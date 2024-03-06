@@ -1,13 +1,16 @@
-# BusinessDataContactInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BusinessDataContactInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**value** | **str** | contact displayed in SERP  example: \&quot;+119797979736\&quot; | [optional] 
-**source** | **str** | data source | [optional] 
+**type** | **str** | type of element | [optional]
+**value** | **str** | contact displayed in SERP  example: \&quot;+119797979736\&quot; | [optional]
+**source** | **str** | data source | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ business_data_contact_info_dict = business_data_contact_info_instance.to_dict()
 # create an instance of BusinessDataContactInfo from a dict
 business_data_contact_info_form_dict = business_data_contact_info.from_dict(business_data_contact_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

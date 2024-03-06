@@ -1,13 +1,16 @@
-# PositiveConnotationDistribution
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# PositiveConnotationDistribution
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**positive** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional] 
-**negative** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional] 
-**neutral** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional] 
+**positive** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional]
+**negative** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional]
+**neutral** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ positive_connotation_distribution_dict = positive_connotation_distribution_insta
 # create an instance of PositiveConnotationDistribution from a dict
 positive_connotation_distribution_form_dict = positive_connotation_distribution.from_dict(positive_connotation_distribution_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,14 +1,17 @@
-# BacklinksDomainIntersectionLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksDomainIntersectionLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**targets** | **Dict[str, Optional[str]]** | target domains, subdomains or webpages in a POST array | [optional] 
-**total_count** | **int** | total amount of results relevant to your request | [optional] 
-**items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BacklinksDomainIntersectionLiveItem]**](BacklinksDomainIntersectionLiveItem.md) | contains domain that link to all targets from the POST array | [optional] 
+**targets** | **Dict[str, Optional[str]]** | target domains, subdomains or webpages in a POST array | [optional]
+**total_count** | **int** | total amount of results relevant to your request | [optional]
+**items_count** | **int** | the number of results returned in the items array | [optional]
+**items** | [**List[BacklinksDomainIntersectionLiveItem]**](BacklinksDomainIntersectionLiveItem.md) | contains domain that link to all targets from the POST array | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ backlinks_domain_intersection_live_result_info_dict = backlinks_domain_intersect
 # create an instance of BacklinksDomainIntersectionLiveResultInfo from a dict
 backlinks_domain_intersection_live_result_info_form_dict = backlinks_domain_intersection_live_result_info.from_dict(backlinks_domain_intersection_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

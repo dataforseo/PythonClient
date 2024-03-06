@@ -1,13 +1,16 @@
-# FormatsElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# FormatsElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**format** | **str** | type of file format of the dataset for example: zip, html, csv | [optional] 
-**size** | **str** | file size in bytes | [optional] 
+**type** | **str** | type of element | [optional]
+**format** | **str** | type of file format of the dataset for example: zip, html, csv | [optional]
+**size** | **str** | file size in bytes | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ formats_element_dict = formats_element_instance.to_dict()
 # create an instance of FormatsElement from a dict
 formats_element_form_dict = formats_element.from_dict(formats_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

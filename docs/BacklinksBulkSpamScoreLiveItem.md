@@ -1,13 +1,16 @@
-# BacklinksBulkSpamScoreLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksBulkSpamScoreLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**target** | **str** | domain, subdomain or webpage from a POST array | [optional] 
-**spam_score** | **int** | average spam score the target learn more about how the metric is calculated | [optional] 
+**type** | **str** | type of element | [optional]
+**target** | **str** | domain, subdomain or webpage from a POST array | [optional]
+**spam_score** | **int** | average spam score the target learn more about how the metric is calculated | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ backlinks_bulk_spam_score_live_item_dict = backlinks_bulk_spam_score_live_item_i
 # create an instance of BacklinksBulkSpamScoreLiveItem from a dict
 backlinks_bulk_spam_score_live_item_form_dict = backlinks_bulk_spam_score_live_item.from_dict(backlinks_bulk_spam_score_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

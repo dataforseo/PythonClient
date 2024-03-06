@@ -1,11 +1,14 @@
-# OnPageForceStopRequestInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageForceStopRequestInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | ID of the task required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” note: you can set up to 1000 id values as separate objects in the POST array | [optional] 
+**id** | **str** | ID of the task required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” note: you can set up to 1000 id values as separate objects in the POST array | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ on_page_force_stop_request_info_dict = on_page_force_stop_request_info_instance.
 # create an instance of OnPageForceStopRequestInfo from a dict
 on_page_force_stop_request_info_form_dict = on_page_force_stop_request_info.from_dict(on_page_force_stop_request_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

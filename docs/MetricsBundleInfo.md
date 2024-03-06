@@ -1,12 +1,15 @@
-# MetricsBundleInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# MetricsBundleInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organic** | [**MetricsInfo**](MetricsInfo.md) |  | [optional] 
-**paid** | [**MetricsInfo**](MetricsInfo.md) |  | [optional] 
+**organic** | [**MetricsInfo**](MetricsInfo.md) |  | [optional]
+**paid** | [**MetricsInfo**](MetricsInfo.md) |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ metrics_bundle_info_dict = metrics_bundle_info_instance.to_dict()
 # create an instance of MetricsBundleInfo from a dict
 metrics_bundle_info_form_dict = metrics_bundle_info.from_dict(metrics_bundle_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

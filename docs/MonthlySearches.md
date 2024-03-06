@@ -1,13 +1,16 @@
-# MonthlySearches
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# MonthlySearches
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**year** | **int** | year | [optional] 
-**month** | **int** | month | [optional] 
-**search_volume** | **int** | monthly average search volume rate | [optional] 
+**year** | **int** | year | [optional]
+**month** | **int** | month | [optional]
+**search_volume** | **int** | monthly average search volume rate | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ monthly_searches_dict = monthly_searches_instance.to_dict()
 # create an instance of MonthlySearches from a dict
 monthly_searches_form_dict = monthly_searches.from_dict(monthly_searches_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

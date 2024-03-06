@@ -1,11 +1,14 @@
-# ContentAnalysisAvailableFiltersResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ContentAnalysisAvailableFiltersResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**search** | **Dict[str, Optional[str]]** |  | [optional] 
+**search** | **Dict[str, Optional[str]]** |  | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ content_analysis_available_filters_result_info_dict = content_analysis_available
 # create an instance of ContentAnalysisAvailableFiltersResultInfo from a dict
 content_analysis_available_filters_result_info_form_dict = content_analysis_available_filters_result_info.from_dict(content_analysis_available_filters_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

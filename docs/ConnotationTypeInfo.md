@@ -1,13 +1,16 @@
-# ConnotationTypeInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ConnotationTypeInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**positive** | **float** | positive connotation | [optional] 
-**negative** | **float** | negative connotation | [optional] 
-**neutral** | **float** | neutral connotation | [optional] 
+**positive** | **float** | positive connotation | [optional]
+**negative** | **float** | negative connotation | [optional]
+**neutral** | **float** | neutral connotation | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ connotation_type_info_dict = connotation_type_info_instance.to_dict()
 # create an instance of ConnotationTypeInfo from a dict
 connotation_type_info_form_dict = connotation_type_info.from_dict(connotation_type_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

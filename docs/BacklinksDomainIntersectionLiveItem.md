@@ -1,12 +1,15 @@
-# BacklinksDomainIntersectionLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksDomainIntersectionLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domain_intersection** | [**Dict[str, BacklinksDomainIntersectionInfo]**](BacklinksDomainIntersectionInfo.md) | contains data on domains that link to the corresponding targets specified in the POST array data is provided in separate objects corresponding to domains, subdomains or pages specified in the targets object | [optional] 
-**summary** | [**Summary**](Summary.md) |  | [optional] 
+**domain_intersection** | [**Dict[str, BacklinksDomainIntersectionInfo]**](BacklinksDomainIntersectionInfo.md) | contains data on domains that link to the corresponding targets specified in the POST array data is provided in separate objects corresponding to domains, subdomains or pages specified in the targets object | [optional]
+**summary** | [**Summary**](Summary.md) |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ backlinks_domain_intersection_live_item_dict = backlinks_domain_intersection_liv
 # create an instance of BacklinksDomainIntersectionLiveItem from a dict
 backlinks_domain_intersection_live_item_form_dict = backlinks_domain_intersection_live_item.from_dict(backlinks_domain_intersection_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

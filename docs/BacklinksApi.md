@@ -1,38 +1,40 @@
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
 # dataforseo_client.BacklinksApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**anchors_live**](BacklinksApi.md#anchors_live) | **POST** /v3/backlinks/anchors/live | 
-[**backlinks_available_filters**](BacklinksApi.md#backlinks_available_filters) | **GET** /v3/backlinks/available_filters | 
-[**backlinks_errors**](BacklinksApi.md#backlinks_errors) | **POST** /v3/backlinks/errors | 
-[**backlinks_id_list**](BacklinksApi.md#backlinks_id_list) | **POST** /v3/backlinks/id_list | 
-[**backlinks_live**](BacklinksApi.md#backlinks_live) | **POST** /v3/backlinks/backlinks/live | 
-[**bulk_backlinks_live**](BacklinksApi.md#bulk_backlinks_live) | **POST** /v3/backlinks/bulk_backlinks/live | 
-[**bulk_new_lost_backlinks_live**](BacklinksApi.md#bulk_new_lost_backlinks_live) | **POST** /v3/backlinks/bulk_new_lost_backlinks/live | 
-[**bulk_new_lost_referring_domains_live**](BacklinksApi.md#bulk_new_lost_referring_domains_live) | **POST** /v3/backlinks/bulk_new_lost_referring_domains/live | 
-[**bulk_ranks_live**](BacklinksApi.md#bulk_ranks_live) | **POST** /v3/backlinks/bulk_ranks/live | 
-[**bulk_referring_domains_live**](BacklinksApi.md#bulk_referring_domains_live) | **POST** /v3/backlinks/bulk_referring_domains/live | 
-[**bulk_spam_score_live**](BacklinksApi.md#bulk_spam_score_live) | **POST** /v3/backlinks/bulk_spam_score/live | 
-[**competitors_live**](BacklinksApi.md#competitors_live) | **POST** /v3/backlinks/competitors/live | 
-[**domain_intersection_live**](BacklinksApi.md#domain_intersection_live) | **POST** /v3/backlinks/domain_intersection/live | 
-[**domain_pages_live**](BacklinksApi.md#domain_pages_live) | **POST** /v3/backlinks/domain_pages/live | 
-[**domain_pages_summary_live**](BacklinksApi.md#domain_pages_summary_live) | **POST** /v3/backlinks/domain_pages_summary/live | 
-[**history_live**](BacklinksApi.md#history_live) | **POST** /v3/backlinks/history/live | 
-[**index**](BacklinksApi.md#index) | **GET** /v3/backlinks/index | 
-[**page_intersection_live**](BacklinksApi.md#page_intersection_live) | **POST** /v3/backlinks/page_intersection/live | 
-[**referring_domains_live**](BacklinksApi.md#referring_domains_live) | **POST** /v3/backlinks/referring_domains/live | 
-[**referring_networks_live**](BacklinksApi.md#referring_networks_live) | **POST** /v3/backlinks/referring_networks/live | 
-[**summary_live**](BacklinksApi.md#summary_live) | **POST** /v3/backlinks/summary/live | 
-[**timeseries_new_lost_summary_live**](BacklinksApi.md#timeseries_new_lost_summary_live) | **POST** /v3/backlinks/timeseries_new_lost_summary/live | 
-[**timeseries_summary_live**](BacklinksApi.md#timeseries_summary_live) | **POST** /v3/backlinks/timeseries_summary/live | 
-
+[**anchors_live**](BacklinksApi.md#anchors_live) | **POST** /v3/backlinks/anchors/live |
+[**backlinks_available_filters**](BacklinksApi.md#backlinks_available_filters) | **GET** /v3/backlinks/available_filters |
+[**backlinks_errors**](BacklinksApi.md#backlinks_errors) | **POST** /v3/backlinks/errors |
+[**backlinks_id_list**](BacklinksApi.md#backlinks_id_list) | **POST** /v3/backlinks/id_list |
+[**backlinks_live**](BacklinksApi.md#backlinks_live) | **POST** /v3/backlinks/backlinks/live |
+[**bulk_backlinks_live**](BacklinksApi.md#bulk_backlinks_live) | **POST** /v3/backlinks/bulk_backlinks/live |
+[**bulk_new_lost_backlinks_live**](BacklinksApi.md#bulk_new_lost_backlinks_live) | **POST** /v3/backlinks/bulk_new_lost_backlinks/live |
+[**bulk_new_lost_referring_domains_live**](BacklinksApi.md#bulk_new_lost_referring_domains_live) | **POST** /v3/backlinks/bulk_new_lost_referring_domains/live |
+[**bulk_ranks_live**](BacklinksApi.md#bulk_ranks_live) | **POST** /v3/backlinks/bulk_ranks/live |
+[**bulk_referring_domains_live**](BacklinksApi.md#bulk_referring_domains_live) | **POST** /v3/backlinks/bulk_referring_domains/live |
+[**bulk_spam_score_live**](BacklinksApi.md#bulk_spam_score_live) | **POST** /v3/backlinks/bulk_spam_score/live |
+[**competitors_live**](BacklinksApi.md#competitors_live) | **POST** /v3/backlinks/competitors/live |
+[**domain_intersection_live**](BacklinksApi.md#domain_intersection_live) | **POST** /v3/backlinks/domain_intersection/live |
+[**domain_pages_live**](BacklinksApi.md#domain_pages_live) | **POST** /v3/backlinks/domain_pages/live |
+[**domain_pages_summary_live**](BacklinksApi.md#domain_pages_summary_live) | **POST** /v3/backlinks/domain_pages_summary/live |
+[**history_live**](BacklinksApi.md#history_live) | **POST** /v3/backlinks/history/live |
+[**index**](BacklinksApi.md#index) | **GET** /v3/backlinks/index |
+[**page_intersection_live**](BacklinksApi.md#page_intersection_live) | **POST** /v3/backlinks/page_intersection/live |
+[**referring_domains_live**](BacklinksApi.md#referring_domains_live) | **POST** /v3/backlinks/referring_domains/live |
+[**referring_networks_live**](BacklinksApi.md#referring_networks_live) | **POST** /v3/backlinks/referring_networks/live |
+[**summary_live**](BacklinksApi.md#summary_live) | **POST** /v3/backlinks/summary/live |
+[**timeseries_new_lost_summary_live**](BacklinksApi.md#timeseries_new_lost_summary_live) | **POST** /v3/backlinks/timeseries_new_lost_summary/live |
+[**timeseries_summary_live**](BacklinksApi.md#timeseries_summary_live) | **POST** /v3/backlinks/timeseries_summary/live |
 
 # **anchors_live**
+
 > BacklinksAnchorsLiveResponseInfo anchors_live(backlinks_anchors_live_request_info=backlinks_anchors_live_request_info)
-
-
 
 ‌‌ This endpoint will provide you with a detailed overview of anchors used when linking to the specified website with relevant backlink data for each of them. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/anchors/live/?bash'
 
@@ -78,14 +80,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->anchors_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_anchors_live_request_info** | [**List[BacklinksAnchorsLiveRequestInfo]**](BacklinksAnchorsLiveRequestInfo.md)|  | [optional] 
+**backlinks_anchors_live_request_info** | [**List[BacklinksAnchorsLiveRequestInfo]**](BacklinksAnchorsLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -97,8 +96,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -106,12 +105,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **backlinks_available_filters**
+
 > BacklinksAvailableFiltersResponseInfo backlinks_available_filters()
-
-
 
 Backlinks API features plenty of parameters that support custom filtration. By applying filters to your POST requests, you will be able to effortlessly extract data that matches your requirements. Note that we do not charge any fees for using data filtering or sorting rules. ‌‌ Here you will find all the necessary information about filters that can be used with DataForSEO Backlinks API endpoints. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/filters/?bash'
 
@@ -155,8 +153,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->backlinks_available_filters: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -171,8 +167,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -180,12 +176,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **backlinks_errors**
+
 > BacklinksErrorsResponseInfo backlinks_errors(backlinks_errors_request_info=backlinks_errors_request_info)
-
-
 
 By calling this endpoint you will receive information about the Backlinks API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/errors/?bash'
 
@@ -231,14 +226,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->backlinks_errors: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_errors_request_info** | [**List[BacklinksErrorsRequestInfo]**](BacklinksErrorsRequestInfo.md)|  | [optional] 
+**backlinks_errors_request_info** | [**List[BacklinksErrorsRequestInfo]**](BacklinksErrorsRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -250,8 +242,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -259,12 +251,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **backlinks_id_list**
+
 > BacklinksIdListResponseInfo backlinks_id_list(backlinks_id_list_request_info=backlinks_id_list_request_info)
-
-
 
 This endpoint is designed to provide you with the list of IDs and metadata of the completed Backlinks tasks during the specified period. You will get all task IDs that were made including successful, uncompleted, and tasks that responded as errors. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/id_list/?bash'
 
@@ -310,14 +301,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->backlinks_id_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_id_list_request_info** | [**List[BacklinksIdListRequestInfo]**](BacklinksIdListRequestInfo.md)|  | [optional] 
+**backlinks_id_list_request_info** | [**List[BacklinksIdListRequestInfo]**](BacklinksIdListRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -329,8 +317,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -338,12 +326,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **backlinks_live**
+
 > BacklinksBacklinksLiveResponseInfo backlinks_live(backlinks_backlinks_live_request_info=backlinks_backlinks_live_request_info)
-
-
 
 ‌ This endpoint will provide you with a list of backlinks and relevant data for the specified domain, subdomain, or webpage. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/backlinks/live/?bash'
 
@@ -389,14 +376,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->backlinks_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_backlinks_live_request_info** | [**List[BacklinksBacklinksLiveRequestInfo]**](BacklinksBacklinksLiveRequestInfo.md)|  | [optional] 
+**backlinks_backlinks_live_request_info** | [**List[BacklinksBacklinksLiveRequestInfo]**](BacklinksBacklinksLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -408,8 +392,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -417,12 +401,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **bulk_backlinks_live**
+
 > BacklinksBulkBacklinksLiveResponseInfo bulk_backlinks_live(backlinks_bulk_backlinks_live_request_info=backlinks_bulk_backlinks_live_request_info)
-
-
 
 ‌ This endpoint will provide you with the number of backlinks pointing to domains, subdomains, and pages specified in the targets array. The returned numbers correspond to all live backlinks, that is, total number of referring links with all attributes (e.g., nofollow, noreferrer, ugc, sponsored etc) that were found during the latest check. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_backlinks/live/?bash'
 
@@ -468,14 +451,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->bulk_backlinks_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_bulk_backlinks_live_request_info** | [**List[BacklinksBulkBacklinksLiveRequestInfo]**](BacklinksBulkBacklinksLiveRequestInfo.md)|  | [optional] 
+**backlinks_bulk_backlinks_live_request_info** | [**List[BacklinksBulkBacklinksLiveRequestInfo]**](BacklinksBulkBacklinksLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -487,8 +467,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -496,12 +476,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **bulk_new_lost_backlinks_live**
+
 > BacklinksBulkNewLostBacklinksLiveResponseInfo bulk_new_lost_backlinks_live(backlinks_bulk_new_lost_backlinks_live_request_info=backlinks_bulk_new_lost_backlinks_live_request_info)
-
-
 
 ‌ This endpoint will provide you with the number of new and lost backlinks for the domains, subdomains, and pages specified in the targets array. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_new_lost_backlinks/live/?bash'
 
@@ -547,14 +526,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->bulk_new_lost_backlinks_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_bulk_new_lost_backlinks_live_request_info** | [**List[BacklinksBulkNewLostBacklinksLiveRequestInfo]**](BacklinksBulkNewLostBacklinksLiveRequestInfo.md)|  | [optional] 
+**backlinks_bulk_new_lost_backlinks_live_request_info** | [**List[BacklinksBulkNewLostBacklinksLiveRequestInfo]**](BacklinksBulkNewLostBacklinksLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -566,8 +542,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -575,12 +551,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **bulk_new_lost_referring_domains_live**
+
 > BacklinksBulkNewLostReferringDomainsLiveResponseInfo bulk_new_lost_referring_domains_live(backlinks_bulk_new_lost_referring_domains_live_request_info=backlinks_bulk_new_lost_referring_domains_live_request_info)
-
-
 
 ‌ This endpoint will provide you with the number of referring domains pointing to the domains, subdomains and pages specified in the targets array. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_new_lost_referring_domains/live/?bash'
 
@@ -626,14 +601,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->bulk_new_lost_referring_domains_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_bulk_new_lost_referring_domains_live_request_info** | [**List[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]**](BacklinksBulkNewLostReferringDomainsLiveRequestInfo.md)|  | [optional] 
+**backlinks_bulk_new_lost_referring_domains_live_request_info** | [**List[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]**](BacklinksBulkNewLostReferringDomainsLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -645,8 +617,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -654,12 +626,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **bulk_ranks_live**
+
 > BacklinksBulkRanksLiveResponseInfo bulk_ranks_live(backlinks_bulk_ranks_live_request_info=backlinks_bulk_ranks_live_request_info)
-
-
 
 ‌ This endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. rank values range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'
 
@@ -705,14 +676,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->bulk_ranks_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_bulk_ranks_live_request_info** | [**List[BacklinksBulkRanksLiveRequestInfo]**](BacklinksBulkRanksLiveRequestInfo.md)|  | [optional] 
+**backlinks_bulk_ranks_live_request_info** | [**List[BacklinksBulkRanksLiveRequestInfo]**](BacklinksBulkRanksLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -724,8 +692,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -733,12 +701,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **bulk_referring_domains_live**
+
 > BacklinksBulkReferringDomainsLiveResponseInfo bulk_referring_domains_live(backlinks_bulk_referring_domains_live_request_info=backlinks_bulk_referring_domains_live_request_info)
-
-
 
 ‌ This endpoint will provide you with the number of referring domains pointing to domains, subdomains, and pages specified in the targets array. The returned numbers are based on all live referring domains, that is, total number of domains pointing to the target with any type of backlinks (e.g., nofollow, noreferrer, ugc, sponsored etc) that were found during the latest check. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_referring_domains/live/?bash'
 
@@ -784,14 +751,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->bulk_referring_domains_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_bulk_referring_domains_live_request_info** | [**List[BacklinksBulkReferringDomainsLiveRequestInfo]**](BacklinksBulkReferringDomainsLiveRequestInfo.md)|  | [optional] 
+**backlinks_bulk_referring_domains_live_request_info** | [**List[BacklinksBulkReferringDomainsLiveRequestInfo]**](BacklinksBulkReferringDomainsLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -803,8 +767,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -812,12 +776,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **bulk_spam_score_live**
+
 > BacklinksBulkSpamScoreLiveResponseInfo bulk_spam_score_live(backlinks_bulk_spam_score_live_request_info=backlinks_bulk_spam_score_live_request_info)
-
-
 
 ‌ This endpoint will provide you with spam scores of the domains, subdomains, and pages you specified in the targets array. Spam Score is DataForSEO’s proprietary metric that indicates how “spammy” your target is on a scale from 0 to 100. You can learn more about Spam Score, how it is calculated, and signals it takes into account in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_spam_score/live/?bash'
 
@@ -863,14 +826,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->bulk_spam_score_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_bulk_spam_score_live_request_info** | [**List[BacklinksBulkSpamScoreLiveRequestInfo]**](BacklinksBulkSpamScoreLiveRequestInfo.md)|  | [optional] 
+**backlinks_bulk_spam_score_live_request_info** | [**List[BacklinksBulkSpamScoreLiveRequestInfo]**](BacklinksBulkSpamScoreLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -882,8 +842,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -891,12 +851,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **competitors_live**
+
 > BacklinksCompetitorsLiveResponseInfo competitors_live(backlinks_competitors_live_request_info=backlinks_competitors_live_request_info)
-
-
 
 ‌‌ This endpoint will provide you with a list of competitors that share some part of the backlink profile with a target website, along with a number of backlink intersections and the rank of every competing website. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/competitors/live/?bash'
 
@@ -942,14 +901,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->competitors_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_competitors_live_request_info** | [**List[BacklinksCompetitorsLiveRequestInfo]**](BacklinksCompetitorsLiveRequestInfo.md)|  | [optional] 
+**backlinks_competitors_live_request_info** | [**List[BacklinksCompetitorsLiveRequestInfo]**](BacklinksCompetitorsLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -961,8 +917,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -970,12 +926,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **domain_intersection_live**
+
 > BacklinksDomainIntersectionLiveResponseInfo domain_intersection_live(backlinks_domain_intersection_live_request_info=backlinks_domain_intersection_live_request_info)
-
-
 
 ‌ This endpoint will provide you with the list of domains pointing to the specified websites. This endpoint is especially useful for creating a Link Gap feature that shows what domains link to your competitors but do not link out to your website. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/domain_intersection/live/?bash'
 
@@ -1021,14 +976,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->domain_intersection_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_domain_intersection_live_request_info** | [**List[BacklinksDomainIntersectionLiveRequestInfo]**](BacklinksDomainIntersectionLiveRequestInfo.md)|  | [optional] 
+**backlinks_domain_intersection_live_request_info** | [**List[BacklinksDomainIntersectionLiveRequestInfo]**](BacklinksDomainIntersectionLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1040,8 +992,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1049,12 +1001,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **domain_pages_live**
+
 > BacklinksDomainPagesLiveResponseInfo domain_pages_live(backlinks_domain_pages_live_request_info=backlinks_domain_pages_live_request_info)
-
-
 
 ‌‌ This endpoint will provide you with a detailed overview of domain pages with backlink data for each page. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/domain_pages/live/?bash'
 
@@ -1100,14 +1051,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->domain_pages_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_domain_pages_live_request_info** | [**List[BacklinksDomainPagesLiveRequestInfo]**](BacklinksDomainPagesLiveRequestInfo.md)|  | [optional] 
+**backlinks_domain_pages_live_request_info** | [**List[BacklinksDomainPagesLiveRequestInfo]**](BacklinksDomainPagesLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1119,8 +1067,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1128,12 +1076,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **domain_pages_summary_live**
+
 > BacklinksDomainPagesSummaryLiveResponseInfo domain_pages_summary_live(backlinks_domain_pages_summary_live_request_info=backlinks_domain_pages_summary_live_request_info)
-
-
 
 This endpoint will provide you with detailed summary data on all backlinks and related metrics for each page of the target domain or subdomain you specify. If you indicate a single page as a target, you will get comprehensive summary data on all backlinks for that page. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/domain_pages_summary/live/?bash'
 
@@ -1179,14 +1126,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->domain_pages_summary_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_domain_pages_summary_live_request_info** | [**List[BacklinksDomainPagesSummaryLiveRequestInfo]**](BacklinksDomainPagesSummaryLiveRequestInfo.md)|  | [optional] 
+**backlinks_domain_pages_summary_live_request_info** | [**List[BacklinksDomainPagesSummaryLiveRequestInfo]**](BacklinksDomainPagesSummaryLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1198,8 +1142,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1207,12 +1151,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **history_live**
+
 > BacklinksHistoryLiveResponseInfo history_live(backlinks_history_live_request_info=backlinks_history_live_request_info)
-
-
 
 ‌ This endpoint will provide you with historical backlinks data back to the beginning of 2019. You can receive the number of backlinks a given domain had in a specific time period, the number of new & lost backlinks, referring domains, and more. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/history/live/?bash'
 
@@ -1258,14 +1201,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->history_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_history_live_request_info** | [**List[BacklinksHistoryLiveRequestInfo]**](BacklinksHistoryLiveRequestInfo.md)|  | [optional] 
+**backlinks_history_live_request_info** | [**List[BacklinksHistoryLiveRequestInfo]**](BacklinksHistoryLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1277,8 +1217,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1286,12 +1226,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **index**
+
 > BacklinksIndexResponseInfo index()
-
-
 
 ‌ This endpoint will provide you with the total number of backlinks, domains, and pages our database contains for the moment when you make a request. You will also get stats for the last 12 months. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/index/?bash'
 
@@ -1335,8 +1274,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->index: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1351,8 +1288,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1360,12 +1297,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **page_intersection_live**
+
 > BacklinksPageIntersectionLiveResponseInfo page_intersection_live(backlinks_page_intersection_live_request_info=backlinks_page_intersection_live_request_info)
-
-
 
 ‌ This endpoint will provide you with the list of referring pages pointing to the specified targets. It is especially useful for finding the backlinks that point to your competitors but don’t point to your website. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/page_intersection/live/?bash'
 
@@ -1411,14 +1347,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->page_intersection_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_page_intersection_live_request_info** | [**List[BacklinksPageIntersectionLiveRequestInfo]**](BacklinksPageIntersectionLiveRequestInfo.md)|  | [optional] 
+**backlinks_page_intersection_live_request_info** | [**List[BacklinksPageIntersectionLiveRequestInfo]**](BacklinksPageIntersectionLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1430,8 +1363,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1439,12 +1372,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **referring_domains_live**
+
 > BacklinksReferringDomainsLiveResponseInfo referring_domains_live(backlinks_referring_domains_live_request_info=backlinks_referring_domains_live_request_info)
-
-
 
 ‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target domain you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
 
@@ -1490,14 +1422,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->referring_domains_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_referring_domains_live_request_info** | [**List[BacklinksReferringDomainsLiveRequestInfo]**](BacklinksReferringDomainsLiveRequestInfo.md)|  | [optional] 
+**backlinks_referring_domains_live_request_info** | [**List[BacklinksReferringDomainsLiveRequestInfo]**](BacklinksReferringDomainsLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1509,8 +1438,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1518,12 +1447,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **referring_networks_live**
+
 > BacklinksReferringNetworksLiveResponseInfo referring_networks_live(backlinks_referring_networks_live_request_info=backlinks_referring_networks_live_request_info)
-
-
 
 ‌‌ This endpoint will provide you with a detailed overview of referring IPs and subnets pointing to the target you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_networks/live/?bash'
 
@@ -1569,14 +1497,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->referring_networks_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_referring_networks_live_request_info** | [**List[BacklinksReferringNetworksLiveRequestInfo]**](BacklinksReferringNetworksLiveRequestInfo.md)|  | [optional] 
+**backlinks_referring_networks_live_request_info** | [**List[BacklinksReferringNetworksLiveRequestInfo]**](BacklinksReferringNetworksLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1588,8 +1513,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1597,12 +1522,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **summary_live**
+
 > BacklinksSummaryLiveResponseInfo summary_live(backlinks_summary_live_request_info=backlinks_summary_live_request_info)
-
-
 
 ‌ This endpoint will provide you with an overview of backlinks data available for a given domain, subdomain, or webpage. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/summary/live/?bash'
 
@@ -1648,14 +1572,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->summary_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_summary_live_request_info** | [**List[BacklinksSummaryLiveRequestInfo]**](BacklinksSummaryLiveRequestInfo.md)|  | [optional] 
+**backlinks_summary_live_request_info** | [**List[BacklinksSummaryLiveRequestInfo]**](BacklinksSummaryLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1667,8 +1588,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1676,12 +1597,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **timeseries_new_lost_summary_live**
+
 > BacklinksTimeseriesNewLostSummaryLiveResponseInfo timeseries_new_lost_summary_live(backlinks_timeseries_new_lost_summary_live_request_info=backlinks_timeseries_new_lost_summary_live_request_info)
-
-
 
 ‌ This endpoint will provide you with the number of new and lost backlinks and referring domains for the domain specified in the target field. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/timeseries_new_lost_summary/live/?bash'
 
@@ -1727,14 +1647,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->timeseries_new_lost_summary_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_timeseries_new_lost_summary_live_request_info** | [**List[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]**](BacklinksTimeseriesNewLostSummaryLiveRequestInfo.md)|  | [optional] 
+**backlinks_timeseries_new_lost_summary_live_request_info** | [**List[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]**](BacklinksTimeseriesNewLostSummaryLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1746,8 +1663,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1755,12 +1672,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **timeseries_summary_live**
+
 > BacklinksTimeseriesSummaryLiveResponseInfo timeseries_summary_live(backlinks_timeseries_summary_live_request_info=backlinks_timeseries_summary_live_request_info)
-
-
 
 ‌ This endpoint will provide you with an overview of backlink data for the target domain available during a period between the two indicated dates. Backlink metrics will be grouped by the time range that you define: day, week, month, or year. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/timeseries_summary/live/?bash'
 
@@ -1806,14 +1722,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BacklinksApi->timeseries_summary_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backlinks_timeseries_summary_live_request_info** | [**List[BacklinksTimeseriesSummaryLiveRequestInfo]**](BacklinksTimeseriesSummaryLiveRequestInfo.md)|  | [optional] 
+**backlinks_timeseries_summary_live_request_info** | [**List[BacklinksTimeseriesSummaryLiveRequestInfo]**](BacklinksTimeseriesSummaryLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1825,8 +1738,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1834,5 +1747,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

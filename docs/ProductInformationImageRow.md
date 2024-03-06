@@ -1,12 +1,15 @@
-# ProductInformationImageRow
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductInformationImageRow
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alt** | **str** | alternative text of the related product image | [optional] 
-**url** | **str** | URL of the image | [optional] 
+**alt** | **str** | alternative text of the related product image | [optional]
+**url** | **str** | URL of the image | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ product_information_image_row_dict = product_information_image_row_instance.to_d
 # create an instance of ProductInformationImageRow from a dict
 product_information_image_row_form_dict = product_information_image_row.from_dict(product_information_image_row_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

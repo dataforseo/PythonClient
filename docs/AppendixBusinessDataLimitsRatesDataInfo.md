@@ -1,19 +1,22 @@
-# AppendixBusinessDataLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixBusinessDataLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**google** | [**AppendixBusinessDataGoogleInfo**](AppendixBusinessDataGoogleInfo.md) |  | [optional] 
-**locations** | **float** |  | [optional] 
-**languages** | **float** |  | [optional] 
-**errors** | **float** |  | [optional] 
-**yelp** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional] 
-**social_media** | [**AppendixSocialMediaBusinessDataLimitsRatesDataInfo**](AppendixSocialMediaBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
-**tripadvisor** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional] 
-**trustpilot** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional] 
-**business_listings** | [**AppendixBusinessListingsBusinessDataLimitsRatesDataInfo**](AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
+**google** | [**AppendixBusinessDataGoogleInfo**](AppendixBusinessDataGoogleInfo.md) |  | [optional]
+**locations** | **float** |  | [optional]
+**languages** | **float** |  | [optional]
+**errors** | **float** |  | [optional]
+**yelp** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional]
+**social_media** | [**AppendixSocialMediaBusinessDataLimitsRatesDataInfo**](AppendixSocialMediaBusinessDataLimitsRatesDataInfo.md) |  | [optional]
+**tripadvisor** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional]
+**trustpilot** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional]
+**business_listings** | [**AppendixBusinessListingsBusinessDataLimitsRatesDataInfo**](AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -32,6 +35,9 @@ appendix_business_data_limits_rates_data_info_dict = appendix_business_data_limi
 # create an instance of AppendixBusinessDataLimitsRatesDataInfo from a dict
 appendix_business_data_limits_rates_data_info_form_dict = appendix_business_data_limits_rates_data_info.from_dict(appendix_business_data_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

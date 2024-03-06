@@ -1,11 +1,14 @@
-# BaseGoogleTrendsItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BaseGoogleTrendsItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
+**type** | **str** | type of element | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ base_google_trends_item_dict = base_google_trends_item_instance.to_dict()
 # create an instance of BaseGoogleTrendsItem from a dict
 base_google_trends_item_form_dict = base_google_trends_item.from_dict(base_google_trends_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

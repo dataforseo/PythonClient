@@ -1,11 +1,14 @@
-# DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | **str** | target domain required field domain name of the website to analyze Note: results will be returned for the specified domain only | [optional] 
+**target** | **str** | target domain required field domain name of the website to analyze Note: results will be returned for the specified domain only | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ domain_analytics_technologies_domain_technologies_live_request_info_dict = domai
 # create an instance of DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo from a dict
 domain_analytics_technologies_domain_technologies_live_request_info_form_dict = domain_analytics_technologies_domain_technologies_live_request_info.from_dict(domain_analytics_technologies_domain_technologies_live_request_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

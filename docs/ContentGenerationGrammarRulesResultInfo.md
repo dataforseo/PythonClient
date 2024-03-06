@@ -1,11 +1,14 @@
-# ContentGenerationGrammarRulesResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ContentGenerationGrammarRulesResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rules** | **List[Optional[str]]** | array of rules | [optional] 
+**rules** | **List[Optional[str]]** | array of rules | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ content_generation_grammar_rules_result_info_dict = content_generation_grammar_r
 # create an instance of ContentGenerationGrammarRulesResultInfo from a dict
 content_generation_grammar_rules_result_info_form_dict = content_generation_grammar_rules_result_info.from_dict(content_generation_grammar_rules_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

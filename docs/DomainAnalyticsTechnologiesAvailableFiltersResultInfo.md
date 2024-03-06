@@ -1,14 +1,17 @@
-# DomainAnalyticsTechnologiesAvailableFiltersResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DomainAnalyticsTechnologiesAvailableFiltersResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domains_by_technology** | **Dict[str, Optional[str]]** |  | [optional] 
-**aggregation_technologies** | **Dict[str, Optional[str]]** |  | [optional] 
-**technologies_summary** | **Dict[str, Optional[str]]** |  | [optional] 
-**domains_by_html_terms** | **Dict[str, Optional[str]]** |  | [optional] 
+**domains_by_technology** | **Dict[str, Optional[str]]** |  | [optional]
+**aggregation_technologies** | **Dict[str, Optional[str]]** |  | [optional]
+**technologies_summary** | **Dict[str, Optional[str]]** |  | [optional]
+**domains_by_html_terms** | **Dict[str, Optional[str]]** |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ domain_analytics_technologies_available_filters_result_info_dict = domain_analyt
 # create an instance of DomainAnalyticsTechnologiesAvailableFiltersResultInfo from a dict
 domain_analytics_technologies_available_filters_result_info_form_dict = domain_analytics_technologies_available_filters_result_info.from_dict(domain_analytics_technologies_available_filters_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

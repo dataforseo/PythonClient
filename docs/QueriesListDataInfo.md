@@ -1,12 +1,15 @@
-# QueriesListDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# QueriesListDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**top** | [**List[QueriesListDataItemInfo]**](QueriesListDataItemInfo.md) | the most popular related topics represents the list of the most popular related topics | [optional] 
-**rising** | [**List[QueriesListDataItemInfo]**](QueriesListDataItemInfo.md) | emerging related topics represents the list of related topics with the biggest increase in search frequency since the last time period | [optional] 
+**top** | [**List[QueriesListDataItemInfo]**](QueriesListDataItemInfo.md) | the most popular related topics represents the list of the most popular related topics | [optional]
+**rising** | [**List[QueriesListDataItemInfo]**](QueriesListDataItemInfo.md) | emerging related topics represents the list of related topics with the biggest increase in search frequency since the last time period | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ queries_list_data_info_dict = queries_list_data_info_instance.to_dict()
 # create an instance of QueriesListDataInfo from a dict
 queries_list_data_info_form_dict = queries_list_data_info.from_dict(queries_list_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

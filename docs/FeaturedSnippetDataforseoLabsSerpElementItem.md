@@ -1,28 +1,31 @@
-# FeaturedSnippetDataforseoLabsSerpElementItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# FeaturedSnippetDataforseoLabsSerpElementItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
-**domain** | **str** | domain where a link points | [optional] 
-**title** | **str** | title of the result in SERP | [optional] 
-**featured_title** | **str** | title of a given element | [optional] 
-**description** | **str** | description of the results element in SERP | [optional] 
-**url** | **str** | URL link | [optional] 
-**table** | [**Table**](Table.md) |  | [optional] 
-**se_type** | **str** | search engine type | [optional] 
-**main_domain** | **str** | primary domain name in SERP | [optional] 
-**relative_url** | **str** | URL in SERP that does not specify the HTTPs protocol and domain name | [optional] 
-**etv** | **float** | estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article | [optional] 
-**estimated_paid_traffic_cost** | **float** | estimated cost of monthly search traffic represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article | [optional] 
-**rank_changes** | [**RankChanges**](RankChanges.md) |  | [optional] 
-**backlinks_info** | [**AvgBacklinksInfo**](AvgBacklinksInfo.md) |  | [optional] 
-**rank_info** | [**RankInfo**](RankInfo.md) |  | [optional] 
+**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional]
+**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional]
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional]
+**xpath** | **str** | the XPath of the element | [optional]
+**domain** | **str** | domain where a link points | [optional]
+**title** | **str** | title of the result in SERP | [optional]
+**featured_title** | **str** | title of a given element | [optional]
+**description** | **str** | description of the results element in SERP | [optional]
+**url** | **str** | URL link | [optional]
+**table** | [**Table**](Table.md) |  | [optional]
+**se_type** | **str** | search engine type | [optional]
+**main_domain** | **str** | primary domain name in SERP | [optional]
+**relative_url** | **str** | URL in SERP that does not specify the HTTPs protocol and domain name | [optional]
+**etv** | **float** | estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article | [optional]
+**estimated_paid_traffic_cost** | **float** | estimated cost of monthly search traffic represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article | [optional]
+**rank_changes** | [**RankChanges**](RankChanges.md) |  | [optional]
+**backlinks_info** | [**AvgBacklinksInfo**](AvgBacklinksInfo.md) |  | [optional]
+**rank_info** | [**RankInfo**](RankInfo.md) |  | [optional]
 
 ## Example
 
@@ -41,6 +44,9 @@ featured_snippet_dataforseo_labs_serp_element_item_dict = featured_snippet_dataf
 # create an instance of FeaturedSnippetDataforseoLabsSerpElementItem from a dict
 featured_snippet_dataforseo_labs_serp_element_item_form_dict = featured_snippet_dataforseo_labs_serp_element_item.from_dict(featured_snippet_dataforseo_labs_serp_element_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,17 +1,20 @@
-# EventsDataforseoLabsSerpElementItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# EventsDataforseoLabsSerpElementItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
-**title** | **str** | title of the result in SERP | [optional] 
-**url** | **str** | URL link | [optional] 
-**items** | [**List[EventsElement]**](EventsElement.md) | elements of search results found in SERP | [optional] 
+**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional]
+**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional]
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional]
+**xpath** | **str** | the XPath of the element | [optional]
+**title** | **str** | title of the result in SERP | [optional]
+**url** | **str** | URL link | [optional]
+**items** | [**List[EventsElement]**](EventsElement.md) | elements of search results found in SERP | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ events_dataforseo_labs_serp_element_item_dict = events_dataforseo_labs_serp_elem
 # create an instance of EventsDataforseoLabsSerpElementItem from a dict
 events_dataforseo_labs_serp_element_item_form_dict = events_dataforseo_labs_serp_element_item.from_dict(events_dataforseo_labs_serp_element_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

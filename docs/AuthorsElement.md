@@ -1,14 +1,17 @@
-# AuthorsElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AuthorsElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**name** | **str** | name of the dataset author | [optional] 
-**url** | **str** | author’s link URL | [optional] 
-**domain** | **str** | author’s link domain | [optional] 
+**type** | **str** | type of element | [optional]
+**name** | **str** | name of the dataset author | [optional]
+**url** | **str** | author’s link URL | [optional]
+**domain** | **str** | author’s link domain | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ authors_element_dict = authors_element_instance.to_dict()
 # create an instance of AuthorsElement from a dict
 authors_element_form_dict = authors_element.from_dict(authors_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

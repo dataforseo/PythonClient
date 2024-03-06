@@ -1,13 +1,16 @@
-# PeriodCovered
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# PeriodCovered
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_date** | **str** | date and time when the period starts in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2020-03-02 02:00:00 +00:00 | [optional] 
-**end_date** | **str** | date and time when the period ends in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-12-09 02:00:00 +00:00 | [optional] 
-**displayed_date** | **str** | period displayed in SERP example: Mar 2, 2020 - Dec 9, 2022 | [optional] 
+**start_date** | **str** | date and time when the period starts in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2020-03-02 02:00:00 +00:00 | [optional]
+**end_date** | **str** | date and time when the period ends in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-12-09 02:00:00 +00:00 | [optional]
+**displayed_date** | **str** | period displayed in SERP example: Mar 2, 2020 - Dec 9, 2022 | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ period_covered_dict = period_covered_instance.to_dict()
 # create an instance of PeriodCovered from a dict
 period_covered_form_dict = period_covered.from_dict(period_covered_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

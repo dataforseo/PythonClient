@@ -1,11 +1,14 @@
-# AppendixWhoisDomainAnalyticsPriceData
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixWhoisDomainAnalyticsPriceData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**overview** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional] 
+**overview** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ appendix_whois_domain_analytics_price_data_dict = appendix_whois_domain_analytic
 # create an instance of AppendixWhoisDomainAnalyticsPriceData from a dict
 appendix_whois_domain_analytics_price_data_form_dict = appendix_whois_domain_analytics_price_data.from_dict(appendix_whois_domain_analytics_price_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

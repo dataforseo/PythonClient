@@ -1,14 +1,17 @@
-# Rectangle
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# Rectangle
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**x** | **float** | x-axis coordinate x-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin | [optional] 
-**y** | **float** | y-axis coordinate y-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin | [optional] 
-**width** | **float** | width of the element in pixels | [optional] 
-**height** | **float** | height of the element in pixels | [optional] 
+**x** | **float** | x-axis coordinate x-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin | [optional]
+**y** | **float** | y-axis coordinate y-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin | [optional]
+**width** | **float** | width of the element in pixels | [optional]
+**height** | **float** | height of the element in pixels | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ rectangle_dict = rectangle_instance.to_dict()
 # create an instance of Rectangle from a dict
 rectangle_form_dict = rectangle.from_dict(rectangle_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,13 +1,16 @@
-# MultiCarouselElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# MultiCarouselElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of the row | [optional] 
-**multi_carousel_snippets** | [**List[CarouselElement]**](CarouselElement.md) | multi_carousel_snippet results | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of the row | [optional]
+**multi_carousel_snippets** | [**List[CarouselElement]**](CarouselElement.md) | multi_carousel_snippet results | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ multi_carousel_element_dict = multi_carousel_element_instance.to_dict()
 # create an instance of MultiCarouselElement from a dict
 multi_carousel_element_form_dict = multi_carousel_element.from_dict(multi_carousel_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

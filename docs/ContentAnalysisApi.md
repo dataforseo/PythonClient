@@ -1,26 +1,28 @@
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
 # dataforseo_client.ContentAnalysisApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**category_trends_live**](ContentAnalysisApi.md#category_trends_live) | **POST** /v3/content_analysis/category_trends/live | 
-[**content_analysis_available_filters**](ContentAnalysisApi.md#content_analysis_available_filters) | **GET** /v3/content_analysis/available_filters | 
-[**content_analysis_categories**](ContentAnalysisApi.md#content_analysis_categories) | **GET** /v3/content_analysis/categories | 
-[**content_analysis_id_list**](ContentAnalysisApi.md#content_analysis_id_list) | **POST** /v3/content_analysis/id_list | 
-[**content_analysis_languages**](ContentAnalysisApi.md#content_analysis_languages) | **GET** /v3/content_analysis/languages | 
-[**content_analysis_locations**](ContentAnalysisApi.md#content_analysis_locations) | **GET** /v3/content_analysis/locations | 
-[**content_analysis_summary_live**](ContentAnalysisApi.md#content_analysis_summary_live) | **POST** /v3/content_analysis/summary/live | 
-[**phrase_trends_live**](ContentAnalysisApi.md#phrase_trends_live) | **POST** /v3/content_analysis/phrase_trends/live | 
-[**rating_distribution_live**](ContentAnalysisApi.md#rating_distribution_live) | **POST** /v3/content_analysis/rating_distribution/live | 
-[**search_live**](ContentAnalysisApi.md#search_live) | **POST** /v3/content_analysis/search/live | 
-[**sentiment_analysis_live**](ContentAnalysisApi.md#sentiment_analysis_live) | **POST** /v3/content_analysis/sentiment_analysis/live | 
-
+[**category_trends_live**](ContentAnalysisApi.md#category_trends_live) | **POST** /v3/content_analysis/category_trends/live |
+[**content_analysis_available_filters**](ContentAnalysisApi.md#content_analysis_available_filters) | **GET** /v3/content_analysis/available_filters |
+[**content_analysis_categories**](ContentAnalysisApi.md#content_analysis_categories) | **GET** /v3/content_analysis/categories |
+[**content_analysis_id_list**](ContentAnalysisApi.md#content_analysis_id_list) | **POST** /v3/content_analysis/id_list |
+[**content_analysis_languages**](ContentAnalysisApi.md#content_analysis_languages) | **GET** /v3/content_analysis/languages |
+[**content_analysis_locations**](ContentAnalysisApi.md#content_analysis_locations) | **GET** /v3/content_analysis/locations |
+[**content_analysis_summary_live**](ContentAnalysisApi.md#content_analysis_summary_live) | **POST** /v3/content_analysis/summary/live |
+[**phrase_trends_live**](ContentAnalysisApi.md#phrase_trends_live) | **POST** /v3/content_analysis/phrase_trends/live |
+[**rating_distribution_live**](ContentAnalysisApi.md#rating_distribution_live) | **POST** /v3/content_analysis/rating_distribution/live |
+[**search_live**](ContentAnalysisApi.md#search_live) | **POST** /v3/content_analysis/search/live |
+[**sentiment_analysis_live**](ContentAnalysisApi.md#sentiment_analysis_live) | **POST** /v3/content_analysis/sentiment_analysis/live |
 
 # **category_trends_live**
+
 > ContentAnalysisCategoryTrendsLiveResponseInfo category_trends_live(content_analysis_category_trends_live_request_info=content_analysis_category_trends_live_request_info)
-
-
 
 ‌ This endpoint will provide you with data on all citations in the target category for the indicated date range. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/category_trends/live/?bash'
 
@@ -66,14 +68,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->category_trends_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_analysis_category_trends_live_request_info** | [**List[ContentAnalysisCategoryTrendsLiveRequestInfo]**](ContentAnalysisCategoryTrendsLiveRequestInfo.md)|  | [optional] 
+**content_analysis_category_trends_live_request_info** | [**List[ContentAnalysisCategoryTrendsLiveRequestInfo]**](ContentAnalysisCategoryTrendsLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -85,8 +84,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -94,12 +93,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **content_analysis_available_filters**
+
 > ContentAnalysisAvailableFiltersResponseInfo content_analysis_available_filters()
-
-
 
 ‌‌ Here you will find all the necessary information about filters that can be used with Content Analysis API endpoints. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/filters/?bash'
 
@@ -143,8 +141,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->content_analysis_available_filters: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -159,8 +155,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -168,12 +164,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **content_analysis_categories**
+
 > ContentAnalysisCategoriesResponseInfo content_analysis_categories()
-
-
 
 We use Google product and service categories. This endpoint will provide you with the full list of available categories. You can also download the CSV file by this link. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/categories/?bash'
 
@@ -217,8 +212,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->content_analysis_categories: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -233,8 +226,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -242,12 +235,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **content_analysis_id_list**
+
 > ContentAnalysisIdListResponseInfo content_analysis_id_list(content_analysis_id_list_request_info=content_analysis_id_list_request_info)
-
-
 
 This endpoint is designed to provide you with the list of IDs and metadata of the completed Content Analysis tasks during the specified period. You will get all task IDs that were made including successful, uncompleted, and tasks that responded as errors. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/id_list/?bash'
 
@@ -293,14 +285,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->content_analysis_id_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_analysis_id_list_request_info** | [**List[ContentAnalysisIdListRequestInfo]**](ContentAnalysisIdListRequestInfo.md)|  | [optional] 
+**content_analysis_id_list_request_info** | [**List[ContentAnalysisIdListRequestInfo]**](ContentAnalysisIdListRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -312,8 +301,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -321,12 +310,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **content_analysis_languages**
+
 > ContentAnalysisLanguagesResponseInfo content_analysis_languages()
-
-
 
 You will receive the list of languages by calling this API.   As a response of the API server, you will receive JSON-encoded data containing a tasks array with the information specific to the set tasks. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/languages/?bash'
 
@@ -370,8 +358,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->content_analysis_languages: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -386,8 +372,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -395,12 +381,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **content_analysis_locations**
+
 > ContentAnalysisLocationsResponseInfo content_analysis_locations()
-
-
 
 You will receive the list of locations by this API call. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/locations/?bash'
 
@@ -444,8 +429,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->content_analysis_locations: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -460,8 +443,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -469,12 +452,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **content_analysis_summary_live**
+
 > ContentAnalysisSummaryLiveResponseInfo content_analysis_summary_live(content_analysis_summary_live_request_info=content_analysis_summary_live_request_info)
-
-
 
 ‌ This endpoint will provide you with an overview of citation data available for the target keyword. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/summary/live/?bash'
 
@@ -520,14 +502,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->content_analysis_summary_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_analysis_summary_live_request_info** | [**List[ContentAnalysisSummaryLiveRequestInfo]**](ContentAnalysisSummaryLiveRequestInfo.md)|  | [optional] 
+**content_analysis_summary_live_request_info** | [**List[ContentAnalysisSummaryLiveRequestInfo]**](ContentAnalysisSummaryLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -539,8 +518,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -548,12 +527,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **phrase_trends_live**
+
 > ContentAnalysisPhraseTrendsLiveResponseInfo phrase_trends_live(content_analysis_phrase_trends_live_request_info=content_analysis_phrase_trends_live_request_info)
-
-
 
 ‌ This endpoint will provide you with data on all citations of the target keyword for the indicated date range. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/phrase_trends/live/?bash'
 
@@ -599,14 +577,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->phrase_trends_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_analysis_phrase_trends_live_request_info** | [**List[ContentAnalysisPhraseTrendsLiveRequestInfo]**](ContentAnalysisPhraseTrendsLiveRequestInfo.md)|  | [optional] 
+**content_analysis_phrase_trends_live_request_info** | [**List[ContentAnalysisPhraseTrendsLiveRequestInfo]**](ContentAnalysisPhraseTrendsLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -618,8 +593,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -627,12 +602,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **rating_distribution_live**
+
 > ContentAnalysisRatingDistributionLiveResponseInfo rating_distribution_live(content_analysis_rating_distribution_live_request_info=content_analysis_rating_distribution_live_request_info)
-
-
 
 ‌ This endpoint will provide you with rating distribution data for the keyword and other parameters specified in the request. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/rating_distribution/live/?bash'
 
@@ -678,14 +652,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->rating_distribution_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_analysis_rating_distribution_live_request_info** | [**List[ContentAnalysisRatingDistributionLiveRequestInfo]**](ContentAnalysisRatingDistributionLiveRequestInfo.md)|  | [optional] 
+**content_analysis_rating_distribution_live_request_info** | [**List[ContentAnalysisRatingDistributionLiveRequestInfo]**](ContentAnalysisRatingDistributionLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -697,8 +668,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -706,12 +677,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **search_live**
+
 > ContentAnalysisSearchLiveResponseInfo search_live(content_analysis_search_live_request_info=content_analysis_search_live_request_info)
-
-
 
 ‌ This endpoint will provide you with detailed citation data available for the target keyword. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/search/live/?bash'
 
@@ -757,14 +727,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->search_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_analysis_search_live_request_info** | [**List[ContentAnalysisSearchLiveRequestInfo]**](ContentAnalysisSearchLiveRequestInfo.md)|  | [optional] 
+**content_analysis_search_live_request_info** | [**List[ContentAnalysisSearchLiveRequestInfo]**](ContentAnalysisSearchLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -776,8 +743,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -785,12 +752,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **sentiment_analysis_live**
+
 > ContentAnalysisSentimentAnalysisLiveResponseInfo sentiment_analysis_live(content_analysis_sentiment_analysis_live_request_info=content_analysis_sentiment_analysis_live_request_info)
-
-
 
 ‌ This endpoint will provide you with sentiment analysis data for the citations available for the target keyword. for more info please visit 'https://docs.dataforseo.com/v3/content_analysis/sentiment_analysis/live/?bash'
 
@@ -836,14 +802,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentAnalysisApi->sentiment_analysis_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_analysis_sentiment_analysis_live_request_info** | [**List[ContentAnalysisSentimentAnalysisLiveRequestInfo]**](ContentAnalysisSentimentAnalysisLiveRequestInfo.md)|  | [optional] 
+**content_analysis_sentiment_analysis_live_request_info** | [**List[ContentAnalysisSentimentAnalysisLiveRequestInfo]**](ContentAnalysisSentimentAnalysisLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -855,8 +818,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -864,5 +827,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

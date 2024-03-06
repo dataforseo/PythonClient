@@ -1,12 +1,15 @@
-# AvailibleVersions
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AvailibleVersions
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**version** | **str** | lighthouse version | [optional] 
-**default** | **bool** | the version is used by default if false, the version is not used by default and should be specified in the corresponding field of the POST request if necessary | [optional] 
+**version** | **str** | lighthouse version | [optional]
+**default** | **bool** | the version is used by default if false, the version is not used by default and should be specified in the corresponding field of the POST request if necessary | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ availible_versions_dict = availible_versions_instance.to_dict()
 # create an instance of AvailibleVersions from a dict
 availible_versions_form_dict = availible_versions.from_dict(availible_versions_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,12 +1,15 @@
-# AppendixBusinessDataDayLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixBusinessDataDayLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reviews** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**search** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**reviews** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**search** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ appendix_business_data_day_limits_rates_data_info_dict = appendix_business_data_
 # create an instance of AppendixBusinessDataDayLimitsRatesDataInfo from a dict
 appendix_business_data_day_limits_rates_data_info_form_dict = appendix_business_data_day_limits_rates_data_info.from_dict(appendix_business_data_day_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

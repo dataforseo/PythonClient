@@ -1,16 +1,19 @@
-# AppendixMerchantPriceData
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixMerchantPriceData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**google** | [**AppendixGoogleMerchantPriceData**](AppendixGoogleMerchantPriceData.md) |  | [optional] 
-**amazon** | [**AppendixAmazonMerchantPriceData**](AppendixAmazonMerchantPriceData.md) |  | [optional] 
-**errors** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
-**languages** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
-**locations** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
-**reviews** | [**AppendixProductGoogleMerchantPriceDataInfo**](AppendixProductGoogleMerchantPriceDataInfo.md) |  | [optional] 
+**google** | [**AppendixGoogleMerchantPriceData**](AppendixGoogleMerchantPriceData.md) |  | [optional]
+**amazon** | [**AppendixAmazonMerchantPriceData**](AppendixAmazonMerchantPriceData.md) |  | [optional]
+**errors** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional]
+**languages** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional]
+**locations** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional]
+**reviews** | [**AppendixProductGoogleMerchantPriceDataInfo**](AppendixProductGoogleMerchantPriceDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -29,6 +32,9 @@ appendix_merchant_price_data_dict = appendix_merchant_price_data_instance.to_dic
 # create an instance of AppendixMerchantPriceData from a dict
 appendix_merchant_price_data_form_dict = appendix_merchant_price_data.from_dict(appendix_merchant_price_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

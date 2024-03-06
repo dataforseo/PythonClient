@@ -1,18 +1,21 @@
-# SerpYoutubeVideoCommentsLiveAdvancedResponseInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# SerpYoutubeVideoCommentsLiveAdvancedResponseInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**version** | **str** | the current version of the API | [optional] 
-**status_code** | **int** | general status code you can find the full list of the response codes here | [optional] 
-**status_message** | **str** | general informational message you can find the full list of general informational messages here | [optional] 
-**time** | **str** | total execution time, seconds | [optional] 
-**cost** | **float** | total tasks cost, USD | [optional] 
-**tasks_count** | **int** | the number of tasks in the tasks array | [optional] 
-**tasks_error** | **int** | the number of tasks in the tasks array returned with an error | [optional] 
-**tasks** | [**List[SerpYoutubeVideoCommentsLiveAdvancedTaskInfo]**](SerpYoutubeVideoCommentsLiveAdvancedTaskInfo.md) | array of tasks | [optional] 
+**version** | **str** | the current version of the API | [optional]
+**status_code** | **int** | general status code you can find the full list of the response codes here | [optional]
+**status_message** | **str** | general informational message you can find the full list of general informational messages here | [optional]
+**time** | **str** | total execution time, seconds | [optional]
+**cost** | **float** | total tasks cost, USD | [optional]
+**tasks_count** | **int** | the number of tasks in the tasks array | [optional]
+**tasks_error** | **int** | the number of tasks in the tasks array returned with an error | [optional]
+**tasks** | [**List[SerpYoutubeVideoCommentsLiveAdvancedTaskInfo]**](SerpYoutubeVideoCommentsLiveAdvancedTaskInfo.md) | array of tasks | [optional]
 
 ## Example
 
@@ -31,6 +34,9 @@ serp_youtube_video_comments_live_advanced_response_info_dict = serp_youtube_vide
 # create an instance of SerpYoutubeVideoCommentsLiveAdvancedResponseInfo from a dict
 serp_youtube_video_comments_live_advanced_response_info_form_dict = serp_youtube_video_comments_live_advanced_response_info.from_dict(serp_youtube_video_comments_live_advanced_response_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

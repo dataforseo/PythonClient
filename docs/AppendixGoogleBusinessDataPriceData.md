@@ -1,15 +1,18 @@
-# AppendixGoogleBusinessDataPriceData
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixGoogleBusinessDataPriceData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hotel_info** | [**AppendixHotelInfoGoogleBusinessDataPriceData**](AppendixHotelInfoGoogleBusinessDataPriceData.md) |  | [optional] 
-**hotel_searches** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
-**my_business_info** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
-**my_business_updates** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
-**reviews** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**hotel_info** | [**AppendixHotelInfoGoogleBusinessDataPriceData**](AppendixHotelInfoGoogleBusinessDataPriceData.md) |  | [optional]
+**hotel_searches** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
+**my_business_info** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
+**my_business_updates** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
+**reviews** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ appendix_google_business_data_price_data_dict = appendix_google_business_data_pr
 # create an instance of AppendixGoogleBusinessDataPriceData from a dict
 appendix_google_business_data_price_data_form_dict = appendix_google_business_data_price_data.from_dict(appendix_google_business_data_price_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

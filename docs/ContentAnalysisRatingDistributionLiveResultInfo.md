@@ -1,14 +1,17 @@
-# ContentAnalysisRatingDistributionLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ContentAnalysisRatingDistributionLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**min** | **float** | min rating on a distribution scale | [optional] 
-**max** | **float** | max rating on a distribution scale | [optional] 
-**metrics** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional] 
+**type** | **str** | type of element | [optional]
+**min** | **float** | min rating on a distribution scale | [optional]
+**max** | **float** | max rating on a distribution scale | [optional]
+**metrics** | [**ContentAnalysisSummaryInfo**](ContentAnalysisSummaryInfo.md) |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ content_analysis_rating_distribution_live_result_info_dict = content_analysis_ra
 # create an instance of ContentAnalysisRatingDistributionLiveResultInfo from a dict
 content_analysis_rating_distribution_live_result_info_form_dict = content_analysis_rating_distribution_live_result_info.from_dict(content_analysis_rating_distribution_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

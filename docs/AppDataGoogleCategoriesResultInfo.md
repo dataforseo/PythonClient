@@ -1,11 +1,14 @@
-# AppDataGoogleCategoriesResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppDataGoogleCategoriesResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**categories** | **List[Optional[str]]** | contains full list of supported app categories | [optional] 
+**categories** | **List[Optional[str]]** | contains full list of supported app categories | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ app_data_google_categories_result_info_dict = app_data_google_categories_result_
 # create an instance of AppDataGoogleCategoriesResultInfo from a dict
 app_data_google_categories_result_info_form_dict = app_data_google_categories_result_info.from_dict(app_data_google_categories_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,17 +1,20 @@
-# AppendixContentGenerationPriceData
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixContentGenerationPriceData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**check_grammar** | [**AppendixContentGenerationPriceDataInfo**](AppendixContentGenerationPriceDataInfo.md) |  | [optional] 
-**generate** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional] 
-**generate_meta_tags** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional] 
-**generate_sub_topics** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional] 
-**generate_text** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional] 
-**paraphrase** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional] 
-**text_summary** | [**AppendixContentGenerationPriceDataInfo**](AppendixContentGenerationPriceDataInfo.md) |  | [optional] 
+**check_grammar** | [**AppendixContentGenerationPriceDataInfo**](AppendixContentGenerationPriceDataInfo.md) |  | [optional]
+**generate** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional]
+**generate_meta_tags** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional]
+**generate_sub_topics** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional]
+**generate_text** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional]
+**paraphrase** | [**AppendixKeywordBingKeywordsDataPriceDataInfo**](AppendixKeywordBingKeywordsDataPriceDataInfo.md) |  | [optional]
+**text_summary** | [**AppendixContentGenerationPriceDataInfo**](AppendixContentGenerationPriceDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ appendix_content_generation_price_data_dict = appendix_content_generation_price_
 # create an instance of AppendixContentGenerationPriceData from a dict
 appendix_content_generation_price_data_form_dict = appendix_content_generation_price_data.from_dict(appendix_content_generation_price_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,13 +1,16 @@
-# Redirect
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# Redirect
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**status_code** | **int** | HTTP status code of the URL | [optional] 
-**url** | **str** | indirect link URL | [optional] 
+**type** | **str** | type of element | [optional]
+**status_code** | **int** | HTTP status code of the URL | [optional]
+**url** | **str** | indirect link URL | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ redirect_dict = redirect_instance.to_dict()
 # create an instance of Redirect from a dict
 redirect_form_dict = redirect.from_dict(redirect_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,13 +1,16 @@
-# KeywordsDataGoogleTrendsCategoriesResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# KeywordsDataGoogleTrendsCategoriesResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category_code** | **int** | unique google trends category identifier | [optional] 
-**category_name** | **str** | name of the google trends category | [optional] 
-**category_code_parent** | **int** | the code of the superordinate category example: \&quot;category_code\&quot;: 1100, \&quot;category_name\&quot;: \&quot;Superhero Films\&quot;, \&quot;category_code_parent\&quot;: 1097 where category_code_parent corresponds to: \&quot;category_code\&quot;: 1097, \&quot;category_name\&quot;: \&quot;Action &amp; Adventure Films\&quot; | [optional] 
+**category_code** | **int** | unique google trends category identifier | [optional]
+**category_name** | **str** | name of the google trends category | [optional]
+**category_code_parent** | **int** | the code of the superordinate category example: \&quot;category_code\&quot;: 1100, \&quot;category_name\&quot;: \&quot;Superhero Films\&quot;, \&quot;category_code_parent\&quot;: 1097 where category_code_parent corresponds to: \&quot;category_code\&quot;: 1097, \&quot;category_name\&quot;: \&quot;Action &amp; Adventure Films\&quot; | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ keywords_data_google_trends_categories_result_info_dict = keywords_data_google_t
 # create an instance of KeywordsDataGoogleTrendsCategoriesResultInfo from a dict
 keywords_data_google_trends_categories_result_info_form_dict = keywords_data_google_trends_categories_result_info.from_dict(keywords_data_google_trends_categories_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

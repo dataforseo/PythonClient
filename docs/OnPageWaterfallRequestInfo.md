@@ -1,13 +1,16 @@
-# OnPageWaterfallRequestInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageWaterfallRequestInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | ID of the task required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” | [optional] 
-**url** | **str** | page URL required field specify the pages you want to receive timing for | [optional] 
-**tag** | **str** | user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response | [optional] 
+**id** | **str** | ID of the task required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” | [optional]
+**url** | **str** | page URL required field specify the pages you want to receive timing for | [optional]
+**tag** | **str** | user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ on_page_waterfall_request_info_dict = on_page_waterfall_request_info_instance.to
 # create an instance of OnPageWaterfallRequestInfo from a dict
 on_page_waterfall_request_info_form_dict = on_page_waterfall_request_info.from_dict(on_page_waterfall_request_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

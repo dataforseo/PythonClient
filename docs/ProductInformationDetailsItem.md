@@ -1,12 +1,15 @@
-# ProductInformationDetailsItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductInformationDetailsItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**section_name** | **str** | name of the section related to product information specified in the contents | [optional] 
-**body** | **Dict[str, Optional[str]]** | contains information specified about the product within the section_name | [optional] 
+**section_name** | **str** | name of the section related to product information specified in the contents | [optional]
+**body** | **Dict[str, Optional[str]]** | contains information specified about the product within the section_name | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ product_information_details_item_dict = product_information_details_item_instanc
 # create an instance of ProductInformationDetailsItem from a dict
 product_information_details_item_form_dict = product_information_details_item.from_dict(product_information_details_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

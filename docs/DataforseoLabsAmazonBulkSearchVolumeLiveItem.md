@@ -1,13 +1,16 @@
-# DataforseoLabsAmazonBulkSearchVolumeLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsAmazonBulkSearchVolumeLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**keyword** | **str** | keyword in a POST array | [optional] 
-**search_volume** | **int** | average monthly search volume rate represents the (approximate) number of searches for the returned keyword on Amazon | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**keyword** | **str** | keyword in a POST array | [optional]
+**search_volume** | **int** | average monthly search volume rate represents the (approximate) number of searches for the returned keyword on Amazon | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ dataforseo_labs_amazon_bulk_search_volume_live_item_dict = dataforseo_labs_amazo
 # create an instance of DataforseoLabsAmazonBulkSearchVolumeLiveItem from a dict
 dataforseo_labs_amazon_bulk_search_volume_live_item_form_dict = dataforseo_labs_amazon_bulk_search_volume_live_item.from_dict(dataforseo_labs_amazon_bulk_search_volume_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,17 +1,20 @@
-# KnowledgeGraphHotelsBookingElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# KnowledgeGraphHotelsBookingElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**source** | **str** | source of the element indicates the source of information included in the shopping_element | [optional] 
-**description** | **str** | the description of the results element in SERP | [optional] 
-**url** | **str** | URL | [optional] 
-**domain** | **str** | domain in the URL | [optional] 
-**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
-**is_paid** | **bool** | indicates whether the element is an ad | [optional] 
+**type** | **str** | type of element | [optional]
+**source** | **str** | source of the element indicates the source of information included in the shopping_element | [optional]
+**description** | **str** | the description of the results element in SERP | [optional]
+**url** | **str** | URL | [optional]
+**domain** | **str** | domain in the URL | [optional]
+**price** | [**PriceInfo**](PriceInfo.md) |  | [optional]
+**is_paid** | **bool** | indicates whether the element is an ad | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ knowledge_graph_hotels_booking_element_dict = knowledge_graph_hotels_booking_ele
 # create an instance of KnowledgeGraphHotelsBookingElement from a dict
 knowledge_graph_hotels_booking_element_form_dict = knowledge_graph_hotels_booking_element.from_dict(knowledge_graph_hotels_booking_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

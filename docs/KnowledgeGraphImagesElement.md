@@ -1,16 +1,19 @@
-# KnowledgeGraphImagesElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# KnowledgeGraphImagesElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**url** | **str** | relevant URL in SERP | [optional] 
-**domain** | **str** | domain in SERP of the Ad element | [optional] 
-**alt** | **str** | alt tag of the image | [optional] 
-**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
+**type** | **str** | type of element | [optional]
+**url** | **str** | relevant URL in SERP | [optional]
+**domain** | **str** | domain in SERP of the Ad element | [optional]
+**alt** | **str** | alt tag of the image | [optional]
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional]
+**xpath** | **str** | the XPath of the element | [optional]
 
 ## Example
 
@@ -29,6 +32,9 @@ knowledge_graph_images_element_dict = knowledge_graph_images_element_instance.to
 # create an instance of KnowledgeGraphImagesElement from a dict
 knowledge_graph_images_element_form_dict = knowledge_graph_images_element.from_dict(knowledge_graph_images_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

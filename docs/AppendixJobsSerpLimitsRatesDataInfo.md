@@ -1,11 +1,14 @@
-# AppendixJobsSerpLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixJobsSerpLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**task_post** | **float** |  | [optional] 
+**task_post** | **float** |  | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ appendix_jobs_serp_limits_rates_data_info_dict = appendix_jobs_serp_limits_rates
 # create an instance of AppendixJobsSerpLimitsRatesDataInfo from a dict
 appendix_jobs_serp_limits_rates_data_info_form_dict = appendix_jobs_serp_limits_rates_data_info.from_dict(appendix_jobs_serp_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,14 +1,17 @@
-# DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_count** | **int** | total amount of results in our database relevant to your request | [optional] 
-**items_count** | **int** | the number of results returned in the items array | [optional] 
-**offset** | **int** | offset in the results array of returned domains | [optional] 
-**items** | [**List[DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem]**](DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem.md) | items array | [optional] 
+**total_count** | **int** | total amount of results in our database relevant to your request | [optional]
+**items_count** | **int** | the number of results returned in the items array | [optional]
+**offset** | **int** | offset in the results array of returned domains | [optional]
+**items** | [**List[DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem]**](DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem.md) | items array | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ domain_analytics_technologies_aggregation_technologies_live_result_info_dict = d
 # create an instance of DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo from a dict
 domain_analytics_technologies_aggregation_technologies_live_result_info_form_dict = domain_analytics_technologies_aggregation_technologies_live_result_info.from_dict(domain_analytics_technologies_aggregation_technologies_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

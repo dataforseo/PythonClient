@@ -1,16 +1,19 @@
-# ResourceMetaInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ResourceMetaInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alternative_text** | **str** | content of the image alt attribute the value depends on the resource_type | [optional] 
-**title** | **str** | title | [optional] 
-**original_width** | **int** | original image width in px | [optional] 
-**original_height** | **int** | original image height in px | [optional] 
-**width** | **int** | image width in px | [optional] 
-**height** | **int** | image height in px | [optional] 
+**alternative_text** | **str** | content of the image alt attribute the value depends on the resource_type | [optional]
+**title** | **str** | title | [optional]
+**original_width** | **int** | original image width in px | [optional]
+**original_height** | **int** | original image height in px | [optional]
+**width** | **int** | image width in px | [optional]
+**height** | **int** | image height in px | [optional]
 
 ## Example
 
@@ -29,6 +32,9 @@ resource_meta_info_dict = resource_meta_info_instance.to_dict()
 # create an instance of ResourceMetaInfo from a dict
 resource_meta_info_form_dict = resource_meta_info.from_dict(resource_meta_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

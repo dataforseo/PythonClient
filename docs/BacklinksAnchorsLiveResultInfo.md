@@ -1,14 +1,17 @@
-# BacklinksAnchorsLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksAnchorsLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | **str** | target in the post array | [optional] 
-**total_count** | **int** | total number of relevant items in the database | [optional] 
-**items_count** | **int** | number of items in the results array | [optional] 
-**items** | [**List[BacklinksAnchorsLiveItem]**](BacklinksAnchorsLiveItem.md) | items array | [optional] 
+**target** | **str** | target in the post array | [optional]
+**total_count** | **int** | total number of relevant items in the database | [optional]
+**items_count** | **int** | number of items in the results array | [optional]
+**items** | [**List[BacklinksAnchorsLiveItem]**](BacklinksAnchorsLiveItem.md) | items array | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ backlinks_anchors_live_result_info_dict = backlinks_anchors_live_result_info_ins
 # create an instance of BacklinksAnchorsLiveResultInfo from a dict
 backlinks_anchors_live_result_info_form_dict = backlinks_anchors_live_result_info.from_dict(backlinks_anchors_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,12 +1,15 @@
-# AppendixAppendixDaysRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixAppendixDaysRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_data** | **float** |  | [optional] 
-**errors** | **float** |  | [optional] 
+**user_data** | **float** |  | [optional]
+**errors** | **float** |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ appendix_appendix_days_rates_data_info_dict = appendix_appendix_days_rates_data_
 # create an instance of AppendixAppendixDaysRatesDataInfo from a dict
 appendix_appendix_days_rates_data_info_form_dict = appendix_appendix_days_rates_data_info.from_dict(appendix_appendix_days_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

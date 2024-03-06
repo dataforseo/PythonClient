@@ -1,13 +1,16 @@
-# DataforseoLabsPageIntersectionLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsPageIntersectionLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**keyword_data** | [**KeywordData**](KeywordData.md) |  | [optional] 
-**intersection_result** | [**Dict[str, BaseDataforseoLabsSerpElementItem]**](BaseDataforseoLabsSerpElementItem.md) | contains data on the SERP elements found for the returned keyword data will be provided in separate arrays for each URL you specified in the pages object when setting a task; depending on the number of specified URLs, it can contain from 1 to 20 arrays named respectively | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**keyword_data** | [**KeywordData**](KeywordData.md) |  | [optional]
+**intersection_result** | [**Dict[str, BaseDataforseoLabsSerpElementItem]**](BaseDataforseoLabsSerpElementItem.md) | contains data on the SERP elements found for the returned keyword data will be provided in separate arrays for each URL you specified in the pages object when setting a task; depending on the number of specified URLs, it can contain from 1 to 20 arrays named respectively | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ dataforseo_labs_page_intersection_live_item_dict = dataforseo_labs_page_intersec
 # create an instance of DataforseoLabsPageIntersectionLiveItem from a dict
 dataforseo_labs_page_intersection_live_item_form_dict = dataforseo_labs_page_intersection_live_item.from_dict(dataforseo_labs_page_intersection_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

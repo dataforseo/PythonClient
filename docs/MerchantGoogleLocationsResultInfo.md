@@ -1,15 +1,18 @@
-# MerchantGoogleLocationsResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# MerchantGoogleLocationsResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**location_code** | **int** | location code | [optional] 
-**location_name** | **str** | full name of the location | [optional] 
-**location_name_parent** | **str** | the name of the superordinate location example: \&quot;location_name\&quot;: \&quot;Arkansas,United States\&quot;, \&quot;location_name_parent\&quot;: \&quot;United States\&quot; | [optional] 
-**country_iso_code** | **str** | ISO country code of the location | [optional] 
-**location_type** | **str** | location type | [optional] 
+**location_code** | **int** | location code | [optional]
+**location_name** | **str** | full name of the location | [optional]
+**location_name_parent** | **str** | the name of the superordinate location example: \&quot;location_name\&quot;: \&quot;Arkansas,United States\&quot;, \&quot;location_name_parent\&quot;: \&quot;United States\&quot; | [optional]
+**country_iso_code** | **str** | ISO country code of the location | [optional]
+**location_type** | **str** | location type | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ merchant_google_locations_result_info_dict = merchant_google_locations_result_in
 # create an instance of MerchantGoogleLocationsResultInfo from a dict
 merchant_google_locations_result_info_form_dict = merchant_google_locations_result_info.from_dict(merchant_google_locations_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

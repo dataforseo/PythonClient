@@ -1,12 +1,15 @@
-# ContentAnalysisCategoriesInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ContentAnalysisCategoriesInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **List[Optional[int]]** |  | [optional] 
-**count** | **int** |  | [optional] 
+**category** | **List[Optional[int]]** |  | [optional]
+**count** | **int** |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ content_analysis_categories_info_dict = content_analysis_categories_info_instanc
 # create an instance of ContentAnalysisCategoriesInfo from a dict
 content_analysis_categories_info_form_dict = content_analysis_categories_info.from_dict(content_analysis_categories_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

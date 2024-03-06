@@ -1,12 +1,15 @@
-# ProductInformationVideoRow
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductInformationVideoRow
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**preview** | **str** | URL of the preview image for the related video | [optional] 
-**url** | **str** | URL of the image | [optional] 
+**preview** | **str** | URL of the preview image for the related video | [optional]
+**url** | **str** | URL of the image | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ product_information_video_row_dict = product_information_video_row_instance.to_d
 # create an instance of ProductInformationVideoRow from a dict
 product_information_video_row_form_dict = product_information_video_row.from_dict(product_information_video_row_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

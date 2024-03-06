@@ -1,11 +1,14 @@
-# PopularTimes
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# PopularTimes
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**popular_times_by_days** | **Dict[str, Optional[List[BusyWorkingTimeInfo]]]** | popular hours information about busy hours of the local establishment on each day of the week | [optional] 
+**popular_times_by_days** | **Dict[str, Optional[List[BusyWorkingTimeInfo]]]** | popular hours information about busy hours of the local establishment on each day of the week | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ popular_times_dict = popular_times_instance.to_dict()
 # create an instance of PopularTimes from a dict
 popular_times_form_dict = popular_times.from_dict(popular_times_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

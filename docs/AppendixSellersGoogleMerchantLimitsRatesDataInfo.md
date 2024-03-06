@@ -1,14 +1,17 @@
-# AppendixSellersGoogleMerchantLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixSellersGoogleMerchantLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**task_post** | **float** |  | [optional] 
-**tasks_ready** | **float** |  | [optional] 
-**task_get** | [**AppendixFunctionTypeInfo**](AppendixFunctionTypeInfo.md) |  | [optional] 
-**ad_url** | **float** |  | [optional] 
+**task_post** | **float** |  | [optional]
+**tasks_ready** | **float** |  | [optional]
+**task_get** | [**AppendixFunctionTypeInfo**](AppendixFunctionTypeInfo.md) |  | [optional]
+**ad_url** | **float** |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ appendix_sellers_google_merchant_limits_rates_data_info_dict = appendix_sellers_
 # create an instance of AppendixSellersGoogleMerchantLimitsRatesDataInfo from a dict
 appendix_sellers_google_merchant_limits_rates_data_info_form_dict = appendix_sellers_google_merchant_limits_rates_data_info.from_dict(appendix_sellers_google_merchant_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,21 +1,24 @@
-# NewsSearchSerpElementItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# NewsSearchSerpElementItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
-**domain** | **str** | domain name of the result in SERP | [optional] 
-**title** | **str** | title of the result in SERP | [optional] 
-**url** | **str** | URL of the result in SERP | [optional] 
-**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
-**snippet** | **str** | snippet of the result in SERP | [optional] 
-**time_published** | **str** | indicates the time the result was published | [optional] 
-**timestamp** | **str** | date and time when the news was published in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: 2019-11-15 12:57:46 +00:00 | [optional] 
-**rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
+**rank_group** | **int** | group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional]
+**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional]
+**xpath** | **str** | the XPath of the element | [optional]
+**domain** | **str** | domain name of the result in SERP | [optional]
+**title** | **str** | title of the result in SERP | [optional]
+**url** | **str** | URL of the result in SERP | [optional]
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional]
+**snippet** | **str** | snippet of the result in SERP | [optional]
+**time_published** | **str** | indicates the time the result was published | [optional]
+**timestamp** | **str** | date and time when the news was published in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: 2019-11-15 12:57:46 +00:00 | [optional]
+**rectangle** | [**Rectangle**](Rectangle.md) |  | [optional]
 
 ## Example
 
@@ -34,6 +37,9 @@ news_search_serp_element_item_dict = news_search_serp_element_item_instance.to_d
 # create an instance of NewsSearchSerpElementItem from a dict
 news_search_serp_element_item_form_dict = news_search_serp_element_item.from_dict(news_search_serp_element_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

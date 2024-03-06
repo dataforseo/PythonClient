@@ -1,12 +1,15 @@
-# BacklinksBulkBacklinksLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksBulkBacklinksLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | **str** | domain, subdomain or webpage from a POST array | [optional] 
-**backlinks** | **int** | number of backlinks pointing to the target | [optional] 
+**target** | **str** | domain, subdomain or webpage from a POST array | [optional]
+**backlinks** | **int** | number of backlinks pointing to the target | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ backlinks_bulk_backlinks_live_item_dict = backlinks_bulk_backlinks_live_item_ins
 # create an instance of BacklinksBulkBacklinksLiveItem from a dict
 backlinks_bulk_backlinks_live_item_form_dict = backlinks_bulk_backlinks_live_item.from_dict(backlinks_bulk_backlinks_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

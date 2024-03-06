@@ -1,13 +1,16 @@
-# AppendixFunctionTypeInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixFunctionTypeInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**regular** | **float** |  | [optional] 
-**advanced** | **float** |  | [optional] 
-**html** | **float** |  | [optional] 
+**regular** | **float** |  | [optional]
+**advanced** | **float** |  | [optional]
+**html** | **float** |  | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ appendix_function_type_info_dict = appendix_function_type_info_instance.to_dict(
 # create an instance of AppendixFunctionTypeInfo from a dict
 appendix_function_type_info_form_dict = appendix_function_type_info.from_dict(appendix_function_type_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

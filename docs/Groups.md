@@ -1,13 +1,16 @@
-# Groups
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# Groups
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | id of the technology group example: marketing, sales | [optional] 
-**title** | **str** | title of the technology group | [optional] 
-**categories** | [**List[TechnologyCategoryInfo]**](TechnologyCategoryInfo.md) | technology categories in this group | [optional] 
+**id** | **str** | id of the technology group example: marketing, sales | [optional]
+**title** | **str** | title of the technology group | [optional]
+**categories** | [**List[TechnologyCategoryInfo]**](TechnologyCategoryInfo.md) | technology categories in this group | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ groups_dict = groups_instance.to_dict()
 # create an instance of Groups from a dict
 groups_form_dict = groups.from_dict(groups_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

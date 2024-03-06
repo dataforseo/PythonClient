@@ -1,15 +1,18 @@
-# MicrodataFieldsInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# MicrodataFieldsInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | field name name of the data field | [optional] 
-**types** | **List[Optional[str]]** | parent microdata types for a full list of available types, please visit schema.org | [optional] 
-**value** | **str** | microdata value microdata value specified on a target web page | [optional] 
-**test_results** | [**MicrodataTestResultsInfo**](MicrodataTestResultsInfo.md) |  | [optional] 
-**fields** | [**List[MicrodataFieldsInfo]**](MicrodataFieldsInfo.md) | microdata fields an array of objects containing data fields related to the certain microdata type | [optional] 
+**name** | **str** | field name name of the data field | [optional]
+**types** | **List[Optional[str]]** | parent microdata types for a full list of available types, please visit schema.org | [optional]
+**value** | **str** | microdata value microdata value specified on a target web page | [optional]
+**test_results** | [**MicrodataTestResultsInfo**](MicrodataTestResultsInfo.md) |  | [optional]
+**fields** | [**List[MicrodataFieldsInfo]**](MicrodataFieldsInfo.md) | microdata fields an array of objects containing data fields related to the certain microdata type | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ microdata_fields_info_dict = microdata_fields_info_instance.to_dict()
 # create an instance of MicrodataFieldsInfo from a dict
 microdata_fields_info_form_dict = microdata_fields_info.from_dict(microdata_fields_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,13 +1,16 @@
-# OnPageKeywordDensityItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageKeywordDensityItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | returned keyword | [optional] 
-**frequency** | **int** | keyword frequency number of times the keyword appears on the website (or webpage if you specified a url) | [optional] 
-**density** | **int** | keyword density calculated as a ratio of frequency to the total count of keywords with the set keyword_length on the web page or website | [optional] 
+**keyword** | **str** | returned keyword | [optional]
+**frequency** | **int** | keyword frequency number of times the keyword appears on the website (or webpage if you specified a url) | [optional]
+**density** | **int** | keyword density calculated as a ratio of frequency to the total count of keywords with the set keyword_length on the web page or website | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ on_page_keyword_density_item_dict = on_page_keyword_density_item_instance.to_dic
 # create an instance of OnPageKeywordDensityItem from a dict
 on_page_keyword_density_item_form_dict = on_page_keyword_density_item.from_dict(on_page_keyword_density_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

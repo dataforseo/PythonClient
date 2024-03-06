@@ -1,13 +1,16 @@
-# AppendixSocialMediaBusinessDataLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixSocialMediaBusinessDataLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**facebook** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**pinterest** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**reddit** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**facebook** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**pinterest** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**reddit** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ appendix_social_media_business_data_limits_rates_data_info_dict = appendix_socia
 # create an instance of AppendixSocialMediaBusinessDataLimitsRatesDataInfo from a dict
 appendix_social_media_business_data_limits_rates_data_info_form_dict = appendix_social_media_business_data_limits_rates_data_info.from_dict(appendix_social_media_business_data_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

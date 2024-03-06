@@ -1,15 +1,18 @@
-# AppendixUserDataResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixUserDataResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**login** | **str** | your login | [optional] 
-**timezone** | **str** | your time zone can be set in your profile settings | [optional] 
-**rates** | [**AppendixRatesData**](AppendixRatesData.md) |  | [optional] 
-**money** | [**AppendixMoneyData**](AppendixMoneyData.md) |  | [optional] 
-**price** | [**AppendixPriceData**](AppendixPriceData.md) |  | [optional] 
+**login** | **str** | your login | [optional]
+**timezone** | **str** | your time zone can be set in your profile settings | [optional]
+**rates** | [**AppendixRatesData**](AppendixRatesData.md) |  | [optional]
+**money** | [**AppendixMoneyData**](AppendixMoneyData.md) |  | [optional]
+**price** | [**AppendixPriceData**](AppendixPriceData.md) |  | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ appendix_user_data_result_info_dict = appendix_user_data_result_info_instance.to
 # create an instance of AppendixUserDataResultInfo from a dict
 appendix_user_data_result_info_form_dict = appendix_user_data_result_info.from_dict(appendix_user_data_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

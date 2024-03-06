@@ -1,17 +1,20 @@
-# ProductSeller
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductSeller
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | product title | [optional] 
-**url** | **str** | seller url url of the page where the product is sold | [optional] 
-**seller_rating** | [**RatingElement**](RatingElement.md) |  | [optional] 
-**seller_review_count** | **int** | number of seller reviews number of reviews on the product seller’s account | [optional] 
-**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
-**delivery_info** | [**DeliveryInfo**](DeliveryInfo.md) |  | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | product title | [optional]
+**url** | **str** | seller url url of the page where the product is sold | [optional]
+**seller_rating** | [**RatingElement**](RatingElement.md) |  | [optional]
+**seller_review_count** | **int** | number of seller reviews number of reviews on the product seller’s account | [optional]
+**price** | [**PriceInfo**](PriceInfo.md) |  | [optional]
+**delivery_info** | [**DeliveryInfo**](DeliveryInfo.md) |  | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ product_seller_dict = product_seller_instance.to_dict()
 # create an instance of ProductSeller from a dict
 product_seller_form_dict = product_seller.from_dict(product_seller_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

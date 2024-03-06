@@ -1,14 +1,17 @@
-# PeopleAlsoSearch
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# PeopleAlsoSearch
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cid** | **str** | google-defined client id unique id of a local establishment learn more about the identifier in this help center article | [optional] 
-**feature_id** | **str** | the unique identifier of the element in SERP learn more about the identifier in this help center article | [optional] 
-**title** | **str** | title of the element in SERP the name of the business entity for which the results are collected | [optional] 
-**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
+**cid** | **str** | google-defined client id unique id of a local establishment learn more about the identifier in this help center article | [optional]
+**feature_id** | **str** | the unique identifier of the element in SERP learn more about the identifier in this help center article | [optional]
+**title** | **str** | title of the element in SERP the name of the business entity for which the results are collected | [optional]
+**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ people_also_search_dict = people_also_search_instance.to_dict()
 # create an instance of PeopleAlsoSearch from a dict
 people_also_search_form_dict = people_also_search.from_dict(people_also_search_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

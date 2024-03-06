@@ -1,26 +1,29 @@
-# TechnologiesInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# TechnologiesInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**add_ons** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**analytics** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**web_development** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**security** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**business_tools** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**sales** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**other** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**user_generated_content** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**privacy** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**servers** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**location** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**content** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**media** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**marketing** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**communication** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**utilities** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
+**add_ons** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**analytics** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**web_development** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**security** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**business_tools** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**sales** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**other** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**user_generated_content** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**privacy** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**servers** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**location** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**content** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**media** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**marketing** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**communication** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
+**utilities** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional]
 
 ## Example
 
@@ -39,6 +42,9 @@ technologies_info_dict = technologies_info_instance.to_dict()
 # create an instance of TechnologiesInfo from a dict
 technologies_info_form_dict = technologies_info.from_dict(technologies_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

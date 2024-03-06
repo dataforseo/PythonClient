@@ -1,14 +1,17 @@
-# ContentAnalysisSearchLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ContentAnalysisSearchLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**offset_token** | **str** | offset token for subsequent requests you can use the string provided in this field to get the subsequent results of the initial task; note: offset_token values are unique for each subsequent task | [optional] 
-**total_count** | **int** | total amount of results in our database relevant to your request | [optional] 
-**items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[ContentAnalysisSearchLiveItem]**](ContentAnalysisSearchLiveItem.md) | contains citations and related data | [optional] 
+**offset_token** | **str** | offset token for subsequent requests you can use the string provided in this field to get the subsequent results of the initial task; note: offset_token values are unique for each subsequent task | [optional]
+**total_count** | **int** | total amount of results in our database relevant to your request | [optional]
+**items_count** | **int** | the number of results returned in the items array | [optional]
+**items** | [**List[ContentAnalysisSearchLiveItem]**](ContentAnalysisSearchLiveItem.md) | contains citations and related data | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ content_analysis_search_live_result_info_dict = content_analysis_search_live_res
 # create an instance of ContentAnalysisSearchLiveResultInfo from a dict
 content_analysis_search_live_result_info_form_dict = content_analysis_search_live_result_info.from_dict(content_analysis_search_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

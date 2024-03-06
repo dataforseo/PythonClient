@@ -1,13 +1,16 @@
-# OnPageDuplicateContentItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageDuplicateContentItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **str** | URL of the specified page | [optional] 
-**total_count** | **int** | total count of duplicate pages | [optional] 
-**pages** | [**List[Pages]**](Pages.md) | pages with duplicate content | [optional] 
+**url** | **str** | URL of the specified page | [optional]
+**total_count** | **int** | total count of duplicate pages | [optional]
+**pages** | [**List[Pages]**](Pages.md) | pages with duplicate content | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ on_page_duplicate_content_item_dict = on_page_duplicate_content_item_instance.to
 # create an instance of OnPageDuplicateContentItem from a dict
 on_page_duplicate_content_item_form_dict = on_page_duplicate_content_item.from_dict(on_page_duplicate_content_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

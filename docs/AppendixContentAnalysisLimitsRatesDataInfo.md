@@ -1,20 +1,23 @@
-# AppendixContentAnalysisLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixContentAnalysisLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**search** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**sentiment_analysis** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**rating_distribution** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**phrase_trends** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**category_trends** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**locations** | **float** |  | [optional] 
-**languages** | **float** |  | [optional] 
-**categories** | **float** |  | [optional] 
-**errors** | **float** |  | [optional] 
+**search** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**sentiment_analysis** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**rating_distribution** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**phrase_trends** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**category_trends** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**locations** | **float** |  | [optional]
+**languages** | **float** |  | [optional]
+**categories** | **float** |  | [optional]
+**errors** | **float** |  | [optional]
 
 ## Example
 
@@ -33,6 +36,9 @@ appendix_content_analysis_limits_rates_data_info_dict = appendix_content_analysi
 # create an instance of AppendixContentAnalysisLimitsRatesDataInfo from a dict
 appendix_content_analysis_limits_rates_data_info_form_dict = appendix_content_analysis_limits_rates_data_info.from_dict(appendix_content_analysis_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

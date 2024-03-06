@@ -1,12 +1,15 @@
-# OnPageMicrodataItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageMicrodataItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**inspection_info** | [**MicrodataInspectionInfo**](MicrodataInspectionInfo.md) |  | [optional] 
+**type** | **str** | type of element | [optional]
+**inspection_info** | [**MicrodataInspectionInfo**](MicrodataInspectionInfo.md) |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ on_page_microdata_item_dict = on_page_microdata_item_instance.to_dict()
 # create an instance of OnPageMicrodataItem from a dict
 on_page_microdata_item_form_dict = on_page_microdata_item.from_dict(on_page_microdata_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

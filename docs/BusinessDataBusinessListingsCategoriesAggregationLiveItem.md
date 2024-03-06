@@ -1,13 +1,16 @@
-# BusinessDataBusinessListingsCategoriesAggregationLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BusinessDataBusinessListingsCategoriesAggregationLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**categories** | **List[Optional[str]]** | business categories Google My Business general category that best describes the cluster of related categories | [optional] 
-**aggregation** | [**BusinessListingAggregationInfo**](BusinessListingAggregationInfo.md) |  | [optional] 
+**type** | **str** | type of element | [optional]
+**categories** | **List[Optional[str]]** | business categories Google My Business general category that best describes the cluster of related categories | [optional]
+**aggregation** | [**BusinessListingAggregationInfo**](BusinessListingAggregationInfo.md) |  | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ business_data_business_listings_categories_aggregation_live_item_dict = business
 # create an instance of BusinessDataBusinessListingsCategoriesAggregationLiveItem from a dict
 business_data_business_listings_categories_aggregation_live_item_form_dict = business_data_business_listings_categories_aggregation_live_item.from_dict(business_data_business_listings_categories_aggregation_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

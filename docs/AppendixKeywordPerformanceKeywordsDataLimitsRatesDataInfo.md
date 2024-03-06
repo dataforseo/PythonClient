@@ -1,13 +1,16 @@
-# AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**task_get** | **float** |  | [optional] 
-**task_post** | **float** |  | [optional] 
-**locations_and_languages** | **float** |  | [optional] 
+**task_get** | **float** |  | [optional]
+**task_post** | **float** |  | [optional]
+**locations_and_languages** | **float** |  | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ appendix_keyword_performance_keywords_data_limits_rates_data_info_dict = appendi
 # create an instance of AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo from a dict
 appendix_keyword_performance_keywords_data_limits_rates_data_info_form_dict = appendix_keyword_performance_keywords_data_limits_rates_data_info.from_dict(appendix_keyword_performance_keywords_data_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

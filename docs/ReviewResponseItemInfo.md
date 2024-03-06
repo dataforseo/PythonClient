@@ -1,13 +1,16 @@
-# ReviewResponseItemInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ReviewResponseItemInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** | the title of response | [optional] 
-**text** | **str** | the content of response | [optional] 
-**timestamp** | **str** | the time of publication | [optional] 
+**title** | **str** | the title of response | [optional]
+**text** | **str** | the content of response | [optional]
+**timestamp** | **str** | the time of publication | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ review_response_item_info_dict = review_response_item_info_instance.to_dict()
 # create an instance of ReviewResponseItemInfo from a dict
 review_response_item_info_form_dict = review_response_item_info.from_dict(review_response_item_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

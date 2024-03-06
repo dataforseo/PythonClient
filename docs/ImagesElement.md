@@ -1,14 +1,17 @@
-# ImagesElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ImagesElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**alt** | **str** | alt tag of the image | [optional] 
-**url** | **str** | URL link | [optional] 
-**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
+**type** | **str** | type of element | [optional]
+**alt** | **str** | alt tag of the image | [optional]
+**url** | **str** | URL link | [optional]
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ images_element_dict = images_element_instance.to_dict()
 # create an instance of ImagesElement from a dict
 images_element_form_dict = images_element.from_dict(images_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

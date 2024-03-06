@@ -1,13 +1,16 @@
-# RankedKeywordsInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# RankedKeywordsInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page_from_keywords_count_top_3** | **int** | number of keywords for which the page is ranked in top 3 search results | [optional] 
-**page_from_keywords_count_top_10** | **int** | number of keywords for which the page is ranked in top 10 search results | [optional] 
-**page_from_keywords_count_top_100** | **int** | number of keywords for which the page is ranked in top 100 search results | [optional] 
+**page_from_keywords_count_top_3** | **int** | number of keywords for which the page is ranked in top 3 search results | [optional]
+**page_from_keywords_count_top_10** | **int** | number of keywords for which the page is ranked in top 10 search results | [optional]
+**page_from_keywords_count_top_100** | **int** | number of keywords for which the page is ranked in top 100 search results | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ ranked_keywords_info_dict = ranked_keywords_info_instance.to_dict()
 # create an instance of RankedKeywordsInfo from a dict
 ranked_keywords_info_form_dict = ranked_keywords_info.from_dict(ranked_keywords_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

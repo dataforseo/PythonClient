@@ -1,13 +1,16 @@
-# LocalBusinessDeliveryServiceInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# LocalBusinessDeliveryServiceInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of the element domain of the online food ordering system | [optional] 
-**url** | **str** | URL to place an order | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of the element domain of the online food ordering system | [optional]
+**url** | **str** | URL to place an order | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ local_business_delivery_service_info_dict = local_business_delivery_service_info
 # create an instance of LocalBusinessDeliveryServiceInfo from a dict
 local_business_delivery_service_info_form_dict = local_business_delivery_service_info.from_dict(local_business_delivery_service_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

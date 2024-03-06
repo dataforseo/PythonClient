@@ -1,11 +1,14 @@
-# Summary
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# Summary
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**intersections_count** | **int** | total number of intersections | [optional] 
+**intersections_count** | **int** | total number of intersections | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ summary_dict = summary_instance.to_dict()
 # create an instance of Summary from a dict
 summary_form_dict = summary.from_dict(summary_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,12 +1,15 @@
-# ConceptGroupInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ConceptGroupInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | the concept group name | [optional] 
-**type** | **str** | type of element | [optional] 
+**name** | **str** | the concept group name | [optional]
+**type** | **str** | type of element | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ concept_group_info_dict = concept_group_info_instance.to_dict()
 # create an instance of ConceptGroupInfo from a dict
 concept_group_info_form_dict = concept_group_info.from_dict(concept_group_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

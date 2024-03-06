@@ -1,13 +1,16 @@
-# ServiceOfferingsElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ServiceOfferingsElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**name** | **str** | name of the label example: Delivery | [optional] 
-**is_available** | **bool** | availability of the offering if the value is false, the offering is not available | [optional] 
+**type** | **str** | type of element | [optional]
+**name** | **str** | name of the label example: Delivery | [optional]
+**is_available** | **bool** | availability of the offering if the value is false, the offering is not available | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ service_offerings_element_dict = service_offerings_element_instance.to_dict()
 # create an instance of ServiceOfferingsElement from a dict
 service_offerings_element_form_dict = service_offerings_element.from_dict(service_offerings_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

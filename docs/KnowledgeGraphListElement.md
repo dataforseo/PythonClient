@@ -1,17 +1,20 @@
-# KnowledgeGraphListElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# KnowledgeGraphListElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | link anchor text | [optional] 
-**subtitle** | **str** | subtitle of the item | [optional] 
-**url** | **str** | sitelink URL | [optional] 
-**domain** | **str** | domain in SERP | [optional] 
-**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | link anchor text | [optional]
+**subtitle** | **str** | subtitle of the item | [optional]
+**url** | **str** | sitelink URL | [optional]
+**domain** | **str** | domain in SERP | [optional]
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional]
+**xpath** | **str** | the XPath of the element | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ knowledge_graph_list_element_dict = knowledge_graph_list_element_instance.to_dic
 # create an instance of KnowledgeGraphListElement from a dict
 knowledge_graph_list_element_form_dict = knowledge_graph_list_element.from_dict(knowledge_graph_list_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

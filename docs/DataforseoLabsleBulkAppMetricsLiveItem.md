@@ -1,13 +1,16 @@
-# DataforseoLabsleBulkAppMetricsLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsleBulkAppMetricsLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**app_id** | **str** | id of the app in a POST array | [optional] 
-**metrics** | [**Dict[str, AppMetricsInfo]**](AppMetricsInfo.md) | metrics for the ranking keywords of the app ranking data relevant to the keywords that the provided application ranks for on Google Play | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**app_id** | **str** | id of the app in a POST array | [optional]
+**metrics** | [**Dict[str, AppMetricsInfo]**](AppMetricsInfo.md) | metrics for the ranking keywords of the app ranking data relevant to the keywords that the provided application ranks for on Google Play | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ dataforseo_labsle_bulk_app_metrics_live_item_dict = dataforseo_labsle_bulk_app_m
 # create an instance of DataforseoLabsleBulkAppMetricsLiveItem from a dict
 dataforseo_labsle_bulk_app_metrics_live_item_form_dict = dataforseo_labsle_bulk_app_metrics_live_item.from_dict(dataforseo_labsle_bulk_app_metrics_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

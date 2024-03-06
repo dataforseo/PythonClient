@@ -1,12 +1,15 @@
-# ProductInformationExtendedItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductInformationExtendedItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**section_name** | **str** | name of the section related to product information specified in the contents | [optional] 
-**contents** | [**List[ProductInformationRows]**](ProductInformationRows.md) | contains information specified about the product within the section_name | [optional] 
+**section_name** | **str** | name of the section related to product information specified in the contents | [optional]
+**contents** | [**List[ProductInformationRows]**](ProductInformationRows.md) | contains information specified about the product within the section_name | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ product_information_extended_item_dict = product_information_extended_item_insta
 # create an instance of ProductInformationExtendedItem from a dict
 product_information_extended_item_form_dict = product_information_extended_item.from_dict(product_information_extended_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

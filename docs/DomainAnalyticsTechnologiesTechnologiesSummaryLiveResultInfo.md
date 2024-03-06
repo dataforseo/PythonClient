@@ -1,14 +1,17 @@
-# DomainAnalyticsTechnologiesTechnologiesSummaryLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DomainAnalyticsTechnologiesTechnologiesSummaryLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**countries** | **Dict[str, Optional[int]]** | distribution of websites by country contains country codes and number of websites per country | [optional] 
-**languages** | **Dict[str, Optional[int]]** | distribution of websites by language contains language codes and number of websites per language | [optional] 
-**content_languages** | **Dict[str, Optional[int]]** | distribution of websites by content language contains content language codes and number of websites per language | [optional] 
-**keywords** | **Dict[str, Optional[int]]** | distribution of websites by keywords contains keywords found in the websites’ titles, descriptions or meta keywords, and number of websites using each keyword | [optional] 
+**countries** | **Dict[str, Optional[int]]** | distribution of websites by country contains country codes and number of websites per country | [optional]
+**languages** | **Dict[str, Optional[int]]** | distribution of websites by language contains language codes and number of websites per language | [optional]
+**content_languages** | **Dict[str, Optional[int]]** | distribution of websites by content language contains content language codes and number of websites per language | [optional]
+**keywords** | **Dict[str, Optional[int]]** | distribution of websites by keywords contains keywords found in the websites’ titles, descriptions or meta keywords, and number of websites using each keyword | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ domain_analytics_technologies_technologies_summary_live_result_info_dict = domai
 # create an instance of DomainAnalyticsTechnologiesTechnologiesSummaryLiveResultInfo from a dict
 domain_analytics_technologies_technologies_summary_live_result_info_form_dict = domain_analytics_technologies_technologies_summary_live_result_info.from_dict(domain_analytics_technologies_technologies_summary_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

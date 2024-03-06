@@ -1,13 +1,16 @@
-# DataforseoLabsGoogleCategoriesForDomainLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsGoogleCategoriesForDomainLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**categories** | **List[int]** | product and service categories you can download the full list of possible categories | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to the specified domain or subdomain | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**categories** | **List[int]** | product and service categories you can download the full list of possible categories | [optional]
+**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to the specified domain or subdomain | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ dataforseo_labs_google_categories_for_domain_live_item_dict = dataforseo_labs_go
 # create an instance of DataforseoLabsGoogleCategoriesForDomainLiveItem from a dict
 dataforseo_labs_google_categories_for_domain_live_item_form_dict = dataforseo_labs_google_categories_for_domain_live_item.from_dict(dataforseo_labs_google_categories_for_domain_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

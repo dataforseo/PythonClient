@@ -1,13 +1,16 @@
-# DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**target** | **str** | target domain in a POST array | [optional] 
-**metrics** | [**HistoricalMetricsBundleInfo**](HistoricalMetricsBundleInfo.md) |  | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**target** | **str** | target domain in a POST array | [optional]
+**metrics** | [**HistoricalMetricsBundleInfo**](HistoricalMetricsBundleInfo.md) |  | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ dataforseo_labs_google_historical_bulk_traffic_estimation_live_item_dict = dataf
 # create an instance of DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveItem from a dict
 dataforseo_labs_google_historical_bulk_traffic_estimation_live_item_form_dict = dataforseo_labs_google_historical_bulk_traffic_estimation_live_item.from_dict(dataforseo_labs_google_historical_bulk_traffic_estimation_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

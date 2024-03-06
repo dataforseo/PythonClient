@@ -1,13 +1,16 @@
-# BacklinksCompetitorsLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksCompetitorsLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_count** | **int** | total number of relevant items in the database | [optional] 
-**items_count** | **int** | number of items in the items array | [optional] 
-**items** | [**List[BacklinksCompetitorsLiveItem]**](BacklinksCompetitorsLiveItem.md) | items array | [optional] 
+**total_count** | **int** | total number of relevant items in the database | [optional]
+**items_count** | **int** | number of items in the items array | [optional]
+**items** | [**List[BacklinksCompetitorsLiveItem]**](BacklinksCompetitorsLiveItem.md) | items array | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ backlinks_competitors_live_result_info_dict = backlinks_competitors_live_result_
 # create an instance of BacklinksCompetitorsLiveResultInfo from a dict
 backlinks_competitors_live_result_info_form_dict = backlinks_competitors_live_result_info.from_dict(backlinks_competitors_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

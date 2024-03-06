@@ -1,13 +1,16 @@
-# OnPageLighthouseTasksReadyResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageLighthouseTasksReadyResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | task identifier of the completed task unique task identifier in our system in the UUID format | [optional] 
-**tag** | **str** | user-defined task identifier | [optional] 
-**endpoint_json** | **str** | URL for collecting the results of the OnPage Lighthouse JSON task | [optional] 
+**id** | **str** | task identifier of the completed task unique task identifier in our system in the UUID format | [optional]
+**tag** | **str** | user-defined task identifier | [optional]
+**endpoint_json** | **str** | URL for collecting the results of the OnPage Lighthouse JSON task | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ on_page_lighthouse_tasks_ready_result_info_dict = on_page_lighthouse_tasks_ready
 # create an instance of OnPageLighthouseTasksReadyResultInfo from a dict
 on_page_lighthouse_tasks_ready_result_info_form_dict = on_page_lighthouse_tasks_ready_result_info.from_dict(on_page_lighthouse_tasks_ready_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

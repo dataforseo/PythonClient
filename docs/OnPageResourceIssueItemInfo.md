@@ -1,14 +1,17 @@
-# OnPageResourceIssueItemInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageResourceIssueItemInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**line** | **int** | line where the error was found | [optional] 
-**column** | **int** | column where the error was found | [optional] 
-**message** | **str** | text message of the error the full list of possible HTML errors can be found here | [optional] 
-**status_code** | **int** | status code of the error possible values: 0 — Unidentified Error; 501 — Html Parse Error; 1501 — JS Parse Error; 2501 — CSS Parse Error; 3501 — Image Parse Error; 3502 — Image Scale Is Zero; 3503 — Image Size Is Zero; 3504 — Image Format Invalid | [optional] 
+**line** | **int** | line where the error was found | [optional]
+**column** | **int** | column where the error was found | [optional]
+**message** | **str** | text message of the error the full list of possible HTML errors can be found here | [optional]
+**status_code** | **int** | status code of the error possible values: 0 — Unidentified Error; 501 — Html Parse Error; 1501 — JS Parse Error; 2501 — CSS Parse Error; 3501 — Image Parse Error; 3502 — Image Scale Is Zero; 3503 — Image Size Is Zero; 3504 — Image Format Invalid | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ on_page_resource_issue_item_info_dict = on_page_resource_issue_item_info_instanc
 # create an instance of OnPageResourceIssueItemInfo from a dict
 on_page_resource_issue_item_info_form_dict = on_page_resource_issue_item_info.from_dict(on_page_resource_issue_item_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

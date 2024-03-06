@@ -1,14 +1,17 @@
-# TestSummary
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# TestSummary
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fatal** | **int** | number of fatal microdata errors | [optional] 
-**error** | **int** | number of serious microdata errors | [optional] 
-**warning** | **int** | number of microdata warnings | [optional] 
-**info** | **int** | number of microdata information flags | [optional] 
+**fatal** | **int** | number of fatal microdata errors | [optional]
+**error** | **int** | number of serious microdata errors | [optional]
+**warning** | **int** | number of microdata warnings | [optional]
+**info** | **int** | number of microdata information flags | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ test_summary_dict = test_summary_instance.to_dict()
 # create an instance of TestSummary from a dict
 test_summary_form_dict = test_summary.from_dict(test_summary_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

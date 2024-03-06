@@ -1,12 +1,15 @@
-# WorkTimeInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# WorkTimeInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hour** | **int** | hours in the 24-hour format | [optional] 
-**minute** | **int** | minutes | [optional] 
+**hour** | **int** | hours in the 24-hour format | [optional]
+**minute** | **int** | minutes | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ work_time_info_dict = work_time_info_instance.to_dict()
 # create an instance of WorkTimeInfo from a dict
 work_time_info_form_dict = work_time_info.from_dict(work_time_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

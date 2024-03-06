@@ -1,12 +1,15 @@
-# BacklinksBulkRanksLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksBulkRanksLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BacklinksBulkRanksLiveItem]**](BacklinksBulkRanksLiveItem.md) | contains relevant backlinks and referring domains data | [optional] 
+**items_count** | **int** | the number of results returned in the items array | [optional]
+**items** | [**List[BacklinksBulkRanksLiveItem]**](BacklinksBulkRanksLiveItem.md) | contains relevant backlinks and referring domains data | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ backlinks_bulk_ranks_live_result_info_dict = backlinks_bulk_ranks_live_result_in
 # create an instance of BacklinksBulkRanksLiveResultInfo from a dict
 backlinks_bulk_ranks_live_result_info_form_dict = backlinks_bulk_ranks_live_result_info.from_dict(backlinks_bulk_ranks_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

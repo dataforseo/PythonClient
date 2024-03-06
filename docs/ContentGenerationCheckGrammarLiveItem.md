@@ -1,21 +1,24 @@
-# ContentGenerationCheckGrammarLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ContentGenerationCheckGrammarLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** | message of the grammar or spelling error | [optional] 
-**description** | **str** | description of the grammar or spelling error | [optional] 
-**suggestions** | **List[Optional[str]]** | suggested corrections | [optional] 
-**offset** | **int** | offset token for subsequent requests | [optional] 
-**length** | **int** | offset token for subsequent requests | [optional] 
-**type** | **str** | type of element | [optional] 
-**rule_id** | **str** | id of the grammar or spelling rule see the List of Grammar Rules for Content Generation API | [optional] 
-**rule_description** | **str** | description of the grammar or spelling rule | [optional] 
-**rule_issue_type** | **str** | type of the issue found by the relevant rule | [optional] 
-**rule_category_id** | **str** | id of the rule category | [optional] 
-**rule_category_name** | **str** | name of the rule category | [optional] 
+**message** | **str** | message of the grammar or spelling error | [optional]
+**description** | **str** | description of the grammar or spelling error | [optional]
+**suggestions** | **List[Optional[str]]** | suggested corrections | [optional]
+**offset** | **int** | offset token for subsequent requests | [optional]
+**length** | **int** | offset token for subsequent requests | [optional]
+**type** | **str** | type of element | [optional]
+**rule_id** | **str** | id of the grammar or spelling rule see the List of Grammar Rules for Content Generation API | [optional]
+**rule_description** | **str** | description of the grammar or spelling rule | [optional]
+**rule_issue_type** | **str** | type of the issue found by the relevant rule | [optional]
+**rule_category_id** | **str** | id of the rule category | [optional]
+**rule_category_name** | **str** | name of the rule category | [optional]
 
 ## Example
 
@@ -34,6 +37,9 @@ content_generation_check_grammar_live_item_dict = content_generation_check_gramm
 # create an instance of ContentGenerationCheckGrammarLiveItem from a dict
 content_generation_check_grammar_live_item_form_dict = content_generation_check_grammar_live_item.from_dict(content_generation_check_grammar_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

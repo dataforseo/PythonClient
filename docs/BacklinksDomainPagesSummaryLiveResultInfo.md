@@ -1,14 +1,17 @@
-# BacklinksDomainPagesSummaryLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksDomainPagesSummaryLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | **str** | target in the post array | [optional] 
-**total_count** | **int** | total number of relevant items in the database | [optional] 
-**items_count** | **int** | number of items in the results array | [optional] 
-**items** | [**List[BacklinksDomainPagesSummaryLiveItem]**](BacklinksDomainPagesSummaryLiveItem.md) | items array | [optional] 
+**target** | **str** | target in the post array | [optional]
+**total_count** | **int** | total number of relevant items in the database | [optional]
+**items_count** | **int** | number of items in the results array | [optional]
+**items** | [**List[BacklinksDomainPagesSummaryLiveItem]**](BacklinksDomainPagesSummaryLiveItem.md) | items array | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ backlinks_domain_pages_summary_live_result_info_dict = backlinks_domain_pages_su
 # create an instance of BacklinksDomainPagesSummaryLiveResultInfo from a dict
 backlinks_domain_pages_summary_live_result_info_form_dict = backlinks_domain_pages_summary_live_result_info.from_dict(backlinks_domain_pages_summary_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

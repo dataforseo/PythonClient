@@ -1,15 +1,18 @@
-# DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_count** | **int** | total number of relevant items in the database | [optional] 
-**items_count** | **int** | number of items in the results array | [optional] 
-**offset** | **int** | specified offset value | [optional] 
-**offset_token** | **str** | token for subsequent requests by specifying the unique offset_token when setting a new task, you will get the subsequent results of the initial task; offset_token values are unique for each subsequent task | [optional] 
-**items** | [**List[DomainAnalyticsTechnologiesDomainsByLiveItem]**](DomainAnalyticsTechnologiesDomainsByLiveItem.md) | items array | [optional] 
+**total_count** | **int** | total number of relevant items in the database | [optional]
+**items_count** | **int** | number of items in the results array | [optional]
+**offset** | **int** | specified offset value | [optional]
+**offset_token** | **str** | token for subsequent requests by specifying the unique offset_token when setting a new task, you will get the subsequent results of the initial task; offset_token values are unique for each subsequent task | [optional]
+**items** | [**List[DomainAnalyticsTechnologiesDomainsByLiveItem]**](DomainAnalyticsTechnologiesDomainsByLiveItem.md) | items array | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ domain_analytics_technologies_domains_by_html_terms_live_result_info_dict = doma
 # create an instance of DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResultInfo from a dict
 domain_analytics_technologies_domains_by_html_terms_live_result_info_form_dict = domain_analytics_technologies_domains_by_html_terms_live_result_info.from_dict(domain_analytics_technologies_domains_by_html_terms_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

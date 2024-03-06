@@ -1,12 +1,15 @@
-# BusinessDataBusinessListingsAvailableFiltersResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BusinessDataBusinessListingsAvailableFiltersResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**search** | **Dict[str, Optional[str]]** |  | [optional] 
-**categories_aggregation** | **Dict[str, Optional[str]]** |  | [optional] 
+**search** | **Dict[str, Optional[str]]** |  | [optional]
+**categories_aggregation** | **Dict[str, Optional[str]]** |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ business_data_business_listings_available_filters_result_info_dict = business_da
 # create an instance of BusinessDataBusinessListingsAvailableFiltersResultInfo from a dict
 business_data_business_listings_available_filters_result_info_form_dict = business_data_business_listings_available_filters_result_info.from_dict(business_data_business_listings_available_filters_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

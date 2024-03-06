@@ -1,14 +1,17 @@
-# OnPageRawHtmlResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageRawHtmlResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**crawl_progress** | **str** | status of the crawling session possible values: in_progress, finished | [optional] 
-**crawl_status** | [**CrawlStatusInfo**](CrawlStatusInfo.md) |  | [optional] 
-**items_count** | **int** | number of items in the results array | [optional] 
-**items** | [**OnPageRawHtmlItem**](OnPageRawHtmlItem.md) |  | [optional] 
+**crawl_progress** | **str** | status of the crawling session possible values: in_progress, finished | [optional]
+**crawl_status** | [**CrawlStatusInfo**](CrawlStatusInfo.md) |  | [optional]
+**items_count** | **int** | number of items in the results array | [optional]
+**items** | [**OnPageRawHtmlItem**](OnPageRawHtmlItem.md) |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ on_page_raw_html_result_info_dict = on_page_raw_html_result_info_instance.to_dic
 # create an instance of OnPageRawHtmlResultInfo from a dict
 on_page_raw_html_result_info_form_dict = on_page_raw_html_result_info.from_dict(on_page_raw_html_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

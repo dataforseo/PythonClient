@@ -1,12 +1,15 @@
-# AppendixTrBusinessDataPriceDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixTrBusinessDataPriceDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reviews** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
-**search** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**reviews** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
+**search** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ appendix_tr_business_data_price_data_info_dict = appendix_tr_business_data_price
 # create an instance of AppendixTrBusinessDataPriceDataInfo from a dict
 appendix_tr_business_data_price_data_info_form_dict = appendix_tr_business_data_price_data_info.from_dict(appendix_tr_business_data_price_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

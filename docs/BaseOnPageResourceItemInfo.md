@@ -1,11 +1,14 @@
-# BaseOnPageResourceItemInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BaseOnPageResourceItemInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resource_type** | **str** | type of the returned resource | [optional] 
+**resource_type** | **str** | type of the returned resource | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ base_on_page_resource_item_info_dict = base_on_page_resource_item_info_instance.
 # create an instance of BaseOnPageResourceItemInfo from a dict
 base_on_page_resource_item_info_form_dict = base_on_page_resource_item_info.from_dict(base_on_page_resource_item_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

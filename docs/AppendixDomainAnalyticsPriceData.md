@@ -1,14 +1,17 @@
-# AppendixDomainAnalyticsPriceData
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixDomainAnalyticsPriceData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**whois** | [**AppendixWhoisDomainAnalyticsPriceData**](AppendixWhoisDomainAnalyticsPriceData.md) |  | [optional] 
-**technologies** | [**AppendixTechnologiesDomainAnalyticsPriceData**](AppendixTechnologiesDomainAnalyticsPriceData.md) |  | [optional] 
-**errors** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
-**tasks_ready** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
+**whois** | [**AppendixWhoisDomainAnalyticsPriceData**](AppendixWhoisDomainAnalyticsPriceData.md) |  | [optional]
+**technologies** | [**AppendixTechnologiesDomainAnalyticsPriceData**](AppendixTechnologiesDomainAnalyticsPriceData.md) |  | [optional]
+**errors** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional]
+**tasks_ready** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ appendix_domain_analytics_price_data_dict = appendix_domain_analytics_price_data
 # create an instance of AppendixDomainAnalyticsPriceData from a dict
 appendix_domain_analytics_price_data_form_dict = appendix_domain_analytics_price_data.from_dict(appendix_domain_analytics_price_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

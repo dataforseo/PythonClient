@@ -1,45 +1,47 @@
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
 # dataforseo_client.OnPageApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**content_parsing**](OnPageApi.md#content_parsing) | **POST** /v3/on_page/content_parsing | 
-[**content_parsing_live**](OnPageApi.md#content_parsing_live) | **POST** /v3/on_page/content_parsing/live | 
-[**duplicate_content**](OnPageApi.md#duplicate_content) | **POST** /v3/on_page/duplicate_content | 
-[**duplicate_tags**](OnPageApi.md#duplicate_tags) | **POST** /v3/on_page/duplicate_tags | 
-[**force_stop**](OnPageApi.md#force_stop) | **POST** /v3/on_page/force_stop | 
-[**instant_pages**](OnPageApi.md#instant_pages) | **POST** /v3/on_page/instant_pages | 
-[**keyword_density**](OnPageApi.md#keyword_density) | **POST** /v3/on_page/keyword_density | 
-[**lighthouse_audits**](OnPageApi.md#lighthouse_audits) | **GET** /v3/on_page/lighthouse/audits | 
-[**lighthouse_live_json**](OnPageApi.md#lighthouse_live_json) | **POST** /v3/on_page/lighthouse/live/json | 
-[**lighthouse_task_get_json**](OnPageApi.md#lighthouse_task_get_json) | **GET** /v3/on_page/lighthouse/task_get/json/{id} | 
-[**lighthouse_task_post**](OnPageApi.md#lighthouse_task_post) | **POST** /v3/on_page/lighthouse/task_post | 
-[**lighthouse_tasks_ready**](OnPageApi.md#lighthouse_tasks_ready) | **GET** /v3/on_page/lighthouse/tasks_ready | 
-[**lighthouse_versions**](OnPageApi.md#lighthouse_versions) | **GET** /v3/on_page/lighthouse/versions | 
-[**links**](OnPageApi.md#links) | **POST** /v3/on_page/links | 
-[**microdata**](OnPageApi.md#microdata) | **POST** /v3/on_page/microdata | 
-[**non_indexable**](OnPageApi.md#non_indexable) | **POST** /v3/on_page/non_indexable | 
-[**on_page_available_filters**](OnPageApi.md#on_page_available_filters) | **GET** /v3/on_page/available_filters | 
-[**on_page_errors**](OnPageApi.md#on_page_errors) | **POST** /v3/on_page/errors | 
-[**on_page_id_list**](OnPageApi.md#on_page_id_list) | **POST** /v3/on_page/id_list | 
-[**on_page_lighthouse_languages**](OnPageApi.md#on_page_lighthouse_languages) | **GET** /v3/on_page/lighthouse/languages | 
-[**page_screenshot**](OnPageApi.md#page_screenshot) | **POST** /v3/on_page/page_screenshot | 
-[**pages**](OnPageApi.md#pages) | **POST** /v3/on_page/pages | 
-[**pages_by_resource**](OnPageApi.md#pages_by_resource) | **POST** /v3/on_page/pages_by_resource | 
-[**raw_html**](OnPageApi.md#raw_html) | **POST** /v3/on_page/raw_html | 
-[**redirect_chains**](OnPageApi.md#redirect_chains) | **POST** /v3/on_page/redirect_chains | 
-[**resources**](OnPageApi.md#resources) | **POST** /v3/on_page/resources | 
-[**summary**](OnPageApi.md#summary) | **GET** /v3/on_page/summary/{id} | 
-[**task_post**](OnPageApi.md#task_post) | **POST** /v3/on_page/task_post | 
-[**tasks_ready**](OnPageApi.md#tasks_ready) | **GET** /v3/on_page/tasks_ready | 
-[**waterfall**](OnPageApi.md#waterfall) | **POST** /v3/on_page/waterfall | 
-
+[**content_parsing**](OnPageApi.md#content_parsing) | **POST** /v3/on_page/content_parsing |
+[**content_parsing_live**](OnPageApi.md#content_parsing_live) | **POST** /v3/on_page/content_parsing/live |
+[**duplicate_content**](OnPageApi.md#duplicate_content) | **POST** /v3/on_page/duplicate_content |
+[**duplicate_tags**](OnPageApi.md#duplicate_tags) | **POST** /v3/on_page/duplicate_tags |
+[**force_stop**](OnPageApi.md#force_stop) | **POST** /v3/on_page/force_stop |
+[**instant_pages**](OnPageApi.md#instant_pages) | **POST** /v3/on_page/instant_pages |
+[**keyword_density**](OnPageApi.md#keyword_density) | **POST** /v3/on_page/keyword_density |
+[**lighthouse_audits**](OnPageApi.md#lighthouse_audits) | **GET** /v3/on_page/lighthouse/audits |
+[**lighthouse_live_json**](OnPageApi.md#lighthouse_live_json) | **POST** /v3/on_page/lighthouse/live/json |
+[**lighthouse_task_get_json**](OnPageApi.md#lighthouse_task_get_json) | **GET** /v3/on_page/lighthouse/task_get/json/{id} |
+[**lighthouse_task_post**](OnPageApi.md#lighthouse_task_post) | **POST** /v3/on_page/lighthouse/task_post |
+[**lighthouse_tasks_ready**](OnPageApi.md#lighthouse_tasks_ready) | **GET** /v3/on_page/lighthouse/tasks_ready |
+[**lighthouse_versions**](OnPageApi.md#lighthouse_versions) | **GET** /v3/on_page/lighthouse/versions |
+[**links**](OnPageApi.md#links) | **POST** /v3/on_page/links |
+[**microdata**](OnPageApi.md#microdata) | **POST** /v3/on_page/microdata |
+[**non_indexable**](OnPageApi.md#non_indexable) | **POST** /v3/on_page/non_indexable |
+[**on_page_available_filters**](OnPageApi.md#on_page_available_filters) | **GET** /v3/on_page/available_filters |
+[**on_page_errors**](OnPageApi.md#on_page_errors) | **POST** /v3/on_page/errors |
+[**on_page_id_list**](OnPageApi.md#on_page_id_list) | **POST** /v3/on_page/id_list |
+[**on_page_lighthouse_languages**](OnPageApi.md#on_page_lighthouse_languages) | **GET** /v3/on_page/lighthouse/languages |
+[**page_screenshot**](OnPageApi.md#page_screenshot) | **POST** /v3/on_page/page_screenshot |
+[**pages**](OnPageApi.md#pages) | **POST** /v3/on_page/pages |
+[**pages_by_resource**](OnPageApi.md#pages_by_resource) | **POST** /v3/on_page/pages_by_resource |
+[**raw_html**](OnPageApi.md#raw_html) | **POST** /v3/on_page/raw_html |
+[**redirect_chains**](OnPageApi.md#redirect_chains) | **POST** /v3/on_page/redirect_chains |
+[**resources**](OnPageApi.md#resources) | **POST** /v3/on_page/resources |
+[**summary**](OnPageApi.md#summary) | **GET** /v3/on_page/summary/{id} |
+[**task_post**](OnPageApi.md#task_post) | **POST** /v3/on_page/task_post |
+[**tasks_ready**](OnPageApi.md#tasks_ready) | **GET** /v3/on_page/tasks_ready |
+[**waterfall**](OnPageApi.md#waterfall) | **POST** /v3/on_page/waterfall |
 
 # **content_parsing**
+
 > OnPageContentParsingResponseInfo content_parsing(on_page_content_parsing_request_info=on_page_content_parsing_request_info)
-
-
 
 ‌‌ This endpoint allows parsing the content on any page you specify and will return the structured content of the target page, including link URLs, anchors, headings, and textual content. for more info please visit 'https://docs.dataforseo.com/v3/on_page/content_parsing/?bash'
 
@@ -85,14 +87,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->content_parsing: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_content_parsing_request_info** | [**List[OnPageContentParsingRequestInfo]**](OnPageContentParsingRequestInfo.md)|  | [optional] 
+**on_page_content_parsing_request_info** | [**List[OnPageContentParsingRequestInfo]**](OnPageContentParsingRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -104,8 +103,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -113,12 +112,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **content_parsing_live**
+
 > OnPageContentParsingLiveResponseInfo content_parsing_live(on_page_content_parsing_live_request_info=on_page_content_parsing_live_request_info)
-
-
 
 ‌‌ This endpoint allows parsing the content on any page you specify and will return the structured content of the target page, including link URLs, anchors, headings, and textual content. for more info please visit 'https://docs.dataforseo.com/v3/on_page/content_parsing/live/?bash'
 
@@ -164,14 +162,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->content_parsing_live: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_content_parsing_live_request_info** | [**List[OnPageContentParsingLiveRequestInfo]**](OnPageContentParsingLiveRequestInfo.md)|  | [optional] 
+**on_page_content_parsing_live_request_info** | [**List[OnPageContentParsingLiveRequestInfo]**](OnPageContentParsingLiveRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -183,8 +178,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -192,12 +187,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **duplicate_content**
+
 > OnPageDuplicateContentResponseInfo duplicate_content(on_page_duplicate_content_request_info=on_page_duplicate_content_request_info)
-
-
 
 ‌‌ This endpoint returns a list of pages that have content similar to the page specified in the request. The response also contains data related to page performance and the similarity index that indicates how similar the compared pages are. for more info please visit 'https://docs.dataforseo.com/v3/on_page/duplicate_content/?bash'
 
@@ -243,14 +237,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->duplicate_content: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_duplicate_content_request_info** | [**List[OnPageDuplicateContentRequestInfo]**](OnPageDuplicateContentRequestInfo.md)|  | [optional] 
+**on_page_duplicate_content_request_info** | [**List[OnPageDuplicateContentRequestInfo]**](OnPageDuplicateContentRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -262,8 +253,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -271,12 +262,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **duplicate_tags**
+
 > OnPageDuplicateTagsResponseInfo duplicate_tags(on_page_duplicate_tags_request_info=on_page_duplicate_tags_request_info)
-
-
 
 ‌‌ This endpoint returns a list of pages that contain duplicate title or description tags. The response also contains data related to page performance. for more info please visit 'https://docs.dataforseo.com/v3/on_page/duplicate_tags/?bash'
 
@@ -322,14 +312,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->duplicate_tags: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_duplicate_tags_request_info** | [**List[OnPageDuplicateTagsRequestInfo]**](OnPageDuplicateTagsRequestInfo.md)|  | [optional] 
+**on_page_duplicate_tags_request_info** | [**List[OnPageDuplicateTagsRequestInfo]**](OnPageDuplicateTagsRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -341,8 +328,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -350,12 +337,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **force_stop**
+
 > OnPageForceStopResponseInfo force_stop(on_page_force_stop_request_info=on_page_force_stop_request_info)
-
-
 
 ‌‌ This endpoint is designed to force stop the crawl process of websites you specified in a task. The execution of all the tasks associated with the IDs indicated in your request to this endpoint will be stopped. You will still be able to obtain the data on pages that have been scanned until the crawling process was stopped. for more info please visit 'https://docs.dataforseo.com/v3/on_page/force_stop/?bash'
 
@@ -401,14 +387,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->force_stop: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_force_stop_request_info** | [**List[OnPageForceStopRequestInfo]**](OnPageForceStopRequestInfo.md)|  | [optional] 
+**on_page_force_stop_request_info** | [**List[OnPageForceStopRequestInfo]**](OnPageForceStopRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -420,8 +403,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -429,12 +412,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **instant_pages**
+
 > OnPageInstantPagesResponseInfo instant_pages(on_page_instant_pages_request_info=on_page_instant_pages_request_info)
-
-
 
 ‌‌ Using this function you will get page-specific data with detailed information on how well a particular page is optimized for organic search. for more info please visit 'https://docs.dataforseo.com/v3/on_page/instant_pages/?bash'
 
@@ -480,14 +462,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->instant_pages: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_instant_pages_request_info** | [**List[OnPageInstantPagesRequestInfo]**](OnPageInstantPagesRequestInfo.md)|  | [optional] 
+**on_page_instant_pages_request_info** | [**List[OnPageInstantPagesRequestInfo]**](OnPageInstantPagesRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -499,8 +478,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -508,12 +487,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **keyword_density**
+
 > OnPageKeywordDensityResponseInfo keyword_density(on_page_keyword_density_request_info=on_page_keyword_density_request_info)
-
-
 
 ‌‌ This endpoint will provide you with keyword density and keyword frequency data for terms appearing on the specified website or web page. You can filter and sort the data that will be retrieved with this API call. for more info please visit 'https://docs.dataforseo.com/v3/on_page/keyword_density/?bash'
 
@@ -559,14 +537,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->keyword_density: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_keyword_density_request_info** | [**List[OnPageKeywordDensityRequestInfo]**](OnPageKeywordDensityRequestInfo.md)|  | [optional] 
+**on_page_keyword_density_request_info** | [**List[OnPageKeywordDensityRequestInfo]**](OnPageKeywordDensityRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -578,8 +553,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -587,12 +562,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **lighthouse_audits**
+
 > OnPageLighthouseAuditsResponseInfo lighthouse_audits()
-
-
 
 The OnPage Lighthouse API is based on Google’s open-source Lighthouse project and provides data on the quality of web pages. for more info please visit 'https://docs.dataforseo.com/v3/on_page/lighthouse/audits/?bash'
 
@@ -636,8 +610,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->lighthouse_audits: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -652,8 +624,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -661,12 +633,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **lighthouse_live_json**
+
 > OnPageLighthouseLiveJsonResponseInfo lighthouse_live_json(on_page_lighthouse_live_json_request_info=on_page_lighthouse_live_json_request_info)
-
-
 
 ‌The OnPage Lighthouse API is based on Google’s open-source Lighthouse project for measuring the quality of web pages and web apps. for more info please visit 'https://docs.dataforseo.com/v3/on_page/lighthouse/live/json/?bash'
 
@@ -712,14 +683,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->lighthouse_live_json: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_lighthouse_live_json_request_info** | [**List[OnPageLighthouseLiveJsonRequestInfo]**](OnPageLighthouseLiveJsonRequestInfo.md)|  | [optional] 
+**on_page_lighthouse_live_json_request_info** | [**List[OnPageLighthouseLiveJsonRequestInfo]**](OnPageLighthouseLiveJsonRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -731,8 +699,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -740,12 +708,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **lighthouse_task_get_json**
+
 > OnPageLighthouseTaskGetJsonResponseInfo lighthouse_task_get_json(id)
-
-
 
 ‌ The OnPage Lighthouse API is based on Google’s open-source Lighthouse project for measuring the quality of web pages and web apps. This endpoint will provide you with the results of Lighthouse Audit. Use the id received in the response of your Task POST request to get the results. The response will include data about all categories and audits specified in the Task POST. By default, the response will include all available data about the webpage including its performance, accessibility, progressive web apps, SEO, and compliance with best practices. for more info please visit 'https://docs.dataforseo.com/v3/on_page/lighthouse/task_get/json/?bash'
 
@@ -790,14 +757,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->lighthouse_task_get_json: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| task identifier required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” | 
+**id** | **str**| task identifier required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” |
 
 ### Return type
 
@@ -809,8 +773,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -818,12 +782,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **lighthouse_task_post**
+
 > OnPageLighthouseTaskPostResponseInfo lighthouse_task_post(on_page_lighthouse_task_post_request_info=on_page_lighthouse_task_post_request_info)
-
-
 
 ‌The OnPage Lighthouse API is based on Google’s open-source Lighthouse project for measuring the quality of web pages and web apps. for more info please visit 'https://docs.dataforseo.com/v3/on_page/lighthouse/task_post/?bash'
 
@@ -869,14 +832,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->lighthouse_task_post: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_lighthouse_task_post_request_info** | [**List[OnPageLighthouseTaskPostRequestInfo]**](OnPageLighthouseTaskPostRequestInfo.md)|  | [optional] 
+**on_page_lighthouse_task_post_request_info** | [**List[OnPageLighthouseTaskPostRequestInfo]**](OnPageLighthouseTaskPostRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -888,8 +848,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -897,12 +857,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **lighthouse_tasks_ready**
+
 > OnPageLighthouseTasksReadyResponseInfo lighthouse_tasks_ready()
-
-
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/on_page/lighthouse/tasks_ready/?bash'
 
@@ -946,8 +905,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->lighthouse_tasks_ready: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -962,8 +919,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -971,12 +928,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **lighthouse_versions**
+
 > OnPageLighthouseVersionsResponseInfo lighthouse_versions()
-
-
 
 OnPage Lighthouse API is based on Google’s open-source Lighthouse project and provides data on the quality of web pages. for more info please visit 'https://docs.dataforseo.com/v3/on_page/lighthouse/versions/?bash'
 
@@ -1020,8 +976,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->lighthouse_versions: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1036,8 +990,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1045,12 +999,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **links**
+
 > OnPageLinksResponseInfo links(on_page_links_request_info=on_page_links_request_info)
-
-
 
 ‌‌ This endpoint will provide you with a list of internal and external links detected on a target website. The following link types are supported: anchor, image, link, canonical, meta, alternate, redirect. for more info please visit 'https://docs.dataforseo.com/v3/on_page/links/?bash'
 
@@ -1096,14 +1049,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->links: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_links_request_info** | [**List[OnPageLinksRequestInfo]**](OnPageLinksRequestInfo.md)|  | [optional] 
+**on_page_links_request_info** | [**List[OnPageLinksRequestInfo]**](OnPageLinksRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1115,8 +1065,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1124,12 +1074,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **microdata**
+
 > OnPageMicrodataResponseInfo microdata(on_page_microdata_request_info=on_page_microdata_request_info)
-
-
 
 ‌‌ This endpoint is designed to validate structured JSON-LD data and Microdata. Using this function you will obtain microdata available on the specified page of the target website and detailed results of its validation. To use this endpoint, set the validate_micromarkup parameter to true in the POST request to OnPage API. for more info please visit 'https://docs.dataforseo.com/v3/on_page/microdata/?bash'
 
@@ -1175,14 +1124,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->microdata: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_microdata_request_info** | [**List[OnPageMicrodataRequestInfo]**](OnPageMicrodataRequestInfo.md)|  | [optional] 
+**on_page_microdata_request_info** | [**List[OnPageMicrodataRequestInfo]**](OnPageMicrodataRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1194,8 +1140,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1203,12 +1149,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **non_indexable**
+
 > OnPageNonIndexableResponseInfo non_indexable(on_page_non_indexable_request_info=on_page_non_indexable_request_info)
-
-
 
 ‌‌ This endpoint returns a list of pages that are blocked from being indexed by Google and other search engines by robots.txt, HTTP headers, or meta tags settings. for more info please visit 'https://docs.dataforseo.com/v3/on_page/non_indexable/?bash'
 
@@ -1254,14 +1199,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->non_indexable: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_non_indexable_request_info** | [**List[OnPageNonIndexableRequestInfo]**](OnPageNonIndexableRequestInfo.md)|  | [optional] 
+**on_page_non_indexable_request_info** | [**List[OnPageNonIndexableRequestInfo]**](OnPageNonIndexableRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1273,8 +1215,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1282,12 +1224,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **on_page_available_filters**
+
 > OnPageAvailableFiltersResponseInfo on_page_available_filters()
-
-
 
 OnPage API supports plenty of customizable crawling parameters that allow you to adapt the extraction of website data to your requirements and modify the thresholds for various performance indicators. ‌‌ Here you will find all the necessary information about filters and thresholds that can be used with DataForSEO OnPage API endpoints. for more info please visit 'https://docs.dataforseo.com/v3/on_page/filters_and_thresholds/?bash'
 
@@ -1331,8 +1272,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->on_page_available_filters: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1347,8 +1286,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1356,12 +1295,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **on_page_errors**
+
 > OnPageErrorsResponseInfo on_page_errors(on_page_errors_request_info=on_page_errors_request_info)
-
-
 
 By calling this endpoint you will receive information about the OnPage API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/on_page/errors/?bash'
 
@@ -1407,14 +1345,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->on_page_errors: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_errors_request_info** | [**List[OnPageErrorsRequestInfo]**](OnPageErrorsRequestInfo.md)|  | [optional] 
+**on_page_errors_request_info** | [**List[OnPageErrorsRequestInfo]**](OnPageErrorsRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1426,8 +1361,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1435,12 +1370,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **on_page_id_list**
+
 > OnPageIdListResponseInfo on_page_id_list(on_page_id_list_request_info=on_page_id_list_request_info)
-
-
 
 This endpoint is designed to provide you with the list of IDs and metadata of the completed On Page tasks during the specified period. You will get all task IDs that were made including successful, uncompleted, and tasks that responded as errors. for more info please visit 'https://docs.dataforseo.com/v3/on_page/id_list/?bash'
 
@@ -1486,14 +1420,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->on_page_id_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_id_list_request_info** | [**List[OnPageIdListRequestInfo]**](OnPageIdListRequestInfo.md)|  | [optional] 
+**on_page_id_list_request_info** | [**List[OnPageIdListRequestInfo]**](OnPageIdListRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1505,8 +1436,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1514,12 +1445,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **on_page_lighthouse_languages**
+
 > OnPageLighthouseLanguagesResponseInfo on_page_lighthouse_languages()
-
-
 
 You will receive the list of languages by calling this API.   As a response of the API server, you will receive JSON-encoded data containing a tasks array with the information specific to the set tasks. for more info please visit 'https://docs.dataforseo.com/v3/on_page/lighthouse/languages/?bash'
 
@@ -1563,8 +1493,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->on_page_lighthouse_languages: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1579,8 +1507,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1588,12 +1516,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **page_screenshot**
+
 > OnPagePageScreenshotResponseInfo page_screenshot(on_page_page_screenshot_request_info=on_page_page_screenshot_request_info)
-
-
 
 ‌‌ Using this endpoint, you can capture a full high-quality screenshot of any webpage. In this way, you can review the target page as the DataForSEO crawler and Googlebot see it. for more info please visit 'https://docs.dataforseo.com/v3/on_page/page_screenshot/?bash'
 
@@ -1639,14 +1566,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->page_screenshot: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_page_screenshot_request_info** | [**List[OnPagePageScreenshotRequestInfo]**](OnPagePageScreenshotRequestInfo.md)|  | [optional] 
+**on_page_page_screenshot_request_info** | [**List[OnPagePageScreenshotRequestInfo]**](OnPagePageScreenshotRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1658,8 +1582,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1667,12 +1591,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **pages**
+
 > OnPagePagesResponseInfo pages(on_page_pages_request_info=on_page_pages_request_info)
-
-
 
 ‌‌ This endpoint returns a list of crawled pages with on-page check-ups and other metrics related to the page performance. Using this function you will get page-specific data with detailed information on how well your pages are optimized for search. for more info please visit 'https://docs.dataforseo.com/v3/on_page/pages/?bash'
 
@@ -1718,14 +1641,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->pages: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_pages_request_info** | [**List[OnPagePagesRequestInfo]**](OnPagePagesRequestInfo.md)|  | [optional] 
+**on_page_pages_request_info** | [**List[OnPagePagesRequestInfo]**](OnPagePagesRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1737,8 +1657,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1746,12 +1666,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **pages_by_resource**
+
 > OnPagePagesByResourceResponseInfo pages_by_resource(on_page_pages_by_resource_request_info=on_page_pages_by_resource_request_info)
-
-
 
 ‌‌ This endpoint will return the list of pages where a specific resource is located. Using this function you will also get the data related to the pages that contain a specified resource. You can get the URL of a resource using the Resources endpoint. for more info please visit 'https://docs.dataforseo.com/v3/on_page/page_by_resource/?bash'
 
@@ -1797,14 +1716,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->pages_by_resource: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_pages_by_resource_request_info** | [**List[OnPagePagesByResourceRequestInfo]**](OnPagePagesByResourceRequestInfo.md)|  | [optional] 
+**on_page_pages_by_resource_request_info** | [**List[OnPagePagesByResourceRequestInfo]**](OnPagePagesByResourceRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1816,8 +1732,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1825,12 +1741,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **raw_html**
+
 > OnPageRawHtmlResponseInfo raw_html(on_page_raw_html_request_info=on_page_raw_html_request_info)
-
-
 
 ‌‌ This endpoint returns the HTML of a page you indicate in the request. for more info please visit 'https://docs.dataforseo.com/v3/on_page/raw_html/?bash'
 
@@ -1876,14 +1791,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->raw_html: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_raw_html_request_info** | [**List[OnPageRawHtmlRequestInfo]**](OnPageRawHtmlRequestInfo.md)|  | [optional] 
+**on_page_raw_html_request_info** | [**List[OnPageRawHtmlRequestInfo]**](OnPageRawHtmlRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1895,8 +1807,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1904,12 +1816,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **redirect_chains**
+
 > OnPageRedirectChainsResponseInfo redirect_chains(on_page_redirect_chains_request_info=on_page_redirect_chains_request_info)
-
-
 
 ‌‌ Redirect chains occur when there are at least two redirects between the initial URL and the destination URL. For example, if page A redirects to page B which redirects to page C, such a series of redirects is considered a redirect chain. Sometimes, if page B redirects back to page A, the redirect chain becomes closed and is considered a redirect loop. for more info please visit 'https://docs.dataforseo.com/v3/on_page/redirect_chains/?bash'
 
@@ -1955,14 +1866,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->redirect_chains: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_redirect_chains_request_info** | [**List[OnPageRedirectChainsRequestInfo]**](OnPageRedirectChainsRequestInfo.md)|  | [optional] 
+**on_page_redirect_chains_request_info** | [**List[OnPageRedirectChainsRequestInfo]**](OnPageRedirectChainsRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -1974,8 +1882,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1983,12 +1891,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **resources**
+
 > OnPageResourcesResponseInfo resources(on_page_resources_request_info=on_page_resources_request_info)
-
-
 
 ‌‌ This endpoint will provide you with a list of resources, including images, scripts, stylesheets, and broken elements. You will get a detailed overview of every resource found on the crawled pages. for more info please visit 'https://docs.dataforseo.com/v3/on_page/resources/?bash'
 
@@ -2034,14 +1941,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->resources: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_resources_request_info** | [**List[OnPageResourcesRequestInfo]**](OnPageResourcesRequestInfo.md)|  | [optional] 
+**on_page_resources_request_info** | [**List[OnPageResourcesRequestInfo]**](OnPageResourcesRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -2053,8 +1957,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -2062,12 +1966,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **summary**
+
 > OnPageSummaryResponseInfo summary(id)
-
-
 
 ‌ Using this function, you can get the overall information on a website as well as drill down into exact on-page issues of a website that has been scanned. As a result, you will know what functions to use for receiving detailed data for each of the found issues. for more info please visit 'https://docs.dataforseo.com/v3/on_page/summary/?bash'
 
@@ -2112,14 +2015,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->summary: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| task identifier required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” | 
+**id** | **str**| task identifier required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04” |
 
 ### Return type
 
@@ -2131,8 +2031,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -2140,12 +2040,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **task_post**
+
 > OnPageTaskPostResponseInfo task_post(on_page_task_request_info=on_page_task_request_info)
-
-
 
 ‌ OnPage API checks websites for 60+ customizable on-page parameters defines and displays all found flaws and opportunities for optimization so that you can easily fix them. It checks meta tags, duplicate content, image tags, response codes, and other parameters on every page. You can find the full list of OnPage API check-up parameters in the Pages section. for more info please visit 'https://docs.dataforseo.com/v3/on_page/task_post/?bash'
 
@@ -2191,14 +2090,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->task_post: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_task_request_info** | [**List[OnPageTaskRequestInfo]**](OnPageTaskRequestInfo.md)|  | [optional] 
+**on_page_task_request_info** | [**List[OnPageTaskRequestInfo]**](OnPageTaskRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -2210,8 +2106,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -2219,12 +2115,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **tasks_ready**
+
 > OnPageTasksReadyResponseInfo tasks_ready()
-
-
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks, which results haven’t been collected yet. for more info please visit 'https://docs.dataforseo.com/v3/on_page-tasks_ready/?bash'
 
@@ -2268,8 +2163,6 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->tasks_ready: %s\n" % e)
 ```
 
-
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2284,8 +2177,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -2293,12 +2186,11 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
 # **waterfall**
+
 > OnPageWaterfallResponseInfo waterfall(on_page_waterfall_request_info=on_page_waterfall_request_info)
-
-
 
 ‌‌ This endpoint is designed to provide you with the page speed insights. Using this function you can get detailed information about the page loading time, time to secure connection, the time it takes to load page resources, and so on. for more info please visit 'https://docs.dataforseo.com/v3/on_page/waterfall/?bash'
 
@@ -2344,14 +2236,11 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling OnPageApi->waterfall: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_waterfall_request_info** | [**List[OnPageWaterfallRequestInfo]**](OnPageWaterfallRequestInfo.md)|  | [optional] 
+**on_page_waterfall_request_info** | [**List[OnPageWaterfallRequestInfo]**](OnPageWaterfallRequestInfo.md)|  | [optional]
 
 ### Return type
 
@@ -2363,8 +2252,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -2372,5 +2261,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+   
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

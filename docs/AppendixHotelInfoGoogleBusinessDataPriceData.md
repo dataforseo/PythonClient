@@ -1,14 +1,17 @@
-# AppendixHotelInfoGoogleBusinessDataPriceData
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixHotelInfoGoogleBusinessDataPriceData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**live** | [**AppendixTaskGetProductGoogleMerchantPriceDataInfo**](AppendixTaskGetProductGoogleMerchantPriceDataInfo.md) |  | [optional] 
-**task_get** | [**AppendixTaskGetProductGoogleMerchantPriceDataInfo**](AppendixTaskGetProductGoogleMerchantPriceDataInfo.md) |  | [optional] 
-**task_post** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
-**tasks_ready** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
+**live** | [**AppendixTaskGetProductGoogleMerchantPriceDataInfo**](AppendixTaskGetProductGoogleMerchantPriceDataInfo.md) |  | [optional]
+**task_get** | [**AppendixTaskGetProductGoogleMerchantPriceDataInfo**](AppendixTaskGetProductGoogleMerchantPriceDataInfo.md) |  | [optional]
+**task_post** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional]
+**tasks_ready** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ appendix_hotel_info_google_business_data_price_data_dict = appendix_hotel_info_g
 # create an instance of AppendixHotelInfoGoogleBusinessDataPriceData from a dict
 appendix_hotel_info_google_business_data_price_data_form_dict = appendix_hotel_info_google_business_data_price_data.from_dict(appendix_hotel_info_google_business_data_price_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

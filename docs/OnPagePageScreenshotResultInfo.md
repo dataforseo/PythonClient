@@ -1,14 +1,17 @@
-# OnPagePageScreenshotResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPagePageScreenshotResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**crawl_progress** | **str** | status of the crawling session possible values: in_progress, finished | [optional] 
-**error_message** | **str** | error message if the url you indicated returns a 404 status code or is not a valid URL, you will obtain \&quot;error_message\&quot;:\&quot;Screenshot is empty\&quot; if no error is encountered, the value will be null | [optional] 
-**items_count** | **int** | number of items in the results array | [optional] 
-**items** | [**List[ScreenshotItem]**](ScreenshotItem.md) | items array | [optional] 
+**crawl_progress** | **str** | status of the crawling session possible values: in_progress, finished | [optional]
+**error_message** | **str** | error message if the url you indicated returns a 404 status code or is not a valid URL, you will obtain \&quot;error_message\&quot;:\&quot;Screenshot is empty\&quot; if no error is encountered, the value will be null | [optional]
+**items_count** | **int** | number of items in the results array | [optional]
+**items** | [**List[ScreenshotItem]**](ScreenshotItem.md) | items array | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ on_page_page_screenshot_result_info_dict = on_page_page_screenshot_result_info_i
 # create an instance of OnPagePageScreenshotResultInfo from a dict
 on_page_page_screenshot_result_info_form_dict = on_page_page_screenshot_result_info.from_dict(on_page_page_screenshot_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

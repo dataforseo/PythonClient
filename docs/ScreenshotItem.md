@@ -1,11 +1,14 @@
-# ScreenshotItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ScreenshotItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**image** | **str** | screenshot of the requested page URL of the page screenshot on the DataForSEO storage note: the page screenshot saved on the DataForSEO storage only remains accessible for one day after making the request | [optional] 
+**image** | **str** | screenshot of the requested page URL of the page screenshot on the DataForSEO storage note: the page screenshot saved on the DataForSEO storage only remains accessible for one day after making the request | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ screenshot_item_dict = screenshot_item_instance.to_dict()
 # create an instance of ScreenshotItem from a dict
 screenshot_item_form_dict = screenshot_item.from_dict(screenshot_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

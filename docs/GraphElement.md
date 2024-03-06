@@ -1,13 +1,16 @@
-# GraphElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# GraphElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**var_date** | **str** | the posting date | [optional] 
-**value** | **int** | the value of the rating | [optional] 
+**type** | **str** | type of element | [optional]
+**var_date** | **str** | the posting date | [optional]
+**value** | **int** | the value of the rating | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ graph_element_dict = graph_element_instance.to_dict()
 # create an instance of GraphElement from a dict
 graph_element_form_dict = graph_element.from_dict(graph_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

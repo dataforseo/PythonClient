@@ -1,18 +1,21 @@
-# DataforseoLabsBingRankedKeywordsLiveResponseInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsBingRankedKeywordsLiveResponseInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**version** | **str** | the current version of the API | [optional] 
-**status_code** | **int** | general status code you can find the full list of the response codes here | [optional] 
-**status_message** | **str** | general informational message you can find the full list of general informational messages here | [optional] 
-**time** | **str** | total execution time, seconds | [optional] 
-**cost** | **float** | total tasks cost, USD | [optional] 
-**tasks_count** | **int** | the number of tasks in the tasks array | [optional] 
-**tasks_error** | **int** | the number of tasks in the tasks array returned with an error | [optional] 
-**tasks** | [**List[DataforseoLabsBingRankedKeywordsLiveTaskInfo]**](DataforseoLabsBingRankedKeywordsLiveTaskInfo.md) | array of tasks | [optional] 
+**version** | **str** | the current version of the API | [optional]
+**status_code** | **int** | general status code you can find the full list of the response codes here | [optional]
+**status_message** | **str** | general informational message you can find the full list of general informational messages here | [optional]
+**time** | **str** | total execution time, seconds | [optional]
+**cost** | **float** | total tasks cost, USD | [optional]
+**tasks_count** | **int** | the number of tasks in the tasks array | [optional]
+**tasks_error** | **int** | the number of tasks in the tasks array returned with an error | [optional]
+**tasks** | [**List[DataforseoLabsBingRankedKeywordsLiveTaskInfo]**](DataforseoLabsBingRankedKeywordsLiveTaskInfo.md) | array of tasks | [optional]
 
 ## Example
 
@@ -31,6 +34,9 @@ dataforseo_labs_bing_ranked_keywords_live_response_info_dict = dataforseo_labs_b
 # create an instance of DataforseoLabsBingRankedKeywordsLiveResponseInfo from a dict
 dataforseo_labs_bing_ranked_keywords_live_response_info_form_dict = dataforseo_labs_bing_ranked_keywords_live_response_info.from_dict(dataforseo_labs_bing_ranked_keywords_live_response_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

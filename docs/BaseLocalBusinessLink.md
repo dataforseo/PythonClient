@@ -1,11 +1,14 @@
-# BaseLocalBusinessLink
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BaseLocalBusinessLink
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
+**type** | **str** | type of element | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ base_local_business_link_dict = base_local_business_link_instance.to_dict()
 # create an instance of BaseLocalBusinessLink from a dict
 base_local_business_link_form_dict = base_local_business_link.from_dict(base_local_business_link_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

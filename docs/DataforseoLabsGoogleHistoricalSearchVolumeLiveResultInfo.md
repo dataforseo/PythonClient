@@ -1,15 +1,18 @@
-# DataforseoLabsGoogleHistoricalSearchVolumeLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsGoogleHistoricalSearchVolumeLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**location_code** | **int** | location code in a POST array | [optional] 
-**language_code** | **str** | language code in a POST array | [optional] 
-**items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[DataforseoLabsGoogleHistoricalSearchVolumeLiveItem]**](DataforseoLabsGoogleHistoricalSearchVolumeLiveItem.md) | contains keywords and related data | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**location_code** | **int** | location code in a POST array | [optional]
+**language_code** | **str** | language code in a POST array | [optional]
+**items_count** | **int** | the number of results returned in the items array | [optional]
+**items** | [**List[DataforseoLabsGoogleHistoricalSearchVolumeLiveItem]**](DataforseoLabsGoogleHistoricalSearchVolumeLiveItem.md) | contains keywords and related data | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ dataforseo_labs_google_historical_search_volume_live_result_info_dict = datafors
 # create an instance of DataforseoLabsGoogleHistoricalSearchVolumeLiveResultInfo from a dict
 dataforseo_labs_google_historical_search_volume_live_result_info_form_dict = dataforseo_labs_google_historical_search_volume_live_result_info.from_dict(dataforseo_labs_google_historical_search_volume_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

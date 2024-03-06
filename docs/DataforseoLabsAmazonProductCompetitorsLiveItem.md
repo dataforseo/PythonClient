@@ -1,17 +1,20 @@
-# DataforseoLabsAmazonProductCompetitorsLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsAmazonProductCompetitorsLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**asin** | **str** | ASIN of the product unique product identifier on Amazon; for more information, refer to this help center guide | [optional] 
-**avg_position** | **float** | average position of the product in Amazon SERP Note: average position is calculated for intersected keywords only; the value for a given product may differ when combined with different target products | [optional] 
-**sum_position** | **int** | sum of all product positions in Amazon SERP Note: average position is calculated for intersected keywords only; the value for a given product may differ when combined with different target products | [optional] 
-**intersections** | **int** | number of intersecting keywords | [optional] 
-**competitor_metrics** | [**AmazonMetricsBundleInfo**](AmazonMetricsBundleInfo.md) |  | [optional] 
-**full_metrics** | [**AmazonMetricsBundleInfo**](AmazonMetricsBundleInfo.md) |  | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**asin** | **str** | ASIN of the product unique product identifier on Amazon; for more information, refer to this help center guide | [optional]
+**avg_position** | **float** | average position of the product in Amazon SERP Note: average position is calculated for intersected keywords only; the value for a given product may differ when combined with different target products | [optional]
+**sum_position** | **int** | sum of all product positions in Amazon SERP Note: average position is calculated for intersected keywords only; the value for a given product may differ when combined with different target products | [optional]
+**intersections** | **int** | number of intersecting keywords | [optional]
+**competitor_metrics** | [**AmazonMetricsBundleInfo**](AmazonMetricsBundleInfo.md) |  | [optional]
+**full_metrics** | [**AmazonMetricsBundleInfo**](AmazonMetricsBundleInfo.md) |  | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ dataforseo_labs_amazon_product_competitors_live_item_dict = dataforseo_labs_amaz
 # create an instance of DataforseoLabsAmazonProductCompetitorsLiveItem from a dict
 dataforseo_labs_amazon_product_competitors_live_item_form_dict = dataforseo_labs_amazon_product_competitors_live_item.from_dict(dataforseo_labs_amazon_product_competitors_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

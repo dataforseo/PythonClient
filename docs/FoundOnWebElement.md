@@ -1,14 +1,17 @@
-# FoundOnWebElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# FoundOnWebElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of the row | [optional] 
-**subtitle** | **str** | subtitle of the element | [optional] 
-**image** | [**ImagesElement**](ImagesElement.md) |  | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of the row | [optional]
+**subtitle** | **str** | subtitle of the element | [optional]
+**image** | [**ImagesElement**](ImagesElement.md) |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ found_on_web_element_dict = found_on_web_element_instance.to_dict()
 # create an instance of FoundOnWebElement from a dict
 found_on_web_element_form_dict = found_on_web_element.from_dict(found_on_web_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

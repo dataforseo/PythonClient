@@ -1,12 +1,15 @@
-# AppendixNaverKeywordsDataDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixNaverKeywordsDataDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keywords_for_category** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**keywords_for_category** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ appendix_naver_keywords_data_data_info_dict = appendix_naver_keywords_data_data_
 # create an instance of AppendixNaverKeywordsDataDataInfo from a dict
 appendix_naver_keywords_data_data_info_form_dict = appendix_naver_keywords_data_data_info.from_dict(appendix_naver_keywords_data_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

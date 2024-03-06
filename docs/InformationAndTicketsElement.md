@@ -1,15 +1,18 @@
-# InformationAndTicketsElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# InformationAndTicketsElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of the element | [optional] 
-**description** | **str** | description of the element | [optional] 
-**url** | **str** | relevant URL | [optional] 
-**domain** | **str** | domain in SERP | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of the element | [optional]
+**description** | **str** | description of the element | [optional]
+**url** | **str** | relevant URL | [optional]
+**domain** | **str** | domain in SERP | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ information_and_tickets_element_dict = information_and_tickets_element_instance.
 # create an instance of InformationAndTicketsElement from a dict
 information_and_tickets_element_form_dict = information_and_tickets_element.from_dict(information_and_tickets_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

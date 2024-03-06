@@ -1,11 +1,14 @@
-# ProductInformationTextRow
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductInformationTextRow
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**text** | **str** | text specified under the given title within the section_name | [optional] 
+**text** | **str** | text specified under the given title within the section_name | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ product_information_text_row_dict = product_information_text_row_instance.to_dic
 # create an instance of ProductInformationTextRow from a dict
 product_information_text_row_form_dict = product_information_text_row.from_dict(product_information_text_row_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,11 +1,14 @@
-# DomainAnalyticsWhoisAvailableFiltersResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DomainAnalyticsWhoisAvailableFiltersResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**overview** | **Dict[str, Optional[str]]** |  | [optional] 
+**overview** | **Dict[str, Optional[str]]** |  | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ domain_analytics_whois_available_filters_result_info_dict = domain_analytics_who
 # create an instance of DomainAnalyticsWhoisAvailableFiltersResultInfo from a dict
 domain_analytics_whois_available_filters_result_info_form_dict = domain_analytics_whois_available_filters_result_info.from_dict(domain_analytics_whois_available_filters_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

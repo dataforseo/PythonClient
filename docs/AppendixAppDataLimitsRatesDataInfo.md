@@ -1,18 +1,21 @@
-# AppendixAppDataLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixAppDataLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**app_info** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
-**app_list** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
-**app_reviews** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
-**app_searches** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
-**errors** | **float** |  | [optional] 
-**languages** | **float** |  | [optional] 
-**locations** | **float** |  | [optional] 
-**categories** | **float** |  | [optional] 
+**app_info** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional]
+**app_list** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional]
+**app_reviews** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional]
+**app_searches** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional]
+**errors** | **float** |  | [optional]
+**languages** | **float** |  | [optional]
+**locations** | **float** |  | [optional]
+**categories** | **float** |  | [optional]
 
 ## Example
 
@@ -31,6 +34,9 @@ appendix_app_data_limits_rates_data_info_dict = appendix_app_data_limits_rates_d
 # create an instance of AppendixAppDataLimitsRatesDataInfo from a dict
 appendix_app_data_limits_rates_data_info_form_dict = appendix_app_data_limits_rates_data_info.from_dict(appendix_app_data_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

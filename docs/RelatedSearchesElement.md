@@ -1,15 +1,18 @@
-# RelatedSearchesElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# RelatedSearchesElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | product title | [optional] 
-**url** | **str** | the URL of the product page | [optional] 
-**image_alt** | **str** | the alt tag of the product image featured in the results | [optional] 
-**image_url** | **str** | URL of the product image featured in the results | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | product title | [optional]
+**url** | **str** | the URL of the product page | [optional]
+**image_alt** | **str** | the alt tag of the product image featured in the results | [optional]
+**image_url** | **str** | URL of the product image featured in the results | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ related_searches_element_dict = related_searches_element_instance.to_dict()
 # create an instance of RelatedSearchesElement from a dict
 related_searches_element_form_dict = related_searches_element.from_dict(related_searches_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

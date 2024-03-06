@@ -1,11 +1,14 @@
-# AppStoreMetricsBundleInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppStoreMetricsBundleInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**app_store_search_organic** | [**AppMetricsInfo**](AppMetricsInfo.md) |  | [optional] 
+**app_store_search_organic** | [**AppMetricsInfo**](AppMetricsInfo.md) |  | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ app_store_metrics_bundle_info_dict = app_store_metrics_bundle_info_instance.to_d
 # create an instance of AppStoreMetricsBundleInfo from a dict
 app_store_metrics_bundle_info_form_dict = app_store_metrics_bundle_info.from_dict(app_store_metrics_bundle_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

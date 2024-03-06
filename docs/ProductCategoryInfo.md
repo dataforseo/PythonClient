@@ -1,12 +1,15 @@
-# ProductCategoryInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductCategoryInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **str** | product category name | [optional] 
-**url** | **str** | product category URL indicates the browse path on Amazon with the unique browse node ID (product category ID on Amazon) | [optional] 
+**category** | **str** | product category name | [optional]
+**url** | **str** | product category URL indicates the browse path on Amazon with the unique browse node ID (product category ID on Amazon) | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ product_category_info_dict = product_category_info_instance.to_dict()
 # create an instance of ProductCategoryInfo from a dict
 product_category_info_form_dict = product_category_info.from_dict(product_category_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

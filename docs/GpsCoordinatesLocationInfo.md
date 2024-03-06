@@ -1,12 +1,15 @@
-# GpsCoordinatesLocationInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# GpsCoordinatesLocationInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**latitude** | **float** | latitude coordinate of the hotel in google maps example: \&quot;latitude\&quot;: 51.584091 | [optional] 
-**longitude** | **float** | longitude coordinate of the hotel in google maps example: \&quot;longitude\&quot;: -0.31365919999999997 | [optional] 
+**latitude** | **float** | latitude coordinate of the hotel in google maps example: \&quot;latitude\&quot;: 51.584091 | [optional]
+**longitude** | **float** | longitude coordinate of the hotel in google maps example: \&quot;longitude\&quot;: -0.31365919999999997 | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ gps_coordinates_location_info_dict = gps_coordinates_location_info_instance.to_d
 # create an instance of GpsCoordinatesLocationInfo from a dict
 gps_coordinates_location_info_form_dict = gps_coordinates_location_info.from_dict(gps_coordinates_location_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

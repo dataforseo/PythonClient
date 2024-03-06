@@ -1,3 +1,7 @@
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
 # DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem
 
 items array
@@ -6,13 +10,13 @@ items array
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**group** | **str** | technology group id | [optional] 
-**category** | **str** | technology category id | [optional] 
-**technology** | **str** | technology name | [optional] 
-**groups_count** | **int** | technology groups count number of domains that match the parameters you specified and are using technologies from the indicated group | [optional] 
-**categories_count** | **int** | technology categories count number of domains that match the parameters you specified and are using technologies from the indicated category | [optional] 
-**technologies_count** | **int** | technologies count number of domains that match the parameters you specified and are using the indicated technology | [optional] 
+**type** | **str** | type of element | [optional]
+**group** | **str** | technology group id | [optional]
+**category** | **str** | technology category id | [optional]
+**technology** | **str** | technology name | [optional]
+**groups_count** | **int** | technology groups count number of domains that match the parameters you specified and are using technologies from the indicated group | [optional]
+**categories_count** | **int** | technology categories count number of domains that match the parameters you specified and are using technologies from the indicated category | [optional]
+**technologies_count** | **int** | technologies count number of domains that match the parameters you specified and are using the indicated technology | [optional]
 
 ## Example
 
@@ -31,6 +35,9 @@ domain_analytics_technologies_aggregation_technologies_live_item_dict = domain_a
 # create an instance of DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem from a dict
 domain_analytics_technologies_aggregation_technologies_live_item_form_dict = domain_analytics_technologies_aggregation_technologies_live_item.from_dict(domain_analytics_technologies_aggregation_technologies_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,14 +1,17 @@
-# FaqBoxElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# FaqBoxElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of the element | [optional] 
-**description** | **str** | description of the results element in SERP | [optional] 
-**links** | [**List[LinkElement]**](LinkElement.md) | link of the element | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of the element | [optional]
+**description** | **str** | description of the results element in SERP | [optional]
+**links** | [**List[LinkElement]**](LinkElement.md) | link of the element | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ faq_box_element_dict = faq_box_element_instance.to_dict()
 # create an instance of FaqBoxElement from a dict
 faq_box_element_form_dict = faq_box_element.from_dict(faq_box_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

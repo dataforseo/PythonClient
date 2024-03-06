@@ -1,15 +1,18 @@
-# BusinessDataUserProfileInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BusinessDataUserProfileInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | the name of the reviewer | [optional] 
-**url** | **str** | URL to the reviewer’s profile | [optional] 
-**image_url** | **str** | URL to the reviewer’s profile picture | [optional] 
-**location** | **str** | country of the reviewer | [optional] 
-**reviews_count** | **int** | total number of reviews submitted by the reviewer | [optional] 
+**name** | **str** | the name of the reviewer | [optional]
+**url** | **str** | URL to the reviewer’s profile | [optional]
+**image_url** | **str** | URL to the reviewer’s profile picture | [optional]
+**location** | **str** | country of the reviewer | [optional]
+**reviews_count** | **int** | total number of reviews submitted by the reviewer | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ business_data_user_profile_info_dict = business_data_user_profile_info_instance.
 # create an instance of BusinessDataUserProfileInfo from a dict
 business_data_user_profile_info_form_dict = business_data_user_profile_info.from_dict(business_data_user_profile_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

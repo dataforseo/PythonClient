@@ -1,15 +1,18 @@
-# AmazonKeywordData
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AmazonKeywordData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**keyword** | **str** | related keyword | [optional] 
-**location_code** | **int** | location code in a POST array | [optional] 
-**language_code** | **str** | language code in a POST array | [optional] 
-**keyword_info** | [**AmazonKeywordInfo**](AmazonKeywordInfo.md) |  | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**keyword** | **str** | related keyword | [optional]
+**location_code** | **int** | location code in a POST array | [optional]
+**language_code** | **str** | language code in a POST array | [optional]
+**keyword_info** | [**AmazonKeywordInfo**](AmazonKeywordInfo.md) |  | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ amazon_keyword_data_dict = amazon_keyword_data_instance.to_dict()
 # create an instance of AmazonKeywordData from a dict
 amazon_keyword_data_form_dict = amazon_keyword_data.from_dict(amazon_keyword_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,11 +1,14 @@
-# DataforseoLabsGoogleAvailableHistoryResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsGoogleAvailableHistoryResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_date** | **str** | available date indicates the date of the range available for setting in the Domain Metrics by Categories endpoint example: 2022-05-16 | [optional] 
+**var_date** | **str** | available date indicates the date of the range available for setting in the Domain Metrics by Categories endpoint example: 2022-05-16 | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ dataforseo_labs_google_available_history_result_info_dict = dataforseo_labs_goog
 # create an instance of DataforseoLabsGoogleAvailableHistoryResultInfo from a dict
 dataforseo_labs_google_available_history_result_info_form_dict = dataforseo_labs_google_available_history_result_info.from_dict(dataforseo_labs_google_available_history_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

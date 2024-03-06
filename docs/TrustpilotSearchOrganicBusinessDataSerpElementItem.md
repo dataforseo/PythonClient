@@ -1,17 +1,20 @@
-# TrustpilotSearchOrganicBusinessDataSerpElementItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# TrustpilotSearchOrganicBusinessDataSerpElementItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank among all the listed reviews absolute position among all reviews on the list | [optional] 
-**title** | **str** | title of the establishment | [optional] 
-**domain** | **str** | domain of the establishment | [optional] 
-**url** | **str** | URL to the establishment | [optional] 
-**reviews_count** | **int** | the total number of reviews | [optional] 
-**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
+**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional]
+**rank_absolute** | **int** | absolute rank among all the listed reviews absolute position among all reviews on the list | [optional]
+**title** | **str** | title of the establishment | [optional]
+**domain** | **str** | domain of the establishment | [optional]
+**url** | **str** | URL to the establishment | [optional]
+**reviews_count** | **int** | the total number of reviews | [optional]
+**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ trustpilot_search_organic_business_data_serp_element_item_dict = trustpilot_sear
 # create an instance of TrustpilotSearchOrganicBusinessDataSerpElementItem from a dict
 trustpilot_search_organic_business_data_serp_element_item_form_dict = trustpilot_search_organic_business_data_serp_element_item.from_dict(trustpilot_search_organic_business_data_serp_element_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

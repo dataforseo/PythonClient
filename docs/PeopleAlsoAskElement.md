@@ -1,15 +1,18 @@
-# PeopleAlsoAskElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# PeopleAlsoAskElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of the row | [optional] 
-**seed_question** | **str** | question that triggered additional expanded elements | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
-**expanded_element** | [**List[PeopleAlsoAskExpandedElement]**](PeopleAlsoAskExpandedElement.md) | expanded element | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of the row | [optional]
+**seed_question** | **str** | question that triggered additional expanded elements | [optional]
+**xpath** | **str** | the XPath of the element | [optional]
+**expanded_element** | [**List[PeopleAlsoAskExpandedElement]**](PeopleAlsoAskExpandedElement.md) | expanded element | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ people_also_ask_element_dict = people_also_ask_element_instance.to_dict()
 # create an instance of PeopleAlsoAskElement from a dict
 people_also_ask_element_form_dict = people_also_ask_element.from_dict(people_also_ask_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

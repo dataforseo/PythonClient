@@ -1,16 +1,19 @@
-# AdLinkElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AdLinkElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of a given link element | [optional] 
-**description** | **str** | description of the results element in SERP | [optional] 
-**url** | **str** | relevant URL | [optional] 
-**domain** | **str** | website domain | [optional] 
-**ad_aclk** | **str** | the identifier of the ad | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of a given link element | [optional]
+**description** | **str** | description of the results element in SERP | [optional]
+**url** | **str** | relevant URL | [optional]
+**domain** | **str** | website domain | [optional]
+**ad_aclk** | **str** | the identifier of the ad | [optional]
 
 ## Example
 
@@ -29,6 +32,9 @@ ad_link_element_dict = ad_link_element_instance.to_dict()
 # create an instance of AdLinkElement from a dict
 ad_link_element_form_dict = ad_link_element.from_dict(ad_link_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

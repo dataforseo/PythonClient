@@ -1,11 +1,14 @@
-# GooglePlayMetricsBundleInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# GooglePlayMetricsBundleInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**google_play_search_organic** | [**AppMetricsInfo**](AppMetricsInfo.md) |  | [optional] 
+**google_play_search_organic** | [**AppMetricsInfo**](AppMetricsInfo.md) |  | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ google_play_metrics_bundle_info_dict = google_play_metrics_bundle_info_instance.
 # create an instance of GooglePlayMetricsBundleInfo from a dict
 google_play_metrics_bundle_info_form_dict = google_play_metrics_bundle_info.from_dict(google_play_metrics_bundle_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

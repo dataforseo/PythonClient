@@ -1,15 +1,18 @@
-# BacklinksBulkNewLostReferringDomainsLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksBulkNewLostReferringDomainsLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | **str** | domain, subdomain or webpage from a POST array | [optional] 
-**new_referring_domains** | **int** | number of new referring domains number of new referring domains pointing to the target | [optional] 
-**lost_referring_domains** | **int** | number of lost referring domains number of lost referring domains of the target | [optional] 
-**new_referring_main_domains** | **int** | number of new referring main domains pointing to the target | [optional] 
-**lost_referring_main_domains** | **int** | number of lost referring main domains pointing to the target | [optional] 
+**target** | **str** | domain, subdomain or webpage from a POST array | [optional]
+**new_referring_domains** | **int** | number of new referring domains number of new referring domains pointing to the target | [optional]
+**lost_referring_domains** | **int** | number of lost referring domains number of lost referring domains of the target | [optional]
+**new_referring_main_domains** | **int** | number of new referring main domains pointing to the target | [optional]
+**lost_referring_main_domains** | **int** | number of lost referring main domains pointing to the target | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ backlinks_bulk_new_lost_referring_domains_live_item_dict = backlinks_bulk_new_lo
 # create an instance of BacklinksBulkNewLostReferringDomainsLiveItem from a dict
 backlinks_bulk_new_lost_referring_domains_live_item_form_dict = backlinks_bulk_new_lost_referring_domains_live_item.from_dict(backlinks_bulk_new_lost_referring_domains_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

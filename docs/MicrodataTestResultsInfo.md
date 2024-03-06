@@ -1,12 +1,15 @@
-# MicrodataTestResultsInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# MicrodataTestResultsInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**level** | **str** | level of microdata error can take the following values: fatal, error, warning, info | [optional] 
-**message** | **str** | message associated with an error message providing the details of the detected error | [optional] 
+**level** | **str** | level of microdata error can take the following values: fatal, error, warning, info | [optional]
+**message** | **str** | message associated with an error message providing the details of the detected error | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ microdata_test_results_info_dict = microdata_test_results_info_instance.to_dict(
 # create an instance of MicrodataTestResultsInfo from a dict
 microdata_test_results_info_form_dict = microdata_test_results_info.from_dict(microdata_test_results_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

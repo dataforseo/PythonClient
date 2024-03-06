@@ -1,17 +1,20 @@
-# OnPageAvailableFiltersResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageAvailableFiltersResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resources** | **Dict[str, Optional[str]]** |  | [optional] 
-**pages** | **Dict[str, Optional[str]]** |  | [optional] 
-**non_indexable** | **Dict[str, Optional[str]]** |  | [optional] 
-**links** | **Dict[str, Optional[str]]** |  | [optional] 
-**pages_by_resource** | **Dict[str, Optional[str]]** |  | [optional] 
-**redirect_chains** | **Dict[str, Optional[str]]** |  | [optional] 
-**keyword_density** | **Dict[str, Optional[str]]** |  | [optional] 
+**resources** | **Dict[str, Optional[str]]** |  | [optional]
+**pages** | **Dict[str, Optional[str]]** |  | [optional]
+**non_indexable** | **Dict[str, Optional[str]]** |  | [optional]
+**links** | **Dict[str, Optional[str]]** |  | [optional]
+**pages_by_resource** | **Dict[str, Optional[str]]** |  | [optional]
+**redirect_chains** | **Dict[str, Optional[str]]** |  | [optional]
+**keyword_density** | **Dict[str, Optional[str]]** |  | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ on_page_available_filters_result_info_dict = on_page_available_filters_result_in
 # create an instance of OnPageAvailableFiltersResultInfo from a dict
 on_page_available_filters_result_info_form_dict = on_page_available_filters_result_info.from_dict(on_page_available_filters_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -1,17 +1,20 @@
-# DataforseoLabsBingDomainRankOverviewLiveResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsBingDomainRankOverviewLiveResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**target** | **str** | target domain in a POST array | [optional] 
-**location_code** | **int** | location code in a POST array | [optional] 
-**language_code** | **str** | language code in a POST array | [optional] 
-**total_count** | **int** | total amount of results in our database relevant to your request | [optional] 
-**items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[DataforseoLabsDomainRankOverviewLiveItem]**](DataforseoLabsDomainRankOverviewLiveItem.md) | contains ranking and traffic data | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**target** | **str** | target domain in a POST array | [optional]
+**location_code** | **int** | location code in a POST array | [optional]
+**language_code** | **str** | language code in a POST array | [optional]
+**total_count** | **int** | total amount of results in our database relevant to your request | [optional]
+**items_count** | **int** | the number of results returned in the items array | [optional]
+**items** | [**List[DataforseoLabsDomainRankOverviewLiveItem]**](DataforseoLabsDomainRankOverviewLiveItem.md) | contains ranking and traffic data | [optional]
 
 ## Example
 
@@ -30,6 +33,9 @@ dataforseo_labs_bing_domain_rank_overview_live_result_info_dict = dataforseo_lab
 # create an instance of DataforseoLabsBingDomainRankOverviewLiveResultInfo from a dict
 dataforseo_labs_bing_domain_rank_overview_live_result_info_form_dict = dataforseo_labs_bing_domain_rank_overview_live_result_info.from_dict(dataforseo_labs_bing_domain_rank_overview_live_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

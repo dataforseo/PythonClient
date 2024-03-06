@@ -1,11 +1,14 @@
-# AppDataAppleCategoriesResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppDataAppleCategoriesResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**categories** | **List[Optional[str]]** | contains full list of supported app categories | [optional] 
+**categories** | **List[Optional[str]]** | contains full list of supported app categories | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ app_data_apple_categories_result_info_dict = app_data_apple_categories_result_in
 # create an instance of AppDataAppleCategoriesResultInfo from a dict
 app_data_apple_categories_result_info_form_dict = app_data_apple_categories_result_info.from_dict(app_data_apple_categories_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

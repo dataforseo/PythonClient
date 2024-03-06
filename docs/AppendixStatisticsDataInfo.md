@@ -1,12 +1,15 @@
-# AppendixStatisticsDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixStatisticsDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**day** | [**AppendixStatisticsRatesDataInfo**](AppendixStatisticsRatesDataInfo.md) |  | [optional] 
-**minute** | [**AppendixStatisticsRatesDataInfo**](AppendixStatisticsRatesDataInfo.md) |  | [optional] 
+**day** | [**AppendixStatisticsRatesDataInfo**](AppendixStatisticsRatesDataInfo.md) |  | [optional]
+**minute** | [**AppendixStatisticsRatesDataInfo**](AppendixStatisticsRatesDataInfo.md) |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ appendix_statistics_data_info_dict = appendix_statistics_data_info_instance.to_d
 # create an instance of AppendixStatisticsDataInfo from a dict
 appendix_statistics_data_info_form_dict = appendix_statistics_data_info.from_dict(appendix_statistics_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

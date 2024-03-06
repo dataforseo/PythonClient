@@ -1,20 +1,23 @@
-# BacklinksAvailableFiltersResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BacklinksAvailableFiltersResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content_duplicates** | **Dict[str, Optional[str]]** |  | [optional] 
-**backlinks** | **Dict[str, Optional[str]]** |  | [optional] 
-**domain_pages** | **Dict[str, Optional[str]]** |  | [optional] 
-**anchors** | **Dict[str, Optional[str]]** |  | [optional] 
-**referring_domains** | **Dict[str, Optional[str]]** |  | [optional] 
-**domain_intersection** | **Dict[str, Optional[str]]** |  | [optional] 
-**page_intersection** | **Dict[str, Optional[str]]** |  | [optional] 
-**referring_networks** | **Dict[str, Optional[str]]** |  | [optional] 
-**domain_pages_summary** | **Dict[str, Optional[str]]** |  | [optional] 
-**competitors** | **Dict[str, Optional[str]]** |  | [optional] 
+**content_duplicates** | **Dict[str, Optional[str]]** |  | [optional]
+**backlinks** | **Dict[str, Optional[str]]** |  | [optional]
+**domain_pages** | **Dict[str, Optional[str]]** |  | [optional]
+**anchors** | **Dict[str, Optional[str]]** |  | [optional]
+**referring_domains** | **Dict[str, Optional[str]]** |  | [optional]
+**domain_intersection** | **Dict[str, Optional[str]]** |  | [optional]
+**page_intersection** | **Dict[str, Optional[str]]** |  | [optional]
+**referring_networks** | **Dict[str, Optional[str]]** |  | [optional]
+**domain_pages_summary** | **Dict[str, Optional[str]]** |  | [optional]
+**competitors** | **Dict[str, Optional[str]]** |  | [optional]
 
 ## Example
 
@@ -33,6 +36,9 @@ backlinks_available_filters_result_info_dict = backlinks_available_filters_resul
 # create an instance of BacklinksAvailableFiltersResultInfo from a dict
 backlinks_available_filters_result_info_form_dict = backlinks_available_filters_result_info.from_dict(backlinks_available_filters_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

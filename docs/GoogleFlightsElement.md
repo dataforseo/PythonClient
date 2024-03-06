@@ -1,13 +1,16 @@
-# GoogleFlightsElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# GoogleFlightsElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**description** | **str** | description of the results element in SERP | [optional] 
-**url** | **str** | URL | [optional] 
+**type** | **str** | type of element | [optional]
+**description** | **str** | description of the results element in SERP | [optional]
+**url** | **str** | URL | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ google_flights_element_dict = google_flights_element_instance.to_dict()
 # create an instance of GoogleFlightsElement from a dict
 google_flights_element_form_dict = google_flights_element.from_dict(google_flights_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

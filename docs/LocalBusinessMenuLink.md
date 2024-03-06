@@ -1,12 +1,15 @@
-# LocalBusinessMenuLink
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# LocalBusinessMenuLink
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** | title of the element domain of the online menu system | [optional] 
-**url** | **str** | URL to view the menu | [optional] 
+**title** | **str** | title of the element domain of the online menu system | [optional]
+**url** | **str** | URL to view the menu | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ local_business_menu_link_dict = local_business_menu_link_instance.to_dict()
 # create an instance of LocalBusinessMenuLink from a dict
 local_business_menu_link_form_dict = local_business_menu_link.from_dict(local_business_menu_link_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

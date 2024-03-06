@@ -1,12 +1,15 @@
-# SerpScreenshotResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# SerpScreenshotResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items_count** | **int** | number of items in the results array | [optional] 
-**items** | [**List[ScreenshotItem]**](ScreenshotItem.md) | items array | [optional] 
+**items_count** | **int** | number of items in the results array | [optional]
+**items** | [**List[ScreenshotItem]**](ScreenshotItem.md) | items array | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ serp_screenshot_result_info_dict = serp_screenshot_result_info_instance.to_dict(
 # create an instance of SerpScreenshotResultInfo from a dict
 serp_screenshot_result_info_form_dict = serp_screenshot_result_info.from_dict(serp_screenshot_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

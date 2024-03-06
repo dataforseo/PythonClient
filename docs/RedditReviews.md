@@ -1,15 +1,18 @@
-# RedditReviews
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# RedditReviews
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subreddit** | **str** | the name of the subreddit | [optional] 
-**author_name** | **str** | nickname of the author nicknname of the user who published the post in the subreddit and shared the URL | [optional] 
-**title** | **str** | title of the subreddit post | [optional] 
-**permalink** | **str** | URL to the subreddit post | [optional] 
-**subreddit_members** | **int** | number of subreddit members | [optional] 
+**subreddit** | **str** | the name of the subreddit | [optional]
+**author_name** | **str** | nickname of the author nicknname of the user who published the post in the subreddit and shared the URL | [optional]
+**title** | **str** | title of the subreddit post | [optional]
+**permalink** | **str** | URL to the subreddit post | [optional]
+**subreddit_members** | **int** | number of subreddit members | [optional]
 
 ## Example
 
@@ -28,6 +31,9 @@ reddit_reviews_dict = reddit_reviews_instance.to_dict()
 # create an instance of RedditReviews from a dict
 reddit_reviews_form_dict = reddit_reviews.from_dict(reddit_reviews_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

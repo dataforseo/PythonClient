@@ -1,13 +1,16 @@
-# DataforseoLabsRelevantPagesLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsRelevantPagesLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**page_address** | **str** | absolute URL of the relevant page | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | rankings and traffic metrics for the relevant page | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**page_address** | **str** | absolute URL of the relevant page | [optional]
+**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | rankings and traffic metrics for the relevant page | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ dataforseo_labs_relevant_pages_live_item_dict = dataforseo_labs_relevant_pages_l
 # create an instance of DataforseoLabsRelevantPagesLiveItem from a dict
 dataforseo_labs_relevant_pages_live_item_form_dict = dataforseo_labs_relevant_pages_live_item.from_dict(dataforseo_labs_relevant_pages_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

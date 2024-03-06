@@ -1,13 +1,16 @@
-# AppsInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppsInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**app_id** | **str** | ID of the app | [optional] 
-**title** | **str** | title of the app | [optional] 
-**url** | **str** | URL to the app page on Google Play | [optional] 
+**app_id** | **str** | ID of the app | [optional]
+**title** | **str** | title of the app | [optional]
+**url** | **str** | URL to the app page on Google Play | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ apps_info_dict = apps_info_instance.to_dict()
 # create an instance of AppsInfo from a dict
 apps_info_form_dict = apps_info.from_dict(apps_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

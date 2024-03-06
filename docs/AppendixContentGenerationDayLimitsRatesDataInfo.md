@@ -1,12 +1,15 @@
-# AppendixContentGenerationDayLimitsRatesDataInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# AppendixContentGenerationDayLimitsRatesDataInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**live** | **float** |  | [optional] 
-**languages** | **float** |  | [optional] 
+**live** | **float** |  | [optional]
+**languages** | **float** |  | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ appendix_content_generation_day_limits_rates_data_info_dict = appendix_content_g
 # create an instance of AppendixContentGenerationDayLimitsRatesDataInfo from a dict
 appendix_content_generation_day_limits_rates_data_info_form_dict = appendix_content_generation_day_limits_rates_data_info.from_dict(appendix_content_generation_day_limits_rates_data_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

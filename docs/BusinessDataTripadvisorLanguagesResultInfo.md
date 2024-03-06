@@ -1,12 +1,15 @@
-# BusinessDataTripadvisorLanguagesResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# BusinessDataTripadvisorLanguagesResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**language_name** | **str** | language name | [optional] 
-**language_code** | **str** | language code according to ISO 639-1 | [optional] 
+**language_name** | **str** | language name | [optional]
+**language_code** | **str** | language code according to ISO 639-1 | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ business_data_tripadvisor_languages_result_info_dict = business_data_tripadvisor
 # create an instance of BusinessDataTripadvisorLanguagesResultInfo from a dict
 business_data_tripadvisor_languages_result_info_form_dict = business_data_tripadvisor_languages_result_info.from_dict(business_data_tripadvisor_languages_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

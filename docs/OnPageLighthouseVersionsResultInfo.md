@@ -1,11 +1,14 @@
-# OnPageLighthouseVersionsResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# OnPageLighthouseVersionsResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**availible_versions** | [**List[AvailibleVersions]**](AvailibleVersions.md) |  | [optional] 
+**availible_versions** | [**List[AvailibleVersions]**](AvailibleVersions.md) |  | [optional]
 
 ## Example
 
@@ -24,6 +27,9 @@ on_page_lighthouse_versions_result_info_dict = on_page_lighthouse_versions_resul
 # create an instance of OnPageLighthouseVersionsResultInfo from a dict
 on_page_lighthouse_versions_result_info_form_dict = on_page_lighthouse_versions_result_info.from_dict(on_page_lighthouse_versions_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

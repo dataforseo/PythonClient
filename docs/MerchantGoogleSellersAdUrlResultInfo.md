@@ -1,13 +1,16 @@
-# MerchantGoogleSellersAdUrlResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# MerchantGoogleSellersAdUrlResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ad_aclk** | **str** | unique ad click referral parameter | [optional] 
-**ad_url** | **str** | full URL of the advertisement | [optional] 
-**ad_url_redirects** | **List[Optional[str]]** | URLs where the link from Google Shopping redirects before reaching a final URL includes up to 10 URLs of the ad’s redirect path to the seller’s ad_url | [optional] 
+**ad_aclk** | **str** | unique ad click referral parameter | [optional]
+**ad_url** | **str** | full URL of the advertisement | [optional]
+**ad_url_redirects** | **List[Optional[str]]** | URLs where the link from Google Shopping redirects before reaching a final URL includes up to 10 URLs of the ad’s redirect path to the seller’s ad_url | [optional]
 
 ## Example
 
@@ -26,6 +29,9 @@ merchant_google_sellers_ad_url_result_info_dict = merchant_google_sellers_ad_url
 # create an instance of MerchantGoogleSellersAdUrlResultInfo from a dict
 merchant_google_sellers_ad_url_result_info_form_dict = merchant_google_sellers_ad_url_result_info.from_dict(merchant_google_sellers_ad_url_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

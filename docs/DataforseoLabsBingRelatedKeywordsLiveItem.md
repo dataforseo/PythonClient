@@ -1,14 +1,17 @@
-# DataforseoLabsBingRelatedKeywordsLiveItem
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DataforseoLabsBingRelatedKeywordsLiveItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
-**keyword_data** | [**KeywordData**](KeywordData.md) |  | [optional] 
-**depth** | **int** | keyword search depth | [optional] 
-**related_keywords** | **List[Optional[str]]** | list of related keywords represents the list of search queries which are related to the keyword returned in the array above | [optional] 
+**se_type** | **str** | search engine type | [optional]
+**keyword_data** | [**KeywordData**](KeywordData.md) |  | [optional]
+**depth** | **int** | keyword search depth | [optional]
+**related_keywords** | **List[Optional[str]]** | list of related keywords represents the list of search queries which are related to the keyword returned in the array above | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ dataforseo_labs_bing_related_keywords_live_item_dict = dataforseo_labs_bing_rela
 # create an instance of DataforseoLabsBingRelatedKeywordsLiveItem from a dict
 dataforseo_labs_bing_related_keywords_live_item_form_dict = dataforseo_labs_bing_related_keywords_live_item.from_dict(dataforseo_labs_bing_related_keywords_live_item_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

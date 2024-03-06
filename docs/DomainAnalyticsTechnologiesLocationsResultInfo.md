@@ -1,12 +1,15 @@
-# DomainAnalyticsTechnologiesLocationsResultInfo
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# DomainAnalyticsTechnologiesLocationsResultInfo
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**location_name** | **str** | full name of the location | [optional] 
-**country_iso_code** | **str** | ISO country code of the location | [optional] 
+**location_name** | **str** | full name of the location | [optional]
+**country_iso_code** | **str** | ISO country code of the location | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ domain_analytics_technologies_locations_result_info_dict = domain_analytics_tech
 # create an instance of DomainAnalyticsTechnologiesLocationsResultInfo from a dict
 domain_analytics_technologies_locations_result_info_form_dict = domain_analytics_technologies_locations_result_info.from_dict(domain_analytics_technologies_locations_result_info_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

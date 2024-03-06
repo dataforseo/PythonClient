@@ -1,14 +1,17 @@
-# ProductConsiderationsElement
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# ProductConsiderationsElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional] 
-**title** | **str** | title of the row | [optional] 
-**consideration_category** | **str** | category of the consideration element the category is indicated just above the title fo the consideration element | [optional] 
-**expanded_element** | [**ProductConsiderationsExpandedElement**](ProductConsiderationsExpandedElement.md) |  | [optional] 
+**type** | **str** | type of element | [optional]
+**title** | **str** | title of the row | [optional]
+**consideration_category** | **str** | category of the consideration element the category is indicated just above the title fo the consideration element | [optional]
+**expanded_element** | [**ProductConsiderationsExpandedElement**](ProductConsiderationsExpandedElement.md) |  | [optional]
 
 ## Example
 
@@ -27,6 +30,9 @@ product_considerations_element_dict = product_considerations_element_instance.to
 # create an instance of ProductConsiderationsElement from a dict
 product_considerations_element_form_dict = product_considerations_element.from_dict(product_considerations_element_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")

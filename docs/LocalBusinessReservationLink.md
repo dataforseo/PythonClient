@@ -1,12 +1,15 @@
-# LocalBusinessReservationLink
+[root](./../ "root") / [docs](./ "docs")
 
+[[Back to README.md]](./../README.md "[Back to README.md]")
+
+# LocalBusinessReservationLink
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** | title of the element domain of the reservation software | [optional] 
-**url** | **str** | URL to make a reservation | [optional] 
+**title** | **str** | title of the element domain of the reservation software | [optional]
+**url** | **str** | URL to make a reservation | [optional]
 
 ## Example
 
@@ -25,6 +28,9 @@ local_business_reservation_link_dict = local_business_reservation_link_instance.
 # create an instance of LocalBusinessReservationLink from a dict
 local_business_reservation_link_form_dict = local_business_reservation_link.from_dict(local_business_reservation_link_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
+  
 
+[root](./../ "root") / [docs](./ "docs")
+
+[[Back to README.md]](./../README.md "[Back to README.md]")
