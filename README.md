@@ -1,41 +1,45 @@
 ## OVERVIEW
 
-There is a Python client to call DataForSeo API.
+This is a Python client providing you, as a developer, with a tool for obtaining the necessary data from DataForSEO APIs. You don't have to figure out how to make a request and process a response - all that is readily available in this client.
 
-DataForSEO API uses REST technology for interchanging data between your application and our service. The data exchange is made through the widely used HTTP protocol, which allows applying our API to almost all programming languages.
+[![GitHub issues](https://img.shields.io/github/issues/dataforseo/PythonClient.svg)](https://github.com/dataforseo/PythonClient/issues)
+[![GitHub license](https://img.shields.io/github/license/dataforseo/PythonClient.svg)](https://github.com/dataforseo/PythonClient)
 
-Client contains 12 sections (aka API):
-- Serp ([source docs](./docs/SerpApi.md) | [api docs](https://docs.dataforseo.com/v3/serp/overview/?bash))
-- KeywordsData ([source docs](./docs/KeywordsDataApi.md) | [api docs](https://docs.dataforseo.com/v3/keywords_data/overview/?bash))
-- DomainAnalytics ([source docs](./docs/DomainAnalyticsApi.md) | [api docs](https://docs.dataforseo.com/v3/domain_analytics/overview/?bash))
-- DataforseoLabs ([source docs](./docs/DataforseoLabsApi.md) | [api docs](https://docs.dataforseo.com/v3/dataforseo_labs/overview/?bash))
+DataForSEO API uses REST technology for interchanging data between your application and our service. The data exchange is made through the widely used HTTP protocol, which allows using our API with almost any programming language.
+
+Client contains 12 sections (aka APIs):
+
+- SERP ([source docs](./docs/SerpApi.md) | [api docs](https://docs.dataforseo.com/v3/serp/overview/?bash))
+- Keywords Data ([source docs](./docs/KeywordsDataApi.md) | [api docs](https://docs.dataforseo.com/v3/keywords_data/overview/?bash))
+- Domain Analytics ([source docs](./docs/DomainAnalyticsApi.md) | [api docs](https://docs.dataforseo.com/v3/domain_analytics/overview/?bash))
+- DataForSEO Labs ([source docs](./docs/DataforseoLabsApi.md) | [api docs](https://docs.dataforseo.com/v3/dataforseo_labs/overview/?bash))
 - Backlinks ([source docs](./docs/BacklinksApi.md) | [api docs](https://docs.dataforseo.com/v3/backlinks/overview/?bash))
 - OnPage ([source docs](./docs/OnPageApi.md) | [api docs](https://docs.dataforseo.com/v3/on_page/overview/?bash))
-- ContentAnalysis ([source docs](./docs/ContentAnalysisApi.md) | [api docs](https://docs.dataforseo.com/v3/content_analysis/overview/?bash))
-- ContentGeneration ([source docs](./docs/ContentGenerationApi.md) | [api docs](https://docs.dataforseo.com/v3/content_generation/overview/?bash))
+- Content Analysis ([source docs](./docs/ContentAnalysisApi.md) | [api docs](https://docs.dataforseo.com/v3/content_analysis/overview/?bash))
+- Content Generation ([source docs](./docs/ContentGenerationApi.md) | [api docs](https://docs.dataforseo.com/v3/content_generation/overview/?bash))
 - Merchant ([source docs](./docs/MerchantApi.md) | [api docs](https://docs.dataforseo.com/v3/merchant/overview/?bash))
 - AppData ([source docs](./docs/AppDataApi.md) | [api docs](https://docs.dataforseo.com/v3/app_data/overview/?bash))
-- BusinessData ([source docs](./docs/BusinessDataApi.md) | [api docs](https://docs.dataforseo.com/v3/business_data/overview/?bash))
+- Business Data ([source docs](./docs/BusinessDataApi.md) | [api docs](https://docs.dataforseo.com/v3/business_data/overview/?bash))
 - Appendix ([source docs](./docs/AppendixApi.md) | [api docs](https://docs.dataforseo.com/v3/appendix/user_data/?bash))
 
 API Contains 2 types of requests:
-1) Live (Simple HTTP request/response message)
-2) Task-Based (Where you need to send a 'Task' entity to execute, waiting until the 'Task' status is ready and getting the 'Task' result in a special endpoint. Usually, it represents in 3 endpoints 'TaskPost', 'TaskReady' and 'TaskGet')
 
+1) Live (Simple HTTP request/response message)
+2) Task-based (Requires sending a 'Task' entity to execute, waiting until the 'Task' status is ready, and getting the 'Task' result in a special endpoint. Usually, it is represented by 3 types of endpoints: 'TaskPost', 'TaskReady', and 'TaskGet')
 For more details - please follow [here](https://docs.dataforseo.com/v3/?bash)
 
 ## YAML Spec
 
-Our API description is based on openAPI [syntax](https://spec.openapis.org/oas/v3.1.0) in YAML format. The YAML file attached to the project [here](./openapi_specification.yaml)
+Our API description is based on the OpenAPI [syntax](https://spec.openapis.org/oas/v3.1.0) in YAML format. The YAML file attached to the project [here](./openapi_specification.yaml)
 
 ## Documentation
-The documentation for code objects, formatted in Markdown (.md) is available [here](./docs/). Offical documentation for DataForSeo API is avaliable [here](https://docs.dataforseo.com/v3/?bash).
+The documentation for code objects, formatted in Markdown (.md) is available [here](./docs/). Official documentation for DataForSEO API is available [here](https://docs.dataforseo.com/v3/?bash).
 
 ## Code generation
 
-Code generated with using [openapi generator cli](https://openapi-generator.tech/docs/installation/)
+Code generated using the [openapi generator cli](https://openapi-generator.tech/docs/installation/)
 
-## install package from nuget.org
+## Install package from nuget.org
 
 ```bash
 pip install dataforseo-client 
