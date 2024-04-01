@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.ad_link_element import AdLinkElement
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
@@ -36,7 +36,7 @@ class PaidSerpElementItem(BaseSerpElementItem):
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb in SERP")
     is_image: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains a video")
@@ -52,11 +52,11 @@ class PaidSerpElementItem(BaseSerpElementItem):
     website_name: Optional[StrictStr] = Field(default=None, description="website name in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "breadcrumb", "is_image", "is_video", "images", "url", "highlighted", "extra", "description", "description_rows", "links", "price", "rectangle", "website_name"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

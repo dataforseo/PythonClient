@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,17 +27,17 @@ class RelatedImageSearchesElement(BaseModel):
     RelatedImageSearchesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the carousel item")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     alt: Optional[StrictStr] = Field(default=None, description="alt tag of the image")
-    url: Optional[StrictStr] = Field(default=None, description="source URL")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     __properties: ClassVar[List[str]] = ["type", "title", "alt", "url", "image_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

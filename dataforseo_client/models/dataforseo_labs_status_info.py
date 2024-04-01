@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +29,11 @@ class DataforseoLabsStatusInfo(BaseModel):
     date_update: Optional[StrictStr] = Field(default=None, description="update date of the Google endpoints indicates the last date when the Google endpoints of DataForSEO Labs API were updated; example: 2022-05-16")
     __properties: ClassVar[List[str]] = ["date_update"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

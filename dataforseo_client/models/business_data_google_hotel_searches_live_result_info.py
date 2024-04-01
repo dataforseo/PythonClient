@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.business_data_google_hotel_searches_item import BusinessDataGoogleHotelSearchesItem
 from typing import Optional, Set
@@ -36,11 +36,11 @@ class BusinessDataGoogleHotelSearchesLiveResultInfo(BaseModel):
     items: Optional[List[BusinessDataGoogleHotelSearchesItem]] = Field(default=None, description="array of items note: this field always equals null; use it to facilitate integration and ensure interoperability with the Hotel Info endpoint")
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "check_url", "datetime", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

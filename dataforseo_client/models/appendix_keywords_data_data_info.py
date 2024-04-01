@@ -17,11 +17,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_bing_keywords_data_limits_rates_data_info import AppendixBingKeywordsDataLimitsRatesDataInfo
+from dataforseo_client.models.appendix_dataforseo_trends_keywords_data_limits_rates_data_info import AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo
+from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from dataforseo_client.models.appendix_google_ads_keywords_data_limits_rates_data_info import AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo
-from dataforseo_client.models.appendix_info import AppendixInfo
 from dataforseo_client.models.appendix_keyword_performance_keywords_data_limits_rates_data_info import AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_naver_keywords_data_data_info import AppendixNaverKeywordsDataDataInfo
 from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
@@ -32,30 +33,31 @@ class AppendixKeywordsDataDataInfo(BaseModel):
     """
     AppendixKeywordsDataDataInfo
     """ # noqa: E501
-    keywords_for_keywords: Optional[AppendixInfo] = None
-    keywords_for_site: Optional[AppendixInfo] = None
-    search_volume: Optional[AppendixInfo] = None
-    ad_traffic_by_keywords: Optional[AppendixInfo] = None
+    keywords_for_keywords: Optional[AppendixFunctionInfo] = None
+    keywords_for_site: Optional[AppendixFunctionInfo] = None
+    search_volume: Optional[AppendixFunctionInfo] = None
+    ad_traffic_by_keywords: Optional[AppendixFunctionInfo] = None
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
-    explore: Optional[AppendixInfo] = None
+    explore: Optional[AppendixFunctionInfo] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     bing: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
     keyword_performance: Optional[AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo] = None
-    search_volume_history: Optional[AppendixInfo] = None
+    search_volume_history: Optional[AppendixFunctionInfo] = None
     google_ads: Optional[AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo] = None
+    dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo] = None
     naver: Optional[AppendixNaverKeywordsDataDataInfo] = None
     google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
     keyword_ideas_ads_api: Optional[AppendixSerpLimitsRatesDataInfo] = None
-    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "search_volume_history", "google_ads", "naver", "google", "keyword_ideas_ads_api"]
+    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "search_volume_history", "google_ads", "dataforseo_trends", "naver", "google", "keyword_ideas_ads_api"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -117,6 +119,9 @@ class AppendixKeywordsDataDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of google_ads
         if self.google_ads:
             _dict['google_ads'] = self.google_ads.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of dataforseo_trends
+        if self.dataforseo_trends:
+            _dict['dataforseo_trends'] = self.dataforseo_trends.to_dict()
         # override the default output from pydantic by calling `to_dict()` of naver
         if self.naver:
             _dict['naver'] = self.naver.to_dict()
@@ -163,20 +168,21 @@ class AppendixKeywordsDataDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "keywords_for_keywords": AppendixInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None,
-            "keywords_for_site": AppendixInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
-            "search_volume": AppendixInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None,
-            "ad_traffic_by_keywords": AppendixInfo.from_dict(obj["ad_traffic_by_keywords"]) if obj.get("ad_traffic_by_keywords") is not None else None,
+            "keywords_for_keywords": AppendixFunctionInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None,
+            "keywords_for_site": AppendixFunctionInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
+            "search_volume": AppendixFunctionInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None,
+            "ad_traffic_by_keywords": AppendixFunctionInfo.from_dict(obj["ad_traffic_by_keywords"]) if obj.get("ad_traffic_by_keywords") is not None else None,
             "languages": obj.get("languages"),
             "locations": obj.get("locations"),
             "tasks_ready": obj.get("tasks_ready"),
-            "explore": AppendixInfo.from_dict(obj["explore"]) if obj.get("explore") is not None else None,
+            "explore": AppendixFunctionInfo.from_dict(obj["explore"]) if obj.get("explore") is not None else None,
             "categories": obj.get("categories"),
             "errors": obj.get("errors"),
             "bing": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["bing"]) if obj.get("bing") is not None else None,
             "keyword_performance": AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
-            "search_volume_history": AppendixInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
+            "search_volume_history": AppendixFunctionInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
             "google_ads": AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.from_dict(obj["google_ads"]) if obj.get("google_ads") is not None else None,
+            "dataforseo_trends": AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.from_dict(obj["dataforseo_trends"]) if obj.get("dataforseo_trends") is not None else None,
             "naver": AppendixNaverKeywordsDataDataInfo.from_dict(obj["naver"]) if obj.get("naver") is not None else None,
             "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None,
             "keyword_ideas_ads_api": AppendixSerpLimitsRatesDataInfo.from_dict(obj["keyword_ideas_ads_api"]) if obj.get("keyword_ideas_ads_api") is not None else None

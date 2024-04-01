@@ -1,57 +1,55 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # dataforseo_client.AppDataApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**app_data_apple_languages**](AppDataApi.md#app_data_apple_languages) | **GET** /v3/app_data/apple/languages |
-[**app_data_apple_locations**](AppDataApi.md#app_data_apple_locations) | **GET** /v3/app_data/apple/locations |
-[**app_data_errors**](AppDataApi.md#app_data_errors) | **POST** /v3/app_data/errors |
-[**app_data_google_languages**](AppDataApi.md#app_data_google_languages) | **GET** /v3/app_data/google/languages |
-[**app_data_google_locations**](AppDataApi.md#app_data_google_locations) | **GET** /v3/app_data/google/locations |
-[**app_data_id_list**](AppDataApi.md#app_data_id_list) | **POST** /v3/app_data/id_list |
-[**apple_app_info_task_get_advanced**](AppDataApi.md#apple_app_info_task_get_advanced) | **GET** /v3/app_data/apple/app_info/task_get/advanced/{id} |
-[**apple_app_info_task_post**](AppDataApi.md#apple_app_info_task_post) | **POST** /v3/app_data/apple/app_info/task_post |
-[**apple_app_info_tasks_ready**](AppDataApi.md#apple_app_info_tasks_ready) | **GET** /v3/app_data/apple/app_info/tasks_ready |
-[**apple_app_list_task_get_advanced**](AppDataApi.md#apple_app_list_task_get_advanced) | **GET** /v3/app_data/apple/app_list/task_get/advanced/{id} |
-[**apple_app_list_task_post**](AppDataApi.md#apple_app_list_task_post) | **POST** /v3/app_data/apple/app_list/task_post |
-[**apple_app_list_tasks_ready**](AppDataApi.md#apple_app_list_tasks_ready) | **GET** /v3/app_data/apple/app_list/tasks_ready |
-[**apple_app_listings_categories**](AppDataApi.md#apple_app_listings_categories) | **GET** /v3/app_data/apple/app_listings/categories |
-[**apple_app_listings_search_live**](AppDataApi.md#apple_app_listings_search_live) | **POST** /v3/app_data/apple/app_listings/search/live |
-[**apple_app_reviews_task_get_advanced**](AppDataApi.md#apple_app_reviews_task_get_advanced) | **GET** /v3/app_data/apple/app_reviews/task_get/advanced/{id} |
-[**apple_app_reviews_task_post**](AppDataApi.md#apple_app_reviews_task_post) | **POST** /v3/app_data/apple/app_reviews/task_post |
-[**apple_app_reviews_tasks_ready**](AppDataApi.md#apple_app_reviews_tasks_ready) | **GET** /v3/app_data/apple/app_reviews/tasks_ready |
-[**apple_app_searches_task_get_advanced**](AppDataApi.md#apple_app_searches_task_get_advanced) | **GET** /v3/app_data/apple/app_searches/task_get/advanced/{id} |
-[**apple_app_searches_task_post**](AppDataApi.md#apple_app_searches_task_post) | **POST** /v3/app_data/apple/app_searches/task_post |
-[**apple_app_searches_tasks_ready**](AppDataApi.md#apple_app_searches_tasks_ready) | **GET** /v3/app_data/apple/app_searches/tasks_ready |
-[**apple_categories**](AppDataApi.md#apple_categories) | **GET** /v3/app_data/apple/categories |
-[**google_app_info_task_get_advanced**](AppDataApi.md#google_app_info_task_get_advanced) | **GET** /v3/app_data/google/app_info/task_get/advanced/{id} |
-[**google_app_info_task_get_html**](AppDataApi.md#google_app_info_task_get_html) | **GET** /v3/app_data/google/app_info/task_get/html/{id} |
-[**google_app_info_task_post**](AppDataApi.md#google_app_info_task_post) | **POST** /v3/app_data/google/app_info/task_post |
-[**google_app_info_tasks_ready**](AppDataApi.md#google_app_info_tasks_ready) | **GET** /v3/app_data/google/app_info/tasks_ready |
-[**google_app_list_task_get_advanced**](AppDataApi.md#google_app_list_task_get_advanced) | **GET** /v3/app_data/google/app_list/task_get/advanced/{id} |
-[**google_app_list_task_get_html**](AppDataApi.md#google_app_list_task_get_html) | **GET** /v3/app_data/google/app_list/task_get/html/{id} |
-[**google_app_list_task_post**](AppDataApi.md#google_app_list_task_post) | **POST** /v3/app_data/google/app_list/task_post |
-[**google_app_list_tasks_ready**](AppDataApi.md#google_app_list_tasks_ready) | **GET** /v3/app_data/google/app_list/tasks_ready |
-[**google_app_listings_categories**](AppDataApi.md#google_app_listings_categories) | **GET** /v3/app_data/google/app_listings/categories |
-[**google_app_listings_search_live**](AppDataApi.md#google_app_listings_search_live) | **POST** /v3/app_data/google/app_listings/search/live |
-[**google_app_reviews_task_get_advanced**](AppDataApi.md#google_app_reviews_task_get_advanced) | **GET** /v3/app_data/google/app_reviews/task_get/advanced/{id} |
-[**google_app_reviews_task_get_html**](AppDataApi.md#google_app_reviews_task_get_html) | **GET** /v3/app_data/google/app_reviews/task_get/html/{id} |
-[**google_app_reviews_task_post**](AppDataApi.md#google_app_reviews_task_post) | **POST** /v3/app_data/google/app_reviews/task_post |
-[**google_app_reviews_tasks_ready**](AppDataApi.md#google_app_reviews_tasks_ready) | **GET** /v3/app_data/google/app_reviews/tasks_ready |
-[**google_app_searches_task_get_advanced**](AppDataApi.md#google_app_searches_task_get_advanced) | **GET** /v3/app_data/google/app_searches/task_get/advanced/{id} |
-[**google_app_searches_task_get_html**](AppDataApi.md#google_app_searches_task_get_html) | **GET** /v3/app_data/google/app_searches/task_get/html/{id} |
-[**google_app_searches_task_post**](AppDataApi.md#google_app_searches_task_post) | **POST** /v3/app_data/google/app_searches/task_post |
-[**google_app_searches_tasks_ready**](AppDataApi.md#google_app_searches_tasks_ready) | **GET** /v3/app_data/google/app_searches/tasks_ready |
-[**google_categories**](AppDataApi.md#google_categories) | **GET** /v3/app_data/google/categories |
+[**app_data_apple_languages**](AppDataApi.md#app_data_apple_languages) | **GET** /v3/app_data/apple/languages | 
+[**app_data_apple_locations**](AppDataApi.md#app_data_apple_locations) | **GET** /v3/app_data/apple/locations | 
+[**app_data_errors**](AppDataApi.md#app_data_errors) | **POST** /v3/app_data/errors | 
+[**app_data_google_languages**](AppDataApi.md#app_data_google_languages) | **GET** /v3/app_data/google/languages | 
+[**app_data_google_locations**](AppDataApi.md#app_data_google_locations) | **GET** /v3/app_data/google/locations | 
+[**app_data_id_list**](AppDataApi.md#app_data_id_list) | **POST** /v3/app_data/id_list | 
+[**apple_app_info_task_get_advanced**](AppDataApi.md#apple_app_info_task_get_advanced) | **GET** /v3/app_data/apple/app_info/task_get/advanced/{id} | 
+[**apple_app_info_task_post**](AppDataApi.md#apple_app_info_task_post) | **POST** /v3/app_data/apple/app_info/task_post | 
+[**apple_app_info_tasks_ready**](AppDataApi.md#apple_app_info_tasks_ready) | **GET** /v3/app_data/apple/app_info/tasks_ready | 
+[**apple_app_list_task_get_advanced**](AppDataApi.md#apple_app_list_task_get_advanced) | **GET** /v3/app_data/apple/app_list/task_get/advanced/{id} | 
+[**apple_app_list_task_post**](AppDataApi.md#apple_app_list_task_post) | **POST** /v3/app_data/apple/app_list/task_post | 
+[**apple_app_list_tasks_ready**](AppDataApi.md#apple_app_list_tasks_ready) | **GET** /v3/app_data/apple/app_list/tasks_ready | 
+[**apple_app_listings_categories**](AppDataApi.md#apple_app_listings_categories) | **GET** /v3/app_data/apple/app_listings/categories | 
+[**apple_app_listings_search_live**](AppDataApi.md#apple_app_listings_search_live) | **POST** /v3/app_data/apple/app_listings/search/live | 
+[**apple_app_reviews_task_get_advanced**](AppDataApi.md#apple_app_reviews_task_get_advanced) | **GET** /v3/app_data/apple/app_reviews/task_get/advanced/{id} | 
+[**apple_app_reviews_task_post**](AppDataApi.md#apple_app_reviews_task_post) | **POST** /v3/app_data/apple/app_reviews/task_post | 
+[**apple_app_reviews_tasks_ready**](AppDataApi.md#apple_app_reviews_tasks_ready) | **GET** /v3/app_data/apple/app_reviews/tasks_ready | 
+[**apple_app_searches_task_get_advanced**](AppDataApi.md#apple_app_searches_task_get_advanced) | **GET** /v3/app_data/apple/app_searches/task_get/advanced/{id} | 
+[**apple_app_searches_task_post**](AppDataApi.md#apple_app_searches_task_post) | **POST** /v3/app_data/apple/app_searches/task_post | 
+[**apple_app_searches_tasks_ready**](AppDataApi.md#apple_app_searches_tasks_ready) | **GET** /v3/app_data/apple/app_searches/tasks_ready | 
+[**apple_categories**](AppDataApi.md#apple_categories) | **GET** /v3/app_data/apple/categories | 
+[**google_app_info_task_get_advanced**](AppDataApi.md#google_app_info_task_get_advanced) | **GET** /v3/app_data/google/app_info/task_get/advanced/{id} | 
+[**google_app_info_task_get_html**](AppDataApi.md#google_app_info_task_get_html) | **GET** /v3/app_data/google/app_info/task_get/html/{id} | 
+[**google_app_info_task_post**](AppDataApi.md#google_app_info_task_post) | **POST** /v3/app_data/google/app_info/task_post | 
+[**google_app_info_tasks_ready**](AppDataApi.md#google_app_info_tasks_ready) | **GET** /v3/app_data/google/app_info/tasks_ready | 
+[**google_app_list_task_get_advanced**](AppDataApi.md#google_app_list_task_get_advanced) | **GET** /v3/app_data/google/app_list/task_get/advanced/{id} | 
+[**google_app_list_task_get_html**](AppDataApi.md#google_app_list_task_get_html) | **GET** /v3/app_data/google/app_list/task_get/html/{id} | 
+[**google_app_list_task_post**](AppDataApi.md#google_app_list_task_post) | **POST** /v3/app_data/google/app_list/task_post | 
+[**google_app_list_tasks_ready**](AppDataApi.md#google_app_list_tasks_ready) | **GET** /v3/app_data/google/app_list/tasks_ready | 
+[**google_app_listings_categories**](AppDataApi.md#google_app_listings_categories) | **GET** /v3/app_data/google/app_listings/categories | 
+[**google_app_listings_search_live**](AppDataApi.md#google_app_listings_search_live) | **POST** /v3/app_data/google/app_listings/search/live | 
+[**google_app_reviews_task_get_advanced**](AppDataApi.md#google_app_reviews_task_get_advanced) | **GET** /v3/app_data/google/app_reviews/task_get/advanced/{id} | 
+[**google_app_reviews_task_get_html**](AppDataApi.md#google_app_reviews_task_get_html) | **GET** /v3/app_data/google/app_reviews/task_get/html/{id} | 
+[**google_app_reviews_task_post**](AppDataApi.md#google_app_reviews_task_post) | **POST** /v3/app_data/google/app_reviews/task_post | 
+[**google_app_reviews_tasks_ready**](AppDataApi.md#google_app_reviews_tasks_ready) | **GET** /v3/app_data/google/app_reviews/tasks_ready | 
+[**google_app_searches_task_get_advanced**](AppDataApi.md#google_app_searches_task_get_advanced) | **GET** /v3/app_data/google/app_searches/task_get/advanced/{id} | 
+[**google_app_searches_task_get_html**](AppDataApi.md#google_app_searches_task_get_html) | **GET** /v3/app_data/google/app_searches/task_get/html/{id} | 
+[**google_app_searches_task_post**](AppDataApi.md#google_app_searches_task_post) | **POST** /v3/app_data/google/app_searches/task_post | 
+[**google_app_searches_tasks_ready**](AppDataApi.md#google_app_searches_tasks_ready) | **GET** /v3/app_data/google/app_searches/tasks_ready | 
+[**google_categories**](AppDataApi.md#google_categories) | **GET** /v3/app_data/google/categories | 
+
 
 # **app_data_apple_languages**
-
 > AppDataAppleLanguagesResponseInfo app_data_apple_languages()
+
+
 
 By calling this endpoint you will receive the list of Apple languages supported in App Data API. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/languages/?bash'
 
@@ -95,6 +93,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->app_data_apple_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -109,8 +109,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -118,11 +118,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **app_data_apple_locations**
-
 > AppDataAppleLocationsResponseInfo app_data_apple_locations()
+
+
 
 By calling this endpoint you will receive the list of Apple locations supported in App Data API. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/locations/?bash'
 
@@ -166,6 +167,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->app_data_apple_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -180,8 +183,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -189,11 +192,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **app_data_errors**
-
 > AppDataErrorsResponseInfo app_data_errors(app_data_errors_request_info=app_data_errors_request_info)
+
+
 
 By calling this endpoint you will receive information about the App Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/app_data/errors/?bash'
 
@@ -239,11 +243,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->app_data_errors: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_errors_request_info** | [**List[AppDataErrorsRequestInfo]**](AppDataErrorsRequestInfo.md)|  | [optional]
+ **app_data_errors_request_info** | [**List[AppDataErrorsRequestInfo]**](AppDataErrorsRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -255,8 +262,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -264,11 +271,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **app_data_google_languages**
-
 > AppDataGoogleLanguagesResponseInfo app_data_google_languages()
+
+
 
 By calling this endpoint you will receive the list of Google languages supported in App Data API. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/languages/?bash'
 
@@ -312,6 +320,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->app_data_google_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -326,8 +336,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -335,11 +345,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **app_data_google_locations**
-
 > AppDataGoogleLocationsResponseInfo app_data_google_locations()
+
+
 
 By calling this endpoint you will receive the list of Google locations supported in App Data API. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/locations/?bash'
 
@@ -383,6 +394,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->app_data_google_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -397,8 +410,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -406,11 +419,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **app_data_id_list**
-
 > AppDataIdListResponseInfo app_data_id_list(app_data_id_list_request_info=app_data_id_list_request_info)
+
+
 
 This endpoint is designed to provide you with the list of IDs and metadata of the completed App Data tasks during the specified period. You will get all task IDs that were made including successful, uncompleted, and tasks that responded as errors. for more info please visit 'https://docs.dataforseo.com/v3/app_data/id_list/?bash'
 
@@ -456,11 +470,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->app_data_id_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_id_list_request_info** | [**List[AppDataIdListRequestInfo]**](AppDataIdListRequestInfo.md)|  | [optional]
+ **app_data_id_list_request_info** | [**List[AppDataIdListRequestInfo]**](AppDataIdListRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -472,8 +489,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -481,11 +498,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_info_task_get_advanced**
-
 > AppDataAppleAppInfoTaskGetAdvancedResponseInfo apple_app_info_task_get_advanced(id)
+
+
 
 This endpoint will provide you with information about the mobile application specified in a POST request. You will receive its ID, icon, description, reviews count, rating, images, and other data. The results are specific to the app_id parameter specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_info/task_get/advanced/?bash'
 
@@ -520,7 +538,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'ecd66181-1c02-4191-9484-0c6b2d86eb16' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '2b1fdc64-0485-4e3b-8bf4-a5efe92c5bc3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_info_task_get_advanced(id)
@@ -530,11 +548,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_info_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -546,8 +567,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -555,11 +576,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_info_task_post**
-
 > AppDataAppleAppInfoTaskPostResponseInfo apple_app_info_task_post(app_data_apple_app_info_task_post_request_info=app_data_apple_app_info_task_post_request_info)
+
+
 
 ‌‌ This endpoint will provide you with information about the App Store application specified in the app_id field of the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_info/task_post/?bash'
 
@@ -605,11 +627,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_info_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_apple_app_info_task_post_request_info** | [**List[AppDataAppleAppInfoTaskPostRequestInfo]**](AppDataAppleAppInfoTaskPostRequestInfo.md)|  | [optional]
+ **app_data_apple_app_info_task_post_request_info** | [**List[AppDataAppleAppInfoTaskPostRequestInfo]**](AppDataAppleAppInfoTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -621,8 +646,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -630,11 +655,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_info_tasks_ready**
-
 > AppDataAppleAppInfoTasksReadyResponseInfo apple_app_info_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_info/tasks_ready/?bash'
 
@@ -678,6 +704,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_info_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -692,8 +720,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -701,11 +729,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_list_task_get_advanced**
-
 > AppDataAppleAppListTaskGetAdvancedResponseInfo apple_app_list_task_get_advanced(id)
+
+
 
 This endpoint will provide you with a list of applications published in the top app charts on the App Store platform, including app IDs, ratings, prices, titles, and more. The results are specific to the app_collection as well as the location and language parameters specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_list/task_get/advanced/?bash'
 
@@ -740,7 +769,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'da1085b7-a143-4f74-8f32-fde6c7f21790' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'ea8ce2ea-6011-4439-b494-ee36ce434a51' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_list_task_get_advanced(id)
@@ -750,11 +779,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_list_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -766,8 +798,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -775,11 +807,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_list_task_post**
-
 > AppDataAppleAppListTaskPostResponseInfo apple_app_list_task_post(app_data_apple_app_list_task_post_request_info=app_data_apple_app_list_task_post_request_info)
+
+
 
 ‌‌ This endpoint will provide you with a list of mobile applications published in the top app charts on the App Store platform. The returned results are specific to the app collection as well as the language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_list/task_post/?bash'
 
@@ -825,11 +858,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_list_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_apple_app_list_task_post_request_info** | [**List[AppDataAppleAppListTaskPostRequestInfo]**](AppDataAppleAppListTaskPostRequestInfo.md)|  | [optional]
+ **app_data_apple_app_list_task_post_request_info** | [**List[AppDataAppleAppListTaskPostRequestInfo]**](AppDataAppleAppListTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -841,8 +877,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -850,11 +886,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_list_tasks_ready**
-
 > AppDataAppleAppListTasksReadyResponseInfo apple_app_list_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_list/tasks_ready/?bash'
 
@@ -898,6 +935,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_list_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -912,8 +951,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -921,11 +960,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_listings_categories**
-
 > AppDataAppleAppListingsCategoriesResponseInfo apple_app_listings_categories()
+
+
 
 This endpoint will provide you with a full list of app categories available on Apple App Store. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_listings/categories/?bash'
 
@@ -969,6 +1009,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_listings_categories: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -983,8 +1025,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -992,11 +1034,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_listings_search_live**
-
 > AppDataAppleAppListingsSearchLiveResponseInfo apple_app_listings_search_live(app_data_apple_app_listings_search_live_request_info=app_data_apple_app_listings_search_live_request_info)
+
+
 
 This endpoint will provide you with a list of apps published on App Store along with additional information: its ID, icon, reviews count, rating, price, and other data. The results are specific to the title, description, and categories parameters specified in the API request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_listings/search/live/?bash'
 
@@ -1042,11 +1085,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_listings_search_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_apple_app_listings_search_live_request_info** | [**List[AppDataAppleAppListingsSearchLiveRequestInfo]**](AppDataAppleAppListingsSearchLiveRequestInfo.md)|  | [optional]
+ **app_data_apple_app_listings_search_live_request_info** | [**List[AppDataAppleAppListingsSearchLiveRequestInfo]**](AppDataAppleAppListingsSearchLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1058,8 +1104,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1067,11 +1113,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_reviews_task_get_advanced**
-
 > AppDataAppleAppReviewsTaskGetAdvancedResponseInfo apple_app_reviews_task_get_advanced(id)
+
+
 
 This endpoint will provide you with feedback data on applications listed on the App Store platform, including review ratings, review content, user profile info of each reviewer, review publication dates, and more. The results are specific to the app_id as well as the location and language parameters specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_reviews/task_get/advanced/?bash'
 
@@ -1106,7 +1153,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '12636453-f709-4d06-8aab-8cf7ed56c707' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'd53e4d09-688d-476e-b990-4a01a92c118f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_reviews_task_get_advanced(id)
@@ -1116,11 +1163,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_reviews_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1132,8 +1182,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1141,11 +1191,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_reviews_task_post**
-
 > AppDataAppleAppReviewsTaskPostResponseInfo apple_app_reviews_task_post(app_data_apple_app_reviews_task_post_request_info=app_data_apple_app_reviews_task_post_request_info)
+
+
 
 ‌‌ This endpoint will provide you with reviews published on the App Store platform for the app specified in the app_id field. The returned results are specific to the indicated language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_reviews/task_post/?bash'
 
@@ -1191,11 +1242,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_reviews_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_apple_app_reviews_task_post_request_info** | [**List[AppDataAppleAppReviewsTaskPostRequestInfo]**](AppDataAppleAppReviewsTaskPostRequestInfo.md)|  | [optional]
+ **app_data_apple_app_reviews_task_post_request_info** | [**List[AppDataAppleAppReviewsTaskPostRequestInfo]**](AppDataAppleAppReviewsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1207,8 +1261,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1216,11 +1270,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_reviews_tasks_ready**
-
 > AppDataAppleAppReviewsTasksReadyResponseInfo apple_app_reviews_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_reviews/tasks_ready/?bash'
 
@@ -1264,6 +1319,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_reviews_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1278,8 +1335,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1287,11 +1344,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_searches_task_get_advanced**
-
 > AppDataAppleAppSearchesTaskGetAdvancedResponseInfo apple_app_searches_task_get_advanced(id)
+
+
 
 This endpoint will provide you with a list of apps ranking on the App Store for the keyword specified in a POST request. You will also receive additional information about each application: its ID, icon, reviews count, rating, price, and other data. The results are specific to the keyword as well as location and language parameters specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_searches/task_get/advanced/?bash'
 
@@ -1326,7 +1384,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '4ea56be8-3721-425b-9677-70a521e323e6' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '677d35e4-2f4f-4dc7-bed3-9c026d2345a7' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_searches_task_get_advanced(id)
@@ -1336,11 +1394,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_searches_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1352,8 +1413,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1361,11 +1422,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_searches_task_post**
-
 > AppDataAppleAppSearchesTaskPostResponseInfo apple_app_searches_task_post(app_data_task_request_info=app_data_task_request_info)
+
+
 
 ‌‌ This endpoint will provide you with a list of apps ranking on the App Store for the specified keyword. The returned results are specific to the indicated keyword, as well as the location and language parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_searches/task_post/?bash'
 
@@ -1411,11 +1473,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_searches_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_task_request_info** | [**List[AppDataTaskRequestInfo]**](AppDataTaskRequestInfo.md)|  | [optional]
+ **app_data_task_request_info** | [**List[AppDataTaskRequestInfo]**](AppDataTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1427,8 +1492,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1436,11 +1501,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_app_searches_tasks_ready**
-
 > AppDataAppleAppSearchesTasksReadyResponseInfo apple_app_searches_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_searches/tasks_ready/?bash'
 
@@ -1484,6 +1550,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_app_searches_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1498,8 +1566,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1507,11 +1575,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apple_categories**
-
 > AppDataAppleCategoriesResponseInfo apple_categories()
+
+
 
 This endpoint will provide you with a full list of app categories available on App Store. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/categories/?bash'
 
@@ -1555,6 +1624,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->apple_categories: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1569,8 +1640,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1578,11 +1649,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_info_task_get_advanced**
-
 > AppDataGoogleAppInfoTaskGetAdvancedResponseInfo google_app_info_task_get_advanced(id)
+
+
 
 This endpoint will provide you with information about the mobile application specified in a POST request. You will receive its ID, icon, description, reviews count, rating, number of installs, images, and other data. The results are specific to the app_id parameter specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_info/task_get/advanced/?bash'
 
@@ -1617,7 +1689,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '5ec98c64-a9ad-4c0f-8571-4188bca2a7a8' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'a5cd093f-0757-4597-ad6b-1ec58f1fd50c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_info_task_get_advanced(id)
@@ -1627,11 +1699,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_info_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1643,8 +1718,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1652,11 +1727,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_info_task_get_html**
-
 > AppDataGoogleAppInfoTaskGetHtmlResponseInfo google_app_info_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_info/task_get/html/?bash'
 
@@ -1691,7 +1767,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'ca3ebc34-df64-4719-9266-e81403c910fc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '89ade4b1-57b0-4aaf-a8ac-a036068b4853' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_info_task_get_html(id)
@@ -1701,11 +1777,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_info_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1717,8 +1796,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1726,11 +1805,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_info_task_post**
-
 > AppDataGoogleAppInfoTaskPostResponseInfo google_app_info_task_post(app_data_google_app_info_task_post_request_info=app_data_google_app_info_task_post_request_info)
+
+
 
 ‌‌ This endpoint will provide you with information about the Google Play application specified in the app_id field of the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_info/task_post/?bash'
 
@@ -1776,11 +1856,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_info_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_google_app_info_task_post_request_info** | [**List[AppDataGoogleAppInfoTaskPostRequestInfo]**](AppDataGoogleAppInfoTaskPostRequestInfo.md)|  | [optional]
+ **app_data_google_app_info_task_post_request_info** | [**List[AppDataGoogleAppInfoTaskPostRequestInfo]**](AppDataGoogleAppInfoTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1792,8 +1875,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1801,11 +1884,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_info_tasks_ready**
-
 > AppDataGoogleAppInfoTasksReadyResponseInfo google_app_info_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_info/tasks_ready/?bash'
 
@@ -1849,6 +1933,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_info_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1863,8 +1949,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1872,11 +1958,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_list_task_get_advanced**
-
 > AppDataGoogleAppListTaskGetAdvancedResponseInfo google_app_list_task_get_advanced(id)
+
+
 
 This endpoint will provide you with a list of applications published in the top charts on the Google Play platform, including app IDs, ratings, prices, titles, and more. The results are specific to the app_collection as well as the location and language parameters specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_list/task_get/advanced/?bash'
 
@@ -1911,7 +1998,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'd75cf7f2-fb9f-48d6-a244-b265a59bcfb6' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '89742f3f-813e-4c4f-b751-9ef6adf758f9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_list_task_get_advanced(id)
@@ -1921,11 +2008,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_list_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1937,8 +2027,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1946,11 +2036,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_list_task_get_html**
-
 > AppDataGoogleAppListTaskGetHtmlResponseInfo google_app_list_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_list/task_get/html/?bash'
 
@@ -1985,7 +2076,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '54f2ac50-e75c-4753-88db-ec7e4602443b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'ba91257e-1f0f-4192-9034-d5d4d2208077' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_list_task_get_html(id)
@@ -1995,11 +2086,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_list_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2011,8 +2105,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2020,11 +2114,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_list_task_post**
-
 > AppDataGoogleAppListTaskPostResponseInfo google_app_list_task_post(app_data_google_app_list_task_post_request_info=app_data_google_app_list_task_post_request_info)
+
+
 
 ‌‌ This endpoint will provide you with a list of mobile applications published in the top charts on the Google Play platform. The returned results are specific to the app collection as well as the the language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_list/task_post/?bash'
 
@@ -2070,11 +2165,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_list_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_google_app_list_task_post_request_info** | [**List[AppDataGoogleAppListTaskPostRequestInfo]**](AppDataGoogleAppListTaskPostRequestInfo.md)|  | [optional]
+ **app_data_google_app_list_task_post_request_info** | [**List[AppDataGoogleAppListTaskPostRequestInfo]**](AppDataGoogleAppListTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2086,8 +2184,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2095,11 +2193,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_list_tasks_ready**
-
 > AppDataGoogleAppListTasksReadyResponseInfo google_app_list_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_list/tasks_ready/?bash'
 
@@ -2143,6 +2242,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_list_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2157,8 +2258,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2166,11 +2267,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_listings_categories**
-
 > AppDataGoogleAppListingsCategoriesResponseInfo google_app_listings_categories()
+
+
 
 This endpoint will provide you with a full list of app categories available on Google Play. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_listings/categories/?bash'
 
@@ -2214,6 +2316,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_listings_categories: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2228,8 +2332,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2237,11 +2341,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_listings_search_live**
-
 > AppDataGoogleAppListingsSearchLiveResponseInfo google_app_listings_search_live(app_data_google_app_listings_search_live_request_info=app_data_google_app_listings_search_live_request_info)
+
+
 
 This endpoint will provide you with a list of apps published on Google Play along with additional information: its ID, icon, reviews count, rating, price, and other data. The results are specific to the title, description, and categories parameters specified in the API request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_listings/search/live/?bash'
 
@@ -2287,11 +2392,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_listings_search_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_google_app_listings_search_live_request_info** | [**List[AppDataGoogleAppListingsSearchLiveRequestInfo]**](AppDataGoogleAppListingsSearchLiveRequestInfo.md)|  | [optional]
+ **app_data_google_app_listings_search_live_request_info** | [**List[AppDataGoogleAppListingsSearchLiveRequestInfo]**](AppDataGoogleAppListingsSearchLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2303,8 +2411,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2312,11 +2420,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_reviews_task_get_advanced**
-
 > AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo google_app_reviews_task_get_advanced(id)
+
+
 
 This endpoint will provide you with feedback data on applications listed on the Google Play platform, including review ratings, review content, user profile info of each reviewer, review publication dates, and more. The results are specific to the app_id as well as the location and language parameters specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_reviews/task_get/advanced/?bash'
 
@@ -2351,7 +2460,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '99045ba1-d4c6-47f5-8fb7-e44aa0f56f92' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '85adb70d-7511-4f3a-8f40-ca0fe89c2c6b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_reviews_task_get_advanced(id)
@@ -2361,11 +2470,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_reviews_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2377,8 +2489,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2386,11 +2498,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_reviews_task_get_html**
-
 > AppDataGoogleAppReviewsTaskGetHtmlResponseInfo google_app_reviews_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_reviews/task_get/html/?bash'
 
@@ -2425,7 +2538,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'd8cab622-f124-45c7-94e4-38ce95695091' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'd4e9d13f-916f-4d52-a27a-d78edd6ec6b8' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_reviews_task_get_html(id)
@@ -2435,11 +2548,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_reviews_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2451,8 +2567,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2460,11 +2576,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_reviews_task_post**
-
 > AppDataGoogleAppReviewsTaskPostResponseInfo google_app_reviews_task_post(app_data_google_app_reviews_task_post_request_info=app_data_google_app_reviews_task_post_request_info)
+
+
 
 ‌‌ This endpoint will provide you with reviews published on the Google Play platform for the app specified in the app_id field. The returned results are specific to the indicated language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_reviews/task_post/?bash'
 
@@ -2510,11 +2627,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_reviews_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_google_app_reviews_task_post_request_info** | [**List[AppDataGoogleAppReviewsTaskPostRequestInfo]**](AppDataGoogleAppReviewsTaskPostRequestInfo.md)|  | [optional]
+ **app_data_google_app_reviews_task_post_request_info** | [**List[AppDataGoogleAppReviewsTaskPostRequestInfo]**](AppDataGoogleAppReviewsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2526,8 +2646,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2535,11 +2655,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_reviews_tasks_ready**
-
 > AppDataGoogleAppReviewsTasksReadyResponseInfo google_app_reviews_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_reviews/tasks_ready/?bash'
 
@@ -2583,6 +2704,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_reviews_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2597,8 +2720,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2606,11 +2729,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_searches_task_get_advanced**
-
 > AppDataGoogleAppSearchesTaskGetAdvancedResponseInfo google_app_searches_task_get_advanced(id)
+
+
 
 This endpoint will provide you with a list of apps ranking on Google Play for the keyword specified in a POST request. You will also receive additional information about each application: its ID, icon, reviews count, rating, price, and other data. The results are specific to the keyword as well as location and language parameters specified in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_searches/task_get/advanced/?bash'
 
@@ -2645,7 +2769,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '0a5f7490-c4ab-409d-a052-ab80ffaa5f66' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'dd56e61a-b197-4369-b5c0-6f9406b80dc5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_searches_task_get_advanced(id)
@@ -2655,11 +2779,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_searches_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2671,8 +2798,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2680,11 +2807,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_searches_task_get_html**
-
 > AppDataGoogleAppSearchesTaskGetHtmlResponseInfo google_app_searches_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_searches/task_get/html/?bash'
 
@@ -2719,7 +2847,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'eaba0a88-f143-4441-9349-48a653994780' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '69e58c87-5672-43a8-9844-2798f1afe359' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_searches_task_get_html(id)
@@ -2729,11 +2857,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_searches_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2745,8 +2876,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2754,11 +2885,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_searches_task_post**
-
 > AppDataGoogleAppSearchesTaskPostResponseInfo google_app_searches_task_post(app_data_task_request_info=app_data_task_request_info)
+
+
 
 ‌‌ This endpoint will provide you with a list of apps ranking on Google Play for the specified keyword. The returned results are specific to the indicated keyword, as well as the language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_searches/task_post/?bash'
 
@@ -2804,11 +2936,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_searches_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**app_data_task_request_info** | [**List[AppDataTaskRequestInfo]**](AppDataTaskRequestInfo.md)|  | [optional]
+ **app_data_task_request_info** | [**List[AppDataTaskRequestInfo]**](AppDataTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2820,8 +2955,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2829,11 +2964,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_app_searches_tasks_ready**
-
 > AppDataGoogleAppSearchesTasksReadyResponseInfo google_app_searches_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks that haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoints. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_searches/tasks_ready/?bash'
 
@@ -2877,6 +3013,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_app_searches_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2891,8 +3029,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2900,11 +3038,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_categories**
-
 > AppDataGoogleCategoriesResponseInfo google_categories()
+
+
 
 This endpoint will provide you with a full list of app categories available on Google Play. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/categories/?bash'
 
@@ -2948,6 +3087,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppDataApi->google_categories: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2962,8 +3103,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2971,8 +3112,5 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

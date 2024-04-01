@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
@@ -64,11 +64,11 @@ class AppendixDataforseoLabsPriceData(BaseModel):
     top_searches: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["app_competitors", "app_intersection", "bulk_app_metrics", "bulk_keyword_difficulty", "bulk_search_volume", "bulk_traffic_estimation", "categories", "categories_for_domain", "competitors_domain", "domain_intersection", "domain_metrics_by_categories", "domain_rank_overview", "domain_whois_overview", "errors", "historical_rank_overview", "historical_search_volume", "historical_serps", "keyword_ideas", "keywords_for_app", "keywords_for_categories", "keywords_for_site", "keyword_suggestions", "locations_and_languages", "page_intersection", "product_competitors", "product_keyword_intersections", "product_rank_overview", "ranked_keywords", "related_keywords", "relevant_pages", "search_intent", "serp_competitors", "subdomains", "top_searches"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

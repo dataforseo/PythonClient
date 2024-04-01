@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -48,13 +48,14 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
     referring_links_platform_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="types of referring platforms indicates referring platform types and and link count per each platform")
     referring_links_semantic_locations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="semantic locations of the referring links indicates semantic elements in HTML where the referring links are located and link count per each semantic location you can get the full list of semantic elements here examples: article, section, footer")
     referring_links_countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="ISO country codes of the referring links indicates ISO country codes of the domains where the referring links are located and the link count per each country")
-    __properties: ClassVar[List[str]] = ["type", "url", "rank", "backlinks", "first_seen", "lost_date", "backlinks_spam_score", "broken_backlinks", "broken_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets", "referring_pages", "referring_links_tld", "referring_links_types", "referring_links_attributes", "referring_links_platform_types", "referring_links_semantic_locations", "referring_links_countries"]
+    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the target")
+    __properties: ClassVar[List[str]] = ["type", "url", "rank", "backlinks", "first_seen", "lost_date", "backlinks_spam_score", "broken_backlinks", "broken_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets", "referring_pages", "referring_links_tld", "referring_links_types", "referring_links_attributes", "referring_links_platform_types", "referring_links_semantic_locations", "referring_links_countries", "referring_pages_nofollow"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -199,6 +200,11 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
         if self.referring_links_countries is None and "referring_links_countries" in self.model_fields_set:
             _dict['referring_links_countries'] = None
 
+        # set to None if referring_pages_nofollow (nullable) is None
+        # and model_fields_set contains the field
+        if self.referring_pages_nofollow is None and "referring_pages_nofollow" in self.model_fields_set:
+            _dict['referring_pages_nofollow'] = None
+
         return _dict
 
     @classmethod
@@ -232,7 +238,8 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
             "referring_links_attributes": obj.get("referring_links_attributes"),
             "referring_links_platform_types": obj.get("referring_links_platform_types"),
             "referring_links_semantic_locations": obj.get("referring_links_semantic_locations"),
-            "referring_links_countries": obj.get("referring_links_countries")
+            "referring_links_countries": obj.get("referring_links_countries"),
+            "referring_pages_nofollow": obj.get("referring_pages_nofollow")
         })
         return _obj
 

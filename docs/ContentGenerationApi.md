@@ -1,27 +1,25 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # dataforseo_client.ContentGenerationApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check_grammar_live**](ContentGenerationApi.md#check_grammar_live) | **POST** /v3/content_generation/check_grammar/live |
-[**content_generation_check_grammar_languages**](ContentGenerationApi.md#content_generation_check_grammar_languages) | **GET** /v3/content_generation/check_grammar/languages |
-[**content_generation_text_summary_languages**](ContentGenerationApi.md#content_generation_text_summary_languages) | **GET** /v3/content_generation/text_summary/languages |
-[**generate_live**](ContentGenerationApi.md#generate_live) | **POST** /v3/content_generation/generate/live |
-[**generate_meta_tags_live**](ContentGenerationApi.md#generate_meta_tags_live) | **POST** /v3/content_generation/generate_meta_tags/live |
-[**generate_sub_topics_live**](ContentGenerationApi.md#generate_sub_topics_live) | **POST** /v3/content_generation/generate_sub_topics/live |
-[**generate_text_live**](ContentGenerationApi.md#generate_text_live) | **POST** /v3/content_generation/generate_text/live |
-[**grammar_rules**](ContentGenerationApi.md#grammar_rules) | **GET** /v3/content_generation/grammar_rules |
-[**paraphrase_live**](ContentGenerationApi.md#paraphrase_live) | **POST** /v3/content_generation/paraphrase/live |
-[**text_summary_live**](ContentGenerationApi.md#text_summary_live) | **POST** /v3/content_generation/text_summary/live |
+[**check_grammar_live**](ContentGenerationApi.md#check_grammar_live) | **POST** /v3/content_generation/check_grammar/live | 
+[**content_generation_check_grammar_languages**](ContentGenerationApi.md#content_generation_check_grammar_languages) | **GET** /v3/content_generation/check_grammar/languages | 
+[**content_generation_text_summary_languages**](ContentGenerationApi.md#content_generation_text_summary_languages) | **GET** /v3/content_generation/text_summary/languages | 
+[**generate_live**](ContentGenerationApi.md#generate_live) | **POST** /v3/content_generation/generate/live | 
+[**generate_meta_tags_live**](ContentGenerationApi.md#generate_meta_tags_live) | **POST** /v3/content_generation/generate_meta_tags/live | 
+[**generate_sub_topics_live**](ContentGenerationApi.md#generate_sub_topics_live) | **POST** /v3/content_generation/generate_sub_topics/live | 
+[**generate_text_live**](ContentGenerationApi.md#generate_text_live) | **POST** /v3/content_generation/generate_text/live | 
+[**grammar_rules**](ContentGenerationApi.md#grammar_rules) | **GET** /v3/content_generation/grammar_rules | 
+[**paraphrase_live**](ContentGenerationApi.md#paraphrase_live) | **POST** /v3/content_generation/paraphrase/live | 
+[**text_summary_live**](ContentGenerationApi.md#text_summary_live) | **POST** /v3/content_generation/text_summary/live | 
+
 
 # **check_grammar_live**
-
 > ContentGenerationCheckGrammarLiveResponseInfo check_grammar_live(content_generation_check_grammar_live_request_info=content_generation_check_grammar_live_request_info)
+
+
 
 ‌ This endpoint will provide you with grammar and spelling corrections for the text you specify. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/check_grammar/live/?bash'
 
@@ -67,11 +65,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->check_grammar_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**content_generation_check_grammar_live_request_info** | [**List[ContentGenerationCheckGrammarLiveRequestInfo]**](ContentGenerationCheckGrammarLiveRequestInfo.md)|  | [optional]
+ **content_generation_check_grammar_live_request_info** | [**List[ContentGenerationCheckGrammarLiveRequestInfo]**](ContentGenerationCheckGrammarLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -83,8 +84,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -92,11 +93,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **content_generation_check_grammar_languages**
-
 > ContentGenerationCheckGrammarLanguagesResponseInfo content_generation_check_grammar_languages()
+
+
 
 You will receive the list of languages by calling this API.   As a response of the API server, you will receive JSON-encoded data containing a tasks array with the information specific to the set tasks. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/check_grammar/languages/?bash'
 
@@ -140,6 +142,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->content_generation_check_grammar_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -154,8 +158,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -163,11 +167,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **content_generation_text_summary_languages**
-
 > ContentGenerationTextSummaryLanguagesResponseInfo content_generation_text_summary_languages()
+
+
 
 You will receive the list of languages by calling this API.   As a response of the API server, you will receive JSON-encoded data containing a tasks array with the information specific to the set tasks. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/text_summary/languages/?bash'
 
@@ -211,6 +216,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->content_generation_text_summary_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -225,8 +232,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -234,11 +241,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_live**
-
 > ContentGenerationGenerateLiveResponseInfo generate_live(content_generation_generate_live_request_info=content_generation_generate_live_request_info)
+
+
 
 ‌ This endpoint will provide you with a text generated based on the part of the text you define and other available parameters. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/generate/live/?bash'
 
@@ -284,11 +292,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->generate_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**content_generation_generate_live_request_info** | [**List[ContentGenerationGenerateLiveRequestInfo]**](ContentGenerationGenerateLiveRequestInfo.md)|  | [optional]
+ **content_generation_generate_live_request_info** | [**List[ContentGenerationGenerateLiveRequestInfo]**](ContentGenerationGenerateLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -300,8 +311,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -309,11 +320,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_meta_tags_live**
-
 > ContentGenerationGenerateMetaTagsLiveResponseInfo generate_meta_tags_live(content_generation_generate_meta_tags_live_request_info=content_generation_generate_meta_tags_live_request_info)
+
+
 
 ‌ This endpoint is designed to generate title and description meta tags for a text specified in the request. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/generate_meta_tags/live/?bash'
 
@@ -359,11 +371,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->generate_meta_tags_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**content_generation_generate_meta_tags_live_request_info** | [**List[ContentGenerationGenerateMetaTagsLiveRequestInfo]**](ContentGenerationGenerateMetaTagsLiveRequestInfo.md)|  | [optional]
+ **content_generation_generate_meta_tags_live_request_info** | [**List[ContentGenerationGenerateMetaTagsLiveRequestInfo]**](ContentGenerationGenerateMetaTagsLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -375,8 +390,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -384,11 +399,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_sub_topics_live**
-
 > ContentGenerationGenerateSubTopicsLiveResponseInfo generate_sub_topics_live(content_generation_generate_sub_topics_live_request_info=content_generation_generate_sub_topics_live_request_info)
+
+
 
 ‌ This endpoint will provide you with 10 subtopics generated based on the topic and other parameters you specify. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/generate_sub_topics/live/?bash'
 
@@ -434,11 +450,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->generate_sub_topics_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**content_generation_generate_sub_topics_live_request_info** | [**List[ContentGenerationGenerateSubTopicsLiveRequestInfo]**](ContentGenerationGenerateSubTopicsLiveRequestInfo.md)|  | [optional]
+ **content_generation_generate_sub_topics_live_request_info** | [**List[ContentGenerationGenerateSubTopicsLiveRequestInfo]**](ContentGenerationGenerateSubTopicsLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -450,8 +469,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -459,11 +478,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_text_live**
-
 > ContentGenerationGenerateTextLiveResponseInfo generate_text_live(content_generation_generate_text_live_request_info=content_generation_generate_text_live_request_info)
+
+
 
 ‌ This endpoint will provide you with a text generated based on the topic and other parameters you specify. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/generate_text/live/?bash'
 
@@ -509,11 +529,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->generate_text_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**content_generation_generate_text_live_request_info** | [**List[ContentGenerationGenerateTextLiveRequestInfo]**](ContentGenerationGenerateTextLiveRequestInfo.md)|  | [optional]
+ **content_generation_generate_text_live_request_info** | [**List[ContentGenerationGenerateTextLiveRequestInfo]**](ContentGenerationGenerateTextLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -525,8 +548,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -534,11 +557,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **grammar_rules**
-
 > ContentGenerationGrammarRulesResponseInfo grammar_rules()
+
+
 
 You will receive the list of grammar rules by calling this API.   As a response of the API server, you will receive JSON-encoded data containing a tasks array with the information specific to the set tasks. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/grammar_rules/?bash'
 
@@ -582,6 +606,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->grammar_rules: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -596,8 +622,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -605,11 +631,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **paraphrase_live**
-
 > ContentGenerationParaphraseLiveResponseInfo paraphrase_live(content_generation_paraphrase_live_request_info=content_generation_paraphrase_live_request_info)
+
+
 
 ‌ This endpoint will provide you with a paraphrased version of the text you specify. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/paraphrase/live/?bash'
 
@@ -655,11 +682,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->paraphrase_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**content_generation_paraphrase_live_request_info** | [**List[ContentGenerationParaphraseLiveRequestInfo]**](ContentGenerationParaphraseLiveRequestInfo.md)|  | [optional]
+ **content_generation_paraphrase_live_request_info** | [**List[ContentGenerationParaphraseLiveRequestInfo]**](ContentGenerationParaphraseLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -671,8 +701,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -680,11 +710,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **text_summary_live**
-
 > ContentGenerationTextSummaryLiveResponseInfo text_summary_live(content_generation_text_summary_live_request_info=content_generation_text_summary_live_request_info)
+
+
 
 ‌ This endpoint will provide you with statistical data based on the given text, such as the number of words and sentences, vocabulary density, and text readability. for more info please visit 'https://docs.dataforseo.com/v3/content_generation/text_summary/live/?bash'
 
@@ -730,11 +761,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling ContentGenerationApi->text_summary_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**content_generation_text_summary_live_request_info** | [**List[ContentGenerationTextSummaryLiveRequestInfo]**](ContentGenerationTextSummaryLiveRequestInfo.md)|  | [optional]
+ **content_generation_text_summary_live_request_info** | [**List[ContentGenerationTextSummaryLiveRequestInfo]**](ContentGenerationTextSummaryLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -746,8 +780,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -755,8 +789,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

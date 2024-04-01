@@ -1,15 +1,12 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # LocalJustificationInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional]
-**text** | **str** | text snippet of local justification | [optional]
+**type** | **str** | type of element | [optional] 
+**text** | **str** | text snippet of local justification | [optional] 
 
 ## Example
 
@@ -21,16 +18,13 @@ json = "{}"
 # create an instance of LocalJustificationInfo from a JSON string
 local_justification_info_instance = LocalJustificationInfo.from_json(json)
 # print the JSON string representation of the object
-print LocalJustificationInfo.to_json()
+print(LocalJustificationInfo.to_json())
 
 # convert the object into a dict
 local_justification_info_dict = local_justification_info_instance.to_dict()
 # create an instance of LocalJustificationInfo from a dict
 local_justification_info_form_dict = local_justification_info.from_dict(local_justification_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

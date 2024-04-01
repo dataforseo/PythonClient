@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.avg_backlinks_info import AvgBacklinksInfo
+from dataforseo_client.models.backlinks_info import BacklinksInfo
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.rank_changes import RankChanges
 from dataforseo_client.models.rank_info import RankInfo
@@ -39,7 +39,7 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     phone: Optional[StrictStr] = Field(default=None, description="phone number")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates whether the element is an ad")
     rating: Optional[RatingInfo] = None
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
@@ -49,15 +49,15 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = None
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    backlinks_info: Optional[AvgBacklinksInfo] = None
+    backlinks_info: Optional[BacklinksInfo] = None
     rank_info: Optional[RankInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "domain", "phone", "url", "is_paid", "rating", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "se_type", "backlinks_info", "rank_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -220,7 +220,7 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
             "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None,
             "se_type": obj.get("se_type"),
-            "backlinks_info": AvgBacklinksInfo.from_dict(obj["backlinks_info"]) if obj.get("backlinks_info") is not None else None,
+            "backlinks_info": BacklinksInfo.from_dict(obj["backlinks_info"]) if obj.get("backlinks_info") is not None else None,
             "rank_info": RankInfo.from_dict(obj["rank_info"]) if obj.get("rank_info") is not None else None
         })
         return _obj

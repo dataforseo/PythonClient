@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.graph import Graph
@@ -38,17 +38,17 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the shopping_element")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
     price: Optional[PriceInfo] = None
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     table: Optional[Table] = None
     graph: Optional[Graph] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "source", "snippet", "price", "url", "domain", "table", "graph"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.images_element import ImagesElement
 from dataforseo_client.models.table import Table
@@ -30,20 +30,20 @@ class PeopleAlsoAskExpandedElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     featured_title: Optional[StrictStr] = Field(default=None, description="the title of the featured snippets source page")
-    url: Optional[StrictStr] = Field(default=None, description="URL")
-    domain: Optional[StrictStr] = Field(default=None, description="website domain")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description="description of the hotel booking element")
+    url: Optional[StrictStr] = Field(default=None, description="URL of element")
+    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    title: Optional[StrictStr] = Field(default=None, description="title of the carousel item")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     images: Optional[List[ImagesElement]] = Field(default=None, description="images of the element")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     table: Optional[Table] = None
     __properties: ClassVar[List[str]] = ["type", "featured_title", "url", "domain", "title", "description", "images", "timestamp", "table"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -52,11 +52,11 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
     amenities: Optional[List[StrictStr]] = Field(default=None, description="hotel amenities optional field you can use this field to specify different hotel amenities example:   [             \"free_parking\",             \"pets_allowed\"         ]  possible values: \"air_conditioning\", \"all_inclusive_available\", \"bar\", \"free_breakfast\", \"fitness_center\", \"kid_friendly\", \"free_parking\", \"pets_allowed\", \"pool\", \"restaurant\", \"room_service\", \"spa\", \"free_wifi\", \"parking\", \"indoor_pool\", \"outdoor_pool\", \"wheelchair_accessible\", \"beach_access\"")
     __properties: ClassVar[List[str]] = ["keyword", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "tag", "postback_url", "pingback_url", "depth", "check_in", "check_out", "currency", "adults", "children", "stars", "min_rating", "sort_by", "min_price", "max_price", "free_cancellation", "is_vacation_rentals", "amenities"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

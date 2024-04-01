@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,11 +40,11 @@ class PageMetrics(BaseModel):
     checks: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="page-specific on-page check-ups")
     __properties: ClassVar[List[str]] = ["links_external", "links_internal", "duplicate_title", "duplicate_description", "duplicate_content", "broken_links", "broken_resources", "links_relation_conflict", "redirect_loop", "onpage_score", "non_indexable", "checks"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.keyword_kpi_info import KeywordKpiInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class KeywordKpi(BaseModel):
     tablet: Optional[List[KeywordKpiInfo]] = Field(default=None, description="keyword data aggregated for tablet devices if there is no data, then the value is null")
     __properties: ClassVar[List[str]] = ["desktop", "mobile", "tablet"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

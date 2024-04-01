@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_task_get_product_google_merchant_price_data_info import AppendixTaskGetProductGoogleMerchantPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
@@ -33,11 +33,11 @@ class AppendixProductGoogleMerchantPriceDataInfo(BaseModel):
     tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["task_get", "task_post", "tasks_ready"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

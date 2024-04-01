@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from typing import Optional, Set
@@ -32,14 +32,14 @@ class GoogleHotelsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIte
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     hotel_identifier: Optional[StrictStr] = Field(default=None, description="unique hotel identifier unique hotel identifier assigned by Google; example: \"CgoIjaeSlI6CnNpVEAE\"")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "hotel_identifier", "url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

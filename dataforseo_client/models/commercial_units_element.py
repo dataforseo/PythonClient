@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_info import RatingInfo
@@ -29,19 +29,19 @@ class CommercialUnitsElement(BaseModel):
     CommercialUnitsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
     price: Optional[PriceInfo] = None
-    source: Optional[StrictStr] = Field(default=None, description="web source of the hotel booking element indicates the source of information included in the element")
+    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
     rating: Optional[RatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "url", "domain", "price", "source", "rating"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

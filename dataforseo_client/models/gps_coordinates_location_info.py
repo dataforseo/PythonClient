@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,11 +30,11 @@ class GpsCoordinatesLocationInfo(BaseModel):
     longitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="longitude coordinate of the hotel in google maps example: \"longitude\": -0.31365919999999997")
     __properties: ClassVar[List[str]] = ["latitude", "longitude"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

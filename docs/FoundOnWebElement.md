@@ -1,17 +1,14 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # FoundOnWebElement
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional]
-**title** | **str** | title of the row | [optional]
-**subtitle** | **str** | subtitle of the element | [optional]
-**image** | [**ImagesElement**](ImagesElement.md) |  | [optional]
+**type** | **str** | type of element | [optional] 
+**title** | **str** | title of a given link element | [optional] 
+**subtitle** | **str** | subtitle of the element | [optional] 
+**image** | [**ImagesElement**](ImagesElement.md) |  | [optional] 
 
 ## Example
 
@@ -23,16 +20,13 @@ json = "{}"
 # create an instance of FoundOnWebElement from a JSON string
 found_on_web_element_instance = FoundOnWebElement.from_json(json)
 # print the JSON string representation of the object
-print FoundOnWebElement.to_json()
+print(FoundOnWebElement.to_json())
 
 # convert the object into a dict
 found_on_web_element_dict = found_on_web_element_instance.to_dict()
 # create an instance of FoundOnWebElement from a dict
 found_on_web_element_form_dict = found_on_web_element.from_dict(found_on_web_element_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

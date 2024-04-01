@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_page_intersection_info import BacklinksPageIntersectionInfo
-from dataforseo_client.models.summary import Summary
+from dataforseo_client.models.intersection_summary_info import IntersectionSummaryInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,14 +29,14 @@ class BacklinksPageIntersectionLiveItem(BaseModel):
     BacklinksPageIntersectionLiveItem
     """ # noqa: E501
     page_intersection: Optional[Dict[str, List[BacklinksPageIntersectionInfo]]] = Field(default=None, description="contains data on pages that link to the corresponding targets specified in the POST array data is provided in separate objects corresponding to pages specified in the targets object")
-    summary: Optional[Summary] = None
+    summary: Optional[IntersectionSummaryInfo] = None
     __properties: ClassVar[List[str]] = ["page_intersection", "summary"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -108,7 +108,7 @@ class BacklinksPageIntersectionLiveItem(BaseModel):
                 )
                 for _k, _v in obj.get("page_intersection", {}).items()
             ),
-            "summary": Summary.from_dict(obj["summary"]) if obj.get("summary") is not None else None
+            "summary": IntersectionSummaryInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None
         })
         return _obj
 

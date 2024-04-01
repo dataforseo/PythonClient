@@ -1,20 +1,17 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # AppendixContentGenerationLimitsRatesDataInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**generate** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
-**generate_meta_tags** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
-**generate_text** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
-**paraphrase** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
-**check_grammar** | [**AppendixContentGenerationDayLimitsRatesDataInfo**](AppendixContentGenerationDayLimitsRatesDataInfo.md) |  | [optional]
-**text_summary** | [**AppendixContentGenerationDayLimitsRatesDataInfo**](AppendixContentGenerationDayLimitsRatesDataInfo.md) |  | [optional]
-**generate_sub_topics** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**generate** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**generate_meta_tags** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**generate_text** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**paraphrase** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**check_grammar** | [**AppendixContentGenerationDayLimitsRatesDataInfo**](AppendixContentGenerationDayLimitsRatesDataInfo.md) |  | [optional] 
+**text_summary** | [**AppendixContentGenerationDayLimitsRatesDataInfo**](AppendixContentGenerationDayLimitsRatesDataInfo.md) |  | [optional] 
+**generate_sub_topics** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
 
 ## Example
 
@@ -26,16 +23,13 @@ json = "{}"
 # create an instance of AppendixContentGenerationLimitsRatesDataInfo from a JSON string
 appendix_content_generation_limits_rates_data_info_instance = AppendixContentGenerationLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixContentGenerationLimitsRatesDataInfo.to_json()
+print(AppendixContentGenerationLimitsRatesDataInfo.to_json())
 
 # convert the object into a dict
 appendix_content_generation_limits_rates_data_info_dict = appendix_content_generation_limits_rates_data_info_instance.to_dict()
 # create an instance of AppendixContentGenerationLimitsRatesDataInfo from a dict
 appendix_content_generation_limits_rates_data_info_form_dict = appendix_content_generation_limits_rates_data_info.from_dict(appendix_content_generation_limits_rates_data_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

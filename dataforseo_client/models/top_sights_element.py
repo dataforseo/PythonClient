@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
@@ -28,17 +28,17 @@ class TopSightsElement(BaseModel):
     TopSightsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
+    description: Optional[StrictStr] = Field(default=None, description="description")
     rating: Optional[RatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "url", "description", "rating"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_info import AppendixInfo
+from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,23 +27,23 @@ class AppendixContentAnalysisLimitsRatesDataInfo(BaseModel):
     """
     AppendixContentAnalysisLimitsRatesDataInfo
     """ # noqa: E501
-    search: Optional[AppendixInfo] = None
-    summary: Optional[AppendixInfo] = None
-    sentiment_analysis: Optional[AppendixInfo] = None
-    rating_distribution: Optional[AppendixInfo] = None
-    phrase_trends: Optional[AppendixInfo] = None
-    category_trends: Optional[AppendixInfo] = None
+    search: Optional[AppendixFunctionInfo] = None
+    summary: Optional[AppendixFunctionInfo] = None
+    sentiment_analysis: Optional[AppendixFunctionInfo] = None
+    rating_distribution: Optional[AppendixFunctionInfo] = None
+    phrase_trends: Optional[AppendixFunctionInfo] = None
+    category_trends: Optional[AppendixFunctionInfo] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["search", "summary", "sentiment_analysis", "rating_distribution", "phrase_trends", "category_trends", "locations", "languages", "categories", "errors"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -128,12 +128,12 @@ class AppendixContentAnalysisLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "search": AppendixInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
-            "summary": AppendixInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
-            "sentiment_analysis": AppendixInfo.from_dict(obj["sentiment_analysis"]) if obj.get("sentiment_analysis") is not None else None,
-            "rating_distribution": AppendixInfo.from_dict(obj["rating_distribution"]) if obj.get("rating_distribution") is not None else None,
-            "phrase_trends": AppendixInfo.from_dict(obj["phrase_trends"]) if obj.get("phrase_trends") is not None else None,
-            "category_trends": AppendixInfo.from_dict(obj["category_trends"]) if obj.get("category_trends") is not None else None,
+            "search": AppendixFunctionInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
+            "summary": AppendixFunctionInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
+            "sentiment_analysis": AppendixFunctionInfo.from_dict(obj["sentiment_analysis"]) if obj.get("sentiment_analysis") is not None else None,
+            "rating_distribution": AppendixFunctionInfo.from_dict(obj["rating_distribution"]) if obj.get("rating_distribution") is not None else None,
+            "phrase_trends": AppendixFunctionInfo.from_dict(obj["phrase_trends"]) if obj.get("phrase_trends") is not None else None,
+            "category_trends": AppendixFunctionInfo.from_dict(obj["category_trends"]) if obj.get("category_trends") is not None else None,
             "locations": obj.get("locations"),
             "languages": obj.get("languages"),
             "categories": obj.get("categories"),

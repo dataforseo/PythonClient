@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class OnPageDuplicateTagsItem(BaseModel):
     pages: Optional[List[BaseOnPageResourceItemInfo]] = Field(default=None, description="pages with duplicate tags")
     __properties: ClassVar[List[str]] = ["accumulator", "total_count", "pages"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

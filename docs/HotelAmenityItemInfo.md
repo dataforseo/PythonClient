@@ -1,17 +1,14 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # HotelAmenityItemInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amenity** | **str** | standardised amenity name | [optional]
-**amenity_label** | **str** | displayed amenity name | [optional]
-**hint** | **str** | standardised details about the amenity | [optional]
-**hint_label** | **str** | displayed details about the amenity | [optional]
+**amenity** | **str** | standardised amenity name | [optional] 
+**amenity_label** | **str** | displayed amenity name | [optional] 
+**hint** | **str** | standardised details about the amenity | [optional] 
+**hint_label** | **str** | displayed details about the amenity | [optional] 
 
 ## Example
 
@@ -23,16 +20,13 @@ json = "{}"
 # create an instance of HotelAmenityItemInfo from a JSON string
 hotel_amenity_item_info_instance = HotelAmenityItemInfo.from_json(json)
 # print the JSON string representation of the object
-print HotelAmenityItemInfo.to_json()
+print(HotelAmenityItemInfo.to_json())
 
 # convert the object into a dict
 hotel_amenity_item_info_dict = hotel_amenity_item_info_instance.to_dict()
 # create an instance of HotelAmenityItemInfo from a dict
 hotel_amenity_item_info_form_dict = hotel_amenity_item_info.from_dict(hotel_amenity_item_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

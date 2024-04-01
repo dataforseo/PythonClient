@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.target_info import TargetInfo
 from typing import Optional, Set
@@ -31,10 +31,10 @@ class BacklinksHistoryLiveItem(BaseModel):
     var_date: Optional[StrictStr] = Field(default=None, description="date and time when the data for the target was stored in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00", alias="date")
     rank: Optional[StrictInt] = Field(default=None, description="domain rank on the given date learn more about the metric and how it is calculated in this help center article")
     backlinks: Optional[StrictInt] = Field(default=None, description="number of backlinks")
-    new_backlinks: Optional[StrictInt] = Field(default=None, description="number of new backlinks for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request preceds May 2021, the field will equal 0")
-    lost_backlinks: Optional[StrictInt] = Field(default=None, description="number of lost backlinks for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request preceds May 2021, the field will equal 0")
-    new_referring_domains: Optional[StrictInt] = Field(default=None, description="number of new referring domains for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request preceds May 2021, the field will equal 0")
-    lost_referring_domains: Optional[StrictInt] = Field(default=None, description="number of lost referring domains for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request preceds May 2021, the field will equal 0")
+    new_backlinks: Optional[StrictInt] = Field(default=None, description="number of new backlinks for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request precedes May 2021, the field will equal 0")
+    lost_backlinks: Optional[StrictInt] = Field(default=None, description="number of lost backlinks for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request precedes May 2021, the field will equal 0")
+    new_referring_domains: Optional[StrictInt] = Field(default=None, description="number of new referring domains for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request precedes May 2021, the field will equal 0")
+    lost_referring_domains: Optional[StrictInt] = Field(default=None, description="number of lost referring domains for the target data is provided based in a comparison with the previous period Note: this data is available from May 2021; if the date range specified in the POST request precedes May 2021, the field will equal 0")
     crawled_pages: Optional[StrictInt] = Field(default=None, description="number of crawled pages for the target")
     info: Optional[TargetInfo] = None
     internal_links_count: Optional[StrictInt] = Field(default=None, description="number of internal links calculated as the sum of internal links on the pages of the specified target")
@@ -48,19 +48,20 @@ class BacklinksHistoryLiveItem(BaseModel):
     referring_ips: Optional[StrictInt] = Field(default=None, description="number of referring IP addresses number of IP addresses pointing to this page")
     referring_subnets: Optional[StrictInt] = Field(default=None, description="number of referring subnetworks")
     referring_pages: Optional[StrictInt] = Field(default=None, description="number of pages pointing to the target")
+    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the target")
     referring_links_tld: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="top-level domains of the referring links contains top-level domains and referring link count per each")
     referring_links_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="types of referring links indicates the types of the referring links and link count per each type possible values: anchor, image, link, meta, canonical, alternate, redirect")
     referring_links_attributes: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="link attributes of the referring links indicates link attributes of the referring links and link count per each attribute")
     referring_links_platform_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="types of referring platforms indicates referring platform types and and link count per each platform")
     referring_links_semantic_locations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="semantic locations of the referring links indicates semantic elements in HTML where the referring links are located and link count per each semantic location you can get the full list of semantic elements here examples: article, section, summary")
     referring_links_countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="ISO country codes of the referring links indicates ISO country codes of the domains where the referring links are located and the link count per each country")
-    __properties: ClassVar[List[str]] = ["type", "date", "rank", "backlinks", "new_backlinks", "lost_backlinks", "new_referring_domains", "lost_referring_domains", "crawled_pages", "info", "internal_links_count", "external_links_count", "broken_backlinks", "broken_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets", "referring_pages", "referring_links_tld", "referring_links_types", "referring_links_attributes", "referring_links_platform_types", "referring_links_semantic_locations", "referring_links_countries"]
+    __properties: ClassVar[List[str]] = ["type", "date", "rank", "backlinks", "new_backlinks", "lost_backlinks", "new_referring_domains", "lost_referring_domains", "crawled_pages", "info", "internal_links_count", "external_links_count", "broken_backlinks", "broken_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets", "referring_pages", "referring_pages_nofollow", "referring_links_tld", "referring_links_types", "referring_links_attributes", "referring_links_platform_types", "referring_links_semantic_locations", "referring_links_countries"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -198,6 +199,11 @@ class BacklinksHistoryLiveItem(BaseModel):
         if self.referring_pages is None and "referring_pages" in self.model_fields_set:
             _dict['referring_pages'] = None
 
+        # set to None if referring_pages_nofollow (nullable) is None
+        # and model_fields_set contains the field
+        if self.referring_pages_nofollow is None and "referring_pages_nofollow" in self.model_fields_set:
+            _dict['referring_pages_nofollow'] = None
+
         # set to None if referring_links_tld (nullable) is None
         # and model_fields_set contains the field
         if self.referring_links_tld is None and "referring_links_tld" in self.model_fields_set:
@@ -261,6 +267,7 @@ class BacklinksHistoryLiveItem(BaseModel):
             "referring_ips": obj.get("referring_ips"),
             "referring_subnets": obj.get("referring_subnets"),
             "referring_pages": obj.get("referring_pages"),
+            "referring_pages_nofollow": obj.get("referring_pages_nofollow"),
             "referring_links_tld": obj.get("referring_links_tld"),
             "referring_links_types": obj.get("referring_links_types"),
             "referring_links_attributes": obj.get("referring_links_attributes"),

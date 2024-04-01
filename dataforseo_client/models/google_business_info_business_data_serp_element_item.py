@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
@@ -68,16 +68,16 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     people_also_search: Optional[List[PeopleAlsoSearch]] = Field(default=None, description="related business entities")
     work_time: Optional[WorkInfo] = None
     popular_times: Optional[PopularTimes] = None
-    local_business_links: Optional[BaseLocalBusinessLink] = None
+    local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null")
     directory: Optional[BusinessDirectoryInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -134,9 +134,13 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         # override the default output from pydantic by calling `to_dict()` of popular_times
         if self.popular_times:
             _dict['popular_times'] = self.popular_times.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of local_business_links
+        # override the default output from pydantic by calling `to_dict()` of each item in local_business_links (list)
+        _items = []
         if self.local_business_links:
-            _dict['local_business_links'] = self.local_business_links.to_dict()
+            for _item in self.local_business_links:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['local_business_links'] = _items
         # override the default output from pydantic by calling `to_dict()` of directory
         if self.directory:
             _dict['directory'] = self.directory.to_dict()
@@ -285,6 +289,11 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         if self.people_also_search is None and "people_also_search" in self.model_fields_set:
             _dict['people_also_search'] = None
 
+        # set to None if local_business_links (nullable) is None
+        # and model_fields_set contains the field
+        if self.local_business_links is None and "local_business_links" in self.model_fields_set:
+            _dict['local_business_links'] = None
+
         # set to None if is_directory_item (nullable) is None
         # and model_fields_set contains the field
         if self.is_directory_item is None and "is_directory_item" in self.model_fields_set:
@@ -336,7 +345,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
             "people_also_search": [PeopleAlsoSearch.from_dict(_item) for _item in obj["people_also_search"]] if obj.get("people_also_search") is not None else None,
             "work_time": WorkInfo.from_dict(obj["work_time"]) if obj.get("work_time") is not None else None,
             "popular_times": PopularTimes.from_dict(obj["popular_times"]) if obj.get("popular_times") is not None else None,
-            "local_business_links": BaseLocalBusinessLink.from_dict(obj["local_business_links"]) if obj.get("local_business_links") is not None else None,
+            "local_business_links": [BaseLocalBusinessLink.from_dict(_item) for _item in obj["local_business_links"]] if obj.get("local_business_links") is not None else None,
             "is_directory_item": obj.get("is_directory_item"),
             "directory": BusinessDirectoryInfo.from_dict(obj["directory"]) if obj.get("directory") is not None else None
         })

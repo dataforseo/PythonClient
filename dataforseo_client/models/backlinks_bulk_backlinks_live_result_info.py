@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_bulk_backlinks_live_item import BacklinksBulkBacklinksLiveItem
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class BacklinksBulkBacklinksLiveResultInfo(BaseModel):
     items: Optional[List[BacklinksBulkBacklinksLiveItem]] = Field(default=None, description="contains relevant backlink data")
     __properties: ClassVar[List[str]] = ["items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

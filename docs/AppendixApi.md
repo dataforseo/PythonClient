@@ -1,21 +1,19 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # dataforseo_client.AppendixApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**appendix_errors**](AppendixApi.md#appendix_errors) | **GET** /v3/appendix/errors |
-[**appendix_status**](AppendixApi.md#appendix_status) | **GET** /v3/appendix/status |
-[**user_data**](AppendixApi.md#user_data) | **GET** /v3/appendix/user_data |
-[**webhook_resend**](AppendixApi.md#webhook_resend) | **POST** /v3/appendix/webhook_resend |
+[**appendix_errors**](AppendixApi.md#appendix_errors) | **GET** /v3/appendix/errors | 
+[**appendix_status**](AppendixApi.md#appendix_status) | **GET** /v3/appendix/status | 
+[**user_data**](AppendixApi.md#user_data) | **GET** /v3/appendix/user_data | 
+[**webhook_resend**](AppendixApi.md#webhook_resend) | **POST** /v3/appendix/webhook_resend | 
+
 
 # **appendix_errors**
-
 > AppendixErrorsResponseInfo appendix_errors()
+
+
 
 This endpoint returns a list of possible DataForSEO API errors and general status codes. Below you will find a list of HTTP response codes and internal messages. We recommend storing the data connected to error codes in your application log and designing a necessary system for handling related exceptional or error conditions. for more info please visit 'https://docs.dataforseo.com/v3/appendix/errors/?bash'
 
@@ -59,6 +57,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppendixApi->appendix_errors: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -73,8 +73,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -82,11 +82,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **appendix_status**
-
 > AppendixStatusResponseInfo appendix_status()
+
+
 
 By calling this API you will receive detailed information about the current status of all our APIs and endpoints. You will also get a full issue description if a problem occurs. for more info please visit 'https://docs.dataforseo.com/v3/appendix/status/?bash'
 
@@ -130,6 +131,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppendixApi->appendix_status: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -144,8 +147,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -153,11 +156,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_data**
-
 > AppendixUserDataResponseInfo user_data()
+
+
 
 You will receive detailed information about your API usage, prices, spending and other account details by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/appendix/user_data/?bash'
 
@@ -201,6 +205,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppendixApi->user_data: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -215,8 +221,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -224,11 +230,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **webhook_resend**
-
 > AppendixWebhookResendResponseInfo webhook_resend(appendix_webhook_resend_request_info=appendix_webhook_resend_request_info)
+
+
 
 Using this endpoint you can resend webhooks (pingbacks and postbacks) for up to 100 specified tasks. Note: Your account will not be double-charged for resending a webhook. for more info please visit 'https://docs.dataforseo.com/v3/appendix/webhook_resend/?bash'
 
@@ -274,11 +281,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling AppendixApi->webhook_resend: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**appendix_webhook_resend_request_info** | [**List[AppendixWebhookResendRequestInfo]**](AppendixWebhookResendRequestInfo.md)|  | [optional]
+ **appendix_webhook_resend_request_info** | [**List[AppendixWebhookResendRequestInfo]**](AppendixWebhookResendRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -290,8 +300,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -299,8 +309,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from dataforseo_client.models.images_element import ImagesElement
@@ -33,15 +33,15 @@ class RelatedResult(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    title: Optional[StrictStr] = Field(default=None, description="title of the element")
-    url: Optional[StrictStr] = Field(default=None, description="URL")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
+    url: Optional[StrictStr] = Field(default=None, description="URL of element")
     cache_url: Optional[StrictStr] = Field(default=None, description="cached version of the page")
     related_search_url: Optional[StrictStr] = Field(default=None, description="URL to a similar search URL to a new search for the same keyword(s) on related sites")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb in SERP")
     website_name: Optional[StrictStr] = Field(default=None, description="name of the website in SERP")
     is_image: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains a video")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the hotel booking element")
     pre_snippet: Optional[StrictStr] = Field(default=None, description="includes additional information appended before the result description in SERP")
     extended_snippet: Optional[StrictStr] = Field(default=None, description="includes additional information appended after the result description in SERP")
     images: Optional[List[ImagesElement]] = Field(default=None, description="images of the element")
@@ -53,11 +53,11 @@ class RelatedResult(BaseModel):
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = ["type", "xpath", "domain", "title", "url", "cache_url", "related_search_url", "breadcrumb", "website_name", "is_image", "is_video", "description", "pre_snippet", "extended_snippet", "images", "amp_version", "rating", "price", "highlighted", "about_this_result", "timestamp"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

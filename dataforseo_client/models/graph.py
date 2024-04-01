@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.graph_element import GraphElement
 from typing import Optional, Set
@@ -27,15 +27,15 @@ class Graph(BaseModel):
     """
     Graph
     """ # noqa: E501
-    items: Optional[List[GraphElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[GraphElement]] = Field(default=None, description="contains arrays of specific images")
     previous_items: Optional[List[GraphElement]] = Field(default=None, description="previous close data contains stock price data based on the preceding time period")
     __properties: ClassVar[List[str]] = ["items", "previous_items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

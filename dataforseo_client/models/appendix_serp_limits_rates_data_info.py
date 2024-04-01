@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_function_type_info import AppendixFunctionTypeInfo
 from dataforseo_client.models.appendix_jobs_serp_limits_rates_data_info import AppendixJobsSerpLimitsRatesDataInfo
@@ -40,11 +40,11 @@ class AppendixSerpLimitsRatesDataInfo(BaseModel):
     screenshot: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["task_post", "task_get", "tasks_ready", "locations", "languages", "live", "errors", "tasks_fixed", "jobs", "screenshot"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

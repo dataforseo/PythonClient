@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.work_day_info import WorkDayInfo
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class WorkHours(BaseModel):
     current_status: Optional[StrictStr] = Field(default=None, description="current status of the establishment indicates whether the establishment is opened or closed")
     __properties: ClassVar[List[str]] = ["timetable", "current_status"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

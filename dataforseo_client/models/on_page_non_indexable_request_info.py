@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,11 +32,11 @@ class OnPageNonIndexableRequestInfo(BaseModel):
     filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, <, <=, >, >=, =, <>, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\"reason\",\"=\",\"robots_txt\"][[\"reason\",\"<>\",\"robots_txt\"], \"and\", [\"url\",\"not_like\",\"%/wp-admin/%\"]] [[\"url\",\"not_like\",\"%/wp-admin/%\"], \"and\", [[\"reason\",\"<>\",\"meta_tag\"],\"or\",[\"reason\",\"<>\",\"http_header\"]]] The full list of possible filters is available by this link.")
     __properties: ClassVar[List[str]] = ["id", "limit", "offset", "filters"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.knowledge_graph_hotels_booking_element import KnowledgeGraphHotelsBookingElement
@@ -37,15 +37,15 @@ class KnowledgeGraphHotelsBookingItemSerpElementItem(BaseSerpElementItem):
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of stay in the format “year-month-date” example: 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of stay in the format “year-month-date” example: 2019-11-17")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/local:hotel booking")
-    items: Optional[List[KnowledgeGraphHotelsBookingElement]] = Field(default=None, description="contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[KnowledgeGraphHotelsBookingElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "date_from", "date_to", "data_attrid", "items", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

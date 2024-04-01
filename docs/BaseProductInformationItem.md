@@ -1,14 +1,11 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # BaseProductInformationItem
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional]
+**type** | **str** | type of element | [optional] 
 
 ## Example
 
@@ -20,16 +17,13 @@ json = "{}"
 # create an instance of BaseProductInformationItem from a JSON string
 base_product_information_item_instance = BaseProductInformationItem.from_json(json)
 # print the JSON string representation of the object
-print BaseProductInformationItem.to_json()
+print(BaseProductInformationItem.to_json())
 
 # convert the object into a dict
 base_product_information_item_dict = base_product_information_item_instance.to_dict()
 # create an instance of BaseProductInformationItem from a dict
 base_product_information_item_form_dict = base_product_information_item.from_dict(base_product_information_item_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from typing import Optional, Set
@@ -35,11 +35,11 @@ class BusinessDataTrustpilotSearchTaskGetResultInfo(BaseModel):
     items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="found reviews you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = ["keyword", "se_domain", "check_url", "datetime", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

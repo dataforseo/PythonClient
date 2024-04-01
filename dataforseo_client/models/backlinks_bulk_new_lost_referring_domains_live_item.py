@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,11 +33,11 @@ class BacklinksBulkNewLostReferringDomainsLiveItem(BaseModel):
     lost_referring_main_domains: Optional[StrictInt] = Field(default=None, description="number of lost referring main domains pointing to the target")
     __properties: ClassVar[List[str]] = ["target", "new_referring_domains", "lost_referring_domains", "new_referring_main_domains", "lost_referring_main_domains"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

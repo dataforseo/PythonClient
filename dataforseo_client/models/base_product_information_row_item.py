@@ -17,10 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.product_information_image_row import ProductInformationImageRow
+    from dataforseo_client.models.product_information_text_row import ProductInformationTextRow
+    from dataforseo_client.models.product_information_video_row import ProductInformationVideoRow
 
 class BaseProductInformationRowItem(BaseModel):
     """
@@ -29,11 +36,11 @@ class BaseProductInformationRowItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     __properties: ClassVar[List[str]] = ["type"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -63,7 +70,7 @@ class BaseProductInformationRowItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[ProductInformationImageRow, ProductInformationTextRow, ProductInformationVideoRow]]:
         """Create an instance of BaseProductInformationRowItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -93,21 +100,19 @@ class BaseProductInformationRowItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[ProductInformationImageRow, ProductInformationTextRow, ProductInformationVideoRow]]:
         """Create an instance of BaseProductInformationRowItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseProductInformationRowItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'product_information_image_row':
+            return import_module("dataforseo_client.models.product_information_image_row").ProductInformationImageRow.from_dict(obj)
+        if object_type ==  'product_information_text_row':
+            return import_module("dataforseo_client.models.product_information_text_row").ProductInformationTextRow.from_dict(obj)
+        if object_type ==  'product_information_video_row':
+            return import_module("dataforseo_client.models.product_information_video_row").ProductInformationVideoRow.from_dict(obj)
 
-from dataforseo_client.models.product_information_image_row import ProductInformationImageRow
-from dataforseo_client.models.product_information_text_row import ProductInformationTextRow
-from dataforseo_client.models.product_information_video_row import ProductInformationVideoRow
-# TODO: Rewrite to not use raise_errors
-BaseProductInformationRowItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseProductInformationRowItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

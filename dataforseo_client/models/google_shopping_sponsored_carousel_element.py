@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.delivery_info import DeliveryInfo
 from dataforseo_client.models.rating_element import RatingElement
@@ -41,11 +41,11 @@ class GoogleShoppingSponsoredCarouselElement(BaseModel):
     delivery_info: Optional[DeliveryInfo] = None
     __properties: ClassVar[List[str]] = ["type", "xpath", "title", "tags", "seller", "price", "currency", "product_rating", "product_images", "shop_ad_aclk", "delivery_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

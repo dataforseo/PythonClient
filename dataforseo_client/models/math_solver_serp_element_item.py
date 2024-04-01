@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.link_element import LinkElement
@@ -30,22 +30,22 @@ class MathSolverSerpElementItem(BaseSerpElementItem):
     """
     MathSolverSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
+    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values; positions of elements with different type values are omitted from rank_group; always equals 0 for desktop")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description="title of the row")
     result: Optional[StrictStr] = Field(default=None, description="solution to the equation solution to the mathematical equation specified in the keyword field when setting a task")
-    items: Optional[List[MathSolverElement]] = Field(default=None, description="contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[MathSolverElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     links: Optional[List[LinkElement]] = Field(default=None, description="link of the element")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "result", "items", "links", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

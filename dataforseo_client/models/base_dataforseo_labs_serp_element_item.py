@@ -17,10 +17,59 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.q_answer_box_dataforseo_labs_serp_element_item import QAnswerBoxDataforseoLabsSerpElementItem
+    from dataforseo_client.models.carousel_dataforseo_labs_serp_element_item import CarouselDataforseoLabsSerpElementItem
+    from dataforseo_client.models.commercial_units_dataforseo_labs_serp_element_item import CommercialUnitsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.events_dataforseo_labs_serp_element_item import EventsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.featured_snippet_dataforseo_labs_serp_element_item import FeaturedSnippetDataforseoLabsSerpElementItem
+    from dataforseo_client.models.find_results_on_dataforseo_labs_serp_element_item import FindResultsOnDataforseoLabsSerpElementItem
+    from dataforseo_client.models.google_flights_dataforseo_labs_serp_element_item import GoogleFlightsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.google_hotels_dataforseo_labs_serp_element_item import GoogleHotelsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.google_posts_dataforseo_labs_serp_element_item import GooglePostsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.google_reviews_dataforseo_labs_serp_element_item import GoogleReviewsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.hotels_pack_dataforseo_labs_serp_element_item import HotelsPackDataforseoLabsSerpElementItem
+    from dataforseo_client.models.images_dataforseo_labs_serp_element_item import ImagesDataforseoLabsSerpElementItem
+    from dataforseo_client.models.jobs_dataforseo_labs_serp_element_item import JobsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_dataforseo_labs_serp_element_item import KnowledgeGraphDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_carousel_item_dataforseo_labs_serp_element_item import KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_description_item_dataforseo_labs_serp_element_item import KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_expanded_item_dataforseo_labs_serp_element_item import KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_images_item_dataforseo_labs_serp_element_item import KnowledgeGraphImagesItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_list_item_dataforseo_labs_serp_element_item import KnowledgeGraphListItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_part_item_dataforseo_labs_serp_element_item import KnowledgeGraphPartItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_row_item_dataforseo_labs_serp_element_item import KnowledgeGraphRowItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.knowledge_graph_shopping_item_dataforseo_labs_serp_element_item import KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem
+    from dataforseo_client.models.local_pack_dataforseo_labs_serp_element_item import LocalPackDataforseoLabsSerpElementItem
+    from dataforseo_client.models.local_services_dataforseo_labs_serp_element_item import LocalServicesDataforseoLabsSerpElementItem
+    from dataforseo_client.models.map_dataforseo_labs_serp_element_item import MapDataforseoLabsSerpElementItem
+    from dataforseo_client.models.math_solver_dataforseo_labs_serp_element_item import MathSolverDataforseoLabsSerpElementItem
+    from dataforseo_client.models.mention_carousel_dataforseo_labs_serp_element_item import MentionCarouselDataforseoLabsSerpElementItem
+    from dataforseo_client.models.multi_carousel_dataforseo_labs_serp_element_item import MultiCarouselDataforseoLabsSerpElementItem
+    from dataforseo_client.models.organic_dataforseo_labs_serp_element_item import OrganicDataforseoLabsSerpElementItem
+    from dataforseo_client.models.paid_dataforseo_labs_serp_element_item import PaidDataforseoLabsSerpElementItem
+    from dataforseo_client.models.people_also_ask_dataforseo_labs_serp_element_item import PeopleAlsoAskDataforseoLabsSerpElementItem
+    from dataforseo_client.models.people_also_search_dataforseo_labs_serp_element_item import PeopleAlsoSearchDataforseoLabsSerpElementItem
+    from dataforseo_client.models.podcasts_dataforseo_labs_serp_element_item import PodcastsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.popular_products_dataforseo_labs_serp_element_item import PopularProductsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.questions_and_answers_dataforseo_labs_serp_element_item import QuestionsAndAnswersDataforseoLabsSerpElementItem
+    from dataforseo_client.models.recipes_dataforseo_labs_serp_element_item import RecipesDataforseoLabsSerpElementItem
+    from dataforseo_client.models.related_searches_dataforseo_labs_serp_element_item import RelatedSearchesDataforseoLabsSerpElementItem
+    from dataforseo_client.models.scholarly_articles_dataforseo_labs_serp_element_item import ScholarlyArticlesDataforseoLabsSerpElementItem
+    from dataforseo_client.models.shopping_dataforseo_labs_serp_element_item import ShoppingDataforseoLabsSerpElementItem
+    from dataforseo_client.models.stocks_box_dataforseo_labs_serp_element_item import StocksBoxDataforseoLabsSerpElementItem
+    from dataforseo_client.models.top_sights_dataforseo_labs_serp_element_item import TopSightsDataforseoLabsSerpElementItem
+    from dataforseo_client.models.top_stories_dataforseo_labs_serp_element_item import TopStoriesDataforseoLabsSerpElementItem
+    from dataforseo_client.models.twitter_dataforseo_labs_serp_element_item import TwitterDataforseoLabsSerpElementItem
+    from dataforseo_client.models.video_dataforseo_labs_serp_element_item import VideoDataforseoLabsSerpElementItem
+    from dataforseo_client.models.visual_stories_dataforseo_labs_serp_element_item import VisualStoriesDataforseoLabsSerpElementItem
 
 class BaseDataforseoLabsSerpElementItem(BaseModel):
     """
@@ -29,11 +78,11 @@ class BaseDataforseoLabsSerpElementItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     __properties: ClassVar[List[str]] = ["type"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -63,7 +112,7 @@ class BaseDataforseoLabsSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[QAnswerBoxDataforseoLabsSerpElementItem, CarouselDataforseoLabsSerpElementItem, CommercialUnitsDataforseoLabsSerpElementItem, EventsDataforseoLabsSerpElementItem, FeaturedSnippetDataforseoLabsSerpElementItem, FindResultsOnDataforseoLabsSerpElementItem, GoogleFlightsDataforseoLabsSerpElementItem, GoogleHotelsDataforseoLabsSerpElementItem, GooglePostsDataforseoLabsSerpElementItem, GoogleReviewsDataforseoLabsSerpElementItem, HotelsPackDataforseoLabsSerpElementItem, ImagesDataforseoLabsSerpElementItem, JobsDataforseoLabsSerpElementItem, KnowledgeGraphDataforseoLabsSerpElementItem, KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem, KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem, KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem, KnowledgeGraphImagesItemDataforseoLabsSerpElementItem, KnowledgeGraphListItemDataforseoLabsSerpElementItem, KnowledgeGraphPartItemDataforseoLabsSerpElementItem, KnowledgeGraphRowItemDataforseoLabsSerpElementItem, KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem, LocalPackDataforseoLabsSerpElementItem, LocalServicesDataforseoLabsSerpElementItem, MapDataforseoLabsSerpElementItem, MathSolverDataforseoLabsSerpElementItem, MentionCarouselDataforseoLabsSerpElementItem, MultiCarouselDataforseoLabsSerpElementItem, OrganicDataforseoLabsSerpElementItem, PaidDataforseoLabsSerpElementItem, PeopleAlsoAskDataforseoLabsSerpElementItem, PeopleAlsoSearchDataforseoLabsSerpElementItem, PodcastsDataforseoLabsSerpElementItem, PopularProductsDataforseoLabsSerpElementItem, QuestionsAndAnswersDataforseoLabsSerpElementItem, RecipesDataforseoLabsSerpElementItem, RelatedSearchesDataforseoLabsSerpElementItem, ScholarlyArticlesDataforseoLabsSerpElementItem, ShoppingDataforseoLabsSerpElementItem, StocksBoxDataforseoLabsSerpElementItem, TopSightsDataforseoLabsSerpElementItem, TopStoriesDataforseoLabsSerpElementItem, TwitterDataforseoLabsSerpElementItem, VideoDataforseoLabsSerpElementItem, VisualStoriesDataforseoLabsSerpElementItem]]:
         """Create an instance of BaseDataforseoLabsSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -93,63 +142,103 @@ class BaseDataforseoLabsSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[QAnswerBoxDataforseoLabsSerpElementItem, CarouselDataforseoLabsSerpElementItem, CommercialUnitsDataforseoLabsSerpElementItem, EventsDataforseoLabsSerpElementItem, FeaturedSnippetDataforseoLabsSerpElementItem, FindResultsOnDataforseoLabsSerpElementItem, GoogleFlightsDataforseoLabsSerpElementItem, GoogleHotelsDataforseoLabsSerpElementItem, GooglePostsDataforseoLabsSerpElementItem, GoogleReviewsDataforseoLabsSerpElementItem, HotelsPackDataforseoLabsSerpElementItem, ImagesDataforseoLabsSerpElementItem, JobsDataforseoLabsSerpElementItem, KnowledgeGraphDataforseoLabsSerpElementItem, KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem, KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem, KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem, KnowledgeGraphImagesItemDataforseoLabsSerpElementItem, KnowledgeGraphListItemDataforseoLabsSerpElementItem, KnowledgeGraphPartItemDataforseoLabsSerpElementItem, KnowledgeGraphRowItemDataforseoLabsSerpElementItem, KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem, LocalPackDataforseoLabsSerpElementItem, LocalServicesDataforseoLabsSerpElementItem, MapDataforseoLabsSerpElementItem, MathSolverDataforseoLabsSerpElementItem, MentionCarouselDataforseoLabsSerpElementItem, MultiCarouselDataforseoLabsSerpElementItem, OrganicDataforseoLabsSerpElementItem, PaidDataforseoLabsSerpElementItem, PeopleAlsoAskDataforseoLabsSerpElementItem, PeopleAlsoSearchDataforseoLabsSerpElementItem, PodcastsDataforseoLabsSerpElementItem, PopularProductsDataforseoLabsSerpElementItem, QuestionsAndAnswersDataforseoLabsSerpElementItem, RecipesDataforseoLabsSerpElementItem, RelatedSearchesDataforseoLabsSerpElementItem, ScholarlyArticlesDataforseoLabsSerpElementItem, ShoppingDataforseoLabsSerpElementItem, StocksBoxDataforseoLabsSerpElementItem, TopSightsDataforseoLabsSerpElementItem, TopStoriesDataforseoLabsSerpElementItem, TwitterDataforseoLabsSerpElementItem, VideoDataforseoLabsSerpElementItem, VisualStoriesDataforseoLabsSerpElementItem]]:
         """Create an instance of BaseDataforseoLabsSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseDataforseoLabsSerpElementItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'answer_box':
+            return import_module("dataforseo_client.models.q_answer_box_dataforseo_labs_serp_element_item").QAnswerBoxDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'carousel':
+            return import_module("dataforseo_client.models.carousel_dataforseo_labs_serp_element_item").CarouselDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'commercial_units':
+            return import_module("dataforseo_client.models.commercial_units_dataforseo_labs_serp_element_item").CommercialUnitsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'events':
+            return import_module("dataforseo_client.models.events_dataforseo_labs_serp_element_item").EventsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'featured_snippet':
+            return import_module("dataforseo_client.models.featured_snippet_dataforseo_labs_serp_element_item").FeaturedSnippetDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'find_results_on':
+            return import_module("dataforseo_client.models.find_results_on_dataforseo_labs_serp_element_item").FindResultsOnDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'google_flights':
+            return import_module("dataforseo_client.models.google_flights_dataforseo_labs_serp_element_item").GoogleFlightsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'google_hotels':
+            return import_module("dataforseo_client.models.google_hotels_dataforseo_labs_serp_element_item").GoogleHotelsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'google_posts':
+            return import_module("dataforseo_client.models.google_posts_dataforseo_labs_serp_element_item").GooglePostsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'google_reviews':
+            return import_module("dataforseo_client.models.google_reviews_dataforseo_labs_serp_element_item").GoogleReviewsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'hotels_pack':
+            return import_module("dataforseo_client.models.hotels_pack_dataforseo_labs_serp_element_item").HotelsPackDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'images':
+            return import_module("dataforseo_client.models.images_dataforseo_labs_serp_element_item").ImagesDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'jobs':
+            return import_module("dataforseo_client.models.jobs_dataforseo_labs_serp_element_item").JobsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph':
+            return import_module("dataforseo_client.models.knowledge_graph_dataforseo_labs_serp_element_item").KnowledgeGraphDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_carousel_item':
+            return import_module("dataforseo_client.models.knowledge_graph_carousel_item_dataforseo_labs_serp_element_item").KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_description_item':
+            return import_module("dataforseo_client.models.knowledge_graph_description_item_dataforseo_labs_serp_element_item").KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_expanded_item':
+            return import_module("dataforseo_client.models.knowledge_graph_expanded_item_dataforseo_labs_serp_element_item").KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_images_item':
+            return import_module("dataforseo_client.models.knowledge_graph_images_item_dataforseo_labs_serp_element_item").KnowledgeGraphImagesItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_list_item':
+            return import_module("dataforseo_client.models.knowledge_graph_list_item_dataforseo_labs_serp_element_item").KnowledgeGraphListItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_part_item':
+            return import_module("dataforseo_client.models.knowledge_graph_part_item_dataforseo_labs_serp_element_item").KnowledgeGraphPartItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_row_item':
+            return import_module("dataforseo_client.models.knowledge_graph_row_item_dataforseo_labs_serp_element_item").KnowledgeGraphRowItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'knowledge_graph_shopping_item':
+            return import_module("dataforseo_client.models.knowledge_graph_shopping_item_dataforseo_labs_serp_element_item").KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'local_pack':
+            return import_module("dataforseo_client.models.local_pack_dataforseo_labs_serp_element_item").LocalPackDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'local_services':
+            return import_module("dataforseo_client.models.local_services_dataforseo_labs_serp_element_item").LocalServicesDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'map':
+            return import_module("dataforseo_client.models.map_dataforseo_labs_serp_element_item").MapDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'math_solver':
+            return import_module("dataforseo_client.models.math_solver_dataforseo_labs_serp_element_item").MathSolverDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'mention_carousel':
+            return import_module("dataforseo_client.models.mention_carousel_dataforseo_labs_serp_element_item").MentionCarouselDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'multi_carousel':
+            return import_module("dataforseo_client.models.multi_carousel_dataforseo_labs_serp_element_item").MultiCarouselDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'organic':
+            return import_module("dataforseo_client.models.organic_dataforseo_labs_serp_element_item").OrganicDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'paid':
+            return import_module("dataforseo_client.models.paid_dataforseo_labs_serp_element_item").PaidDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'people_also_ask':
+            return import_module("dataforseo_client.models.people_also_ask_dataforseo_labs_serp_element_item").PeopleAlsoAskDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'people_also_search':
+            return import_module("dataforseo_client.models.people_also_search_dataforseo_labs_serp_element_item").PeopleAlsoSearchDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'podcasts':
+            return import_module("dataforseo_client.models.podcasts_dataforseo_labs_serp_element_item").PodcastsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'popular_products':
+            return import_module("dataforseo_client.models.popular_products_dataforseo_labs_serp_element_item").PopularProductsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'questions_and_answers':
+            return import_module("dataforseo_client.models.questions_and_answers_dataforseo_labs_serp_element_item").QuestionsAndAnswersDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'recipes':
+            return import_module("dataforseo_client.models.recipes_dataforseo_labs_serp_element_item").RecipesDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'related_searches':
+            return import_module("dataforseo_client.models.related_searches_dataforseo_labs_serp_element_item").RelatedSearchesDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'scholarly_articles':
+            return import_module("dataforseo_client.models.scholarly_articles_dataforseo_labs_serp_element_item").ScholarlyArticlesDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'shopping':
+            return import_module("dataforseo_client.models.shopping_dataforseo_labs_serp_element_item").ShoppingDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'stocks_box':
+            return import_module("dataforseo_client.models.stocks_box_dataforseo_labs_serp_element_item").StocksBoxDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'top_sights':
+            return import_module("dataforseo_client.models.top_sights_dataforseo_labs_serp_element_item").TopSightsDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'top_stories':
+            return import_module("dataforseo_client.models.top_stories_dataforseo_labs_serp_element_item").TopStoriesDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'twitter':
+            return import_module("dataforseo_client.models.twitter_dataforseo_labs_serp_element_item").TwitterDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'video':
+            return import_module("dataforseo_client.models.video_dataforseo_labs_serp_element_item").VideoDataforseoLabsSerpElementItem.from_dict(obj)
+        if object_type ==  'visual_stories':
+            return import_module("dataforseo_client.models.visual_stories_dataforseo_labs_serp_element_item").VisualStoriesDataforseoLabsSerpElementItem.from_dict(obj)
 
-from dataforseo_client.models.carousel_dataforseo_labs_serp_element_item import CarouselDataforseoLabsSerpElementItem
-from dataforseo_client.models.commercial_units_dataforseo_labs_serp_element_item import CommercialUnitsDataforseoLabsSerpElementItem
-from dataforseo_client.models.events_dataforseo_labs_serp_element_item import EventsDataforseoLabsSerpElementItem
-from dataforseo_client.models.featured_snippet_dataforseo_labs_serp_element_item import FeaturedSnippetDataforseoLabsSerpElementItem
-from dataforseo_client.models.find_results_on_dataforseo_labs_serp_element_item import FindResultsOnDataforseoLabsSerpElementItem
-from dataforseo_client.models.google_flights_dataforseo_labs_serp_element_item import GoogleFlightsDataforseoLabsSerpElementItem
-from dataforseo_client.models.google_hotels_dataforseo_labs_serp_element_item import GoogleHotelsDataforseoLabsSerpElementItem
-from dataforseo_client.models.google_posts_dataforseo_labs_serp_element_item import GooglePostsDataforseoLabsSerpElementItem
-from dataforseo_client.models.google_reviews_dataforseo_labs_serp_element_item import GoogleReviewsDataforseoLabsSerpElementItem
-from dataforseo_client.models.hotels_pack_dataforseo_labs_serp_element_item import HotelsPackDataforseoLabsSerpElementItem
-from dataforseo_client.models.images_dataforseo_labs_serp_element_item import ImagesDataforseoLabsSerpElementItem
-from dataforseo_client.models.jobs_dataforseo_labs_serp_element_item import JobsDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_carousel_item_dataforseo_labs_serp_element_item import KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_dataforseo_labs_serp_element_item import KnowledgeGraphDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_description_item_dataforseo_labs_serp_element_item import KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_expanded_item_dataforseo_labs_serp_element_item import KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_images_item_dataforseo_labs_serp_element_item import KnowledgeGraphImagesItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_list_item_dataforseo_labs_serp_element_item import KnowledgeGraphListItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_part_item_dataforseo_labs_serp_element_item import KnowledgeGraphPartItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_row_item_dataforseo_labs_serp_element_item import KnowledgeGraphRowItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.knowledge_graph_shopping_item_dataforseo_labs_serp_element_item import KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem
-from dataforseo_client.models.local_pack_dataforseo_labs_serp_element_item import LocalPackDataforseoLabsSerpElementItem
-from dataforseo_client.models.local_services_dataforseo_labs_serp_element_item import LocalServicesDataforseoLabsSerpElementItem
-from dataforseo_client.models.map_dataforseo_labs_serp_element_item import MapDataforseoLabsSerpElementItem
-from dataforseo_client.models.math_solver_dataforseo_labs_serp_element_item import MathSolverDataforseoLabsSerpElementItem
-from dataforseo_client.models.mention_carousel_dataforseo_labs_serp_element_item import MentionCarouselDataforseoLabsSerpElementItem
-from dataforseo_client.models.multi_carousel_dataforseo_labs_serp_element_item import MultiCarouselDataforseoLabsSerpElementItem
-from dataforseo_client.models.organic_dataforseo_labs_serp_element_item import OrganicDataforseoLabsSerpElementItem
-from dataforseo_client.models.paid_dataforseo_labs_serp_element_item import PaidDataforseoLabsSerpElementItem
-from dataforseo_client.models.people_also_ask_dataforseo_labs_serp_element_item import PeopleAlsoAskDataforseoLabsSerpElementItem
-from dataforseo_client.models.people_also_search_dataforseo_labs_serp_element_item import PeopleAlsoSearchDataforseoLabsSerpElementItem
-from dataforseo_client.models.podcasts_dataforseo_labs_serp_element_item import PodcastsDataforseoLabsSerpElementItem
-from dataforseo_client.models.popular_products_dataforseo_labs_serp_element_item import PopularProductsDataforseoLabsSerpElementItem
-from dataforseo_client.models.q_answer_box_dataforseo_labs_serp_element_item import QAnswerBoxDataforseoLabsSerpElementItem
-from dataforseo_client.models.questions_and_answers_dataforseo_labs_serp_element_item import QuestionsAndAnswersDataforseoLabsSerpElementItem
-from dataforseo_client.models.recipes_dataforseo_labs_serp_element_item import RecipesDataforseoLabsSerpElementItem
-from dataforseo_client.models.related_searches_dataforseo_labs_serp_element_item import RelatedSearchesDataforseoLabsSerpElementItem
-from dataforseo_client.models.scholarly_articles_dataforseo_labs_serp_element_item import ScholarlyArticlesDataforseoLabsSerpElementItem
-from dataforseo_client.models.shopping_dataforseo_labs_serp_element_item import ShoppingDataforseoLabsSerpElementItem
-from dataforseo_client.models.stocks_box_dataforseo_labs_serp_element_item import StocksBoxDataforseoLabsSerpElementItem
-from dataforseo_client.models.top_sights_dataforseo_labs_serp_element_item import TopSightsDataforseoLabsSerpElementItem
-from dataforseo_client.models.top_stories_dataforseo_labs_serp_element_item import TopStoriesDataforseoLabsSerpElementItem
-from dataforseo_client.models.twitter_dataforseo_labs_serp_element_item import TwitterDataforseoLabsSerpElementItem
-from dataforseo_client.models.video_dataforseo_labs_serp_element_item import VideoDataforseoLabsSerpElementItem
-from dataforseo_client.models.visual_stories_dataforseo_labs_serp_element_item import VisualStoriesDataforseoLabsSerpElementItem
-# TODO: Rewrite to not use raise_errors
-BaseDataforseoLabsSerpElementItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseDataforseoLabsSerpElementItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

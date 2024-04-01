@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_info import AppendixInfo
+from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +27,15 @@ class AppendixNaverKeywordsDataDataInfo(BaseModel):
     """
     AppendixNaverKeywordsDataDataInfo
     """ # noqa: E501
-    keywords_for_category: Optional[AppendixInfo] = None
-    search_volume: Optional[AppendixInfo] = None
+    keywords_for_category: Optional[AppendixFunctionInfo] = None
+    search_volume: Optional[AppendixFunctionInfo] = None
     __properties: ClassVar[List[str]] = ["keywords_for_category", "search_volume"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -88,8 +88,8 @@ class AppendixNaverKeywordsDataDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "keywords_for_category": AppendixInfo.from_dict(obj["keywords_for_category"]) if obj.get("keywords_for_category") is not None else None,
-            "search_volume": AppendixInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None
+            "keywords_for_category": AppendixFunctionInfo.from_dict(obj["keywords_for_category"]) if obj.get("keywords_for_category") is not None else None,
+            "search_volume": AppendixFunctionInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None
         })
         return _obj
 

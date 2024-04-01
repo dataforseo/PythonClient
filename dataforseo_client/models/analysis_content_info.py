@@ -17,11 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.connotation_type_info import ConnotationTypeInfo
 from dataforseo_client.models.content_analysis_rating_info import ContentAnalysisRatingInfo
-from dataforseo_client.models.sentiment_connotation_info import SentimentConnotationInfo
 from dataforseo_client.models.social_metrics_info import SocialMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -41,8 +39,8 @@ class AnalysisContentInfo(BaseModel):
     social_metrics: Optional[List[SocialMetricsInfo]] = Field(default=None, description="social media engagement metrics data on social media interactions associated with the content based on website embeds developed and supported by social media platforms")
     highlighted_text: Optional[StrictStr] = Field(default=None, description="highlighted text from the snippet")
     language: Optional[StrictStr] = Field(default=None, description="content language to obtain a full list of available languages, refer to the Languages endpoint")
-    sentiment_connotations: Optional[SentimentConnotationInfo] = None
-    connotation_types: Optional[ConnotationTypeInfo] = None
+    sentiment_connotations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="sentiment connotations contains sentiments (emotional reactions) related to the given citation and probability index per each sentiment possible sentiment connotations: anger, happiness, love, sadness, share, fun")
+    connotation_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="connotation types contains types of sentiments (sentiment polarity) related to the given citation and probability index per each sentiment type possible sentiment connotation types: positive, negative, neutral")
     text_category: Optional[List[StrictInt]] = Field(default=None, description="text category to obtain a full list of available categories, refer to the Categories endpoint")
     date_published: Optional[StrictStr] = Field(default=None, description="date and time when the content was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
     content_quality_score: Optional[StrictInt] = Field(default=None, description="content quality score this value is calculated based on the number of words, sentences and characters the content contains")
@@ -51,11 +49,11 @@ class AnalysisContentInfo(BaseModel):
     group_date: Optional[StrictStr] = Field(default=None, description="citation group date and time indicates content publication date or date and time when our crawler visited the page for the first time; this field can be used to group citations by date and display citation trends; date and time are provided in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
     __properties: ClassVar[List[str]] = ["content_type", "title", "main_title", "previous_title", "level", "author", "snippet", "snippet_length", "social_metrics", "highlighted_text", "language", "sentiment_connotations", "connotation_types", "text_category", "date_published", "content_quality_score", "semantic_location", "rating", "group_date"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -97,12 +95,6 @@ class AnalysisContentInfo(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['social_metrics'] = _items
-        # override the default output from pydantic by calling `to_dict()` of sentiment_connotations
-        if self.sentiment_connotations:
-            _dict['sentiment_connotations'] = self.sentiment_connotations.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of connotation_types
-        if self.connotation_types:
-            _dict['connotation_types'] = self.connotation_types.to_dict()
         # override the default output from pydantic by calling `to_dict()` of rating
         if self.rating:
             _dict['rating'] = self.rating.to_dict()
@@ -161,6 +153,16 @@ class AnalysisContentInfo(BaseModel):
         if self.language is None and "language" in self.model_fields_set:
             _dict['language'] = None
 
+        # set to None if sentiment_connotations (nullable) is None
+        # and model_fields_set contains the field
+        if self.sentiment_connotations is None and "sentiment_connotations" in self.model_fields_set:
+            _dict['sentiment_connotations'] = None
+
+        # set to None if connotation_types (nullable) is None
+        # and model_fields_set contains the field
+        if self.connotation_types is None and "connotation_types" in self.model_fields_set:
+            _dict['connotation_types'] = None
+
         # set to None if text_category (nullable) is None
         # and model_fields_set contains the field
         if self.text_category is None and "text_category" in self.model_fields_set:
@@ -209,8 +211,8 @@ class AnalysisContentInfo(BaseModel):
             "social_metrics": [SocialMetricsInfo.from_dict(_item) for _item in obj["social_metrics"]] if obj.get("social_metrics") is not None else None,
             "highlighted_text": obj.get("highlighted_text"),
             "language": obj.get("language"),
-            "sentiment_connotations": SentimentConnotationInfo.from_dict(obj["sentiment_connotations"]) if obj.get("sentiment_connotations") is not None else None,
-            "connotation_types": ConnotationTypeInfo.from_dict(obj["connotation_types"]) if obj.get("connotation_types") is not None else None,
+            "sentiment_connotations": obj.get("sentiment_connotations"),
+            "connotation_types": obj.get("connotation_types"),
             "text_category": obj.get("text_category"),
             "date_published": obj.get("date_published"),
             "content_quality_score": obj.get("content_quality_score"),

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_status_endpoints_info import AppendixStatusEndpointsInfo
 from typing import Optional, Set
@@ -27,16 +27,16 @@ class AppendixStatusResultInfo(BaseModel):
     """
     AppendixStatusResultInfo
     """ # noqa: E501
-    api: Optional[StrictStr] = Field(default=None, description="name of the API the list of APIs: serp keywords_data appendix dataforseo_labs domain_analytics merchant on_page business_data backlinks app_data")
+    api: Optional[StrictStr] = Field(default=None, description="name of the API the list of APIs: serp keywords_data appendix dataforseo_labs domain_analytics merchant on_page business_data backlinks app_data content_analysis content_generation")
     status: Optional[StrictStr] = Field(default=None, description="current status you can find all information about your API statuses for the last 60 days here the list of possible current statuses: major_outage partial_outage long_response_time long_execution_time webhook_delay send_delay")
     endpoints: Optional[List[AppendixStatusEndpointsInfo]] = Field(default=None, description="array of objects that contain status information for API endpoints")
     __properties: ClassVar[List[str]] = ["api", "status", "endpoints"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

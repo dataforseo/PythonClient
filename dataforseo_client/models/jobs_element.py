@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class JobsElement(BaseModel):
     JobsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
-    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
+    description: Optional[StrictStr] = Field(default=None, description="description")
     author: Optional[StrictStr] = Field(default=None, description="author")
     job_posted_time: Optional[StrictStr] = Field(default=None, description="the time when the job was posted")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
@@ -37,11 +37,11 @@ class JobsElement(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description="URL")
     __properties: ClassVar[List[str]] = ["type", "title", "description", "author", "job_posted_time", "timestamp", "contract_type", "salary", "url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

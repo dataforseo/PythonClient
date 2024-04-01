@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
@@ -39,7 +39,7 @@ class OrganicSerpElementItem(BaseSerpElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     cache_url: Optional[StrictStr] = Field(default=None, description="cached version of the page")
@@ -68,11 +68,11 @@ class OrganicSerpElementItem(BaseSerpElementItem):
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "cache_url", "related_search_url", "breadcrumb", "website_name", "is_image", "is_video", "is_featured_snippet", "is_malicious", "is_web_story", "description", "pre_snippet", "extended_snippet", "images", "amp_version", "rating", "price", "highlighted", "links", "faq", "extended_people_also_search", "about_this_result", "related_result", "timestamp", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

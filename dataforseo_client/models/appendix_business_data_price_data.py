@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_business_listings_business_data_price_data import AppendixBusinessListingsBusinessDataPriceData
 from dataforseo_client.models.appendix_google_business_data_price_data import AppendixGoogleBusinessDataPriceData
@@ -37,16 +37,16 @@ class AppendixBusinessDataPriceData(BaseModel):
     google: Optional[AppendixGoogleBusinessDataPriceData] = None
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    tripadvisor: Optional[AppendixTrBusinessDataPriceDataInfo] = None
     trustpilot: Optional[AppendixTrBusinessDataPriceDataInfo] = None
+    tripadvisor: Optional[AppendixTrBusinessDataPriceDataInfo] = None
     yelp: Optional[AppendixTrBusinessDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["business_listings", "errors", "social_media", "google", "languages", "locations", "tripadvisor", "trustpilot", "yelp"]
+    __properties: ClassVar[List[str]] = ["business_listings", "errors", "social_media", "google", "languages", "locations", "trustpilot", "tripadvisor", "yelp"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -99,12 +99,12 @@ class AppendixBusinessDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of locations
         if self.locations:
             _dict['locations'] = self.locations.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of tripadvisor
-        if self.tripadvisor:
-            _dict['tripadvisor'] = self.tripadvisor.to_dict()
         # override the default output from pydantic by calling `to_dict()` of trustpilot
         if self.trustpilot:
             _dict['trustpilot'] = self.trustpilot.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of tripadvisor
+        if self.tripadvisor:
+            _dict['tripadvisor'] = self.tripadvisor.to_dict()
         # override the default output from pydantic by calling `to_dict()` of yelp
         if self.yelp:
             _dict['yelp'] = self.yelp.to_dict()
@@ -126,8 +126,8 @@ class AppendixBusinessDataPriceData(BaseModel):
             "google": AppendixGoogleBusinessDataPriceData.from_dict(obj["google"]) if obj.get("google") is not None else None,
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
-            "tripadvisor": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["tripadvisor"]) if obj.get("tripadvisor") is not None else None,
             "trustpilot": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["trustpilot"]) if obj.get("trustpilot") is not None else None,
+            "tripadvisor": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["tripadvisor"]) if obj.get("tripadvisor") is not None else None,
             "yelp": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["yelp"]) if obj.get("yelp") is not None else None
         })
         return _obj

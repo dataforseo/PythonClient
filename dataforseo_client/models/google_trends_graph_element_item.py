@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_google_trends_item import BaseGoogleTrendsItem
 from dataforseo_client.models.trends_graph_data_info import TrendsGraphDataInfo
@@ -35,11 +35,11 @@ class GoogleTrendsGraphElementItem(BaseGoogleTrendsItem):
     averages: Optional[List[Optional[Union[StrictFloat, StrictInt]]]] = Field(default=None, description="keyword popularity values averaged over the whole time range")
     __properties: ClassVar[List[str]] = ["type", "position", "title", "keywords", "data", "averages"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

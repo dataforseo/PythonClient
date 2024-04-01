@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.keyword_annotations import KeywordAnnotations
 from dataforseo_client.models.monthly_searches import MonthlySearches
@@ -42,11 +42,11 @@ class KeywordsDataGoogleAdsKeywordsForSiteTaskGetResultInfo(BaseModel):
     keyword_annotations: Optional[KeywordAnnotations] = None
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "search_partners", "competition", "competition_index", "search_volume", "low_top_of_page_bid", "high_top_of_page_bid", "cpc", "monthly_searches", "keyword_annotations"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

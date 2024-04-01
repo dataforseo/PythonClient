@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.amazon_product_newer_model_info import AmazonProductNewerModelInfo
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
@@ -57,11 +57,11 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
     is_available: Optional[StrictBool] = Field(default=None, description="indicates whether the product is available for ordering if the value is true, the product can be ordered")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "details", "image_url", "author", "data_asin", "parent_asin", "product_asins", "price_from", "price_to", "currency", "is_amazon_choice", "rating", "is_newer_model_available", "newer_model", "categories", "product_information", "product_images_list", "product_videos_list", "description", "is_available"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

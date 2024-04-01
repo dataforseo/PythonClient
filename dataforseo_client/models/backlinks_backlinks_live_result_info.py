@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_backlinks_live_item import BacklinksBacklinksLiveItem
 from typing import Optional, Set
@@ -36,11 +36,11 @@ class BacklinksBacklinksLiveResultInfo(BaseModel):
     search_after_token: Optional[StrictStr] = Field(default=None, description="token for subsequent requests by specifying the unique search_after_token when setting a new task, you will get the subsequent results of the initial task; search_after_token values are unique for each subsequent task")
     __properties: ClassVar[List[str]] = ["target", "mode", "custom_mode", "total_count", "items_count", "items", "search_after_token"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

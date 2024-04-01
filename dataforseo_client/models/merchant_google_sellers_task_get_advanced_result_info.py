@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
+from dataforseo_client.models.rating_element import RatingElement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,16 +35,20 @@ class MerchantGoogleSellersTaskGetAdvancedResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to Google Shopping results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
+    title: Optional[StrictStr] = Field(default=None, description="title of the product")
+    url: Optional[StrictStr] = Field(default=None, description="URL to the product page")
+    image_url: Optional[StrictStr] = Field(default=None, description="URL to the product image")
+    rating: Optional[RatingElement] = None
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results found in Google Shopping SERP contains types of all search results (items) found in the returned SERP possible item types: shops_list, buy_on_google")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseMerchantSerpElementItem]] = Field(default=None, description="items in SERP")
-    __properties: ClassVar[List[str]] = ["product_id", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "item_types", "items_count", "items"]
+    __properties: ClassVar[List[str]] = ["product_id", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "title", "url", "image_url", "rating", "item_types", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -78,6 +83,9 @@ class MerchantGoogleSellersTaskGetAdvancedResultInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rating
+        if self.rating:
+            _dict['rating'] = self.rating.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
@@ -120,6 +128,21 @@ class MerchantGoogleSellersTaskGetAdvancedResultInfo(BaseModel):
         if self.datetime is None and "datetime" in self.model_fields_set:
             _dict['datetime'] = None
 
+        # set to None if title (nullable) is None
+        # and model_fields_set contains the field
+        if self.title is None and "title" in self.model_fields_set:
+            _dict['title'] = None
+
+        # set to None if url (nullable) is None
+        # and model_fields_set contains the field
+        if self.url is None and "url" in self.model_fields_set:
+            _dict['url'] = None
+
+        # set to None if image_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.image_url is None and "image_url" in self.model_fields_set:
+            _dict['image_url'] = None
+
         # set to None if item_types (nullable) is None
         # and model_fields_set contains the field
         if self.item_types is None and "item_types" in self.model_fields_set:
@@ -154,6 +177,10 @@ class MerchantGoogleSellersTaskGetAdvancedResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "check_url": obj.get("check_url"),
             "datetime": obj.get("datetime"),
+            "title": obj.get("title"),
+            "url": obj.get("url"),
+            "image_url": obj.get("image_url"),
+            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "item_types": obj.get("item_types"),
             "items_count": obj.get("items_count"),
             "items": [BaseMerchantSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None

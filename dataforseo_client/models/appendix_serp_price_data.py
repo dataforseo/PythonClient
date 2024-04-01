@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_keywords_keywords_data_price_data_info import AppendixKeywordsKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_serp_price_data_info import AppendixSerpPriceDataInfo
@@ -41,11 +41,11 @@ class AppendixSerpPriceData(BaseModel):
     tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["tasks_fixed", "errors", "jobs", "languages", "live", "locations", "screenshot", "task_get", "task_post", "tasks_ready"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

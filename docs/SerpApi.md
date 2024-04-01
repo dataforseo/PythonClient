@@ -1,158 +1,161 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # dataforseo_client.SerpApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ai_summary**](SerpApi.md#ai_summary) | **POST** /v3/serp/ai_summary |
-[**baidu_organic_task_get_advanced**](SerpApi.md#baidu_organic_task_get_advanced) | **GET** /v3/serp/baidu/organic/task_get/advanced/{id} |
-[**baidu_organic_task_get_html**](SerpApi.md#baidu_organic_task_get_html) | **GET** /v3/serp/baidu/organic/task_get/html/{id} |
-[**baidu_organic_task_get_regular**](SerpApi.md#baidu_organic_task_get_regular) | **GET** /v3/serp/baidu/organic/task_get/regular/{id} |
-[**baidu_organic_task_post**](SerpApi.md#baidu_organic_task_post) | **POST** /v3/serp/baidu/organic/task_post |
-[**baidu_organic_tasks_fixed**](SerpApi.md#baidu_organic_tasks_fixed) | **GET** /v3/serp/baidu/organic/tasks_fixed |
-[**baidu_organic_tasks_ready**](SerpApi.md#baidu_organic_tasks_ready) | **GET** /v3/serp/baidu/organic/tasks_ready |
-[**bing_local_pack_live_html**](SerpApi.md#bing_local_pack_live_html) | **POST** /v3/serp/bing/local_pack/live/html |
-[**bing_local_pack_live_regular**](SerpApi.md#bing_local_pack_live_regular) | **POST** /v3/serp/bing/local_pack/live/regular |
-[**bing_local_pack_task_get_html**](SerpApi.md#bing_local_pack_task_get_html) | **GET** /v3/serp/bing/local_pack/task_get/html/{id} |
-[**bing_local_pack_task_get_regular**](SerpApi.md#bing_local_pack_task_get_regular) | **GET** /v3/serp/bing/local_pack/task_get/regular/{id} |
-[**bing_local_pack_task_post**](SerpApi.md#bing_local_pack_task_post) | **POST** /v3/serp/bing/local_pack/task_post |
-[**bing_local_pack_tasks_fixed**](SerpApi.md#bing_local_pack_tasks_fixed) | **GET** /v3/serp/bing/local_pack/tasks_fixed |
-[**bing_local_pack_tasks_ready**](SerpApi.md#bing_local_pack_tasks_ready) | **GET** /v3/serp/bing/local_pack/tasks_ready |
-[**bing_organic_live_advanced**](SerpApi.md#bing_organic_live_advanced) | **POST** /v3/serp/bing/organic/live/advanced |
-[**bing_organic_live_html**](SerpApi.md#bing_organic_live_html) | **POST** /v3/serp/bing/organic/live/html |
-[**bing_organic_live_regular**](SerpApi.md#bing_organic_live_regular) | **POST** /v3/serp/bing/organic/live/regular |
-[**bing_organic_task_get_advanced**](SerpApi.md#bing_organic_task_get_advanced) | **GET** /v3/serp/bing/organic/task_get/advanced/{id} |
-[**bing_organic_task_get_html**](SerpApi.md#bing_organic_task_get_html) | **GET** /v3/serp/bing/organic/task_get/html/{id} |
-[**bing_organic_task_get_regular**](SerpApi.md#bing_organic_task_get_regular) | **GET** /v3/serp/bing/organic/task_get/regular/{id} |
-[**bing_organic_task_post**](SerpApi.md#bing_organic_task_post) | **POST** /v3/serp/bing/organic/task_post |
-[**bing_organic_tasks_fixed**](SerpApi.md#bing_organic_tasks_fixed) | **GET** /v3/serp/bing/organic/tasks_fixed |
-[**bing_organic_tasks_ready**](SerpApi.md#bing_organic_tasks_ready) | **GET** /v3/serp/bing/organic/tasks_ready |
-[**google_dataset_info_live_advanced**](SerpApi.md#google_dataset_info_live_advanced) | **POST** /v3/serp/google/dataset_info/live/advanced |
-[**google_dataset_info_task_get_advanced**](SerpApi.md#google_dataset_info_task_get_advanced) | **GET** /v3/serp/google/dataset_info/task_get/advanced/{id} |
-[**google_dataset_info_task_post**](SerpApi.md#google_dataset_info_task_post) | **POST** /v3/serp/google/dataset_info/task_post |
-[**google_dataset_info_tasks_fixed**](SerpApi.md#google_dataset_info_tasks_fixed) | **GET** /v3/serp/google/dataset_info/tasks_fixed |
-[**google_dataset_info_tasks_ready**](SerpApi.md#google_dataset_info_tasks_ready) | **GET** /v3/serp/google/dataset_info/tasks_ready |
-[**google_dataset_search_live_advanced**](SerpApi.md#google_dataset_search_live_advanced) | **POST** /v3/serp/google/dataset_search/live/advanced |
-[**google_dataset_search_task_get_advanced**](SerpApi.md#google_dataset_search_task_get_advanced) | **GET** /v3/serp/google/dataset_search/task_get/advanced/{id} |
-[**google_dataset_search_task_post**](SerpApi.md#google_dataset_search_task_post) | **POST** /v3/serp/google/dataset_search/task_post |
-[**google_dataset_search_tasks_fixed**](SerpApi.md#google_dataset_search_tasks_fixed) | **GET** /v3/serp/google/dataset_search/tasks_fixed |
-[**google_dataset_search_tasks_ready**](SerpApi.md#google_dataset_search_tasks_ready) | **GET** /v3/serp/google/dataset_search/tasks_ready |
-[**google_events_live_advanced**](SerpApi.md#google_events_live_advanced) | **POST** /v3/serp/google/events/live/advanced |
-[**google_events_task_get_advanced**](SerpApi.md#google_events_task_get_advanced) | **GET** /v3/serp/google/events/task_get/advanced/{id} |
-[**google_events_task_post**](SerpApi.md#google_events_task_post) | **POST** /v3/serp/google/events/task_post |
-[**google_events_tasks_fixed**](SerpApi.md#google_events_tasks_fixed) | **GET** /v3/serp/google/events/tasks_fixed |
-[**google_events_tasks_ready**](SerpApi.md#google_events_tasks_ready) | **GET** /v3/serp/google/events/tasks_ready |
-[**google_images_live_advanced**](SerpApi.md#google_images_live_advanced) | **POST** /v3/serp/google/images/live/advanced |
-[**google_images_live_html**](SerpApi.md#google_images_live_html) | **POST** /v3/serp/google/images/live/html |
-[**google_images_task_get_advanced**](SerpApi.md#google_images_task_get_advanced) | **GET** /v3/serp/google/images/task_get/advanced/{id} |
-[**google_images_task_get_html**](SerpApi.md#google_images_task_get_html) | **GET** /v3/serp/google/images/task_get/html/{id} |
-[**google_images_task_post**](SerpApi.md#google_images_task_post) | **POST** /v3/serp/google/images/task_post |
-[**google_images_tasks_fixed**](SerpApi.md#google_images_tasks_fixed) | **GET** /v3/serp/google/images/tasks_fixed |
-[**google_images_tasks_ready**](SerpApi.md#google_images_tasks_ready) | **GET** /v3/serp/google/images/tasks_ready |
-[**google_jobs_task_get_advanced**](SerpApi.md#google_jobs_task_get_advanced) | **GET** /v3/serp/google/jobs/task_get/advanced/{id} |
-[**google_jobs_task_get_html**](SerpApi.md#google_jobs_task_get_html) | **GET** /v3/serp/google/jobs/task_get/html/{id} |
-[**google_jobs_task_post**](SerpApi.md#google_jobs_task_post) | **POST** /v3/serp/google/jobs/task_post |
-[**google_jobs_tasks_fixed**](SerpApi.md#google_jobs_tasks_fixed) | **GET** /v3/serp/google/jobs/tasks_fixed |
-[**google_jobs_tasks_ready**](SerpApi.md#google_jobs_tasks_ready) | **GET** /v3/serp/google/jobs/tasks_ready |
-[**google_local_finder_live_advanced**](SerpApi.md#google_local_finder_live_advanced) | **POST** /v3/serp/google/local_finder/live/advanced |
-[**google_local_finder_live_html**](SerpApi.md#google_local_finder_live_html) | **POST** /v3/serp/google/local_finder/live/html |
-[**google_local_finder_task_get_advanced**](SerpApi.md#google_local_finder_task_get_advanced) | **GET** /v3/serp/google/local_finder/task_get/advanced/{id} |
-[**google_local_finder_task_get_html**](SerpApi.md#google_local_finder_task_get_html) | **GET** /v3/serp/google/local_finder/task_get/html/{id} |
-[**google_local_finder_task_post**](SerpApi.md#google_local_finder_task_post) | **POST** /v3/serp/google/local_finder/task_post |
-[**google_local_finder_tasks_fixed**](SerpApi.md#google_local_finder_tasks_fixed) | **GET** /v3/serp/google/local_finder/tasks_fixed |
-[**google_local_finder_tasks_ready**](SerpApi.md#google_local_finder_tasks_ready) | **GET** /v3/serp/google/local_finder/tasks_ready |
-[**google_maps_live_advanced**](SerpApi.md#google_maps_live_advanced) | **POST** /v3/serp/google/maps/live/advanced |
-[**google_maps_task_get_advanced**](SerpApi.md#google_maps_task_get_advanced) | **GET** /v3/serp/google/maps/task_get/advanced/{id} |
-[**google_maps_task_post**](SerpApi.md#google_maps_task_post) | **POST** /v3/serp/google/maps/task_post |
-[**google_maps_tasks_fixed**](SerpApi.md#google_maps_tasks_fixed) | **GET** /v3/serp/google/maps/tasks_fixed |
-[**google_maps_tasks_ready**](SerpApi.md#google_maps_tasks_ready) | **GET** /v3/serp/google/maps/tasks_ready |
-[**google_news_live_advanced**](SerpApi.md#google_news_live_advanced) | **POST** /v3/serp/google/news/live/advanced |
-[**google_news_live_html**](SerpApi.md#google_news_live_html) | **POST** /v3/serp/google/news/live/html |
-[**google_news_task_get_advanced**](SerpApi.md#google_news_task_get_advanced) | **GET** /v3/serp/google/news/task_get/advanced/{id} |
-[**google_news_task_get_html**](SerpApi.md#google_news_task_get_html) | **GET** /v3/serp/google/news/task_get/html/{id} |
-[**google_news_task_post**](SerpApi.md#google_news_task_post) | **POST** /v3/serp/google/news/task_post |
-[**google_news_tasks_fixed**](SerpApi.md#google_news_tasks_fixed) | **GET** /v3/serp/google/news/tasks_fixed |
-[**google_news_tasks_ready**](SerpApi.md#google_news_tasks_ready) | **GET** /v3/serp/google/news/tasks_ready |
-[**google_organic_live_advanced**](SerpApi.md#google_organic_live_advanced) | **POST** /v3/serp/google/organic/live/advanced |
-[**google_organic_live_html**](SerpApi.md#google_organic_live_html) | **POST** /v3/serp/google/organic/live/html |
-[**google_organic_live_regular**](SerpApi.md#google_organic_live_regular) | **POST** /v3/serp/google/organic/live/regular |
-[**google_organic_task_get_advanced**](SerpApi.md#google_organic_task_get_advanced) | **GET** /v3/serp/google/organic/task_get/advanced/{id} |
-[**google_organic_task_get_html**](SerpApi.md#google_organic_task_get_html) | **GET** /v3/serp/google/organic/task_get/html/{id} |
-[**google_organic_task_get_regular**](SerpApi.md#google_organic_task_get_regular) | **GET** /v3/serp/google/organic/task_get/regular/{id} |
-[**google_organic_task_post**](SerpApi.md#google_organic_task_post) | **POST** /v3/serp/google/organic/task_post |
-[**google_organic_tasks_fixed**](SerpApi.md#google_organic_tasks_fixed) | **GET** /v3/serp/google/organic/tasks_fixed |
-[**google_organic_tasks_ready**](SerpApi.md#google_organic_tasks_ready) | **GET** /v3/serp/google/organic/tasks_ready |
-[**google_search_by_image_task_get_advanced**](SerpApi.md#google_search_by_image_task_get_advanced) | **GET** /v3/serp/google/search_by_image/task_get/advanced/{id} |
-[**google_search_by_image_task_post**](SerpApi.md#google_search_by_image_task_post) | **POST** /v3/serp/google/search_by_image/task_post |
-[**google_search_by_image_tasks_fixed**](SerpApi.md#google_search_by_image_tasks_fixed) | **GET** /v3/serp/google/search_by_image/tasks_fixed |
-[**google_search_by_image_tasks_ready**](SerpApi.md#google_search_by_image_tasks_ready) | **GET** /v3/serp/google/search_by_image/tasks_ready |
-[**naver_organic_task_get_advanced**](SerpApi.md#naver_organic_task_get_advanced) | **GET** /v3/serp/naver/organic/task_get/advanced/{id} |
-[**naver_organic_task_get_html**](SerpApi.md#naver_organic_task_get_html) | **GET** /v3/serp/naver/organic/task_get/html/{id} |
-[**naver_organic_task_get_regular**](SerpApi.md#naver_organic_task_get_regular) | **GET** /v3/serp/naver/organic/task_get/regular/{id} |
-[**naver_organic_task_post**](SerpApi.md#naver_organic_task_post) | **POST** /v3/serp/naver/organic/task_post |
-[**naver_organic_tasks_fixed**](SerpApi.md#naver_organic_tasks_fixed) | **GET** /v3/serp/naver/organic/tasks_fixed |
-[**naver_organic_tasks_ready**](SerpApi.md#naver_organic_tasks_ready) | **GET** /v3/serp/naver/organic/tasks_ready |
-[**screenshot**](SerpApi.md#screenshot) | **POST** /v3/serp/screenshot |
-[**serp_baidu_languages**](SerpApi.md#serp_baidu_languages) | **GET** /v3/serp/baidu/languages |
-[**serp_baidu_locations**](SerpApi.md#serp_baidu_locations) | **GET** /v3/serp/baidu/locations |
-[**serp_baidu_locations_country**](SerpApi.md#serp_baidu_locations_country) | **GET** /v3/serp/baidu/locations/{country} |
-[**serp_bing_languages**](SerpApi.md#serp_bing_languages) | **GET** /v3/serp/bing/languages |
-[**serp_bing_locations**](SerpApi.md#serp_bing_locations) | **GET** /v3/serp/bing/locations |
-[**serp_bing_locations_country**](SerpApi.md#serp_bing_locations_country) | **GET** /v3/serp/bing/locations/{country} |
-[**serp_errors**](SerpApi.md#serp_errors) | **POST** /v3/serp/errors |
-[**serp_google_languages**](SerpApi.md#serp_google_languages) | **GET** /v3/serp/google/languages |
-[**serp_google_locations**](SerpApi.md#serp_google_locations) | **GET** /v3/serp/google/locations |
-[**serp_google_locations_country**](SerpApi.md#serp_google_locations_country) | **GET** /v3/serp/google/locations/{country} |
-[**serp_id_list**](SerpApi.md#serp_id_list) | **POST** /v3/serp/id_list |
-[**serp_seznam_languages**](SerpApi.md#serp_seznam_languages) | **GET** /v3/serp/seznam/languages |
-[**serp_seznam_locations**](SerpApi.md#serp_seznam_locations) | **GET** /v3/serp/seznam/locations |
-[**serp_seznam_locations_country**](SerpApi.md#serp_seznam_locations_country) | **GET** /v3/serp/seznam/locations/{country} |
-[**serp_yahoo_languages**](SerpApi.md#serp_yahoo_languages) | **GET** /v3/serp/yahoo/languages |
-[**serp_yahoo_locations**](SerpApi.md#serp_yahoo_locations) | **GET** /v3/serp/yahoo/locations |
-[**serp_yahoo_locations_country**](SerpApi.md#serp_yahoo_locations_country) | **GET** /v3/serp/yahoo/locations/{country} |
-[**serp_youtube_languages**](SerpApi.md#serp_youtube_languages) | **GET** /v3/serp/youtube/languages |
-[**serp_youtube_locations**](SerpApi.md#serp_youtube_locations) | **GET** /v3/serp/youtube/locations |
-[**serp_youtube_locations_country**](SerpApi.md#serp_youtube_locations_country) | **GET** /v3/serp/youtube/locations/{country} |
-[**seznam_organic_task_get_advanced**](SerpApi.md#seznam_organic_task_get_advanced) | **GET** /v3/serp/seznam/organic/task_get/advanced/{id} |
-[**seznam_organic_task_get_html**](SerpApi.md#seznam_organic_task_get_html) | **GET** /v3/serp/seznam/organic/task_get/html/{id} |
-[**seznam_organic_task_get_regular**](SerpApi.md#seznam_organic_task_get_regular) | **GET** /v3/serp/seznam/organic/task_get/regular/{id} |
-[**seznam_organic_task_post**](SerpApi.md#seznam_organic_task_post) | **POST** /v3/serp/seznam/organic/task_post |
-[**seznam_organic_tasks_fixed**](SerpApi.md#seznam_organic_tasks_fixed) | **GET** /v3/serp/seznam/organic/tasks_fixed |
-[**seznam_organic_tasks_ready**](SerpApi.md#seznam_organic_tasks_ready) | **GET** /v3/serp/seznam/organic/tasks_ready |
-[**yahoo_organic_live_advanced**](SerpApi.md#yahoo_organic_live_advanced) | **POST** /v3/serp/yahoo/organic/live/advanced |
-[**yahoo_organic_live_html**](SerpApi.md#yahoo_organic_live_html) | **POST** /v3/serp/yahoo/organic/live/html |
-[**yahoo_organic_live_regular**](SerpApi.md#yahoo_organic_live_regular) | **POST** /v3/serp/yahoo/organic/live/regular |
-[**yahoo_organic_task_get_advanced**](SerpApi.md#yahoo_organic_task_get_advanced) | **GET** /v3/serp/yahoo/organic/task_get/advanced/{id} |
-[**yahoo_organic_task_get_html**](SerpApi.md#yahoo_organic_task_get_html) | **GET** /v3/serp/yahoo/organic/task_get/html/{id} |
-[**yahoo_organic_task_get_regular**](SerpApi.md#yahoo_organic_task_get_regular) | **GET** /v3/serp/yahoo/organic/task_get/regular/{id} |
-[**yahoo_organic_task_post**](SerpApi.md#yahoo_organic_task_post) | **POST** /v3/serp/yahoo/organic/task_post |
-[**yahoo_organic_tasks_fixed**](SerpApi.md#yahoo_organic_tasks_fixed) | **GET** /v3/serp/yahoo/organic/tasks_fixed |
-[**yahoo_organic_tasks_ready**](SerpApi.md#yahoo_organic_tasks_ready) | **GET** /v3/serp/yahoo/organic/tasks_ready |
-[**youtube_video_comments_live_advanced**](SerpApi.md#youtube_video_comments_live_advanced) | **POST** /v3/serp/youtube/video_comments/live/advanced |
-[**youtube_video_comments_task_get_advanced**](SerpApi.md#youtube_video_comments_task_get_advanced) | **GET** /v3/serp/youtube/video_comments/task_get/advanced/{id} |
-[**youtube_video_comments_task_post**](SerpApi.md#youtube_video_comments_task_post) | **POST** /v3/serp/youtube/video_comments/task_post |
-[**youtube_video_comments_tasks_fixed**](SerpApi.md#youtube_video_comments_tasks_fixed) | **GET** /v3/serp/youtube/video_comments/tasks_fixed |
-[**youtube_video_comments_tasks_ready**](SerpApi.md#youtube_video_comments_tasks_ready) | **GET** /v3/serp/youtube/video_comments/tasks_ready |
-[**youtube_video_info_live_advanced**](SerpApi.md#youtube_video_info_live_advanced) | **POST** /v3/serp/youtube/video_info/live/advanced |
-[**youtube_video_info_task_get_advanced**](SerpApi.md#youtube_video_info_task_get_advanced) | **GET** /v3/serp/youtube/video_info/task_get/advanced/{id} |
-[**youtube_video_info_task_post**](SerpApi.md#youtube_video_info_task_post) | **POST** /v3/serp/youtube/video_info/task_post |
-[**youtube_video_info_tasks_fixed**](SerpApi.md#youtube_video_info_tasks_fixed) | **GET** /v3/serp/youtube/video_info/tasks_fixed |
-[**youtube_video_info_tasks_ready**](SerpApi.md#youtube_video_info_tasks_ready) | **GET** /v3/serp/youtube/video_info/tasks_ready |
-[**youtube_video_subtitles_live_advanced**](SerpApi.md#youtube_video_subtitles_live_advanced) | **POST** /v3/serp/youtube/video_subtitles/live/advanced |
-[**youtube_video_subtitles_task_get_advanced**](SerpApi.md#youtube_video_subtitles_task_get_advanced) | **GET** /v3/serp/youtube/video_subtitles/task_get/advanced/{id} |
-[**youtube_video_subtitles_task_post**](SerpApi.md#youtube_video_subtitles_task_post) | **POST** /v3/serp/youtube/video_subtitles/task_post |
-[**youtube_video_subtitles_tasks_fixed**](SerpApi.md#youtube_video_subtitles_tasks_fixed) | **GET** /v3/serp/youtube/video_subtitles/tasks_fixed |
-[**youtube_video_subtitles_tasks_ready**](SerpApi.md#youtube_video_subtitles_tasks_ready) | **GET** /v3/serp/youtube/video_subtitles/tasks_ready |
+[**ai_summary**](SerpApi.md#ai_summary) | **POST** /v3/serp/ai_summary | 
+[**baidu_organic_task_get_advanced**](SerpApi.md#baidu_organic_task_get_advanced) | **GET** /v3/serp/baidu/organic/task_get/advanced/{id} | 
+[**baidu_organic_task_get_html**](SerpApi.md#baidu_organic_task_get_html) | **GET** /v3/serp/baidu/organic/task_get/html/{id} | 
+[**baidu_organic_task_get_regular**](SerpApi.md#baidu_organic_task_get_regular) | **GET** /v3/serp/baidu/organic/task_get/regular/{id} | 
+[**baidu_organic_task_post**](SerpApi.md#baidu_organic_task_post) | **POST** /v3/serp/baidu/organic/task_post | 
+[**baidu_organic_tasks_fixed**](SerpApi.md#baidu_organic_tasks_fixed) | **GET** /v3/serp/baidu/organic/tasks_fixed | 
+[**baidu_organic_tasks_ready**](SerpApi.md#baidu_organic_tasks_ready) | **GET** /v3/serp/baidu/organic/tasks_ready | 
+[**bing_local_pack_live_html**](SerpApi.md#bing_local_pack_live_html) | **POST** /v3/serp/bing/local_pack/live/html | 
+[**bing_local_pack_live_regular**](SerpApi.md#bing_local_pack_live_regular) | **POST** /v3/serp/bing/local_pack/live/regular | 
+[**bing_local_pack_task_get_html**](SerpApi.md#bing_local_pack_task_get_html) | **GET** /v3/serp/bing/local_pack/task_get/html/{id} | 
+[**bing_local_pack_task_get_regular**](SerpApi.md#bing_local_pack_task_get_regular) | **GET** /v3/serp/bing/local_pack/task_get/regular/{id} | 
+[**bing_local_pack_task_post**](SerpApi.md#bing_local_pack_task_post) | **POST** /v3/serp/bing/local_pack/task_post | 
+[**bing_local_pack_tasks_fixed**](SerpApi.md#bing_local_pack_tasks_fixed) | **GET** /v3/serp/bing/local_pack/tasks_fixed | 
+[**bing_local_pack_tasks_ready**](SerpApi.md#bing_local_pack_tasks_ready) | **GET** /v3/serp/bing/local_pack/tasks_ready | 
+[**bing_organic_live_advanced**](SerpApi.md#bing_organic_live_advanced) | **POST** /v3/serp/bing/organic/live/advanced | 
+[**bing_organic_live_html**](SerpApi.md#bing_organic_live_html) | **POST** /v3/serp/bing/organic/live/html | 
+[**bing_organic_live_regular**](SerpApi.md#bing_organic_live_regular) | **POST** /v3/serp/bing/organic/live/regular | 
+[**bing_organic_task_get_advanced**](SerpApi.md#bing_organic_task_get_advanced) | **GET** /v3/serp/bing/organic/task_get/advanced/{id} | 
+[**bing_organic_task_get_html**](SerpApi.md#bing_organic_task_get_html) | **GET** /v3/serp/bing/organic/task_get/html/{id} | 
+[**bing_organic_task_get_regular**](SerpApi.md#bing_organic_task_get_regular) | **GET** /v3/serp/bing/organic/task_get/regular/{id} | 
+[**bing_organic_task_post**](SerpApi.md#bing_organic_task_post) | **POST** /v3/serp/bing/organic/task_post | 
+[**bing_organic_tasks_fixed**](SerpApi.md#bing_organic_tasks_fixed) | **GET** /v3/serp/bing/organic/tasks_fixed | 
+[**bing_organic_tasks_ready**](SerpApi.md#bing_organic_tasks_ready) | **GET** /v3/serp/bing/organic/tasks_ready | 
+[**google_autocomplete_live_advanced**](SerpApi.md#google_autocomplete_live_advanced) | **POST** /v3/serp/google/autocomplete/live/advanced | 
+[**google_autocomplete_task_get_advanced**](SerpApi.md#google_autocomplete_task_get_advanced) | **GET** /v3/serp/google/autocomplete/task_get/advanced/{id} | 
+[**google_autocomplete_task_post**](SerpApi.md#google_autocomplete_task_post) | **POST** /v3/serp/google/autocomplete/task_post | 
+[**google_autocomplete_tasks_fixed**](SerpApi.md#google_autocomplete_tasks_fixed) | **GET** /v3/serp/google/autocomplete/tasks_fixed | 
+[**google_autocomplete_tasks_ready**](SerpApi.md#google_autocomplete_tasks_ready) | **GET** /v3/serp/google/autocomplete/tasks_ready | 
+[**google_dataset_info_live_advanced**](SerpApi.md#google_dataset_info_live_advanced) | **POST** /v3/serp/google/dataset_info/live/advanced | 
+[**google_dataset_info_task_get_advanced**](SerpApi.md#google_dataset_info_task_get_advanced) | **GET** /v3/serp/google/dataset_info/task_get/advanced/{id} | 
+[**google_dataset_info_task_post**](SerpApi.md#google_dataset_info_task_post) | **POST** /v3/serp/google/dataset_info/task_post | 
+[**google_dataset_info_tasks_fixed**](SerpApi.md#google_dataset_info_tasks_fixed) | **GET** /v3/serp/google/dataset_info/tasks_fixed | 
+[**google_dataset_info_tasks_ready**](SerpApi.md#google_dataset_info_tasks_ready) | **GET** /v3/serp/google/dataset_info/tasks_ready | 
+[**google_dataset_search_live_advanced**](SerpApi.md#google_dataset_search_live_advanced) | **POST** /v3/serp/google/dataset_search/live/advanced | 
+[**google_dataset_search_task_get_advanced**](SerpApi.md#google_dataset_search_task_get_advanced) | **GET** /v3/serp/google/dataset_search/task_get/advanced/{id} | 
+[**google_dataset_search_task_post**](SerpApi.md#google_dataset_search_task_post) | **POST** /v3/serp/google/dataset_search/task_post | 
+[**google_dataset_search_tasks_fixed**](SerpApi.md#google_dataset_search_tasks_fixed) | **GET** /v3/serp/google/dataset_search/tasks_fixed | 
+[**google_dataset_search_tasks_ready**](SerpApi.md#google_dataset_search_tasks_ready) | **GET** /v3/serp/google/dataset_search/tasks_ready | 
+[**google_events_live_advanced**](SerpApi.md#google_events_live_advanced) | **POST** /v3/serp/google/events/live/advanced | 
+[**google_events_task_get_advanced**](SerpApi.md#google_events_task_get_advanced) | **GET** /v3/serp/google/events/task_get/advanced/{id} | 
+[**google_events_task_post**](SerpApi.md#google_events_task_post) | **POST** /v3/serp/google/events/task_post | 
+[**google_events_tasks_fixed**](SerpApi.md#google_events_tasks_fixed) | **GET** /v3/serp/google/events/tasks_fixed | 
+[**google_events_tasks_ready**](SerpApi.md#google_events_tasks_ready) | **GET** /v3/serp/google/events/tasks_ready | 
+[**google_images_live_advanced**](SerpApi.md#google_images_live_advanced) | **POST** /v3/serp/google/images/live/advanced | 
+[**google_images_live_html**](SerpApi.md#google_images_live_html) | **POST** /v3/serp/google/images/live/html | 
+[**google_images_task_get_advanced**](SerpApi.md#google_images_task_get_advanced) | **GET** /v3/serp/google/images/task_get/advanced/{id} | 
+[**google_images_task_get_html**](SerpApi.md#google_images_task_get_html) | **GET** /v3/serp/google/images/task_get/html/{id} | 
+[**google_images_task_post**](SerpApi.md#google_images_task_post) | **POST** /v3/serp/google/images/task_post | 
+[**google_images_tasks_fixed**](SerpApi.md#google_images_tasks_fixed) | **GET** /v3/serp/google/images/tasks_fixed | 
+[**google_images_tasks_ready**](SerpApi.md#google_images_tasks_ready) | **GET** /v3/serp/google/images/tasks_ready | 
+[**google_jobs_task_get_advanced**](SerpApi.md#google_jobs_task_get_advanced) | **GET** /v3/serp/google/jobs/task_get/advanced/{id} | 
+[**google_jobs_task_get_html**](SerpApi.md#google_jobs_task_get_html) | **GET** /v3/serp/google/jobs/task_get/html/{id} | 
+[**google_jobs_task_post**](SerpApi.md#google_jobs_task_post) | **POST** /v3/serp/google/jobs/task_post | 
+[**google_jobs_tasks_fixed**](SerpApi.md#google_jobs_tasks_fixed) | **GET** /v3/serp/google/jobs/tasks_fixed | 
+[**google_jobs_tasks_ready**](SerpApi.md#google_jobs_tasks_ready) | **GET** /v3/serp/google/jobs/tasks_ready | 
+[**google_local_finder_live_advanced**](SerpApi.md#google_local_finder_live_advanced) | **POST** /v3/serp/google/local_finder/live/advanced | 
+[**google_local_finder_live_html**](SerpApi.md#google_local_finder_live_html) | **POST** /v3/serp/google/local_finder/live/html | 
+[**google_local_finder_task_get_advanced**](SerpApi.md#google_local_finder_task_get_advanced) | **GET** /v3/serp/google/local_finder/task_get/advanced/{id} | 
+[**google_local_finder_task_get_html**](SerpApi.md#google_local_finder_task_get_html) | **GET** /v3/serp/google/local_finder/task_get/html/{id} | 
+[**google_local_finder_task_post**](SerpApi.md#google_local_finder_task_post) | **POST** /v3/serp/google/local_finder/task_post | 
+[**google_local_finder_tasks_fixed**](SerpApi.md#google_local_finder_tasks_fixed) | **GET** /v3/serp/google/local_finder/tasks_fixed | 
+[**google_local_finder_tasks_ready**](SerpApi.md#google_local_finder_tasks_ready) | **GET** /v3/serp/google/local_finder/tasks_ready | 
+[**google_maps_live_advanced**](SerpApi.md#google_maps_live_advanced) | **POST** /v3/serp/google/maps/live/advanced | 
+[**google_maps_task_get_advanced**](SerpApi.md#google_maps_task_get_advanced) | **GET** /v3/serp/google/maps/task_get/advanced/{id} | 
+[**google_maps_task_post**](SerpApi.md#google_maps_task_post) | **POST** /v3/serp/google/maps/task_post | 
+[**google_maps_tasks_fixed**](SerpApi.md#google_maps_tasks_fixed) | **GET** /v3/serp/google/maps/tasks_fixed | 
+[**google_maps_tasks_ready**](SerpApi.md#google_maps_tasks_ready) | **GET** /v3/serp/google/maps/tasks_ready | 
+[**google_news_live_advanced**](SerpApi.md#google_news_live_advanced) | **POST** /v3/serp/google/news/live/advanced | 
+[**google_news_live_html**](SerpApi.md#google_news_live_html) | **POST** /v3/serp/google/news/live/html | 
+[**google_news_task_get_advanced**](SerpApi.md#google_news_task_get_advanced) | **GET** /v3/serp/google/news/task_get/advanced/{id} | 
+[**google_news_task_get_html**](SerpApi.md#google_news_task_get_html) | **GET** /v3/serp/google/news/task_get/html/{id} | 
+[**google_news_task_post**](SerpApi.md#google_news_task_post) | **POST** /v3/serp/google/news/task_post | 
+[**google_news_tasks_fixed**](SerpApi.md#google_news_tasks_fixed) | **GET** /v3/serp/google/news/tasks_fixed | 
+[**google_news_tasks_ready**](SerpApi.md#google_news_tasks_ready) | **GET** /v3/serp/google/news/tasks_ready | 
+[**google_organic_live_advanced**](SerpApi.md#google_organic_live_advanced) | **POST** /v3/serp/google/organic/live/advanced | 
+[**google_organic_live_html**](SerpApi.md#google_organic_live_html) | **POST** /v3/serp/google/organic/live/html | 
+[**google_organic_live_regular**](SerpApi.md#google_organic_live_regular) | **POST** /v3/serp/google/organic/live/regular | 
+[**google_organic_task_get_advanced**](SerpApi.md#google_organic_task_get_advanced) | **GET** /v3/serp/google/organic/task_get/advanced/{id} | 
+[**google_organic_task_get_html**](SerpApi.md#google_organic_task_get_html) | **GET** /v3/serp/google/organic/task_get/html/{id} | 
+[**google_organic_task_get_regular**](SerpApi.md#google_organic_task_get_regular) | **GET** /v3/serp/google/organic/task_get/regular/{id} | 
+[**google_organic_task_post**](SerpApi.md#google_organic_task_post) | **POST** /v3/serp/google/organic/task_post | 
+[**google_organic_tasks_fixed**](SerpApi.md#google_organic_tasks_fixed) | **GET** /v3/serp/google/organic/tasks_fixed | 
+[**google_organic_tasks_ready**](SerpApi.md#google_organic_tasks_ready) | **GET** /v3/serp/google/organic/tasks_ready | 
+[**google_search_by_image_task_get_advanced**](SerpApi.md#google_search_by_image_task_get_advanced) | **GET** /v3/serp/google/search_by_image/task_get/advanced/{id} | 
+[**google_search_by_image_task_post**](SerpApi.md#google_search_by_image_task_post) | **POST** /v3/serp/google/search_by_image/task_post | 
+[**google_search_by_image_tasks_fixed**](SerpApi.md#google_search_by_image_tasks_fixed) | **GET** /v3/serp/google/search_by_image/tasks_fixed | 
+[**google_search_by_image_tasks_ready**](SerpApi.md#google_search_by_image_tasks_ready) | **GET** /v3/serp/google/search_by_image/tasks_ready | 
+[**naver_organic_task_get_advanced**](SerpApi.md#naver_organic_task_get_advanced) | **GET** /v3/serp/naver/organic/task_get/advanced/{id} | 
+[**naver_organic_task_get_html**](SerpApi.md#naver_organic_task_get_html) | **GET** /v3/serp/naver/organic/task_get/html/{id} | 
+[**naver_organic_task_get_regular**](SerpApi.md#naver_organic_task_get_regular) | **GET** /v3/serp/naver/organic/task_get/regular/{id} | 
+[**naver_organic_task_post**](SerpApi.md#naver_organic_task_post) | **POST** /v3/serp/naver/organic/task_post | 
+[**naver_organic_tasks_fixed**](SerpApi.md#naver_organic_tasks_fixed) | **GET** /v3/serp/naver/organic/tasks_fixed | 
+[**naver_organic_tasks_ready**](SerpApi.md#naver_organic_tasks_ready) | **GET** /v3/serp/naver/organic/tasks_ready | 
+[**screenshot**](SerpApi.md#screenshot) | **POST** /v3/serp/screenshot | 
+[**serp_baidu_languages**](SerpApi.md#serp_baidu_languages) | **GET** /v3/serp/baidu/languages | 
+[**serp_baidu_locations**](SerpApi.md#serp_baidu_locations) | **GET** /v3/serp/baidu/locations | 
+[**serp_baidu_locations_country**](SerpApi.md#serp_baidu_locations_country) | **GET** /v3/serp/baidu/locations/{country} | 
+[**serp_bing_languages**](SerpApi.md#serp_bing_languages) | **GET** /v3/serp/bing/languages | 
+[**serp_bing_locations**](SerpApi.md#serp_bing_locations) | **GET** /v3/serp/bing/locations | 
+[**serp_bing_locations_country**](SerpApi.md#serp_bing_locations_country) | **GET** /v3/serp/bing/locations/{country} | 
+[**serp_errors**](SerpApi.md#serp_errors) | **POST** /v3/serp/errors | 
+[**serp_google_languages**](SerpApi.md#serp_google_languages) | **GET** /v3/serp/google/languages | 
+[**serp_google_locations**](SerpApi.md#serp_google_locations) | **GET** /v3/serp/google/locations | 
+[**serp_google_locations_country**](SerpApi.md#serp_google_locations_country) | **GET** /v3/serp/google/locations/{country} | 
+[**serp_id_list**](SerpApi.md#serp_id_list) | **POST** /v3/serp/id_list | 
+[**serp_seznam_languages**](SerpApi.md#serp_seznam_languages) | **GET** /v3/serp/seznam/languages | 
+[**serp_seznam_locations**](SerpApi.md#serp_seznam_locations) | **GET** /v3/serp/seznam/locations | 
+[**serp_seznam_locations_country**](SerpApi.md#serp_seznam_locations_country) | **GET** /v3/serp/seznam/locations/{country} | 
+[**serp_yahoo_languages**](SerpApi.md#serp_yahoo_languages) | **GET** /v3/serp/yahoo/languages | 
+[**serp_yahoo_locations**](SerpApi.md#serp_yahoo_locations) | **GET** /v3/serp/yahoo/locations | 
+[**serp_yahoo_locations_country**](SerpApi.md#serp_yahoo_locations_country) | **GET** /v3/serp/yahoo/locations/{country} | 
+[**serp_youtube_languages**](SerpApi.md#serp_youtube_languages) | **GET** /v3/serp/youtube/languages | 
+[**serp_youtube_locations**](SerpApi.md#serp_youtube_locations) | **GET** /v3/serp/youtube/locations | 
+[**serp_youtube_locations_country**](SerpApi.md#serp_youtube_locations_country) | **GET** /v3/serp/youtube/locations/{country} | 
+[**seznam_organic_task_get_advanced**](SerpApi.md#seznam_organic_task_get_advanced) | **GET** /v3/serp/seznam/organic/task_get/advanced/{id} | 
+[**seznam_organic_task_get_html**](SerpApi.md#seznam_organic_task_get_html) | **GET** /v3/serp/seznam/organic/task_get/html/{id} | 
+[**seznam_organic_task_get_regular**](SerpApi.md#seznam_organic_task_get_regular) | **GET** /v3/serp/seznam/organic/task_get/regular/{id} | 
+[**seznam_organic_task_post**](SerpApi.md#seznam_organic_task_post) | **POST** /v3/serp/seznam/organic/task_post | 
+[**seznam_organic_tasks_fixed**](SerpApi.md#seznam_organic_tasks_fixed) | **GET** /v3/serp/seznam/organic/tasks_fixed | 
+[**seznam_organic_tasks_ready**](SerpApi.md#seznam_organic_tasks_ready) | **GET** /v3/serp/seznam/organic/tasks_ready | 
+[**yahoo_organic_live_advanced**](SerpApi.md#yahoo_organic_live_advanced) | **POST** /v3/serp/yahoo/organic/live/advanced | 
+[**yahoo_organic_live_html**](SerpApi.md#yahoo_organic_live_html) | **POST** /v3/serp/yahoo/organic/live/html | 
+[**yahoo_organic_live_regular**](SerpApi.md#yahoo_organic_live_regular) | **POST** /v3/serp/yahoo/organic/live/regular | 
+[**yahoo_organic_task_get_advanced**](SerpApi.md#yahoo_organic_task_get_advanced) | **GET** /v3/serp/yahoo/organic/task_get/advanced/{id} | 
+[**yahoo_organic_task_get_html**](SerpApi.md#yahoo_organic_task_get_html) | **GET** /v3/serp/yahoo/organic/task_get/html/{id} | 
+[**yahoo_organic_task_get_regular**](SerpApi.md#yahoo_organic_task_get_regular) | **GET** /v3/serp/yahoo/organic/task_get/regular/{id} | 
+[**yahoo_organic_task_post**](SerpApi.md#yahoo_organic_task_post) | **POST** /v3/serp/yahoo/organic/task_post | 
+[**yahoo_organic_tasks_fixed**](SerpApi.md#yahoo_organic_tasks_fixed) | **GET** /v3/serp/yahoo/organic/tasks_fixed | 
+[**yahoo_organic_tasks_ready**](SerpApi.md#yahoo_organic_tasks_ready) | **GET** /v3/serp/yahoo/organic/tasks_ready | 
+[**youtube_video_comments_live_advanced**](SerpApi.md#youtube_video_comments_live_advanced) | **POST** /v3/serp/youtube/video_comments/live/advanced | 
+[**youtube_video_comments_task_get_advanced**](SerpApi.md#youtube_video_comments_task_get_advanced) | **GET** /v3/serp/youtube/video_comments/task_get/advanced/{id} | 
+[**youtube_video_comments_task_post**](SerpApi.md#youtube_video_comments_task_post) | **POST** /v3/serp/youtube/video_comments/task_post | 
+[**youtube_video_comments_tasks_fixed**](SerpApi.md#youtube_video_comments_tasks_fixed) | **GET** /v3/serp/youtube/video_comments/tasks_fixed | 
+[**youtube_video_comments_tasks_ready**](SerpApi.md#youtube_video_comments_tasks_ready) | **GET** /v3/serp/youtube/video_comments/tasks_ready | 
+[**youtube_video_info_live_advanced**](SerpApi.md#youtube_video_info_live_advanced) | **POST** /v3/serp/youtube/video_info/live/advanced | 
+[**youtube_video_info_task_get_advanced**](SerpApi.md#youtube_video_info_task_get_advanced) | **GET** /v3/serp/youtube/video_info/task_get/advanced/{id} | 
+[**youtube_video_info_task_post**](SerpApi.md#youtube_video_info_task_post) | **POST** /v3/serp/youtube/video_info/task_post | 
+[**youtube_video_info_tasks_fixed**](SerpApi.md#youtube_video_info_tasks_fixed) | **GET** /v3/serp/youtube/video_info/tasks_fixed | 
+[**youtube_video_info_tasks_ready**](SerpApi.md#youtube_video_info_tasks_ready) | **GET** /v3/serp/youtube/video_info/tasks_ready | 
+[**youtube_video_subtitles_live_advanced**](SerpApi.md#youtube_video_subtitles_live_advanced) | **POST** /v3/serp/youtube/video_subtitles/live/advanced | 
+[**youtube_video_subtitles_task_get_advanced**](SerpApi.md#youtube_video_subtitles_task_get_advanced) | **GET** /v3/serp/youtube/video_subtitles/task_get/advanced/{id} | 
+[**youtube_video_subtitles_task_post**](SerpApi.md#youtube_video_subtitles_task_post) | **POST** /v3/serp/youtube/video_subtitles/task_post | 
+[**youtube_video_subtitles_tasks_fixed**](SerpApi.md#youtube_video_subtitles_tasks_fixed) | **GET** /v3/serp/youtube/video_subtitles/tasks_fixed | 
+[**youtube_video_subtitles_tasks_ready**](SerpApi.md#youtube_video_subtitles_tasks_ready) | **GET** /v3/serp/youtube/video_subtitles/tasks_ready | 
+
 
 # **ai_summary**
-
 > SerpAiSummaryResponseInfo ai_summary(serp_ai_summary_request_info=serp_ai_summary_request_info)
 
-‌‌ The purpose of the Live SERP API AI Summary endpoint is to provide a summary of the content found on any SERP and generate a response based on the user’s specified prompt. To obtain results, you have to specify task_id, which you can find in the response to the POST request. for more info please visit 'https://docs.dataforseo.com/v3/serp/ai_summary/?bash'
+
+
+‌‌ The purpose of the Live SERP API AI Summary endpoint is to provide a summary of the content found on any SERP and generate a response based on the user’s specified prompt. To obtain results, you have to specify task_id, which you can find in the response to the POST request. Learn more in our Help Center. for more info please visit 'https://docs.dataforseo.com/v3/serp/ai_summary/?bash'
 
 ### Example
 
@@ -196,11 +199,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->ai_summary: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_ai_summary_request_info** | [**List[SerpAiSummaryRequestInfo]**](SerpAiSummaryRequestInfo.md)|  | [optional]
+ **serp_ai_summary_request_info** | [**List[SerpAiSummaryRequestInfo]**](SerpAiSummaryRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -212,8 +218,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -221,11 +227,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **baidu_organic_task_get_advanced**
-
 > SerpBaiduOrganicTaskGetAdvancedResponseInfo baidu_organic_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/task_get/advanced/?bash'
 
@@ -270,11 +277,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->baidu_organic_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -286,8 +296,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -295,11 +305,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **baidu_organic_task_get_html**
-
 > SerpBaiduOrganicTaskGetHtmlResponseInfo baidu_organic_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/task_get/html/?bash'
 
@@ -334,7 +345,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '681a28b6-0bc9-489c-818d-2eef87edfe8b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '20e87186-3bfd-44a4-b4de-705027945325' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.baidu_organic_task_get_html(id)
@@ -344,11 +355,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->baidu_organic_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -360,8 +374,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -369,11 +383,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **baidu_organic_task_get_regular**
-
 > SerpBaiduOrganicTaskGetRegularResponseInfo baidu_organic_task_get_regular(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/task_get/regular/?bash'
 
@@ -418,11 +433,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->baidu_organic_task_get_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -434,8 +452,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -443,11 +461,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **baidu_organic_task_post**
-
 > SerpBaiduOrganicTaskPostResponseInfo baidu_organic_task_post(serp_baidu_organic_task_post_request_info=serp_baidu_organic_task_post_request_info)
+
+
 
 ‌‌ Baidu SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and other settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/task_post/?bash'
 
@@ -493,11 +512,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->baidu_organic_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_baidu_organic_task_post_request_info** | [**List[SerpBaiduOrganicTaskPostRequestInfo]**](SerpBaiduOrganicTaskPostRequestInfo.md)|  | [optional]
+ **serp_baidu_organic_task_post_request_info** | [**List[SerpBaiduOrganicTaskPostRequestInfo]**](SerpBaiduOrganicTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -509,8 +531,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -518,11 +540,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **baidu_organic_tasks_fixed**
-
 > SerpBaiduOrganicTasksFixedResponseInfo baidu_organic_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/tasks_fixed/?bash'
 
@@ -566,6 +589,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->baidu_organic_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -580,8 +605,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -589,11 +614,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **baidu_organic_tasks_ready**
-
 > SerpBaiduOrganicTasksReadyResponseInfo baidu_organic_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/tasks_ready/?bash'
 
@@ -637,6 +663,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->baidu_organic_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -651,8 +679,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -660,11 +688,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_live_html**
-
 > SerpBingLocalPackLiveHtmlResponseInfo bing_local_pack_live_html(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/html/?bash'
 
@@ -710,11 +739,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_local_pack_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -726,8 +758,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -735,11 +767,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_live_regular**
-
 > SerpBingLocalPackLiveRegularResponseInfo bing_local_pack_live_regular(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
@@ -785,11 +818,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_local_pack_live_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -801,8 +837,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -810,11 +846,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_task_get_html**
-
 > SerpBingLocalPackTaskGetHtmlResponseInfo bing_local_pack_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/task_get/html/?bash'
 
@@ -849,7 +886,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'a28504f6-9bf6-4f7a-9963-2b919e9a8f5c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '935918d4-a5c3-4438-8e66-94fc0fa0d3b8' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_local_pack_task_get_html(id)
@@ -859,11 +896,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_local_pack_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -875,8 +915,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -884,11 +924,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_task_get_regular**
-
 > SerpBingLocalPackTaskGetRegularResponseInfo bing_local_pack_task_get_regular(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/task_get/regular/?bash'
 
@@ -933,11 +974,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_local_pack_task_get_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -949,8 +993,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -958,11 +1002,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_task_post**
-
 > SerpBingLocalPackTaskPostResponseInfo bing_local_pack_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/task_post/?bash'
 
@@ -1008,11 +1053,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_local_pack_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1024,8 +1072,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1033,11 +1081,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_tasks_fixed**
-
 > SerpBingLocalPackTasksFixedResponseInfo bing_local_pack_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/tasks_fixed/?bash'
 
@@ -1081,6 +1130,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_local_pack_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1095,8 +1146,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1104,11 +1155,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_tasks_ready**
-
 > SerpBingLocalPackTasksReadyResponseInfo bing_local_pack_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/tasks_ready/?bash'
 
@@ -1152,6 +1204,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_local_pack_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1166,8 +1220,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1175,11 +1229,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_live_advanced**
-
 > SerpBingOrganicLiveAdvancedResponseInfo bing_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/advanced/?bash'
 
@@ -1225,11 +1280,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1241,8 +1299,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1250,11 +1308,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_live_html**
-
 > SerpBingOrganicLiveHtmlResponseInfo bing_organic_live_html(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/html/?bash'
 
@@ -1300,11 +1359,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1316,8 +1378,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1325,11 +1387,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_live_regular**
-
 > SerpBingOrganicLiveRegularResponseInfo bing_organic_live_regular(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/regular/?bash'
 
@@ -1375,11 +1438,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_live_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1391,8 +1457,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1400,11 +1466,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_task_get_advanced**
-
 > SerpBingOrganicTaskGetAdvancedResponseInfo bing_organic_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/task_get/advanced/?bash'
 
@@ -1449,11 +1516,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1465,8 +1535,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1474,11 +1544,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_task_get_html**
-
 > SerpBingOrganicTaskGetHtmlResponseInfo bing_organic_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/task_get/html/?bash'
 
@@ -1513,7 +1584,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'd79a7314-3c12-4a32-84ed-1fc1a91b8730' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '3ac6bae8-5528-4131-be41-5dd78e923b50' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_organic_task_get_html(id)
@@ -1523,11 +1594,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1539,8 +1613,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1548,11 +1622,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_task_get_regular**
-
 > SerpBingOrganicTaskGetRegularResponseInfo bing_organic_task_get_regular(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/task_get/regular/?bash'
 
@@ -1597,11 +1672,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_task_get_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1613,8 +1691,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1622,11 +1700,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_task_post**
-
 > SerpBingOrganicTaskPostResponseInfo bing_organic_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/task_post/?bash'
 
@@ -1672,11 +1751,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1688,8 +1770,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1697,11 +1779,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_tasks_fixed**
-
 > SerpBingOrganicTasksFixedResponseInfo bing_organic_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/tasks_fixed/?bash'
 
@@ -1745,6 +1828,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1759,8 +1844,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1768,11 +1853,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_tasks_ready**
-
 > SerpBingOrganicTasksReadyResponseInfo bing_organic_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/tasks_ready/?bash'
 
@@ -1816,6 +1902,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->bing_organic_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1830,8 +1918,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1839,11 +1927,396 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_autocomplete_live_advanced**
+> SerpGoogleAutocompleteLiveAdvancedResponseInfo google_autocomplete_live_advanced(serp_google_autocomplete_live_advanced_request_info=serp_google_autocomplete_live_advanced_request_info)
+
+
+
+‌‌ Google Autocomplete is a feature within Google Search that improves the search experience by allowing users to complete searches they started to type. DataForSEO SERP API will provide you with all the suggestions Google Autocomplete offers for a particular keyword, the position of the cursor pointer, and the search client. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/autocomplete/live/advanced/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_autocomplete_live_advanced_request_info import SerpGoogleAutocompleteLiveAdvancedRequestInfo
+from dataforseo_client.models.serp_google_autocomplete_live_advanced_response_info import SerpGoogleAutocompleteLiveAdvancedResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    serp_google_autocomplete_live_advanced_request_info = [dataforseo_client.SerpGoogleAutocompleteLiveAdvancedRequestInfo()] # List[SerpGoogleAutocompleteLiveAdvancedRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_autocomplete_live_advanced(serp_google_autocomplete_live_advanced_request_info=serp_google_autocomplete_live_advanced_request_info)
+        print("The response of SerpApi->google_autocomplete_live_advanced:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_autocomplete_live_advanced: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serp_google_autocomplete_live_advanced_request_info** | [**List[SerpGoogleAutocompleteLiveAdvancedRequestInfo]**](SerpGoogleAutocompleteLiveAdvancedRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**SerpGoogleAutocompleteLiveAdvancedResponseInfo**](SerpGoogleAutocompleteLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_autocomplete_task_get_advanced**
+> SerpGoogleAutocompleteTaskGetAdvancedResponseInfo google_autocomplete_task_get_advanced(id)
+
+
+
+Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/autocomplete/task_get/advanced/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_autocomplete_task_get_advanced_response_info import SerpGoogleAutocompleteTaskGetAdvancedResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    id = '00000000-0000-0000-0000-000000000000' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.google_autocomplete_task_get_advanced(id)
+        print("The response of SerpApi->google_autocomplete_task_get_advanced:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_autocomplete_task_get_advanced: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**SerpGoogleAutocompleteTaskGetAdvancedResponseInfo**](SerpGoogleAutocompleteTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_autocomplete_task_post**
+> SerpGoogleAutocompleteTaskPostResponseInfo google_autocomplete_task_post(serp_google_autocomplete_task_post_request_info=serp_google_autocomplete_task_post_request_info)
+
+
+
+‌‌ Google Autocomplete is a feature within Google Search that improves the search experience by allowing users to complete searches they started to type. DataForSEO SERP API will provide you with all the suggestions Google Autocomplete offers for a particular keyword, the position of the cursor pointer, and the search client. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/autocomplete/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_autocomplete_task_post_request_info import SerpGoogleAutocompleteTaskPostRequestInfo
+from dataforseo_client.models.serp_google_autocomplete_task_post_response_info import SerpGoogleAutocompleteTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    serp_google_autocomplete_task_post_request_info = [dataforseo_client.SerpGoogleAutocompleteTaskPostRequestInfo()] # List[SerpGoogleAutocompleteTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_autocomplete_task_post(serp_google_autocomplete_task_post_request_info=serp_google_autocomplete_task_post_request_info)
+        print("The response of SerpApi->google_autocomplete_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_autocomplete_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serp_google_autocomplete_task_post_request_info** | [**List[SerpGoogleAutocompleteTaskPostRequestInfo]**](SerpGoogleAutocompleteTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**SerpGoogleAutocompleteTaskPostResponseInfo**](SerpGoogleAutocompleteTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_autocomplete_tasks_fixed**
+> SerpGoogleAutocompleteTasksFixedResponseInfo google_autocomplete_tasks_fixed()
+
+
+
+‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/autocomplete/tasks_fixed/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_autocomplete_tasks_fixed_response_info import SerpGoogleAutocompleteTasksFixedResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+
+    try:
+        api_response = api_instance.google_autocomplete_tasks_fixed()
+        print("The response of SerpApi->google_autocomplete_tasks_fixed:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_autocomplete_tasks_fixed: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SerpGoogleAutocompleteTasksFixedResponseInfo**](SerpGoogleAutocompleteTasksFixedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_autocomplete_tasks_ready**
+> SerpGoogleAutocompleteTasksReadyResponseInfo google_autocomplete_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/autocomplete/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_autocomplete_tasks_ready_response_info import SerpGoogleAutocompleteTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+
+    try:
+        api_response = api_instance.google_autocomplete_tasks_ready()
+        print("The response of SerpApi->google_autocomplete_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_autocomplete_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SerpGoogleAutocompleteTasksReadyResponseInfo**](SerpGoogleAutocompleteTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_info_live_advanced**
-
 > SerpGoogleDatasetInfoLiveAdvancedResponseInfo google_dataset_info_live_advanced(serp_google_dataset_info_live_advanced_request_info=serp_google_dataset_info_live_advanced_request_info)
+
+
 
 ‌ Live Google Dataset Info provides real-time data on the dataset you specify in the request. You will get data from a page of the dataset displayed separately from the SERP. It contains information about dataset content, authors, licenses, and description on the SERP. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_info/live/advanced/?bash'
 
@@ -1889,11 +2362,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_info_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_dataset_info_live_advanced_request_info** | [**List[SerpGoogleDatasetInfoLiveAdvancedRequestInfo]**](SerpGoogleDatasetInfoLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_google_dataset_info_live_advanced_request_info** | [**List[SerpGoogleDatasetInfoLiveAdvancedRequestInfo]**](SerpGoogleDatasetInfoLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1905,8 +2381,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1914,11 +2390,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_info_task_get_advanced**
-
 > SerpGoogleDatasetInfoTaskGetAdvancedResponseInfo google_dataset_info_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_info/task_get/advanced/?bash'
 
@@ -1963,11 +2440,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_info_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1979,8 +2459,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1988,11 +2468,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_info_task_post**
-
 > SerpGoogleDatasetInfoTaskPostResponseInfo google_dataset_info_task_post(serp_google_dataset_info_task_post_request_info=serp_google_dataset_info_task_post_request_info)
+
+
 
 ‌‌ Google Dataset Info API provides detailed information about the dataset you specify in the POST request. You will get data from a page of the dataset displayed separately from the SERP. It contains information about dataset content, authors, licenses, and description on the SERP. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_info/task_post/?bash'
 
@@ -2038,11 +2519,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_info_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_dataset_info_task_post_request_info** | [**List[SerpGoogleDatasetInfoTaskPostRequestInfo]**](SerpGoogleDatasetInfoTaskPostRequestInfo.md)|  | [optional]
+ **serp_google_dataset_info_task_post_request_info** | [**List[SerpGoogleDatasetInfoTaskPostRequestInfo]**](SerpGoogleDatasetInfoTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2054,8 +2538,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2063,11 +2547,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_info_tasks_fixed**
-
 > SerpGoogleDatasetInfoTasksFixedResponseInfo google_dataset_info_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_info/tasks_fixed/?bash'
 
@@ -2111,6 +2596,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_info_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2125,8 +2612,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2134,11 +2621,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_info_tasks_ready**
-
 > SerpGoogleDatasetInfoTasksReadyResponseInfo google_dataset_info_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_info/tasks_ready/?bash'
 
@@ -2182,6 +2670,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_info_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2196,8 +2686,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2205,11 +2695,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_search_live_advanced**
-
 > SerpGoogleDatasetSearchLiveAdvancedResponseInfo google_dataset_search_live_advanced(serp_google_dataset_search_live_advanced_request_info=serp_google_dataset_search_live_advanced_request_info)
+
+
 
 ‌ Live Google Dataset Search provides real-time data on the top 20 Google Dataset search engine results. These results are specific to the indicated keyword. You can specify other parameters optionally. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_search/live/advanced/?bash'
 
@@ -2255,11 +2746,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_search_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_dataset_search_live_advanced_request_info** | [**List[SerpGoogleDatasetSearchLiveAdvancedRequestInfo]**](SerpGoogleDatasetSearchLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_google_dataset_search_live_advanced_request_info** | [**List[SerpGoogleDatasetSearchLiveAdvancedRequestInfo]**](SerpGoogleDatasetSearchLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2271,8 +2765,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2280,11 +2774,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_search_task_get_advanced**
-
 > SerpGoogleDatasetSearchTaskGetAdvancedResponseInfo google_dataset_search_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_search/task_get/advanced/?bash'
 
@@ -2329,11 +2824,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_search_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2345,8 +2843,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2354,11 +2852,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_search_task_post**
-
 > SerpGoogleDatasetSearchTaskPostResponseInfo google_dataset_search_task_post(serp_google_dataset_search_task_post_request_info=serp_google_dataset_search_task_post_request_info)
+
+
 
 ‌‌ Google Dataset Search API provides top 20 Google Dataset search engine results. These results are specific to the indicated keyword. You can specify other parameters optionally. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_search/task_post/?bash'
 
@@ -2404,11 +2903,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_search_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_dataset_search_task_post_request_info** | [**List[SerpGoogleDatasetSearchTaskPostRequestInfo]**](SerpGoogleDatasetSearchTaskPostRequestInfo.md)|  | [optional]
+ **serp_google_dataset_search_task_post_request_info** | [**List[SerpGoogleDatasetSearchTaskPostRequestInfo]**](SerpGoogleDatasetSearchTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2420,8 +2922,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2429,11 +2931,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_search_tasks_fixed**
-
 > SerpGoogleDatasetSearchTasksFixedResponseInfo google_dataset_search_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_search/tasks_fixed/?bash'
 
@@ -2477,6 +2980,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_search_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2491,8 +2996,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2500,11 +3005,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_dataset_search_tasks_ready**
-
 > SerpGoogleDatasetSearchTasksReadyResponseInfo google_dataset_search_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_search/tasks_ready/?bash'
 
@@ -2548,6 +3054,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_dataset_search_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2562,8 +3070,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2571,11 +3079,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_events_live_advanced**
-
 > SerpGoogleEventsLiveAdvancedResponseInfo google_events_live_advanced(serp_google_events_live_advanced_request_info=serp_google_events_live_advanced_request_info)
+
+
 
 ‌‌ Live Google Events SERP provides real-time data from Google Events Search for the specified keyword and location. Note that Google Events SERP API works for the English language only. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/events/live/advanced/?bash'
 
@@ -2621,11 +3130,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_events_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_events_live_advanced_request_info** | [**List[SerpGoogleEventsLiveAdvancedRequestInfo]**](SerpGoogleEventsLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_google_events_live_advanced_request_info** | [**List[SerpGoogleEventsLiveAdvancedRequestInfo]**](SerpGoogleEventsLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2637,8 +3149,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2646,11 +3158,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_events_task_get_advanced**
-
 > SerpGoogleEventsTaskGetAdvancedResponseInfo google_events_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/events/task_get/advanced/?bash'
 
@@ -2695,11 +3208,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_events_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2711,8 +3227,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2720,11 +3236,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_events_task_post**
-
 > SerpGoogleEventsTaskPostResponseInfo google_events_task_post(serp_google_events_task_post_request_info=serp_google_events_task_post_request_info)
+
+
 
 ‌‌ Google Events SERP provides data from Google Events Search for the specified keyword and location (see the List of Locations). Note that Google Events SERP API works for the English language only. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/events/task_post/?bash'
 
@@ -2770,11 +3287,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_events_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_events_task_post_request_info** | [**List[SerpGoogleEventsTaskPostRequestInfo]**](SerpGoogleEventsTaskPostRequestInfo.md)|  | [optional]
+ **serp_google_events_task_post_request_info** | [**List[SerpGoogleEventsTaskPostRequestInfo]**](SerpGoogleEventsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2786,8 +3306,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2795,11 +3315,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_events_tasks_fixed**
-
 > SerpGoogleEventsTasksFixedResponseInfo google_events_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/events/tasks_fixed/?bash'
 
@@ -2843,6 +3364,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_events_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2857,8 +3380,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2866,11 +3389,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_events_tasks_ready**
-
 > SerpGoogleEventsTasksReadyResponseInfo google_events_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/events/tasks_ready/?bash'
 
@@ -2914,6 +3438,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_events_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2928,8 +3454,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2937,11 +3463,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_live_advanced**
-
 > SerpGoogleImagesLiveAdvancedResponseInfo google_images_live_advanced(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live Google Images SERP provides real-time data on top 100 images results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/advanced/?bash'
 
@@ -2987,11 +3514,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_images_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3003,8 +3533,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3012,11 +3542,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_live_html**
-
 > SerpGoogleImagesLiveHtmlResponseInfo google_images_live_html(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/html/?bash'
 
@@ -3062,11 +3593,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_images_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3078,8 +3612,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3087,11 +3621,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_task_get_advanced**
-
 > SerpGoogleImagesTaskGetAdvancedResponseInfo google_images_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/task_get/advanced/?bash'
 
@@ -3136,11 +3671,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_images_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3152,8 +3690,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3161,11 +3699,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_task_get_html**
-
 > SerpGoogleImagesTaskGetHtmlResponseInfo google_images_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/task_get/html/?bash'
 
@@ -3200,7 +3739,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '856c0b1d-5c14-41e8-9574-b56c122dfb67' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '73f57d16-bcb8-423c-aed3-fa550f8c8e70' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_images_task_get_html(id)
@@ -3210,11 +3749,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_images_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3226,8 +3768,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3235,11 +3777,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_task_post**
-
 > SerpGoogleImagesTaskPostResponseInfo google_images_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/task_post/?bash'
 
@@ -3285,11 +3828,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_images_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3301,8 +3847,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3310,11 +3856,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_tasks_fixed**
-
 > SerpGoogleImagesTasksFixedResponseInfo google_images_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/tasks_fixed/?bash'
 
@@ -3358,6 +3905,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_images_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3372,8 +3921,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3381,11 +3930,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_tasks_ready**
-
 > SerpGoogleImagesTasksReadyResponseInfo google_images_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/tasks_ready/?bash'
 
@@ -3429,6 +3979,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_images_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3443,8 +3995,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3452,11 +4004,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_jobs_task_get_advanced**
-
 > SerpGoogleJobsTaskGetAdvancedResponseInfo google_jobs_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/jobs/task_get/advanced/?bash'
 
@@ -3501,11 +4054,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_jobs_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3517,8 +4073,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3526,11 +4082,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_jobs_task_get_html**
-
 > SerpGoogleJobsTaskGetHtmlResponseInfo google_jobs_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/jobs/task_get/html/?bash'
 
@@ -3565,7 +4122,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '32d7d24d-dca1-4be9-a9b3-719600b4ce19' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '5c9931fc-ca6e-4b0b-8759-dec271b406a1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_jobs_task_get_html(id)
@@ -3575,11 +4132,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_jobs_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3591,8 +4151,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3600,11 +4160,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_jobs_task_post**
-
 > SerpGoogleJobsTaskPostResponseInfo google_jobs_task_post(serp_google_jobs_task_post_request_info=serp_google_jobs_task_post_request_info)
+
+
 
 ‌‌ This endpoint will provide you with SERP data from the Google Jobs search engine. The returned results are specific to the keyword as well as the language and location parameters of the POST request. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/jobs/task_post/?bash'
 
@@ -3650,11 +4211,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_jobs_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_jobs_task_post_request_info** | [**List[SerpGoogleJobsTaskPostRequestInfo]**](SerpGoogleJobsTaskPostRequestInfo.md)|  | [optional]
+ **serp_google_jobs_task_post_request_info** | [**List[SerpGoogleJobsTaskPostRequestInfo]**](SerpGoogleJobsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3666,8 +4230,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3675,11 +4239,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_jobs_tasks_fixed**
-
 > SerpGoogleJobsTasksFixedResponseInfo google_jobs_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/jobs/tasks_fixed/?bash'
 
@@ -3723,6 +4288,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_jobs_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3737,8 +4304,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3746,11 +4313,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_jobs_tasks_ready**
-
 > SerpGoogleJobsTasksReadyResponseInfo google_jobs_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/jobs/tasks_ready/?bash'
 
@@ -3794,6 +4362,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_jobs_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3808,8 +4378,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3817,11 +4387,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_local_finder_live_advanced**
-
 > SerpGoogleLocalFinderLiveAdvancedResponseInfo google_local_finder_live_advanced(serp_google_local_finder_live_advanced_request_info=serp_google_local_finder_live_advanced_request_info)
+
+
 
 ‌‌ Live Google Local finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
 
@@ -3867,11 +4438,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_local_finder_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_local_finder_live_advanced_request_info** | [**List[SerpGoogleLocalFinderLiveAdvancedRequestInfo]**](SerpGoogleLocalFinderLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_google_local_finder_live_advanced_request_info** | [**List[SerpGoogleLocalFinderLiveAdvancedRequestInfo]**](SerpGoogleLocalFinderLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3883,8 +4457,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3892,11 +4466,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_local_finder_live_html**
-
 > SerpGoogleLocalFinderLiveHtmlResponseInfo google_local_finder_live_html(serp_google_local_finder_live_html_request_info=serp_google_local_finder_live_html_request_info)
+
+
 
 ‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
@@ -3942,11 +4517,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_local_finder_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_local_finder_live_html_request_info** | [**List[SerpGoogleLocalFinderLiveHtmlRequestInfo]**](SerpGoogleLocalFinderLiveHtmlRequestInfo.md)|  | [optional]
+ **serp_google_local_finder_live_html_request_info** | [**List[SerpGoogleLocalFinderLiveHtmlRequestInfo]**](SerpGoogleLocalFinderLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3958,8 +4536,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3967,11 +4545,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_local_finder_task_get_advanced**
-
 > SerpGoogleLocalFinderTaskGetAdvancedResponseInfo google_local_finder_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_get/advanced/?bash'
 
@@ -4016,11 +4595,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_local_finder_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier a universally unique identifier (UUID) unique task identifier in our system you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier a universally unique identifier (UUID) unique task identifier in our system you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -4032,8 +4614,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4041,11 +4623,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_local_finder_task_get_html**
-
 > SerpGoogleLocalFinderTaskGetHtmlResponseInfo google_local_finder_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_get/html/?bash'
 
@@ -4080,7 +4663,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '5f8f6759-a455-4240-aecb-3cb6d6835bd1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '25477652-2016-40b7-bae3-86a002ab6740' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_local_finder_task_get_html(id)
@@ -4090,11 +4673,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_local_finder_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -4106,8 +4692,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4115,11 +4701,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_local_finder_task_post**
-
 > SerpGoogleLocalFinderTaskPostResponseInfo google_local_finder_task_post(serp_google_local_finder_task_post_request_info=serp_google_local_finder_task_post_request_info)
+
+
 
 ‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
@@ -4165,11 +4752,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_local_finder_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_local_finder_task_post_request_info** | [**List[SerpGoogleLocalFinderTaskPostRequestInfo]**](SerpGoogleLocalFinderTaskPostRequestInfo.md)|  | [optional]
+ **serp_google_local_finder_task_post_request_info** | [**List[SerpGoogleLocalFinderTaskPostRequestInfo]**](SerpGoogleLocalFinderTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -4181,8 +4771,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4190,11 +4780,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_local_finder_tasks_fixed**
-
 > SerpGoogleLocalFinderTasksFixedResponseInfo google_local_finder_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/tasks_fixed/?bash'
 
@@ -4238,6 +4829,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_local_finder_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -4252,8 +4845,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4261,11 +4854,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_local_finder_tasks_ready**
-
 > SerpGoogleLocalFinderTasksReadyResponseInfo google_local_finder_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/tasks_ready/?bash'
 
@@ -4309,6 +4903,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_local_finder_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -4323,8 +4919,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4332,11 +4928,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_maps_live_advanced**
-
 > SerpGoogleMapsLiveAdvancedResponseInfo google_maps_live_advanced(serp_google_maps_live_advanced_request_info=serp_google_maps_live_advanced_request_info)
+
+
 
 ‌‌ Live Google Maps SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/maps/live/advanced/?bash'
 
@@ -4382,11 +4979,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_maps_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_maps_live_advanced_request_info** | [**List[SerpGoogleMapsLiveAdvancedRequestInfo]**](SerpGoogleMapsLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_google_maps_live_advanced_request_info** | [**List[SerpGoogleMapsLiveAdvancedRequestInfo]**](SerpGoogleMapsLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -4398,8 +4998,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4407,11 +5007,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_maps_task_get_advanced**
-
 > SerpGoogleMapsTaskGetAdvancedResponseInfo google_maps_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/maps/task_get/advanced/?bash'
 
@@ -4456,11 +5057,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_maps_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier a universally unique identifier (UUID) unique task identifier in our system you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier a universally unique identifier (UUID) unique task identifier in our system you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -4472,8 +5076,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4481,11 +5085,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_maps_task_post**
-
 > SerpGoogleMapsTaskPostResponseInfo google_maps_task_post(serp_google_maps_task_post_request_info=serp_google_maps_task_post_request_info)
+
+
 
 ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/maps/task_post/?bash'
 
@@ -4531,11 +5136,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_maps_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_maps_task_post_request_info** | [**List[SerpGoogleMapsTaskPostRequestInfo]**](SerpGoogleMapsTaskPostRequestInfo.md)|  | [optional]
+ **serp_google_maps_task_post_request_info** | [**List[SerpGoogleMapsTaskPostRequestInfo]**](SerpGoogleMapsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -4547,8 +5155,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4556,11 +5164,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_maps_tasks_fixed**
-
 > SerpGoogleMapsTasksFixedResponseInfo google_maps_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/maps/tasks_fixed/?bash'
 
@@ -4604,6 +5213,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_maps_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -4618,8 +5229,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4627,11 +5238,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_maps_tasks_ready**
-
 > SerpGoogleMapsTasksReadyResponseInfo google_maps_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/maps/tasks_ready/?bash'
 
@@ -4675,6 +5287,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_maps_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -4689,8 +5303,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4698,11 +5312,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_live_advanced**
-
 > SerpGoogleNewsLiveAdvancedResponseInfo google_news_live_advanced(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Live Google News SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/advanced/?bash'
 
@@ -4748,11 +5363,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_news_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -4764,8 +5382,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4773,11 +5391,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_live_html**
-
 > SerpGoogleNewsLiveHtmlResponseInfo google_news_live_html(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/html/?bash'
 
@@ -4823,11 +5442,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_news_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -4839,8 +5461,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4848,11 +5470,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_task_get_advanced**
-
 > SerpGoogleNewsTaskGetAdvancedResponseInfo google_news_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/task_get/advanced/?bash'
 
@@ -4897,11 +5520,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_news_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -4913,8 +5539,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4922,11 +5548,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_task_get_html**
-
 > SerpGoogleNewsTaskGetHtmlResponseInfo google_news_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/task_get/html/?bash'
 
@@ -4961,7 +5588,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '5ebbc5cb-0d69-4e15-95e0-fd0692ab7305' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'ce8b12b3-5ba2-4402-9e92-8693aac9832c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_news_task_get_html(id)
@@ -4971,11 +5598,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_news_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -4987,8 +5617,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4996,11 +5626,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_task_post**
-
 > SerpGoogleNewsTaskPostResponseInfo google_news_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/task_post/?bash'
 
@@ -5046,11 +5677,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_news_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5062,8 +5696,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5071,11 +5705,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_tasks_fixed**
-
 > SerpGoogleNewsTasksFixedResponseInfo google_news_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/tasks_fixed/?bash'
 
@@ -5119,6 +5754,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_news_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -5133,8 +5770,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5142,11 +5779,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_tasks_ready**
-
 > SerpGoogleNewsTasksReadyResponseInfo google_news_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/tasks_ready/?bash'
 
@@ -5190,6 +5828,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_news_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -5204,8 +5844,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5213,11 +5853,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_live_advanced**
-
 > SerpGoogleOrganicLiveAdvancedResponseInfo google_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/?bash'
 
@@ -5263,11 +5904,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5279,8 +5923,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5288,11 +5932,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_live_html**
-
 > SerpGoogleOrganicLiveHtmlResponseInfo google_organic_live_html(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/html/?bash'
 
@@ -5338,11 +5983,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5354,8 +6002,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5363,11 +6011,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_live_regular**
-
 > SerpGoogleOrganicLiveRegularResponseInfo google_organic_live_regular(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/regular/?bash'
 
@@ -5413,11 +6062,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_live_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5429,8 +6081,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5438,11 +6090,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_task_get_advanced**
-
 > SerpGoogleOrganicTaskGetAdvancedResponseInfo google_organic_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/task_get/advanced/?bash'
 
@@ -5487,11 +6140,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -5503,8 +6159,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5512,11 +6168,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_task_get_html**
-
 > SerpGoogleOrganicTaskGetHtmlResponseInfo google_organic_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/task_get/html/?bash'
 
@@ -5551,7 +6208,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '99258988-5203-43c3-a3a3-e1c6e2a46e91' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'c92c8a73-b7e5-4518-8cc4-ee58aa347a6f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_organic_task_get_html(id)
@@ -5561,11 +6218,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -5577,8 +6237,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5586,11 +6246,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_task_get_regular**
-
 > SerpGoogleOrganicTaskGetRegularResponseInfo google_organic_task_get_regular(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/task_get/regular/?bash'
 
@@ -5635,11 +6296,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_task_get_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -5651,8 +6315,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5660,11 +6324,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_task_post**
-
 > SerpGoogleOrganicTaskPostResponseInfo google_organic_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/task_post/?bash'
 
@@ -5710,11 +6375,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5726,8 +6394,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5735,11 +6403,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_tasks_fixed**
-
 > SerpGoogleOrganicTasksFixedResponseInfo google_organic_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/tasks_fixed/?bash'
 
@@ -5783,6 +6452,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -5797,8 +6468,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5806,11 +6477,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_tasks_ready**
-
 > SerpGoogleOrganicTasksReadyResponseInfo google_organic_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/tasks_ready/?bash'
 
@@ -5854,6 +6526,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_organic_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -5868,8 +6542,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5877,11 +6551,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_search_by_image_task_get_advanced**
-
 > SerpGoogleSearchByImageTaskGetAdvancedResponseInfo google_search_by_image_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/google/search_by_image/task_get/advanced/?bash'
 
@@ -5926,11 +6601,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_search_by_image_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -5942,8 +6620,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -5951,11 +6629,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_search_by_image_task_post**
-
 > SerpGoogleSearchByImageTaskPostResponseInfo google_search_by_image_task_post(serp_google_search_by_image_task_post_request_info=serp_google_search_by_image_task_post_request_info)
+
+
 
 ‌‌ Google Search By Image SERP API provides up to top 100 search engine results based on the image you specified. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/search_by_image/task_post/?bash'
 
@@ -6001,11 +6680,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_search_by_image_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_google_search_by_image_task_post_request_info** | [**List[SerpGoogleSearchByImageTaskPostRequestInfo]**](SerpGoogleSearchByImageTaskPostRequestInfo.md)|  | [optional]
+ **serp_google_search_by_image_task_post_request_info** | [**List[SerpGoogleSearchByImageTaskPostRequestInfo]**](SerpGoogleSearchByImageTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -6017,8 +6699,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6026,11 +6708,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_search_by_image_tasks_fixed**
-
 > SerpGoogleSearchByImageTasksFixedResponseInfo google_search_by_image_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/search_by_image/tasks_fixed/?bash'
 
@@ -6074,6 +6757,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_search_by_image_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -6088,8 +6773,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6097,11 +6782,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_search_by_image_tasks_ready**
-
 > SerpGoogleSearchByImageTasksReadyResponseInfo google_search_by_image_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/search_by_image/tasks_ready/?bash'
 
@@ -6145,6 +6831,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->google_search_by_image_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -6159,8 +6847,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6168,11 +6856,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **naver_organic_task_get_advanced**
-
 > SerpNaverOrganicTaskGetAdvancedResponseInfo naver_organic_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/task_get/advanced/?bash'
 
@@ -6217,11 +6906,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->naver_organic_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -6233,8 +6925,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6242,11 +6934,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **naver_organic_task_get_html**
-
 > SerpNaverOrganicTaskGetHtmlResponseInfo naver_organic_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/task_get/html/?bash'
 
@@ -6281,7 +6974,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'fe48ebf9-bde3-497f-895c-9838280d6141' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'da03955a-6d69-4b0f-92c8-c68261626330' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.naver_organic_task_get_html(id)
@@ -6291,11 +6984,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->naver_organic_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -6307,8 +7003,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6316,11 +7012,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **naver_organic_task_get_regular**
-
 > SerpNaverOrganicTaskGetRegularResponseInfo naver_organic_task_get_regular(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/task_get/regular/?bash'
 
@@ -6365,11 +7062,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->naver_organic_task_get_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -6381,8 +7081,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6390,11 +7090,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **naver_organic_task_post**
-
 > SerpNaverOrganicTaskPostResponseInfo naver_organic_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Naver SERP API provides top 100 search engine results. Naver search results do not vary by location and language, and the search parameters for this search engine do not contain language and location variables. However, you can specify a keyword in any language, and the search engine results may vary depending on the language you used for specifying the search query. for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/task_post/?bash'
 
@@ -6440,11 +7141,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->naver_organic_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -6456,8 +7160,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6465,11 +7169,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **naver_organic_tasks_fixed**
-
 > SerpNaverOrganicTasksFixedResponseInfo naver_organic_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/tasks_fixed/?bash'
 
@@ -6513,6 +7218,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->naver_organic_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -6527,8 +7234,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6536,11 +7243,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **naver_organic_tasks_ready**
-
 > SerpNaverOrganicTasksReadyResponseInfo naver_organic_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/tasks_ready/?bash'
 
@@ -6584,6 +7292,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->naver_organic_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -6598,8 +7308,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6607,11 +7317,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **screenshot**
-
 > SerpScreenshotResponseInfo screenshot(serp_screenshot_request_info=serp_screenshot_request_info)
+
+
 
 ‌‌ Using the Live Page Screenshot endpoint, you can capture a screenshot of any SERP page. for more info please visit 'https://docs.dataforseo.com/v3/serp/screenshot/?bash'
 
@@ -6657,11 +7368,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->screenshot: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_screenshot_request_info** | [**List[SerpScreenshotRequestInfo]**](SerpScreenshotRequestInfo.md)|  | [optional]
+ **serp_screenshot_request_info** | [**List[SerpScreenshotRequestInfo]**](SerpScreenshotRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -6673,8 +7387,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6682,11 +7396,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_baidu_languages**
-
 > SerpBaiduLanguagesResponseInfo serp_baidu_languages()
+
+
 
 You will receive the list of languages by calling this API. You can also download the full list of supported languages in the CSV format (last updated 2023-05-02). for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/languages/?bash'
 
@@ -6730,6 +7445,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_baidu_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -6744,8 +7461,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6753,11 +7470,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_baidu_locations**
-
 > SerpBaiduLocationsResponseInfo serp_baidu_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/locations/?bash'
 
@@ -6801,6 +7519,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_baidu_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -6815,8 +7535,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6824,11 +7544,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_baidu_locations_country**
-
 > SerpBaiduLocationsCountryResponseInfo serp_baidu_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/locations/?bash'
 
@@ -6873,11 +7594,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_baidu_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -6889,8 +7613,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6898,11 +7622,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_bing_languages**
-
 > SerpBingLanguagesResponseInfo serp_bing_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/languages/?bash'
 
@@ -6946,6 +7671,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_bing_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -6960,8 +7687,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -6969,11 +7696,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_bing_locations**
-
 > SerpBingLocationsResponseInfo serp_bing_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/locations/?bash'
 
@@ -7017,6 +7745,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_bing_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7031,8 +7761,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7040,11 +7770,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_bing_locations_country**
-
 > SerpBingLocationsCountryResponseInfo serp_bing_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/locations/?bash'
 
@@ -7089,11 +7820,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_bing_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -7105,8 +7839,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7114,11 +7848,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_errors**
-
 > SerpErrorsResponseInfo serp_errors(serp_errors_request_info=serp_errors_request_info)
+
+
 
 By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
 
@@ -7164,11 +7899,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_errors: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_errors_request_info** | [**List[SerpErrorsRequestInfo]**](SerpErrorsRequestInfo.md)|  | [optional]
+ **serp_errors_request_info** | [**List[SerpErrorsRequestInfo]**](SerpErrorsRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -7180,8 +7918,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7189,11 +7927,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_google_languages**
-
 > SerpGoogleLanguagesResponseInfo serp_google_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/languages/?bash'
 
@@ -7237,6 +7976,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_google_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7251,8 +7992,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7260,11 +8001,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_google_locations**
-
 > SerpGoogleLocationsResponseInfo serp_google_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/locations/?bash'
 
@@ -7308,6 +8050,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_google_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7322,8 +8066,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7331,11 +8075,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_google_locations_country**
-
 > SerpGoogleLocationsCountryResponseInfo serp_google_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/locations/?bash'
 
@@ -7380,11 +8125,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_google_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -7396,8 +8144,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7405,11 +8153,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_id_list**
-
 > SerpIdListResponseInfo serp_id_list(serp_id_list_request_info=serp_id_list_request_info)
+
+
 
 This endpoint is designed to provide you with the list of IDs and metadata of the completed SERP tasks during the specified period. You will get all task IDs that were made including successful, uncompleted, and tasks that responded as errors. for more info please visit 'https://docs.dataforseo.com/v3/serp/id_list/?bash'
 
@@ -7455,11 +8204,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_id_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_id_list_request_info** | [**List[SerpIdListRequestInfo]**](SerpIdListRequestInfo.md)|  | [optional]
+ **serp_id_list_request_info** | [**List[SerpIdListRequestInfo]**](SerpIdListRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -7471,8 +8223,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7480,11 +8232,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_seznam_languages**
-
 > SerpSeznamLanguagesResponseInfo serp_seznam_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/languages/?bash'
 
@@ -7528,6 +8281,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_seznam_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7542,8 +8297,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7551,11 +8306,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_seznam_locations**
-
 > SerpSeznamLocationsResponseInfo serp_seznam_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/locations/?bash'
 
@@ -7599,6 +8355,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_seznam_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7613,8 +8371,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7622,11 +8380,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_seznam_locations_country**
-
 > SerpSeznamLocationsCountryResponseInfo serp_seznam_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/locations/?bash'
 
@@ -7671,11 +8430,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_seznam_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -7687,8 +8449,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7696,11 +8458,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_yahoo_languages**
-
 > SerpYahooLanguagesResponseInfo serp_yahoo_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/languages/?bash'
 
@@ -7744,6 +8507,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_yahoo_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7758,8 +8523,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7767,11 +8532,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_yahoo_locations**
-
 > SerpYahooLocationsResponseInfo serp_yahoo_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/locations/?bash'
 
@@ -7815,6 +8581,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_yahoo_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7829,8 +8597,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7838,11 +8606,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_yahoo_locations_country**
-
 > SerpYahooLocationsCountryResponseInfo serp_yahoo_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/locations/?bash'
 
@@ -7887,11 +8656,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_yahoo_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -7903,8 +8675,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7912,11 +8684,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_youtube_languages**
-
 > SerpYoutubeLanguagesResponseInfo serp_youtube_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/languages/?bash'
 
@@ -7960,6 +8733,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_youtube_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -7974,8 +8749,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -7983,11 +8758,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_youtube_locations**
-
 > SerpYoutubeLocationsResponseInfo serp_youtube_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/locations/?bash'
 
@@ -8031,6 +8807,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_youtube_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -8045,8 +8823,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8054,11 +8832,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serp_youtube_locations_country**
-
 > SerpYoutubeLocationsCountryResponseInfo serp_youtube_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/locations/?bash'
 
@@ -8103,11 +8882,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->serp_youtube_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -8119,8 +8901,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8128,11 +8910,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **seznam_organic_task_get_advanced**
-
 > SerpSeznamOrganicTaskGetAdvancedResponseInfo seznam_organic_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/task_get/advanced/?bash'
 
@@ -8177,11 +8960,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->seznam_organic_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -8193,8 +8979,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8202,11 +8988,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **seznam_organic_task_get_html**
-
 > SerpSeznamOrganicTaskGetHtmlResponseInfo seznam_organic_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/task_get/html/?bash'
 
@@ -8241,7 +9028,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '800ccde8-41cd-47c9-bf1c-c742d35e3ed1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'e1b3d24c-fe7d-470a-80b6-7d81e6e05e5b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.seznam_organic_task_get_html(id)
@@ -8251,11 +9038,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->seznam_organic_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -8267,8 +9057,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8276,11 +9066,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **seznam_organic_task_get_regular**
-
 > SerpSeznamOrganicTaskGetRegularResponseInfo seznam_organic_task_get_regular(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/task_get/regular/?bash'
 
@@ -8325,11 +9116,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->seznam_organic_task_get_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -8341,8 +9135,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8350,11 +9144,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **seznam_organic_task_post**
-
 > SerpSeznamOrganicTaskPostResponseInfo seznam_organic_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Seznam SERP API provides top 10 search engine results from one of the most popular search engines in the Czech Republic. Seznam is focused on the local search market, and thus supports the Czech language only. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/task_post/?bash'
 
@@ -8400,11 +9195,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->seznam_organic_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -8416,8 +9214,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8425,11 +9223,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **seznam_organic_tasks_fixed**
-
 > SerpSeznamOrganicTasksFixedResponseInfo seznam_organic_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/tasks_fixed/?bash'
 
@@ -8473,6 +9272,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->seznam_organic_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -8487,8 +9288,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8496,11 +9297,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **seznam_organic_tasks_ready**
-
 > SerpSeznamOrganicTasksReadyResponseInfo seznam_organic_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/tasks_ready/?bash'
 
@@ -8544,6 +9346,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->seznam_organic_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -8558,8 +9362,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8567,11 +9371,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_live_advanced**
-
 > SerpYahooOrganicLiveAdvancedResponseInfo yahoo_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP provides real-time data on top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/advanced/?bash'
 
@@ -8617,11 +9422,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -8633,8 +9441,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8642,11 +9450,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_live_html**
-
 > SerpYahooOrganicLiveHtmlResponseInfo yahoo_organic_live_html(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/html/?bash'
 
@@ -8692,11 +9501,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -8708,8 +9520,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8717,11 +9529,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_live_regular**
-
 > SerpYahooOrganicLiveRegularResponseInfo yahoo_organic_live_regular(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ Live Yahoo SERP provides real-time data on up to 100 top search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/regular/?bash'
 
@@ -8767,11 +9580,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_live_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -8783,8 +9599,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8792,11 +9608,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_task_get_advanced**
-
 > SerpYahooOrganicTaskGetAdvancedResponseInfo yahoo_organic_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/task_get/advanced/?bash'
 
@@ -8841,11 +9658,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -8857,8 +9677,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8866,11 +9686,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_task_get_html**
-
 > SerpYahooOrganicTaskGetHtmlResponseInfo yahoo_organic_task_get_html(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/task_get/html/?bash'
 
@@ -8905,7 +9726,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'c3248917-909b-4886-9805-58d2e3c6e2cb' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '203bbb4e-4f39-4e8e-af52-6958893cc8b9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.yahoo_organic_task_get_html(id)
@@ -8915,11 +9736,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -8931,8 +9755,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -8940,11 +9764,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_task_get_regular**
-
 > SerpYahooOrganicTaskGetRegularResponseInfo yahoo_organic_task_get_regular(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/task_get/regular/?bash'
 
@@ -8989,11 +9814,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_task_get_regular: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -9005,8 +9833,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9014,11 +9842,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_task_post**
-
 > SerpYahooOrganicTaskPostResponseInfo yahoo_organic_task_post(serp_task_request_info=serp_task_request_info)
+
+
 
 ‌‌ SERP API provides top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/task_post/?bash'
 
@@ -9064,11 +9893,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional]
+ **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9080,8 +9912,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9089,11 +9921,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_tasks_fixed**
-
 > SerpYahooOrganicTasksFixedResponseInfo yahoo_organic_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/tasks_fixed/?bash'
 
@@ -9137,6 +9970,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -9151,8 +9986,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9160,11 +9995,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_tasks_ready**
-
 > SerpYahooOrganicTasksReadyResponseInfo yahoo_organic_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/tasks_ready/?bash'
 
@@ -9208,6 +10044,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->yahoo_organic_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -9222,8 +10060,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9231,11 +10069,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_comments_live_advanced**
-
 > SerpYoutubeVideoCommentsLiveAdvancedResponseInfo youtube_video_comments_live_advanced(serp_youtube_video_comments_live_advanced_request_info=serp_youtube_video_comments_live_advanced_request_info)
+
+
 
 ‌ Live YouTube Comments provides real-time data on comments on the video you specify in the request. You will get the top 20 comments on the video as well as information about the author, and key comment metrics. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_comments/live/advanced/?bash'
 
@@ -9281,11 +10120,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_comments_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_youtube_video_comments_live_advanced_request_info** | [**List[SerpYoutubeVideoCommentsLiveAdvancedRequestInfo]**](SerpYoutubeVideoCommentsLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_youtube_video_comments_live_advanced_request_info** | [**List[SerpYoutubeVideoCommentsLiveAdvancedRequestInfo]**](SerpYoutubeVideoCommentsLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9297,8 +10139,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9306,11 +10148,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_comments_task_get_advanced**
-
 > SerpYoutubeVideoCommentsTaskGetAdvancedResponseInfo youtube_video_comments_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_comments/task_get/advanced/?bash'
 
@@ -9355,11 +10198,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_comments_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -9371,8 +10217,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9380,11 +10226,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_comments_task_post**
-
 > SerpYoutubeVideoCommentsTaskPostResponseInfo youtube_video_comments_task_post(serp_youtube_video_comments_task_post_request_info=serp_youtube_video_comments_task_post_request_info)
+
+
 
 ‌‌ YouTube Comments API provides data on comments on the video you specify in the request. You will get the top 20 comments on the video as well as information about the author, and key comment metrics. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_comments/task_post/?bash'
 
@@ -9430,11 +10277,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_comments_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_youtube_video_comments_task_post_request_info** | [**List[SerpYoutubeVideoCommentsTaskPostRequestInfo]**](SerpYoutubeVideoCommentsTaskPostRequestInfo.md)|  | [optional]
+ **serp_youtube_video_comments_task_post_request_info** | [**List[SerpYoutubeVideoCommentsTaskPostRequestInfo]**](SerpYoutubeVideoCommentsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9446,8 +10296,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9455,11 +10305,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_comments_tasks_fixed**
-
 > SerpYoutubeVideoCommentsTasksFixedResponseInfo youtube_video_comments_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_comments/tasks_fixed/?bash'
 
@@ -9503,6 +10354,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_comments_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -9517,8 +10370,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9526,11 +10379,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_comments_tasks_ready**
-
 > SerpYoutubeVideoCommentsTasksReadyResponseInfo youtube_video_comments_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_comments/tasks_ready/?bash'
 
@@ -9574,6 +10428,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_comments_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -9588,8 +10444,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9597,11 +10453,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_info_live_advanced**
-
 > SerpYoutubeVideoInfoLiveAdvancedResponseInfo youtube_video_info_live_advanced(serp_youtube_video_info_live_advanced_request_info=serp_youtube_video_info_live_advanced_request_info)
+
+
 
 ‌ Live YouTube Video Info provides real-time data on the video you specify in the request. You will get data from the watching page containing key video and content metrics as well as the channel where the video is published. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_info/live/advanced/?bash'
 
@@ -9647,11 +10504,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_info_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_youtube_video_info_live_advanced_request_info** | [**List[SerpYoutubeVideoInfoLiveAdvancedRequestInfo]**](SerpYoutubeVideoInfoLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_youtube_video_info_live_advanced_request_info** | [**List[SerpYoutubeVideoInfoLiveAdvancedRequestInfo]**](SerpYoutubeVideoInfoLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9663,8 +10523,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9672,11 +10532,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_info_task_get_advanced**
-
 > SerpYoutubeVideoInfoTaskGetAdvancedResponseInfo youtube_video_info_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_info/task_get/advanced/?bash'
 
@@ -9721,11 +10582,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_info_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -9737,8 +10601,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9746,11 +10610,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_info_task_post**
-
 > SerpYoutubeVideoInfoTaskPostResponseInfo youtube_video_info_task_post(serp_youtube_video_info_task_post_request_info=serp_youtube_video_info_task_post_request_info)
+
+
 
 ‌‌ YouTube Video Info API provides detailed information about the video you specify in the POST request. You will get data from the watching page containing key video and content metrics as well as the channel where the video is published. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_info/task_post/?bash'
 
@@ -9796,11 +10661,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_info_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_youtube_video_info_task_post_request_info** | [**List[SerpYoutubeVideoInfoTaskPostRequestInfo]**](SerpYoutubeVideoInfoTaskPostRequestInfo.md)|  | [optional]
+ **serp_youtube_video_info_task_post_request_info** | [**List[SerpYoutubeVideoInfoTaskPostRequestInfo]**](SerpYoutubeVideoInfoTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9812,8 +10680,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9821,11 +10689,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_info_tasks_fixed**
-
 > SerpYoutubeVideoInfoTasksFixedResponseInfo youtube_video_info_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_info/tasks_fixed/?bash'
 
@@ -9869,6 +10738,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_info_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -9883,8 +10754,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9892,11 +10763,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_info_tasks_ready**
-
 > SerpYoutubeVideoInfoTasksReadyResponseInfo youtube_video_info_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_info/tasks_ready/?bash'
 
@@ -9940,6 +10812,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_info_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -9954,8 +10828,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -9963,11 +10837,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_subtitles_live_advanced**
-
 > SerpYoutubeVideoSubtitlesLiveAdvancedResponseInfo youtube_video_subtitles_live_advanced(serp_youtube_video_subtitles_live_advanced_request_info=serp_youtube_video_subtitles_live_advanced_request_info)
+
+
 
 ‌ Live YouTube Subtitles provides real-time data on subtitles in the video you specify in the request. You will get data from the watching page containing subtitled text, its language, and duration in the video. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/live/advanced/?bash'
 
@@ -10013,11 +10888,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_subtitles_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_youtube_video_subtitles_live_advanced_request_info** | [**List[SerpYoutubeVideoSubtitlesLiveAdvancedRequestInfo]**](SerpYoutubeVideoSubtitlesLiveAdvancedRequestInfo.md)|  | [optional]
+ **serp_youtube_video_subtitles_live_advanced_request_info** | [**List[SerpYoutubeVideoSubtitlesLiveAdvancedRequestInfo]**](SerpYoutubeVideoSubtitlesLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -10029,8 +10907,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -10038,11 +10916,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_subtitles_task_get_advanced**
-
 > SerpYoutubeVideoSubtitlesTaskGetAdvancedResponseInfo youtube_video_subtitles_task_get_advanced(id)
+
+
 
 Description of the fields for sending a request: for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/task_get/advanced/?bash'
 
@@ -10087,11 +10966,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_subtitles_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -10103,8 +10985,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -10112,11 +10994,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_subtitles_task_post**
-
 > SerpYoutubeVideoSubtitlesTaskPostResponseInfo youtube_video_subtitles_task_post(serp_youtube_video_subtitles_task_post_request_info=serp_youtube_video_subtitles_task_post_request_info)
+
+
 
 ‌‌ YouTube Subtitles API provides data on all subtitles in the video you specify in the POST request. You will get data from the watching page containing subtitled text, its language, and duration in the video. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/task_post/?bash'
 
@@ -10162,11 +11045,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_subtitles_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**serp_youtube_video_subtitles_task_post_request_info** | [**List[SerpYoutubeVideoSubtitlesTaskPostRequestInfo]**](SerpYoutubeVideoSubtitlesTaskPostRequestInfo.md)|  | [optional]
+ **serp_youtube_video_subtitles_task_post_request_info** | [**List[SerpYoutubeVideoSubtitlesTaskPostRequestInfo]**](SerpYoutubeVideoSubtitlesTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -10178,8 +11064,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -10187,11 +11073,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_subtitles_tasks_fixed**
-
 > SerpYoutubeVideoSubtitlesTasksFixedResponseInfo youtube_video_subtitles_tasks_fixed()
+
+
 
 ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/tasks_fixed/?bash'
 
@@ -10235,6 +11122,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_subtitles_tasks_fixed: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -10249,8 +11138,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -10258,11 +11147,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **youtube_video_subtitles_tasks_ready**
-
 > SerpYoutubeVideoSubtitlesTasksReadyResponseInfo youtube_video_subtitles_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/tasks_ready/?bash'
 
@@ -10306,6 +11196,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling SerpApi->youtube_video_subtitles_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -10320,8 +11212,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -10329,8 +11221,5 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

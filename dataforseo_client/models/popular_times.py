@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.busy_working_time_info import BusyWorkingTimeInfo
 from typing import Optional, Set
@@ -30,11 +30,11 @@ class PopularTimes(BaseModel):
     popular_times_by_days: Optional[Dict[str, Optional[List[BusyWorkingTimeInfo]]]] = Field(default=None, description="popular hours information about busy hours of the local establishment on each day of the week")
     __properties: ClassVar[List[str]] = ["popular_times_by_days"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

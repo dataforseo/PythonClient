@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from typing import Optional, Set
@@ -36,18 +36,18 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
     sub_title: Optional[StrictStr] = Field(default=None, description="subtitle of the item")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     card_id: Optional[StrictStr] = Field(default=None, description="card id")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image from knowledge graph")
     logo_url: Optional[StrictStr] = Field(default=None, description="URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
     items: Optional[List[BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "title", "sub_title", "description", "card_id", "url", "image_url", "logo_url", "cid", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.hotel_amenity_info import HotelAmenityInfo
 from dataforseo_client.models.hotel_amenity_item_info import HotelAmenityItemInfo
@@ -40,11 +40,11 @@ class HotelAboutInfo(BaseModel):
     popular_amenities: Optional[List[HotelAmenityItemInfo]] = Field(default=None, description="hotel amenities information about hotel amenities labelled as “popular”")
     __properties: ClassVar[List[str]] = ["description", "sub_descriptions", "check_in_time", "check_out_time", "full_address", "domain", "url", "amenities", "popular_amenities"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

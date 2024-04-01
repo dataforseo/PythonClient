@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.price_info import PriceInfo
 from typing import Optional, Set
@@ -28,19 +28,19 @@ class KnowledgeGraphHotelsBookingElement(BaseModel):
     KnowledgeGraphHotelsBookingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the shopping_element")
-    description: Optional[StrictStr] = Field(default=None, description="the description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="URL")
-    domain: Optional[StrictStr] = Field(default=None, description="domain in the URL")
+    source: Optional[StrictStr] = Field(default=None, description="source of additional information about the result")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
+    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     price: Optional[PriceInfo] = None
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates whether the element is an ad")
     __properties: ClassVar[List[str]] = ["type", "source", "description", "url", "domain", "price", "is_paid"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

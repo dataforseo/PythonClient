@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.app_metrics_info import AppMetricsInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class DataforseoLabsleBulkAppMetricsLiveItem(BaseModel):
     metrics: Optional[Dict[str, AppMetricsInfo]] = Field(default=None, description="metrics for the ranking keywords of the app ranking data relevant to the keywords that the provided application ranks for on Google Play")
     __properties: ClassVar[List[str]] = ["se_type", "app_id", "metrics"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

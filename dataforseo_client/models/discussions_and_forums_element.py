@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,20 +27,20 @@ class DiscussionsAndForumsElement(BaseModel):
     DiscussionsAndForumsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    source: Optional[StrictStr] = Field(default=None, description="web source of the hotel booking element indicates the source of information included in the element")
-    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
+    description: Optional[StrictStr] = Field(default=None, description="description")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     posts_count: Optional[StrictInt] = Field(default=None, description="number of posts from the discussion on the related source")
     __properties: ClassVar[List[str]] = ["type", "title", "url", "domain", "source", "description", "timestamp", "posts_count"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

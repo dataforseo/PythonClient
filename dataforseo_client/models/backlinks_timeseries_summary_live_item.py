@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,19 +32,20 @@ class BacklinksTimeseriesSummaryLiveItem(BaseModel):
     backlinks: Optional[StrictInt] = Field(default=None, description="number of backlinks for the given date")
     backlinks_nofollow: Optional[StrictInt] = Field(default=None, description="number of nofollow backlinks for the given date")
     referring_pages: Optional[StrictInt] = Field(default=None, description="number of pages pointing to target for the given date")
+    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the target for the given date")
     referring_domains: Optional[StrictInt] = Field(default=None, description="number of referring domains for the given date referring domains include subdomains that are counted as separate domains for this metric")
     referring_domains_nofollow: Optional[StrictInt] = Field(default=None, description="number of domains pointing at least one nofollow link to the target for the given date")
     referring_main_domains: Optional[StrictInt] = Field(default=None, description="number of referring main domains for the given date")
     referring_main_domains_nofollow: Optional[StrictInt] = Field(default=None, description="number of main domains pointing at least one nofollow link to the target for the given date")
     referring_ips: Optional[StrictInt] = Field(default=None, description="number of referring IP addresses for the given date number of IP addresses pointing to this page")
     referring_subnets: Optional[StrictInt] = Field(default=None, description="number of referring subnetworks for the given date")
-    __properties: ClassVar[List[str]] = ["type", "date", "rank", "backlinks", "backlinks_nofollow", "referring_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets"]
+    __properties: ClassVar[List[str]] = ["type", "date", "rank", "backlinks", "backlinks_nofollow", "referring_pages", "referring_pages_nofollow", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -109,6 +110,11 @@ class BacklinksTimeseriesSummaryLiveItem(BaseModel):
         if self.referring_pages is None and "referring_pages" in self.model_fields_set:
             _dict['referring_pages'] = None
 
+        # set to None if referring_pages_nofollow (nullable) is None
+        # and model_fields_set contains the field
+        if self.referring_pages_nofollow is None and "referring_pages_nofollow" in self.model_fields_set:
+            _dict['referring_pages_nofollow'] = None
+
         # set to None if referring_domains (nullable) is None
         # and model_fields_set contains the field
         if self.referring_domains is None and "referring_domains" in self.model_fields_set:
@@ -157,6 +163,7 @@ class BacklinksTimeseriesSummaryLiveItem(BaseModel):
             "backlinks": obj.get("backlinks"),
             "backlinks_nofollow": obj.get("backlinks_nofollow"),
             "referring_pages": obj.get("referring_pages"),
+            "referring_pages_nofollow": obj.get("referring_pages_nofollow"),
             "referring_domains": obj.get("referring_domains"),
             "referring_domains_nofollow": obj.get("referring_domains_nofollow"),
             "referring_main_domains": obj.get("referring_main_domains"),

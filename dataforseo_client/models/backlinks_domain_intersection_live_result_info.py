@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_domain_intersection_live_item import BacklinksDomainIntersectionLiveItem
 from typing import Optional, Set
@@ -33,11 +33,11 @@ class BacklinksDomainIntersectionLiveResultInfo(BaseModel):
     items: Optional[List[BacklinksDomainIntersectionLiveItem]] = Field(default=None, description="contains domain that link to all targets from the POST array")
     __properties: ClassVar[List[str]] = ["targets", "total_count", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

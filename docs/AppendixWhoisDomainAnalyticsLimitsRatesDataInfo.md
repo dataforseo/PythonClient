@@ -1,14 +1,11 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # AppendixWhoisDomainAnalyticsLimitsRatesDataInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**overview** | [**AppendixInfo**](AppendixInfo.md) |  | [optional]
+**overview** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
 
 ## Example
 
@@ -20,16 +17,13 @@ json = "{}"
 # create an instance of AppendixWhoisDomainAnalyticsLimitsRatesDataInfo from a JSON string
 appendix_whois_domain_analytics_limits_rates_data_info_instance = AppendixWhoisDomainAnalyticsLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixWhoisDomainAnalyticsLimitsRatesDataInfo.to_json()
+print(AppendixWhoisDomainAnalyticsLimitsRatesDataInfo.to_json())
 
 # convert the object into a dict
 appendix_whois_domain_analytics_limits_rates_data_info_dict = appendix_whois_domain_analytics_limits_rates_data_info_instance.to_dict()
 # create an instance of AppendixWhoisDomainAnalyticsLimitsRatesDataInfo from a dict
 appendix_whois_domain_analytics_limits_rates_data_info_form_dict = appendix_whois_domain_analytics_limits_rates_data_info.from_dict(appendix_whois_domain_analytics_limits_rates_data_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

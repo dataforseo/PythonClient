@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.graph import Graph
@@ -31,26 +31,26 @@ class StocksBoxSerpElementItem(BaseSerpElementItem):
     """
     StocksBoxSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
+    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values; positions of elements with different type values are omitted from rank_group; always equals 0 for desktop")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
+    title: Optional[StrictStr] = Field(default=None, description="title of the row")
+    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of the video")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
     price: Optional[PriceInfo] = None
-    url: Optional[StrictStr] = Field(default=None, description="URL")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    url: Optional[StrictStr] = Field(default=None, description="source URL")
+    domain: Optional[StrictStr] = Field(default=None, description="source domain")
     rectangle: Optional[Rectangle] = None
     table: Optional[Table] = None
     graph: Optional[Graph] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "source", "snippet", "price", "url", "domain", "rectangle", "table", "graph"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

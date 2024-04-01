@@ -1,17 +1,14 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # AppendixMerchantGoogleInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**products** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional]
-**sellers** | [**AppendixSellersGoogleMerchantLimitsRatesDataInfo**](AppendixSellersGoogleMerchantLimitsRatesDataInfo.md) |  | [optional]
-**product_spec** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional]
-**product_info** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional]
+**products** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**sellers** | [**AppendixSellersGoogleMerchantLimitsRatesDataInfo**](AppendixSellersGoogleMerchantLimitsRatesDataInfo.md) |  | [optional] 
+**product_spec** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**product_info** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 
@@ -23,16 +20,13 @@ json = "{}"
 # create an instance of AppendixMerchantGoogleInfo from a JSON string
 appendix_merchant_google_info_instance = AppendixMerchantGoogleInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixMerchantGoogleInfo.to_json()
+print(AppendixMerchantGoogleInfo.to_json())
 
 # convert the object into a dict
 appendix_merchant_google_info_dict = appendix_merchant_google_info_instance.to_dict()
 # create an instance of AppendixMerchantGoogleInfo from a dict
 appendix_merchant_google_info_form_dict = appendix_merchant_google_info.from_dict(appendix_merchant_google_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.app_data_google_categories_task_info import AppDataGoogleCategoriesTaskInfo
 from typing import Optional, Set
@@ -37,11 +37,11 @@ class AppDataGoogleCategoriesResponseInfo(BaseModel):
     tasks: Optional[List[AppDataGoogleCategoriesTaskInfo]] = Field(default=None, description="array of tasks")
     __properties: ClassVar[List[str]] = ["version", "status_code", "status_message", "time", "cost", "tasks_count", "tasks_error", "tasks"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

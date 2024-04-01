@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.spell_info import SpellInfo
@@ -46,11 +46,11 @@ class SerpYoutubeVideoSubtitlesTaskGetAdvancedResultInfo(BaseModel):
     items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["video_id", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "unsupported_language", "translate_language", "origin_language", "category", "subtitles_count", "title", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

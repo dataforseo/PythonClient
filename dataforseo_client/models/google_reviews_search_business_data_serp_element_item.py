@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.images_element import ImagesElement
@@ -53,11 +53,11 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
     images: Optional[List[ImagesElement]] = Field(default=None, description="images submitted by the reviewer")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "review_text", "original_review_text", "time_ago", "timestamp", "rating", "reviews_count", "photos_count", "local_guide", "profile_name", "profile_url", "review_url", "profile_image_url", "owner_answer", "original_owner_answer", "owner_time_ago", "owner_timestamp", "review_id", "images"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
@@ -28,20 +28,20 @@ class RecipesElement(BaseModel):
     RecipesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    source: Optional[StrictStr] = Field(default=None, description="web source of the hotel booking element indicates the source of information included in the element")
-    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
+    description: Optional[StrictStr] = Field(default=None, description="description")
     time: Optional[StrictStr] = Field(default=None, description="the total time it takes to prepare the cook the dish")
     rating: Optional[RatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "url", "domain", "source", "description", "time", "rating"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

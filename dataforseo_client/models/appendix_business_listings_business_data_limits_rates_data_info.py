@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_info import AppendixInfo
+from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,17 +27,17 @@ class AppendixBusinessListingsBusinessDataLimitsRatesDataInfo(BaseModel):
     """
     AppendixBusinessListingsBusinessDataLimitsRatesDataInfo
     """ # noqa: E501
-    search: Optional[AppendixInfo] = None
-    categories_aggregation: Optional[AppendixInfo] = None
+    search: Optional[AppendixFunctionInfo] = None
+    categories_aggregation: Optional[AppendixFunctionInfo] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["search", "categories_aggregation", "categories", "locations"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -100,8 +100,8 @@ class AppendixBusinessListingsBusinessDataLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "search": AppendixInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
-            "categories_aggregation": AppendixInfo.from_dict(obj["categories_aggregation"]) if obj.get("categories_aggregation") is not None else None,
+            "search": AppendixFunctionInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
+            "categories_aggregation": AppendixFunctionInfo.from_dict(obj["categories_aggregation"]) if obj.get("categories_aggregation") is not None else None,
             "categories": obj.get("categories"),
             "locations": obj.get("locations")
         })

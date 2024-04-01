@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_info import AppendixInfo
+from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +27,15 @@ class AppendixBusinessDataDayLimitsRatesDataInfo(BaseModel):
     """
     AppendixBusinessDataDayLimitsRatesDataInfo
     """ # noqa: E501
-    reviews: Optional[AppendixInfo] = None
-    search: Optional[AppendixInfo] = None
+    reviews: Optional[AppendixFunctionInfo] = None
+    search: Optional[AppendixFunctionInfo] = None
     __properties: ClassVar[List[str]] = ["reviews", "search"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -88,8 +88,8 @@ class AppendixBusinessDataDayLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "reviews": AppendixInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
-            "search": AppendixInfo.from_dict(obj["search"]) if obj.get("search") is not None else None
+            "reviews": AppendixFunctionInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "search": AppendixFunctionInfo.from_dict(obj["search"]) if obj.get("search") is not None else None
         })
         return _obj
 

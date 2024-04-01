@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,20 +27,20 @@ class TopStoriesElement(BaseModel):
     TopStoriesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    source: Optional[StrictStr] = Field(default=None, description="web source of the hotel booking element indicates the source of information included in the element")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
+    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     var_date: Optional[StrictStr] = Field(default=None, description="the date when the page source of the element was published", alias="date")
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     __properties: ClassVar[List[str]] = ["type", "source", "domain", "title", "date", "amp_version", "timestamp", "url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

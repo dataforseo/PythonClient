@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.queries_list_data_item_info import QueriesListDataItemInfo
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class QueriesListDataInfo(BaseModel):
     rising: Optional[List[QueriesListDataItemInfo]] = Field(default=None, description="emerging related topics represents the list of related topics with the biggest increase in search frequency since the last time period")
     __properties: ClassVar[List[str]] = ["top", "rising"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

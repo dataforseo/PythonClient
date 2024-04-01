@@ -1,14 +1,11 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # OnPageLighthouseVersionsResultInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**availible_versions** | [**List[AvailibleVersions]**](AvailibleVersions.md) |  | [optional]
+**availible_versions** | [**List[AvailibleVersions]**](AvailibleVersions.md) |  | [optional] 
 
 ## Example
 
@@ -20,16 +17,13 @@ json = "{}"
 # create an instance of OnPageLighthouseVersionsResultInfo from a JSON string
 on_page_lighthouse_versions_result_info_instance = OnPageLighthouseVersionsResultInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageLighthouseVersionsResultInfo.to_json()
+print(OnPageLighthouseVersionsResultInfo.to_json())
 
 # convert the object into a dict
 on_page_lighthouse_versions_result_info_dict = on_page_lighthouse_versions_result_info_instance.to_dict()
 # create an instance of OnPageLighthouseVersionsResultInfo from a dict
 on_page_lighthouse_versions_result_info_form_dict = on_page_lighthouse_versions_result_info.from_dict(on_page_lighthouse_versions_result_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

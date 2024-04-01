@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field
+from pydantic import ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_local_business_link import BaseLocalBusinessLink
 from dataforseo_client.models.local_business_delivery_service_info import LocalBusinessDeliveryServiceInfo
@@ -31,11 +31,11 @@ class LocalBusinessOrderLink(BaseLocalBusinessLink):
     delivery_services: Optional[List[LocalBusinessDeliveryServiceInfo]] = Field(default=None, description="lists available delivery services")
     __properties: ClassVar[List[str]] = ["type", "delivery_services"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

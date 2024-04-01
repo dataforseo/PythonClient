@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_local_business_link import BaseLocalBusinessLink
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class LocalBusinessMenuLink(BaseLocalBusinessLink):
     url: Optional[StrictStr] = Field(default=None, description="URL to view the menu")
     __properties: ClassVar[List[str]] = ["type", "title", "url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.cache_control import CacheControl
@@ -51,11 +51,11 @@ class OnPageImageResourceElementItem(BaseOnPageResourceItemInfo):
     resource_errors: Optional[OnPageResourceIssueInfo] = None
     __properties: ClassVar[List[str]] = ["resource_type", "meta", "status_code", "location", "url", "size", "encoded_size", "total_transfer_size", "fetch_time", "fetch_timing", "cache_control", "checks", "content_encoding", "media_type", "accept_type", "server", "last_modified", "resource_errors"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

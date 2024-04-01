@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from dataforseo_client.models.backlinks_info import BacklinksInfo
@@ -65,11 +65,11 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     rank_info: Optional[RankInfo] = None
     __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "breadcrumb", "website_name", "is_image", "is_video", "is_featured_snippet", "is_malicious", "description", "pre_snippet", "extended_snippet", "amp_version", "rating", "highlighted", "links", "about_this_result", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "backlinks_info", "rank_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

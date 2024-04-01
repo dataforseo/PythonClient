@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_bing_keywords_data_price_data import AppendixBingKeywordsDataPriceData
+from dataforseo_client.models.appendix_dataforseo_trends_keywords_data_price_data import AppendixDataforseoTrendsKeywordsDataPriceData
 from dataforseo_client.models.appendix_explore_keywords_data_price_data import AppendixExploreKeywordsDataPriceData
 from dataforseo_client.models.appendix_google_ads_keywords_data_price_data import AppendixGoogleAdsKeywordsDataPriceData
 from dataforseo_client.models.appendix_keyword_performance_keywords_data_price_data import AppendixKeywordPerformanceKeywordsDataPriceData
@@ -45,14 +46,15 @@ class AppendixKeywordsDataPriceData(BaseModel):
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     search_volume_history: Optional[AppendixKeywordsKeywordsDataPriceDataInfo] = None
     search_volume: Optional[AppendixKeywordsKeywordsDataPriceDataInfo] = None
+    dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataPriceData] = None
     explore: Optional[AppendixExploreKeywordsDataPriceData] = None
-    __properties: ClassVar[List[str]] = ["tasks_ready", "ad_traffic_by_keywords", "bing", "categories", "errors", "google_ads", "keyword_performance", "keywords_for_keywords", "keywords_for_site", "languages", "locations", "search_volume_history", "search_volume", "explore"]
+    __properties: ClassVar[List[str]] = ["tasks_ready", "ad_traffic_by_keywords", "bing", "categories", "errors", "google_ads", "keyword_performance", "keywords_for_keywords", "keywords_for_site", "languages", "locations", "search_volume_history", "search_volume", "dataforseo_trends", "explore"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -126,6 +128,9 @@ class AppendixKeywordsDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of search_volume
         if self.search_volume:
             _dict['search_volume'] = self.search_volume.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of dataforseo_trends
+        if self.dataforseo_trends:
+            _dict['dataforseo_trends'] = self.dataforseo_trends.to_dict()
         # override the default output from pydantic by calling `to_dict()` of explore
         if self.explore:
             _dict['explore'] = self.explore.to_dict()
@@ -154,6 +159,7 @@ class AppendixKeywordsDataPriceData(BaseModel):
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
             "search_volume_history": AppendixKeywordsKeywordsDataPriceDataInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
             "search_volume": AppendixKeywordsKeywordsDataPriceDataInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None,
+            "dataforseo_trends": AppendixDataforseoTrendsKeywordsDataPriceData.from_dict(obj["dataforseo_trends"]) if obj.get("dataforseo_trends") is not None else None,
             "explore": AppendixExploreKeywordsDataPriceData.from_dict(obj["explore"]) if obj.get("explore") is not None else None
         })
         return _obj

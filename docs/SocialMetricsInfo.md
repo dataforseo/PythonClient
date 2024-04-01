@@ -1,15 +1,12 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # SocialMetricsInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | type of element | [optional]
-**like_count** | **int** | likes count | [optional]
+**type** | **str** | type of element | [optional] 
+**like_count** | **int** | likes count | [optional] 
 
 ## Example
 
@@ -21,16 +18,13 @@ json = "{}"
 # create an instance of SocialMetricsInfo from a JSON string
 social_metrics_info_instance = SocialMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print SocialMetricsInfo.to_json()
+print(SocialMetricsInfo.to_json())
 
 # convert the object into a dict
 social_metrics_info_dict = social_metrics_info_instance.to_dict()
 # create an instance of SocialMetricsInfo from a dict
 social_metrics_info_form_dict = social_metrics_info.from_dict(social_metrics_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

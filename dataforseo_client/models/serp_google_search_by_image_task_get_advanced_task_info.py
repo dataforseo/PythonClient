@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.serp_google_search_by_image_task_get_advanced_result_info import SerpGoogleSearchByImageTaskGetAdvancedResultInfo
 from typing import Optional, Set
@@ -38,11 +38,11 @@ class SerpGoogleSearchByImageTaskGetAdvancedTaskInfo(BaseModel):
     result: Optional[List[SerpGoogleSearchByImageTaskGetAdvancedResultInfo]] = Field(default=None, description="array of results")
     __properties: ClassVar[List[str]] = ["id", "status_code", "status_message", "time", "cost", "result_count", "path", "data", "result"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.keyword_data import KeywordData
@@ -34,11 +34,11 @@ class DataforseoLabsDomainIntersectionLiveItem(BaseModel):
     second_domain_serp_element: Optional[BaseDataforseoLabsSerpElementItem] = None
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "first_domain_serp_element", "second_domain_serp_element"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

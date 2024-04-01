@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.price_info import PriceInfo
 from typing import Optional, Set
@@ -35,11 +35,11 @@ class AmazonDeliveryInfo(BaseModel):
     delivery_price: Optional[PriceInfo] = None
     __properties: ClassVar[List[str]] = ["delivery_message", "delivery_date_from", "delivery_date_to", "fastest_delivery_date_from", "fastest_delivery_date_to", "delivery_price"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

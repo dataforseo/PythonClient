@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_info import AppendixInfo
+from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,18 +42,18 @@ class AppendixOnPageLimitsRatesDataInfo(BaseModel):
     raw_html: Optional[Union[StrictFloat, StrictInt]] = None
     instant_pages: Optional[Union[StrictFloat, StrictInt]] = None
     redirect_chains: Optional[Union[StrictFloat, StrictInt]] = None
-    lighthouse: Optional[AppendixInfo] = None
+    lighthouse: Optional[AppendixFunctionInfo] = None
     keyword_density: Optional[Union[StrictFloat, StrictInt]] = None
     page_screenshot: Optional[Union[StrictFloat, StrictInt]] = None
     content_parsing: Optional[Union[StrictFloat, StrictInt]] = None
     content_parsing_live: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "summary", "resources", "pages", "non_indexable", "duplicate_tags", "links", "waterfall", "errors", "pages_by_resource", "duplicate_content", "raw_html", "instant_pages", "redirect_chains", "lighthouse", "keyword_density", "page_screenshot", "content_parsing", "content_parsing_live"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -213,7 +213,7 @@ class AppendixOnPageLimitsRatesDataInfo(BaseModel):
             "raw_html": obj.get("raw_html"),
             "instant_pages": obj.get("instant_pages"),
             "redirect_chains": obj.get("redirect_chains"),
-            "lighthouse": AppendixInfo.from_dict(obj["lighthouse"]) if obj.get("lighthouse") is not None else None,
+            "lighthouse": AppendixFunctionInfo.from_dict(obj["lighthouse"]) if obj.get("lighthouse") is not None else None,
             "keyword_density": obj.get("keyword_density"),
             "page_screenshot": obj.get("page_screenshot"),
             "content_parsing": obj.get("content_parsing"),

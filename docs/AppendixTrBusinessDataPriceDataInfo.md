@@ -1,15 +1,12 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # AppendixTrBusinessDataPriceDataInfo
+
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reviews** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
-**search** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional]
+**reviews** | [**AppendixHotelSearchesGoogleBusinessDataPriceData**](AppendixHotelSearchesGoogleBusinessDataPriceData.md) |  | [optional] 
+**search** | [**AppendixHotelSearchesGoogleBusinessDataPriceData**](AppendixHotelSearchesGoogleBusinessDataPriceData.md) |  | [optional] 
 
 ## Example
 
@@ -21,16 +18,13 @@ json = "{}"
 # create an instance of AppendixTrBusinessDataPriceDataInfo from a JSON string
 appendix_tr_business_data_price_data_info_instance = AppendixTrBusinessDataPriceDataInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixTrBusinessDataPriceDataInfo.to_json()
+print(AppendixTrBusinessDataPriceDataInfo.to_json())
 
 # convert the object into a dict
 appendix_tr_business_data_price_data_info_dict = appendix_tr_business_data_price_data_info_instance.to_dict()
 # create an instance of AppendixTrBusinessDataPriceDataInfo from a dict
 appendix_tr_business_data_price_data_info_form_dict = appendix_tr_business_data_price_data_info.from_dict(appendix_tr_business_data_price_data_info_dict)
 ```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
-  
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

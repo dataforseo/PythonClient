@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.price_info import PriceInfo
 from typing import Optional, Set
@@ -28,20 +28,20 @@ class ShoppingElement(BaseModel):
     ShoppingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     price: Optional[PriceInfo] = None
-    source: Optional[StrictStr] = Field(default=None, description="web source of the hotel booking element indicates the source of information included in the element")
-    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
+    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
+    description: Optional[StrictStr] = Field(default=None, description="description")
     marketplace: Optional[StrictStr] = Field(default=None, description="merchant account provider commerce site that hosts products or websites of individual sellers under the same merchant account example: by Google")
     marketplace_url: Optional[StrictStr] = Field(default=None, description="relevant marketplace URL URL of the page on the marketplace website where the product is hosted")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     __properties: ClassVar[List[str]] = ["type", "title", "price", "source", "description", "marketplace", "marketplace_url", "url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

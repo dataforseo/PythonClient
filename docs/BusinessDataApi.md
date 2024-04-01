@@ -1,73 +1,71 @@
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")
-
 # dataforseo_client.BusinessDataApi
 
 All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**business_data_business_listings_locations**](BusinessDataApi.md#business_data_business_listings_locations) | **GET** /v3/business_data/business_listings/locations |
-[**business_data_errors**](BusinessDataApi.md#business_data_errors) | **POST** /v3/business_data/errors |
-[**business_data_google_languages**](BusinessDataApi.md#business_data_google_languages) | **GET** /v3/business_data/google/languages |
-[**business_data_google_locations**](BusinessDataApi.md#business_data_google_locations) | **GET** /v3/business_data/google/locations |
-[**business_data_google_locations_country**](BusinessDataApi.md#business_data_google_locations_country) | **GET** /v3/business_data/google/locations/{country} |
-[**business_data_id_list**](BusinessDataApi.md#business_data_id_list) | **POST** /v3/business_data/id_list |
-[**business_data_tripadvisor_languages**](BusinessDataApi.md#business_data_tripadvisor_languages) | **GET** /v3/business_data/tripadvisor/languages |
-[**business_data_tripadvisor_locations**](BusinessDataApi.md#business_data_tripadvisor_locations) | **GET** /v3/business_data/tripadvisor/locations |
-[**business_data_tripadvisor_locations_country**](BusinessDataApi.md#business_data_tripadvisor_locations_country) | **GET** /v3/business_data/tripadvisor/locations/{country} |
-[**business_data_yelp_languages**](BusinessDataApi.md#business_data_yelp_languages) | **GET** /v3/business_data/yelp/languages |
-[**business_data_yelp_locations**](BusinessDataApi.md#business_data_yelp_locations) | **GET** /v3/business_data/yelp/locations |
-[**business_data_yelp_locations_country**](BusinessDataApi.md#business_data_yelp_locations_country) | **GET** /v3/business_data/yelp/locations/{country} |
-[**business_listings_available_filters**](BusinessDataApi.md#business_listings_available_filters) | **GET** /v3/business_data/business_listings/available_filters |
-[**business_listings_categories**](BusinessDataApi.md#business_listings_categories) | **GET** /v3/business_data/business_listings/categories |
-[**business_listings_categories_aggregation_live**](BusinessDataApi.md#business_listings_categories_aggregation_live) | **POST** /v3/business_data/business_listings/categories_aggregation/live |
-[**business_listings_search_live**](BusinessDataApi.md#business_listings_search_live) | **POST** /v3/business_data/business_listings/search/live |
-[**google_hotel_info_live_advanced**](BusinessDataApi.md#google_hotel_info_live_advanced) | **POST** /v3/business_data/google/hotel_info/live/advanced |
-[**google_hotel_info_live_html**](BusinessDataApi.md#google_hotel_info_live_html) | **POST** /v3/business_data/google/hotel_info/live/html |
-[**google_hotel_info_task_get_advanced**](BusinessDataApi.md#google_hotel_info_task_get_advanced) | **GET** /v3/business_data/google/hotel_info/task_get/advanced/{id} |
-[**google_hotel_info_task_get_html**](BusinessDataApi.md#google_hotel_info_task_get_html) | **GET** /v3/business_data/google/hotel_info/task_get/html/{id} |
-[**google_hotel_info_task_post**](BusinessDataApi.md#google_hotel_info_task_post) | **POST** /v3/business_data/google/hotel_info/task_post |
-[**google_hotel_info_tasks_ready**](BusinessDataApi.md#google_hotel_info_tasks_ready) | **GET** /v3/business_data/google/hotel_info/tasks_ready |
-[**google_hotel_searches_live**](BusinessDataApi.md#google_hotel_searches_live) | **POST** /v3/business_data/google/hotel_searches/live |
-[**google_hotel_searches_task_get**](BusinessDataApi.md#google_hotel_searches_task_get) | **GET** /v3/business_data/google/hotel_searches/task_get/{id} |
-[**google_hotel_searches_task_post**](BusinessDataApi.md#google_hotel_searches_task_post) | **POST** /v3/business_data/google/hotel_searches/task_post |
-[**google_hotel_searches_tasks_ready**](BusinessDataApi.md#google_hotel_searches_tasks_ready) | **GET** /v3/business_data/google/hotel_searches/tasks_ready |
-[**google_my_business_info_task_get**](BusinessDataApi.md#google_my_business_info_task_get) | **GET** /v3/business_data/google/my_business_info/task_get/{id} |
-[**google_my_business_info_task_post**](BusinessDataApi.md#google_my_business_info_task_post) | **POST** /v3/business_data/google/my_business_info/task_post |
-[**google_my_business_info_tasks_ready**](BusinessDataApi.md#google_my_business_info_tasks_ready) | **GET** /v3/business_data/google/my_business_info/tasks_ready |
-[**google_my_business_updates_task_get**](BusinessDataApi.md#google_my_business_updates_task_get) | **GET** /v3/business_data/google/my_business_updates/task_get/{id} |
-[**google_my_business_updates_task_post**](BusinessDataApi.md#google_my_business_updates_task_post) | **POST** /v3/business_data/google/my_business_updates/task_post |
-[**google_my_business_updates_tasks_ready**](BusinessDataApi.md#google_my_business_updates_tasks_ready) | **GET** /v3/business_data/google/my_business_updates/tasks_ready |
-[**google_reviews_task_get**](BusinessDataApi.md#google_reviews_task_get) | **GET** /v3/business_data/google/reviews/task_get/{id} |
-[**google_reviews_task_post**](BusinessDataApi.md#google_reviews_task_post) | **POST** /v3/business_data/google/reviews/task_post |
-[**google_reviews_tasks_ready**](BusinessDataApi.md#google_reviews_tasks_ready) | **GET** /v3/business_data/google/reviews/tasks_ready |
-[**social_media_facebook_live**](BusinessDataApi.md#social_media_facebook_live) | **POST** /v3/business_data/social_media/facebook/live |
-[**social_media_pinterest_live**](BusinessDataApi.md#social_media_pinterest_live) | **POST** /v3/business_data/social_media/pinterest/live |
-[**social_media_reddit_live**](BusinessDataApi.md#social_media_reddit_live) | **POST** /v3/business_data/social_media/reddit/live |
-[**tripadvisor_reviews_task_get**](BusinessDataApi.md#tripadvisor_reviews_task_get) | **GET** /v3/business_data/tripadvisor/reviews/task_get/{id} |
-[**tripadvisor_reviews_task_post**](BusinessDataApi.md#tripadvisor_reviews_task_post) | **POST** /v3/business_data/tripadvisor/reviews/task_post |
-[**tripadvisor_reviews_tasks_ready**](BusinessDataApi.md#tripadvisor_reviews_tasks_ready) | **GET** /v3/business_data/tripadvisor/reviews/tasks_ready |
-[**tripadvisor_search_task_get**](BusinessDataApi.md#tripadvisor_search_task_get) | **GET** /v3/business_data/tripadvisor/search/task_get/{id} |
-[**tripadvisor_search_task_post**](BusinessDataApi.md#tripadvisor_search_task_post) | **POST** /v3/business_data/tripadvisor/search/task_post |
-[**tripadvisor_search_tasks_ready**](BusinessDataApi.md#tripadvisor_search_tasks_ready) | **GET** /v3/business_data/tripadvisor/search/tasks_ready |
-[**trustpilot_reviews_task_get**](BusinessDataApi.md#trustpilot_reviews_task_get) | **GET** /v3/business_data/trustpilot/reviews/task_get/{id} |
-[**trustpilot_reviews_task_post**](BusinessDataApi.md#trustpilot_reviews_task_post) | **POST** /v3/business_data/trustpilot/reviews/task_post |
-[**trustpilot_reviews_tasks_ready**](BusinessDataApi.md#trustpilot_reviews_tasks_ready) | **GET** /v3/business_data/trustpilot/reviews/tasks_ready |
-[**trustpilot_search_task_get**](BusinessDataApi.md#trustpilot_search_task_get) | **GET** /v3/business_data/trustpilot/search/task_get/{id} |
-[**trustpilot_search_task_post**](BusinessDataApi.md#trustpilot_search_task_post) | **POST** /v3/business_data/trustpilot/search/task_post |
-[**trustpilot_search_tasks_ready**](BusinessDataApi.md#trustpilot_search_tasks_ready) | **GET** /v3/business_data/trustpilot/search/tasks_ready |
-[**yelp_reviews_task_get**](BusinessDataApi.md#yelp_reviews_task_get) | **GET** /v3/business_data/yelp/reviews/task_get/{id} |
-[**yelp_reviews_task_post**](BusinessDataApi.md#yelp_reviews_task_post) | **POST** /v3/business_data/yelp/reviews/task_post |
-[**yelp_reviews_tasks_ready**](BusinessDataApi.md#yelp_reviews_tasks_ready) | **GET** /v3/business_data/yelp/reviews/tasks_ready |
-[**yelp_search_task_get**](BusinessDataApi.md#yelp_search_task_get) | **GET** /v3/business_data/yelp/search/task_get/{id} |
-[**yelp_search_task_post**](BusinessDataApi.md#yelp_search_task_post) | **POST** /v3/business_data/yelp/search/task_post |
-[**yelp_search_tasks_ready**](BusinessDataApi.md#yelp_search_tasks_ready) | **GET** /v3/business_data/yelp/search/tasks_ready |
+[**business_data_business_listings_locations**](BusinessDataApi.md#business_data_business_listings_locations) | **GET** /v3/business_data/business_listings/locations | 
+[**business_data_errors**](BusinessDataApi.md#business_data_errors) | **POST** /v3/business_data/errors | 
+[**business_data_google_languages**](BusinessDataApi.md#business_data_google_languages) | **GET** /v3/business_data/google/languages | 
+[**business_data_google_locations**](BusinessDataApi.md#business_data_google_locations) | **GET** /v3/business_data/google/locations | 
+[**business_data_google_locations_country**](BusinessDataApi.md#business_data_google_locations_country) | **GET** /v3/business_data/google/locations/{country} | 
+[**business_data_id_list**](BusinessDataApi.md#business_data_id_list) | **POST** /v3/business_data/id_list | 
+[**business_data_tripadvisor_languages**](BusinessDataApi.md#business_data_tripadvisor_languages) | **GET** /v3/business_data/tripadvisor/languages | 
+[**business_data_tripadvisor_locations**](BusinessDataApi.md#business_data_tripadvisor_locations) | **GET** /v3/business_data/tripadvisor/locations | 
+[**business_data_tripadvisor_locations_country**](BusinessDataApi.md#business_data_tripadvisor_locations_country) | **GET** /v3/business_data/tripadvisor/locations/{country} | 
+[**business_data_yelp_languages**](BusinessDataApi.md#business_data_yelp_languages) | **GET** /v3/business_data/yelp/languages | 
+[**business_data_yelp_locations**](BusinessDataApi.md#business_data_yelp_locations) | **GET** /v3/business_data/yelp/locations | 
+[**business_data_yelp_locations_country**](BusinessDataApi.md#business_data_yelp_locations_country) | **GET** /v3/business_data/yelp/locations/{country} | 
+[**business_listings_available_filters**](BusinessDataApi.md#business_listings_available_filters) | **GET** /v3/business_data/business_listings/available_filters | 
+[**business_listings_categories**](BusinessDataApi.md#business_listings_categories) | **GET** /v3/business_data/business_listings/categories | 
+[**business_listings_categories_aggregation_live**](BusinessDataApi.md#business_listings_categories_aggregation_live) | **POST** /v3/business_data/business_listings/categories_aggregation/live | 
+[**business_listings_search_live**](BusinessDataApi.md#business_listings_search_live) | **POST** /v3/business_data/business_listings/search/live | 
+[**google_hotel_info_live_advanced**](BusinessDataApi.md#google_hotel_info_live_advanced) | **POST** /v3/business_data/google/hotel_info/live/advanced | 
+[**google_hotel_info_live_html**](BusinessDataApi.md#google_hotel_info_live_html) | **POST** /v3/business_data/google/hotel_info/live/html | 
+[**google_hotel_info_task_get_advanced**](BusinessDataApi.md#google_hotel_info_task_get_advanced) | **GET** /v3/business_data/google/hotel_info/task_get/advanced/{id} | 
+[**google_hotel_info_task_get_html**](BusinessDataApi.md#google_hotel_info_task_get_html) | **GET** /v3/business_data/google/hotel_info/task_get/html/{id} | 
+[**google_hotel_info_task_post**](BusinessDataApi.md#google_hotel_info_task_post) | **POST** /v3/business_data/google/hotel_info/task_post | 
+[**google_hotel_info_tasks_ready**](BusinessDataApi.md#google_hotel_info_tasks_ready) | **GET** /v3/business_data/google/hotel_info/tasks_ready | 
+[**google_hotel_searches_live**](BusinessDataApi.md#google_hotel_searches_live) | **POST** /v3/business_data/google/hotel_searches/live | 
+[**google_hotel_searches_task_get**](BusinessDataApi.md#google_hotel_searches_task_get) | **GET** /v3/business_data/google/hotel_searches/task_get/{id} | 
+[**google_hotel_searches_task_post**](BusinessDataApi.md#google_hotel_searches_task_post) | **POST** /v3/business_data/google/hotel_searches/task_post | 
+[**google_hotel_searches_tasks_ready**](BusinessDataApi.md#google_hotel_searches_tasks_ready) | **GET** /v3/business_data/google/hotel_searches/tasks_ready | 
+[**google_my_business_info_task_get**](BusinessDataApi.md#google_my_business_info_task_get) | **GET** /v3/business_data/google/my_business_info/task_get/{id} | 
+[**google_my_business_info_task_post**](BusinessDataApi.md#google_my_business_info_task_post) | **POST** /v3/business_data/google/my_business_info/task_post | 
+[**google_my_business_info_tasks_ready**](BusinessDataApi.md#google_my_business_info_tasks_ready) | **GET** /v3/business_data/google/my_business_info/tasks_ready | 
+[**google_my_business_updates_task_get**](BusinessDataApi.md#google_my_business_updates_task_get) | **GET** /v3/business_data/google/my_business_updates/task_get/{id} | 
+[**google_my_business_updates_task_post**](BusinessDataApi.md#google_my_business_updates_task_post) | **POST** /v3/business_data/google/my_business_updates/task_post | 
+[**google_my_business_updates_tasks_ready**](BusinessDataApi.md#google_my_business_updates_tasks_ready) | **GET** /v3/business_data/google/my_business_updates/tasks_ready | 
+[**google_reviews_task_get**](BusinessDataApi.md#google_reviews_task_get) | **GET** /v3/business_data/google/reviews/task_get/{id} | 
+[**google_reviews_task_post**](BusinessDataApi.md#google_reviews_task_post) | **POST** /v3/business_data/google/reviews/task_post | 
+[**google_reviews_tasks_ready**](BusinessDataApi.md#google_reviews_tasks_ready) | **GET** /v3/business_data/google/reviews/tasks_ready | 
+[**social_media_facebook_live**](BusinessDataApi.md#social_media_facebook_live) | **POST** /v3/business_data/social_media/facebook/live | 
+[**social_media_pinterest_live**](BusinessDataApi.md#social_media_pinterest_live) | **POST** /v3/business_data/social_media/pinterest/live | 
+[**social_media_reddit_live**](BusinessDataApi.md#social_media_reddit_live) | **POST** /v3/business_data/social_media/reddit/live | 
+[**tripadvisor_reviews_task_get**](BusinessDataApi.md#tripadvisor_reviews_task_get) | **GET** /v3/business_data/tripadvisor/reviews/task_get/{id} | 
+[**tripadvisor_reviews_task_post**](BusinessDataApi.md#tripadvisor_reviews_task_post) | **POST** /v3/business_data/tripadvisor/reviews/task_post | 
+[**tripadvisor_reviews_tasks_ready**](BusinessDataApi.md#tripadvisor_reviews_tasks_ready) | **GET** /v3/business_data/tripadvisor/reviews/tasks_ready | 
+[**tripadvisor_search_task_get**](BusinessDataApi.md#tripadvisor_search_task_get) | **GET** /v3/business_data/tripadvisor/search/task_get/{id} | 
+[**tripadvisor_search_task_post**](BusinessDataApi.md#tripadvisor_search_task_post) | **POST** /v3/business_data/tripadvisor/search/task_post | 
+[**tripadvisor_search_tasks_ready**](BusinessDataApi.md#tripadvisor_search_tasks_ready) | **GET** /v3/business_data/tripadvisor/search/tasks_ready | 
+[**trustpilot_reviews_task_get**](BusinessDataApi.md#trustpilot_reviews_task_get) | **GET** /v3/business_data/trustpilot/reviews/task_get/{id} | 
+[**trustpilot_reviews_task_post**](BusinessDataApi.md#trustpilot_reviews_task_post) | **POST** /v3/business_data/trustpilot/reviews/task_post | 
+[**trustpilot_reviews_tasks_ready**](BusinessDataApi.md#trustpilot_reviews_tasks_ready) | **GET** /v3/business_data/trustpilot/reviews/tasks_ready | 
+[**trustpilot_search_task_get**](BusinessDataApi.md#trustpilot_search_task_get) | **GET** /v3/business_data/trustpilot/search/task_get/{id} | 
+[**trustpilot_search_task_post**](BusinessDataApi.md#trustpilot_search_task_post) | **POST** /v3/business_data/trustpilot/search/task_post | 
+[**trustpilot_search_tasks_ready**](BusinessDataApi.md#trustpilot_search_tasks_ready) | **GET** /v3/business_data/trustpilot/search/tasks_ready | 
+[**yelp_reviews_task_get**](BusinessDataApi.md#yelp_reviews_task_get) | **GET** /v3/business_data/yelp/reviews/task_get/{id} | 
+[**yelp_reviews_task_post**](BusinessDataApi.md#yelp_reviews_task_post) | **POST** /v3/business_data/yelp/reviews/task_post | 
+[**yelp_reviews_tasks_ready**](BusinessDataApi.md#yelp_reviews_tasks_ready) | **GET** /v3/business_data/yelp/reviews/tasks_ready | 
+[**yelp_search_task_get**](BusinessDataApi.md#yelp_search_task_get) | **GET** /v3/business_data/yelp/search/task_get/{id} | 
+[**yelp_search_task_post**](BusinessDataApi.md#yelp_search_task_post) | **POST** /v3/business_data/yelp/search/task_post | 
+[**yelp_search_tasks_ready**](BusinessDataApi.md#yelp_search_tasks_ready) | **GET** /v3/business_data/yelp/search/tasks_ready | 
+
 
 # **business_data_business_listings_locations**
-
 > BusinessDataBusinessListingsLocationsResponseInfo business_data_business_listings_locations()
+
+
 
 You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2023-12-29). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
 
@@ -111,6 +109,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_business_listings_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -125,8 +125,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -134,11 +134,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_errors**
-
 > BusinessDataErrorsResponseInfo business_data_errors(business_data_errors_request_info=business_data_errors_request_info)
+
+
 
 By calling this endpoint you will receive information about the Business Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/business_data/errors/?bash'
 
@@ -184,11 +185,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_errors: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_errors_request_info** | [**List[BusinessDataErrorsRequestInfo]**](BusinessDataErrorsRequestInfo.md)|  | [optional]
+ **business_data_errors_request_info** | [**List[BusinessDataErrorsRequestInfo]**](BusinessDataErrorsRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -200,8 +204,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -209,11 +213,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_google_languages**
-
 > BusinessDataGoogleLanguagesResponseInfo business_data_google_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/languages/?bash'
 
@@ -257,6 +262,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_google_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -271,8 +278,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -280,11 +287,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_google_locations**
-
 > BusinessDataGoogleLocationsResponseInfo business_data_google_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/locations/?bash'
 
@@ -328,6 +336,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_google_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -342,8 +352,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -351,11 +361,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_google_locations_country**
-
 > BusinessDataGoogleLocationsCountryResponseInfo business_data_google_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/locations/?bash'
 
@@ -400,11 +411,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_google_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -416,8 +430,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -425,11 +439,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_id_list**
-
 > BusinessDataIdListResponseInfo business_data_id_list(business_data_id_list_request_info=business_data_id_list_request_info)
+
+
 
 This endpoint is designed to provide you with the list of IDs and metadata of the completed Business Data tasks during the specified period. You will get all task IDs that were made including successful, uncompleted, and tasks that responded as errors. for more info please visit 'https://docs.dataforseo.com/v3/business_data/id_list/?bash'
 
@@ -475,11 +490,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_id_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_id_list_request_info** | [**List[BusinessDataIdListRequestInfo]**](BusinessDataIdListRequestInfo.md)|  | [optional]
+ **business_data_id_list_request_info** | [**List[BusinessDataIdListRequestInfo]**](BusinessDataIdListRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -491,8 +509,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -500,11 +518,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_tripadvisor_languages**
-
 > BusinessDataTripadvisorLanguagesResponseInfo business_data_tripadvisor_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/languages/?bash'
 
@@ -548,6 +567,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_tripadvisor_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -562,8 +583,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -571,11 +592,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_tripadvisor_locations**
-
 > BusinessDataTripadvisorLocationsResponseInfo business_data_tripadvisor_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. Note that supported location types in Tripadvisor Business Data API are City and Region only. for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/locations/?bash'
 
@@ -619,6 +641,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_tripadvisor_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -633,8 +657,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -642,11 +666,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_tripadvisor_locations_country**
-
 > BusinessDataTripadvisorLocationsCountryResponseInfo business_data_tripadvisor_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. Note that supported location types in Tripadvisor Business Data API are City and Region only. for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/locations/?bash'
 
@@ -691,11 +716,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_tripadvisor_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -707,8 +735,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -716,11 +744,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_yelp_languages**
-
 > BusinessDataYelpLanguagesResponseInfo business_data_yelp_languages()
+
+
 
 You will receive the list of languages by calling this API. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/languages/?bash'
 
@@ -764,6 +793,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_yelp_languages: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -778,8 +809,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -787,11 +818,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_yelp_locations**
-
 > BusinessDataYelpLocationsResponseInfo business_data_yelp_locations()
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/locations/?bash'
 
@@ -835,6 +867,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_yelp_locations: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -849,8 +883,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -858,11 +892,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_data_yelp_locations_country**
-
 > BusinessDataYelpLocationsCountryResponseInfo business_data_yelp_locations_country(country)
+
+
 
 You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/locations/?bash'
 
@@ -907,11 +942,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_data_yelp_locations_country: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us |
+ **country** | **str**| country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us | 
 
 ### Return type
 
@@ -923,8 +961,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -932,11 +970,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_listings_available_filters**
-
 > BusinessDataBusinessListingsAvailableFiltersResponseInfo business_listings_available_filters()
+
+
 
 ‌‌ Here you will find all the necessary information about filters that can be used with Business Listings API. for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/filters/?bash'
 
@@ -980,6 +1019,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_listings_available_filters: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -994,8 +1035,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1003,11 +1044,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_listings_categories**
-
 > BusinessDataBusinessListingsCategoriesResponseInfo business_listings_categories()
+
+
 
 This endpoint will provide you with the list of top categories by business count. for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/categories/?bash'
 
@@ -1051,6 +1093,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_listings_categories: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1065,8 +1109,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1074,11 +1118,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_listings_categories_aggregation_live**
-
 > BusinessDataBusinessListingsCategoriesAggregationLiveResponseInfo business_listings_categories_aggregation_live(business_data_business_listings_categories_aggregation_live_request_info=business_data_business_listings_categories_aggregation_live_request_info)
+
+
 
 ‌‌ Business Listings Categories Aggregation endpoint provides results containing information about groups of related categories along with the number of entities in each category. The provided results are specific to the specified parameters. for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/categories_aggregation/live/?bash'
 
@@ -1124,11 +1169,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_listings_categories_aggregation_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_business_listings_categories_aggregation_live_request_info** | [**List[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]**](BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo.md)|  | [optional]
+ **business_data_business_listings_categories_aggregation_live_request_info** | [**List[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]**](BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1140,8 +1188,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1149,11 +1197,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **business_listings_search_live**
-
 > BusinessDataBusinessListingsSearchLiveResponseInfo business_listings_search_live(business_data_business_listings_search_live_request_info=business_data_business_listings_search_live_request_info)
+
+
 
 ‌‌ Business Listings Search API provides results containing information about business entities listed on Google Maps in the specified categories. You will receive the address, contacts, rating, working hours, and other relevant data. The provided results are specific to the selected location (see the List of Locations) settings. for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/search/live/?bash'
 
@@ -1199,11 +1248,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->business_listings_search_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_business_listings_search_live_request_info** | [**List[BusinessDataBusinessListingsSearchLiveRequestInfo]**](BusinessDataBusinessListingsSearchLiveRequestInfo.md)|  | [optional]
+ **business_data_business_listings_search_live_request_info** | [**List[BusinessDataBusinessListingsSearchLiveRequestInfo]**](BusinessDataBusinessListingsSearchLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1215,8 +1267,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1224,11 +1276,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_info_live_advanced**
-
 > BusinessDataGoogleHotelInfoLiveAdvancedResponseInfo google_hotel_info_live_advanced(business_data_google_hotel_info_live_advanced_request_info=business_data_google_hotel_info_live_advanced_request_info)
+
+
 
 ‌‌ Google Hotel Info will provide you with structured data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_info/live/advanced/?bash'
 
@@ -1274,11 +1327,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_info_live_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_google_hotel_info_live_advanced_request_info** | [**List[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]**](BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.md)|  | [optional]
+ **business_data_google_hotel_info_live_advanced_request_info** | [**List[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]**](BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1290,8 +1346,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1299,11 +1355,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_info_live_html**
-
 > BusinessDataGoogleHotelInfoLiveHtmlResponseInfo google_hotel_info_live_html(business_data_google_hotel_info_live_html_request_info=business_data_google_hotel_info_live_html_request_info)
+
+
 
 ‌‌ Google Hotel Info will provide you with unstructured HTML data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_info/live/html/?bash'
 
@@ -1349,11 +1406,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_info_live_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_google_hotel_info_live_html_request_info** | [**List[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]**](BusinessDataGoogleHotelInfoLiveHtmlRequestInfo.md)|  | [optional]
+ **business_data_google_hotel_info_live_html_request_info** | [**List[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]**](BusinessDataGoogleHotelInfoLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1365,8 +1425,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1374,11 +1434,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_info_task_get_advanced**
-
 > BusinessDataGoogleHotelInfoTaskGetAdvancedResponseInfo google_hotel_info_task_get_advanced(id)
+
+
 
 for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_info/task_get/advanced/?bash'
 
@@ -1423,11 +1484,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_info_task_get_advanced: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1439,8 +1503,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1448,11 +1512,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_info_task_get_html**
-
 > BusinessDataGoogleHotelInfoTaskGetHtmlResponseInfo google_hotel_info_task_get_html(id)
+
+
 
 for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_info/task_get/html/?bash'
 
@@ -1487,7 +1552,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    id = '757ed41e-6f6b-4259-b1c7-aee14e80083b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '21cc6b8f-15aa-46c1-a574-e25f456a3351' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_hotel_info_task_get_html(id)
@@ -1497,11 +1562,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_info_task_get_html: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1513,8 +1581,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1522,11 +1590,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_info_task_post**
-
 > BusinessDataGoogleHotelInfoTaskPostResponseInfo google_hotel_info_task_post(business_data_google_hotel_info_task_post_request_info=business_data_google_hotel_info_task_post_request_info)
+
+
 
 ‌‌ Google Hotel Info will provide you with structured data available for a specific hotel entity on the Google Hotels platform: such as service description, location details, rating, amenities, reviews, images, prices, and more. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_info/task_post/?bash'
 
@@ -1572,11 +1641,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_info_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_google_hotel_info_task_post_request_info** | [**List[BusinessDataGoogleHotelInfoTaskPostRequestInfo]**](BusinessDataGoogleHotelInfoTaskPostRequestInfo.md)|  | [optional]
+ **business_data_google_hotel_info_task_post_request_info** | [**List[BusinessDataGoogleHotelInfoTaskPostRequestInfo]**](BusinessDataGoogleHotelInfoTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1588,8 +1660,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1597,11 +1669,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_info_tasks_ready**
-
 > BusinessDataGoogleHotelInfoTasksReadyResponseInfo google_hotel_info_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_info/tasks_ready/?bash'
 
@@ -1645,6 +1718,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_info_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1659,8 +1734,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1668,11 +1743,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_searches_live**
-
 > BusinessDataGoogleHotelSearchesLiveResponseInfo google_hotel_searches_live(business_data_google_hotel_searches_live_request_info=business_data_google_hotel_searches_live_request_info)
+
+
 
 ‌‌ Hotel Searches API provides results containing information about different hotels listed on Google Hotels. The provided results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_searches/live/?bash'
 
@@ -1718,11 +1794,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_searches_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_google_hotel_searches_live_request_info** | [**List[BusinessDataGoogleHotelSearchesLiveRequestInfo]**](BusinessDataGoogleHotelSearchesLiveRequestInfo.md)|  | [optional]
+ **business_data_google_hotel_searches_live_request_info** | [**List[BusinessDataGoogleHotelSearchesLiveRequestInfo]**](BusinessDataGoogleHotelSearchesLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1734,8 +1813,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1743,11 +1822,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_searches_task_get**
-
 > BusinessDataGoogleHotelSearchesTaskGetResponseInfo google_hotel_searches_task_get(id)
+
+
 
 for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_searches/task_get/?bash'
 
@@ -1792,11 +1872,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_searches_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -1808,8 +1891,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1817,11 +1900,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_searches_task_post**
-
 > BusinessDataGoogleHotelSearchesTaskPostResponseInfo google_hotel_searches_task_post(business_data_google_hotel_searches_task_post_request_info=business_data_google_hotel_searches_task_post_request_info)
+
+
 
 ‌‌ Hotel Searches API provides results containing information about different hotels listed on Google. The provided results are specific to the keyword, selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_searches/task_post/?bash'
 
@@ -1867,11 +1951,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_searches_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_google_hotel_searches_task_post_request_info** | [**List[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]**](BusinessDataGoogleHotelSearchesTaskPostRequestInfo.md)|  | [optional]
+ **business_data_google_hotel_searches_task_post_request_info** | [**List[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]**](BusinessDataGoogleHotelSearchesTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1883,8 +1970,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1892,11 +1979,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_hotel_searches_tasks_ready**
-
 > BusinessDataGoogleHotelSearchesTasksReadyResponseInfo google_hotel_searches_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/hotel_searches/tasks_ready/?bash'
 
@@ -1940,6 +2028,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_hotel_searches_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -1954,8 +2044,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -1963,11 +2053,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_info_task_get**
-
 > BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo google_my_business_info_task_get(id)
+
+
 
 for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_info/task_get/?bash'
 
@@ -2012,11 +2103,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_my_business_info_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2028,8 +2122,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2037,11 +2131,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_info_task_post**
-
 > BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo google_my_business_info_task_post(business_data_task_request_info=business_data_task_request_info)
+
+
 
 ‌‌ Business Data API provides results containing information about specific business entity from Google. The provided results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_info/task_post/?bash'
 
@@ -2087,11 +2182,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_my_business_info_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_task_request_info** | [**List[BusinessDataTaskRequestInfo]**](BusinessDataTaskRequestInfo.md)|  | [optional]
+ **business_data_task_request_info** | [**List[BusinessDataTaskRequestInfo]**](BusinessDataTaskRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2103,8 +2201,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2112,11 +2210,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_info_tasks_ready**
-
 > BusinessDataGoogleMyBusinessInfoTasksReadyResponseInfo google_my_business_info_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_info/tasks_ready/?bash'
 
@@ -2160,6 +2259,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_my_business_info_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2174,8 +2275,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2183,11 +2284,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_updates_task_get**
-
 > BusinessDataGoogleMyBusinessUpdatesTaskGetResponseInfo google_my_business_updates_task_get(id)
+
+
 
 for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_updates/task_get/?bash'
 
@@ -2232,11 +2334,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_my_business_updates_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2248,8 +2353,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2257,11 +2362,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_updates_task_post**
-
 > BusinessDataGoogleMyBusinessUpdatesTaskPostResponseInfo google_my_business_updates_task_post(business_data_google_my_business_updates_task_post_request_info=business_data_google_my_business_updates_task_post_request_info)
+
+
 
 ‌‌ This endpoints provides the latest updates of a specific business entity from Google SERP. The provided results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_updates/task_post/?bash'
 
@@ -2307,11 +2413,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_my_business_updates_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_google_my_business_updates_task_post_request_info** | [**List[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]**](BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo.md)|  | [optional]
+ **business_data_google_my_business_updates_task_post_request_info** | [**List[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]**](BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2323,8 +2432,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2332,11 +2441,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_updates_tasks_ready**
-
 > BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo google_my_business_updates_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_updates/tasks_ready/?bash'
 
@@ -2380,6 +2490,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_my_business_updates_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2394,8 +2506,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2403,11 +2515,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_reviews_task_get**
-
 > BusinessDataGoogleReviewsTaskGetResponseInfo google_reviews_task_get(id)
+
+
 
 The returned results are specific to the indicated local establishment name, search engine, location and language parameters. We emulate set location and search engine with the highest accuracy so that the results you receive will match the actual search results for the specified parameters at the time of task setting. You can always check the returned results accessing the check_url in the Incognito mode to make sure the received data is entirely relevant. Note that user preferences, search history, and other personalized search factors are ignored by our system and thus would not be reflected in the returned results. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/reviews/task_get/?bash'
 
@@ -2452,11 +2565,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_reviews_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2468,8 +2584,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2477,11 +2593,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_reviews_task_post**
-
 > BusinessDataGoogleReviewsTaskPostResponseInfo google_reviews_task_post(business_data_google_reviews_task_post_request_info=business_data_google_reviews_task_post_request_info)
+
+
 
 ‌‌ This endpoint provides results from the “Reviews” element of Google SERPs. The results are specific to the selected location (see the List of Locations) and language (see the List of Languages) parameters. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/reviews/task_post/?bash'
 
@@ -2527,11 +2644,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_reviews_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_google_reviews_task_post_request_info** | [**List[BusinessDataGoogleReviewsTaskPostRequestInfo]**](BusinessDataGoogleReviewsTaskPostRequestInfo.md)|  | [optional]
+ **business_data_google_reviews_task_post_request_info** | [**List[BusinessDataGoogleReviewsTaskPostRequestInfo]**](BusinessDataGoogleReviewsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2543,8 +2663,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2552,11 +2672,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_reviews_tasks_ready**
-
 > BusinessDataGoogleReviewsTasksReadyResponseInfo google_reviews_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/reviews/tasks_ready/?bash'
 
@@ -2600,6 +2721,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->google_reviews_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -2614,8 +2737,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2623,11 +2746,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **social_media_facebook_live**
-
 > BusinessDataSocialMediaFacebookLiveResponseInfo social_media_facebook_live(business_data_social_media_facebook_live_request_info=business_data_social_media_facebook_live_request_info)
+
+
 
 ‌‌ Social Media Facebook API will provide you with the number of likes a certain page received through the Facebook Like button embed. for more info please visit 'https://docs.dataforseo.com/v3/business_data/social_media/facebook/live/?bash'
 
@@ -2673,11 +2797,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->social_media_facebook_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_social_media_facebook_live_request_info** | [**List[BusinessDataSocialMediaFacebookLiveRequestInfo]**](BusinessDataSocialMediaFacebookLiveRequestInfo.md)|  | [optional]
+ **business_data_social_media_facebook_live_request_info** | [**List[BusinessDataSocialMediaFacebookLiveRequestInfo]**](BusinessDataSocialMediaFacebookLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2689,8 +2816,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2698,11 +2825,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **social_media_pinterest_live**
-
 > BusinessDataSocialMediaPinterestLiveResponseInfo social_media_pinterest_live(business_data_social_media_pinterest_live_request_info=business_data_social_media_pinterest_live_request_info)
+
+
 
 ‌‌ Social Media Pinterest API will provide you with data on pins made from the specified URLs. Pins on Pinterest correspond to content saves. For each specified page URL, you will get the number of content saves to Pinterest made using the Pinterest Save Button placed on that page. for more info please visit 'https://docs.dataforseo.com/v3/business_data/social_media/pinterest/live/?bash'
 
@@ -2748,11 +2876,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->social_media_pinterest_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_social_media_pinterest_live_request_info** | [**List[BusinessDataSocialMediaPinterestLiveRequestInfo]**](BusinessDataSocialMediaPinterestLiveRequestInfo.md)|  | [optional]
+ **business_data_social_media_pinterest_live_request_info** | [**List[BusinessDataSocialMediaPinterestLiveRequestInfo]**](BusinessDataSocialMediaPinterestLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2764,8 +2895,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2773,11 +2904,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **social_media_reddit_live**
-
 > BusinessDataSocialMediaRedditLiveResponseInfo social_media_reddit_live(business_data_social_media_reddit_live_request_info=business_data_social_media_reddit_live_request_info)
+
+
 
 Social Media Reddit API provides information for each share of the target webpage on Reddit. For each specified Reddit URL, you will get subreddit and author names, permalink, title, and the number of subreddit members. for more info please visit 'https://docs.dataforseo.com/v3/business_data/social_media/reddit/live/?bash'
 
@@ -2823,11 +2955,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->social_media_reddit_live: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_social_media_reddit_live_request_info** | [**List[BusinessDataSocialMediaRedditLiveRequestInfo]**](BusinessDataSocialMediaRedditLiveRequestInfo.md)|  | [optional]
+ **business_data_social_media_reddit_live_request_info** | [**List[BusinessDataSocialMediaRedditLiveRequestInfo]**](BusinessDataSocialMediaRedditLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2839,8 +2974,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2848,11 +2983,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tripadvisor_reviews_task_get**
-
 > BusinessDataTripadvisorReviewsTaskGetResponseInfo tripadvisor_reviews_task_get(id)
+
+
 
 This endpoint provides feedback data on businesses listed on the Tripadvisor platform, including their locations, ratings, review content and count. The results are specific to the URL path indicated in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/reviews/task_get/?bash'
 
@@ -2897,11 +3033,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->tripadvisor_reviews_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -2913,8 +3052,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2922,11 +3061,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tripadvisor_reviews_task_post**
-
 > BusinessDataTripadvisorReviewsTaskPostResponseInfo tripadvisor_reviews_task_post(business_data_tripadvisor_reviews_task_post_request_info=business_data_tripadvisor_reviews_task_post_request_info)
+
+
 
 ‌‌ This endpoint provides results from the “Reviews” element on the Tripadvisor platform. The results are specific to the URL path or keyword you indicate, and and the selected location (see the List of Locations). for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/reviews/task_post/?bash'
 
@@ -2972,11 +3112,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->tripadvisor_reviews_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_tripadvisor_reviews_task_post_request_info** | [**List[BusinessDataTripadvisorReviewsTaskPostRequestInfo]**](BusinessDataTripadvisorReviewsTaskPostRequestInfo.md)|  | [optional]
+ **business_data_tripadvisor_reviews_task_post_request_info** | [**List[BusinessDataTripadvisorReviewsTaskPostRequestInfo]**](BusinessDataTripadvisorReviewsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2988,8 +3131,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -2997,11 +3140,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tripadvisor_reviews_tasks_ready**
-
 > BusinessDataTripadvisorReviewsTasksReadyResponseInfo tripadvisor_reviews_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/reviews/tasks_ready/?bash'
 
@@ -3045,6 +3189,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->tripadvisor_reviews_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3059,8 +3205,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3068,11 +3214,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tripadvisor_search_task_get**
-
 > BusinessDataTripadvisorSearchTaskGetResponseInfo tripadvisor_search_task_get(id)
+
+
 
 This endpoint will provide you with data on businesses listed on the Tripadvisor platform. The results obtained through this endpoint are specific to the location (see the List of Tripadvisor Locations) and keyword parameters used in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/search/task_get/?bash'
 
@@ -3117,11 +3264,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->tripadvisor_search_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3133,8 +3283,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3142,11 +3292,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tripadvisor_search_task_post**
-
 > BusinessDataTripadvisorSearchTaskPostResponseInfo tripadvisor_search_task_post(business_data_tripadvisor_search_task_post_request_info=business_data_tripadvisor_search_task_post_request_info)
+
+
 
 ‌‌ This endpoint provides a list of business profiles listed on the Tripadvisor platform. The returned results are relevant to the specified keyword and the selected location (see the List of Locations). for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/search/task_post/?bash'
 
@@ -3192,11 +3343,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->tripadvisor_search_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_tripadvisor_search_task_post_request_info** | [**List[BusinessDataTripadvisorSearchTaskPostRequestInfo]**](BusinessDataTripadvisorSearchTaskPostRequestInfo.md)|  | [optional]
+ **business_data_tripadvisor_search_task_post_request_info** | [**List[BusinessDataTripadvisorSearchTaskPostRequestInfo]**](BusinessDataTripadvisorSearchTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3208,8 +3362,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3217,11 +3371,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tripadvisor_search_tasks_ready**
-
 > BusinessDataTripadvisorSearchTasksReadyResponseInfo tripadvisor_search_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/tripadvisor/search/tasks_ready/?bash'
 
@@ -3265,6 +3420,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->tripadvisor_search_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3279,8 +3436,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3288,11 +3445,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trustpilot_reviews_task_get**
-
 > BusinessDataTrustpilotReviewsTaskGetResponseInfo trustpilot_reviews_task_get(id)
+
+
 
 This endpoint provides reviews published on the Trustpilot platform The returned results are specific to the indicated business entity. We emulate set parameters with the highest accuracy so that the results you receive will match the actual search results for the specified parameters at the time of task setting. You can always check the returned results accessing the check_url in the Incognito mode to make sure the received data is entirely relevant. Note that user preferences, search history, and other personalized search factors are ignored by our system and thus would not be reflected in the returned results. for more info please visit 'https://docs.dataforseo.com/v3/business_data/trustpilot/reviews/task_get/?bash'
 
@@ -3337,11 +3495,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->trustpilot_reviews_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3353,8 +3514,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3362,11 +3523,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trustpilot_reviews_task_post**
-
 > BusinessDataTrustpilotReviewsTaskPostResponseInfo trustpilot_reviews_task_post(business_data_trustpilot_reviews_task_post_request_info=business_data_trustpilot_reviews_task_post_request_info)
+
+
 
 ‌‌ This endpoint provides reviews published on the Trustpilot platform for the local establishment specified in the domain field. for more info please visit 'https://docs.dataforseo.com/v3/business_data/trustpilot/reviews/task_post/?bash'
 
@@ -3412,11 +3574,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->trustpilot_reviews_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_trustpilot_reviews_task_post_request_info** | [**List[BusinessDataTrustpilotReviewsTaskPostRequestInfo]**](BusinessDataTrustpilotReviewsTaskPostRequestInfo.md)|  | [optional]
+ **business_data_trustpilot_reviews_task_post_request_info** | [**List[BusinessDataTrustpilotReviewsTaskPostRequestInfo]**](BusinessDataTrustpilotReviewsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3428,8 +3593,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3437,11 +3602,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trustpilot_reviews_tasks_ready**
-
 > BusinessDataTrustpilotReviewsTasksReadyResponseInfo trustpilot_reviews_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/trustpilot/reviews/tasks_ready/?bash'
 
@@ -3485,6 +3651,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->trustpilot_reviews_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3499,8 +3667,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3508,11 +3676,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trustpilot_search_task_get**
-
 > BusinessDataTrustpilotSearchTaskGetResponseInfo trustpilot_search_task_get(id)
+
+
 
 This endpoint provides a list of business profiles listed on the Trustpilot platform. The returned results are relevant to the keyword specified in a POST request. We emulate set parameters with the highest accuracy so that the results you receive match the actual search results for the specified parameters at the time of task setting. You can always check the returned results accessing the check_url in the Incognito mode to make sure the received data is entirely relevant. Note that user preferences, search history, and other personalized search factors are ignored by our system and thus will not be reflected in the returned results. for more info please visit 'https://docs.dataforseo.com/v3/business_data/trustpilot/search/task_get/?bash'
 
@@ -3557,11 +3726,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->trustpilot_search_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3573,8 +3745,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3582,11 +3754,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trustpilot_search_task_post**
-
 > BusinessDataTrustpilotSearchTaskPostResponseInfo trustpilot_search_task_post(business_data_trustpilot_search_task_post_request_info=business_data_trustpilot_search_task_post_request_info)
+
+
 
 ‌‌ This endpoint provides a list of business profiles listed on the Trustpilot platform. The returned results are relevant to the specified keyword. for more info please visit 'https://docs.dataforseo.com/v3/business_data/trustpilot/search/task_post/?bash'
 
@@ -3632,11 +3805,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->trustpilot_search_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_trustpilot_search_task_post_request_info** | [**List[BusinessDataTrustpilotSearchTaskPostRequestInfo]**](BusinessDataTrustpilotSearchTaskPostRequestInfo.md)|  | [optional]
+ **business_data_trustpilot_search_task_post_request_info** | [**List[BusinessDataTrustpilotSearchTaskPostRequestInfo]**](BusinessDataTrustpilotSearchTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3648,8 +3824,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3657,11 +3833,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trustpilot_search_tasks_ready**
-
 > BusinessDataTrustpilotSearchTasksReadyResponseInfo trustpilot_search_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/trustpilot/search/tasks_ready/?bash'
 
@@ -3705,6 +3882,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->trustpilot_search_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3719,8 +3898,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3728,11 +3907,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yelp_reviews_task_get**
-
 > BusinessDataYelpReviewsTaskGetResponseInfo yelp_reviews_task_get(id)
+
+
 
 This endpoint provides reviews published on the Yelp platform. The results are specific to the selected alias and language parameters. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/reviews/task_get/?bash'
 
@@ -3777,11 +3957,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->yelp_reviews_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -3793,8 +3976,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3802,11 +3985,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yelp_reviews_task_post**
-
 > BusinessDataYelpReviewsTaskPostResponseInfo yelp_reviews_task_post(business_data_yelp_reviews_task_post_request_info=business_data_yelp_reviews_task_post_request_info)
+
+
 
 ‌‌ This endpoint provides reviews published on the Yelp platform. The results are specific to the selected alias and language (see the List of Languages) parameters. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/reviews/task_post/?bash'
 
@@ -3852,11 +4036,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->yelp_reviews_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_yelp_reviews_task_post_request_info** | [**List[BusinessDataYelpReviewsTaskPostRequestInfo]**](BusinessDataYelpReviewsTaskPostRequestInfo.md)|  | [optional]
+ **business_data_yelp_reviews_task_post_request_info** | [**List[BusinessDataYelpReviewsTaskPostRequestInfo]**](BusinessDataYelpReviewsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3868,8 +4055,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3877,11 +4064,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yelp_reviews_tasks_ready**
-
 > BusinessDataYelpReviewsTasksReadyResponseInfo yelp_reviews_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/reviews/tasks_ready/?bash'
 
@@ -3925,6 +4113,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->yelp_reviews_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -3939,8 +4129,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -3948,11 +4138,12 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yelp_search_task_get**
-
 > BusinessDataYelpSearchTaskGetResponseInfo yelp_search_task_get(id)
+
+
 
 This endpoint will provide you with data on businesses listed on the Yelp platform. The results obtained through this endpoint are specific to the location (see the List of Yelp Locations) and keyword parameters used in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/search/task_get/?bash'
 
@@ -3997,11 +4188,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->yelp_search_task_get: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time |
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -4013,8 +4207,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4022,11 +4216,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yelp_search_task_post**
-
 > BusinessDataYelpSearchTaskPostResponseInfo yelp_search_task_post(business_data_yelp_search_task_post_request_info=business_data_yelp_search_task_post_request_info)
+
+
 
 ‌‌ By using this endpoint you can request data on businesses listed on the Yelp platform. The results will be specific to the location (see the List of Yelp Locations) and keyword parameters used in the POST request. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/search/task_post/?bash'
 
@@ -4072,11 +4267,14 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->yelp_search_task_post: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**business_data_yelp_search_task_post_request_info** | [**List[BusinessDataYelpSearchTaskPostRequestInfo]**](BusinessDataYelpSearchTaskPostRequestInfo.md)|  | [optional]
+ **business_data_yelp_search_task_post_request_info** | [**List[BusinessDataYelpSearchTaskPostRequestInfo]**](BusinessDataYelpSearchTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -4088,8 +4286,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4097,11 +4295,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yelp_search_tasks_ready**
-
 > BusinessDataYelpSearchTasksReadyResponseInfo yelp_search_tasks_ready()
+
+
 
 ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/search/tasks_ready/?bash'
 
@@ -4145,6 +4344,8 @@ with dataforseo_client.ApiClient(configuration) as api_client:
         print("Exception when calling BusinessDataApi->yelp_search_tasks_ready: %s\n" % e)
 ```
 
+
+
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -4159,8 +4360,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -4168,8 +4369,5 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
 
-   
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-[root](./../ "root") / [docs](./ "docs")
-
-[[Back to README.md]](./../README.md "[Back to README.md]")

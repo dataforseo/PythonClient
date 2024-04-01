@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_info import AppendixInfo
+from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,33 +27,33 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
     """
     AppendixBacklinksLimitsRatesDataInfo
     """ # noqa: E501
-    summary: Optional[AppendixInfo] = None
-    history: Optional[AppendixInfo] = None
-    content_duplicates: Optional[AppendixInfo] = None
-    domain_intersection: Optional[AppendixInfo] = None
-    backlinks: Optional[AppendixInfo] = None
-    domain_pages: Optional[AppendixInfo] = None
-    anchors: Optional[AppendixInfo] = None
-    referring_domains: Optional[AppendixInfo] = None
-    page_intersection: Optional[AppendixInfo] = None
-    referring_networks: Optional[AppendixInfo] = None
-    bulk_ranks: Optional[AppendixInfo] = None
-    bulk_backlinks: Optional[AppendixInfo] = None
-    bulk_new_lost_backlinks: Optional[AppendixInfo] = None
-    bulk_new_lost_referring_domains: Optional[AppendixInfo] = None
-    bulk_referring_domains: Optional[AppendixInfo] = None
+    summary: Optional[AppendixFunctionInfo] = None
+    history: Optional[AppendixFunctionInfo] = None
+    content_duplicates: Optional[AppendixFunctionInfo] = None
+    domain_intersection: Optional[AppendixFunctionInfo] = None
+    backlinks: Optional[AppendixFunctionInfo] = None
+    domain_pages: Optional[AppendixFunctionInfo] = None
+    anchors: Optional[AppendixFunctionInfo] = None
+    referring_domains: Optional[AppendixFunctionInfo] = None
+    page_intersection: Optional[AppendixFunctionInfo] = None
+    referring_networks: Optional[AppendixFunctionInfo] = None
+    bulk_ranks: Optional[AppendixFunctionInfo] = None
+    bulk_backlinks: Optional[AppendixFunctionInfo] = None
+    bulk_new_lost_backlinks: Optional[AppendixFunctionInfo] = None
+    bulk_new_lost_referring_domains: Optional[AppendixFunctionInfo] = None
+    bulk_referring_domains: Optional[AppendixFunctionInfo] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
-    domain_pages_summary: Optional[AppendixInfo] = None
-    timeseries_summary: Optional[AppendixInfo] = None
-    timeseries_new_lost_summary: Optional[AppendixInfo] = None
-    competitors: Optional[AppendixInfo] = None
+    domain_pages_summary: Optional[AppendixFunctionInfo] = None
+    timeseries_summary: Optional[AppendixFunctionInfo] = None
+    timeseries_new_lost_summary: Optional[AppendixFunctionInfo] = None
+    competitors: Optional[AppendixFunctionInfo] = None
     __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -162,26 +162,26 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "summary": AppendixInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
-            "history": AppendixInfo.from_dict(obj["history"]) if obj.get("history") is not None else None,
-            "content_duplicates": AppendixInfo.from_dict(obj["content_duplicates"]) if obj.get("content_duplicates") is not None else None,
-            "domain_intersection": AppendixInfo.from_dict(obj["domain_intersection"]) if obj.get("domain_intersection") is not None else None,
-            "backlinks": AppendixInfo.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
-            "domain_pages": AppendixInfo.from_dict(obj["domain_pages"]) if obj.get("domain_pages") is not None else None,
-            "anchors": AppendixInfo.from_dict(obj["anchors"]) if obj.get("anchors") is not None else None,
-            "referring_domains": AppendixInfo.from_dict(obj["referring_domains"]) if obj.get("referring_domains") is not None else None,
-            "page_intersection": AppendixInfo.from_dict(obj["page_intersection"]) if obj.get("page_intersection") is not None else None,
-            "referring_networks": AppendixInfo.from_dict(obj["referring_networks"]) if obj.get("referring_networks") is not None else None,
-            "bulk_ranks": AppendixInfo.from_dict(obj["bulk_ranks"]) if obj.get("bulk_ranks") is not None else None,
-            "bulk_backlinks": AppendixInfo.from_dict(obj["bulk_backlinks"]) if obj.get("bulk_backlinks") is not None else None,
-            "bulk_new_lost_backlinks": AppendixInfo.from_dict(obj["bulk_new_lost_backlinks"]) if obj.get("bulk_new_lost_backlinks") is not None else None,
-            "bulk_new_lost_referring_domains": AppendixInfo.from_dict(obj["bulk_new_lost_referring_domains"]) if obj.get("bulk_new_lost_referring_domains") is not None else None,
-            "bulk_referring_domains": AppendixInfo.from_dict(obj["bulk_referring_domains"]) if obj.get("bulk_referring_domains") is not None else None,
+            "summary": AppendixFunctionInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
+            "history": AppendixFunctionInfo.from_dict(obj["history"]) if obj.get("history") is not None else None,
+            "content_duplicates": AppendixFunctionInfo.from_dict(obj["content_duplicates"]) if obj.get("content_duplicates") is not None else None,
+            "domain_intersection": AppendixFunctionInfo.from_dict(obj["domain_intersection"]) if obj.get("domain_intersection") is not None else None,
+            "backlinks": AppendixFunctionInfo.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
+            "domain_pages": AppendixFunctionInfo.from_dict(obj["domain_pages"]) if obj.get("domain_pages") is not None else None,
+            "anchors": AppendixFunctionInfo.from_dict(obj["anchors"]) if obj.get("anchors") is not None else None,
+            "referring_domains": AppendixFunctionInfo.from_dict(obj["referring_domains"]) if obj.get("referring_domains") is not None else None,
+            "page_intersection": AppendixFunctionInfo.from_dict(obj["page_intersection"]) if obj.get("page_intersection") is not None else None,
+            "referring_networks": AppendixFunctionInfo.from_dict(obj["referring_networks"]) if obj.get("referring_networks") is not None else None,
+            "bulk_ranks": AppendixFunctionInfo.from_dict(obj["bulk_ranks"]) if obj.get("bulk_ranks") is not None else None,
+            "bulk_backlinks": AppendixFunctionInfo.from_dict(obj["bulk_backlinks"]) if obj.get("bulk_backlinks") is not None else None,
+            "bulk_new_lost_backlinks": AppendixFunctionInfo.from_dict(obj["bulk_new_lost_backlinks"]) if obj.get("bulk_new_lost_backlinks") is not None else None,
+            "bulk_new_lost_referring_domains": AppendixFunctionInfo.from_dict(obj["bulk_new_lost_referring_domains"]) if obj.get("bulk_new_lost_referring_domains") is not None else None,
+            "bulk_referring_domains": AppendixFunctionInfo.from_dict(obj["bulk_referring_domains"]) if obj.get("bulk_referring_domains") is not None else None,
             "errors": obj.get("errors"),
-            "domain_pages_summary": AppendixInfo.from_dict(obj["domain_pages_summary"]) if obj.get("domain_pages_summary") is not None else None,
-            "timeseries_summary": AppendixInfo.from_dict(obj["timeseries_summary"]) if obj.get("timeseries_summary") is not None else None,
-            "timeseries_new_lost_summary": AppendixInfo.from_dict(obj["timeseries_new_lost_summary"]) if obj.get("timeseries_new_lost_summary") is not None else None,
-            "competitors": AppendixInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None
+            "domain_pages_summary": AppendixFunctionInfo.from_dict(obj["domain_pages_summary"]) if obj.get("domain_pages_summary") is not None else None,
+            "timeseries_summary": AppendixFunctionInfo.from_dict(obj["timeseries_summary"]) if obj.get("timeseries_summary") is not None else None,
+            "timeseries_new_lost_summary": AppendixFunctionInfo.from_dict(obj["timeseries_new_lost_summary"]) if obj.get("timeseries_new_lost_summary") is not None else None,
+            "competitors": AppendixFunctionInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None
         })
         return _obj
 

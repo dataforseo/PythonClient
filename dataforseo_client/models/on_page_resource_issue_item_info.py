@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,11 +32,11 @@ class OnPageResourceIssueItemInfo(BaseModel):
     status_code: Optional[StrictInt] = Field(default=None, description="status code of the error possible values: 0 — Unidentified Error; 501 — Html Parse Error; 1501 — JS Parse Error; 2501 — CSS Parse Error; 3501 — Image Parse Error; 3502 — Image Scale Is Zero; 3503 — Image Size Is Zero; 3504 — Image Format Invalid")
     __properties: ClassVar[List[str]] = ["line", "column", "message", "status_code"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

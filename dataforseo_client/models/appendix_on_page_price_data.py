@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_google_business_data_price_data_info import AppendixGoogleBusinessDataPriceDataInfo
+from dataforseo_client.models.appendix_lighthouse_on_page_price_data import AppendixLighthouseOnPagePriceData
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class AppendixOnPagePriceData(BaseModel):
     AppendixOnPagePriceData
     """ # noqa: E501
     errors: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    lighthouse: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
+    lighthouse: Optional[AppendixLighthouseOnPagePriceData] = None
     content_parsing: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     content_parsing_live: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     duplicate_content: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
@@ -50,11 +50,11 @@ class AppendixOnPagePriceData(BaseModel):
     waterfall: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["errors", "lighthouse", "content_parsing", "content_parsing_live", "duplicate_content", "duplicate_tags", "instant_pages", "keyword_density", "links", "non_indexable", "pages", "pages_by_resource", "page_screenshot", "raw_html", "redirect_chains", "resources", "summary", "task_post", "tasks_ready", "waterfall"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -162,7 +162,7 @@ class AppendixOnPagePriceData(BaseModel):
 
         _obj = cls.model_validate({
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
-            "lighthouse": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["lighthouse"]) if obj.get("lighthouse") is not None else None,
+            "lighthouse": AppendixLighthouseOnPagePriceData.from_dict(obj["lighthouse"]) if obj.get("lighthouse") is not None else None,
             "content_parsing": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["content_parsing"]) if obj.get("content_parsing") is not None else None,
             "content_parsing_live": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["content_parsing_live"]) if obj.get("content_parsing_live") is not None else None,
             "duplicate_content": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["duplicate_content"]) if obj.get("duplicate_content") is not None else None,

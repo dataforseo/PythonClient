@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,11 +35,11 @@ class KeywordKpiInfo(BaseModel):
     average_bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average bid of the keyword")
     __properties: ClassVar[List[str]] = ["ad_position", "clicks", "impressions", "average_cpc", "ctr", "total_cost", "average_bid"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

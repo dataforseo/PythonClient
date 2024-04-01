@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from typing import Optional, Set
@@ -28,22 +28,22 @@ class ProductConsiderationsExpandedElement(BaseModel):
     ProductConsiderationsExpandedElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description="title of the carousel item")
     featured_title: Optional[StrictStr] = Field(default=None, description="the title of the featured snippets source page")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb of the Ad element in SERP")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
-    domain: Optional[StrictStr] = Field(default=None, description="website domain")
-    url: Optional[StrictStr] = Field(default=None, description="URL")
+    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    url: Optional[StrictStr] = Field(default=None, description="URL of element")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     related_searches: Optional[List[Optional[StrictStr]]] = Field(default=None, description="search queries related to the elment")
     about_this_result: Optional[AboutThisResultElement] = None
     __properties: ClassVar[List[str]] = ["type", "title", "featured_title", "breadcrumb", "snippet", "domain", "url", "timestamp", "related_searches", "about_this_result"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,11 +33,11 @@ class SerpAiSummaryRequestInfo(BaseModel):
     include_links: Optional[StrictBool] = Field(default=None, description="include source links in the summary optional field if set to true, the summary field in the API response will contain links to sources of the generated summary; default value: false")
     __properties: ClassVar[List[str]] = ["task_id", "prompt", "support_extra", "fetch_content", "include_links"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
