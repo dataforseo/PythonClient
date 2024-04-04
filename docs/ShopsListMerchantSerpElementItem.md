@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
 **rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements found in Google Shopping SERP | [optional] 
-**position** | **str** | the alignment of the element in Google Shopping SERP possible values: left, right | [optional] 
+**position** | **str** | alignment of the element in SERP can take the following values: left, right | [optional] 
 **xpath** | **str** | XPath of the element | [optional] 
 **domain** | **str** | domain in SERP | [optional] 
 **title** | **str** | product title | [optional] 
@@ -34,7 +34,7 @@ json = "{}"
 # create an instance of ShopsListMerchantSerpElementItem from a JSON string
 shops_list_merchant_serp_element_item_instance = ShopsListMerchantSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(ShopsListMerchantSerpElementItem.to_json())
+print ShopsListMerchantSerpElementItem.to_json()
 
 # convert the object into a dict
 shops_list_merchant_serp_element_item_dict = shops_list_merchant_serp_element_item_instance.to_dict()

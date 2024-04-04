@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of CacheControl from a JSON string
 cache_control_instance = CacheControl.from_json(json)
 # print the JSON string representation of the object
-print(CacheControl.to_json())
+print CacheControl.to_json()
 
 # convert the object into a dict
 cache_control_dict = cache_control_instance.to_dict()

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of VisualStoriesSerpElementItem from a JSON string
 visual_stories_serp_element_item_instance = VisualStoriesSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(VisualStoriesSerpElementItem.to_json())
+print VisualStoriesSerpElementItem.to_json()
 
 # convert the object into a dict
 visual_stories_serp_element_item_dict = visual_stories_serp_element_item_instance.to_dict()

@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of AppendixJobsSerpLimitsRatesDataInfo from a JSON string
 appendix_jobs_serp_limits_rates_data_info_instance = AppendixJobsSerpLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixJobsSerpLimitsRatesDataInfo.to_json())
+print AppendixJobsSerpLimitsRatesDataInfo.to_json()
 
 # convert the object into a dict
 appendix_jobs_serp_limits_rates_data_info_dict = appendix_jobs_serp_limits_rates_data_info_instance.to_dict()

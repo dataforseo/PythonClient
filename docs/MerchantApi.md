@@ -162,7 +162,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = 'b9ededb2-c7ec-4607-becd-57af838ade30' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'fde58d07-e16f-4e75-a3aa-eec25fe3c0f3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_asin_task_get_html(id)
@@ -471,7 +471,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = 'd5f1c098-611c-4467-9d2d-edf6cf89b460' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '1405027e-f7fb-43d9-9236-d9d4076a01d3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_products_task_get_html(id)
@@ -780,7 +780,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = 'f7b94f67-7d5b-46bd-abf5-54000fa87306' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '01e9e0af-cee1-4489-85ff-d38ac43d8a5a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_reviews_task_get_html(id)
@@ -1089,7 +1089,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = 'c6cd60b3-a57c-4d44-ab95-5dc8f292d572' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '52d59a53-9fe2-4069-8c87-418eafc3db6f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_sellers_task_get_html(id)
@@ -1629,7 +1629,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = 'bd7a1867-f6b7-40f3-8d38-35e9f3d2bf32' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '2f3aa476-24fd-4038-bcdb-3abcb7f63d1d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_product_spec_task_get_html(id)
@@ -1938,7 +1938,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = '4b4049ef-d752-44a6-bb7a-0b6fa6081a96' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'a6e5fdf6-e35a-4560-b0cd-d3a99bf31ec3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_products_task_get_html(id)
@@ -2325,7 +2325,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = '044e1884-f3b8-4968-a02c-6101be90814c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'b3f58612-d220-4e59-97da-cf3509d3a1bc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_sellers_task_get_html(id)

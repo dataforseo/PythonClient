@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleSearchIntentLiveItem from a JSON string
 dataforseo_labs_google_search_intent_live_item_instance = DataforseoLabsGoogleSearchIntentLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleSearchIntentLiveItem.to_json())
+print DataforseoLabsGoogleSearchIntentLiveItem.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_search_intent_live_item_dict = dataforseo_labs_google_search_intent_live_item_instance.to_dict()

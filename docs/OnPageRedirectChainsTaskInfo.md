@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageRedirectChainsTaskInfo from a JSON string
 on_page_redirect_chains_task_info_instance = OnPageRedirectChainsTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageRedirectChainsTaskInfo.to_json())
+print OnPageRedirectChainsTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_redirect_chains_task_info_dict = on_page_redirect_chains_task_info_instance.to_dict()

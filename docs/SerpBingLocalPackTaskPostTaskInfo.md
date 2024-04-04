@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpBingLocalPackTaskPostTaskInfo from a JSON string
 serp_bing_local_pack_task_post_task_info_instance = SerpBingLocalPackTaskPostTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLocalPackTaskPostTaskInfo.to_json())
+print SerpBingLocalPackTaskPostTaskInfo.to_json()
 
 # convert the object into a dict
 serp_bing_local_pack_task_post_task_info_dict = serp_bing_local_pack_task_post_task_info_instance.to_dict()

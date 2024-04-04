@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageLighthouseLanguagesTaskInfo from a JSON string
 on_page_lighthouse_languages_task_info_instance = OnPageLighthouseLanguagesTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageLighthouseLanguagesTaskInfo.to_json())
+print OnPageLighthouseLanguagesTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_lighthouse_languages_task_info_dict = on_page_lighthouse_languages_task_info_instance.to_dict()

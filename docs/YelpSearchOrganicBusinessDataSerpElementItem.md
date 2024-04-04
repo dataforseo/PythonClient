@@ -33,7 +33,7 @@ json = "{}"
 # create an instance of YelpSearchOrganicBusinessDataSerpElementItem from a JSON string
 yelp_search_organic_business_data_serp_element_item_instance = YelpSearchOrganicBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(YelpSearchOrganicBusinessDataSerpElementItem.to_json())
+print YelpSearchOrganicBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 yelp_search_organic_business_data_serp_element_item_dict = yelp_search_organic_business_data_serp_element_item_instance.to_dict()

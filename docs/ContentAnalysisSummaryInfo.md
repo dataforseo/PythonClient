@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of ContentAnalysisSummaryInfo from a JSON string
 content_analysis_summary_info_instance = ContentAnalysisSummaryInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentAnalysisSummaryInfo.to_json())
+print ContentAnalysisSummaryInfo.to_json()
 
 # convert the object into a dict
 content_analysis_summary_info_dict = content_analysis_summary_info_instance.to_dict()

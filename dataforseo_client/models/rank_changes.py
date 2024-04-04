@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
+from pydantic import BaseModel, Field, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,11 +32,11 @@ class RankChanges(BaseModel):
     is_down: Optional[StrictBool] = Field(default=None, description="rank of this element went down if the value is true, position of the element in SERP is lower compared to the previous check")
     __properties: ClassVar[List[str]] = ["previous_rank_absolute", "is_new", "is_up", "is_down"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

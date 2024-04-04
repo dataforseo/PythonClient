@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpGoogleNewsTaskGetAdvancedResultInfo from a JSON string
 serp_google_news_task_get_advanced_result_info_instance = SerpGoogleNewsTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleNewsTaskGetAdvancedResultInfo.to_json())
+print SerpGoogleNewsTaskGetAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_news_task_get_advanced_result_info_dict = serp_google_news_task_get_advanced_result_info_instance.to_dict()

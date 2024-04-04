@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of DataAmazonTopRatedFromOurBrandsSerpElementItem from a JSON string
 data_amazon_top_rated_from_our_brands_serp_element_item_instance = DataAmazonTopRatedFromOurBrandsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DataAmazonTopRatedFromOurBrandsSerpElementItem.to_json())
+print DataAmazonTopRatedFromOurBrandsSerpElementItem.to_json()
 
 # convert the object into a dict
 data_amazon_top_rated_from_our_brands_serp_element_item_dict = data_amazon_top_rated_from_our_brands_serp_element_item_instance.to_dict()

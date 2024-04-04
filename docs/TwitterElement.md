@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of TwitterElement from a JSON string
 twitter_element_instance = TwitterElement.from_json(json)
 # print the JSON string representation of the object
-print(TwitterElement.to_json())
+print TwitterElement.to_json()
 
 # convert the object into a dict
 twitter_element_dict = twitter_element_instance.to_dict()

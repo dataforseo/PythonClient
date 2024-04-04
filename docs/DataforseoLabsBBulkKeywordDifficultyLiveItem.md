@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of DataforseoLabsBBulkKeywordDifficultyLiveItem from a JSON string
 dataforseo_labs_b_bulk_keyword_difficulty_live_item_instance = DataforseoLabsBBulkKeywordDifficultyLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsBBulkKeywordDifficultyLiveItem.to_json())
+print DataforseoLabsBBulkKeywordDifficultyLiveItem.to_json()
 
 # convert the object into a dict
 dataforseo_labs_b_bulk_keyword_difficulty_live_item_dict = dataforseo_labs_b_bulk_keyword_difficulty_live_item_instance.to_dict()

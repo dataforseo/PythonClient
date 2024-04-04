@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AppendixMerchantAmazonInfo from a JSON string
 appendix_merchant_amazon_info_instance = AppendixMerchantAmazonInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixMerchantAmazonInfo.to_json())
+print AppendixMerchantAmazonInfo.to_json()
 
 # convert the object into a dict
 appendix_merchant_amazon_info_dict = appendix_merchant_amazon_info_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,11 +33,11 @@ class ContentGenerationGenerateMetaTagsLiveResultInfo(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="generated description")
     __properties: ClassVar[List[str]] = ["input_tokens", "output_tokens", "new_tokens", "title", "description"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

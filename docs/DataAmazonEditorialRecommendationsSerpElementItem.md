@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of DataAmazonEditorialRecommendationsSerpElementItem from a JSON string
 data_amazon_editorial_recommendations_serp_element_item_instance = DataAmazonEditorialRecommendationsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DataAmazonEditorialRecommendationsSerpElementItem.to_json())
+print DataAmazonEditorialRecommendationsSerpElementItem.to_json()
 
 # convert the object into a dict
 data_amazon_editorial_recommendations_serp_element_item_dict = data_amazon_editorial_recommendations_serp_element_item_instance.to_dict()

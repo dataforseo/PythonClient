@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of KeywordsDataGoogleTrendsLocationsResponseInfo from a JSON string
 keywords_data_google_trends_locations_response_info_instance = KeywordsDataGoogleTrendsLocationsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataGoogleTrendsLocationsResponseInfo.to_json())
+print KeywordsDataGoogleTrendsLocationsResponseInfo.to_json()
 
 # convert the object into a dict
 keywords_data_google_trends_locations_response_info_dict = keywords_data_google_trends_locations_response_info_instance.to_dict()

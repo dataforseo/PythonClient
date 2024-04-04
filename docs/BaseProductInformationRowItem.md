@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of BaseProductInformationRowItem from a JSON string
 base_product_information_row_item_instance = BaseProductInformationRowItem.from_json(json)
 # print the JSON string representation of the object
-print(BaseProductInformationRowItem.to_json())
+print BaseProductInformationRowItem.to_json()
 
 # convert the object into a dict
 base_product_information_row_item_dict = base_product_information_row_item_instance.to_dict()

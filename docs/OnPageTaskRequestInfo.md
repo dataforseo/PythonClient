@@ -59,7 +59,7 @@ json = "{}"
 # create an instance of OnPageTaskRequestInfo from a JSON string
 on_page_task_request_info_instance = OnPageTaskRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageTaskRequestInfo.to_json())
+print OnPageTaskRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_task_request_info_dict = on_page_task_request_info_instance.to_dict()

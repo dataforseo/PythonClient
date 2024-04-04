@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of DataforseoLabsleBulkAppMetricsLiveItem from a JSON string
 dataforseo_labsle_bulk_app_metrics_live_item_instance = DataforseoLabsleBulkAppMetricsLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsleBulkAppMetricsLiveItem.to_json())
+print DataforseoLabsleBulkAppMetricsLiveItem.to_json()
 
 # convert the object into a dict
 dataforseo_labsle_bulk_app_metrics_live_item_dict = dataforseo_labsle_bulk_app_metrics_live_item_instance.to_dict()

@@ -38,7 +38,7 @@ json = "{}"
 # create an instance of BacklinksReferringNetworksLiveItem from a JSON string
 backlinks_referring_networks_live_item_instance = BacklinksReferringNetworksLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksReferringNetworksLiveItem.to_json())
+print BacklinksReferringNetworksLiveItem.to_json()
 
 # convert the object into a dict
 backlinks_referring_networks_live_item_dict = backlinks_referring_networks_live_item_instance.to_dict()

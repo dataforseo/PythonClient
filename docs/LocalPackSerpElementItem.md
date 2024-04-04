@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of LocalPackSerpElementItem from a JSON string
 local_pack_serp_element_item_instance = LocalPackSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(LocalPackSerpElementItem.to_json())
+print LocalPackSerpElementItem.to_json()
 
 # convert the object into a dict
 local_pack_serp_element_item_dict = local_pack_serp_element_item_instance.to_dict()

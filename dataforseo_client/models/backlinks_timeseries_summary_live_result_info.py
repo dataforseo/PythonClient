@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_timeseries_summary_live_item import BacklinksTimeseriesSummaryLiveItem
 from typing import Optional, Set
@@ -35,11 +35,11 @@ class BacklinksTimeseriesSummaryLiveResultInfo(BaseModel):
     items: Optional[List[BacklinksTimeseriesSummaryLiveItem]] = Field(default=None, description="contains relevant summary data")
     __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "group_range", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

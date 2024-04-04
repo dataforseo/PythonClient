@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageWaterfallTaskInfo from a JSON string
 on_page_waterfall_task_info_instance = OnPageWaterfallTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageWaterfallTaskInfo.to_json())
+print OnPageWaterfallTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_waterfall_task_info_dict = on_page_waterfall_task_info_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleOrganicLiveRegularResponseInfo from a JSON string
 serp_google_organic_live_regular_response_info_instance = SerpGoogleOrganicLiveRegularResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleOrganicLiveRegularResponseInfo.to_json())
+print SerpGoogleOrganicLiveRegularResponseInfo.to_json()
 
 # convert the object into a dict
 serp_google_organic_live_regular_response_info_dict = serp_google_organic_live_regular_response_info_instance.to_dict()

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of SentimentConnotationDistribution from a JSON string
 sentiment_connotation_distribution_instance = SentimentConnotationDistribution.from_json(json)
 # print the JSON string representation of the object
-print(SentimentConnotationDistribution.to_json())
+print SentimentConnotationDistribution.to_json()
 
 # convert the object into a dict
 sentiment_connotation_distribution_dict = sentiment_connotation_distribution_instance.to_dict()

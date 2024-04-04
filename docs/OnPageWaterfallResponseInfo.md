@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageWaterfallResponseInfo from a JSON string
 on_page_waterfall_response_info_instance = OnPageWaterfallResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageWaterfallResponseInfo.to_json())
+print OnPageWaterfallResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_waterfall_response_info_dict = on_page_waterfall_response_info_instance.to_dict()

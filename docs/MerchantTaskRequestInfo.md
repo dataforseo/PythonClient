@@ -35,7 +35,7 @@ json = "{}"
 # create an instance of MerchantTaskRequestInfo from a JSON string
 merchant_task_request_info_instance = MerchantTaskRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(MerchantTaskRequestInfo.to_json())
+print MerchantTaskRequestInfo.to_json()
 
 # convert the object into a dict
 merchant_task_request_info_dict = merchant_task_request_info_instance.to_dict()

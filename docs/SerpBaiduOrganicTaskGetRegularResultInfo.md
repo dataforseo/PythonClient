@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpBaiduOrganicTaskGetRegularResultInfo from a JSON string
 serp_baidu_organic_task_get_regular_result_info_instance = SerpBaiduOrganicTaskGetRegularResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBaiduOrganicTaskGetRegularResultInfo.to_json())
+print SerpBaiduOrganicTaskGetRegularResultInfo.to_json()
 
 # convert the object into a dict
 serp_baidu_organic_task_get_regular_result_info_dict = serp_baidu_organic_task_get_regular_result_info_instance.to_dict()

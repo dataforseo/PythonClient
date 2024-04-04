@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpBingLocationsCountryTaskInfo from a JSON string
 serp_bing_locations_country_task_info_instance = SerpBingLocationsCountryTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLocationsCountryTaskInfo.to_json())
+print SerpBingLocationsCountryTaskInfo.to_json()
 
 # convert the object into a dict
 serp_bing_locations_country_task_info_dict = serp_bing_locations_country_task_info_instance.to_dict()

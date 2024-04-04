@@ -33,7 +33,7 @@ json = "{}"
 # create an instance of GoogleJobsItemSerpElementItem from a JSON string
 google_jobs_item_serp_element_item_instance = GoogleJobsItemSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GoogleJobsItemSerpElementItem.to_json())
+print GoogleJobsItemSerpElementItem.to_json()
 
 # convert the object into a dict
 google_jobs_item_serp_element_item_dict = google_jobs_item_serp_element_item_instance.to_dict()

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of SerpInfo from a JSON string
 serp_info_instance = SerpInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpInfo.to_json())
+print SerpInfo.to_json()
 
 # convert the object into a dict
 serp_info_dict = serp_info_instance.to_dict()

@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of AppDataTaskRequestInfo from a JSON string
 app_data_task_request_info_instance = AppDataTaskRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataTaskRequestInfo.to_json())
+print AppDataTaskRequestInfo.to_json()
 
 # convert the object into a dict
 app_data_task_request_info_dict = app_data_task_request_info_instance.to_dict()

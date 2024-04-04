@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of GoogleTrendsQueriesListElementItem from a JSON string
 google_trends_queries_list_element_item_instance = GoogleTrendsQueriesListElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GoogleTrendsQueriesListElementItem.to_json())
+print GoogleTrendsQueriesListElementItem.to_json()
 
 # convert the object into a dict
 google_trends_queries_list_element_item_dict = google_trends_queries_list_element_item_instance.to_dict()

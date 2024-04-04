@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of SerpIdListRequestInfo from a JSON string
 serp_id_list_request_info_instance = SerpIdListRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpIdListRequestInfo.to_json())
+print SerpIdListRequestInfo.to_json()
 
 # convert the object into a dict
 serp_id_list_request_info_dict = serp_id_list_request_info_instance.to_dict()

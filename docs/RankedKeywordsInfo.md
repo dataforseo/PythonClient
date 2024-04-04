@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of RankedKeywordsInfo from a JSON string
 ranked_keywords_info_instance = RankedKeywordsInfo.from_json(json)
 # print the JSON string representation of the object
-print(RankedKeywordsInfo.to_json())
+print RankedKeywordsInfo.to_json()
 
 # convert the object into a dict
 ranked_keywords_info_dict = ranked_keywords_info_instance.to_dict()

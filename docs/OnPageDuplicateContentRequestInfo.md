@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of OnPageDuplicateContentRequestInfo from a JSON string
 on_page_duplicate_content_request_info_instance = OnPageDuplicateContentRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageDuplicateContentRequestInfo.to_json())
+print OnPageDuplicateContentRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_duplicate_content_request_info_dict = on_page_duplicate_content_request_info_instance.to_dict()

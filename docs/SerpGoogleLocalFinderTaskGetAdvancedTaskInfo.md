@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpGoogleLocalFinderTaskGetAdvancedTaskInfo from a JSON string
 serp_google_local_finder_task_get_advanced_task_info_instance = SerpGoogleLocalFinderTaskGetAdvancedTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleLocalFinderTaskGetAdvancedTaskInfo.to_json())
+print SerpGoogleLocalFinderTaskGetAdvancedTaskInfo.to_json()
 
 # convert the object into a dict
 serp_google_local_finder_task_get_advanced_task_info_dict = serp_google_local_finder_task_get_advanced_task_info_instance.to_dict()

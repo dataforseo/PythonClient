@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of AppendixLighthouseOnPagePriceData from a JSON string
 appendix_lighthouse_on_page_price_data_instance = AppendixLighthouseOnPagePriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixLighthouseOnPagePriceData.to_json())
+print AppendixLighthouseOnPagePriceData.to_json()
 
 # convert the object into a dict
 appendix_lighthouse_on_page_price_data_dict = appendix_lighthouse_on_page_price_data_instance.to_dict()

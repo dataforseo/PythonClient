@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of MathSolverSerpElementItem from a JSON string
 math_solver_serp_element_item_instance = MathSolverSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(MathSolverSerpElementItem.to_json())
+print MathSolverSerpElementItem.to_json()
 
 # convert the object into a dict
 math_solver_serp_element_item_dict = math_solver_serp_element_item_instance.to_dict()

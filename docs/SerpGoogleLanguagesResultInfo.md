@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of SerpGoogleLanguagesResultInfo from a JSON string
 serp_google_languages_result_info_instance = SerpGoogleLanguagesResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleLanguagesResultInfo.to_json())
+print SerpGoogleLanguagesResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_languages_result_info_dict = serp_google_languages_result_info_instance.to_dict()

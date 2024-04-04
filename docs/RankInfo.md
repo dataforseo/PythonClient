@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of RankInfo from a JSON string
 rank_info_instance = RankInfo.from_json(json)
 # print the JSON string representation of the object
-print(RankInfo.to_json())
+print RankInfo.to_json()
 
 # convert the object into a dict
 rank_info_dict = rank_info_instance.to_dict()

@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpYahooLocationsCountryTaskInfo from a JSON string
 serp_yahoo_locations_country_task_info_instance = SerpYahooLocationsCountryTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpYahooLocationsCountryTaskInfo.to_json())
+print SerpYahooLocationsCountryTaskInfo.to_json()
 
 # convert the object into a dict
 serp_yahoo_locations_country_task_info_dict = serp_yahoo_locations_country_task_info_instance.to_dict()

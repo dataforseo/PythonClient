@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of CurrencyBoxSerpElementItem from a JSON string
 currency_box_serp_element_item_instance = CurrencyBoxSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(CurrencyBoxSerpElementItem.to_json())
+print CurrencyBoxSerpElementItem.to_json()
 
 # convert the object into a dict
 currency_box_serp_element_item_dict = currency_box_serp_element_item_instance.to_dict()

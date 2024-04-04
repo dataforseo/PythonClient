@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -46,11 +46,11 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255; you can use this parameter to identify the task and match it with the result; you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["category_codes", "first_date", "second_date", "location_name", "location_code", "language_name", "language_code", "item_types", "top_categories_count", "include_subdomains", "etv_min", "etv_max", "correlate", "limit", "offset", "filters", "order_by", "tag"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

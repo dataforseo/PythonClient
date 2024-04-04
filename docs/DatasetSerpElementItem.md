@@ -36,7 +36,7 @@ json = "{}"
 # create an instance of DatasetSerpElementItem from a JSON string
 dataset_serp_element_item_instance = DatasetSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DatasetSerpElementItem.to_json())
+print DatasetSerpElementItem.to_json()
 
 # convert the object into a dict
 dataset_serp_element_item_dict = dataset_serp_element_item_instance.to_dict()

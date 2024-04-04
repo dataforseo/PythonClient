@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of HotelsPackElement from a JSON string
 hotels_pack_element_instance = HotelsPackElement.from_json(json)
 # print the JSON string representation of the object
-print(HotelsPackElement.to_json())
+print HotelsPackElement.to_json()
 
 # convert the object into a dict
 hotels_pack_element_dict = hotels_pack_element_instance.to_dict()

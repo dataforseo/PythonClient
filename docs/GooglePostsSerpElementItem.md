@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of GooglePostsSerpElementItem from a JSON string
 google_posts_serp_element_item_instance = GooglePostsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GooglePostsSerpElementItem.to_json())
+print GooglePostsSerpElementItem.to_json()
 
 # convert the object into a dict
 google_posts_serp_element_item_dict = google_posts_serp_element_item_instance.to_dict()

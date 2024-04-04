@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageAvailableFiltersResponseInfo from a JSON string
 on_page_available_filters_response_info_instance = OnPageAvailableFiltersResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageAvailableFiltersResponseInfo.to_json())
+print OnPageAvailableFiltersResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_available_filters_response_info_dict = on_page_available_filters_response_info_instance.to_dict()

@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of PageMetrics from a JSON string
 page_metrics_instance = PageMetrics.from_json(json)
 # print the JSON string representation of the object
-print(PageMetrics.to_json())
+print PageMetrics.to_json()
 
 # convert the object into a dict
 page_metrics_dict = page_metrics_instance.to_dict()

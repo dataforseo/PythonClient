@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of Values from a JSON string
 values_instance = Values.from_json(json)
 # print the JSON string representation of the object
-print(Values.to_json())
+print Values.to_json()
 
 # convert the object into a dict
 values_dict = values_instance.to_dict()

@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of AboutThisResultElement from a JSON string
 about_this_result_element_instance = AboutThisResultElement.from_json(json)
 # print the JSON string representation of the object
-print(AboutThisResultElement.to_json())
+print AboutThisResultElement.to_json()
 
 # convert the object into a dict
 about_this_result_element_dict = about_this_result_element_instance.to_dict()

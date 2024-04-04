@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AppendixMerchantPriceData from a JSON string
 appendix_merchant_price_data_instance = AppendixMerchantPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixMerchantPriceData.to_json())
+print AppendixMerchantPriceData.to_json()
 
 # convert the object into a dict
 appendix_merchant_price_data_dict = appendix_merchant_price_data_instance.to_dict()

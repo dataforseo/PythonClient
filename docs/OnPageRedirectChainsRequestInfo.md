@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of OnPageRedirectChainsRequestInfo from a JSON string
 on_page_redirect_chains_request_info_instance = OnPageRedirectChainsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageRedirectChainsRequestInfo.to_json())
+print OnPageRedirectChainsRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_redirect_chains_request_info_dict = on_page_redirect_chains_request_info_instance.to_dict()

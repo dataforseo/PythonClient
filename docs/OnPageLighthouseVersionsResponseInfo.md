@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageLighthouseVersionsResponseInfo from a JSON string
 on_page_lighthouse_versions_response_info_instance = OnPageLighthouseVersionsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageLighthouseVersionsResponseInfo.to_json())
+print OnPageLighthouseVersionsResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_lighthouse_versions_response_info_dict = on_page_lighthouse_versions_response_info_instance.to_dict()

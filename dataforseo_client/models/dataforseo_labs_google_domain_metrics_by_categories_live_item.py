@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.metrics_info import MetricsInfo
 from typing import Optional, Set
@@ -39,11 +39,11 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem(BaseModel):
     metrics_difference: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="metrics difference between first_date and second_date calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date")
     __properties: ClassVar[List[str]] = ["se_type", "top_categories", "organic_etv", "organic_count", "organic_is_lost", "organic_is_new", "domain", "main_domain", "metrics_history", "metrics_difference"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

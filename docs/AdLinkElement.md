@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AdLinkElement from a JSON string
 ad_link_element_instance = AdLinkElement.from_json(json)
 # print the JSON string representation of the object
-print(AdLinkElement.to_json())
+print AdLinkElement.to_json()
 
 # convert the object into a dict
 ad_link_element_dict = ad_link_element_instance.to_dict()

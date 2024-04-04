@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of KeywordsDataDataforseoTrendsLocationsCountryResultInfo from a JSON string
 keywords_data_dataforseo_trends_locations_country_result_info_instance = KeywordsDataDataforseoTrendsLocationsCountryResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataDataforseoTrendsLocationsCountryResultInfo.to_json())
+print KeywordsDataDataforseoTrendsLocationsCountryResultInfo.to_json()
 
 # convert the object into a dict
 keywords_data_dataforseo_trends_locations_country_result_info_dict = keywords_data_dataforseo_trends_locations_country_result_info_instance.to_dict()

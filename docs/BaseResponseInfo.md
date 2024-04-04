@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of BaseResponseInfo from a JSON string
 base_response_info_instance = BaseResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(BaseResponseInfo.to_json())
+print BaseResponseInfo.to_json()
 
 # convert the object into a dict
 base_response_info_dict = base_response_info_instance.to_dict()

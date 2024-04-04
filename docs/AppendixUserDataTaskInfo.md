@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of AppendixUserDataTaskInfo from a JSON string
 appendix_user_data_task_info_instance = AppendixUserDataTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixUserDataTaskInfo.to_json())
+print AppendixUserDataTaskInfo.to_json()
 
 # convert the object into a dict
 appendix_user_data_task_info_dict = appendix_user_data_task_info_instance.to_dict()

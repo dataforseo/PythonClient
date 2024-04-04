@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of YoutubeCommentSerpElementItem from a JSON string
 youtube_comment_serp_element_item_instance = YoutubeCommentSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(YoutubeCommentSerpElementItem.to_json())
+print YoutubeCommentSerpElementItem.to_json()
 
 # convert the object into a dict
 youtube_comment_serp_element_item_dict = youtube_comment_serp_element_item_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of EventDates from a JSON string
 event_dates_instance = EventDates.from_json(json)
 # print the JSON string representation of the object
-print(EventDates.to_json())
+print EventDates.to_json()
 
 # convert the object into a dict
 event_dates_dict = event_dates_instance.to_dict()

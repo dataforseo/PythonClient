@@ -17,18 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
-
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from dataforseo_client.models.on_page_alternate_link_element_item import OnPageAlternateLinkElementItem
-    from dataforseo_client.models.on_page_anchor_link_element_item import OnPageAnchorLinkElementItem
-    from dataforseo_client.models.on_page_image_link_element_item import OnPageImageLinkElementItem
-    from dataforseo_client.models.on_page_redirect_link_element_item import OnPageRedirectLinkElementItem
 
 class BaseOnPageLinkItemInfo(BaseModel):
     """
@@ -37,11 +29,11 @@ class BaseOnPageLinkItemInfo(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     __properties: ClassVar[List[str]] = ["type"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     # JSON field name that stores the object type
@@ -71,7 +63,7 @@ class BaseOnPageLinkItemInfo(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[OnPageAlternateLinkElementItem, OnPageAnchorLinkElementItem, OnPageImageLinkElementItem, OnPageRedirectLinkElementItem]]:
+    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self]]:
         """Create an instance of BaseOnPageLinkItemInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -101,21 +93,22 @@ class BaseOnPageLinkItemInfo(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[OnPageAlternateLinkElementItem, OnPageAnchorLinkElementItem, OnPageImageLinkElementItem, OnPageRedirectLinkElementItem]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self]]:
         """Create an instance of BaseOnPageLinkItemInfo from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'alternate':
-            return import_module("dataforseo_client.models.on_page_alternate_link_element_item").OnPageAlternateLinkElementItem.from_dict(obj)
-        if object_type ==  'anchor':
-            return import_module("dataforseo_client.models.on_page_anchor_link_element_item").OnPageAnchorLinkElementItem.from_dict(obj)
-        if object_type ==  'image':
-            return import_module("dataforseo_client.models.on_page_image_link_element_item").OnPageImageLinkElementItem.from_dict(obj)
-        if object_type ==  'redirect':
-            return import_module("dataforseo_client.models.on_page_redirect_link_element_item").OnPageRedirectLinkElementItem.from_dict(obj)
+        if object_type:
+            klass = globals()[object_type]
+            return klass.from_dict(obj)
+        else:
+            raise ValueError("BaseOnPageLinkItemInfo failed to lookup discriminator value from " +
+                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
 
-        raise ValueError("BaseOnPageLinkItemInfo failed to lookup discriminator value from " +
-                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
-
+from dataforseo_client.models.on_page_alternate_link_element_item import OnPageAlternateLinkElementItem
+from dataforseo_client.models.on_page_anchor_link_element_item import OnPageAnchorLinkElementItem
+from dataforseo_client.models.on_page_image_link_element_item import OnPageImageLinkElementItem
+from dataforseo_client.models.on_page_redirect_link_element_item import OnPageRedirectLinkElementItem
+# TODO: Rewrite to not use raise_errors
+BaseOnPageLinkItemInfo.model_rebuild(raise_errors=False)
 

@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of EventsDataforseoLabsSerpElementItem from a JSON string
 events_dataforseo_labs_serp_element_item_instance = EventsDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(EventsDataforseoLabsSerpElementItem.to_json())
+print EventsDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 events_dataforseo_labs_serp_element_item_dict = events_dataforseo_labs_serp_element_item_instance.to_dict()

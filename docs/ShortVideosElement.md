@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of ShortVideosElement from a JSON string
 short_videos_element_instance = ShortVideosElement.from_json(json)
 # print the JSON string representation of the object
-print(ShortVideosElement.to_json())
+print ShortVideosElement.to_json()
 
 # convert the object into a dict
 short_videos_element_dict = short_videos_element_instance.to_dict()

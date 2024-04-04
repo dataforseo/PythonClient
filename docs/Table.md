@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of Table from a JSON string
 table_instance = Table.from_json(json)
 # print the JSON string representation of the object
-print(Table.to_json())
+print Table.to_json()
 
 # convert the object into a dict
 table_dict = table_instance.to_dict()

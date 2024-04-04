@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of AppDataIdListResultInfo from a JSON string
 app_data_id_list_result_info_instance = AppDataIdListResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataIdListResultInfo.to_json())
+print AppDataIdListResultInfo.to_json()
 
 # convert the object into a dict
 app_data_id_list_result_info_dict = app_data_id_list_result_info_instance.to_dict()

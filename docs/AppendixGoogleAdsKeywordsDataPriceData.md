@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AppendixGoogleAdsKeywordsDataPriceData from a JSON string
 appendix_google_ads_keywords_data_price_data_instance = AppendixGoogleAdsKeywordsDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixGoogleAdsKeywordsDataPriceData.to_json())
+print AppendixGoogleAdsKeywordsDataPriceData.to_json()
 
 # convert the object into a dict
 appendix_google_ads_keywords_data_price_data_dict = appendix_google_ads_keywords_data_price_data_instance.to_dict()

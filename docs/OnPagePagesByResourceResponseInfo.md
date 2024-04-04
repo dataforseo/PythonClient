@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPagePagesByResourceResponseInfo from a JSON string
 on_page_pages_by_resource_response_info_instance = OnPagePagesByResourceResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPagePagesByResourceResponseInfo.to_json())
+print OnPagePagesByResourceResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_pages_by_resource_response_info_dict = on_page_pages_by_resource_response_info_instance.to_dict()

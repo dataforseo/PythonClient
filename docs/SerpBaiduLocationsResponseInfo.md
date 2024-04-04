@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpBaiduLocationsResponseInfo from a JSON string
 serp_baidu_locations_response_info_instance = SerpBaiduLocationsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBaiduLocationsResponseInfo.to_json())
+print SerpBaiduLocationsResponseInfo.to_json()
 
 # convert the object into a dict
 serp_baidu_locations_response_info_dict = serp_baidu_locations_response_info_instance.to_dict()

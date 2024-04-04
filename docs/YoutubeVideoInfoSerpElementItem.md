@@ -39,7 +39,7 @@ json = "{}"
 # create an instance of YoutubeVideoInfoSerpElementItem from a JSON string
 youtube_video_info_serp_element_item_instance = YoutubeVideoInfoSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(YoutubeVideoInfoSerpElementItem.to_json())
+print YoutubeVideoInfoSerpElementItem.to_json()
 
 # convert the object into a dict
 youtube_video_info_serp_element_item_dict = youtube_video_info_serp_element_item_instance.to_dict()

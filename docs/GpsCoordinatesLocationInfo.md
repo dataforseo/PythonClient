@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of GpsCoordinatesLocationInfo from a JSON string
 gps_coordinates_location_info_instance = GpsCoordinatesLocationInfo.from_json(json)
 # print the JSON string representation of the object
-print(GpsCoordinatesLocationInfo.to_json())
+print GpsCoordinatesLocationInfo.to_json()
 
 # convert the object into a dict
 gps_coordinates_location_info_dict = gps_coordinates_location_info_instance.to_dict()

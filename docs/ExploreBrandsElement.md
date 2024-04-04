@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of ExploreBrandsElement from a JSON string
 explore_brands_element_instance = ExploreBrandsElement.from_json(json)
 # print the JSON string representation of the object
-print(ExploreBrandsElement.to_json())
+print ExploreBrandsElement.to_json()
 
 # convert the object into a dict
 explore_brands_element_dict = explore_brands_element_instance.to_dict()

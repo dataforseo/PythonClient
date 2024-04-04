@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
@@ -73,11 +73,11 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     directory: Optional[BusinessDirectoryInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

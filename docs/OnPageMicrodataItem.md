@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of OnPageMicrodataItem from a JSON string
 on_page_microdata_item_instance = OnPageMicrodataItem.from_json(json)
 # print the JSON string representation of the object
-print(OnPageMicrodataItem.to_json())
+print OnPageMicrodataItem.to_json()
 
 # convert the object into a dict
 on_page_microdata_item_dict = on_page_microdata_item_instance.to_dict()

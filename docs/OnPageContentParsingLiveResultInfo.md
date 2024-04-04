@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of OnPageContentParsingLiveResultInfo from a JSON string
 on_page_content_parsing_live_result_info_instance = OnPageContentParsingLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageContentParsingLiveResultInfo.to_json())
+print OnPageContentParsingLiveResultInfo.to_json()
 
 # convert the object into a dict
 on_page_content_parsing_live_result_info_dict = on_page_content_parsing_live_result_info_instance.to_dict()

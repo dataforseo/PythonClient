@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of SearchIntentInfo from a JSON string
 search_intent_info_instance = SearchIntentInfo.from_json(json)
 # print the JSON string representation of the object
-print(SearchIntentInfo.to_json())
+print SearchIntentInfo.to_json()
 
 # convert the object into a dict
 search_intent_info_dict = search_intent_info_instance.to_dict()

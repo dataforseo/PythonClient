@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of ProductInfoElementMerchantSerpElementItem from a JSON string
 product_info_element_merchant_serp_element_item_instance = ProductInfoElementMerchantSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(ProductInfoElementMerchantSerpElementItem.to_json())
+print ProductInfoElementMerchantSerpElementItem.to_json()
 
 # convert the object into a dict
 product_info_element_merchant_serp_element_item_dict = product_info_element_merchant_serp_element_item_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of BusinessDataSocialMediaFacebookLiveRequestInfo from a JSON string
 business_data_social_media_facebook_live_request_info_instance = BusinessDataSocialMediaFacebookLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataSocialMediaFacebookLiveRequestInfo.to_json())
+print BusinessDataSocialMediaFacebookLiveRequestInfo.to_json()
 
 # convert the object into a dict
 business_data_social_media_facebook_live_request_info_dict = business_data_social_media_facebook_live_request_info_instance.to_dict()

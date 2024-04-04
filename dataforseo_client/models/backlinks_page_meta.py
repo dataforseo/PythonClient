@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -45,11 +45,11 @@ class BacklinksPageMeta(BaseModel):
     technologies: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="website technologies")
     __properties: ClassVar[List[str]] = ["title", "canonical", "internal_links_count", "external_links_count", "images_count", "words_count", "page_spam_score", "social_media_tags", "h1", "h2", "h3", "images_alt", "powered_by", "language", "charset", "platform_type", "technologies"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

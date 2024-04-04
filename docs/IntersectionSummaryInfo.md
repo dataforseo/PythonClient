@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of IntersectionSummaryInfo from a JSON string
 intersection_summary_info_instance = IntersectionSummaryInfo.from_json(json)
 # print the JSON string representation of the object
-print(IntersectionSummaryInfo.to_json())
+print IntersectionSummaryInfo.to_json()
 
 # convert the object into a dict
 intersection_summary_info_dict = intersection_summary_info_instance.to_dict()

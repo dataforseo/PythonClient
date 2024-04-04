@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of InterestsComparison from a JSON string
 interests_comparison_instance = InterestsComparison.from_json(json)
 # print the JSON string representation of the object
-print(InterestsComparison.to_json())
+print InterestsComparison.to_json()
 
 # convert the object into a dict
 interests_comparison_dict = interests_comparison_instance.to_dict()

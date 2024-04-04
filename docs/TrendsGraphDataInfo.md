@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of TrendsGraphDataInfo from a JSON string
 trends_graph_data_info_instance = TrendsGraphDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(TrendsGraphDataInfo.to_json())
+print TrendsGraphDataInfo.to_json()
 
 # convert the object into a dict
 trends_graph_data_info_dict = trends_graph_data_info_instance.to_dict()

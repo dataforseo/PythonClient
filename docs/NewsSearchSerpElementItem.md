@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of NewsSearchSerpElementItem from a JSON string
 news_search_serp_element_item_instance = NewsSearchSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(NewsSearchSerpElementItem.to_json())
+print NewsSearchSerpElementItem.to_json()
 
 # convert the object into a dict
 news_search_serp_element_item_dict = news_search_serp_element_item_instance.to_dict()

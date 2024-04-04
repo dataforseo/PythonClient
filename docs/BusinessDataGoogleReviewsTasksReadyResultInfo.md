@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of BusinessDataGoogleReviewsTasksReadyResultInfo from a JSON string
 business_data_google_reviews_tasks_ready_result_info_instance = BusinessDataGoogleReviewsTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataGoogleReviewsTasksReadyResultInfo.to_json())
+print BusinessDataGoogleReviewsTasksReadyResultInfo.to_json()
 
 # convert the object into a dict
 business_data_google_reviews_tasks_ready_result_info_dict = business_data_google_reviews_tasks_ready_result_info_instance.to_dict()

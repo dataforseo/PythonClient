@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of OnPageDuplicateTagsResultInfo from a JSON string
 on_page_duplicate_tags_result_info_instance = OnPageDuplicateTagsResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageDuplicateTagsResultInfo.to_json())
+print OnPageDuplicateTagsResultInfo.to_json()
 
 # convert the object into a dict
 on_page_duplicate_tags_result_info_dict = on_page_duplicate_tags_result_info_instance.to_dict()

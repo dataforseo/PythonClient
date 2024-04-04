@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of BusinessDataSocialMediaPinterestLiveResultInfo from a JSON string
 business_data_social_media_pinterest_live_result_info_instance = BusinessDataSocialMediaPinterestLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataSocialMediaPinterestLiveResultInfo.to_json())
+print BusinessDataSocialMediaPinterestLiveResultInfo.to_json()
 
 # convert the object into a dict
 business_data_social_media_pinterest_live_result_info_dict = business_data_social_media_pinterest_live_result_info_instance.to_dict()

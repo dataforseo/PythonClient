@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of VideoElement from a JSON string
 video_element_instance = VideoElement.from_json(json)
 # print the JSON string representation of the object
-print(VideoElement.to_json())
+print VideoElement.to_json()
 
 # convert the object into a dict
 video_element_dict = video_element_instance.to_dict()

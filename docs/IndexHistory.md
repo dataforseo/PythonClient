@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of IndexHistory from a JSON string
 index_history_instance = IndexHistory.from_json(json)
 # print the JSON string representation of the object
-print(IndexHistory.to_json())
+print IndexHistory.to_json()
 
 # convert the object into a dict
 index_history_dict = index_history_instance.to_dict()

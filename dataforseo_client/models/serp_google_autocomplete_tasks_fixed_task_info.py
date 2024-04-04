@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.serp_google_autocomplete_tasks_fixed_result_info import SerpGoogleAutocompleteTasksFixedResultInfo
 from typing import Optional, Set
@@ -38,11 +38,11 @@ class SerpGoogleAutocompleteTasksFixedTaskInfo(BaseModel):
     result: Optional[List[SerpGoogleAutocompleteTasksFixedResultInfo]] = Field(default=None, description="array of results")
     __properties: ClassVar[List[str]] = ["id", "status_code", "status_message", "time", "cost", "result_count", "path", "data", "result"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

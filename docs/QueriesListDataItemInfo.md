@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of QueriesListDataItemInfo from a JSON string
 queries_list_data_item_info_instance = QueriesListDataItemInfo.from_json(json)
 # print the JSON string representation of the object
-print(QueriesListDataItemInfo.to_json())
+print QueriesListDataItemInfo.to_json()
 
 # convert the object into a dict
 queries_list_data_item_info_dict = queries_list_data_item_info_instance.to_dict()

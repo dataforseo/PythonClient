@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of ProductSeller from a JSON string
 product_seller_instance = ProductSeller.from_json(json)
 # print the JSON string representation of the object
-print(ProductSeller.to_json())
+print ProductSeller.to_json()
 
 # convert the object into a dict
 product_seller_dict = product_seller_instance.to_dict()

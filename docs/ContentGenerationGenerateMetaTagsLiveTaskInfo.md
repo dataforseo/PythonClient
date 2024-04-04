@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of ContentGenerationGenerateMetaTagsLiveTaskInfo from a JSON string
 content_generation_generate_meta_tags_live_task_info_instance = ContentGenerationGenerateMetaTagsLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationGenerateMetaTagsLiveTaskInfo.to_json())
+print ContentGenerationGenerateMetaTagsLiveTaskInfo.to_json()
 
 # convert the object into a dict
 content_generation_generate_meta_tags_live_task_info_dict = content_generation_generate_meta_tags_live_task_info_instance.to_dict()

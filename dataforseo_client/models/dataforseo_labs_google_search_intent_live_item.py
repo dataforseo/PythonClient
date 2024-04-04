@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.keyword_intent_info import KeywordIntentInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class DataforseoLabsGoogleSearchIntentLiveItem(BaseModel):
     secondary_keyword_intents: Optional[List[KeywordIntentInfo]] = Field(default=None, description="contains objects with other possible search intents for the specified keyword")
     __properties: ClassVar[List[str]] = ["keyword", "keyword_intent", "secondary_keyword_intents"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of MicrodataInspectionInfo from a JSON string
 microdata_inspection_info_instance = MicrodataInspectionInfo.from_json(json)
 # print the JSON string representation of the object
-print(MicrodataInspectionInfo.to_json())
+print MicrodataInspectionInfo.to_json()
 
 # convert the object into a dict
 microdata_inspection_info_dict = microdata_inspection_info_instance.to_dict()

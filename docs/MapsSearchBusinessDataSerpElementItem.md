@@ -43,7 +43,7 @@ json = "{}"
 # create an instance of MapsSearchBusinessDataSerpElementItem from a JSON string
 maps_search_business_data_serp_element_item_instance = MapsSearchBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(MapsSearchBusinessDataSerpElementItem.to_json())
+print MapsSearchBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 maps_search_business_data_serp_element_item_dict = maps_search_business_data_serp_element_item_instance.to_dict()

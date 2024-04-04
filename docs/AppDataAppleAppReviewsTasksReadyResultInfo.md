@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AppDataAppleAppReviewsTasksReadyResultInfo from a JSON string
 app_data_apple_app_reviews_tasks_ready_result_info_instance = AppDataAppleAppReviewsTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataAppleAppReviewsTasksReadyResultInfo.to_json())
+print AppDataAppleAppReviewsTasksReadyResultInfo.to_json()
 
 # convert the object into a dict
 app_data_apple_app_reviews_tasks_ready_result_info_dict = app_data_apple_app_reviews_tasks_ready_result_info_instance.to_dict()

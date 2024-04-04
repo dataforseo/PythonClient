@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of ContentGenerationGenerateTextLiveRequestInfo from a JSON string
 content_generation_generate_text_live_request_info_instance = ContentGenerationGenerateTextLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationGenerateTextLiveRequestInfo.to_json())
+print ContentGenerationGenerateTextLiveRequestInfo.to_json()
 
 # convert the object into a dict
 content_generation_generate_text_live_request_info_dict = content_generation_generate_text_live_request_info_instance.to_dict()

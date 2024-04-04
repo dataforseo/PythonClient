@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from dataforseo_client.models.rating_element import RatingElement
@@ -30,7 +30,7 @@ class ShopsListMerchantSerpElementItem(BaseMerchantSerpElementItem):
     """ # noqa: E501
     rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements found in Google Shopping SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Google Shopping SERP possible values: left, right")
+    position: Optional[StrictStr] = Field(default=None, description="alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description="product title")
@@ -48,11 +48,11 @@ class ShopsListMerchantSerpElementItem(BaseMerchantSerpElementItem):
     product_annotation: Optional[StrictStr] = Field(default=None, description="data from annotations and badges with special offers if there is no annotation for this product, the value will be null examples: LOW PRICE, SPECIAL OFFER, SALE, PRICE DROP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "details", "base_price", "tax", "shipping_price", "total_price", "currency", "seller_name", "rating", "shop_ad_aclk", "product_condition", "product_annotation"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -37,7 +37,7 @@ json = "{}"
 # create an instance of PageSummary from a JSON string
 page_summary_instance = PageSummary.from_json(json)
 # print the JSON string representation of the object
-print(PageSummary.to_json())
+print PageSummary.to_json()
 
 # convert the object into a dict
 page_summary_dict = page_summary_instance.to_dict()

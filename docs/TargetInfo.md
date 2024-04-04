@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of TargetInfo from a JSON string
 target_info_instance = TargetInfo.from_json(json)
 # print the JSON string representation of the object
-print(TargetInfo.to_json())
+print TargetInfo.to_json()
 
 # convert the object into a dict
 target_info_dict = target_info_instance.to_dict()

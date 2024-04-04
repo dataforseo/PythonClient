@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AppendixFunctionTypeInfo from a JSON string
 appendix_function_type_info_instance = AppendixFunctionTypeInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixFunctionTypeInfo.to_json())
+print AppendixFunctionTypeInfo.to_json()
 
 # convert the object into a dict
 appendix_function_type_info_dict = appendix_function_type_info_instance.to_dict()

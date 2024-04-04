@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of ContentAnalysisIdListRequestInfo from a JSON string
 content_analysis_id_list_request_info_instance = ContentAnalysisIdListRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentAnalysisIdListRequestInfo.to_json())
+print ContentAnalysisIdListRequestInfo.to_json()
 
 # convert the object into a dict
 content_analysis_id_list_request_info_dict = content_analysis_id_list_request_info_instance.to_dict()

@@ -61,7 +61,7 @@ json = "{}"
 # create an instance of BacklinksPageIntersectionInfo from a JSON string
 backlinks_page_intersection_info_instance = BacklinksPageIntersectionInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksPageIntersectionInfo.to_json())
+print BacklinksPageIntersectionInfo.to_json()
 
 # convert the object into a dict
 backlinks_page_intersection_info_dict = backlinks_page_intersection_info_instance.to_dict()

@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of ImagesSerpElementItem from a JSON string
 images_serp_element_item_instance = ImagesSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(ImagesSerpElementItem.to_json())
+print ImagesSerpElementItem.to_json()
 
 # convert the object into a dict
 images_serp_element_item_dict = images_serp_element_item_instance.to_dict()

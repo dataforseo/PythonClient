@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of AppDataAppleAppListingsSearchLiveResponseInfo from a JSON string
 app_data_apple_app_listings_search_live_response_info_instance = AppDataAppleAppListingsSearchLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataAppleAppListingsSearchLiveResponseInfo.to_json())
+print AppDataAppleAppListingsSearchLiveResponseInfo.to_json()
 
 # convert the object into a dict
 app_data_apple_app_listings_search_live_response_info_dict = app_data_apple_app_listings_search_live_response_info_instance.to_dict()

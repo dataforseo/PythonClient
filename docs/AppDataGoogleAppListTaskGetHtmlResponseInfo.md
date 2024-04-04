@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of AppDataGoogleAppListTaskGetHtmlResponseInfo from a JSON string
 app_data_google_app_list_task_get_html_response_info_instance = AppDataGoogleAppListTaskGetHtmlResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataGoogleAppListTaskGetHtmlResponseInfo.to_json())
+print AppDataGoogleAppListTaskGetHtmlResponseInfo.to_json()
 
 # convert the object into a dict
 app_data_google_app_list_task_get_html_response_info_dict = app_data_google_app_list_task_get_html_response_info_instance.to_dict()

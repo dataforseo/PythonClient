@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResultInfo from a JSON string
 dataforseo_labs_google_historical_bulk_traffic_estimation_live_result_info_instance = DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResultInfo.to_json())
+print DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResultInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_historical_bulk_traffic_estimation_live_result_info_dict = dataforseo_labs_google_historical_bulk_traffic_estimation_live_result_info_instance.to_dict()

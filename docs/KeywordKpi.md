@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of KeywordKpi from a JSON string
 keyword_kpi_instance = KeywordKpi.from_json(json)
 # print the JSON string representation of the object
-print(KeywordKpi.to_json())
+print KeywordKpi.to_json()
 
 # convert the object into a dict
 keyword_kpi_dict = keyword_kpi_instance.to_dict()

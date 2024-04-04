@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpGoogleMapsTaskPostTaskInfo from a JSON string
 serp_google_maps_task_post_task_info_instance = SerpGoogleMapsTaskPostTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleMapsTaskPostTaskInfo.to_json())
+print SerpGoogleMapsTaskPostTaskInfo.to_json()
 
 # convert the object into a dict
 serp_google_maps_task_post_task_info_dict = serp_google_maps_task_post_task_info_instance.to_dict()

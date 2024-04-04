@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,11 +31,11 @@ class OnPageKeywordDensityItem(BaseModel):
     density: Optional[StrictInt] = Field(default=None, description="keyword density calculated as a ratio of frequency to the total count of keywords with the set keyword_length on the web page or website")
     __properties: ClassVar[List[str]] = ["keyword", "frequency", "density"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

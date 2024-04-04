@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpIdListTaskInfo from a JSON string
 serp_id_list_task_info_instance = SerpIdListTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpIdListTaskInfo.to_json())
+print SerpIdListTaskInfo.to_json()
 
 # convert the object into a dict
 serp_id_list_task_info_dict = serp_id_list_task_info_instance.to_dict()

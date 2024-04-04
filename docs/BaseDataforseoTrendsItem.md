@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of BaseDataforseoTrendsItem from a JSON string
 base_dataforseo_trends_item_instance = BaseDataforseoTrendsItem.from_json(json)
 # print the JSON string representation of the object
-print(BaseDataforseoTrendsItem.to_json())
+print BaseDataforseoTrendsItem.to_json()
 
 # convert the object into a dict
 base_dataforseo_trends_item_dict = base_dataforseo_trends_item_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of SocialMetricsInfo from a JSON string
 social_metrics_info_instance = SocialMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print(SocialMetricsInfo.to_json())
+print SocialMetricsInfo.to_json()
 
 # convert the object into a dict
 social_metrics_info_dict = social_metrics_info_instance.to_dict()

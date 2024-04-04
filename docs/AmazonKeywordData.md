@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AmazonKeywordData from a JSON string
 amazon_keyword_data_instance = AmazonKeywordData.from_json(json)
 # print the JSON string representation of the object
-print(AmazonKeywordData.to_json())
+print AmazonKeywordData.to_json()
 
 # convert the object into a dict
 amazon_keyword_data_dict = amazon_keyword_data_instance.to_dict()

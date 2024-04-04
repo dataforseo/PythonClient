@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AbsoluteItems from a JSON string
 absolute_items_instance = AbsoluteItems.from_json(json)
 # print the JSON string representation of the object
-print(AbsoluteItems.to_json())
+print AbsoluteItems.to_json()
 
 # convert the object into a dict
 absolute_items_dict = absolute_items_instance.to_dict()

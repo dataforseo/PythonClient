@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of PeopleAlsoSearch from a JSON string
 people_also_search_instance = PeopleAlsoSearch.from_json(json)
 # print the JSON string representation of the object
-print(PeopleAlsoSearch.to_json())
+print PeopleAlsoSearch.to_json()
 
 # convert the object into a dict
 people_also_search_dict = people_also_search_instance.to_dict()

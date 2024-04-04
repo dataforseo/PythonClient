@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleSerpCompetitorsLiveResultInfo from a JSON string
 dataforseo_labs_google_serp_competitors_live_result_info_instance = DataforseoLabsGoogleSerpCompetitorsLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleSerpCompetitorsLiveResultInfo.to_json())
+print DataforseoLabsGoogleSerpCompetitorsLiveResultInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_serp_competitors_live_result_info_dict = dataforseo_labs_google_serp_competitors_live_result_info_instance.to_dict()

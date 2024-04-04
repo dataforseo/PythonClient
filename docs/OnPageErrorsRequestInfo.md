@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of OnPageErrorsRequestInfo from a JSON string
 on_page_errors_request_info_instance = OnPageErrorsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageErrorsRequestInfo.to_json())
+print OnPageErrorsRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_errors_request_info_dict = on_page_errors_request_info_instance.to_dict()

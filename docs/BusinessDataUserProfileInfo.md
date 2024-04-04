@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of BusinessDataUserProfileInfo from a JSON string
 business_data_user_profile_info_instance = BusinessDataUserProfileInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataUserProfileInfo.to_json())
+print BusinessDataUserProfileInfo.to_json()
 
 # convert the object into a dict
 business_data_user_profile_info_dict = business_data_user_profile_info_instance.to_dict()

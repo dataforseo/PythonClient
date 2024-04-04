@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AppDataErrorsRequestInfo from a JSON string
 app_data_errors_request_info_instance = AppDataErrorsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataErrorsRequestInfo.to_json())
+print AppDataErrorsRequestInfo.to_json()
 
 # convert the object into a dict
 app_data_errors_request_info_dict = app_data_errors_request_info_instance.to_dict()

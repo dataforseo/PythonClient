@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of KeywordsDataBingKeywordsForKeywordsTaskGetTaskInfo from a JSON string
 keywords_data_bing_keywords_for_keywords_task_get_task_info_instance = KeywordsDataBingKeywordsForKeywordsTaskGetTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataBingKeywordsForKeywordsTaskGetTaskInfo.to_json())
+print KeywordsDataBingKeywordsForKeywordsTaskGetTaskInfo.to_json()
 
 # convert the object into a dict
 keywords_data_bing_keywords_for_keywords_task_get_task_info_dict = keywords_data_bing_keywords_for_keywords_task_get_task_info_instance.to_dict()

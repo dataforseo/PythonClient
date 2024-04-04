@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpSeznamLocationsResponseInfo from a JSON string
 serp_seznam_locations_response_info_instance = SerpSeznamLocationsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpSeznamLocationsResponseInfo.to_json())
+print SerpSeznamLocationsResponseInfo.to_json()
 
 # convert the object into a dict
 serp_seznam_locations_response_info_dict = serp_seznam_locations_response_info_instance.to_dict()

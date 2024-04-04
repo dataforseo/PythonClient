@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of ContentGenerationGenerateMetaTagsLiveResultInfo from a JSON string
 content_generation_generate_meta_tags_live_result_info_instance = ContentGenerationGenerateMetaTagsLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationGenerateMetaTagsLiveResultInfo.to_json())
+print ContentGenerationGenerateMetaTagsLiveResultInfo.to_json()
 
 # convert the object into a dict
 content_generation_generate_meta_tags_live_result_info_dict = content_generation_generate_meta_tags_live_result_info_instance.to_dict()

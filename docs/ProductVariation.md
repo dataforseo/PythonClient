@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of ProductVariation from a JSON string
 product_variation_instance = ProductVariation.from_json(json)
 # print the JSON string representation of the object
-print(ProductVariation.to_json())
+print ProductVariation.to_json()
 
 # convert the object into a dict
 product_variation_dict = product_variation_instance.to_dict()

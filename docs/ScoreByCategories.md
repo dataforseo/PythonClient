@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of ScoreByCategories from a JSON string
 score_by_categories_instance = ScoreByCategories.from_json(json)
 # print the JSON string representation of the object
-print(ScoreByCategories.to_json())
+print ScoreByCategories.to_json()
 
 # convert the object into a dict
 score_by_categories_dict = score_by_categories_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_page_meta import BacklinksPageMeta
 from dataforseo_client.models.page_summary import PageSummary
@@ -48,11 +48,11 @@ class BacklinksDomainPagesLiveItem(BaseModel):
     page_summary: Optional[PageSummary] = None
     __properties: ClassVar[List[str]] = ["type", "main_domain", "domain", "tld", "page", "ip", "first_visited", "prev_visited", "fetch_time", "status_code", "location", "size", "encoded_size", "content_encoding", "media_type", "server", "meta", "page_summary"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

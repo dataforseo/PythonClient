@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of HotelAmenityInfo from a JSON string
 hotel_amenity_info_instance = HotelAmenityInfo.from_json(json)
 # print the JSON string representation of the object
-print(HotelAmenityInfo.to_json())
+print HotelAmenityInfo.to_json()
 
 # convert the object into a dict
 hotel_amenity_info_dict = hotel_amenity_info_instance.to_dict()

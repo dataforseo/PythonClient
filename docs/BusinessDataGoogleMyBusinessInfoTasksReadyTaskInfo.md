@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of BusinessDataGoogleMyBusinessInfoTasksReadyTaskInfo from a JSON string
 business_data_google_my_business_info_tasks_ready_task_info_instance = BusinessDataGoogleMyBusinessInfoTasksReadyTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataGoogleMyBusinessInfoTasksReadyTaskInfo.to_json())
+print BusinessDataGoogleMyBusinessInfoTasksReadyTaskInfo.to_json()
 
 # convert the object into a dict
 business_data_google_my_business_info_tasks_ready_task_info_dict = business_data_google_my_business_info_tasks_ready_task_info_instance.to_dict()

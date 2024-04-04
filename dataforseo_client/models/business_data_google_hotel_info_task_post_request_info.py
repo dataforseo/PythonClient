@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -45,11 +45,11 @@ class BusinessDataGoogleHotelInfoTaskPostRequestInfo(BaseModel):
     postback_data: Optional[StrictStr] = Field(default=None, description="postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: advanced, html")
     __properties: ClassVar[List[str]] = ["keyword", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "tag", "postback_url", "pingback_url", "hotel_identifier", "check_in", "check_out", "currency", "adults", "children", "postback_data"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

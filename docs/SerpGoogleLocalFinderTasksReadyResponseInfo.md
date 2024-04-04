@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleLocalFinderTasksReadyResponseInfo from a JSON string
 serp_google_local_finder_tasks_ready_response_info_instance = SerpGoogleLocalFinderTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleLocalFinderTasksReadyResponseInfo.to_json())
+print SerpGoogleLocalFinderTasksReadyResponseInfo.to_json()
 
 # convert the object into a dict
 serp_google_local_finder_tasks_ready_response_info_dict = serp_google_local_finder_tasks_ready_response_info_instance.to_dict()

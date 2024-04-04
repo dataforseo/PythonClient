@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of OnPageResourceIssueInfo from a JSON string
 on_page_resource_issue_info_instance = OnPageResourceIssueInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageResourceIssueInfo.to_json())
+print OnPageResourceIssueInfo.to_json()
 
 # convert the object into a dict
 on_page_resource_issue_info_dict = on_page_resource_issue_info_instance.to_dict()

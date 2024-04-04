@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -71,11 +71,11 @@ class OnPageTaskRequestInfo(BaseModel):
     pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special symbols in pingback_url will be urlencoded; i.a., the # symbol will be encoded into %23")
     __properties: ClassVar[List[str]] = ["target", "max_crawl_pages", "start_url", "force_sitewide_checks", "priority_urls", "max_crawl_depth", "crawl_delay", "store_raw_html", "enable_content_parsing", "support_cookies", "accept_language", "custom_robots_txt", "robots_txt_merge_mode", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "respect_sitemap", "custom_sitemap", "crawl_sitemap_only", "load_resources", "enable_www_redirect_check", "enable_javascript", "enable_xhr", "enable_browser_rendering", "disable_cookie_popup", "custom_js", "validate_micromarkup", "allow_subdomains", "allowed_subdomains", "disallowed_subdomains", "check_spell", "check_spell_language", "check_spell_exceptions", "calculate_keyword_density", "checks_threshold", "disable_sitewide_checks", "disable_page_checks", "switch_pool", "return_despite_timeout", "tag", "pingback_url"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

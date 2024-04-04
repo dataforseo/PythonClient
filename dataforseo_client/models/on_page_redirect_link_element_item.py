@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictStr
+from pydantic import Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_link_item_info import BaseOnPageLinkItemInfo
 from typing import Optional, Set
@@ -41,11 +41,11 @@ class OnPageRedirectLinkElementItem(BaseOnPageLinkItemInfo):
     is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description="indicates that the link may have a conflict with another link if true, at least one link pointing to the URL in link_to has a rel=\"nofollow\" attribute and at least one is dofollow")
     __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

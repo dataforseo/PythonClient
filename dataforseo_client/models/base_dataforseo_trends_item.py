@@ -17,17 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
-
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from dataforseo_client.models.dataforseo_trends_dataforseo_trends_graph_element_item import DataforseoTrendsDataforseoTrendsGraphElementItem
-    from dataforseo_client.models.dataforseo_trends_demography_element_item import DataforseoTrendsDemographyElementItem
-    from dataforseo_client.models.dataforseo_trends_subregion_interests_element_item import DataforseoTrendsSubregionInterestsElementItem
 
 class BaseDataforseoTrendsItem(BaseModel):
     """
@@ -36,11 +29,11 @@ class BaseDataforseoTrendsItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     __properties: ClassVar[List[str]] = ["type"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     # JSON field name that stores the object type
@@ -70,7 +63,7 @@ class BaseDataforseoTrendsItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[DataforseoTrendsDataforseoTrendsGraphElementItem, DataforseoTrendsDemographyElementItem, DataforseoTrendsSubregionInterestsElementItem]]:
+    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self]]:
         """Create an instance of BaseDataforseoTrendsItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -100,19 +93,21 @@ class BaseDataforseoTrendsItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[DataforseoTrendsDataforseoTrendsGraphElementItem, DataforseoTrendsDemographyElementItem, DataforseoTrendsSubregionInterestsElementItem]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self]]:
         """Create an instance of BaseDataforseoTrendsItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'dataforseo_trends_graph':
-            return import_module("dataforseo_client.models.dataforseo_trends_dataforseo_trends_graph_element_item").DataforseoTrendsDataforseoTrendsGraphElementItem.from_dict(obj)
-        if object_type ==  'demography':
-            return import_module("dataforseo_client.models.dataforseo_trends_demography_element_item").DataforseoTrendsDemographyElementItem.from_dict(obj)
-        if object_type ==  'subregion_interests':
-            return import_module("dataforseo_client.models.dataforseo_trends_subregion_interests_element_item").DataforseoTrendsSubregionInterestsElementItem.from_dict(obj)
+        if object_type:
+            klass = globals()[object_type]
+            return klass.from_dict(obj)
+        else:
+            raise ValueError("BaseDataforseoTrendsItem failed to lookup discriminator value from " +
+                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
 
-        raise ValueError("BaseDataforseoTrendsItem failed to lookup discriminator value from " +
-                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
-
+from dataforseo_client.models.dataforseo_trends_dataforseo_trends_graph_element_item import DataforseoTrendsDataforseoTrendsGraphElementItem
+from dataforseo_client.models.dataforseo_trends_demography_element_item import DataforseoTrendsDemographyElementItem
+from dataforseo_client.models.dataforseo_trends_subregion_interests_element_item import DataforseoTrendsSubregionInterestsElementItem
+# TODO: Rewrite to not use raise_errors
+BaseDataforseoTrendsItem.model_rebuild(raise_errors=False)
 

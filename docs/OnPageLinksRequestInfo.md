@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of OnPageLinksRequestInfo from a JSON string
 on_page_links_request_info_instance = OnPageLinksRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageLinksRequestInfo.to_json())
+print OnPageLinksRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_links_request_info_dict = on_page_links_request_info_instance.to_dict()

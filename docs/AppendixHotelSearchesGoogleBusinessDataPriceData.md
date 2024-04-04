@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of AppendixHotelSearchesGoogleBusinessDataPriceData from a JSON string
 appendix_hotel_searches_google_business_data_price_data_instance = AppendixHotelSearchesGoogleBusinessDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixHotelSearchesGoogleBusinessDataPriceData.to_json())
+print AppendixHotelSearchesGoogleBusinessDataPriceData.to_json()
 
 # convert the object into a dict
 appendix_hotel_searches_google_business_data_price_data_dict = appendix_hotel_searches_google_business_data_price_data_instance.to_dict()

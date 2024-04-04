@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of LocalServicesElement from a JSON string
 local_services_element_instance = LocalServicesElement.from_json(json)
 # print the JSON string representation of the object
-print(LocalServicesElement.to_json())
+print LocalServicesElement.to_json()
 
 # convert the object into a dict
 local_services_element_dict = local_services_element_instance.to_dict()

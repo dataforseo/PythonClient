@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageContentParsingTaskInfo from a JSON string
 on_page_content_parsing_task_info_instance = OnPageContentParsingTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageContentParsingTaskInfo.to_json())
+print OnPageContentParsingTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_content_parsing_task_info_dict = on_page_content_parsing_task_info_instance.to_dict()

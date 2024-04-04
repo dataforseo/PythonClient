@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of BacklinksAvailableFiltersResponseInfo from a JSON string
 backlinks_available_filters_response_info_instance = BacklinksAvailableFiltersResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksAvailableFiltersResponseInfo.to_json())
+print BacklinksAvailableFiltersResponseInfo.to_json()
 
 # convert the object into a dict
 backlinks_available_filters_response_info_dict = backlinks_available_filters_response_info_instance.to_dict()

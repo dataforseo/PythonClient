@@ -33,7 +33,7 @@ json = "{}"
 # create an instance of OnPageImageLinkElementItem from a JSON string
 on_page_image_link_element_item_instance = OnPageImageLinkElementItem.from_json(json)
 # print the JSON string representation of the object
-print(OnPageImageLinkElementItem.to_json())
+print OnPageImageLinkElementItem.to_json()
 
 # convert the object into a dict
 on_page_image_link_element_item_dict = on_page_image_link_element_item_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of AppendixLimitsRatesData from a JSON string
 appendix_limits_rates_data_instance = AppendixLimitsRatesData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixLimitsRatesData.to_json())
+print AppendixLimitsRatesData.to_json()
 
 # convert the object into a dict
 appendix_limits_rates_data_dict = appendix_limits_rates_data_instance.to_dict()

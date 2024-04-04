@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of DataforseoLabsLocationsAndLanguagesResponseInfo from a JSON string
 dataforseo_labs_locations_and_languages_response_info_instance = DataforseoLabsLocationsAndLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsLocationsAndLanguagesResponseInfo.to_json())
+print DataforseoLabsLocationsAndLanguagesResponseInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_locations_and_languages_response_info_dict = dataforseo_labs_locations_and_languages_response_info_instance.to_dict()

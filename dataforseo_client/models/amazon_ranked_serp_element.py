@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
 from typing import Optional, Set
@@ -36,11 +36,11 @@ class AmazonRankedSerpElement(BaseModel):
     previous_updated_time: Optional[StrictStr] = Field(default=None, description="previous to the most recent update of SERP data in the ISO 8601 format: “YYYY-MM-DDThh:mm:ss.sssssssZ” example: 2020-09-12T00:07:43.0733218Z")
     __properties: ClassVar[List[str]] = ["se_type", "serp_item", "check_url", "serp_item_types", "se_results_count", "last_updated_time", "previous_updated_time"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

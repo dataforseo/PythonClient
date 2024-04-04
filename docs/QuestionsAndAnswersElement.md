@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of QuestionsAndAnswersElement from a JSON string
 questions_and_answers_element_instance = QuestionsAndAnswersElement.from_json(json)
 # print the JSON string representation of the object
-print(QuestionsAndAnswersElement.to_json())
+print QuestionsAndAnswersElement.to_json()
 
 # convert the object into a dict
 questions_and_answers_element_dict = questions_and_answers_element_instance.to_dict()

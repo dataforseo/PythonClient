@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of ContentGenerationParaphraseLiveRequestInfo from a JSON string
 content_generation_paraphrase_live_request_info_instance = ContentGenerationParaphraseLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationParaphraseLiveRequestInfo.to_json())
+print ContentGenerationParaphraseLiveRequestInfo.to_json()
 
 # convert the object into a dict
 content_generation_paraphrase_live_request_info_dict = content_generation_paraphrase_live_request_info_instance.to_dict()

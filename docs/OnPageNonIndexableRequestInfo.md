@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of OnPageNonIndexableRequestInfo from a JSON string
 on_page_non_indexable_request_info_instance = OnPageNonIndexableRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageNonIndexableRequestInfo.to_json())
+print OnPageNonIndexableRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_non_indexable_request_info_dict = on_page_non_indexable_request_info_instance.to_dict()

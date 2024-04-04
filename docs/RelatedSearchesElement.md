@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of RelatedSearchesElement from a JSON string
 related_searches_element_instance = RelatedSearchesElement.from_json(json)
 # print the JSON string representation of the object
-print(RelatedSearchesElement.to_json())
+print RelatedSearchesElement.to_json()
 
 # convert the object into a dict
 related_searches_element_dict = related_searches_element_instance.to_dict()

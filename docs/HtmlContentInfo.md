@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of HtmlContentInfo from a JSON string
 html_content_info_instance = HtmlContentInfo.from_json(json)
 # print the JSON string representation of the object
-print(HtmlContentInfo.to_json())
+print HtmlContentInfo.to_json()
 
 # convert the object into a dict
 html_content_info_dict = html_content_info_instance.to_dict()

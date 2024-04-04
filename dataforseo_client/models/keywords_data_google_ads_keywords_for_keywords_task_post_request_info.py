@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -43,11 +43,11 @@ class KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo(BaseModel):
     target: Optional[StrictStr] = Field(default=None, description="target website optional field specify a website or URL to get a list of keywords relevant to it; Note: if a website url is specified, you will still get keywords relevant for the entire website")
     __properties: ClassVar[List[str]] = ["keywords", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "search_partners", "date_from", "date_to", "include_adult_keywords", "sort_by", "postback_url", "pingback_url", "tag", "target"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

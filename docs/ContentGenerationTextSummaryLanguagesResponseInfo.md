@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of ContentGenerationTextSummaryLanguagesResponseInfo from a JSON string
 content_generation_text_summary_languages_response_info_instance = ContentGenerationTextSummaryLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationTextSummaryLanguagesResponseInfo.to_json())
+print ContentGenerationTextSummaryLanguagesResponseInfo.to_json()
 
 # convert the object into a dict
 content_generation_text_summary_languages_response_info_dict = content_generation_text_summary_languages_response_info_instance.to_dict()

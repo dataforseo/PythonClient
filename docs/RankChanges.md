@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of RankChanges from a JSON string
 rank_changes_instance = RankChanges.from_json(json)
 # print the JSON string representation of the object
-print(RankChanges.to_json())
+print RankChanges.to_json()
 
 # convert the object into a dict
 rank_changes_dict = rank_changes_instance.to_dict()

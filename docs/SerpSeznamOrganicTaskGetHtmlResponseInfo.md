@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpSeznamOrganicTaskGetHtmlResponseInfo from a JSON string
 serp_seznam_organic_task_get_html_response_info_instance = SerpSeznamOrganicTaskGetHtmlResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpSeznamOrganicTaskGetHtmlResponseInfo.to_json())
+print SerpSeznamOrganicTaskGetHtmlResponseInfo.to_json()
 
 # convert the object into a dict
 serp_seznam_organic_task_get_html_response_info_dict = serp_seznam_organic_task_get_html_response_info_instance.to_dict()

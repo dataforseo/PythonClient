@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of ContentGenerationCheckGrammarLiveRequestInfo from a JSON string
 content_generation_check_grammar_live_request_info_instance = ContentGenerationCheckGrammarLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationCheckGrammarLiveRequestInfo.to_json())
+print ContentGenerationCheckGrammarLiveRequestInfo.to_json()
 
 # convert the object into a dict
 content_generation_check_grammar_live_request_info_dict = content_generation_check_grammar_live_request_info_instance.to_dict()

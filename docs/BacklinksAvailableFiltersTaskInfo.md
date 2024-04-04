@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of BacklinksAvailableFiltersTaskInfo from a JSON string
 backlinks_available_filters_task_info_instance = BacklinksAvailableFiltersTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksAvailableFiltersTaskInfo.to_json())
+print BacklinksAvailableFiltersTaskInfo.to_json()
 
 # convert the object into a dict
 backlinks_available_filters_task_info_dict = backlinks_available_filters_task_info_instance.to_dict()

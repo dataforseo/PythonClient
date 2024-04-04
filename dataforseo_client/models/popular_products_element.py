@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_info import RatingInfo
@@ -31,15 +31,16 @@ class PopularProductsElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     description: Optional[StrictStr] = Field(default=None, description="description")
+    seller: Optional[StrictStr] = Field(default=None, description="seller of the product")
     price: Optional[PriceInfo] = None
     rating: Optional[RatingInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "title", "description", "price", "rating"]
+    __properties: ClassVar[List[str]] = ["type", "title", "description", "seller", "price", "rating"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:
@@ -95,6 +96,11 @@ class PopularProductsElement(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
+        # set to None if seller (nullable) is None
+        # and model_fields_set contains the field
+        if self.seller is None and "seller" in self.model_fields_set:
+            _dict['seller'] = None
+
         return _dict
 
     @classmethod
@@ -110,6 +116,7 @@ class PopularProductsElement(BaseModel):
             "type": obj.get("type"),
             "title": obj.get("title"),
             "description": obj.get("description"),
+            "seller": obj.get("seller"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })

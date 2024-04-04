@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of AppDataAppleAppInfoTaskPostRequestInfo from a JSON string
 app_data_apple_app_info_task_post_request_info_instance = AppDataAppleAppInfoTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataAppleAppInfoTaskPostRequestInfo.to_json())
+print AppDataAppleAppInfoTaskPostRequestInfo.to_json()
 
 # convert the object into a dict
 app_data_apple_app_info_task_post_request_info_dict = app_data_apple_app_info_task_post_request_info_instance.to_dict()

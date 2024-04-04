@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of ProductConsiderationsElement from a JSON string
 product_considerations_element_instance = ProductConsiderationsElement.from_json(json)
 # print the JSON string representation of the object
-print(ProductConsiderationsElement.to_json())
+print ProductConsiderationsElement.to_json()
 
 # convert the object into a dict
 product_considerations_element_dict = product_considerations_element_instance.to_dict()

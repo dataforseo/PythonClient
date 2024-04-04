@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of AppendixContentGenerationPriceData from a JSON string
 appendix_content_generation_price_data_instance = AppendixContentGenerationPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixContentGenerationPriceData.to_json())
+print AppendixContentGenerationPriceData.to_json()
 
 # convert the object into a dict
 appendix_content_generation_price_data_dict = appendix_content_generation_price_data_instance.to_dict()

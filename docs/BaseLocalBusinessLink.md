@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of BaseLocalBusinessLink from a JSON string
 base_local_business_link_instance = BaseLocalBusinessLink.from_json(json)
 # print the JSON string representation of the object
-print(BaseLocalBusinessLink.to_json())
+print BaseLocalBusinessLink.to_json()
 
 # convert the object into a dict
 base_local_business_link_dict = base_local_business_link_instance.to_dict()

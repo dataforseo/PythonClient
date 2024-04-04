@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpYoutubeLocationsTaskInfo from a JSON string
 serp_youtube_locations_task_info_instance = SerpYoutubeLocationsTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpYoutubeLocationsTaskInfo.to_json())
+print SerpYoutubeLocationsTaskInfo.to_json()
 
 # convert the object into a dict
 serp_youtube_locations_task_info_dict = serp_youtube_locations_task_info_instance.to_dict()

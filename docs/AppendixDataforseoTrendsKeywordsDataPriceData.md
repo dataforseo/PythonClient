@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of AppendixDataforseoTrendsKeywordsDataPriceData from a JSON string
 appendix_dataforseo_trends_keywords_data_price_data_instance = AppendixDataforseoTrendsKeywordsDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixDataforseoTrendsKeywordsDataPriceData.to_json())
+print AppendixDataforseoTrendsKeywordsDataPriceData.to_json()
 
 # convert the object into a dict
 appendix_dataforseo_trends_keywords_data_price_data_dict = appendix_dataforseo_trends_keywords_data_price_data_instance.to_dict()

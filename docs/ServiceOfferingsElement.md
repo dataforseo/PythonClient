@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of ServiceOfferingsElement from a JSON string
 service_offerings_element_instance = ServiceOfferingsElement.from_json(json)
 # print the JSON string representation of the object
-print(ServiceOfferingsElement.to_json())
+print ServiceOfferingsElement.to_json()
 
 # convert the object into a dict
 service_offerings_element_dict = service_offerings_element_instance.to_dict()

@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpYahooOrganicLiveRegularTaskInfo from a JSON string
 serp_yahoo_organic_live_regular_task_info_instance = SerpYahooOrganicLiveRegularTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpYahooOrganicLiveRegularTaskInfo.to_json())
+print SerpYahooOrganicLiveRegularTaskInfo.to_json()
 
 # convert the object into a dict
 serp_yahoo_organic_live_regular_task_info_dict = serp_yahoo_organic_live_regular_task_info_instance.to_dict()

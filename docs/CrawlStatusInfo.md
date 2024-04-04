@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of CrawlStatusInfo from a JSON string
 crawl_status_info_instance = CrawlStatusInfo.from_json(json)
 # print the JSON string representation of the object
-print(CrawlStatusInfo.to_json())
+print CrawlStatusInfo.to_json()
 
 # convert the object into a dict
 crawl_status_info_dict = crawl_status_info_instance.to_dict()

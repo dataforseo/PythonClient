@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo from a JSON string
 business_data_google_hotel_info_live_advanced_request_info_instance = BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.to_json())
+print BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.to_json()
 
 # convert the object into a dict
 business_data_google_hotel_info_live_advanced_request_info_dict = business_data_google_hotel_info_live_advanced_request_info_instance.to_dict()

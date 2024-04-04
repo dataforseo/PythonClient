@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of BacklinksIdListRequestInfo from a JSON string
 backlinks_id_list_request_info_instance = BacklinksIdListRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksIdListRequestInfo.to_json())
+print BacklinksIdListRequestInfo.to_json()
 
 # convert the object into a dict
 backlinks_id_list_request_info_dict = backlinks_id_list_request_info_instance.to_dict()

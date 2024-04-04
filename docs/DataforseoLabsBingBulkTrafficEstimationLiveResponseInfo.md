@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of DataforseoLabsBingBulkTrafficEstimationLiveResponseInfo from a JSON string
 dataforseo_labs_bing_bulk_traffic_estimation_live_response_info_instance = DataforseoLabsBingBulkTrafficEstimationLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsBingBulkTrafficEstimationLiveResponseInfo.to_json())
+print DataforseoLabsBingBulkTrafficEstimationLiveResponseInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_bing_bulk_traffic_estimation_live_response_info_dict = dataforseo_labs_bing_bulk_traffic_estimation_live_response_info_instance.to_dict()

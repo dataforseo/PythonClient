@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of MicrodataFieldsInfo from a JSON string
 microdata_fields_info_instance = MicrodataFieldsInfo.from_json(json)
 # print the JSON string representation of the object
-print(MicrodataFieldsInfo.to_json())
+print MicrodataFieldsInfo.to_json()
 
 # convert the object into a dict
 microdata_fields_info_dict = microdata_fields_info_instance.to_dict()

@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of HistoricalMetricsInfo from a JSON string
 historical_metrics_info_instance = HistoricalMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print(HistoricalMetricsInfo.to_json())
+print HistoricalMetricsInfo.to_json()
 
 # convert the object into a dict
 historical_metrics_info_dict = historical_metrics_info_instance.to_dict()

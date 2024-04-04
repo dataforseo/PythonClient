@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of OnPageAnchorLinkElementItem from a JSON string
 on_page_anchor_link_element_item_instance = OnPageAnchorLinkElementItem.from_json(json)
 # print the JSON string representation of the object
-print(OnPageAnchorLinkElementItem.to_json())
+print OnPageAnchorLinkElementItem.to_json()
 
 # convert the object into a dict
 on_page_anchor_link_element_item_dict = on_page_anchor_link_element_item_instance.to_dict()

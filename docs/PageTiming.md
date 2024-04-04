@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of PageTiming from a JSON string
 page_timing_instance = PageTiming.from_json(json)
 # print the JSON string representation of the object
-print(PageTiming.to_json())
+print PageTiming.to_json()
 
 # convert the object into a dict
 page_timing_dict = page_timing_instance.to_dict()

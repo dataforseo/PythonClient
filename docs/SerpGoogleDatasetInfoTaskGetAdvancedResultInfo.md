@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of SerpGoogleDatasetInfoTaskGetAdvancedResultInfo from a JSON string
 serp_google_dataset_info_task_get_advanced_result_info_instance = SerpGoogleDatasetInfoTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleDatasetInfoTaskGetAdvancedResultInfo.to_json())
+print SerpGoogleDatasetInfoTaskGetAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_dataset_info_task_get_advanced_result_info_dict = serp_google_dataset_info_task_get_advanced_result_info_instance.to_dict()

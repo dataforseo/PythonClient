@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,11 +40,11 @@ class OnPagePageScreenshotRequestInfo(BaseModel):
     ip_pool_for_scan: Optional[StrictStr] = Field(default=None, description="proxy pool optional field you can choose a location of the proxy pool that will be used to obtain the requested data; the parameter can be used if page content is inaccessible in one of the locations, resulting in occasional site_unreachable errors possible values: us, de")
     __properties: ClassVar[List[str]] = ["url", "accept_language", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "full_page_screenshot", "disable_cookie_popup", "enable_javascript", "custom_js", "ip_pool_for_scan"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

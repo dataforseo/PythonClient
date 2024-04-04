@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of BusinessDataYelpReviewsTasksReadyResponseInfo from a JSON string
 business_data_yelp_reviews_tasks_ready_response_info_instance = BusinessDataYelpReviewsTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataYelpReviewsTasksReadyResponseInfo.to_json())
+print BusinessDataYelpReviewsTasksReadyResponseInfo.to_json()
 
 # convert the object into a dict
 business_data_yelp_reviews_tasks_ready_response_info_dict = business_data_yelp_reviews_tasks_ready_response_info_instance.to_dict()

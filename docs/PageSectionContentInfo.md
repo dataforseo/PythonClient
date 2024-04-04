@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of PageSectionContentInfo from a JSON string
 page_section_content_info_instance = PageSectionContentInfo.from_json(json)
 # print the JSON string representation of the object
-print(PageSectionContentInfo.to_json())
+print PageSectionContentInfo.to_json()
 
 # convert the object into a dict
 page_section_content_info_dict = page_section_content_info_instance.to_dict()

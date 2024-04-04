@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of OnPagePageScreenshotRequestInfo from a JSON string
 on_page_page_screenshot_request_info_instance = OnPagePageScreenshotRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPagePageScreenshotRequestInfo.to_json())
+print OnPagePageScreenshotRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_page_screenshot_request_info_dict = on_page_page_screenshot_request_info_instance.to_dict()

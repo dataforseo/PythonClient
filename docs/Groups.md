@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of Groups from a JSON string
 groups_instance = Groups.from_json(json)
 # print the JSON string representation of the object
-print(Groups.to_json())
+print Groups.to_json()
 
 # convert the object into a dict
 groups_dict = groups_instance.to_dict()

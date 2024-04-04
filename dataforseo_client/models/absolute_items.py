@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,11 +31,11 @@ class AbsoluteItems(BaseModel):
     values: Optional[List[Optional[StrictInt]]] = Field(default=None, description="keyword popularity rates within a given location represents location-specific keyword popularity rate over the specified time range; using these values, you can understand which of the specified keywords is more popular in the related location; the first value in the array is provided for the first term from the keywords array, the second value is provided for the second keyword, and so on; calculation: we determine the highest popularity value across all specified keywords within a given location, and then express the popularity values of each keyword as a percentage of the highest value (100); a value of 100 is the peak popularity for the term a value of 50 means that the term is half as popular a value of 0 means there was not enough data for this term")
     __properties: ClassVar[List[str]] = ["geo_id", "geo_name", "values"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

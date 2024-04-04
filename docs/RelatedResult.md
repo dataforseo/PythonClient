@@ -37,7 +37,7 @@ json = "{}"
 # create an instance of RelatedResult from a JSON string
 related_result_instance = RelatedResult.from_json(json)
 # print the JSON string representation of the object
-print(RelatedResult.to_json())
+print RelatedResult.to_json()
 
 # convert the object into a dict
 related_result_dict = related_result_instance.to_dict()

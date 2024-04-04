@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleOrganicTaskGetRegularResponseInfo from a JSON string
 serp_google_organic_task_get_regular_response_info_instance = SerpGoogleOrganicTaskGetRegularResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleOrganicTaskGetRegularResponseInfo.to_json())
+print SerpGoogleOrganicTaskGetRegularResponseInfo.to_json()
 
 # convert the object into a dict
 serp_google_organic_task_get_regular_response_info_dict = serp_google_organic_task_get_regular_response_info_instance.to_dict()

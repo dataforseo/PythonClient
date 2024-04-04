@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of OnPageRedirectLinkElementItem from a JSON string
 on_page_redirect_link_element_item_instance = OnPageRedirectLinkElementItem.from_json(json)
 # print the JSON string representation of the object
-print(OnPageRedirectLinkElementItem.to_json())
+print OnPageRedirectLinkElementItem.to_json()
 
 # convert the object into a dict
 on_page_redirect_link_element_item_dict = on_page_redirect_link_element_item_instance.to_dict()

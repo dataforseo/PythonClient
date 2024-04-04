@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_local_business_link import BaseLocalBusinessLink
@@ -68,11 +68,11 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-01-26 09:03:15 +00:00")
     __properties: ClassVar[List[str]] = ["type", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "contact_info", "check_url", "last_updated_time"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

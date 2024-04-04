@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of AppendixBusinessListingsBusinessDataLimitsRatesDataInfo from a JSON string
 appendix_business_listings_business_data_limits_rates_data_info_instance = AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.to_json())
+print AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.to_json()
 
 # convert the object into a dict
 appendix_business_listings_business_data_limits_rates_data_info_dict = appendix_business_listings_business_data_limits_rates_data_info_instance.to_dict()

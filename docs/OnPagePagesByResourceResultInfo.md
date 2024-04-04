@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of OnPagePagesByResourceResultInfo from a JSON string
 on_page_pages_by_resource_result_info_instance = OnPagePagesByResourceResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPagePagesByResourceResultInfo.to_json())
+print OnPagePagesByResourceResultInfo.to_json()
 
 # convert the object into a dict
 on_page_pages_by_resource_result_info_dict = on_page_pages_by_resource_result_info_instance.to_dict()

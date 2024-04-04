@@ -47,7 +47,7 @@ json = "{}"
 # create an instance of OrganicSerpElementItem from a JSON string
 organic_serp_element_item_instance = OrganicSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(OrganicSerpElementItem.to_json())
+print OrganicSerpElementItem.to_json()
 
 # convert the object into a dict
 organic_serp_element_item_dict = organic_serp_element_item_instance.to_dict()

@@ -32,7 +32,7 @@ json = "{}"
 # create an instance of SerpGoogleEventsTaskPostRequestInfo from a JSON string
 serp_google_events_task_post_request_info_instance = SerpGoogleEventsTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleEventsTaskPostRequestInfo.to_json())
+print SerpGoogleEventsTaskPostRequestInfo.to_json()
 
 # convert the object into a dict
 serp_google_events_task_post_request_info_dict = serp_google_events_task_post_request_info_instance.to_dict()

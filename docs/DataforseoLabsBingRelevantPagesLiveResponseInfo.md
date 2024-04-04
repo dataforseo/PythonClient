@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of DataforseoLabsBingRelevantPagesLiveResponseInfo from a JSON string
 dataforseo_labs_bing_relevant_pages_live_response_info_instance = DataforseoLabsBingRelevantPagesLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsBingRelevantPagesLiveResponseInfo.to_json())
+print DataforseoLabsBingRelevantPagesLiveResponseInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_bing_relevant_pages_live_response_info_dict = dataforseo_labs_bing_relevant_pages_live_response_info_instance.to_dict()

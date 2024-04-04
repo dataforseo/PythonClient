@@ -30,7 +30,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo from a JSON string
 dataforseo_labs_google_competitors_domain_live_request_info_instance = DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo.to_json())
+print DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_competitors_domain_live_request_info_dict = dataforseo_labs_google_competitors_domain_live_request_info_instance.to_dict()

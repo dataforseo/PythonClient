@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageDuplicateContentResponseInfo from a JSON string
 on_page_duplicate_content_response_info_instance = OnPageDuplicateContentResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageDuplicateContentResponseInfo.to_json())
+print OnPageDuplicateContentResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_duplicate_content_response_info_dict = on_page_duplicate_content_response_info_instance.to_dict()

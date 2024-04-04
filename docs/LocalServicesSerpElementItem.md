@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of LocalServicesSerpElementItem from a JSON string
 local_services_serp_element_item_instance = LocalServicesSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(LocalServicesSerpElementItem.to_json())
+print LocalServicesSerpElementItem.to_json()
 
 # convert the object into a dict
 local_services_serp_element_item_dict = local_services_serp_element_item_instance.to_dict()

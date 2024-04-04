@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of BusinessDataBusinessListingsCategoriesAggregationLiveTaskInfo from a JSON string
 business_data_business_listings_categories_aggregation_live_task_info_instance = BusinessDataBusinessListingsCategoriesAggregationLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataBusinessListingsCategoriesAggregationLiveTaskInfo.to_json())
+print BusinessDataBusinessListingsCategoriesAggregationLiveTaskInfo.to_json()
 
 # convert the object into a dict
 business_data_business_listings_categories_aggregation_live_task_info_dict = business_data_business_listings_categories_aggregation_live_task_info_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of GraphElement from a JSON string
 graph_element_instance = GraphElement.from_json(json)
 # print the JSON string representation of the object
-print(GraphElement.to_json())
+print GraphElement.to_json()
 
 # convert the object into a dict
 graph_element_dict = graph_element_instance.to_dict()

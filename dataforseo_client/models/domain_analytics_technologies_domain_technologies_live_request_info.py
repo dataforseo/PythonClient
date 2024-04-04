@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +29,11 @@ class DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo(BaseModel):
     target: Optional[StrictStr] = Field(default=None, description="target domain required field domain name of the website to analyze Note: results will be returned for the specified domain only")
     __properties: ClassVar[List[str]] = ["target"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

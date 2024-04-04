@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpGoogleLocationsCountryTaskInfo from a JSON string
 serp_google_locations_country_task_info_instance = SerpGoogleLocationsCountryTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleLocationsCountryTaskInfo.to_json())
+print SerpGoogleLocationsCountryTaskInfo.to_json()
 
 # convert the object into a dict
 serp_google_locations_country_task_info_dict = serp_google_locations_country_task_info_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,11 +35,11 @@ class OnPageAvailableFiltersResultInfo(BaseModel):
     keyword_density: Optional[Dict[str, Optional[StrictStr]]] = None
     __properties: ClassVar[List[str]] = ["resources", "pages", "non_indexable", "links", "pages_by_resource", "redirect_chains", "keyword_density"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

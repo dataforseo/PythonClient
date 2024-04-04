@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of DataforseoLabsErrorsRequestInfo from a JSON string
 dataforseo_labs_errors_request_info_instance = DataforseoLabsErrorsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsErrorsRequestInfo.to_json())
+print DataforseoLabsErrorsRequestInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_errors_request_info_dict = dataforseo_labs_errors_request_info_instance.to_dict()

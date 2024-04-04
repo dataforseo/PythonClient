@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of OnPageDuplicateContentResultInfo from a JSON string
 on_page_duplicate_content_result_info_instance = OnPageDuplicateContentResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageDuplicateContentResultInfo.to_json())
+print OnPageDuplicateContentResultInfo.to_json()
 
 # convert the object into a dict
 on_page_duplicate_content_result_info_dict = on_page_duplicate_content_result_info_instance.to_dict()

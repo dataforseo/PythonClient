@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpBingLocalPackLiveHtmlResponseInfo from a JSON string
 serp_bing_local_pack_live_html_response_info_instance = SerpBingLocalPackLiveHtmlResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLocalPackLiveHtmlResponseInfo.to_json())
+print SerpBingLocalPackLiveHtmlResponseInfo.to_json()
 
 # convert the object into a dict
 serp_bing_local_pack_live_html_response_info_dict = serp_bing_local_pack_live_html_response_info_instance.to_dict()

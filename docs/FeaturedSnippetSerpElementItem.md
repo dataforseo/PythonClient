@@ -30,7 +30,7 @@ json = "{}"
 # create an instance of FeaturedSnippetSerpElementItem from a JSON string
 featured_snippet_serp_element_item_instance = FeaturedSnippetSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(FeaturedSnippetSerpElementItem.to_json())
+print FeaturedSnippetSerpElementItem.to_json()
 
 # convert the object into a dict
 featured_snippet_serp_element_item_dict = featured_snippet_serp_element_item_instance.to_dict()

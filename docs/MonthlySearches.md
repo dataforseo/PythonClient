@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MonthlySearches from a JSON string
 monthly_searches_instance = MonthlySearches.from_json(json)
 # print the JSON string representation of the object
-print(MonthlySearches.to_json())
+print MonthlySearches.to_json()
 
 # convert the object into a dict
 monthly_searches_dict = monthly_searches_instance.to_dict()

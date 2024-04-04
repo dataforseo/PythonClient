@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.analysis_content_info import AnalysisContentInfo
 from dataforseo_client.models.social_metrics_info import SocialMetricsInfo
@@ -46,11 +46,11 @@ class ContentAnalysisSearchLiveItem(BaseModel):
     content_info: Optional[AnalysisContentInfo] = None
     __properties: ClassVar[List[str]] = ["type", "url", "domain", "main_domain", "url_rank", "spam_score", "domain_rank", "fetch_time", "country", "language", "score", "page_category", "page_types", "ratings", "social_metrics", "content_info"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -44,7 +44,7 @@ json = "{}"
 # create an instance of BacklinksHistoryLiveItem from a JSON string
 backlinks_history_live_item_instance = BacklinksHistoryLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksHistoryLiveItem.to_json())
+print BacklinksHistoryLiveItem.to_json()
 
 # convert the object into a dict
 backlinks_history_live_item_dict = backlinks_history_live_item_instance.to_dict()

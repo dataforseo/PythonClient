@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.rating_info import RatingInfo
@@ -42,11 +42,11 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     __properties: ClassVar[List[str]] = ["url_path", "type", "se_domain", "check_url", "datetime", "title", "location", "reviews_count", "rating", "items_count", "items", "language_code"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

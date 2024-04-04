@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpYoutubeLanguagesResponseInfo from a JSON string
 serp_youtube_languages_response_info_instance = SerpYoutubeLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpYoutubeLanguagesResponseInfo.to_json())
+print SerpYoutubeLanguagesResponseInfo.to_json()
 
 # convert the object into a dict
 serp_youtube_languages_response_info_dict = serp_youtube_languages_response_info_instance.to_dict()

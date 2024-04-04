@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpGoogleDatasetSearchTasksReadyTaskInfo from a JSON string
 serp_google_dataset_search_tasks_ready_task_info_instance = SerpGoogleDatasetSearchTasksReadyTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleDatasetSearchTasksReadyTaskInfo.to_json())
+print SerpGoogleDatasetSearchTasksReadyTaskInfo.to_json()
 
 # convert the object into a dict
 serp_google_dataset_search_tasks_ready_task_info_dict = serp_google_dataset_search_tasks_ready_task_info_instance.to_dict()

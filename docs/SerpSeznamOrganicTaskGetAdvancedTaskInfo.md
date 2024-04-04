@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpSeznamOrganicTaskGetAdvancedTaskInfo from a JSON string
 serp_seznam_organic_task_get_advanced_task_info_instance = SerpSeznamOrganicTaskGetAdvancedTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpSeznamOrganicTaskGetAdvancedTaskInfo.to_json())
+print SerpSeznamOrganicTaskGetAdvancedTaskInfo.to_json()
 
 # convert the object into a dict
 serp_seznam_organic_task_get_advanced_task_info_dict = serp_seznam_organic_task_get_advanced_task_info_instance.to_dict()

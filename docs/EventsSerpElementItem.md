@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of EventsSerpElementItem from a JSON string
 events_serp_element_item_instance = EventsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(EventsSerpElementItem.to_json())
+print EventsSerpElementItem.to_json()
 
 # convert the object into a dict
 events_serp_element_item_dict = events_serp_element_item_instance.to_dict()

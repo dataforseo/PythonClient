@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of BacklinksDomainPagesLiveRequestInfo from a JSON string
 backlinks_domain_pages_live_request_info_instance = BacklinksDomainPagesLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksDomainPagesLiveRequestInfo.to_json())
+print BacklinksDomainPagesLiveRequestInfo.to_json()
 
 # convert the object into a dict
 backlinks_domain_pages_live_request_info_dict = backlinks_domain_pages_live_request_info_instance.to_dict()

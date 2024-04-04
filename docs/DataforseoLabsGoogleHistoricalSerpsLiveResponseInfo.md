@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleHistoricalSerpsLiveResponseInfo from a JSON string
 dataforseo_labs_google_historical_serps_live_response_info_instance = DataforseoLabsGoogleHistoricalSerpsLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleHistoricalSerpsLiveResponseInfo.to_json())
+print DataforseoLabsGoogleHistoricalSerpsLiveResponseInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_historical_serps_live_response_info_dict = dataforseo_labs_google_historical_serps_live_response_info_instance.to_dict()

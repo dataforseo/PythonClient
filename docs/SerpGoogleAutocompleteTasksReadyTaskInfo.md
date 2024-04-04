@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpGoogleAutocompleteTasksReadyTaskInfo from a JSON string
 serp_google_autocomplete_tasks_ready_task_info_instance = SerpGoogleAutocompleteTasksReadyTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleAutocompleteTasksReadyTaskInfo.to_json())
+print SerpGoogleAutocompleteTasksReadyTaskInfo.to_json()
 
 # convert the object into a dict
 serp_google_autocomplete_tasks_ready_task_info_dict = serp_google_autocomplete_tasks_ready_task_info_instance.to_dict()

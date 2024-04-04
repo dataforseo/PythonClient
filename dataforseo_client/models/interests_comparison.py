@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.absolute_items import AbsoluteItems
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class InterestsComparison(BaseModel):
     absolute_items: Optional[List[AbsoluteItems]] = Field(default=None, description="keyword popularity rates across all locations values in this array represent percentages relative to the maximum value across all locations")
     __properties: ClassVar[List[str]] = ["items", "absolute_items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpGoogleAutocompleteTaskPostRequestInfo from a JSON string
 serp_google_autocomplete_task_post_request_info_instance = SerpGoogleAutocompleteTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleAutocompleteTaskPostRequestInfo.to_json())
+print SerpGoogleAutocompleteTaskPostRequestInfo.to_json()
 
 # convert the object into a dict
 serp_google_autocomplete_task_post_request_info_dict = serp_google_autocomplete_task_post_request_info_instance.to_dict()

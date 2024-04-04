@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpGoogleLocalFinderLiveAdvancedResultInfo from a JSON string
 serp_google_local_finder_live_advanced_result_info_instance = SerpGoogleLocalFinderLiveAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleLocalFinderLiveAdvancedResultInfo.to_json())
+print SerpGoogleLocalFinderLiveAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_local_finder_live_advanced_result_info_dict = serp_google_local_finder_live_advanced_result_info_instance.to_dict()

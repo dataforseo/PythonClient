@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of PodcastsElement from a JSON string
 podcasts_element_instance = PodcastsElement.from_json(json)
 # print the JSON string representation of the object
-print(PodcastsElement.to_json())
+print PodcastsElement.to_json()
 
 # convert the object into a dict
 podcasts_element_dict = podcasts_element_instance.to_dict()

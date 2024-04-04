@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleKeywordsForCategoriesLiveTaskInfo from a JSON string
 dataforseo_labs_google_keywords_for_categories_live_task_info_instance = DataforseoLabsGoogleKeywordsForCategoriesLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleKeywordsForCategoriesLiveTaskInfo.to_json())
+print DataforseoLabsGoogleKeywordsForCategoriesLiveTaskInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_keywords_for_categories_live_task_info_dict = dataforseo_labs_google_keywords_for_categories_live_task_info_instance.to_dict()

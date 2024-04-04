@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo from a JSON string
 appendix_google_ads_keywords_data_limits_rates_data_info_instance = AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.to_json())
+print AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.to_json()
 
 # convert the object into a dict
 appendix_google_ads_keywords_data_limits_rates_data_info_dict = appendix_google_ads_keywords_data_limits_rates_data_info_instance.to_dict()

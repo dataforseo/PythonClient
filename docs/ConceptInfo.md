@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ConceptInfo from a JSON string
 concept_info_instance = ConceptInfo.from_json(json)
 # print the JSON string representation of the object
-print(ConceptInfo.to_json())
+print ConceptInfo.to_json()
 
 # convert the object into a dict
 concept_info_dict = concept_info_instance.to_dict()

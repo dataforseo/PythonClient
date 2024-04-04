@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.content_analysis_rating_info import ContentAnalysisRatingInfo
 from dataforseo_client.models.social_metrics_info import SocialMetricsInfo
@@ -49,11 +49,11 @@ class AnalysisContentInfo(BaseModel):
     group_date: Optional[StrictStr] = Field(default=None, description="citation group date and time indicates content publication date or date and time when our crawler visited the page for the first time; this field can be used to group citations by date and display citation trends; date and time are provided in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
     __properties: ClassVar[List[str]] = ["content_type", "title", "main_title", "previous_title", "level", "author", "snippet", "snippet_length", "social_metrics", "highlighted_text", "language", "sentiment_connotations", "connotation_types", "text_category", "date_published", "content_quality_score", "semantic_location", "rating", "group_date"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

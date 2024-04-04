@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.app_user_profile_info import AppUserProfileInfo
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
@@ -44,11 +44,11 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
     responses: Optional[List[ResponseDataInfo]] = Field(default=None, description="response from the developer")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "version", "rating", "timestamp", "id", "helpful_count", "title", "review_text", "user_profile", "responses"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

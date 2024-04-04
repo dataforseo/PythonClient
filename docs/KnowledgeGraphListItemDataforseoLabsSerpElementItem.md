@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of KnowledgeGraphListItemDataforseoLabsSerpElementItem from a JSON string
 knowledge_graph_list_item_dataforseo_labs_serp_element_item_instance = KnowledgeGraphListItemDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(KnowledgeGraphListItemDataforseoLabsSerpElementItem.to_json())
+print KnowledgeGraphListItemDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 knowledge_graph_list_item_dataforseo_labs_serp_element_item_dict = knowledge_graph_list_item_dataforseo_labs_serp_element_item_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageInstantPagesResponseInfo from a JSON string
 on_page_instant_pages_response_info_instance = OnPageInstantPagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageInstantPagesResponseInfo.to_json())
+print OnPageInstantPagesResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_instant_pages_response_info_dict = on_page_instant_pages_response_info_instance.to_dict()

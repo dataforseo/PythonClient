@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of HotelPriceInfo from a JSON string
 hotel_price_info_instance = HotelPriceInfo.from_json(json)
 # print the JSON string representation of the object
-print(HotelPriceInfo.to_json())
+print HotelPriceInfo.to_json()
 
 # convert the object into a dict
 hotel_price_info_dict = hotel_price_info_instance.to_dict()

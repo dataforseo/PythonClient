@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of KeywordIntentInfo from a JSON string
 keyword_intent_info_instance = KeywordIntentInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordIntentInfo.to_json())
+print KeywordIntentInfo.to_json()
 
 # convert the object into a dict
 keyword_intent_info_dict = keyword_intent_info_instance.to_dict()

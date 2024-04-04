@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,11 +39,11 @@ class ContentGenerationCheckGrammarLiveItem(BaseModel):
     rule_category_name: Optional[StrictStr] = Field(default=None, description="name of the rule category")
     __properties: ClassVar[List[str]] = ["message", "description", "suggestions", "offset", "length", "type", "rule_id", "rule_description", "rule_issue_type", "rule_category_id", "rule_category_name"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

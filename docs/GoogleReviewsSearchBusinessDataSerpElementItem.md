@@ -38,7 +38,7 @@ json = "{}"
 # create an instance of GoogleReviewsSearchBusinessDataSerpElementItem from a JSON string
 google_reviews_search_business_data_serp_element_item_instance = GoogleReviewsSearchBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GoogleReviewsSearchBusinessDataSerpElementItem.to_json())
+print GoogleReviewsSearchBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 google_reviews_search_business_data_serp_element_item_dict = google_reviews_search_business_data_serp_element_item_instance.to_dict()

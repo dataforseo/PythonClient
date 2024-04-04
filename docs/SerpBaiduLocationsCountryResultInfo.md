@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of SerpBaiduLocationsCountryResultInfo from a JSON string
 serp_baidu_locations_country_result_info_instance = SerpBaiduLocationsCountryResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBaiduLocationsCountryResultInfo.to_json())
+print SerpBaiduLocationsCountryResultInfo.to_json()
 
 # convert the object into a dict
 serp_baidu_locations_country_result_info_dict = serp_baidu_locations_country_result_info_instance.to_dict()

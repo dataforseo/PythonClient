@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of BusinessDataIdListResultInfo from a JSON string
 business_data_id_list_result_info_instance = BusinessDataIdListResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataIdListResultInfo.to_json())
+print BusinessDataIdListResultInfo.to_json()
 
 # convert the object into a dict
 business_data_id_list_result_info_dict = business_data_id_list_result_info_instance.to_dict()

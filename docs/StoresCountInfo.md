@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of StoresCountInfo from a JSON string
 stores_count_info_instance = StoresCountInfo.from_json(json)
 # print the JSON string representation of the object
-print(StoresCountInfo.to_json())
+print StoresCountInfo.to_json()
 
 # convert the object into a dict
 stores_count_info_dict = stores_count_info_instance.to_dict()

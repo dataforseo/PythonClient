@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of AvailibleVersions from a JSON string
 availible_versions_instance = AvailibleVersions.from_json(json)
 # print the JSON string representation of the object
-print(AvailibleVersions.to_json())
+print AvailibleVersions.to_json()
 
 # convert the object into a dict
 availible_versions_dict = availible_versions_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of DemographyComparison from a JSON string
 demography_comparison_instance = DemographyComparison.from_json(json)
 # print the JSON string representation of the object
-print(DemographyComparison.to_json())
+print DemographyComparison.to_json()
 
 # convert the object into a dict
 demography_comparison_dict = demography_comparison_instance.to_dict()

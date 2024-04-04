@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
 from dataforseo_client.models.on_page_keyword_density_item import OnPageKeywordDensityItem
@@ -35,11 +35,11 @@ class OnPageKeywordDensityResultInfo(BaseModel):
     items: Optional[List[OnPageKeywordDensityItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "total_items_count", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.reddit_reviews import RedditReviews
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class BusinessDataSocialMediaRedditLiveResultInfo(BaseModel):
     reddit_reviews: Optional[List[RedditReviews]] = Field(default=None, description="reddit reviews for the page_url")
     __properties: ClassVar[List[str]] = ["type", "page_url", "reddit_reviews"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

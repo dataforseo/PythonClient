@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
@@ -61,11 +61,11 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
     is_directory_item: Optional[StrictBool] = Field(default=None, description="indicates whether this local establishment is a directory")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "contact_url", "rating", "hotel_rating", "price_level", "rating_distribution", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

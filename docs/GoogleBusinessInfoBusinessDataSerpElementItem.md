@@ -52,7 +52,7 @@ json = "{}"
 # create an instance of GoogleBusinessInfoBusinessDataSerpElementItem from a JSON string
 google_business_info_business_data_serp_element_item_instance = GoogleBusinessInfoBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GoogleBusinessInfoBusinessDataSerpElementItem.to_json())
+print GoogleBusinessInfoBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 google_business_info_business_data_serp_element_item_dict = google_business_info_business_data_serp_element_item_instance.to_dict()

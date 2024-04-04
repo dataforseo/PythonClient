@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of ImagesElement from a JSON string
 images_element_instance = ImagesElement.from_json(json)
 # print the JSON string representation of the object
-print(ImagesElement.to_json())
+print ImagesElement.to_json()
 
 # convert the object into a dict
 images_element_dict = images_element_instance.to_dict()

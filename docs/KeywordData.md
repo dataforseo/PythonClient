@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of KeywordData from a JSON string
 keyword_data_instance = KeywordData.from_json(json)
 # print the JSON string representation of the object
-print(KeywordData.to_json())
+print KeywordData.to_json()
 
 # convert the object into a dict
 keyword_data_dict = keyword_data_instance.to_dict()

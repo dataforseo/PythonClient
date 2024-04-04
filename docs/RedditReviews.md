@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of RedditReviews from a JSON string
 reddit_reviews_instance = RedditReviews.from_json(json)
 # print the JSON string representation of the object
-print(RedditReviews.to_json())
+print RedditReviews.to_json()
 
 # convert the object into a dict
 reddit_reviews_dict = reddit_reviews_instance.to_dict()

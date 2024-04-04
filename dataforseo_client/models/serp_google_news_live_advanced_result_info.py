@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.spell_info import SpellInfo
@@ -39,14 +39,14 @@ class SerpGoogleNewsLiveAdvancedResultInfo(BaseModel):
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item types: top_stories, news_search")
     se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

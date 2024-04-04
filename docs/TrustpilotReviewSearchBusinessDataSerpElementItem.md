@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of TrustpilotReviewSearchBusinessDataSerpElementItem from a JSON string
 trustpilot_review_search_business_data_serp_element_item_instance = TrustpilotReviewSearchBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(TrustpilotReviewSearchBusinessDataSerpElementItem.to_json())
+print TrustpilotReviewSearchBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 trustpilot_review_search_business_data_serp_element_item_dict = trustpilot_review_search_business_data_serp_element_item_instance.to_dict()

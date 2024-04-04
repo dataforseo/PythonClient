@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of KeywordsDataIdListTaskInfo from a JSON string
 keywords_data_id_list_task_info_instance = KeywordsDataIdListTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataIdListTaskInfo.to_json())
+print KeywordsDataIdListTaskInfo.to_json()
 
 # convert the object into a dict
 keywords_data_id_list_task_info_dict = keywords_data_id_list_task_info_instance.to_dict()

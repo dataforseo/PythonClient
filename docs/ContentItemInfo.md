@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ContentItemInfo from a JSON string
 content_item_info_instance = ContentItemInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentItemInfo.to_json())
+print ContentItemInfo.to_json()
 
 # convert the object into a dict
 content_item_info_dict = content_item_info_instance.to_dict()

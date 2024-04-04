@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of AvailableLocations from a JSON string
 available_locations_instance = AvailableLocations.from_json(json)
 # print the JSON string representation of the object
-print(AvailableLocations.to_json())
+print AvailableLocations.to_json()
 
 # convert the object into a dict
 available_locations_dict = available_locations_instance.to_dict()

@@ -32,7 +32,7 @@ json = "{}"
 # create an instance of SerpYoutubeVideoSubtitlesLiveAdvancedResultInfo from a JSON string
 serp_youtube_video_subtitles_live_advanced_result_info_instance = SerpYoutubeVideoSubtitlesLiveAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpYoutubeVideoSubtitlesLiveAdvancedResultInfo.to_json())
+print SerpYoutubeVideoSubtitlesLiveAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 serp_youtube_video_subtitles_live_advanced_result_info_dict = serp_youtube_video_subtitles_live_advanced_result_info_instance.to_dict()

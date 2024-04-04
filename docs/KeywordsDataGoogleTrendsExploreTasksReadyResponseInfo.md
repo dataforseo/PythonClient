@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo from a JSON string
 keywords_data_google_trends_explore_tasks_ready_response_info_instance = KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo.to_json())
+print KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo.to_json()
 
 # convert the object into a dict
 keywords_data_google_trends_explore_tasks_ready_response_info_dict = keywords_data_google_trends_explore_tasks_ready_response_info_instance.to_dict()

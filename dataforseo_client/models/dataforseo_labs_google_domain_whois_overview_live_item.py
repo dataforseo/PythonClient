@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_info import BacklinksInfo
 from dataforseo_client.models.metrics_info import MetricsInfo
@@ -43,11 +43,11 @@ class DataforseoLabsGoogleDomainWhoisOverviewLiveItem(BaseModel):
     backlinks_info: Optional[BacklinksInfo] = None
     __properties: ClassVar[List[str]] = ["se_type", "domain", "created_datetime", "changed_datetime", "expiration_datetime", "updated_datetime", "first_seen", "epp_status_codes", "tld", "registered", "registrar", "metrics", "backlinks_info"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

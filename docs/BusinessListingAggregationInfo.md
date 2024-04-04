@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of BusinessListingAggregationInfo from a JSON string
 business_listing_aggregation_info_instance = BusinessListingAggregationInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessListingAggregationInfo.to_json())
+print BusinessListingAggregationInfo.to_json()
 
 # convert the object into a dict
 business_listing_aggregation_info_dict = business_listing_aggregation_info_instance.to_dict()

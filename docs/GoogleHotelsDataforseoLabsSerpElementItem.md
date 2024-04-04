@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of GoogleHotelsDataforseoLabsSerpElementItem from a JSON string
 google_hotels_dataforseo_labs_serp_element_item_instance = GoogleHotelsDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GoogleHotelsDataforseoLabsSerpElementItem.to_json())
+print GoogleHotelsDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 google_hotels_dataforseo_labs_serp_element_item_dict = google_hotels_dataforseo_labs_serp_element_item_instance.to_dict()

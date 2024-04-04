@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AppendixGoogleBusinessDataPriceData from a JSON string
 appendix_google_business_data_price_data_instance = AppendixGoogleBusinessDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixGoogleBusinessDataPriceData.to_json())
+print AppendixGoogleBusinessDataPriceData.to_json()
 
 # convert the object into a dict
 appendix_google_business_data_price_data_dict = appendix_google_business_data_price_data_instance.to_dict()

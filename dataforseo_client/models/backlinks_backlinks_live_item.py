@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.ranked_keywords_info import RankedKeywordsInfo
 from dataforseo_client.models.redirect import Redirect
@@ -77,11 +77,11 @@ class BacklinksBacklinksLiveItem(BaseModel):
     indirect_link_path: Optional[List[Redirect]] = Field(default=None, description="indirect link path indicates a URL or a sequence of URLs that lead to url_to")
     __properties: ClassVar[List[str]] = ["type", "domain_from", "url_from", "url_from_https", "domain_to", "url_to", "url_to_https", "tld_from", "is_new", "is_lost", "backlink_spam_score", "rank", "page_from_rank", "domain_from_rank", "domain_from_platform_type", "domain_from_is_ip", "domain_from_ip", "domain_from_country", "page_from_external_links", "page_from_internal_links", "page_from_size", "page_from_encoding", "page_from_language", "page_from_title", "page_from_status_code", "first_seen", "prev_seen", "last_seen", "item_type", "attributes", "dofollow", "original", "alt", "image_url", "anchor", "text_pre", "text_post", "semantic_location", "links_count", "group_count", "is_broken", "url_to_status_code", "url_to_spam_score", "url_to_redirect_target", "ranked_keywords_info", "is_indirect_link", "indirect_link_path"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

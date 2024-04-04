@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -48,11 +48,11 @@ class MerchantAmazonProductsTaskPostRequestInfo(BaseModel):
     department: Optional[StrictStr] = Field(default=None, description="amazon product department optional field specify one of the following amazon departments for extracting product listings: \"Arts & Crafts\", \"Automotive\", \"Baby\", \"Beauty & Personal Care\", \"Books\", \"Computers\", \"Digital Music\", \"Electronics\", \"Kindle Store\", \"Prime Video\", \"Women's Fashion\", \"Men's Fashion\", \"Girls' Fashion\", \"Boys' Fashion\", \"Deals\", \"Health & Household\", \"Home & Kitchen\", \"Industrial & Scientific\", \"Luggage\", \"Movies & TV\", \"Music, CDs & Vinyl\", \"Pet Supplies\", \"Software\", \"Sports & Outdoors\", \"Tools & Home Improvement\", \"Toys & Games\", \"Video Games\"")
     __properties: ClassVar[List[str]] = ["keyword", "url", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "depth", "max_crawl_pages", "search_param", "price_min", "price_max", "sort_by", "tag", "postback_url", "postback_data", "pingback_url", "department"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

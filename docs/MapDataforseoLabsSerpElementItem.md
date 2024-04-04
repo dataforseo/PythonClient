@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of MapDataforseoLabsSerpElementItem from a JSON string
 map_dataforseo_labs_serp_element_item_instance = MapDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(MapDataforseoLabsSerpElementItem.to_json())
+print MapDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 map_dataforseo_labs_serp_element_item_dict = map_dataforseo_labs_serp_element_item_instance.to_dict()

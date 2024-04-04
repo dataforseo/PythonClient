@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo from a JSON string
 appendix_keyword_performance_keywords_data_limits_rates_data_info_instance = AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo.to_json())
+print AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo.to_json()
 
 # convert the object into a dict
 appendix_keyword_performance_keywords_data_limits_rates_data_info_dict = appendix_keyword_performance_keywords_data_limits_rates_data_info_instance.to_dict()

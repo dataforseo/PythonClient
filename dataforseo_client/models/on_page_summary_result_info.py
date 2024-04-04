@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
 from dataforseo_client.models.domain_info import DomainInfo
@@ -37,11 +37,11 @@ class OnPageSummaryResultInfo(BaseModel):
     page_metrics: Optional[PageMetrics] = None
     __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "crawl_gateway_address", "crawl_stop_reason", "domain_info", "page_metrics"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

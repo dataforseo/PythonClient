@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of PriceInfo from a JSON string
 price_info_instance = PriceInfo.from_json(json)
 # print the JSON string representation of the object
-print(PriceInfo.to_json())
+print PriceInfo.to_json()
 
 # convert the object into a dict
 price_info_dict = price_info_instance.to_dict()

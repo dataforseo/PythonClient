@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
 from dataforseo_client.models.rating_info import RatingInfo
@@ -42,11 +42,11 @@ class AppDataAppleAppReviewsTaskGetAdvancedResultInfo(BaseModel):
     items: Optional[List[BaseAppDataSerpElementItem]] = Field(default=None, description="found reviews")
     __properties: ClassVar[List[str]] = ["app_id", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "title", "rating", "reviews_count", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

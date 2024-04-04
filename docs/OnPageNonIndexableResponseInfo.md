@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageNonIndexableResponseInfo from a JSON string
 on_page_non_indexable_response_info_instance = OnPageNonIndexableResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageNonIndexableResponseInfo.to_json())
+print OnPageNonIndexableResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_non_indexable_response_info_dict = on_page_non_indexable_response_info_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of HtmlItem from a JSON string
 html_item_instance = HtmlItem.from_json(json)
 # print the JSON string representation of the object
-print(HtmlItem.to_json())
+print HtmlItem.to_json()
 
 # convert the object into a dict
 html_item_dict = html_item_instance.to_dict()

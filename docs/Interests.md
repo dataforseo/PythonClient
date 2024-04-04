@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of Interests from a JSON string
 interests_instance = Interests.from_json(json)
 # print the JSON string representation of the object
-print(Interests.to_json())
+print Interests.to_json()
 
 # convert the object into a dict
 interests_dict = interests_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of DatasetDescription from a JSON string
 dataset_description_instance = DatasetDescription.from_json(json)
 # print the JSON string representation of the object
-print(DatasetDescription.to_json())
+print DatasetDescription.to_json()
 
 # convert the object into a dict
 dataset_description_dict = dataset_description_instance.to_dict()

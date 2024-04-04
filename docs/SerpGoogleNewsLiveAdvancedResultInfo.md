@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **item_types** | **List[Optional[str]]** | types of search results in SERP contains types of search results (items) found in SERP. possible item types: top_stories, news_search | [optional] 
 **se_results_count** | **int** | total number of results in SERP | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 
@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpGoogleNewsLiveAdvancedResultInfo from a JSON string
 serp_google_news_live_advanced_result_info_instance = SerpGoogleNewsLiveAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleNewsLiveAdvancedResultInfo.to_json())
+print SerpGoogleNewsLiveAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_news_live_advanced_result_info_dict = serp_google_news_live_advanced_result_info_instance.to_dict()

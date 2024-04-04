@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_trends_item import BaseDataforseoTrendsItem
 from dataforseo_client.models.demography import Demography
@@ -34,11 +34,11 @@ class DataforseoTrendsDemographyElementItem(BaseDataforseoTrendsItem):
     demography_comparison: Optional[Dict[str, Any]] = Field(default=None, description="comparison of demographic data on keyword popularity for the specified parameters conains keyword popularity data by age and gender if you specified a single keyword, the value will be null")
     __properties: ClassVar[List[str]] = ["type", "position", "keywords", "demography", "demography_comparison"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

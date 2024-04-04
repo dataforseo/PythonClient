@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of AppDataErrorsResultInfo from a JSON string
 app_data_errors_result_info_instance = AppDataErrorsResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataErrorsResultInfo.to_json())
+print AppDataErrorsResultInfo.to_json()
 
 # convert the object into a dict
 app_data_errors_result_info_dict = app_data_errors_result_info_instance.to_dict()

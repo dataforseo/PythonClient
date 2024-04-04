@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleRelevantPagesLiveTaskInfo from a JSON string
 dataforseo_labs_google_relevant_pages_live_task_info_instance = DataforseoLabsGoogleRelevantPagesLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleRelevantPagesLiveTaskInfo.to_json())
+print DataforseoLabsGoogleRelevantPagesLiveTaskInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_relevant_pages_live_task_info_dict = dataforseo_labs_google_relevant_pages_live_task_info_instance.to_dict()

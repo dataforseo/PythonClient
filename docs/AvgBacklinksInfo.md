@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of AvgBacklinksInfo from a JSON string
 avg_backlinks_info_instance = AvgBacklinksInfo.from_json(json)
 # print the JSON string representation of the object
-print(AvgBacklinksInfo.to_json())
+print AvgBacklinksInfo.to_json()
 
 # convert the object into a dict
 avg_backlinks_info_dict = avg_backlinks_info_instance.to_dict()

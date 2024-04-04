@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
 **rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements found in Google Shopping SERP | [optional] 
-**position** | **str** | the alignment of the element in Google Shopping SERP possible values: left, right | [optional] 
+**position** | **str** | alignment of the element in SERP can take the following values: left, right | [optional] 
 **xpath** | **str** | XPath of the element | [optional] 
 **domain** | **str** | domain in SERP | [optional] 
 **title** | **str** | product title | [optional] 
@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **seller_name** | **str** | name of the seller the name of the company that placed a corresponding product on Google Shopping | [optional] 
 **rating** | [**RatingElement**](RatingElement.md) |  | [optional] 
 **shop_ad_aclk** | **str** | unique ad click referral parameter using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL in this case, the value equals null | [optional] 
-**product_condition** | **str** | indicated condition of the product possible values: Used, Refurbished, New, null | [optional] 
 
 ## Example
 
@@ -33,7 +32,7 @@ json = "{}"
 # create an instance of BuyOnGoogleMerchantSerpElementItem from a JSON string
 buy_on_google_merchant_serp_element_item_instance = BuyOnGoogleMerchantSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(BuyOnGoogleMerchantSerpElementItem.to_json())
+print BuyOnGoogleMerchantSerpElementItem.to_json()
 
 # convert the object into a dict
 buy_on_google_merchant_serp_element_item_dict = buy_on_google_merchant_serp_element_item_instance.to_dict()

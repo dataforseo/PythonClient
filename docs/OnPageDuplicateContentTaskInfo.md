@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageDuplicateContentTaskInfo from a JSON string
 on_page_duplicate_content_task_info_instance = OnPageDuplicateContentTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageDuplicateContentTaskInfo.to_json())
+print OnPageDuplicateContentTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_duplicate_content_task_info_dict = on_page_duplicate_content_task_info_instance.to_dict()

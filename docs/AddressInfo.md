@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AddressInfo from a JSON string
 address_info_instance = AddressInfo.from_json(json)
 # print the JSON string representation of the object
-print(AddressInfo.to_json())
+print AddressInfo.to_json()
 
 # convert the object into a dict
 address_info_dict = address_info_instance.to_dict()

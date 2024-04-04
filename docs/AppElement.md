@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AppElement from a JSON string
 app_element_instance = AppElement.from_json(json)
 # print the JSON string representation of the object
-print(AppElement.to_json())
+print AppElement.to_json()
 
 # convert the object into a dict
 app_element_dict = app_element_instance.to_dict()

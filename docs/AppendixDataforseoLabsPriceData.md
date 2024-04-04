@@ -50,7 +50,7 @@ json = "{}"
 # create an instance of AppendixDataforseoLabsPriceData from a JSON string
 appendix_dataforseo_labs_price_data_instance = AppendixDataforseoLabsPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixDataforseoLabsPriceData.to_json())
+print AppendixDataforseoLabsPriceData.to_json()
 
 # convert the object into a dict
 appendix_dataforseo_labs_price_data_dict = appendix_dataforseo_labs_price_data_instance.to_dict()

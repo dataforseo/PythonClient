@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of DataforseoTrendsDataforseoTrendsGraphElementItem from a JSON string
 dataforseo_trends_dataforseo_trends_graph_element_item_instance = DataforseoTrendsDataforseoTrendsGraphElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoTrendsDataforseoTrendsGraphElementItem.to_json())
+print DataforseoTrendsDataforseoTrendsGraphElementItem.to_json()
 
 # convert the object into a dict
 dataforseo_trends_dataforseo_trends_graph_element_item_dict = dataforseo_trends_dataforseo_trends_graph_element_item_instance.to_dict()

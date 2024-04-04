@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of AppendixErrorsResponseInfo from a JSON string
 appendix_errors_response_info_instance = AppendixErrorsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixErrorsResponseInfo.to_json())
+print AppendixErrorsResponseInfo.to_json()
 
 # convert the object into a dict
 appendix_errors_response_info_dict = appendix_errors_response_info_instance.to_dict()

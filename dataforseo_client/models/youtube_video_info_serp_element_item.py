@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.streaming_quality_element import StreamingQualityElement
@@ -53,11 +53,11 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
     streaming_quality: Optional[List[StreamingQualityElement]] = Field(default=None, description="array of elements that contain information about all possible streaming qualities of the video")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "publication_date", "timestamp", "keywords", "category", "is_live", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

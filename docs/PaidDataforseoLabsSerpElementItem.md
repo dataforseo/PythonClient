@@ -38,7 +38,7 @@ json = "{}"
 # create an instance of PaidDataforseoLabsSerpElementItem from a JSON string
 paid_dataforseo_labs_serp_element_item_instance = PaidDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(PaidDataforseoLabsSerpElementItem.to_json())
+print PaidDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 paid_dataforseo_labs_serp_element_item_dict = paid_dataforseo_labs_serp_element_item_instance.to_dict()

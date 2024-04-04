@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of BaseOnPageResourceItemInfo from a JSON string
 base_on_page_resource_item_info_instance = BaseOnPageResourceItemInfo.from_json(json)
 # print the JSON string representation of the object
-print(BaseOnPageResourceItemInfo.to_json())
+print BaseOnPageResourceItemInfo.to_json()
 
 # convert the object into a dict
 base_on_page_resource_item_info_dict = base_on_page_resource_item_info_instance.to_dict()

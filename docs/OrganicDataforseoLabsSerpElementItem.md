@@ -46,7 +46,7 @@ json = "{}"
 # create an instance of OrganicDataforseoLabsSerpElementItem from a JSON string
 organic_dataforseo_labs_serp_element_item_instance = OrganicDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(OrganicDataforseoLabsSerpElementItem.to_json())
+print OrganicDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 organic_dataforseo_labs_serp_element_item_dict = organic_dataforseo_labs_serp_element_item_instance.to_dict()

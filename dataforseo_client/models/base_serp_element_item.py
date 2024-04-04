@@ -17,81 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
-
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from dataforseo_client.models.q_answer_box_serp_element_item import QAnswerBoxSerpElementItem
-    from dataforseo_client.models.data_app_serp_element_item import DataAppSerpElementItem
-    from dataforseo_client.models.autocomplete_serp_element_item import AutocompleteSerpElementItem
-    from dataforseo_client.models.carousel_serp_element_item import CarouselSerpElementItem
-    from dataforseo_client.models.commercial_units_serp_element_item import CommercialUnitsSerpElementItem
-    from dataforseo_client.models.currency_box_serp_element_item import CurrencyBoxSerpElementItem
-    from dataforseo_client.models.dataset_serp_element_item import DatasetSerpElementItem
-    from dataforseo_client.models.dictionary_serp_element_item import DictionarySerpElementItem
-    from dataforseo_client.models.discussions_and_forums_serp_element_item import DiscussionsAndForumsSerpElementItem
-    from dataforseo_client.models.event_item_serp_element_item import EventItemSerpElementItem
-    from dataforseo_client.models.events_serp_element_item import EventsSerpElementItem
-    from dataforseo_client.models.explore_brands_serp_element_item import ExploreBrandsSerpElementItem
-    from dataforseo_client.models.featured_snippet_serp_element_item import FeaturedSnippetSerpElementItem
-    from dataforseo_client.models.find_results_on_serp_element_item import FindResultsOnSerpElementItem
-    from dataforseo_client.models.found_on_web_serp_element_item import FoundOnWebSerpElementItem
-    from dataforseo_client.models.google_flights_serp_element_item import GoogleFlightsSerpElementItem
-    from dataforseo_client.models.google_hotels_serp_element_item import GoogleHotelsSerpElementItem
-    from dataforseo_client.models.google_jobs_item_serp_element_item import GoogleJobsItemSerpElementItem
-    from dataforseo_client.models.google_posts_serp_element_item import GooglePostsSerpElementItem
-    from dataforseo_client.models.google_reviews_serp_element_item import GoogleReviewsSerpElementItem
-    from dataforseo_client.models.hotels_pack_serp_element_item import HotelsPackSerpElementItem
-    from dataforseo_client.models.images_serp_element_item import ImagesSerpElementItem
-    from dataforseo_client.models.images_search_serp_element_item import ImagesSearchSerpElementItem
-    from dataforseo_client.models.jobs_serp_element_item import JobsSerpElementItem
-    from dataforseo_client.models.knowledge_graph_serp_element_item import KnowledgeGraphSerpElementItem
-    from dataforseo_client.models.knowledge_graph_carousel_item_serp_element_item import KnowledgeGraphCarouselItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_description_item_serp_element_item import KnowledgeGraphDescriptionItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_expanded_item_serp_element_item import KnowledgeGraphExpandedItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_hotels_booking_item_serp_element_item import KnowledgeGraphHotelsBookingItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_images_item_serp_element_item import KnowledgeGraphImagesItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_list_item_serp_element_item import KnowledgeGraphListItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_part_item_serp_element_item import KnowledgeGraphPartItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_row_item_serp_element_item import KnowledgeGraphRowItemSerpElementItem
-    from dataforseo_client.models.knowledge_graph_shopping_item_serp_element_item import KnowledgeGraphShoppingItemSerpElementItem
-    from dataforseo_client.models.local_pack_serp_element_item import LocalPackSerpElementItem
-    from dataforseo_client.models.local_services_serp_element_item import LocalServicesSerpElementItem
-    from dataforseo_client.models.map_serp_element_item import MapSerpElementItem
-    from dataforseo_client.models.maps_paid_item_serp_element_item import MapsPaidItemSerpElementItem
-    from dataforseo_client.models.maps_search_serp_element_item import MapsSearchSerpElementItem
-    from dataforseo_client.models.math_solver_serp_element_item import MathSolverSerpElementItem
-    from dataforseo_client.models.mention_carousel_serp_element_item import MentionCarouselSerpElementItem
-    from dataforseo_client.models.multi_carousel_serp_element_item import MultiCarouselSerpElementItem
-    from dataforseo_client.models.news_search_serp_element_item import NewsSearchSerpElementItem
-    from dataforseo_client.models.organic_serp_element_item import OrganicSerpElementItem
-    from dataforseo_client.models.paid_serp_element_item import PaidSerpElementItem
-    from dataforseo_client.models.people_also_ask_serp_element_item import PeopleAlsoAskSerpElementItem
-    from dataforseo_client.models.people_also_search_serp_element_item import PeopleAlsoSearchSerpElementItem
-    from dataforseo_client.models.perspectives_serp_element_item import PerspectivesSerpElementItem
-    from dataforseo_client.models.podcasts_serp_element_item import PodcastsSerpElementItem
-    from dataforseo_client.models.popular_products_serp_element_item import PopularProductsSerpElementItem
-    from dataforseo_client.models.product_considerations_serp_element_item import ProductConsiderationsSerpElementItem
-    from dataforseo_client.models.questions_and_answers_serp_element_item import QuestionsAndAnswersSerpElementItem
-    from dataforseo_client.models.recipes_serp_element_item import RecipesSerpElementItem
-    from dataforseo_client.models.refine_products_serp_element_item import RefineProductsSerpElementItem
-    from dataforseo_client.models.related_searches_serp_element_item import RelatedSearchesSerpElementItem
-    from dataforseo_client.models.scholarly_articles_serp_element_item import ScholarlyArticlesSerpElementItem
-    from dataforseo_client.models.shopping_serp_element_item import ShoppingSerpElementItem
-    from dataforseo_client.models.short_videos_serp_element_item import ShortVideosSerpElementItem
-    from dataforseo_client.models.stocks_box_serp_element_item import StocksBoxSerpElementItem
-    from dataforseo_client.models.top_sights_serp_element_item import TopSightsSerpElementItem
-    from dataforseo_client.models.top_stories_serp_element_item import TopStoriesSerpElementItem
-    from dataforseo_client.models.twitter_serp_element_item import TwitterSerpElementItem
-    from dataforseo_client.models.video_serp_element_item import VideoSerpElementItem
-    from dataforseo_client.models.visual_stories_serp_element_item import VisualStoriesSerpElementItem
-    from dataforseo_client.models.youtube_comment_serp_element_item import YoutubeCommentSerpElementItem
-    from dataforseo_client.models.youtube_subtitles_serp_element_item import YoutubeSubtitlesSerpElementItem
-    from dataforseo_client.models.youtube_video_info_serp_element_item import YoutubeVideoInfoSerpElementItem
 
 class BaseSerpElementItem(BaseModel):
     """
@@ -100,11 +29,11 @@ class BaseSerpElementItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     __properties: ClassVar[List[str]] = ["type"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     # JSON field name that stores the object type
@@ -112,7 +41,7 @@ class BaseSerpElementItem(BaseModel):
 
     # discriminator mappings
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'answer_box': 'QAnswerBoxSerpElementItem','app': 'DataAppSerpElementItem','autocomplete': 'AutocompleteSerpElementItem','carousel': 'CarouselSerpElementItem','commercial_units': 'CommercialUnitsSerpElementItem','currency_box': 'CurrencyBoxSerpElementItem','dataset': 'DatasetSerpElementItem','dictionary': 'DictionarySerpElementItem','discussions_and_forums': 'DiscussionsAndForumsSerpElementItem','event_item': 'EventItemSerpElementItem','events': 'EventsSerpElementItem','explore_brands': 'ExploreBrandsSerpElementItem','featured_snippet': 'FeaturedSnippetSerpElementItem','find_results_on': 'FindResultsOnSerpElementItem','found_on_web': 'FoundOnWebSerpElementItem','google_flights': 'GoogleFlightsSerpElementItem','google_hotels': 'GoogleHotelsSerpElementItem','google_jobs_item': 'GoogleJobsItemSerpElementItem','google_posts': 'GooglePostsSerpElementItem','google_reviews': 'GoogleReviewsSerpElementItem','hotels_pack': 'HotelsPackSerpElementItem','images': 'ImagesSerpElementItem','images_search': 'ImagesSearchSerpElementItem','jobs': 'JobsSerpElementItem','knowledge_graph': 'KnowledgeGraphSerpElementItem','knowledge_graph_carousel_item': 'KnowledgeGraphCarouselItemSerpElementItem','knowledge_graph_description_item': 'KnowledgeGraphDescriptionItemSerpElementItem','knowledge_graph_expanded_item': 'KnowledgeGraphExpandedItemSerpElementItem','knowledge_graph_hotels_booking_item': 'KnowledgeGraphHotelsBookingItemSerpElementItem','knowledge_graph_images_item': 'KnowledgeGraphImagesItemSerpElementItem','knowledge_graph_list_item': 'KnowledgeGraphListItemSerpElementItem','knowledge_graph_part_item': 'KnowledgeGraphPartItemSerpElementItem','knowledge_graph_row_item': 'KnowledgeGraphRowItemSerpElementItem','knowledge_graph_shopping_item': 'KnowledgeGraphShoppingItemSerpElementItem','local_pack': 'LocalPackSerpElementItem','local_services': 'LocalServicesSerpElementItem','map': 'MapSerpElementItem','maps_paid_item': 'MapsPaidItemSerpElementItem','maps_search': 'MapsSearchSerpElementItem','math_solver': 'MathSolverSerpElementItem','mention_carousel': 'MentionCarouselSerpElementItem','multi_carousel': 'MultiCarouselSerpElementItem','news_search': 'NewsSearchSerpElementItem','organic': 'OrganicSerpElementItem','paid': 'PaidSerpElementItem','people_also_ask': 'PeopleAlsoAskSerpElementItem','people_also_search': 'PeopleAlsoSearchSerpElementItem','perspectives': 'PerspectivesSerpElementItem','podcasts': 'PodcastsSerpElementItem','popular_products': 'PopularProductsSerpElementItem','product_considerations': 'ProductConsiderationsSerpElementItem','questions_and_answers': 'QuestionsAndAnswersSerpElementItem','recipes': 'RecipesSerpElementItem','refine_products': 'RefineProductsSerpElementItem','related_searches': 'RelatedSearchesSerpElementItem','scholarly_articles': 'ScholarlyArticlesSerpElementItem','shopping': 'ShoppingSerpElementItem','short_videos': 'ShortVideosSerpElementItem','stocks_box': 'StocksBoxSerpElementItem','top_sights': 'TopSightsSerpElementItem','top_stories': 'TopStoriesSerpElementItem','twitter': 'TwitterSerpElementItem','video': 'VideoSerpElementItem','visual_stories': 'VisualStoriesSerpElementItem','youtube_comment': 'YoutubeCommentSerpElementItem','youtube_subtitles': 'YoutubeSubtitlesSerpElementItem','youtube_video_info': 'YoutubeVideoInfoSerpElementItem'
+        'answer_box': 'QAnswerBoxSerpElementItem','app': 'DataAppSerpElementItem','autocomplete': 'SerpAutocompleteSerpElementItem','carousel': 'CarouselSerpElementItem','commercial_units': 'CommercialUnitsSerpElementItem','currency_box': 'CurrencyBoxSerpElementItem','dataset': 'DatasetSerpElementItem','dictionary': 'DictionarySerpElementItem','discussions_and_forums': 'DiscussionsAndForumsSerpElementItem','event_item': 'EventItemSerpElementItem','events': 'EventsSerpElementItem','explore_brands': 'ExploreBrandsSerpElementItem','featured_snippet': 'FeaturedSnippetSerpElementItem','find_results_on': 'FindResultsOnSerpElementItem','found_on_web': 'FoundOnWebSerpElementItem','google_flights': 'GoogleFlightsSerpElementItem','google_hotels': 'GoogleHotelsSerpElementItem','google_jobs_item': 'GoogleJobsItemSerpElementItem','google_posts': 'GooglePostsSerpElementItem','google_reviews': 'GoogleReviewsSerpElementItem','hotels_pack': 'HotelsPackSerpElementItem','images': 'ImagesSerpElementItem','images_search': 'ImagesSearchSerpElementItem','jobs': 'JobsSerpElementItem','knowledge_graph': 'KnowledgeGraphSerpElementItem','knowledge_graph_carousel_item': 'KnowledgeGraphCarouselItemSerpElementItem','knowledge_graph_description_item': 'KnowledgeGraphDescriptionItemSerpElementItem','knowledge_graph_expanded_item': 'KnowledgeGraphExpandedItemSerpElementItem','knowledge_graph_hotels_booking_item': 'KnowledgeGraphHotelsBookingItemSerpElementItem','knowledge_graph_images_item': 'KnowledgeGraphImagesItemSerpElementItem','knowledge_graph_list_item': 'KnowledgeGraphListItemSerpElementItem','knowledge_graph_part_item': 'KnowledgeGraphPartItemSerpElementItem','knowledge_graph_row_item': 'KnowledgeGraphRowItemSerpElementItem','knowledge_graph_shopping_item': 'KnowledgeGraphShoppingItemSerpElementItem','local_pack': 'LocalPackSerpElementItem','local_services': 'LocalServicesSerpElementItem','map': 'MapSerpElementItem','maps_paid_item': 'MapsPaidItemSerpElementItem','maps_search': 'MapsSearchSerpElementItem','math_solver': 'MathSolverSerpElementItem','mention_carousel': 'MentionCarouselSerpElementItem','multi_carousel': 'MultiCarouselSerpElementItem','news_search': 'NewsSearchSerpElementItem','organic': 'OrganicSerpElementItem','paid': 'PaidSerpElementItem','people_also_ask': 'PeopleAlsoAskSerpElementItem','people_also_search': 'PeopleAlsoSearchSerpElementItem','perspectives': 'PerspectivesSerpElementItem','podcasts': 'PodcastsSerpElementItem','popular_products': 'PopularProductsSerpElementItem','product_considerations': 'ProductConsiderationsSerpElementItem','questions_and_answers': 'QuestionsAndAnswersSerpElementItem','recipes': 'RecipesSerpElementItem','refine_products': 'RefineProductsSerpElementItem','related_searches': 'RelatedSearchesSerpElementItem','scholarly_articles': 'ScholarlyArticlesSerpElementItem','shopping': 'ShoppingSerpElementItem','short_videos': 'ShortVideosSerpElementItem','stocks_box': 'StocksBoxSerpElementItem','top_sights': 'TopSightsSerpElementItem','top_stories': 'TopStoriesSerpElementItem','twitter': 'TwitterSerpElementItem','video': 'VideoSerpElementItem','visual_stories': 'VisualStoriesSerpElementItem','youtube_comment': 'YoutubeCommentSerpElementItem','youtube_subtitles': 'YoutubeSubtitlesSerpElementItem','youtube_video_info': 'YoutubeVideoInfoSerpElementItem'
     }
 
     @classmethod
@@ -134,7 +63,7 @@ class BaseSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[QAnswerBoxSerpElementItem, DataAppSerpElementItem, AutocompleteSerpElementItem, CarouselSerpElementItem, CommercialUnitsSerpElementItem, CurrencyBoxSerpElementItem, DatasetSerpElementItem, DictionarySerpElementItem, DiscussionsAndForumsSerpElementItem, EventItemSerpElementItem, EventsSerpElementItem, ExploreBrandsSerpElementItem, FeaturedSnippetSerpElementItem, FindResultsOnSerpElementItem, FoundOnWebSerpElementItem, GoogleFlightsSerpElementItem, GoogleHotelsSerpElementItem, GoogleJobsItemSerpElementItem, GooglePostsSerpElementItem, GoogleReviewsSerpElementItem, HotelsPackSerpElementItem, ImagesSerpElementItem, ImagesSearchSerpElementItem, JobsSerpElementItem, KnowledgeGraphSerpElementItem, KnowledgeGraphCarouselItemSerpElementItem, KnowledgeGraphDescriptionItemSerpElementItem, KnowledgeGraphExpandedItemSerpElementItem, KnowledgeGraphHotelsBookingItemSerpElementItem, KnowledgeGraphImagesItemSerpElementItem, KnowledgeGraphListItemSerpElementItem, KnowledgeGraphPartItemSerpElementItem, KnowledgeGraphRowItemSerpElementItem, KnowledgeGraphShoppingItemSerpElementItem, LocalPackSerpElementItem, LocalServicesSerpElementItem, MapSerpElementItem, MapsPaidItemSerpElementItem, MapsSearchSerpElementItem, MathSolverSerpElementItem, MentionCarouselSerpElementItem, MultiCarouselSerpElementItem, NewsSearchSerpElementItem, OrganicSerpElementItem, PaidSerpElementItem, PeopleAlsoAskSerpElementItem, PeopleAlsoSearchSerpElementItem, PerspectivesSerpElementItem, PodcastsSerpElementItem, PopularProductsSerpElementItem, ProductConsiderationsSerpElementItem, QuestionsAndAnswersSerpElementItem, RecipesSerpElementItem, RefineProductsSerpElementItem, RelatedSearchesSerpElementItem, ScholarlyArticlesSerpElementItem, ShoppingSerpElementItem, ShortVideosSerpElementItem, StocksBoxSerpElementItem, TopSightsSerpElementItem, TopStoriesSerpElementItem, TwitterSerpElementItem, VideoSerpElementItem, VisualStoriesSerpElementItem, YoutubeCommentSerpElementItem, YoutubeSubtitlesSerpElementItem, YoutubeVideoInfoSerpElementItem]]:
+    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
         """Create an instance of BaseSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -164,147 +93,85 @@ class BaseSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[QAnswerBoxSerpElementItem, DataAppSerpElementItem, AutocompleteSerpElementItem, CarouselSerpElementItem, CommercialUnitsSerpElementItem, CurrencyBoxSerpElementItem, DatasetSerpElementItem, DictionarySerpElementItem, DiscussionsAndForumsSerpElementItem, EventItemSerpElementItem, EventsSerpElementItem, ExploreBrandsSerpElementItem, FeaturedSnippetSerpElementItem, FindResultsOnSerpElementItem, FoundOnWebSerpElementItem, GoogleFlightsSerpElementItem, GoogleHotelsSerpElementItem, GoogleJobsItemSerpElementItem, GooglePostsSerpElementItem, GoogleReviewsSerpElementItem, HotelsPackSerpElementItem, ImagesSerpElementItem, ImagesSearchSerpElementItem, JobsSerpElementItem, KnowledgeGraphSerpElementItem, KnowledgeGraphCarouselItemSerpElementItem, KnowledgeGraphDescriptionItemSerpElementItem, KnowledgeGraphExpandedItemSerpElementItem, KnowledgeGraphHotelsBookingItemSerpElementItem, KnowledgeGraphImagesItemSerpElementItem, KnowledgeGraphListItemSerpElementItem, KnowledgeGraphPartItemSerpElementItem, KnowledgeGraphRowItemSerpElementItem, KnowledgeGraphShoppingItemSerpElementItem, LocalPackSerpElementItem, LocalServicesSerpElementItem, MapSerpElementItem, MapsPaidItemSerpElementItem, MapsSearchSerpElementItem, MathSolverSerpElementItem, MentionCarouselSerpElementItem, MultiCarouselSerpElementItem, NewsSearchSerpElementItem, OrganicSerpElementItem, PaidSerpElementItem, PeopleAlsoAskSerpElementItem, PeopleAlsoSearchSerpElementItem, PerspectivesSerpElementItem, PodcastsSerpElementItem, PopularProductsSerpElementItem, ProductConsiderationsSerpElementItem, QuestionsAndAnswersSerpElementItem, RecipesSerpElementItem, RefineProductsSerpElementItem, RelatedSearchesSerpElementItem, ScholarlyArticlesSerpElementItem, ShoppingSerpElementItem, ShortVideosSerpElementItem, StocksBoxSerpElementItem, TopSightsSerpElementItem, TopStoriesSerpElementItem, TwitterSerpElementItem, VideoSerpElementItem, VisualStoriesSerpElementItem, YoutubeCommentSerpElementItem, YoutubeSubtitlesSerpElementItem, YoutubeVideoInfoSerpElementItem]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
         """Create an instance of BaseSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'answer_box':
-            return import_module("dataforseo_client.models.q_answer_box_serp_element_item").QAnswerBoxSerpElementItem.from_dict(obj)
-        if object_type ==  'app':
-            return import_module("dataforseo_client.models.data_app_serp_element_item").DataAppSerpElementItem.from_dict(obj)
-        if object_type ==  'autocomplete':
-            return import_module("dataforseo_client.models.autocomplete_serp_element_item").AutocompleteSerpElementItem.from_dict(obj)
-        if object_type ==  'carousel':
-            return import_module("dataforseo_client.models.carousel_serp_element_item").CarouselSerpElementItem.from_dict(obj)
-        if object_type ==  'commercial_units':
-            return import_module("dataforseo_client.models.commercial_units_serp_element_item").CommercialUnitsSerpElementItem.from_dict(obj)
-        if object_type ==  'currency_box':
-            return import_module("dataforseo_client.models.currency_box_serp_element_item").CurrencyBoxSerpElementItem.from_dict(obj)
-        if object_type ==  'dataset':
-            return import_module("dataforseo_client.models.dataset_serp_element_item").DatasetSerpElementItem.from_dict(obj)
-        if object_type ==  'dictionary':
-            return import_module("dataforseo_client.models.dictionary_serp_element_item").DictionarySerpElementItem.from_dict(obj)
-        if object_type ==  'discussions_and_forums':
-            return import_module("dataforseo_client.models.discussions_and_forums_serp_element_item").DiscussionsAndForumsSerpElementItem.from_dict(obj)
-        if object_type ==  'event_item':
-            return import_module("dataforseo_client.models.event_item_serp_element_item").EventItemSerpElementItem.from_dict(obj)
-        if object_type ==  'events':
-            return import_module("dataforseo_client.models.events_serp_element_item").EventsSerpElementItem.from_dict(obj)
-        if object_type ==  'explore_brands':
-            return import_module("dataforseo_client.models.explore_brands_serp_element_item").ExploreBrandsSerpElementItem.from_dict(obj)
-        if object_type ==  'featured_snippet':
-            return import_module("dataforseo_client.models.featured_snippet_serp_element_item").FeaturedSnippetSerpElementItem.from_dict(obj)
-        if object_type ==  'find_results_on':
-            return import_module("dataforseo_client.models.find_results_on_serp_element_item").FindResultsOnSerpElementItem.from_dict(obj)
-        if object_type ==  'found_on_web':
-            return import_module("dataforseo_client.models.found_on_web_serp_element_item").FoundOnWebSerpElementItem.from_dict(obj)
-        if object_type ==  'google_flights':
-            return import_module("dataforseo_client.models.google_flights_serp_element_item").GoogleFlightsSerpElementItem.from_dict(obj)
-        if object_type ==  'google_hotels':
-            return import_module("dataforseo_client.models.google_hotels_serp_element_item").GoogleHotelsSerpElementItem.from_dict(obj)
-        if object_type ==  'google_jobs_item':
-            return import_module("dataforseo_client.models.google_jobs_item_serp_element_item").GoogleJobsItemSerpElementItem.from_dict(obj)
-        if object_type ==  'google_posts':
-            return import_module("dataforseo_client.models.google_posts_serp_element_item").GooglePostsSerpElementItem.from_dict(obj)
-        if object_type ==  'google_reviews':
-            return import_module("dataforseo_client.models.google_reviews_serp_element_item").GoogleReviewsSerpElementItem.from_dict(obj)
-        if object_type ==  'hotels_pack':
-            return import_module("dataforseo_client.models.hotels_pack_serp_element_item").HotelsPackSerpElementItem.from_dict(obj)
-        if object_type ==  'images':
-            return import_module("dataforseo_client.models.images_serp_element_item").ImagesSerpElementItem.from_dict(obj)
-        if object_type ==  'images_search':
-            return import_module("dataforseo_client.models.images_search_serp_element_item").ImagesSearchSerpElementItem.from_dict(obj)
-        if object_type ==  'jobs':
-            return import_module("dataforseo_client.models.jobs_serp_element_item").JobsSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph':
-            return import_module("dataforseo_client.models.knowledge_graph_serp_element_item").KnowledgeGraphSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_carousel_item':
-            return import_module("dataforseo_client.models.knowledge_graph_carousel_item_serp_element_item").KnowledgeGraphCarouselItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_description_item':
-            return import_module("dataforseo_client.models.knowledge_graph_description_item_serp_element_item").KnowledgeGraphDescriptionItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_expanded_item':
-            return import_module("dataforseo_client.models.knowledge_graph_expanded_item_serp_element_item").KnowledgeGraphExpandedItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_hotels_booking_item':
-            return import_module("dataforseo_client.models.knowledge_graph_hotels_booking_item_serp_element_item").KnowledgeGraphHotelsBookingItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_images_item':
-            return import_module("dataforseo_client.models.knowledge_graph_images_item_serp_element_item").KnowledgeGraphImagesItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_list_item':
-            return import_module("dataforseo_client.models.knowledge_graph_list_item_serp_element_item").KnowledgeGraphListItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_part_item':
-            return import_module("dataforseo_client.models.knowledge_graph_part_item_serp_element_item").KnowledgeGraphPartItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_row_item':
-            return import_module("dataforseo_client.models.knowledge_graph_row_item_serp_element_item").KnowledgeGraphRowItemSerpElementItem.from_dict(obj)
-        if object_type ==  'knowledge_graph_shopping_item':
-            return import_module("dataforseo_client.models.knowledge_graph_shopping_item_serp_element_item").KnowledgeGraphShoppingItemSerpElementItem.from_dict(obj)
-        if object_type ==  'local_pack':
-            return import_module("dataforseo_client.models.local_pack_serp_element_item").LocalPackSerpElementItem.from_dict(obj)
-        if object_type ==  'local_services':
-            return import_module("dataforseo_client.models.local_services_serp_element_item").LocalServicesSerpElementItem.from_dict(obj)
-        if object_type ==  'map':
-            return import_module("dataforseo_client.models.map_serp_element_item").MapSerpElementItem.from_dict(obj)
-        if object_type ==  'maps_paid_item':
-            return import_module("dataforseo_client.models.maps_paid_item_serp_element_item").MapsPaidItemSerpElementItem.from_dict(obj)
-        if object_type ==  'maps_search':
-            return import_module("dataforseo_client.models.maps_search_serp_element_item").MapsSearchSerpElementItem.from_dict(obj)
-        if object_type ==  'math_solver':
-            return import_module("dataforseo_client.models.math_solver_serp_element_item").MathSolverSerpElementItem.from_dict(obj)
-        if object_type ==  'mention_carousel':
-            return import_module("dataforseo_client.models.mention_carousel_serp_element_item").MentionCarouselSerpElementItem.from_dict(obj)
-        if object_type ==  'multi_carousel':
-            return import_module("dataforseo_client.models.multi_carousel_serp_element_item").MultiCarouselSerpElementItem.from_dict(obj)
-        if object_type ==  'news_search':
-            return import_module("dataforseo_client.models.news_search_serp_element_item").NewsSearchSerpElementItem.from_dict(obj)
-        if object_type ==  'organic':
-            return import_module("dataforseo_client.models.organic_serp_element_item").OrganicSerpElementItem.from_dict(obj)
-        if object_type ==  'paid':
-            return import_module("dataforseo_client.models.paid_serp_element_item").PaidSerpElementItem.from_dict(obj)
-        if object_type ==  'people_also_ask':
-            return import_module("dataforseo_client.models.people_also_ask_serp_element_item").PeopleAlsoAskSerpElementItem.from_dict(obj)
-        if object_type ==  'people_also_search':
-            return import_module("dataforseo_client.models.people_also_search_serp_element_item").PeopleAlsoSearchSerpElementItem.from_dict(obj)
-        if object_type ==  'perspectives':
-            return import_module("dataforseo_client.models.perspectives_serp_element_item").PerspectivesSerpElementItem.from_dict(obj)
-        if object_type ==  'podcasts':
-            return import_module("dataforseo_client.models.podcasts_serp_element_item").PodcastsSerpElementItem.from_dict(obj)
-        if object_type ==  'popular_products':
-            return import_module("dataforseo_client.models.popular_products_serp_element_item").PopularProductsSerpElementItem.from_dict(obj)
-        if object_type ==  'product_considerations':
-            return import_module("dataforseo_client.models.product_considerations_serp_element_item").ProductConsiderationsSerpElementItem.from_dict(obj)
-        if object_type ==  'questions_and_answers':
-            return import_module("dataforseo_client.models.questions_and_answers_serp_element_item").QuestionsAndAnswersSerpElementItem.from_dict(obj)
-        if object_type ==  'recipes':
-            return import_module("dataforseo_client.models.recipes_serp_element_item").RecipesSerpElementItem.from_dict(obj)
-        if object_type ==  'refine_products':
-            return import_module("dataforseo_client.models.refine_products_serp_element_item").RefineProductsSerpElementItem.from_dict(obj)
-        if object_type ==  'related_searches':
-            return import_module("dataforseo_client.models.related_searches_serp_element_item").RelatedSearchesSerpElementItem.from_dict(obj)
-        if object_type ==  'scholarly_articles':
-            return import_module("dataforseo_client.models.scholarly_articles_serp_element_item").ScholarlyArticlesSerpElementItem.from_dict(obj)
-        if object_type ==  'shopping':
-            return import_module("dataforseo_client.models.shopping_serp_element_item").ShoppingSerpElementItem.from_dict(obj)
-        if object_type ==  'short_videos':
-            return import_module("dataforseo_client.models.short_videos_serp_element_item").ShortVideosSerpElementItem.from_dict(obj)
-        if object_type ==  'stocks_box':
-            return import_module("dataforseo_client.models.stocks_box_serp_element_item").StocksBoxSerpElementItem.from_dict(obj)
-        if object_type ==  'top_sights':
-            return import_module("dataforseo_client.models.top_sights_serp_element_item").TopSightsSerpElementItem.from_dict(obj)
-        if object_type ==  'top_stories':
-            return import_module("dataforseo_client.models.top_stories_serp_element_item").TopStoriesSerpElementItem.from_dict(obj)
-        if object_type ==  'twitter':
-            return import_module("dataforseo_client.models.twitter_serp_element_item").TwitterSerpElementItem.from_dict(obj)
-        if object_type ==  'video':
-            return import_module("dataforseo_client.models.video_serp_element_item").VideoSerpElementItem.from_dict(obj)
-        if object_type ==  'visual_stories':
-            return import_module("dataforseo_client.models.visual_stories_serp_element_item").VisualStoriesSerpElementItem.from_dict(obj)
-        if object_type ==  'youtube_comment':
-            return import_module("dataforseo_client.models.youtube_comment_serp_element_item").YoutubeCommentSerpElementItem.from_dict(obj)
-        if object_type ==  'youtube_subtitles':
-            return import_module("dataforseo_client.models.youtube_subtitles_serp_element_item").YoutubeSubtitlesSerpElementItem.from_dict(obj)
-        if object_type ==  'youtube_video_info':
-            return import_module("dataforseo_client.models.youtube_video_info_serp_element_item").YoutubeVideoInfoSerpElementItem.from_dict(obj)
+        if object_type:
+            klass = globals()[object_type]
+            return klass.from_dict(obj)
+        else:
+            raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
+                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
-
+from dataforseo_client.models.carousel_serp_element_item import CarouselSerpElementItem
+from dataforseo_client.models.commercial_units_serp_element_item import CommercialUnitsSerpElementItem
+from dataforseo_client.models.currency_box_serp_element_item import CurrencyBoxSerpElementItem
+from dataforseo_client.models.data_app_serp_element_item import DataAppSerpElementItem
+from dataforseo_client.models.dataset_serp_element_item import DatasetSerpElementItem
+from dataforseo_client.models.dictionary_serp_element_item import DictionarySerpElementItem
+from dataforseo_client.models.discussions_and_forums_serp_element_item import DiscussionsAndForumsSerpElementItem
+from dataforseo_client.models.event_item_serp_element_item import EventItemSerpElementItem
+from dataforseo_client.models.events_serp_element_item import EventsSerpElementItem
+from dataforseo_client.models.explore_brands_serp_element_item import ExploreBrandsSerpElementItem
+from dataforseo_client.models.featured_snippet_serp_element_item import FeaturedSnippetSerpElementItem
+from dataforseo_client.models.find_results_on_serp_element_item import FindResultsOnSerpElementItem
+from dataforseo_client.models.found_on_web_serp_element_item import FoundOnWebSerpElementItem
+from dataforseo_client.models.google_flights_serp_element_item import GoogleFlightsSerpElementItem
+from dataforseo_client.models.google_hotels_serp_element_item import GoogleHotelsSerpElementItem
+from dataforseo_client.models.google_jobs_item_serp_element_item import GoogleJobsItemSerpElementItem
+from dataforseo_client.models.google_posts_serp_element_item import GooglePostsSerpElementItem
+from dataforseo_client.models.google_reviews_serp_element_item import GoogleReviewsSerpElementItem
+from dataforseo_client.models.hotels_pack_serp_element_item import HotelsPackSerpElementItem
+from dataforseo_client.models.images_search_serp_element_item import ImagesSearchSerpElementItem
+from dataforseo_client.models.images_serp_element_item import ImagesSerpElementItem
+from dataforseo_client.models.jobs_serp_element_item import JobsSerpElementItem
+from dataforseo_client.models.knowledge_graph_carousel_item_serp_element_item import KnowledgeGraphCarouselItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_description_item_serp_element_item import KnowledgeGraphDescriptionItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_expanded_item_serp_element_item import KnowledgeGraphExpandedItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_hotels_booking_item_serp_element_item import KnowledgeGraphHotelsBookingItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_images_item_serp_element_item import KnowledgeGraphImagesItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_list_item_serp_element_item import KnowledgeGraphListItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_part_item_serp_element_item import KnowledgeGraphPartItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_row_item_serp_element_item import KnowledgeGraphRowItemSerpElementItem
+from dataforseo_client.models.knowledge_graph_serp_element_item import KnowledgeGraphSerpElementItem
+from dataforseo_client.models.knowledge_graph_shopping_item_serp_element_item import KnowledgeGraphShoppingItemSerpElementItem
+from dataforseo_client.models.local_pack_serp_element_item import LocalPackSerpElementItem
+from dataforseo_client.models.local_services_serp_element_item import LocalServicesSerpElementItem
+from dataforseo_client.models.map_serp_element_item import MapSerpElementItem
+from dataforseo_client.models.maps_paid_item_serp_element_item import MapsPaidItemSerpElementItem
+from dataforseo_client.models.maps_search_serp_element_item import MapsSearchSerpElementItem
+from dataforseo_client.models.math_solver_serp_element_item import MathSolverSerpElementItem
+from dataforseo_client.models.mention_carousel_serp_element_item import MentionCarouselSerpElementItem
+from dataforseo_client.models.multi_carousel_serp_element_item import MultiCarouselSerpElementItem
+from dataforseo_client.models.news_search_serp_element_item import NewsSearchSerpElementItem
+from dataforseo_client.models.organic_serp_element_item import OrganicSerpElementItem
+from dataforseo_client.models.paid_serp_element_item import PaidSerpElementItem
+from dataforseo_client.models.people_also_ask_serp_element_item import PeopleAlsoAskSerpElementItem
+from dataforseo_client.models.people_also_search_serp_element_item import PeopleAlsoSearchSerpElementItem
+from dataforseo_client.models.perspectives_serp_element_item import PerspectivesSerpElementItem
+from dataforseo_client.models.podcasts_serp_element_item import PodcastsSerpElementItem
+from dataforseo_client.models.popular_products_serp_element_item import PopularProductsSerpElementItem
+from dataforseo_client.models.product_considerations_serp_element_item import ProductConsiderationsSerpElementItem
+from dataforseo_client.models.q_answer_box_serp_element_item import QAnswerBoxSerpElementItem
+from dataforseo_client.models.questions_and_answers_serp_element_item import QuestionsAndAnswersSerpElementItem
+from dataforseo_client.models.recipes_serp_element_item import RecipesSerpElementItem
+from dataforseo_client.models.refine_products_serp_element_item import RefineProductsSerpElementItem
+from dataforseo_client.models.related_searches_serp_element_item import RelatedSearchesSerpElementItem
+from dataforseo_client.models.scholarly_articles_serp_element_item import ScholarlyArticlesSerpElementItem
+from dataforseo_client.models.serp_autocomplete_serp_element_item import SerpAutocompleteSerpElementItem
+from dataforseo_client.models.shopping_serp_element_item import ShoppingSerpElementItem
+from dataforseo_client.models.short_videos_serp_element_item import ShortVideosSerpElementItem
+from dataforseo_client.models.stocks_box_serp_element_item import StocksBoxSerpElementItem
+from dataforseo_client.models.top_sights_serp_element_item import TopSightsSerpElementItem
+from dataforseo_client.models.top_stories_serp_element_item import TopStoriesSerpElementItem
+from dataforseo_client.models.twitter_serp_element_item import TwitterSerpElementItem
+from dataforseo_client.models.video_serp_element_item import VideoSerpElementItem
+from dataforseo_client.models.visual_stories_serp_element_item import VisualStoriesSerpElementItem
+from dataforseo_client.models.youtube_comment_serp_element_item import YoutubeCommentSerpElementItem
+from dataforseo_client.models.youtube_subtitles_serp_element_item import YoutubeSubtitlesSerpElementItem
+from dataforseo_client.models.youtube_video_info_serp_element_item import YoutubeVideoInfoSerpElementItem
+# TODO: Rewrite to not use raise_errors
+BaseSerpElementItem.model_rebuild(raise_errors=False)
 

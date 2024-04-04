@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of AuthorsElement from a JSON string
 authors_element_instance = AuthorsElement.from_json(json)
 # print the JSON string representation of the object
-print(AuthorsElement.to_json())
+print AuthorsElement.to_json()
 
 # convert the object into a dict
 authors_element_dict = authors_element_instance.to_dict()

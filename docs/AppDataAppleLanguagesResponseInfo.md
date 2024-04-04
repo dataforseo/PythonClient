@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of AppDataAppleLanguagesResponseInfo from a JSON string
 app_data_apple_languages_response_info_instance = AppDataAppleLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataAppleLanguagesResponseInfo.to_json())
+print AppDataAppleLanguagesResponseInfo.to_json()
 
 # convert the object into a dict
 app_data_apple_languages_response_info_dict = app_data_apple_languages_response_info_instance.to_dict()

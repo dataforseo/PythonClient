@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of AmazonRankedSerpElement from a JSON string
 amazon_ranked_serp_element_instance = AmazonRankedSerpElement.from_json(json)
 # print the JSON string representation of the object
-print(AmazonRankedSerpElement.to_json())
+print AmazonRankedSerpElement.to_json()
 
 # convert the object into a dict
 amazon_ranked_serp_element_dict = amazon_ranked_serp_element_instance.to_dict()

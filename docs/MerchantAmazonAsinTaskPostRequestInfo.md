@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of MerchantAmazonAsinTaskPostRequestInfo from a JSON string
 merchant_amazon_asin_task_post_request_info_instance = MerchantAmazonAsinTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(MerchantAmazonAsinTaskPostRequestInfo.to_json())
+print MerchantAmazonAsinTaskPostRequestInfo.to_json()
 
 # convert the object into a dict
 merchant_amazon_asin_task_post_request_info_dict = merchant_amazon_asin_task_post_request_info_instance.to_dict()

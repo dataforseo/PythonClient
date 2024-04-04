@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of RankedSerpElement from a JSON string
 ranked_serp_element_instance = RankedSerpElement.from_json(json)
 # print the JSON string representation of the object
-print(RankedSerpElement.to_json())
+print RankedSerpElement.to_json()
 
 # convert the object into a dict
 ranked_serp_element_dict = ranked_serp_element_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from dataforseo_client.models.images_element import ImagesElement
@@ -53,11 +53,11 @@ class RelatedResult(BaseModel):
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = ["type", "xpath", "domain", "title", "url", "cache_url", "related_search_url", "breadcrumb", "website_name", "is_image", "is_video", "description", "pre_snippet", "extended_snippet", "images", "amp_version", "rating", "price", "highlighted", "about_this_result", "timestamp"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

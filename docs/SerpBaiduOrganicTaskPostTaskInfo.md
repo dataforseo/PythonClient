@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpBaiduOrganicTaskPostTaskInfo from a JSON string
 serp_baidu_organic_task_post_task_info_instance = SerpBaiduOrganicTaskPostTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBaiduOrganicTaskPostTaskInfo.to_json())
+print SerpBaiduOrganicTaskPostTaskInfo.to_json()
 
 # convert the object into a dict
 serp_baidu_organic_task_post_task_info_dict = serp_baidu_organic_task_post_task_info_instance.to_dict()

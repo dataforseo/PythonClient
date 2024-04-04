@@ -32,7 +32,7 @@ json = "{}"
 # create an instance of SerpGoogleLocalFinderTaskPostRequestInfo from a JSON string
 serp_google_local_finder_task_post_request_info_instance = SerpGoogleLocalFinderTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleLocalFinderTaskPostRequestInfo.to_json())
+print SerpGoogleLocalFinderTaskPostRequestInfo.to_json()
 
 # convert the object into a dict
 serp_google_local_finder_task_post_request_info_dict = serp_google_local_finder_task_post_request_info_instance.to_dict()

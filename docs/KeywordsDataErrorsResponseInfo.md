@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of KeywordsDataErrorsResponseInfo from a JSON string
 keywords_data_errors_response_info_instance = KeywordsDataErrorsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataErrorsResponseInfo.to_json())
+print KeywordsDataErrorsResponseInfo.to_json()
 
 # convert the object into a dict
 keywords_data_errors_response_info_dict = keywords_data_errors_response_info_instance.to_dict()

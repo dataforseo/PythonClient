@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MultiCarouselElement from a JSON string
 multi_carousel_element_instance = MultiCarouselElement.from_json(json)
 # print the JSON string representation of the object
-print(MultiCarouselElement.to_json())
+print MultiCarouselElement.to_json()
 
 # convert the object into a dict
 multi_carousel_element_dict = multi_carousel_element_instance.to_dict()

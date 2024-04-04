@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of AmazonMetricsBundleInfo from a JSON string
 amazon_metrics_bundle_info_instance = AmazonMetricsBundleInfo.from_json(json)
 # print the JSON string representation of the object
-print(AmazonMetricsBundleInfo.to_json())
+print AmazonMetricsBundleInfo.to_json()
 
 # convert the object into a dict
 amazon_metrics_bundle_info_dict = amazon_metrics_bundle_info_instance.to_dict()

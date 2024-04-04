@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleSearchByImageTasksReadyResultInfo from a JSON string
 serp_google_search_by_image_tasks_ready_result_info_instance = SerpGoogleSearchByImageTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleSearchByImageTasksReadyResultInfo.to_json())
+print SerpGoogleSearchByImageTasksReadyResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_search_by_image_tasks_ready_result_info_dict = serp_google_search_by_image_tasks_ready_result_info_instance.to_dict()

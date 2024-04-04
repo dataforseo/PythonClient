@@ -35,7 +35,7 @@ json = "{}"
 # create an instance of ImpressionsInfo from a JSON string
 impressions_info_instance = ImpressionsInfo.from_json(json)
 # print the JSON string representation of the object
-print(ImpressionsInfo.to_json())
+print ImpressionsInfo.to_json()
 
 # convert the object into a dict
 impressions_info_dict = impressions_info_instance.to_dict()

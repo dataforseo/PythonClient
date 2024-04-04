@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of OnPageDuplicateTagsItem from a JSON string
 on_page_duplicate_tags_item_instance = OnPageDuplicateTagsItem.from_json(json)
 # print the JSON string representation of the object
-print(OnPageDuplicateTagsItem.to_json())
+print OnPageDuplicateTagsItem.to_json()
 
 # convert the object into a dict
 on_page_duplicate_tags_item_dict = on_page_duplicate_tags_item_instance.to_dict()

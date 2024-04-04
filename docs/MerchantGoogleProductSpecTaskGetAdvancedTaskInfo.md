@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of MerchantGoogleProductSpecTaskGetAdvancedTaskInfo from a JSON string
 merchant_google_product_spec_task_get_advanced_task_info_instance = MerchantGoogleProductSpecTaskGetAdvancedTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(MerchantGoogleProductSpecTaskGetAdvancedTaskInfo.to_json())
+print MerchantGoogleProductSpecTaskGetAdvancedTaskInfo.to_json()
 
 # convert the object into a dict
 merchant_google_product_spec_task_get_advanced_task_info_dict = merchant_google_product_spec_task_get_advanced_task_info_instance.to_dict()

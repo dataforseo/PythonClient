@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of DataforseoLabsAppleAppCompetitorsLiveResultInfo from a JSON string
 dataforseo_labs_apple_app_competitors_live_result_info_instance = DataforseoLabsAppleAppCompetitorsLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsAppleAppCompetitorsLiveResultInfo.to_json())
+print DataforseoLabsAppleAppCompetitorsLiveResultInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_apple_app_competitors_live_result_info_dict = dataforseo_labs_apple_app_competitors_live_result_info_instance.to_dict()

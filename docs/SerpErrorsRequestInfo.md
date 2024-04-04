@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of SerpErrorsRequestInfo from a JSON string
 serp_errors_request_info_instance = SerpErrorsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpErrorsRequestInfo.to_json())
+print SerpErrorsRequestInfo.to_json()
 
 # convert the object into a dict
 serp_errors_request_info_dict = serp_errors_request_info_instance.to_dict()

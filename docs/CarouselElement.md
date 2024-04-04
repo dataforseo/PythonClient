@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of CarouselElement from a JSON string
 carousel_element_instance = CarouselElement.from_json(json)
 # print the JSON string representation of the object
-print(CarouselElement.to_json())
+print CarouselElement.to_json()
 
 # convert the object into a dict
 carousel_element_dict = carousel_element_instance.to_dict()

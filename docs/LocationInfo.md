@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of LocationInfo from a JSON string
 location_info_instance = LocationInfo.from_json(json)
 # print the JSON string representation of the object
-print(LocationInfo.to_json())
+print LocationInfo.to_json()
 
 # convert the object into a dict
 location_info_dict = location_info_instance.to_dict()

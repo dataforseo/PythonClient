@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleNewsLiveAdvancedResponseInfo from a JSON string
 serp_google_news_live_advanced_response_info_instance = SerpGoogleNewsLiveAdvancedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleNewsLiveAdvancedResponseInfo.to_json())
+print SerpGoogleNewsLiveAdvancedResponseInfo.to_json()
 
 # convert the object into a dict
 serp_google_news_live_advanced_response_info_dict = serp_google_news_live_advanced_response_info_instance.to_dict()

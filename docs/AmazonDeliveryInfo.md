@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AmazonDeliveryInfo from a JSON string
 amazon_delivery_info_instance = AmazonDeliveryInfo.from_json(json)
 # print the JSON string representation of the object
-print(AmazonDeliveryInfo.to_json())
+print AmazonDeliveryInfo.to_json()
 
 # convert the object into a dict
 amazon_delivery_info_dict = amazon_delivery_info_instance.to_dict()

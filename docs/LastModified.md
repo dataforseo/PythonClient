@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of LastModified from a JSON string
 last_modified_instance = LastModified.from_json(json)
 # print the JSON string representation of the object
-print(LastModified.to_json())
+print LastModified.to_json()
 
 # convert the object into a dict
 last_modified_dict = last_modified_instance.to_dict()

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of GoogleShoppingSponsoredCarouselMerchantSerpElementItem from a JSON string
 google_shopping_sponsored_carousel_merchant_serp_element_item_instance = GoogleShoppingSponsoredCarouselMerchantSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GoogleShoppingSponsoredCarouselMerchantSerpElementItem.to_json())
+print GoogleShoppingSponsoredCarouselMerchantSerpElementItem.to_json()
 
 # convert the object into a dict
 google_shopping_sponsored_carousel_merchant_serp_element_item_dict = google_shopping_sponsored_carousel_merchant_serp_element_item_instance.to_dict()

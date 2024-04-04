@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpGoogleEventsLiveAdvancedRequestInfo from a JSON string
 serp_google_events_live_advanced_request_info_instance = SerpGoogleEventsLiveAdvancedRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleEventsLiveAdvancedRequestInfo.to_json())
+print SerpGoogleEventsLiveAdvancedRequestInfo.to_json()
 
 # convert the object into a dict
 serp_google_events_live_advanced_request_info_dict = serp_google_events_live_advanced_request_info_instance.to_dict()

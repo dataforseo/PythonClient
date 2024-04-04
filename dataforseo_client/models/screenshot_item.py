@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +29,11 @@ class ScreenshotItem(BaseModel):
     image: Optional[StrictStr] = Field(default=None, description="screenshot of the requested page URL of the page screenshot on the DataForSEO storage note: the page screenshot saved on the DataForSEO storage only remains accessible for one day after making the request")
     __properties: ClassVar[List[str]] = ["image"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

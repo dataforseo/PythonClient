@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of ContentAnalysisSentimentAnalysisLiveResultInfo from a JSON string
 content_analysis_sentiment_analysis_live_result_info_instance = ContentAnalysisSentimentAnalysisLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentAnalysisSentimentAnalysisLiveResultInfo.to_json())
+print ContentAnalysisSentimentAnalysisLiveResultInfo.to_json()
 
 # convert the object into a dict
 content_analysis_sentiment_analysis_live_result_info_dict = content_analysis_sentiment_analysis_live_result_info_instance.to_dict()

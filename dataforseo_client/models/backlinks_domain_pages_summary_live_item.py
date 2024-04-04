@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -51,11 +51,11 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
     referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the target")
     __properties: ClassVar[List[str]] = ["type", "url", "rank", "backlinks", "first_seen", "lost_date", "backlinks_spam_score", "broken_backlinks", "broken_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets", "referring_pages", "referring_links_tld", "referring_links_types", "referring_links_attributes", "referring_links_platform_types", "referring_links_semantic_locations", "referring_links_countries", "referring_pages_nofollow"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

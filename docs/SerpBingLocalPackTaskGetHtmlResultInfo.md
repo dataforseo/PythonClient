@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpBingLocalPackTaskGetHtmlResultInfo from a JSON string
 serp_bing_local_pack_task_get_html_result_info_instance = SerpBingLocalPackTaskGetHtmlResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLocalPackTaskGetHtmlResultInfo.to_json())
+print SerpBingLocalPackTaskGetHtmlResultInfo.to_json()
 
 # convert the object into a dict
 serp_bing_local_pack_task_get_html_result_info_dict = serp_bing_local_pack_task_get_html_result_info_instance.to_dict()

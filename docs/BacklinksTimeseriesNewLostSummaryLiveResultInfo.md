@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of BacklinksTimeseriesNewLostSummaryLiveResultInfo from a JSON string
 backlinks_timeseries_new_lost_summary_live_result_info_instance = BacklinksTimeseriesNewLostSummaryLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksTimeseriesNewLostSummaryLiveResultInfo.to_json())
+print BacklinksTimeseriesNewLostSummaryLiveResultInfo.to_json()
 
 # convert the object into a dict
 backlinks_timeseries_new_lost_summary_live_result_info_dict = backlinks_timeseries_new_lost_summary_live_result_info_instance.to_dict()

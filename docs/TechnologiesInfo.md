@@ -32,7 +32,7 @@ json = "{}"
 # create an instance of TechnologiesInfo from a JSON string
 technologies_info_instance = TechnologiesInfo.from_json(json)
 # print the JSON string representation of the object
-print(TechnologiesInfo.to_json())
+print TechnologiesInfo.to_json()
 
 # convert the object into a dict
 technologies_info_dict = technologies_info_instance.to_dict()

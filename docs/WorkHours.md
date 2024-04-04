@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of WorkHours from a JSON string
 work_hours_instance = WorkHours.from_json(json)
 # print the JSON string representation of the object
-print(WorkHours.to_json())
+print WorkHours.to_json()
 
 # convert the object into a dict
 work_hours_dict = work_hours_instance.to_dict()

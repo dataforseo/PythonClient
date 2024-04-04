@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of BaseGoogleTrendsItem from a JSON string
 base_google_trends_item_instance = BaseGoogleTrendsItem.from_json(json)
 # print the JSON string representation of the object
-print(BaseGoogleTrendsItem.to_json())
+print BaseGoogleTrendsItem.to_json()
 
 # convert the object into a dict
 base_google_trends_item_dict = base_google_trends_item_instance.to_dict()

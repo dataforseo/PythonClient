@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of AppendixContentGenerationLimitsRatesDataInfo from a JSON string
 appendix_content_generation_limits_rates_data_info_instance = AppendixContentGenerationLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixContentGenerationLimitsRatesDataInfo.to_json())
+print AppendixContentGenerationLimitsRatesDataInfo.to_json()
 
 # convert the object into a dict
 appendix_content_generation_limits_rates_data_info_dict = appendix_content_generation_limits_rates_data_info_instance.to_dict()

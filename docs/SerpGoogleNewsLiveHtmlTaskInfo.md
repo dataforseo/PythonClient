@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpGoogleNewsLiveHtmlTaskInfo from a JSON string
 serp_google_news_live_html_task_info_instance = SerpGoogleNewsLiveHtmlTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleNewsLiveHtmlTaskInfo.to_json())
+print SerpGoogleNewsLiveHtmlTaskInfo.to_json()
 
 # convert the object into a dict
 serp_google_news_live_html_task_info_dict = serp_google_news_live_html_task_info_instance.to_dict()

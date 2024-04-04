@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of SerpScreenshotRequestInfo from a JSON string
 serp_screenshot_request_info_instance = SerpScreenshotRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpScreenshotRequestInfo.to_json())
+print SerpScreenshotRequestInfo.to_json()
 
 # convert the object into a dict
 serp_screenshot_request_info_dict = serp_screenshot_request_info_instance.to_dict()

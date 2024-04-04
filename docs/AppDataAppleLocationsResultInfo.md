@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AppDataAppleLocationsResultInfo from a JSON string
 app_data_apple_locations_result_info_instance = AppDataAppleLocationsResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataAppleLocationsResultInfo.to_json())
+print AppDataAppleLocationsResultInfo.to_json()
 
 # convert the object into a dict
 app_data_apple_locations_result_info_dict = app_data_apple_locations_result_info_instance.to_dict()

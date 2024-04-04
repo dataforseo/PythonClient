@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.page_content_info import PageContentInfo
 from typing import Optional, Set
@@ -33,11 +33,11 @@ class OnPageContentParsingItem(BaseModel):
     page_content: Optional[PageContentInfo] = None
     __properties: ClassVar[List[str]] = ["type", "fetch_time", "status_code", "page_content"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.metrics_info import MetricsInfo
 from typing import Optional, Set
@@ -37,11 +37,11 @@ class DataforseoLabsCompetitorsDomainLiveItem(BaseModel):
     competitor_metrics: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the returned competitor’s domain")
     __properties: ClassVar[List[str]] = ["se_type", "domain", "avg_position", "sum_position", "intersections", "full_domain_metrics", "metrics", "competitor_metrics"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

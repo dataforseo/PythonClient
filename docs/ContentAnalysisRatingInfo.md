@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of ContentAnalysisRatingInfo from a JSON string
 content_analysis_rating_info_instance = ContentAnalysisRatingInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentAnalysisRatingInfo.to_json())
+print ContentAnalysisRatingInfo.to_json()
 
 # convert the object into a dict
 content_analysis_rating_info_dict = content_analysis_rating_info_instance.to_dict()

@@ -32,7 +32,7 @@ json = "{}"
 # create an instance of AmazonSerpElement from a JSON string
 amazon_serp_element_instance = AmazonSerpElement.from_json(json)
 # print the JSON string representation of the object
-print(AmazonSerpElement.to_json())
+print AmazonSerpElement.to_json()
 
 # convert the object into a dict
 amazon_serp_element_dict = amazon_serp_element_instance.to_dict()

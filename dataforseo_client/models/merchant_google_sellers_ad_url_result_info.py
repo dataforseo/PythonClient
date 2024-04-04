@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,11 +31,11 @@ class MerchantGoogleSellersAdUrlResultInfo(BaseModel):
     ad_url_redirects: Optional[List[Optional[StrictStr]]] = Field(default=None, description="URLs where the link from Google Shopping redirects before reaching a final URL includes up to 10 URLs of the ad’s redirect path to the seller’s ad_url")
     __properties: ClassVar[List[str]] = ["ad_aclk", "ad_url", "ad_url_redirects"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

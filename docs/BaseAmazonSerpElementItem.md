@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of BaseAmazonSerpElementItem from a JSON string
 base_amazon_serp_element_item_instance = BaseAmazonSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(BaseAmazonSerpElementItem.to_json())
+print BaseAmazonSerpElementItem.to_json()
 
 # convert the object into a dict
 base_amazon_serp_element_item_dict = base_amazon_serp_element_item_instance.to_dict()

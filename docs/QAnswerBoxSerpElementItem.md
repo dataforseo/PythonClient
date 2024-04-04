@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of QAnswerBoxSerpElementItem from a JSON string
 q_answer_box_serp_element_item_instance = QAnswerBoxSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(QAnswerBoxSerpElementItem.to_json())
+print QAnswerBoxSerpElementItem.to_json()
 
 # convert the object into a dict
 q_answer_box_serp_element_item_dict = q_answer_box_serp_element_item_instance.to_dict()

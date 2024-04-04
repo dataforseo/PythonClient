@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AppendixStatusResultInfo from a JSON string
 appendix_status_result_info_instance = AppendixStatusResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixStatusResultInfo.to_json())
+print AppendixStatusResultInfo.to_json()
 
 # convert the object into a dict
 appendix_status_result_info_dict = appendix_status_result_info_instance.to_dict()

@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpBingLocalPackLiveRegularResultInfo from a JSON string
 serp_bing_local_pack_live_regular_result_info_instance = SerpBingLocalPackLiveRegularResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLocalPackLiveRegularResultInfo.to_json())
+print SerpBingLocalPackLiveRegularResultInfo.to_json()
 
 # convert the object into a dict
 serp_bing_local_pack_live_regular_result_info_dict = serp_bing_local_pack_live_regular_result_info_instance.to_dict()

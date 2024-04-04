@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of DomainAnalyticsErrorsTaskInfo from a JSON string
 domain_analytics_errors_task_info_instance = DomainAnalyticsErrorsTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(DomainAnalyticsErrorsTaskInfo.to_json())
+print DomainAnalyticsErrorsTaskInfo.to_json()
 
 # convert the object into a dict
 domain_analytics_errors_task_info_dict = domain_analytics_errors_task_info_instance.to_dict()

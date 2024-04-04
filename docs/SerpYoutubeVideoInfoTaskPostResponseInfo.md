@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpYoutubeVideoInfoTaskPostResponseInfo from a JSON string
 serp_youtube_video_info_task_post_response_info_instance = SerpYoutubeVideoInfoTaskPostResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpYoutubeVideoInfoTaskPostResponseInfo.to_json())
+print SerpYoutubeVideoInfoTaskPostResponseInfo.to_json()
 
 # convert the object into a dict
 serp_youtube_video_info_task_post_response_info_dict = serp_youtube_video_info_task_post_response_info_instance.to_dict()

@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of OtherSitesReviewsInfo from a JSON string
 other_sites_reviews_info_instance = OtherSitesReviewsInfo.from_json(json)
 # print the JSON string representation of the object
-print(OtherSitesReviewsInfo.to_json())
+print OtherSitesReviewsInfo.to_json()
 
 # convert the object into a dict
 other_sites_reviews_info_dict = other_sites_reviews_info_instance.to_dict()

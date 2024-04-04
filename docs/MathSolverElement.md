@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MathSolverElement from a JSON string
 math_solver_element_instance = MathSolverElement.from_json(json)
 # print the JSON string representation of the object
-print(MathSolverElement.to_json())
+print MathSolverElement.to_json()
 
 # convert the object into a dict
 math_solver_element_dict = math_solver_element_instance.to_dict()

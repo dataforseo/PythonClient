@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpNaverOrganicTaskGetRegularTaskInfo from a JSON string
 serp_naver_organic_task_get_regular_task_info_instance = SerpNaverOrganicTaskGetRegularTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpNaverOrganicTaskGetRegularTaskInfo.to_json())
+print SerpNaverOrganicTaskGetRegularTaskInfo.to_json()
 
 # convert the object into a dict
 serp_naver_organic_task_get_regular_task_info_dict = serp_naver_organic_task_get_regular_task_info_instance.to_dict()

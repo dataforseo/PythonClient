@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of AppStoreMetricsBundleInfo from a JSON string
 app_store_metrics_bundle_info_instance = AppStoreMetricsBundleInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppStoreMetricsBundleInfo.to_json())
+print AppStoreMetricsBundleInfo.to_json()
 
 # convert the object into a dict
 app_store_metrics_bundle_info_dict = app_store_metrics_bundle_info_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpNaverOrganicTasksReadyResultInfo from a JSON string
 serp_naver_organic_tasks_ready_result_info_instance = SerpNaverOrganicTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpNaverOrganicTasksReadyResultInfo.to_json())
+print SerpNaverOrganicTasksReadyResultInfo.to_json()
 
 # convert the object into a dict
 serp_naver_organic_tasks_ready_result_info_dict = serp_naver_organic_tasks_ready_result_info_instance.to_dict()

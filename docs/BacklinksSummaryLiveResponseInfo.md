@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of BacklinksSummaryLiveResponseInfo from a JSON string
 backlinks_summary_live_response_info_instance = BacklinksSummaryLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksSummaryLiveResponseInfo.to_json())
+print BacklinksSummaryLiveResponseInfo.to_json()
 
 # convert the object into a dict
 backlinks_summary_live_response_info_dict = backlinks_summary_live_response_info_instance.to_dict()

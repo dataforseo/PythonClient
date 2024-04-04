@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.other_sites_reviews_info import OtherSitesReviewsInfo
 from dataforseo_client.models.review_mention_info import ReviewMentionInfo
@@ -35,11 +35,11 @@ class HotelReviewInfo(BaseModel):
     other_sites_reviews: Optional[List[OtherSitesReviewsInfo]] = Field(default=None, description="reviews on third-party sites reviews from third-paty sites")
     __properties: ClassVar[List[str]] = ["value", "votes_count", "mentions", "rating_distribution", "other_sites_reviews"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

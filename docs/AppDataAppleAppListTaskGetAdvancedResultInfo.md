@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of AppDataAppleAppListTaskGetAdvancedResultInfo from a JSON string
 app_data_apple_app_list_task_get_advanced_result_info_instance = AppDataAppleAppListTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataAppleAppListTaskGetAdvancedResultInfo.to_json())
+print AppDataAppleAppListTaskGetAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 app_data_apple_app_list_task_get_advanced_result_info_dict = app_data_apple_app_list_task_get_advanced_result_info_instance.to_dict()

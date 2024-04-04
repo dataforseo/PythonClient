@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of GoogleFlightsElement from a JSON string
 google_flights_element_instance = GoogleFlightsElement.from_json(json)
 # print the JSON string representation of the object
-print(GoogleFlightsElement.to_json())
+print GoogleFlightsElement.to_json()
 
 # convert the object into a dict
 google_flights_element_dict = google_flights_element_instance.to_dict()

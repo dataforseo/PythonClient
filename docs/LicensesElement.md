@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of LicensesElement from a JSON string
 licenses_element_instance = LicensesElement.from_json(json)
 # print the JSON string representation of the object
-print(LicensesElement.to_json())
+print LicensesElement.to_json()
 
 # convert the object into a dict
 licenses_element_dict = licenses_element_instance.to_dict()

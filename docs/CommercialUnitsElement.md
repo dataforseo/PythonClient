@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of CommercialUnitsElement from a JSON string
 commercial_units_element_instance = CommercialUnitsElement.from_json(json)
 # print the JSON string representation of the object
-print(CommercialUnitsElement.to_json())
+print CommercialUnitsElement.to_json()
 
 # convert the object into a dict
 commercial_units_element_dict = commercial_units_element_instance.to_dict()

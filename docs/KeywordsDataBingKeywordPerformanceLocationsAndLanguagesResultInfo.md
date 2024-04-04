@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo from a JSON string
 keywords_data_bing_keyword_performance_locations_and_languages_result_info_instance = KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo.to_json())
+print KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo.to_json()
 
 # convert the object into a dict
 keywords_data_bing_keyword_performance_locations_and_languages_result_info_dict = keywords_data_bing_keyword_performance_locations_and_languages_result_info_instance.to_dict()

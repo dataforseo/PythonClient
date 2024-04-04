@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageNonIndexableTaskInfo from a JSON string
 on_page_non_indexable_task_info_instance = OnPageNonIndexableTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageNonIndexableTaskInfo.to_json())
+print OnPageNonIndexableTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_non_indexable_task_info_dict = on_page_non_indexable_task_info_instance.to_dict()

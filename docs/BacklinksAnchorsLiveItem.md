@@ -39,7 +39,7 @@ json = "{}"
 # create an instance of BacklinksAnchorsLiveItem from a JSON string
 backlinks_anchors_live_item_instance = BacklinksAnchorsLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksAnchorsLiveItem.to_json())
+print BacklinksAnchorsLiveItem.to_json()
 
 # convert the object into a dict
 backlinks_anchors_live_item_dict = backlinks_anchors_live_item_instance.to_dict()

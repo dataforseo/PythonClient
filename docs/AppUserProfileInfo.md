@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of AppUserProfileInfo from a JSON string
 app_user_profile_info_instance = AppUserProfileInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppUserProfileInfo.to_json())
+print AppUserProfileInfo.to_json()
 
 # convert the object into a dict
 app_user_profile_info_dict = app_user_profile_info_instance.to_dict()

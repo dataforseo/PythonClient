@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of CarouselSerpElementItem from a JSON string
 carousel_serp_element_item_instance = CarouselSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(CarouselSerpElementItem.to_json())
+print CarouselSerpElementItem.to_json()
 
 # convert the object into a dict
 carousel_serp_element_item_dict = carousel_serp_element_item_instance.to_dict()

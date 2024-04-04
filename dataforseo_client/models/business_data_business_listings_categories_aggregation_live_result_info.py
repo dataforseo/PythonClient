@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.business_data_business_listings_categories_aggregation_live_item import BusinessDataBusinessListingsCategoriesAggregationLiveItem
 from typing import Optional, Set
@@ -34,11 +34,11 @@ class BusinessDataBusinessListingsCategoriesAggregationLiveResultInfo(BaseModel)
     items: Optional[List[BusinessDataBusinessListingsCategoriesAggregationLiveItem]] = Field(default=None, description="encountered item types types of search engine results encountered in the items array; possible item types: business_category")
     __properties: ClassVar[List[str]] = ["total_count", "count", "offset", "offset_token", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

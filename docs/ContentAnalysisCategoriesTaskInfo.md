@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of ContentAnalysisCategoriesTaskInfo from a JSON string
 content_analysis_categories_task_info_instance = ContentAnalysisCategoriesTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentAnalysisCategoriesTaskInfo.to_json())
+print ContentAnalysisCategoriesTaskInfo.to_json()
 
 # convert the object into a dict
 content_analysis_categories_task_info_dict = content_analysis_categories_task_info_instance.to_dict()

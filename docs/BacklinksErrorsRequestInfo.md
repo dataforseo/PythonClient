@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of BacklinksErrorsRequestInfo from a JSON string
 backlinks_errors_request_info_instance = BacklinksErrorsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksErrorsRequestInfo.to_json())
+print BacklinksErrorsRequestInfo.to_json()
 
 # convert the object into a dict
 backlinks_errors_request_info_dict = backlinks_errors_request_info_instance.to_dict()

@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem from a JSON string
 dataforseo_labs_google_domain_metrics_by_categories_live_item_instance = DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem.to_json())
+print DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_domain_metrics_by_categories_live_item_dict = dataforseo_labs_google_domain_metrics_by_categories_live_item_instance.to_dict()

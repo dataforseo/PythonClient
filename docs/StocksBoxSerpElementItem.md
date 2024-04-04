@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of StocksBoxSerpElementItem from a JSON string
 stocks_box_serp_element_item_instance = StocksBoxSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(StocksBoxSerpElementItem.to_json())
+print StocksBoxSerpElementItem.to_json()
 
 # convert the object into a dict
 stocks_box_serp_element_item_dict = stocks_box_serp_element_item_instance.to_dict()

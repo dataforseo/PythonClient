@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of KeywordKpiInfo from a JSON string
 keyword_kpi_info_instance = KeywordKpiInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordKpiInfo.to_json())
+print KeywordKpiInfo.to_json()
 
 # convert the object into a dict
 keyword_kpi_info_dict = keyword_kpi_info_instance.to_dict()

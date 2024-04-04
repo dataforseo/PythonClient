@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of FoundOnWebSerpElementItem from a JSON string
 found_on_web_serp_element_item_instance = FoundOnWebSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(FoundOnWebSerpElementItem.to_json())
+print FoundOnWebSerpElementItem.to_json()
 
 # convert the object into a dict
 found_on_web_serp_element_item_dict = found_on_web_serp_element_item_instance.to_dict()

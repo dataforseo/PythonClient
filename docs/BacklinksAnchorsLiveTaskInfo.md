@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of BacklinksAnchorsLiveTaskInfo from a JSON string
 backlinks_anchors_live_task_info_instance = BacklinksAnchorsLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksAnchorsLiveTaskInfo.to_json())
+print BacklinksAnchorsLiveTaskInfo.to_json()
 
 # convert the object into a dict
 backlinks_anchors_live_task_info_dict = backlinks_anchors_live_task_info_instance.to_dict()

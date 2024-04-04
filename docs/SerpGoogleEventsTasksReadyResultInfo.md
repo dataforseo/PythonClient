@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleEventsTasksReadyResultInfo from a JSON string
 serp_google_events_tasks_ready_result_info_instance = SerpGoogleEventsTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleEventsTasksReadyResultInfo.to_json())
+print SerpGoogleEventsTasksReadyResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_events_tasks_ready_result_info_dict = serp_google_events_tasks_ready_result_info_instance.to_dict()

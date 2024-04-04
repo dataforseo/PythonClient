@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageRawHtmlResponseInfo from a JSON string
 on_page_raw_html_response_info_instance = OnPageRawHtmlResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageRawHtmlResponseInfo.to_json())
+print OnPageRawHtmlResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_raw_html_response_info_dict = on_page_raw_html_response_info_instance.to_dict()

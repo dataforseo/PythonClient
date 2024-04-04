@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of PeriodCovered from a JSON string
 period_covered_instance = PeriodCovered.from_json(json)
 # print the JSON string representation of the object
-print(PeriodCovered.to_json())
+print PeriodCovered.to_json()
 
 # convert the object into a dict
 period_covered_dict = period_covered_instance.to_dict()

@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of Rectangle from a JSON string
 rectangle_instance = Rectangle.from_json(json)
 # print the JSON string representation of the object
-print(Rectangle.to_json())
+print Rectangle.to_json()
 
 # convert the object into a dict
 rectangle_dict = rectangle_instance.to_dict()

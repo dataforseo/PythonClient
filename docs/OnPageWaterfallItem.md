@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of OnPageWaterfallItem from a JSON string
 on_page_waterfall_item_instance = OnPageWaterfallItem.from_json(json)
 # print the JSON string representation of the object
-print(OnPageWaterfallItem.to_json())
+print OnPageWaterfallItem.to_json()
 
 # convert the object into a dict
 on_page_waterfall_item_dict = on_page_waterfall_item_instance.to_dict()

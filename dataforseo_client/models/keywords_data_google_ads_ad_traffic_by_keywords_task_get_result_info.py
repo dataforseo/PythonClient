@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,11 +40,11 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResultInfo(BaseModel):
     clicks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of clicks on an ad number of clicks an ad is projected to get within the specified time period if there is no data, then the value is null")
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "date_interval", "search_partners", "bid", "match", "impressions", "ctr", "average_cpc", "cost", "clicks"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -36,7 +36,7 @@ json = "{}"
 # create an instance of LocalPackDataforseoLabsSerpElementItem from a JSON string
 local_pack_dataforseo_labs_serp_element_item_instance = LocalPackDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(LocalPackDataforseoLabsSerpElementItem.to_json())
+print LocalPackDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 local_pack_dataforseo_labs_serp_element_item_dict = local_pack_dataforseo_labs_serp_element_item_instance.to_dict()

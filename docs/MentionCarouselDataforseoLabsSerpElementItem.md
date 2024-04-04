@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of MentionCarouselDataforseoLabsSerpElementItem from a JSON string
 mention_carousel_dataforseo_labs_serp_element_item_instance = MentionCarouselDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(MentionCarouselDataforseoLabsSerpElementItem.to_json())
+print MentionCarouselDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 mention_carousel_dataforseo_labs_serp_element_item_dict = mention_carousel_dataforseo_labs_serp_element_item_instance.to_dict()

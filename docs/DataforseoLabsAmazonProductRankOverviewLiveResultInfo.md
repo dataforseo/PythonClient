@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of DataforseoLabsAmazonProductRankOverviewLiveResultInfo from a JSON string
 dataforseo_labs_amazon_product_rank_overview_live_result_info_instance = DataforseoLabsAmazonProductRankOverviewLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsAmazonProductRankOverviewLiveResultInfo.to_json())
+print DataforseoLabsAmazonProductRankOverviewLiveResultInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_amazon_product_rank_overview_live_result_info_dict = dataforseo_labs_amazon_product_rank_overview_live_result_info_instance.to_dict()

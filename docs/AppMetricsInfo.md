@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AppMetricsInfo from a JSON string
 app_metrics_info_instance = AppMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppMetricsInfo.to_json())
+print AppMetricsInfo.to_json()
 
 # convert the object into a dict
 app_metrics_info_dict = app_metrics_info_instance.to_dict()

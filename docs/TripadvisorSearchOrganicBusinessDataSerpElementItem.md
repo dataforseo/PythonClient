@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of TripadvisorSearchOrganicBusinessDataSerpElementItem from a JSON string
 tripadvisor_search_organic_business_data_serp_element_item_instance = TripadvisorSearchOrganicBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(TripadvisorSearchOrganicBusinessDataSerpElementItem.to_json())
+print TripadvisorSearchOrganicBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 tripadvisor_search_organic_business_data_serp_element_item_dict = tripadvisor_search_organic_business_data_serp_element_item_instance.to_dict()

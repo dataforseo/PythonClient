@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of KnowledgeGraphImagesElement from a JSON string
 knowledge_graph_images_element_instance = KnowledgeGraphImagesElement.from_json(json)
 # print the JSON string representation of the object
-print(KnowledgeGraphImagesElement.to_json())
+print KnowledgeGraphImagesElement.to_json()
 
 # convert the object into a dict
 knowledge_graph_images_element_dict = knowledge_graph_images_element_instance.to_dict()

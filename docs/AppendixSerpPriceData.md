@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of AppendixSerpPriceData from a JSON string
 appendix_serp_price_data_instance = AppendixSerpPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixSerpPriceData.to_json())
+print AppendixSerpPriceData.to_json()
 
 # convert the object into a dict
 appendix_serp_price_data_dict = appendix_serp_price_data_instance.to_dict()

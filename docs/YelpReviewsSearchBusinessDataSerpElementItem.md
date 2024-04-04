@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of YelpReviewsSearchBusinessDataSerpElementItem from a JSON string
 yelp_reviews_search_business_data_serp_element_item_instance = YelpReviewsSearchBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(YelpReviewsSearchBusinessDataSerpElementItem.to_json())
+print YelpReviewsSearchBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 yelp_reviews_search_business_data_serp_element_item_dict = yelp_reviews_search_business_data_serp_element_item_instance.to_dict()

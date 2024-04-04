@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_hotel_info_google_business_data_price_data import AppendixHotelInfoGoogleBusinessDataPriceData
 from dataforseo_client.models.appendix_hotel_searches_google_business_data_price_data import AppendixHotelSearchesGoogleBusinessDataPriceData
@@ -35,11 +35,11 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
     reviews: Optional[AppendixHotelSearchesGoogleBusinessDataPriceData] = None
     __properties: ClassVar[List[str]] = ["hotel_info", "hotel_searches", "my_business_info", "my_business_updates", "reviews"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

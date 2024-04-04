@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of TrendsMapDataInfo from a JSON string
 trends_map_data_info_instance = TrendsMapDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(TrendsMapDataInfo.to_json())
+print TrendsMapDataInfo.to_json()
 
 # convert the object into a dict
 trends_map_data_info_dict = trends_map_data_info_instance.to_dict()

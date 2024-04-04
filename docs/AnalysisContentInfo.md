@@ -35,7 +35,7 @@ json = "{}"
 # create an instance of AnalysisContentInfo from a JSON string
 analysis_content_info_instance = AnalysisContentInfo.from_json(json)
 # print the JSON string representation of the object
-print(AnalysisContentInfo.to_json())
+print AnalysisContentInfo.to_json()
 
 # convert the object into a dict
 analysis_content_info_dict = analysis_content_info_instance.to_dict()

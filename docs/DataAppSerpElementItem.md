@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of DataAppSerpElementItem from a JSON string
 data_app_serp_element_item_instance = DataAppSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DataAppSerpElementItem.to_json())
+print DataAppSerpElementItem.to_json()
 
 # convert the object into a dict
 data_app_serp_element_item_dict = data_app_serp_element_item_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.amazon_ranked_serp_element import AmazonRankedSerpElement
 from dataforseo_client.models.keyword_data import KeywordData
@@ -33,11 +33,11 @@ class DataforseoLabsAmazonRankedKeywordsLiveItem(BaseModel):
     ranked_serp_element: Optional[AmazonRankedSerpElement] = None
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "ranked_serp_element"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

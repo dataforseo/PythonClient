@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of WorkInfo from a JSON string
 work_info_instance = WorkInfo.from_json(json)
 # print the JSON string representation of the object
-print(WorkInfo.to_json())
+print WorkInfo.to_json()
 
 # convert the object into a dict
 work_info_dict = work_info_instance.to_dict()

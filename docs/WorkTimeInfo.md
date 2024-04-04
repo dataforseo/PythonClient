@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of WorkTimeInfo from a JSON string
 work_time_info_instance = WorkTimeInfo.from_json(json)
 # print the JSON string representation of the object
-print(WorkTimeInfo.to_json())
+print WorkTimeInfo.to_json()
 
 # convert the object into a dict
 work_time_info_dict = work_time_info_instance.to_dict()

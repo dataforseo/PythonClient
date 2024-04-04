@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of BacklinksPageIntersectionLiveItem from a JSON string
 backlinks_page_intersection_live_item_instance = BacklinksPageIntersectionLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksPageIntersectionLiveItem.to_json())
+print BacklinksPageIntersectionLiveItem.to_json()
 
 # convert the object into a dict
 backlinks_page_intersection_live_item_dict = backlinks_page_intersection_live_item_instance.to_dict()

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of AppRankedSerpElementInfo from a JSON string
 app_ranked_serp_element_info_instance = AppRankedSerpElementInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppRankedSerpElementInfo.to_json())
+print AppRankedSerpElementInfo.to_json()
 
 # convert the object into a dict
 app_ranked_serp_element_info_dict = app_ranked_serp_element_info_instance.to_dict()

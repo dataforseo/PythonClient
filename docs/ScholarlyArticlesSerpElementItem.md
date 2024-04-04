@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of ScholarlyArticlesSerpElementItem from a JSON string
 scholarly_articles_serp_element_item_instance = ScholarlyArticlesSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(ScholarlyArticlesSerpElementItem.to_json())
+print ScholarlyArticlesSerpElementItem.to_json()
 
 # convert the object into a dict
 scholarly_articles_serp_element_item_dict = scholarly_articles_serp_element_item_instance.to_dict()

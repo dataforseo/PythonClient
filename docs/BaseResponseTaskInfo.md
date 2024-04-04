@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of BaseResponseTaskInfo from a JSON string
 base_response_task_info_instance = BaseResponseTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(BaseResponseTaskInfo.to_json())
+print BaseResponseTaskInfo.to_json()
 
 # convert the object into a dict
 base_response_task_info_dict = base_response_task_info_instance.to_dict()

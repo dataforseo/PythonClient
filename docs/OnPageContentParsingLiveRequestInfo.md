@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of OnPageContentParsingLiveRequestInfo from a JSON string
 on_page_content_parsing_live_request_info_instance = OnPageContentParsingLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageContentParsingLiveRequestInfo.to_json())
+print OnPageContentParsingLiveRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_content_parsing_live_request_info_dict = on_page_content_parsing_live_request_info_instance.to_dict()

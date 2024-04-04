@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of AppendixKeywordsDataPriceData from a JSON string
 appendix_keywords_data_price_data_instance = AppendixKeywordsDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixKeywordsDataPriceData.to_json())
+print AppendixKeywordsDataPriceData.to_json()
 
 # convert the object into a dict
 appendix_keywords_data_price_data_dict = appendix_keywords_data_price_data_instance.to_dict()

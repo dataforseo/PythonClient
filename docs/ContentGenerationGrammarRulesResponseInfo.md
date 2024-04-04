@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of ContentGenerationGrammarRulesResponseInfo from a JSON string
 content_generation_grammar_rules_response_info_instance = ContentGenerationGrammarRulesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationGrammarRulesResponseInfo.to_json())
+print ContentGenerationGrammarRulesResponseInfo.to_json()
 
 # convert the object into a dict
 content_generation_grammar_rules_response_info_dict = content_generation_grammar_rules_response_info_instance.to_dict()

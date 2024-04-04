@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpGoogleMapsTaskGetAdvancedResultInfo from a JSON string
 serp_google_maps_task_get_advanced_result_info_instance = SerpGoogleMapsTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleMapsTaskGetAdvancedResultInfo.to_json())
+print SerpGoogleMapsTaskGetAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_maps_task_get_advanced_result_info_dict = serp_google_maps_task_get_advanced_result_info_instance.to_dict()

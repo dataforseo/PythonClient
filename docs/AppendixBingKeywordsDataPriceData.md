@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of AppendixBingKeywordsDataPriceData from a JSON string
 appendix_bing_keywords_data_price_data_instance = AppendixBingKeywordsDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixBingKeywordsDataPriceData.to_json())
+print AppendixBingKeywordsDataPriceData.to_json()
 
 # convert the object into a dict
 appendix_bing_keywords_data_price_data_dict = appendix_bing_keywords_data_price_data_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
 from typing import Optional, Set
@@ -35,11 +35,11 @@ class AppRankedSerpElementInfo(BaseModel):
     previous_updated_time: Optional[StrictStr] = Field(default=None, description="previous to the most recent date and time when SERP data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-10-15 12:57:46 +00:00; in this case, will equal null")
     __properties: ClassVar[List[str]] = ["se_type", "serp_item", "check_url", "se_results_count", "last_updated_time", "previous_updated_time"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

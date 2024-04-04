@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of DataforseoTrendsDataInfo from a JSON string
 dataforseo_trends_data_info_instance = DataforseoTrendsDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoTrendsDataInfo.to_json())
+print DataforseoTrendsDataInfo.to_json()
 
 # convert the object into a dict
 dataforseo_trends_data_info_dict = dataforseo_trends_data_info_instance.to_dict()

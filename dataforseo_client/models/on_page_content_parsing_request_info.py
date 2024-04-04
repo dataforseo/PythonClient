@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,11 +30,11 @@ class OnPageContentParsingRequestInfo(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="ID of the task required field you can get this ID in the response of the Task POST endpoint note: the enable_content_parsing parameter in the POST request must be set to true example: \"07131248-1535-0216-1000-17384017ad04\"")
     __properties: ClassVar[List[str]] = ["url", "id"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.people_also_ask_expanded_element import PeopleAlsoAskExpandedElement
 from typing import Optional, Set
@@ -34,11 +34,11 @@ class PeopleAlsoAskElement(BaseModel):
     expanded_element: Optional[List[PeopleAlsoAskExpandedElement]] = Field(default=None, description="expanded element")
     __properties: ClassVar[List[str]] = ["type", "title", "seed_question", "xpath", "expanded_element"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

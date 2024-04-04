@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of MerchantGoogleLocationsCountryTaskInfo from a JSON string
 merchant_google_locations_country_task_info_instance = MerchantGoogleLocationsCountryTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(MerchantGoogleLocationsCountryTaskInfo.to_json())
+print MerchantGoogleLocationsCountryTaskInfo.to_json()
 
 # convert the object into a dict
 merchant_google_locations_country_task_info_dict = merchant_google_locations_country_task_info_instance.to_dict()

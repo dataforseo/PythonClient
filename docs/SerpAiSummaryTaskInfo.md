@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpAiSummaryTaskInfo from a JSON string
 serp_ai_summary_task_info_instance = SerpAiSummaryTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpAiSummaryTaskInfo.to_json())
+print SerpAiSummaryTaskInfo.to_json()
 
 # convert the object into a dict
 serp_ai_summary_task_info_dict = serp_ai_summary_task_info_instance.to_dict()

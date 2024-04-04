@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleBulkKeywordDifficultyLiveRequestInfo from a JSON string
 dataforseo_labs_google_bulk_keyword_difficulty_live_request_info_instance = DataforseoLabsGoogleBulkKeywordDifficultyLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleBulkKeywordDifficultyLiveRequestInfo.to_json())
+print DataforseoLabsGoogleBulkKeywordDifficultyLiveRequestInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_bulk_keyword_difficulty_live_request_info_dict = dataforseo_labs_google_bulk_keyword_difficulty_live_request_info_instance.to_dict()

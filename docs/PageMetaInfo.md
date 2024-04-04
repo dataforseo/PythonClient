@@ -46,7 +46,7 @@ json = "{}"
 # create an instance of PageMetaInfo from a JSON string
 page_meta_info_instance = PageMetaInfo.from_json(json)
 # print the JSON string representation of the object
-print(PageMetaInfo.to_json())
+print PageMetaInfo.to_json()
 
 # convert the object into a dict
 page_meta_info_dict = page_meta_info_instance.to_dict()

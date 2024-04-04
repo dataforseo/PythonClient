@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.hotel_about_info import HotelAboutInfo
 from dataforseo_client.models.hotel_price_info import HotelPriceInfo
@@ -47,11 +47,11 @@ class BusinessDataGoogleHotelInfoLiveAdvancedResultInfo(BaseModel):
     prices: Optional[HotelPriceInfo] = None
     __properties: ClassVar[List[str]] = ["hotel_identifier", "location_code", "language_code", "check_url", "datetime", "title", "stars", "stars_description", "address", "phone", "about", "location", "reviews", "overview_images", "prices"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

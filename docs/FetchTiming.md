@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of FetchTiming from a JSON string
 fetch_timing_instance = FetchTiming.from_json(json)
 # print the JSON string representation of the object
-print(FetchTiming.to_json())
+print FetchTiming.to_json()
 
 # convert the object into a dict
 fetch_timing_dict = fetch_timing_instance.to_dict()

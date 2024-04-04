@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem from a JSON string
 knowledge_graph_description_item_dataforseo_labs_serp_element_item_instance = KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem.to_json())
+print KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 knowledge_graph_description_item_dataforseo_labs_serp_element_item_dict = knowledge_graph_description_item_dataforseo_labs_serp_element_item_instance.to_dict()

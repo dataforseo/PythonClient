@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of SerpGoogleDatasetInfoTasksFixedTaskInfo from a JSON string
 serp_google_dataset_info_tasks_fixed_task_info_instance = SerpGoogleDatasetInfoTasksFixedTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleDatasetInfoTasksFixedTaskInfo.to_json())
+print SerpGoogleDatasetInfoTasksFixedTaskInfo.to_json()
 
 # convert the object into a dict
 serp_google_dataset_info_tasks_fixed_task_info_dict = serp_google_dataset_info_tasks_fixed_task_info_instance.to_dict()

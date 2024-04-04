@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of PeopleAlsoAskExpandedElement from a JSON string
 people_also_ask_expanded_element_instance = PeopleAlsoAskExpandedElement.from_json(json)
 # print the JSON string representation of the object
-print(PeopleAlsoAskExpandedElement.to_json())
+print PeopleAlsoAskExpandedElement.to_json()
 
 # convert the object into a dict
 people_also_ask_expanded_element_dict = people_also_ask_expanded_element_instance.to_dict()

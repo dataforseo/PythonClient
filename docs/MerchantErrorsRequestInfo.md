@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of MerchantErrorsRequestInfo from a JSON string
 merchant_errors_request_info_instance = MerchantErrorsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(MerchantErrorsRequestInfo.to_json())
+print MerchantErrorsRequestInfo.to_json()
 
 # convert the object into a dict
 merchant_errors_request_info_dict = merchant_errors_request_info_instance.to_dict()

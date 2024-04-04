@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of OnPageIdListRequestInfo from a JSON string
 on_page_id_list_request_info_instance = OnPageIdListRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageIdListRequestInfo.to_json())
+print OnPageIdListRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_id_list_request_info_dict = on_page_id_list_request_info_instance.to_dict()

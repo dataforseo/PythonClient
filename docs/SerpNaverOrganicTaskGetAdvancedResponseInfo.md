@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpNaverOrganicTaskGetAdvancedResponseInfo from a JSON string
 serp_naver_organic_task_get_advanced_response_info_instance = SerpNaverOrganicTaskGetAdvancedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpNaverOrganicTaskGetAdvancedResponseInfo.to_json())
+print SerpNaverOrganicTaskGetAdvancedResponseInfo.to_json()
 
 # convert the object into a dict
 serp_naver_organic_task_get_advanced_response_info_dict = serp_naver_organic_task_get_advanced_response_info_instance.to_dict()

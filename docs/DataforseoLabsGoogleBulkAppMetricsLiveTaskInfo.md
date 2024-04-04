@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleBulkAppMetricsLiveTaskInfo from a JSON string
 dataforseo_labs_google_bulk_app_metrics_live_task_info_instance = DataforseoLabsGoogleBulkAppMetricsLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleBulkAppMetricsLiveTaskInfo.to_json())
+print DataforseoLabsGoogleBulkAppMetricsLiveTaskInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_bulk_app_metrics_live_task_info_dict = dataforseo_labs_google_bulk_app_metrics_live_task_info_instance.to_dict()

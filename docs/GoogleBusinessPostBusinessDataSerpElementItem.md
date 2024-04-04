@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of GoogleBusinessPostBusinessDataSerpElementItem from a JSON string
 google_business_post_business_data_serp_element_item_instance = GoogleBusinessPostBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(GoogleBusinessPostBusinessDataSerpElementItem.to_json())
+print GoogleBusinessPostBusinessDataSerpElementItem.to_json()
 
 # convert the object into a dict
 google_business_post_business_data_serp_element_item_dict = google_business_post_business_data_serp_element_item_instance.to_dict()

@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of DataAppAppStoreReviewsSearchSerpElementItem from a JSON string
 data_app_app_store_reviews_search_serp_element_item_instance = DataAppAppStoreReviewsSearchSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DataAppAppStoreReviewsSearchSerpElementItem.to_json())
+print DataAppAppStoreReviewsSearchSerpElementItem.to_json()
 
 # convert the object into a dict
 data_app_app_store_reviews_search_serp_element_item_dict = data_app_app_store_reviews_search_serp_element_item_instance.to_dict()

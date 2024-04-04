@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageKeywordDensityTaskInfo from a JSON string
 on_page_keyword_density_task_info_instance = OnPageKeywordDensityTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageKeywordDensityTaskInfo.to_json())
+print OnPageKeywordDensityTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_keyword_density_task_info_dict = on_page_keyword_density_task_info_instance.to_dict()

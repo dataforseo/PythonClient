@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of OnPageSummaryResultInfo from a JSON string
 on_page_summary_result_info_instance = OnPageSummaryResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageSummaryResultInfo.to_json())
+print OnPageSummaryResultInfo.to_json()
 
 # convert the object into a dict
 on_page_summary_result_info_dict = on_page_summary_result_info_instance.to_dict()

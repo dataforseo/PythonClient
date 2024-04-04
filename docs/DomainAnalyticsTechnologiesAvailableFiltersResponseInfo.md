@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of DomainAnalyticsTechnologiesAvailableFiltersResponseInfo from a JSON string
 domain_analytics_technologies_available_filters_response_info_instance = DomainAnalyticsTechnologiesAvailableFiltersResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(DomainAnalyticsTechnologiesAvailableFiltersResponseInfo.to_json())
+print DomainAnalyticsTechnologiesAvailableFiltersResponseInfo.to_json()
 
 # convert the object into a dict
 domain_analytics_technologies_available_filters_response_info_dict = domain_analytics_technologies_available_filters_response_info_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of ShoppingElement from a JSON string
 shopping_element_instance = ShoppingElement.from_json(json)
 # print the JSON string representation of the object
-print(ShoppingElement.to_json())
+print ShoppingElement.to_json()
 
 # convert the object into a dict
 shopping_element_dict = shopping_element_instance.to_dict()

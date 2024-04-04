@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of AppDataAppleCategoriesResultInfo from a JSON string
 app_data_apple_categories_result_info_instance = AppDataAppleCategoriesResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataAppleCategoriesResultInfo.to_json())
+print AppDataAppleCategoriesResultInfo.to_json()
 
 # convert the object into a dict
 app_data_apple_categories_result_info_dict = app_data_apple_categories_result_info_instance.to_dict()

@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of AppendixSerpLimitsRatesDataInfo from a JSON string
 appendix_serp_limits_rates_data_info_instance = AppendixSerpLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixSerpLimitsRatesDataInfo.to_json())
+print AppendixSerpLimitsRatesDataInfo.to_json()
 
 # convert the object into a dict
 appendix_serp_limits_rates_data_info_dict = appendix_serp_limits_rates_data_info_instance.to_dict()

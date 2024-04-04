@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of LocalBusinessReservationLink from a JSON string
 local_business_reservation_link_instance = LocalBusinessReservationLink.from_json(json)
 # print the JSON string representation of the object
-print(LocalBusinessReservationLink.to_json())
+print LocalBusinessReservationLink.to_json()
 
 # convert the object into a dict
 local_business_reservation_link_dict = local_business_reservation_link_instance.to_dict()

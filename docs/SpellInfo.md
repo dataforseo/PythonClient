@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of SpellInfo from a JSON string
 spell_info_instance = SpellInfo.from_json(json)
 # print the JSON string representation of the object
-print(SpellInfo.to_json())
+print SpellInfo.to_json()
 
 # convert the object into a dict
 spell_info_dict = spell_info_instance.to_dict()

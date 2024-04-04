@@ -40,7 +40,7 @@ json = "{}"
 # create an instance of SerpTaskRequestInfo from a JSON string
 serp_task_request_info_instance = SerpTaskRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpTaskRequestInfo.to_json())
+print SerpTaskRequestInfo.to_json()
 
 # convert the object into a dict
 serp_task_request_info_dict = serp_task_request_info_instance.to_dict()

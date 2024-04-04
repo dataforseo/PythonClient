@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of AppendixKeywordsDataDaysRatesDataInfo from a JSON string
 appendix_keywords_data_days_rates_data_info_instance = AppendixKeywordsDataDaysRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixKeywordsDataDaysRatesDataInfo.to_json())
+print AppendixKeywordsDataDaysRatesDataInfo.to_json()
 
 # convert the object into a dict
 appendix_keywords_data_days_rates_data_info_dict = appendix_keywords_data_days_rates_data_info_instance.to_dict()

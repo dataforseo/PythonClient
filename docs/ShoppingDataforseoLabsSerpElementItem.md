@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of ShoppingDataforseoLabsSerpElementItem from a JSON string
 shopping_dataforseo_labs_serp_element_item_instance = ShoppingDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(ShoppingDataforseoLabsSerpElementItem.to_json())
+print ShoppingDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 shopping_dataforseo_labs_serp_element_item_dict = shopping_dataforseo_labs_serp_element_item_instance.to_dict()

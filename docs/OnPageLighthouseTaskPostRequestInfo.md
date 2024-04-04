@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of OnPageLighthouseTaskPostRequestInfo from a JSON string
 on_page_lighthouse_task_post_request_info_instance = OnPageLighthouseTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageLighthouseTaskPostRequestInfo.to_json())
+print OnPageLighthouseTaskPostRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_lighthouse_task_post_request_info_dict = on_page_lighthouse_task_post_request_info_instance.to_dict()

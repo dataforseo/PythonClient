@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of FaqBoxElement from a JSON string
 faq_box_element_instance = FaqBoxElement.from_json(json)
 # print the JSON string representation of the object
-print(FaqBoxElement.to_json())
+print FaqBoxElement.to_json()
 
 # convert the object into a dict
 faq_box_element_dict = faq_box_element_instance.to_dict()

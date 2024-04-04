@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.dataforseo_labs_amazon_product_keyword_intersections_live_item import DataforseoLabsAmazonProductKeywordIntersectionsLiveItem
 from typing import Optional, Set
@@ -36,11 +36,11 @@ class DataforseoLabsAmazonProductKeywordIntersectionsLiveResultInfo(BaseModel):
     items: Optional[List[DataforseoLabsAmazonProductKeywordIntersectionsLiveItem]] = Field(default=None, description="contains detected Amazon product competitors and related data")
     __properties: ClassVar[List[str]] = ["se_type", "asins", "location_code", "language_code", "total_count", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

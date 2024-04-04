@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of UserProfileInfo from a JSON string
 user_profile_info_instance = UserProfileInfo.from_json(json)
 # print the JSON string representation of the object
-print(UserProfileInfo.to_json())
+print UserProfileInfo.to_json()
 
 # convert the object into a dict
 user_profile_info_dict = user_profile_info_instance.to_dict()

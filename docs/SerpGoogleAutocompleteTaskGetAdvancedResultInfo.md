@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of SerpGoogleAutocompleteTaskGetAdvancedResultInfo from a JSON string
 serp_google_autocomplete_task_get_advanced_result_info_instance = SerpGoogleAutocompleteTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleAutocompleteTaskGetAdvancedResultInfo.to_json())
+print SerpGoogleAutocompleteTaskGetAdvancedResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_autocomplete_task_get_advanced_result_info_dict = serp_google_autocomplete_task_get_advanced_result_info_instance.to_dict()

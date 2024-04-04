@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of MerchantIdListResponseInfo from a JSON string
 merchant_id_list_response_info_instance = MerchantIdListResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(MerchantIdListResponseInfo.to_json())
+print MerchantIdListResponseInfo.to_json()
 
 # convert the object into a dict
 merchant_id_list_response_info_dict = merchant_id_list_response_info_instance.to_dict()

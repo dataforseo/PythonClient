@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_app_data_price_data import AppendixAppDataPriceData
 from dataforseo_client.models.appendix_appendix_price_data import AppendixAppendixPriceData
@@ -52,11 +52,11 @@ class AppendixPriceData(BaseModel):
     on_page: Optional[AppendixOnPagePriceData] = None
     __properties: ClassVar[List[str]] = ["keywords_data", "merchant", "serp", "appendix", "app_data", "backlinks", "business_data", "content_analysis", "content_generation", "dataforseo_labs", "domain_analytics", "on_page"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

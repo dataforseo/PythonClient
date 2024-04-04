@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageDuplicateTagsResponseInfo from a JSON string
 on_page_duplicate_tags_response_info_instance = OnPageDuplicateTagsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageDuplicateTagsResponseInfo.to_json())
+print OnPageDuplicateTagsResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_duplicate_tags_response_info_dict = on_page_duplicate_tags_response_info_instance.to_dict()

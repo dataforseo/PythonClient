@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpBingLocalPackTasksFixedResponseInfo from a JSON string
 serp_bing_local_pack_tasks_fixed_response_info_instance = SerpBingLocalPackTasksFixedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLocalPackTasksFixedResponseInfo.to_json())
+print SerpBingLocalPackTasksFixedResponseInfo.to_json()
 
 # convert the object into a dict
 serp_bing_local_pack_tasks_fixed_response_info_dict = serp_bing_local_pack_tasks_fixed_response_info_instance.to_dict()

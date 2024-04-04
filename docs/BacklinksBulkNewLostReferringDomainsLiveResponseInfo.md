@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of BacklinksBulkNewLostReferringDomainsLiveResponseInfo from a JSON string
 backlinks_bulk_new_lost_referring_domains_live_response_info_instance = BacklinksBulkNewLostReferringDomainsLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksBulkNewLostReferringDomainsLiveResponseInfo.to_json())
+print BacklinksBulkNewLostReferringDomainsLiveResponseInfo.to_json()
 
 # convert the object into a dict
 backlinks_bulk_new_lost_referring_domains_live_response_info_dict = backlinks_bulk_new_lost_referring_domains_live_response_info_instance.to_dict()

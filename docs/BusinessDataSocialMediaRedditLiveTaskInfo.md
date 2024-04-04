@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of BusinessDataSocialMediaRedditLiveTaskInfo from a JSON string
 business_data_social_media_reddit_live_task_info_instance = BusinessDataSocialMediaRedditLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataSocialMediaRedditLiveTaskInfo.to_json())
+print BusinessDataSocialMediaRedditLiveTaskInfo.to_json()
 
 # convert the object into a dict
 business_data_social_media_reddit_live_task_info_dict = business_data_social_media_reddit_live_task_info_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of TwitterSerpElementItem from a JSON string
 twitter_serp_element_item_instance = TwitterSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(TwitterSerpElementItem.to_json())
+print TwitterSerpElementItem.to_json()
 
 # convert the object into a dict
 twitter_serp_element_item_dict = twitter_serp_element_item_instance.to_dict()

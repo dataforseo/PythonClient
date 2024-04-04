@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of BulkMetricsInfo from a JSON string
 bulk_metrics_info_instance = BulkMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print(BulkMetricsInfo.to_json())
+print BulkMetricsInfo.to_json()
 
 # convert the object into a dict
 bulk_metrics_info_dict = bulk_metrics_info_instance.to_dict()

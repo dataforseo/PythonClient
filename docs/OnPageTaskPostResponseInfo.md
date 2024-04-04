@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageTaskPostResponseInfo from a JSON string
 on_page_task_post_response_info_instance = OnPageTaskPostResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageTaskPostResponseInfo.to_json())
+print OnPageTaskPostResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_task_post_response_info_dict = on_page_task_post_response_info_instance.to_dict()

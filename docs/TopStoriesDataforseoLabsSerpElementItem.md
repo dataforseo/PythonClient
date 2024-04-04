@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of TopStoriesDataforseoLabsSerpElementItem from a JSON string
 top_stories_dataforseo_labs_serp_element_item_instance = TopStoriesDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(TopStoriesDataforseoLabsSerpElementItem.to_json())
+print TopStoriesDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 top_stories_dataforseo_labs_serp_element_item_dict = top_stories_dataforseo_labs_serp_element_item_instance.to_dict()

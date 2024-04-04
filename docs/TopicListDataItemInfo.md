@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of TopicListDataItemInfo from a JSON string
 topic_list_data_item_info_instance = TopicListDataItemInfo.from_json(json)
 # print the JSON string representation of the object
-print(TopicListDataItemInfo.to_json())
+print TopicListDataItemInfo.to_json()
 
 # convert the object into a dict
 topic_list_data_item_info_dict = topic_list_data_item_info_instance.to_dict()

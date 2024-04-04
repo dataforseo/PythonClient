@@ -49,7 +49,7 @@ json = "{}"
 # create an instance of DataAppGooglePlayInfoOrganicSerpElementItem from a JSON string
 data_app_google_play_info_organic_serp_element_item_instance = DataAppGooglePlayInfoOrganicSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DataAppGooglePlayInfoOrganicSerpElementItem.to_json())
+print DataAppGooglePlayInfoOrganicSerpElementItem.to_json()
 
 # convert the object into a dict
 data_app_google_play_info_organic_serp_element_item_dict = data_app_google_play_info_organic_serp_element_item_instance.to_dict()

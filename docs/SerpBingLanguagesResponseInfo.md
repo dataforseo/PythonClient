@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpBingLanguagesResponseInfo from a JSON string
 serp_bing_languages_response_info_instance = SerpBingLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLanguagesResponseInfo.to_json())
+print SerpBingLanguagesResponseInfo.to_json()
 
 # convert the object into a dict
 serp_bing_languages_response_info_dict = serp_bing_languages_response_info_instance.to_dict()

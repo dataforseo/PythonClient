@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of BusinessDataTrustpilotSearchTaskGetTaskInfo from a JSON string
 business_data_trustpilot_search_task_get_task_info_instance = BusinessDataTrustpilotSearchTaskGetTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataTrustpilotSearchTaskGetTaskInfo.to_json())
+print BusinessDataTrustpilotSearchTaskGetTaskInfo.to_json()
 
 # convert the object into a dict
 business_data_trustpilot_search_task_get_task_info_dict = business_data_trustpilot_search_task_get_task_info_instance.to_dict()

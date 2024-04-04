@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.page_section_content_info import PageSectionContentInfo
 from dataforseo_client.models.topic_info import TopicInfo
@@ -34,11 +34,11 @@ class PageContentInfo(BaseModel):
     secondary_topic: Optional[List[TopicInfo]] = Field(default=None, description="secondary topic on the page you can find more information about topic priority calculation in this help center article")
     __properties: ClassVar[List[str]] = ["header", "footer", "main_topic", "secondary_topic"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

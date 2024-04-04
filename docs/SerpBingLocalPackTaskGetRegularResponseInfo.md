@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpBingLocalPackTaskGetRegularResponseInfo from a JSON string
 serp_bing_local_pack_task_get_regular_response_info_instance = SerpBingLocalPackTaskGetRegularResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpBingLocalPackTaskGetRegularResponseInfo.to_json())
+print SerpBingLocalPackTaskGetRegularResponseInfo.to_json()
 
 # convert the object into a dict
 serp_bing_local_pack_task_get_regular_response_info_dict = serp_bing_local_pack_task_get_regular_response_info_instance.to_dict()

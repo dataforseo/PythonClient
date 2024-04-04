@@ -27,7 +27,7 @@ json = "{}"
 # create an instance of DataAppAppStoreSearchOrganicSerpElementItem from a JSON string
 data_app_app_store_search_organic_serp_element_item_instance = DataAppAppStoreSearchOrganicSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(DataAppAppStoreSearchOrganicSerpElementItem.to_json())
+print DataAppAppStoreSearchOrganicSerpElementItem.to_json()
 
 # convert the object into a dict
 data_app_app_store_search_organic_serp_element_item_dict = data_app_app_store_search_organic_serp_element_item_instance.to_dict()

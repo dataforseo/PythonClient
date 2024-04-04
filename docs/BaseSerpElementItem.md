@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of BaseSerpElementItem from a JSON string
 base_serp_element_item_instance = BaseSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(BaseSerpElementItem.to_json())
+print BaseSerpElementItem.to_json()
 
 # convert the object into a dict
 base_serp_element_item_dict = base_serp_element_item_instance.to_dict()

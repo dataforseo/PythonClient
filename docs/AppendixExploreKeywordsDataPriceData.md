@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AppendixExploreKeywordsDataPriceData from a JSON string
 appendix_explore_keywords_data_price_data_instance = AppendixExploreKeywordsDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print(AppendixExploreKeywordsDataPriceData.to_json())
+print AppendixExploreKeywordsDataPriceData.to_json()
 
 # convert the object into a dict
 appendix_explore_keywords_data_price_data_dict = appendix_explore_keywords_data_price_data_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.html_content_info import HtmlContentInfo
 from dataforseo_client.models.on_page_resource_issue_info import OnPageResourceIssueInfo
@@ -61,11 +61,11 @@ class PageMetaInfo(BaseModel):
     broken_html: Optional[OnPageResourceIssueInfo] = None
     __properties: ClassVar[List[str]] = ["title", "charset", "follow", "generator", "htags", "description", "favicon", "meta_keywords", "canonical", "internal_links_count", "external_links_count", "inbound_links_count", "images_count", "images_size", "scripts_count", "scripts_size", "stylesheets_count", "stylesheets_size", "title_length", "description_length", "render_blocking_scripts_count", "render_blocking_stylesheets_count", "cumulative_layout_shift", "meta_title", "content", "deprecated_tags", "duplicate_meta_tags", "spell", "social_media_tags", "broken_html"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

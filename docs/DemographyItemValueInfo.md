@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of DemographyItemValueInfo from a JSON string
 demography_item_value_info_instance = DemographyItemValueInfo.from_json(json)
 # print the JSON string representation of the object
-print(DemographyItemValueInfo.to_json())
+print DemographyItemValueInfo.to_json()
 
 # convert the object into a dict
 demography_item_value_info_dict = demography_item_value_info_instance.to_dict()

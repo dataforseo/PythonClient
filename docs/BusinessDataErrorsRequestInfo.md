@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of BusinessDataErrorsRequestInfo from a JSON string
 business_data_errors_request_info_instance = BusinessDataErrorsRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataErrorsRequestInfo.to_json())
+print BusinessDataErrorsRequestInfo.to_json()
 
 # convert the object into a dict
 business_data_errors_request_info_dict = business_data_errors_request_info_instance.to_dict()

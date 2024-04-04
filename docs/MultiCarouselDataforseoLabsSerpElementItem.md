@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of MultiCarouselDataforseoLabsSerpElementItem from a JSON string
 multi_carousel_dataforseo_labs_serp_element_item_instance = MultiCarouselDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(MultiCarouselDataforseoLabsSerpElementItem.to_json())
+print MultiCarouselDataforseoLabsSerpElementItem.to_json()
 
 # convert the object into a dict
 multi_carousel_dataforseo_labs_serp_element_item_dict = multi_carousel_dataforseo_labs_serp_element_item_instance.to_dict()

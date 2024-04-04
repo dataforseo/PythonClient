@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of AppDataGoogleAppSearchesTasksReadyTaskInfo from a JSON string
 app_data_google_app_searches_tasks_ready_task_info_instance = AppDataGoogleAppSearchesTasksReadyTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataGoogleAppSearchesTasksReadyTaskInfo.to_json())
+print AppDataGoogleAppSearchesTasksReadyTaskInfo.to_json()
 
 # convert the object into a dict
 app_data_google_app_searches_tasks_ready_task_info_dict = app_data_google_app_searches_tasks_ready_task_info_instance.to_dict()

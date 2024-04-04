@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of AppDataleAppListingsSearchLiveItem from a JSON string
 app_datale_app_listings_search_live_item_instance = AppDataleAppListingsSearchLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(AppDataleAppListingsSearchLiveItem.to_json())
+print AppDataleAppListingsSearchLiveItem.to_json()
 
 # convert the object into a dict
 app_datale_app_listings_search_live_item_dict = app_datale_app_listings_search_live_item_instance.to_dict()

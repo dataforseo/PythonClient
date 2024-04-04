@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
 from typing import Optional, Set
@@ -41,11 +41,11 @@ class MerchantAmazonSellersTaskGetAdvancedResultInfo(BaseModel):
     items: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="items in SERP")
     __properties: ClassVar[List[str]] = ["asin", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "title", "image", "item_types", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of ResourceMetaInfo from a JSON string
 resource_meta_info_instance = ResourceMetaInfo.from_json(json)
 # print the JSON string representation of the object
-print(ResourceMetaInfo.to_json())
+print ResourceMetaInfo.to_json()
 
 # convert the object into a dict
 resource_meta_info_dict = resource_meta_info_instance.to_dict()

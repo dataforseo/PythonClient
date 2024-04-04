@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.impressions_info import ImpressionsInfo
 from dataforseo_client.models.keyword_info import KeywordInfo
@@ -41,11 +41,11 @@ class DataforseoLabsGoogleHistoricalSearchVolumeLiveItem(BaseModel):
     serp_info: Optional[SerpInfo] = None
     __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "search_partners", "keyword_info", "keyword_properties", "impressions_info", "serp_info"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

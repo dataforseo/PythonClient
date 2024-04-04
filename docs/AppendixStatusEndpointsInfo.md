@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of AppendixStatusEndpointsInfo from a JSON string
 appendix_status_endpoints_info_instance = AppendixStatusEndpointsInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixStatusEndpointsInfo.to_json())
+print AppendixStatusEndpointsInfo.to_json()
 
 # convert the object into a dict
 appendix_status_endpoints_info_dict = appendix_status_endpoints_info_instance.to_dict()

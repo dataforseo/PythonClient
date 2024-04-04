@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AppsInfo from a JSON string
 apps_info_instance = AppsInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppsInfo.to_json())
+print AppsInfo.to_json()
 
 # convert the object into a dict
 apps_info_dict = apps_info_instance.to_dict()

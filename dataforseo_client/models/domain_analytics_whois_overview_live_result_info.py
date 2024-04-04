@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from pydantic import BaseModel, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.domain_analytics_whois_overview_live_item import DomainAnalyticsWhoisOverviewLiveItem
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class DomainAnalyticsWhoisOverviewLiveResultInfo(BaseModel):
     items: Optional[List[DomainAnalyticsWhoisOverviewLiveItem]] = Field(default=None, description="contains ranking and traffic data")
     __properties: ClassVar[List[str]] = ["total_count", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

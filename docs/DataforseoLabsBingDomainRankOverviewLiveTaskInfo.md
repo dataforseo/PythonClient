@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of DataforseoLabsBingDomainRankOverviewLiveTaskInfo from a JSON string
 dataforseo_labs_bing_domain_rank_overview_live_task_info_instance = DataforseoLabsBingDomainRankOverviewLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsBingDomainRankOverviewLiveTaskInfo.to_json())
+print DataforseoLabsBingDomainRankOverviewLiveTaskInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_bing_domain_rank_overview_live_task_info_dict = dataforseo_labs_bing_domain_rank_overview_live_task_info_instance.to_dict()

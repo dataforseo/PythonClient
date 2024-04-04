@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from pydantic import BaseModel, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
 from typing import Optional, Set
@@ -49,11 +49,11 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
     competitors: Optional[AppendixFunctionInfo] = None
     __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

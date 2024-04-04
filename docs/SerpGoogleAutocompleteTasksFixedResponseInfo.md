@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleAutocompleteTasksFixedResponseInfo from a JSON string
 serp_google_autocomplete_tasks_fixed_response_info_instance = SerpGoogleAutocompleteTasksFixedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleAutocompleteTasksFixedResponseInfo.to_json())
+print SerpGoogleAutocompleteTasksFixedResponseInfo.to_json()
 
 # convert the object into a dict
 serp_google_autocomplete_tasks_fixed_response_info_dict = serp_google_autocomplete_tasks_fixed_response_info_instance.to_dict()

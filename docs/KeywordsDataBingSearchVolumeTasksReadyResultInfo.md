@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of KeywordsDataBingSearchVolumeTasksReadyResultInfo from a JSON string
 keywords_data_bing_search_volume_tasks_ready_result_info_instance = KeywordsDataBingSearchVolumeTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataBingSearchVolumeTasksReadyResultInfo.to_json())
+print KeywordsDataBingSearchVolumeTasksReadyResultInfo.to_json()
 
 # convert the object into a dict
 keywords_data_bing_search_volume_tasks_ready_result_info_dict = keywords_data_bing_search_volume_tasks_ready_result_info_instance.to_dict()

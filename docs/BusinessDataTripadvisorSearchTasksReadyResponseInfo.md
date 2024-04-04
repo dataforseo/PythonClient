@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of BusinessDataTripadvisorSearchTasksReadyResponseInfo from a JSON string
 business_data_tripadvisor_search_tasks_ready_response_info_instance = BusinessDataTripadvisorSearchTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(BusinessDataTripadvisorSearchTasksReadyResponseInfo.to_json())
+print BusinessDataTripadvisorSearchTasksReadyResponseInfo.to_json()
 
 # convert the object into a dict
 business_data_tripadvisor_search_tasks_ready_response_info_dict = business_data_tripadvisor_search_tasks_ready_response_info_instance.to_dict()

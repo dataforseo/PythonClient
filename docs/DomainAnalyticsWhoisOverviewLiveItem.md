@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of DomainAnalyticsWhoisOverviewLiveItem from a JSON string
 domain_analytics_whois_overview_live_item_instance = DomainAnalyticsWhoisOverviewLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(DomainAnalyticsWhoisOverviewLiveItem.to_json())
+print DomainAnalyticsWhoisOverviewLiveItem.to_json()
 
 # convert the object into a dict
 domain_analytics_whois_overview_live_item_dict = domain_analytics_whois_overview_live_item_instance.to_dict()

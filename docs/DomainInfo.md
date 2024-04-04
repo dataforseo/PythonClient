@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of DomainInfo from a JSON string
 domain_info_instance = DomainInfo.from_json(json)
 # print the JSON string representation of the object
-print(DomainInfo.to_json())
+print DomainInfo.to_json()
 
 # convert the object into a dict
 domain_info_dict = domain_info_instance.to_dict()

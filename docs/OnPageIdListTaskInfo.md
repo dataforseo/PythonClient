@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageIdListTaskInfo from a JSON string
 on_page_id_list_task_info_instance = OnPageIdListTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageIdListTaskInfo.to_json())
+print OnPageIdListTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_id_list_task_info_dict = on_page_id_list_task_info_instance.to_dict()

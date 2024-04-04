@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of StreamingQualityElement from a JSON string
 streaming_quality_element_instance = StreamingQualityElement.from_json(json)
 # print the JSON string representation of the object
-print(StreamingQualityElement.to_json())
+print StreamingQualityElement.to_json()
 
 # convert the object into a dict
 streaming_quality_element_dict = streaming_quality_element_instance.to_dict()

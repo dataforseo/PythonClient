@@ -33,7 +33,7 @@ json = "{}"
 # create an instance of BacklinksPageMeta from a JSON string
 backlinks_page_meta_instance = BacklinksPageMeta.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksPageMeta.to_json())
+print BacklinksPageMeta.to_json()
 
 # convert the object into a dict
 backlinks_page_meta_dict = backlinks_page_meta_instance.to_dict()

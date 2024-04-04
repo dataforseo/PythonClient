@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageLighthouseTasksReadyTaskInfo from a JSON string
 on_page_lighthouse_tasks_ready_task_info_instance = OnPageLighthouseTasksReadyTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageLighthouseTasksReadyTaskInfo.to_json())
+print OnPageLighthouseTasksReadyTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_lighthouse_tasks_ready_task_info_dict = on_page_lighthouse_tasks_ready_task_info_instance.to_dict()

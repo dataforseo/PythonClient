@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of ContentGenerationCheckGrammarLanguagesTaskInfo from a JSON string
 content_generation_check_grammar_languages_task_info_instance = ContentGenerationCheckGrammarLanguagesTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationCheckGrammarLanguagesTaskInfo.to_json())
+print ContentGenerationCheckGrammarLanguagesTaskInfo.to_json()
 
 # convert the object into a dict
 content_generation_check_grammar_languages_task_info_dict = content_generation_check_grammar_languages_task_info_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of BacklinksBulkNewLostBacklinksLiveItem from a JSON string
 backlinks_bulk_new_lost_backlinks_live_item_instance = BacklinksBulkNewLostBacklinksLiveItem.from_json(json)
 # print the JSON string representation of the object
-print(BacklinksBulkNewLostBacklinksLiveItem.to_json())
+print BacklinksBulkNewLostBacklinksLiveItem.to_json()
 
 # convert the object into a dict
 backlinks_bulk_new_lost_backlinks_live_item_dict = backlinks_bulk_new_lost_backlinks_live_item_instance.to_dict()

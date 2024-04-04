@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of RefineProductsElement from a JSON string
 refine_products_element_instance = RefineProductsElement.from_json(json)
 # print the JSON string representation of the object
-print(RefineProductsElement.to_json())
+print RefineProductsElement.to_json()
 
 # convert the object into a dict
 refine_products_element_dict = refine_products_element_instance.to_dict()

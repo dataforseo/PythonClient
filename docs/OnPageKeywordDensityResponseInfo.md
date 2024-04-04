@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageKeywordDensityResponseInfo from a JSON string
 on_page_keyword_density_response_info_instance = OnPageKeywordDensityResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageKeywordDensityResponseInfo.to_json())
+print OnPageKeywordDensityResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_keyword_density_response_info_dict = on_page_keyword_density_response_info_instance.to_dict()

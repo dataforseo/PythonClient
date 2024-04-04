@@ -31,7 +31,7 @@ json = "{}"
 # create an instance of KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo from a JSON string
 keywords_data_google_ads_keywords_for_site_task_post_request_info_instance = KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo.to_json())
+print KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo.to_json()
 
 # convert the object into a dict
 keywords_data_google_ads_keywords_for_site_task_post_request_info_dict = keywords_data_google_ads_keywords_for_site_task_post_request_info_instance.to_dict()

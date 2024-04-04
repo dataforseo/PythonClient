@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of OnPageRawHtmlRequestInfo from a JSON string
 on_page_raw_html_request_info_instance = OnPageRawHtmlRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageRawHtmlRequestInfo.to_json())
+print OnPageRawHtmlRequestInfo.to_json()
 
 # convert the object into a dict
 on_page_raw_html_request_info_dict = on_page_raw_html_request_info_instance.to_dict()

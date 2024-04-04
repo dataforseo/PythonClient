@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -50,11 +50,11 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
     database_rows_count: Optional[Dict[str, Optional[StrictStr]]] = None
     __properties: ClassVar[List[str]] = ["related_keywords", "keyword_suggestions", "ranked_keywords", "keyword_ideas", "serp_competitors", "relevant_pages", "subdomains", "competitors_domain", "categories_for_domain", "keywords_for_categories", "domain_intersection", "page_intersection", "domain_whois_overview", "top_searches", "domain_metrics_by_categories", "keywords_for_site", "product_competitors", "product_keyword_intersections", "app_intersection", "app_competitors", "keywords_for_app", "database_rows_count"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

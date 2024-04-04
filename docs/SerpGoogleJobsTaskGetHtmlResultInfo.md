@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of SerpGoogleJobsTaskGetHtmlResultInfo from a JSON string
 serp_google_jobs_task_get_html_result_info_instance = SerpGoogleJobsTaskGetHtmlResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(SerpGoogleJobsTaskGetHtmlResultInfo.to_json())
+print SerpGoogleJobsTaskGetHtmlResultInfo.to_json()
 
 # convert the object into a dict
 serp_google_jobs_task_get_html_result_info_dict = serp_google_jobs_task_get_html_result_info_instance.to_dict()

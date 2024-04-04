@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of OnPageIdListResponseInfo from a JSON string
 on_page_id_list_response_info_instance = OnPageIdListResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageIdListResponseInfo.to_json())
+print OnPageIdListResponseInfo.to_json()
 
 # convert the object into a dict
 on_page_id_list_response_info_dict = on_page_id_list_response_info_instance.to_dict()

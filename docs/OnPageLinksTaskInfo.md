@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OnPageLinksTaskInfo from a JSON string
 on_page_links_task_info_instance = OnPageLinksTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageLinksTaskInfo.to_json())
+print OnPageLinksTaskInfo.to_json()
 
 # convert the object into a dict
 on_page_links_task_info_dict = on_page_links_task_info_instance.to_dict()

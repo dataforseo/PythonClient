@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of ContentGenerationCheckGrammarLiveResponseInfo from a JSON string
 content_generation_check_grammar_live_response_info_instance = ContentGenerationCheckGrammarLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print(ContentGenerationCheckGrammarLiveResponseInfo.to_json())
+print ContentGenerationCheckGrammarLiveResponseInfo.to_json()
 
 # convert the object into a dict
 content_generation_check_grammar_live_response_info_dict = content_generation_check_grammar_live_response_info_instance.to_dict()

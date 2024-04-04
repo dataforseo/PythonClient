@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of OnPageNonIndexableItem from a JSON string
 on_page_non_indexable_item_instance = OnPageNonIndexableItem.from_json(json)
 # print the JSON string representation of the object
-print(OnPageNonIndexableItem.to_json())
+print OnPageNonIndexableItem.to_json()
 
 # convert the object into a dict
 on_page_non_indexable_item_dict = on_page_non_indexable_item_instance.to_dict()

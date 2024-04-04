@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from dataforseo_client.models.rating_element import RatingElement
@@ -30,7 +30,7 @@ class BuyOnGoogleMerchantSerpElementItem(BaseMerchantSerpElementItem):
     """ # noqa: E501
     rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements found in Google Shopping SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Google Shopping SERP possible values: left, right")
+    position: Optional[StrictStr] = Field(default=None, description="alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description="product title")
@@ -44,14 +44,13 @@ class BuyOnGoogleMerchantSerpElementItem(BaseMerchantSerpElementItem):
     seller_name: Optional[StrictStr] = Field(default=None, description="name of the seller the name of the company that placed a corresponding product on Google Shopping")
     rating: Optional[RatingElement] = None
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description="unique ad click referral parameter using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL in this case, the value equals null")
-    product_condition: Optional[StrictStr] = Field(default=None, description="indicated condition of the product possible values: Used, Refurbished, New, null")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "details", "base_price", "tax", "shipping_price", "total_price", "currency", "seller_name", "rating", "shop_ad_aclk", "product_condition"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "details", "base_price", "tax", "shipping_price", "total_price", "currency", "seller_name", "rating", "shop_ad_aclk"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:
@@ -169,11 +168,6 @@ class BuyOnGoogleMerchantSerpElementItem(BaseMerchantSerpElementItem):
         if self.shop_ad_aclk is None and "shop_ad_aclk" in self.model_fields_set:
             _dict['shop_ad_aclk'] = None
 
-        # set to None if product_condition (nullable) is None
-        # and model_fields_set contains the field
-        if self.product_condition is None and "product_condition" in self.model_fields_set:
-            _dict['product_condition'] = None
-
         return _dict
 
     @classmethod
@@ -202,8 +196,7 @@ class BuyOnGoogleMerchantSerpElementItem(BaseMerchantSerpElementItem):
             "currency": obj.get("currency"),
             "seller_name": obj.get("seller_name"),
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
-            "shop_ad_aclk": obj.get("shop_ad_aclk"),
-            "product_condition": obj.get("product_condition")
+            "shop_ad_aclk": obj.get("shop_ad_aclk")
         })
         return _obj
 

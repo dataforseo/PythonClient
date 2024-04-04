@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of DeliveryInfo from a JSON string
 delivery_info_instance = DeliveryInfo.from_json(json)
 # print the JSON string representation of the object
-print(DeliveryInfo.to_json())
+print DeliveryInfo.to_json()
 
 # convert the object into a dict
 delivery_info_dict = delivery_info_instance.to_dict()

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
@@ -59,11 +59,11 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
     is_directory_item: Optional[StrictBool] = Field(default=None, description="business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "price_level", "hotel_rating", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

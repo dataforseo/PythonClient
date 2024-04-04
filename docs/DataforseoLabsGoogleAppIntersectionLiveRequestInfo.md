@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleAppIntersectionLiveRequestInfo from a JSON string
 dataforseo_labs_google_app_intersection_live_request_info_instance = DataforseoLabsGoogleAppIntersectionLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print(DataforseoLabsGoogleAppIntersectionLiveRequestInfo.to_json())
+print DataforseoLabsGoogleAppIntersectionLiveRequestInfo.to_json()
 
 # convert the object into a dict
 dataforseo_labs_google_app_intersection_live_request_info_dict = dataforseo_labs_google_app_intersection_live_request_info_instance.to_dict()

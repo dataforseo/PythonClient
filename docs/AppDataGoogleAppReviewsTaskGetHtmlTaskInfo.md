@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of AppDataGoogleAppReviewsTaskGetHtmlTaskInfo from a JSON string
 app_data_google_app_reviews_task_get_html_task_info_instance = AppDataGoogleAppReviewsTaskGetHtmlTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppDataGoogleAppReviewsTaskGetHtmlTaskInfo.to_json())
+print AppDataGoogleAppReviewsTaskGetHtmlTaskInfo.to_json()
 
 # convert the object into a dict
 app_data_google_app_reviews_task_get_html_task_info_dict = app_data_google_app_reviews_task_get_html_task_info_instance.to_dict()

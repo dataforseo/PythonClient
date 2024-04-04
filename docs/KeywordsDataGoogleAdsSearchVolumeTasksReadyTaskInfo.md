@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of KeywordsDataGoogleAdsSearchVolumeTasksReadyTaskInfo from a JSON string
 keywords_data_google_ads_search_volume_tasks_ready_task_info_instance = KeywordsDataGoogleAdsSearchVolumeTasksReadyTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print(KeywordsDataGoogleAdsSearchVolumeTasksReadyTaskInfo.to_json())
+print KeywordsDataGoogleAdsSearchVolumeTasksReadyTaskInfo.to_json()
 
 # convert the object into a dict
 keywords_data_google_ads_search_volume_tasks_ready_task_info_dict = keywords_data_google_ads_search_volume_tasks_ready_task_info_instance.to_dict()

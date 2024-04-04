@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -45,11 +45,11 @@ class OnPageInstantPagesRequestInfo(BaseModel):
     checks_threshold: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="custom threshold values for checks optional field you can specify custom threshold values for the parameters included in the checks array of OnPage API responses; Note: only integer threshold values can be modified;")
     __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "accept_language", "enable_javascript", "enable_browser_rendering", "disable_cookie_popup", "return_despite_timeout", "enable_xhr", "custom_js", "validate_micromarkup", "check_spell", "checks_threshold"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

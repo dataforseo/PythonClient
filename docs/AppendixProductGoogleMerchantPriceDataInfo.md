@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of AppendixProductGoogleMerchantPriceDataInfo from a JSON string
 appendix_product_google_merchant_price_data_info_instance = AppendixProductGoogleMerchantPriceDataInfo.from_json(json)
 # print the JSON string representation of the object
-print(AppendixProductGoogleMerchantPriceDataInfo.to_json())
+print AppendixProductGoogleMerchantPriceDataInfo.to_json()
 
 # convert the object into a dict
 appendix_product_google_merchant_price_data_info_dict = appendix_product_google_merchant_price_data_info_instance.to_dict()

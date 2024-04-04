@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of HotelsPackSerpElementItem from a JSON string
 hotels_pack_serp_element_item_instance = HotelsPackSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print(HotelsPackSerpElementItem.to_json())
+print HotelsPackSerpElementItem.to_json()
 
 # convert the object into a dict
 hotels_pack_serp_element_item_dict = hotels_pack_serp_element_item_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of PositiveConnotationDistribution from a JSON string
 positive_connotation_distribution_instance = PositiveConnotationDistribution.from_json(json)
 # print the JSON string representation of the object
-print(PositiveConnotationDistribution.to_json())
+print PositiveConnotationDistribution.to_json()
 
 # convert the object into a dict
 positive_connotation_distribution_dict = positive_connotation_distribution_instance.to_dict()

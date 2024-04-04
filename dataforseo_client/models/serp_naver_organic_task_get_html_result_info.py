@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.html_item import HtmlItem
 from typing import Optional, Set
@@ -37,11 +37,11 @@ class SerpNaverOrganicTaskGetHtmlResultInfo(BaseModel):
     items: Optional[List[HtmlItem]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "datetime", "items_count", "items"]
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    model_config = {
+        "populate_by_name": True,
+        "validate_assignment": True,
+        "protected_namespaces": (),
+    }
 
 
     def to_str(self) -> str:

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of OnPageLighthouseLanguagesResultInfo from a JSON string
 on_page_lighthouse_languages_result_info_instance = OnPageLighthouseLanguagesResultInfo.from_json(json)
 # print the JSON string representation of the object
-print(OnPageLighthouseLanguagesResultInfo.to_json())
+print OnPageLighthouseLanguagesResultInfo.to_json()
 
 # convert the object into a dict
 on_page_lighthouse_languages_result_info_dict = on_page_lighthouse_languages_result_info_instance.to_dict()
