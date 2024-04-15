@@ -19,23 +19,26 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.dataforseo_labs_google_domain_intersection_live_item import DataforseoLabsGoogleDomainIntersectionLiveItem
+from dataforseo_client.models.avg_backlinks_info import AvgBacklinksInfo
+from dataforseo_client.models.keyword_info import KeywordInfo
+from dataforseo_client.models.keyword_properties import KeywordProperties
+from dataforseo_client.models.serp_info import SerpInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DataforseoLabsGoogleDomainIntersectionLiveResultInfo(BaseModel):
+class KeywordDataKeywordDataInfo(BaseModel):
     """
-    DataforseoLabsGoogleDomainIntersectionLiveResultInfo
+    KeywordDataKeywordDataInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    target1: Optional[StrictStr] = Field(default=None, description="the first target domain in a POST array")
-    target2: Optional[StrictStr] = Field(default=None, description="the second target domain in a POST array")
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type search engine type specified in a POST request; for this endpoint, the field equals bing")
+    keyword: Optional[StrictStr] = Field(default=None, description="returned keyword")
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[DataforseoLabsGoogleDomainIntersectionLiveItem]] = Field(default=None, description="contains keywords, relevant SERP elements and related data")
-    __properties: ClassVar[List[str]] = ["se_type", "target1", "target2", "location_code", "language_code", "total_count", "items_count", "items"]
+    keyword_info: Optional[KeywordInfo] = None
+    keyword_properties: Optional[KeywordProperties] = None
+    serp_info: Optional[SerpInfo] = None
+    avg_backlinks_info: Optional[AvgBacklinksInfo] = None
+    __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "keyword_info", "keyword_properties", "serp_info", "avg_backlinks_info"]
 
     model_config = {
         "populate_by_name": True,
@@ -55,7 +58,7 @@ class DataforseoLabsGoogleDomainIntersectionLiveResultInfo(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DataforseoLabsGoogleDomainIntersectionLiveResultInfo from a JSON string"""
+        """Create an instance of KeywordDataKeywordDataInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -76,27 +79,27 @@ class DataforseoLabsGoogleDomainIntersectionLiveResultInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in items (list)
-        _items = []
-        if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['items'] = _items
+        # override the default output from pydantic by calling `to_dict()` of keyword_info
+        if self.keyword_info:
+            _dict['keyword_info'] = self.keyword_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_properties
+        if self.keyword_properties:
+            _dict['keyword_properties'] = self.keyword_properties.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of serp_info
+        if self.serp_info:
+            _dict['serp_info'] = self.serp_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of avg_backlinks_info
+        if self.avg_backlinks_info:
+            _dict['avg_backlinks_info'] = self.avg_backlinks_info.to_dict()
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field
         if self.se_type is None and "se_type" in self.model_fields_set:
             _dict['se_type'] = None
 
-        # set to None if target1 (nullable) is None
+        # set to None if keyword (nullable) is None
         # and model_fields_set contains the field
-        if self.target1 is None and "target1" in self.model_fields_set:
-            _dict['target1'] = None
-
-        # set to None if target2 (nullable) is None
-        # and model_fields_set contains the field
-        if self.target2 is None and "target2" in self.model_fields_set:
-            _dict['target2'] = None
+        if self.keyword is None and "keyword" in self.model_fields_set:
+            _dict['keyword'] = None
 
         # set to None if location_code (nullable) is None
         # and model_fields_set contains the field
@@ -108,26 +111,11 @@ class DataforseoLabsGoogleDomainIntersectionLiveResultInfo(BaseModel):
         if self.language_code is None and "language_code" in self.model_fields_set:
             _dict['language_code'] = None
 
-        # set to None if total_count (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_count is None and "total_count" in self.model_fields_set:
-            _dict['total_count'] = None
-
-        # set to None if items_count (nullable) is None
-        # and model_fields_set contains the field
-        if self.items_count is None and "items_count" in self.model_fields_set:
-            _dict['items_count'] = None
-
-        # set to None if items (nullable) is None
-        # and model_fields_set contains the field
-        if self.items is None and "items" in self.model_fields_set:
-            _dict['items'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DataforseoLabsGoogleDomainIntersectionLiveResultInfo from a dict"""
+        """Create an instance of KeywordDataKeywordDataInfo from a dict"""
         if obj is None:
             return None
 
@@ -136,13 +124,13 @@ class DataforseoLabsGoogleDomainIntersectionLiveResultInfo(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "target1": obj.get("target1"),
-            "target2": obj.get("target2"),
+            "keyword": obj.get("keyword"),
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
-            "total_count": obj.get("total_count"),
-            "items_count": obj.get("items_count"),
-            "items": [DataforseoLabsGoogleDomainIntersectionLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "keyword_info": KeywordInfo.from_dict(obj["keyword_info"]) if obj.get("keyword_info") is not None else None,
+            "keyword_properties": KeywordProperties.from_dict(obj["keyword_properties"]) if obj.get("keyword_properties") is not None else None,
+            "serp_info": SerpInfo.from_dict(obj["serp_info"]) if obj.get("serp_info") is not None else None,
+            "avg_backlinks_info": AvgBacklinksInfo.from_dict(obj["avg_backlinks_info"]) if obj.get("avg_backlinks_info") is not None else None
         })
         return _obj
 

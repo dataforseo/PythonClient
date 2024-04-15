@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.keyword_data import KeywordData
+from dataforseo_client.models.keyword_data_info import KeywordDataInfo
 from dataforseo_client.models.ranked_serp_element import RankedSerpElement
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class DataforseoLabsGoogleRankedKeywordsLiveItem(BaseModel):
     DataforseoLabsGoogleRankedKeywordsLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    keyword_data: Optional[KeywordData] = None
+    keyword_data: Optional[KeywordDataInfo] = None
     ranked_serp_element: Optional[RankedSerpElement] = None
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "ranked_serp_element"]
 
@@ -96,7 +96,7 @@ class DataforseoLabsGoogleRankedKeywordsLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "keyword_data": KeywordData.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
+            "keyword_data": KeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
             "ranked_serp_element": RankedSerpElement.from_dict(obj["ranked_serp_element"]) if obj.get("ranked_serp_element") is not None else None
         })
         return _obj

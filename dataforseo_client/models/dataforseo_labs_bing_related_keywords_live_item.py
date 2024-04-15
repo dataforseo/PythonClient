@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.keyword_data import KeywordData
+from dataforseo_client.models.keyword_data_keyword_data_info import KeywordDataKeywordDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class DataforseoLabsBingRelatedKeywordsLiveItem(BaseModel):
     DataforseoLabsBingRelatedKeywordsLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    keyword_data: Optional[KeywordData] = None
+    keyword_data: Optional[KeywordDataKeywordDataInfo] = None
     depth: Optional[StrictInt] = Field(default=None, description="keyword search depth")
     related_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="list of related keywords represents the list of search queries which are related to the keyword returned in the array above")
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "depth", "related_keywords"]
@@ -103,7 +103,7 @@ class DataforseoLabsBingRelatedKeywordsLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "keyword_data": KeywordData.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
+            "keyword_data": KeywordDataKeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
             "depth": obj.get("depth"),
             "related_keywords": obj.get("related_keywords")
         })

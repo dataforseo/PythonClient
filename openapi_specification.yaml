@@ -259,7 +259,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b64f7947-e833-42ec-8246-55d27687bf8a
+          example: 1bb48a44-e868-4e48-8ab3-495701055e97
       responses:
         '200':
           description: Successful operation
@@ -520,7 +520,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d6f981e5-5092-432b-b179-9f89c3d41559
+          example: 7bbde02c-25b6-4693-8e60-8a7c8b62f57c
       responses:
         '200':
           description: Successful operation
@@ -662,7 +662,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ab47c493-93e6-47d9-a39f-96d947179656
+          example: 9bc60037-a4df-444f-9fbd-55f00adf28df
       responses:
         '200':
           description: Successful operation
@@ -901,7 +901,7 @@ paths:
           required: true
           schema:
             type: string
-          example: bcfe0441-a26e-4c4a-bb9b-761499fd5822
+          example: 57cd81ad-3910-4058-9ad9-e4d97843dad4
       responses:
         '200':
           description: Successful operation
@@ -1118,7 +1118,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7f3a5306-c884-4275-9cb2-4509fb6d6178
+          example: 5b855179-6963-4c61-8a5c-135b53c2b766
       responses:
         '200':
           description: Successful operation
@@ -1583,7 +1583,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c5ed75ef-4041-431f-b85d-4c660ed55763
+          example: facf3b79-774b-40b5-92e7-46bcfb893569
       responses:
         '200':
           description: Successful operation
@@ -1747,7 +1747,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2808b35e-3851-4133-8d4b-200dbf9810c7
+          example: 9a98cfa9-f5bc-49a4-8bf8-8529220bbe31
       responses:
         '200':
           description: Successful operation
@@ -2309,7 +2309,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7d7de019-b16b-4d0c-9543-06c1fa0d4530
+          example: a0769242-3fdf-41e1-a26b-2640f22a0559
       responses:
         '200':
           description: Successful operation
@@ -2549,7 +2549,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f87e3789-55c5-4090-b35c-53146baba9da
+          example: 3553d3fb-a458-4f01-aa99-3e5dd7200a5b
       responses:
         '200':
           description: Successful operation
@@ -2670,7 +2670,7 @@ paths:
           required: true
           schema:
             type: string
-          example: eed7074e-4a05-42d4-98b6-0b4f964cb5ff
+          example: d9dce828-9a5c-411b-b15d-a53b26ec61b7
       responses:
         '200':
           description: Successful operation
@@ -2844,7 +2844,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8ae8df9a-dcfb-450d-a9e3-03e34a55001a
+          example: 35db1753-a16e-4627-85e3-c917f6fbb547
       responses:
         '200':
           description: Successful operation
@@ -4463,7 +4463,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 16d1d197-3141-48da-adb3-1998349b4f08
+          example: c7f38115-55e0-453c-9322-06d963985099
       responses:
         '200':
           description: Successful operation
@@ -4545,7 +4545,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1c63ec69-2dd8-4e0f-8c0c-a7df568e4ab5
+          example: 98a85aa9-ba1d-4742-a968-ab4a23e755b2
       responses:
         '200':
           description: Successful operation
@@ -4627,7 +4627,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a363f737-e920-489a-9d07-d0bca6e2722e
+          example: d5905f07-57b6-492f-8a7c-8ac745a46bfa
       responses:
         '200':
           description: Successful operation
@@ -4709,7 +4709,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3a6ebb33-4324-4b22-9c65-5b5c16557e5a
+          example: cce86e25-c0fd-4c93-b16c-1e3cccc2e725
       responses:
         '200':
           description: Successful operation
@@ -4859,7 +4859,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 41488aad-1611-4698-9a84-307f912a048b
+          example: 9982694f-2320-466e-abea-d86452d5eed5
       responses:
         '200':
           description: Successful operation
@@ -5097,7 +5097,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c8d774fb-e15a-48ca-9a60-4786866ffaca
+          example: 146195d6-6838-4f89-8be2-a2430dd71075
       responses:
         '200':
           description: Successful operation
@@ -5179,7 +5179,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3a286d85-3982-4796-b09c-f61d717cc934
+          example: 0ebe6ba9-40d9-4daf-ad43-1ef7dbbdaf98
       responses:
         '200':
           description: Successful operation
@@ -5261,7 +5261,7 @@ paths:
           required: true
           schema:
             type: string
-          example: eafcfca1-d114-4c6f-b6e0-84ffe0a3df48
+          example: 04e62f60-61e3-4ea3-aea8-be12bbe508fd
       responses:
         '200':
           description: Successful operation
@@ -5358,7 +5358,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 014ffc05-2efe-450b-be68-443ad71ffeb1
+          example: 5a588f81-12fd-4f0b-8f75-b33aabbdc5fd
       responses:
         '200':
           description: Successful operation
@@ -7085,7 +7085,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a6e5fdf6-e35a-4560-b0cd-d3a99bf31ec3
+          example: a15e3598-16b6-4e5c-8969-676c02bf4741
       responses:
         '200':
           description: Successful operation
@@ -7168,7 +7168,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b3f58612-d220-4e59-97da-cf3509d3a1bc
+          example: 23939f3c-98d1-4ccc-adec-4c0f4a21c910
       responses:
         '200':
           description: Successful operation
@@ -7251,7 +7251,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2f3aa476-24fd-4038-bcdb-3abcb7f63d1d
+          example: 1cdbde36-88ee-48d6-92c0-70698d8c36c9
       responses:
         '200':
           description: Successful operation
@@ -7470,7 +7470,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1405027e-f7fb-43d9-9236-d9d4076a01d3
+          example: 5838618a-24de-4135-9753-48a649a64bdf
       responses:
         '200':
           description: Successful operation
@@ -7553,7 +7553,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fde58d07-e16f-4e75-a3aa-eec25fe3c0f3
+          example: 208b80f2-7e76-44b7-a1b7-daa41223ccdf
       responses:
         '200':
           description: Successful operation
@@ -7636,7 +7636,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 52d59a53-9fe2-4069-8c87-418eafc3db6f
+          example: 54d53751-7dc0-4c42-af15-dff98d77e8c1
       responses:
         '200':
           description: Successful operation
@@ -7719,7 +7719,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 01e9e0af-cee1-4489-85ff-d38ac43d8a5a
+          example: 1f4739f6-9c20-4492-986e-ba6b1c85c710
       responses:
         '200':
           description: Successful operation
@@ -7868,7 +7868,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7ed8b1fc-c858-47b2-b7e5-02bfc7f8d022
+          example: 0585dd06-56a0-4c4a-9cb9-baa4f535d0b0
       responses:
         '200':
           description: Successful operation
@@ -7891,7 +7891,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2e329ce8-e9a6-47c3-9abe-ad02323c7a4b
+          example: 78fa9c41-a223-4a3f-ae27-d43c23d24cf9
       responses:
         '200':
           description: Successful operation
@@ -7951,7 +7951,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4c0b6658-6c7c-4356-a600-de6da1be133a
+          example: cce18eee-32b8-4afb-96d4-d978a20e7ebe
       responses:
         '200':
           description: Successful operation
@@ -7974,7 +7974,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1d60ade2-0a48-46c2-8286-817da1ee9138
+          example: c96a29fa-00b3-425a-a876-2f6662b81c0f
       responses:
         '200':
           description: Successful operation
@@ -8034,7 +8034,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 6a6c5bda-26e3-4187-a07f-f687bf82f2bd
+          example: 3128ab1c-d380-4f11-8154-59b7518221d0
       responses:
         '200':
           description: Successful operation
@@ -8057,7 +8057,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4ed3c84a-b40a-4406-9bf4-8b4da45a89d9
+          example: 0e5da268-e1bd-4c2b-87aa-f382915077fd
       responses:
         '200':
           description: Successful operation
@@ -8117,7 +8117,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a1b56e3f-ced6-4000-8bd8-84e5bad49a3f
+          example: 959bdc55-1412-4613-b387-59b9012613e1
       responses:
         '200':
           description: Successful operation
@@ -8140,7 +8140,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 72e92b9f-0efe-4e27-b172-9d89b7c1879e
+          example: a0f21319-fb83-437d-9303-e7abef213d0b
       responses:
         '200':
           description: Successful operation
@@ -8282,7 +8282,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3d24cc80-edb7-4e2b-ac1c-7ac0202d311e
+          example: 008880b5-8edd-4e3a-b585-b14d0b32e05f
       responses:
         '200':
           description: Successful operation
@@ -8342,7 +8342,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e92a5d77-ac12-40ea-9710-ce3977d5fac9
+          example: 5df7d23e-8a09-4d5e-8c4a-487b8d32785d
       responses:
         '200':
           description: Successful operation
@@ -8402,7 +8402,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 16be40f7-f36e-45e7-bb5c-ac812ce65e7f
+          example: 30f1b855-76bd-46bd-9145-41e99ddfebd3
       responses:
         '200':
           description: Successful operation
@@ -8462,7 +8462,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2772dc88-9197-4514-9f03-d099c990d10c
+          example: 17347437-4c80-4df5-8a01-a8575bff0579
       responses:
         '200':
           description: Successful operation
@@ -8557,7 +8557,7 @@ paths:
     get:
       tags:
         - BusinessData
-      description: "You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2023-12-29).\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'"
+      description: "You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2024-04-04).\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'"
       operationId: BusinessDataBusinessListingsLocations
       responses:
         '200':
@@ -8970,7 +8970,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 86c5446a-1c43-4665-869e-fd1cc09ef238
+          example: b7e9682e-2567-4047-b118-312292de8cf0
       responses:
         '200':
           description: Successful operation
@@ -13525,6 +13525,10 @@ components:
           type: string
           description: seller of the product
           nullable: true
+        image_url:
+          type: string
+          description: URL of the image
+          nullable: true
         price:
           $ref: '#/components/schemas/PriceInfo'
         rating:
@@ -13550,6 +13554,10 @@ components:
             xpath:
               type: string
               description: the XPath of the element
+              nullable: true
+            title:
+              type: string
+              description: title of the row
               nullable: true
             items:
               type: array
@@ -16742,7 +16750,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BaseSerpElementItem'
-          description: "additional items present in the element\nif there are none, equals null"
+          description: elements of search results found in SERP
           nullable: true
     SerpGoogleNewsLiveAdvancedTaskInfo:
       type: object
@@ -20498,7 +20506,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BaseSerpElementItem'
-          description: "additional items present in the element\nif there are none, equals null"
+          description: items featured in the faq_box
           nullable: true
     SerpBingOrganicLiveAdvancedTaskInfo:
       type: object
@@ -28719,37 +28727,6 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    KeywordData:
-      type: object
-      properties:
-        se_type:
-          type: string
-          description: search engine type
-          nullable: true
-        keyword:
-          type: string
-          description: returned keyword
-          nullable: true
-        location_code:
-          type: integer
-          description: location code in a POST array
-          nullable: true
-        language_code:
-          type: string
-          description: language code in a POST array
-          nullable: true
-        keyword_info:
-          $ref: '#/components/schemas/KeywordInfo'
-        keyword_properties:
-          $ref: '#/components/schemas/KeywordProperties'
-        impressions_info:
-          $ref: '#/components/schemas/ImpressionsInfo'
-        serp_info:
-          $ref: '#/components/schemas/SerpInfo'
-        avg_backlinks_info:
-          $ref: '#/components/schemas/AvgBacklinksInfo'
-        search_intent_info:
-          $ref: '#/components/schemas/SearchIntentInfo'
     RankChanges:
       type: object
       properties:
@@ -28868,13 +28845,13 @@ components:
               description: words highlighted in bold within the results description
               nullable: true
             links:
-              type: array
-              items:
-                $ref: '#/components/schemas/LinkElement'
+              type: object
               description: "sitelinks\nthe links shown below some of Google’s search results\nif there are none, equals null"
               nullable: true
             about_this_result:
-              $ref: '#/components/schemas/AboutThisResultElement'
+              type: object
+              description: "contains information from the ‘About this result’ panel\n‘About this result’ panel provides additional context about why Google returned this result for the given query;\nthis feature appears after clicking on the three dots next to most results"
+              nullable: true
             main_domain:
               type: string
               description: primary domain name in SERP
@@ -28952,7 +28929,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataInfo'
         ranked_serp_element:
           $ref: '#/components/schemas/RankedSerpElement'
     DataforseoLabsGoogleRankedKeywordsLiveResultInfo:
@@ -29428,7 +29405,7 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    DataforseoLabsDomainIntersectionLiveItem:
+    DataforseoLabsGoogleDomainIntersectionLiveItem:
       type: object
       properties:
         se_type:
@@ -29436,7 +29413,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataInfo'
         first_domain_serp_element:
           $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
         second_domain_serp_element:
@@ -29477,7 +29454,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsDomainIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsGoogleDomainIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsGoogleDomainIntersectionLiveTaskInfo:
@@ -30746,14 +30723,6 @@ components:
               nullable: true
             rank_changes:
               $ref: '#/components/schemas/RankChanges'
-            se_type:
-              type: string
-              description: search engine type
-              nullable: true
-            backlinks_info:
-              $ref: '#/components/schemas/BacklinksInfo'
-            rank_info:
-              $ref: '#/components/schemas/RankInfo'
     HotelsPackDataforseoLabsSerpElementItem:
       type: object
       allOf:
@@ -31767,6 +31736,10 @@ components:
           type: boolean
           description: "correlate data with previously obtained datasets\noptional field\ndefault value: true\nif you use this parameter, our system will correlate data you obtain now with previously obtained datasets\nthis parameter is intended to mitigate any inconsistencies that may result from changes to our database\nwe recommend always setting correlate to true"
           nullable: true
+        ignore_synonyms:
+          type: boolean
+          description: "ignore highly similar keywords\noptional field\nif set to true, only data based on core keywords will be returned, data for all highly similar keywords will be excluded;\ndefault value: false"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -31930,7 +31903,7 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    DataforseoLabsPageIntersectionLiveItem:
+    DataforseoLabsGooglePageIntersectionLiveItem:
       type: object
       properties:
         se_type:
@@ -31938,7 +31911,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataInfo'
         intersection_result:
           type: object
           additionalProperties:
@@ -31987,7 +31960,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsPageIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsGooglePageIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsGooglePageIntersectionLiveTaskInfo:
@@ -32061,7 +32034,7 @@ components:
           description: total count of organic SERPs that contain the domain
           format: int64
           nullable: true
-    DataforseoLabsBulkTrafficEstimationLiveItem:
+    DataforseoLabsBBulkTrafficEstimationLiveItem:
       type: object
       properties:
         se_type:
@@ -32106,7 +32079,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsBulkTrafficEstimationLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsBBulkTrafficEstimationLiveItem'
           description: array of items with relevant traffic estimation data
           nullable: true
     DataforseoLabsGoogleBulkTrafficEstimationLiveTaskInfo:
@@ -32164,6 +32137,10 @@ components:
         date_to:
           type: string
           description: "ending date of the time range\noptional field\nif you don’t specify this field, the today’s date will be used by default;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2021-04-01\""
+          nullable: true
+        ignore_synonyms:
+          type: boolean
+          description: "ignore highly similar keywords\noptional field\nif set to true only core keywords will be returned, all highly similar keywords will be excluded;\ndefault value: false"
           nullable: true
         item_types:
           type: array
@@ -32436,6 +32413,33 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    KeywordDataKeywordDataInfo:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: "search engine type\nsearch engine type specified in a POST request;\nfor this endpoint, the field equals bing"
+          nullable: true
+        keyword:
+          type: string
+          description: returned keyword
+          nullable: true
+        location_code:
+          type: integer
+          description: location code in a POST array
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        keyword_info:
+          $ref: '#/components/schemas/KeywordInfo'
+        keyword_properties:
+          $ref: '#/components/schemas/KeywordProperties'
+        serp_info:
+          $ref: '#/components/schemas/SerpInfo'
+        avg_backlinks_info:
+          $ref: '#/components/schemas/AvgBacklinksInfo'
     DataforseoLabsAmazonRelatedKeywordsLiveItem:
       type: object
       properties:
@@ -32699,7 +32703,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
         ranked_serp_element:
           $ref: '#/components/schemas/AmazonRankedSerpElement'
     DataforseoLabsAmazonRankedKeywordsLiveResultInfo:
@@ -33304,7 +33308,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsBulkTrafficEstimationLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsBBulkTrafficEstimationLiveItem'
           description: array of items with relevant traffic estimation data
           nullable: true
     DataforseoLabsBingBulkTrafficEstimationLiveTaskInfo:
@@ -33521,6 +33525,19 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    DataforseoLabsBingDomainIntersectionLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: "search engine type\nsearch engine type specified in a POST request;\nfor this endpoint, the field equals bing"
+          nullable: true
+        keyword_data:
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+        first_domain_serp_element:
+          $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        second_domain_serp_element:
+          $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
     DataforseoLabsBingDomainIntersectionLiveResultInfo:
       type: object
       properties:
@@ -33557,7 +33574,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsDomainIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsBingDomainIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsBingDomainIntersectionLiveTaskInfo:
@@ -33756,6 +33773,21 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    DataforseoLabsBingPageIntersectionLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: "search engine type\nsearch engine type specified in a POST request;\nfor this endpoint, the field equals bing"
+          nullable: true
+        keyword_data:
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+        intersection_result:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+          description: "contains data on the SERP elements found for the returned keyword\ndata will be provided in separate arrays for each URL you specified in the pages object when setting a task;\ndepending on the number of specified URLs, it can contain from 1 to 20 arrays named respectively"
+          nullable: true
     DataforseoLabsBingPageIntersectionLiveResultInfo:
       type: object
       properties:
@@ -33798,7 +33830,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsPageIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsBingPageIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsBingPageIntersectionLiveTaskInfo:
@@ -33898,7 +33930,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataInfo'
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
         ranked_serp_element:
           $ref: '#/components/schemas/RankedSerpElement'
     DataforseoLabsBingRankedKeywordsLiveResultInfo:
@@ -34047,7 +34079,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
         depth:
           type: integer
           description: keyword search depth
@@ -34071,7 +34103,7 @@ components:
           description: keyword in a POST array
           nullable: true
         seed_keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
         location_code:
           type: integer
           description: location code in a POST array
@@ -34708,7 +34740,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
         ranked_serp_element:
           $ref: '#/components/schemas/AppRankedSerpElementInfo'
     DataforseoLabsGoogleKeywordsForAppLiveResultInfo:
@@ -34968,7 +35000,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordData'
+          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
         intersection_result:
           type: object
           additionalProperties:
@@ -41666,6 +41698,7 @@ components:
           type: array
           items:
             type: string
+            description: content management system
             nullable: true
           description: type of a platform
           nullable: true

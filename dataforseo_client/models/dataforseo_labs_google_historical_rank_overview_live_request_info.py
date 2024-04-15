@@ -34,8 +34,9 @@ class DataforseoLabsGoogleHistoricalRankOverviewLiveRequestInfo(BaseModel):
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range optional field if you don’t specify this field, the data will be provided for the previous 6 months minimal possible value: 2020-10-01 date format: \"yyyy-mm-dd\"")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field if you don’t specify this field, the today’s date will be used by default date format: \"yyyy-mm-dd\" example: \"2021-04-01\"")
     correlate: Optional[StrictBool] = Field(default=None, description="correlate data with previously obtained datasets optional field default value: true if you use this parameter, our system will correlate data you obtain now with previously obtained datasets this parameter is intended to mitigate any inconsistencies that may result from changes to our database we recommend always setting correlate to true")
+    ignore_synonyms: Optional[StrictBool] = Field(default=None, description="ignore highly similar keywords optional field if set to true, only data based on core keywords will be returned, data for all highly similar keywords will be excluded; default value: false")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "location_name", "location_code", "language_name", "language_code", "date_from", "date_to", "correlate", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "location_name", "location_code", "language_name", "language_code", "date_from", "date_to", "correlate", "ignore_synonyms", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -111,6 +112,11 @@ class DataforseoLabsGoogleHistoricalRankOverviewLiveRequestInfo(BaseModel):
         if self.correlate is None and "correlate" in self.model_fields_set:
             _dict['correlate'] = None
 
+        # set to None if ignore_synonyms (nullable) is None
+        # and model_fields_set contains the field
+        if self.ignore_synonyms is None and "ignore_synonyms" in self.model_fields_set:
+            _dict['ignore_synonyms'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -136,6 +142,7 @@ class DataforseoLabsGoogleHistoricalRankOverviewLiveRequestInfo(BaseModel):
             "date_from": obj.get("date_from"),
             "date_to": obj.get("date_to"),
             "correlate": obj.get("correlate"),
+            "ignore_synonyms": obj.get("ignore_synonyms"),
             "tag": obj.get("tag")
         })
         return _obj

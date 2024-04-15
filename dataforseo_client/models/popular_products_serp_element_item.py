@@ -33,9 +33,10 @@ class PopularProductsSerpElementItem(BaseSerpElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
+    title: Optional[StrictStr] = Field(default=None, description="title of the row")
     items: Optional[List[PopularProductsElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     rectangle: Optional[Rectangle] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items", "rectangle"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "items", "rectangle"]
 
     model_config = {
         "populate_by_name": True,
@@ -111,6 +112,11 @@ class PopularProductsSerpElementItem(BaseSerpElementItem):
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if title (nullable) is None
+        # and model_fields_set contains the field
+        if self.title is None and "title" in self.model_fields_set:
+            _dict['title'] = None
+
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -133,6 +139,7 @@ class PopularProductsSerpElementItem(BaseSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "title": obj.get("title"),
             "items": [PopularProductsElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
         })

@@ -19,23 +19,18 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.bulk_metrics_info import BulkMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PopularProductsElement(BaseModel):
+class DataforseoLabsBBulkTrafficEstimationLiveItem(BaseModel):
     """
-    PopularProductsElement
+    DataforseoLabsBBulkTrafficEstimationLiveItem
     """ # noqa: E501
-    type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
-    seller: Optional[StrictStr] = Field(default=None, description="seller of the product")
-    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image")
-    price: Optional[PriceInfo] = None
-    rating: Optional[RatingInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "title", "description", "seller", "image_url", "price", "rating"]
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
+    target: Optional[StrictStr] = Field(default=None, description="target domain in a POST array")
+    metrics: Optional[Dict[str, BulkMetricsInfo]] = Field(default=None, description="traffic data relevant to the specified domain")
+    __properties: ClassVar[List[str]] = ["se_type", "target", "metrics"]
 
     model_config = {
         "populate_by_name": True,
@@ -55,7 +50,7 @@ class PopularProductsElement(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PopularProductsElement from a JSON string"""
+        """Create an instance of DataforseoLabsBBulkTrafficEstimationLiveItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -76,42 +71,33 @@ class PopularProductsElement(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of price
-        if self.price:
-            _dict['price'] = self.price.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of rating
-        if self.rating:
-            _dict['rating'] = self.rating.to_dict()
-        # set to None if type (nullable) is None
+        # override the default output from pydantic by calling `to_dict()` of each value in metrics (dict)
+        _field_dict = {}
+        if self.metrics:
+            for _key in self.metrics:
+                if self.metrics[_key]:
+                    _field_dict[_key] = self.metrics[_key].to_dict()
+            _dict['metrics'] = _field_dict
+        # set to None if se_type (nullable) is None
         # and model_fields_set contains the field
-        if self.type is None and "type" in self.model_fields_set:
-            _dict['type'] = None
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
 
-        # set to None if title (nullable) is None
+        # set to None if target (nullable) is None
         # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
+        if self.target is None and "target" in self.model_fields_set:
+            _dict['target'] = None
 
-        # set to None if description (nullable) is None
+        # set to None if metrics (nullable) is None
         # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
-
-        # set to None if seller (nullable) is None
-        # and model_fields_set contains the field
-        if self.seller is None and "seller" in self.model_fields_set:
-            _dict['seller'] = None
-
-        # set to None if image_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.image_url is None and "image_url" in self.model_fields_set:
-            _dict['image_url'] = None
+        if self.metrics is None and "metrics" in self.model_fields_set:
+            _dict['metrics'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PopularProductsElement from a dict"""
+        """Create an instance of DataforseoLabsBBulkTrafficEstimationLiveItem from a dict"""
         if obj is None:
             return None
 
@@ -119,13 +105,14 @@ class PopularProductsElement(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "title": obj.get("title"),
-            "description": obj.get("description"),
-            "seller": obj.get("seller"),
-            "image_url": obj.get("image_url"),
-            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "se_type": obj.get("se_type"),
+            "target": obj.get("target"),
+            "metrics": dict(
+                (_k, BulkMetricsInfo.from_dict(_v))
+                for _k, _v in obj["metrics"].items()
+            )
+            if obj.get("metrics") is not None
+            else None
         })
         return _obj
 

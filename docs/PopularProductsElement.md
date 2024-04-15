@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of a given link element | [optional] 
 **description** | **str** | description | [optional] 
 **seller** | **str** | seller of the product | [optional] 
+**image_url** | **str** | URL of the image | [optional] 
 **price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 

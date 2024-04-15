@@ -67,7 +67,7 @@ Method | HTTP request | Description
 
 
 
-You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2023-12-29). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
+You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2024-04-04). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
 
 ### Example
 
@@ -1552,7 +1552,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    id = '86c5446a-1c43-4665-869e-fd1cc09ef238' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'b7e9682e-2567-4047-b118-312292de8cf0' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_hotel_info_task_get_html(id)

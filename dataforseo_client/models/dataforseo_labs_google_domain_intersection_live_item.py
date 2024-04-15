@@ -19,19 +19,20 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.app_ranked_serp_element_info import AppRankedSerpElementInfo
-from dataforseo_client.models.keyword_data_keyword_data_info import KeywordDataKeywordDataInfo
+from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
+from dataforseo_client.models.keyword_data_info import KeywordDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DataforseoLabsleKeywordsForAppLiveItem(BaseModel):
+class DataforseoLabsGoogleDomainIntersectionLiveItem(BaseModel):
     """
-    DataforseoLabsleKeywordsForAppLiveItem
+    DataforseoLabsGoogleDomainIntersectionLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    keyword_data: Optional[KeywordDataKeywordDataInfo] = None
-    ranked_serp_element: Optional[AppRankedSerpElementInfo] = None
-    __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "ranked_serp_element"]
+    keyword_data: Optional[KeywordDataInfo] = None
+    first_domain_serp_element: Optional[BaseDataforseoLabsSerpElementItem] = None
+    second_domain_serp_element: Optional[BaseDataforseoLabsSerpElementItem] = None
+    __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "first_domain_serp_element", "second_domain_serp_element"]
 
     model_config = {
         "populate_by_name": True,
@@ -51,7 +52,7 @@ class DataforseoLabsleKeywordsForAppLiveItem(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DataforseoLabsleKeywordsForAppLiveItem from a JSON string"""
+        """Create an instance of DataforseoLabsGoogleDomainIntersectionLiveItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,9 +76,12 @@ class DataforseoLabsleKeywordsForAppLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keyword_data
         if self.keyword_data:
             _dict['keyword_data'] = self.keyword_data.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of ranked_serp_element
-        if self.ranked_serp_element:
-            _dict['ranked_serp_element'] = self.ranked_serp_element.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of first_domain_serp_element
+        if self.first_domain_serp_element:
+            _dict['first_domain_serp_element'] = self.first_domain_serp_element.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of second_domain_serp_element
+        if self.second_domain_serp_element:
+            _dict['second_domain_serp_element'] = self.second_domain_serp_element.to_dict()
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field
         if self.se_type is None and "se_type" in self.model_fields_set:
@@ -87,7 +91,7 @@ class DataforseoLabsleKeywordsForAppLiveItem(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DataforseoLabsleKeywordsForAppLiveItem from a dict"""
+        """Create an instance of DataforseoLabsGoogleDomainIntersectionLiveItem from a dict"""
         if obj is None:
             return None
 
@@ -96,8 +100,9 @@ class DataforseoLabsleKeywordsForAppLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "keyword_data": KeywordDataKeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
-            "ranked_serp_element": AppRankedSerpElementInfo.from_dict(obj["ranked_serp_element"]) if obj.get("ranked_serp_element") is not None else None
+            "keyword_data": KeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
+            "first_domain_serp_element": BaseDataforseoLabsSerpElementItem.from_dict(obj["first_domain_serp_element"]) if obj.get("first_domain_serp_element") is not None else None,
+            "second_domain_serp_element": BaseDataforseoLabsSerpElementItem.from_dict(obj["second_domain_serp_element"]) if obj.get("second_domain_serp_element") is not None else None
         })
         return _obj
 

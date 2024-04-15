@@ -39,7 +39,7 @@ class SerpBingOrganicLiveAdvancedResultInfo(BaseModel):
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item types: answer_box, carousel, events, featured_snippet, hotels_pack, images, jobs, local_pack, map, organic, paid, people_also_ask, people_also_search, questions_and_answers,recipes, related_searches, shopping, top_stories, video")
     se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="items featured in the faq_box")
     __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items"]
 
     model_config = {

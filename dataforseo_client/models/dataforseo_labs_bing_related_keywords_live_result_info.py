@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.dataforseo_labs_bing_related_keywords_live_item import DataforseoLabsBingRelatedKeywordsLiveItem
-from dataforseo_client.models.keyword_data import KeywordData
+from dataforseo_client.models.keyword_data_keyword_data_info import KeywordDataKeywordDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class DataforseoLabsBingRelatedKeywordsLiveResultInfo(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     seed_keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    seed_keyword_data: Optional[KeywordData] = None
+    seed_keyword_data: Optional[KeywordDataKeywordDataInfo] = None
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
@@ -136,7 +136,7 @@ class DataforseoLabsBingRelatedKeywordsLiveResultInfo(BaseModel):
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
             "seed_keyword": obj.get("seed_keyword"),
-            "seed_keyword_data": KeywordData.from_dict(obj["seed_keyword_data"]) if obj.get("seed_keyword_data") is not None else None,
+            "seed_keyword_data": KeywordDataKeywordDataInfo.from_dict(obj["seed_keyword_data"]) if obj.get("seed_keyword_data") is not None else None,
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),

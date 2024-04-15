@@ -19,10 +19,8 @@ import json
 
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.backlinks_info import BacklinksInfo
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.rank_changes import RankChanges
-from dataforseo_client.models.rank_info import RankInfo
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -48,10 +46,7 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     impressions_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on impressions estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of the returned keyword learn more about how the metric is calculated in this help center article")
     estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = None
-    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    backlinks_info: Optional[BacklinksInfo] = None
-    rank_info: Optional[RankInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "domain", "phone", "url", "is_paid", "rating", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "se_type", "backlinks_info", "rank_info"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "domain", "phone", "url", "is_paid", "rating", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes"]
 
     model_config = {
         "populate_by_name": True,
@@ -98,12 +93,6 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of rank_changes
         if self.rank_changes:
             _dict['rank_changes'] = self.rank_changes.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of backlinks_info
-        if self.backlinks_info:
-            _dict['backlinks_info'] = self.backlinks_info.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of rank_info
-        if self.rank_info:
-            _dict['rank_info'] = self.rank_info.to_dict()
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -184,11 +173,6 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.estimated_paid_traffic_cost is None and "estimated_paid_traffic_cost" in self.model_fields_set:
             _dict['estimated_paid_traffic_cost'] = None
 
-        # set to None if se_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.se_type is None and "se_type" in self.model_fields_set:
-            _dict['se_type'] = None
-
         return _dict
 
     @classmethod
@@ -218,10 +202,7 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "etv": obj.get("etv"),
             "impressions_etv": obj.get("impressions_etv"),
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
-            "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None,
-            "se_type": obj.get("se_type"),
-            "backlinks_info": BacklinksInfo.from_dict(obj["backlinks_info"]) if obj.get("backlinks_info") is not None else None,
-            "rank_info": RankInfo.from_dict(obj["rank_info"]) if obj.get("rank_info") is not None else None
+            "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None
         })
         return _obj
 

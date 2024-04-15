@@ -22,9 +22,6 @@ Name | Type | Description | Notes
 **impressions_etv** | **float** | estimated traffic volume based on impressions estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of the returned keyword learn more about how the metric is calculated in this help center article | [optional] 
 **estimated_paid_traffic_cost** | **float** | estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article | [optional] 
 **rank_changes** | [**RankChanges**](RankChanges.md) |  | [optional] 
-**se_type** | **str** | search engine type | [optional] 
-**backlinks_info** | [**BacklinksInfo**](BacklinksInfo.md) |  | [optional] 
-**rank_info** | [**RankInfo**](RankInfo.md) |  | [optional] 
 
 ## Example
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,9 +33,10 @@ class DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveRequestInfo(BaseMod
     language_code: Optional[StrictStr] = Field(default=None, description="language code if you use this field, you don’t need to specify language_name you can receive the list of available languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available languages example: en")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range optional field if you don’t specify this field, the data will be provided for the previous 12 months minimal possible value: 2020-10-01 date format: \"yyyy-mm-dd\"")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field if you don’t specify this field, the today’s date will be used by default; date format: \"yyyy-mm-dd\" example: \"2021-04-01\"")
+    ignore_synonyms: Optional[StrictBool] = Field(default=None, description="ignore highly similar keywords optional field if set to true only core keywords will be returned, all highly similar keywords will be excluded; default value: false")
     item_types: Optional[List[StrictStr]] = Field(default=None, description="display results by item type optional field indicates the type of search results included in the response; Note: if the item_types array contains item types that are different from organic, the results will be ordered by the first item type in the array; possible values: [\"organic\", \"paid\", \"featured_snippet\", \"local_pack\"] default value: [\"organic\", \"paid\"]")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["targets", "location_name", "location_code", "language_name", "language_code", "date_from", "date_to", "item_types", "tag"]
+    __properties: ClassVar[List[str]] = ["targets", "location_name", "location_code", "language_name", "language_code", "date_from", "date_to", "ignore_synonyms", "item_types", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -106,6 +107,11 @@ class DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveRequestInfo(BaseMod
         if self.date_to is None and "date_to" in self.model_fields_set:
             _dict['date_to'] = None
 
+        # set to None if ignore_synonyms (nullable) is None
+        # and model_fields_set contains the field
+        if self.ignore_synonyms is None and "ignore_synonyms" in self.model_fields_set:
+            _dict['ignore_synonyms'] = None
+
         # set to None if item_types (nullable) is None
         # and model_fields_set contains the field
         if self.item_types is None and "item_types" in self.model_fields_set:
@@ -135,6 +141,7 @@ class DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveRequestInfo(BaseMod
             "language_code": obj.get("language_code"),
             "date_from": obj.get("date_from"),
             "date_to": obj.get("date_to"),
+            "ignore_synonyms": obj.get("ignore_synonyms"),
             "item_types": obj.get("item_types"),
             "tag": obj.get("tag")
         })
