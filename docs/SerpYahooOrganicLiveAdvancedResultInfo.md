@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **item_types** | **List[Optional[str]]** | types of search results in SERP contains types of search results (items) found in SERP. possible item types: featured_snippet, images, local_pack, hotels_pack, organic, paid, people_also_ask, related_searches, shopping, recipes, top_stories, video | [optional] 
 **se_results_count** | **int** | total number of results in SERP | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | items featured in the faq_box | [optional] 
 
 ## Example
 

@@ -259,7 +259,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1bb48a44-e868-4e48-8ab3-495701055e97
+          example: 4d15b657-3148-442d-8d62-002b19a56a69
       responses:
         '200':
           description: Successful operation
@@ -520,7 +520,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7bbde02c-25b6-4693-8e60-8a7c8b62f57c
+          example: a1bb450e-0b8e-450d-a292-55397d6050d1
       responses:
         '200':
           description: Successful operation
@@ -662,7 +662,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9bc60037-a4df-444f-9fbd-55f00adf28df
+          example: 2329e222-f65b-44ff-9d77-9d26918f788f
       responses:
         '200':
           description: Successful operation
@@ -901,7 +901,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 57cd81ad-3910-4058-9ad9-e4d97843dad4
+          example: 5ca1032c-444a-483a-86ec-4f60f0b4f77a
       responses:
         '200':
           description: Successful operation
@@ -1118,7 +1118,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5b855179-6963-4c61-8a5c-135b53c2b766
+          example: 151ac63d-4304-4c6e-9561-e8da50950f93
       responses:
         '200':
           description: Successful operation
@@ -1583,7 +1583,7 @@ paths:
           required: true
           schema:
             type: string
-          example: facf3b79-774b-40b5-92e7-46bcfb893569
+          example: 4aeb2ea6-5417-4d62-95f4-5fdb23db8f68
       responses:
         '200':
           description: Successful operation
@@ -1747,7 +1747,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9a98cfa9-f5bc-49a4-8bf8-8529220bbe31
+          example: 0ae15d00-2e64-420c-9ceb-61703a0a35dc
       responses:
         '200':
           description: Successful operation
@@ -2309,7 +2309,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a0769242-3fdf-41e1-a26b-2640f22a0559
+          example: 1a9042a2-a9d5-47c1-8274-05a95bd19327
       responses:
         '200':
           description: Successful operation
@@ -2549,7 +2549,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3553d3fb-a458-4f01-aa99-3e5dd7200a5b
+          example: bdf3057e-52e8-4d3e-8140-1eb872e7c035
       responses:
         '200':
           description: Successful operation
@@ -2670,7 +2670,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d9dce828-9a5c-411b-b15d-a53b26ec61b7
+          example: d00f8267-b579-4df3-856e-9c999b970023
       responses:
         '200':
           description: Successful operation
@@ -2844,7 +2844,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 35db1753-a16e-4627-85e3-c917f6fbb547
+          example: 08226a48-5637-40f1-89da-ba9f90797e7f
       responses:
         '200':
           description: Successful operation
@@ -4463,7 +4463,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c7f38115-55e0-453c-9322-06d963985099
+          example: b1334b88-8192-41e8-921b-958a2dc0ee0a
       responses:
         '200':
           description: Successful operation
@@ -4545,7 +4545,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 98a85aa9-ba1d-4742-a968-ab4a23e755b2
+          example: 25074a56-638c-46ae-942d-41fca8580dfb
       responses:
         '200':
           description: Successful operation
@@ -4627,7 +4627,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d5905f07-57b6-492f-8a7c-8ac745a46bfa
+          example: 31942f57-90a6-4206-966b-3b4291c7abf5
       responses:
         '200':
           description: Successful operation
@@ -4709,7 +4709,7 @@ paths:
           required: true
           schema:
             type: string
-          example: cce86e25-c0fd-4c93-b16c-1e3cccc2e725
+          example: 07d0bc3c-5472-434f-9132-48fdcdcaea1d
       responses:
         '200':
           description: Successful operation
@@ -4859,7 +4859,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9982694f-2320-466e-abea-d86452d5eed5
+          example: a3cf1bb5-5e9f-4134-b3f3-2bde5b98d081
       responses:
         '200':
           description: Successful operation
@@ -5097,7 +5097,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 146195d6-6838-4f89-8be2-a2430dd71075
+          example: 42221add-442d-4623-9588-a7a7e74fcb2e
       responses:
         '200':
           description: Successful operation
@@ -5179,7 +5179,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0ebe6ba9-40d9-4daf-ad43-1ef7dbbdaf98
+          example: 92197e47-5312-45e6-96cd-2fb76ef0a9ea
       responses:
         '200':
           description: Successful operation
@@ -5261,7 +5261,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 04e62f60-61e3-4ea3-aea8-be12bbe508fd
+          example: 9ee5b61d-293c-4bbd-a8b5-712d3dd6ae66
       responses:
         '200':
           description: Successful operation
@@ -5358,7 +5358,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5a588f81-12fd-4f0b-8f75-b33aabbdc5fd
+          example: aaae39b8-3845-46f7-a93b-3a72f2c14ad4
       responses:
         '200':
           description: Successful operation
@@ -5600,7 +5600,7 @@ paths:
     post:
       tags:
         - Backlinks
-      description: "‌‌\nThis endpoint will provide you with a detailed overview of referring domains pointing to the target domain you specify.\nfor more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'"
+      description: "‌‌\nThis endpoint will provide you with a detailed overview of referring domains pointing to the target you specify.\nfor more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'"
       operationId: ReferringDomainsLive
       requestBody:
         content:
@@ -5880,6 +5880,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BacklinksBulkNewLostReferringDomainsLiveResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/backlinks/bulk_pages_summary/live:
+    post:
+      tags:
+        - Backlinks
+      description: "This endpoint will provide you with a comprehensive overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains. If you indicate a single page as a target, you will get comprehensive summary data on all backlinks for that page.\nfor more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_pages_summary/live/?bash'"
+      operationId: BulkPagesSummaryLive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/BacklinksBulkPagesSummaryLiveRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BacklinksBulkPagesSummaryLiveResponseInfo'
       security:
         - basicAuth: [ ]
   /v3/on_page/id_list:
@@ -7085,7 +7107,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a15e3598-16b6-4e5c-8969-676c02bf4741
+          example: 88c0a006-bb65-47a4-9ec2-57312d64c19f
       responses:
         '200':
           description: Successful operation
@@ -7168,7 +7190,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 23939f3c-98d1-4ccc-adec-4c0f4a21c910
+          example: 3d125976-0bef-428e-8635-82acf905d5c8
       responses:
         '200':
           description: Successful operation
@@ -7251,7 +7273,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1cdbde36-88ee-48d6-92c0-70698d8c36c9
+          example: 220e8cc9-dddf-4b91-967c-b5cfac6ca536
       responses:
         '200':
           description: Successful operation
@@ -7470,7 +7492,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5838618a-24de-4135-9753-48a649a64bdf
+          example: 7fe85dc1-6bf2-4bd1-a935-7503b1bcf50f
       responses:
         '200':
           description: Successful operation
@@ -7553,7 +7575,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 208b80f2-7e76-44b7-a1b7-daa41223ccdf
+          example: 125a6709-34c1-42f9-8fd7-02f0cc15c685
       responses:
         '200':
           description: Successful operation
@@ -7636,7 +7658,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 54d53751-7dc0-4c42-af15-dff98d77e8c1
+          example: a2f59ca4-e69d-4917-9ec7-e418fface2ce
       responses:
         '200':
           description: Successful operation
@@ -7719,7 +7741,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1f4739f6-9c20-4492-986e-ba6b1c85c710
+          example: 32e8e55a-922d-4c93-8766-47697285cd4f
       responses:
         '200':
           description: Successful operation
@@ -7868,7 +7890,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0585dd06-56a0-4c4a-9cb9-baa4f535d0b0
+          example: 7753aed0-66ea-4d2d-88e8-5fabc48440ae
       responses:
         '200':
           description: Successful operation
@@ -7891,7 +7913,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 78fa9c41-a223-4a3f-ae27-d43c23d24cf9
+          example: af8a6779-e57d-46eb-8ef7-1fe633e8f02f
       responses:
         '200':
           description: Successful operation
@@ -7951,7 +7973,7 @@ paths:
           required: true
           schema:
             type: string
-          example: cce18eee-32b8-4afb-96d4-d978a20e7ebe
+          example: 6ef3c579-21ff-43bc-81a8-9b68af859f6a
       responses:
         '200':
           description: Successful operation
@@ -7974,7 +7996,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c96a29fa-00b3-425a-a876-2f6662b81c0f
+          example: 297b0278-def3-4c4c-9423-369ed71a19bb
       responses:
         '200':
           description: Successful operation
@@ -8034,7 +8056,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3128ab1c-d380-4f11-8154-59b7518221d0
+          example: 22854bcb-f522-42a1-849b-ec2c8b7dc40b
       responses:
         '200':
           description: Successful operation
@@ -8057,7 +8079,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0e5da268-e1bd-4c2b-87aa-f382915077fd
+          example: 6c0bf5d4-54ed-444e-9663-c58c7dfe6e54
       responses:
         '200':
           description: Successful operation
@@ -8117,7 +8139,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 959bdc55-1412-4613-b387-59b9012613e1
+          example: 14ba6a8e-a9ff-41e2-b806-c7a5f5579de0
       responses:
         '200':
           description: Successful operation
@@ -8140,7 +8162,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a0f21319-fb83-437d-9303-e7abef213d0b
+          example: d9730608-68e6-4249-8056-a7644197a0a1
       responses:
         '200':
           description: Successful operation
@@ -8282,7 +8304,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 008880b5-8edd-4e3a-b585-b14d0b32e05f
+          example: 36842547-4cd3-4faf-984e-9011c1905aa6
       responses:
         '200':
           description: Successful operation
@@ -8342,7 +8364,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5df7d23e-8a09-4d5e-8c4a-487b8d32785d
+          example: 00b5b49c-e808-45a3-b265-10c52a648434
       responses:
         '200':
           description: Successful operation
@@ -8402,7 +8424,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 30f1b855-76bd-46bd-9145-41e99ddfebd3
+          example: ca7da351-3497-4614-8dd9-30dab09493ee
       responses:
         '200':
           description: Successful operation
@@ -8462,7 +8484,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 17347437-4c80-4df5-8a01-a8575bff0579
+          example: 769af20f-1937-49ee-a4ec-8e4e6c3d37db
       responses:
         '200':
           description: Successful operation
@@ -8970,7 +8992,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b7e9682e-2567-4047-b118-312292de8cf0
+          example: 98704259-70db-45cc-9f33-1c6075f61803
       responses:
         '200':
           description: Successful operation
@@ -9773,6 +9795,7 @@ components:
         propertyName: type
         mapping:
           organic: '#/components/schemas/OrganicDataforseoLabsSerpElementItem'
+          paid: '#/components/schemas/PaidDataforseoLabsSerpElementItem'
           people_also_ask: '#/components/schemas/PeopleAlsoAskDataforseoLabsSerpElementItem'
           twitter: '#/components/schemas/TwitterDataforseoLabsSerpElementItem'
           people_also_search: '#/components/schemas/PeopleAlsoSearchDataforseoLabsSerpElementItem'
@@ -9796,7 +9819,6 @@ components:
           knowledge_graph_part_item: '#/components/schemas/KnowledgeGraphPartItemDataforseoLabsSerpElementItem'
           knowledge_graph_expanded_item: '#/components/schemas/KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem'
           knowledge_graph_shopping_item: '#/components/schemas/KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem'
-          paid: '#/components/schemas/PaidDataforseoLabsSerpElementItem'
           google_reviews: '#/components/schemas/GoogleReviewsDataforseoLabsSerpElementItem'
           google_posts: '#/components/schemas/GooglePostsDataforseoLabsSerpElementItem'
           google_flights: '#/components/schemas/GoogleFlightsDataforseoLabsSerpElementItem'
@@ -9835,6 +9857,34 @@ components:
           buy_on_google: '#/components/schemas/BuyOnGoogleMerchantSerpElementItem'
           shopping_specification: '#/components/schemas/ShoppingSpecificationMerchantSerpElementItem'
           product_info_element: '#/components/schemas/ProductInfoElementMerchantSerpElementItem'
+    RatingElement:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        position:
+          type: string
+          description: "the alignment of the element in Google Shopping SERP\npossible values:\nleft, right"
+          nullable: true
+        rating_type:
+          type: string
+          description: "the type of rating\nhere you can find the following elements: Max5, Percents, CustomMax"
+          nullable: true
+        value:
+          type: string
+          description: value of the rating
+          nullable: true
+        votes_count:
+          type: integer
+          description: the amount of feedback
+          format: int64
+          nullable: true
+        rating_max:
+          type: integer
+          description: the maximum value for a rating_type
+          nullable: true
     BaseBusinessDataSerpElementItem:
       type: object
       properties:
@@ -9867,8 +9917,8 @@ components:
         propertyName: resource_type
         mapping:
           html: '#/components/schemas/OnPageHtmlResourceElementItem'
-          script: '#/components/schemas/OnPageScriptResourceElementItem'
           stylesheet: '#/components/schemas/OnPageStylesheetResourceElementItem'
+          script: '#/components/schemas/OnPageScriptResourceElementItem'
           image: '#/components/schemas/OnPageImageResourceElementItem'
           broken: '#/components/schemas/OnPageBrokenResourceElementItem'
     ReviewResponseItemInfo:
@@ -16750,7 +16800,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BaseSerpElementItem'
-          description: elements of search results found in SERP
+          description: "additional items present in the element\nif there are none, equals null"
           nullable: true
     SerpGoogleNewsLiveAdvancedTaskInfo:
       type: object
@@ -20506,7 +20556,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BaseSerpElementItem'
-          description: items featured in the faq_box
+          description: "additional items present in the element\nif there are none, equals null"
           nullable: true
     SerpBingOrganicLiveAdvancedTaskInfo:
       type: object
@@ -23178,7 +23228,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BaseSerpElementItem'
-          description: "additional items present in the element\nif there are none, equals null"
+          description: items featured in the faq_box
           nullable: true
     SerpYahooOrganicLiveAdvancedTaskInfo:
       type: object
@@ -28845,7 +28895,9 @@ components:
               description: words highlighted in bold within the results description
               nullable: true
             links:
-              type: object
+              type: array
+              items:
+                $ref: '#/components/schemas/AdLinkElement'
               description: "sitelinks\nthe links shown below some of Google’s search results\nif there are none, equals null"
               nullable: true
             about_this_result:
@@ -28932,6 +28984,108 @@ components:
           $ref: '#/components/schemas/KeywordDataInfo'
         ranked_serp_element:
           $ref: '#/components/schemas/RankedSerpElement'
+    PaidDataforseoLabsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        - type: object
+          properties:
+            se_type:
+              type: string
+              description: search engine type
+              nullable: true
+            rank_group:
+              type: integer
+              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            title:
+              type: string
+              description: title of the result in SERP
+              nullable: true
+            domain:
+              type: string
+              description: subdomain in SERP
+              nullable: true
+            description:
+              type: string
+              description: description of the results element in SERP
+              nullable: true
+            breadcrumb:
+              type: string
+              description: breadcrumb in SERP
+              nullable: true
+            url:
+              type: string
+              description: relevant URL in SERP
+              nullable: true
+            highlighted:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: words highlighted in bold within the results description
+              nullable: true
+            extra:
+              type: object
+              additionalProperties:
+                type: string
+                nullable: true
+              description: additional information about the result
+              nullable: true
+            description_rows:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: "extended description\nif there is none, equals null"
+              nullable: true
+            links:
+              type: array
+              items:
+                $ref: '#/components/schemas/AdLinkElement'
+              description: "sitelinks\nthe links shown below some of Google’s search results\nif there are none, equals null"
+              nullable: true
+            main_domain:
+              type: string
+              description: primary domain name in SERP
+              nullable: true
+            relative_url:
+              type: string
+              description: URL in SERP that does not specify the HTTPs protocol and domain name
+              nullable: true
+            etv:
+              type: number
+              description: "estimated traffic volume\nestimated paid monthly traffic to the domain\ncalculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for\nlearn more about how the metric is calculated in this help center article"
+              format: float
+              nullable: true
+            impressions_etv:
+              type: number
+              description: "estimated traffic volume based on impressions\nestimated paid monthly traffic to the domain\ncalculated as the product of CTR (click-through-rate) and impressions values of all keywords in the category that the domain ranks for\nlearn more about how the metric is calculated in this help center article"
+              format: float
+              nullable: true
+            estimated_paid_traffic_cost:
+              type: number
+              description: "estimated cost of monthly search traffic\nrepresents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for\nlearn more about how the metric is calculated in this help center article"
+              format: float
+              nullable: true
+            rank_changes:
+              $ref: '#/components/schemas/RankChanges'
+            backlinks_info:
+              $ref: '#/components/schemas/BacklinksInfo'
+            rank_info:
+              $ref: '#/components/schemas/RankInfo'
     DataforseoLabsGoogleRankedKeywordsLiveResultInfo:
       type: object
       properties:
@@ -30913,108 +31067,6 @@ components:
                 $ref: '#/components/schemas/KnowledgeGraphShoppingElement'
               description: elements of search results found in SERP
               nullable: true
-    PaidDataforseoLabsSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-        - type: object
-          properties:
-            rank_group:
-              type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
-              nullable: true
-            xpath:
-              type: string
-              description: the XPath of the element
-              nullable: true
-            title:
-              type: string
-              description: title of the result in SERP
-              nullable: true
-            domain:
-              type: string
-              description: domain where a link points
-              nullable: true
-            description:
-              type: string
-              description: description of the results element in SERP
-              nullable: true
-            breadcrumb:
-              type: string
-              description: breadcrumb of the Ad element in SERP
-              nullable: true
-            url:
-              type: string
-              description: relevant URL of the Ad element in SERP
-              nullable: true
-            highlighted:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: words highlighted in bold within the results description
-              nullable: true
-            extra:
-              type: object
-              additionalProperties:
-                type: string
-                nullable: true
-              description: additional information about the result
-              nullable: true
-            description_rows:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: "extended description\nif there is none, equals null"
-              nullable: true
-            links:
-              type: array
-              items:
-                $ref: '#/components/schemas/AdLinkElement'
-              description: link of the element
-              nullable: true
-            main_domain:
-              type: string
-              description: primary domain name in SERP
-              nullable: true
-            relative_url:
-              type: string
-              description: URL in SERP that does not specify the HTTPs protocol and domain name
-              nullable: true
-            etv:
-              type: number
-              description: "estimated traffic volume\nestimated organic monthly traffic to the domain\ncalculated as the product of CTR (click-through-rate) and search volume values of the returned keyword\nlearn more about how the metric is calculated in this help center article"
-              format: float
-              nullable: true
-            impressions_etv:
-              type: number
-              description: "estimated traffic volume based on impressions\nestimated organic monthly traffic to the domain\ncalculated as the product of CTR (click-through-rate) and impressions values of the returned keyword\nlearn more about how the metric is calculated in this help center article"
-              format: float
-              nullable: true
-            estimated_paid_traffic_cost:
-              type: number
-              description: "estimated cost of converting organic search traffic into paid\nrepresents the estimated monthly cost of running ads for the returned keyword\nthe metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search\nlearn more about how the metric is calculated in this help center article"
-              format: float
-              nullable: true
-            rank_changes:
-              $ref: '#/components/schemas/RankChanges'
-            se_type:
-              type: string
-              description: search engine type
-              nullable: true
-            backlinks_info:
-              $ref: '#/components/schemas/BacklinksInfo'
-            rank_info:
-              $ref: '#/components/schemas/RankInfo'
     GoogleReviewsDataforseoLabsSerpElementItem:
       type: object
       allOf:
@@ -40714,11 +40766,6 @@ components:
           description: number of referring pages pointing at least one nofollow link to the target
           format: int64
           nullable: true
-        backlinks_nofollow:
-          type: integer
-          description: number of nofollow backlinks pointing to the target
-          format: int64
-          nullable: true
     BacklinksSummaryLiveTaskInfo:
       type: object
       allOf:
@@ -43360,6 +43407,10 @@ components:
           type: string
           description: "time range which will be used to group the results\noptional field\ndefault value: month\npossible values: day, week, month, year\nnote: for day, we will return items corresponding to all dates between and including date_from and date_to;\nfor week/month/year, we will return items corresponding to full weeks/months/years, where each item will indicate the last day of the week/month/year\nfor example, if you specify:\n\"group_range\": \"month\",\n\"date_from\": \"2022-03-23\",\n\"date_to\": \"2022-05-13\"\nwe will return items falling between 2022-03-01 and 2022-05-31, namely, three items corresponding to the following dates: 2022-03-31, 2022-04-30, 2022-05-31\nif there is no data for a certain  day/week/month/year, we will return 0"
           nullable: true
+        include_subdomains:
+          type: boolean
+          description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -43500,6 +43551,10 @@ components:
         group_range:
           type: string
           description: "time range which will be used to group the results\noptional field\ndefault value: month\npossible values: day, week, month, year\nnote: for day, we will return items corresponding to all dates between and including date_from and date_to;\nfor week/month/year, we will return items corresponding to full weeks/months/years, where each item will indicate the last day of the week/month/year\nfor example, if you specify:\n\"group_range\": \"month\",\n\"date_from\": \"2022-03-23\",\n\"date_to\": \"2022-05-13\"\nwe will return items falling between 2022-03-01 and 2022-05-31, namely, three items corresponding to the following dates: 2022-03-31, 2022-04-30, 2022-05-31\nif there is no data for a certain  day/week/month/year, we will return 0"
+          nullable: true
+        include_subdomains:
+          type: boolean
+          description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
           nullable: true
         tag:
           type: string
@@ -44015,6 +44070,237 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/BacklinksBulkNewLostReferringDomainsLiveTaskInfo'
+              description: array of tasks
+              nullable: true
+    BacklinksBulkPagesSummaryLiveRequestInfo:
+      type: object
+      properties:
+        targets:
+          type: array
+          items:
+            type: string
+          description: "domains, subdomains or webpages to get summary data for\nrequired field\na domain or a subdomain should be specified without https:// and www.\na page should be specified with absolute URL (including http:// or https://)\nyou can specify up to 1000 pages, domains, or subdomains in each request.\nnote that the URLs you set in a single request cannot belong to more than 100 different domains."
+        limit:
+          type: integer
+          description: "the maximum number of returned pages\noptional field\ndefault value: 100\nmaximum value: 1000"
+          nullable: true
+        offset:
+          type: integer
+          description: "offset in the results array of returned pages\noptional field\ndefault value: 0\nif you specify the 10 value, the first ten pages in the results array will be omitted and the data will be provided for the successive pages"
+          nullable: true
+        internal_list_limit:
+          type: integer
+          description: "maximum number of elements within internal arrays\noptional field\nyou can use this field to limit the number of elements within the following arrays:\nreferring_links_tld\nreferring_links_types\nreferring_links_attributes\nreferring_links_platform_types\nreferring_links_semantic_locations\ndefault value: 10\nmaximum value: 1000"
+          nullable: true
+        backlinks_status_type:
+          type: string
+          description: "set what backlinks to return and count\noptional field\nyou can use this field to choose what backlinks will be returned and used for aggregated metrics for your target;\npossible values:\nall – all backlinks will be returned and counted;\nlive – backlinks found during the last check will be returned and counted;\nlost – lost backlinks will be returned and counted;\ndefault value: live"
+          nullable: true
+        filters:
+          type: array
+          items:
+            type: object
+            nullable: true
+          description: "array of results filtering parameters\noptional field\nyou can add several filters at once (8 filters maximum)\nyou should set a logical operator and, or between the conditions\nthe following operators are supported:\nregex, =, <>, in, not_in, like, not_like, ilike, not_ilike\nyou can use the % operator with like and not_like to match any string of zero or more characters\nexample:\n[\"referring_links_types.anchors\",\">\",\"1\"]\n[[\"broken_pages\",\">\",\"2\"],\n\"and\",\n[\"backlinks\",\">\",\"10\"]]\n[[\"first_seen\",\">\",\"2017-10-23 11:31:45 +00:00\"],\n\"and\",\n[[\"anchor\",\"like\",\"%seo%\"],\"or\",[\"referring_domains\",\">\",\"10\"]]]\nThe full list of possible filters is available here."
+          nullable: true
+        order_by:
+          type: array
+          items:
+            type: string
+          description: "results sorting rules\noptional field\nyou can use the same values as in the filters array to sort the results\npossible sorting types:\nasc – results will be sorted in the ascending order\ndesc – results will be sorted in the descending order\nyou should use a comma to set up a sorting type\nexample:\n[\"backlinks,desc\"]\nnote that you can set no more than three sorting rules in a single request\nyou should use a comma to separate several sorting rules\nexample:\n[\"backlinks,desc\",\"rank,asc\"]"
+          nullable: true
+        backlinks_filters:
+          type: array
+          items:
+            type: object
+            nullable: true
+          description: "filter the backlinks of your target\noptional field\nyou can use this field to filter the initial backlinks that will be included in the dataset for aggregated metrics for your target\nyou can filter the backlinks by all fields available in the response of this endpoint\nusing this parameter, you can include only dofollow backlinks in the response and create a flexible backlinks dataset to calculate the metrics for\nexample:\n\"backlinks_filters\": [[\"dofollow\", \"=\", true]]"
+          nullable: true
+        include_subdomains:
+          type: boolean
+          description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
+          nullable: true
+        include_indirect_links:
+          type: boolean
+          description: "indicates if indirect links to the target will be included in the results\noptional field\nif set to true, the results will include data on indirect links pointing to a page that either redirects to the target, or points to a canonical page\nif set to false, indirect links will be ignored\ndefault value: true"
+          nullable: true
+        exclude_internal_backlinks:
+          type: boolean
+          description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, the backlinks from subdomains of the target will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
+          nullable: true
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+    BacklinksBulkPagesSummaryLiveItem:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        url:
+          type: string
+          description: page URL
+          nullable: true
+        rank:
+          type: integer
+          description: "page rank\nrank of the page on the target website\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
+          nullable: true
+        main_domain_rank:
+          type: integer
+          description: "rank of the main domain\nrank of the main domain is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
+          nullable: true
+        backlinks:
+          type: integer
+          description: number of backlinks
+          format: int64
+          nullable: true
+        first_seen:
+          type: string
+          description: "date and time when our crawler found a backlink to this page for the first time\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
+          nullable: true
+        lost_date:
+          type: string
+          description: "date and time when the last backlink to this page was lost\nindicates the date and time when our crawler visited the page and it responded with 4xx or 5xx status code or the last backlink was removed\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2017-01-24 13:20:59 +00:00"
+          nullable: true
+        backlinks_spam_score:
+          type: integer
+          description: "average spam score of the backlinks pointing to the page\nlearn more about how the metric is calculated on this help center page"
+          format: int64
+          nullable: true
+        broken_backlinks:
+          type: integer
+          description: "number of broken backlinks\nnumber of broken backlinks pointing to the page"
+          format: int64
+          nullable: true
+        broken_pages:
+          type: integer
+          description: "number of broken pages\nnumber of pages that respond with 4xx or 5xx status codes where backlinks are pointing to"
+          nullable: true
+        referring_domains:
+          type: integer
+          description: indicates the number domains referring to the page
+          format: int64
+          nullable: true
+        referring_domains_nofollow:
+          type: integer
+          description: number of domains pointing at least one nofollow link to the target
+          format: int64
+          nullable: true
+        referring_main_domains:
+          type: integer
+          description: indicates the number of referring main domains
+          format: int64
+          nullable: true
+        referring_main_domains_nofollow:
+          type: integer
+          description: number of main domains pointing at least one nofollow link to the target
+          format: int64
+          nullable: true
+        referring_ips:
+          type: integer
+          description: "number of referring IP addresses\nnumber of IP addresses pointing to this page"
+          format: int64
+          nullable: true
+        referring_subnets:
+          type: integer
+          description: number of referring subnetworks
+          format: int64
+          nullable: true
+        referring_pages:
+          type: integer
+          description: indicates the number of pages pointing to the relevant url
+          format: int64
+          nullable: true
+        referring_pages_nofollow:
+          type: integer
+          description: number of referring pages pointing at least one nofollow link to the target
+          format: int64
+          nullable: true
+        referring_links_tld:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+            nullable: true
+          nullable: true
+        referring_links_types:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+            nullable: true
+          nullable: true
+        referring_links_attributes:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+            nullable: true
+          nullable: true
+        referring_links_platform_types:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+            nullable: true
+          nullable: true
+        referring_links_semantic_locations:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+            nullable: true
+          nullable: true
+        referring_links_countries:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int64
+            nullable: true
+          nullable: true
+    BacklinksBulkPagesSummaryLiveResultInfo:
+      type: object
+      properties:
+        total_count:
+          type: integer
+          description: total number of relevant items in the database
+          format: int64
+          nullable: true
+        items_count:
+          type: integer
+          description: number of items in the results array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BacklinksBulkPagesSummaryLiveItem'
+          description: items array
+          nullable: true
+    BacklinksBulkPagesSummaryLiveTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/BacklinksBulkPagesSummaryLiveResultInfo'
+              description: array of results
+              nullable: true
+    BacklinksBulkPagesSummaryLiveResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/BacklinksBulkPagesSummaryLiveTaskInfo'
               description: array of tasks
               nullable: true
     OnPageIdListRequestInfo:
@@ -45297,74 +45583,6 @@ components:
           type: integer
           description: "time to complete downloading the resource\nthe amount of time a browser needs to complete downloading a resource"
           nullable: true
-    OnPageScriptResourceElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
-        - type: object
-          properties:
-            meta:
-              $ref: '#/components/schemas/ResourceMetaInfo'
-            status_code:
-              type: integer
-              description: status code of the page where a given resource is located
-              nullable: true
-            location:
-              type: string
-              description: "location header\nindicates the URL to redirect a page to"
-              nullable: true
-            url:
-              type: string
-              description: resource URL
-              nullable: true
-            size:
-              type: integer
-              description: "resource size\nindicates the size of a given resource measured in bytes"
-              nullable: true
-            encoded_size:
-              type: integer
-              description: "resource size after encoding\nindicates the size of the encoded resource measured in bytes"
-              nullable: true
-            total_transfer_size:
-              type: integer
-              description: "compressed resource size\nindicates the compressed size of a given resource in bytes"
-              format: int64
-              nullable: true
-            fetch_time:
-              type: string
-              description: "date and time when a resource was fetched\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2021-02-17 13:54:15 +00:00"
-              nullable: true
-            fetch_timing:
-              $ref: '#/components/schemas/FetchTiming'
-            cache_control:
-              $ref: '#/components/schemas/CacheControl'
-            checks:
-              type: object
-              additionalProperties:
-                type: boolean
-                nullable: true
-              description: "resource check-ups\ncontents of the array depend on the resource_type"
-              nullable: true
-            resource_errors:
-              $ref: '#/components/schemas/OnPageResourceIssueInfo'
-            content_encoding:
-              type: string
-              description: type of encoding
-              nullable: true
-            media_type:
-              type: string
-              description: types of media used to display a resource
-              nullable: true
-            accept_type:
-              type: string
-              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
-              nullable: true
-            server:
-              type: string
-              description: server version
-              nullable: true
-            last_modified:
-              $ref: '#/components/schemas/LastModified'
     OnPageStylesheetResourceElementItem:
       type: object
       allOf:
@@ -45490,6 +45708,74 @@ components:
                 $ref: '#/components/schemas/OnPageResourcesResultInfo'
               description: array of results
               nullable: true
+    OnPageScriptResourceElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
+        - type: object
+          properties:
+            meta:
+              $ref: '#/components/schemas/ResourceMetaInfo'
+            status_code:
+              type: integer
+              description: status code of the page where a given resource is located
+              nullable: true
+            location:
+              type: string
+              description: "location header\nindicates the URL to redirect a page to"
+              nullable: true
+            url:
+              type: string
+              description: resource URL
+              nullable: true
+            size:
+              type: integer
+              description: "resource size\nindicates the size of a given resource measured in bytes"
+              nullable: true
+            encoded_size:
+              type: integer
+              description: "resource size after encoding\nindicates the size of the encoded resource measured in bytes"
+              nullable: true
+            total_transfer_size:
+              type: integer
+              description: "compressed resource size\nindicates the compressed size of a given resource in bytes"
+              format: int64
+              nullable: true
+            fetch_time:
+              type: string
+              description: "date and time when a resource was fetched\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2021-02-17 13:54:15 +00:00"
+              nullable: true
+            fetch_timing:
+              $ref: '#/components/schemas/FetchTiming'
+            cache_control:
+              $ref: '#/components/schemas/CacheControl'
+            checks:
+              type: object
+              additionalProperties:
+                type: boolean
+                nullable: true
+              description: "resource check-ups\ncontents of the array depend on the resource_type"
+              nullable: true
+            content_encoding:
+              type: string
+              description: type of encoding
+              nullable: true
+            media_type:
+              type: string
+              description: types of media used to display a resource
+              nullable: true
+            accept_type:
+              type: string
+              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
+              nullable: true
+            server:
+              type: string
+              description: server version
+              nullable: true
+            last_modified:
+              $ref: '#/components/schemas/LastModified'
+            resource_errors:
+              $ref: '#/components/schemas/OnPageResourceIssueInfo'
     OnPageImageResourceElementItem:
       type: object
       allOf:
@@ -47098,7 +47384,7 @@ components:
       properties:
         url:
           type: string
-          description: "target page url\nrequired field\nabsolute URL of the target page\nNote: results will be returned for the specified URL only\nNote: to prevent denial-of-service events, tasks that contain a duplicate crawl host will be returned with a 40501 error;\nto prevent this error from occuring, avoid setting tasks with the same domain if at least one of your previous tasks with this domain (including a page URL on the domain) is still in a crawling queue"
+          description: "target page url\nrequired field\nabsolute URL of the target page;\nNote #1: results will be returned for the specified URL only;\nNote #2: to prevent denial-of-service events, tasks that contain a duplicate crawl host will be returned with a 40501 error;\nto prevent this error from occurring, avoid setting tasks with the same domain if at least one of your previous tasks with this domain (including a page URL on the domain) is still in a crawling queue"
         custom_user_agent:
           type: string
           description: "custom user agent\noptional field\ncustom user agent for crawling a website\nexample: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36\n\ndefault value: Mozilla/5.0 (compatible; RSiteAuditor)"
@@ -47773,7 +48059,7 @@ components:
           nullable: true
         limit:
           type: integer
-          description: "the maximum number of returned citations\noptional field\ndefault value: 100\nmaximum value: 20000"
+          description: "the maximum number of returned citations\noptional field\ndefault value: 100\nmaximum value: 1000"
           nullable: true
         filters:
           type: array
@@ -49818,34 +50104,6 @@ components:
                 $ref: '#/components/schemas/MerchantGoogleProductsTasksReadyTaskInfo'
               description: array of tasks
               nullable: true
-    RatingElement:
-      type: object
-      properties:
-        type:
-          type: string
-          description: type of element
-          nullable: true
-        position:
-          type: string
-          description: "the alignment of the element in Google Shopping SERP\npossible values:\nleft, right"
-          nullable: true
-        rating_type:
-          type: string
-          description: "the type of rating\nhere you can find the following elements: Max5, Percents, CustomMax"
-          nullable: true
-        value:
-          type: string
-          description: value of the rating
-          nullable: true
-        votes_count:
-          type: integer
-          description: the amount of feedback
-          format: int64
-          nullable: true
-        rating_max:
-          type: integer
-          description: the maximum value for a rating_type
-          nullable: true
     DeliveryInfo:
       type: object
       properties:
@@ -55035,7 +55293,7 @@ components:
           nullable: true
         location_coordinate:
           type: string
-          description: "GPS coordinates of a location\nrequired field if you don’t specify location_name or location_code\nif you use this field, you don’t need to specify location_name or location_code\nlocation_coordinate parameter should be specified in the “latitude,longitude,radius” format\nthe maximum number of decimal digits for “latitude” and “longitude”: 7\nthe minimum value for “radius”: 199.9\nexample:\n53.476225,-2.243572,200"
+          description: "GPS coordinates of a location\nrequired field if you don’t specify location_name or location_code\nif you use this field, you don’t need to specify location_name or location_code\nlocation_coordinate parameter should be specified in the “latitude,longitude,radius” format\nthe maximum number of decimal digits for “latitude” and “longitude”: 7\nthe minimum value for “radius”: 199.9 (mm)\nthe maximum value for “radius”: 199999 (mm)\nexample:\n53.476225,-2.243572,200"
           nullable: true
         language_name:
           type: string
@@ -61792,6 +62050,8 @@ components:
           $ref: '#/components/schemas/AppendixFunctionInfo'
         competitors:
           $ref: '#/components/schemas/AppendixFunctionInfo'
+        bulk_pages_summary:
+          $ref: '#/components/schemas/AppendixFunctionInfo'
     AppendixAppDataLimitsRatesDataInfo:
       type: object
       properties:
@@ -62483,9 +62743,9 @@ components:
       properties:
         advanced:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-        regular:
-          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         html:
+          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
+        regular:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
     AppendixSerpPriceData:
       type: object
@@ -62548,6 +62808,8 @@ components:
         bulk_new_lost_backlinks:
           $ref: '#/components/schemas/AppendixKeywordBingKeywordsDataPriceDataInfo'
         bulk_new_lost_referring_domains:
+          $ref: '#/components/schemas/AppendixKeywordBingKeywordsDataPriceDataInfo'
+        bulk_pages_summary:
           $ref: '#/components/schemas/AppendixKeywordBingKeywordsDataPriceDataInfo'
         bulk_ranks:
           $ref: '#/components/schemas/AppendixKeywordBingKeywordsDataPriceDataInfo'
@@ -62656,9 +62918,9 @@ components:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         locations:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-        trustpilot:
-          $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'
         tripadvisor:
+          $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'
+        trustpilot:
           $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'
         yelp:
           $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'

@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **timeseries_summary** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
 **timeseries_new_lost_summary** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
 **competitors** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**bulk_pages_summary** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
 
 ## Example
 

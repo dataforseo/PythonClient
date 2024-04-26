@@ -17,20 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
+from dataforseo_client.models.backlinks_bulk_pages_summary_live_item import BacklinksBulkPagesSummaryLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AppendixSerpPriceDataInfo(BaseModel):
+class BacklinksBulkPagesSummaryLiveResultInfo(BaseModel):
     """
-    AppendixSerpPriceDataInfo
+    BacklinksBulkPagesSummaryLiveResultInfo
     """ # noqa: E501
-    advanced: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    html: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    regular: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["advanced", "html", "regular"]
+    total_count: Optional[StrictInt] = Field(default=None, description="total number of relevant items in the database")
+    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    items: Optional[List[BacklinksBulkPagesSummaryLiveItem]] = Field(default=None, description="items array")
+    __properties: ClassVar[List[str]] = ["total_count", "items_count", "items"]
 
     model_config = {
         "populate_by_name": True,
@@ -50,7 +50,7 @@ class AppendixSerpPriceDataInfo(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AppendixSerpPriceDataInfo from a JSON string"""
+        """Create an instance of BacklinksBulkPagesSummaryLiveResultInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,20 +71,33 @@ class AppendixSerpPriceDataInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of advanced
-        if self.advanced:
-            _dict['advanced'] = self.advanced.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of html
-        if self.html:
-            _dict['html'] = self.html.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of regular
-        if self.regular:
-            _dict['regular'] = self.regular.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in items (list)
+        _items = []
+        if self.items:
+            for _item in self.items:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['items'] = _items
+        # set to None if total_count (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_count is None and "total_count" in self.model_fields_set:
+            _dict['total_count'] = None
+
+        # set to None if items_count (nullable) is None
+        # and model_fields_set contains the field
+        if self.items_count is None and "items_count" in self.model_fields_set:
+            _dict['items_count'] = None
+
+        # set to None if items (nullable) is None
+        # and model_fields_set contains the field
+        if self.items is None and "items" in self.model_fields_set:
+            _dict['items'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AppendixSerpPriceDataInfo from a dict"""
+        """Create an instance of BacklinksBulkPagesSummaryLiveResultInfo from a dict"""
         if obj is None:
             return None
 
@@ -92,9 +105,9 @@ class AppendixSerpPriceDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "advanced": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["advanced"]) if obj.get("advanced") is not None else None,
-            "html": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["html"]) if obj.get("html") is not None else None,
-            "regular": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["regular"]) if obj.get("regular") is not None else None
+            "total_count": obj.get("total_count"),
+            "items_count": obj.get("items_count"),
+            "items": [BacklinksBulkPagesSummaryLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

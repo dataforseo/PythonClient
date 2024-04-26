@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**bulk_backlinks_live**](BacklinksApi.md#bulk_backlinks_live) | **POST** /v3/backlinks/bulk_backlinks/live | 
 [**bulk_new_lost_backlinks_live**](BacklinksApi.md#bulk_new_lost_backlinks_live) | **POST** /v3/backlinks/bulk_new_lost_backlinks/live | 
 [**bulk_new_lost_referring_domains_live**](BacklinksApi.md#bulk_new_lost_referring_domains_live) | **POST** /v3/backlinks/bulk_new_lost_referring_domains/live | 
+[**bulk_pages_summary_live**](BacklinksApi.md#bulk_pages_summary_live) | **POST** /v3/backlinks/bulk_pages_summary/live | 
 [**bulk_ranks_live**](BacklinksApi.md#bulk_ranks_live) | **POST** /v3/backlinks/bulk_ranks/live | 
 [**bulk_referring_domains_live**](BacklinksApi.md#bulk_referring_domains_live) | **POST** /v3/backlinks/bulk_referring_domains/live | 
 [**bulk_spam_score_live**](BacklinksApi.md#bulk_spam_score_live) | **POST** /v3/backlinks/bulk_spam_score/live | 
@@ -638,6 +639,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BacklinksBulkNewLostReferringDomainsLiveResponseInfo**](BacklinksBulkNewLostReferringDomainsLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bulk_pages_summary_live**
+> BacklinksBulkPagesSummaryLiveResponseInfo bulk_pages_summary_live(backlinks_bulk_pages_summary_live_request_info=backlinks_bulk_pages_summary_live_request_info)
+
+
+
+This endpoint will provide you with a comprehensive overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains. If you indicate a single page as a target, you will get comprehensive summary data on all backlinks for that page. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_pages_summary/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.backlinks_bulk_pages_summary_live_request_info import BacklinksBulkPagesSummaryLiveRequestInfo
+from dataforseo_client.models.backlinks_bulk_pages_summary_live_response_info import BacklinksBulkPagesSummaryLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BacklinksApi(api_client)
+    backlinks_bulk_pages_summary_live_request_info = [dataforseo_client.BacklinksBulkPagesSummaryLiveRequestInfo()] # List[BacklinksBulkPagesSummaryLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.bulk_pages_summary_live(backlinks_bulk_pages_summary_live_request_info=backlinks_bulk_pages_summary_live_request_info)
+        print("The response of BacklinksApi->bulk_pages_summary_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BacklinksApi->bulk_pages_summary_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **backlinks_bulk_pages_summary_live_request_info** | [**List[BacklinksBulkPagesSummaryLiveRequestInfo]**](BacklinksBulkPagesSummaryLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**BacklinksBulkPagesSummaryLiveResponseInfo**](BacklinksBulkPagesSummaryLiveResponseInfo.md)
 
 ### Authorization
 
@@ -1446,7 +1526,7 @@ Name | Type | Description  | Notes
 
 
 
-‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target domain you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
+‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
 
 ### Example
 

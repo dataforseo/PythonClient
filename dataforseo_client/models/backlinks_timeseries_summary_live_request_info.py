@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,8 +30,9 @@ class BacklinksTimeseriesSummaryLiveRequestInfo(BaseModel):
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range optional field this field indicates the date which will be used as a threshold for summary data; minimum value: 2019-01-30 maximum value shouldn’t exceed the date specified in the date_to date format: \"yyyy-mm-dd\" example: \"2021-01-01\"")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field if you don’t specify this field, the today’s date will be used by default minimum value shouldn’t preceed the date specified in the date_from maximum value: today’s date date format: \"yyyy-mm-dd\" example: \"2021-01-15\"")
     group_range: Optional[StrictStr] = Field(default=None, description="time range which will be used to group the results optional field default value: month possible values: day, week, month, year note: for day, we will return items corresponding to all dates between and including date_from and date_to; for week/month/year, we will return items corresponding to full weeks/months/years, where each item will indicate the last day of the week/month/year for example, if you specify: \"group_range\": \"month\", \"date_from\": \"2022-03-23\", \"date_to\": \"2022-05-13\" we will return items falling between 2022-03-01 and 2022-05-31, namely, three items corresponding to the following dates: 2022-03-31, 2022-04-30, 2022-05-31 if there is no data for a certain  day/week/month/year, we will return 0")
+    include_subdomains: Optional[StrictBool] = Field(default=None, description="indicates if the subdomains of the target will be included in the search optional field if set to false, the subdomains will be ignored default value: true")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "group_range", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "group_range", "include_subdomains", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -87,6 +88,11 @@ class BacklinksTimeseriesSummaryLiveRequestInfo(BaseModel):
         if self.group_range is None and "group_range" in self.model_fields_set:
             _dict['group_range'] = None
 
+        # set to None if include_subdomains (nullable) is None
+        # and model_fields_set contains the field
+        if self.include_subdomains is None and "include_subdomains" in self.model_fields_set:
+            _dict['include_subdomains'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -108,6 +114,7 @@ class BacklinksTimeseriesSummaryLiveRequestInfo(BaseModel):
             "date_from": obj.get("date_from"),
             "date_to": obj.get("date_to"),
             "group_range": obj.get("group_range"),
+            "include_subdomains": obj.get("include_subdomains"),
             "tag": obj.get("tag")
         })
         return _obj

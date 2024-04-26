@@ -19,6 +19,7 @@ import json
 
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.ad_link_element import AdLinkElement
 from dataforseo_client.models.backlinks_info import BacklinksInfo
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.rank_changes import RankChanges
@@ -51,7 +52,7 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version")
     rating: Optional[RatingInfo] = None
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="words highlighted in bold within the results description")
-    links: Optional[Dict[str, Any]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
+    links: Optional[List[AdLinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     about_this_result: Optional[Dict[str, Any]] = Field(default=None, description="contains information from the ‘About this result’ panel ‘About this result’ panel provides additional context about why Google returned this result for the given query; this feature appears after clicking on the three dots next to most results")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
     relative_url: Optional[StrictStr] = Field(default=None, description="URL in SERP that does not specify the HTTPs protocol and domain name")
@@ -105,6 +106,13 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of rating
         if self.rating:
             _dict['rating'] = self.rating.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in links (list)
+        _items = []
+        if self.links:
+            for _item in self.links:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['links'] = _items
         # override the default output from pydantic by calling `to_dict()` of rank_changes
         if self.rank_changes:
             _dict['rank_changes'] = self.rank_changes.to_dict()
@@ -282,7 +290,7 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "amp_version": obj.get("amp_version"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "highlighted": obj.get("highlighted"),
-            "links": obj.get("links"),
+            "links": [AdLinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
             "about_this_result": obj.get("about_this_result"),
             "main_domain": obj.get("main_domain"),
             "relative_url": obj.get("relative_url"),

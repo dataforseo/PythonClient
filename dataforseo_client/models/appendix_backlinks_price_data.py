@@ -33,6 +33,7 @@ class AppendixBacklinksPriceData(BaseModel):
     bulk_backlinks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     bulk_new_lost_backlinks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     bulk_new_lost_referring_domains: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    bulk_pages_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     bulk_ranks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     bulk_referring_domains: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     competitors: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
@@ -48,7 +49,7 @@ class AppendixBacklinksPriceData(BaseModel):
     summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     timeseries_new_lost_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     timeseries_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["anchors", "backlinks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_ranks", "bulk_referring_domains", "competitors", "content_duplicates", "domain_intersection", "domain_pages", "domain_pages_summary", "errors", "history", "page_intersection", "referring_domains", "referring_networks", "summary", "timeseries_new_lost_summary", "timeseries_summary"]
+    __properties: ClassVar[List[str]] = ["anchors", "backlinks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_pages_summary", "bulk_ranks", "bulk_referring_domains", "competitors", "content_duplicates", "domain_intersection", "domain_pages", "domain_pages_summary", "errors", "history", "page_intersection", "referring_domains", "referring_networks", "summary", "timeseries_new_lost_summary", "timeseries_summary"]
 
     model_config = {
         "populate_by_name": True,
@@ -104,6 +105,9 @@ class AppendixBacklinksPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of bulk_new_lost_referring_domains
         if self.bulk_new_lost_referring_domains:
             _dict['bulk_new_lost_referring_domains'] = self.bulk_new_lost_referring_domains.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bulk_pages_summary
+        if self.bulk_pages_summary:
+            _dict['bulk_pages_summary'] = self.bulk_pages_summary.to_dict()
         # override the default output from pydantic by calling `to_dict()` of bulk_ranks
         if self.bulk_ranks:
             _dict['bulk_ranks'] = self.bulk_ranks.to_dict()
@@ -166,6 +170,7 @@ class AppendixBacklinksPriceData(BaseModel):
             "bulk_backlinks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_backlinks"]) if obj.get("bulk_backlinks") is not None else None,
             "bulk_new_lost_backlinks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_new_lost_backlinks"]) if obj.get("bulk_new_lost_backlinks") is not None else None,
             "bulk_new_lost_referring_domains": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_new_lost_referring_domains"]) if obj.get("bulk_new_lost_referring_domains") is not None else None,
+            "bulk_pages_summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_pages_summary"]) if obj.get("bulk_pages_summary") is not None else None,
             "bulk_ranks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_ranks"]) if obj.get("bulk_ranks") is not None else None,
             "bulk_referring_domains": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_referring_domains"]) if obj.get("bulk_referring_domains") is not None else None,
             "competitors": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None,

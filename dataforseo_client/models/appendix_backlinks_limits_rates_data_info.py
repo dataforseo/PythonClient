@@ -47,7 +47,8 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
     timeseries_summary: Optional[AppendixFunctionInfo] = None
     timeseries_new_lost_summary: Optional[AppendixFunctionInfo] = None
     competitors: Optional[AppendixFunctionInfo] = None
-    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors"]
+    bulk_pages_summary: Optional[AppendixFunctionInfo] = None
+    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors", "bulk_pages_summary"]
 
     model_config = {
         "populate_by_name": True,
@@ -145,6 +146,9 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of competitors
         if self.competitors:
             _dict['competitors'] = self.competitors.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bulk_pages_summary
+        if self.bulk_pages_summary:
+            _dict['bulk_pages_summary'] = self.bulk_pages_summary.to_dict()
         # set to None if errors (nullable) is None
         # and model_fields_set contains the field
         if self.errors is None and "errors" in self.model_fields_set:
@@ -181,7 +185,8 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
             "domain_pages_summary": AppendixFunctionInfo.from_dict(obj["domain_pages_summary"]) if obj.get("domain_pages_summary") is not None else None,
             "timeseries_summary": AppendixFunctionInfo.from_dict(obj["timeseries_summary"]) if obj.get("timeseries_summary") is not None else None,
             "timeseries_new_lost_summary": AppendixFunctionInfo.from_dict(obj["timeseries_new_lost_summary"]) if obj.get("timeseries_new_lost_summary") is not None else None,
-            "competitors": AppendixFunctionInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None
+            "competitors": AppendixFunctionInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None,
+            "bulk_pages_summary": AppendixFunctionInfo.from_dict(obj["bulk_pages_summary"]) if obj.get("bulk_pages_summary") is not None else None
         })
         return _obj
 

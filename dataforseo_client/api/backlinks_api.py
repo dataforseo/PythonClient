@@ -28,6 +28,8 @@ from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_request_inf
 from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_response_info import BacklinksBulkNewLostBacklinksLiveResponseInfo
 from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_request_info import BacklinksBulkNewLostReferringDomainsLiveRequestInfo
 from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_response_info import BacklinksBulkNewLostReferringDomainsLiveResponseInfo
+from dataforseo_client.models.backlinks_bulk_pages_summary_live_request_info import BacklinksBulkPagesSummaryLiveRequestInfo
+from dataforseo_client.models.backlinks_bulk_pages_summary_live_response_info import BacklinksBulkPagesSummaryLiveResponseInfo
 from dataforseo_client.models.backlinks_bulk_ranks_live_request_info import BacklinksBulkRanksLiveRequestInfo
 from dataforseo_client.models.backlinks_bulk_ranks_live_response_info import BacklinksBulkRanksLiveResponseInfo
 from dataforseo_client.models.backlinks_bulk_referring_domains_live_request_info import BacklinksBulkReferringDomainsLiveRequestInfo
@@ -2212,6 +2214,278 @@ class BacklinksApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/backlinks/bulk_new_lost_referring_domains/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def bulk_pages_summary_live(
+        self,
+        backlinks_bulk_pages_summary_live_request_info: Optional[List[BacklinksBulkPagesSummaryLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> BacklinksBulkPagesSummaryLiveResponseInfo:
+        """bulk_pages_summary_live
+
+        This endpoint will provide you with a comprehensive overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains. If you indicate a single page as a target, you will get comprehensive summary data on all backlinks for that page. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_pages_summary/live/?bash'
+
+        :param backlinks_bulk_pages_summary_live_request_info:
+        :type backlinks_bulk_pages_summary_live_request_info: List[BacklinksBulkPagesSummaryLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bulk_pages_summary_live_serialize(
+            backlinks_bulk_pages_summary_live_request_info=backlinks_bulk_pages_summary_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "BacklinksBulkPagesSummaryLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def bulk_pages_summary_live_with_http_info(
+        self,
+        backlinks_bulk_pages_summary_live_request_info: Optional[List[BacklinksBulkPagesSummaryLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[BacklinksBulkPagesSummaryLiveResponseInfo]:
+        """bulk_pages_summary_live
+
+        This endpoint will provide you with a comprehensive overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains. If you indicate a single page as a target, you will get comprehensive summary data on all backlinks for that page. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_pages_summary/live/?bash'
+
+        :param backlinks_bulk_pages_summary_live_request_info:
+        :type backlinks_bulk_pages_summary_live_request_info: List[BacklinksBulkPagesSummaryLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bulk_pages_summary_live_serialize(
+            backlinks_bulk_pages_summary_live_request_info=backlinks_bulk_pages_summary_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "BacklinksBulkPagesSummaryLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def bulk_pages_summary_live_without_preload_content(
+        self,
+        backlinks_bulk_pages_summary_live_request_info: Optional[List[BacklinksBulkPagesSummaryLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """bulk_pages_summary_live
+
+        This endpoint will provide you with a comprehensive overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains. If you indicate a single page as a target, you will get comprehensive summary data on all backlinks for that page. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_pages_summary/live/?bash'
+
+        :param backlinks_bulk_pages_summary_live_request_info:
+        :type backlinks_bulk_pages_summary_live_request_info: List[BacklinksBulkPagesSummaryLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bulk_pages_summary_live_serialize(
+            backlinks_bulk_pages_summary_live_request_info=backlinks_bulk_pages_summary_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "BacklinksBulkPagesSummaryLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _bulk_pages_summary_live_serialize(
+        self,
+        backlinks_bulk_pages_summary_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'BacklinksBulkPagesSummaryLiveRequestInfo': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, str] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if backlinks_bulk_pages_summary_live_request_info is not None:
+            _body_params = backlinks_bulk_pages_summary_live_request_info
+
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
+        )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/backlinks/bulk_pages_summary/live',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -4937,7 +5211,7 @@ class BacklinksApi:
     ) -> BacklinksReferringDomainsLiveResponseInfo:
         """referring_domains_live
 
-        ‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target domain you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
+        ‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
 
         :param backlinks_referring_domains_live_request_info:
         :type backlinks_referring_domains_live_request_info: List[BacklinksReferringDomainsLiveRequestInfo]
@@ -5004,7 +5278,7 @@ class BacklinksApi:
     ) -> ApiResponse[BacklinksReferringDomainsLiveResponseInfo]:
         """referring_domains_live
 
-        ‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target domain you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
+        ‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
 
         :param backlinks_referring_domains_live_request_info:
         :type backlinks_referring_domains_live_request_info: List[BacklinksReferringDomainsLiveRequestInfo]
@@ -5071,7 +5345,7 @@ class BacklinksApi:
     ) -> RESTResponseType:
         """referring_domains_live
 
-        ‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target domain you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
+        ‌‌ This endpoint will provide you with a detailed overview of referring domains pointing to the target you specify. for more info please visit 'https://docs.dataforseo.com/v3/backlinks/referring_domains/live/?bash'
 
         :param backlinks_referring_domains_live_request_info:
         :type backlinks_referring_domains_live_request_info: List[BacklinksReferringDomainsLiveRequestInfo]

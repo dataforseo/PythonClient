@@ -31,7 +31,6 @@ Name | Type | Description | Notes
 **referring_links_semantic_locations** | **Dict[str, Optional[int]]** | semantic locations of the referring links indicates semantic elements in HTML where the referring links are located and link count per each semantic location you can get the full list of semantic elements here example values: article, section, summary, \&quot;\&quot; | [optional] 
 **referring_links_countries** | **Dict[str, Optional[int]]** | ISO country codes of the referring links indicates ISO country codes of the domains where the referring links are located and the link count per each country | [optional] 
 **referring_pages_nofollow** | **int** | number of referring pages pointing at least one nofollow link to the target | [optional] 
-**backlinks_nofollow** | **int** | number of nofollow backlinks pointing to the target | [optional] 
 
 ## Example
 

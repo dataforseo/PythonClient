@@ -31,29 +31,29 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """
     PaidDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    domain: Optional[StrictStr] = Field(default=None, description="subdomain in SERP")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb of the Ad element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="words highlighted in bold within the results description")
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="additional information about the result")
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description="extended description if there is none, equals null")
-    links: Optional[List[AdLinkElement]] = Field(default=None, description="link of the element")
+    links: Optional[List[AdLinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
     relative_url: Optional[StrictStr] = Field(default=None, description="URL in SERP that does not specify the HTTPs protocol and domain name")
-    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of the returned keyword learn more about how the metric is calculated in this help center article")
-    impressions_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on impressions estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of the returned keyword learn more about how the metric is calculated in this help center article")
-    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article")
+    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    impressions_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on impressions estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of monthly search traffic represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = None
-    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     backlinks_info: Optional[BacklinksInfo] = None
     rank_info: Optional[RankInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "description", "breadcrumb", "url", "highlighted", "extra", "description_rows", "links", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "se_type", "backlinks_info", "rank_info"]
+    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "description", "breadcrumb", "url", "highlighted", "extra", "description_rows", "links", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "backlinks_info", "rank_info"]
 
     model_config = {
         "populate_by_name": True,
@@ -114,6 +114,11 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
+
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
 
         # set to None if rank_group (nullable) is None
         # and model_fields_set contains the field
@@ -205,11 +210,6 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.estimated_paid_traffic_cost is None and "estimated_paid_traffic_cost" in self.model_fields_set:
             _dict['estimated_paid_traffic_cost'] = None
 
-        # set to None if se_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.se_type is None and "se_type" in self.model_fields_set:
-            _dict['se_type'] = None
-
         return _dict
 
     @classmethod
@@ -223,6 +223,7 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
+            "se_type": obj.get("se_type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
@@ -242,7 +243,6 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "impressions_etv": obj.get("impressions_etv"),
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
             "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None,
-            "se_type": obj.get("se_type"),
             "backlinks_info": BacklinksInfo.from_dict(obj["backlinks_info"]) if obj.get("backlinks_info") is not None else None,
             "rank_info": RankInfo.from_dict(obj["rank_info"]) if obj.get("rank_info") is not None else None
         })
