@@ -345,7 +345,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'bdf3057e-52e8-4d3e-8140-1eb872e7c035' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '24593f08-2756-4992-b974-2fde41f8d464' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.baidu_organic_task_get_html(id)
@@ -886,7 +886,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '0ae15d00-2e64-420c-9ceb-61703a0a35dc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'a2c1bb44-be10-48d0-bba7-109f8f5be73f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_local_pack_task_get_html(id)
@@ -1584,7 +1584,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '4aeb2ea6-5417-4d62-95f4-5fdb23db8f68' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'bae7f104-5013-4843-9abc-dfd1820c3d1e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_organic_task_get_html(id)
@@ -3739,7 +3739,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '5ca1032c-444a-483a-86ec-4f60f0b4f77a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '4f2c8f27-8227-4877-a938-3fa688b5e002' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_images_task_get_html(id)
@@ -4122,7 +4122,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '151ac63d-4304-4c6e-9561-e8da50950f93' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'e1ed10f9-5042-497e-b423-b33dca7e2781' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_jobs_task_get_html(id)
@@ -4663,7 +4663,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'a1bb450e-0b8e-450d-a292-55397d6050d1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '9730090c-453c-47dd-91f8-191e319ea1b3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_local_finder_task_get_html(id)
@@ -5588,7 +5588,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '2329e222-f65b-44ff-9d77-9d26918f788f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '995a09b1-f27e-4f3f-a08d-8fda147a8abd' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_news_task_get_html(id)
@@ -5856,7 +5856,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_live_advanced**
-> SerpGoogleOrganicLiveAdvancedResponseInfo google_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+> SerpGoogleOrganicLiveAdvancedResponseInfo google_organic_live_advanced(serp_google_organic_live_advanced_request_info=serp_google_organic_live_advanced_request_info)
 
 
 
@@ -5868,8 +5868,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_organic_live_advanced_request_info import SerpGoogleOrganicLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_organic_live_advanced_response_info import SerpGoogleOrganicLiveAdvancedResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -5894,10 +5894,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_organic_live_advanced_request_info = [dataforseo_client.SerpGoogleOrganicLiveAdvancedRequestInfo()] # List[SerpGoogleOrganicLiveAdvancedRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_organic_live_advanced(serp_google_organic_live_advanced_request_info=serp_google_organic_live_advanced_request_info)
         print("The response of SerpApi->google_organic_live_advanced:\n")
         pprint(api_response)
     except Exception as e:
@@ -5911,7 +5911,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_organic_live_advanced_request_info** | [**List[SerpGoogleOrganicLiveAdvancedRequestInfo]**](SerpGoogleOrganicLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -6014,7 +6014,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_live_regular**
-> SerpGoogleOrganicLiveRegularResponseInfo google_organic_live_regular(serp_task_request_info=serp_task_request_info)
+> SerpGoogleOrganicLiveRegularResponseInfo google_organic_live_regular(serp_google_organic_live_regular_request_info=serp_google_organic_live_regular_request_info)
 
 
 
@@ -6026,8 +6026,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_organic_live_regular_request_info import SerpGoogleOrganicLiveRegularRequestInfo
 from dataforseo_client.models.serp_google_organic_live_regular_response_info import SerpGoogleOrganicLiveRegularResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -6052,10 +6052,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_organic_live_regular_request_info = [dataforseo_client.SerpGoogleOrganicLiveRegularRequestInfo()] # List[SerpGoogleOrganicLiveRegularRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_organic_live_regular(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_organic_live_regular(serp_google_organic_live_regular_request_info=serp_google_organic_live_regular_request_info)
         print("The response of SerpApi->google_organic_live_regular:\n")
         pprint(api_response)
     except Exception as e:
@@ -6069,7 +6069,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_organic_live_regular_request_info** | [**List[SerpGoogleOrganicLiveRegularRequestInfo]**](SerpGoogleOrganicLiveRegularRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -6208,7 +6208,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '4d15b657-3148-442d-8d62-002b19a56a69' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'dd923ed8-e801-4e2a-8b63-b8f03be4dd61' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_organic_task_get_html(id)
@@ -6974,7 +6974,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'd00f8267-b579-4df3-856e-9c999b970023' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '2683b1d2-c666-401e-bd4a-62885fdd5bd6' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.naver_organic_task_get_html(id)
@@ -9028,7 +9028,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '08226a48-5637-40f1-89da-ba9f90797e7f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'b0bddfd6-eb6b-4e62-a1b4-f4cde1ab6e41' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.seznam_organic_task_get_html(id)
@@ -9726,7 +9726,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '1a9042a2-a9d5-47c1-8274-05a95bd19327' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '70eadf95-49bf-487f-8b85-b6b1099a8053' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.yahoo_organic_task_get_html(id)

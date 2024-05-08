@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.content_item_info import ContentItemInfo
 from typing import Optional, Set
@@ -31,7 +31,7 @@ class TopicInfo(BaseModel):
     main_title: Optional[StrictStr] = Field(default=None, description="main title of the block")
     author: Optional[StrictStr] = Field(default=None, description="content author name")
     language: Optional[StrictStr] = Field(default=None, description="content language")
-    level: Optional[StrictStr] = Field(default=None, description="HTML level")
+    level: Optional[StrictInt] = Field(default=None, description="HTML level")
     primary_content: Optional[List[ContentItemInfo]] = Field(default=None, description="primary content on the page you can find more information about content priority calculation in this help center article")
     secondary_content: Optional[List[ContentItemInfo]] = Field(default=None, description="secondary content on the page you can find more information about content priority calculation in this help center article")
     __properties: ClassVar[List[str]] = ["h_title", "main_title", "author", "language", "level", "primary_content", "secondary_content"]

@@ -58,15 +58,17 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     attributes: Optional[BusinessDataAttributesInfo] = None
     place_topics: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="keywords mentioned in customer reviews contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword example:  \"place_topics\": { \"egg roll\": 48, \"birthday\": 33 }")
     rating: Optional[RatingInfo] = None
+    hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
+    price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     people_also_search: Optional[List[PeopleAlsoSearch]] = Field(default=None, description="related business entities")
     work_time: Optional[WorkInfo] = None
     popular_times: Optional[PopularTimes] = None
-    local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
+    local_business_links: Optional[List[BaseLocalBusinessLink]] = None
     contact_info: Optional[List[BusinessDataContactInfo]] = Field(default=None, description="available contacts of the business list of contacts to interact with the business")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-01-26 09:03:15 +00:00")
-    __properties: ClassVar[List[str]] = ["type", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "contact_info", "check_url", "last_updated_time"]
+    __properties: ClassVar[List[str]] = ["type", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "contact_info", "check_url", "last_updated_time"]
 
     model_config = {
         "populate_by_name": True,
@@ -248,6 +250,16 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
         if self.place_topics is None and "place_topics" in self.model_fields_set:
             _dict['place_topics'] = None
 
+        # set to None if hotel_rating (nullable) is None
+        # and model_fields_set contains the field
+        if self.hotel_rating is None and "hotel_rating" in self.model_fields_set:
+            _dict['hotel_rating'] = None
+
+        # set to None if price_level (nullable) is None
+        # and model_fields_set contains the field
+        if self.price_level is None and "price_level" in self.model_fields_set:
+            _dict['price_level'] = None
+
         # set to None if rating_distribution (nullable) is None
         # and model_fields_set contains the field
         if self.rating_distribution is None and "rating_distribution" in self.model_fields_set:
@@ -314,6 +326,8 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
             "attributes": BusinessDataAttributesInfo.from_dict(obj["attributes"]) if obj.get("attributes") is not None else None,
             "place_topics": obj.get("place_topics"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "hotel_rating": obj.get("hotel_rating"),
+            "price_level": obj.get("price_level"),
             "rating_distribution": obj.get("rating_distribution"),
             "people_also_search": [PeopleAlsoSearch.from_dict(_item) for _item in obj["people_also_search"]] if obj.get("people_also_search") is not None else None,
             "work_time": WorkInfo.from_dict(obj["work_time"]) if obj.get("work_time") is not None else None,

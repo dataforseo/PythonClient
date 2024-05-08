@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **hotel_info** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
 **hotel_searches** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
 **reviews** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**questions_and_answers** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
 
 ## Example
 

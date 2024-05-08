@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **available_attributes** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
-**unavailable_attributes** | **Dict[str, Optional[List[Optional[str]]]]** |  | [optional] 
+**unavailable_attributes** | **Dict[str, Optional[List[Optional[str]]]]** | unavailable attributes indicates attributes a business entity cannot offer | [optional] 
 
 ## Example
 

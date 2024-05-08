@@ -59,6 +59,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     latitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="latitude coordinate of the local establishments in google maps example: \"latitude\": 51.584091")
     longitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="longitude coordinate of the local establishment in google maps example: \"longitude\": -0.31365919999999997")
     is_claimed: Optional[StrictBool] = Field(default=None, description="shows whether the entity is verified by its owner on Google Maps")
+    questions_and_answers_count: Optional[StrictInt] = None
     attributes: Optional[BusinessDataAttributesInfo] = None
     place_topics: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="keywords mentioned in customer reviews contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword example:  \"place_topics\": { \"egg roll\": 48, \"birthday\": 33 }")
     rating: Optional[RatingInfo] = None
@@ -71,7 +72,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null")
     directory: Optional[BusinessDirectoryInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "questions_and_answers_count", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
 
     model_config = {
         "populate_by_name": True,
@@ -264,6 +265,11 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         if self.is_claimed is None and "is_claimed" in self.model_fields_set:
             _dict['is_claimed'] = None
 
+        # set to None if questions_and_answers_count (nullable) is None
+        # and model_fields_set contains the field
+        if self.questions_and_answers_count is None and "questions_and_answers_count" in self.model_fields_set:
+            _dict['questions_and_answers_count'] = None
+
         # set to None if place_topics (nullable) is None
         # and model_fields_set contains the field
         if self.place_topics is None and "place_topics" in self.model_fields_set:
@@ -336,6 +342,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
             "latitude": obj.get("latitude"),
             "longitude": obj.get("longitude"),
             "is_claimed": obj.get("is_claimed"),
+            "questions_and_answers_count": obj.get("questions_and_answers_count"),
             "attributes": BusinessDataAttributesInfo.from_dict(obj["attributes"]) if obj.get("attributes") is not None else None,
             "place_topics": obj.get("place_topics"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,

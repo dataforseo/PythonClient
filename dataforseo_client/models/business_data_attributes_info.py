@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictStr
+from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class BusinessDataAttributesInfo(BaseModel):
     BusinessDataAttributesInfo
     """ # noqa: E501
     available_attributes: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = None
-    unavailable_attributes: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = None
+    unavailable_attributes: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="unavailable attributes indicates attributes a business entity cannot offer")
     __properties: ClassVar[List[str]] = ["available_attributes", "unavailable_attributes"]
 
     model_config = {

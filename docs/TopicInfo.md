@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **main_title** | **str** | main title of the block | [optional] 
 **author** | **str** | content author name | [optional] 
 **language** | **str** | content language | [optional] 
-**level** | **str** | HTML level | [optional] 
+**level** | **int** | HTML level | [optional] 
 **primary_content** | [**List[ContentItemInfo]**](ContentItemInfo.md) | primary content on the page you can find more information about content priority calculation in this help center article | [optional] 
 **secondary_content** | [**List[ContentItemInfo]**](ContentItemInfo.md) | secondary content on the page you can find more information about content priority calculation in this help center article | [optional] 
 

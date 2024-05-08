@@ -6,10 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hotel_info** | [**AppendixHotelInfoGoogleBusinessDataPriceData**](AppendixHotelInfoGoogleBusinessDataPriceData.md) |  | [optional] 
-**hotel_searches** | [**AppendixHotelSearchesGoogleBusinessDataPriceData**](AppendixHotelSearchesGoogleBusinessDataPriceData.md) |  | [optional] 
-**my_business_info** | [**AppendixHotelSearchesGoogleBusinessDataPriceData**](AppendixHotelSearchesGoogleBusinessDataPriceData.md) |  | [optional] 
-**my_business_updates** | [**AppendixHotelSearchesGoogleBusinessDataPriceData**](AppendixHotelSearchesGoogleBusinessDataPriceData.md) |  | [optional] 
-**reviews** | [**AppendixHotelSearchesGoogleBusinessDataPriceData**](AppendixHotelSearchesGoogleBusinessDataPriceData.md) |  | [optional] 
+**hotel_searches** | [**AppendixsGoogleBusinessDataPriceDataInfo**](AppendixsGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**my_business_info** | [**AppendixsGoogleBusinessDataPriceDataInfo**](AppendixsGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**my_business_updates** | [**AppendixsGoogleBusinessDataPriceDataInfo**](AppendixsGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**questions_and_answers** | [**AppendixsGoogleBusinessDataPriceDataInfo**](AppendixsGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**reviews** | [**AppendixsGoogleBusinessDataPriceDataInfo**](AppendixsGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
 
 ## Example
 

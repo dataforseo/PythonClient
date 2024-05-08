@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **latitude** | **float** | latitude coordinate of the local establishments in google maps example: \&quot;latitude\&quot;: 51.584091 | [optional] 
 **longitude** | **float** | longitude coordinate of the local establishment in google maps example: \&quot;longitude\&quot;: -0.31365919999999997 | [optional] 
 **is_claimed** | **bool** | shows whether the entity is verified by its owner on Google Maps | [optional] 
+**questions_and_answers_count** | **int** |  | [optional] 
 **attributes** | [**BusinessDataAttributesInfo**](BusinessDataAttributesInfo.md) |  | [optional] 
 **place_topics** | **Dict[str, Optional[str]]** | keywords mentioned in customer reviews contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword example:  \&quot;place_topics\&quot;: { \&quot;egg roll\&quot;: 48, \&quot;birthday\&quot;: 33 } | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 

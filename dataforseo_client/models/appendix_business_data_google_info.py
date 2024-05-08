@@ -33,7 +33,8 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
     hotel_info: Optional[AppendixSerpLimitsRatesDataInfo] = None
     hotel_searches: Optional[AppendixFunctionInfo] = None
     reviews: Optional[AppendixFunctionInfo] = None
-    __properties: ClassVar[List[str]] = ["my_business_info", "my_business_updates", "hotel_info", "hotel_searches", "reviews"]
+    questions_and_answers: Optional[AppendixFunctionInfo] = None
+    __properties: ClassVar[List[str]] = ["my_business_info", "my_business_updates", "hotel_info", "hotel_searches", "reviews", "questions_and_answers"]
 
     model_config = {
         "populate_by_name": True,
@@ -89,6 +90,9 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of reviews
         if self.reviews:
             _dict['reviews'] = self.reviews.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of questions_and_answers
+        if self.questions_and_answers:
+            _dict['questions_and_answers'] = self.questions_and_answers.to_dict()
         return _dict
 
     @classmethod
@@ -105,7 +109,8 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
             "my_business_updates": AppendixFunctionInfo.from_dict(obj["my_business_updates"]) if obj.get("my_business_updates") is not None else None,
             "hotel_info": AppendixSerpLimitsRatesDataInfo.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
             "hotel_searches": AppendixFunctionInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
-            "reviews": AppendixFunctionInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
+            "reviews": AppendixFunctionInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "questions_and_answers": AppendixFunctionInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None
         })
         return _obj
 

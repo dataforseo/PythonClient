@@ -36,6 +36,10 @@ Method | HTTP request | Description
 [**google_my_business_updates_task_get**](BusinessDataApi.md#google_my_business_updates_task_get) | **GET** /v3/business_data/google/my_business_updates/task_get/{id} | 
 [**google_my_business_updates_task_post**](BusinessDataApi.md#google_my_business_updates_task_post) | **POST** /v3/business_data/google/my_business_updates/task_post | 
 [**google_my_business_updates_tasks_ready**](BusinessDataApi.md#google_my_business_updates_tasks_ready) | **GET** /v3/business_data/google/my_business_updates/tasks_ready | 
+[**google_questions_and_answers_live**](BusinessDataApi.md#google_questions_and_answers_live) | **POST** /v3/business_data/google/questions_and_answers/live | 
+[**google_questions_and_answers_task_get**](BusinessDataApi.md#google_questions_and_answers_task_get) | **GET** /v3/business_data/google/questions_and_answers/task_get/{id} | 
+[**google_questions_and_answers_task_post**](BusinessDataApi.md#google_questions_and_answers_task_post) | **POST** /v3/business_data/google/questions_and_answers/task_post | 
+[**google_questions_and_answers_tasks_ready**](BusinessDataApi.md#google_questions_and_answers_tasks_ready) | **GET** /v3/business_data/google/questions_and_answers/tasks_ready | 
 [**google_reviews_task_get**](BusinessDataApi.md#google_reviews_task_get) | **GET** /v3/business_data/google/reviews/task_get/{id} | 
 [**google_reviews_task_post**](BusinessDataApi.md#google_reviews_task_post) | **POST** /v3/business_data/google/reviews/task_post | 
 [**google_reviews_tasks_ready**](BusinessDataApi.md#google_reviews_tasks_ready) | **GET** /v3/business_data/google/reviews/tasks_ready | 
@@ -1552,7 +1556,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    id = '98704259-70db-45cc-9f33-1c6075f61803' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '395e3f33-bcf8-40f4-9e2c-eb2c3bc2b047' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_hotel_info_task_get_html(id)
@@ -2499,6 +2503,316 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo**](BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_questions_and_answers_live**
+> BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo google_questions_and_answers_live(business_data_google_questions_and_answers_live_request_info=business_data_google_questions_and_answers_live_request_info)
+
+
+
+‌‌ This endpoint will provide you with a detailed overview of questions and answers associated with a specific business entity listed on Google My Business. By submitting a request to this endpoint, you can access comprehensive data on the inquiries and responses related to a particular business, including the full text of the questions and answers, as well as metadata such as timestamps, user information.   The provided results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings.   Your account will be billed for every 20 questions, the maximum number of answers returned for each question is 5. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/questions_and_answers/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_questions_and_answers_live_request_info import BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo
+from dataforseo_client.models.business_data_google_questions_and_answers_live_response_info import BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+    business_data_google_questions_and_answers_live_request_info = [dataforseo_client.BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo()] # List[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_questions_and_answers_live(business_data_google_questions_and_answers_live_request_info=business_data_google_questions_and_answers_live_request_info)
+        print("The response of BusinessDataApi->google_questions_and_answers_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_questions_and_answers_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **business_data_google_questions_and_answers_live_request_info** | [**List[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo]**](BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo**](BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_questions_and_answers_task_get**
+> BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo google_questions_and_answers_task_get(id)
+
+
+
+for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/questions_and_answers/task_get/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_questions_and_answers_task_get_response_info import BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+    id = '00000000-0000-0000-0000-000000000000' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.google_questions_and_answers_task_get(id)
+        print("The response of BusinessDataApi->google_questions_and_answers_task_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_questions_and_answers_task_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo**](BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_questions_and_answers_task_post**
+> BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo google_questions_and_answers_task_post(business_data_google_questions_and_answers_task_post_request_info=business_data_google_questions_and_answers_task_post_request_info)
+
+
+
+‌‌ This endpoint will provide you with a detailed overview of questions and answers associated with a specific business entity listed on Google My Business. By submitting a request to this endpoint, you can access comprehensive data on the inquiries and responses related to a particular business, including the full text of the questions and answers, as well as metadata such as timestamps, user information.   The provided results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings.   Your account will be billed for every 20 questions, the maximum number of answers returned for each question is 5. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/questions_and_answers/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_questions_and_answers_task_post_request_info import BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo
+from dataforseo_client.models.business_data_google_questions_and_answers_task_post_response_info import BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+    business_data_google_questions_and_answers_task_post_request_info = [dataforseo_client.BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo()] # List[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_questions_and_answers_task_post(business_data_google_questions_and_answers_task_post_request_info=business_data_google_questions_and_answers_task_post_request_info)
+        print("The response of BusinessDataApi->google_questions_and_answers_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_questions_and_answers_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **business_data_google_questions_and_answers_task_post_request_info** | [**List[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo]**](BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo**](BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_questions_and_answers_tasks_ready**
+> BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo google_questions_and_answers_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/questions_and_answers/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_questions_and_answers_tasks_ready_response_info import BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+
+    try:
+        api_response = api_instance.google_questions_and_answers_tasks_ready()
+        print("The response of BusinessDataApi->google_questions_and_answers_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_questions_and_answers_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo**](BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo.md)
 
 ### Authorization
 

@@ -120,8 +120,10 @@ from dataforseo_client.models.serp_google_news_task_get_html_response_info impor
 from dataforseo_client.models.serp_google_news_task_post_response_info import SerpGoogleNewsTaskPostResponseInfo
 from dataforseo_client.models.serp_google_news_tasks_fixed_response_info import SerpGoogleNewsTasksFixedResponseInfo
 from dataforseo_client.models.serp_google_news_tasks_ready_response_info import SerpGoogleNewsTasksReadyResponseInfo
+from dataforseo_client.models.serp_google_organic_live_advanced_request_info import SerpGoogleOrganicLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_organic_live_advanced_response_info import SerpGoogleOrganicLiveAdvancedResponseInfo
 from dataforseo_client.models.serp_google_organic_live_html_response_info import SerpGoogleOrganicLiveHtmlResponseInfo
+from dataforseo_client.models.serp_google_organic_live_regular_request_info import SerpGoogleOrganicLiveRegularRequestInfo
 from dataforseo_client.models.serp_google_organic_live_regular_response_info import SerpGoogleOrganicLiveRegularResponseInfo
 from dataforseo_client.models.serp_google_organic_task_get_advanced_response_info import SerpGoogleOrganicTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_google_organic_task_get_html_response_info import SerpGoogleOrganicTaskGetHtmlResponseInfo
@@ -19350,7 +19352,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_advanced(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_advanced_request_info: Optional[List[SerpGoogleOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19368,8 +19370,8 @@ class SerpApi:
 
         ‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_advanced_request_info:
+        :type serp_google_organic_live_advanced_request_info: List[SerpGoogleOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19393,7 +19395,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_advanced_request_info=serp_google_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19417,7 +19419,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_advanced_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_advanced_request_info: Optional[List[SerpGoogleOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19435,8 +19437,8 @@ class SerpApi:
 
         ‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_advanced_request_info:
+        :type serp_google_organic_live_advanced_request_info: List[SerpGoogleOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19460,7 +19462,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_advanced_request_info=serp_google_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19484,7 +19486,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_advanced_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_advanced_request_info: Optional[List[SerpGoogleOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19502,8 +19504,8 @@ class SerpApi:
 
         ‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_advanced_request_info:
+        :type serp_google_organic_live_advanced_request_info: List[SerpGoogleOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19527,7 +19529,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_advanced_request_info=serp_google_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19546,7 +19548,7 @@ class SerpApi:
 
     def _google_organic_live_advanced_serialize(
         self,
-        serp_task_request_info,
+        serp_google_organic_live_advanced_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -19556,7 +19558,7 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleOrganicLiveAdvancedRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
@@ -19571,8 +19573,8 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_organic_live_advanced_request_info is not None:
+            _body_params = serp_google_organic_live_advanced_request_info
 
 
         # set the HTTP header `Accept`
@@ -19894,7 +19896,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_regular(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_regular_request_info: Optional[List[SerpGoogleOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19912,8 +19914,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_regular_request_info:
+        :type serp_google_organic_live_regular_request_info: List[SerpGoogleOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19937,7 +19939,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_regular_request_info=serp_google_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19961,7 +19963,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_regular_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_regular_request_info: Optional[List[SerpGoogleOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19979,8 +19981,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_regular_request_info:
+        :type serp_google_organic_live_regular_request_info: List[SerpGoogleOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20004,7 +20006,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_regular_request_info=serp_google_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20028,7 +20030,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_regular_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_regular_request_info: Optional[List[SerpGoogleOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20046,8 +20048,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_regular_request_info:
+        :type serp_google_organic_live_regular_request_info: List[SerpGoogleOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20071,7 +20073,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_regular_request_info=serp_google_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -20090,7 +20092,7 @@ class SerpApi:
 
     def _google_organic_live_regular_serialize(
         self,
-        serp_task_request_info,
+        serp_google_organic_live_regular_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -20100,7 +20102,7 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleOrganicLiveRegularRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
@@ -20115,8 +20117,8 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_organic_live_regular_request_info is not None:
+            _body_params = serp_google_organic_live_regular_request_info
 
 
         # set the HTTP header `Accept`
