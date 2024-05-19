@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **text** | **str** | content text | [optional] 
 **url** | **str** | page URL displayed in case the text is a link anchor | [optional] 
+**urls** | [**List[ContentUrlInfo]**](ContentUrlInfo.md) | contains other URLs and anchors found in the content element | [optional] 
 
 ## Example
 

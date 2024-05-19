@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.demography import Demography
-from dataforseo_client.models.demography_comparison import DemographyComparison
+from dataforseo_client.models.demography_comparison_info import DemographyComparisonInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class DataforseoTrendsDemographyInfo(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the demography and demography_comparison is based on the keywords listed in this array")
     demography: Optional[Demography] = None
-    demography_comparison: Optional[DemographyComparison] = None
+    demography_comparison: Optional[DemographyComparisonInfo] = None
     __properties: ClassVar[List[str]] = ["position", "type", "keywords", "demography", "demography_comparison"]
 
     model_config = {
@@ -111,7 +111,7 @@ class DataforseoTrendsDemographyInfo(BaseModel):
             "type": obj.get("type"),
             "keywords": obj.get("keywords"),
             "demography": Demography.from_dict(obj["demography"]) if obj.get("demography") is not None else None,
-            "demography_comparison": DemographyComparison.from_dict(obj["demography_comparison"]) if obj.get("demography_comparison") is not None else None
+            "demography_comparison": DemographyComparisonInfo.from_dict(obj["demography_comparison"]) if obj.get("demography_comparison") is not None else None
         })
         return _obj
 

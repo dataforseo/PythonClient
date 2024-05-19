@@ -39,7 +39,8 @@ class AppendixBusinessDataLimitsRatesDataInfo(BaseModel):
     tripadvisor: Optional[AppendixBusinessDataDayLimitsRatesDataInfo] = None
     trustpilot: Optional[AppendixBusinessDataDayLimitsRatesDataInfo] = None
     business_listings: Optional[AppendixBusinessListingsBusinessDataLimitsRatesDataInfo] = None
-    __properties: ClassVar[List[str]] = ["google", "locations", "languages", "errors", "yelp", "social_media", "tripadvisor", "trustpilot", "business_listings"]
+    tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["google", "locations", "languages", "errors", "yelp", "social_media", "tripadvisor", "trustpilot", "business_listings", "tasks_ready"]
 
     model_config = {
         "populate_by_name": True,
@@ -113,6 +114,11 @@ class AppendixBusinessDataLimitsRatesDataInfo(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
+        # set to None if tasks_ready (nullable) is None
+        # and model_fields_set contains the field
+        if self.tasks_ready is None and "tasks_ready" in self.model_fields_set:
+            _dict['tasks_ready'] = None
+
         return _dict
 
     @classmethod
@@ -133,7 +139,8 @@ class AppendixBusinessDataLimitsRatesDataInfo(BaseModel):
             "social_media": AppendixSocialMediaBusinessDataLimitsRatesDataInfo.from_dict(obj["social_media"]) if obj.get("social_media") is not None else None,
             "tripadvisor": AppendixBusinessDataDayLimitsRatesDataInfo.from_dict(obj["tripadvisor"]) if obj.get("tripadvisor") is not None else None,
             "trustpilot": AppendixBusinessDataDayLimitsRatesDataInfo.from_dict(obj["trustpilot"]) if obj.get("trustpilot") is not None else None,
-            "business_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["business_listings"]) if obj.get("business_listings") is not None else None
+            "business_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["business_listings"]) if obj.get("business_listings") is not None else None,
+            "tasks_ready": obj.get("tasks_ready")
         })
         return _obj
 

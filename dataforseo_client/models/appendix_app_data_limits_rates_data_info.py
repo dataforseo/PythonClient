@@ -35,7 +35,8 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories"]
+    tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories", "tasks_ready"]
 
     model_config = {
         "populate_by_name": True,
@@ -108,6 +109,11 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
         if self.categories is None and "categories" in self.model_fields_set:
             _dict['categories'] = None
 
+        # set to None if tasks_ready (nullable) is None
+        # and model_fields_set contains the field
+        if self.tasks_ready is None and "tasks_ready" in self.model_fields_set:
+            _dict['tasks_ready'] = None
+
         return _dict
 
     @classmethod
@@ -127,7 +133,8 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
             "errors": obj.get("errors"),
             "languages": obj.get("languages"),
             "locations": obj.get("locations"),
-            "categories": obj.get("categories")
+            "categories": obj.get("categories"),
+            "tasks_ready": obj.get("tasks_ready")
         })
         return _obj
 

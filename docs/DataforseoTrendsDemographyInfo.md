@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **type** | **str** | type of element | [optional] 
 **keywords** | **List[Optional[str]]** | relevant keywords the data included in the demography and demography_comparison is based on the keywords listed in this array | [optional] 
 **demography** | [**Demography**](Demography.md) |  | [optional] 
-**demography_comparison** | [**DemographyComparison**](DemographyComparison.md) |  | [optional] 
+**demography_comparison** | [**DemographyComparisonInfo**](DemographyComparisonInfo.md) |  | [optional] 
 
 ## Example
 

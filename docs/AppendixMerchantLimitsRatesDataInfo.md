@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **languages** | **float** |  | [optional] 
 **errors** | **float** |  | [optional] 
 **reviews** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**tasks_ready** | **float** |  | [optional] 
 
 ## Example
 

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.google_business_answer_element import GoogleBusinessAnswerElement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,7 +39,7 @@ class ItemsWithoutAnswers(BaseModel):
     original_question_text: Optional[StrictStr] = Field(default=None, description="original text of the question")
     time_ago: Optional[StrictStr] = Field(default=None, description="estimated time when the question was posted")
     timestamp: Optional[StrictStr] = Field(default=None, description="exact time when the question was posted")
-    items: Optional[Dict[str, Any]] = Field(default=None, description="array of items items within google_business_question_item")
+    items: Optional[GoogleBusinessAnswerElement] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "question_id", "url", "profile_image_url", "profile_url", "profile_name", "question_text", "original_question_text", "time_ago", "timestamp", "items"]
 
     model_config = {
@@ -80,6 +81,9 @@ class ItemsWithoutAnswers(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of items
+        if self.items:
+            _dict['items'] = self.items.to_dict()
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -140,11 +144,6 @@ class ItemsWithoutAnswers(BaseModel):
         if self.timestamp is None and "timestamp" in self.model_fields_set:
             _dict['timestamp'] = None
 
-        # set to None if items (nullable) is None
-        # and model_fields_set contains the field
-        if self.items is None and "items" in self.model_fields_set:
-            _dict['items'] = None
-
         return _dict
 
     @classmethod
@@ -169,7 +168,7 @@ class ItemsWithoutAnswers(BaseModel):
             "original_question_text": obj.get("original_question_text"),
             "time_ago": obj.get("time_ago"),
             "timestamp": obj.get("timestamp"),
-            "items": obj.get("items")
+            "items": GoogleBusinessAnswerElement.from_dict(obj["items"]) if obj.get("items") is not None else None
         })
         return _obj
 

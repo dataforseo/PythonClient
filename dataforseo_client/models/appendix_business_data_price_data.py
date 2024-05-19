@@ -40,7 +40,8 @@ class AppendixBusinessDataPriceData(BaseModel):
     tripadvisor: Optional[AppendixTrBusinessDataPriceDataInfo] = None
     trustpilot: Optional[AppendixTrBusinessDataPriceDataInfo] = None
     yelp: Optional[AppendixTrBusinessDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["business_listings", "errors", "social_media", "google", "languages", "locations", "tripadvisor", "trustpilot", "yelp"]
+    tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
+    __properties: ClassVar[List[str]] = ["business_listings", "errors", "social_media", "google", "languages", "locations", "tripadvisor", "trustpilot", "yelp", "tasks_ready"]
 
     model_config = {
         "populate_by_name": True,
@@ -108,6 +109,9 @@ class AppendixBusinessDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of yelp
         if self.yelp:
             _dict['yelp'] = self.yelp.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of tasks_ready
+        if self.tasks_ready:
+            _dict['tasks_ready'] = self.tasks_ready.to_dict()
         return _dict
 
     @classmethod
@@ -128,7 +132,8 @@ class AppendixBusinessDataPriceData(BaseModel):
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
             "tripadvisor": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["tripadvisor"]) if obj.get("tripadvisor") is not None else None,
             "trustpilot": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["trustpilot"]) if obj.get("trustpilot") is not None else None,
-            "yelp": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["yelp"]) if obj.get("yelp") is not None else None
+            "yelp": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["yelp"]) if obj.get("yelp") is not None else None,
+            "tasks_ready": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["tasks_ready"]) if obj.get("tasks_ready") is not None else None
         })
         return _obj
 

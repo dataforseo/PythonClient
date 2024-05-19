@@ -21,6 +21,7 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_trends_item import BaseDataforseoTrendsItem
 from dataforseo_client.models.demography import Demography
+from dataforseo_client.models.demography_comparison_info import DemographyComparisonInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +32,7 @@ class DataforseoTrendsDemographyElementItem(BaseDataforseoTrendsItem):
     position: Optional[StrictInt] = Field(default=None, description="the alignment of the element can take the following values: 1, 2, 3, 4, etc.")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the interests and interests_comparison is based on the keywords listed in this array")
     demography: Optional[Demography] = None
-    demography_comparison: Optional[Dict[str, Any]] = Field(default=None, description="comparison of demographic data on keyword popularity for the specified parameters conains keyword popularity data by age and gender if you specified a single keyword, the value will be null")
+    demography_comparison: Optional[DemographyComparisonInfo] = None
     __properties: ClassVar[List[str]] = ["type", "position", "keywords", "demography", "demography_comparison"]
 
     model_config = {
@@ -76,6 +77,9 @@ class DataforseoTrendsDemographyElementItem(BaseDataforseoTrendsItem):
         # override the default output from pydantic by calling `to_dict()` of demography
         if self.demography:
             _dict['demography'] = self.demography.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of demography_comparison
+        if self.demography_comparison:
+            _dict['demography_comparison'] = self.demography_comparison.to_dict()
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -90,11 +94,6 @@ class DataforseoTrendsDemographyElementItem(BaseDataforseoTrendsItem):
         # and model_fields_set contains the field
         if self.keywords is None and "keywords" in self.model_fields_set:
             _dict['keywords'] = None
-
-        # set to None if demography_comparison (nullable) is None
-        # and model_fields_set contains the field
-        if self.demography_comparison is None and "demography_comparison" in self.model_fields_set:
-            _dict['demography_comparison'] = None
 
         return _dict
 
@@ -112,7 +111,7 @@ class DataforseoTrendsDemographyElementItem(BaseDataforseoTrendsItem):
             "position": obj.get("position"),
             "keywords": obj.get("keywords"),
             "demography": Demography.from_dict(obj["demography"]) if obj.get("demography") is not None else None,
-            "demography_comparison": obj.get("demography_comparison")
+            "demography_comparison": DemographyComparisonInfo.from_dict(obj["demography_comparison"]) if obj.get("demography_comparison") is not None else None
         })
         return _obj
 

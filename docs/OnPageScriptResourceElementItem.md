@@ -16,12 +16,12 @@ Name | Type | Description | Notes
 **fetch_timing** | [**FetchTiming**](FetchTiming.md) |  | [optional] 
 **cache_control** | [**CacheControl**](CacheControl.md) |  | [optional] 
 **checks** | **Dict[str, Optional[bool]]** | resource check-ups contents of the array depend on the resource_type | [optional] 
-**resource_errors** | [**OnPageResourceIssueInfo**](OnPageResourceIssueInfo.md) |  | [optional] 
 **content_encoding** | **str** | type of encoding | [optional] 
 **media_type** | **str** | types of media used to display a resource | [optional] 
 **accept_type** | **str** | indicates the expected type of resource for example, if \&quot;resource_type\&quot;: \&quot;broken\&quot;, accept_type will indicate the type of the broken resource possible values: any, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font | [optional] 
 **server** | **str** | server version | [optional] 
 **last_modified** | [**LastModified**](LastModified.md) |  | [optional] 
+**resource_errors** | [**OnPageResourceIssueInfo**](OnPageResourceIssueInfo.md) |  | [optional] 
 
 ## Example
 

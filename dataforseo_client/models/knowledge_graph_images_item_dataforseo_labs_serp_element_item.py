@@ -21,6 +21,7 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.knowledge_graph_images_element import KnowledgeGraphImagesElement
+from dataforseo_client.models.link_element import LinkElement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,7 @@ class KnowledgeGraphImagesItemDataforseoLabsSerpElementItem(BaseDataforseoLabsSe
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    link: Optional[Dict[str, Any]] = Field(default=None, description="link of the element")
+    link: Optional[LinkElement] = None
     items: Optional[List[KnowledgeGraphImagesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "link", "items"]
 
@@ -75,6 +76,9 @@ class KnowledgeGraphImagesItemDataforseoLabsSerpElementItem(BaseDataforseoLabsSe
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of link
+        if self.link:
+            _dict['link'] = self.link.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
@@ -107,11 +111,6 @@ class KnowledgeGraphImagesItemDataforseoLabsSerpElementItem(BaseDataforseoLabsSe
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
-        # set to None if link (nullable) is None
-        # and model_fields_set contains the field
-        if self.link is None and "link" in self.model_fields_set:
-            _dict['link'] = None
-
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -134,7 +133,7 @@ class KnowledgeGraphImagesItemDataforseoLabsSerpElementItem(BaseDataforseoLabsSe
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
-            "link": obj.get("link"),
+            "link": LinkElement.from_dict(obj["link"]) if obj.get("link") is not None else None,
             "items": [KnowledgeGraphImagesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.content_item_info import ContentItemInfo
+from dataforseo_client.models.table_content import TableContent
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,8 @@ class PageSectionContentInfo(BaseModel):
     """ # noqa: E501
     primary_content: Optional[List[ContentItemInfo]] = Field(default=None, description="primary content on the page you can find more information about content priority calculation in this help center article")
     secondary_content: Optional[List[ContentItemInfo]] = Field(default=None, description="secondary content on the page you can find more information about content priority calculation in this help center article")
-    __properties: ClassVar[List[str]] = ["primary_content", "secondary_content"]
+    table_content: Optional[List[TableContent]] = Field(default=None, description="content of the table on the page")
+    __properties: ClassVar[List[str]] = ["primary_content", "secondary_content", "table_content"]
 
     model_config = {
         "populate_by_name": True,
@@ -84,6 +86,13 @@ class PageSectionContentInfo(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['secondary_content'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in table_content (list)
+        _items = []
+        if self.table_content:
+            for _item in self.table_content:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['table_content'] = _items
         # set to None if primary_content (nullable) is None
         # and model_fields_set contains the field
         if self.primary_content is None and "primary_content" in self.model_fields_set:
@@ -93,6 +102,11 @@ class PageSectionContentInfo(BaseModel):
         # and model_fields_set contains the field
         if self.secondary_content is None and "secondary_content" in self.model_fields_set:
             _dict['secondary_content'] = None
+
+        # set to None if table_content (nullable) is None
+        # and model_fields_set contains the field
+        if self.table_content is None and "table_content" in self.model_fields_set:
+            _dict['table_content'] = None
 
         return _dict
 
@@ -107,7 +121,8 @@ class PageSectionContentInfo(BaseModel):
 
         _obj = cls.model_validate({
             "primary_content": [ContentItemInfo.from_dict(_item) for _item in obj["primary_content"]] if obj.get("primary_content") is not None else None,
-            "secondary_content": [ContentItemInfo.from_dict(_item) for _item in obj["secondary_content"]] if obj.get("secondary_content") is not None else None
+            "secondary_content": [ContentItemInfo.from_dict(_item) for _item in obj["secondary_content"]] if obj.get("secondary_content") is not None else None,
+            "table_content": [TableContent.from_dict(_item) for _item in obj["table_content"]] if obj.get("table_content") is not None else None
         })
         return _obj
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **tripadvisor** | [**AppendixTrBusinessDataPriceDataInfo**](AppendixTrBusinessDataPriceDataInfo.md) |  | [optional] 
 **trustpilot** | [**AppendixTrBusinessDataPriceDataInfo**](AppendixTrBusinessDataPriceDataInfo.md) |  | [optional] 
 **yelp** | [**AppendixTrBusinessDataPriceDataInfo**](AppendixTrBusinessDataPriceDataInfo.md) |  | [optional] 
+**tasks_ready** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
 
 ## Example
 

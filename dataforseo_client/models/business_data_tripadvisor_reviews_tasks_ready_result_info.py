@@ -28,10 +28,11 @@ class BusinessDataTripadvisorReviewsTasksReadyResultInfo(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="task identifier of the completed task unique task identifier in our system in the UUID format")
     se: Optional[StrictStr] = Field(default=None, description="search engine specified when setting the task can take the following values: tripadvisor")
+    se_type: Optional[StrictStr] = None
     date_posted: Optional[StrictStr] = Field(default=None, description="date when the task was posted (in the UTC format)")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier")
     endpoint: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the task")
-    __properties: ClassVar[List[str]] = ["id", "se", "date_posted", "tag", "endpoint"]
+    __properties: ClassVar[List[str]] = ["id", "se", "se_type", "date_posted", "tag", "endpoint"]
 
     model_config = {
         "populate_by_name": True,
@@ -82,6 +83,11 @@ class BusinessDataTripadvisorReviewsTasksReadyResultInfo(BaseModel):
         if self.se is None and "se" in self.model_fields_set:
             _dict['se'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if date_posted (nullable) is None
         # and model_fields_set contains the field
         if self.date_posted is None and "date_posted" in self.model_fields_set:
@@ -111,6 +117,7 @@ class BusinessDataTripadvisorReviewsTasksReadyResultInfo(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "se": obj.get("se"),
+            "se_type": obj.get("se_type"),
             "date_posted": obj.get("date_posted"),
             "tag": obj.get("tag"),
             "endpoint": obj.get("endpoint")

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **languages** | **float** |  | [optional] 
 **locations** | **float** |  | [optional] 
 **categories** | **float** |  | [optional] 
+**tasks_ready** | **float** |  | [optional] 
 
 ## Example
 

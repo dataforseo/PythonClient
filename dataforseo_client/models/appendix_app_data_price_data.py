@@ -37,7 +37,8 @@ class AppendixAppDataPriceData(BaseModel):
     errors: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "categories", "errors", "languages", "locations"]
+    tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
+    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "categories", "errors", "languages", "locations", "tasks_ready"]
 
     model_config = {
         "populate_by_name": True,
@@ -102,6 +103,9 @@ class AppendixAppDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of locations
         if self.locations:
             _dict['locations'] = self.locations.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of tasks_ready
+        if self.tasks_ready:
+            _dict['tasks_ready'] = self.tasks_ready.to_dict()
         return _dict
 
     @classmethod
@@ -121,7 +125,8 @@ class AppendixAppDataPriceData(BaseModel):
             "categories": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["categories"]) if obj.get("categories") is not None else None,
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
-            "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None
+            "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
+            "tasks_ready": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["tasks_ready"]) if obj.get("tasks_ready") is not None else None
         })
         return _obj
 

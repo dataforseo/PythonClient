@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | task identifier of the completed task unique task identifier in our system in the UUID format | [optional] 
 **se** | **str** | search engine specified when setting the task can take the following values: tripadvisor | [optional] 
+**se_type** | **str** |  | [optional] 
 **date_posted** | **str** | date when the task was posted (in the UTC format) | [optional] 
 **tag** | **str** | user-defined task identifier | [optional] 
 **endpoint** | **str** | URL for collecting the results of the task | [optional] 

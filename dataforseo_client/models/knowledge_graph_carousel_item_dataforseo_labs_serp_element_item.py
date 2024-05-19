@@ -21,6 +21,7 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.knowledge_graph_list_element import KnowledgeGraphListElement
+from dataforseo_client.models.link_element import LinkElement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +35,7 @@ class KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the link")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: ss:/webfacts:net_worth")
-    link: Optional[Dict[str, Any]] = Field(default=None, description="link of the element")
+    link: Optional[LinkElement] = None
     items: Optional[List[KnowledgeGraphListElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "data_attrid", "link", "items"]
 
@@ -77,6 +78,9 @@ class KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of link
+        if self.link:
+            _dict['link'] = self.link.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
@@ -119,11 +123,6 @@ class KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
         if self.data_attrid is None and "data_attrid" in self.model_fields_set:
             _dict['data_attrid'] = None
 
-        # set to None if link (nullable) is None
-        # and model_fields_set contains the field
-        if self.link is None and "link" in self.model_fields_set:
-            _dict['link'] = None
-
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -148,7 +147,7 @@ class KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
             "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "data_attrid": obj.get("data_attrid"),
-            "link": obj.get("link"),
+            "link": LinkElement.from_dict(obj["link"]) if obj.get("link") is not None else None,
             "items": [KnowledgeGraphListElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

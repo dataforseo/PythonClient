@@ -36,7 +36,8 @@ class AppendixMerchantPriceData(BaseModel):
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     reviews: Optional[AppendixProductGoogleMerchantPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["google", "amazon", "errors", "languages", "locations", "reviews"]
+    tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
+    __properties: ClassVar[List[str]] = ["google", "amazon", "errors", "languages", "locations", "reviews", "tasks_ready"]
 
     model_config = {
         "populate_by_name": True,
@@ -95,6 +96,9 @@ class AppendixMerchantPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of reviews
         if self.reviews:
             _dict['reviews'] = self.reviews.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of tasks_ready
+        if self.tasks_ready:
+            _dict['tasks_ready'] = self.tasks_ready.to_dict()
         return _dict
 
     @classmethod
@@ -112,7 +116,8 @@ class AppendixMerchantPriceData(BaseModel):
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
-            "reviews": AppendixProductGoogleMerchantPriceDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
+            "reviews": AppendixProductGoogleMerchantPriceDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "tasks_ready": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["tasks_ready"]) if obj.get("tasks_ready") is not None else None
         })
         return _obj
 

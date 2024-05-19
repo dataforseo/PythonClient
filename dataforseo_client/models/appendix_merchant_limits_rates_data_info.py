@@ -35,7 +35,8 @@ class AppendixMerchantLimitsRatesDataInfo(BaseModel):
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     reviews: Optional[AppendixSerpLimitsRatesDataInfo] = None
-    __properties: ClassVar[List[str]] = ["google", "amazon", "locations", "languages", "errors", "reviews"]
+    tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["google", "amazon", "locations", "languages", "errors", "reviews", "tasks_ready"]
 
     model_config = {
         "populate_by_name": True,
@@ -100,6 +101,11 @@ class AppendixMerchantLimitsRatesDataInfo(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
+        # set to None if tasks_ready (nullable) is None
+        # and model_fields_set contains the field
+        if self.tasks_ready is None and "tasks_ready" in self.model_fields_set:
+            _dict['tasks_ready'] = None
+
         return _dict
 
     @classmethod
@@ -117,7 +123,8 @@ class AppendixMerchantLimitsRatesDataInfo(BaseModel):
             "locations": obj.get("locations"),
             "languages": obj.get("languages"),
             "errors": obj.get("errors"),
-            "reviews": AppendixSerpLimitsRatesDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
+            "reviews": AppendixSerpLimitsRatesDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "tasks_ready": obj.get("tasks_ready")
         })
         return _obj
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **position** | **int** | the alignment of the element can take the following values: 1, 2, 3, 4, etc. | [optional] 
 **keywords** | **List[Optional[str]]** | relevant keywords the data included in the interests and interests_comparison is based on the keywords listed in this array | [optional] 
 **demography** | [**Demography**](Demography.md) |  | [optional] 
-**demography_comparison** | **object** | comparison of demographic data on keyword popularity for the specified parameters conains keyword popularity data by age and gender if you specified a single keyword, the value will be null | [optional] 
+**demography_comparison** | [**DemographyComparisonInfo**](DemographyComparisonInfo.md) |  | [optional] 
 
 ## Example
 

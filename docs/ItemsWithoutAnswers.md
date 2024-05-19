@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **original_question_text** | **str** | original text of the question | [optional] 
 **time_ago** | **str** | estimated time when the question was posted | [optional] 
 **timestamp** | **str** | exact time when the question was posted | [optional] 
-**items** | **object** | array of items items within google_business_question_item | [optional] 
+**items** | [**GoogleBusinessAnswerElement**](GoogleBusinessAnswerElement.md) |  | [optional] 
 
 ## Example
 

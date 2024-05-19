@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **highlighted** | **List[Optional[str]]** | words highlighted in bold within the results description | [optional] 
 **links** | [**List[AdLinkElement]**](AdLinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
-**about_this_result** | **object** | contains information from the ‘About this result’ panel ‘About this result’ panel provides additional context about why Google returned this result for the given query; this feature appears after clicking on the three dots next to most results | [optional] 
+**about_this_result** | [**Dict[str, AboutThisResultElement]**](AboutThisResultElement.md) | contains information from the ‘About this result’ panel ‘About this result’ panel provides additional context about why Google returned this result for the given query; this feature appears after clicking on the three dots next to most results | [optional] 
 **main_domain** | **str** | primary domain name in SERP | [optional] 
 **relative_url** | **str** | URL in SERP that does not specify the HTTPs protocol and domain name | [optional] 
 **etv** | **float** | estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article | [optional] 

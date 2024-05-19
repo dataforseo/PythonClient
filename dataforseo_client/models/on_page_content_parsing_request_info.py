@@ -26,7 +26,7 @@ class OnPageContentParsingRequestInfo(BaseModel):
     """
     OnPageContentParsingRequestInfo
     """ # noqa: E501
-    url: Optional[StrictStr] = Field(default=None, description="URL of the content to parse required field URL of the page to parse example: https://www.fujielectric.com/")
+    url: Optional[StrictStr] = Field(default=None, description="URL of the content to parse required field URL of the page to parse example: https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api")
     id: Optional[StrictStr] = Field(default=None, description="ID of the task required field you can get this ID in the response of the Task POST endpoint note: the enable_content_parsing parameter in the POST request must be set to true example: \"07131248-1535-0216-1000-17384017ad04\"")
     __properties: ClassVar[List[str]] = ["url", "id"]
 

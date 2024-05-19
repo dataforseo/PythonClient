@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.content_url_info import ContentUrlInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,8 @@ class ContentItemInfo(BaseModel):
     """ # noqa: E501
     text: Optional[StrictStr] = Field(default=None, description="content text")
     url: Optional[StrictStr] = Field(default=None, description="page URL displayed in case the text is a link anchor")
-    __properties: ClassVar[List[str]] = ["text", "url"]
+    urls: Optional[List[ContentUrlInfo]] = Field(default=None, description="contains other URLs and anchors found in the content element")
+    __properties: ClassVar[List[str]] = ["text", "url", "urls"]
 
     model_config = {
         "populate_by_name": True,
@@ -69,6 +71,13 @@ class ContentItemInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in urls (list)
+        _items = []
+        if self.urls:
+            for _item in self.urls:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['urls'] = _items
         # set to None if text (nullable) is None
         # and model_fields_set contains the field
         if self.text is None and "text" in self.model_fields_set:
@@ -78,6 +87,11 @@ class ContentItemInfo(BaseModel):
         # and model_fields_set contains the field
         if self.url is None and "url" in self.model_fields_set:
             _dict['url'] = None
+
+        # set to None if urls (nullable) is None
+        # and model_fields_set contains the field
+        if self.urls is None and "urls" in self.model_fields_set:
+            _dict['urls'] = None
 
         return _dict
 
@@ -92,7 +106,8 @@ class ContentItemInfo(BaseModel):
 
         _obj = cls.model_validate({
             "text": obj.get("text"),
-            "url": obj.get("url")
+            "url": obj.get("url"),
+            "urls": [ContentUrlInfo.from_dict(_item) for _item in obj["urls"]] if obj.get("urls") is not None else None
         })
         return _obj
 
