@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**facebook** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**pinterest** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**reddit** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**facebook** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**pinterest** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**reddit** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

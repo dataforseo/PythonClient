@@ -34,8 +34,9 @@ class OnPageInstantPagesRequestInfo(BaseModel):
     browser_screen_scale_factor: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="browser screen scale factor optional field you can set a custom browser screen resolution ratio to perform audit for a particular device; if you use this field, you don’t need to indicate browser_preset as it will be ignored;Note: to use this parameter, set enable_javascript or enable_browser_rendering to trueminimum value: 0.5 maximum value: 3")
     store_raw_html: Optional[StrictBool] = Field(default=None, description="store HTML of a crawled page optional field set to true if you want get the HTML of the page using the OnPage Raw HTML endpoint default value: false")
     accept_language: Optional[StrictStr] = Field(default=None, description="language header for accessing the website optional field all locale formats are supported (xx, xx-XX, xxx-XX, etc.) Note: if you do not specify this parameter, some websites may deny access; in this case, pages will be returned with the \"type\":\"broken in the response array")
+    load_resources: Optional[StrictBool] = Field(default=None, description="load resources optional field set to true if you want to load image, stylesheets, scripts, and broken resources default value: false Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
     enable_javascript: Optional[StrictBool] = Field(default=None, description="load javascript on a page optional field set to true if you want to load the scripts available on a page default value: false Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
-    enable_browser_rendering: Optional[StrictBool] = Field(default=None, description="emulate browser rendering to measure Core Web Vitals optional field by using this parameter you will be able to emulate a browser when loading a web page; enable_browser_rendering loads styles, images, fonts, animations, videos, and other resources on a page; default value: false set to true to obtain Core Web Vitals (FID, CLS, LCP) metrics in the response; if you use this field, enable_javascript, and load_resources parameters must be set to true Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
+    enable_browser_rendering: Optional[StrictBool] = Field(default=None, description="emulate browser rendering to measure Core Web Vitals optional field by using this parameter you will be able to emulate a browser when loading a web page; enable_browser_rendering loads styles, images, fonts, animations, videos, and other resources on a page; default value: false set to true to obtain Core Web Vitals (FID, CLS, LCP) metrics in the response; if you use this field, parameters enable_javascript, and load_resources are enabled automatically; Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
     disable_cookie_popup: Optional[StrictBool] = Field(default=None, description="disable the cookie popup  optional field set to true if you want to disable the popup requesting cookie consent from the user; default value: false")
     return_despite_timeout: Optional[StrictBool] = Field(default=None, description="return data on pages despite the timeout error optional field if true, the data will be provided on pages that failed to load within 120 seconds and responded with a timeout error; default value: false")
     enable_xhr: Optional[StrictBool] = Field(default=None, description="enable XMLHttpRequest on a page optional field set to true if you want our crawler to request data from a web server using the XMLHttpRequest object default value: falseif you use this field, enable_javascript must be set to true;")
@@ -43,7 +44,7 @@ class OnPageInstantPagesRequestInfo(BaseModel):
     validate_micromarkup: Optional[StrictBool] = Field(default=None, description="enable microdata validation optional field if set to true, you can use the OnPage API Microdata endpoint with the id of the task; default value: false")
     check_spell: Optional[StrictBool] = Field(default=None, description="check spelling optional field set to true to check spelling on a website using Hunspell library default value: false")
     checks_threshold: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="custom threshold values for checks optional field you can specify custom threshold values for the parameters included in the checks array of OnPage API responses; Note: only integer threshold values can be modified;")
-    __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "accept_language", "enable_javascript", "enable_browser_rendering", "disable_cookie_popup", "return_despite_timeout", "enable_xhr", "custom_js", "validate_micromarkup", "check_spell", "checks_threshold"]
+    __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "accept_language", "load_resources", "enable_javascript", "enable_browser_rendering", "disable_cookie_popup", "return_despite_timeout", "enable_xhr", "custom_js", "validate_micromarkup", "check_spell", "checks_threshold"]
 
     model_config = {
         "populate_by_name": True,
@@ -119,6 +120,11 @@ class OnPageInstantPagesRequestInfo(BaseModel):
         if self.accept_language is None and "accept_language" in self.model_fields_set:
             _dict['accept_language'] = None
 
+        # set to None if load_resources (nullable) is None
+        # and model_fields_set contains the field
+        if self.load_resources is None and "load_resources" in self.model_fields_set:
+            _dict['load_resources'] = None
+
         # set to None if enable_javascript (nullable) is None
         # and model_fields_set contains the field
         if self.enable_javascript is None and "enable_javascript" in self.model_fields_set:
@@ -184,6 +190,7 @@ class OnPageInstantPagesRequestInfo(BaseModel):
             "browser_screen_scale_factor": obj.get("browser_screen_scale_factor"),
             "store_raw_html": obj.get("store_raw_html"),
             "accept_language": obj.get("accept_language"),
+            "load_resources": obj.get("load_resources"),
             "enable_javascript": obj.get("enable_javascript"),
             "enable_browser_rendering": obj.get("enable_browser_rendering"),
             "disable_cookie_popup": obj.get("disable_cookie_popup"),

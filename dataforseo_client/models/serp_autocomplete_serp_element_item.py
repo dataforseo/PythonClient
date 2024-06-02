@@ -33,8 +33,9 @@ class SerpAutocompleteSerpElementItem(BaseSerpElementItem):
     suggestion: Optional[StrictStr] = Field(default=None, description="google autocomplete keyword suggestion")
     suggestion_type: Optional[StrictStr] = Field(default=None, description="google autocomplete suggestion type Note: only available for the following client: chrome/chrome-omni")
     search_query_url: Optional[StrictStr] = Field(default=None, description="url to search results url to search results relevant to the google autocomplete suggestion")
+    thumbnail_url: Optional[StrictStr] = Field(default=None, description="url of the thumbnail image url of the thumbnail image of the google autocomplete suggestion Note: only available for the following client: gws-wiz gws-wiz-serp")
     highlighted: Optional[List[Optional[StrictStr]]] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "relevance", "suggestion", "suggestion_type", "search_query_url", "highlighted"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "relevance", "suggestion", "suggestion_type", "search_query_url", "thumbnail_url", "highlighted"]
 
     model_config = {
         "populate_by_name": True,
@@ -110,6 +111,11 @@ class SerpAutocompleteSerpElementItem(BaseSerpElementItem):
         if self.search_query_url is None and "search_query_url" in self.model_fields_set:
             _dict['search_query_url'] = None
 
+        # set to None if thumbnail_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.thumbnail_url is None and "thumbnail_url" in self.model_fields_set:
+            _dict['thumbnail_url'] = None
+
         # set to None if highlighted (nullable) is None
         # and model_fields_set contains the field
         if self.highlighted is None and "highlighted" in self.model_fields_set:
@@ -134,6 +140,7 @@ class SerpAutocompleteSerpElementItem(BaseSerpElementItem):
             "suggestion": obj.get("suggestion"),
             "suggestion_type": obj.get("suggestion_type"),
             "search_query_url": obj.get("search_query_url"),
+            "thumbnail_url": obj.get("thumbnail_url"),
             "highlighted": obj.get("highlighted")
         })
         return _obj

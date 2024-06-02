@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **float** |  | [optional] 
-**search_volume** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**keywords_for_keywords** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**keywords_for_site** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**ad_traffic_by_keywords** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**keywords_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**keywords_for_site** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**ad_traffic_by_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

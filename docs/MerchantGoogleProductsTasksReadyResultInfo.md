@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | task identifier of the completed task unique task identifier in our system in the UUID format | [optional] 
 **se** | **str** | search engine specified when setting the task | [optional] 
-**se_type** | **str** | type of search engine can take the following values: shopping | [optional] 
+**se_type** | **str** | type of search engine example: products | [optional] 
 **date_posted** | **str** | date when the task was posted (in the UTC format) | [optional] 
 **tag** | **str** | user-defined task identifier | [optional] 
 **endpoint_advanced** | **str** | URL for collecting the results of Google Shopping Products Advanced task | [optional] 

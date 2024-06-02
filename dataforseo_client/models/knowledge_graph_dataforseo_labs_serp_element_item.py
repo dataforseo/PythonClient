@@ -20,6 +20,7 @@ import json
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
+from dataforseo_client.models.people_also_ask_element import PeopleAlsoAskElement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
     KnowledgeGraphDataforseoLabsSerpElementItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
@@ -36,11 +37,11 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
     sub_title: Optional[StrictStr] = Field(default=None, description="subtitle of the item")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     card_id: Optional[StrictStr] = Field(default=None, description="card id")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image from knowledge graph")
     logo_url: Optional[StrictStr] = Field(default=None, description="URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
-    items: Optional[List[BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[PeopleAlsoAskElement]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "title", "sub_title", "description", "card_id", "url", "image_url", "logo_url", "cid", "items"]
 
     model_config = {
@@ -190,7 +191,7 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
             "image_url": obj.get("image_url"),
             "logo_url": obj.get("logo_url"),
             "cid": obj.get("cid"),
-            "items": [BaseDataforseoLabsSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [PeopleAlsoAskElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

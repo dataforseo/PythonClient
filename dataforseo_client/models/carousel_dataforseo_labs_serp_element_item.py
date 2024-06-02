@@ -33,7 +33,7 @@ class CarouselDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    items: Optional[List[CarouselElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[CarouselElement]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "items"]
 
     model_config = {

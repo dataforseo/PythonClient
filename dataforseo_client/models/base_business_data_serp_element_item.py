@@ -41,7 +41,7 @@ class BaseBusinessDataSerpElementItem(BaseModel):
 
     # discriminator mappings
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'google_business_info': 'GoogleBusinessInfoBusinessDataSerpElementItem','google_business_post': 'GoogleBusinessPostBusinessDataSerpElementItem','google_reviews_search': 'GoogleReviewsSearchBusinessDataSerpElementItem','maps_search': 'MapsSearchBusinessDataSerpElementItem','tripadvisor_review_search': 'TripadvisorReviewSearchBusinessDataSerpElementItem','tripadvisor_search_organic': 'TripadvisorSearchOrganicBusinessDataSerpElementItem','trustpilot_review_search': 'TrustpilotReviewSearchBusinessDataSerpElementItem','trustpilot_search_organic': 'TrustpilotSearchOrganicBusinessDataSerpElementItem','yelp_reviews_search': 'YelpReviewsSearchBusinessDataSerpElementItem','yelp_search_organic': 'YelpSearchOrganicBusinessDataSerpElementItem','yelp_search_paid': 'YelpSearchPaidBusinessDataSerpElementItem'
+        'google_business_info': 'GoogleBusinessInfoBusinessDataSerpElementItem','google_business_post': 'GoogleBusinessPostBusinessDataSerpElementItem','google_reviews_search': 'GoogleReviewsSearchBusinessDataSerpElementItem','maps_search': 'MapsSearchBusinessDataSerpElementItem','tripadvisor_review_search': 'TripadvisorReviewSearchBusinessDataSerpElementItem','tripadvisor_search_organic': 'TripadvisorSearchOrganicBusinessDataSerpElementItem','trustpilot_review_search': 'TrustpilotReviewSearchBusinessDataSerpElementItem','trustpilot_search_organic': 'TrustpilotSearchOrganicBusinessDataSerpElementItem'
     }
 
     @classmethod
@@ -63,7 +63,7 @@ class BaseBusinessDataSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self]]:
         """Create an instance of BaseBusinessDataSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -93,7 +93,7 @@ class BaseBusinessDataSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self]]:
         """Create an instance of BaseBusinessDataSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -113,9 +113,6 @@ from dataforseo_client.models.tripadvisor_review_search_business_data_serp_eleme
 from dataforseo_client.models.tripadvisor_search_organic_business_data_serp_element_item import TripadvisorSearchOrganicBusinessDataSerpElementItem
 from dataforseo_client.models.trustpilot_review_search_business_data_serp_element_item import TrustpilotReviewSearchBusinessDataSerpElementItem
 from dataforseo_client.models.trustpilot_search_organic_business_data_serp_element_item import TrustpilotSearchOrganicBusinessDataSerpElementItem
-from dataforseo_client.models.yelp_reviews_search_business_data_serp_element_item import YelpReviewsSearchBusinessDataSerpElementItem
-from dataforseo_client.models.yelp_search_organic_business_data_serp_element_item import YelpSearchOrganicBusinessDataSerpElementItem
-from dataforseo_client.models.yelp_search_paid_business_data_serp_element_item import YelpSearchPaidBusinessDataSerpElementItem
 # TODO: Rewrite to not use raise_errors
 BaseBusinessDataSerpElementItem.model_rebuild(raise_errors=False)
 

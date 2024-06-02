@@ -36,7 +36,7 @@ class GoogleReviewsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
     rating: Optional[RatingInfo] = None
     place_id: Optional[StrictStr] = Field(default=None, description="the identifier of a place")
     feature: Optional[StrictStr] = Field(default=None, description="the additional feature of the review")
-    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
+    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "reviews_count", "rating", "place_id", "feature", "cid"]
 
     model_config = {

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +27,15 @@ class AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo(BaseModel):
     """
     AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo
     """ # noqa: E501
-    domain_technologies: Optional[AppendixFunctionInfo] = None
-    domains_by_technology: Optional[AppendixFunctionInfo] = None
+    domain_technologies: Optional[AppendixInfo] = None
+    domains_by_technology: Optional[AppendixInfo] = None
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     technologies: Optional[Union[StrictFloat, StrictInt]] = None
-    aggregation_technologies: Optional[AppendixFunctionInfo] = None
-    technologies_summary: Optional[AppendixFunctionInfo] = None
-    domains_by_html_terms: Optional[AppendixFunctionInfo] = None
-    technology_stats: Optional[AppendixFunctionInfo] = None
+    aggregation_technologies: Optional[AppendixInfo] = None
+    technologies_summary: Optional[AppendixInfo] = None
+    domains_by_html_terms: Optional[AppendixInfo] = None
+    technology_stats: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["domain_technologies", "domains_by_technology", "languages", "locations", "technologies", "aggregation_technologies", "technologies_summary", "domains_by_html_terms", "technology_stats"]
 
     model_config = {
@@ -122,15 +122,15 @@ class AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "domain_technologies": AppendixFunctionInfo.from_dict(obj["domain_technologies"]) if obj.get("domain_technologies") is not None else None,
-            "domains_by_technology": AppendixFunctionInfo.from_dict(obj["domains_by_technology"]) if obj.get("domains_by_technology") is not None else None,
+            "domain_technologies": AppendixInfo.from_dict(obj["domain_technologies"]) if obj.get("domain_technologies") is not None else None,
+            "domains_by_technology": AppendixInfo.from_dict(obj["domains_by_technology"]) if obj.get("domains_by_technology") is not None else None,
             "languages": obj.get("languages"),
             "locations": obj.get("locations"),
             "technologies": obj.get("technologies"),
-            "aggregation_technologies": AppendixFunctionInfo.from_dict(obj["aggregation_technologies"]) if obj.get("aggregation_technologies") is not None else None,
-            "technologies_summary": AppendixFunctionInfo.from_dict(obj["technologies_summary"]) if obj.get("technologies_summary") is not None else None,
-            "domains_by_html_terms": AppendixFunctionInfo.from_dict(obj["domains_by_html_terms"]) if obj.get("domains_by_html_terms") is not None else None,
-            "technology_stats": AppendixFunctionInfo.from_dict(obj["technology_stats"]) if obj.get("technology_stats") is not None else None
+            "aggregation_technologies": AppendixInfo.from_dict(obj["aggregation_technologies"]) if obj.get("aggregation_technologies") is not None else None,
+            "technologies_summary": AppendixInfo.from_dict(obj["technologies_summary"]) if obj.get("technologies_summary") is not None else None,
+            "domains_by_html_terms": AppendixInfo.from_dict(obj["domains_by_html_terms"]) if obj.get("domains_by_html_terms") is not None else None,
+            "technology_stats": AppendixInfo.from_dict(obj["technology_stats"]) if obj.get("technology_stats") is not None else None
         })
         return _obj
 

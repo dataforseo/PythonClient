@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendixs_google_business_data_price_data_info import AppendixsGoogleBusinessDataPriceDataInfo
+from dataforseo_client.models.appendix_google_business_data_price_data_info import AppendixGoogleBusinessDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +27,8 @@ class AppendixTrBusinessDataPriceDataInfo(BaseModel):
     """
     AppendixTrBusinessDataPriceDataInfo
     """ # noqa: E501
-    reviews: Optional[AppendixsGoogleBusinessDataPriceDataInfo] = None
-    search: Optional[AppendixsGoogleBusinessDataPriceDataInfo] = None
+    reviews: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
+    search: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["reviews", "search"]
 
     model_config = {
@@ -88,8 +88,8 @@ class AppendixTrBusinessDataPriceDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "reviews": AppendixsGoogleBusinessDataPriceDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
-            "search": AppendixsGoogleBusinessDataPriceDataInfo.from_dict(obj["search"]) if obj.get("search") is not None else None
+            "reviews": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "search": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["search"]) if obj.get("search") is not None else None
         })
         return _obj
 

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,7 +42,7 @@ class AppendixOnPageLimitsRatesDataInfo(BaseModel):
     raw_html: Optional[Union[StrictFloat, StrictInt]] = None
     instant_pages: Optional[Union[StrictFloat, StrictInt]] = None
     redirect_chains: Optional[Union[StrictFloat, StrictInt]] = None
-    lighthouse: Optional[AppendixFunctionInfo] = None
+    lighthouse: Optional[AppendixInfo] = None
     keyword_density: Optional[Union[StrictFloat, StrictInt]] = None
     page_screenshot: Optional[Union[StrictFloat, StrictInt]] = None
     content_parsing: Optional[Union[StrictFloat, StrictInt]] = None
@@ -213,7 +213,7 @@ class AppendixOnPageLimitsRatesDataInfo(BaseModel):
             "raw_html": obj.get("raw_html"),
             "instant_pages": obj.get("instant_pages"),
             "redirect_chains": obj.get("redirect_chains"),
-            "lighthouse": AppendixFunctionInfo.from_dict(obj["lighthouse"]) if obj.get("lighthouse") is not None else None,
+            "lighthouse": AppendixInfo.from_dict(obj["lighthouse"]) if obj.get("lighthouse") is not None else None,
             "keyword_density": obj.get("keyword_density"),
             "page_screenshot": obj.get("page_screenshot"),
             "content_parsing": obj.get("content_parsing"),

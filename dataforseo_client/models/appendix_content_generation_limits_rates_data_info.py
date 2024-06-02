@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_content_generation_day_limits_rates_data_info import AppendixContentGenerationDayLimitsRatesDataInfo
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,13 +28,13 @@ class AppendixContentGenerationLimitsRatesDataInfo(BaseModel):
     """
     AppendixContentGenerationLimitsRatesDataInfo
     """ # noqa: E501
-    generate: Optional[AppendixFunctionInfo] = None
-    generate_meta_tags: Optional[AppendixFunctionInfo] = None
-    generate_text: Optional[AppendixFunctionInfo] = None
-    paraphrase: Optional[AppendixFunctionInfo] = None
+    generate: Optional[AppendixInfo] = None
+    generate_meta_tags: Optional[AppendixInfo] = None
+    generate_text: Optional[AppendixInfo] = None
+    paraphrase: Optional[AppendixInfo] = None
     check_grammar: Optional[AppendixContentGenerationDayLimitsRatesDataInfo] = None
     text_summary: Optional[AppendixContentGenerationDayLimitsRatesDataInfo] = None
-    generate_sub_topics: Optional[AppendixFunctionInfo] = None
+    generate_sub_topics: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["generate", "generate_meta_tags", "generate_text", "paraphrase", "check_grammar", "text_summary", "generate_sub_topics"]
 
     model_config = {
@@ -109,13 +109,13 @@ class AppendixContentGenerationLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "generate": AppendixFunctionInfo.from_dict(obj["generate"]) if obj.get("generate") is not None else None,
-            "generate_meta_tags": AppendixFunctionInfo.from_dict(obj["generate_meta_tags"]) if obj.get("generate_meta_tags") is not None else None,
-            "generate_text": AppendixFunctionInfo.from_dict(obj["generate_text"]) if obj.get("generate_text") is not None else None,
-            "paraphrase": AppendixFunctionInfo.from_dict(obj["paraphrase"]) if obj.get("paraphrase") is not None else None,
+            "generate": AppendixInfo.from_dict(obj["generate"]) if obj.get("generate") is not None else None,
+            "generate_meta_tags": AppendixInfo.from_dict(obj["generate_meta_tags"]) if obj.get("generate_meta_tags") is not None else None,
+            "generate_text": AppendixInfo.from_dict(obj["generate_text"]) if obj.get("generate_text") is not None else None,
+            "paraphrase": AppendixInfo.from_dict(obj["paraphrase"]) if obj.get("paraphrase") is not None else None,
             "check_grammar": AppendixContentGenerationDayLimitsRatesDataInfo.from_dict(obj["check_grammar"]) if obj.get("check_grammar") is not None else None,
             "text_summary": AppendixContentGenerationDayLimitsRatesDataInfo.from_dict(obj["text_summary"]) if obj.get("text_summary") is not None else None,
-            "generate_sub_topics": AppendixFunctionInfo.from_dict(obj["generate_sub_topics"]) if obj.get("generate_sub_topics") is not None else None
+            "generate_sub_topics": AppendixInfo.from_dict(obj["generate_sub_topics"]) if obj.get("generate_sub_topics") is not None else None
         })
         return _obj
 

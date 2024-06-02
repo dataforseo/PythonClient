@@ -177,7 +177,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '9e2c77e8-7433-4d9a-82eb-f508e23f286b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '7065c138-22d4-416e-87df-1d7c23580fc9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keyword_performance_task_get(id)
@@ -487,7 +487,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '7717c9e6-3342-4e4b-bb33-da96570300a3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '7f90530c-74c3-42c1-9ef6-d29b9edad953' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_keywords_task_get(id)
@@ -797,7 +797,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'b4856705-c97b-4022-9f0d-d90545567506' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '31361ebd-a035-4507-a24c-e85b0ffaa769' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_site_task_get(id)
@@ -1107,7 +1107,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '7f52db79-2cd8-479d-b354-e813a85399ac' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '25d54efd-84b7-4dee-97dd-f7838c3a5402' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_search_volume_task_get(id)
@@ -1733,7 +1733,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'df44eb55-3e34-4275-89a3-47ce7d2358d4' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '15d258f1-4a69-4124-bd78-2c736bc97474' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_ad_traffic_by_keywords_task_get(id)
@@ -2043,7 +2043,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '281f12ff-a689-4b39-a40b-801be1398b72' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '8c6f570a-926b-4260-9f5c-2b178d09703b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_keywords_task_get(id)
@@ -2353,7 +2353,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'c2fe87b4-7d34-445a-9637-d39c969045b8' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '4b65fb13-b226-4175-bd7d-006b9e830282' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_site_task_get(id)
@@ -2663,7 +2663,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'e8791da7-243f-4340-9ea3-6b983dbb1dfc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'b1303efa-cea7-48b9-824a-f468dd91611f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_search_volume_task_get(id)
@@ -3121,7 +3121,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '9becb74e-4524-4aa6-9fe9-3af3c48ba402' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'c5de6648-6772-456b-a3aa-e1b816ec52b2' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_trends_explore_task_get(id)

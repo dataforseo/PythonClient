@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
 **hotel_identifier** | **str** | unique hotel identifier unique hotel identifier assigned by Google; example: \&quot;CgoIjaeSlI6CnNpVEAE\&quot; | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | URL link | [optional] 
 
 ## Example
 

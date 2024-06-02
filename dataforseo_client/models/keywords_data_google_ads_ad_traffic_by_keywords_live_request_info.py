@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(BaseModel):
     KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo
     """ # noqa: E501
     keywords: Optional[List[StrictStr]] = Field(default=None, description="keywords required field The maximum number of keywords you can specify: 1000 The maximum number of characters for each keyword: 80 The maximum number of words for each keyword phrase: 10 the keywords you specify will be converted to a lowercase format Note: Google Ads may return no data for certain groups of keywords visit our Help Center to learn more Also note that Google Ads doesn’t allow using certain symbols and characters (e.g., UTF symbols, emojis), so you can’t use them when setting a task; to learn more about which symbols can be used, please refer to this article")
-    bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the maximum custom bid required field the collected data will be based on this value it stands for the price you are willing to pay for an ad; the higher value you specify here, the higher values you will get in the returned metrics learn more in this help center article")
+    bid: Optional[StrictInt] = Field(default=None, description="the maximum custom bid required field the collected data will be based on this value it stands for the price you are willing to pay for an ad; the higher value you specify here, the higher values you will get in the returned metrics learn more in this help center article")
     match: Optional[StrictStr] = Field(default=None, description="keywords match-type required field can take the following values: exact, broad, phrase")
     search_partners: Optional[StrictBool] = Field(default=None, description="include Google search partners optional field if you specify true, the results will be delivered for owned, operated, and syndicated networks across Google and partner sites that host Google search; default value: false – results are returned for Google search sites")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of search engine location optional field if you do not indicate the location, you will receive worldwide results, i.e., for all available locations; if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_ads/locations example: London,England,United Kingdom")

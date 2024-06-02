@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class AppendixWhoisDomainAnalyticsLimitsRatesDataInfo(BaseModel):
     """
     AppendixWhoisDomainAnalyticsLimitsRatesDataInfo
     """ # noqa: E501
-    overview: Optional[AppendixFunctionInfo] = None
+    overview: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["overview"]
 
     model_config = {
@@ -84,7 +84,7 @@ class AppendixWhoisDomainAnalyticsLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "overview": AppendixFunctionInfo.from_dict(obj["overview"]) if obj.get("overview") is not None else None
+            "overview": AppendixInfo.from_dict(obj["overview"]) if obj.get("overview") is not None else None
         })
         return _obj
 

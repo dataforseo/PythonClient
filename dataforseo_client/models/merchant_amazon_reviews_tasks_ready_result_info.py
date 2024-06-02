@@ -28,7 +28,7 @@ class MerchantAmazonReviewsTasksReadyResultInfo(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="task identifier of the completed task unique task identifier in our system in the UUID format")
     se: Optional[StrictStr] = Field(default=None, description="search engine specified when setting the task")
-    se_type: Optional[StrictStr] = Field(default=None, description="type of search engine can take the following values: shopping")
+    se_type: Optional[StrictStr] = Field(default=None, description="type of search engine")
     date_posted: Optional[StrictStr] = Field(default=None, description="date when the task was posted (in the UTC format)")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier")
     endpoint_advanced: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the Amazon Reviews Advanced task")

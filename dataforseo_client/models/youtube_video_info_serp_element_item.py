@@ -21,6 +21,7 @@ from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.streaming_quality_element import StreamingQualityElement
+from dataforseo_client.models.subtitles import Subtitles
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -49,7 +50,7 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
     is_live: Optional[StrictBool] = Field(default=None, description="indicates whether the video is on live")
     duration_time: Optional[StrictStr] = Field(default=None, description="duration of the video")
     duration_time_seconds: Optional[StrictInt] = Field(default=None, description="duration of the video in seconds")
-    subtitles: Optional[StrictStr] = Field(default=None, description="subtitles in the video")
+    subtitles: Optional[List[Subtitles]] = Field(default=None, description="array of elements describing properties of subtitles in the video")
     streaming_quality: Optional[List[StreamingQualityElement]] = Field(default=None, description="array of elements that contain information about all possible streaming qualities of the video")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "publication_date", "timestamp", "keywords", "category", "is_live", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]
 
@@ -92,6 +93,13 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in subtitles (list)
+        _items = []
+        if self.subtitles:
+            for _item in self.subtitles:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['subtitles'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in streaming_quality (list)
         _items = []
         if self.streaming_quality:
@@ -253,7 +261,7 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
             "is_live": obj.get("is_live"),
             "duration_time": obj.get("duration_time"),
             "duration_time_seconds": obj.get("duration_time_seconds"),
-            "subtitles": obj.get("subtitles"),
+            "subtitles": [Subtitles.from_dict(_item) for _item in obj["subtitles"]] if obj.get("subtitles") is not None else None,
             "streaming_quality": [StreamingQualityElement.from_dict(_item) for _item in obj["streaming_quality"]] if obj.get("streaming_quality") is not None else None
         })
         return _obj

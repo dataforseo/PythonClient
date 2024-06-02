@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reviews** | [**AppendixsGoogleBusinessDataPriceDataInfo**](AppendixsGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
-**search** | [**AppendixsGoogleBusinessDataPriceDataInfo**](AppendixsGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**reviews** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
+**search** | [**AppendixGoogleBusinessDataPriceDataInfo**](AppendixGoogleBusinessDataPriceDataInfo.md) |  | [optional] 
 
 ## Example
 

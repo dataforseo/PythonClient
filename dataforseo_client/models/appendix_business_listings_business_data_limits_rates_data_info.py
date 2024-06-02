@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +27,8 @@ class AppendixBusinessListingsBusinessDataLimitsRatesDataInfo(BaseModel):
     """
     AppendixBusinessListingsBusinessDataLimitsRatesDataInfo
     """ # noqa: E501
-    search: Optional[AppendixFunctionInfo] = None
-    categories_aggregation: Optional[AppendixFunctionInfo] = None
+    search: Optional[AppendixInfo] = None
+    categories_aggregation: Optional[AppendixInfo] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["search", "categories_aggregation", "categories", "locations"]
@@ -100,8 +100,8 @@ class AppendixBusinessListingsBusinessDataLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "search": AppendixFunctionInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
-            "categories_aggregation": AppendixFunctionInfo.from_dict(obj["categories_aggregation"]) if obj.get("categories_aggregation") is not None else None,
+            "search": AppendixInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
+            "categories_aggregation": AppendixInfo.from_dict(obj["categories_aggregation"]) if obj.get("categories_aggregation") is not None else None,
             "categories": obj.get("categories"),
             "locations": obj.get("locations")
         })

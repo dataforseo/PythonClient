@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **is_live** | **bool** | indicates whether the video is on live | [optional] 
 **duration_time** | **str** | duration of the video | [optional] 
 **duration_time_seconds** | **int** | duration of the video in seconds | [optional] 
-**subtitles** | **str** | subtitles in the video | [optional] 
+**subtitles** | [**List[Subtitles]**](Subtitles.md) | array of elements describing properties of subtitles in the video | [optional] 
 **streaming_quality** | [**List[StreamingQualityElement]**](StreamingQualityElement.md) | array of elements that contain information about all possible streaming qualities of the video | [optional] 
 
 ## Example

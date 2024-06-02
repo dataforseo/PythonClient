@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,10 +38,11 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain optional field we choose the relevant search engine domain automatically according to the location and language you specify however, you can set a custom search engine domain in this field example: google.co.uk, google.com.au, google.de, etc.")
     depth: Optional[StrictInt] = Field(default=None, description="parsing depth optional field number of results in SERP default value: 100 max value: 700 Note: your account will be billed per each SERP containing up to 100 results; thus, setting a depth above 100 may result in additional charges if the search engine returns more than 100 results; if the specified depth is higher than the number of results in the response, the difference will be refunded automatically to your account balance")
     target: Optional[StrictStr] = Field(default=None, description="target domain, subdomain, or webpage to get results for optional field a domain or a subdomain should be specified without https:// and www. note that the results of target-specific tasks will only include SERP elements that contain a url string; you can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results; examples: example.com  – return results for the website’s home page with URLs, such as https://example.com, or https://www.example.com/, or https://example.com/; example.com* – returns results for the domain, including all its pages; *example.com* – returns results for the entire domain, including all its pages and subdomains; *example.com  – returns results for the home page regardless of the subdomain, such as https://en.example.com; example.com/example-page  – returns results for the exact URL; example.com/example-page*  – returns results for all domain’s URLs that start with the specified string")
+    group_organic_results: Optional[StrictBool] = Field(default=None, description="display related results optional field if set to true, the related_result element in the response will be provided as a snippet of its parent organic result; if set to false, the related_result element will be provided as a separate organic result; default value: true")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description="page crawl limit optional field number of search results pages to crawl max value: 100 Note: the max_crawl_pages and depth parameters complement each other; learn more at our help center")
     search_param: Optional[StrictStr] = Field(default=None, description="additional parameters of the search query optional field get the list of available parameters and additional details here")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["url", "keyword", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "device", "os", "se_domain", "depth", "target", "max_crawl_pages", "search_param", "tag"]
+    __properties: ClassVar[List[str]] = ["url", "keyword", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "device", "os", "se_domain", "depth", "target", "group_organic_results", "max_crawl_pages", "search_param", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -137,6 +138,11 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
         if self.target is None and "target" in self.model_fields_set:
             _dict['target'] = None
 
+        # set to None if group_organic_results (nullable) is None
+        # and model_fields_set contains the field
+        if self.group_organic_results is None and "group_organic_results" in self.model_fields_set:
+            _dict['group_organic_results'] = None
+
         # set to None if max_crawl_pages (nullable) is None
         # and model_fields_set contains the field
         if self.max_crawl_pages is None and "max_crawl_pages" in self.model_fields_set:
@@ -176,6 +182,7 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
             "se_domain": obj.get("se_domain"),
             "depth": obj.get("depth"),
             "target": obj.get("target"),
+            "group_organic_results": obj.get("group_organic_results"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "search_param": obj.get("search_param"),
             "tag": obj.get("tag")

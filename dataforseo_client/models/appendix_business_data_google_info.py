@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,12 +28,12 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
     """
     AppendixBusinessDataGoogleInfo
     """ # noqa: E501
-    my_business_info: Optional[AppendixFunctionInfo] = None
-    my_business_updates: Optional[AppendixFunctionInfo] = None
+    my_business_info: Optional[AppendixInfo] = None
+    my_business_updates: Optional[AppendixInfo] = None
     hotel_info: Optional[AppendixSerpLimitsRatesDataInfo] = None
-    hotel_searches: Optional[AppendixFunctionInfo] = None
-    reviews: Optional[AppendixFunctionInfo] = None
-    questions_and_answers: Optional[AppendixFunctionInfo] = None
+    hotel_searches: Optional[AppendixInfo] = None
+    reviews: Optional[AppendixInfo] = None
+    questions_and_answers: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["my_business_info", "my_business_updates", "hotel_info", "hotel_searches", "reviews", "questions_and_answers"]
 
     model_config = {
@@ -105,12 +105,12 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "my_business_info": AppendixFunctionInfo.from_dict(obj["my_business_info"]) if obj.get("my_business_info") is not None else None,
-            "my_business_updates": AppendixFunctionInfo.from_dict(obj["my_business_updates"]) if obj.get("my_business_updates") is not None else None,
+            "my_business_info": AppendixInfo.from_dict(obj["my_business_info"]) if obj.get("my_business_info") is not None else None,
+            "my_business_updates": AppendixInfo.from_dict(obj["my_business_updates"]) if obj.get("my_business_updates") is not None else None,
             "hotel_info": AppendixSerpLimitsRatesDataInfo.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
-            "hotel_searches": AppendixFunctionInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
-            "reviews": AppendixFunctionInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
-            "questions_and_answers": AppendixFunctionInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None
+            "hotel_searches": AppendixInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
+            "reviews": AppendixInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "questions_and_answers": AppendixInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None
         })
         return _obj
 

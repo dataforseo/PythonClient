@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**explore** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**subregion_interests** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**demography** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**merged_data** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**explore** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**subregion_interests** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**demography** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**merged_data** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

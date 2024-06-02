@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**on_page_errors**](OnPageApi.md#on_page_errors) | **POST** /v3/on_page/errors | 
 [**on_page_id_list**](OnPageApi.md#on_page_id_list) | **POST** /v3/on_page/id_list | 
 [**on_page_lighthouse_languages**](OnPageApi.md#on_page_lighthouse_languages) | **GET** /v3/on_page/lighthouse/languages | 
+[**on_page_tasks_ready**](OnPageApi.md#on_page_tasks_ready) | **GET** /v3/on_page/tasks_ready | 
 [**page_screenshot**](OnPageApi.md#page_screenshot) | **POST** /v3/on_page/page_screenshot | 
 [**pages**](OnPageApi.md#pages) | **POST** /v3/on_page/pages | 
 [**pages_by_resource**](OnPageApi.md#pages_by_resource) | **POST** /v3/on_page/pages_by_resource | 
@@ -32,7 +33,6 @@ Method | HTTP request | Description
 [**resources**](OnPageApi.md#resources) | **POST** /v3/on_page/resources | 
 [**summary**](OnPageApi.md#summary) | **GET** /v3/on_page/summary/{id} | 
 [**task_post**](OnPageApi.md#task_post) | **POST** /v3/on_page/task_post | 
-[**tasks_ready**](OnPageApi.md#tasks_ready) | **GET** /v3/on_page/tasks_ready | 
 [**waterfall**](OnPageApi.md#waterfall) | **POST** /v3/on_page/waterfall | 
 
 
@@ -1590,6 +1590,80 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **on_page_tasks_ready**
+> OnPageTasksReadyResponseInfo on_page_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks, which results haven’t been collected yet. for more info please visit 'https://docs.dataforseo.com/v3/on_page-tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.on_page_tasks_ready_response_info import OnPageTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.OnPageApi(api_client)
+
+    try:
+        api_response = api_instance.on_page_tasks_ready()
+        print("The response of OnPageApi->on_page_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OnPageApi->on_page_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OnPageTasksReadyResponseInfo**](OnPageTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **page_screenshot**
 > OnPagePageScreenshotResponseInfo page_screenshot(on_page_page_screenshot_request_info=on_page_page_screenshot_request_info)
 
@@ -2211,80 +2285,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **tasks_ready**
-> OnPageTasksReadyResponseInfo tasks_ready()
-
-
-
-‌ The ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks, which results haven’t been collected yet. for more info please visit 'https://docs.dataforseo.com/v3/on_page-tasks_ready/?bash'
-
-### Example
-
-* Basic Authentication (basicAuth):
-
-```python
-import dataforseo_client
-from dataforseo_client.models.on_page_tasks_ready_response_info import OnPageTasksReadyResponseInfo
-from dataforseo_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.dataforseo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dataforseo_client.Configuration(
-    host = "https://api.dataforseo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = dataforseo_client.Configuration(
-    username = os.environ["USERNAME"],
-    password = os.environ["PASSWORD"]
-)
-
-# Enter a context with an instance of the API client
-with dataforseo_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dataforseo_client.OnPageApi(api_client)
-
-    try:
-        api_response = api_instance.tasks_ready()
-        print("The response of OnPageApi->tasks_ready:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OnPageApi->tasks_ready: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OnPageTasksReadyResponseInfo**](OnPageTasksReadyResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

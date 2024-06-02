@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**overview** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**overview** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

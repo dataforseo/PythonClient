@@ -174,7 +174,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/tasks_ready/?bash'"
       operationId: GoogleOrganicTasksReady
       responses:
         '200':
@@ -183,6 +183,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SerpGoogleOrganicTasksReadyResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/serp/tasks_ready:
+    get:
+      tags:
+        - Serp
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/tasks_ready/?bash'"
+      operationId: TasksReady
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SerpTasksReadyResponseInfo'
       security:
         - basicAuth: [ ]
   /v3/serp/google/organic/tasks_fixed:
@@ -259,7 +274,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0f1c5a15-c6b6-4bf0-ab35-2a20537c2d3c
+          example: a32cc9a0-0d1b-45b9-8162-f0acf357d1ab
       responses:
         '200':
           description: Successful operation
@@ -361,7 +376,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/maps/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/maps/tasks_ready/?bash'"
       operationId: GoogleMapsTasksReady
       responses:
         '200':
@@ -458,7 +473,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/tasks_ready/?bash'"
       operationId: GoogleLocalFinderTasksReady
       responses:
         '200':
@@ -520,7 +535,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5c18b1e3-c054-4a35-b2ae-11fcc99b4483
+          example: 1e7f3fc6-8815-4042-8571-7dea857da7dd
       responses:
         '200':
           description: Successful operation
@@ -600,7 +615,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/tasks_ready/?bash'"
       operationId: GoogleNewsTasksReady
       responses:
         '200':
@@ -662,7 +677,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 6bbec216-defa-4bd5-bd6a-48accca7b2db
+          example: 5cdb1b99-54e6-424d-abed-cc4d0cd72e1c
       responses:
         '200':
           description: Successful operation
@@ -742,7 +757,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/events/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/events/tasks_ready/?bash'"
       operationId: GoogleEventsTasksReady
       responses:
         '200':
@@ -839,7 +854,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/tasks_ready/?bash'"
       operationId: GoogleImagesTasksReady
       responses:
         '200':
@@ -901,7 +916,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c015082f-57db-43d8-a30c-92ddf1c1adc5
+          example: 785a4742-3058-494a-844b-0e7032340367
       responses:
         '200':
           description: Successful operation
@@ -1056,7 +1071,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/jobs/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/jobs/tasks_ready/?bash'"
       operationId: GoogleJobsTasksReady
       responses:
         '200':
@@ -1118,7 +1133,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5d1de85e-a1c6-4ba7-b78a-c169946cfb85
+          example: 40b8c8fd-e108-45ab-8497-618f0344d4c3
       responses:
         '200':
           description: Successful operation
@@ -1154,7 +1169,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/autocomplete/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/autocomplete/tasks_ready/?bash'"
       operationId: GoogleAutocompleteTasksReady
       responses:
         '200':
@@ -1251,7 +1266,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_search/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_search/tasks_ready/?bash'"
       operationId: GoogleDatasetSearchTasksReady
       responses:
         '200':
@@ -1348,7 +1363,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_info/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/dataset_info/tasks_ready/?bash'"
       operationId: GoogleDatasetInfoTasksReady
       responses:
         '200':
@@ -1498,7 +1513,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/tasks_ready/?bash'"
       operationId: BingOrganicTasksReady
       responses:
         '200':
@@ -1583,7 +1598,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7dd13543-9a98-447c-bafe-2da09d1aa524
+          example: f612c748-e32a-453a-8389-dabf007a6f21
       responses:
         '200':
           description: Successful operation
@@ -1685,7 +1700,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/tasks_ready/?bash'"
       operationId: BingLocalPackTasksReady
       responses:
         '200':
@@ -1747,7 +1762,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 79d523ab-6261-454d-a2df-667e71e5aa2d
+          example: 85c85030-329e-43b5-972b-5cc38f0bd9ea
       responses:
         '200':
           description: Successful operation
@@ -1880,7 +1895,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_info/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_info/tasks_ready/?bash'"
       operationId: YoutubeVideoInfoTasksReady
       responses:
         '200':
@@ -1977,7 +1992,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/tasks_ready/?bash'"
       operationId: YoutubeVideoSubtitlesTasksReady
       responses:
         '200':
@@ -2074,7 +2089,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_comments/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/youtube/video_comments/tasks_ready/?bash'"
       operationId: YoutubeVideoCommentsTasksReady
       responses:
         '200':
@@ -2224,7 +2239,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/tasks_ready/?bash'"
       operationId: YahooOrganicTasksReady
       responses:
         '200':
@@ -2309,7 +2324,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7f63b193-2fb7-472a-9155-83484986d899
+          example: 233fb319-9085-4f69-900d-f8ca8b0a8811
       responses:
         '200':
           description: Successful operation
@@ -2464,7 +2479,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/baidu/organic/tasks_ready/?bash'"
       operationId: BaiduOrganicTasksReady
       responses:
         '200':
@@ -2549,7 +2564,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a9de15f5-b039-4c14-9901-cb8e4f51f9a7
+          example: 10098694-e881-46bc-b538-a63b5b0b6088
       responses:
         '200':
           description: Successful operation
@@ -2585,7 +2600,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/tasks_ready/?bash'"
       operationId: NaverOrganicTasksReady
       responses:
         '200':
@@ -2670,7 +2685,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 260a342d-4c64-456b-9570-cf14fb33420c
+          example: 104eaeee-6761-433a-86b6-f30878d7f148
       responses:
         '200':
           description: Successful operation
@@ -2759,7 +2774,7 @@ paths:
     get:
       tags:
         - Serp
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/tasks_ready/?bash'"
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/tasks_ready/?bash'"
       operationId: SeznamOrganicTasksReady
       responses:
         '200':
@@ -2844,7 +2859,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fa4c0d43-9470-41d4-8fe5-38ead37765b2
+          example: 5eb0bcd2-cda8-40e9-becf-7628050aebc0
       responses:
         '200':
           description: Successful operation
@@ -4463,7 +4478,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e8791da7-243f-4340-9ea3-6b983dbb1dfc
+          example: b1303efa-cea7-48b9-824a-f468dd91611f
       responses:
         '200':
           description: Successful operation
@@ -4545,7 +4560,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c2fe87b4-7d34-445a-9637-d39c969045b8
+          example: 4b65fb13-b226-4175-bd7d-006b9e830282
       responses:
         '200':
           description: Successful operation
@@ -4627,7 +4642,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 281f12ff-a689-4b39-a40b-801be1398b72
+          example: 8c6f570a-926b-4260-9f5c-2b178d09703b
       responses:
         '200':
           description: Successful operation
@@ -4709,7 +4724,7 @@ paths:
           required: true
           schema:
             type: string
-          example: df44eb55-3e34-4275-89a3-47ce7d2358d4
+          example: 15d258f1-4a69-4124-bd78-2c736bc97474
       responses:
         '200':
           description: Successful operation
@@ -4859,7 +4874,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9becb74e-4524-4aa6-9fe9-3af3c48ba402
+          example: c5de6648-6772-456b-a3aa-e1b816ec52b2
       responses:
         '200':
           description: Successful operation
@@ -5097,7 +5112,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7f52db79-2cd8-479d-b354-e813a85399ac
+          example: 25d54efd-84b7-4dee-97dd-f7838c3a5402
       responses:
         '200':
           description: Successful operation
@@ -5179,7 +5194,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b4856705-c97b-4022-9f0d-d90545567506
+          example: 31361ebd-a035-4507-a24c-e85b0ffaa769
       responses:
         '200':
           description: Successful operation
@@ -5261,7 +5276,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7717c9e6-3342-4e4b-bb33-da96570300a3
+          example: 7f90530c-74c3-42c1-9ef6-d29b9edad953
       responses:
         '200':
           description: Successful operation
@@ -5358,7 +5373,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9e2c77e8-7433-4d9a-82eb-f508e23f286b
+          example: 7065c138-22d4-416e-87df-1d7c23580fc9
       responses:
         '200':
           description: Successful operation
@@ -6012,7 +6027,7 @@ paths:
       tags:
         - OnPage
       description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with a list of completed tasks, which results haven’t been collected yet.\nfor more info please visit 'https://docs.dataforseo.com/v3/on_page-tasks_ready/?bash'"
-      operationId: TasksReady
+      operationId: OnPageTasksReady
       responses:
         '200':
           description: Successful operation
@@ -7107,7 +7122,7 @@ paths:
           required: true
           schema:
             type: string
-          example: cc4e3069-cfe5-4741-9fa0-18032f85f23d
+          example: 5b76c2dd-6fd7-4913-b6ac-1e4ca02f0224
       responses:
         '200':
           description: Successful operation
@@ -7190,7 +7205,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3e29a29d-cdea-4c38-8da5-eac56104470b
+          example: 8d3d6a14-2f80-44f8-a96f-5baad2e8a6db
       responses:
         '200':
           description: Successful operation
@@ -7273,7 +7288,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e469781a-e52b-475a-b4bb-ef09f5deb01c
+          example: 8711189d-7a4d-45d5-8166-1c1f5d32093b
       responses:
         '200':
           description: Successful operation
@@ -7492,7 +7507,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 13a7aadc-5d47-4440-9cdc-bb2c2a81f164
+          example: 90a20e4a-f864-4d2e-86d0-f3a1eea680f2
       responses:
         '200':
           description: Successful operation
@@ -7575,7 +7590,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8cbe267e-7970-40c7-b951-4b87e0fa7b1c
+          example: f774d396-86a8-418f-b9f6-1a2dffb7a2fa
       responses:
         '200':
           description: Successful operation
@@ -7658,7 +7673,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b045470b-03e7-4eb3-9f2b-31ef3845960e
+          example: e0261b71-7f76-4470-b458-1f86eabf446a
       responses:
         '200':
           description: Successful operation
@@ -7741,7 +7756,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c94b5a72-3f98-41c5-b595-970b514fde80
+          example: 2989cd72-b827-4dbc-95b0-f0e8d8494075
       responses:
         '200':
           description: Successful operation
@@ -7890,7 +7905,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 15255453-f8f3-40fa-b3fc-ddbd241b3c66
+          example: c494934f-ba93-47a8-945b-bee853de1d25
       responses:
         '200':
           description: Successful operation
@@ -7913,7 +7928,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1eae7355-8af9-4237-962d-64080742901b
+          example: f0101f15-19a5-4dea-989b-06a2dd9f9b92
       responses:
         '200':
           description: Successful operation
@@ -7973,7 +7988,7 @@ paths:
           required: true
           schema:
             type: string
-          example: db15a80f-e56f-4a76-9d6f-e8fcee409f43
+          example: 939c8eaf-ff7a-4996-95c3-88f58c156b60
       responses:
         '200':
           description: Successful operation
@@ -7996,7 +8011,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 704810c3-fddc-4b64-9ccf-9c23ad8c1bb9
+          example: 90fff956-84ea-434b-b7c8-b2f6b569a766
       responses:
         '200':
           description: Successful operation
@@ -8056,7 +8071,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 91c72f12-c1c6-45b7-aff9-d98f3d9dda66
+          example: 323644be-5f32-43e6-87b9-1ca3bae3ad32
       responses:
         '200':
           description: Successful operation
@@ -8079,7 +8094,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b54fb1e5-04a7-4a9e-8412-dbb2c9d70012
+          example: 98d2968b-4fbc-4d82-beae-6a031d85a586
       responses:
         '200':
           description: Successful operation
@@ -8139,7 +8154,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 067ec2ed-32be-47fc-9a49-6778ca4d9ab3
+          example: ce99b069-b9a8-4338-ab2e-e7d11c7dccaf
       responses:
         '200':
           description: Successful operation
@@ -8162,7 +8177,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2189610a-e966-4690-a330-a0739c0430e8
+          example: 99e76fe5-71a8-4502-920b-06f4ea3eb64c
       responses:
         '200':
           description: Successful operation
@@ -8304,7 +8319,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8fec3640-94ed-4cb9-9db6-01b1d2caacf1
+          example: d809d170-209f-4118-bbb7-d3ca633e93f7
       responses:
         '200':
           description: Successful operation
@@ -8364,7 +8379,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 06f711b1-979c-4ae4-ba95-7d78f15e3f80
+          example: 9dd66f13-240c-453b-a601-1d7f4f9df3c3
       responses:
         '200':
           description: Successful operation
@@ -8424,7 +8439,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b7da914a-6d41-4fb8-b671-a31651706739
+          example: cdbf9e05-8ff4-402a-b573-a6f63a956d5c
       responses:
         '200':
           description: Successful operation
@@ -8484,7 +8499,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9c75a53c-016a-4407-9d90-af8aa8c8a6ec
+          example: 46512241-cf55-4928-b951-4be091adfcf4
       responses:
         '200':
           description: Successful operation
@@ -8992,7 +9007,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8bc80dee-2dd4-4eea-8aba-1bcfc899e3cf
+          example: 8ed533b3-4f67-4232-993c-33072210714a
       responses:
         '200':
           description: Successful operation
@@ -9481,179 +9496,6 @@ paths:
                 $ref: '#/components/schemas/BusinessDataTripadvisorReviewsTaskGetResponseInfo'
       security:
         - basicAuth: [ ]
-  /v3/business_data/yelp/locations:
-    get:
-      tags:
-        - BusinessData
-      description: "You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/locations/?bash'"
-      operationId: BusinessDataYelpLocations
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpLocationsResponseInfo'
-      security:
-        - basicAuth: [ ]
-  '/v3/business_data/yelp/locations/{country}':
-    get:
-      tags:
-        - BusinessData
-      description: "You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/locations/?bash'"
-      operationId: BusinessDataYelpLocationsCountry
-      parameters:
-        - name: country
-          in: path
-          description: "country ISO code\noptional field\nspecify the ISO code if you want to filter the list of locations by country\nexample:\nus"
-          required: true
-          schema:
-            type: string
-          example: us
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpLocationsCountryResponseInfo'
-      security:
-        - basicAuth: [ ]
-  /v3/business_data/yelp/languages:
-    get:
-      tags:
-        - BusinessData
-      description: "You will receive the list of languages by calling this API.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/languages/?bash'"
-      operationId: BusinessDataYelpLanguages
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpLanguagesResponseInfo'
-      security:
-        - basicAuth: [ ]
-  /v3/business_data/yelp/search/task_post:
-    post:
-      tags:
-        - BusinessData
-      description: "‌‌\nBy using this endpoint you can request data on businesses listed on the Yelp platform. The results will be specific to the location (see the List of Yelp Locations) and keyword parameters used in the POST request.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/search/task_post/?bash'"
-      operationId: YelpSearchTaskPost
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTaskPostRequestInfo'
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTaskPostResponseInfo'
-      security:
-        - basicAuth: [ ]
-  /v3/business_data/yelp/search/tasks_ready:
-    get:
-      tags:
-        - BusinessData
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/search/tasks_ready/?bash'"
-      operationId: YelpSearchTasksReady
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTasksReadyResponseInfo'
-      security:
-        - basicAuth: [ ]
-  '/v3/business_data/yelp/search/task_get/{id}':
-    get:
-      tags:
-        - BusinessData
-      description: "This endpoint will provide you with data on businesses listed on the Yelp platform. The results obtained through this endpoint are specific to the location (see the List of Yelp Locations) and keyword parameters used in the POST request.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/search/task_get/?bash'"
-      operationId: YelpSearchTaskGet
-      parameters:
-        - name: id
-          in: path
-          description: "task identifier\nunique task identifier in our system in the UUID format\nyou will be able to use it within 30 days to request the results of the task at any time"
-          required: true
-          schema:
-            type: string
-          example: 00000000-0000-0000-0000-000000000000
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTaskGetResponseInfo'
-      security:
-        - basicAuth: [ ]
-  /v3/business_data/yelp/reviews/task_post:
-    post:
-      tags:
-        - BusinessData
-      description: "‌‌\nThis endpoint provides reviews published on the Yelp platform. The results are specific to the selected alias and language (see the List of Languages) parameters.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/reviews/task_post/?bash'"
-      operationId: YelpReviewsTaskPost
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTaskPostRequestInfo'
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTaskPostResponseInfo'
-      security:
-        - basicAuth: [ ]
-  /v3/business_data/yelp/reviews/tasks_ready:
-    get:
-      tags:
-        - BusinessData
-      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/reviews/tasks_ready/?bash'"
-      operationId: YelpReviewsTasksReady
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTasksReadyResponseInfo'
-      security:
-        - basicAuth: [ ]
-  '/v3/business_data/yelp/reviews/task_get/{id}':
-    get:
-      tags:
-        - BusinessData
-      description: "This endpoint provides reviews published on the Yelp platform. The results are specific to the selected alias and language parameters.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/yelp/reviews/task_get/?bash'"
-      operationId: YelpReviewsTaskGet
-      parameters:
-        - name: id
-          in: path
-          description: "task identifier\nunique task identifier in our system in the UUID format\nyou will be able to use it within 30 days to request the results of the task at any time"
-          required: true
-          schema:
-            type: string
-          example: 00000000-0000-0000-0000-000000000000
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTaskGetResponseInfo'
-      security:
-        - basicAuth: [ ]
   /v3/business_data/social_media/pinterest/live:
     post:
       tags:
@@ -9878,15 +9720,15 @@ components:
         mapping:
           organic: '#/components/schemas/OrganicDataforseoLabsSerpElementItem'
           paid: '#/components/schemas/PaidDataforseoLabsSerpElementItem'
+          knowledge_graph: '#/components/schemas/KnowledgeGraphDataforseoLabsSerpElementItem'
           people_also_ask: '#/components/schemas/PeopleAlsoAskDataforseoLabsSerpElementItem'
-          twitter: '#/components/schemas/TwitterDataforseoLabsSerpElementItem'
           people_also_search: '#/components/schemas/PeopleAlsoSearchDataforseoLabsSerpElementItem'
           related_searches: '#/components/schemas/RelatedSearchesDataforseoLabsSerpElementItem'
           knowledge_graph_description_item: '#/components/schemas/KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem'
-          knowledge_graph_images_item: '#/components/schemas/KnowledgeGraphImagesItemDataforseoLabsSerpElementItem'
           knowledge_graph_row_item: '#/components/schemas/KnowledgeGraphRowItemDataforseoLabsSerpElementItem'
           knowledge_graph_carousel_item: '#/components/schemas/KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem'
-          knowledge_graph: '#/components/schemas/KnowledgeGraphDataforseoLabsSerpElementItem'
+          twitter: '#/components/schemas/TwitterDataforseoLabsSerpElementItem'
+          knowledge_graph_images_item: '#/components/schemas/KnowledgeGraphImagesItemDataforseoLabsSerpElementItem'
           carousel: '#/components/schemas/CarouselDataforseoLabsSerpElementItem'
           multi_carousel: '#/components/schemas/MultiCarouselDataforseoLabsSerpElementItem'
           top_stories: '#/components/schemas/TopStoriesDataforseoLabsSerpElementItem'
@@ -10008,9 +9850,6 @@ components:
           trustpilot_review_search: '#/components/schemas/TrustpilotReviewSearchBusinessDataSerpElementItem'
           tripadvisor_search_organic: '#/components/schemas/TripadvisorSearchOrganicBusinessDataSerpElementItem'
           tripadvisor_review_search: '#/components/schemas/TripadvisorReviewSearchBusinessDataSerpElementItem'
-          yelp_search_organic: '#/components/schemas/YelpSearchOrganicBusinessDataSerpElementItem'
-          yelp_search_paid: '#/components/schemas/YelpSearchPaidBusinessDataSerpElementItem'
-          yelp_reviews_search: '#/components/schemas/YelpReviewsSearchBusinessDataSerpElementItem'
     BaseOnPageResourceItemInfo:
       type: object
       properties:
@@ -11210,7 +11049,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: organic"
+          description: "type of search engine\nexample: organic"
           nullable: true
         date_posted:
           type: string
@@ -11254,6 +11093,65 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/SerpGoogleOrganicTasksReadyTaskInfo'
+              description: array of tasks
+              nullable: true
+    SerpTasksReadyResultInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "task identifier of the completed task\nunique task identifier in our system in the UUID format"
+          nullable: true
+        se:
+          type: string
+          description: search engine specified when setting the task
+          nullable: true
+        se_type:
+          type: string
+          description: "type of search engine\nexample: organic"
+          nullable: true
+        date_posted:
+          type: string
+          description: date when the task was posted (in the UTC format)
+          nullable: true
+        tag:
+          type: string
+          description: user-defined task identifier
+          nullable: true
+        endpoint_regular:
+          type: string
+          description: "URL for collecting the results of the SERP Regular task\nif SERP Regular is not supported in the specified endpoint, the value will be null"
+          nullable: true
+        endpoint_advanced:
+          type: string
+          description: "URL for collecting the results of the SERP Advanced task\nif SERP Advanced is not supported in the specified endpoint, the value will be null"
+          nullable: true
+        endpoint_html:
+          type: string
+          description: "URL for collecting the results of the SERP HTML task\nif SERP HTML is not supported in the specified endpoint, the value will be null"
+          nullable: true
+    SerpTasksReadyTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpTasksReadyResultInfo'
+              description: array of results
+              nullable: true
+    SerpTasksReadyResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpTasksReadyTaskInfo'
               description: array of tasks
               nullable: true
     SerpGoogleOrganicTasksFixedResultInfo:
@@ -14884,6 +14782,33 @@ components:
               nullable: true
             rectangle:
               $ref: '#/components/schemas/Rectangle'
+    CompareSitesElement:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        title:
+          type: string
+          description: title of a given link element
+          nullable: true
+        url:
+          type: string
+          description: URL
+          nullable: true
+        domain:
+          type: string
+          description: website domain
+          nullable: true
+        image_url:
+          type: string
+          description: URL of the image
+          nullable: true
+        source:
+          type: string
+          description: "source of the element\nindicates the source of information included in the top_stories_element"
+          nullable: true
     SerpGoogleOrganicTaskGetAdvancedResultInfo:
       type: object
       properties:
@@ -15091,6 +15016,10 @@ components:
           type: string
           description: "target domain, subdomain, or webpage to get results for\noptional field\na domain or a subdomain should be specified without https:// and www.\nnote that the results of target-specific tasks will only include SERP elements that contain a url string;\nyou can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results;\nexamples:\nexample.com  – return results for the website’s home page with URLs, such as https://example.com, or https://www.example.com/, or https://example.com/;\nexample.com* – returns results for the domain, including all its pages;\n*example.com* – returns results for the entire domain, including all its pages and subdomains;\n*example.com  – returns results for the home page regardless of the subdomain, such as https://en.example.com;\nexample.com/example-page  – returns results for the exact URL;\nexample.com/example-page*  – returns results for all domain’s URLs that start with the specified string"
           nullable: true
+        group_organic_results:
+          type: boolean
+          description: "display related results\noptional field\nif set to true, the related_result element in the response will be provided as a snippet of its parent organic result;\nif set to false, the related_result element will be provided as a separate organic result;\ndefault value: true"
+          nullable: true
         max_crawl_pages:
           type: integer
           description: "page crawl limit\noptional field\nnumber of search results pages to crawl\nmax value: 100\nNote: the max_crawl_pages and depth parameters complement each other;\nlearn more at our help center"
@@ -15256,7 +15185,7 @@ components:
           nullable: true
         browser_screen_resolution_ratio:
           type: integer
-          description: "browser screen resolution ratio\noptional field\nyou can set a custom browser screen resolution ratio to calculate pixel rankings for a particular device;\nby default, the parameter is set to:\n1 for desktop;\n3 for mobile on android;\n3 for mobile on iOS;\nNote: to use this parameter, set calculate_rectangles to true"
+          description: "browser screen resolution ratio\noptional field\nyou can set a custom browser screen resolution ratio to calculate pixel rankings for a particular device;\npossible values: from 1 to 3;\nby default, the parameter is set to:\n1 for desktop;\n3 for mobile on android;\n3 for mobile on iOS;\nNote: to use this parameter, set calculate_rectangles to true"
           nullable: true
         people_also_ask_click_depth:
           type: integer
@@ -15525,7 +15454,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: maps"
+          description: "type of search engine\nexample: maps"
           nullable: true
         date_posted:
           type: string
@@ -16089,7 +16018,7 @@ components:
           nullable: true
         location_coordinate:
           type: string
-          description: "GPS coordinates of a location\nrequired field if you don’t specify location_name or location_code\nif you use this field, you don’t need to specify location_name or location_code\nlocation_coordinate parameter should be specified in the “latitude,longitude,zoom” format\nif “zoom” is not specified, 17z will be applied as a default value\nthe maximum number of decimal digits for “latitude” and “longitude”: 7\nthe minimum value for “zoom”: 4z\nthe maximum value for “zoom”: 18z\nexample:\n52.6178549,-155.352142,20z"
+          description: "GPS coordinates of a location\nrequired field if you don’t specify location_name or location_code\nif you use this field, you don’t need to specify location_name or location_code\nlocation_coordinate parameter should be specified in the “latitude,longitude,zoom” format\nif “zoom” is not specified, 17z will be applied as a default value\nthe maximum number of decimal digits for “latitude” and “longitude”: 7\nthe minimum value for “zoom”: 4z\nthe maximum value for “zoom”: 18z\nexample:\n52.6178549,-155.352142,18z"
           nullable: true
         language_name:
           type: string
@@ -16171,7 +16100,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: local_finder"
+          description: "type of search engine\nexample: local_finder"
           nullable: true
         date_posted:
           type: string
@@ -16705,7 +16634,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: news"
+          description: "type of search engine\nexample: news"
           nullable: true
         date_posted:
           type: string
@@ -17243,7 +17172,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: events"
+          description: "type of search engine\nexample: events"
           nullable: true
         date_posted:
           type: string
@@ -17702,7 +17631,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: images"
+          description: "type of search engine\nexample: images"
           nullable: true
         date_posted:
           type: string
@@ -18528,7 +18457,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: jobs"
+          description: "type of search engine\nexample: jobs"
           nullable: true
         date_posted:
           type: string
@@ -18879,7 +18808,7 @@ components:
           nullable: true
         client:
           type: string
-          description: "search client for autocomplete\noptional field\nautocomplete results may differ depending on the search client;\npossible values:\nchrome — used when google search is opened in google chrome;\nchrome-omni — used in the address bar in chrome;\ngws-wiz — used in google search home page;\nsafari — used when google search is opened in safari browser;\nfirefox — used when google search is opened in firefox browser;\npsy-ab — may be used when google search is opened in google chrome browser;\ntoolbar — returns XML;\nyoutube — returns JSONP;\ngws-wiz-local — used in google local;\nimg — used in google’s image search;\nproducts-cc — used in google shopping search"
+          description: "search client for autocomplete\noptional field\nautocomplete results may differ depending on the search client;\npossible values:\nchrome — used when google search is opened in google chrome;\nchrome-omni — used in the address bar in chrome;\ngws-wiz — used in google search home page;\ngws-wiz-serp — used in google search engine results page;\nsafari — used when google search is opened in safari browser;\nfirefox — used when google search is opened in firefox browser;\npsy-ab — may be used when google search is opened in google chrome browser;\ntoolbar — returns XML;\nyoutube — returns JSONP;\ngws-wiz-local — used in google local;\nimg — used in google’s image search;\nproducts-cc — used in google shopping search"
           nullable: true
         tag:
           type: string
@@ -18932,7 +18861,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: autocomplete"
+          description: "type of search engine\nexample: autocomplete"
           nullable: true
         date_posted:
           type: string
@@ -19067,6 +18996,10 @@ components:
               type: string
               description: "url to search results\nurl to search results relevant to the google autocomplete suggestion"
               nullable: true
+            thumbnail_url:
+              type: string
+              description: "url of the thumbnail image\nurl of the thumbnail image of the google autocomplete suggestion\nNote: only available for the following client:\ngws-wiz\ngws-wiz-serp"
+              nullable: true
             highlighted:
               type: array
               items:
@@ -19181,7 +19114,7 @@ components:
           nullable: true
         client:
           type: string
-          description: "search client for autocomplete\noptional field\nautocomplete results may differ depending on the search client;\npossible values:\nchrome — used when google search is opened in google chrome;\nchrome-omni — used in the address bar in chrome;\ngws-wiz — used in google search home page;\nsafari — used when google search is opened in safari browser;\nfirefox — used when google search is opened in firefox browser;\npsy-ab — may be used when google search is opened in google chrome browser;\ntoolbar — returns XML;\nyoutube — returns JSONP;\ngws-wiz-local — used in google local;\nimg — used in google’s image search;\nproducts-cc — used in google shopping search"
+          description: "search client for autocomplete\noptional field\nautocomplete results may differ depending on the search client;\npossible values:\nchrome — used when google search is opened in google chrome;\nchrome-omni — used in the address bar in chrome;\ngws-wiz — used in google search home page;\ngws-wiz-serp — used in google search engine results page;\nsafari — used when google search is opened in safari browser;\nfirefox — used when google search is opened in firefox browser;\npsy-ab — may be used when google search is opened in google chrome browser;\ntoolbar — returns XML;\nyoutube — returns JSONP;\ngws-wiz-local — used in google local;\nimg — used in google’s image search;\nproducts-cc — used in google shopping search"
           nullable: true
         tag:
           type: string
@@ -19372,7 +19305,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: dataset_search"
+          description: "type of search engine\nexample: dataset_search"
           nullable: true
         date_posted:
           type: string
@@ -19910,7 +19843,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: dataset_info"
+          description: "type of search engine\nexample: dataset_info"
           nullable: true
         date_posted:
           type: string
@@ -20349,7 +20282,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: organic"
+          description: "type of search engine\nexample: organic"
           nullable: true
         date_posted:
           type: string
@@ -20933,7 +20866,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: local_pack"
+          description: "type of search engine\nexample: local_pack"
           nullable: true
         date_posted:
           type: string
@@ -21536,7 +21469,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: video_info"
+          description: "type of search engine\nexample: video_info"
           nullable: true
         date_posted:
           type: string
@@ -21641,6 +21574,21 @@ components:
                 $ref: '#/components/schemas/SerpYoutubeVideoInfoTasksFixedTaskInfo'
               description: array of tasks
               nullable: true
+    Subtitles:
+      type: object
+      properties:
+        language:
+          type: string
+          description: language of subtitles
+          nullable: true
+        is_translatable:
+          type: boolean
+          description: defines if subtitles are translatable
+          nullable: true
+        is_auto_generated:
+          type: boolean
+          description: defines if subtitles are auto generated
+          nullable: true
     StreamingQualityElement:
       type: object
       properties:
@@ -21770,8 +21718,10 @@ components:
               description: duration of the video in seconds
               nullable: true
             subtitles:
-              type: string
-              description: subtitles in the video
+              type: array
+              items:
+                $ref: '#/components/schemas/Subtitles'
+              description: array of elements describing properties of subtitles in the video
               nullable: true
             streaming_quality:
               type: array
@@ -22048,7 +21998,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: video_subtitles"
+          description: "type of search engine\nexample: video_subtitles"
           nullable: true
         date_posted:
           type: string
@@ -22506,7 +22456,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: video_comments"
+          description: "type of search engine\nexample: video_comments"
           nullable: true
         date_posted:
           type: string
@@ -23021,7 +22971,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: organic"
+          description: "type of search engine\nexample: organic"
           nullable: true
         date_posted:
           type: string
@@ -23800,7 +23750,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: organic"
+          description: "type of search engine\nexample: organic"
           nullable: true
         date_posted:
           type: string
@@ -24220,7 +24170,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: organic"
+          description: "type of search engine\nexample: organic"
           nullable: true
         date_posted:
           type: string
@@ -24770,7 +24720,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: organic"
+          description: "type of search engine\nexample: organic"
           nullable: true
         date_posted:
           type: string
@@ -25469,15 +25419,15 @@ components:
       properties:
         group:
           type: string
-          description: "id of the target technology group\nrequired field if you don’t specify technology or category\nyou can find the full list of technology group ids on this page\nexample:\n\"marketing\""
+          description: "id of the target technology group\nrequired field if you don’t specify technology or category\nat least one field (group, category, technology) must be set\nyou can find the full list of technology group ids on this page\nexample:\n\"marketing\""
           nullable: true
         category:
           type: string
-          description: "id of the target technology category\nrequired field if you don’t specify group or technology\nyou can find the full list of technology category ids on this page\nexample:\n\"crm\""
+          description: "id of the target technology category\nrequired field if you don’t specify group or technology\nat least one field (group, category, technology) must be set\nyou can find the full list of technology category ids on this page\nexample:\n\"crm\""
           nullable: true
         technology:
           type: string
-          description: "target technology\nrequired field if you don’t specify group or category\nyou can find the full list of technologies on this page\nexample:\n\"Salesforce\""
+          description: "target technology\nrequired field if you don’t specify group or category\nat least one field (group, category, technology) must be set\nyou can find the full list of technologies on this page\nexample:\n\"Salesforce\""
           nullable: true
         keyword:
           type: string
@@ -25617,25 +25567,25 @@ components:
           type: array
           items:
             type: string
-          description: "target technology paths\nrequired field if you don’t specify groups, technologies and categories\nif you use this field, you don’t need to specify groups, technologies and categories\neach technology path should be specified as a separate object containing “path” and “name”, where “path” is specified as “$group_id.$category_id” and “name” – as the name of the target technology;\neach object with a technology path should be separated with a comma\nyou can find the full list of technology group ids, category ids and technology names on this page\nnote: you can specify up to 10 technology paths in this array\nexample:\n[{\"path\": \"content.cms\",\"name\": \"wordpress\"}, {\"path\": \"marketing.crm\",\"name\": \"salesforce\"}]"
+          description: "target technology paths\nrequired field if you don’t specify groups, technologies and categories\neach technology path should be specified as a separate object containing “path” and “name”, where “path” is specified as “$group_id.$category_id” and “name” – as the name of the target technology;\neach object with a technology path should be separated with a comma\nyou can find the full list of technology group ids, category ids and technology names on this page\nnote: you can specify up to 10 technology paths in this array\nexample:\n[{\"path\": \"content.cms\",\"name\": \"wordpress\"}, {\"path\": \"marketing.crm\",\"name\": \"salesforce\"}]"
           nullable: true
         groups:
           type: array
           items:
             type: string
-          description: "ids of the target technology groups\nrequired field if you don’t specify technologies or categories\nyou can find the full list of technology group ids on this page\nnote: you can specify up to 10 technology groups in this array\nexample:\n[\"sales\", \"marketing\"]"
+          description: "ids of the target technology groups\nrequired field if you don’t specify technologies, technology_paths or categories\nyou can find the full list of technology group ids on this page\nnote: you can specify up to 10 technology groups in this array\nexample:\n[\"sales\", \"marketing\"]"
           nullable: true
         categories:
           type: array
           items:
             type: string
-          description: "ids of the target technology categories\nrequired field if you don’t specify groups or technologies\nyou can find the full list of technology category ids on this page\nnote: you can specify up to 10 technology categories in this array\nexample:\n[\"payment_processors\",\"crm\"]"
+          description: "ids of the target technology categories\nrequired field if you don’t specify groups, technology_paths or technologies\nyou can find the full list of technology category ids on this page\nnote: you can specify up to 10 technology categories in this array\nexample:\n[\"payment_processors\",\"crm\"]"
           nullable: true
         technologies:
           type: array
           items:
             type: string
-          description: "target technologies\nrequired field if you don’t specify groups or categories\nyou can find the full list of technologies you can specify here on this page\nnote: you can specify up to 10 technologies in this array\nexample:\n[\"Google Pay\",\"Salesforce\"]"
+          description: "target technologies\nrequired field if you don’t specify groups, technology_paths or categories\nyou can find the full list of technologies you can specify here on this page\nnote: you can specify up to 10 technologies in this array\nexample:\n[\"Google Pay\",\"Salesforce\"]"
           nullable: true
         keywords:
           type: array
@@ -25837,25 +25787,25 @@ components:
           type: array
           items:
             type: string
-          description: "target technology paths\nrequired field if you don’t specify groups, technologies and categories\nif you use this field, you don’t need to specify groups, technologies and categories\neach technology path should be specified as a separate object containing “path” and “name”, where “path” is specified as “$group_id.$category_id” and “name” – as the name of the target technology;\neach object with a technology path should be separated with a comma\nyou can find the full list of technology group ids, category ids and technology names on this page\nnote: you can specify up to 10 technology paths in this array\nexample:\n[{\"path\": \"content.cms\",\"name\": \"wordpress\"}, {\"path\": \"marketing.crm\",\"name\": \"salesforce\"}]"
+          description: "target technology paths\nrequired field if you don’t specify groups, technologies and categories\neach technology path should be specified as a separate object containing “path” and “name”, where “path” is specified as “$group_id.$category_id” and “name” – as the name of the target technology;\neach object with a technology path should be separated with a comma\nyou can find the full list of technology group ids, category ids and technology names on this page\nnote: you can specify up to 10 technology paths in this array\nexample:\n[{\"path\": \"content.cms\",\"name\": \"wordpress\"}, {\"path\": \"marketing.crm\",\"name\": \"salesforce\"}]"
           nullable: true
         groups:
           type: array
           items:
             type: string
-          description: "ids of the target technology groups\nrequired field if you don’t specify technologies or categories\nyou can find the full list of technology group ids on this page\nnote: you can specify up to 10 technology groups in this array\nexample:\n[\"sales\", \"marketing\"]"
+          description: "ids of the target technology groups\nrequired field if you don’t specify technologies, technology_paths or categories\nyou can find the full list of technology group ids on this page\nnote: you can specify up to 10 technology groups in this array\nexample:\n[\"sales\", \"marketing\"]"
           nullable: true
         categories:
           type: array
           items:
             type: string
-          description: "ids of the target technology categories\nrequired field if you don’t specify groups or technologies\nyou can find the full list of technology category ids on this page\nnote: you can specify up to 10 technology categories in this array\nexample:\n[\"payment_processors\",\"crm\"]"
+          description: "ids of the target technology categories\nrequired field if you don’t specify groups, technology_paths or technologies\nyou can find the full list of technology category ids on this page\nnote: you can specify up to 10 technology categories in this array\nexample:\n[\"payment_processors\",\"crm\"]"
           nullable: true
         technologies:
           type: array
           items:
             type: string
-          description: "target technologies\nrequired field if you don’t specify groups or categories\nyou can find the full list of technologies you can specify here on this page\nnote: you can specify up to 10 technologies in this array\nexample:\n[\"Google Pay\",\"Salesforce\"]"
+          description: "target technologies\nrequired field if you don’t specify groups, technology_paths or categories\nyou can find the full list of technologies you can specify here on this page\nnote: you can specify up to 10 technologies in this array\nexample:\n[\"Google Pay\",\"Salesforce\"]"
           nullable: true
         keywords:
           type: array
@@ -30309,7 +30259,7 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    PeopleAlsoAskDataforseoLabsSerpElementItem:
+    KnowledgeGraphDataforseoLabsSerpElementItem:
       type: object
       allOf:
         - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
@@ -30321,39 +30271,7 @@ components:
               nullable: true
             rank_group:
               type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
-              nullable: true
-            xpath:
-              type: string
-              description: the XPath of the element
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/PeopleAlsoAskElement'
-              description: elements of search results found in SERP
-              nullable: true
-    TwitterDataforseoLabsSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-        - type: object
-          properties:
-            se_type:
-              type: string
-              description: search engine type
-              nullable: true
-            rank_group:
-              type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
               nullable: true
             rank_absolute:
               type: integer
@@ -30371,14 +30289,70 @@ components:
               type: string
               description: title of the result in SERP
               nullable: true
+            sub_title:
+              type: string
+              description: subtitle of the item
+              nullable: true
+            description:
+              type: string
+              description: description of the results element in SERP
+              nullable: true
+            card_id:
+              type: string
+              description: card id
+              nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: relevant URL in SERP
+              nullable: true
+            image_url:
+              type: string
+              description: URL of the image from knowledge graph
+              nullable: true
+            logo_url:
+              type: string
+              description: URL of the logo from knowledge graph
+              nullable: true
+            cid:
+              type: string
+              description: google-defined client id
               nullable: true
             items:
               type: array
               items:
-                $ref: '#/components/schemas/TwitterElement'
+                $ref: '#/components/schemas/PeopleAlsoAskElement'
+              description: elements of search results found in SERP
+              nullable: true
+    PeopleAlsoAskDataforseoLabsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        - type: object
+          properties:
+            se_type:
+              type: string
+              description: search engine type
+              nullable: true
+            rank_group:
+              type: integer
+              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/PeopleAlsoAskElement'
               description: elements of search results found in SERP
               nullable: true
     PeopleAlsoSearchDataforseoLabsSerpElementItem:
@@ -30409,14 +30383,14 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             items:
               type: array
               items:
                 type: string
                 nullable: true
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     RelatedSearchesDataforseoLabsSerpElementItem:
       type: object
@@ -30449,7 +30423,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem:
       type: object
@@ -30483,36 +30457,6 @@ components:
                 $ref: '#/components/schemas/LinkElement'
               description: "sitelinks\nthe links shown below some of Google’s search results\nif there are none, equals null"
               nullable: true
-    KnowledgeGraphImagesItemDataforseoLabsSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-        - type: object
-          properties:
-            rank_group:
-              type: integer
-              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
-              nullable: true
-            xpath:
-              type: string
-              description: the XPath of the element
-              nullable: true
-            link:
-              $ref: '#/components/schemas/LinkElement'
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/KnowledgeGraphImagesElement'
-              description: "additional items present in the element\nif there are none, equals null"
-              nullable: true
     KnowledgeGraphRowItemDataforseoLabsSerpElementItem:
       type: object
       allOf:
@@ -30537,7 +30481,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the link
               nullable: true
             data_attrid:
               type: string
@@ -30577,7 +30521,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the link
+              description: title of the result in SERP
               nullable: true
             data_attrid:
               type: string
@@ -30590,70 +30534,6 @@ components:
               items:
                 $ref: '#/components/schemas/KnowledgeGraphListElement'
               description: "additional items present in the element\nif there are none, equals null"
-              nullable: true
-    KnowledgeGraphDataforseoLabsSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-        - type: object
-          properties:
-            se_type:
-              type: string
-              description: search engine type
-              nullable: true
-            rank_group:
-              type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
-              nullable: true
-            xpath:
-              type: string
-              description: the XPath of the element
-              nullable: true
-            title:
-              type: string
-              description: title of the result in SERP
-              nullable: true
-            sub_title:
-              type: string
-              description: subtitle of the item
-              nullable: true
-            description:
-              type: string
-              description: description of the results element in SERP
-              nullable: true
-            card_id:
-              type: string
-              description: card id
-              nullable: true
-            url:
-              type: string
-              description: relevant URL of the Ad element in SERP
-              nullable: true
-            image_url:
-              type: string
-              description: URL of the image from knowledge graph
-              nullable: true
-            logo_url:
-              type: string
-              description: URL of the logo from knowledge graph
-              nullable: true
-            cid:
-              type: string
-              description: google-defined client id
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-              description: elements of search results found in SERP
               nullable: true
     DataforseoLabsGoogleHistoricalSerpsLiveItem:
       type: object
@@ -30715,6 +30595,76 @@ components:
             $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
           description: "additional items present in the element\nif there are none, equals null"
           nullable: true
+    TwitterDataforseoLabsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        - type: object
+          properties:
+            se_type:
+              type: string
+              description: search engine type
+              nullable: true
+            rank_group:
+              type: integer
+              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            title:
+              type: string
+              description: title of the item
+              nullable: true
+            url:
+              type: string
+              description: URL link
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/TwitterElement'
+              description: "additional items present in the element\nif there are none, equals null"
+              nullable: true
+    KnowledgeGraphImagesItemDataforseoLabsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        - type: object
+          properties:
+            rank_group:
+              type: integer
+              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            link:
+              $ref: '#/components/schemas/LinkElement'
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/KnowledgeGraphImagesElement'
+              description: "additional items present in the element\nif there are none, equals null"
+              nullable: true
     DataforseoLabsGoogleHistoricalSerpsLiveResultInfo:
       type: object
       properties:
@@ -30791,7 +30741,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/CarouselElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     MultiCarouselDataforseoLabsSerpElementItem:
       type: object
@@ -30819,7 +30769,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/MultiCarouselElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     TopStoriesDataforseoLabsSerpElementItem:
       type: object
@@ -30847,7 +30797,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/TopStoriesElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     QAnswerBoxDataforseoLabsSerpElementItem:
       type: object
@@ -30918,7 +30868,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/MathSolverElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
             links:
               type: array
@@ -30952,7 +30902,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/VideoElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     MapDataforseoLabsSerpElementItem:
       type: object
@@ -30978,11 +30928,11 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
     FeaturedSnippetDataforseoLabsSerpElementItem:
       type: object
@@ -31012,7 +30962,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             featured_title:
               type: string
@@ -31024,7 +30974,7 @@ components:
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             table:
               $ref: '#/components/schemas/Table'
@@ -31080,7 +31030,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             description:
               type: string
@@ -31096,7 +31046,7 @@ components:
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             is_paid:
               type: boolean
@@ -31153,7 +31103,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             date_from:
               type: string
@@ -31167,7 +31117,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/HotelsPackElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     KnowledgeGraphListItemDataforseoLabsSerpElementItem:
       type: object
@@ -31307,7 +31257,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             data_attrid:
               type: string
@@ -31317,7 +31267,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/KnowledgeGraphShoppingElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     GoogleReviewsDataforseoLabsSerpElementItem:
       type: object
@@ -31358,7 +31308,7 @@ components:
               nullable: true
             cid:
               type: string
-              description: google-defined client id
+              description: "google-defined client id\nunique id of a local establishment;\ncan be used with Google Reviews API to get a full list of reviews"
               nullable: true
     GooglePostsDataforseoLabsSerpElementItem:
       type: object
@@ -31392,7 +31342,7 @@ components:
               nullable: true
             cid:
               type: string
-              description: google-defined client id
+              description: "google-defined client id\nunique id of a local establishment;\ncan be used with Google Reviews API to get a full list of reviews"
               nullable: true
     GoogleFlightsDataforseoLabsSerpElementItem:
       type: object
@@ -31418,17 +31368,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/GoogleFlightsElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     ImagesDataforseoLabsSerpElementItem:
       type: object
@@ -31454,17 +31404,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/ImagesElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
             related_image_searches:
               type: array
@@ -31496,13 +31446,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/ShoppingElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     JobsDataforseoLabsSerpElementItem:
       type: object
@@ -31528,17 +31478,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/JobsElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     EventsDataforseoLabsSerpElementItem:
       type: object
@@ -31564,17 +31514,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/EventsElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     MentionCarouselDataforseoLabsSerpElementItem:
       type: object
@@ -31600,13 +31550,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/MentionCarouselElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     RecipesDataforseoLabsSerpElementItem:
       type: object
@@ -31634,7 +31584,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/RecipesElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     TopSightsDataforseoLabsSerpElementItem:
       type: object
@@ -31660,13 +31610,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/TopSightsElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     ScholarlyArticlesDataforseoLabsSerpElementItem:
       type: object
@@ -31692,17 +31642,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/ScholarlyArticlesElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     PopularProductsDataforseoLabsSerpElementItem:
       type: object
@@ -31730,7 +31680,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PopularProductsElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     PodcastsDataforseoLabsSerpElementItem:
       type: object
@@ -31758,7 +31708,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PodcastsElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     QuestionsAndAnswersDataforseoLabsSerpElementItem:
       type: object
@@ -31786,7 +31736,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/QuestionsAndAnswersElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     FindResultsOnDataforseoLabsSerpElementItem:
       type: object
@@ -31814,7 +31764,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/ShortVideosElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     StocksBoxDataforseoLabsSerpElementItem:
       type: object
@@ -31840,7 +31790,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             source:
               type: string
@@ -31854,7 +31804,7 @@ components:
               $ref: '#/components/schemas/PriceInfo'
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             domain:
               type: string
@@ -31890,7 +31840,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/LicensesElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     CommercialUnitsDataforseoLabsSerpElementItem:
       type: object
@@ -31916,13 +31866,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/CommercialUnitsElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     LocalServicesDataforseoLabsSerpElementItem:
       type: object
@@ -31948,11 +31898,11 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the item
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
             domain:
               type: string
@@ -31962,7 +31912,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/LocalServicesElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     GoogleHotelsDataforseoLabsSerpElementItem:
       type: object
@@ -31992,7 +31942,7 @@ components:
               nullable: true
             url:
               type: string
-              description: relevant URL of the Ad element in SERP
+              description: URL link
               nullable: true
     DataforseoLabsGoogleHistoricalSerpsLiveResponseInfo:
       type: object
@@ -37426,9 +37376,9 @@ components:
             type: string
           description: "keywords\nrequired field\nThe maximum number of keywords you can specify: 1000\nThe maximum number of characters for each keyword: 80\nThe maximum number of words for each keyword phrase: 10\nthe keywords you specify will be converted to a lowercase format\nNote: Google Ads may return no data for certain groups of keywords\nvisit our Help Center to learn more\nAlso note that Google Ads doesn’t allow using certain symbols and characters (e.g., UTF symbols, emojis), so you can’t use them when setting a task;\nto learn more about which symbols can be used, please refer to this article"
         bid:
-          type: number
+          type: integer
           description: "the maximum custom bid\nrequired field\nthe collected data will be based on this value\nit stands for the price you are willing to pay for an ad; the higher value you specify here, the higher values you will get in the returned metrics\nlearn more in this help center article"
-          format: float
+          format: int64
         match:
           type: string
           description: "keywords match-type\nrequired field\ncan take the following values: exact, broad, phrase"
@@ -37500,9 +37450,9 @@ components:
           description: "include Google search partners\nthe value you specified when setting the task\nif true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search;\nif false, the results are returned for Google search sites only"
           nullable: true
         bid:
-          type: number
+          type: integer
           description: "the maximum custom bid\nthe bid you have specified when setting the task\nrepresents the price you are willing to pay for an ad\nthe higher value you have specified, the higher metrics and cost you receive in response\nlearn more in this help center article"
-          format: float
+          format: int64
           nullable: true
         match:
           type: string
@@ -41994,7 +41944,7 @@ components:
           nullable: true
         rank:
           type: integer
-          description: "page rank\nrank of the page on the target website\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
+          description: "page rank\nrank of the page\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
           nullable: true
         backlinks:
           type: integer
@@ -42008,7 +41958,7 @@ components:
           nullable: true
         broken_backlinks:
           type: integer
-          description: "number of broken backlinks\nnumber of broken backlinks pointing to the target"
+          description: "number of broken backlinks\nnumber of broken backlinks pointing to the page"
           format: int64
           nullable: true
         broken_pages:
@@ -42022,7 +41972,7 @@ components:
           nullable: true
         referring_domains_nofollow:
           type: integer
-          description: number of domains pointing at least one nofollow link to the target
+          description: number of domains pointing at least one nofollow link to the page
           format: int64
           nullable: true
         referring_main_domains:
@@ -42032,7 +41982,7 @@ components:
           nullable: true
         referring_main_domains_nofollow:
           type: integer
-          description: number of main domains pointing at least one nofollow link to the target
+          description: number of main domains pointing at least one nofollow link to the page
           format: int64
           nullable: true
         referring_ips:
@@ -42047,12 +41997,12 @@ components:
           nullable: true
         referring_pages:
           type: integer
-          description: indicates the number of pages pointing to the target
+          description: indicates the number of pages pointing to the page
           format: int64
           nullable: true
         referring_pages_nofollow:
           type: integer
-          description: number of referring pages pointing at least one nofollow link to the target
+          description: number of referring pages pointing at least one nofollow link to the page
           format: int64
           nullable: true
         referring_links_tld:
@@ -42265,7 +42215,7 @@ components:
           nullable: true
         include_subdomains:
           type: boolean
-          description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
+          description: "indicates if the subdomains of the target domain will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
           nullable: true
         include_indirect_links:
           type: boolean
@@ -42273,7 +42223,7 @@ components:
           nullable: true
         exclude_internal_backlinks:
           type: boolean
-          description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, the backlinks from subdomains of the target will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
+          description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, backlinks from the subdomains of the target domain will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
           nullable: true
         tag:
           type: string
@@ -42292,7 +42242,7 @@ components:
           nullable: true
         rank:
           type: integer
-          description: "page rank\nrank of the page on the target website\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
+          description: "page rank\nrank of the page\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
           nullable: true
         backlinks:
           type: integer
@@ -42328,7 +42278,7 @@ components:
           nullable: true
         referring_domains_nofollow:
           type: integer
-          description: number of domains pointing at least one nofollow link to the target
+          description: number of domains pointing at least one nofollow link to the page
           format: int64
           nullable: true
         referring_main_domains:
@@ -42338,7 +42288,7 @@ components:
           nullable: true
         referring_main_domains_nofollow:
           type: integer
-          description: number of main domains pointing at least one nofollow link to the target
+          description: number of main domains pointing at least one nofollow link to the page
           format: int64
           nullable: true
         referring_ips:
@@ -42406,7 +42356,7 @@ components:
           nullable: true
         referring_pages_nofollow:
           type: integer
-          description: number of referring pages pointing at least one nofollow link to the target
+          description: number of referring pages pointing at least one nofollow link to the page
           format: int64
           nullable: true
     BacklinksDomainPagesSummaryLiveResultInfo:
@@ -44305,49 +44255,9 @@ components:
           items:
             type: string
           description: "domains, subdomains or webpages to get summary data for\nrequired field\na domain or a subdomain should be specified without https:// and www.\na page should be specified with absolute URL (including http:// or https://)\nyou can specify up to 1000 pages, domains, or subdomains in each request.\nnote that the URLs you set in a single request cannot belong to more than 100 different domains."
-        offset:
-          type: integer
-          description: "offset in the results array of returned pages\noptional field\ndefault value: 0\nif you specify the 10 value, the first ten pages in the results array will be omitted and the data will be provided for the successive pages"
-          nullable: true
-        internal_list_limit:
-          type: integer
-          description: "maximum number of elements within internal arrays\noptional field\nyou can use this field to limit the number of elements within the following arrays:\nreferring_links_tld\nreferring_links_types\nreferring_links_attributes\nreferring_links_platform_types\nreferring_links_semantic_locations\ndefault value: 10\nmaximum value: 1000"
-          nullable: true
-        backlinks_status_type:
-          type: string
-          description: "set what backlinks to return and count\noptional field\nyou can use this field to choose what backlinks will be returned and used for aggregated metrics for your target;\npossible values:\nall – all backlinks will be returned and counted;\nlive – backlinks found during the last check will be returned and counted;\nlost – lost backlinks will be returned and counted;\ndefault value: live"
-          nullable: true
-        filters:
-          type: array
-          items:
-            type: object
-            nullable: true
-          description: "array of results filtering parameters\noptional field\nyou can add several filters at once (8 filters maximum)\nyou should set a logical operator and, or between the conditions\nthe following operators are supported:\nregex, not_regex, =, <>, in, not_in, like, not_like, ilike, not_ilike\nyou can use the % operator with like and not_like to match any string of zero or more characters\nexample:\n[\"referring_links_types.anchors\",\">\",\"1\"]\n[[\"broken_pages\",\">\",\"2\"],\n\"and\",\n[\"backlinks\",\">\",\"10\"]]\n[[\"first_seen\",\">\",\"2017-10-23 11:31:45 +00:00\"],\n\"and\",\n[[\"anchor\",\"like\",\"%seo%\"],\"or\",[\"referring_domains\",\">\",\"10\"]]]\nThe full list of possible filters is available here."
-          nullable: true
-        order_by:
-          type: array
-          items:
-            type: string
-          description: "results sorting rules\noptional field\nyou can use the same values as in the filters array to sort the results\npossible sorting types:\nasc – results will be sorted in the ascending order\ndesc – results will be sorted in the descending order\nyou should use a comma to set up a sorting type\nexample:\n[\"backlinks,desc\"]\nnote that you can set no more than three sorting rules in a single request\nyou should use a comma to separate several sorting rules\nexample:\n[\"backlinks,desc\",\"rank,asc\"]"
-          nullable: true
-        backlinks_filters:
-          type: array
-          items:
-            type: object
-            nullable: true
-          description: "filter the backlinks of your target\noptional field\nyou can use this field to filter the initial backlinks that will be included in the dataset for aggregated metrics for your target\nyou can filter the backlinks by all fields available in the response of this endpoint\nusing this parameter, you can include only dofollow backlinks in the response and create a flexible backlinks dataset to calculate the metrics for\nexample:\n\"backlinks_filters\": [[\"dofollow\", \"=\", true]]"
-          nullable: true
         include_subdomains:
           type: boolean
           description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
-          nullable: true
-        include_indirect_links:
-          type: boolean
-          description: "indicates if indirect links to the target will be included in the results\noptional field\nif set to true, the results will include data on indirect links pointing to a page that either redirects to the target, or points to a canonical page\nif set to false, indirect links will be ignored\ndefault value: true"
-          nullable: true
-        exclude_internal_backlinks:
-          type: boolean
-          description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, the backlinks from subdomains of the target will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
           nullable: true
         tag:
           type: string
@@ -47629,6 +47539,10 @@ components:
           type: string
           description: "custom user agent\noptional field\ncustom user agent for crawling a website\nexample: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36\n\ndefault value: Mozilla/5.0 (compatible; RSiteAuditor)"
           nullable: true
+        custom_js:
+          type: string
+          description: "custom javascript\noptional field\nNote that the execution time for the script you enter here should be 700 ms maximum, for example, you can use the following JS snippet to check if the website contains Google Tag Manager as a scr attribute:\nlet meta = { haveGoogleAnalytics: false, haveTagManager: false };\\r\\nfor (var i = 0; i < document.scripts.length; i++) {\\r\\n let src = document.scripts[i].getAttribute(\\\"src\\\");\\r\\n if (src != undefined) {\\r\\n if (src.indexOf(\\\"analytics.js\\\") >= 0)\\r\\n      meta.haveGoogleAnalytics = true;\\r\\n\\tif (src.indexOf(\\\"gtm.js\\\") >= 0)\\r\\n      meta.haveTagManager = true;\\r\\n  }\\r\\n}\\r\\nmeta;the returned value depends on what you specified in this field. For instance, if you specify the following script:\nmeta = {}; meta.url = document.URL; meta.test = 'test'; meta;\nas a response you will receive the following data:\n\"custom_js_response\": {\n\"url\": \"https://dataforseo.com/\",\n\"test\": \"test\"\n}\nNote: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page"
+          nullable: true
         browser_preset:
           type: string
           description: "preset for browser screen parameters\noptional field\nif you use this field, you don’t need to indicate browser_screen_width, browser_screen_height, browser_screen_scale_factor\npossible values:\ndesktop, mobile, tablet\ndesktop preset will apply the following values:\nbrowser_screen_width: 1920\nbrowser_screen_height: 1080\nbrowser_screen_scale_factor: 1\nmobile preset will apply the following values:\nbrowser_screen_width: 390\nbrowser_screen_height: 844\nbrowser_screen_scale_factor: 3\ntablet preset will apply the following values:\nbrowser_screen_width: 1024\nbrowser_screen_height: 1366\nbrowser_screen_scale_factor: 2\nNote: to use this parameter, set enable_javascript or enable_browser_rendering to true"
@@ -47766,13 +47680,17 @@ components:
           type: string
           description: "language header for accessing the website\noptional field\nall locale formats are supported (xx, xx-XX, xxx-XX, etc.)\nNote: if you do not specify this parameter, some websites may deny access; in this case, pages will be returned with the \"type\":\"broken in the response array"
           nullable: true
+        load_resources:
+          type: boolean
+          description: "load resources\noptional field\nset to true if you want to load image, stylesheets, scripts, and broken resources\ndefault value: false\nNote: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page"
+          nullable: true
         enable_javascript:
           type: boolean
           description: "load javascript on a page\noptional field\nset to true if you want to load the scripts available on a page\ndefault value: false\nNote: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page"
           nullable: true
         enable_browser_rendering:
           type: boolean
-          description: "emulate browser rendering to measure Core Web Vitals\noptional field\nby using this parameter you will be able to emulate a browser when loading a web page;\nenable_browser_rendering loads styles, images, fonts, animations, videos, and other resources on a page;\ndefault value: false\nset to true to obtain Core Web Vitals (FID, CLS, LCP) metrics in the response;\nif you use this field, enable_javascript, and load_resources parameters must be set to true\nNote: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page"
+          description: "emulate browser rendering to measure Core Web Vitals\noptional field\nby using this parameter you will be able to emulate a browser when loading a web page;\nenable_browser_rendering loads styles, images, fonts, animations, videos, and other resources on a page;\ndefault value: false\nset to true to obtain Core Web Vitals (FID, CLS, LCP) metrics in the response;\nif you use this field, parameters enable_javascript, and load_resources are enabled automatically;\nNote: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page"
           nullable: true
         disable_cookie_popup:
           type: boolean
@@ -50415,7 +50333,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: shopping"
+          description: "type of search engine\nexample: products"
           nullable: true
         date_posted:
           type: string
@@ -53167,7 +53085,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: shopping"
+          description: type of search engine
           nullable: true
         date_posted:
           type: string
@@ -53561,7 +53479,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: shopping"
+          description: type of search engine
           nullable: true
         date_posted:
           type: string
@@ -54164,6 +54082,9 @@ components:
           type: string
           description: search engine specified when setting the task
           nullable: true
+        se_type:
+          type: string
+          nullable: true
         date_posted:
           type: string
           description: date when the task was posted (in the UTC format)
@@ -54420,6 +54341,9 @@ components:
           type: string
           description: search engine specified when setting the task
           nullable: true
+        se_type:
+          type: string
+          nullable: true
         date_posted:
           type: string
           description: date when the task was posted (in the UTC format)
@@ -54663,6 +54587,9 @@ components:
         se:
           type: string
           description: search engine specified when setting the task
+          nullable: true
+        se_type:
+          type: string
           nullable: true
         date_posted:
           type: string
@@ -55086,6 +55013,9 @@ components:
         se:
           type: string
           description: search engine specified when setting the task
+          nullable: true
+        se_type:
+          type: string
           nullable: true
         date_posted:
           type: string
@@ -55701,6 +55631,9 @@ components:
           type: string
           description: search engine specified when setting the task
           nullable: true
+        se_type:
+          type: string
+          nullable: true
         date_posted:
           type: string
           description: date when the task was posted (in the UTC format)
@@ -55882,6 +55815,9 @@ components:
         se:
           type: string
           description: search engine specified when setting the task
+          nullable: true
+        se_type:
+          type: string
           nullable: true
         date_posted:
           type: string
@@ -56204,6 +56140,9 @@ components:
           type: string
           description: search engine specified when setting the task
           nullable: true
+        se_type:
+          type: string
+          nullable: true
         date_posted:
           type: string
           description: date when the task was posted (in the UTC format)
@@ -56393,6 +56332,9 @@ components:
         se:
           type: string
           description: search engine specified when setting the task
+          nullable: true
+        se_type:
+          type: string
           nullable: true
         date_posted:
           type: string
@@ -57632,6 +57574,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine specified when setting the task
           nullable: true
         date_posted:
           type: string
@@ -58076,6 +58019,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine type
           nullable: true
         date_posted:
           type: string
@@ -58354,6 +58298,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine type
           nullable: true
         date_posted:
           type: string
@@ -58839,6 +58784,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine specified when setting the task
           nullable: true
         date_posted:
           type: string
@@ -59619,7 +59565,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\ncan take the following values: reviews"
+          description: type of search engine
           nullable: true
         date_posted:
           type: string
@@ -59891,6 +59837,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine type
           nullable: true
         date_posted:
           type: string
@@ -60338,6 +60285,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine type
           nullable: true
         date_posted:
           type: string
@@ -60527,6 +60475,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine type
           nullable: true
         date_posted:
           type: string
@@ -60917,6 +60866,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine type
           nullable: true
         date_posted:
           type: string
@@ -61177,6 +61127,7 @@ components:
           nullable: true
         se_type:
           type: string
+          description: search engine type
           nullable: true
         date_posted:
           type: string
@@ -61350,782 +61301,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/BusinessDataTripadvisorReviewsTaskGetTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessDataYelpLocationsResultInfo:
-      type: object
-      properties:
-        location_code:
-          type: integer
-          description: location code
-          nullable: true
-        location_name:
-          type: string
-          description: full name of the location
-          nullable: true
-        location_name_parent:
-          type: string
-          description: "the name of the superordinate location\nexample:\n\"location_code\": 9041134,\n\"location_name\": \"Vienna International Airport,Lower Austria,Austria\",\n\"location_name_parent\": \"Lower Austria,Austria\""
-          nullable: true
-        country_iso_code:
-          type: string
-          description: ISO country code of the location
-          nullable: true
-        location_type:
-          type: string
-          description: location type
-          nullable: true
-    BusinessDataYelpLocationsTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpLocationsResultInfo'
-              description: array of results
-              nullable: true
-    BusinessDataYelpLocationsResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpLocationsTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessDataYelpLocationsCountryResultInfo:
-      type: object
-      properties:
-        location_code:
-          type: integer
-          description: location code
-          nullable: true
-        location_name:
-          type: string
-          description: full name of the location
-          nullable: true
-        location_name_parent:
-          type: string
-          description: "the name of the superordinate location\nexample:\n\"location_code\": 9041134,\n\"location_name\": \"Vienna International Airport,Lower Austria,Austria\",\n\"location_name_parent\": \"Lower Austria,Austria\""
-          nullable: true
-        country_iso_code:
-          type: string
-          description: ISO country code of the location
-          nullable: true
-        location_type:
-          type: string
-          description: location type
-          nullable: true
-    BusinessDataYelpLocationsCountryTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpLocationsCountryResultInfo'
-              description: array of results
-              nullable: true
-    BusinessDataYelpLocationsCountryResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpLocationsCountryTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessDataYelpLanguagesResultInfo:
-      type: object
-      properties:
-        language_name:
-          type: string
-          description: language name
-          nullable: true
-        language_code:
-          type: string
-          description: language code according to ISO 639-1
-          nullable: true
-    BusinessDataYelpLanguagesTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpLanguagesResultInfo'
-              description: array of results
-              nullable: true
-    BusinessDataYelpLanguagesResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpLanguagesTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessDataYelpSearchTaskPostRequestInfo:
-      type: object
-      properties:
-        keyword:
-          type: string
-          description: "search query\noptional field\nyou can specify up to 700 symbols in the keyword filed;\nall %## will be decoded (plus symbol ‘+’ will be decoded to a space character)\nif you need to use the “%” symbol for your keyword, please specify it as “%25”\nNote: if the keyword is not specified, the results will be returned based on the location alone"
-          nullable: true
-        priority:
-          type: integer
-          description: "task priority\noptional field\ncan take the following values:\n1 – normal execution priority (set by default)\n2 – high execution priority\nYou will be additionally charged for the tasks with high execution priority.\nThe cost can be calculated on the Pricing page."
-          nullable: true
-        location_name:
-          type: string
-          description: "full name of search engine location\nrequired field if you don’t specify location_code\nif you use this field, you don’t need to specify location_code\nyou can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/locations\nexample:\nWest Los Angeles,California,United States"
-          nullable: true
-        location_code:
-          type: integer
-          description: "search engine location code\nrequired field if you don’t specify location_name\nif you use this field, you don’t need to specify location_name\nyou can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/locations\nexample:\n9061121"
-          nullable: true
-        language_name:
-          type: string
-          description: "full name of search engine language\noptional field\nif you use this field, you don’t need to specify language_code\nyou can receive the list of available languages with language_name by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/languages\nexample:\nEnglish"
-          nullable: true
-        language_code:
-          type: string
-          description: "search engine language code\noptional field\nif you use this field, you don’t need to specify language_name\nyou can receive the list of available languages with their language_code by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/languages\nexample:\nen"
-          nullable: true
-        depth:
-          type: integer
-          description: "parsing depth\noptional field\nnumber of reviews in SERP\nwe strongly recommend setting the parsing depth in the multiples of ten, because our systems processes ten reviews in a row\ndefault value: 10\nmaximal value: 70"
-          nullable: true
-        sort_by:
-          type: string
-          description: "results sorting parameters\noptional field\nyou can use this field to sort the results\npossible types of sorting:\nrecommended – sort by Yelp recommendation\nrating – sort by highest rating\nreviews_count – sort by the highest count of reviews\ndefault value: recommended"
-          nullable: true
-        tag:
-          type: string
-          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
-          nullable: true
-        postback_url:
-          type: string
-          description: "return URL for sending task results\noptional field\nonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.\nexample:\nhttp://your-server.com/postbackscript?id=$id\nhttp://your-server.com/postbackscript?id=$id&tag=$tag\nNote: special symbols in postback_url will be urlencoded;\ni.a., the # symbol will be encoded into %23"
-          nullable: true
-        pingback_url:
-          type: string
-          description: "notification URL of a completed task\noptional field\nwhen a task is completed we will notify you by GET request sent to the URL you have specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.\nexample:\nhttp://your-server.com/pingscript?id=$id\nhttp://your-server.com/pingscript?id=$id&tag=$tag\nNote: special symbols in pingback_url will be urlencoded;\ni.a., the # symbol will be encoded into %23"
-          nullable: true
-    BusinessDataYelpSearchTaskPostTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: object
-              description: "array of results\nin this case, the value will be null"
-              nullable: true
-    BusinessDataYelpSearchTaskPostResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTaskPostTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessDataYelpSearchTasksReadyResultInfo:
-      type: object
-      properties:
-        id:
-          type: string
-          description: "task identifier of the completed task\nunique task identifier in our system in the UUID format"
-          nullable: true
-        se:
-          type: string
-          description: "search engine specified when setting the task\ncan take the following values: yelp"
-          nullable: true
-        se_type:
-          type: string
-          description: "type of search engine\ncan take the following values: search"
-          nullable: true
-        date_posted:
-          type: string
-          description: date when the task was posted (in the UTC format)
-          nullable: true
-        tag:
-          type: string
-          description: user-defined task identifier
-          nullable: true
-        endpoint:
-          type: string
-          description: URL for collecting the results of the task
-          nullable: true
-    BusinessDataYelpSearchTasksReadyTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTasksReadyResultInfo'
-              description: array of results
-              nullable: true
-    BusinessDataYelpSearchTasksReadyResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTasksReadyTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessAddressLocationInfo:
-      type: object
-      properties:
-        address_lines:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: "business address\ncontains few address lines specified by the business entity"
-          nullable: true
-        latitude:
-          type: string
-          description: latitude in GPS coordinates
-          nullable: true
-        longitude:
-          type: string
-          description: longitude in GPS coordinates
-          nullable: true
-    ServiceOfferingsElement:
-      type: object
-      properties:
-        type:
-          type: string
-          description: type of element
-          nullable: true
-        name:
-          type: string
-          description: "name of the label\nexample: Delivery"
-          nullable: true
-        is_available:
-          type: boolean
-          description: "availability of the offering\nif the value is false, the offering is not available"
-          nullable: true
-    YelpSearchOrganicBusinessDataSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseBusinessDataSerpElementItem'
-        - type: object
-          properties:
-            rank_group:
-              type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank among all the listed results\nabsolute position among all reviews on the list"
-              nullable: true
-            yelp_business_id:
-              type: string
-              description: "the unique identifier of a business identity on Yelp\nexample:\n2sWZ17vpEF2vuM_7ic721w"
-              nullable: true
-            business_url:
-              type: string
-              description: link to the Yelp profile of the business entity
-              nullable: true
-            alias:
-              type: string
-              description: "Yelp business identifier\ndisplayed only if the request contained the corresponding field"
-              nullable: true
-            name:
-              type: string
-              description: name of the business entity
-              nullable: true
-            description:
-              type: string
-              description: description containing the featured review
-              nullable: true
-            location:
-              $ref: '#/components/schemas/BusinessAddressLocationInfo'
-            price_range:
-              type: integer
-              description: "price range of the business entity\nindicates the number of currency signs next to the business listing corresponding to its price score"
-              nullable: true
-            phone:
-              type: string
-              description: "contact phone number\nexample:\n(804) 342-1981"
-              nullable: true
-            is_guaranteed:
-              type: boolean
-              description: Yelp guaranteed label
-              nullable: true
-            rating:
-              $ref: '#/components/schemas/RatingInfo'
-            categories:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: categories related to the business entity
-              nullable: true
-            photos:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: links to photos appearing in the result
-              nullable: true
-            tags:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: "tags generated by Yelp\nexample:\n\"New on Yelp\""
-              nullable: true
-            business_highlights:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: "highlights describing business offerings\nexample:\n\"casual_dining\""
-              nullable: true
-            service_offerings:
-              type: array
-              items:
-                $ref: '#/components/schemas/ServiceOfferingsElement'
-              description: tags corresponding to the availability of certain business offerings
-              nullable: true
-    YelpSearchPaidBusinessDataSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseBusinessDataSerpElementItem'
-        - type: object
-          properties:
-            rank_group:
-              type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank among all the listed results\nabsolute position among all reviews on the list"
-              nullable: true
-            yelp_business_id:
-              type: string
-              description: "the unique identifier of a business identity on Yelp\nexample:\n2sWZ17vpEF2vuM_7ic721w"
-              nullable: true
-            business_url:
-              type: string
-              description: link to the Yelp profile of the business entity
-              nullable: true
-            alias:
-              type: string
-              description: "Yelp business identifier\ndisplayed only if the request contained the corresponding field"
-              nullable: true
-            name:
-              type: string
-              description: name of the business entity
-              nullable: true
-            description:
-              type: string
-              description: description containing the featured review
-              nullable: true
-            location:
-              $ref: '#/components/schemas/BusinessAddressLocationInfo'
-            price_range:
-              type: integer
-              description: "price range of the business entity\nindicates the number of currency signs next to the business listing corresponding to its price score"
-              nullable: true
-            phone:
-              type: string
-              description: "contact phone number\nexample:\n(804) 342-1981"
-              nullable: true
-            is_guaranteed:
-              type: boolean
-              description: Yelp guaranteed label
-              nullable: true
-            rating:
-              $ref: '#/components/schemas/RatingInfo'
-            categories:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: categories related to the business entity
-              nullable: true
-            photos:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: links to photos appearing in the result
-              nullable: true
-            tags:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: "tags generated by Yelp\nexample:\n\"New on Yelp\""
-              nullable: true
-            business_highlights:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: "highlights describing business offerings\nexample:\n\"casual_dining\""
-              nullable: true
-            service_offerings:
-              type: array
-              items:
-                $ref: '#/components/schemas/ServiceOfferingsElement'
-              description: tags corresponding to the availability of certain business offerings
-              nullable: true
-    BusinessDataYelpSearchTaskGetResultInfo:
-      type: object
-      properties:
-        keyword:
-          type: string
-          description: "keyword received in a POST array\nthis field will contain the alias parameter if it was specified in a POST array"
-          nullable: true
-        se_domain:
-          type: string
-          description: search engine domain in a POST array
-          nullable: true
-        location_code:
-          type: string
-          description: "location code in a POST array\nif location_code was not specified in a POST array, the value equals null"
-          nullable: true
-        language_code:
-          type: string
-          description: language code in a POST array
-          nullable: true
-        check_url:
-          type: string
-          description: "direct URL to Yelp results\nyou can use it to make sure that we provided accurate results"
-          nullable: true
-        datetime:
-          type: string
-          description: "date and time when the result was received\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
-          nullable: true
-        item_types:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: "item types encountered in the result\npossible item types: yelp_search_organic, yelp_search_paid"
-          nullable: true
-        se_results_count:
-          type: integer
-          description: the total number of results
-          format: int64
-          nullable: true
-        items_count:
-          type: integer
-          description: "the number of items in the results array\nyou can get more results by using the depth parameter when setting a task"
-          format: int64
-          nullable: true
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BaseBusinessDataSerpElementItem'
-          description: "Yelp search listing results\nyou can get more results by using the depth parameter when setting a task"
-          nullable: true
-    BusinessDataYelpSearchTaskGetTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTaskGetResultInfo'
-              description: array of results
-              nullable: true
-    BusinessDataYelpSearchTaskGetResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpSearchTaskGetTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessDataYelpReviewsTaskPostRequestInfo:
-      type: object
-      properties:
-        alias:
-          type: string
-          description: "unique business identifier\nrequired field if you don’t specify keyword\nif you use this field, you don’t need to specify keyword\nunique business identifier on Yelp;\nyou can find this identifier in the URL of every business listed on Yelp\nexample:\nvatos-urban-tacos-singapore\nhttps://www.yelp.com/biz/vatos-urban-tacos-singapore?rl=en"
-          nullable: true
-        keyword:
-          type: string
-          description: "keyword\nrequired field if you don’t specify alias\nif you use this field, you don’t need to specify alias\nyou can specify up to 700 symbols in the keyword filed;\nall %## will be decoded (plus symbol ‘+’ will be decoded to a space character)\nif you need to use the “%” symbol for your keyword, please specify it as “%25”"
-          nullable: true
-        priority:
-          type: integer
-          description: "task priority\noptional field\ncan take the following values:\n1 – normal execution priority (set by default)\n2 – high execution priority\nYou will be additionally charged for the tasks with high execution priority.\nThe cost can be calculated on the Pricing page."
-          nullable: true
-        location_name:
-          type: string
-          description: "full name of search engine location\nrequired field if you don’t specify location_code or alias\nif you use this field, you don’t need to specify location_code\nyou can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/locations\nexample:\nWest Los Angeles,California,United States"
-          nullable: true
-        location_code:
-          type: integer
-          description: "search engine location code\nrequired field if you don’t specify location_name or alias\nif you use this field, you don’t need to specify location_name\nyou can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/locations\nexample:\n9061121"
-          nullable: true
-        language_name:
-          type: string
-          description: "full name of search engine language\noptional field\nif you use this field, you don’t need to specify language_code\nyou can receive the list of available languages with language_name by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/languages\nexample:\nEnglish"
-          nullable: true
-        language_code:
-          type: string
-          description: "search engine language code\noptional field\nif you use this field, you don’t need to specify language_name\nyou can receive the list of available languages with their language_code by making a separate request to https://api.dataforseo.com/v3/business_data/yelp/languages\nexample:\nen"
-          nullable: true
-        depth:
-          type: integer
-          description: "parsing depth\noptional field\nnumber of reviews in SERP\nwe strongly recommend setting the parsing depth in the multiples of ten, because our systems processes ten reviews in a row\ndefault value: 10\nmaximum value: 4490"
-          nullable: true
-        sort_by:
-          type: string
-          description: "results sorting parameters\noptional field\nyou can use this field to sort the results\npossible types of sorting:\nnewest – sort by newest first\nhighest_rating – sort by highest rating\nlowest_rating – sort by lowest rating\nrelevant – sort by relevance\nelites – sort by elite Yelp users first\ndefault value: relevant"
-          nullable: true
-        tag:
-          type: string
-          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
-          nullable: true
-        postback_url:
-          type: string
-          description: "return URL for sending task results\noptional field\nonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.\nexample:\nhttp://your-server.com/postbackscript?id=$id\nhttp://your-server.com/postbackscript?id=$id&tag=$tag\nNote: special symbols in postback_url will be urlencoded;\ni.a., the # symbol will be encoded into %23"
-          nullable: true
-        pingback_url:
-          type: string
-          description: "notification URL of a completed task\noptional field\nwhen a task is completed we will notify you by GET request sent to the URL you have specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.\nexample:\nhttp://your-server.com/pingscript?id=$id\nhttp://your-server.com/pingscript?id=$id&tag=$tag\nNote: special symbols in pingback_url will be urlencoded;\ni.a., the # symbol will be encoded into %23"
-          nullable: true
-    BusinessDataYelpReviewsTaskPostTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: object
-              description: "array of results\nin this case, the value will be null"
-              nullable: true
-    BusinessDataYelpReviewsTaskPostResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTaskPostTaskInfo'
-              description: array of tasks
-              nullable: true
-    BusinessDataYelpReviewsTasksReadyResultInfo:
-      type: object
-      properties:
-        id:
-          type: string
-          description: "task identifier of the completed task\nunique task identifier in our system in the UUID format"
-          nullable: true
-        se:
-          type: string
-          description: "search engine specified when setting the task\ncan take the following values: yelp"
-          nullable: true
-        se_type:
-          type: string
-          description: "type of search engine\ncan take the following values: reviews"
-          nullable: true
-        date_posted:
-          type: string
-          description: date when the task was posted (in the UTC format)
-          nullable: true
-        tag:
-          type: string
-          description: user-defined task identifier
-          nullable: true
-        endpoint:
-          type: string
-          description: URL for collecting the results of the task
-          nullable: true
-    BusinessDataYelpReviewsTasksReadyTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTasksReadyResultInfo'
-              description: array of results
-              nullable: true
-    BusinessDataYelpReviewsTasksReadyResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTasksReadyTaskInfo'
-              description: array of tasks
-              nullable: true
-    YelpReviewsSearchBusinessDataSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseBusinessDataSerpElementItem'
-        - type: object
-          properties:
-            rank_group:
-              type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank among all the listed reviews\nabsolute position among all reviews on the list"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the review in SERP\ncan take the following values: left"
-              nullable: true
-            review_id:
-              type: string
-              description: "the unique identifier of a review received from Yelp\nexample:\nWvjNtncj8PDZytbofWlC5A"
-              nullable: true
-            rating:
-              $ref: '#/components/schemas/RatingInfo'
-            timestamp:
-              type: string
-              description: "the time of publication\nindicates timestamp of when the review was listed"
-              nullable: true
-            review_text:
-              type: string
-              description: the content of the review
-              nullable: true
-            review_images:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: "images submitted by the reviewer\nyou will find URLs to the images provided by the author of this review"
-              nullable: true
-            user_profile:
-              $ref: '#/components/schemas/BusinessDataUserProfileInfo'
-            responses:
-              type: array
-              items:
-                $ref: '#/components/schemas/ReviewResponseItemInfo'
-              description: text of the owner’s response
-              nullable: true
-    BusinessDataYelpReviewsTaskGetResultInfo:
-      type: object
-      properties:
-        keyword:
-          type: string
-          description: "keyword received in a POST array\nthis field will contain the alias parameter if it was specified in a POST array"
-          nullable: true
-        alias:
-          type: string
-          description: Yelp business identifier
-          nullable: true
-        type:
-          type: string
-          description: type of element
-          nullable: true
-        se_domain:
-          type: string
-          description: search engine domain in a POST array
-          nullable: true
-        location_code:
-          type: string
-          description: "location code in a POST array\nif location_code was not specified in a POST array, the value equals null"
-          nullable: true
-        language_code:
-          type: string
-          description: language code in a POST array
-          nullable: true
-        check_url:
-          type: string
-          description: "direct URL to Yelp results\nyou can use it to make sure that we provided accurate results"
-          nullable: true
-        datetime:
-          type: string
-          description: "date and time when the result was received\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
-          nullable: true
-        title:
-          type: string
-          description: "title of the reviews from Yelp\nthe name of the local establishment for which the reviews are collected"
-          nullable: true
-        rating:
-          $ref: '#/components/schemas/RatingInfo'
-        reviews_count:
-          type: integer
-          description: the total number of reviews
-          format: int64
-          nullable: true
-        items_count:
-          type: integer
-          description: "the number of reviews items in the results array\nyou can get more results by using the depth parameter when setting a task"
-          format: int64
-          nullable: true
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BaseBusinessDataSerpElementItem'
-          description: "found reviews\nyou can get more results by using the depth parameter when setting a task"
-          nullable: true
-    BusinessDataYelpReviewsTaskGetTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTaskGetResultInfo'
-              description: array of results
-              nullable: true
-    BusinessDataYelpReviewsTaskGetResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/BusinessDataYelpReviewsTaskGetTaskInfo'
               description: array of tasks
               nullable: true
     BusinessDataSocialMediaPinterestLiveRequestInfo:
@@ -62367,7 +61542,7 @@ components:
           type: number
           format: double
           nullable: true
-    AppendixFunctionInfo:
+    AppendixInfo:
       type: object
       properties:
         task_post:
@@ -62386,15 +61561,15 @@ components:
       type: object
       properties:
         keyword_performance:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         search_volume_history:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         search_volume:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_site:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo:
       type: object
       properties:
@@ -62418,35 +61593,35 @@ components:
           format: double
           nullable: true
         search_volume:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_site:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         ad_traffic_by_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo:
       type: object
       properties:
         explore:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         subregion_interests:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         demography:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         merged_data:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixKeywordsDataDaysRatesDataInfo:
       type: object
       properties:
         keywords_for_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_site:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         search_volume:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         ad_traffic_by_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         languages:
           type: number
           format: double
@@ -62460,7 +61635,7 @@ components:
           format: double
           nullable: true
         explore:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         categories:
           type: number
           format: double
@@ -62474,7 +61649,7 @@ components:
         keyword_performance:
           $ref: '#/components/schemas/AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo'
         search_volume_history:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         google_ads:
           $ref: '#/components/schemas/AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo'
         dataforseo_trends:
@@ -62506,79 +61681,79 @@ components:
           format: double
           nullable: true
         product_competitors:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         product_keyword_intersections:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         product_rank_overview:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         ranked_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         serp_competitors:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         subdomains:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         relevant_pages:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         competitors_domain:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         related_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domain_rank_overview:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domain_intersection:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         page_intersection:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_traffic_estimation:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_keyword_difficulty:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_search_volume:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_site:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keyword_suggestions:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keyword_ideas:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         historical_search_volume:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         categories_for_domain:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domain_metrics_by_categories:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         top_searches:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domain_whois_overview:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         historical_rank_overview:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_categories:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         historical_serps:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         app_competitors:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_app:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         app_intersection:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_app_metrics:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         search_intent:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixWhoisDomainAnalyticsLimitsRatesDataInfo:
       type: object
       properties:
         overview:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo:
       type: object
       properties:
         domain_technologies:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domains_by_technology:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         languages:
           type: number
           format: double
@@ -62592,13 +61767,13 @@ components:
           format: double
           nullable: true
         aggregation_technologies:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         technologies_summary:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domains_by_html_terms:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         technology_stats:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixDomainAnalyticsLimitsRatesDataInfo:
       type: object
       properties:
@@ -62740,7 +61915,7 @@ components:
           format: double
           nullable: true
         lighthouse:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keyword_density:
           type: number
           format: double
@@ -62761,40 +61936,40 @@ components:
       type: object
       properties:
         my_business_info:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         my_business_updates:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         hotel_info:
           $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
         hotel_searches:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         reviews:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         questions_and_answers:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixBusinessDataDayLimitsRatesDataInfo:
       type: object
       properties:
         reviews:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         search:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixSocialMediaBusinessDataLimitsRatesDataInfo:
       type: object
       properties:
         facebook:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         pinterest:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         reddit:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixBusinessListingsBusinessDataLimitsRatesDataInfo:
       type: object
       properties:
         search:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         categories_aggregation:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         categories:
           type: number
           format: double
@@ -62838,49 +62013,49 @@ components:
       type: object
       properties:
         summary:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         history:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         content_duplicates:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domain_intersection:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         backlinks:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         domain_pages:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         anchors:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         referring_domains:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         page_intersection:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         referring_networks:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_ranks:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_backlinks:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_new_lost_backlinks:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_new_lost_referring_domains:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_referring_domains:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         errors:
           type: number
           format: double
           nullable: true
         domain_pages_summary:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         timeseries_summary:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         timeseries_new_lost_summary:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         competitors:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         bulk_pages_summary:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixAppDataLimitsRatesDataInfo:
       type: object
       properties:
@@ -62916,17 +62091,17 @@ components:
       type: object
       properties:
         search:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         summary:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         sentiment_analysis:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         rating_distribution:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         phrase_trends:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         category_trends:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         locations:
           type: number
           format: double
@@ -62958,19 +62133,19 @@ components:
       type: object
       properties:
         generate:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         generate_meta_tags:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         generate_text:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         paraphrase:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         check_grammar:
           $ref: '#/components/schemas/AppendixContentGenerationDayLimitsRatesDataInfo'
         text_summary:
           $ref: '#/components/schemas/AppendixContentGenerationDayLimitsRatesDataInfo'
         generate_sub_topics:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixDayLimitsRatesData:
       type: object
       properties:
@@ -63067,20 +62242,20 @@ components:
       type: object
       properties:
         keywords_for_category:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         search_volume:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
     AppendixKeywordsDataDataInfo:
       type: object
       properties:
         keywords_for_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         keywords_for_site:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         search_volume:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         ad_traffic_by_keywords:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         languages:
           type: number
           format: double
@@ -63094,7 +62269,7 @@ components:
           format: double
           nullable: true
         explore:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         categories:
           type: number
           format: double
@@ -63108,7 +62283,7 @@ components:
         keyword_performance:
           $ref: '#/components/schemas/AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo'
         search_volume_history:
-          $ref: '#/components/schemas/AppendixFunctionInfo'
+          $ref: '#/components/schemas/AppendixInfo'
         google_ads:
           $ref: '#/components/schemas/AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo'
         dataforseo_trends:
@@ -63576,11 +62751,11 @@ components:
     AppendixSerpPriceDataInfo:
       type: object
       properties:
+        advanced:
+          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         regular:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         html:
-          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-        advanced:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
     AppendixSerpPriceData:
       type: object
@@ -63709,7 +62884,7 @@ components:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         tasks_ready:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-    AppendixsGoogleBusinessDataPriceDataInfo:
+    AppendixGoogleBusinessDataPriceDataInfo:
       type: object
       properties:
         live:
@@ -63726,22 +62901,22 @@ components:
         hotel_info:
           $ref: '#/components/schemas/AppendixHotelInfoGoogleBusinessDataPriceData'
         hotel_searches:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
         my_business_info:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
         my_business_updates:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
         questions_and_answers:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
         reviews:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
     AppendixTrBusinessDataPriceDataInfo:
       type: object
       properties:
         reviews:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
         search:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
     AppendixBusinessDataPriceData:
       type: object
       properties:
@@ -63926,7 +63101,7 @@ components:
         errors:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         lighthouse:
-          $ref: '#/components/schemas/AppendixsGoogleBusinessDataPriceDataInfo'
+          $ref: '#/components/schemas/AppendixGoogleBusinessDataPriceDataInfo'
         content_parsing:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         content_parsing_live:

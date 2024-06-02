@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
 **position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
-**title** | **str** | title of the item | [optional] 
+**title** | **str** | title of the link | [optional] 
 **data_attrid** | **str** | google defined data attribute ID example: action:listen_artist | [optional] 
 **text** | **str** | row content | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 

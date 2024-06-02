@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +27,9 @@ class AppendixSocialMediaBusinessDataLimitsRatesDataInfo(BaseModel):
     """
     AppendixSocialMediaBusinessDataLimitsRatesDataInfo
     """ # noqa: E501
-    facebook: Optional[AppendixFunctionInfo] = None
-    pinterest: Optional[AppendixFunctionInfo] = None
-    reddit: Optional[AppendixFunctionInfo] = None
+    facebook: Optional[AppendixInfo] = None
+    pinterest: Optional[AppendixInfo] = None
+    reddit: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["facebook", "pinterest", "reddit"]
 
     model_config = {
@@ -92,9 +92,9 @@ class AppendixSocialMediaBusinessDataLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "facebook": AppendixFunctionInfo.from_dict(obj["facebook"]) if obj.get("facebook") is not None else None,
-            "pinterest": AppendixFunctionInfo.from_dict(obj["pinterest"]) if obj.get("pinterest") is not None else None,
-            "reddit": AppendixFunctionInfo.from_dict(obj["reddit"]) if obj.get("reddit") is not None else None
+            "facebook": AppendixInfo.from_dict(obj["facebook"]) if obj.get("facebook") is not None else None,
+            "pinterest": AppendixInfo.from_dict(obj["pinterest"]) if obj.get("pinterest") is not None else None,
+            "reddit": AppendixInfo.from_dict(obj["reddit"]) if obj.get("reddit") is not None else None
         })
         return _obj
 

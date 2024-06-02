@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**search** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**summary** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**sentiment_analysis** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**rating_distribution** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**phrase_trends** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**category_trends** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**search** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**sentiment_analysis** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**rating_distribution** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**phrase_trends** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**category_trends** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **locations** | **float** |  | [optional] 
 **languages** | **float** |  | [optional] 
 **categories** | **float** |  | [optional] 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**search** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**categories_aggregation** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**search** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**categories_aggregation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **categories** | **float** |  | [optional] 
 **locations** | **float** |  | [optional] 
 

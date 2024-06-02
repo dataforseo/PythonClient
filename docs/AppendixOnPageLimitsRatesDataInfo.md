@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **raw_html** | **float** |  | [optional] 
 **instant_pages** | **float** |  | [optional] 
 **redirect_chains** | **float** |  | [optional] 
-**lighthouse** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**lighthouse** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_density** | **float** |  | [optional] 
 **page_screenshot** | **float** |  | [optional] 
 **content_parsing** | **float** |  | [optional] 

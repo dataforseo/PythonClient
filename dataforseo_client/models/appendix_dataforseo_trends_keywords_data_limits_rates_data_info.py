@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,10 +27,10 @@ class AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo(BaseModel):
     """
     AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo
     """ # noqa: E501
-    explore: Optional[AppendixFunctionInfo] = None
-    subregion_interests: Optional[AppendixFunctionInfo] = None
-    demography: Optional[AppendixFunctionInfo] = None
-    merged_data: Optional[AppendixFunctionInfo] = None
+    explore: Optional[AppendixInfo] = None
+    subregion_interests: Optional[AppendixInfo] = None
+    demography: Optional[AppendixInfo] = None
+    merged_data: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["explore", "subregion_interests", "demography", "merged_data"]
 
     model_config = {
@@ -96,10 +96,10 @@ class AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "explore": AppendixFunctionInfo.from_dict(obj["explore"]) if obj.get("explore") is not None else None,
-            "subregion_interests": AppendixFunctionInfo.from_dict(obj["subregion_interests"]) if obj.get("subregion_interests") is not None else None,
-            "demography": AppendixFunctionInfo.from_dict(obj["demography"]) if obj.get("demography") is not None else None,
-            "merged_data": AppendixFunctionInfo.from_dict(obj["merged_data"]) if obj.get("merged_data") is not None else None
+            "explore": AppendixInfo.from_dict(obj["explore"]) if obj.get("explore") is not None else None,
+            "subregion_interests": AppendixInfo.from_dict(obj["subregion_interests"]) if obj.get("subregion_interests") is not None else None,
+            "demography": AppendixInfo.from_dict(obj["demography"]) if obj.get("demography") is not None else None,
+            "merged_data": AppendixInfo.from_dict(obj["merged_data"]) if obj.get("merged_data") is not None else None
         })
         return _obj
 

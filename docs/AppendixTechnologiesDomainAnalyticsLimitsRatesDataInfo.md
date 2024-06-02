@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domain_technologies** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**domains_by_technology** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**domain_technologies** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**domains_by_technology** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **languages** | **float** |  | [optional] 
 **locations** | **float** |  | [optional] 
 **technologies** | **float** |  | [optional] 
-**aggregation_technologies** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**technologies_summary** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**domains_by_html_terms** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**technology_stats** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**aggregation_technologies** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**technologies_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**domains_by_html_terms** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**technology_stats** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

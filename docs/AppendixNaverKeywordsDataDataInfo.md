@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keywords_for_category** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**search_volume** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**keywords_for_category** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_function_info import AppendixFunctionInfo
+from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,11 +27,11 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
     """
     AppendixBingKeywordsDataLimitsRatesDataInfo
     """ # noqa: E501
-    keyword_performance: Optional[AppendixFunctionInfo] = None
-    search_volume_history: Optional[AppendixFunctionInfo] = None
-    search_volume: Optional[AppendixFunctionInfo] = None
-    keywords_for_site: Optional[AppendixFunctionInfo] = None
-    keywords_for_keywords: Optional[AppendixFunctionInfo] = None
+    keyword_performance: Optional[AppendixInfo] = None
+    search_volume_history: Optional[AppendixInfo] = None
+    search_volume: Optional[AppendixInfo] = None
+    keywords_for_site: Optional[AppendixInfo] = None
+    keywords_for_keywords: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["keyword_performance", "search_volume_history", "search_volume", "keywords_for_site", "keywords_for_keywords"]
 
     model_config = {
@@ -100,11 +100,11 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "keyword_performance": AppendixFunctionInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
-            "search_volume_history": AppendixFunctionInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
-            "search_volume": AppendixFunctionInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None,
-            "keywords_for_site": AppendixFunctionInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
-            "keywords_for_keywords": AppendixFunctionInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None
+            "keyword_performance": AppendixInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
+            "search_volume_history": AppendixInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
+            "search_volume": AppendixInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None,
+            "keywords_for_site": AppendixInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
+            "keywords_for_keywords": AppendixInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None
         })
         return _obj
 

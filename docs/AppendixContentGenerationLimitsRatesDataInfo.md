@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**generate** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**generate_meta_tags** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**generate_text** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
-**paraphrase** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**generate** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**generate_meta_tags** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**generate_text** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**paraphrase** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **check_grammar** | [**AppendixContentGenerationDayLimitsRatesDataInfo**](AppendixContentGenerationDayLimitsRatesDataInfo.md) |  | [optional] 
 **text_summary** | [**AppendixContentGenerationDayLimitsRatesDataInfo**](AppendixContentGenerationDayLimitsRatesDataInfo.md) |  | [optional] 
-**generate_sub_topics** | [**AppendixFunctionInfo**](AppendixFunctionInfo.md) |  | [optional] 
+**generate_sub_topics** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

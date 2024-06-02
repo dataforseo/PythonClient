@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.appendix_google_business_data_price_data_info import AppendixGoogleBusinessDataPriceDataInfo
 from dataforseo_client.models.appendix_hotel_info_google_business_data_price_data import AppendixHotelInfoGoogleBusinessDataPriceData
-from dataforseo_client.models.appendixs_google_business_data_price_data_info import AppendixsGoogleBusinessDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,11 +29,11 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
     AppendixGoogleBusinessDataPriceData
     """ # noqa: E501
     hotel_info: Optional[AppendixHotelInfoGoogleBusinessDataPriceData] = None
-    hotel_searches: Optional[AppendixsGoogleBusinessDataPriceDataInfo] = None
-    my_business_info: Optional[AppendixsGoogleBusinessDataPriceDataInfo] = None
-    my_business_updates: Optional[AppendixsGoogleBusinessDataPriceDataInfo] = None
-    questions_and_answers: Optional[AppendixsGoogleBusinessDataPriceDataInfo] = None
-    reviews: Optional[AppendixsGoogleBusinessDataPriceDataInfo] = None
+    hotel_searches: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
+    my_business_info: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
+    my_business_updates: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
+    questions_and_answers: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
+    reviews: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["hotel_info", "hotel_searches", "my_business_info", "my_business_updates", "questions_and_answers", "reviews"]
 
     model_config = {
@@ -106,11 +106,11 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
 
         _obj = cls.model_validate({
             "hotel_info": AppendixHotelInfoGoogleBusinessDataPriceData.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
-            "hotel_searches": AppendixsGoogleBusinessDataPriceDataInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
-            "my_business_info": AppendixsGoogleBusinessDataPriceDataInfo.from_dict(obj["my_business_info"]) if obj.get("my_business_info") is not None else None,
-            "my_business_updates": AppendixsGoogleBusinessDataPriceDataInfo.from_dict(obj["my_business_updates"]) if obj.get("my_business_updates") is not None else None,
-            "questions_and_answers": AppendixsGoogleBusinessDataPriceDataInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None,
-            "reviews": AppendixsGoogleBusinessDataPriceDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
+            "hotel_searches": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
+            "my_business_info": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["my_business_info"]) if obj.get("my_business_info") is not None else None,
+            "my_business_updates": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["my_business_updates"]) if obj.get("my_business_updates") is not None else None,
+            "questions_and_answers": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None,
+            "reviews": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
         })
         return _obj
 

@@ -33,7 +33,7 @@ class KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the link")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: ss:/webfacts:net_worth")
     link: Optional[LinkElement] = None
     items: Optional[List[KnowledgeGraphListElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
