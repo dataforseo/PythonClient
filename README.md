@@ -49,26 +49,21 @@ pip install dataforseo-client
 
 Example of live request
 ```python
-from __future__ import print_function
-import time
-
-import dataforseo_client
-from dataforseo_client.rest import ApiException
+from dataforseo_client_local import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client_local.api.serp_api import SerpApi
+from dataforseo_client_local.rest import ApiException
+from dataforseo_client_local.models.serp_google_organic_live_advanced_request_info import SerpGoogleOrganicLiveAdvancedRequestInfo
 from pprint import pprint
-import asyncio
+
 # Configure HTTP basic authorization: basicAuth
-configuration = dataforseo_client.Configuration()
-configuration.username = 'USERNAME'
-configuration.password = 'PASSWORD'
-
-with dataforseo_client.ApiClient(configuration) as api_client:
+configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+with dfs_api_provider.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    serp_api = dataforseo_client.SerpApi(api_client)
-
+    serp_api = SerpApi(api_client)
 
     try:
 
-        api_response = serp_api.google_organic_live_advanced([dataforseo_client.SerpGoogleOrganicLiveAdvancedRequestInfo(
+        api_response = serp_api.google_organic_live_advanced([SerpGoogleOrganicLiveAdvancedRequestInfo(
             language_name="English",
             location_name="United States",
             keyword="albert einstein"
@@ -83,32 +78,28 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 Example of Task-Based request
 
 ```python
-from __future__ import print_function
-import time
-
-import dataforseo_client
-from dataforseo_client.rest import ApiException
+from dataforseo_client_local import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client_local.api.serp_api import SerpApi
+from dataforseo_client_local.rest import ApiException
+from dataforseo_client_local.models.serp_task_request_info import SerpTaskRequestInfo
 from pprint import pprint
 import asyncio
-# Configure HTTP basic authorization: basicAuth
-configuration = dataforseo_client.Configuration()
-configuration.username = 'USERNAME'
-configuration.password = 'PASSWORD'
+import time
 
+# Configure HTTP basic authorization: basicAuth
+configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
 
 def GoogleOrganicTaskReady(id):
     result = serp_api.google_organic_tasks_ready()
     return any(any(xx.id == id for xx in x.result) for x in result.tasks)
 
-
-with dataforseo_client.ApiClient(configuration) as api_client:
+with dfs_api_provider.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    serp_api = dataforseo_client.SerpApi(api_client)
-
+    serp_api = SerpApi(api_client)
 
     try:
 
-        task_post = serp_api.google_organic_task_post([dataforseo_client.SerpTaskRequestInfo(
+        task_post = serp_api.google_organic_task_post([SerpTaskRequestInfo(
             language_name="English",
             location_name="United States",
             keyword="albert einstein"
@@ -118,7 +109,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
         start_time = time.time()
 
-        while GoogleOrganicTaskReady(task_id) and (time.time() - start_time) < 60:
+        while GoogleOrganicTaskReady(task_id) is not True and (time.time() - start_time) < 60:
            asyncio.sleep(1) 
 
         api_response = serp_api.google_organic_task_get_advanced(id=task_id)
