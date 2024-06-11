@@ -68,7 +68,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
     try:
 
-        api_response = serp_api.google_organic_live_advanced([dataforseo_client.SerpTaskRequestInfo(
+        api_response = serp_api.google_organic_live_advanced([dataforseo_client.SerpGoogleOrganicLiveAdvancedRequestInfo(
             language_name="English",
             location_name="United States",
             keyword="albert einstein"
