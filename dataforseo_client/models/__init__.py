@@ -22,7 +22,7 @@ def camel_to_snake(name):
 
 def __getattr__(name):
     file_name = camel_to_snake(name)
-    module = importlib.import_module(f'dataforseo_client_local.models.{file_name}')
+    module = importlib.import_module(f'dataforseo_client.models.{file_name}')
     model = getattr(module, name)
     globals()[name] = model
     return model

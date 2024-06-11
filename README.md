@@ -49,10 +49,10 @@ pip install dataforseo-client
 
 Example of live request
 ```python
-from dataforseo_client_local import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client_local.api.serp_api import SerpApi
-from dataforseo_client_local.rest import ApiException
-from dataforseo_client_local.models.serp_google_organic_live_advanced_request_info import SerpGoogleOrganicLiveAdvancedRequestInfo
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.serp_google_organic_live_advanced_request_info import SerpGoogleOrganicLiveAdvancedRequestInfo
 from pprint import pprint
 
 # Configure HTTP basic authorization: basicAuth
@@ -78,10 +78,10 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
 Example of Task-Based request
 
 ```python
-from dataforseo_client_local import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client_local.api.serp_api import SerpApi
-from dataforseo_client_local.rest import ApiException
-from dataforseo_client_local.models.serp_task_request_info import SerpTaskRequestInfo
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from pprint import pprint
 import asyncio
 import time
