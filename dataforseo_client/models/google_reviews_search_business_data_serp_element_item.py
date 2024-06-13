@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.images_element import ImagesElement
 from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.review_highlights import ReviewHighlights
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -51,7 +52,8 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
     owner_timestamp: Optional[StrictStr] = Field(default=None, description="date and time of the owner’s reply to the review in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     review_id: Optional[StrictStr] = Field(default=None, description="the unique identifier of a review on Google example: ChZDSUhNMG9nS0VJQ0FnSUMxbHFyMFlnEAE")
     images: Optional[List[ImagesElement]] = Field(default=None, description="images submitted by the reviewer")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "review_text", "original_review_text", "time_ago", "timestamp", "rating", "reviews_count", "photos_count", "local_guide", "profile_name", "profile_url", "review_url", "profile_image_url", "owner_answer", "original_owner_answer", "owner_time_ago", "owner_timestamp", "review_id", "images"]
+    review_highlights: Optional[List[ReviewHighlights]] = Field(default=None, description="review highlights contains highlighted review criteria and assessments")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "review_text", "original_review_text", "time_ago", "timestamp", "rating", "reviews_count", "photos_count", "local_guide", "profile_name", "profile_url", "review_url", "profile_image_url", "owner_answer", "original_owner_answer", "owner_time_ago", "owner_timestamp", "review_id", "images", "review_highlights"]
 
     model_config = {
         "populate_by_name": True,
@@ -102,6 +104,13 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
                 if _item:
                     _items.append(_item.to_dict())
             _dict['images'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in review_highlights (list)
+        _items = []
+        if self.review_highlights:
+            for _item in self.review_highlights:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['review_highlights'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -212,6 +221,11 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
         if self.images is None and "images" in self.model_fields_set:
             _dict['images'] = None
 
+        # set to None if review_highlights (nullable) is None
+        # and model_fields_set contains the field
+        if self.review_highlights is None and "review_highlights" in self.model_fields_set:
+            _dict['review_highlights'] = None
+
         return _dict
 
     @classmethod
@@ -246,7 +260,8 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
             "owner_time_ago": obj.get("owner_time_ago"),
             "owner_timestamp": obj.get("owner_timestamp"),
             "review_id": obj.get("review_id"),
-            "images": [ImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None
+            "images": [ImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "review_highlights": [ReviewHighlights.from_dict(_item) for _item in obj["review_highlights"]] if obj.get("review_highlights") is not None else None
         })
         return _obj
 

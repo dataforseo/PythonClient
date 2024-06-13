@@ -64,7 +64,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     people_also_search: Optional[List[PeopleAlsoSearch]] = Field(default=None, description="related business entities")
     work_time: Optional[WorkInfo] = None
     popular_times: Optional[PopularTimes] = None
-    local_business_links: Optional[List[BaseLocalBusinessLink]] = None
+    local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
     contact_info: Optional[List[BusinessDataContactInfo]] = Field(default=None, description="available contacts of the business list of contacts to interact with the business")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-01-26 09:03:15 +00:00")

@@ -44,7 +44,9 @@ class OnPageInstantPagesRequestInfo(BaseModel):
     validate_micromarkup: Optional[StrictBool] = Field(default=None, description="enable microdata validation optional field if set to true, you can use the OnPage API Microdata endpoint with the id of the task; default value: false")
     check_spell: Optional[StrictBool] = Field(default=None, description="check spelling optional field set to true to check spelling on a website using Hunspell library default value: false")
     checks_threshold: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="custom threshold values for checks optional field you can specify custom threshold values for the parameters included in the checks array of OnPage API responses; Note: only integer threshold values can be modified;")
-    __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "accept_language", "load_resources", "enable_javascript", "enable_browser_rendering", "disable_cookie_popup", "return_despite_timeout", "enable_xhr", "custom_js", "validate_micromarkup", "check_spell", "checks_threshold"]
+    switch_pool: Optional[StrictBool] = Field(default=None, description="switch proxy pool optional field if true, additional proxy pools will be used to obtain the requested data; the parameter can be used if a multitude of tasks is set simultaneously, resulting in occasional rate-limit and/or site_unreachable errors")
+    ip_pool_for_scan: Optional[StrictStr] = Field(default=None, description="proxy pool optional field you can choose a location of the proxy pool that will be used to obtain the requested data; the parameter can be used if page content is inaccessible in one of the locations, resulting in occasional site_unreachable errors possible values: us, de")
+    __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "accept_language", "load_resources", "enable_javascript", "enable_browser_rendering", "disable_cookie_popup", "return_despite_timeout", "enable_xhr", "custom_js", "validate_micromarkup", "check_spell", "checks_threshold", "switch_pool", "ip_pool_for_scan"]
 
     model_config = {
         "populate_by_name": True,
@@ -170,6 +172,16 @@ class OnPageInstantPagesRequestInfo(BaseModel):
         if self.checks_threshold is None and "checks_threshold" in self.model_fields_set:
             _dict['checks_threshold'] = None
 
+        # set to None if switch_pool (nullable) is None
+        # and model_fields_set contains the field
+        if self.switch_pool is None and "switch_pool" in self.model_fields_set:
+            _dict['switch_pool'] = None
+
+        # set to None if ip_pool_for_scan (nullable) is None
+        # and model_fields_set contains the field
+        if self.ip_pool_for_scan is None and "ip_pool_for_scan" in self.model_fields_set:
+            _dict['ip_pool_for_scan'] = None
+
         return _dict
 
     @classmethod
@@ -199,7 +211,9 @@ class OnPageInstantPagesRequestInfo(BaseModel):
             "custom_js": obj.get("custom_js"),
             "validate_micromarkup": obj.get("validate_micromarkup"),
             "check_spell": obj.get("check_spell"),
-            "checks_threshold": obj.get("checks_threshold")
+            "checks_threshold": obj.get("checks_threshold"),
+            "switch_pool": obj.get("switch_pool"),
+            "ip_pool_for_scan": obj.get("ip_pool_for_scan")
         })
         return _obj
 

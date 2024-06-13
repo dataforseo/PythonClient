@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.microdata_test_results_info import MicrodataTestResultsInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +27,9 @@ class MicrodataFieldsInfo(BaseModel):
     MicrodataFieldsInfo
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="field name name of the data field")
-    types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="parent microdata types for a full list of available types, please visit schema.org")
+    types: Optional[Dict[str, Any]] = Field(default=None, description="parent microdata types for a full list of available types, please visit schema.org")
     value: Optional[StrictStr] = Field(default=None, description="microdata value microdata value specified on a target web page")
-    test_results: Optional[MicrodataTestResultsInfo] = None
+    test_results: Optional[Dict[str, Any]] = Field(default=None, description="microdata validation test results sub-type microdata test results that contain detected errors and related messages")
     fields: Optional[List[MicrodataFieldsInfo]] = Field(default=None, description="microdata fields an array of objects containing data fields related to the certain microdata type")
     __properties: ClassVar[List[str]] = ["name", "types", "value", "test_results", "fields"]
 
@@ -73,9 +72,6 @@ class MicrodataFieldsInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of test_results
-        if self.test_results:
-            _dict['test_results'] = self.test_results.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in fields (list)
         _items = []
         if self.fields:
@@ -98,6 +94,11 @@ class MicrodataFieldsInfo(BaseModel):
         if self.value is None and "value" in self.model_fields_set:
             _dict['value'] = None
 
+        # set to None if test_results (nullable) is None
+        # and model_fields_set contains the field
+        if self.test_results is None and "test_results" in self.model_fields_set:
+            _dict['test_results'] = None
+
         # set to None if fields (nullable) is None
         # and model_fields_set contains the field
         if self.fields is None and "fields" in self.model_fields_set:
@@ -118,7 +119,7 @@ class MicrodataFieldsInfo(BaseModel):
             "name": obj.get("name"),
             "types": obj.get("types"),
             "value": obj.get("value"),
-            "test_results": MicrodataTestResultsInfo.from_dict(obj["test_results"]) if obj.get("test_results") is not None else None,
+            "test_results": obj.get("test_results"),
             "fields": [MicrodataFieldsInfo.from_dict(_item) for _item in obj["fields"]] if obj.get("fields") is not None else None
         })
         return _obj

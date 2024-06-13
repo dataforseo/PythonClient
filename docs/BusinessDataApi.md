@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**business_data_google_locations**](BusinessDataApi.md#business_data_google_locations) | **GET** /v3/business_data/google/locations | 
 [**business_data_google_locations_country**](BusinessDataApi.md#business_data_google_locations_country) | **GET** /v3/business_data/google/locations/{country} | 
 [**business_data_id_list**](BusinessDataApi.md#business_data_id_list) | **POST** /v3/business_data/id_list | 
+[**business_data_tasks_ready**](BusinessDataApi.md#business_data_tasks_ready) | **GET** /v3/business_data/tasks_ready | 
 [**business_data_tripadvisor_languages**](BusinessDataApi.md#business_data_tripadvisor_languages) | **GET** /v3/business_data/tripadvisor/languages | 
 [**business_data_tripadvisor_locations**](BusinessDataApi.md#business_data_tripadvisor_locations) | **GET** /v3/business_data/tripadvisor/locations | 
 [**business_data_tripadvisor_locations_country**](BusinessDataApi.md#business_data_tripadvisor_locations_country) | **GET** /v3/business_data/tripadvisor/locations/{country} | 
@@ -505,6 +506,80 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **business_data_tasks_ready**
+> BusinessDataTasksReadyResponseInfo business_data_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_info/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_tasks_ready_response_info import BusinessDataTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+
+    try:
+        api_response = api_instance.business_data_tasks_ready()
+        print("The response of BusinessDataApi->business_data_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->business_data_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BusinessDataTasksReadyResponseInfo**](BusinessDataTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1321,7 +1396,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    id = '8ed533b3-4f67-4232-993c-33072210714a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'd5aa525c-70fc-44cc-99e7-2011973c429b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_hotel_info_task_get_html(id)

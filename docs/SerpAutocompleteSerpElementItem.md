@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **suggestion_type** | **str** | google autocomplete suggestion type Note: only available for the following client: chrome/chrome-omni | [optional] 
 **search_query_url** | **str** | url to search results url to search results relevant to the google autocomplete suggestion | [optional] 
 **thumbnail_url** | **str** | url of the thumbnail image url of the thumbnail image of the google autocomplete suggestion Note: only available for the following client: gws-wiz gws-wiz-serp | [optional] 
-**highlighted** | **List[Optional[str]]** |  | [optional] 
+**highlighted** | **List[Optional[str]]** | keywords highlighted in autocomplete contains a list of google autocomplete suggestions that are highlighted in the search bar; Note: array is only available for the following client: gws-wiz psy-ab gws-wiz-local | [optional] 
 
 ## Example
 

@@ -39,7 +39,9 @@ class OnPageContentParsingLiveRequestInfo(BaseModel):
     enable_javascript: Optional[StrictBool] = Field(default=None, description="load javascript on a page optional field set to true if you want to load the scripts available on a page default value: false Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
     enable_browser_rendering: Optional[StrictBool] = Field(default=None, description="emulate browser rendering to measure Core Web Vitals optional field by using this parameter you will be able to emulate a browser when loading a web page; enable_browser_rendering loads styles, images, fonts, animations, videos, and other resources on a page; default value: false set to true to obtain Core Web Vitals (FID, CLS, LCP) metrics in the response; if you use this field, enable_javascript, and load_resources parameters must be set to true Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
     enable_xhr: Optional[StrictBool] = Field(default=None, description="enable XMLHttpRequest on a page optional field set to true if you want our crawler to request data from a web server using the XMLHttpRequest object default value: false if you use this field, enable_javascript must be set to true;")
-    __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "custom_js", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "disable_cookie_popup", "accept_language", "enable_javascript", "enable_browser_rendering", "enable_xhr"]
+    switch_pool: Optional[StrictBool] = Field(default=None, description="switch proxy pool optional field if true, additional proxy pools will be used to obtain the requested data; the parameter can be used if a multitude of tasks is set simultaneously, resulting in occasional rate-limit and/or site_unreachable errors")
+    ip_pool_for_scan: Optional[StrictStr] = Field(default=None, description="proxy pool optional field you can choose a location of the proxy pool that will be used to obtain the requested data; the parameter can be used if page content is inaccessible in one of the locations, resulting in occasional site_unreachable errors possible values: us, de")
+    __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "custom_js", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "disable_cookie_popup", "accept_language", "enable_javascript", "enable_browser_rendering", "enable_xhr", "switch_pool", "ip_pool_for_scan"]
 
     model_config = {
         "populate_by_name": True,
@@ -140,6 +142,16 @@ class OnPageContentParsingLiveRequestInfo(BaseModel):
         if self.enable_xhr is None and "enable_xhr" in self.model_fields_set:
             _dict['enable_xhr'] = None
 
+        # set to None if switch_pool (nullable) is None
+        # and model_fields_set contains the field
+        if self.switch_pool is None and "switch_pool" in self.model_fields_set:
+            _dict['switch_pool'] = None
+
+        # set to None if ip_pool_for_scan (nullable) is None
+        # and model_fields_set contains the field
+        if self.ip_pool_for_scan is None and "ip_pool_for_scan" in self.model_fields_set:
+            _dict['ip_pool_for_scan'] = None
+
         return _dict
 
     @classmethod
@@ -164,7 +176,9 @@ class OnPageContentParsingLiveRequestInfo(BaseModel):
             "accept_language": obj.get("accept_language"),
             "enable_javascript": obj.get("enable_javascript"),
             "enable_browser_rendering": obj.get("enable_browser_rendering"),
-            "enable_xhr": obj.get("enable_xhr")
+            "enable_xhr": obj.get("enable_xhr"),
+            "switch_pool": obj.get("switch_pool"),
+            "ip_pool_for_scan": obj.get("ip_pool_for_scan")
         })
         return _obj
 

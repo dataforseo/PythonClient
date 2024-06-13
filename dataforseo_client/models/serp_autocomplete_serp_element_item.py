@@ -34,7 +34,7 @@ class SerpAutocompleteSerpElementItem(BaseSerpElementItem):
     suggestion_type: Optional[StrictStr] = Field(default=None, description="google autocomplete suggestion type Note: only available for the following client: chrome/chrome-omni")
     search_query_url: Optional[StrictStr] = Field(default=None, description="url to search results url to search results relevant to the google autocomplete suggestion")
     thumbnail_url: Optional[StrictStr] = Field(default=None, description="url of the thumbnail image url of the thumbnail image of the google autocomplete suggestion Note: only available for the following client: gws-wiz gws-wiz-serp")
-    highlighted: Optional[List[Optional[StrictStr]]] = None
+    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="keywords highlighted in autocomplete contains a list of google autocomplete suggestions that are highlighted in the search bar; Note: array is only available for the following client: gws-wiz psy-ab gws-wiz-local")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "relevance", "suggestion", "suggestion_type", "search_query_url", "thumbnail_url", "highlighted"]
 
     model_config = {
