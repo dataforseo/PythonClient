@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **language_code** | **str** | language code in a POST array | [optional] 
 **total_count** | **int** | total amount of results in our database relevant to your request | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[DataforseoLabsBingPageIntersectionLiveItem]**](DataforseoLabsBingPageIntersectionLiveItem.md) | contains keywords, relevant SERP elements and related data | [optional] 
+**items** | [**List[DataforseoLabsPageIntersectionLiveItem]**](DataforseoLabsPageIntersectionLiveItem.md) | contains keywords, relevant SERP elements and related data | [optional] 
 
 ## Example
 

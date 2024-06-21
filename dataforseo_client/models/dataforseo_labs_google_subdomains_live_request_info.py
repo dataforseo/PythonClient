@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,14 +31,15 @@ class DataforseoLabsGoogleSubdomainsLiveRequestInfo(BaseModel):
     location_code: Optional[StrictInt] = Field(default=None, description="location code optional field if you use this field, you don’t need to specify location_name you can receive the list of available locations with their location_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available locations example: 2840")
     language_name: Optional[StrictStr] = Field(default=None, description="full name of the language optional field if you use this field, you don’t need to specify language_code you can receive the list of available languages with their language_name by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available languages example: English")
     language_code: Optional[StrictStr] = Field(default=None, description="language code optional field if you use this field, you don’t need to specify language_name you can receive the list of available languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available languages example: en")
-    item_types: Optional[List[StrictStr]] = Field(default=None, description="display results by item type optional field indicates the type of search results included in the response Note: if the item_types array contains item types that are different from organic, the results will be ordered by the first item type in the array; you will not be able to sort and filter results by the types of search results not included in the response; possible values: [\"organic\", \"paid\", \"featured_snippet\", \"local_pack\"] default value: [\"organic\", \"paid\", \"featured_snippet\", \"local_pack\"]")
+    item_types: Optional[List[StrictStr]] = Field(default=None, description="display results by item type optional field indicates the type of search results included in the response Note: if the item_types array contains item types that are different from organic, the results will be ordered by the first item type in the array; you will not be able to sort and filter results by the types of search results not included in the response; possible values: [\"organic\", \"paid\", \"featured_snippet\", \"local_pack\"] default value: [\"organic\", \"paid\"]")
+    include_clickstream_data: Optional[StrictBool] = Field(default=None, description="include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_etv, clickstream_gender_distribution, and clickstream_age_distribution fields with clickstream data in the response default value: false with this parameter enabled, you will be charged double the price for the request Note: clickstream data is available for roughly 15% of keywords in the response learn more about how clickstream-based metrics are calculated in this help center article")
     historical_serp_mode: Optional[StrictStr] = Field(default=None, description="data collection mode optional field you can use this field to filter the results; possible types of filtering: live — return metrics for SERPs in which the specified target currently has ranking results; lost — return metrics for SERPs in which the specified target had previously had ranking results, but didn’t have them during the last check; all — return metrics for both types of SERPs. default value: live")
     filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in example: [\"metrics.paid.count\",\">\",0] [[\"metrics.paid.count\",\">\",0],\"and\",[\"metrics.paid.etv\",\">\",\"50\"]] [[\"metrics.organic.count\",\">\",\"10\"], \"and\", [[\"metrics.organic.pos_1\",\"<>\",0],\"or\",[\"metrics.organic.pos_2_3\",\"<>\",0]]] for more information about filters, please refer to Dataforseo Labs – Filters or this help center guide")
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to specify a sorting type example: [\"metrics.paid.etv,asc\"] Note: you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"metrics.organic.etv,desc\",\"metrics.paid.count,asc\"] default rule: [\"metrics.organic.count,desc\"] Note: if the item_types array contains item types that are different from organic, the results will be ordered by the first item type in the array")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned keywords optional field default value: 100 maximum value: 1000")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned keywords optional field default value: 0 if you specify the 10 value, the first ten keywords in the results array will be omitted and the data will be provided for the successive keywords")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "location_name", "location_code", "language_name", "language_code", "item_types", "historical_serp_mode", "filters", "order_by", "limit", "offset", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "location_name", "location_code", "language_name", "language_code", "item_types", "include_clickstream_data", "historical_serp_mode", "filters", "order_by", "limit", "offset", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -104,6 +105,11 @@ class DataforseoLabsGoogleSubdomainsLiveRequestInfo(BaseModel):
         if self.item_types is None and "item_types" in self.model_fields_set:
             _dict['item_types'] = None
 
+        # set to None if include_clickstream_data (nullable) is None
+        # and model_fields_set contains the field
+        if self.include_clickstream_data is None and "include_clickstream_data" in self.model_fields_set:
+            _dict['include_clickstream_data'] = None
+
         # set to None if historical_serp_mode (nullable) is None
         # and model_fields_set contains the field
         if self.historical_serp_mode is None and "historical_serp_mode" in self.model_fields_set:
@@ -152,6 +158,7 @@ class DataforseoLabsGoogleSubdomainsLiveRequestInfo(BaseModel):
             "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
             "item_types": obj.get("item_types"),
+            "include_clickstream_data": obj.get("include_clickstream_data"),
             "historical_serp_mode": obj.get("historical_serp_mode"),
             "filters": obj.get("filters"),
             "order_by": obj.get("order_by"),

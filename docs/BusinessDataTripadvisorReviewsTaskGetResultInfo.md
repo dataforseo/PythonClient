@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **location** | **str** | location of the local establishment address of the local establishment for which the reviews are collected | [optional] 
 **reviews_count** | **int** | the total number of reviews | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
+**rating_distribution** | **Dict[str, Optional[int]]** | rating distribution by votes the distribution of votes across the rating in the range from 1 to 5 | [optional] 
 **items_count** | **int** | the number of reviews items in the results array you can get more results by using the depth parameter when setting a task | [optional] 
 **items** | [**List[BaseBusinessDataSerpElementItem]**](BaseBusinessDataSerpElementItem.md) | found reviews you can get more results by using the depth parameter when setting a task | [optional] 
 **language_code** | **str** | language code in a POST array | [optional] 

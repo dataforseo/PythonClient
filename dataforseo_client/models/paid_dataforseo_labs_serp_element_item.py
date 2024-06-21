@@ -50,10 +50,11 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
     impressions_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on impressions estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
     estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of monthly search traffic represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    clickstream_etv: Optional[StrictInt] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true")
     rank_changes: Optional[RankChanges] = None
     backlinks_info: Optional[BacklinksInfo] = None
     rank_info: Optional[RankInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "description", "breadcrumb", "url", "highlighted", "extra", "description_rows", "links", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "backlinks_info", "rank_info"]
+    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "description", "breadcrumb", "url", "highlighted", "extra", "description_rows", "links", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "clickstream_etv", "rank_changes", "backlinks_info", "rank_info"]
 
     model_config = {
         "populate_by_name": True,
@@ -210,6 +211,11 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.estimated_paid_traffic_cost is None and "estimated_paid_traffic_cost" in self.model_fields_set:
             _dict['estimated_paid_traffic_cost'] = None
 
+        # set to None if clickstream_etv (nullable) is None
+        # and model_fields_set contains the field
+        if self.clickstream_etv is None and "clickstream_etv" in self.model_fields_set:
+            _dict['clickstream_etv'] = None
+
         return _dict
 
     @classmethod
@@ -242,6 +248,7 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "etv": obj.get("etv"),
             "impressions_etv": obj.get("impressions_etv"),
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
+            "clickstream_etv": obj.get("clickstream_etv"),
             "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None,
             "backlinks_info": BacklinksInfo.from_dict(obj["backlinks_info"]) if obj.get("backlinks_info") is not None else None,
             "rank_info": RankInfo.from_dict(obj["rank_info"]) if obj.get("rank_info") is not None else None

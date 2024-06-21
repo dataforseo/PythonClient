@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **se_type** | **str** | search engine type | [optional] 
 **seed_keyword** | **str** | keyword in a POST array | [optional] 
 **seed_keyword_data** | **Dict[str, Optional[str]]** | keyword data for the seed keyword fields in this object are identical to those of the items array | [optional] 
-**location_code** | **int** | location code in a POST array | [optional] 
-**language_code** | **str** | language code in a POST array | [optional] 
+**location_code** | **int** | location code in a POST array if there is no data, then the value is null | [optional] 
+**language_code** | **str** | language code in a POST array if there is no data, then the value is null | [optional] 
 **total_count** | **int** | total amount of results in our database relevant to your request | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
 **offset** | **int** | current offset value | [optional] 
 **offset_token** | **str** | offset token for subsequent requests you can use the string provided in this field to get the subsequent results of the initial task; note: offset_token values are unique for each subsequent task | [optional] 
-**items** | [**List[KeywordDataInfo]**](KeywordDataInfo.md) | contains keywords and related data | [optional] 
+**items** | [**List[KeywordDataKeywordDataInfo]**](KeywordDataKeywordDataInfo.md) | contains keywords and related data | [optional] 
 
 ## Example
 

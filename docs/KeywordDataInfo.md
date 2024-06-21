@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **location_code** | **int** | location code in a POST array | [optional] 
 **language_code** | **str** | language code in a POST array | [optional] 
 **keyword_info** | [**KeywordInfo**](KeywordInfo.md) |  | [optional] 
+**clickstream_keyword_info** | [**ClickstreamKeywordInfo**](ClickstreamKeywordInfo.md) |  | [optional] 
 **keyword_properties** | [**KeywordProperties**](KeywordProperties.md) |  | [optional] 
 **impressions_info** | [**ImpressionsInfo**](ImpressionsInfo.md) |  | [optional] 
 **serp_info** | [**SerpInfo**](SerpInfo.md) |  | [optional] 

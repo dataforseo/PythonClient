@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **review_images** | [**List[ImageUrlInfo]**](ImageUrlInfo.md) | contains URLs of the images used in the review | [optional] 
 **user_profile** | [**BusinessDataUserProfileInfo**](BusinessDataUserProfileInfo.md) |  | [optional] 
 **responses** | [**List[ReviewResponseItemInfo]**](ReviewResponseItemInfo.md) | contains information about the owner’s response | [optional] 
+**review_highlights** | [**List[ReviewHighlights]**](ReviewHighlights.md) | review highlights contains highlighted review criteria and assessments | [optional] 
 
 ## Example
 

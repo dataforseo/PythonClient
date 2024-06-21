@@ -34,7 +34,8 @@ class TopStoriesElement(BaseModel):
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    __properties: ClassVar[List[str]] = ["type", "source", "domain", "title", "date", "amp_version", "timestamp", "url"]
+    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image")
+    __properties: ClassVar[List[str]] = ["type", "source", "domain", "title", "date", "amp_version", "timestamp", "url", "image_url"]
 
     model_config = {
         "populate_by_name": True,
@@ -115,6 +116,11 @@ class TopStoriesElement(BaseModel):
         if self.url is None and "url" in self.model_fields_set:
             _dict['url'] = None
 
+        # set to None if image_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.image_url is None and "image_url" in self.model_fields_set:
+            _dict['image_url'] = None
+
         return _dict
 
     @classmethod
@@ -134,7 +140,8 @@ class TopStoriesElement(BaseModel):
             "date": obj.get("date"),
             "amp_version": obj.get("amp_version"),
             "timestamp": obj.get("timestamp"),
-            "url": obj.get("url")
+            "url": obj.get("url"),
+            "image_url": obj.get("image_url")
         })
         return _obj
 

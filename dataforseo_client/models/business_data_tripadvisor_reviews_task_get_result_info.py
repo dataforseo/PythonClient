@@ -37,10 +37,11 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
     location: Optional[StrictStr] = Field(default=None, description="location of the local establishment address of the local establishment for which the reviews are collected")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
     rating: Optional[RatingInfo] = None
+    rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="rating distribution by votes the distribution of votes across the rating in the range from 1 to 5")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of reviews items in the results array you can get more results by using the depth parameter when setting a task")
     items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="found reviews you can get more results by using the depth parameter when setting a task")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
-    __properties: ClassVar[List[str]] = ["url_path", "type", "se_domain", "check_url", "datetime", "title", "location", "reviews_count", "rating", "items_count", "items", "language_code"]
+    __properties: ClassVar[List[str]] = ["url_path", "type", "se_domain", "check_url", "datetime", "title", "location", "reviews_count", "rating", "rating_distribution", "items_count", "items", "language_code"]
 
     model_config = {
         "populate_by_name": True,
@@ -131,6 +132,11 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
         if self.reviews_count is None and "reviews_count" in self.model_fields_set:
             _dict['reviews_count'] = None
 
+        # set to None if rating_distribution (nullable) is None
+        # and model_fields_set contains the field
+        if self.rating_distribution is None and "rating_distribution" in self.model_fields_set:
+            _dict['rating_distribution'] = None
+
         # set to None if items_count (nullable) is None
         # and model_fields_set contains the field
         if self.items_count is None and "items_count" in self.model_fields_set:
@@ -167,6 +173,7 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
             "location": obj.get("location"),
             "reviews_count": obj.get("reviews_count"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating_distribution": obj.get("rating_distribution"),
             "items_count": obj.get("items_count"),
             "items": [BaseBusinessDataSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "language_code": obj.get("language_code")

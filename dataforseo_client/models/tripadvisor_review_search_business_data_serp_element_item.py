@@ -23,6 +23,7 @@ from dataforseo_client.models.base_business_data_serp_element_item import BaseBu
 from dataforseo_client.models.business_data_user_profile_info import BusinessDataUserProfileInfo
 from dataforseo_client.models.image_url_info import ImageUrlInfo
 from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.review_highlights import ReviewHighlights
 from dataforseo_client.models.review_response_item_info import ReviewResponseItemInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -43,7 +44,8 @@ class TripadvisorReviewSearchBusinessDataSerpElementItem(BaseBusinessDataSerpEle
     review_images: Optional[List[ImageUrlInfo]] = Field(default=None, description="contains URLs of the images used in the review")
     user_profile: Optional[BusinessDataUserProfileInfo] = None
     responses: Optional[List[ReviewResponseItemInfo]] = Field(default=None, description="contains information about the owner’s response")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "url", "rating", "date_of_visit", "timestamp", "title", "review_text", "review_images", "user_profile", "responses"]
+    review_highlights: Optional[List[ReviewHighlights]] = Field(default=None, description="review highlights contains highlighted review criteria and assessments")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "url", "rating", "date_of_visit", "timestamp", "title", "review_text", "review_images", "user_profile", "responses", "review_highlights"]
 
     model_config = {
         "populate_by_name": True,
@@ -104,6 +106,13 @@ class TripadvisorReviewSearchBusinessDataSerpElementItem(BaseBusinessDataSerpEle
                 if _item:
                     _items.append(_item.to_dict())
             _dict['responses'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in review_highlights (list)
+        _items = []
+        if self.review_highlights:
+            for _item in self.review_highlights:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['review_highlights'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -159,6 +168,11 @@ class TripadvisorReviewSearchBusinessDataSerpElementItem(BaseBusinessDataSerpEle
         if self.responses is None and "responses" in self.model_fields_set:
             _dict['responses'] = None
 
+        # set to None if review_highlights (nullable) is None
+        # and model_fields_set contains the field
+        if self.review_highlights is None and "review_highlights" in self.model_fields_set:
+            _dict['review_highlights'] = None
+
         return _dict
 
     @classmethod
@@ -183,7 +197,8 @@ class TripadvisorReviewSearchBusinessDataSerpElementItem(BaseBusinessDataSerpEle
             "review_text": obj.get("review_text"),
             "review_images": [ImageUrlInfo.from_dict(_item) for _item in obj["review_images"]] if obj.get("review_images") is not None else None,
             "user_profile": BusinessDataUserProfileInfo.from_dict(obj["user_profile"]) if obj.get("user_profile") is not None else None,
-            "responses": [ReviewResponseItemInfo.from_dict(_item) for _item in obj["responses"]] if obj.get("responses") is not None else None
+            "responses": [ReviewResponseItemInfo.from_dict(_item) for _item in obj["responses"]] if obj.get("responses") is not None else None,
+            "review_highlights": [ReviewHighlights.from_dict(_item) for _item in obj["review_highlights"]] if obj.get("review_highlights") is not None else None
         })
         return _obj
 
