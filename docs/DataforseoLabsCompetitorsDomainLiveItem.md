@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **avg_position** | **float** | average position of the domain in SERP Note: average position is calculated for intersected keywords only; the value for a given domain may differ when combined with different target websites | [optional] 
 **sum_position** | **int** | sum of all domain positions in SERP Note: average position is calculated for intersected keywords only; the value for a given domain may differ when combined with different target websites | [optional] 
 **intersections** | **int** | number of intersecting keywords | [optional] 
-**full_domain_metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | metrics for all keywords of the domain full overview of ranking and traffic data relevant to all keywords that the provided domain is ranking for | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the target considering the keywords target shares in search with the competitor’s domain | [optional] 
-**competitor_metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the returned competitor’s domain | [optional] 
+**full_domain_metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | metrics for all keywords of the domain full overview of ranking and traffic data relevant to all keywords that the provided domain is ranking for | [optional] 
+**metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the target considering the keywords target shares in search with the competitor’s domain | [optional] 
+**competitor_metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the returned competitor’s domain | [optional] 
 
 ## Example
 

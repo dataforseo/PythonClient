@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
 **subdomain** | **str** | returned subdomain | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to subdomain | [optional] 
+**metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | ranking data relevant to subdomain | [optional] 
 
 ## Example
 

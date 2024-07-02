@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **language_code** | **str** | language code in a POST array if there is no data, then the value is null | [optional] 
 **total_count** | **int** | total number of results in our database relevant to your request | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to the specified domain ranking data is provided by the rank_group parameters that show the result’s rank considering only equivalent SERP elements | [optional] 
-**metrics_absolute** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to the specified domain ranking data is provided by the rank_absolute parameters that indicate the result’s position among all SERP elements | [optional] 
-**items** | [**List[DataforseoLabsRankedKeywordsLiveItem]**](DataforseoLabsRankedKeywordsLiveItem.md) | contains ranked keywords and related data | [optional] 
+**metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | ranking data relevant to the specified domain ranking data is provided by the rank_group parameters that show the result’s rank considering only equivalent SERP elements | [optional] 
+**metrics_absolute** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | ranking data relevant to the specified domain ranking data is provided by the rank_absolute parameters that indicate the result’s position among all SERP elements | [optional] 
+**items** | [**List[DataforseoLabsLiveItem]**](DataforseoLabsLiveItem.md) | contains ranked keywords and related data | [optional] 
 
 ## Example
 

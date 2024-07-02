@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.app_datale_app_listings_search_live_item import AppDataleAppListingsSearchLiveItem
+from dataforseo_client.models.app_data_google_app_listings_search_live_item import AppDataGoogleAppListingsSearchLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class AppDataGoogleAppListingsSearchLiveResultInfo(BaseModel):
     count: Optional[StrictInt] = Field(default=None, description="the number of items in the results array")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned apps")
     offset_token: Optional[StrictStr] = Field(default=None, description="token for subsequent requests you can use this parameter in the POST request to avoid timeouts while trying to obtain over 100,000 results in a single request")
-    items: Optional[List[AppDataleAppListingsSearchLiveItem]] = Field(default=None, description="array of apps and related data")
+    items: Optional[List[AppDataGoogleAppListingsSearchLiveItem]] = Field(default=None, description="array of apps and related data")
     __properties: ClassVar[List[str]] = ["total_count", "count", "offset", "offset_token", "items"]
 
     model_config = {
@@ -121,7 +121,7 @@ class AppDataGoogleAppListingsSearchLiveResultInfo(BaseModel):
             "count": obj.get("count"),
             "offset": obj.get("offset"),
             "offset_token": obj.get("offset_token"),
-            "items": [AppDataleAppListingsSearchLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [AppDataGoogleAppListingsSearchLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

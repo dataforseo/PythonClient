@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.metrics_info import MetricsInfo
+from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,8 +35,8 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem(BaseModel):
     organic_is_new: Optional[StrictInt] = Field(default=None, description="current number of new ranked elements indicates how many new ranked elements were found for the domain")
     domain: Optional[StrictStr] = Field(default=None, description="domain found for the specified category")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain")
-    metrics_history: Optional[Dict[str, Dict[str, MetricsInfo]]] = Field(default=None, description="historical ranking and traffic data of the domain")
-    metrics_difference: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="metrics difference between first_date and second_date calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date")
+    metrics_history: Optional[Dict[str, Dict[str, DataforseoLabsMetricsInfo]]] = Field(default=None, description="historical ranking and traffic data of the domain")
+    metrics_difference: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="metrics difference between first_date and second_date calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date")
     __properties: ClassVar[List[str]] = ["se_type", "top_categories", "organic_etv", "organic_count", "organic_is_lost", "organic_is_new", "domain", "main_domain", "metrics_history", "metrics_difference"]
 
     model_config = {
@@ -164,7 +164,7 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem(BaseModel):
             "main_domain": obj.get("main_domain"),
             "metrics_history": dict(
                 (_k, dict(
-                    (_ik, MetricsInfo.from_dict(_iv))
+                    (_ik, DataforseoLabsMetricsInfo.from_dict(_iv))
                         for _ik, _iv in _v.items()
                     )
                     if _v is not None
@@ -175,7 +175,7 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem(BaseModel):
             if obj.get("metrics_history") is not None
             else None,
             "metrics_difference": dict(
-                (_k, MetricsInfo.from_dict(_v))
+                (_k, DataforseoLabsMetricsInfo.from_dict(_v))
                 for _k, _v in obj["metrics_difference"].items()
             )
             if obj.get("metrics_difference") is not None

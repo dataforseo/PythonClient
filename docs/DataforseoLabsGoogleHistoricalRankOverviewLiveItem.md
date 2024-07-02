@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **se_type** | **str** | search engine type | [optional] 
 **year** | **int** | year for which the data is provided | [optional] 
 **month** | **int** | month for which the data is provided | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to the specified domain | [optional] 
+**metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | ranking data relevant to the specified domain | [optional] 
 
 ## Example
 

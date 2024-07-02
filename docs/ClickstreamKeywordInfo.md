@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **search_volume** | **int** | monthly average clickstream search volume rate | [optional] 
 **last_updated_time** | **str** | date and time when the clickstream dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” | [optional] 
-**gender_distribution** | **Dict[str, Optional[int]]** | distribution of estimated clickstream-based metrics by gender | [optional] 
-**age_distribution** | **Dict[str, Optional[int]]** | distribution of clickstream-based metrics by age | [optional] 
+**gender_distribution** | **Dict[str, Optional[int]]** | distribution of estimated clickstream-based metrics by gender learn more about how the metric is calculated in this help center article | [optional] 
+**age_distribution** | **Dict[str, Optional[int]]** | distribution of clickstream-based metrics by age learn more about how the metric is calculated in this help center article | [optional] 
 **monthly_searches** | [**List[MonthlySearches]**](MonthlySearches.md) | monthly clickstream search volume rates array of objects with clickstream search volume rates in a certain month of a year | [optional] 
 
 ## Example

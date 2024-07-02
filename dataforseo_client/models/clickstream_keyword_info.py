@@ -29,8 +29,8 @@ class ClickstreamKeywordInfo(BaseModel):
     """ # noqa: E501
     search_volume: Optional[StrictInt] = Field(default=None, description="monthly average clickstream search volume rate")
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the clickstream dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
-    gender_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of estimated clickstream-based metrics by gender")
-    age_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of clickstream-based metrics by age")
+    gender_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of estimated clickstream-based metrics by gender learn more about how the metric is calculated in this help center article")
+    age_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of clickstream-based metrics by age learn more about how the metric is calculated in this help center article")
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly clickstream search volume rates array of objects with clickstream search volume rates in a certain month of a year")
     __properties: ClassVar[List[str]] = ["search_volume", "last_updated_time", "gender_distribution", "age_distribution", "monthly_searches"]
 

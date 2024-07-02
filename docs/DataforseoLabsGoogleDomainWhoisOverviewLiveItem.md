@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **tld** | **str** | top-level domain top-level domain in the DNS root zone | [optional] 
 **registered** | **bool** | domain registration status if false, the domain name registration has expired Note: expired domains will remain in the database for only a short period of time | [optional] 
 **registrar** | **str** | domain registrar if null, the domain registrar is unknown example: NameCheap, Inc. | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to the specified domain | [optional] 
+**metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | ranking data relevant to the specified domain | [optional] 
 **backlinks_info** | [**BacklinksInfo**](BacklinksInfo.md) |  | [optional] 
 
 ## Example

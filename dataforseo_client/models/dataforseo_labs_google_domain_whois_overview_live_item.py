@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_info import BacklinksInfo
-from dataforseo_client.models.metrics_info import MetricsInfo
+from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,7 +39,7 @@ class DataforseoLabsGoogleDomainWhoisOverviewLiveItem(BaseModel):
     tld: Optional[StrictStr] = Field(default=None, description="top-level domain top-level domain in the DNS root zone")
     registered: Optional[StrictBool] = Field(default=None, description="domain registration status if false, the domain name registration has expired Note: expired domains will remain in the database for only a short period of time")
     registrar: Optional[StrictStr] = Field(default=None, description="domain registrar if null, the domain registrar is unknown example: NameCheap, Inc.")
-    metrics: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain")
+    metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain")
     backlinks_info: Optional[BacklinksInfo] = None
     __properties: ClassVar[List[str]] = ["se_type", "domain", "created_datetime", "changed_datetime", "expiration_datetime", "updated_datetime", "first_seen", "epp_status_codes", "tld", "registered", "registrar", "metrics", "backlinks_info"]
 
@@ -176,7 +176,7 @@ class DataforseoLabsGoogleDomainWhoisOverviewLiveItem(BaseModel):
             "registered": obj.get("registered"),
             "registrar": obj.get("registrar"),
             "metrics": dict(
-                (_k, MetricsInfo.from_dict(_v))
+                (_k, DataforseoLabsMetricsInfo.from_dict(_v))
                 for _k, _v in obj["metrics"].items()
             )
             if obj.get("metrics") is not None

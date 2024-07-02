@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.dataforseo_labsle_app_intersection_live_item import DataforseoLabsleAppIntersectionLiveItem
+from dataforseo_client.models.dataforseo_labs_apple_app_intersection_live_item import DataforseoLabsAppleAppIntersectionLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +33,7 @@ class DataforseoLabsAppleAppIntersectionLiveResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[DataforseoLabsleAppIntersectionLiveItem]] = Field(default=None, description="contains data related to the ranking keywords for the app specified in the app_id field")
+    items: Optional[List[DataforseoLabsAppleAppIntersectionLiveItem]] = Field(default=None, description="contains data related to the ranking keywords for the app specified in the app_id field")
     __properties: ClassVar[List[str]] = ["se_type", "app_ids", "location_code", "language_code", "total_count", "items_count", "items"]
 
     model_config = {
@@ -135,7 +135,7 @@ class DataforseoLabsAppleAppIntersectionLiveResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),
             "items_count": obj.get("items_count"),
-            "items": [DataforseoLabsleAppIntersectionLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [DataforseoLabsAppleAppIntersectionLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

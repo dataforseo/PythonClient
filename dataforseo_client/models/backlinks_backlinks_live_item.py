@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.ranked_keywords_info import RankedKeywordsInfo
+from dataforseo_client.models.redirect import Redirect
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -56,7 +57,7 @@ class BacklinksBacklinksLiveItem(BaseModel):
     prev_seen: Optional[StrictStr] = Field(default=None, description="previous to the most recent date when our crawler visited the backlink in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     last_seen: Optional[StrictStr] = Field(default=None, description="most recent date when our crawler visited the backlink in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     item_type: Optional[StrictStr] = Field(default=None, description="link type possible values: anchor, image, meta, canonical, alternate, redirect")
-    attributes: Optional[Dict[str, Any]] = Field(default=None, description="link attributes of the referring links example: nofollow")
+    attributes: Optional[List[Optional[StrictStr]]] = Field(default=None, description="link attributes of the referring links example: nofollow")
     dofollow: Optional[StrictBool] = Field(default=None, description="indicates whether the backlink is dofollow if false, the backlink is nofollow")
     original: Optional[StrictBool] = Field(default=None, description="indicates whether the backlink was present on the referring page when our crawler first visited it")
     alt: Optional[StrictStr] = Field(default=None, description="alternative text of the image this field will be null if backlink type is not image")
@@ -73,7 +74,7 @@ class BacklinksBacklinksLiveItem(BaseModel):
     url_to_redirect_target: Optional[StrictStr] = Field(default=None, description="target url of the redirect target page the redirect is pointing to")
     ranked_keywords_info: Optional[RankedKeywordsInfo] = None
     is_indirect_link: Optional[StrictBool] = Field(default=None, description="indicates whether the backlink is an indirect link if true, the backlink is an indirect link pointing to a page that either redirects to url_to, or points to a canonical page")
-    indirect_link_path: Optional[Dict[str, Any]] = Field(default=None, description="indirect link path indicates a URL or a sequence of URLs that lead to url_to")
+    indirect_link_path: Optional[List[Redirect]] = Field(default=None, description="indirect link path indicates a URL or a sequence of URLs that lead to url_to")
     __properties: ClassVar[List[str]] = ["type", "domain_from", "url_from", "url_from_https", "domain_to", "url_to", "url_to_https", "tld_from", "is_new", "is_lost", "backlink_spam_score", "rank", "page_from_rank", "domain_from_rank", "domain_from_platform_type", "domain_from_is_ip", "domain_from_ip", "domain_from_country", "page_from_external_links", "page_from_internal_links", "page_from_size", "page_from_encoding", "page_from_language", "page_from_title", "page_from_status_code", "first_seen", "prev_seen", "last_seen", "item_type", "attributes", "dofollow", "original", "alt", "image_url", "anchor", "text_pre", "text_post", "semantic_location", "links_count", "group_count", "is_broken", "url_to_status_code", "url_to_spam_score", "url_to_redirect_target", "ranked_keywords_info", "is_indirect_link", "indirect_link_path"]
 
     model_config = {
@@ -118,6 +119,13 @@ class BacklinksBacklinksLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of ranked_keywords_info
         if self.ranked_keywords_info:
             _dict['ranked_keywords_info'] = self.ranked_keywords_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in indirect_link_path (list)
+        _items = []
+        if self.indirect_link_path:
+            for _item in self.indirect_link_path:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['indirect_link_path'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -406,7 +414,7 @@ class BacklinksBacklinksLiveItem(BaseModel):
             "url_to_redirect_target": obj.get("url_to_redirect_target"),
             "ranked_keywords_info": RankedKeywordsInfo.from_dict(obj["ranked_keywords_info"]) if obj.get("ranked_keywords_info") is not None else None,
             "is_indirect_link": obj.get("is_indirect_link"),
-            "indirect_link_path": obj.get("indirect_link_path")
+            "indirect_link_path": [Redirect.from_dict(_item) for _item in obj["indirect_link_path"]] if obj.get("indirect_link_path") is not None else None
         })
         return _obj
 

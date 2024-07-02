@@ -23,7 +23,6 @@ from dataforseo_client.models.appendix_bing_keywords_data_limits_rates_data_info
 from dataforseo_client.models.appendix_dataforseo_trends_keywords_data_limits_rates_data_info import AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_google_ads_keywords_data_limits_rates_data_info import AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_info import AppendixInfo
-from dataforseo_client.models.appendix_keyword_performance_keywords_data_limits_rates_data_info import AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,11 +41,12 @@ class AppendixKeywordsDataDaysRatesDataInfo(BaseModel):
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     bing: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
-    keyword_performance: Optional[AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo] = None
+    keyword_performance: Optional[AppendixInfo] = None
+    locations_and_languages: Optional[Union[StrictFloat, StrictInt]] = None
     search_volume_history: Optional[AppendixInfo] = None
     google_ads: Optional[AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo] = None
     dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo] = None
-    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "search_volume_history", "google_ads", "dataforseo_trends"]
+    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "search_volume_history", "google_ads", "dataforseo_trends"]
 
     model_config = {
         "populate_by_name": True,
@@ -142,6 +142,11 @@ class AppendixKeywordsDataDaysRatesDataInfo(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
+        # set to None if locations_and_languages (nullable) is None
+        # and model_fields_set contains the field
+        if self.locations_and_languages is None and "locations_and_languages" in self.model_fields_set:
+            _dict['locations_and_languages'] = None
+
         return _dict
 
     @classmethod
@@ -165,7 +170,8 @@ class AppendixKeywordsDataDaysRatesDataInfo(BaseModel):
             "categories": obj.get("categories"),
             "errors": obj.get("errors"),
             "bing": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["bing"]) if obj.get("bing") is not None else None,
-            "keyword_performance": AppendixKeywordPerformanceKeywordsDataLimitsRatesDataInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
+            "keyword_performance": AppendixInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
+            "locations_and_languages": obj.get("locations_and_languages"),
             "search_volume_history": AppendixInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
             "google_ads": AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.from_dict(obj["google_ads"]) if obj.get("google_ads") is not None else None,
             "dataforseo_trends": AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.from_dict(obj["dataforseo_trends"]) if obj.get("dataforseo_trends") is not None else None

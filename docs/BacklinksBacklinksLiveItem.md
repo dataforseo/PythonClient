@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **prev_seen** | **str** | previous to the most recent date when our crawler visited the backlink in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **last_seen** | **str** | most recent date when our crawler visited the backlink in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **item_type** | **str** | link type possible values: anchor, image, meta, canonical, alternate, redirect | [optional] 
-**attributes** | **object** | link attributes of the referring links example: nofollow | [optional] 
+**attributes** | **List[Optional[str]]** | link attributes of the referring links example: nofollow | [optional] 
 **dofollow** | **bool** | indicates whether the backlink is dofollow if false, the backlink is nofollow | [optional] 
 **original** | **bool** | indicates whether the backlink was present on the referring page when our crawler first visited it | [optional] 
 **alt** | **str** | alternative text of the image this field will be null if backlink type is not image | [optional] 
@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **url_to_redirect_target** | **str** | target url of the redirect target page the redirect is pointing to | [optional] 
 **ranked_keywords_info** | [**RankedKeywordsInfo**](RankedKeywordsInfo.md) |  | [optional] 
 **is_indirect_link** | **bool** | indicates whether the backlink is an indirect link if true, the backlink is an indirect link pointing to a page that either redirects to url_to, or points to a canonical page | [optional] 
-**indirect_link_path** | **object** | indirect link path indicates a URL or a sequence of URLs that lead to url_to | [optional] 
+**indirect_link_path** | [**List[Redirect]**](Redirect.md) | indirect link path indicates a URL or a sequence of URLs that lead to url_to | [optional] 
 
 ## Example
 

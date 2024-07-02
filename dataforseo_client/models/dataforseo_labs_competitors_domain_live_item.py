@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.metrics_info import MetricsInfo
+from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,9 +32,9 @@ class DataforseoLabsCompetitorsDomainLiveItem(BaseModel):
     avg_position: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average position of the domain in SERP Note: average position is calculated for intersected keywords only; the value for a given domain may differ when combined with different target websites")
     sum_position: Optional[StrictInt] = Field(default=None, description="sum of all domain positions in SERP Note: average position is calculated for intersected keywords only; the value for a given domain may differ when combined with different target websites")
     intersections: Optional[StrictInt] = Field(default=None, description="number of intersecting keywords")
-    full_domain_metrics: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="metrics for all keywords of the domain full overview of ranking and traffic data relevant to all keywords that the provided domain is ranking for")
-    metrics: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the target considering the keywords target shares in search with the competitor’s domain")
-    competitor_metrics: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the returned competitor’s domain")
+    full_domain_metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="metrics for all keywords of the domain full overview of ranking and traffic data relevant to all keywords that the provided domain is ranking for")
+    metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the target considering the keywords target shares in search with the competitor’s domain")
+    competitor_metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the returned competitor’s domain")
     __properties: ClassVar[List[str]] = ["se_type", "domain", "avg_position", "sum_position", "intersections", "full_domain_metrics", "metrics", "competitor_metrics"]
 
     model_config = {
@@ -155,19 +155,19 @@ class DataforseoLabsCompetitorsDomainLiveItem(BaseModel):
             "sum_position": obj.get("sum_position"),
             "intersections": obj.get("intersections"),
             "full_domain_metrics": dict(
-                (_k, MetricsInfo.from_dict(_v))
+                (_k, DataforseoLabsMetricsInfo.from_dict(_v))
                 for _k, _v in obj["full_domain_metrics"].items()
             )
             if obj.get("full_domain_metrics") is not None
             else None,
             "metrics": dict(
-                (_k, MetricsInfo.from_dict(_v))
+                (_k, DataforseoLabsMetricsInfo.from_dict(_v))
                 for _k, _v in obj["metrics"].items()
             )
             if obj.get("metrics") is not None
             else None,
             "competitor_metrics": dict(
-                (_k, MetricsInfo.from_dict(_v))
+                (_k, DataforseoLabsMetricsInfo.from_dict(_v))
                 for _k, _v in obj["competitor_metrics"].items()
             )
             if obj.get("competitor_metrics") is not None

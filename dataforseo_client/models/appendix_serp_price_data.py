@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keywords_keywords_data_price_data_info import AppendixKeywordsKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_keywords_data_price_data_info import AppendixKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_serp_price_data_info import AppendixSerpPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
@@ -31,7 +31,7 @@ class AppendixSerpPriceData(BaseModel):
     """ # noqa: E501
     tasks_fixed: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     errors: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    jobs: Optional[AppendixKeywordsKeywordsDataPriceDataInfo] = None
+    jobs: Optional[AppendixKeywordsDataPriceDataInfo] = None
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     live: Optional[AppendixSerpPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
@@ -124,7 +124,7 @@ class AppendixSerpPriceData(BaseModel):
         _obj = cls.model_validate({
             "tasks_fixed": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["tasks_fixed"]) if obj.get("tasks_fixed") is not None else None,
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
-            "jobs": AppendixKeywordsKeywordsDataPriceDataInfo.from_dict(obj["jobs"]) if obj.get("jobs") is not None else None,
+            "jobs": AppendixKeywordsDataPriceDataInfo.from_dict(obj["jobs"]) if obj.get("jobs") is not None else None,
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
             "live": AppendixSerpPriceDataInfo.from_dict(obj["live"]) if obj.get("live") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,

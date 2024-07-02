@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.metrics_info import MetricsInfo
+from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class DataforseoLabsSubdomainsLiveItem(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     subdomain: Optional[StrictStr] = Field(default=None, description="returned subdomain")
-    metrics: Optional[Dict[str, MetricsInfo]] = Field(default=None, description="ranking data relevant to subdomain")
+    metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to subdomain")
     __properties: ClassVar[List[str]] = ["se_type", "subdomain", "metrics"]
 
     model_config = {
@@ -108,7 +108,7 @@ class DataforseoLabsSubdomainsLiveItem(BaseModel):
             "se_type": obj.get("se_type"),
             "subdomain": obj.get("subdomain"),
             "metrics": dict(
-                (_k, MetricsInfo.from_dict(_v))
+                (_k, DataforseoLabsMetricsInfo.from_dict(_v))
                 for _k, _v in obj["metrics"].items()
             )
             if obj.get("metrics") is not None

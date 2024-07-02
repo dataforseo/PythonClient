@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **se_type** | **str** | search engine type | [optional] 
 **location_code** | **int** | location code in a POST array | [optional] 
 **language_code** | **str** | language code in a POST array | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | ranking data relevant to the specified domain | [optional] 
+**metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | ranking data relevant to the specified domain | [optional] 
 
 ## Example
 

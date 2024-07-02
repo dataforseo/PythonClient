@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **organic_is_new** | **int** | current number of new ranked elements indicates how many new ranked elements were found for the domain | [optional] 
 **domain** | **str** | domain found for the specified category | [optional] 
 **main_domain** | **str** | primary domain | [optional] 
-**metrics_history** | **Dict[str, Dict[str, MetricsInfo]]** | historical ranking and traffic data of the domain | [optional] 
-**metrics_difference** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | metrics difference between first_date and second_date calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date | [optional] 
+**metrics_history** | **Dict[str, Dict[str, DataforseoLabsMetricsInfo]]** | historical ranking and traffic data of the domain | [optional] 
+**metrics_difference** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | metrics difference between first_date and second_date calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date | [optional] 
 
 ## Example
 

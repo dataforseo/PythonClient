@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
 **page_address** | **str** | absolute URL of the relevant page | [optional] 
-**metrics** | [**Dict[str, MetricsInfo]**](MetricsInfo.md) | rankings and traffic metrics for the relevant page | [optional] 
+**metrics** | [**Dict[str, DataforseoLabsMetricsInfo]**](DataforseoLabsMetricsInfo.md) | rankings and traffic metrics for the relevant page | [optional] 
 
 ## Example
 
