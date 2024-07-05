@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **keywords_count** | **int** | the number of specified keywords the domain has positions for in SERPs | [optional] 
 **visibility** | **float** | SERP visibility rate represents the website visibility rate based on the SERP positions of the specified keywords Keywords with positions in the range from 1 to 10 are assigned the visibility index from 1 to 0.1, respectively Keywords with positions in the range from 11 to 20 have the fixed visibility index of 0.05 keywords with positions from 20 to 100 have the visibility index equal to 0 | [optional] 
 **relevant_serp_items** | **int** | the number of SERP elements relevant to the domain represents the number of search results in SERP relevant to the domain for the specified keywords | [optional] 
-**keywords_positions** | **Dict[str, List[float]]** |  | [optional] 
+**keywords_positions** | **Dict[str, Optional[List[Optional[int]]]]** | keyword positions SERP positions the related domain holds in SERP for the specified keywords | [optional] 
 
 ## Example
 

@@ -274,7 +274,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9b5bea96-e1bf-46c9-bae0-4494a6597e2f
+          example: aec7bbb9-abae-46be-a91c-2815d6489af8
       responses:
         '200':
           description: Successful operation
@@ -535,7 +535,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 357c327a-069a-44aa-b7d2-d693d580014d
+          example: a5f20605-07fe-46a5-9d79-e490977c0b0c
       responses:
         '200':
           description: Successful operation
@@ -677,7 +677,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 64076eb6-953b-47f6-b9c2-ed2e6d2fcc1d
+          example: 60bac76b-4cb5-4f30-8c81-30ad4929228e
       responses:
         '200':
           description: Successful operation
@@ -916,7 +916,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 940e15f3-876e-4bb4-aa27-103f8bfa4440
+          example: 2975eb26-cd02-4ba6-a335-70ca89d407b6
       responses:
         '200':
           description: Successful operation
@@ -1133,7 +1133,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 20f94630-7950-4042-a9b2-377db4750fbe
+          example: 240f2766-c19b-4b2e-b57a-b2d1c84ab4d9
       responses:
         '200':
           description: Successful operation
@@ -1598,7 +1598,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 230f56a1-cb85-4aa1-af69-4807bfd0f571
+          example: 8978c653-bd22-4bd1-91cb-61cf8ba81882
       responses:
         '200':
           description: Successful operation
@@ -1762,7 +1762,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 65a173a5-aa8f-454d-a039-d89ef02927ce
+          example: 84032a07-bf90-4094-ae19-9c2976c4a4b4
       responses:
         '200':
           description: Successful operation
@@ -2324,7 +2324,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8b3c3f10-a016-4134-9e3b-bc420868ce4b
+          example: 7ad939c8-17d3-4040-a91e-38071f4841d1
       responses:
         '200':
           description: Successful operation
@@ -2564,7 +2564,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 237f305f-15dd-4074-9a9e-0f5699f3214a
+          example: fae2af8f-d387-4ea9-aea3-2c21fbb4b763
       responses:
         '200':
           description: Successful operation
@@ -2685,7 +2685,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f68d79a3-219f-4a0f-b0b4-581a8f1b72ad
+          example: 7ea09b63-7ef3-4ef6-9e89-d80fed810faa
       responses:
         '200':
           description: Successful operation
@@ -2859,7 +2859,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 710064fe-2127-4d13-be58-ca2b7fd95408
+          example: e7c9d295-7bfa-4f20-a9e6-b12ca8914b33
       responses:
         '200':
           description: Successful operation
@@ -4501,7 +4501,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d3d0f8c2-2144-4fb9-bb5a-6bd52cfdd2c1
+          example: 70d43165-e3ff-4693-96aa-80be36a009a5
       responses:
         '200':
           description: Successful operation
@@ -4583,7 +4583,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 41fb731d-76aa-40f6-ba60-fcd371d1910b
+          example: 112e46c5-4478-4911-9a9e-79b2072fee7d
       responses:
         '200':
           description: Successful operation
@@ -4665,7 +4665,7 @@ paths:
           required: true
           schema:
             type: string
-          example: efaf87de-0e7a-4650-b791-fa7dfa887ea0
+          example: fdf828d3-be7b-4d53-a74c-fefc1e2ae6fd
       responses:
         '200':
           description: Successful operation
@@ -4747,7 +4747,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 67547e7d-5842-41df-b7b2-35dec33bcba5
+          example: adf5fbb8-34d9-4b39-aba2-140030854198
       responses:
         '200':
           description: Successful operation
@@ -4897,7 +4897,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2534fb66-135d-46b9-8ada-dcee247139a8
+          example: 57520e83-8287-425f-bee8-1e6d9ba7ba7b
       responses:
         '200':
           description: Successful operation
@@ -5135,7 +5135,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 880233f0-a727-46a7-83c7-bfcb910b7eaf
+          example: b5b8e877-5185-44ff-bb4e-6ddbf8b6df34
       responses:
         '200':
           description: Successful operation
@@ -5217,7 +5217,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c885712e-9c5e-4882-92b1-16b520afe90b
+          example: f4949348-1fe1-4c50-bfdd-1aefa9792aef
       responses:
         '200':
           description: Successful operation
@@ -5299,7 +5299,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1ad3229d-7339-4caf-8884-03152b765178
+          example: 547d93f3-c780-461b-9312-9ab5d184cec0
       responses:
         '200':
           description: Successful operation
@@ -5396,7 +5396,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f3fedae9-c73c-4e95-8854-d454a88d168d
+          example: 910809dc-3f86-4075-af5c-d1a4e7d2407b
       responses:
         '200':
           description: Successful operation
@@ -7160,7 +7160,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3c48a661-b578-4efd-a33f-b574714c547d
+          example: 4378f82a-9a96-4ab4-b2fb-5ae8e27b82dc
       responses:
         '200':
           description: Successful operation
@@ -7243,7 +7243,7 @@ paths:
           required: true
           schema:
             type: string
-          example: df1b6707-3811-4600-89fa-8eb5c8208e4c
+          example: 852ed3ec-bf19-4380-b206-ae399a3f14c4
       responses:
         '200':
           description: Successful operation
@@ -7326,7 +7326,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c57c5bbc-db2b-4e04-a827-5b573c9a6d45
+          example: 03eeefd1-b013-4168-898a-385036ce1b6c
       responses:
         '200':
           description: Successful operation
@@ -7545,7 +7545,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0f95469c-eb4e-4930-b58e-436ed90e4a2f
+          example: ccd6a4ba-26c8-474b-b186-2369274f5184
       responses:
         '200':
           description: Successful operation
@@ -7628,7 +7628,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 6b404456-7c3d-40fd-aa72-bbf0f803fb7c
+          example: 79baf360-a03b-47d3-b5ad-9f0a46296a7b
       responses:
         '200':
           description: Successful operation
@@ -7711,7 +7711,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ff2d6c7d-19b2-4b50-bcca-26b3e91a0d0e
+          example: 3212fb18-7bf9-4321-8dbc-f90780086c57
       responses:
         '200':
           description: Successful operation
@@ -7794,7 +7794,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d267c8aa-a511-4bf8-8852-ad20d8445ba8
+          example: 9c077b91-d182-4323-a6b4-a664fc11ef04
       responses:
         '200':
           description: Successful operation
@@ -7981,7 +7981,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ca8db4c3-334f-4be5-8c47-81b30eb11d80
+          example: 921c1161-9139-4fa4-809a-87939da69b6d
       responses:
         '200':
           description: Successful operation
@@ -8004,7 +8004,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7e8edc01-6864-4bd6-ab4b-da653ee1714a
+          example: 354b2394-1dcb-4b29-bafd-9432d38ac962
       responses:
         '200':
           description: Successful operation
@@ -8064,7 +8064,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b83652c7-9519-4b92-8241-8bd7570e00d8
+          example: 760fd162-c5a6-4a3e-9a74-19a77242ad4c
       responses:
         '200':
           description: Successful operation
@@ -8087,7 +8087,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a6996b2c-9733-42d2-a2f7-20196e2296ce
+          example: 299e4b35-577e-4303-9912-0b4e7aeadd1b
       responses:
         '200':
           description: Successful operation
@@ -8147,7 +8147,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 58d85a02-1789-436c-9568-aa50eb4b60b7
+          example: 020b9e94-e665-43e3-8f87-e516faecc48a
       responses:
         '200':
           description: Successful operation
@@ -8170,7 +8170,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ab3de591-f6a6-48c8-a68d-6982569bd2b1
+          example: d89d5dbc-b6bb-4f79-896a-b03c62da5d8c
       responses:
         '200':
           description: Successful operation
@@ -8230,7 +8230,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3379cd54-4e0a-4e34-bfb7-4f9374474742
+          example: ca6c04b6-fab0-455c-9e18-c4cf6daf7456
       responses:
         '200':
           description: Successful operation
@@ -8253,7 +8253,7 @@ paths:
           required: true
           schema:
             type: string
-          example: eb067995-1bd3-45bc-8942-dabf6a415801
+          example: 20b84165-3f4a-4daf-8fa7-ed2934744f7f
       responses:
         '200':
           description: Successful operation
@@ -8395,7 +8395,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 07892f44-b965-4b12-9473-ec1ae549c504
+          example: 2a97bbf9-b31b-4fbc-9043-0294a497ce40
       responses:
         '200':
           description: Successful operation
@@ -8455,7 +8455,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 456f2b62-e176-4c32-b543-5a7028a1e71d
+          example: a0847ad7-23b9-4bde-bf62-a15d988d6756
       responses:
         '200':
           description: Successful operation
@@ -8515,7 +8515,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f2e443f7-ee7f-4de2-9802-d84fdbf04531
+          example: e42499ff-a39f-43c4-8a9f-613f938f5e76
       responses:
         '200':
           description: Successful operation
@@ -8575,7 +8575,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a74b50b7-6378-49dd-8031-085dde87886b
+          example: cf4dd790-1959-4f4a-9c9b-3fb740fa6cdc
       responses:
         '200':
           description: Successful operation
@@ -8883,6 +8883,28 @@ paths:
                 $ref: '#/components/schemas/BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo'
       security:
         - basicAuth: [ ]
+  /v3/business_data/google/my_business_info/live:
+    post:
+      tags:
+        - BusinessData
+      description: "‌‌\nBusiness Data API provides results containing information about specific business entity from Google. The provided results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings.\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_info/live/?bash'"
+      operationId: GoogleMyBusinessInfoLive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/BusinessDataTaskRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessDataGoogleMyBusinessInfoLiveResponseInfo'
+      security:
+        - basicAuth: [ ]
   /v3/business_data/google/my_business_updates/task_post:
     post:
       tags:
@@ -9098,7 +9120,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 14f1967c-9503-427a-afca-c94ac7cd6519
+          example: 06c5d218-03de-43b7-a343-4b362773112f
       responses:
         '200':
           description: Successful operation
@@ -9788,6 +9810,7 @@ components:
           perspectives: '#/components/schemas/PerspectivesSerpElementItem'
           discussions_and_forums: '#/components/schemas/DiscussionsAndForumsSerpElementItem'
           compare_sites: '#/components/schemas/CompareSitesSerpElementItem'
+          courses: '#/components/schemas/CoursesSerpElementItem'
           maps_search: '#/components/schemas/MapsSearchSerpElementItem'
           maps_paid_item: '#/components/schemas/MapsPaidItemSerpElementItem'
           news_search: '#/components/schemas/NewsSearchSerpElementItem'
@@ -9812,15 +9835,15 @@ components:
         mapping:
           organic: '#/components/schemas/OrganicDataforseoLabsSerpElementItem'
           paid: '#/components/schemas/PaidDataforseoLabsSerpElementItem'
-          knowledge_graph: '#/components/schemas/KnowledgeGraphDataforseoLabsSerpElementItem'
           people_also_ask: '#/components/schemas/PeopleAlsoAskDataforseoLabsSerpElementItem'
+          twitter: '#/components/schemas/TwitterDataforseoLabsSerpElementItem'
           people_also_search: '#/components/schemas/PeopleAlsoSearchDataforseoLabsSerpElementItem'
           related_searches: '#/components/schemas/RelatedSearchesDataforseoLabsSerpElementItem'
           knowledge_graph_description_item: '#/components/schemas/KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem'
+          knowledge_graph_images_item: '#/components/schemas/KnowledgeGraphImagesItemDataforseoLabsSerpElementItem'
           knowledge_graph_row_item: '#/components/schemas/KnowledgeGraphRowItemDataforseoLabsSerpElementItem'
           knowledge_graph_carousel_item: '#/components/schemas/KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem'
-          twitter: '#/components/schemas/TwitterDataforseoLabsSerpElementItem'
-          knowledge_graph_images_item: '#/components/schemas/KnowledgeGraphImagesItemDataforseoLabsSerpElementItem'
+          knowledge_graph: '#/components/schemas/KnowledgeGraphDataforseoLabsSerpElementItem'
           carousel: '#/components/schemas/CarouselDataforseoLabsSerpElementItem'
           multi_carousel: '#/components/schemas/MultiCarouselDataforseoLabsSerpElementItem'
           top_stories: '#/components/schemas/TopStoriesDataforseoLabsSerpElementItem'
@@ -9914,6 +9937,7 @@ components:
         value:
           type: string
           description: value of the rating
+          format: float
           nullable: true
         votes_count:
           type: integer
@@ -9953,8 +9977,8 @@ components:
         propertyName: resource_type
         mapping:
           html: '#/components/schemas/OnPageHtmlResourceElementItem'
-          stylesheet: '#/components/schemas/OnPageStylesheetResourceElementItem'
           script: '#/components/schemas/OnPageScriptResourceElementItem'
+          stylesheet: '#/components/schemas/OnPageStylesheetResourceElementItem'
           image: '#/components/schemas/OnPageImageResourceElementItem'
           broken: '#/components/schemas/OnPageBrokenResourceElementItem'
     ReviewResponseItemInfo:
@@ -14976,6 +15000,47 @@ components:
           nullable: true
         rating:
           $ref: '#/components/schemas/RatingInfo'
+    CoursesSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseSerpElementItem'
+        - type: object
+          properties:
+            rank_group:
+              type: integer
+              description: "group rank in SERP\nposition within a group of elements with identical type values;\npositions of elements with different type values are omitted from rank_group;\nalways equals 0 for desktop"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP\nalways equals 0 for desktop"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            title:
+              type: string
+              description: title of the row
+              nullable: true
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: "array of course categories\ncontains a list of categories relevant to courses"
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/CoursesElement'
+              description: "additional items present in the element\nif there are none, equals null"
+              nullable: true
+            rectangle:
+              $ref: '#/components/schemas/Rectangle'
     SerpGoogleOrganicTaskGetAdvancedResultInfo:
       type: object
       properties:
@@ -15014,7 +15079,7 @@ components:
           items:
             type: string
             nullable: true
-          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, google_posts, images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, recipes, top_sights, scholarly_articles, popular_products, podcasts, questions_and_answers, find_results_on, stocks_box, visual_stories, commercial_units, local_services, google_hotels, math_solver, currency_box,product_considerations, found_on_web, short_videos, refine_products, explore_brands, perspectives, discussions_and_forums, compare_sites"
+          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, google_posts, images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, recipes, top_sights, scholarly_articles, popular_products, podcasts, questions_and_answers, find_results_on, stocks_box, visual_stories, commercial_units, local_services, google_hotels, math_solver, currency_box,product_considerations, found_on_web, short_videos, refine_products, explore_brands, perspectives, discussions_and_forums, compare_sites, courses"
           nullable: true
         se_results_count:
           type: integer
@@ -15404,7 +15469,7 @@ components:
           items:
             type: string
             nullable: true
-          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, google_posts, images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, recipes, top_sights, scholarly_articles, popular_products, podcasts, questions_and_answers, find_results_on, stocks_box, visual_stories, commercial_units, local_services, google_hotels, math_solver, currency_box, product_considerations, found_on_web, short_videos, refine_products, explore_brands, perspectives, discussions_and_forums, compare_sites"
+          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, google_posts, images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, recipes, top_sights, scholarly_articles, popular_products, podcasts, questions_and_answers, find_results_on, stocks_box, visual_stories, commercial_units, local_services, google_hotels, math_solver, currency_box, product_considerations, found_on_web, short_videos, refine_products, explore_brands, perspectives, discussions_and_forums, compare_sites, courses"
           nullable: true
         se_results_count:
           type: integer
@@ -24523,6 +24588,27 @@ components:
                 $ref: '#/components/schemas/SerpNaverOrganicTaskGetRegularTaskInfo'
               description: array of tasks
               nullable: true
+    Price:
+      type: object
+      properties:
+        current:
+          type: integer
+          nullable: true
+        regular:
+          type: integer
+          nullable: true
+        max_value:
+          type: integer
+          nullable: true
+        currency:
+          type: string
+          nullable: true
+        is_price_range:
+          type: boolean
+          nullable: true
+        displayed_price:
+          type: string
+          nullable: true
     SerpNaverOrganicTaskGetAdvancedResultInfo:
       type: object
       properties:
@@ -27904,41 +27990,6 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    KeywordDataKeywordDataInfo:
-      type: object
-      properties:
-        se_type:
-          type: string
-          description: search engine type
-          nullable: true
-        keyword:
-          type: string
-          description: keyword suggestion
-          nullable: true
-        location_code:
-          type: integer
-          description: location code in a POST array
-          nullable: true
-        language_code:
-          type: string
-          description: language code in a POST array
-          nullable: true
-        keyword_info:
-          $ref: '#/components/schemas/KeywordInfo'
-        clickstream_keyword_info:
-          type: object
-          description: "clickstream data for the returned keyword\nto retrieve results for this field, the parameter include_clickstream_data must be set to true"
-          nullable: true
-        keyword_properties:
-          $ref: '#/components/schemas/KeywordProperties'
-        impressions_info:
-          $ref: '#/components/schemas/ImpressionsInfo'
-        serp_info:
-          $ref: '#/components/schemas/SerpInfo'
-        avg_backlinks_info:
-          $ref: '#/components/schemas/AvgBacklinksInfo'
-        search_intent_info:
-          $ref: '#/components/schemas/SearchIntentInfo'
     DataforseoLabsGoogleKeywordSuggestionsLiveResultInfo:
       type: object
       properties:
@@ -27986,7 +28037,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+            $ref: '#/components/schemas/KeywordDataInfo'
           description: contains keywords and related data
           nullable: true
     DataforseoLabsGoogleKeywordSuggestionsLiveTaskInfo:
@@ -29567,7 +29618,7 @@ components:
           type: string
           description: "previous to the most recent date and time when SERP data was updated\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-10-15 12:57:46 +00:00"
           nullable: true
-    DataforseoLabsLiveItem:
+    DataforseoLabsGoogleRankedKeywordsLiveItem:
       type: object
       properties:
         se_type:
@@ -29575,7 +29626,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordDataInfo'
         ranked_serp_element:
           $ref: '#/components/schemas/RankedSerpElement'
     PaidDataforseoLabsSerpElementItem:
@@ -29728,7 +29779,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsGoogleRankedKeywordsLiveItem'
           description: contains ranked keywords and related data
           nullable: true
     DataforseoLabsGoogleRankedKeywordsLiveTaskInfo:
@@ -29862,7 +29913,11 @@ components:
           additionalProperties:
             type: array
             items:
-              type: number
+              type: integer
+              nullable: true
+            nullable: true
+          description: "keyword positions\nSERP positions the related domain holds in SERP for the specified keywords"
+          nullable: true
     DataforseoLabsGoogleSerpCompetitorsLiveResultInfo:
       type: object
       properties:
@@ -30165,7 +30220,7 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    DataforseoLabsDomainIntersectionLiveItem:
+    DataforseoLabsGoogleDomainIntersectionLiveItem:
       type: object
       properties:
         se_type:
@@ -30173,7 +30228,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordDataInfo'
         first_domain_serp_element:
           $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
         second_domain_serp_element:
@@ -30214,7 +30269,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsDomainIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsGoogleDomainIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsGoogleDomainIntersectionLiveTaskInfo:
@@ -30667,7 +30722,7 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    KnowledgeGraphDataforseoLabsSerpElementItem:
+    PeopleAlsoAskDataforseoLabsSerpElementItem:
       type: object
       allOf:
         - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
@@ -30679,7 +30734,39 @@ components:
               nullable: true
             rank_group:
               type: integer
-              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/PeopleAlsoAskElement'
+              description: elements of search results found in SERP
+              nullable: true
+    TwitterDataforseoLabsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        - type: object
+          properties:
+            se_type:
+              type: string
+              description: search engine type
+              nullable: true
+            rank_group:
+              type: integer
+              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
               nullable: true
             rank_absolute:
               type: integer
@@ -30697,70 +30784,14 @@ components:
               type: string
               description: title of the result in SERP
               nullable: true
-            sub_title:
-              type: string
-              description: subtitle of the item
-              nullable: true
-            description:
-              type: string
-              description: description of the results element in SERP
-              nullable: true
-            card_id:
-              type: string
-              description: card id
-              nullable: true
             url:
               type: string
-              description: relevant URL in SERP
-              nullable: true
-            image_url:
-              type: string
-              description: URL of the image from knowledge graph
-              nullable: true
-            logo_url:
-              type: string
-              description: URL of the logo from knowledge graph
-              nullable: true
-            cid:
-              type: string
-              description: google-defined client id
+              description: relevant URL of the Ad element in SERP
               nullable: true
             items:
               type: array
               items:
-                $ref: '#/components/schemas/PeopleAlsoAskElement'
-              description: elements of search results found in SERP
-              nullable: true
-    PeopleAlsoAskDataforseoLabsSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-        - type: object
-          properties:
-            se_type:
-              type: string
-              description: search engine type
-              nullable: true
-            rank_group:
-              type: integer
-              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
-              nullable: true
-            xpath:
-              type: string
-              description: the XPath of the element
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/PeopleAlsoAskElement'
+                $ref: '#/components/schemas/TwitterElement'
               description: elements of search results found in SERP
               nullable: true
     PeopleAlsoSearchDataforseoLabsSerpElementItem:
@@ -30791,14 +30822,14 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             items:
               type: array
               items:
                 type: string
                 nullable: true
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     RelatedSearchesDataforseoLabsSerpElementItem:
       type: object
@@ -30831,7 +30862,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem:
       type: object
@@ -30865,6 +30896,36 @@ components:
                 $ref: '#/components/schemas/LinkElement'
               description: "sitelinks\nthe links shown below some of Google’s search results\nif there are none, equals null"
               nullable: true
+    KnowledgeGraphImagesItemDataforseoLabsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        - type: object
+          properties:
+            rank_group:
+              type: integer
+              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            link:
+              $ref: '#/components/schemas/LinkElement'
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/KnowledgeGraphImagesElement'
+              description: "additional items present in the element\nif there are none, equals null"
+              nullable: true
     KnowledgeGraphRowItemDataforseoLabsSerpElementItem:
       type: object
       allOf:
@@ -30889,7 +30950,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the link
+              description: title of the item
               nullable: true
             data_attrid:
               type: string
@@ -30929,7 +30990,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the result in SERP
+              description: title of the link
               nullable: true
             data_attrid:
               type: string
@@ -30942,6 +31003,70 @@ components:
               items:
                 $ref: '#/components/schemas/KnowledgeGraphListElement'
               description: "additional items present in the element\nif there are none, equals null"
+              nullable: true
+    KnowledgeGraphDataforseoLabsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        - type: object
+          properties:
+            se_type:
+              type: string
+              description: search engine type
+              nullable: true
+            rank_group:
+              type: integer
+              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+              nullable: true
+            rank_absolute:
+              type: integer
+              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+              nullable: true
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            title:
+              type: string
+              description: title of the result in SERP
+              nullable: true
+            sub_title:
+              type: string
+              description: subtitle of the item
+              nullable: true
+            description:
+              type: string
+              description: description of the results element in SERP
+              nullable: true
+            card_id:
+              type: string
+              description: card id
+              nullable: true
+            url:
+              type: string
+              description: relevant URL of the Ad element in SERP
+              nullable: true
+            image_url:
+              type: string
+              description: URL of the image from knowledge graph
+              nullable: true
+            logo_url:
+              type: string
+              description: URL of the logo from knowledge graph
+              nullable: true
+            cid:
+              type: string
+              description: google-defined client id
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+              description: elements of search results found in SERP
               nullable: true
     DataforseoLabsGoogleHistoricalSerpsLiveItem:
       type: object
@@ -31003,76 +31128,6 @@ components:
             $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
           description: "additional items present in the element\nif there are none, equals null"
           nullable: true
-    TwitterDataforseoLabsSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-        - type: object
-          properties:
-            se_type:
-              type: string
-              description: search engine type
-              nullable: true
-            rank_group:
-              type: integer
-              description: "position within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
-              nullable: true
-            xpath:
-              type: string
-              description: the XPath of the element
-              nullable: true
-            title:
-              type: string
-              description: title of the item
-              nullable: true
-            url:
-              type: string
-              description: URL link
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/TwitterElement'
-              description: "additional items present in the element\nif there are none, equals null"
-              nullable: true
-    KnowledgeGraphImagesItemDataforseoLabsSerpElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
-        - type: object
-          properties:
-            rank_group:
-              type: integer
-              description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
-              nullable: true
-            rank_absolute:
-              type: integer
-              description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
-              nullable: true
-            position:
-              type: string
-              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
-              nullable: true
-            xpath:
-              type: string
-              description: the XPath of the element
-              nullable: true
-            link:
-              $ref: '#/components/schemas/LinkElement'
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/KnowledgeGraphImagesElement'
-              description: "additional items present in the element\nif there are none, equals null"
-              nullable: true
     DataforseoLabsGoogleHistoricalSerpsLiveResultInfo:
       type: object
       properties:
@@ -31149,7 +31204,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/CarouselElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     MultiCarouselDataforseoLabsSerpElementItem:
       type: object
@@ -31177,7 +31232,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/MultiCarouselElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     TopStoriesDataforseoLabsSerpElementItem:
       type: object
@@ -31205,7 +31260,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/TopStoriesElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     QAnswerBoxDataforseoLabsSerpElementItem:
       type: object
@@ -31276,7 +31331,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/MathSolverElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
             links:
               type: array
@@ -31310,7 +31365,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/VideoElement'
-              description: elements of search results found in SERP
+              description: "additional items present in the element\nif there are none, equals null"
               nullable: true
     MapDataforseoLabsSerpElementItem:
       type: object
@@ -31336,11 +31391,11 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
     FeaturedSnippetDataforseoLabsSerpElementItem:
       type: object
@@ -31370,11 +31425,11 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             featured_title:
               type: string
-              description: title of a given element
+              description: title
               nullable: true
             description:
               type: string
@@ -31382,7 +31437,7 @@ components:
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             table:
               $ref: '#/components/schemas/Table'
@@ -31438,7 +31493,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             description:
               type: string
@@ -31454,7 +31509,7 @@ components:
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             is_paid:
               type: boolean
@@ -31511,7 +31566,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             date_from:
               type: string
@@ -31525,7 +31580,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/HotelsPackElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     KnowledgeGraphListItemDataforseoLabsSerpElementItem:
       type: object
@@ -31665,7 +31720,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             data_attrid:
               type: string
@@ -31675,7 +31730,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/KnowledgeGraphShoppingElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     GoogleReviewsDataforseoLabsSerpElementItem:
       type: object
@@ -31716,7 +31771,7 @@ components:
               nullable: true
             cid:
               type: string
-              description: "google-defined client id\nunique id of a local establishment;\ncan be used with Google Reviews API to get a full list of reviews"
+              description: google-defined client id
               nullable: true
     GooglePostsDataforseoLabsSerpElementItem:
       type: object
@@ -31750,7 +31805,7 @@ components:
               nullable: true
             cid:
               type: string
-              description: "google-defined client id\nunique id of a local establishment;\ncan be used with Google Reviews API to get a full list of reviews"
+              description: google-defined client id
               nullable: true
     GoogleFlightsDataforseoLabsSerpElementItem:
       type: object
@@ -31776,17 +31831,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/GoogleFlightsElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     ImagesDataforseoLabsSerpElementItem:
       type: object
@@ -31812,17 +31867,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/ImagesElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
             related_image_searches:
               type: array
@@ -31854,13 +31909,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/ShoppingElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     JobsDataforseoLabsSerpElementItem:
       type: object
@@ -31886,17 +31941,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/JobsElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     EventsDataforseoLabsSerpElementItem:
       type: object
@@ -31922,17 +31977,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/EventsElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     MentionCarouselDataforseoLabsSerpElementItem:
       type: object
@@ -31958,13 +32013,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/MentionCarouselElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     RecipesDataforseoLabsSerpElementItem:
       type: object
@@ -31992,7 +32047,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/RecipesElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     TopSightsDataforseoLabsSerpElementItem:
       type: object
@@ -32018,13 +32073,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/TopSightsElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     ScholarlyArticlesDataforseoLabsSerpElementItem:
       type: object
@@ -32050,17 +32105,17 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/ScholarlyArticlesElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     PopularProductsDataforseoLabsSerpElementItem:
       type: object
@@ -32088,7 +32143,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PopularProductsElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     PodcastsDataforseoLabsSerpElementItem:
       type: object
@@ -32116,7 +32171,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/PodcastsElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     QuestionsAndAnswersDataforseoLabsSerpElementItem:
       type: object
@@ -32144,7 +32199,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/QuestionsAndAnswersElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     FindResultsOnDataforseoLabsSerpElementItem:
       type: object
@@ -32172,7 +32227,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/ShortVideosElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     StocksBoxDataforseoLabsSerpElementItem:
       type: object
@@ -32198,7 +32253,7 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             source:
               type: string
@@ -32209,10 +32264,10 @@ components:
               description: text alongside the link title
               nullable: true
             price:
-              $ref: '#/components/schemas/PriceInfo'
+              $ref: '#/components/schemas/Price'
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             domain:
               type: string
@@ -32248,7 +32303,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/LicensesElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     CommercialUnitsDataforseoLabsSerpElementItem:
       type: object
@@ -32274,13 +32329,13 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/CommercialUnitsElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     LocalServicesDataforseoLabsSerpElementItem:
       type: object
@@ -32306,11 +32361,11 @@ components:
               nullable: true
             title:
               type: string
-              description: title of the item
+              description: title of the result in SERP
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
             domain:
               type: string
@@ -32320,7 +32375,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/LocalServicesElement'
-              description: "additional items present in the element\nif there are none, equals null"
+              description: elements of search results found in SERP
               nullable: true
     GoogleHotelsDataforseoLabsSerpElementItem:
       type: object
@@ -32350,7 +32405,7 @@ components:
               nullable: true
             url:
               type: string
-              description: URL link
+              description: relevant URL of the Ad element in SERP
               nullable: true
     DataforseoLabsGoogleHistoricalSerpsLiveResponseInfo:
       type: object
@@ -32573,7 +32628,7 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    DataforseoLabsPageIntersectionLiveItem:
+    DataforseoLabsGooglePageIntersectionLiveItem:
       type: object
       properties:
         se_type:
@@ -32581,7 +32636,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordDataInfo'
         intersection_result:
           type: object
           additionalProperties:
@@ -32630,7 +32685,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsPageIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsGooglePageIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsGooglePageIntersectionLiveTaskInfo:
@@ -33083,6 +33138,33 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    KeywordData:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: "search engine type\nsearch engine type specified in a POST request;\nfor this endpoint, the field equals bing"
+          nullable: true
+        keyword:
+          type: string
+          description: returned keyword
+          nullable: true
+        location_code:
+          type: integer
+          description: location code in a POST array
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        keyword_info:
+          $ref: '#/components/schemas/KeywordInfo'
+        keyword_properties:
+          $ref: '#/components/schemas/KeywordProperties'
+        serp_info:
+          $ref: '#/components/schemas/SerpInfo'
+        avg_backlinks_info:
+          $ref: '#/components/schemas/AvgBacklinksInfo'
     DataforseoLabsAmazonRelatedKeywordsLiveItem:
       type: object
       properties:
@@ -33346,7 +33428,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordData'
         ranked_serp_element:
           $ref: '#/components/schemas/AmazonRankedSerpElement'
     DataforseoLabsAmazonRankedKeywordsLiveResultInfo:
@@ -34168,6 +34250,19 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    DataforseoLabsBingDomainIntersectionLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: "search engine type\nsearch engine type specified in a POST request;\nfor this endpoint, the field equals bing"
+          nullable: true
+        keyword_data:
+          $ref: '#/components/schemas/KeywordData'
+        first_domain_serp_element:
+          $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+        second_domain_serp_element:
+          $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
     DataforseoLabsBingDomainIntersectionLiveResultInfo:
       type: object
       properties:
@@ -34204,7 +34299,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsDomainIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsBingDomainIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsBingDomainIntersectionLiveTaskInfo:
@@ -34403,6 +34498,21 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    DataforseoLabsBingPageIntersectionLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: "search engine type\nsearch engine type specified in a POST request;\nfor this endpoint, the field equals bing"
+          nullable: true
+        keyword_data:
+          $ref: '#/components/schemas/KeywordData'
+        intersection_result:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
+          description: "contains data on the SERP elements found for the returned keyword\ndata will be provided in separate arrays for each URL you specified in the pages object when setting a task;\ndepending on the number of specified URLs, it can contain from 1 to 20 arrays named respectively"
+          nullable: true
     DataforseoLabsBingPageIntersectionLiveResultInfo:
       type: object
       properties:
@@ -34445,7 +34555,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsPageIntersectionLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsBingPageIntersectionLiveItem'
           description: 'contains keywords, relevant SERP elements and related data'
           nullable: true
     DataforseoLabsBingPageIntersectionLiveTaskInfo:
@@ -34537,6 +34647,17 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    DataforseoLabsBingRankedKeywordsLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: search engine type
+          nullable: true
+        keyword_data:
+          $ref: '#/components/schemas/KeywordData'
+        ranked_serp_element:
+          $ref: '#/components/schemas/RankedSerpElement'
     DataforseoLabsBingRankedKeywordsLiveResultInfo:
       type: object
       properties:
@@ -34581,7 +34702,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsBingRankedKeywordsLiveItem'
           description: contains ranked keywords and related data
           nullable: true
     DataforseoLabsBingRankedKeywordsLiveTaskInfo:
@@ -34683,7 +34804,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordData'
         depth:
           type: integer
           description: keyword search depth
@@ -34707,7 +34828,7 @@ components:
           description: keyword in a POST array
           nullable: true
         seed_keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordData'
         location_code:
           type: integer
           description: location code in a POST array
@@ -35302,7 +35423,7 @@ components:
               description: indicates whether the app is free
               nullable: true
             price:
-              $ref: '#/components/schemas/PriceInfo'
+              $ref: '#/components/schemas/Price'
             developer:
               type: string
               description: name of the app developer
@@ -35344,7 +35465,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordData'
         ranked_serp_element:
           $ref: '#/components/schemas/AppRankedSerpElementInfo'
     DataforseoLabsGoogleKeywordsForAppLiveResultInfo:
@@ -35604,7 +35725,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordData'
         intersection_result:
           type: object
           additionalProperties:
@@ -35849,7 +35970,43 @@ components:
               description: indicates whether the app is free
               nullable: true
             price:
-              $ref: '#/components/schemas/PriceInfo'
+              $ref: '#/components/schemas/Price'
+    ItemsRankedSerpElement:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: search engine type
+          nullable: true
+        serp_item:
+          $ref: '#/components/schemas/DataAppAppStoreSearchOrganicSerpElementItem'
+        check_url:
+          type: string
+          description: "direct URL to search engine results\nyou can use it to make sure that we provided accurate results"
+          nullable: true
+        se_results_count:
+          type: string
+          description: number of search results for the returned keyword
+          nullable: true
+        last_updated_time:
+          type: string
+          description: "date and time when SERP data was updated\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
+          nullable: true
+        previous_updated_time:
+          type: string
+          description: "previous to the most recent date and time when SERP data was updated\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-10-15 12:57:46 +00:00;\nin this case, will equal null"
+          nullable: true
+    DataforseoLabsAppleKeywordsForAppLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: search engine type
+          nullable: true
+        keyword_data:
+          $ref: '#/components/schemas/KeywordData'
+        ranked_serp_element:
+          $ref: '#/components/schemas/ItemsRankedSerpElement'
     DataforseoLabsAppleKeywordsForAppLiveResultInfo:
       type: object
       properties:
@@ -35882,7 +36039,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/DataforseoLabsLiveItem'
+            $ref: '#/components/schemas/DataforseoLabsAppleKeywordsForAppLiveItem'
           description: contains data related to the ranking keywords for the app specified in the app_id field
           nullable: true
     DataforseoLabsAppleKeywordsForAppLiveTaskInfo:
@@ -36107,7 +36264,7 @@ components:
           description: search engine type
           nullable: true
         keyword_data:
-          $ref: '#/components/schemas/KeywordDataKeywordDataInfo'
+          $ref: '#/components/schemas/KeywordData'
         intersection_result:
           type: object
           additionalProperties:
@@ -46126,6 +46283,74 @@ components:
           type: integer
           description: "time to complete downloading the resource\nthe amount of time a browser needs to complete downloading a resource"
           nullable: true
+    OnPageScriptResourceElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
+        - type: object
+          properties:
+            meta:
+              $ref: '#/components/schemas/ResourceMetaInfo'
+            status_code:
+              type: integer
+              description: status code of the page where a given resource is located
+              nullable: true
+            location:
+              type: string
+              description: "location header\nindicates the URL to redirect a page to"
+              nullable: true
+            url:
+              type: string
+              description: resource URL
+              nullable: true
+            size:
+              type: integer
+              description: "resource size\nindicates the size of a given resource measured in bytes"
+              nullable: true
+            encoded_size:
+              type: integer
+              description: "resource size after encoding\nindicates the size of the encoded resource measured in bytes"
+              nullable: true
+            total_transfer_size:
+              type: integer
+              description: "compressed resource size\nindicates the compressed size of a given resource in bytes"
+              format: int64
+              nullable: true
+            fetch_time:
+              type: string
+              description: "date and time when a resource was fetched\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2021-02-17 13:54:15 +00:00"
+              nullable: true
+            fetch_timing:
+              $ref: '#/components/schemas/FetchTiming'
+            cache_control:
+              $ref: '#/components/schemas/CacheControl'
+            checks:
+              type: object
+              additionalProperties:
+                type: boolean
+                nullable: true
+              description: "resource check-ups\ncontents of the array depend on the resource_type"
+              nullable: true
+            resource_errors:
+              $ref: '#/components/schemas/OnPageResourceIssueInfo'
+            content_encoding:
+              type: string
+              description: type of encoding
+              nullable: true
+            media_type:
+              type: string
+              description: types of media used to display a resource
+              nullable: true
+            accept_type:
+              type: string
+              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
+              nullable: true
+            server:
+              type: string
+              description: server version
+              nullable: true
+            last_modified:
+              $ref: '#/components/schemas/LastModified'
     OnPageStylesheetResourceElementItem:
       type: object
       allOf:
@@ -46251,74 +46476,6 @@ components:
                 $ref: '#/components/schemas/OnPageResourcesResultInfo'
               description: array of results
               nullable: true
-    OnPageScriptResourceElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
-        - type: object
-          properties:
-            meta:
-              $ref: '#/components/schemas/ResourceMetaInfo'
-            status_code:
-              type: integer
-              description: status code of the page where a given resource is located
-              nullable: true
-            location:
-              type: string
-              description: "location header\nindicates the URL to redirect a page to"
-              nullable: true
-            url:
-              type: string
-              description: resource URL
-              nullable: true
-            size:
-              type: integer
-              description: "resource size\nindicates the size of a given resource measured in bytes"
-              nullable: true
-            encoded_size:
-              type: integer
-              description: "resource size after encoding\nindicates the size of the encoded resource measured in bytes"
-              nullable: true
-            total_transfer_size:
-              type: integer
-              description: "compressed resource size\nindicates the compressed size of a given resource in bytes"
-              format: int64
-              nullable: true
-            fetch_time:
-              type: string
-              description: "date and time when a resource was fetched\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2021-02-17 13:54:15 +00:00"
-              nullable: true
-            fetch_timing:
-              $ref: '#/components/schemas/FetchTiming'
-            cache_control:
-              $ref: '#/components/schemas/CacheControl'
-            checks:
-              type: object
-              additionalProperties:
-                type: boolean
-                nullable: true
-              description: "resource check-ups\ncontents of the array depend on the resource_type"
-              nullable: true
-            content_encoding:
-              type: string
-              description: type of encoding
-              nullable: true
-            media_type:
-              type: string
-              description: types of media used to display a resource
-              nullable: true
-            accept_type:
-              type: string
-              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
-              nullable: true
-            server:
-              type: string
-              description: server version
-              nullable: true
-            last_modified:
-              $ref: '#/components/schemas/LastModified'
-            resource_errors:
-              $ref: '#/components/schemas/OnPageResourceIssueInfo'
     OnPageImageResourceElementItem:
       type: object
       allOf:
@@ -47769,7 +47926,7 @@ components:
             $ref: '#/components/schemas/TableContentItemInfo'
           description: content of the footer of the table
           nullable: true
-    MainTopic:
+    TopicInfo:
       type: object
       properties:
         h_title:
@@ -47796,45 +47953,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ContentItemInfo'
-          description: "primary content on the page\nyou can find more information about content priority calculation in this help center article"
-          nullable: true
-        secondary_content:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContentItemInfo'
-          description: "secondary content on the page\nyou can find more information about content priority calculation in this help center article"
-          nullable: true
-        table_content:
-          type: array
-          items:
-            $ref: '#/components/schemas/TableContent'
-          description: content of the table on the page
-          nullable: true
-    SecondaryTopic:
-      type: object
-      properties:
-        h_title:
-          type: string
-          description: meta title
-          nullable: true
-        main_title:
-          type: string
-          description: main title of the block
-          nullable: true
-        author:
-          type: string
-          description: content author name
-          nullable: true
-        language:
-          type: string
-          description: content language
-          nullable: true
-        level:
-          type: integer
-          description: HTML level
-          nullable: true
-        primary_content:
-          type: string
           description: "primary content on the page\nyou can find more information about content priority calculation in this help center article"
           nullable: true
         secondary_content:
@@ -47859,13 +47977,13 @@ components:
         main_topic:
           type: array
           items:
-            $ref: '#/components/schemas/MainTopic'
+            $ref: '#/components/schemas/TopicInfo'
           description: "main topic on the page\nyou can find more information about topic priority calculation in this help center article"
           nullable: true
         secondary_topic:
           type: array
           items:
-            $ref: '#/components/schemas/SecondaryTopic'
+            $ref: '#/components/schemas/TopicInfo'
           description: "secondary topic on the page\nyou can find more information about topic priority calculation in this help center article"
           nullable: true
     OnPageContentParsingItem:
@@ -47992,21 +48110,6 @@ components:
         ip_pool_for_scan:
           type: string
           description: "proxy pool\noptional field\nyou can choose a location of the proxy pool that will be used to obtain the requested data;\nthe parameter can be used if page content is inaccessible in one of the locations, resulting in occasional site_unreachable errors\npossible values: us, de"
-          nullable: true
-    RowCells:
-      type: object
-      properties:
-        text:
-          type: string
-          description: content text
-          nullable: true
-        urls:
-          type: object
-          description: contains other URLs and anchors found in the content element
-          nullable: true
-        is_header:
-          type: boolean
-          description: indicates if the text belongs to the header
           nullable: true
     OnPageContentParsingLiveResultInfo:
       type: object
@@ -51449,19 +51552,19 @@ components:
               description: "details and special offers\nif there are no details, the value will be null"
               nullable: true
             base_price:
-              type: integer
+              type: number
               description: product price without tax and shipping
               nullable: true
             tax:
-              type: integer
+              type: number
               description: "the amount of tax\ntax is specified as the actual amount of money, not as the percentage"
               nullable: true
             shipping_price:
-              type: integer
+              type: number
               description: product shipping price
               nullable: true
             total_price:
-              type: integer
+              type: number
               description: product price including tax and shipping
               format: int64
               nullable: true
@@ -52176,7 +52279,7 @@ components:
           description: "number of seller reviews\nnumber of reviews on the product seller’s account"
           nullable: true
         price:
-          $ref: '#/components/schemas/PriceInfo'
+          $ref: '#/components/schemas/Price'
         delivery_info:
           $ref: '#/components/schemas/DeliveryInfo'
     ProductVariation:
@@ -53633,7 +53736,7 @@ components:
               description: sender company name
               nullable: true
             price:
-              $ref: '#/components/schemas/PriceInfo'
+              $ref: '#/components/schemas/Price'
             rating:
               $ref: '#/components/schemas/RatingElement'
             condition:
@@ -53681,7 +53784,7 @@ components:
               description: sender company name
               nullable: true
             price:
-              $ref: '#/components/schemas/PriceInfo'
+              $ref: '#/components/schemas/Price'
             rating:
               $ref: '#/components/schemas/RatingElement'
             condition:
@@ -55268,7 +55371,7 @@ components:
             rating:
               $ref: '#/components/schemas/RatingInfo'
             price:
-              $ref: '#/components/schemas/PriceInfo'
+              $ref: '#/components/schemas/Price'
             is_free:
               type: boolean
               description: indicates whether the app is free
@@ -56484,7 +56587,7 @@ components:
             rating:
               $ref: '#/components/schemas/RatingInfo'
             price:
-              $ref: '#/components/schemas/PriceInfo'
+              $ref: '#/components/schemas/Price'
             is_free:
               type: boolean
               description: indicates whether the app is free
@@ -57588,6 +57691,7 @@ components:
               type: string
               nullable: true
             nullable: true
+          description: "available attributes\nindicates attributes a business entity can offer"
           nullable: true
         unavailable_attributes:
           type: object
@@ -58634,6 +58738,75 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/BusinessDataGoogleMyBusinessInfoTaskGetTaskInfo'
+              description: array of tasks
+              nullable: true
+    BusinessDataGoogleMyBusinessInfoLiveResultInfo:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: "keyword received in a POST array\nkeyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)\nthis field will contain the cid parameter if you specified it in the keyword field when setting a task;\nexample:\ncid:2946633002421908862\nlearn more about the parameter in this help center article"
+          nullable: true
+        se_domain:
+          type: string
+          description: search engine domain as specified in a POST array
+          nullable: true
+        location_code:
+          type: integer
+          description: location code in a POST array
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        check_url:
+          type: string
+          description: "direct URL to search engine results\nyou can use it to make sure that we provided accurate results"
+          nullable: true
+        datetime:
+          type: string
+          description: "date and time when the result was received\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
+          nullable: true
+        item_types:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: "item types\ntypes of search engine results encountered in the items array;\npossible item types: google_business_info"
+          nullable: true
+        items_count:
+          type: integer
+          description: "item types\nthe number of items in the items array"
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseBusinessDataSerpElementItem'
+          description: "encountered item types\ntypes of search engine results encountered in the items array;\npossible item types: google_business_info"
+          nullable: true
+    BusinessDataGoogleMyBusinessInfoLiveTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/BusinessDataGoogleMyBusinessInfoLiveResultInfo'
+              description: array of results
+              nullable: true
+    BusinessDataGoogleMyBusinessInfoLiveResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/BusinessDataGoogleMyBusinessInfoLiveTaskInfo'
               description: array of tasks
               nullable: true
     BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo:

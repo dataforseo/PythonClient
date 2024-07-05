@@ -36,10 +36,10 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    title: Optional[StrictStr] = Field(default=None, description="title of the item")
-    featured_title: Optional[StrictStr] = Field(default=None, description="title of a given element")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    featured_title: Optional[StrictStr] = Field(default=None, description="title")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     table: Optional[Table] = None
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")

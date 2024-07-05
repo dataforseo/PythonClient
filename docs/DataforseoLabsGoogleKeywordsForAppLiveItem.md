@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
-**keyword_data** | [**KeywordDataKeywordDataInfo**](KeywordDataKeywordDataInfo.md) |  | [optional] 
+**keyword_data** | [**KeywordData**](KeywordData.md) |  | [optional] 
 **ranked_serp_element** | [**AppRankedSerpElementInfo**](AppRankedSerpElementInfo.md) |  | [optional] 
 
 ## Example

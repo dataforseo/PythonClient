@@ -33,7 +33,7 @@ class GooglePostsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     posts_id: Optional[StrictStr] = Field(default=None, description="the identifier of the google_posts feature")
     feature: Optional[StrictStr] = Field(default=None, description="the additional feature of the review")
-    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews")
+    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "posts_id", "feature", "cid"]
 
     model_config = {

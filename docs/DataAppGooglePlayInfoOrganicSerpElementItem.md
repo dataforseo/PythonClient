@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **description** | **str** | description of the app | [optional] 
 **reviews_count** | **int** | the total number of reviews the app has | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
-**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
+**price** | [**Price**](Price.md) |  | [optional] 
 **is_free** | **bool** | indicates whether the app is free | [optional] 
 **main_category** | **str** | main category of the app | [optional] 
 **installs** | **str** | number of installs of the app approximate number of installs as displayed on the app page | [optional] 

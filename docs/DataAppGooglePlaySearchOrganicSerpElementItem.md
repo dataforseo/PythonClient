@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **reviews_count** | **int** | the total number of reviews of the app | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **is_free** | **bool** | indicates whether the app is free | [optional] 
-**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
+**price** | [**Price**](Price.md) |  | [optional] 
 **developer** | **str** | name of the app developer | [optional] 
 **developer_url** | **str** | URL to the developer page on Google Play | [optional] 
 

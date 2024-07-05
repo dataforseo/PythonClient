@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **str** | type of element | [optional] 
 **position** | **str** | the alignment of the element in Google Shopping SERP possible values: left, right | [optional] 
 **rating_type** | **str** | the type of rating here you can find the following elements: Max5, Percents, CustomMax | [optional] 
-**value** | **str** | value of the rating | [optional] 
+**value** | **float** | value of the rating | [optional] 
 **votes_count** | **int** | the amount of feedback | [optional] 
 **rating_max** | **int** | the maximum value for a rating_type | [optional] 
 

@@ -32,7 +32,7 @@ class GoogleHotelsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIte
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     hotel_identifier: Optional[StrictStr] = Field(default=None, description="unique hotel identifier unique hotel identifier assigned by Google; example: \"CgoIjaeSlI6CnNpVEAE\"")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "hotel_identifier", "url"]
 
     model_config = {

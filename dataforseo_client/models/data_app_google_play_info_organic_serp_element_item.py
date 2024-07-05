@@ -21,7 +21,7 @@ from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.apps_info import AppsInfo
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
-from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.price import Price
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,7 +40,7 @@ class DataAppGooglePlayInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
     description: Optional[StrictStr] = Field(default=None, description="description of the app")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews the app has")
     rating: Optional[RatingInfo] = None
-    price: Optional[PriceInfo] = None
+    price: Optional[Price] = None
     is_free: Optional[StrictBool] = Field(default=None, description="indicates whether the app is free")
     main_category: Optional[StrictStr] = Field(default=None, description="main category of the app")
     installs: Optional[StrictStr] = Field(default=None, description="number of installs of the app approximate number of installs as displayed on the app page")
@@ -307,7 +307,7 @@ class DataAppGooglePlayInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
             "description": obj.get("description"),
             "reviews_count": obj.get("reviews_count"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
-            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "is_free": obj.get("is_free"),
             "main_category": obj.get("main_category"),
             "installs": obj.get("installs"),

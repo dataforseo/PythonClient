@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.data_app_google_play_search_organic_serp_element_item import DataAppGooglePlaySearchOrganicSerpElementItem
-from dataforseo_client.models.keyword_data_keyword_data_info import KeywordDataKeywordDataInfo
+from dataforseo_client.models.keyword_data import KeywordData
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class DataforseoLabsGoogleAppIntersectionLiveItem(BaseModel):
     DataforseoLabsGoogleAppIntersectionLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    keyword_data: Optional[KeywordDataKeywordDataInfo] = None
+    keyword_data: Optional[KeywordData] = None
     intersection_result: Optional[Dict[str, DataAppGooglePlaySearchOrganicSerpElementItem]] = Field(default=None, description="contains SERP data for the returned keyword data will be provided in separate arrays for each app ID you specified in the app_ids object when setting a task; depending on the number of specified app IDs, it can contain from 1 to 20 arrays named respectively")
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "intersection_result"]
 
@@ -105,7 +105,7 @@ class DataforseoLabsGoogleAppIntersectionLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "keyword_data": KeywordDataKeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
+            "keyword_data": KeywordData.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
             "intersection_result": dict(
                 (_k, DataAppGooglePlaySearchOrganicSerpElementItem.from_dict(_v))
                 for _k, _v in obj["intersection_result"].items()

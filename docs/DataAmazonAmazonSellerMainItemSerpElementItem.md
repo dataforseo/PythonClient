@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **seller_name** | **str** | business name of the seller | [optional] 
 **seller_url** | **str** | url forwarding to the seller’s page on Amazon | [optional] 
 **ships_from** | **str** | sender company name | [optional] 
-**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
+**price** | [**Price**](Price.md) |  | [optional] 
 **rating** | [**RatingElement**](RatingElement.md) |  | [optional] 
 **condition** | **str** | product condition condition of the product offered by the seller | [optional] 
 **condition_description** | **str** | product condition details expanded details on the condition of the product offered by the seller | [optional] 

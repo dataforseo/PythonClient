@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **url** | **str** | seller url url of the page where the product is sold | [optional] 
 **seller_rating** | [**RatingElement**](RatingElement.md) |  | [optional] 
 **seller_review_count** | **int** | number of seller reviews number of reviews on the product seller’s account | [optional] 
-**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
+**price** | [**Price**](Price.md) |  | [optional] 
 **delivery_info** | [**DeliveryInfo**](DeliveryInfo.md) |  | [optional] 
 
 ## Example

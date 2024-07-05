@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **description** | **str** | description of the app | [optional] 
 **reviews_count** | **int** | the total number of reviews of the app | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
-**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
+**price** | [**Price**](Price.md) |  | [optional] 
 **is_free** | **bool** | indicates whether the app is free | [optional] 
 **main_category** | **str** | main category/genre of the app | [optional] 
 **categories** | **List[Optional[str]]** | all relevant categories/genres of the app | [optional] 

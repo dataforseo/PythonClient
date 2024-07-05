@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
-from dataforseo_client.models.keyword_data_keyword_data_info import KeywordDataKeywordDataInfo
+from dataforseo_client.models.keyword_data import KeywordData
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class DataforseoLabsBingDomainIntersectionLiveItem(BaseModel):
     DataforseoLabsBingDomainIntersectionLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type search engine type specified in a POST request; for this endpoint, the field equals bing")
-    keyword_data: Optional[KeywordDataKeywordDataInfo] = None
+    keyword_data: Optional[KeywordData] = None
     first_domain_serp_element: Optional[BaseDataforseoLabsSerpElementItem] = None
     second_domain_serp_element: Optional[BaseDataforseoLabsSerpElementItem] = None
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "first_domain_serp_element", "second_domain_serp_element"]
@@ -100,7 +100,7 @@ class DataforseoLabsBingDomainIntersectionLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "keyword_data": KeywordDataKeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
+            "keyword_data": KeywordData.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
             "first_domain_serp_element": BaseDataforseoLabsSerpElementItem.from_dict(obj["first_domain_serp_element"]) if obj.get("first_domain_serp_element") is not None else None,
             "second_domain_serp_element": BaseDataforseoLabsSerpElementItem.from_dict(obj["second_domain_serp_element"]) if obj.get("second_domain_serp_element") is not None else None
         })

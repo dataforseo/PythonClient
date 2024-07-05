@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **xpath** | **str** | the XPath of the element | [optional] 
 **posts_id** | **str** | the identifier of the google_posts feature | [optional] 
 **feature** | **str** | the additional feature of the review | [optional] 
-**cid** | **str** | google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews | [optional] 
+**cid** | **str** | google-defined client id | [optional] 
 
 ## Example
 

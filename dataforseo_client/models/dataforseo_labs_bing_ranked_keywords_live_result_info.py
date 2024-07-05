@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.dataforseo_labs_live_item import DataforseoLabsLiveItem
+from dataforseo_client.models.dataforseo_labs_bing_ranked_keywords_live_item import DataforseoLabsBingRankedKeywordsLiveItem
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -36,7 +36,7 @@ class DataforseoLabsBingRankedKeywordsLiveResultInfo(BaseModel):
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
     metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain ranking data is provided by the rank_group parameters that show the result’s rank considering only equivalent SERP elements")
     metrics_absolute: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain ranking data is provided by the rank_absolute parameters that indicate the result’s position among all SERP elements")
-    items: Optional[List[DataforseoLabsLiveItem]] = Field(default=None, description="contains ranked keywords and related data")
+    items: Optional[List[DataforseoLabsBingRankedKeywordsLiveItem]] = Field(default=None, description="contains ranked keywords and related data")
     __properties: ClassVar[List[str]] = ["se_type", "target", "location_code", "language_code", "total_count", "items_count", "metrics", "metrics_absolute", "items"]
 
     model_config = {
@@ -174,7 +174,7 @@ class DataforseoLabsBingRankedKeywordsLiveResultInfo(BaseModel):
             )
             if obj.get("metrics_absolute") is not None
             else None,
-            "items": [DataforseoLabsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [DataforseoLabsBingRankedKeywordsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

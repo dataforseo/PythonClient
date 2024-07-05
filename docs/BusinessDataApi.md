@@ -28,6 +28,7 @@ Method | HTTP request | Description
 [**google_hotel_searches_task_get**](BusinessDataApi.md#google_hotel_searches_task_get) | **GET** /v3/business_data/google/hotel_searches/task_get/{id} | 
 [**google_hotel_searches_task_post**](BusinessDataApi.md#google_hotel_searches_task_post) | **POST** /v3/business_data/google/hotel_searches/task_post | 
 [**google_hotel_searches_tasks_ready**](BusinessDataApi.md#google_hotel_searches_tasks_ready) | **GET** /v3/business_data/google/hotel_searches/tasks_ready | 
+[**google_my_business_info_live**](BusinessDataApi.md#google_my_business_info_live) | **POST** /v3/business_data/google/my_business_info/live | 
 [**google_my_business_info_task_get**](BusinessDataApi.md#google_my_business_info_task_get) | **GET** /v3/business_data/google/my_business_info/task_get/{id} | 
 [**google_my_business_info_task_post**](BusinessDataApi.md#google_my_business_info_task_post) | **POST** /v3/business_data/google/my_business_info/task_post | 
 [**google_my_business_info_tasks_ready**](BusinessDataApi.md#google_my_business_info_tasks_ready) | **GET** /v3/business_data/google/my_business_info/tasks_ready | 
@@ -1396,7 +1397,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    id = '14f1967c-9503-427a-afca-c94ac7cd6519' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '06c5d218-03de-43b7-a343-4b362773112f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_hotel_info_task_get_html(id)
@@ -1889,6 +1890,85 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_my_business_info_live**
+> BusinessDataGoogleMyBusinessInfoLiveResponseInfo google_my_business_info_live(business_data_task_request_info=business_data_task_request_info)
+
+
+
+‌‌ Business Data API provides results containing information about specific business entity from Google. The provided results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/business_data/google/my_business_info/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_my_business_info_live_response_info import BusinessDataGoogleMyBusinessInfoLiveResponseInfo
+from dataforseo_client.models.business_data_task_request_info import BusinessDataTaskRequestInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+    business_data_task_request_info = [dataforseo_client.BusinessDataTaskRequestInfo()] # List[BusinessDataTaskRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_my_business_info_live(business_data_task_request_info=business_data_task_request_info)
+        print("The response of BusinessDataApi->google_my_business_info_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_my_business_info_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **business_data_task_request_info** | [**List[BusinessDataTaskRequestInfo]**](BusinessDataTaskRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**BusinessDataGoogleMyBusinessInfoLiveResponseInfo**](BusinessDataGoogleMyBusinessInfoLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **items_count** | **int** | the number of results returned in the items array | [optional] 
 **offset** | **int** | current offset value | [optional] 
 **offset_token** | **str** | offset token for subsequent requests you can use the string provided in this field to get the subsequent results of the initial task; note: offset_token values are unique for each subsequent task | [optional] 
-**items** | [**List[KeywordDataKeywordDataInfo]**](KeywordDataKeywordDataInfo.md) | contains keywords and related data | [optional] 
+**items** | [**List[KeywordDataInfo]**](KeywordDataInfo.md) | contains keywords and related data | [optional] 
 
 ## Example
 

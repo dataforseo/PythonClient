@@ -35,7 +35,7 @@ class MathSolverDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     result: Optional[StrictStr] = Field(default=None, description="solution to the equation solution to the mathematical equation specified in the keyword field when setting a task")
-    items: Optional[List[MathSolverElement]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[MathSolverElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "result", "items", "links"]
 

@@ -21,7 +21,7 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.amazon_delivery_info import AmazonDeliveryInfo
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
-from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.price import Price
 from dataforseo_client.models.rating_element import RatingElement
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,7 +37,7 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
     seller_name: Optional[StrictStr] = Field(default=None, description="business name of the seller")
     seller_url: Optional[StrictStr] = Field(default=None, description="url forwarding to the seller’s page on Amazon")
     ships_from: Optional[StrictStr] = Field(default=None, description="sender company name")
-    price: Optional[PriceInfo] = None
+    price: Optional[Price] = None
     rating: Optional[RatingElement] = None
     condition: Optional[StrictStr] = Field(default=None, description="product condition condition of the product offered by the seller")
     condition_description: Optional[StrictStr] = Field(default=None, description="product condition details expanded details on the condition of the product offered by the seller")
@@ -162,7 +162,7 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
             "seller_name": obj.get("seller_name"),
             "seller_url": obj.get("seller_url"),
             "ships_from": obj.get("ships_from"),
-            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "condition": obj.get("condition"),
             "condition_description": obj.get("condition_description"),

@@ -21,7 +21,7 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.graph import Graph
-from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.price import Price
 from dataforseo_client.models.table import Table
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,11 +34,11 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the item")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the shopping_element")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
-    price: Optional[PriceInfo] = None
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    price: Optional[Price] = None
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     table: Optional[Table] = None
     graph: Optional[Graph] = None
@@ -162,7 +162,7 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "title": obj.get("title"),
             "source": obj.get("source"),
             "snippet": obj.get("snippet"),
-            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "url": obj.get("url"),
             "domain": obj.get("domain"),
             "table": Table.from_dict(obj["table"]) if obj.get("table") is not None else None,

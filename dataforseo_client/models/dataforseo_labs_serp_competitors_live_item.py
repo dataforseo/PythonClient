@@ -35,7 +35,7 @@ class DataforseoLabsSerpCompetitorsLiveItem(BaseModel):
     keywords_count: Optional[StrictInt] = Field(default=None, description="the number of specified keywords the domain has positions for in SERPs")
     visibility: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="SERP visibility rate represents the website visibility rate based on the SERP positions of the specified keywords Keywords with positions in the range from 1 to 10 are assigned the visibility index from 1 to 0.1, respectively Keywords with positions in the range from 11 to 20 have the fixed visibility index of 0.05 keywords with positions from 20 to 100 have the visibility index equal to 0")
     relevant_serp_items: Optional[StrictInt] = Field(default=None, description="the number of SERP elements relevant to the domain represents the number of search results in SERP relevant to the domain for the specified keywords")
-    keywords_positions: Optional[Dict[str, List[Union[StrictFloat, StrictInt]]]] = None
+    keywords_positions: Optional[Dict[str, Optional[List[Optional[StrictInt]]]]] = Field(default=None, description="keyword positions SERP positions the related domain holds in SERP for the specified keywords")
     __properties: ClassVar[List[str]] = ["se_type", "domain", "avg_position", "median_position", "rating", "etv", "keywords_count", "visibility", "relevant_serp_items", "keywords_positions"]
 
     model_config = {
@@ -121,6 +121,11 @@ class DataforseoLabsSerpCompetitorsLiveItem(BaseModel):
         # and model_fields_set contains the field
         if self.relevant_serp_items is None and "relevant_serp_items" in self.model_fields_set:
             _dict['relevant_serp_items'] = None
+
+        # set to None if keywords_positions (nullable) is None
+        # and model_fields_set contains the field
+        if self.keywords_positions is None and "keywords_positions" in self.model_fields_set:
+            _dict['keywords_positions'] = None
 
         return _dict
 

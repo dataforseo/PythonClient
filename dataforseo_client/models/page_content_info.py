@@ -19,9 +19,8 @@ import json
 
 from pydantic import BaseModel, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.main_topic import MainTopic
 from dataforseo_client.models.page_section_content_info import PageSectionContentInfo
-from dataforseo_client.models.secondary_topic import SecondaryTopic
+from dataforseo_client.models.topic_info import TopicInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,8 +30,8 @@ class PageContentInfo(BaseModel):
     """ # noqa: E501
     header: Optional[PageSectionContentInfo] = None
     footer: Optional[PageSectionContentInfo] = None
-    main_topic: Optional[List[MainTopic]] = Field(default=None, description="main topic on the page you can find more information about topic priority calculation in this help center article")
-    secondary_topic: Optional[List[SecondaryTopic]] = Field(default=None, description="secondary topic on the page you can find more information about topic priority calculation in this help center article")
+    main_topic: Optional[List[TopicInfo]] = Field(default=None, description="main topic on the page you can find more information about topic priority calculation in this help center article")
+    secondary_topic: Optional[List[TopicInfo]] = Field(default=None, description="secondary topic on the page you can find more information about topic priority calculation in this help center article")
     __properties: ClassVar[List[str]] = ["header", "footer", "main_topic", "secondary_topic"]
 
     model_config = {
@@ -118,8 +117,8 @@ class PageContentInfo(BaseModel):
         _obj = cls.model_validate({
             "header": PageSectionContentInfo.from_dict(obj["header"]) if obj.get("header") is not None else None,
             "footer": PageSectionContentInfo.from_dict(obj["footer"]) if obj.get("footer") is not None else None,
-            "main_topic": [MainTopic.from_dict(_item) for _item in obj["main_topic"]] if obj.get("main_topic") is not None else None,
-            "secondary_topic": [SecondaryTopic.from_dict(_item) for _item in obj["secondary_topic"]] if obj.get("secondary_topic") is not None else None
+            "main_topic": [TopicInfo.from_dict(_item) for _item in obj["main_topic"]] if obj.get("main_topic") is not None else None,
+            "secondary_topic": [TopicInfo.from_dict(_item) for _item in obj["secondary_topic"]] if obj.get("secondary_topic") is not None else None
         })
         return _obj
 

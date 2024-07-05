@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
-**keyword_data** | [**KeywordDataKeywordDataInfo**](KeywordDataKeywordDataInfo.md) |  | [optional] 
+**keyword_data** | [**KeywordData**](KeywordData.md) |  | [optional] 
 **depth** | **int** | keyword search depth | [optional] 
 **related_keywords** | **List[Optional[str]]** | list of related keywords represents the list of search queries which are related to the keyword returned in the array above | [optional] 
 

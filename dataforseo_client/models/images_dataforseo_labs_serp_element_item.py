@@ -33,9 +33,9 @@ class ImagesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the item")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
-    items: Optional[List[ImagesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    items: Optional[List[ImagesElement]] = Field(default=None, description="elements of search results found in SERP")
     related_image_searches: Optional[List[RelatedImageSearchesElement]] = Field(default=None, description="contains keywords and images related to the specified search term if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "items", "related_image_searches"]
 

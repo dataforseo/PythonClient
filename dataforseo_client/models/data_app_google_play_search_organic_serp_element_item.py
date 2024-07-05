@@ -20,7 +20,7 @@ import json
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
-from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.price import Price
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,7 +39,7 @@ class DataAppGooglePlaySearchOrganicSerpElementItem(BaseAppDataSerpElementItem):
     reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews of the app")
     rating: Optional[RatingInfo] = None
     is_free: Optional[StrictBool] = Field(default=None, description="indicates whether the app is free")
-    price: Optional[PriceInfo] = None
+    price: Optional[Price] = None
     developer: Optional[StrictStr] = Field(default=None, description="name of the app developer")
     developer_url: Optional[StrictStr] = Field(default=None, description="URL to the developer page on Google Play")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "app_id", "title", "url", "icon", "reviews_count", "rating", "is_free", "price", "developer", "developer_url"]
@@ -172,7 +172,7 @@ class DataAppGooglePlaySearchOrganicSerpElementItem(BaseAppDataSerpElementItem):
             "reviews_count": obj.get("reviews_count"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "is_free": obj.get("is_free"),
-            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "developer": obj.get("developer"),
             "developer_url": obj.get("developer_url")
         })

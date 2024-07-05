@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **header** | [**PageSectionContentInfo**](PageSectionContentInfo.md) |  | [optional] 
 **footer** | [**PageSectionContentInfo**](PageSectionContentInfo.md) |  | [optional] 
-**main_topic** | [**List[MainTopic]**](MainTopic.md) | main topic on the page you can find more information about topic priority calculation in this help center article | [optional] 
-**secondary_topic** | [**List[SecondaryTopic]**](SecondaryTopic.md) | secondary topic on the page you can find more information about topic priority calculation in this help center article | [optional] 
+**main_topic** | [**List[TopicInfo]**](TopicInfo.md) | main topic on the page you can find more information about topic priority calculation in this help center article | [optional] 
+**secondary_topic** | [**List[TopicInfo]**](TopicInfo.md) | secondary topic on the page you can find more information about topic priority calculation in this help center article | [optional] 
 
 ## Example
 
