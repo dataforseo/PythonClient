@@ -39,8 +39,9 @@ class BacklinksBacklinksLiveRequestInfo(BaseModel):
     backlinks_status_type: Optional[StrictStr] = Field(default=None, description="set what backlinks to return and count optional field you can use this field to choose what backlinks will be returned and used for aggregated metrics for your target; possible values: all – all backlinks will be returned and counted; live – backlinks found during the last check will be returned and counted; lost – lost backlinks will be returned and counted; default value: live")
     include_subdomains: Optional[StrictBool] = Field(default=None, description="indicates if the subdomains of the target will be included in the search optional field if set to false, the subdomains will be ignored default value: true")
     include_indirect_links: Optional[StrictBool] = Field(default=None, description="indicates if indirect links to the target will be included in the results optional field if set to true, the results will include data on indirect links pointing to a page that either redirects to the target, or points to a canonical page if set to false, indirect links will be ignored default value: true")
+    exclude_internal_backlinks: Optional[StrictBool] = Field(default=None, description="indicates if internal backlinks from subdomains to the target will be excluded from the results optional field if set to true, the results will not include data on internal backlinks from subdomains of the same domain as target if set to false, internal links will be included in the results default value: true")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "mode", "custom_mode", "field", "value", "filters", "order_by", "offset", "search_after_token", "limit", "backlinks_status_type", "include_subdomains", "include_indirect_links", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "mode", "custom_mode", "field", "value", "filters", "order_by", "offset", "search_after_token", "limit", "backlinks_status_type", "include_subdomains", "include_indirect_links", "exclude_internal_backlinks", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -141,6 +142,11 @@ class BacklinksBacklinksLiveRequestInfo(BaseModel):
         if self.include_indirect_links is None and "include_indirect_links" in self.model_fields_set:
             _dict['include_indirect_links'] = None
 
+        # set to None if exclude_internal_backlinks (nullable) is None
+        # and model_fields_set contains the field
+        if self.exclude_internal_backlinks is None and "exclude_internal_backlinks" in self.model_fields_set:
+            _dict['exclude_internal_backlinks'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -171,6 +177,7 @@ class BacklinksBacklinksLiveRequestInfo(BaseModel):
             "backlinks_status_type": obj.get("backlinks_status_type"),
             "include_subdomains": obj.get("include_subdomains"),
             "include_indirect_links": obj.get("include_indirect_links"),
+            "exclude_internal_backlinks": obj.get("exclude_internal_backlinks"),
             "tag": obj.get("tag")
         })
         return _obj

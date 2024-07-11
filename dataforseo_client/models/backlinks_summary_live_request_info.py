@@ -29,11 +29,12 @@ class BacklinksSummaryLiveRequestInfo(BaseModel):
     target: Optional[StrictStr] = Field(default=None, description="domain, subdomain or webpage to get data for required field a domain or a subdomain should be specified without https:// and www. a page should be specified with absolute URL (including http:// or https://)")
     include_subdomains: Optional[StrictBool] = Field(default=None, description="indicates if the subdomains of the target will be included in the search optional field if set to false, the subdomains will be ignored default value: true")
     include_indirect_links: Optional[StrictBool] = Field(default=None, description="indicates if indirect links to the target will be included in the results optional field if set to true, the results will include data on indirect links pointing to a page that either redirects to the target, or points to a canonical page if set to false, indirect links will be ignored default value: true")
+    exclude_internal_backlinks: Optional[StrictBool] = Field(default=None, description="indicates if internal backlinks from subdomains to the target will be excluded from the results optional field if set to true, the results will not include data on internal backlinks from subdomains of the same domain as target if set to false, internal links will be included in the results default value: true")
     internal_list_limit: Optional[StrictInt] = Field(default=None, description="maximum number of elements within internal arrays optional field you can use this field to limit the number of elements within the following arrays: referring_links_tld referring_links_types referring_links_attributes referring_links_platform_types referring_links_semantic_locations default value: 10 maximum value: 1000")
     backlinks_status_type: Optional[StrictStr] = Field(default=None, description="set what backlinks to return and count optional field you can use this field to choose what backlinks will be returned and used for aggregated metrics for your target; possible values: all – all backlinks will be returned and counted; live – backlinks found during the last check will be returned and counted; lost – lost backlinks will be returned and counted; default value: live")
     backlinks_filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="filter the backlinks of your target optional field you can use this field to filter the initial backlinks that will be included in the dataset for aggregated metrics for your target you can filter the backlinks by all fields available in the response of this endpoint using this parameter, you can include only dofollow backlinks in the response and create a flexible backlinks dataset to calculate the metrics for example: \"backlinks_filters\": [\"dofollow\", \"=\", true]")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "include_subdomains", "include_indirect_links", "internal_list_limit", "backlinks_status_type", "backlinks_filters", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "include_subdomains", "include_indirect_links", "exclude_internal_backlinks", "internal_list_limit", "backlinks_status_type", "backlinks_filters", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -84,6 +85,11 @@ class BacklinksSummaryLiveRequestInfo(BaseModel):
         if self.include_indirect_links is None and "include_indirect_links" in self.model_fields_set:
             _dict['include_indirect_links'] = None
 
+        # set to None if exclude_internal_backlinks (nullable) is None
+        # and model_fields_set contains the field
+        if self.exclude_internal_backlinks is None and "exclude_internal_backlinks" in self.model_fields_set:
+            _dict['exclude_internal_backlinks'] = None
+
         # set to None if internal_list_limit (nullable) is None
         # and model_fields_set contains the field
         if self.internal_list_limit is None and "internal_list_limit" in self.model_fields_set:
@@ -119,6 +125,7 @@ class BacklinksSummaryLiveRequestInfo(BaseModel):
             "target": obj.get("target"),
             "include_subdomains": obj.get("include_subdomains"),
             "include_indirect_links": obj.get("include_indirect_links"),
+            "exclude_internal_backlinks": obj.get("exclude_internal_backlinks"),
             "internal_list_limit": obj.get("internal_list_limit"),
             "backlinks_status_type": obj.get("backlinks_status_type"),
             "backlinks_filters": obj.get("backlinks_filters"),

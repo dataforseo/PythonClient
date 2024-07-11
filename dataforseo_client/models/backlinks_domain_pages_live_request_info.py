@@ -35,8 +35,9 @@ class BacklinksDomainPagesLiveRequestInfo(BaseModel):
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to set up a sorting type example: [\"page_summary.backlinks,desc\"] note that you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"page_summary.backlinks,desc\",\"page_summary.rank,asc\"]")
     backlinks_filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="filter the backlinks of your target optional field you can use this field to filter the initial backlinks that will be included in the dataset for aggregated metrics for your target you can filter the backlinks by all fields available in the response of this endpoint using this parameter, you can include only dofollow backlinks in the response and create a flexible backlinks dataset to calculate the metrics for example: \"backlinks_filters\": [\"dofollow\", \"=\", true]")
     include_subdomains: Optional[StrictBool] = Field(default=None, description="indicates if the subdomains of the target will be included in the search optional field if set to false, the subdomains will be ignored default value: true")
+    exclude_internal_backlinks: Optional[StrictBool] = Field(default=None, description="indicates if internal backlinks from subdomains to the target will be excluded from the results optional field if set to true, the results will not include data on internal backlinks from subdomains of the same domain as target if set to false, internal links will be included in the results default value: true")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "limit", "offset", "internal_list_limit", "backlinks_status_type", "filters", "order_by", "backlinks_filters", "include_subdomains", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "limit", "offset", "internal_list_limit", "backlinks_status_type", "filters", "order_by", "backlinks_filters", "include_subdomains", "exclude_internal_backlinks", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -117,6 +118,11 @@ class BacklinksDomainPagesLiveRequestInfo(BaseModel):
         if self.include_subdomains is None and "include_subdomains" in self.model_fields_set:
             _dict['include_subdomains'] = None
 
+        # set to None if exclude_internal_backlinks (nullable) is None
+        # and model_fields_set contains the field
+        if self.exclude_internal_backlinks is None and "exclude_internal_backlinks" in self.model_fields_set:
+            _dict['exclude_internal_backlinks'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -143,6 +149,7 @@ class BacklinksDomainPagesLiveRequestInfo(BaseModel):
             "order_by": obj.get("order_by"),
             "backlinks_filters": obj.get("backlinks_filters"),
             "include_subdomains": obj.get("include_subdomains"),
+            "exclude_internal_backlinks": obj.get("exclude_internal_backlinks"),
             "tag": obj.get("tag")
         })
         return _obj

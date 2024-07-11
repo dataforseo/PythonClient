@@ -61,7 +61,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     is_claimed: Optional[StrictBool] = Field(default=None, description="shows whether the entity is verified by its owner on Google Maps")
     questions_and_answers_count: Optional[StrictInt] = None
     attributes: Optional[BusinessDataAttributesInfo] = None
-    place_topics: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="keywords mentioned in customer reviews contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword example:  \"place_topics\": { \"egg roll\": 48, \"birthday\": 33 }")
+    place_topics: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="keywords mentioned in customer reviews contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword example:  \"place_topics\": { \"egg roll\": 48, \"birthday\": 33 }")
     rating: Optional[RatingInfo] = None
     hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")

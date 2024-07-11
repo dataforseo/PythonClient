@@ -36,9 +36,10 @@ class BacklinksPageIntersectionLiveRequestInfo(BaseModel):
     internal_list_limit: Optional[StrictInt] = Field(default=None, description="maximum number of elements within internal arrays optional field you can use this field to limit the number of elements within the following arrays: attributes domain_from_platform_type default value: 10 maximum value: 1000")
     include_subdomains: Optional[StrictBool] = Field(default=None, description="indicates if the subdomains of the targets will be included in the search optional field if set to false, the subdomains will be ignored default value: true")
     include_indirect_links: Optional[StrictBool] = Field(default=None, description="indicates if indirect links to the targets will be included in the results optional field if set to true, the results will include data on indirect links pointing to a page that either redirects to a target, or points to a canonical page if set to false, indirect links will be ignored default value: true")
+    exclude_internal_backlinks: Optional[StrictBool] = Field(default=None, description="indicates if internal backlinks from subdomains to the target will be excluded from the results optional field if set to true, the results will not include data on internal backlinks from subdomains of the same domain as target if set to false, internal links will be included in the result default value: true")
     intersection_mode: Optional[StrictStr] = Field(default=None, description="indicates whether to intersect backlinks optional field use this field to intersect or merge results for the specified URLs possible values: all, partial all – results are based on all backlinks; partial – results are based on the intersecting backlinks only; default value: all")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["targets", "exclude_targets", "backlinks_status_type", "filters", "order_by", "offset", "limit", "internal_list_limit", "include_subdomains", "include_indirect_links", "intersection_mode", "tag"]
+    __properties: ClassVar[List[str]] = ["targets", "exclude_targets", "backlinks_status_type", "filters", "order_by", "offset", "limit", "internal_list_limit", "include_subdomains", "include_indirect_links", "exclude_internal_backlinks", "intersection_mode", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -129,6 +130,11 @@ class BacklinksPageIntersectionLiveRequestInfo(BaseModel):
         if self.include_indirect_links is None and "include_indirect_links" in self.model_fields_set:
             _dict['include_indirect_links'] = None
 
+        # set to None if exclude_internal_backlinks (nullable) is None
+        # and model_fields_set contains the field
+        if self.exclude_internal_backlinks is None and "exclude_internal_backlinks" in self.model_fields_set:
+            _dict['exclude_internal_backlinks'] = None
+
         # set to None if intersection_mode (nullable) is None
         # and model_fields_set contains the field
         if self.intersection_mode is None and "intersection_mode" in self.model_fields_set:
@@ -161,6 +167,7 @@ class BacklinksPageIntersectionLiveRequestInfo(BaseModel):
             "internal_list_limit": obj.get("internal_list_limit"),
             "include_subdomains": obj.get("include_subdomains"),
             "include_indirect_links": obj.get("include_indirect_links"),
+            "exclude_internal_backlinks": obj.get("exclude_internal_backlinks"),
             "intersection_mode": obj.get("intersection_mode"),
             "tag": obj.get("tag")
         })

@@ -274,7 +274,7 @@ paths:
           required: true
           schema:
             type: string
-          example: aec7bbb9-abae-46be-a91c-2815d6489af8
+          example: a3edfe71-fb8d-42c6-97a6-7fcc051104f5
       responses:
         '200':
           description: Successful operation
@@ -535,7 +535,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a5f20605-07fe-46a5-9d79-e490977c0b0c
+          example: a1c45304-e338-467b-bfdb-7fc39c2944fa
       responses:
         '200':
           description: Successful operation
@@ -677,7 +677,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 60bac76b-4cb5-4f30-8c81-30ad4929228e
+          example: 7ac25994-542d-492a-94a1-0c0023333366
       responses:
         '200':
           description: Successful operation
@@ -916,7 +916,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2975eb26-cd02-4ba6-a335-70ca89d407b6
+          example: 7fbca73a-2b22-4a39-982f-a26da9f5e684
       responses:
         '200':
           description: Successful operation
@@ -1133,7 +1133,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 240f2766-c19b-4b2e-b57a-b2d1c84ab4d9
+          example: 0d066812-5965-4530-b811-6109d20a838f
       responses:
         '200':
           description: Successful operation
@@ -1598,7 +1598,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8978c653-bd22-4bd1-91cb-61cf8ba81882
+          example: 25109afd-2470-4dd0-838a-360a4d872667
       responses:
         '200':
           description: Successful operation
@@ -1762,7 +1762,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 84032a07-bf90-4094-ae19-9c2976c4a4b4
+          example: 1798907c-8820-4341-8930-d682f5ea66c2
       responses:
         '200':
           description: Successful operation
@@ -2324,7 +2324,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7ad939c8-17d3-4040-a91e-38071f4841d1
+          example: c4e3f458-bb36-4cd6-adb1-e76eabdc36cd
       responses:
         '200':
           description: Successful operation
@@ -2564,7 +2564,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fae2af8f-d387-4ea9-aea3-2c21fbb4b763
+          example: 2a17fc10-b72e-41ac-aa03-d77e58532538
       responses:
         '200':
           description: Successful operation
@@ -2685,7 +2685,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7ea09b63-7ef3-4ef6-9e89-d80fed810faa
+          example: dd47e926-2afb-4f0b-b2a1-4731313892f3
       responses:
         '200':
           description: Successful operation
@@ -2859,7 +2859,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e7c9d295-7bfa-4f20-a9e6-b12ca8914b33
+          example: f314d808-7252-496c-8434-c35d0f8098ef
       responses:
         '200':
           description: Successful operation
@@ -4501,7 +4501,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 70d43165-e3ff-4693-96aa-80be36a009a5
+          example: b5c16afe-dc88-4408-8674-545467e63cda
       responses:
         '200':
           description: Successful operation
@@ -4583,7 +4583,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 112e46c5-4478-4911-9a9e-79b2072fee7d
+          example: d0f7364c-02f9-4568-aa83-f924b950a4d8
       responses:
         '200':
           description: Successful operation
@@ -4665,7 +4665,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fdf828d3-be7b-4d53-a74c-fefc1e2ae6fd
+          example: 3009ca80-0757-482b-be59-f12f18c40962
       responses:
         '200':
           description: Successful operation
@@ -4747,7 +4747,7 @@ paths:
           required: true
           schema:
             type: string
-          example: adf5fbb8-34d9-4b39-aba2-140030854198
+          example: 9e8000ea-2dee-4f01-a273-9710f728ebfd
       responses:
         '200':
           description: Successful operation
@@ -4897,7 +4897,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 57520e83-8287-425f-bee8-1e6d9ba7ba7b
+          example: 98bde3d5-cace-414a-a6a2-5031c79cf44a
       responses:
         '200':
           description: Successful operation
@@ -5135,7 +5135,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b5b8e877-5185-44ff-bb4e-6ddbf8b6df34
+          example: a0a28cdd-bf4c-4669-b1bb-ec7a116814ec
       responses:
         '200':
           description: Successful operation
@@ -5217,7 +5217,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f4949348-1fe1-4c50-bfdd-1aefa9792aef
+          example: e58b14d1-c83e-4a7a-b1dd-afabed52f6fc
       responses:
         '200':
           description: Successful operation
@@ -5299,7 +5299,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 547d93f3-c780-461b-9312-9ab5d184cec0
+          example: 554d4656-9765-471d-997e-dd2eef508714
       responses:
         '200':
           description: Successful operation
@@ -5396,7 +5396,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 910809dc-3f86-4075-af5c-d1a4e7d2407b
+          example: 6806d8b2-1cf7-4046-9bf7-2cfc7a555aa9
       responses:
         '200':
           description: Successful operation
@@ -7160,7 +7160,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4378f82a-9a96-4ab4-b2fb-5ae8e27b82dc
+          example: 59f6b8cb-2f7c-4187-9778-58caa53c24a8
       responses:
         '200':
           description: Successful operation
@@ -7243,7 +7243,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 852ed3ec-bf19-4380-b206-ae399a3f14c4
+          example: 3d10884c-7bfb-4027-a7b4-ef83c73331c8
       responses:
         '200':
           description: Successful operation
@@ -7326,7 +7326,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 03eeefd1-b013-4168-898a-385036ce1b6c
+          example: 5f4f0cb4-b451-4e40-b1aa-82182635a731
       responses:
         '200':
           description: Successful operation
@@ -7545,7 +7545,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ccd6a4ba-26c8-474b-b186-2369274f5184
+          example: f151ebf5-70a2-417a-8ec9-92ee9c0d483f
       responses:
         '200':
           description: Successful operation
@@ -7628,7 +7628,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 79baf360-a03b-47d3-b5ad-9f0a46296a7b
+          example: d92fcd15-6a24-4c84-a18e-3b6e10d6896f
       responses:
         '200':
           description: Successful operation
@@ -7711,7 +7711,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3212fb18-7bf9-4321-8dbc-f90780086c57
+          example: e415e7ca-9f22-4c7d-a4a0-b0e244380df9
       responses:
         '200':
           description: Successful operation
@@ -7794,7 +7794,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9c077b91-d182-4323-a6b4-a664fc11ef04
+          example: fd84964d-c201-453f-a5ca-bce0479115e6
       responses:
         '200':
           description: Successful operation
@@ -7981,7 +7981,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 921c1161-9139-4fa4-809a-87939da69b6d
+          example: 9a571490-d6fc-4aa9-98d6-b91661d65aa6
       responses:
         '200':
           description: Successful operation
@@ -8004,7 +8004,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 354b2394-1dcb-4b29-bafd-9432d38ac962
+          example: 336634d8-0768-49c9-8fae-e3bdf9a1e337
       responses:
         '200':
           description: Successful operation
@@ -8064,7 +8064,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 760fd162-c5a6-4a3e-9a74-19a77242ad4c
+          example: 6de8ce91-563b-4b5d-854c-b1207f5695c1
       responses:
         '200':
           description: Successful operation
@@ -8087,7 +8087,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 299e4b35-577e-4303-9912-0b4e7aeadd1b
+          example: c5f25af3-9f42-4caf-8a3b-dc8403adb0b1
       responses:
         '200':
           description: Successful operation
@@ -8147,7 +8147,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 020b9e94-e665-43e3-8f87-e516faecc48a
+          example: 3258e2d3-e174-4c2d-827e-527232013b1b
       responses:
         '200':
           description: Successful operation
@@ -8170,7 +8170,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d89d5dbc-b6bb-4f79-896a-b03c62da5d8c
+          example: 17b2003e-f4e2-4395-aa17-9097d60f8743
       responses:
         '200':
           description: Successful operation
@@ -8230,7 +8230,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ca6c04b6-fab0-455c-9e18-c4cf6daf7456
+          example: 12fa8c15-44bf-4e9c-9416-7a91645778b1
       responses:
         '200':
           description: Successful operation
@@ -8253,7 +8253,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 20b84165-3f4a-4daf-8fa7-ed2934744f7f
+          example: e76e4d8d-d83b-4db8-9dcf-0ada248ebb3d
       responses:
         '200':
           description: Successful operation
@@ -8395,7 +8395,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2a97bbf9-b31b-4fbc-9043-0294a497ce40
+          example: 09bdd71b-2885-4380-a680-be65d35c37a9
       responses:
         '200':
           description: Successful operation
@@ -8455,7 +8455,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a0847ad7-23b9-4bde-bf62-a15d988d6756
+          example: dbe4bff6-31ed-4736-b855-d2774c03d3f0
       responses:
         '200':
           description: Successful operation
@@ -8515,7 +8515,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e42499ff-a39f-43c4-8a9f-613f938f5e76
+          example: c10361ae-3717-44fc-87d1-55b4f3368476
       responses:
         '200':
           description: Successful operation
@@ -8575,7 +8575,7 @@ paths:
           required: true
           schema:
             type: string
-          example: cf4dd790-1959-4f4a-9c9b-3fb740fa6cdc
+          example: 01109ae0-496a-475f-bb87-805a39688d59
       responses:
         '200':
           description: Successful operation
@@ -9120,7 +9120,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 06c5d218-03de-43b7-a343-4b362773112f
+          example: 95e1fd2f-5ee0-405e-ae1a-7c473ea8b098
       responses:
         '200':
           description: Successful operation
@@ -9977,8 +9977,8 @@ components:
         propertyName: resource_type
         mapping:
           html: '#/components/schemas/OnPageHtmlResourceElementItem'
-          script: '#/components/schemas/OnPageScriptResourceElementItem'
           stylesheet: '#/components/schemas/OnPageStylesheetResourceElementItem'
+          script: '#/components/schemas/OnPageScriptResourceElementItem'
           image: '#/components/schemas/OnPageImageResourceElementItem'
           broken: '#/components/schemas/OnPageBrokenResourceElementItem'
     ReviewResponseItemInfo:
@@ -28797,7 +28797,7 @@ components:
           nullable: true
         limit:
           type: integer
-          description: "the maximum number of keywords in the results array\noptional field\ndefault value: 700\nmaximum value: 1000"
+          description: "the maximum number of keywords in the results array\noptional field\ndefault value: 100\nmaximum value: 1000"
           nullable: true
         offset:
           type: integer
@@ -41314,6 +41314,10 @@ components:
           type: boolean
           description: "indicates if indirect links to the target will be included in the results\noptional field\nif set to true, the results will include data on indirect links pointing to a page that either redirects to the target, or points to a canonical page\nif set to false, indirect links will be ignored\ndefault value: true"
           nullable: true
+        exclude_internal_backlinks:
+          type: boolean
+          description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the results\ndefault value: true"
+          nullable: true
         internal_list_limit:
           type: integer
           description: "maximum number of elements within internal arrays\noptional field\nyou can use this field to limit the number of elements within the following arrays:\nreferring_links_tld\nreferring_links_types\nreferring_links_attributes\nreferring_links_platform_types\nreferring_links_semantic_locations\ndefault value: 10\nmaximum value: 1000"
@@ -41816,6 +41820,10 @@ components:
         include_indirect_links:
           type: boolean
           description: "indicates if indirect links to the target will be included in the results\noptional field\nif set to true, the results will include data on indirect links pointing to a page that either redirects to the target, or points to a canonical page\nif set to false, indirect links will be ignored\ndefault value: true"
+          nullable: true
+        exclude_internal_backlinks:
+          type: boolean
+          description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the results\ndefault value: true"
           nullable: true
         tag:
           type: string
@@ -42395,6 +42403,10 @@ components:
         include_subdomains:
           type: boolean
           description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
+          nullable: true
+        exclude_internal_backlinks:
+          type: boolean
+          description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the results\ndefault value: true"
           nullable: true
         tag:
           type: string
@@ -43479,6 +43491,10 @@ components:
           type: boolean
           description: "indicates whether large domain will appear in results\noptional field\nif set to true, the results from the large domain (google.com, amazon.com, etc.) will be omitted;\ndefault value: true"
           nullable: true
+        exclude_internal_backlinks:
+          type: boolean
+          description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the results\ndefault value: true"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -43868,6 +43884,10 @@ components:
         include_indirect_links:
           type: boolean
           description: "indicates if indirect links to the targets will be included in the results\noptional field\nif set to true, the results will include data on indirect links pointing to a page that either redirects to a target, or points to a canonical page\nif set to false, indirect links will be ignored\ndefault value: true"
+          nullable: true
+        exclude_internal_backlinks:
+          type: boolean
+          description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the result\ndefault value: true"
           nullable: true
         intersection_mode:
           type: string
@@ -46283,74 +46303,6 @@ components:
           type: integer
           description: "time to complete downloading the resource\nthe amount of time a browser needs to complete downloading a resource"
           nullable: true
-    OnPageScriptResourceElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
-        - type: object
-          properties:
-            meta:
-              $ref: '#/components/schemas/ResourceMetaInfo'
-            status_code:
-              type: integer
-              description: status code of the page where a given resource is located
-              nullable: true
-            location:
-              type: string
-              description: "location header\nindicates the URL to redirect a page to"
-              nullable: true
-            url:
-              type: string
-              description: resource URL
-              nullable: true
-            size:
-              type: integer
-              description: "resource size\nindicates the size of a given resource measured in bytes"
-              nullable: true
-            encoded_size:
-              type: integer
-              description: "resource size after encoding\nindicates the size of the encoded resource measured in bytes"
-              nullable: true
-            total_transfer_size:
-              type: integer
-              description: "compressed resource size\nindicates the compressed size of a given resource in bytes"
-              format: int64
-              nullable: true
-            fetch_time:
-              type: string
-              description: "date and time when a resource was fetched\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2021-02-17 13:54:15 +00:00"
-              nullable: true
-            fetch_timing:
-              $ref: '#/components/schemas/FetchTiming'
-            cache_control:
-              $ref: '#/components/schemas/CacheControl'
-            checks:
-              type: object
-              additionalProperties:
-                type: boolean
-                nullable: true
-              description: "resource check-ups\ncontents of the array depend on the resource_type"
-              nullable: true
-            resource_errors:
-              $ref: '#/components/schemas/OnPageResourceIssueInfo'
-            content_encoding:
-              type: string
-              description: type of encoding
-              nullable: true
-            media_type:
-              type: string
-              description: types of media used to display a resource
-              nullable: true
-            accept_type:
-              type: string
-              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
-              nullable: true
-            server:
-              type: string
-              description: server version
-              nullable: true
-            last_modified:
-              $ref: '#/components/schemas/LastModified'
     OnPageStylesheetResourceElementItem:
       type: object
       allOf:
@@ -46439,6 +46391,74 @@ components:
               type: boolean
               description: indicates whether the resource blocks rendering
               nullable: true
+    OnPageScriptResourceElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
+        - type: object
+          properties:
+            meta:
+              $ref: '#/components/schemas/ResourceMetaInfo'
+            status_code:
+              type: integer
+              description: status code of the page where a given resource is located
+              nullable: true
+            location:
+              type: string
+              description: "location header\nindicates the URL to redirect a page to"
+              nullable: true
+            url:
+              type: string
+              description: resource URL
+              nullable: true
+            size:
+              type: integer
+              description: "resource size\nindicates the size of a given resource measured in bytes"
+              nullable: true
+            encoded_size:
+              type: integer
+              description: "resource size after encoding\nindicates the size of the encoded resource measured in bytes"
+              nullable: true
+            total_transfer_size:
+              type: integer
+              description: "compressed resource size\nindicates the compressed size of a given resource in bytes"
+              format: int64
+              nullable: true
+            fetch_time:
+              type: string
+              description: "date and time when a resource was fetched\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2021-02-17 13:54:15 +00:00"
+              nullable: true
+            fetch_timing:
+              $ref: '#/components/schemas/FetchTiming'
+            cache_control:
+              $ref: '#/components/schemas/CacheControl'
+            checks:
+              type: object
+              additionalProperties:
+                type: boolean
+                nullable: true
+              description: "resource check-ups\ncontents of the array depend on the resource_type"
+              nullable: true
+            resource_errors:
+              $ref: '#/components/schemas/OnPageResourceIssueInfo'
+            content_encoding:
+              type: string
+              description: type of encoding
+              nullable: true
+            media_type:
+              type: string
+              description: types of media used to display a resource
+              nullable: true
+            accept_type:
+              type: string
+              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
+              nullable: true
+            server:
+              type: string
+              description: server version
+              nullable: true
+            last_modified:
+              $ref: '#/components/schemas/LastModified'
     OnPageResourcesResultInfo:
       type: object
       properties:
@@ -51552,7 +51572,7 @@ components:
               description: "details and special offers\nif there are no details, the value will be null"
               nullable: true
             base_price:
-              type: number
+              type: integer
               description: product price without tax and shipping
               nullable: true
             tax:
@@ -51560,7 +51580,7 @@ components:
               description: "the amount of tax\ntax is specified as the actual amount of money, not as the percentage"
               nullable: true
             shipping_price:
-              type: number
+              type: integer
               description: product shipping price
               nullable: true
             total_price:
@@ -57649,7 +57669,7 @@ components:
           nullable: true
         location_coordinate:
           type: string
-          description: "GPS coordinates of a location\noptional field\nlocation_coordinate parameter should be specified in the “latitude,longitude,radius” format\nthe maximum number of decimal digits for “latitude” and “longitude”: 7\nthe minimum value for “radius”: 1\nthe maximum value for “radius”: 100000\nexample:\n53.476225,-2.243572,200"
+          description: "GPS coordinates of a location\noptional field\nlocation_coordinate parameter should be specified in the “latitude,longitude,radius” format\nthe maximum number of decimal digits for “latitude” and “longitude”: 7\nthe value of “radius” is specified in kilometres (km)\nthe minimum value for “radius”: 1\nthe maximum value for “radius”: 100000\nexample:\n53.476225,-2.243572,200"
           nullable: true
         filters:
           type: array
@@ -58627,7 +58647,8 @@ components:
             place_topics:
               type: object
               additionalProperties:
-                type: string
+                type: integer
+                format: int64
                 nullable: true
               description: "keywords mentioned in customer reviews\ncontains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword\nexample: \n\"place_topics\": {\n\"egg roll\": 48,\n\"birthday\": 33\n}"
               nullable: true
@@ -63605,9 +63626,9 @@ components:
       properties:
         regular:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-        html:
-          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         advanced:
+          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
+        html:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
     AppendixSerpPriceData:
       type: object
@@ -63784,9 +63805,9 @@ components:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         locations:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-        tripadvisor:
-          $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'
         trustpilot:
+          $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'
+        tripadvisor:
           $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'
         yelp:
           $ref: '#/components/schemas/AppendixTrBusinessDataPriceDataInfo'

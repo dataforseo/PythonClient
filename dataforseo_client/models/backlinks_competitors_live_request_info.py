@@ -33,8 +33,9 @@ class BacklinksCompetitorsLiveRequestInfo(BaseModel):
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to set up a sorting type example: [\"rank,desc\"] note that you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"intersections,desc\",\"rank,asc\"]")
     main_domain: Optional[StrictBool] = Field(default=None, description="indicates if only main domain of the target will be included in the search optional field if set to true, only the main domain will be included in search; default value: true")
     exclude_large_domains: Optional[StrictBool] = Field(default=None, description="indicates whether large domain will appear in results optional field if set to true, the results from the large domain (google.com, amazon.com, etc.) will be omitted; default value: true")
+    exclude_internal_backlinks: Optional[StrictBool] = Field(default=None, description="indicates if internal backlinks from subdomains to the target will be excluded from the results optional field if set to true, the results will not include data on internal backlinks from subdomains of the same domain as target if set to false, internal links will be included in the results default value: true")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "limit", "offset", "filters", "order_by", "main_domain", "exclude_large_domains", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "limit", "offset", "filters", "order_by", "main_domain", "exclude_large_domains", "exclude_internal_backlinks", "tag"]
 
     model_config = {
         "populate_by_name": True,
@@ -105,6 +106,11 @@ class BacklinksCompetitorsLiveRequestInfo(BaseModel):
         if self.exclude_large_domains is None and "exclude_large_domains" in self.model_fields_set:
             _dict['exclude_large_domains'] = None
 
+        # set to None if exclude_internal_backlinks (nullable) is None
+        # and model_fields_set contains the field
+        if self.exclude_internal_backlinks is None and "exclude_internal_backlinks" in self.model_fields_set:
+            _dict['exclude_internal_backlinks'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -129,6 +135,7 @@ class BacklinksCompetitorsLiveRequestInfo(BaseModel):
             "order_by": obj.get("order_by"),
             "main_domain": obj.get("main_domain"),
             "exclude_large_domains": obj.get("exclude_large_domains"),
+            "exclude_internal_backlinks": obj.get("exclude_internal_backlinks"),
             "tag": obj.get("tag")
         })
         return _obj
