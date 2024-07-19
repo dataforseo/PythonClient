@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **details** | **str** | details and special offers if there are no details, the value will be null | [optional] 
 **base_price** | **int** | product price without tax and shipping | [optional] 
 **tax** | **float** | the amount of tax tax is specified as the actual amount of money, not as the percentage | [optional] 
-**shipping_price** | **int** | product shipping price | [optional] 
+**shipping_price** | **float** | product shipping price | [optional] 
 **total_price** | **float** | product price including tax and shipping | [optional] 
 **currency** | **str** | currency in the ISO format example: USD | [optional] 
 **seller_name** | **str** | name of the seller the name of the company that placed a corresponding product on Google Shopping | [optional] 

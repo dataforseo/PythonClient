@@ -28,6 +28,7 @@ Method | HTTP request | Description
 [**bing_subdomains_live**](DataforseoLabsApi.md#bing_subdomains_live) | **POST** /v3/dataforseo_labs/bing/subdomains/live | 
 [**categories**](DataforseoLabsApi.md#categories) | **GET** /v3/dataforseo_labs/categories | 
 [**dataforseo_labs_errors**](DataforseoLabsApi.md#dataforseo_labs_errors) | **POST** /v3/dataforseo_labs/errors | 
+[**dataforseo_labs_google_categories_for_keywords_languages**](DataforseoLabsApi.md#dataforseo_labs_google_categories_for_keywords_languages) | **GET** /v3/dataforseo_labs/google/categories_for_keywords/languages | 
 [**dataforseo_labs_id_list**](DataforseoLabsApi.md#dataforseo_labs_id_list) | **POST** /v3/dataforseo_labs/id_list | 
 [**dataforseo_labs_locations_and_languages**](DataforseoLabsApi.md#dataforseo_labs_locations_and_languages) | **GET** /v3/dataforseo_labs/locations_and_languages | 
 [**dataforseo_labs_status**](DataforseoLabsApi.md#dataforseo_labs_status) | **GET** /v3/dataforseo_labs/status | 
@@ -38,6 +39,7 @@ Method | HTTP request | Description
 [**google_bulk_keyword_difficulty_live**](DataforseoLabsApi.md#google_bulk_keyword_difficulty_live) | **POST** /v3/dataforseo_labs/google/bulk_keyword_difficulty/live | 
 [**google_bulk_traffic_estimation_live**](DataforseoLabsApi.md#google_bulk_traffic_estimation_live) | **POST** /v3/dataforseo_labs/google/bulk_traffic_estimation/live | 
 [**google_categories_for_domain_live**](DataforseoLabsApi.md#google_categories_for_domain_live) | **POST** /v3/dataforseo_labs/google/categories_for_domain/live | 
+[**google_categories_for_keywords_live**](DataforseoLabsApi.md#google_categories_for_keywords_live) | **POST** /v3/dataforseo_labs/google/categories_for_keywords/live | 
 [**google_competitors_domain_live**](DataforseoLabsApi.md#google_competitors_domain_live) | **POST** /v3/dataforseo_labs/google/competitors_domain/live | 
 [**google_domain_intersection_live**](DataforseoLabsApi.md#google_domain_intersection_live) | **POST** /v3/dataforseo_labs/google/domain_intersection/live | 
 [**google_domain_metrics_by_categories_live**](DataforseoLabsApi.md#google_domain_metrics_by_categories_live) | **POST** /v3/dataforseo_labs/google/domain_metrics_by_categories/live | 
@@ -1948,6 +1950,80 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **dataforseo_labs_google_categories_for_keywords_languages**
+> DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo dataforseo_labs_google_categories_for_keywords_languages()
+
+
+
+‌ Using this endpoint you can get the full list of languages supported for the Google Categories for Keywords endpoint of DataForSEO Labs API. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/categories_for_keywords/languages/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.dataforseo_labs_google_categories_for_keywords_languages_response_info import DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.DataforseoLabsApi(api_client)
+
+    try:
+        api_response = api_instance.dataforseo_labs_google_categories_for_keywords_languages()
+        print("The response of DataforseoLabsApi->dataforseo_labs_google_categories_for_keywords_languages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataforseoLabsApi->dataforseo_labs_google_categories_for_keywords_languages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo**](DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **dataforseo_labs_id_list**
 > DataforseoLabsIdListResponseInfo dataforseo_labs_id_list(dataforseo_labs_id_list_request_info=dataforseo_labs_id_list_request_info)
 
@@ -2705,6 +2781,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DataforseoLabsGoogleCategoriesForDomainLiveResponseInfo**](DataforseoLabsGoogleCategoriesForDomainLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_categories_for_keywords_live**
+> DataforseoLabsGoogleCategoriesForKeywordsLiveResponseInfo google_categories_for_keywords_live(dataforseo_labs_google_categories_for_keywords_live_request_info=dataforseo_labs_google_categories_for_keywords_live_request_info)
+
+
+
+This endpoint will provide you with Google product and service categories related for each specified keyword. You can indicate a maximum of 1,000 keywords in one API request. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/categories_for_keywords/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.dataforseo_labs_google_categories_for_keywords_live_request_info import DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo
+from dataforseo_client.models.dataforseo_labs_google_categories_for_keywords_live_response_info import DataforseoLabsGoogleCategoriesForKeywordsLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.DataforseoLabsApi(api_client)
+    dataforseo_labs_google_categories_for_keywords_live_request_info = [dataforseo_client.DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo()] # List[DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_categories_for_keywords_live(dataforseo_labs_google_categories_for_keywords_live_request_info=dataforseo_labs_google_categories_for_keywords_live_request_info)
+        print("The response of DataforseoLabsApi->google_categories_for_keywords_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataforseoLabsApi->google_categories_for_keywords_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dataforseo_labs_google_categories_for_keywords_live_request_info** | [**List[DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo]**](DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**DataforseoLabsGoogleCategoriesForKeywordsLiveResponseInfo**](DataforseoLabsGoogleCategoriesForKeywordsLiveResponseInfo.md)
 
 ### Authorization
 

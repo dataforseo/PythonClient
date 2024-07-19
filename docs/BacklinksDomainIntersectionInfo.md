@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
 **target** | **str** | domain that links to the corresponding target from the POST array | [optional] 
-**rank** | **int** | rank of the target rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article | [optional] 
+**rank** | **int** | rank referred to the target from the POST array indicates the rank that the referring domain (target above) refers to your target from the POST array; rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article | [optional] 
 **backlinks** | **int** | indicates the number of backlinks | [optional] 
 **first_seen** | **str** | date and time when our crawler found the backlink from this target for the first time in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **lost_date** | **int** | date and time when the last backlink from this target was lost indicates the date and time when our crawler visited the page and it responded with 4xx or 5xx status code or the last backlink was removed in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 

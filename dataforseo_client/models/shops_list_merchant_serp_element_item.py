@@ -38,7 +38,7 @@ class ShopsListMerchantSerpElementItem(BaseMerchantSerpElementItem):
     details: Optional[StrictStr] = Field(default=None, description="details and special offers if there are no details, the value will be null")
     base_price: Optional[StrictInt] = Field(default=None, description="product price without tax and shipping")
     tax: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the amount of tax tax is specified as the actual amount of money, not as the percentage")
-    shipping_price: Optional[StrictInt] = Field(default=None, description="product shipping price")
+    shipping_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="product shipping price")
     total_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="product price including tax and shipping")
     currency: Optional[StrictStr] = Field(default=None, description="currency in the ISO format example: USD")
     seller_name: Optional[StrictStr] = Field(default=None, description="name of the seller the name of the company that placed a corresponding product on Google Shopping")

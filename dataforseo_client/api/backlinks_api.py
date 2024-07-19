@@ -2520,7 +2520,7 @@ class BacklinksApi:
     ) -> BacklinksBulkRanksLiveResponseInfo:
         """bulk_ranks_live
 
-        ‌ This endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. rank values range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'
+        ‌ This endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. The rank values represent real-time data for the date of the request and range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'
 
         :param backlinks_bulk_ranks_live_request_info:
         :type backlinks_bulk_ranks_live_request_info: List[BacklinksBulkRanksLiveRequestInfo]
@@ -2587,7 +2587,7 @@ class BacklinksApi:
     ) -> ApiResponse[BacklinksBulkRanksLiveResponseInfo]:
         """bulk_ranks_live
 
-        ‌ This endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. rank values range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'
+        ‌ This endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. The rank values represent real-time data for the date of the request and range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'
 
         :param backlinks_bulk_ranks_live_request_info:
         :type backlinks_bulk_ranks_live_request_info: List[BacklinksBulkRanksLiveRequestInfo]
@@ -2654,7 +2654,7 @@ class BacklinksApi:
     ) -> RESTResponseType:
         """bulk_ranks_live
 
-        ‌ This endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. rank values range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'
+        ‌ This endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. The rank values represent real-time data for the date of the request and range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article for more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'
 
         :param backlinks_bulk_ranks_live_request_info:
         :type backlinks_bulk_ranks_live_request_info: List[BacklinksBulkRanksLiveRequestInfo]

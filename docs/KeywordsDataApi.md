@@ -16,6 +16,10 @@ Method | HTTP request | Description
 [**bing_keywords_for_site_task_get**](KeywordsDataApi.md#bing_keywords_for_site_task_get) | **GET** /v3/keywords_data/bing/keywords_for_site/task_get/{id} | 
 [**bing_keywords_for_site_task_post**](KeywordsDataApi.md#bing_keywords_for_site_task_post) | **POST** /v3/keywords_data/bing/keywords_for_site/task_post | 
 [**bing_keywords_for_site_tasks_ready**](KeywordsDataApi.md#bing_keywords_for_site_tasks_ready) | **GET** /v3/keywords_data/bing/keywords_for_site/tasks_ready | 
+[**bing_search_volume_history_live**](KeywordsDataApi.md#bing_search_volume_history_live) | **POST** /v3/keywords_data/bing/search_volume_history/live | 
+[**bing_search_volume_history_task_get**](KeywordsDataApi.md#bing_search_volume_history_task_get) | **GET** /v3/keywords_data/bing/search_volume_history/task_get/{id} | 
+[**bing_search_volume_history_task_post**](KeywordsDataApi.md#bing_search_volume_history_task_post) | **POST** /v3/keywords_data/bing/search_volume_history/task_post | 
+[**bing_search_volume_history_tasks_ready**](KeywordsDataApi.md#bing_search_volume_history_tasks_ready) | **GET** /v3/keywords_data/bing/search_volume_history/tasks_ready | 
 [**bing_search_volume_live**](KeywordsDataApi.md#bing_search_volume_live) | **POST** /v3/keywords_data/bing/search_volume/live | 
 [**bing_search_volume_task_get**](KeywordsDataApi.md#bing_search_volume_task_get) | **GET** /v3/keywords_data/bing/search_volume/task_get/{id} | 
 [**bing_search_volume_task_post**](KeywordsDataApi.md#bing_search_volume_task_post) | **POST** /v3/keywords_data/bing/search_volume/task_post | 
@@ -49,6 +53,7 @@ Method | HTTP request | Description
 [**keywords_data_bing_keyword_performance_locations_and_languages**](KeywordsDataApi.md#keywords_data_bing_keyword_performance_locations_and_languages) | **GET** /v3/keywords_data/bing/keyword_performance/locations_and_languages | 
 [**keywords_data_bing_languages**](KeywordsDataApi.md#keywords_data_bing_languages) | **GET** /v3/keywords_data/bing/languages | 
 [**keywords_data_bing_locations**](KeywordsDataApi.md#keywords_data_bing_locations) | **GET** /v3/keywords_data/bing/locations | 
+[**keywords_data_bing_search_volume_history_locations_and_languages**](KeywordsDataApi.md#keywords_data_bing_search_volume_history_locations_and_languages) | **GET** /v3/keywords_data/bing/search_volume_history/locations_and_languages | 
 [**keywords_data_dataforseo_trends_locations**](KeywordsDataApi.md#keywords_data_dataforseo_trends_locations) | **GET** /v3/keywords_data/dataforseo_trends/locations | 
 [**keywords_data_dataforseo_trends_locations_country**](KeywordsDataApi.md#keywords_data_dataforseo_trends_locations_country) | **GET** /v3/keywords_data/dataforseo_trends/locations/{country} | 
 [**keywords_data_errors**](KeywordsDataApi.md#keywords_data_errors) | **POST** /v3/keywords_data/errors | 
@@ -178,7 +183,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '6806d8b2-1cf7-4046-9bf7-2cfc7a555aa9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '2755f0a5-0b18-4368-a041-e819a477d633' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keyword_performance_task_get(id)
@@ -488,7 +493,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '554d4656-9765-471d-997e-dd2eef508714' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'e5873b9b-d5cd-4a39-8ff6-4f2d61c77484' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_keywords_task_get(id)
@@ -798,7 +803,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'e58b14d1-c83e-4a7a-b1dd-afabed52f6fc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'a9833ac9-86b9-4ee0-8dba-8ad6f08c92be' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_site_task_get(id)
@@ -991,6 +996,316 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **bing_search_volume_history_live**
+> KeywordsDataBingSearchVolumeHistoryLiveResponseInfo bing_search_volume_history_live(keywords_data_bing_search_volume_history_live_request_info=keywords_data_bing_search_volume_history_live_request_info)
+
+
+
+‌This endpoint will provide you with historical search volume data for up to 1000 keywords in one request. You can get search volume for keywords in monthly, weekly, or daily format and specify the device type. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_search_volume_history_live_request_info import KeywordsDataBingSearchVolumeHistoryLiveRequestInfo
+from dataforseo_client.models.keywords_data_bing_search_volume_history_live_response_info import KeywordsDataBingSearchVolumeHistoryLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    keywords_data_bing_search_volume_history_live_request_info = [dataforseo_client.KeywordsDataBingSearchVolumeHistoryLiveRequestInfo()] # List[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.bing_search_volume_history_live(keywords_data_bing_search_volume_history_live_request_info=keywords_data_bing_search_volume_history_live_request_info)
+        print("The response of KeywordsDataApi->bing_search_volume_history_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_search_volume_history_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keywords_data_bing_search_volume_history_live_request_info** | [**List[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo]**](KeywordsDataBingSearchVolumeHistoryLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**KeywordsDataBingSearchVolumeHistoryLiveResponseInfo**](KeywordsDataBingSearchVolumeHistoryLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_search_volume_history_task_get**
+> KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo bing_search_volume_history_task_get(id)
+
+
+
+‌ for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/task_get/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_search_volume_history_task_get_response_info import KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    id = 'c4b6df04-13d4-4793-8495-b5dceaeb35bb' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.bing_search_volume_history_task_get(id)
+        print("The response of KeywordsDataApi->bing_search_volume_history_task_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_search_volume_history_task_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo**](KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_search_volume_history_task_post**
+> KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo bing_search_volume_history_task_post(keywords_data_bing_search_volume_history_task_post_request_info=keywords_data_bing_search_volume_history_task_post_request_info)
+
+
+
+‌ This endpoint will provide you with historical search volume data for up to 1000 keywords in one request. You can get search volume for keywords in monthly, weekly, or daily format and specify the device type. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_request_info import KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo
+from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_response_info import KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    keywords_data_bing_search_volume_history_task_post_request_info = [dataforseo_client.KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo()] # List[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.bing_search_volume_history_task_post(keywords_data_bing_search_volume_history_task_post_request_info=keywords_data_bing_search_volume_history_task_post_request_info)
+        print("The response of KeywordsDataApi->bing_search_volume_history_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_search_volume_history_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keywords_data_bing_search_volume_history_task_post_request_info** | [**List[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo]**](KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo**](KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_search_volume_history_tasks_ready**
+> KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo bing_search_volume_history_tasks_ready()
+
+
+
+‌ This endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_search_volume_history_tasks_ready_response_info import KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+
+    try:
+        api_response = api_instance.bing_search_volume_history_tasks_ready()
+        print("The response of KeywordsDataApi->bing_search_volume_history_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_search_volume_history_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo**](KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **bing_search_volume_live**
 > KeywordsDataBingSearchVolumeLiveResponseInfo bing_search_volume_live(keywords_data_bing_search_volume_live_request_info=keywords_data_bing_search_volume_live_request_info)
 
@@ -1108,7 +1423,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'a0a28cdd-bf4c-4669-b1bb-ec7a116814ec' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'c71c3bd3-a8c2-40ca-9ba6-6c322426683d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_search_volume_task_get(id)
@@ -1734,7 +2049,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '9e8000ea-2dee-4f01-a273-9710f728ebfd' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '6d3b4926-d1d2-4f6f-a57d-2a1b6b7d2b2e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_ad_traffic_by_keywords_task_get(id)
@@ -2044,7 +2359,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '3009ca80-0757-482b-be59-f12f18c40962' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '73eca3d5-6b70-4262-81db-ab93b79651f5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_keywords_task_get(id)
@@ -2354,7 +2669,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'd0f7364c-02f9-4568-aa83-f924b950a4d8' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'a1bf4153-a956-451e-a4d7-3b7df2fc9db6' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_site_task_get(id)
@@ -2664,7 +2979,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'b5c16afe-dc88-4408-8674-545467e63cda' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '2da2cb62-62e5-407f-8454-9ee7bac414ac' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_search_volume_task_get(id)
@@ -3122,7 +3437,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '98bde3d5-cace-414a-a6a2-5031c79cf44a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '6569a012-7424-4c4f-92e0-a2cce87ad6dc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_trends_explore_task_get(id)
@@ -3519,6 +3834,80 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**KeywordsDataBingLocationsResponseInfo**](KeywordsDataBingLocationsResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **keywords_data_bing_search_volume_history_locations_and_languages**
+> KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo keywords_data_bing_search_volume_history_locations_and_languages()
+
+
+
+By calling this API you will receive the list of locations and languages supported by Bing ‘Search Volume History’ endpoint. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_search_volume_history_locations_and_languages_response_info import KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+
+    try:
+        api_response = api_instance.keywords_data_bing_search_volume_history_locations_and_languages()
+        print("The response of KeywordsDataApi->keywords_data_bing_search_volume_history_locations_and_languages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->keywords_data_bing_search_volume_history_locations_and_languages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo**](KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo.md)
 
 ### Authorization
 

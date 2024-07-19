@@ -27,7 +27,7 @@ class BacklinksBulkRanksLiveItem(BaseModel):
     BacklinksBulkRanksLiveItem
     """ # noqa: E501
     target: Optional[StrictStr] = Field(default=None, description="domain, subdomain or webpage from a POST array")
-    rank: Optional[StrictInt] = Field(default=None, description="rank of the target rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
+    rank: Optional[StrictInt] = Field(default=None, description="rank of the target values represent real-time data for the date of the request rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
     __properties: ClassVar[List[str]] = ["target", "rank"]
 
     model_config = {

@@ -274,7 +274,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a3edfe71-fb8d-42c6-97a6-7fcc051104f5
+          example: 15c8d200-60cd-4d03-a710-bca2040b596f
       responses:
         '200':
           description: Successful operation
@@ -535,7 +535,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a1c45304-e338-467b-bfdb-7fc39c2944fa
+          example: 5fa07557-7fa1-4615-a8c7-748208184383
       responses:
         '200':
           description: Successful operation
@@ -677,7 +677,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7ac25994-542d-492a-94a1-0c0023333366
+          example: eb08cfbe-f2e1-43f4-bde4-c7288a84a319
       responses:
         '200':
           description: Successful operation
@@ -916,7 +916,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7fbca73a-2b22-4a39-982f-a26da9f5e684
+          example: 338a61a4-70ab-4733-a97e-0b78d55ec893
       responses:
         '200':
           description: Successful operation
@@ -1133,7 +1133,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0d066812-5965-4530-b811-6109d20a838f
+          example: 5596b59c-a168-4b41-98f1-a477c6027aef
       responses:
         '200':
           description: Successful operation
@@ -1598,7 +1598,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 25109afd-2470-4dd0-838a-360a4d872667
+          example: b51c43f3-802e-4abd-a07a-1148d16b74d0
       responses:
         '200':
           description: Successful operation
@@ -1762,7 +1762,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1798907c-8820-4341-8930-d682f5ea66c2
+          example: 6f677085-8d90-4cc7-910c-d51315938dc3
       responses:
         '200':
           description: Successful operation
@@ -2324,7 +2324,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c4e3f458-bb36-4cd6-adb1-e76eabdc36cd
+          example: 32437ae9-66bf-4877-b04d-955c08d5c58e
       responses:
         '200':
           description: Successful operation
@@ -2564,7 +2564,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2a17fc10-b72e-41ac-aa03-d77e58532538
+          example: 9642dfbb-f3e0-4585-877b-90a1f0a73db1
       responses:
         '200':
           description: Successful operation
@@ -2685,7 +2685,7 @@ paths:
           required: true
           schema:
             type: string
-          example: dd47e926-2afb-4f0b-b2a1-4731313892f3
+          example: 3dab0e44-7b1e-494b-94cd-237ddb451988
       responses:
         '200':
           description: Successful operation
@@ -2859,7 +2859,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f314d808-7252-496c-8434-c35d0f8098ef
+          example: baaa26a6-6a24-4493-a1bb-98495f365d90
       responses:
         '200':
           description: Successful operation
@@ -3415,6 +3415,21 @@ paths:
                 $ref: '#/components/schemas/DataforseoLabsGoogleSearchIntentLiveResponseInfo'
       security:
         - basicAuth: [ ]
+  /v3/dataforseo_labs/google/categories_for_keywords/languages:
+    get:
+      tags:
+        - DataforseoLabs
+      description: "‌\nUsing this endpoint you can get the full list of languages supported for the Google Categories for Keywords endpoint of DataForSEO Labs API.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/categories_for_keywords/languages/?bash'"
+      operationId: DataforseoLabsGoogleCategoriesForKeywordsLanguages
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo'
+      security:
+        - basicAuth: [ ]
   /v3/dataforseo_labs/google/categories_for_domain/live:
     post:
       tags:
@@ -3435,6 +3450,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForDomainLiveResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/dataforseo_labs/google/categories_for_keywords/live:
+    post:
+      tags:
+        - DataforseoLabs
+      description: "This endpoint will provide you with Google product and service categories related for each specified keyword. You can indicate a maximum of 1,000 keywords in one API request.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/categories_for_keywords/live/?bash'"
+      operationId: GoogleCategoriesForKeywordsLive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLiveResponseInfo'
       security:
         - basicAuth: [ ]
   /v3/dataforseo_labs/google/keywords_for_categories/live:
@@ -4501,7 +4538,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b5c16afe-dc88-4408-8674-545467e63cda
+          example: 2da2cb62-62e5-407f-8454-9ee7bac414ac
       responses:
         '200':
           description: Successful operation
@@ -4583,7 +4620,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d0f7364c-02f9-4568-aa83-f924b950a4d8
+          example: a1bf4153-a956-451e-a4d7-3b7df2fc9db6
       responses:
         '200':
           description: Successful operation
@@ -4665,7 +4702,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3009ca80-0757-482b-be59-f12f18c40962
+          example: 73eca3d5-6b70-4262-81db-ab93b79651f5
       responses:
         '200':
           description: Successful operation
@@ -4747,7 +4784,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9e8000ea-2dee-4f01-a273-9710f728ebfd
+          example: 6d3b4926-d1d2-4f6f-a57d-2a1b6b7d2b2e
       responses:
         '200':
           description: Successful operation
@@ -4897,7 +4934,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 98bde3d5-cace-414a-a6a2-5031c79cf44a
+          example: 6569a012-7424-4c4f-92e0-a2cce87ad6dc
       responses:
         '200':
           description: Successful operation
@@ -5135,7 +5172,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a0a28cdd-bf4c-4669-b1bb-ec7a116814ec
+          example: c71c3bd3-a8c2-40ca-9ba6-6c322426683d
       responses:
         '200':
           description: Successful operation
@@ -5217,7 +5254,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e58b14d1-c83e-4a7a-b1dd-afabed52f6fc
+          example: a9833ac9-86b9-4ee0-8dba-8ad6f08c92be
       responses:
         '200':
           description: Successful operation
@@ -5299,7 +5336,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 554d4656-9765-471d-997e-dd2eef508714
+          example: e5873b9b-d5cd-4a39-8ff6-4f2d61c77484
       responses:
         '200':
           description: Successful operation
@@ -5396,7 +5433,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 6806d8b2-1cf7-4046-9bf7-2cfc7a555aa9
+          example: 2755f0a5-0b18-4368-a041-e819a477d633
       responses:
         '200':
           description: Successful operation
@@ -5426,6 +5463,103 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/KeywordsDataBingKeywordPerformanceLiveResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/keywords_data/bing/search_volume_history/locations_and_languages:
+    get:
+      tags:
+        - KeywordsData
+      description: "By calling this API you will receive the list of locations and languages supported by Bing ‘Search Volume History’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages/?bash'"
+      operationId: KeywordsDataBingSearchVolumeHistoryLocationsAndLanguages
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/keywords_data/bing/search_volume_history/task_post:
+    post:
+      tags:
+        - KeywordsData
+      description: "‌\nThis endpoint will provide you with historical search volume data for up to 1000 keywords in one request. You can get search volume for keywords in monthly, weekly, or daily format and specify the device type.\nfor more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/task_post/?bash'"
+      operationId: BingSearchVolumeHistoryTaskPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/keywords_data/bing/search_volume_history/tasks_ready:
+    get:
+      tags:
+        - KeywordsData
+      description: "‌\nThis endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nfor more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/tasks_ready/?bash'"
+      operationId: BingSearchVolumeHistoryTasksReady
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo'
+      security:
+        - basicAuth: [ ]
+  '/v3/keywords_data/bing/search_volume_history/task_get/{id}':
+    get:
+      tags:
+        - KeywordsData
+      description: "‌\nfor more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/task_get/?bash'"
+      operationId: BingSearchVolumeHistoryTaskGet
+      parameters:
+        - name: id
+          in: path
+          description: "task identifier\nunique task identifier in our system in the UUID format\nyou will be able to use it within 30 days to request the results of the task at any time"
+          required: true
+          schema:
+            type: string
+          example: c4b6df04-13d4-4793-8495-b5dceaeb35bb
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/keywords_data/bing/search_volume_history/live:
+    post:
+      tags:
+        - KeywordsData
+      description: "‌This endpoint will provide you with historical search volume data for up to 1000 keywords in one request. You can get search volume for keywords in monthly, weekly, or daily format and specify the device type.\nfor more info please visit 'https://docs.dataforseo.com/v3/keywords_data/bing/search_volume_history/live/?bash'"
+      operationId: BingSearchVolumeHistoryLive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryLiveRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryLiveResponseInfo'
       security:
         - basicAuth: [ ]
   /v3/backlinks/id_list:
@@ -5792,7 +5926,7 @@ paths:
     post:
       tags:
         - Backlinks
-      description: "‌\nThis endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. rank values range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article\nfor more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'"
+      description: "‌\nThis endpoint will provide you with rank scores of the domains, subdomains, and pages specified in the targets array. The score is based on the number of referring domains pointing to the specified domains, subdomains, or pages. The rank values represent real-time data for the date of the request and range from 0 (no backlinks detected) to 1,000 (highest rank). A similar scoring system is used in Google’s Page Rank algorithm. You can learn more about rank scores in this help center article\nfor more info please visit 'https://docs.dataforseo.com/v3/backlinks/bulk_ranks/live/?bash'"
       operationId: BulkRanksLive
       requestBody:
         content:
@@ -7160,7 +7294,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 59f6b8cb-2f7c-4187-9778-58caa53c24a8
+          example: 60aa82b0-59fd-4c35-a086-de1de53b5431
       responses:
         '200':
           description: Successful operation
@@ -7243,7 +7377,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3d10884c-7bfb-4027-a7b4-ef83c73331c8
+          example: 85a1ccb1-9599-4286-8195-f818ca11e6f8
       responses:
         '200':
           description: Successful operation
@@ -7326,7 +7460,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5f4f0cb4-b451-4e40-b1aa-82182635a731
+          example: 65db1395-c2f9-4851-acdc-e0ac62c677f0
       responses:
         '200':
           description: Successful operation
@@ -7545,7 +7679,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f151ebf5-70a2-417a-8ec9-92ee9c0d483f
+          example: 46a5f058-e11c-412e-b625-7850fe231159
       responses:
         '200':
           description: Successful operation
@@ -7628,7 +7762,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d92fcd15-6a24-4c84-a18e-3b6e10d6896f
+          example: 155e1bdd-c9b3-48cf-9097-b624595fb7aa
       responses:
         '200':
           description: Successful operation
@@ -7711,7 +7845,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e415e7ca-9f22-4c7d-a4a0-b0e244380df9
+          example: 2fe8ff5a-2de3-438c-8d6c-6c32ef299fc4
       responses:
         '200':
           description: Successful operation
@@ -7794,7 +7928,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fd84964d-c201-453f-a5ca-bce0479115e6
+          example: f7a44d3d-0a2d-468d-8469-108917f90d8f
       responses:
         '200':
           description: Successful operation
@@ -7981,7 +8115,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9a571490-d6fc-4aa9-98d6-b91661d65aa6
+          example: 9c9b100d-658c-4711-be14-4a92d1200957
       responses:
         '200':
           description: Successful operation
@@ -8004,7 +8138,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 336634d8-0768-49c9-8fae-e3bdf9a1e337
+          example: 586573d6-0952-459a-80d7-db2698fb8dd1
       responses:
         '200':
           description: Successful operation
@@ -8064,7 +8198,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 6de8ce91-563b-4b5d-854c-b1207f5695c1
+          example: 2687370f-f383-4445-922b-66c4731a6823
       responses:
         '200':
           description: Successful operation
@@ -8087,7 +8221,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c5f25af3-9f42-4caf-8a3b-dc8403adb0b1
+          example: b0562547-813c-47cf-b895-e0fd90edd23f
       responses:
         '200':
           description: Successful operation
@@ -8147,7 +8281,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 3258e2d3-e174-4c2d-827e-527232013b1b
+          example: 8885d073-cc8d-4d96-9796-258e42fc54db
       responses:
         '200':
           description: Successful operation
@@ -8170,7 +8304,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 17b2003e-f4e2-4395-aa17-9097d60f8743
+          example: 16009be1-035c-4e10-a772-d32054fd6ab8
       responses:
         '200':
           description: Successful operation
@@ -8230,7 +8364,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 12fa8c15-44bf-4e9c-9416-7a91645778b1
+          example: 13596e2c-b215-44be-a290-76e3d8c3b3c0
       responses:
         '200':
           description: Successful operation
@@ -8253,7 +8387,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e76e4d8d-d83b-4db8-9dcf-0ada248ebb3d
+          example: 4ac866c8-6113-4d26-928d-7399b6cc582b
       responses:
         '200':
           description: Successful operation
@@ -8395,7 +8529,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 09bdd71b-2885-4380-a680-be65d35c37a9
+          example: 5de02508-976a-48db-b77e-d50d1b677a84
       responses:
         '200':
           description: Successful operation
@@ -8455,7 +8589,7 @@ paths:
           required: true
           schema:
             type: string
-          example: dbe4bff6-31ed-4736-b855-d2774c03d3f0
+          example: 49c99946-f426-4932-8fcb-6a70ebde30bf
       responses:
         '200':
           description: Successful operation
@@ -8515,7 +8649,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c10361ae-3717-44fc-87d1-55b4f3368476
+          example: a1931109-950c-4a1b-89c3-cee78eb01aad
       responses:
         '200':
           description: Successful operation
@@ -8575,7 +8709,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 01109ae0-496a-475f-bb87-805a39688d59
+          example: 95c471b9-c5b0-447a-993d-8178c81bbc25
       responses:
         '200':
           description: Successful operation
@@ -8670,7 +8804,7 @@ paths:
     get:
       tags:
         - BusinessData
-      description: "You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2024-06-17).\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'"
+      description: "You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2024-07-17).\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'"
       operationId: BusinessDataBusinessListingsLocations
       responses:
         '200':
@@ -9120,7 +9254,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 95e1fd2f-5ee0-405e-ae1a-7c473ea8b098
+          example: 5cabb8df-ce12-40b9-98e1-5fd3c54fc83d
       responses:
         '200':
           description: Successful operation
@@ -10344,6 +10478,27 @@ components:
         displayed_price:
           type: string
           description: "price string in the result\nraw price string as provided in the result"
+          nullable: true
+    RatingInfo:
+      type: object
+      properties:
+        rating_type:
+          type: string
+          description: "the type of rating\nhere you can find the following elements: Max5, Percents, CustomMax"
+          nullable: true
+        value:
+          type: number
+          description: the value of the rating
+          format: float
+          nullable: true
+        votes_count:
+          type: integer
+          description: the amount of feedback
+          format: int64
+          nullable: true
+        rating_max:
+          type: integer
+          description: the maximum value for a rating_type
           nullable: true
     SocialMetricsInfo:
       properties:
@@ -12314,27 +12469,6 @@ components:
         ad_aclk:
           type: string
           description: the identifier of the ad
-          nullable: true
-    RatingInfo:
-      type: object
-      properties:
-        rating_type:
-          type: string
-          description: "the type of rating\nhere you can find the following elements: Max5, Percents, CustomMax"
-          nullable: true
-        value:
-          type: number
-          description: the value of the rating
-          format: float
-          nullable: true
-        votes_count:
-          type: integer
-          description: the amount of feedback
-          format: int64
-          nullable: true
-        rating_max:
-          type: integer
-          description: the maximum value for a rating_type
           nullable: true
     FaqBoxElement:
       type: object
@@ -28265,13 +28399,17 @@ components:
         keyword_info:
           $ref: '#/components/schemas/KeywordInfo'
         clickstream_keyword_info:
-          $ref: '#/components/schemas/ClickstreamKeywordInfo'
+          type: object
+          description: "clickstream data for the returned keyword\nto retrieve results for this field, the parameter include_clickstream_data must be set to true"
+          nullable: true
         keyword_properties:
           $ref: '#/components/schemas/KeywordProperties'
         impressions_info:
           $ref: '#/components/schemas/ImpressionsInfo'
         serp_info:
           $ref: '#/components/schemas/SerpInfo'
+        avg_backlinks_info:
+          $ref: '#/components/schemas/AvgBacklinksInfo'
     DataforseoLabsGoogleHistoricalSearchVolumeLiveResultInfo:
       type: object
       properties:
@@ -28507,6 +28645,41 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/DataforseoLabsGoogleSearchIntentLiveTaskInfo'
+              description: array of tasks
+              nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLanguagesResultInfo:
+      type: object
+      properties:
+        language_name:
+          type: string
+          description: language name
+          nullable: true
+        language_code:
+          type: string
+          description: language code according to ISO 639-1
+          nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLanguagesTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLanguagesResultInfo'
+              description: array of results
+              nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLanguagesTaskInfo'
               description: array of tasks
               nullable: true
     DataforseoLabsGoogleCategoriesForDomainLiveRequestInfo:
@@ -28753,6 +28926,81 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForDomainLiveTaskInfo'
+              description: array of tasks
+              nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+          description: "target keywords\nrequired field\nUTF-8 encoding\nmaximum number of keywords you can specify in this array: 1000\neach keyword should be at least 3 characters long;\nthe keywords will be converted to lowercase format"
+        language_name:
+          type: string
+          description: "full name of the language\nrequired field if don’t specify language_code\nyou can receive the list of available languages with their language_name by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/google/categories_for_keywords/languages\nexample:\nEnglish"
+          nullable: true
+        language_code:
+          type: string
+          description: "language code\nrequired field if don’t specify language_name\nyou can receive the list of available languages with their language_code by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/google/categories_for_keywords/languages\nexample:\nen"
+          nullable: true
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLiveItem:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: keyword in a POST array
+          nullable: true
+        categories:
+          type: array
+          items:
+            type: integer
+          description: "product and service categories\nyou can download the full list of possible categories"
+          nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLiveResultInfo:
+      type: object
+      properties:
+        language_code:
+          type: string
+          description: "language code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        items_count:
+          type: integer
+          description: the number of results returned in the items array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLiveItem'
+          description: contains keywords and related keyword difficulty scores
+          nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLiveTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLiveResultInfo'
+              description: array of results
+              nullable: true
+    DataforseoLabsGoogleCategoriesForKeywordsLiveResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleCategoriesForKeywordsLiveTaskInfo'
               description: array of tasks
               nullable: true
     DataforseoLabsGoogleKeywordsForCategoriesLiveRequestInfo:
@@ -38455,59 +38703,6 @@ components:
                 format: double
                 nullable: true
               description: keyword popularity values averaged over the whole time range
-    KeywordsDataGoogleTrendsExploreTaskGetResultInfo:
-      type: object
-      properties:
-        keywords:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: keywords in a POST array
-          nullable: true
-        type:
-          type: string
-          description: type of element
-          nullable: true
-        location_code:
-          type: integer
-          description: "location code in a POST array\nif there is no data, then the value is null"
-          nullable: true
-        language_code:
-          type: string
-          description: "language code in a POST array\nif there is no data, then the value is null"
-          nullable: true
-        check_url:
-          type: string
-          description: "direct URL to the Google Trends results\nyou can use it to make sure that we provided accurate results"
-          nullable: true
-        datetime:
-          type: string
-          description: "date and time when the result was received\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
-          nullable: true
-        items_count:
-          type: integer
-          description: the number of results returned in the items array
-          format: int64
-          nullable: true
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BaseGoogleTrendsItem'
-          description: items on the Google Trends page
-          nullable: true
-    KeywordsDataGoogleTrendsExploreTaskGetTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/KeywordsDataGoogleTrendsExploreTaskGetResultInfo'
-              description: array of results
-              nullable: true
     TrendsMapDataInfo:
       type: object
       properties:
@@ -38606,6 +38801,59 @@ components:
               nullable: true
             data:
               $ref: '#/components/schemas/QueriesListDataInfo'
+    KeywordsDataGoogleTrendsExploreTaskGetResultInfo:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: keywords in a POST array
+          nullable: true
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        location_code:
+          type: integer
+          description: "location code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        language_code:
+          type: string
+          description: "language code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        check_url:
+          type: string
+          description: "direct URL to the Google Trends results\nyou can use it to make sure that we provided accurate results"
+          nullable: true
+        datetime:
+          type: string
+          description: "date and time when the result was received\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
+          nullable: true
+        items_count:
+          type: integer
+          description: the number of results returned in the items array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseGoogleTrendsItem'
+          description: items on the Google Trends page
+          nullable: true
+    KeywordsDataGoogleTrendsExploreTaskGetTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataGoogleTrendsExploreTaskGetResultInfo'
+              description: array of results
+              nullable: true
     KeywordsDataGoogleTrendsExploreTaskGetResponseInfo:
       type: object
       allOf:
@@ -39611,11 +39859,11 @@ components:
           nullable: true
         date_from:
           type: string
-          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\nminimum value: two years back from today’s date\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\""
+          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\nminimum value: two years back from today’s date\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         date_to:
           type: string
-          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\""
+          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         postback_url:
           type: string
@@ -39819,11 +40067,11 @@ components:
           nullable: true
         date_from:
           type: string
-          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\nminimum value: two years back from today’s date\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\""
+          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\nminimum value: two years back from today’s date\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         date_to:
           type: string
-          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\""
+          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         search_partners:
           type: boolean
@@ -39950,11 +40198,11 @@ components:
           nullable: true
         date_from:
           type: string
-          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\""
+          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         date_to:
           type: string
-          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\""
+          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         postback_url:
           type: string
@@ -40158,11 +40406,11 @@ components:
           nullable: true
         date_from:
           type: string
-          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\""
+          description: "starting date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         date_to:
           type: string
-          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\""
+          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         sort_by:
           type: string
@@ -40295,11 +40543,11 @@ components:
           nullable: true
         date_from:
           type: string
-          description: "starting date of the time range\noptional field\nyou can specify a date from the past 24 months\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\""
+          description: "starting date of the time range\noptional field\nyou can specify a date from the past 24 months\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         date_to:
           type: string
-          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\""
+          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         search_partners:
           type: boolean
@@ -40509,11 +40757,11 @@ components:
           nullable: true
         date_from:
           type: string
-          description: "starting date of the time range\noptional field\nyou can specify a date from the past 24 months\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\""
+          description: "starting date of the time range\noptional field\nyou can specify a date from the past 24 months\nif you don’t specify this field, data will be provided for the last 12 months\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         date_to:
           type: string
-          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\nnote: we do not recommend using a custom time range for the past year’s dates;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\""
+          description: "ending date of the time range\noptional field\nif you don’t specify this field, data will be provided for the last 12 months;\nminimum value: two years back from today’s date;\nmaximum value: one month from today’s date;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range for the past year’s dates"
           nullable: true
         search_partners:
           type: boolean
@@ -40971,6 +41219,374 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/KeywordsDataBingKeywordPerformanceLiveTaskInfo'
+              description: array of tasks
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResultInfo:
+      type: object
+      properties:
+        language_name:
+          type: string
+          description: language name
+          nullable: true
+        language_code:
+          type: string
+          description: language code according to ISO 639-1
+          nullable: true
+        available_locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/AvailableLocations'
+          description: array of available locations for a certain language
+          nullable: true
+    KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResultInfo'
+              description: array of results
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesTaskInfo'
+              description: array of tasks
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+          description: "keywords\nrequired field\nThe maximum number of keywords you can specify: 1000\nThe maximum number of characters for each keyword: 100\nthe specified keywords will be converted to lowercase, data will be provided in a separate array"
+        location_name:
+          type: string
+          description: "full name of search engine location\nrequired field if you don’t specify location_code or location_coordinate\nif you use this field, you don’t need to specify location_code or location_coordinate\nyou can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages\nexample:\nLondon,England,United Kingdom"
+          nullable: true
+        location_code:
+          type: integer
+          description: "search engine location code\nrequired field if you don’t specify location_name or location_coordinate\nif you use this field, you don’t need to specify location_name or location_coordinate\nyou can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages\nexample:\n2840"
+          nullable: true
+        location_coordinate:
+          type: string
+          description: "GPS coordinates of a location\nrequired field if you don’t specify location_name or location_code\nif you use this field, you don’t need to specify location_name or location_code\nlocation_coordinate parameter should be specified in the “latitude,longitude” format\nthe data will be provided for the country the specified coordinates belong to\nexample:\n52.6178549,-155.352142"
+          nullable: true
+        language_name:
+          type: string
+          description: "full name of search engine language\nrequired field if you don’t specify language_code\nif you use this field, you don’t need to specify language_code\nyou can receive the list of available languages of the search engines with their language_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages"
+          nullable: true
+        language_code:
+          type: string
+          description: "search engine language code\nrequired field if you don’t specify language_name\nif you use this field, you don’t need to specify language_name\nyou can receive the list of available languages of the search engines with their language_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages"
+          nullable: true
+        device:
+          type: string
+          description: "device type\noptional field\nspecify this field if you want to get the data for a particular device type\npossible values: mobile, desktop, tablet, non_smartphones\ndefault value:  mobile, desktop, tablet, non_smartphones"
+          nullable: true
+        period:
+          type: string
+          description: "aggregates the returned data to a certain time period\noptional field\nspecify this field if you want to get the data in monthly, weekly or daily format\npossible values: monthly, weekly, daily\nmonthly – returns data up to past 24 months\nweekly – returns data up to past 15 weeks\ndaily – returns data up to past 45 days\ndefault value:  monthly"
+          nullable: true
+        date_from:
+          type: string
+          description: "starting date of the time range\noptional field\nminimum value: two years back from today’s date\nmaximum value: one day from today’s date\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range\nNote 2: if date_from and date_to parameters are not specified, the data will be returned for the past 24 months\nif you specify the period parameter:\nwith value weekly, you will get results for the past 15 weeks\nwith value daily, you will get results for the past 45 days"
+          nullable: true
+        date_to:
+          type: string
+          description: "ending date of the time range\noptional field\nminimum value: two years back from today’s date;\nmaximum value: one day from today’s date;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range\nNote 2: if date_from and date_to parameters are not specified, the data will be returned for the past 24 months\nif you specify the period parameter:\nwith value weekly, you will get results for the past 15 weeks\nwith value daily, you will get results for the past 45 days"
+          nullable: true
+        postback_url:
+          type: string
+          description: "return URL for sending task results\noptional field\nonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.\nexample:\nhttp://your-server.com/postbackscript?id=$id\nhttp://your-server.com/postbackscript?id=$id&tag=$tag\nNote: special symbols in postback_url will be urlencoded;\ni.a., the # symbol will be encoded into %23"
+          nullable: true
+        pingback_url:
+          type: string
+          description: "notification URL of a completed task\noptional field\nwhen a task is completed we will notify you by GET request sent to the URL you have specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request\nexample:\nhttp://your-server.com/pingscript?id=$id\nhttp://your-server.com/pingscript?id=$id&tag=$tag\nNote: special symbols in pingback_url will be urlencoded;\ni.a., the # symbol will be encoded into %23"
+          nullable: true
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+    KeywordsDataBingSearchVolumeHistoryTaskPostTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: object
+              description: "array of results\nin this case, the value will be null"
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTaskPostTaskInfo'
+              description: array of tasks
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryTasksReadyResultInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "task identifier of the completed task\nunique task identifier in our system in the UUID format"
+          nullable: true
+        se:
+          type: string
+          description: search engine specified when setting the task
+          nullable: true
+        function:
+          type: string
+          description: type of the task
+          nullable: true
+        date_posted:
+          type: string
+          description: date when the task was posted (in the UTC format)
+          nullable: true
+        tag:
+          type: string
+          description: user-defined task identifier
+          nullable: true
+        endpoint:
+          type: string
+          description: URL for collecting the results of the task
+          nullable: true
+    KeywordsDataBingSearchVolumeHistoryTasksReadyTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTasksReadyResultInfo'
+              description: array of results
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTasksReadyTaskInfo'
+              description: array of tasks
+              nullable: true
+    SearchVolumeHistoryItemInfo:
+      type: object
+      properties:
+        year:
+          type: integer
+          description: year
+          nullable: true
+        month:
+          type: integer
+          description: month
+          nullable: true
+        day:
+          type: integer
+          description: day of the month
+          nullable: true
+        search_volume:
+          type: integer
+          description: search volume rate
+          format: int64
+          nullable: true
+      description: "device type = desktop\ncontains historical search volume data for searches made from desktop devices"
+    SearchVolumeHistorySearchInfo:
+      type: object
+      properties:
+        desktop:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchVolumeHistoryItemInfo'
+          description: "device type = desktop\ncontains historical search volume data for searches made from desktop devices"
+          nullable: true
+        non_smartphones:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchVolumeHistoryItemInfo'
+          description: "device type = non-smartphones\ncontains historical search volume data for searches made from feature phones (non-smartphone mobile devices)"
+          nullable: true
+        mobile:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchVolumeHistoryItemInfo'
+          description: "device type = mobile\ncontains historical search volume data for searches made from mobile devices"
+          nullable: true
+        tablet:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchVolumeHistoryItemInfo'
+          description: "device type = tablet\ncontains historical search volume data for searches made from tablets"
+          nullable: true
+    KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: keyword in a POST array
+          nullable: true
+        location_code:
+          type: integer
+          description: "location code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        language_code:
+          type: string
+          description: "language code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        device:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        period:
+          type: string
+          description: "time period\nindicates if returned data is aggregated to a certain time period\ndefault value monthly"
+          nullable: true
+        searches:
+          $ref: '#/components/schemas/SearchVolumeHistorySearchInfo'
+    KeywordsDataBingSearchVolumeHistoryTaskGetTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo'
+              description: array of results
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryTaskGetTaskInfo'
+              description: array of tasks
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryLiveRequestInfo:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+          description: "keywords\nrequired field\nThe maximum number of keywords you can specify: 1000\nThe maximum number of characters for each keyword: 100\nthe specified keywords will be converted to lowercase, data will be provided in a separate array"
+        location_name:
+          type: string
+          description: "full name of search engine location\nrequired field if you don’t specify location_code or location_coordinate\nif you use this field, you don’t need to specify location_code or location_coordinate\nyou can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages\nexample:\nLondon,England,United Kingdom"
+          nullable: true
+        location_code:
+          type: integer
+          description: "search engine location code\nrequired field if you don’t specify location_name or location_coordinate\nif you use this field, you don’t need to specify location_name or location_coordinate\nyou can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages\nexample:\n2840"
+          nullable: true
+        location_coordinate:
+          type: string
+          description: "GPS coordinates of a location\nrequired field if you don’t specify location_name or location_code\nif you use this field, you don’t need to specify location_name or location_code\nlocation_coordinate parameter should be specified in the “latitude,longitude” format\nthe data will be provided for the country the specified coordinates belong to\nexample:\n52.6178549,-155.352142"
+          nullable: true
+        language_name:
+          type: string
+          description: "full name of search engine language\nrequired field if you don’t specify language_code\nif you use this field, you don’t need to specify language_code\nyou can receive the list of available languages of the search engines with their language_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages"
+          nullable: true
+        language_code:
+          type: string
+          description: "search engine language code\nrequired field if you don’t specify language_name\nif you use this field, you don’t need to specify language_name\nyou can receive the list of available languages of the search engines with their language_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/bing/search_volume_history/locations_and_languages"
+          nullable: true
+        device:
+          type: string
+          description: "device type\noptional field\nspecify this field if you want to get the data for a particular device type\npossible values: mobile, desktop, tablet, non_smartphones\ndefault value:  mobile, desktop, tablet, non_smartphones"
+          nullable: true
+        period:
+          type: string
+          description: "aggregates the returned data to a certain time period\noptional field\nspecify this field if you want to get the data in monthly, weekly or daily format\npossible values: monthly, weekly, daily\nmonthly – returns data up to past 24 months\nweekly – returns data up to past 15 weeks\ndaily – returns data up to past 45 days\ndefault value:  monthly"
+          nullable: true
+        date_from:
+          type: string
+          description: "starting date of the time range\noptional field\nminimum value: two years back from today’s date\nmaximum value: one day from today’s date\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-01-01\"\nNote: we do not recommend using a custom time range\nNote 2: if date_from and date_to parameters are not specified, the data will be returned for the past 24 months\nif you specify the period parameter:\nwith value weekly, you will get results for the past 15 weeks\nwith value daily, you will get results for the past 45 days"
+          nullable: true
+        date_to:
+          type: string
+          description: "ending date of the time range\noptional field\nminimum value: two years back from today’s date;\nmaximum value: one day from today’s date;\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2020-03-15\"\nNote: we do not recommend using a custom time range\nNote 2: if date_from and date_to parameters are not specified, the data will be returned for the past 24 months\nif you specify the period parameter:\nwith value weekly, you will get results for the past 15 weeks\nwith value daily, you will get results for the past 45 days"
+          nullable: true
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+    KeywordsDataBingSearchVolumeHistoryLiveResultInfo:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: keyword in a POST array
+          nullable: true
+        location_code:
+          type: integer
+          description: "location code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        language_code:
+          type: string
+          description: "language code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        device:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        period:
+          type: string
+          description: "time period\nindicates if returned data is aggregated to a certain time period\ndefault value monthly"
+          nullable: true
+        searches:
+          $ref: '#/components/schemas/SearchVolumeHistorySearchInfo'
+    KeywordsDataBingSearchVolumeHistoryLiveTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryLiveResultInfo'
+              description: array of results
+              nullable: true
+    KeywordsDataBingSearchVolumeHistoryLiveResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/KeywordsDataBingSearchVolumeHistoryLiveTaskInfo'
               description: array of tasks
               nullable: true
     BacklinksIdListRequestInfo:
@@ -43646,7 +44262,7 @@ components:
           nullable: true
         rank:
           type: integer
-          description: "rank of the target\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
+          description: "rank referred to the target from the POST array\nindicates the rank that the referring domain (target above) refers to your target from the POST array;\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
           nullable: true
         backlinks:
           type: integer
@@ -43954,7 +44570,7 @@ components:
           nullable: true
         domain_from_rank:
           type: integer
-          description: "domain rank of the referring domain\ndomain_from_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
+          description: "domain rank of the referring domain\nindicates the rank of the domain at the time our crawler last saw the backlink;\ndomain_from_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
           nullable: true
         domain_from_platform_type:
           type: array
@@ -44440,7 +45056,7 @@ components:
           nullable: true
         rank:
           type: integer
-          description: "rank of the target\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
+          description: "rank of the target\nvalues represent real-time data for the date of the request\nrank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm\nlearn more about the metric and how it is calculated in this help center article"
           nullable: true
     BacklinksBulkRanksLiveResultInfo:
       type: object
@@ -46391,6 +47007,43 @@ components:
               type: boolean
               description: indicates whether the resource blocks rendering
               nullable: true
+    OnPageResourcesResultInfo:
+      type: object
+      properties:
+        crawl_progress:
+          type: string
+          description: "status of the crawling session\npossible values: in_progress, finished"
+          nullable: true
+        crawl_status:
+          $ref: '#/components/schemas/CrawlStatusInfo'
+        total_items_count:
+          type: integer
+          description: total number of relevant items crawled
+          format: int64
+          nullable: true
+        items_count:
+          type: integer
+          description: number of items in the results array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
+          description: items array
+          nullable: true
+    OnPageResourcesTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/OnPageResourcesResultInfo'
+              description: array of results
+              nullable: true
     OnPageScriptResourceElementItem:
       type: object
       allOf:
@@ -46439,8 +47092,6 @@ components:
                 nullable: true
               description: "resource check-ups\ncontents of the array depend on the resource_type"
               nullable: true
-            resource_errors:
-              $ref: '#/components/schemas/OnPageResourceIssueInfo'
             content_encoding:
               type: string
               description: type of encoding
@@ -46459,43 +47110,8 @@ components:
               nullable: true
             last_modified:
               $ref: '#/components/schemas/LastModified'
-    OnPageResourcesResultInfo:
-      type: object
-      properties:
-        crawl_progress:
-          type: string
-          description: "status of the crawling session\npossible values: in_progress, finished"
-          nullable: true
-        crawl_status:
-          $ref: '#/components/schemas/CrawlStatusInfo'
-        total_items_count:
-          type: integer
-          description: total number of relevant items crawled
-          format: int64
-          nullable: true
-        items_count:
-          type: integer
-          description: number of items in the results array
-          format: int64
-          nullable: true
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
-          description: items array
-          nullable: true
-    OnPageResourcesTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/OnPageResourcesResultInfo'
-              description: array of results
-              nullable: true
+            resource_errors:
+              $ref: '#/components/schemas/OnPageResourceIssueInfo'
     OnPageImageResourceElementItem:
       type: object
       allOf:
@@ -51580,7 +52196,7 @@ components:
               description: "the amount of tax\ntax is specified as the actual amount of money, not as the percentage"
               nullable: true
             shipping_price:
-              type: integer
+              type: number
               description: product shipping price
               nullable: true
             total_price:
@@ -61897,7 +62513,7 @@ components:
       properties:
         url_path:
           type: string
-          description: "URL path of the business entity\nrequired field if you do not specify keyword\nURL path to the Tripadvisor page of the business entity;\ncan be found in the URL of the business entity on Tripadvisor\nexample:\nHotel_Review-g60763-d23462501-Reviews-Margaritaville_Times_Square-New_York_City_New_York.html\nhttps://www.tripadvisor.com/Hotel_Review-g60763-d23462501-Reviews-Margaritaville_Times_Square-New_York_City_New_York.html"
+          description: "URL path of the business entity\nrequired field if you do not specify keyword\nURL path to the Tripadvisor page of the business entity;\nexamples:\nHotel_Review-g60763-d23462501-Reviews-Margaritaville_Times_Square-New_York_City_New_York.html\nhttps://www.tripadvisor.com/Hotel_Review-g60763-d23462501-Reviews-Margaritaville_Times_Square-New_York_City_New_York.html"
           nullable: true
         keyword:
           type: string
@@ -61952,6 +62568,10 @@ components:
         sort_by:
           type: string
           description: "results sorting parameters\noptional field\nyou can use this field to sort the results;\npossible types of sorting:\nmost_recent\ndetailed_reviews"
+          nullable: true
+        translate_reviews:
+          type: boolean
+          description: "translate reviews according to the URL path\noptional field\nif set to true, returned reviews will be translated to the language matching the specified url_path;\nfor example, if url_path contains tripadvisor.it and translate_reviews is true, reviews will be translated to the Italian language;\ndefault value: true"
           nullable: true
         tag:
           type: string
