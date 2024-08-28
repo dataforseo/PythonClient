@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.avg_backlinks_info import AvgBacklinksInfo
 from dataforseo_client.models.impressions_info import ImpressionsInfo
 from dataforseo_client.models.keyword_info import KeywordInfo
+from dataforseo_client.models.keyword_info_normalized_with_info import KeywordInfoNormalizedWithInfo
 from dataforseo_client.models.keyword_properties import KeywordProperties
 from dataforseo_client.models.serp_info import SerpInfo
 from typing import Optional, Set
@@ -37,12 +38,14 @@ class DataforseoLabsGoogleHistoricalSearchVolumeLiveItem(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     search_partners: Optional[StrictBool] = Field(default=None, description="indicates data for Google and partner sites if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search; if false, the results are returned for Google search sites only")
     keyword_info: Optional[KeywordInfo] = None
+    keyword_info_normalized_with_bing: Optional[KeywordInfoNormalizedWithInfo] = None
+    keyword_info_normalized_with_clickstream: Optional[KeywordInfoNormalizedWithInfo] = None
     clickstream_keyword_info: Optional[Dict[str, Any]] = Field(default=None, description="clickstream data for the returned keyword to retrieve results for this field, the parameter include_clickstream_data must be set to true")
     keyword_properties: Optional[KeywordProperties] = None
     impressions_info: Optional[ImpressionsInfo] = None
     serp_info: Optional[SerpInfo] = None
     avg_backlinks_info: Optional[AvgBacklinksInfo] = None
-    __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "search_partners", "keyword_info", "clickstream_keyword_info", "keyword_properties", "impressions_info", "serp_info", "avg_backlinks_info"]
+    __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "search_partners", "keyword_info", "keyword_info_normalized_with_bing", "keyword_info_normalized_with_clickstream", "clickstream_keyword_info", "keyword_properties", "impressions_info", "serp_info", "avg_backlinks_info"]
 
     model_config = {
         "populate_by_name": True,
@@ -86,6 +89,12 @@ class DataforseoLabsGoogleHistoricalSearchVolumeLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keyword_info
         if self.keyword_info:
             _dict['keyword_info'] = self.keyword_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_info_normalized_with_bing
+        if self.keyword_info_normalized_with_bing:
+            _dict['keyword_info_normalized_with_bing'] = self.keyword_info_normalized_with_bing.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_info_normalized_with_clickstream
+        if self.keyword_info_normalized_with_clickstream:
+            _dict['keyword_info_normalized_with_clickstream'] = self.keyword_info_normalized_with_clickstream.to_dict()
         # override the default output from pydantic by calling `to_dict()` of keyword_properties
         if self.keyword_properties:
             _dict['keyword_properties'] = self.keyword_properties.to_dict()
@@ -146,6 +155,8 @@ class DataforseoLabsGoogleHistoricalSearchVolumeLiveItem(BaseModel):
             "language_code": obj.get("language_code"),
             "search_partners": obj.get("search_partners"),
             "keyword_info": KeywordInfo.from_dict(obj["keyword_info"]) if obj.get("keyword_info") is not None else None,
+            "keyword_info_normalized_with_bing": KeywordInfoNormalizedWithInfo.from_dict(obj["keyword_info_normalized_with_bing"]) if obj.get("keyword_info_normalized_with_bing") is not None else None,
+            "keyword_info_normalized_with_clickstream": KeywordInfoNormalizedWithInfo.from_dict(obj["keyword_info_normalized_with_clickstream"]) if obj.get("keyword_info_normalized_with_clickstream") is not None else None,
             "clickstream_keyword_info": obj.get("clickstream_keyword_info"),
             "keyword_properties": KeywordProperties.from_dict(obj["keyword_properties"]) if obj.get("keyword_properties") is not None else None,
             "impressions_info": ImpressionsInfo.from_dict(obj["impressions_info"]) if obj.get("impressions_info") is not None else None,

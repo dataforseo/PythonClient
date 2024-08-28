@@ -28,11 +28,10 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
     AppendixBingKeywordsDataLimitsRatesDataInfo
     """ # noqa: E501
     keyword_performance: Optional[AppendixInfo] = None
-    search_volume_history: Optional[AppendixInfo] = None
     search_volume: Optional[AppendixInfo] = None
     keywords_for_site: Optional[AppendixInfo] = None
     keywords_for_keywords: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["keyword_performance", "search_volume_history", "search_volume", "keywords_for_site", "keywords_for_keywords"]
+    __properties: ClassVar[List[str]] = ["keyword_performance", "search_volume", "keywords_for_site", "keywords_for_keywords"]
 
     model_config = {
         "populate_by_name": True,
@@ -76,9 +75,6 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keyword_performance
         if self.keyword_performance:
             _dict['keyword_performance'] = self.keyword_performance.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of search_volume_history
-        if self.search_volume_history:
-            _dict['search_volume_history'] = self.search_volume_history.to_dict()
         # override the default output from pydantic by calling `to_dict()` of search_volume
         if self.search_volume:
             _dict['search_volume'] = self.search_volume.to_dict()
@@ -101,7 +97,6 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
 
         _obj = cls.model_validate({
             "keyword_performance": AppendixInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
-            "search_volume_history": AppendixInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
             "search_volume": AppendixInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None,
             "keywords_for_site": AppendixInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
             "keywords_for_keywords": AppendixInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None

@@ -30,9 +30,8 @@ class AppendixBingKeywordsDataPriceData(BaseModel):
     keyword_performance: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     keywords_for_keywords: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     keywords_for_site: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    search_volume_history: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
     search_volume: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["keyword_performance", "keywords_for_keywords", "keywords_for_site", "search_volume_history", "search_volume"]
+    __properties: ClassVar[List[str]] = ["keyword_performance", "keywords_for_keywords", "keywords_for_site", "search_volume"]
 
     model_config = {
         "populate_by_name": True,
@@ -82,9 +81,6 @@ class AppendixBingKeywordsDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keywords_for_site
         if self.keywords_for_site:
             _dict['keywords_for_site'] = self.keywords_for_site.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of search_volume_history
-        if self.search_volume_history:
-            _dict['search_volume_history'] = self.search_volume_history.to_dict()
         # override the default output from pydantic by calling `to_dict()` of search_volume
         if self.search_volume:
             _dict['search_volume'] = self.search_volume.to_dict()
@@ -103,7 +99,6 @@ class AppendixBingKeywordsDataPriceData(BaseModel):
             "keyword_performance": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
             "keywords_for_keywords": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None,
             "keywords_for_site": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
-            "search_volume_history": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
             "search_volume": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None
         })
         return _obj

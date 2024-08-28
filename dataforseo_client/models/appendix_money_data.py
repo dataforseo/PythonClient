@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_limits_money_data import AppendixLimitsMoneyData
-from dataforseo_client.models.appendix_statistics_data_info import AppendixStatisticsDataInfo
+from dataforseo_client.models.appendix_statistics_money_data import AppendixStatisticsMoneyData
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class AppendixMoneyData(BaseModel):
     total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of money deposited to your account")
     balance: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="amount of money left in your account")
     limits: Optional[AppendixLimitsMoneyData] = None
-    statistics: Optional[AppendixStatisticsDataInfo] = None
+    statistics: Optional[AppendixStatisticsMoneyData] = None
     __properties: ClassVar[List[str]] = ["total", "balance", "limits", "statistics"]
 
     model_config = {
@@ -104,7 +104,7 @@ class AppendixMoneyData(BaseModel):
             "total": obj.get("total"),
             "balance": obj.get("balance"),
             "limits": AppendixLimitsMoneyData.from_dict(obj["limits"]) if obj.get("limits") is not None else None,
-            "statistics": AppendixStatisticsDataInfo.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None
+            "statistics": AppendixStatisticsMoneyData.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None
         })
         return _obj
 

@@ -20,6 +20,7 @@ import json
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.channel_subscribers_count import ChannelSubscribersCount
 from dataforseo_client.models.streaming_quality_element import StreamingQualityElement
 from dataforseo_client.models.subtitles import Subtitles
 from typing import Optional, Set
@@ -43,6 +44,7 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
     views_count: Optional[StrictInt] = Field(default=None, description="number of views of the video")
     likes_count: Optional[StrictInt] = Field(default=None, description="number of likes on the video")
     comments_count: Optional[StrictInt] = Field(default=None, description="number of comments on the video")
+    channel_subscribers_count: Optional[ChannelSubscribersCount] = None
     publication_date: Optional[StrictStr] = Field(default=None, description="the date when the video is published")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result is published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-11-15 12:57:46 +00:00")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="keywords relevant to the video")
@@ -52,7 +54,7 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
     duration_time_seconds: Optional[StrictInt] = Field(default=None, description="duration of the video in seconds")
     subtitles: Optional[List[Subtitles]] = Field(default=None, description="array of elements describing properties of subtitles in the video")
     streaming_quality: Optional[List[StreamingQualityElement]] = Field(default=None, description="array of elements that contain information about all possible streaming qualities of the video")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "publication_date", "timestamp", "keywords", "category", "is_live", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "channel_subscribers_count", "publication_date", "timestamp", "keywords", "category", "is_live", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]
 
     model_config = {
         "populate_by_name": True,
@@ -93,6 +95,9 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of channel_subscribers_count
+        if self.channel_subscribers_count:
+            _dict['channel_subscribers_count'] = self.channel_subscribers_count.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in subtitles (list)
         _items = []
         if self.subtitles:
@@ -254,6 +259,7 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
             "views_count": obj.get("views_count"),
             "likes_count": obj.get("likes_count"),
             "comments_count": obj.get("comments_count"),
+            "channel_subscribers_count": ChannelSubscribersCount.from_dict(obj["channel_subscribers_count"]) if obj.get("channel_subscribers_count") is not None else None,
             "publication_date": obj.get("publication_date"),
             "timestamp": obj.get("timestamp"),
             "keywords": obj.get("keywords"),

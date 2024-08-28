@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **views_count** | **int** | number of views of the video | [optional] 
 **likes_count** | **int** | number of likes on the video | [optional] 
 **comments_count** | **int** | number of comments on the video | [optional] 
+**channel_subscribers_count** | [**ChannelSubscribersCount**](ChannelSubscribersCount.md) |  | [optional] 
 **publication_date** | **str** | the date when the video is published | [optional] 
 **timestamp** | **str** | date and time when the result is published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-11-15 12:57:46 +00:00 | [optional] 
 **keywords** | **List[Optional[str]]** | keywords relevant to the video | [optional] 

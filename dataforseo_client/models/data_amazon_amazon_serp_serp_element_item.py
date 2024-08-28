@@ -37,7 +37,6 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
     domain: Optional[StrictStr] = Field(default=None, description="Amazon domain")
     title: Optional[StrictStr] = Field(default=None, description="product title")
     url: Optional[StrictStr] = Field(default=None, description="URL of the product page")
-    description: Optional[StrictStr] = Field(default=None, description="description of the product")
     asin: Optional[StrictStr] = Field(default=None, description="ASIN of the product learn more about ASIN in this help center guide")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the product image featured in the results")
     price_from: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the regular price of a product example: 49.98")
@@ -49,8 +48,9 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
     rating: Optional[RatingElement] = None
     delivery_info: Optional[AmazonDeliveryInfo] = None
     bought_past_month: Optional[StrictInt] = Field(default=None, description="number of product purchases in the past month")
+    description: Optional[StrictStr] = Field(default=None, description="description of the product")
     data_asin: Optional[StrictStr] = Field(default=None, description="unique product identifier on Amazon note that there is no full list of possible values as the data_asin is a dynamic value assigned by Amazon example: B07G82D89J")
-    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "description", "asin", "image_url", "price_from", "price_to", "currency", "special_offers", "is_best_seller", "is_amazon_choice", "rating", "delivery_info", "bought_past_month", "data_asin"]
+    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "asin", "image_url", "price_from", "price_to", "currency", "special_offers", "is_best_seller", "is_amazon_choice", "rating", "delivery_info", "bought_past_month", "description", "data_asin"]
 
     model_config = {
         "populate_by_name": True,
@@ -142,11 +142,6 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
         if self.url is None and "url" in self.model_fields_set:
             _dict['url'] = None
 
-        # set to None if description (nullable) is None
-        # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
-
         # set to None if asin (nullable) is None
         # and model_fields_set contains the field
         if self.asin is None and "asin" in self.model_fields_set:
@@ -192,6 +187,11 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
         if self.bought_past_month is None and "bought_past_month" in self.model_fields_set:
             _dict['bought_past_month'] = None
 
+        # set to None if description (nullable) is None
+        # and model_fields_set contains the field
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
+
         # set to None if data_asin (nullable) is None
         # and model_fields_set contains the field
         if self.data_asin is None and "data_asin" in self.model_fields_set:
@@ -218,7 +218,6 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "description": obj.get("description"),
             "asin": obj.get("asin"),
             "image_url": obj.get("image_url"),
             "price_from": obj.get("price_from"),
@@ -230,6 +229,7 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "delivery_info": AmazonDeliveryInfo.from_dict(obj["delivery_info"]) if obj.get("delivery_info") is not None else None,
             "bought_past_month": obj.get("bought_past_month"),
+            "description": obj.get("description"),
             "data_asin": obj.get("data_asin")
         })
         return _obj

@@ -41,7 +41,8 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
     se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["se_type", "keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items"]
+    clickstream_etv: Optional[StrictInt] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated")
+    __properties: ClassVar[List[str]] = ["se_type", "keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items", "clickstream_etv"]
 
     model_config = {
         "populate_by_name": True,
@@ -152,6 +153,11 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
         if self.items is None and "items" in self.model_fields_set:
             _dict['items'] = None
 
+        # set to None if clickstream_etv (nullable) is None
+        # and model_fields_set contains the field
+        if self.clickstream_etv is None and "clickstream_etv" in self.model_fields_set:
+            _dict['clickstream_etv'] = None
+
         return _dict
 
     @classmethod
@@ -176,7 +182,8 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
             "item_types": obj.get("item_types"),
             "se_results_count": obj.get("se_results_count"),
             "items_count": obj.get("items_count"),
-            "items": [BaseDataforseoLabsSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [BaseDataforseoLabsSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "clickstream_etv": obj.get("clickstream_etv")
         })
         return _obj
 

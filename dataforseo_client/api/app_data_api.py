@@ -1338,7 +1338,7 @@ class AppDataApi:
     @validate_call
     def app_data_google_locations_country(
         self,
-        country: Annotated[StrictStr, Field(description="country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us")],
+        country: Annotated[Optional[StrictStr], Field(description="country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1405,7 +1405,7 @@ class AppDataApi:
     @validate_call
     def app_data_google_locations_country_with_http_info(
         self,
-        country: Annotated[StrictStr, Field(description="country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us")],
+        country: Annotated[Optional[StrictStr], Field(description="country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1472,7 +1472,7 @@ class AppDataApi:
     @validate_call
     def app_data_google_locations_country_without_preload_content(
         self,
-        country: Annotated[StrictStr, Field(description="country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us")],
+        country: Annotated[Optional[StrictStr], Field(description="country ISO code optional field specify the ISO code if you want to filter the list of locations by country example: us")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

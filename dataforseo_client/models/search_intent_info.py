@@ -29,7 +29,7 @@ class SearchIntentInfo(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type possible values: google")
     main_intent: Optional[StrictStr] = Field(default=None, description="main search intent possible values: informational, navigational, commercial, transactional")
     foreign_intent: Optional[List[Optional[StrictStr]]] = Field(default=None, description="supplementary search intents possible values: informational, navigational, commercial, transactional")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when search intent data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = ["se_type", "main_intent", "foreign_intent", "last_updated_time"]
 
     model_config = {

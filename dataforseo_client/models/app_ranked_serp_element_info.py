@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.data_app_google_play_search_organic_serp_element_item import DataAppGooglePlaySearchOrganicSerpElementItem
+from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class AppRankedSerpElementInfo(BaseModel):
     AppRankedSerpElementInfo
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    serp_item: Optional[DataAppGooglePlaySearchOrganicSerpElementItem] = None
+    serp_item: Optional[BaseAppDataSerpElementItem] = None
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     se_results_count: Optional[StrictStr] = Field(default=None, description="number of search results for the returned keyword")
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when SERP data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
@@ -115,7 +115,7 @@ class AppRankedSerpElementInfo(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "serp_item": DataAppGooglePlaySearchOrganicSerpElementItem.from_dict(obj["serp_item"]) if obj.get("serp_item") is not None else None,
+            "serp_item": BaseAppDataSerpElementItem.from_dict(obj["serp_item"]) if obj.get("serp_item") is not None else None,
             "check_url": obj.get("check_url"),
             "se_results_count": obj.get("se_results_count"),
             "last_updated_time": obj.get("last_updated_time"),

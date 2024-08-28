@@ -30,12 +30,12 @@ Name | Type | Description | Notes
 **total_content_analysis** | **float** |  | [optional] 
 **content_generation** | [**AppendixContentGenerationLimitsRatesDataInfo**](AppendixContentGenerationLimitsRatesDataInfo.md) |  | [optional] 
 **total_content_generation** | **float** |  | [optional] 
-**total_traffic_analytics** | **float** |  | [optional] 
-**traffic_analytics** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
 **total_reviews** | **float** |  | [optional] 
 **reviews** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
 **total_social** | **float** |  | [optional] 
 **social** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**total_traffic_analytics** | **float** |  | [optional] 
+**traffic_analytics** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 

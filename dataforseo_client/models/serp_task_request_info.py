@@ -45,12 +45,14 @@ class SerpTaskRequestInfo(BaseModel):
     browser_screen_height: Optional[StrictInt] = Field(default=None, description="browser screen height optional field you can set a custom browser screen height to calculate pixel rankings for a particular device; by default, the parameter is set to: 1080 for desktop; 640 for mobile on android; 812 for mobile on iOS; Note: to use this parameter, set calculate_rectangles to true")
     browser_screen_resolution_ratio: Optional[StrictInt] = Field(default=None, description="browser screen resolution ratio optional field you can set a custom browser screen resolution ratio to calculate pixel rankings for a particular device; by default, the parameter is set to: 1 for desktop; 3 for mobile on android; 3 for mobile on iOS; Note: to use this parameter, set calculate_rectangles to true")
     people_also_ask_click_depth: Optional[StrictInt] = Field(default=None, description="clicks on the corresponding element optional field specify the click depth on the people_also_ask element to get additional people_also_ask_element items; Note your account will be billed $0.00015 extra for each click regardless of task priority; if the element is absent or we perform fewer clicks than you specified, all extra charges will be returned to your account balance possible values: from 1 to 4")
+    load_async_ai_overview: Optional[StrictBool] = Field(default=None, description="load asynchronous ai overview optional field set to true to obtain ai_overview items is SERPs even if they are loaded asynchronically; if set to false, you will only obtain ai_overview items from cache; default value: false Note your account will be billed $0.0006-$0.0012 extra for each request, depending on the priority; if the element is absent or contains \"asynchronous_ai_overview\": false, all extra charges will be returned to your account balance")
+    expand_ai_overview: Optional[StrictBool] = Field(default=None, description="expand ai overview optional field set to true to expand the ai_overview item; default value: false; Note: this parameter applies only to HTML task results")
     search_param: Optional[StrictStr] = Field(default=None, description="additional parameters of the search query optional field get the list of available parameters and additional details here")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special symbols in postback_url will be urlencoded; i.a., the # symbol will be encoded into %23")
     postback_data: Optional[StrictStr] = Field(default=None, description="postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: regular, advanced, html")
     pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special symbols in pingback_url will be urlencoded; i.a., the # symbol will be encoded into %23")
-    __properties: ClassVar[List[str]] = ["keyword", "url", "priority", "depth", "max_crawl_pages", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "device", "os", "group_organic_results", "calculate_rectangles", "browser_screen_width", "browser_screen_height", "browser_screen_resolution_ratio", "people_also_ask_click_depth", "search_param", "tag", "postback_url", "postback_data", "pingback_url"]
+    __properties: ClassVar[List[str]] = ["keyword", "url", "priority", "depth", "max_crawl_pages", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "device", "os", "group_organic_results", "calculate_rectangles", "browser_screen_width", "browser_screen_height", "browser_screen_resolution_ratio", "people_also_ask_click_depth", "load_async_ai_overview", "expand_ai_overview", "search_param", "tag", "postback_url", "postback_data", "pingback_url"]
 
     model_config = {
         "populate_by_name": True,
@@ -181,6 +183,16 @@ class SerpTaskRequestInfo(BaseModel):
         if self.people_also_ask_click_depth is None and "people_also_ask_click_depth" in self.model_fields_set:
             _dict['people_also_ask_click_depth'] = None
 
+        # set to None if load_async_ai_overview (nullable) is None
+        # and model_fields_set contains the field
+        if self.load_async_ai_overview is None and "load_async_ai_overview" in self.model_fields_set:
+            _dict['load_async_ai_overview'] = None
+
+        # set to None if expand_ai_overview (nullable) is None
+        # and model_fields_set contains the field
+        if self.expand_ai_overview is None and "expand_ai_overview" in self.model_fields_set:
+            _dict['expand_ai_overview'] = None
+
         # set to None if search_param (nullable) is None
         # and model_fields_set contains the field
         if self.search_param is None and "search_param" in self.model_fields_set:
@@ -237,6 +249,8 @@ class SerpTaskRequestInfo(BaseModel):
             "browser_screen_height": obj.get("browser_screen_height"),
             "browser_screen_resolution_ratio": obj.get("browser_screen_resolution_ratio"),
             "people_also_ask_click_depth": obj.get("people_also_ask_click_depth"),
+            "load_async_ai_overview": obj.get("load_async_ai_overview"),
+            "expand_ai_overview": obj.get("expand_ai_overview"),
             "search_param": obj.get("search_param"),
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),

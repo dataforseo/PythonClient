@@ -68,7 +68,8 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     contact_info: Optional[List[BusinessDataContactInfo]] = Field(default=None, description="available contacts of the business list of contacts to interact with the business")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-01-26 09:03:15 +00:00")
-    __properties: ClassVar[List[str]] = ["type", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "contact_info", "check_url", "last_updated_time"]
+    first_seen: Optional[StrictStr] = Field(default=None, description="date and time when our crawler found the business listing element for the first time in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-03-11 10:04:11 +00:00")
+    __properties: ClassVar[List[str]] = ["type", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "contact_info", "check_url", "last_updated_time", "first_seen"]
 
     model_config = {
         "populate_by_name": True,
@@ -290,6 +291,11 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
         if self.last_updated_time is None and "last_updated_time" in self.model_fields_set:
             _dict['last_updated_time'] = None
 
+        # set to None if first_seen (nullable) is None
+        # and model_fields_set contains the field
+        if self.first_seen is None and "first_seen" in self.model_fields_set:
+            _dict['first_seen'] = None
+
         return _dict
 
     @classmethod
@@ -335,7 +341,8 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
             "local_business_links": [BaseLocalBusinessLink.from_dict(_item) for _item in obj["local_business_links"]] if obj.get("local_business_links") is not None else None,
             "contact_info": [BusinessDataContactInfo.from_dict(_item) for _item in obj["contact_info"]] if obj.get("contact_info") is not None else None,
             "check_url": obj.get("check_url"),
-            "last_updated_time": obj.get("last_updated_time")
+            "last_updated_time": obj.get("last_updated_time"),
+            "first_seen": obj.get("first_seen")
         })
         return _obj
 

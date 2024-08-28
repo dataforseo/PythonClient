@@ -1397,7 +1397,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    id = '5cabb8df-ce12-40b9-98e1-5fd3c54fc83d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'dd09c8da-2180-4fb1-87b0-58ff36b01c8c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_hotel_info_task_get_html(id)

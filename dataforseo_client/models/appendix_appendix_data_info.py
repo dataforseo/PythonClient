@@ -28,9 +28,9 @@ class AppendixAppendixDataInfo(BaseModel):
     """ # noqa: E501
     user_data: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
-    test: Optional[Union[StrictFloat, StrictInt]] = None
     status: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["user_data", "errors", "test", "status"]
+    test: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["user_data", "errors", "status", "test"]
 
     model_config = {
         "populate_by_name": True,
@@ -81,15 +81,15 @@ class AppendixAppendixDataInfo(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
-        # set to None if test (nullable) is None
-        # and model_fields_set contains the field
-        if self.test is None and "test" in self.model_fields_set:
-            _dict['test'] = None
-
         # set to None if status (nullable) is None
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
             _dict['status'] = None
+
+        # set to None if test (nullable) is None
+        # and model_fields_set contains the field
+        if self.test is None and "test" in self.model_fields_set:
+            _dict['test'] = None
 
         return _dict
 
@@ -105,8 +105,8 @@ class AppendixAppendixDataInfo(BaseModel):
         _obj = cls.model_validate({
             "user_data": obj.get("user_data"),
             "errors": obj.get("errors"),
-            "test": obj.get("test"),
-            "status": obj.get("status")
+            "status": obj.get("status"),
+            "test": obj.get("test")
         })
         return _obj
 

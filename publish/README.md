@@ -1,1 +1,0 @@
-API client that provide services of DataForSeo API. For more information about client code generation, please follow to github

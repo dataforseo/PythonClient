@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **limits** | [**AppendixLimitsRatesData**](AppendixLimitsRatesData.md) |  | [optional] 
-**statistics** | [**AppendixStatisticsDataInfo**](AppendixStatisticsDataInfo.md) |  | [optional] 
+**statistics** | [**AppendixStatisticsRatesData**](AppendixStatisticsRatesData.md) |  | [optional] 
 
 ## Example
 

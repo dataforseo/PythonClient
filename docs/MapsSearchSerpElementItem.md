@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of the result in SERP | [optional] 
 **url** | **str** | relevant URL in SERP | [optional] 
 **contact_url** | **str** | URL of the preferred contact page | [optional] 
+**contributor_url** | **str** | URL of the user’s or entity’s Local Guides profile, if available | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **hotel_rating** | **int** | hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null | [optional] 
 **price_level** | **str** | property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null | [optional] 

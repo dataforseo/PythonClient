@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **keyword_performance** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**search_volume_history** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keywords_for_site** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keywords_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **count** | **int** | the number of items in the results array | [optional] 
 **offset** | **int** | offset in the results array of returned apps | [optional] 
 **offset_token** | **str** | token for subsequent requests you can use this parameter in the POST request to avoid timeouts while trying to obtain over 100,000 results in a single request | [optional] 
-**items** | [**List[AppDataAppleAppListingsSearchLiveItem]**](AppDataAppleAppListingsSearchLiveItem.md) | array of apps and related data | [optional] 
+**items** | [**List[AppDataleAppListingsSearchLiveItem]**](AppDataleAppListingsSearchLiveItem.md) | array of apps and related data | [optional] 
 
 ## Example
 

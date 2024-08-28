@@ -51,6 +51,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     phone: Optional[StrictStr] = Field(default=None, description="phone number of the business entity")
     url: Optional[StrictStr] = Field(default=None, description="absolute url of the business entity")
     contact_url: Optional[StrictStr] = Field(default=None, description="URL of the preferred contact page")
+    contributor_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s or entity’s Local Guides profile, if available")
     domain: Optional[StrictStr] = Field(default=None, description="domain of the business entity")
     logo: Optional[StrictStr] = Field(default=None, description="URL of the logo featured in Google My Business profile")
     main_image: Optional[StrictStr] = Field(default=None, description="URL of the main image featured in Google My Business profile")
@@ -72,7 +73,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null")
     directory: Optional[BusinessDirectoryInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "questions_and_answers_count", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "contributor_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "questions_and_answers_count", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
 
     model_config = {
         "populate_by_name": True,
@@ -225,6 +226,11 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         if self.contact_url is None and "contact_url" in self.model_fields_set:
             _dict['contact_url'] = None
 
+        # set to None if contributor_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.contributor_url is None and "contributor_url" in self.model_fields_set:
+            _dict['contributor_url'] = None
+
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
         if self.domain is None and "domain" in self.model_fields_set:
@@ -334,6 +340,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
             "phone": obj.get("phone"),
             "url": obj.get("url"),
             "contact_url": obj.get("contact_url"),
+            "contributor_url": obj.get("contributor_url"),
             "domain": obj.get("domain"),
             "logo": obj.get("logo"),
             "main_image": obj.get("main_image"),

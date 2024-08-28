@@ -38,7 +38,7 @@ class BusinessDataGoogleMyBusinessUpdatesTaskGetResultInfo(BaseModel):
     feature_id: Optional[StrictStr] = Field(default=None, description="the unique identifier of the element in SERP learn more about the identifier in this help center article")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="item types types of search engine results encountered in the items array; possible item types: google_business_post")
     items_count: Optional[StrictInt] = Field(default=None, description="item types the number of items in the items array")
-    items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="encountered item types types of search engine results encountered in the items array; possible item types: google_business_info")
+    items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="encountered item types types of search engine results encountered in the items array; possible item types: google_business_post")
     __properties: ClassVar[List[str]] = ["keyword", "se_domain", "location_code", "language_code", "check_url", "datetime", "business_updates_id", "cid", "feature_id", "item_types", "items_count", "items"]
 
     model_config = {

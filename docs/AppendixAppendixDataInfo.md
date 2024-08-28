@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_data** | **float** |  | [optional] 
 **errors** | **float** |  | [optional] 
-**test** | **float** |  | [optional] 
 **status** | **float** |  | [optional] 
+**test** | **float** |  | [optional] 
 
 ## Example
 

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **language_code** | **str** | language code in a POST array | [optional] 
 **search_partners** | **bool** | indicates data for Google and partner sites if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search; if false, the results are returned for Google search sites only | [optional] 
 **keyword_info** | [**KeywordInfo**](KeywordInfo.md) |  | [optional] 
+**keyword_info_normalized_with_bing** | [**KeywordInfoNormalizedWithInfo**](KeywordInfoNormalizedWithInfo.md) |  | [optional] 
+**keyword_info_normalized_with_clickstream** | [**KeywordInfoNormalizedWithInfo**](KeywordInfoNormalizedWithInfo.md) |  | [optional] 
 **clickstream_keyword_info** | **object** | clickstream data for the returned keyword to retrieve results for this field, the parameter include_clickstream_data must be set to true | [optional] 
 **keyword_properties** | [**KeywordProperties**](KeywordProperties.md) |  | [optional] 
 **impressions_info** | [**ImpressionsInfo**](ImpressionsInfo.md) |  | [optional] 

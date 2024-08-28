@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **se_results_count** | **str** | number of search results for the returned keyword | [optional] 
 **keyword_difficulty** | **int** | difficulty of ranking in the first top-10 organic results for a keyword indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100; calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP; learn more about the metric in this help center guide | [optional] 
 **is_lost** | **bool** | lost ranked elements indicates how many ranked elements of this domain were previously presented in SERPs, but weren’t found during the last check | [optional] 
-**last_updated_time** | **str** | date and time when keyword data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
+**last_updated_time** | **str** | date and time when search intent data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **previous_updated_time** | **str** | previous to the most recent date and time when SERP data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-10-15 12:57:46 +00:00 | [optional] 
 
 ## Example

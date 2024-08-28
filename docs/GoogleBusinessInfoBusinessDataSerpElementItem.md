@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **phone** | **str** | phone number of the business entity | [optional] 
 **url** | **str** | absolute url of the business entity | [optional] 
 **contact_url** | **str** | URL of the preferred contact page | [optional] 
+**contributor_url** | **str** | URL of the user’s or entity’s Local Guides profile, if available | [optional] 
 **domain** | **str** | domain of the business entity | [optional] 
 **logo** | **str** | URL of the logo featured in Google My Business profile | [optional] 
 **main_image** | **str** | URL of the main image featured in Google My Business profile | [optional] 

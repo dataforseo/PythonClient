@@ -24,6 +24,9 @@ Method | HTTP request | Description
 [**bing_search_volume_task_get**](KeywordsDataApi.md#bing_search_volume_task_get) | **GET** /v3/keywords_data/bing/search_volume/task_get/{id} | 
 [**bing_search_volume_task_post**](KeywordsDataApi.md#bing_search_volume_task_post) | **POST** /v3/keywords_data/bing/search_volume/task_post | 
 [**bing_search_volume_tasks_ready**](KeywordsDataApi.md#bing_search_volume_tasks_ready) | **GET** /v3/keywords_data/bing/search_volume/tasks_ready | 
+[**clickstream_data_bulk_search_volume_live**](KeywordsDataApi.md#clickstream_data_bulk_search_volume_live) | **POST** /v3/keywords_data/clickstream_data/bulk_search_volume/live | 
+[**clickstream_data_dataforseo_search_volume_live**](KeywordsDataApi.md#clickstream_data_dataforseo_search_volume_live) | **POST** /v3/keywords_data/clickstream_data/dataforseo_search_volume/live | 
+[**clickstream_data_global_search_volume_live**](KeywordsDataApi.md#clickstream_data_global_search_volume_live) | **POST** /v3/keywords_data/clickstream_data/global_search_volume/live | 
 [**dataforseo_trends_demography_live**](KeywordsDataApi.md#dataforseo_trends_demography_live) | **POST** /v3/keywords_data/dataforseo_trends/demography/live | 
 [**dataforseo_trends_explore_live**](KeywordsDataApi.md#dataforseo_trends_explore_live) | **POST** /v3/keywords_data/dataforseo_trends/explore/live | 
 [**dataforseo_trends_merged_data_live**](KeywordsDataApi.md#dataforseo_trends_merged_data_live) | **POST** /v3/keywords_data/dataforseo_trends/merged_data/live | 
@@ -54,6 +57,7 @@ Method | HTTP request | Description
 [**keywords_data_bing_languages**](KeywordsDataApi.md#keywords_data_bing_languages) | **GET** /v3/keywords_data/bing/languages | 
 [**keywords_data_bing_locations**](KeywordsDataApi.md#keywords_data_bing_locations) | **GET** /v3/keywords_data/bing/locations | 
 [**keywords_data_bing_search_volume_history_locations_and_languages**](KeywordsDataApi.md#keywords_data_bing_search_volume_history_locations_and_languages) | **GET** /v3/keywords_data/bing/search_volume_history/locations_and_languages | 
+[**keywords_data_clickstream_data_locations_and_languages**](KeywordsDataApi.md#keywords_data_clickstream_data_locations_and_languages) | **GET** /v3/keywords_data/clickstream_data/locations_and_languages | 
 [**keywords_data_dataforseo_trends_locations**](KeywordsDataApi.md#keywords_data_dataforseo_trends_locations) | **GET** /v3/keywords_data/dataforseo_trends/locations | 
 [**keywords_data_dataforseo_trends_locations_country**](KeywordsDataApi.md#keywords_data_dataforseo_trends_locations_country) | **GET** /v3/keywords_data/dataforseo_trends/locations/{country} | 
 [**keywords_data_errors**](KeywordsDataApi.md#keywords_data_errors) | **POST** /v3/keywords_data/errors | 
@@ -183,7 +187,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '2755f0a5-0b18-4368-a041-e819a477d633' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '26fe298f-208f-4726-af38-76dcaec866a8' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keyword_performance_task_get(id)
@@ -493,7 +497,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'e5873b9b-d5cd-4a39-8ff6-4f2d61c77484' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'd059ca11-d6e9-4740-b88a-d665cd9d5fef' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_keywords_task_get(id)
@@ -803,7 +807,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'a9833ac9-86b9-4ee0-8dba-8ad6f08c92be' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '6284a11b-0379-4091-8746-d24f87d9485d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_site_task_get(id)
@@ -1113,7 +1117,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'c4b6df04-13d4-4793-8495-b5dceaeb35bb' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '7fcd086a-81b5-4c95-9f8b-f01e25c557a4' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_search_volume_history_task_get(id)
@@ -1423,7 +1427,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'c71c3bd3-a8c2-40ca-9ba6-6c322426683d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'eea6df11-c7ed-4bbb-a73c-dd84bc18271e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_search_volume_task_get(id)
@@ -1606,6 +1610,243 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **clickstream_data_bulk_search_volume_live**
+> KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo clickstream_data_bulk_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+
+
+
+‌‌  The Bulk Clickstream Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers historical search volume values for up to 12 months (depending on keywords, location, and language parameters). for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/bulk_search_volume/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_response_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo
+from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    keywords_data_task_request_info = [dataforseo_client.KeywordsDataTaskRequestInfo()] # List[KeywordsDataTaskRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.clickstream_data_bulk_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+        print("The response of KeywordsDataApi->clickstream_data_bulk_search_volume_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->clickstream_data_bulk_search_volume_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keywords_data_task_request_info** | [**List[KeywordsDataTaskRequestInfo]**](KeywordsDataTaskRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo**](KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **clickstream_data_dataforseo_search_volume_live**
+> KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo clickstream_data_dataforseo_search_volume_live(keywords_data_clickstream_data_dataforseo_search_volume_live_request_info=keywords_data_clickstream_data_dataforseo_search_volume_live_request_info)
+
+
+
+‌ for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/dataforseo_search_volume/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_request_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo
+from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_response_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    keywords_data_clickstream_data_dataforseo_search_volume_live_request_info = [dataforseo_client.KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo()] # List[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.clickstream_data_dataforseo_search_volume_live(keywords_data_clickstream_data_dataforseo_search_volume_live_request_info=keywords_data_clickstream_data_dataforseo_search_volume_live_request_info)
+        print("The response of KeywordsDataApi->clickstream_data_dataforseo_search_volume_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->clickstream_data_dataforseo_search_volume_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keywords_data_clickstream_data_dataforseo_search_volume_live_request_info** | [**List[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo]**](KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo**](KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **clickstream_data_global_search_volume_live**
+> KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo clickstream_data_global_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+
+
+
+‌‌  The Clickstream Global Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers geographical distribution of clickstream search volume values across all available locations. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/global_search_volume/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_response_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo
+from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    keywords_data_task_request_info = [dataforseo_client.KeywordsDataTaskRequestInfo()] # List[KeywordsDataTaskRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.clickstream_data_global_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+        print("The response of KeywordsDataApi->clickstream_data_global_search_volume_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->clickstream_data_global_search_volume_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keywords_data_task_request_info** | [**List[KeywordsDataTaskRequestInfo]**](KeywordsDataTaskRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo**](KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2049,7 +2290,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '6d3b4926-d1d2-4f6f-a57d-2a1b6b7d2b2e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '4797c77d-213b-4df1-a468-dec9cad24dd2' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_ad_traffic_by_keywords_task_get(id)
@@ -2359,7 +2600,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '73eca3d5-6b70-4262-81db-ab93b79651f5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '389d886f-ea37-4789-9600-1525c8567c77' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_keywords_task_get(id)
@@ -2669,7 +2910,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'a1bf4153-a956-451e-a4d7-3b7df2fc9db6' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'b2543ee5-cad8-4cbb-939f-a52077463d5c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_site_task_get(id)
@@ -2979,7 +3220,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '2da2cb62-62e5-407f-8454-9ee7bac414ac' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '5018f086-0421-4e92-b7db-3ec349130077' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_search_volume_task_get(id)
@@ -3437,7 +3678,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '6569a012-7424-4c4f-92e0-a2cce87ad6dc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'bc293e59-f37d-44e7-8d59-9cff6a90df2a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_trends_explore_task_get(id)
@@ -3908,6 +4149,80 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo**](KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **keywords_data_clickstream_data_locations_and_languages**
+> KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo keywords_data_clickstream_data_locations_and_languages()
+
+
+
+‌ Using this endpoint you can get the full list of locations and languages supported in DataForSEO Clickstream Data API. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/locations_and_languages/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_clickstream_data_locations_and_languages_response_info import KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+
+    try:
+        api_response = api_instance.keywords_data_clickstream_data_locations_and_languages()
+        print("The response of KeywordsDataApi->keywords_data_clickstream_data_locations_and_languages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->keywords_data_clickstream_data_locations_and_languages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo**](KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo.md)
 
 ### Authorization
 

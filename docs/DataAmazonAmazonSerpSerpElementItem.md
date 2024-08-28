@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **domain** | **str** | Amazon domain | [optional] 
 **title** | **str** | product title | [optional] 
 **url** | **str** | URL of the product page | [optional] 
-**description** | **str** | description of the product | [optional] 
 **asin** | **str** | ASIN of the product learn more about ASIN in this help center guide | [optional] 
 **image_url** | **str** | URL of the product image featured in the results | [optional] 
 **price_from** | **float** | the regular price of a product example: 49.98 | [optional] 
@@ -25,6 +24,7 @@ Name | Type | Description | Notes
 **rating** | [**RatingElement**](RatingElement.md) |  | [optional] 
 **delivery_info** | [**AmazonDeliveryInfo**](AmazonDeliveryInfo.md) |  | [optional] 
 **bought_past_month** | **int** | number of product purchases in the past month | [optional] 
+**description** | **str** | description of the product | [optional] 
 **data_asin** | **str** | unique product identifier on Amazon note that there is no full list of possible values as the data_asin is a dynamic value assigned by Amazon example: B07G82D89J | [optional] 
 
 ## Example

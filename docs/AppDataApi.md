@@ -692,7 +692,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '49c99946-f426-4932-8fcb-6a70ebde30bf' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'b1a15ef4-01fb-4248-8dcb-d2828073c212' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_info_task_get_advanced(id)
@@ -923,7 +923,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'a1931109-950c-4a1b-89c3-cee78eb01aad' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'daadab4d-bd8c-455c-bd60-a5019facbf40' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_list_task_get_advanced(id)
@@ -1307,7 +1307,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '95c471b9-c5b0-447a-993d-8178c81bbc25' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '2c17436f-f485-41d6-abc7-092892a30d07' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_reviews_task_get_advanced(id)
@@ -1538,7 +1538,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '5de02508-976a-48db-b77e-d50d1b677a84' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '098ca840-c908-4880-8158-34d2e7402b11' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.apple_app_searches_task_get_advanced(id)
@@ -1843,7 +1843,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '8885d073-cc8d-4d96-9796-258e42fc54db' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '239a7816-bc5f-424c-9ad7-243b3247f441' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_info_task_get_advanced(id)
@@ -1921,7 +1921,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '16009be1-035c-4e10-a772-d32054fd6ab8' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '7fa14dcf-dd5c-4bb6-bb6c-9ce4f280cdc0' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_info_task_get_html(id)
@@ -2152,7 +2152,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '2687370f-f383-4445-922b-66c4731a6823' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '3fcebda0-5f16-470c-bb1d-b1f67a481c52' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_list_task_get_advanced(id)
@@ -2230,7 +2230,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = 'b0562547-813c-47cf-b895-e0fd90edd23f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '239aa9ef-1d84-4b87-834b-eaa776df41dd' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_list_task_get_html(id)
@@ -2614,7 +2614,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '13596e2c-b215-44be-a290-76e3d8c3b3c0' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'de28059f-62f2-41cd-9866-6fecefa1d18e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_reviews_task_get_advanced(id)
@@ -2692,7 +2692,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '4ac866c8-6113-4d26-928d-7399b6cc582b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '84e3099a-bccf-4383-b105-db2db373d50d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_reviews_task_get_html(id)
@@ -2923,7 +2923,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '9c9b100d-658c-4711-be14-4a92d1200957' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'fa6d6c5f-0a22-48f0-a6f9-b51388078fb9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_searches_task_get_advanced(id)
@@ -3001,7 +3001,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.AppDataApi(api_client)
-    id = '586573d6-0952-459a-80d7-db2698fb8dd1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'ff79ef02-7790-472b-968d-66b279be48f7' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_app_searches_task_get_html(id)

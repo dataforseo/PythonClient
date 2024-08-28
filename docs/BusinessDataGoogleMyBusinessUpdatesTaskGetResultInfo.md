@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **feature_id** | **str** | the unique identifier of the element in SERP learn more about the identifier in this help center article | [optional] 
 **item_types** | **List[Optional[str]]** | item types types of search engine results encountered in the items array; possible item types: google_business_post | [optional] 
 **items_count** | **int** | item types the number of items in the items array | [optional] 
-**items** | [**List[BaseBusinessDataSerpElementItem]**](BaseBusinessDataSerpElementItem.md) | encountered item types types of search engine results encountered in the items array; possible item types: google_business_info | [optional] 
+**items** | [**List[BaseBusinessDataSerpElementItem]**](BaseBusinessDataSerpElementItem.md) | encountered item types types of search engine results encountered in the items array; possible item types: google_business_post | [optional] 
 
 ## Example
 

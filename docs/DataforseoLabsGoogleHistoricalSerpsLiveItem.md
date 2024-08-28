@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **se_results_count** | **int** | total number of results in SERP | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
 **items** | [**List[BaseDataforseoLabsSerpElementItem]**](BaseDataforseoLabsSerpElementItem.md) | additional items present in the element if there are none, equals null | [optional] 
+**clickstream_etv** | **int** | estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated | [optional] 
 
 ## Example
 

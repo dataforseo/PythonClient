@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
 **position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
-**title** | **str** | title of the result in SERP | [optional] 
+**title** | **str** | title of the item | [optional] 
 **description** | **str** | description of the results element in SERP | [optional] 
 **domain** | **str** | domain where a link points | [optional] 
 **phone** | **str** | phone number | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | URL link | [optional] 
 **is_paid** | **bool** | indicates whether the element is an ad | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **main_domain** | **str** | primary domain name in SERP | [optional] 
@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **impressions_etv** | **float** | estimated traffic volume based on impressions estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of the returned keyword learn more about how the metric is calculated in this help center article | [optional] 
 **estimated_paid_traffic_cost** | **float** | estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article | [optional] 
 **rank_changes** | [**RankChanges**](RankChanges.md) |  | [optional] 
+**clickstream_etv** | **int** | estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated | [optional] 
 
 ## Example
 

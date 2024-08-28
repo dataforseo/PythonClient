@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **timestamp** | **str** | date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **url** | **str** | URL | [optional] 
 **image_url** | **str** | URL of the image | [optional] 
+**badges** | **List[Optional[str]]** | badges relevant to the element | [optional] 
 
 ## Example
 

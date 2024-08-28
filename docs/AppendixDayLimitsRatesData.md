@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **serp** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
 **total** | **float** | total amount of money deposited to your account | [optional] 
 **total_serp** | **float** |  | [optional] 
-**keywords_data** | [**AppendixKeywordsDataDaysRatesDataInfo**](AppendixKeywordsDataDaysRatesDataInfo.md) |  | [optional] 
+**keywords_data** | [**AppendixKeywordsDatasRatesDataInfo**](AppendixKeywordsDatasRatesDataInfo.md) |  | [optional] 
 **total_keywords_data** | **float** |  | [optional] 
-**appendix** | [**AppendixAppendixDaysRatesDataInfo**](AppendixAppendixDaysRatesDataInfo.md) |  | [optional] 
+**appendix** | [**AppendixAppendixsRatesDataInfo**](AppendixAppendixsRatesDataInfo.md) |  | [optional] 
 **total_appendix** | **float** |  | [optional] 
 **dataforseo_labs** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
 **total_dataforseo_labs** | **float** |  | [optional] 
@@ -30,9 +30,9 @@ Name | Type | Description | Notes
 **total_content_analysis** | **float** |  | [optional] 
 **content_generation** | [**AppendixContentGenerationLimitsRatesDataInfo**](AppendixContentGenerationLimitsRatesDataInfo.md) |  | [optional] 
 **total_content_generation** | **float** |  | [optional] 
-**total_traffic_analytics** | **float** |  | [optional] 
 **total_reviews** | **float** |  | [optional] 
 **total_social** | **float** |  | [optional] 
+**total_traffic_analytics** | **float** |  | [optional] 
 
 ## Example
 

@@ -34,7 +34,7 @@ class RankedSerpElement(BaseModel):
     se_results_count: Optional[StrictStr] = Field(default=None, description="number of search results for the returned keyword")
     keyword_difficulty: Optional[StrictInt] = Field(default=None, description="difficulty of ranking in the first top-10 organic results for a keyword indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100; calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP; learn more about the metric in this help center guide")
     is_lost: Optional[StrictBool] = Field(default=None, description="lost ranked elements indicates how many ranked elements of this domain were previously presented in SERPs, but weren’t found during the last check")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when keyword data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when search intent data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     previous_updated_time: Optional[StrictStr] = Field(default=None, description="previous to the most recent date and time when SERP data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-10-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = ["se_type", "serp_item", "check_url", "serp_item_types", "se_results_count", "keyword_difficulty", "is_lost", "last_updated_time", "previous_updated_time"]
 

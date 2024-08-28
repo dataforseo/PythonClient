@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_limits_rates_data import AppendixLimitsRatesData
-from dataforseo_client.models.appendix_statistics_data_info import AppendixStatisticsDataInfo
+from dataforseo_client.models.appendix_statistics_rates_data import AppendixStatisticsRatesData
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class AppendixRatesData(BaseModel):
     AppendixRatesData
     """ # noqa: E501
     limits: Optional[AppendixLimitsRatesData] = None
-    statistics: Optional[AppendixStatisticsDataInfo] = None
+    statistics: Optional[AppendixStatisticsRatesData] = None
     __properties: ClassVar[List[str]] = ["limits", "statistics"]
 
     model_config = {
@@ -90,7 +90,7 @@ class AppendixRatesData(BaseModel):
 
         _obj = cls.model_validate({
             "limits": AppendixLimitsRatesData.from_dict(obj["limits"]) if obj.get("limits") is not None else None,
-            "statistics": AppendixStatisticsDataInfo.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None
+            "statistics": AppendixStatisticsRatesData.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None
         })
         return _obj
 

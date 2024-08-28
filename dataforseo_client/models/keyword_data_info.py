@@ -20,9 +20,9 @@ import json
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.avg_backlinks_info import AvgBacklinksInfo
-from dataforseo_client.models.clickstream_keyword_info import ClickstreamKeywordInfo
 from dataforseo_client.models.impressions_info import ImpressionsInfo
 from dataforseo_client.models.keyword_info import KeywordInfo
+from dataforseo_client.models.keyword_info_normalized_with_info import KeywordInfoNormalizedWithInfo
 from dataforseo_client.models.keyword_properties import KeywordProperties
 from dataforseo_client.models.search_intent_info import SearchIntentInfo
 from dataforseo_client.models.serp_info import SerpInfo
@@ -38,13 +38,15 @@ class KeywordDataInfo(BaseModel):
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     keyword_info: Optional[KeywordInfo] = None
-    clickstream_keyword_info: Optional[ClickstreamKeywordInfo] = None
+    keyword_info_normalized_with_bing: Optional[KeywordInfoNormalizedWithInfo] = None
+    keyword_info_normalized_with_clickstream: Optional[KeywordInfoNormalizedWithInfo] = None
+    clickstream_keyword_info: Optional[Dict[str, Any]] = Field(default=None, description="clickstream data for the returned keyword to retrieve results for this field, the parameter include_clickstream_data must be set to true")
     keyword_properties: Optional[KeywordProperties] = None
     impressions_info: Optional[ImpressionsInfo] = None
     serp_info: Optional[SerpInfo] = None
     avg_backlinks_info: Optional[AvgBacklinksInfo] = None
     search_intent_info: Optional[SearchIntentInfo] = None
-    __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "keyword_info", "clickstream_keyword_info", "keyword_properties", "impressions_info", "serp_info", "avg_backlinks_info", "search_intent_info"]
+    __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "keyword_info", "keyword_info_normalized_with_bing", "keyword_info_normalized_with_clickstream", "clickstream_keyword_info", "keyword_properties", "impressions_info", "serp_info", "avg_backlinks_info", "search_intent_info"]
 
     model_config = {
         "populate_by_name": True,
@@ -88,9 +90,12 @@ class KeywordDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keyword_info
         if self.keyword_info:
             _dict['keyword_info'] = self.keyword_info.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of clickstream_keyword_info
-        if self.clickstream_keyword_info:
-            _dict['clickstream_keyword_info'] = self.clickstream_keyword_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_info_normalized_with_bing
+        if self.keyword_info_normalized_with_bing:
+            _dict['keyword_info_normalized_with_bing'] = self.keyword_info_normalized_with_bing.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_info_normalized_with_clickstream
+        if self.keyword_info_normalized_with_clickstream:
+            _dict['keyword_info_normalized_with_clickstream'] = self.keyword_info_normalized_with_clickstream.to_dict()
         # override the default output from pydantic by calling `to_dict()` of keyword_properties
         if self.keyword_properties:
             _dict['keyword_properties'] = self.keyword_properties.to_dict()
@@ -126,6 +131,11 @@ class KeywordDataInfo(BaseModel):
         if self.language_code is None and "language_code" in self.model_fields_set:
             _dict['language_code'] = None
 
+        # set to None if clickstream_keyword_info (nullable) is None
+        # and model_fields_set contains the field
+        if self.clickstream_keyword_info is None and "clickstream_keyword_info" in self.model_fields_set:
+            _dict['clickstream_keyword_info'] = None
+
         return _dict
 
     @classmethod
@@ -143,7 +153,9 @@ class KeywordDataInfo(BaseModel):
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "keyword_info": KeywordInfo.from_dict(obj["keyword_info"]) if obj.get("keyword_info") is not None else None,
-            "clickstream_keyword_info": ClickstreamKeywordInfo.from_dict(obj["clickstream_keyword_info"]) if obj.get("clickstream_keyword_info") is not None else None,
+            "keyword_info_normalized_with_bing": KeywordInfoNormalizedWithInfo.from_dict(obj["keyword_info_normalized_with_bing"]) if obj.get("keyword_info_normalized_with_bing") is not None else None,
+            "keyword_info_normalized_with_clickstream": KeywordInfoNormalizedWithInfo.from_dict(obj["keyword_info_normalized_with_clickstream"]) if obj.get("keyword_info_normalized_with_clickstream") is not None else None,
+            "clickstream_keyword_info": obj.get("clickstream_keyword_info"),
             "keyword_properties": KeywordProperties.from_dict(obj["keyword_properties"]) if obj.get("keyword_properties") is not None else None,
             "impressions_info": ImpressionsInfo.from_dict(obj["impressions_info"]) if obj.get("impressions_info") is not None else None,
             "serp_info": SerpInfo.from_dict(obj["serp_info"]) if obj.get("serp_info") is not None else None,

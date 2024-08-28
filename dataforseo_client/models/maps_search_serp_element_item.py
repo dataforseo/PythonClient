@@ -37,6 +37,7 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     contact_url: Optional[StrictStr] = Field(default=None, description="URL of the preferred contact page")
+    contributor_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s or entity’s Local Guides profile, if available")
     rating: Optional[RatingInfo] = None
     hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
@@ -59,7 +60,7 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
     is_claimed: Optional[StrictBool] = Field(default=None, description="indicates whether ownership of this local establishment is claimed")
     local_justifications: Optional[List[LocalJustificationInfo]] = Field(default=None, description="Google local justifications snippets of text that “justify” why the business is showing up for search query")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="indicates whether this local establishment is a directory")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "contact_url", "rating", "hotel_rating", "price_level", "rating_distribution", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "contact_url", "contributor_url", "rating", "hotel_rating", "price_level", "rating_distribution", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
 
     model_config = {
         "populate_by_name": True,
@@ -150,6 +151,11 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
         # and model_fields_set contains the field
         if self.contact_url is None and "contact_url" in self.model_fields_set:
             _dict['contact_url'] = None
+
+        # set to None if contributor_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.contributor_url is None and "contributor_url" in self.model_fields_set:
+            _dict['contributor_url'] = None
 
         # set to None if hotel_rating (nullable) is None
         # and model_fields_set contains the field
@@ -265,6 +271,7 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "contact_url": obj.get("contact_url"),
+            "contributor_url": obj.get("contributor_url"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "hotel_rating": obj.get("hotel_rating"),
             "price_level": obj.get("price_level"),

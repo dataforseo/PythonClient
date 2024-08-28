@@ -34,7 +34,7 @@ class AvgBacklinksInfo(BaseModel):
     referring_main_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average number of referring main domains")
     rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average rank learn more about the metric and its calculation formula in this help center article")
     main_domain_rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average main domain rank learn more about the metric and its calculation formula in this help center article")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when backlink data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when search intent data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = ["se_type", "backlinks", "dofollow", "referring_pages", "referring_domains", "referring_main_domains", "rank", "main_domain_rank", "last_updated_time"]
 
     model_config = {

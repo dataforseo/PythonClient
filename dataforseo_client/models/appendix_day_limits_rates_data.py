@@ -20,14 +20,14 @@ import json
 from pydantic import BaseModel, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_app_data_limits_rates_data_info import AppendixAppDataLimitsRatesDataInfo
-from dataforseo_client.models.appendix_appendix_days_rates_data_info import AppendixAppendixDaysRatesDataInfo
+from dataforseo_client.models.appendix_appendixs_rates_data_info import AppendixAppendixsRatesDataInfo
 from dataforseo_client.models.appendix_backlinks_limits_rates_data_info import AppendixBacklinksLimitsRatesDataInfo
 from dataforseo_client.models.appendix_business_data_limits_rates_data_info import AppendixBusinessDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_content_analysis_limits_rates_data_info import AppendixContentAnalysisLimitsRatesDataInfo
 from dataforseo_client.models.appendix_content_generation_limits_rates_data_info import AppendixContentGenerationLimitsRatesDataInfo
 from dataforseo_client.models.appendix_dataforseo_labs_limits_rates_data_info import AppendixDataforseoLabsLimitsRatesDataInfo
 from dataforseo_client.models.appendix_domain_analytics_limits_rates_data_info import AppendixDomainAnalyticsLimitsRatesDataInfo
-from dataforseo_client.models.appendix_keywords_data_days_rates_data_info import AppendixKeywordsDataDaysRatesDataInfo
+from dataforseo_client.models.appendix_keywords_datas_rates_data_info import AppendixKeywordsDatasRatesDataInfo
 from dataforseo_client.models.appendix_merchant_limits_rates_data_info import AppendixMerchantLimitsRatesDataInfo
 from dataforseo_client.models.appendix_on_page_limits_rates_data_info import AppendixOnPageLimitsRatesDataInfo
 from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
@@ -41,9 +41,9 @@ class AppendixDayLimitsRatesData(BaseModel):
     serp: Optional[AppendixSerpLimitsRatesDataInfo] = None
     total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of money deposited to your account")
     total_serp: Optional[Union[StrictFloat, StrictInt]] = None
-    keywords_data: Optional[AppendixKeywordsDataDaysRatesDataInfo] = None
+    keywords_data: Optional[AppendixKeywordsDatasRatesDataInfo] = None
     total_keywords_data: Optional[Union[StrictFloat, StrictInt]] = None
-    appendix: Optional[AppendixAppendixDaysRatesDataInfo] = None
+    appendix: Optional[AppendixAppendixsRatesDataInfo] = None
     total_appendix: Optional[Union[StrictFloat, StrictInt]] = None
     dataforseo_labs: Optional[AppendixDataforseoLabsLimitsRatesDataInfo] = None
     total_dataforseo_labs: Optional[Union[StrictFloat, StrictInt]] = None
@@ -63,10 +63,10 @@ class AppendixDayLimitsRatesData(BaseModel):
     total_content_analysis: Optional[Union[StrictFloat, StrictInt]] = None
     content_generation: Optional[AppendixContentGenerationLimitsRatesDataInfo] = None
     total_content_generation: Optional[Union[StrictFloat, StrictInt]] = None
-    total_traffic_analytics: Optional[Union[StrictFloat, StrictInt]] = None
     total_reviews: Optional[Union[StrictFloat, StrictInt]] = None
     total_social: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["serp", "total", "total_serp", "keywords_data", "total_keywords_data", "appendix", "total_appendix", "dataforseo_labs", "total_dataforseo_labs", "domain_analytics", "total_domain_analytics", "merchant", "total_merchant", "on_page", "total_on_page", "business_data", "total_business_data", "backlinks", "total_backlinks", "app_data", "total_app_data", "content_analysis", "total_content_analysis", "content_generation", "total_content_generation", "total_traffic_analytics", "total_reviews", "total_social"]
+    total_traffic_analytics: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["serp", "total", "total_serp", "keywords_data", "total_keywords_data", "appendix", "total_appendix", "dataforseo_labs", "total_dataforseo_labs", "domain_analytics", "total_domain_analytics", "merchant", "total_merchant", "on_page", "total_on_page", "business_data", "total_business_data", "backlinks", "total_backlinks", "app_data", "total_app_data", "content_analysis", "total_content_analysis", "content_generation", "total_content_generation", "total_reviews", "total_social", "total_traffic_analytics"]
 
     model_config = {
         "populate_by_name": True,
@@ -208,11 +208,6 @@ class AppendixDayLimitsRatesData(BaseModel):
         if self.total_content_generation is None and "total_content_generation" in self.model_fields_set:
             _dict['total_content_generation'] = None
 
-        # set to None if total_traffic_analytics (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_traffic_analytics is None and "total_traffic_analytics" in self.model_fields_set:
-            _dict['total_traffic_analytics'] = None
-
         # set to None if total_reviews (nullable) is None
         # and model_fields_set contains the field
         if self.total_reviews is None and "total_reviews" in self.model_fields_set:
@@ -222,6 +217,11 @@ class AppendixDayLimitsRatesData(BaseModel):
         # and model_fields_set contains the field
         if self.total_social is None and "total_social" in self.model_fields_set:
             _dict['total_social'] = None
+
+        # set to None if total_traffic_analytics (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_traffic_analytics is None and "total_traffic_analytics" in self.model_fields_set:
+            _dict['total_traffic_analytics'] = None
 
         return _dict
 
@@ -238,9 +238,9 @@ class AppendixDayLimitsRatesData(BaseModel):
             "serp": AppendixSerpLimitsRatesDataInfo.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
             "total": obj.get("total"),
             "total_serp": obj.get("total_serp"),
-            "keywords_data": AppendixKeywordsDataDaysRatesDataInfo.from_dict(obj["keywords_data"]) if obj.get("keywords_data") is not None else None,
+            "keywords_data": AppendixKeywordsDatasRatesDataInfo.from_dict(obj["keywords_data"]) if obj.get("keywords_data") is not None else None,
             "total_keywords_data": obj.get("total_keywords_data"),
-            "appendix": AppendixAppendixDaysRatesDataInfo.from_dict(obj["appendix"]) if obj.get("appendix") is not None else None,
+            "appendix": AppendixAppendixsRatesDataInfo.from_dict(obj["appendix"]) if obj.get("appendix") is not None else None,
             "total_appendix": obj.get("total_appendix"),
             "dataforseo_labs": AppendixDataforseoLabsLimitsRatesDataInfo.from_dict(obj["dataforseo_labs"]) if obj.get("dataforseo_labs") is not None else None,
             "total_dataforseo_labs": obj.get("total_dataforseo_labs"),
@@ -260,9 +260,9 @@ class AppendixDayLimitsRatesData(BaseModel):
             "total_content_analysis": obj.get("total_content_analysis"),
             "content_generation": AppendixContentGenerationLimitsRatesDataInfo.from_dict(obj["content_generation"]) if obj.get("content_generation") is not None else None,
             "total_content_generation": obj.get("total_content_generation"),
-            "total_traffic_analytics": obj.get("total_traffic_analytics"),
             "total_reviews": obj.get("total_reviews"),
-            "total_social": obj.get("total_social")
+            "total_social": obj.get("total_social"),
+            "total_traffic_analytics": obj.get("total_traffic_analytics")
         })
         return _obj
 

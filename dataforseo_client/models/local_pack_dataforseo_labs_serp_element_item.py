@@ -33,11 +33,11 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    title: Optional[StrictStr] = Field(default=None, description="title of the item")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     phone: Optional[StrictStr] = Field(default=None, description="phone number")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="URL link")
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates whether the element is an ad")
     rating: Optional[RatingInfo] = None
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
@@ -46,7 +46,8 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     impressions_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on impressions estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of the returned keyword learn more about how the metric is calculated in this help center article")
     estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "domain", "phone", "url", "is_paid", "rating", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes"]
+    clickstream_etv: Optional[StrictInt] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "domain", "phone", "url", "is_paid", "rating", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "clickstream_etv"]
 
     model_config = {
         "populate_by_name": True,
@@ -173,6 +174,11 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.estimated_paid_traffic_cost is None and "estimated_paid_traffic_cost" in self.model_fields_set:
             _dict['estimated_paid_traffic_cost'] = None
 
+        # set to None if clickstream_etv (nullable) is None
+        # and model_fields_set contains the field
+        if self.clickstream_etv is None and "clickstream_etv" in self.model_fields_set:
+            _dict['clickstream_etv'] = None
+
         return _dict
 
     @classmethod
@@ -202,7 +208,8 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "etv": obj.get("etv"),
             "impressions_etv": obj.get("impressions_etv"),
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
-            "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None
+            "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None,
+            "clickstream_etv": obj.get("clickstream_etv")
         })
         return _obj
 
