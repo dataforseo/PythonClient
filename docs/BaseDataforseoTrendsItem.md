@@ -6,6 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
+**position** | **int** | the alignment of the element can take the following values: 1, 2, 3, 4, etc. | [optional] 
+**keywords** | **List[Optional[str]]** | relevant keywords the data included in the dataforseo_trends_graph element is based on the keywords listed in this array | [optional] 
 
 ## Example
 

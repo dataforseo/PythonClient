@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **language_code** | **str** | language code in a POST array | [optional] 
 **total_count** | **int** | the number of results returned in the items array | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[DataforseoLabsGoogleHistoricalSerpsLiveItem]**](DataforseoLabsGoogleHistoricalSerpsLiveItem.md) | contains results featured in the ‘hotels_pack’ element of SERP | [optional] 
+**items** | [**List[DataforseoLabsGoogleHistoricalSerpsLiveItem]**](DataforseoLabsGoogleHistoricalSerpsLiveItem.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

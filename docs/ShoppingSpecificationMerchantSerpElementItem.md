@@ -5,9 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank on the product specification page absolute position among all the elements found on the product specification page | [optional] 
-**position** | **str** | alignment of the element on the product specification page can take the following values: right | [optional] 
 **xpath** | **str** | XPath of the element | [optional] 
 **block_name** | **str** | name of the block of product attributes indicates the name of the product specification section in which the related element is listed | [optional] 
 **specification_name** | **str** | product attribute attribute name of the product data specification | [optional] 

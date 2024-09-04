@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP for the target domain absolute position among all the elements in SERP | [optional] 
 **video_id** | **str** | ID of the video received in a POST array | [optional] 
 **title** | **str** | title of the video | [optional] 
 **url** | **str** | URL of the video | [optional] 
@@ -25,6 +23,7 @@ Name | Type | Description | Notes
 **keywords** | **List[Optional[str]]** | keywords relevant to the video | [optional] 
 **category** | **str** | the category the video belongs to | [optional] 
 **is_live** | **bool** | indicates whether the video is on live | [optional] 
+**is_embeddable** | **bool** | indicates whether the video is embeddable | [optional] 
 **duration_time** | **str** | duration of the video | [optional] 
 **duration_time_seconds** | **int** | duration of the video in seconds | [optional] 
 **subtitles** | [**List[Subtitles]**](Subtitles.md) | array of elements describing properties of subtitles in the video | [optional] 

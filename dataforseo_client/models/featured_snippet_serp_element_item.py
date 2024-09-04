@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.images_element import ImagesElement
@@ -30,21 +30,17 @@ class FeaturedSnippetSerpElementItem(BaseSerpElementItem):
     """
     FeaturedSnippetSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements found in SERP note values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results; to get all items (including SERP features and rich snippets) with their positions, please refer to the Google Organiс Advanced SERP endpoint")
     domain: Optional[StrictStr] = Field(default=None, description="domain of the ad element in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the ad element in SERP")
     description: Optional[StrictStr] = Field(default=None, description="description of the ad element in SERP")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL of the ad element in SERP")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb of the ad element in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     featured_title: Optional[StrictStr] = Field(default=None, description="title")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     images: Optional[List[ImagesElement]] = Field(default=None, description="images of the element")
     table: Optional[Table] = None
     rectangle: Optional[Rectangle] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "description", "url", "breadcrumb", "position", "xpath", "featured_title", "timestamp", "images", "table", "rectangle"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "description", "url", "breadcrumb", "featured_title", "timestamp", "images", "table", "rectangle"]
 
     model_config = {
         "populate_by_name": True,
@@ -113,6 +109,16 @@ class FeaturedSnippetSerpElementItem(BaseSerpElementItem):
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
 
+        # set to None if position (nullable) is None
+        # and model_fields_set contains the field
+        if self.position is None and "position" in self.model_fields_set:
+            _dict['position'] = None
+
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
+
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
         if self.domain is None and "domain" in self.model_fields_set:
@@ -137,16 +143,6 @@ class FeaturedSnippetSerpElementItem(BaseSerpElementItem):
         # and model_fields_set contains the field
         if self.breadcrumb is None and "breadcrumb" in self.model_fields_set:
             _dict['breadcrumb'] = None
-
-        # set to None if position (nullable) is None
-        # and model_fields_set contains the field
-        if self.position is None and "position" in self.model_fields_set:
-            _dict['position'] = None
-
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
 
         # set to None if featured_title (nullable) is None
         # and model_fields_set contains the field
@@ -178,13 +174,13 @@ class FeaturedSnippetSerpElementItem(BaseSerpElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
+            "position": obj.get("position"),
+            "xpath": obj.get("xpath"),
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "description": obj.get("description"),
             "url": obj.get("url"),
             "breadcrumb": obj.get("breadcrumb"),
-            "position": obj.get("position"),
-            "xpath": obj.get("xpath"),
             "featured_title": obj.get("featured_title"),
             "timestamp": obj.get("timestamp"),
             "images": [ImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,

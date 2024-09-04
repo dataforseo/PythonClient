@@ -31,15 +31,11 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     """
     FeaturedSnippetDataforseoLabsSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    title: Optional[StrictStr] = Field(default=None, description="title of the item")
-    featured_title: Optional[StrictStr] = Field(default=None, description="title")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    featured_title: Optional[StrictStr] = Field(default=None, description="the title of the featured snippets source page")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     table: Optional[Table] = None
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")

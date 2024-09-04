@@ -37,9 +37,9 @@ class AppendixAppDataDayStatisticsRatesData(BaseModel):
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     app_listings: Optional[AppendixBusinessListingsBusinessDataLimitsRatesDataInfo] = None
-    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories", "tasks_ready", "id_list", "app_listings"]
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories", "tasks_ready", "app_listings", "id_list"]
 
     model_config = {
         "populate_by_name": True,
@@ -146,8 +146,8 @@ class AppendixAppDataDayStatisticsRatesData(BaseModel):
             "locations": obj.get("locations"),
             "categories": obj.get("categories"),
             "tasks_ready": obj.get("tasks_ready"),
-            "id_list": obj.get("id_list"),
-            "app_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["app_listings"]) if obj.get("app_listings") is not None else None
+            "app_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["app_listings"]) if obj.get("app_listings") is not None else None,
+            "id_list": obj.get("id_list")
         })
         return _obj
 

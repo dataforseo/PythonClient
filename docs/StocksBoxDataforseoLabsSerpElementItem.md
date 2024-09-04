@@ -5,16 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
-**title** | **str** | title of the item | [optional] 
+**title** | **str** | title of the result in SERP | [optional] 
 **source** | **str** | source of the element indicates the source of information included in the shopping_element | [optional] 
 **snippet** | **str** | text alongside the link title | [optional] 
 **price** | [**Price**](Price.md) |  | [optional] 
-**url** | **str** | URL link | [optional] 
-**domain** | **str** | domain where a link points | [optional] 
+**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**domain** | **str** | website domain | [optional] 
 **table** | [**Table**](Table.md) |  | [optional] 
 **graph** | [**Graph**](Graph.md) |  | [optional] 
 

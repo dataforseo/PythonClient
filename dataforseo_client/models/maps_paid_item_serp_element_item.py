@@ -17,24 +17,16 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from typing import Any, ClassVar, Dict, List
+from dataforseo_client.models.base_google_maps_serp_element_item import BaseGoogleMapsSerpElementItem
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
-class MapsPaidItemSerpElementItem(BaseSerpElementItem):
+class MapsPaidItemSerpElementItem(BaseGoogleMapsSerpElementItem):
     """
     MapsPaidItemSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="domain in the SERP element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
-    rating: Optional[RatingInfo] = None
-    rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution"]
 
     model_config = {

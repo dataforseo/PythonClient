@@ -9,13 +9,11 @@ Name | Type | Description | Notes
 **rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
 **domain** | **str** | domain name of the result in SERP | [optional] 
-**title** | **str** | title of the result in SERP | [optional] 
 **url** | **str** | URL of the result in SERP | [optional] 
 **image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **snippet** | **str** | snippet of the result in SERP | [optional] 
 **time_published** | **str** | indicates the time the result was published | [optional] 
 **timestamp** | **str** | date and time when the news was published in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: 2019-11-15 12:57:46 +00:00 | [optional] 
-**rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example
 

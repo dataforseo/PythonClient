@@ -28,8 +28,6 @@ class TripadvisorSearchOrganicBusinessDataSerpElementItem(BaseBusinessDataSerpEl
     """
     TripadvisorSearchOrganicBusinessDataSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed results absolute position among all reviews on the list")
     title: Optional[StrictStr] = Field(default=None, description="name of the business entity")
     url_path: Optional[StrictStr] = Field(default=None, description="URL path of the business entity URL path to the Tripadvisor page of the business entity you can use this identifier to collect reviews for the business entity using Tripadvisor Reviews")
     is_sponsored: Optional[StrictBool] = Field(default=None, description="indicates a sponsored placement if true, related tripadvisor_search_organic item is a paid advertising on Tripadvisor")

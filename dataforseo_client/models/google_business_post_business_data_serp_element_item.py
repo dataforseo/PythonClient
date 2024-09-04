@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.link_element import LinkElement
@@ -28,8 +28,6 @@ class GoogleBusinessPostBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     """
     GoogleBusinessPostBusinessDataSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed updates absolute position among all present elements")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     author: Optional[StrictStr] = Field(default=None, description="author of the post")

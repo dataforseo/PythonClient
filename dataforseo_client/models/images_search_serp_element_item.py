@@ -19,11 +19,11 @@ import json
 
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_google_images_serp_element_item import BaseGoogleImagesSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ImagesSearchSerpElementItem(BaseSerpElementItem):
+class ImagesSearchSerpElementItem(BaseGoogleImagesSerpElementItem):
     """
     ImagesSearchSerpElementItem
     """ # noqa: E501

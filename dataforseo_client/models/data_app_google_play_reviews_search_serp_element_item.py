@@ -30,19 +30,14 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
     """
     DataAppGooglePlayReviewsSearchSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed reviews absolute position among all reviews on the list")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the review in SERP can take the following values: left")
     version: Optional[StrictStr] = Field(default=None, description="version of the app version of the app for which the review is submitted")
-    rating: Optional[RatingInfo] = None
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00")
     id: Optional[StrictStr] = Field(default=None, description="id of the review")
     helpful_count: Optional[StrictInt] = Field(default=None, description="number of helpful votes indicates how many users considered the review helpful and voted with the thumbs up icon")
-    title: Optional[StrictStr] = Field(default=None, description="title of the review Google Play doesn’t provide an option to title reviews, so this parameter will always equal null")
     review_text: Optional[StrictStr] = Field(default=None, description="content of the review")
     user_profile: Optional[AppUserProfileInfo] = None
     responses: Optional[List[ResponseDataInfo]] = Field(default=None, description="response from the developer")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "version", "rating", "timestamp", "id", "helpful_count", "title", "review_text", "user_profile", "responses"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "rating", "version", "timestamp", "id", "helpful_count", "review_text", "user_profile", "responses"]
 
     model_config = {
         "populate_by_name": True,
@@ -116,6 +111,11 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
 
+        # set to None if title (nullable) is None
+        # and model_fields_set contains the field
+        if self.title is None and "title" in self.model_fields_set:
+            _dict['title'] = None
+
         # set to None if version (nullable) is None
         # and model_fields_set contains the field
         if self.version is None and "version" in self.model_fields_set:
@@ -135,11 +135,6 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
         # and model_fields_set contains the field
         if self.helpful_count is None and "helpful_count" in self.model_fields_set:
             _dict['helpful_count'] = None
-
-        # set to None if title (nullable) is None
-        # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
 
         # set to None if review_text (nullable) is None
         # and model_fields_set contains the field
@@ -167,12 +162,12 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
-            "version": obj.get("version"),
+            "title": obj.get("title"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "version": obj.get("version"),
             "timestamp": obj.get("timestamp"),
             "id": obj.get("id"),
             "helpful_count": obj.get("helpful_count"),
-            "title": obj.get("title"),
             "review_text": obj.get("review_text"),
             "user_profile": AppUserProfileInfo.from_dict(obj["user_profile"]) if obj.get("user_profile") is not None else None,
             "responses": [ResponseDataInfo.from_dict(_item) for _item in obj["responses"]] if obj.get("responses") is not None else None

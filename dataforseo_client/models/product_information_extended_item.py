@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_product_information_item import BaseProductInformationItem
 from dataforseo_client.models.product_information_rows import ProductInformationRows
@@ -28,7 +28,6 @@ class ProductInformationExtendedItem(BaseProductInformationItem):
     """
     ProductInformationExtendedItem
     """ # noqa: E501
-    section_name: Optional[StrictStr] = Field(default=None, description="name of the section related to product information specified in the contents")
     contents: Optional[List[ProductInformationRows]] = Field(default=None, description="contains information specified about the product within the section_name")
     __properties: ClassVar[List[str]] = ["type", "section_name", "contents"]
 

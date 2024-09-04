@@ -27,7 +27,8 @@ class BaseProductInformationItem(BaseModel):
     BaseProductInformationItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    __properties: ClassVar[List[str]] = ["type"]
+    section_name: Optional[StrictStr] = Field(default=None, description="name of the section related to product information specified in the contents")
+    __properties: ClassVar[List[str]] = ["type", "section_name"]
 
     model_config = {
         "populate_by_name": True,
@@ -89,6 +90,11 @@ class BaseProductInformationItem(BaseModel):
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
+
+        # set to None if section_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.section_name is None and "section_name" in self.model_fields_set:
+            _dict['section_name'] = None
 
         return _dict
 

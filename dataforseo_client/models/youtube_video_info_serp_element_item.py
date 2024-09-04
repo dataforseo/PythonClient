@@ -19,19 +19,17 @@ import json
 
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from dataforseo_client.models.channel_subscribers_count import ChannelSubscribersCount
 from dataforseo_client.models.streaming_quality_element import StreamingQualityElement
 from dataforseo_client.models.subtitles import Subtitles
 from typing import Optional, Set
 from typing_extensions import Self
 
-class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
+class YoutubeVideoInfoSerpElementItem(BaseYoutubeSerpElementItem):
     """
     YoutubeVideoInfoSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP for the target domain absolute position among all the elements in SERP")
     video_id: Optional[StrictStr] = Field(default=None, description="ID of the video received in a POST array")
     title: Optional[StrictStr] = Field(default=None, description="title of the video")
     url: Optional[StrictStr] = Field(default=None, description="URL of the video")
@@ -50,11 +48,12 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="keywords relevant to the video")
     category: Optional[StrictStr] = Field(default=None, description="the category the video belongs to")
     is_live: Optional[StrictBool] = Field(default=None, description="indicates whether the video is on live")
+    is_embeddable: Optional[StrictBool] = Field(default=None, description="indicates whether the video is embeddable")
     duration_time: Optional[StrictStr] = Field(default=None, description="duration of the video")
     duration_time_seconds: Optional[StrictInt] = Field(default=None, description="duration of the video in seconds")
     subtitles: Optional[List[Subtitles]] = Field(default=None, description="array of elements describing properties of subtitles in the video")
     streaming_quality: Optional[List[StreamingQualityElement]] = Field(default=None, description="array of elements that contain information about all possible streaming qualities of the video")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "channel_subscribers_count", "publication_date", "timestamp", "keywords", "category", "is_live", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "channel_subscribers_count", "publication_date", "timestamp", "keywords", "category", "is_live", "is_embeddable", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]
 
     model_config = {
         "populate_by_name": True,
@@ -212,6 +211,11 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
         if self.is_live is None and "is_live" in self.model_fields_set:
             _dict['is_live'] = None
 
+        # set to None if is_embeddable (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_embeddable is None and "is_embeddable" in self.model_fields_set:
+            _dict['is_embeddable'] = None
+
         # set to None if duration_time (nullable) is None
         # and model_fields_set contains the field
         if self.duration_time is None and "duration_time" in self.model_fields_set:
@@ -265,6 +269,7 @@ class YoutubeVideoInfoSerpElementItem(BaseSerpElementItem):
             "keywords": obj.get("keywords"),
             "category": obj.get("category"),
             "is_live": obj.get("is_live"),
+            "is_embeddable": obj.get("is_embeddable"),
             "duration_time": obj.get("duration_time"),
             "duration_time_seconds": obj.get("duration_time_seconds"),
             "subtitles": [Subtitles.from_dict(_item) for _item in obj["subtitles"]] if obj.get("subtitles") is not None else None,

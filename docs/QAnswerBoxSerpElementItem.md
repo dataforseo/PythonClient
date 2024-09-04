@@ -5,10 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | group rank in SERP position within a group of elements with identical type values; positions of elements with different type values are omitted from rank_group; always equals 0 for desktop | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
 **text** | **List[Optional[str]]** | text if there is none, equals null | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | link of the element | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 

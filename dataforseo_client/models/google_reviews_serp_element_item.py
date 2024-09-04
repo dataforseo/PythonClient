@@ -29,10 +29,6 @@ class GoogleReviewsSerpElementItem(BaseSerpElementItem):
     """
     GoogleReviewsSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values; positions of elements with different type values are omitted from rank_group; always equals 0 for desktop")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the number of reviews")
     rating: Optional[RatingInfo] = None
     place_id: Optional[StrictStr] = Field(default=None, description="the identifier of a place")

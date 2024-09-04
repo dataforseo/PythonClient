@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.graph import Graph
@@ -30,16 +30,12 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """
     StocksBoxDataforseoLabsSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the item")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the shopping_element")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
     price: Optional[Price] = None
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
     table: Optional[Table] = None
     graph: Optional[Graph] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "source", "snippet", "price", "url", "domain", "table", "graph"]

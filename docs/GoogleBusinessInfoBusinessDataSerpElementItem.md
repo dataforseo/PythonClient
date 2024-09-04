@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank among all the elements | [optional] 
 **position** | **str** | the alignment in SERP | [optional] 
 **title** | **str** | title of the element in SERP the name of the business entity for which the results are collected | [optional] 
 **description** | **str** | description of the element in SERP the description of the business entity for which the results are collected | [optional] 

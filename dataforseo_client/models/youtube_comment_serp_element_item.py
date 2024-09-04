@@ -19,16 +19,14 @@ import json
 
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
 
-class YoutubeCommentSerpElementItem(BaseSerpElementItem):
+class YoutubeCommentSerpElementItem(BaseYoutubeSerpElementItem):
     """
     YoutubeCommentSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP for the target domain absolute position among all the elements in SERP")
     author_name: Optional[StrictStr] = Field(default=None, description="name of the author of the comment")
     author_thumbnail: Optional[StrictStr] = Field(default=None, description="the URL of the page where the author’s channel logo is hosted")
     author_url: Optional[StrictStr] = Field(default=None, description="URL of the author’s channel")

@@ -30,9 +30,6 @@ class ProductInfoElementMerchantSerpElementItem(BaseMerchantSerpElementItem):
     """
     ProductInfoElementMerchantSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank on the product specification page absolute position among all the elements found on the product specification page")
-    position: Optional[StrictStr] = Field(default=None, description="alignment of the element on the product specification page can take the following values: right, left")
     product_id: Optional[StrictStr] = Field(default=None, description="product_id received in a POST array ilearn more about the parameter in this help center guide")
     title: Optional[StrictStr] = Field(default=None, description="title of the product")
     description: Optional[StrictStr] = Field(default=None, description="description of the product")

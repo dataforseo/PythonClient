@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP for the target domain absolute position among all the elements in SERP | [optional] 
 **text** | **str** | text translated in subtitles | [optional] 
 **start_time** | **int** | the second subtitled text starts | [optional] 
 **end_time** | **int** | the second subtitled text ends | [optional] 

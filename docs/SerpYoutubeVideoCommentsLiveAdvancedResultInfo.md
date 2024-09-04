@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of the video | [optional] 
 **comments_count** | **int** | number of comments on the video | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[BaseYoutubeSerpElementItem]**](BaseYoutubeSerpElementItem.md) | elements of search results found in SERP | [optional] 
 
 ## Example
 

@@ -33,7 +33,7 @@ class DataforseoLabsGoogleHistoricalSerpsLiveResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[DataforseoLabsGoogleHistoricalSerpsLiveItem]] = Field(default=None, description="contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[DataforseoLabsGoogleHistoricalSerpsLiveItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "total_count", "items_count", "items"]
 
     model_config = {

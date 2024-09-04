@@ -5,16 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank among all the listed apps absolute position among all apps on the list | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left | [optional] 
 **app_id** | **str** | ID of the app | [optional] 
-**title** | **str** | title of the app | [optional] 
 **url** | **str** | URL to the app page on App Store | [optional] 
 **icon** | **str** | URL to the app icon | [optional] 
 **description** | **str** | description of the app | [optional] 
 **reviews_count** | **int** | the total number of reviews of the app | [optional] 
-**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **price** | [**Price**](Price.md) |  | [optional] 
 **is_free** | **bool** | indicates whether the app is free | [optional] 
 **main_category** | **str** | main category/genre of the app | [optional] 

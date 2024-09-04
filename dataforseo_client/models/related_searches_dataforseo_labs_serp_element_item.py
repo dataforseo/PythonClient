@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from typing import Optional, Set
@@ -28,12 +28,8 @@ class RelatedSearchesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     RelatedSearchesDataforseoLabsSerpElementItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    items: Optional[List[Optional[StrictStr]]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "items"]
+    items: Optional[List[Optional[StrictStr]]] = Field(default=None, description="elements of search results found in SERP")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "items"]
 
     model_config = {
         "populate_by_name": True,
@@ -79,11 +75,6 @@ class RelatedSearchesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
-        # set to None if se_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.se_type is None and "se_type" in self.model_fields_set:
-            _dict['se_type'] = None
-
         # set to None if rank_group (nullable) is None
         # and model_fields_set contains the field
         if self.rank_group is None and "rank_group" in self.model_fields_set:
@@ -104,6 +95,11 @@ class RelatedSearchesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -122,11 +118,11 @@ class RelatedSearchesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "se_type": obj.get("se_type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "items": obj.get("items")
         })
         return _obj

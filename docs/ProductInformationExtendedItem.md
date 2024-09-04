@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**section_name** | **str** | name of the section related to product information specified in the contents | [optional] 
 **contents** | [**List[ProductInformationRows]**](ProductInformationRows.md) | contains information specified about the product within the section_name | [optional] 
 
 ## Example

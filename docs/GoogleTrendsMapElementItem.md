@@ -5,9 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**position** | **int** | the alignment of the element in Google Trends can take the following values: 1, 2, 3, 4, etc. | [optional] 
-**title** | **str** | title of the element in Google Trends | [optional] 
-**keywords** | **List[Optional[str]]** | relevant keywords the data included in the google_trends_map element is based on the keywords listed in this array | [optional] 
 **data** | [**List[TrendsMapDataInfo]**](TrendsMapDataInfo.md) | Google Trends data from the corresponding item | [optional] 
 
 ## Example

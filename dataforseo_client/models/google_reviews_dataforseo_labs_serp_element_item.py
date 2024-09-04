@@ -28,15 +28,11 @@ class GoogleReviewsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
     """
     GoogleReviewsDataforseoLabsSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the number of reviews")
     rating: Optional[RatingInfo] = None
     place_id: Optional[StrictStr] = Field(default=None, description="the identifier of a place")
     feature: Optional[StrictStr] = Field(default=None, description="the additional feature of the review")
-    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews")
+    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "reviews_count", "rating", "place_id", "feature", "cid"]
 
     model_config = {

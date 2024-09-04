@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank among all the listed reviews absolute position among all reviews on the list | [optional] 
 **position** | **str** | the alignment of the review in SERP can take the following values: right | [optional] 
 **url** | **str** | URL of the review | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 

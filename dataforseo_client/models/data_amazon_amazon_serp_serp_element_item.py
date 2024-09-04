@@ -30,10 +30,6 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
     DataAmazonAmazonSerpSerpElementItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in Amazon SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="Amazon domain")
     title: Optional[StrictStr] = Field(default=None, description="product title")
     url: Optional[StrictStr] = Field(default=None, description="URL of the product page")
@@ -50,7 +46,7 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
     bought_past_month: Optional[StrictInt] = Field(default=None, description="number of product purchases in the past month")
     description: Optional[StrictStr] = Field(default=None, description="description of the product")
     data_asin: Optional[StrictStr] = Field(default=None, description="unique product identifier on Amazon note that there is no full list of possible values as the data_asin is a dynamic value assigned by Amazon example: B07G82D89J")
-    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "asin", "image_url", "price_from", "price_to", "currency", "special_offers", "is_best_seller", "is_amazon_choice", "rating", "delivery_info", "bought_past_month", "description", "data_asin"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "domain", "title", "url", "asin", "image_url", "price_from", "price_to", "currency", "special_offers", "is_best_seller", "is_amazon_choice", "rating", "delivery_info", "bought_past_month", "description", "data_asin"]
 
     model_config = {
         "populate_by_name": True,
@@ -102,11 +98,6 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
-        # set to None if se_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.se_type is None and "se_type" in self.model_fields_set:
-            _dict['se_type'] = None
-
         # set to None if rank_group (nullable) is None
         # and model_fields_set contains the field
         if self.rank_group is None and "rank_group" in self.model_fields_set:
@@ -126,6 +117,11 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
         # and model_fields_set contains the field
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
+
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
 
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
@@ -210,11 +206,11 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "se_type": obj.get("se_type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),

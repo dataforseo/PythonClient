@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **item_types** | **List[Optional[str]]** | types of search results in SERP contains types of search results (items) found in SERP. possible item types: carousel, images_search, related_searches | [optional] 
 **se_results_count** | **int** | total number of results in SERP | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | contains keywords and images related to the specified search term | [optional] 
+**items** | [**List[BaseGoogleImagesSerpElementItem]**](BaseGoogleImagesSerpElementItem.md) | contains keywords and images related to the specified search term | [optional] 
 
 ## Example
 

@@ -65,10 +65,10 @@ class AppendixDayStatisticsRatesData(BaseModel):
     content_generation: Optional[AppendixContentGenerationDayStatisticsRatesData] = None
     total_content_generation: Optional[Union[StrictFloat, StrictInt]] = None
     value: Optional[StrictStr] = Field(default=None, description="time period for grouping day in the yyyy-MM-dd format minute in the yyyy-MM-dd HH:mm format")
-    total_traffic_analytics: Optional[Union[StrictFloat, StrictInt]] = None
     total_reviews: Optional[Union[StrictFloat, StrictInt]] = None
     reviews: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["serp", "total", "total_serp", "keywords_data", "total_keywords_data", "appendix", "total_appendix", "dataforseo_labs", "total_dataforseo_labs", "domain_analytics", "total_domain_analytics", "merchant", "total_merchant", "on_page", "total_on_page", "business_data", "total_business_data", "backlinks", "total_backlinks", "app_data", "total_app_data", "content_analysis", "total_content_analysis", "content_generation", "total_content_generation", "value", "total_traffic_analytics", "total_reviews", "reviews"]
+    total_traffic_analytics: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["serp", "total", "total_serp", "keywords_data", "total_keywords_data", "appendix", "total_appendix", "dataforseo_labs", "total_dataforseo_labs", "domain_analytics", "total_domain_analytics", "merchant", "total_merchant", "on_page", "total_on_page", "business_data", "total_business_data", "backlinks", "total_backlinks", "app_data", "total_app_data", "content_analysis", "total_content_analysis", "content_generation", "total_content_generation", "value", "total_reviews", "reviews", "total_traffic_analytics"]
 
     model_config = {
         "populate_by_name": True,
@@ -218,15 +218,15 @@ class AppendixDayStatisticsRatesData(BaseModel):
         if self.value is None and "value" in self.model_fields_set:
             _dict['value'] = None
 
-        # set to None if total_traffic_analytics (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_traffic_analytics is None and "total_traffic_analytics" in self.model_fields_set:
-            _dict['total_traffic_analytics'] = None
-
         # set to None if total_reviews (nullable) is None
         # and model_fields_set contains the field
         if self.total_reviews is None and "total_reviews" in self.model_fields_set:
             _dict['total_reviews'] = None
+
+        # set to None if total_traffic_analytics (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_traffic_analytics is None and "total_traffic_analytics" in self.model_fields_set:
+            _dict['total_traffic_analytics'] = None
 
         return _dict
 
@@ -266,9 +266,9 @@ class AppendixDayStatisticsRatesData(BaseModel):
             "content_generation": AppendixContentGenerationDayStatisticsRatesData.from_dict(obj["content_generation"]) if obj.get("content_generation") is not None else None,
             "total_content_generation": obj.get("total_content_generation"),
             "value": obj.get("value"),
-            "total_traffic_analytics": obj.get("total_traffic_analytics"),
             "total_reviews": obj.get("total_reviews"),
-            "reviews": AppendixInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
+            "reviews": AppendixInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "total_traffic_analytics": obj.get("total_traffic_analytics")
         })
         return _obj
 

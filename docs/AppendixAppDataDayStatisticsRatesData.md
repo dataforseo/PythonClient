@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **locations** | **float** |  | [optional] 
 **categories** | **float** |  | [optional] 
 **tasks_ready** | **float** |  | [optional] 
-**id_list** | **float** |  | [optional] 
 **app_listings** | [**AppendixBusinessListingsBusinessDataLimitsRatesDataInfo**](AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
+**id_list** | **float** |  | [optional] 
 
 ## Example
 

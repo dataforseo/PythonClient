@@ -5,14 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
-**title** | **str** | title of the item | [optional] 
-**url** | **str** | URL link | [optional] 
-**domain** | **str** | domain where a link points | [optional] 
-**items** | [**List[LocalServicesElement]**](LocalServicesElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**title** | **str** | title of the result in SERP | [optional] 
+**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**domain** | **str** | website domain | [optional] 
+**items** | [**List[LocalServicesElement]**](LocalServicesElement.md) | elements of search results found in SERP | [optional] 
 
 ## Example
 

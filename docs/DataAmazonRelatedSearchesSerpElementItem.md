@@ -5,10 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements found in Amazon SERP | [optional] 
-**position** | **str** | the alignment of the element in Amazon SERP possible values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
 **items** | [**List[RelatedSearchesElement]**](RelatedSearchesElement.md) | Amazon product items | [optional] 
 
 ## Example

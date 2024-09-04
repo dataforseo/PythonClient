@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank among all the listed reviews absolute position among all reviews on the list | [optional] 
 **title** | **str** | title of the establishment | [optional] 
 **domain** | **str** | domain of the establishment | [optional] 
 **url** | **str** | URL to the establishment | [optional] 

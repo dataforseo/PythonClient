@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from typing import Optional, Set
@@ -27,9 +27,6 @@ class ShoppingSpecificationMerchantSerpElementItem(BaseMerchantSerpElementItem):
     """
     ShoppingSpecificationMerchantSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank on the product specification page absolute position among all the elements found on the product specification page")
-    position: Optional[StrictStr] = Field(default=None, description="alignment of the element on the product specification page can take the following values: right")
     xpath: Optional[StrictStr] = Field(default=None, description="XPath of the element")
     block_name: Optional[StrictStr] = Field(default=None, description="name of the block of product attributes indicates the name of the product specification section in which the related element is listed")
     specification_name: Optional[StrictStr] = Field(default=None, description="product attribute attribute name of the product data specification")

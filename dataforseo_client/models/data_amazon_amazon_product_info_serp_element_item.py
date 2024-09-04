@@ -31,10 +31,6 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
     """
     DataAmazonAmazonProductInfoSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank absolute position among all the elements in the response array")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP possible values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="product title")
     details: Optional[StrictStr] = Field(default=None, description="product specs and other details")
     image_url: Optional[StrictStr] = Field(default=None, description="the URL of the product image")

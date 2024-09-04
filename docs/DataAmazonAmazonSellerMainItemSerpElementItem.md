@@ -5,10 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements found in Amazon Sellers SERP | [optional] 
-**position** | **str** | alignment of the element in SERP possible values: left, right | [optional] 
-**xpath** | **str** | XPath of the element | [optional] 
 **seller_name** | **str** | business name of the seller | [optional] 
 **seller_url** | **str** | url forwarding to the seller’s page on Amazon | [optional] 
 **ships_from** | **str** | sender company name | [optional] 

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,7 +37,7 @@ class SerpYoutubeVideoInfoTaskGetAdvancedResultInfo(BaseModel):
     spell: Optional[SpellInfo] = None
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item: youtube_video_info")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[BaseYoutubeSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["video_id", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "items_count", "items"]
 
     model_config = {
@@ -155,7 +155,7 @@ class SerpYoutubeVideoInfoTaskGetAdvancedResultInfo(BaseModel):
             "spell": SpellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
             "item_types": obj.get("item_types"),
             "items_count": obj.get("items_count"),
-            "items": [BaseSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [BaseYoutubeSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

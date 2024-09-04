@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.knowledge_graph_hotels_booking_element import KnowledgeGraphHotelsBookingElement
@@ -29,10 +29,6 @@ class KnowledgeGraphHotelsBookingItemSerpElementItem(BaseSerpElementItem):
     """
     KnowledgeGraphHotelsBookingItemSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of stay in the format “year-month-date” example: 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of stay in the format “year-month-date” example: 2019-11-17")

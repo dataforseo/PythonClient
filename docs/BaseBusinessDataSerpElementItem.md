@@ -6,6 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
+**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from the rank_group | [optional] 
+**rank_absolute** | **int** | absolute rank among all the elements | [optional] 
 
 ## Example
 

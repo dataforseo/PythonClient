@@ -5,10 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | group rank in SERP position within a group of elements with identical type values; positions of elements with different type values are omitted from rank_group; always equals 0 for desktop | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
 **asynchronous_ai_overview** | **bool** | indicates whether the element is loaded asynchronically if true, the ai_overview element is loaded asynchronically; if false, the ai_overview element is loaded from cache; | [optional] 
 **items** | [**List[AiOverviewElement]**](AiOverviewElement.md) | additional items present in the element if there are none, equals null | [optional] 
 **references** | [**List[AiOverviewReference]**](AiOverviewReference.md) | additional references relevant to the item includes references to webpages that may have been used to generate the ai_overview | [optional] 

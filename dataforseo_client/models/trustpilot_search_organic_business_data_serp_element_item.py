@@ -28,8 +28,6 @@ class TrustpilotSearchOrganicBusinessDataSerpElementItem(BaseBusinessDataSerpEle
     """
     TrustpilotSearchOrganicBusinessDataSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed reviews absolute position among all reviews on the list")
     title: Optional[StrictStr] = Field(default=None, description="title of the establishment")
     domain: Optional[StrictStr] = Field(default=None, description="domain of the establishment")
     url: Optional[StrictStr] = Field(default=None, description="URL to the establishment")

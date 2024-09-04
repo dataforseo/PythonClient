@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_trends_item import BaseDataforseoTrendsItem
 from dataforseo_client.models.trends_graph_data_info import TrendsGraphDataInfo
@@ -28,8 +28,6 @@ class DataforseoTrendsDataforseoTrendsGraphElementItem(BaseDataforseoTrendsItem)
     """
     DataforseoTrendsDataforseoTrendsGraphElementItem
     """ # noqa: E501
-    position: Optional[StrictInt] = Field(default=None, description="the alignment of the element can take the following values: 1, 2, 3, 4, etc.")
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the dataforseo_trends_graph element is based on the keywords listed in this array")
     data: Optional[List[TrendsGraphDataInfo]] = Field(default=None, description="DataForSEO Trends data for the specified parameters")
     averages: Optional[List[Optional[StrictInt]]] = Field(default=None, description="keyword popularity values averaged over the whole time range")
     __properties: ClassVar[List[str]] = ["type", "position", "keywords", "data", "averages"]

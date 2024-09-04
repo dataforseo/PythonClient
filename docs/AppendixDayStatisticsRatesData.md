@@ -31,9 +31,9 @@ Name | Type | Description | Notes
 **content_generation** | [**AppendixContentGenerationDayStatisticsRatesData**](AppendixContentGenerationDayStatisticsRatesData.md) |  | [optional] 
 **total_content_generation** | **float** |  | [optional] 
 **value** | **str** | time period for grouping day in the yyyy-MM-dd format minute in the yyyy-MM-dd HH:mm format | [optional] 
-**total_traffic_analytics** | **float** |  | [optional] 
 **total_reviews** | **float** |  | [optional] 
 **reviews** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**total_traffic_analytics** | **float** |  | [optional] 
 
 ## Example
 

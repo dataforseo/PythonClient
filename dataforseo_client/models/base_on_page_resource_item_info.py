@@ -17,8 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.cache_control import CacheControl
+from dataforseo_client.models.last_modified import LastModified
+from dataforseo_client.models.on_page_resource_issue_info import OnPageResourceIssueInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +30,21 @@ class BaseOnPageResourceItemInfo(BaseModel):
     BaseOnPageResourceItemInfo
     """ # noqa: E501
     resource_type: Optional[StrictStr] = Field(default=None, description="type of the returned resource")
-    __properties: ClassVar[List[str]] = ["resource_type"]
+    status_code: Optional[StrictInt] = Field(default=None, description="status code of the page")
+    location: Optional[StrictStr] = Field(default=None, description="location header indicates the URL to redirect a page to")
+    url: Optional[StrictStr] = Field(default=None, description="page URL")
+    resource_errors: Optional[OnPageResourceIssueInfo] = None
+    size: Optional[StrictInt] = Field(default=None, description="resource size indicates the size of a given page measured in bytes")
+    encoded_size: Optional[StrictInt] = Field(default=None, description="page size after encoding indicates the size of the encoded page measured in bytes")
+    total_transfer_size: Optional[StrictInt] = Field(default=None, description="compressed page size indicates the compressed size of a given page")
+    fetch_time: Optional[StrictStr] = Field(default=None, description="date and time when a resource was fetched in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
+    cache_control: Optional[CacheControl] = None
+    checks: Optional[Dict[str, Optional[StrictBool]]] = Field(default=None, description="website checks on-page check-ups related to the page")
+    content_encoding: Optional[StrictStr] = Field(default=None, description="type of encoding")
+    media_type: Optional[StrictStr] = Field(default=None, description="types of media used to display a page")
+    server: Optional[StrictStr] = Field(default=None, description="server version")
+    last_modified: Optional[LastModified] = None
+    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified"]
 
     model_config = {
         "populate_by_name": True,
@@ -85,10 +102,74 @@ class BaseOnPageResourceItemInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of resource_errors
+        if self.resource_errors:
+            _dict['resource_errors'] = self.resource_errors.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of cache_control
+        if self.cache_control:
+            _dict['cache_control'] = self.cache_control.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of last_modified
+        if self.last_modified:
+            _dict['last_modified'] = self.last_modified.to_dict()
         # set to None if resource_type (nullable) is None
         # and model_fields_set contains the field
         if self.resource_type is None and "resource_type" in self.model_fields_set:
             _dict['resource_type'] = None
+
+        # set to None if status_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.status_code is None and "status_code" in self.model_fields_set:
+            _dict['status_code'] = None
+
+        # set to None if location (nullable) is None
+        # and model_fields_set contains the field
+        if self.location is None and "location" in self.model_fields_set:
+            _dict['location'] = None
+
+        # set to None if url (nullable) is None
+        # and model_fields_set contains the field
+        if self.url is None and "url" in self.model_fields_set:
+            _dict['url'] = None
+
+        # set to None if size (nullable) is None
+        # and model_fields_set contains the field
+        if self.size is None and "size" in self.model_fields_set:
+            _dict['size'] = None
+
+        # set to None if encoded_size (nullable) is None
+        # and model_fields_set contains the field
+        if self.encoded_size is None and "encoded_size" in self.model_fields_set:
+            _dict['encoded_size'] = None
+
+        # set to None if total_transfer_size (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_transfer_size is None and "total_transfer_size" in self.model_fields_set:
+            _dict['total_transfer_size'] = None
+
+        # set to None if fetch_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.fetch_time is None and "fetch_time" in self.model_fields_set:
+            _dict['fetch_time'] = None
+
+        # set to None if checks (nullable) is None
+        # and model_fields_set contains the field
+        if self.checks is None and "checks" in self.model_fields_set:
+            _dict['checks'] = None
+
+        # set to None if content_encoding (nullable) is None
+        # and model_fields_set contains the field
+        if self.content_encoding is None and "content_encoding" in self.model_fields_set:
+            _dict['content_encoding'] = None
+
+        # set to None if media_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.media_type is None and "media_type" in self.model_fields_set:
+            _dict['media_type'] = None
+
+        # set to None if server (nullable) is None
+        # and model_fields_set contains the field
+        if self.server is None and "server" in self.model_fields_set:
+            _dict['server'] = None
 
         return _dict
 

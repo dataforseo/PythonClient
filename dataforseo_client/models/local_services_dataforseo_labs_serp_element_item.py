@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.local_services_element import LocalServicesElement
@@ -28,14 +28,10 @@ class LocalServicesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
     """
     LocalServicesDataforseoLabsSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the item")
-    url: Optional[StrictStr] = Field(default=None, description="URL link")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    items: Optional[List[LocalServicesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    items: Optional[List[LocalServicesElement]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "domain", "items"]
 
     model_config = {

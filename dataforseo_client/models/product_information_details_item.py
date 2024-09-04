@@ -27,7 +27,6 @@ class ProductInformationDetailsItem(BaseProductInformationItem):
     """
     ProductInformationDetailsItem
     """ # noqa: E501
-    section_name: Optional[StrictStr] = Field(default=None, description="name of the section related to product information specified in the contents")
     body: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="contains information specified about the product within the section_name")
     __properties: ClassVar[List[str]] = ["type", "section_name", "body"]
 

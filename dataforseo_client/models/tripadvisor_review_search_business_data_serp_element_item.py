@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.business_data_user_profile_info import BusinessDataUserProfileInfo
@@ -32,8 +32,6 @@ class TripadvisorReviewSearchBusinessDataSerpElementItem(BaseBusinessDataSerpEle
     """
     TripadvisorReviewSearchBusinessDataSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed reviews absolute position among all reviews on the list")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the review in SERP can take the following values: right")
     url: Optional[StrictStr] = Field(default=None, description="URL of the review")
     rating: Optional[RatingInfo] = None

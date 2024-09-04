@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_link_item_info import BaseOnPageLinkItemInfo
 from typing import Optional, Set
@@ -27,18 +27,6 @@ class OnPageAlternateLinkElementItem(BaseOnPageLinkItemInfo):
     """
     OnPageAlternateLinkElementItem
     """ # noqa: E501
-    domain_from: Optional[StrictStr] = Field(default=None, description="referring domain the link was found on this domain")
-    domain_to: Optional[StrictStr] = Field(default=None, description="referenced domain the link is pointing to this domain")
-    page_from: Optional[StrictStr] = Field(default=None, description="referring page relative URL of the page on which the link was found")
-    page_to: Optional[StrictStr] = Field(default=None, description="referenced page relative URL of the page to which the link is pointing")
-    link_from: Optional[StrictStr] = Field(default=None, description="referring page absolute URL of the page on which the link was found")
-    link_to: Optional[StrictStr] = Field(default=None, description="referenced page absolute URL of the page to which the link is pointing")
-    dofollow: Optional[StrictBool] = Field(default=None, description="indicates whether the link is dofollow if the value is true, the link doesn’t have a rel=\"nofollow\" attribute")
-    page_from_scheme: Optional[StrictStr] = Field(default=None, description="url scheme of the referring page")
-    page_to_scheme: Optional[StrictStr] = Field(default=None, description="url scheme of the referenced page")
-    direction: Optional[StrictStr] = Field(default=None, description="direction of the link possible values: internal, external")
-    is_broken: Optional[StrictBool] = Field(default=None, description="link is broken indicates whether a link is directing to a broken page or resource")
-    is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description="indicates that the link may have a conflict with another link if true, at least one link pointing to link_to has a rel=\"nofollow\" attribute and at least one is dofollow")
     page_to_status_code: Optional[StrictInt] = Field(default=None, description="status code of the referenced page status code of the page to which the link is pointing")
     __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict", "page_to_status_code"]
 

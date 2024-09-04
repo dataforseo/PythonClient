@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.knowledge_graph_list_element import KnowledgeGraphListElement
@@ -29,11 +29,7 @@ class KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
     """
     KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    title: Optional[StrictStr] = Field(default=None, description="title of the link")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: ss:/webfacts:net_worth")
     link: Optional[LinkElement] = None
     items: Optional[List[KnowledgeGraphListElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")

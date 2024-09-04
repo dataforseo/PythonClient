@@ -30,8 +30,6 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
     """
     MapsSearchBusinessDataSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from the rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the elements")
     domain: Optional[StrictStr] = Field(default=None, description="domain of the business entity")
     title: Optional[StrictStr] = Field(default=None, description="directory title can take the following values: At this place, Directory")
     url: Optional[StrictStr] = Field(default=None, description="URL to view the menu")

@@ -5,9 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank on the product specification page absolute position among all the elements found on the product specification page | [optional] 
-**position** | **str** | alignment of the element on the product specification page can take the following values: right, left | [optional] 
 **product_id** | **str** | product_id received in a POST array ilearn more about the parameter in this help center guide | [optional] 
 **title** | **str** | title of the product | [optional] 
 **description** | **str** | description of the product | [optional] 

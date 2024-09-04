@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.amazon_serp_element import AmazonSerpElement
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
@@ -28,10 +28,6 @@ class DataAmazonEditorialRecommendationsSerpElementItem(BaseAmazonSerpElementIte
     """
     DataAmazonEditorialRecommendationsSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements found in Amazon SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP possible values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     items: Optional[List[AmazonSerpElement]] = Field(default=None, description="Amazon product items")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 

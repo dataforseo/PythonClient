@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **spell** | [**SpellInfo**](SpellInfo.md) |  | [optional] 
 **item_types** | **List[Optional[str]]** | types of search results in SERP contains types of search results (items) found in SERP. possible item: youtube_video_info | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[BaseYoutubeSerpElementItem]**](BaseYoutubeSerpElementItem.md) | elements of search results found in SERP | [optional] 
 
 ## Example
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,9 @@ class BaseBusinessDataSerpElementItem(BaseModel):
     BaseBusinessDataSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    __properties: ClassVar[List[str]] = ["type"]
+    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from the rank_group")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the elements")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute"]
 
     model_config = {
         "populate_by_name": True,
@@ -89,6 +91,16 @@ class BaseBusinessDataSerpElementItem(BaseModel):
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
+
+        # set to None if rank_group (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_group is None and "rank_group" in self.model_fields_set:
+            _dict['rank_group'] = None
+
+        # set to None if rank_absolute (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
+            _dict['rank_absolute'] = None
 
         return _dict
 

@@ -28,9 +28,6 @@ class BuyOnGoogleMerchantSerpElementItem(BaseMerchantSerpElementItem):
     """
     BuyOnGoogleMerchantSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements found in Google Shopping SERP")
-    position: Optional[StrictStr] = Field(default=None, description="alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description="product title")

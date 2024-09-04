@@ -33,10 +33,6 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     OrganicDataforseoLabsSerpElementItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="subdomain in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
@@ -63,7 +59,7 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     rank_changes: Optional[RankChanges] = None
     backlinks_info: Optional[BacklinksInfo] = None
     rank_info: Optional[RankInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "breadcrumb", "website_name", "is_image", "is_video", "is_featured_snippet", "is_malicious", "description", "pre_snippet", "extended_snippet", "amp_version", "rating", "highlighted", "links", "about_this_result", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "clickstream_etv", "rank_changes", "backlinks_info", "rank_info"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "domain", "title", "url", "breadcrumb", "website_name", "is_image", "is_video", "is_featured_snippet", "is_malicious", "description", "pre_snippet", "extended_snippet", "amp_version", "rating", "highlighted", "links", "about_this_result", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "clickstream_etv", "rank_changes", "backlinks_info", "rank_info"]
 
     model_config = {
         "populate_by_name": True,
@@ -128,11 +124,6 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
-        # set to None if se_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.se_type is None and "se_type" in self.model_fields_set:
-            _dict['se_type'] = None
-
         # set to None if rank_group (nullable) is None
         # and model_fields_set contains the field
         if self.rank_group is None and "rank_group" in self.model_fields_set:
@@ -152,6 +143,11 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # and model_fields_set contains the field
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
+
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
 
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
@@ -276,11 +272,11 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "se_type": obj.get("se_type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),

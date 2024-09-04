@@ -19,16 +19,14 @@ import json
 
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
 
-class YoutubeSubtitlesSerpElementItem(BaseSerpElementItem):
+class YoutubeSubtitlesSerpElementItem(BaseYoutubeSerpElementItem):
     """
     YoutubeSubtitlesSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP for the target domain absolute position among all the elements in SERP")
     text: Optional[StrictStr] = Field(default=None, description="text translated in subtitles")
     start_time: Optional[StrictInt] = Field(default=None, description="the second subtitled text starts")
     end_time: Optional[StrictInt] = Field(default=None, description="the second subtitled text ends")

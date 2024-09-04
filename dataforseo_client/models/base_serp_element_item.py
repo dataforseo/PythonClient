@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,11 @@ class BaseSerpElementItem(BaseModel):
     BaseSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    __properties: ClassVar[List[str]] = ["type"]
+    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath"]
 
     model_config = {
         "populate_by_name": True,
@@ -41,7 +45,7 @@ class BaseSerpElementItem(BaseModel):
 
     # discriminator mappings
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'ai_overview': 'AiOverviewSerpElementItem','answer_box': 'QAnswerBoxSerpElementItem','app': 'DataAppSerpElementItem','autocomplete': 'SerpAutocompleteSerpElementItem','carousel': 'CarouselSerpElementItem','commercial_units': 'CommercialUnitsSerpElementItem','compare_sites': 'CompareSitesSerpElementItem','courses': 'CoursesSerpElementItem','currency_box': 'CurrencyBoxSerpElementItem','dataset': 'DatasetSerpElementItem','dictionary': 'DictionarySerpElementItem','discussions_and_forums': 'DiscussionsAndForumsSerpElementItem','event_item': 'EventItemSerpElementItem','events': 'EventsSerpElementItem','explore_brands': 'ExploreBrandsSerpElementItem','featured_snippet': 'FeaturedSnippetSerpElementItem','find_results_on': 'FindResultsOnSerpElementItem','found_on_web': 'FoundOnWebSerpElementItem','google_flights': 'GoogleFlightsSerpElementItem','google_hotels': 'GoogleHotelsSerpElementItem','google_jobs_item': 'GoogleJobsItemSerpElementItem','google_posts': 'GooglePostsSerpElementItem','google_reviews': 'GoogleReviewsSerpElementItem','hotels_pack': 'HotelsPackSerpElementItem','images': 'ImagesSerpElementItem','images_search': 'ImagesSearchSerpElementItem','jobs': 'JobsSerpElementItem','knowledge_graph': 'KnowledgeGraphSerpElementItem','knowledge_graph_carousel_item': 'KnowledgeGraphCarouselItemSerpElementItem','knowledge_graph_description_item': 'KnowledgeGraphDescriptionItemSerpElementItem','knowledge_graph_expanded_item': 'KnowledgeGraphExpandedItemSerpElementItem','knowledge_graph_hotels_booking_item': 'KnowledgeGraphHotelsBookingItemSerpElementItem','knowledge_graph_images_item': 'KnowledgeGraphImagesItemSerpElementItem','knowledge_graph_list_item': 'KnowledgeGraphListItemSerpElementItem','knowledge_graph_part_item': 'KnowledgeGraphPartItemSerpElementItem','knowledge_graph_row_item': 'KnowledgeGraphRowItemSerpElementItem','knowledge_graph_shopping_item': 'KnowledgeGraphShoppingItemSerpElementItem','local_pack': 'LocalPackSerpElementItem','local_services': 'LocalServicesSerpElementItem','map': 'MapSerpElementItem','maps_paid_item': 'MapsPaidItemSerpElementItem','maps_search': 'MapsSearchSerpElementItem','math_solver': 'MathSolverSerpElementItem','mention_carousel': 'MentionCarouselSerpElementItem','multi_carousel': 'MultiCarouselSerpElementItem','news_search': 'NewsSearchSerpElementItem','organic': 'OrganicSerpElementItem','paid': 'PaidSerpElementItem','people_also_ask': 'PeopleAlsoAskSerpElementItem','people_also_search': 'PeopleAlsoSearchSerpElementItem','perspectives': 'PerspectivesSerpElementItem','podcasts': 'PodcastsSerpElementItem','popular_products': 'PopularProductsSerpElementItem','product_considerations': 'ProductConsiderationsSerpElementItem','questions_and_answers': 'QuestionsAndAnswersSerpElementItem','recipes': 'RecipesSerpElementItem','refine_products': 'RefineProductsSerpElementItem','related_searches': 'RelatedSearchesSerpElementItem','scholarly_articles': 'ScholarlyArticlesSerpElementItem','shopping': 'ShoppingSerpElementItem','short_videos': 'ShortVideosSerpElementItem','stocks_box': 'StocksBoxSerpElementItem','top_sights': 'TopSightsSerpElementItem','top_stories': 'TopStoriesSerpElementItem','twitter': 'TwitterSerpElementItem','video': 'VideoSerpElementItem','visual_stories': 'VisualStoriesSerpElementItem','youtube_comment': 'YoutubeCommentSerpElementItem','youtube_subtitles': 'YoutubeSubtitlesSerpElementItem','youtube_video_info': 'YoutubeVideoInfoSerpElementItem'
+        'ai_overview': 'AiOverviewSerpElementItem','answer_box': 'QAnswerBoxSerpElementItem','app': 'DataAppSerpElementItem','carousel': 'CarouselSerpElementItem','commercial_units': 'CommercialUnitsSerpElementItem','compare_sites': 'CompareSitesSerpElementItem','courses': 'CoursesSerpElementItem','currency_box': 'CurrencyBoxSerpElementItem','dictionary': 'DictionarySerpElementItem','discussions_and_forums': 'DiscussionsAndForumsSerpElementItem','event_item': 'EventItemSerpElementItem','events': 'EventsSerpElementItem','explore_brands': 'ExploreBrandsSerpElementItem','featured_snippet': 'FeaturedSnippetSerpElementItem','find_results_on': 'FindResultsOnSerpElementItem','found_on_web': 'FoundOnWebSerpElementItem','google_flights': 'GoogleFlightsSerpElementItem','google_hotels': 'GoogleHotelsSerpElementItem','google_posts': 'GooglePostsSerpElementItem','google_reviews': 'GoogleReviewsSerpElementItem','hotels_pack': 'HotelsPackSerpElementItem','images': 'ImagesSerpElementItem','jobs': 'JobsSerpElementItem','knowledge_graph': 'KnowledgeGraphSerpElementItem','knowledge_graph_carousel_item': 'KnowledgeGraphCarouselItemSerpElementItem','knowledge_graph_description_item': 'KnowledgeGraphDescriptionItemSerpElementItem','knowledge_graph_expanded_item': 'KnowledgeGraphExpandedItemSerpElementItem','knowledge_graph_hotels_booking_item': 'KnowledgeGraphHotelsBookingItemSerpElementItem','knowledge_graph_images_item': 'KnowledgeGraphImagesItemSerpElementItem','knowledge_graph_list_item': 'KnowledgeGraphListItemSerpElementItem','knowledge_graph_part_item': 'KnowledgeGraphPartItemSerpElementItem','knowledge_graph_row_item': 'KnowledgeGraphRowItemSerpElementItem','knowledge_graph_shopping_item': 'KnowledgeGraphShoppingItemSerpElementItem','local_pack': 'LocalPackSerpElementItem','local_services': 'LocalServicesSerpElementItem','map': 'MapSerpElementItem','math_solver': 'MathSolverSerpElementItem','mention_carousel': 'MentionCarouselSerpElementItem','multi_carousel': 'MultiCarouselSerpElementItem','organic': 'OrganicSerpElementItem','paid': 'PaidSerpElementItem','people_also_ask': 'PeopleAlsoAskSerpElementItem','people_also_search': 'PeopleAlsoSearchSerpElementItem','perspectives': 'PerspectivesSerpElementItem','podcasts': 'PodcastsSerpElementItem','popular_products': 'PopularProductsSerpElementItem','product_considerations': 'ProductConsiderationsSerpElementItem','questions_and_answers': 'QuestionsAndAnswersSerpElementItem','recipes': 'RecipesSerpElementItem','refine_products': 'RefineProductsSerpElementItem','related_searches': 'RelatedSearchesSerpElementItem','scholarly_articles': 'ScholarlyArticlesSerpElementItem','shopping': 'ShoppingSerpElementItem','short_videos': 'ShortVideosSerpElementItem','stocks_box': 'StocksBoxSerpElementItem','top_sights': 'TopSightsSerpElementItem','top_stories': 'TopStoriesSerpElementItem','twitter': 'TwitterSerpElementItem','video': 'VideoSerpElementItem','visual_stories': 'VisualStoriesSerpElementItem'
     }
 
     @classmethod
@@ -63,7 +67,7 @@ class BaseSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
         """Create an instance of BaseSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -90,10 +94,30 @@ class BaseSerpElementItem(BaseModel):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
+        # set to None if rank_group (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_group is None and "rank_group" in self.model_fields_set:
+            _dict['rank_group'] = None
+
+        # set to None if rank_absolute (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
+            _dict['rank_absolute'] = None
+
+        # set to None if position (nullable) is None
+        # and model_fields_set contains the field
+        if self.position is None and "position" in self.model_fields_set:
+            _dict['position'] = None
+
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
+
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
         """Create an instance of BaseSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -112,7 +136,6 @@ from dataforseo_client.models.compare_sites_serp_element_item import CompareSite
 from dataforseo_client.models.courses_serp_element_item import CoursesSerpElementItem
 from dataforseo_client.models.currency_box_serp_element_item import CurrencyBoxSerpElementItem
 from dataforseo_client.models.data_app_serp_element_item import DataAppSerpElementItem
-from dataforseo_client.models.dataset_serp_element_item import DatasetSerpElementItem
 from dataforseo_client.models.dictionary_serp_element_item import DictionarySerpElementItem
 from dataforseo_client.models.discussions_and_forums_serp_element_item import DiscussionsAndForumsSerpElementItem
 from dataforseo_client.models.event_item_serp_element_item import EventItemSerpElementItem
@@ -123,11 +146,9 @@ from dataforseo_client.models.find_results_on_serp_element_item import FindResul
 from dataforseo_client.models.found_on_web_serp_element_item import FoundOnWebSerpElementItem
 from dataforseo_client.models.google_flights_serp_element_item import GoogleFlightsSerpElementItem
 from dataforseo_client.models.google_hotels_serp_element_item import GoogleHotelsSerpElementItem
-from dataforseo_client.models.google_jobs_item_serp_element_item import GoogleJobsItemSerpElementItem
 from dataforseo_client.models.google_posts_serp_element_item import GooglePostsSerpElementItem
 from dataforseo_client.models.google_reviews_serp_element_item import GoogleReviewsSerpElementItem
 from dataforseo_client.models.hotels_pack_serp_element_item import HotelsPackSerpElementItem
-from dataforseo_client.models.images_search_serp_element_item import ImagesSearchSerpElementItem
 from dataforseo_client.models.images_serp_element_item import ImagesSerpElementItem
 from dataforseo_client.models.jobs_serp_element_item import JobsSerpElementItem
 from dataforseo_client.models.knowledge_graph_carousel_item_serp_element_item import KnowledgeGraphCarouselItemSerpElementItem
@@ -143,12 +164,9 @@ from dataforseo_client.models.knowledge_graph_shopping_item_serp_element_item im
 from dataforseo_client.models.local_pack_serp_element_item import LocalPackSerpElementItem
 from dataforseo_client.models.local_services_serp_element_item import LocalServicesSerpElementItem
 from dataforseo_client.models.map_serp_element_item import MapSerpElementItem
-from dataforseo_client.models.maps_paid_item_serp_element_item import MapsPaidItemSerpElementItem
-from dataforseo_client.models.maps_search_serp_element_item import MapsSearchSerpElementItem
 from dataforseo_client.models.math_solver_serp_element_item import MathSolverSerpElementItem
 from dataforseo_client.models.mention_carousel_serp_element_item import MentionCarouselSerpElementItem
 from dataforseo_client.models.multi_carousel_serp_element_item import MultiCarouselSerpElementItem
-from dataforseo_client.models.news_search_serp_element_item import NewsSearchSerpElementItem
 from dataforseo_client.models.organic_serp_element_item import OrganicSerpElementItem
 from dataforseo_client.models.paid_serp_element_item import PaidSerpElementItem
 from dataforseo_client.models.people_also_ask_serp_element_item import PeopleAlsoAskSerpElementItem
@@ -163,7 +181,6 @@ from dataforseo_client.models.recipes_serp_element_item import RecipesSerpElemen
 from dataforseo_client.models.refine_products_serp_element_item import RefineProductsSerpElementItem
 from dataforseo_client.models.related_searches_serp_element_item import RelatedSearchesSerpElementItem
 from dataforseo_client.models.scholarly_articles_serp_element_item import ScholarlyArticlesSerpElementItem
-from dataforseo_client.models.serp_autocomplete_serp_element_item import SerpAutocompleteSerpElementItem
 from dataforseo_client.models.shopping_serp_element_item import ShoppingSerpElementItem
 from dataforseo_client.models.short_videos_serp_element_item import ShortVideosSerpElementItem
 from dataforseo_client.models.stocks_box_serp_element_item import StocksBoxSerpElementItem
@@ -172,9 +189,6 @@ from dataforseo_client.models.top_stories_serp_element_item import TopStoriesSer
 from dataforseo_client.models.twitter_serp_element_item import TwitterSerpElementItem
 from dataforseo_client.models.video_serp_element_item import VideoSerpElementItem
 from dataforseo_client.models.visual_stories_serp_element_item import VisualStoriesSerpElementItem
-from dataforseo_client.models.youtube_comment_serp_element_item import YoutubeCommentSerpElementItem
-from dataforseo_client.models.youtube_subtitles_serp_element_item import YoutubeSubtitlesSerpElementItem
-from dataforseo_client.models.youtube_video_info_serp_element_item import YoutubeVideoInfoSerpElementItem
 # TODO: Rewrite to not use raise_errors
 BaseSerpElementItem.model_rebuild(raise_errors=False)
 

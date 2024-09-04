@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **subtitles_count** | **int** | number of subtitles in the video | [optional] 
 **title** | **str** | title of the video | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[BaseYoutubeSerpElementItem]**](BaseYoutubeSerpElementItem.md) | elements of search results found in SERP | [optional] 
 
 ## Example
 

@@ -17,10 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
-from dataforseo_client.models.people_also_ask_element import PeopleAlsoAskElement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,20 +28,16 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
     KnowledgeGraphDataforseoLabsSerpElementItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     sub_title: Optional[StrictStr] = Field(default=None, description="subtitle of the item")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     card_id: Optional[StrictStr] = Field(default=None, description="card id")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image from knowledge graph")
     logo_url: Optional[StrictStr] = Field(default=None, description="URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
-    items: Optional[List[PeopleAlsoAskElement]] = Field(default=None, description="elements of search results found in SERP")
-    __properties: ClassVar[List[str]] = ["type", "se_type", "rank_group", "rank_absolute", "position", "xpath", "title", "sub_title", "description", "card_id", "url", "image_url", "logo_url", "cid", "items"]
+    items: Optional[List[BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "sub_title", "description", "card_id", "url", "image_url", "logo_url", "cid", "items"]
 
     model_config = {
         "populate_by_name": True,
@@ -95,11 +90,6 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
-        # set to None if se_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.se_type is None and "se_type" in self.model_fields_set:
-            _dict['se_type'] = None
-
         # set to None if rank_group (nullable) is None
         # and model_fields_set contains the field
         if self.rank_group is None and "rank_group" in self.model_fields_set:
@@ -119,6 +109,11 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
         # and model_fields_set contains the field
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
+
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
 
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
@@ -178,11 +173,11 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "se_type": obj.get("se_type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "sub_title": obj.get("sub_title"),
             "description": obj.get("description"),
@@ -191,7 +186,7 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
             "image_url": obj.get("image_url"),
             "logo_url": obj.get("logo_url"),
             "cid": obj.get("cid"),
-            "items": [PeopleAlsoAskElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [BaseDataforseoLabsSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

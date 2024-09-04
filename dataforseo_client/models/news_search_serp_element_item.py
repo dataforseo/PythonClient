@@ -19,12 +19,12 @@ import json
 
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_google_news_serp_element_item import BaseGoogleNewsSerpElementItem
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
 
-class NewsSearchSerpElementItem(BaseSerpElementItem):
+class NewsSearchSerpElementItem(BaseGoogleNewsSerpElementItem):
     """
     NewsSearchSerpElementItem
     """ # noqa: E501
@@ -32,14 +32,12 @@ class NewsSearchSerpElementItem(BaseSerpElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain name of the result in SERP")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description="URL of the result in SERP")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     snippet: Optional[StrictStr] = Field(default=None, description="snippet of the result in SERP")
     time_published: Optional[StrictStr] = Field(default=None, description="indicates the time the result was published")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the news was published in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: 2019-11-15 12:57:46 +00:00")
-    rectangle: Optional[Rectangle] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "domain", "title", "url", "image_url", "snippet", "time_published", "timestamp", "rectangle"]
+    __properties: ClassVar[List[str]] = ["type", "title", "rectangle", "rank_group", "rank_absolute", "xpath", "domain", "url", "image_url", "snippet", "time_published", "timestamp"]
 
     model_config = {
         "populate_by_name": True,
@@ -88,6 +86,11 @@ class NewsSearchSerpElementItem(BaseSerpElementItem):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
+        # set to None if title (nullable) is None
+        # and model_fields_set contains the field
+        if self.title is None and "title" in self.model_fields_set:
+            _dict['title'] = None
+
         # set to None if rank_group (nullable) is None
         # and model_fields_set contains the field
         if self.rank_group is None and "rank_group" in self.model_fields_set:
@@ -107,11 +110,6 @@ class NewsSearchSerpElementItem(BaseSerpElementItem):
         # and model_fields_set contains the field
         if self.domain is None and "domain" in self.model_fields_set:
             _dict['domain'] = None
-
-        # set to None if title (nullable) is None
-        # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
 
         # set to None if url (nullable) is None
         # and model_fields_set contains the field
@@ -151,17 +149,17 @@ class NewsSearchSerpElementItem(BaseSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
+            "title": obj.get("title"),
+            "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "xpath": obj.get("xpath"),
             "domain": obj.get("domain"),
-            "title": obj.get("title"),
             "url": obj.get("url"),
             "image_url": obj.get("image_url"),
             "snippet": obj.get("snippet"),
             "time_published": obj.get("time_published"),
-            "timestamp": obj.get("timestamp"),
-            "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
+            "timestamp": obj.get("timestamp")
         })
         return _obj
 

@@ -6,6 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
+**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
+**rank_absolute** | **int** | absolute rank in Amazon SERP absolute position among all the elements in SERP | [optional] 
+**position** | **str** | the alignment of the element in Amazon SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 
 ## Example
 

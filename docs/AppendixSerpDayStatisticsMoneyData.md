@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **tasks_fixed** | **float** |  | [optional] 
 **jobs** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
 **screenshot** | **float** |  | [optional] 
-**ai_summary** | **float** |  | [optional] 
 **refund_money** | **float** |  | [optional] 
+**ai_summary** | **float** |  | [optional] 
 
 ## Example
 

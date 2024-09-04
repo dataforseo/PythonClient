@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from the rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank among all the elements | [optional] 
 **domain** | **str** | domain of the business entity | [optional] 
 **title** | **str** | directory title can take the following values: At this place, Directory | [optional] 
 **url** | **str** | URL to view the menu | [optional] 

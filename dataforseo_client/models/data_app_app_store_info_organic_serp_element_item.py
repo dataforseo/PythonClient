@@ -30,16 +30,11 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
     """
     DataAppAppStoreInfoOrganicSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed apps absolute position among all apps on the list")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left")
     app_id: Optional[StrictStr] = Field(default=None, description="ID of the app")
-    title: Optional[StrictStr] = Field(default=None, description="title of the app")
     url: Optional[StrictStr] = Field(default=None, description="URL to the app page on App Store")
     icon: Optional[StrictStr] = Field(default=None, description="URL to the app icon")
     description: Optional[StrictStr] = Field(default=None, description="description of the app")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews of the app")
-    rating: Optional[RatingInfo] = None
     price: Optional[Price] = None
     is_free: Optional[StrictBool] = Field(default=None, description="indicates whether the app is free")
     main_category: Optional[StrictStr] = Field(default=None, description="main category/genre of the app")
@@ -58,7 +53,7 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
     images: Optional[List[Optional[StrictStr]]] = Field(default=None, description="app images contains URLs to the images used on the app page on App Store")
     similar_apps: Optional[List[AppsInfo]] = Field(default=None, description="similar apps displays apps similar to the app in a POST request")
     more_apps_by_developer: Optional[List[AppsInfo]] = Field(default=None, description="similar apps information about apps built by the same developer")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "app_id", "title", "url", "icon", "description", "reviews_count", "rating", "price", "is_free", "main_category", "categories", "languages", "advisories", "developer", "developer_id", "developer_url", "version", "minimum_os_version", "size", "released_date", "last_update_date", "update_notes", "images", "similar_apps", "more_apps_by_developer"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "rating", "app_id", "url", "icon", "description", "reviews_count", "price", "is_free", "main_category", "categories", "languages", "advisories", "developer", "developer_id", "developer_url", "version", "minimum_os_version", "size", "released_date", "last_update_date", "update_notes", "images", "similar_apps", "more_apps_by_developer"]
 
     model_config = {
         "populate_by_name": True,
@@ -139,15 +134,15 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
 
-        # set to None if app_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.app_id is None and "app_id" in self.model_fields_set:
-            _dict['app_id'] = None
-
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
             _dict['title'] = None
+
+        # set to None if app_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.app_id is None and "app_id" in self.model_fields_set:
+            _dict['app_id'] = None
 
         # set to None if url (nullable) is None
         # and model_fields_set contains the field
@@ -270,13 +265,13 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
-            "app_id": obj.get("app_id"),
             "title": obj.get("title"),
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "app_id": obj.get("app_id"),
             "url": obj.get("url"),
             "icon": obj.get("icon"),
             "description": obj.get("description"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "is_free": obj.get("is_free"),
             "main_category": obj.get("main_category"),

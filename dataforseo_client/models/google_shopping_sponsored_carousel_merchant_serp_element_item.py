@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from dataforseo_client.models.google_shopping_sponsored_carousel_element import GoogleShoppingSponsoredCarouselElement
@@ -28,9 +28,6 @@ class GoogleShoppingSponsoredCarouselMerchantSerpElementItem(BaseMerchantSerpEle
     """
     GoogleShoppingSponsoredCarouselMerchantSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements found in Google Shopping SERP")
-    position: Optional[StrictStr] = Field(default=None, description="alignment of the element in Google Shopping SERP possible values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="product title")
     items: Optional[List[GoogleShoppingSponsoredCarouselElement]] = Field(default=None, description="items in SERP")

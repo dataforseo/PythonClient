@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_google_images_serp_element_item import BaseGoogleImagesSerpElementItem
 from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,7 +39,7 @@ class SerpGoogleImagesTaskGetAdvancedResultInfo(BaseModel):
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item types: carousel, images_search, related_searches")
     se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="contains keywords and images related to the specified search term")
+    items: Optional[List[BaseGoogleImagesSerpElementItem]] = Field(default=None, description="contains keywords and images related to the specified search term")
     __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items"]
 
     model_config = {
@@ -169,7 +169,7 @@ class SerpGoogleImagesTaskGetAdvancedResultInfo(BaseModel):
             "item_types": obj.get("item_types"),
             "se_results_count": obj.get("se_results_count"),
             "items_count": obj.get("items_count"),
-            "items": [BaseSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [BaseGoogleImagesSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

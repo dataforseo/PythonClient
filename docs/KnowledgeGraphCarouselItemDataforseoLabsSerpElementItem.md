@@ -5,11 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
-**title** | **str** | title of the result in SERP | [optional] 
+**title** | **str** | title of the link | [optional] 
 **data_attrid** | **str** | google defined data attribute ID example: ss:/webfacts:net_worth | [optional] 
 **link** | [**LinkElement**](LinkElement.md) |  | [optional] 
 **items** | [**List[KnowledgeGraphListElement]**](KnowledgeGraphListElement.md) | additional items present in the element if there are none, equals null | [optional] 

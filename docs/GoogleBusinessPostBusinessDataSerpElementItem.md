@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank among all the listed updates absolute position among all present elements | [optional] 
 **position** | **str** | the alignment of the element in SERP can take the following values: right | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
 **author** | **str** | author of the post | [optional] 

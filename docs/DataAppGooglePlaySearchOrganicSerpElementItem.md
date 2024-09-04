@@ -5,15 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
 **app_id** | **str** | id of the app | [optional] 
-**title** | **str** | title of the app | [optional] 
 **url** | **str** | URL to the app page on Google Play | [optional] 
 **icon** | **str** | URL to the app icon | [optional] 
 **reviews_count** | **int** | the total number of reviews of the app | [optional] 
-**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **is_free** | **bool** | indicates whether the app is free | [optional] 
 **price** | [**Price**](Price.md) |  | [optional] 
 **developer** | **str** | name of the app developer | [optional] 

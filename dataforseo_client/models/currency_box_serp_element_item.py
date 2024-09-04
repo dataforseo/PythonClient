@@ -30,10 +30,6 @@ class CurrencyBoxSerpElementItem(BaseSerpElementItem):
     """
     CurrencyBoxSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values; positions of elements with different type values are omitted from rank_group; always equals 0 for desktop")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the value of the rating")
     converted_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="value converted to a requested currency indicates the exact value based on Google Fincance data at the time when our API pulled the results note that exchange rates displayed in the currency_box element may be delayed according to the Google Finance disclaimer")
     currency: Optional[StrictStr] = Field(default=None, description="currency of the listed price ISO code of the currency applied to the price")

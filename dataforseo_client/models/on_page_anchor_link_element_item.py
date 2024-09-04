@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_link_item_info import BaseOnPageLinkItemInfo
 from typing import Optional, Set
@@ -27,22 +27,10 @@ class OnPageAnchorLinkElementItem(BaseOnPageLinkItemInfo):
     """
     OnPageAnchorLinkElementItem
     """ # noqa: E501
-    domain_from: Optional[StrictStr] = Field(default=None, description="referring domain the link was found on this domain")
-    domain_to: Optional[StrictStr] = Field(default=None, description="referenced domain the link is pointing to this domain")
-    page_from: Optional[StrictStr] = Field(default=None, description="referring page relative URL of the page on which the link was found")
-    page_to: Optional[StrictStr] = Field(default=None, description="referenced page relative URL of the page to which the link is pointing")
-    link_from: Optional[StrictStr] = Field(default=None, description="referring page absolute URL of the page on which the link was found")
-    link_to: Optional[StrictStr] = Field(default=None, description="referenced page absolute URL of the page to which the link is pointing")
     link_attribute: Optional[List[Optional[StrictStr]]] = Field(default=None, description="link attribute added to external link indicates link attributes added to the link_to on the page_from example: [\"ugc\",\"noopener\"]")
-    dofollow: Optional[StrictBool] = Field(default=None, description="indicates whether the link is dofollow if the value is true, the link doesn’t have a rel=\"nofollow\" attribute")
-    page_from_scheme: Optional[StrictStr] = Field(default=None, description="url scheme of the referring page")
-    page_to_scheme: Optional[StrictStr] = Field(default=None, description="url scheme of the referenced page")
-    direction: Optional[StrictStr] = Field(default=None, description="direction of the link possible values: internal, external")
-    is_broken: Optional[StrictBool] = Field(default=None, description="link is broken indicates whether a link is directing to a broken page or resource")
     text: Optional[StrictStr] = Field(default=None, description="anchor text")
-    is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description="indicates that the link may have a conflict with another link if true, at least one link pointing to link_to has a rel=\"nofollow\" attribute and at least one is dofollow")
     page_to_status_code: Optional[StrictInt] = Field(default=None, description="status code of the referenced page status code of the page to which the link is pointing")
-    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "link_attribute", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "text", "is_link_relation_conflict", "page_to_status_code"]
+    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict", "link_attribute", "text", "page_to_status_code"]
 
     model_config = {
         "populate_by_name": True,
@@ -118,11 +106,6 @@ class OnPageAnchorLinkElementItem(BaseOnPageLinkItemInfo):
         if self.link_to is None and "link_to" in self.model_fields_set:
             _dict['link_to'] = None
 
-        # set to None if link_attribute (nullable) is None
-        # and model_fields_set contains the field
-        if self.link_attribute is None and "link_attribute" in self.model_fields_set:
-            _dict['link_attribute'] = None
-
         # set to None if dofollow (nullable) is None
         # and model_fields_set contains the field
         if self.dofollow is None and "dofollow" in self.model_fields_set:
@@ -148,15 +131,20 @@ class OnPageAnchorLinkElementItem(BaseOnPageLinkItemInfo):
         if self.is_broken is None and "is_broken" in self.model_fields_set:
             _dict['is_broken'] = None
 
-        # set to None if text (nullable) is None
-        # and model_fields_set contains the field
-        if self.text is None and "text" in self.model_fields_set:
-            _dict['text'] = None
-
         # set to None if is_link_relation_conflict (nullable) is None
         # and model_fields_set contains the field
         if self.is_link_relation_conflict is None and "is_link_relation_conflict" in self.model_fields_set:
             _dict['is_link_relation_conflict'] = None
+
+        # set to None if link_attribute (nullable) is None
+        # and model_fields_set contains the field
+        if self.link_attribute is None and "link_attribute" in self.model_fields_set:
+            _dict['link_attribute'] = None
+
+        # set to None if text (nullable) is None
+        # and model_fields_set contains the field
+        if self.text is None and "text" in self.model_fields_set:
+            _dict['text'] = None
 
         # set to None if page_to_status_code (nullable) is None
         # and model_fields_set contains the field
@@ -182,14 +170,14 @@ class OnPageAnchorLinkElementItem(BaseOnPageLinkItemInfo):
             "page_to": obj.get("page_to"),
             "link_from": obj.get("link_from"),
             "link_to": obj.get("link_to"),
-            "link_attribute": obj.get("link_attribute"),
             "dofollow": obj.get("dofollow"),
             "page_from_scheme": obj.get("page_from_scheme"),
             "page_to_scheme": obj.get("page_to_scheme"),
             "direction": obj.get("direction"),
             "is_broken": obj.get("is_broken"),
-            "text": obj.get("text"),
             "is_link_relation_conflict": obj.get("is_link_relation_conflict"),
+            "link_attribute": obj.get("link_attribute"),
+            "text": obj.get("text"),
             "page_to_status_code": obj.get("page_to_status_code")
         })
         return _obj

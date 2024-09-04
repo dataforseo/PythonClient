@@ -35,8 +35,6 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     """
     GoogleBusinessInfoBusinessDataSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the elements")
     position: Optional[StrictStr] = Field(default=None, description="the alignment in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the element in SERP the name of the business entity for which the results are collected")
     description: Optional[StrictStr] = Field(default=None, description="description of the element in SERP the description of the business entity for which the results are collected")

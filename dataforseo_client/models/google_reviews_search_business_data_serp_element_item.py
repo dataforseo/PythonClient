@@ -30,8 +30,6 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
     """
     GoogleReviewsSearchBusinessDataSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed reviews absolute position among all reviews on the list")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the review in SERP can take the following values: right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the review")
     review_text: Optional[StrictStr] = Field(default=None, description="the content of the review")

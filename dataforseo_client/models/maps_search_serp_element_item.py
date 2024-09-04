@@ -20,28 +20,21 @@ import json
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
-from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.base_google_maps_serp_element_item import BaseGoogleMapsSerpElementItem
 from dataforseo_client.models.local_justification_info import LocalJustificationInfo
 from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.work_hours import WorkHours
 from typing import Optional, Set
 from typing_extensions import Self
 
-class MapsSearchSerpElementItem(BaseSerpElementItem):
+class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
     """
     MapsSearchSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="domain in the SERP element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     contact_url: Optional[StrictStr] = Field(default=None, description="URL of the preferred contact page")
     contributor_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s or entity’s Local Guides profile, if available")
-    rating: Optional[RatingInfo] = None
     hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
-    rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     snippet: Optional[StrictStr] = Field(default=None, description="element snippet contains the address and other information about the local establishment featured in the element")
     address: Optional[StrictStr] = Field(default=None, description="address line address of the local establishment featured in the element")
     address_info: Optional[AddressInfo] = None
@@ -60,7 +53,7 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
     is_claimed: Optional[StrictBool] = Field(default=None, description="indicates whether ownership of this local establishment is claimed")
     local_justifications: Optional[List[LocalJustificationInfo]] = Field(default=None, description="Google local justifications snippets of text that “justify” why the business is showing up for search query")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="indicates whether this local establishment is a directory")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "contact_url", "contributor_url", "rating", "hotel_rating", "price_level", "rating_distribution", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution", "contact_url", "contributor_url", "hotel_rating", "price_level", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
 
     model_config = {
         "populate_by_name": True,
@@ -147,6 +140,11 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
         if self.url is None and "url" in self.model_fields_set:
             _dict['url'] = None
 
+        # set to None if rating_distribution (nullable) is None
+        # and model_fields_set contains the field
+        if self.rating_distribution is None and "rating_distribution" in self.model_fields_set:
+            _dict['rating_distribution'] = None
+
         # set to None if contact_url (nullable) is None
         # and model_fields_set contains the field
         if self.contact_url is None and "contact_url" in self.model_fields_set:
@@ -166,11 +164,6 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
         # and model_fields_set contains the field
         if self.price_level is None and "price_level" in self.model_fields_set:
             _dict['price_level'] = None
-
-        # set to None if rating_distribution (nullable) is None
-        # and model_fields_set contains the field
-        if self.rating_distribution is None and "rating_distribution" in self.model_fields_set:
-            _dict['rating_distribution'] = None
 
         # set to None if snippet (nullable) is None
         # and model_fields_set contains the field
@@ -270,12 +263,12 @@ class MapsSearchSerpElementItem(BaseSerpElementItem):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating_distribution": obj.get("rating_distribution"),
             "contact_url": obj.get("contact_url"),
             "contributor_url": obj.get("contributor_url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "hotel_rating": obj.get("hotel_rating"),
             "price_level": obj.get("price_level"),
-            "rating_distribution": obj.get("rating_distribution"),
             "snippet": obj.get("snippet"),
             "address": obj.get("address"),
             "address_info": AddressInfo.from_dict(obj["address_info"]) if obj.get("address_info") is not None else None,

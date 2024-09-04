@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.cache_control import CacheControl
@@ -33,23 +33,9 @@ class OnPageScriptResourceElementItem(BaseOnPageResourceItemInfo):
     OnPageScriptResourceElementItem
     """ # noqa: E501
     meta: Optional[ResourceMetaInfo] = None
-    status_code: Optional[StrictInt] = Field(default=None, description="status code of the page where a given resource is located")
-    location: Optional[StrictStr] = Field(default=None, description="location header indicates the URL to redirect a page to")
-    url: Optional[StrictStr] = Field(default=None, description="resource URL")
-    size: Optional[StrictInt] = Field(default=None, description="resource size indicates the size of a given resource measured in bytes")
-    encoded_size: Optional[StrictInt] = Field(default=None, description="resource size after encoding indicates the size of the encoded resource measured in bytes")
-    total_transfer_size: Optional[StrictInt] = Field(default=None, description="compressed resource size indicates the compressed size of a given resource in bytes")
-    fetch_time: Optional[StrictStr] = Field(default=None, description="date and time when a resource was fetched in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2021-02-17 13:54:15 +00:00")
     fetch_timing: Optional[FetchTiming] = None
-    cache_control: Optional[CacheControl] = None
-    checks: Optional[Dict[str, Optional[StrictBool]]] = Field(default=None, description="resource check-ups contents of the array depend on the resource_type")
-    resource_errors: Optional[OnPageResourceIssueInfo] = None
-    content_encoding: Optional[StrictStr] = Field(default=None, description="type of encoding")
-    media_type: Optional[StrictStr] = Field(default=None, description="types of media used to display a resource")
     accept_type: Optional[StrictStr] = Field(default=None, description="indicates the expected type of resource for example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource possible values: any, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font")
-    server: Optional[StrictStr] = Field(default=None, description="server version")
-    last_modified: Optional[LastModified] = None
-    __properties: ClassVar[List[str]] = ["resource_type", "meta", "status_code", "location", "url", "size", "encoded_size", "total_transfer_size", "fetch_time", "fetch_timing", "cache_control", "checks", "resource_errors", "content_encoding", "media_type", "accept_type", "server", "last_modified"]
+    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "fetch_timing", "accept_type"]
 
     model_config = {
         "populate_by_name": True,
@@ -90,21 +76,21 @@ class OnPageScriptResourceElementItem(BaseOnPageResourceItemInfo):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of resource_errors
+        if self.resource_errors:
+            _dict['resource_errors'] = self.resource_errors.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of cache_control
+        if self.cache_control:
+            _dict['cache_control'] = self.cache_control.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of last_modified
+        if self.last_modified:
+            _dict['last_modified'] = self.last_modified.to_dict()
         # override the default output from pydantic by calling `to_dict()` of meta
         if self.meta:
             _dict['meta'] = self.meta.to_dict()
         # override the default output from pydantic by calling `to_dict()` of fetch_timing
         if self.fetch_timing:
             _dict['fetch_timing'] = self.fetch_timing.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of cache_control
-        if self.cache_control:
-            _dict['cache_control'] = self.cache_control.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of resource_errors
-        if self.resource_errors:
-            _dict['resource_errors'] = self.resource_errors.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of last_modified
-        if self.last_modified:
-            _dict['last_modified'] = self.last_modified.to_dict()
         # set to None if resource_type (nullable) is None
         # and model_fields_set contains the field
         if self.resource_type is None and "resource_type" in self.model_fields_set:
@@ -160,15 +146,15 @@ class OnPageScriptResourceElementItem(BaseOnPageResourceItemInfo):
         if self.media_type is None and "media_type" in self.model_fields_set:
             _dict['media_type'] = None
 
-        # set to None if accept_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.accept_type is None and "accept_type" in self.model_fields_set:
-            _dict['accept_type'] = None
-
         # set to None if server (nullable) is None
         # and model_fields_set contains the field
         if self.server is None and "server" in self.model_fields_set:
             _dict['server'] = None
+
+        # set to None if accept_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.accept_type is None and "accept_type" in self.model_fields_set:
+            _dict['accept_type'] = None
 
         return _dict
 
@@ -183,23 +169,23 @@ class OnPageScriptResourceElementItem(BaseOnPageResourceItemInfo):
 
         _obj = cls.model_validate({
             "resource_type": obj.get("resource_type"),
-            "meta": ResourceMetaInfo.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
             "status_code": obj.get("status_code"),
             "location": obj.get("location"),
             "url": obj.get("url"),
+            "resource_errors": OnPageResourceIssueInfo.from_dict(obj["resource_errors"]) if obj.get("resource_errors") is not None else None,
             "size": obj.get("size"),
             "encoded_size": obj.get("encoded_size"),
             "total_transfer_size": obj.get("total_transfer_size"),
             "fetch_time": obj.get("fetch_time"),
-            "fetch_timing": FetchTiming.from_dict(obj["fetch_timing"]) if obj.get("fetch_timing") is not None else None,
             "cache_control": CacheControl.from_dict(obj["cache_control"]) if obj.get("cache_control") is not None else None,
             "checks": obj.get("checks"),
-            "resource_errors": OnPageResourceIssueInfo.from_dict(obj["resource_errors"]) if obj.get("resource_errors") is not None else None,
             "content_encoding": obj.get("content_encoding"),
             "media_type": obj.get("media_type"),
-            "accept_type": obj.get("accept_type"),
             "server": obj.get("server"),
-            "last_modified": LastModified.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None
+            "last_modified": LastModified.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None,
+            "meta": ResourceMetaInfo.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
+            "fetch_timing": FetchTiming.from_dict(obj["fetch_timing"]) if obj.get("fetch_timing") is not None else None,
+            "accept_type": obj.get("accept_type")
         })
         return _obj
 

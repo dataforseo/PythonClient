@@ -5,23 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rank_group** | **int** | position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
-**rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements found in Amazon SERP | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
+**se_type** | **str** | search engine type | [optional] 
 **domain** | **str** | Amazon domain | [optional] 
 **title** | **str** | product title | [optional] 
-**url** | **str** | the URL of the product page | [optional] 
+**url** | **str** | URL of the product page | [optional] 
+**asin** | **str** | ASIN of the product learn more about ASIN in this help center guide | [optional] 
 **image_url** | **str** | URL of the product image featured in the results | [optional] 
-**bought_past_month** | **int** | number of product purchases in the past month | [optional] 
 **price_from** | **float** | the regular price of a product example: 49.98 | [optional] 
 **price_to** | **float** | the upper limit of the product price range example: 384.99 | [optional] 
 **currency** | **str** | currency in the ISO format example: USD | [optional] 
 **special_offers** | **List[Optional[str]]** | special offer details contains special offer details, including coupon and Subscribe &amp; Save discounts | [optional] 
-**data_asin** | **str** | unique product identifier on Amazon note that there is no full list of possible values as the data_asin is a dynamic value assigned by Amazon example: B07G82D89J | [optional] 
-**rating** | [**RatingElement**](RatingElement.md) |  | [optional] 
-**is_amazon_choice** | **bool** | “Amazon’s choice” label if the value is true, the product is marked with the “Amazon’s choice” label | [optional] 
 **is_best_seller** | **bool** | “Best Seller” label if the value is true, the product is marked with the “Best Seller” label | [optional] 
+**is_amazon_choice** | **bool** | “Amazon’s choice” label if the value is true, the product is marked with the “Amazon’s choice” label | [optional] 
+**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **delivery_info** | [**AmazonDeliveryInfo**](AmazonDeliveryInfo.md) |  | [optional] 
+**bought_past_month** | **int** | number of product purchases in the past month | [optional] 
+**data_asin** | **str** | unique product identifier on Amazon note that there is no full list of possible values as the data_asin is a dynamic value assigned by Amazon example: B07G82D89J | [optional] 
 
 ## Example
 

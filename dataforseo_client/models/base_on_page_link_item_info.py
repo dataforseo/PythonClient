@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,19 @@ class BaseOnPageLinkItemInfo(BaseModel):
     BaseOnPageLinkItemInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    __properties: ClassVar[List[str]] = ["type"]
+    domain_from: Optional[StrictStr] = Field(default=None, description="referring domain the link was found on this domain")
+    domain_to: Optional[StrictStr] = Field(default=None, description="referenced domain the link is pointing to this domain")
+    page_from: Optional[StrictStr] = Field(default=None, description="referring page relative URL of the page on which the link was found")
+    page_to: Optional[StrictStr] = Field(default=None, description="referenced page relative URL of the page to which the link is pointing")
+    link_from: Optional[StrictStr] = Field(default=None, description="referring page absolute URL of the page on which the link was found")
+    link_to: Optional[StrictStr] = Field(default=None, description="referenced page absolute URL of the page to which the link is pointing")
+    dofollow: Optional[StrictBool] = Field(default=None, description="indicates whether the link is dofollow if the value is true, the link doesn’t have a rel=\"nofollow\" attribute")
+    page_from_scheme: Optional[StrictStr] = Field(default=None, description="url scheme of the referring page")
+    page_to_scheme: Optional[StrictStr] = Field(default=None, description="url scheme of the referenced page")
+    direction: Optional[StrictStr] = Field(default=None, description="direction of the link possible values: internal, external")
+    is_broken: Optional[StrictBool] = Field(default=None, description="link is broken indicates whether a link is directing to a broken page or resource")
+    is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description="indicates that the link may have a conflict with another link if true, at least one link pointing to link_to has a rel=\"nofollow\" attribute and at least one is dofollow")
+    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict"]
 
     model_config = {
         "populate_by_name": True,
@@ -89,6 +101,66 @@ class BaseOnPageLinkItemInfo(BaseModel):
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
+
+        # set to None if domain_from (nullable) is None
+        # and model_fields_set contains the field
+        if self.domain_from is None and "domain_from" in self.model_fields_set:
+            _dict['domain_from'] = None
+
+        # set to None if domain_to (nullable) is None
+        # and model_fields_set contains the field
+        if self.domain_to is None and "domain_to" in self.model_fields_set:
+            _dict['domain_to'] = None
+
+        # set to None if page_from (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_from is None and "page_from" in self.model_fields_set:
+            _dict['page_from'] = None
+
+        # set to None if page_to (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_to is None and "page_to" in self.model_fields_set:
+            _dict['page_to'] = None
+
+        # set to None if link_from (nullable) is None
+        # and model_fields_set contains the field
+        if self.link_from is None and "link_from" in self.model_fields_set:
+            _dict['link_from'] = None
+
+        # set to None if link_to (nullable) is None
+        # and model_fields_set contains the field
+        if self.link_to is None and "link_to" in self.model_fields_set:
+            _dict['link_to'] = None
+
+        # set to None if dofollow (nullable) is None
+        # and model_fields_set contains the field
+        if self.dofollow is None and "dofollow" in self.model_fields_set:
+            _dict['dofollow'] = None
+
+        # set to None if page_from_scheme (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_from_scheme is None and "page_from_scheme" in self.model_fields_set:
+            _dict['page_from_scheme'] = None
+
+        # set to None if page_to_scheme (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_to_scheme is None and "page_to_scheme" in self.model_fields_set:
+            _dict['page_to_scheme'] = None
+
+        # set to None if direction (nullable) is None
+        # and model_fields_set contains the field
+        if self.direction is None and "direction" in self.model_fields_set:
+            _dict['direction'] = None
+
+        # set to None if is_broken (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_broken is None and "is_broken" in self.model_fields_set:
+            _dict['is_broken'] = None
+
+        # set to None if is_link_relation_conflict (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_link_relation_conflict is None and "is_link_relation_conflict" in self.model_fields_set:
+            _dict['is_link_relation_conflict'] = None
 
         return _dict
 

@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
+**section_name** | **str** | name of the section related to product information specified in the contents | [optional] 
 
 ## Example
 

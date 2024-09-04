@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr
+from pydantic import Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_google_trends_item import BaseGoogleTrendsItem
 from dataforseo_client.models.trends_graph_data_info import TrendsGraphDataInfo
@@ -28,9 +28,6 @@ class GoogleTrendsGraphElementItem(BaseGoogleTrendsItem):
     """
     GoogleTrendsGraphElementItem
     """ # noqa: E501
-    position: Optional[StrictInt] = Field(default=None, description="the alignment of the element in Google Trends can take the following values: 1, 2, 3, 4, etc.")
-    title: Optional[StrictStr] = Field(default=None, description="title of the element in Google Trends")
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the google_trends_graph element is based on the keywords listed in this array")
     data: Optional[List[TrendsGraphDataInfo]] = Field(default=None, description="Google Trends data for the specified parameters")
     averages: Optional[List[Optional[Union[StrictFloat, StrictInt]]]] = Field(default=None, description="keyword popularity values averaged over the whole time range")
     __properties: ClassVar[List[str]] = ["type", "position", "title", "keywords", "data", "averages"]

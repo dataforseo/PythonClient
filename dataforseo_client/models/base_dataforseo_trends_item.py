@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,9 @@ class BaseDataforseoTrendsItem(BaseModel):
     BaseDataforseoTrendsItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    __properties: ClassVar[List[str]] = ["type"]
+    position: Optional[StrictInt] = Field(default=None, description="the alignment of the element can take the following values: 1, 2, 3, 4, etc.")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the dataforseo_trends_graph element is based on the keywords listed in this array")
+    __properties: ClassVar[List[str]] = ["type", "position", "keywords"]
 
     model_config = {
         "populate_by_name": True,
@@ -89,6 +91,16 @@ class BaseDataforseoTrendsItem(BaseModel):
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
+
+        # set to None if position (nullable) is None
+        # and model_fields_set contains the field
+        if self.position is None and "position" in self.model_fields_set:
+            _dict['position'] = None
+
+        # set to None if keywords (nullable) is None
+        # and model_fields_set contains the field
+        if self.keywords is None and "keywords" in self.model_fields_set:
+            _dict['keywords'] = None
 
         return _dict
 

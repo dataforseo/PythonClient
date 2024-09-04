@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.cache_control import CacheControl
@@ -32,35 +32,21 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
     """
     OnPageHtmlResourceElementItem
     """ # noqa: E501
-    status_code: Optional[StrictInt] = Field(default=None, description="status code of the page")
-    location: Optional[StrictStr] = Field(default=None, description="location header indicates the URL to redirect a page to")
-    url: Optional[StrictStr] = Field(default=None, description="page URL")
     meta: Optional[PageMetaInfo] = None
     page_timing: Optional[PageTiming] = None
     onpage_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="shows how page is optimized on a 100-point scale this field shows how page is optimized considering critical on-page issues and warnings detected; 100 is the highest possible score that means the page does not have any critical on-page issues and important warnings; learn more about how the metric is calculated in this help center article")
     total_dom_size: Optional[StrictInt] = Field(default=None, description="total DOM size of a page")
     custom_js_response: Optional[Dict[str, Any]] = Field(default=None, description="the result of executing a specified JS script note that you should specify a custom_js field when setting a task to receive this data and the field type and its value will totally depend on the script you specified;you can also filter the results by this value specifying filters in the following way: [\"custom_js_response.url\", \"like\", \"pixel\"]")
-    resource_errors: Optional[OnPageResourceIssueInfo] = None
     broken_resources: Optional[StrictBool] = Field(default=None, description="indicates whether a page contains broken resources")
     broken_links: Optional[StrictBool] = Field(default=None, description="indicates whether a page contains broken links")
     duplicate_title: Optional[StrictBool] = Field(default=None, description="indicates whether a page has duplicate title tags")
     duplicate_description: Optional[StrictBool] = Field(default=None, description="indicates whether a page has a duplicate description")
     duplicate_content: Optional[StrictBool] = Field(default=None, description="indicates whether a page has duplicate content")
     click_depth: Optional[StrictInt] = Field(default=None, description="number of clicks it takes to get to the page indicates the number of clicks from the homepage needed before landing at the target page")
-    size: Optional[StrictInt] = Field(default=None, description="resource size indicates the size of a given page measured in bytes")
-    encoded_size: Optional[StrictInt] = Field(default=None, description="page size after encoding indicates the size of the encoded page measured in bytes")
-    total_transfer_size: Optional[StrictInt] = Field(default=None, description="compressed page size indicates the compressed size of a given page")
-    fetch_time: Optional[StrictStr] = Field(default=None, description="date and time when a resource was fetched in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    cache_control: Optional[CacheControl] = None
-    checks: Optional[Dict[str, Optional[StrictBool]]] = Field(default=None, description="website checks on-page check-ups related to the page")
-    content_encoding: Optional[StrictStr] = Field(default=None, description="type of encoding")
-    media_type: Optional[StrictStr] = Field(default=None, description="types of media used to display a page")
-    server: Optional[StrictStr] = Field(default=None, description="server version")
     is_resource: Optional[StrictBool] = Field(default=None, description="indicates whether a page is a single resource")
     url_length: Optional[StrictInt] = Field(default=None, description="page URL length in characters")
     relative_url_length: Optional[StrictInt] = Field(default=None, description="relative URL length in characters")
-    last_modified: Optional[LastModified] = None
-    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "meta", "page_timing", "onpage_score", "total_dom_size", "custom_js_response", "resource_errors", "broken_resources", "broken_links", "duplicate_title", "duplicate_description", "duplicate_content", "click_depth", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "is_resource", "url_length", "relative_url_length", "last_modified"]
+    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "page_timing", "onpage_score", "total_dom_size", "custom_js_response", "broken_resources", "broken_links", "duplicate_title", "duplicate_description", "duplicate_content", "click_depth", "is_resource", "url_length", "relative_url_length"]
 
     model_config = {
         "populate_by_name": True,
@@ -101,12 +87,6 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of meta
-        if self.meta:
-            _dict['meta'] = self.meta.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of page_timing
-        if self.page_timing:
-            _dict['page_timing'] = self.page_timing.to_dict()
         # override the default output from pydantic by calling `to_dict()` of resource_errors
         if self.resource_errors:
             _dict['resource_errors'] = self.resource_errors.to_dict()
@@ -116,6 +96,12 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
         # override the default output from pydantic by calling `to_dict()` of last_modified
         if self.last_modified:
             _dict['last_modified'] = self.last_modified.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of page_timing
+        if self.page_timing:
+            _dict['page_timing'] = self.page_timing.to_dict()
         # set to None if resource_type (nullable) is None
         # and model_fields_set contains the field
         if self.resource_type is None and "resource_type" in self.model_fields_set:
@@ -135,6 +121,46 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
         # and model_fields_set contains the field
         if self.url is None and "url" in self.model_fields_set:
             _dict['url'] = None
+
+        # set to None if size (nullable) is None
+        # and model_fields_set contains the field
+        if self.size is None and "size" in self.model_fields_set:
+            _dict['size'] = None
+
+        # set to None if encoded_size (nullable) is None
+        # and model_fields_set contains the field
+        if self.encoded_size is None and "encoded_size" in self.model_fields_set:
+            _dict['encoded_size'] = None
+
+        # set to None if total_transfer_size (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_transfer_size is None and "total_transfer_size" in self.model_fields_set:
+            _dict['total_transfer_size'] = None
+
+        # set to None if fetch_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.fetch_time is None and "fetch_time" in self.model_fields_set:
+            _dict['fetch_time'] = None
+
+        # set to None if checks (nullable) is None
+        # and model_fields_set contains the field
+        if self.checks is None and "checks" in self.model_fields_set:
+            _dict['checks'] = None
+
+        # set to None if content_encoding (nullable) is None
+        # and model_fields_set contains the field
+        if self.content_encoding is None and "content_encoding" in self.model_fields_set:
+            _dict['content_encoding'] = None
+
+        # set to None if media_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.media_type is None and "media_type" in self.model_fields_set:
+            _dict['media_type'] = None
+
+        # set to None if server (nullable) is None
+        # and model_fields_set contains the field
+        if self.server is None and "server" in self.model_fields_set:
+            _dict['server'] = None
 
         # set to None if onpage_score (nullable) is None
         # and model_fields_set contains the field
@@ -181,46 +207,6 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
         if self.click_depth is None and "click_depth" in self.model_fields_set:
             _dict['click_depth'] = None
 
-        # set to None if size (nullable) is None
-        # and model_fields_set contains the field
-        if self.size is None and "size" in self.model_fields_set:
-            _dict['size'] = None
-
-        # set to None if encoded_size (nullable) is None
-        # and model_fields_set contains the field
-        if self.encoded_size is None and "encoded_size" in self.model_fields_set:
-            _dict['encoded_size'] = None
-
-        # set to None if total_transfer_size (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_transfer_size is None and "total_transfer_size" in self.model_fields_set:
-            _dict['total_transfer_size'] = None
-
-        # set to None if fetch_time (nullable) is None
-        # and model_fields_set contains the field
-        if self.fetch_time is None and "fetch_time" in self.model_fields_set:
-            _dict['fetch_time'] = None
-
-        # set to None if checks (nullable) is None
-        # and model_fields_set contains the field
-        if self.checks is None and "checks" in self.model_fields_set:
-            _dict['checks'] = None
-
-        # set to None if content_encoding (nullable) is None
-        # and model_fields_set contains the field
-        if self.content_encoding is None and "content_encoding" in self.model_fields_set:
-            _dict['content_encoding'] = None
-
-        # set to None if media_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.media_type is None and "media_type" in self.model_fields_set:
-            _dict['media_type'] = None
-
-        # set to None if server (nullable) is None
-        # and model_fields_set contains the field
-        if self.server is None and "server" in self.model_fields_set:
-            _dict['server'] = None
-
         # set to None if is_resource (nullable) is None
         # and model_fields_set contains the field
         if self.is_resource is None and "is_resource" in self.model_fields_set:
@@ -252,18 +238,7 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
             "status_code": obj.get("status_code"),
             "location": obj.get("location"),
             "url": obj.get("url"),
-            "meta": PageMetaInfo.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
-            "page_timing": PageTiming.from_dict(obj["page_timing"]) if obj.get("page_timing") is not None else None,
-            "onpage_score": obj.get("onpage_score"),
-            "total_dom_size": obj.get("total_dom_size"),
-            "custom_js_response": obj.get("custom_js_response"),
             "resource_errors": OnPageResourceIssueInfo.from_dict(obj["resource_errors"]) if obj.get("resource_errors") is not None else None,
-            "broken_resources": obj.get("broken_resources"),
-            "broken_links": obj.get("broken_links"),
-            "duplicate_title": obj.get("duplicate_title"),
-            "duplicate_description": obj.get("duplicate_description"),
-            "duplicate_content": obj.get("duplicate_content"),
-            "click_depth": obj.get("click_depth"),
             "size": obj.get("size"),
             "encoded_size": obj.get("encoded_size"),
             "total_transfer_size": obj.get("total_transfer_size"),
@@ -273,10 +248,21 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
             "content_encoding": obj.get("content_encoding"),
             "media_type": obj.get("media_type"),
             "server": obj.get("server"),
+            "last_modified": LastModified.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None,
+            "meta": PageMetaInfo.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
+            "page_timing": PageTiming.from_dict(obj["page_timing"]) if obj.get("page_timing") is not None else None,
+            "onpage_score": obj.get("onpage_score"),
+            "total_dom_size": obj.get("total_dom_size"),
+            "custom_js_response": obj.get("custom_js_response"),
+            "broken_resources": obj.get("broken_resources"),
+            "broken_links": obj.get("broken_links"),
+            "duplicate_title": obj.get("duplicate_title"),
+            "duplicate_description": obj.get("duplicate_description"),
+            "duplicate_content": obj.get("duplicate_content"),
+            "click_depth": obj.get("click_depth"),
             "is_resource": obj.get("is_resource"),
             "url_length": obj.get("url_length"),
-            "relative_url_length": obj.get("relative_url_length"),
-            "last_modified": LastModified.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None
+            "relative_url_length": obj.get("relative_url_length")
         })
         return _obj
 

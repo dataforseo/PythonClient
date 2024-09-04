@@ -17,10 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
-from dataforseo_client.models.rectangle import Rectangle
 from dataforseo_client.models.top_stories_element import TopStoriesElement
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,14 +28,8 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
     """
     TopStoriesSerpElementItem
     """ # noqa: E501
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values; positions of elements with different type values are omitted from rank_group; always equals 0 for desktop")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP always equals 0 for desktop")
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the row")
     items: Optional[List[TopStoriesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    rectangle: Optional[Rectangle] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "items", "rectangle"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 
     model_config = {
         "populate_by_name": True,
@@ -84,9 +77,6 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['items'] = _items
-        # override the default output from pydantic by calling `to_dict()` of rectangle
-        if self.rectangle:
-            _dict['rectangle'] = self.rectangle.to_dict()
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -112,11 +102,6 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
-        # set to None if title (nullable) is None
-        # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
-
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -139,9 +124,7 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
-            "title": obj.get("title"),
-            "items": [TopStoriesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
-            "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
+            "items": [TopStoriesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

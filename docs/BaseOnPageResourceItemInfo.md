@@ -6,6 +6,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **resource_type** | **str** | type of the returned resource | [optional] 
+**status_code** | **int** | status code of the page | [optional] 
+**location** | **str** | location header indicates the URL to redirect a page to | [optional] 
+**url** | **str** | page URL | [optional] 
+**resource_errors** | [**OnPageResourceIssueInfo**](OnPageResourceIssueInfo.md) |  | [optional] 
+**size** | **int** | resource size indicates the size of a given page measured in bytes | [optional] 
+**encoded_size** | **int** | page size after encoding indicates the size of the encoded page measured in bytes | [optional] 
+**total_transfer_size** | **int** | compressed page size indicates the compressed size of a given page | [optional] 
+**fetch_time** | **str** | date and time when a resource was fetched in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
+**cache_control** | [**CacheControl**](CacheControl.md) |  | [optional] 
+**checks** | **Dict[str, Optional[bool]]** | website checks on-page check-ups related to the page | [optional] 
+**content_encoding** | **str** | type of encoding | [optional] 
+**media_type** | **str** | types of media used to display a page | [optional] 
+**server** | **str** | server version | [optional] 
+**last_modified** | [**LastModified**](LastModified.md) |  | [optional] 
 
 ## Example
 
