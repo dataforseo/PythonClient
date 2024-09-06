@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the row | [optional] 
 **related_searches** | **List[Optional[str]]** | search queries related to the elment | [optional] 
-**items** | [**List[FoundOnWebElement]**](FoundOnWebElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[FoundOnWebElement]**](FoundOnWebElement.md) | contains arrays of specific images | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example

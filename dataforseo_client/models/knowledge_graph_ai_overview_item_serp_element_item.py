@@ -17,20 +17,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.amazon_serp_element import AmazonSerpElement
-from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
+from dataforseo_client.models.ai_overview_element import AiOverviewElement
+from dataforseo_client.models.ai_overview_reference import AiOverviewReference
+from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
+class KnowledgeGraphAiOverviewItemSerpElementItem(BaseSerpElementItem):
     """
-    DataAmazonTopRatedFromOurBrandsSerpElementItem
+    KnowledgeGraphAiOverviewItemSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP possible values: left, right")
-    items: Optional[List[AmazonSerpElement]] = Field(default=None, description="Amazon product items")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "items"]
+    asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description="indicates whether the element is loaded asynchronically if true, the ai_overview element is loaded asynchronically; if false, the ai_overview element is loaded from cache;")
+    items: Optional[List[AiOverviewElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    references: Optional[List[AiOverviewReference]] = Field(default=None, description="additional references relevant to the item includes references to webpages that may have been used to generate the ai_overview")
+    rectangle: Optional[Rectangle] = None
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "asynchronous_ai_overview", "items", "references", "rectangle"]
 
     model_config = {
         "populate_by_name": True,
@@ -50,7 +54,7 @@ class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DataAmazonTopRatedFromOurBrandsSerpElementItem from a JSON string"""
+        """Create an instance of KnowledgeGraphAiOverviewItemSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,6 +82,16 @@ class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['items'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in references (list)
+        _items = []
+        if self.references:
+            for _item in self.references:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['references'] = _items
+        # override the default output from pydantic by calling `to_dict()` of rectangle
+        if self.rectangle:
+            _dict['rectangle'] = self.rectangle.to_dict()
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -93,26 +107,36 @@ class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
 
+        # set to None if position (nullable) is None
+        # and model_fields_set contains the field
+        if self.position is None and "position" in self.model_fields_set:
+            _dict['position'] = None
+
         # set to None if xpath (nullable) is None
         # and model_fields_set contains the field
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
-        # set to None if position (nullable) is None
+        # set to None if asynchronous_ai_overview (nullable) is None
         # and model_fields_set contains the field
-        if self.position is None and "position" in self.model_fields_set:
-            _dict['position'] = None
+        if self.asynchronous_ai_overview is None and "asynchronous_ai_overview" in self.model_fields_set:
+            _dict['asynchronous_ai_overview'] = None
 
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
             _dict['items'] = None
 
+        # set to None if references (nullable) is None
+        # and model_fields_set contains the field
+        if self.references is None and "references" in self.model_fields_set:
+            _dict['references'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DataAmazonTopRatedFromOurBrandsSerpElementItem from a dict"""
+        """Create an instance of KnowledgeGraphAiOverviewItemSerpElementItem from a dict"""
         if obj is None:
             return None
 
@@ -123,9 +147,12 @@ class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "xpath": obj.get("xpath"),
             "position": obj.get("position"),
-            "items": [AmazonSerpElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "xpath": obj.get("xpath"),
+            "asynchronous_ai_overview": obj.get("asynchronous_ai_overview"),
+            "items": [AiOverviewElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "references": [AiOverviewReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
         })
         return _obj
 

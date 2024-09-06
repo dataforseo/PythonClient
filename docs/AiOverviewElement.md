@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
-**title** | **str** | title of a given link element | [optional] 
-**text** | **str** | reference text text snippet from the page that was used to generate the ai_overview_element | [optional] 
-**images** | [**List[ImagesElement]**](ImagesElement.md) | images of the element if there are none, equals null | [optional] 
-**references** | [**List[AiOverviewReference]**](AiOverviewReference.md) | references relevant to the element includes references to webpages that were used to generate the ai_overview_element | [optional] 
+**title** | **str** | title of the element | [optional] 
+**text** | **str** | description content | [optional] 
+**images** | [**List[ImagesElement]**](ImagesElement.md) | images of the element | [optional] 
+**references** | [**List[AiOverviewReference]**](AiOverviewReference.md) | references relevant to the element | [optional] 
 
 ## Example
 

@@ -29,10 +29,10 @@ class AiOverviewElement(BaseModel):
     AiOverviewElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    text: Optional[StrictStr] = Field(default=None, description="reference text text snippet from the page that was used to generate the ai_overview_element")
-    images: Optional[List[ImagesElement]] = Field(default=None, description="images of the element if there are none, equals null")
-    references: Optional[List[AiOverviewReference]] = Field(default=None, description="references relevant to the element includes references to webpages that were used to generate the ai_overview_element")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element")
+    text: Optional[StrictStr] = Field(default=None, description="description content")
+    images: Optional[List[ImagesElement]] = Field(default=None, description="images of the element")
+    references: Optional[List[AiOverviewReference]] = Field(default=None, description="references relevant to the element")
     __properties: ClassVar[List[str]] = ["type", "title", "text", "images", "references"]
 
     model_config = {

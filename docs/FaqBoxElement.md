@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
-**title** | **str** | title of a given link element | [optional] 
+**title** | **str** | reference page title | [optional] 
 **description** | **str** | description | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | link of the element | [optional] 
 

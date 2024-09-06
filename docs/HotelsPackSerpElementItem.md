@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of the row | [optional] 
 **date_from** | **str** | starting date of stay in the format “year-month-date” example: 2019-11-15 | [optional] 
 **date_to** | **str** | ending date of stay in the format “year-month-date” example: 2019-11-17 | [optional] 
-**items** | [**List[HotelsPackElement]**](HotelsPackElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[HotelsPackElement]**](HotelsPackElement.md) | contains arrays of specific images | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example

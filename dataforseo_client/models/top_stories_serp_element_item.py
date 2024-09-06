@@ -28,7 +28,7 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
     """
     TopStoriesSerpElementItem
     """ # noqa: E501
-    items: Optional[List[TopStoriesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[TopStoriesElement]] = Field(default=None, description="contains arrays of specific images")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 
     model_config = {

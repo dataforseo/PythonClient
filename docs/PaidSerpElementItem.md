@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
-**domain** | **str** | website domain | [optional] 
+**domain** | **str** | domain name of the reference | [optional] 
 **breadcrumb** | **str** | breadcrumb in SERP | [optional] 
 **is_image** | **bool** | indicates whether the element contains an image | [optional] 
 **is_video** | **bool** | indicates whether the element contains a video | [optional] 

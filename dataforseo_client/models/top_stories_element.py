@@ -34,7 +34,7 @@ class TopStoriesElement(BaseModel):
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image")
+    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     badges: Optional[List[Optional[StrictStr]]] = Field(default=None, description="badges relevant to the element")
     __properties: ClassVar[List[str]] = ["type", "source", "domain", "title", "date", "amp_version", "timestamp", "url", "image_url", "badges"]
 

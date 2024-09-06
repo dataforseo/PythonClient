@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **xpath** | **str** | the XPath of the element | [optional] 
 **domain** | **str** | domain where a link points | [optional] 
 **title** | **str** | title of a given link element | [optional] 
-**url** | **str** | URL of element | [optional] 
+**url** | **str** | reference page URL | [optional] 
 **cache_url** | **str** | cached version of the page | [optional] 
 **related_search_url** | **str** | URL to a similar search URL to a new search for the same keyword(s) on related sites | [optional] 
 **breadcrumb** | **str** | breadcrumb in SERP | [optional] 

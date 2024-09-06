@@ -49,9 +49,9 @@ class AppendixKeywordsDataDayStatisticsMoneyData(BaseModel):
     google_ads: Optional[AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo] = None
     dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo] = None
     clickstream_data: Optional[AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo] = None
-    google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
     search_volume_history: Optional[AppendixJobsSerpLimitsRatesDataInfo] = None
-    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "google", "search_volume_history"]
+    google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
+    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "search_volume_history", "google"]
 
     model_config = {
         "populate_by_name": True,
@@ -122,12 +122,12 @@ class AppendixKeywordsDataDayStatisticsMoneyData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of clickstream_data
         if self.clickstream_data:
             _dict['clickstream_data'] = self.clickstream_data.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of google
-        if self.google:
-            _dict['google'] = self.google.to_dict()
         # override the default output from pydantic by calling `to_dict()` of search_volume_history
         if self.search_volume_history:
             _dict['search_volume_history'] = self.search_volume_history.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of google
+        if self.google:
+            _dict['google'] = self.google.to_dict()
         # set to None if languages (nullable) is None
         # and model_fields_set contains the field
         if self.languages is None and "languages" in self.model_fields_set:
@@ -186,8 +186,8 @@ class AppendixKeywordsDataDayStatisticsMoneyData(BaseModel):
             "google_ads": AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.from_dict(obj["google_ads"]) if obj.get("google_ads") is not None else None,
             "dataforseo_trends": AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.from_dict(obj["dataforseo_trends"]) if obj.get("dataforseo_trends") is not None else None,
             "clickstream_data": AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.from_dict(obj["clickstream_data"]) if obj.get("clickstream_data") is not None else None,
-            "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None,
-            "search_volume_history": AppendixJobsSerpLimitsRatesDataInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None
+            "search_volume_history": AppendixJobsSerpLimitsRatesDataInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
+            "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None
         })
         return _obj
 

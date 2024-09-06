@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the row | [optional] 
 **result** | **str** | solution to the equation solution to the mathematical equation specified in the keyword field when setting a task | [optional] 
-**items** | [**List[MathSolverElement]**](MathSolverElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[MathSolverElement]**](MathSolverElement.md) | contains arrays of specific images | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | link of the element | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 

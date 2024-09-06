@@ -26,12 +26,12 @@ Name | Type | Description | Notes
 **timeseries_new_lost_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **competitors** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **bulk_pages_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**historical_new_lost_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**available_filters** | **float** |  | [optional] 
-**bulk_spam_score** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **index** | **float** |  | [optional] 
-**pages_summary_with_page_info** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **id_list** | **float** |  | [optional] 
+**available_filters** | **float** |  | [optional] 
+**pages_summary_with_page_info** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**historical_new_lost_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**bulk_spam_score** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

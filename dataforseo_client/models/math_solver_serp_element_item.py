@@ -32,7 +32,7 @@ class MathSolverSerpElementItem(BaseSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     result: Optional[StrictStr] = Field(default=None, description="solution to the equation solution to the mathematical equation specified in the keyword field when setting a task")
-    items: Optional[List[MathSolverElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[MathSolverElement]] = Field(default=None, description="contains arrays of specific images")
     links: Optional[List[LinkElement]] = Field(default=None, description="link of the element")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "result", "items", "links", "rectangle"]

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the row | [optional] 
 **categories** | **List[Optional[str]]** | array of course categories contains a list of categories relevant to courses | [optional] 
-**items** | [**List[CoursesElement]**](CoursesElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[CoursesElement]**](CoursesElement.md) | contains arrays of specific images | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example

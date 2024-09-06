@@ -27,11 +27,11 @@ class AiOverviewReference(BaseModel):
     AiOverviewReference
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the questions_and_answers_element")
-    domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
+    source: Optional[StrictStr] = Field(default=None, description="reference source name or title")
+    domain: Optional[StrictStr] = Field(default=None, description="website domain")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given shopping element")
-    text: Optional[StrictStr] = Field(default=None, description="reference text text snippet from the page that was used to generate the ai_overview_element")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
+    text: Optional[StrictStr] = Field(default=None, description="row content")
     __properties: ClassVar[List[str]] = ["type", "source", "domain", "url", "title", "text"]
 
     model_config = {

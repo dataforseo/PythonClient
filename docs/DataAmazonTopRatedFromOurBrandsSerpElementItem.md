@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in Amazon SERP possible values: left, right | [optional] 
 **items** | [**List[AmazonSerpElement]**](AmazonSerpElement.md) | Amazon product items | [optional] 
 
 ## Example

@@ -28,7 +28,7 @@ class RelatedSearchesSerpElementItem(BaseSerpElementItem):
     """
     RelatedSearchesSerpElementItem
     """ # noqa: E501
-    items: Optional[List[Optional[StrictStr]]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[Optional[StrictStr]]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items", "rectangle"]
 

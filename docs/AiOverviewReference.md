@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
-**source** | **str** | source of the element indicates the source of information included in the questions_and_answers_element | [optional] 
-**domain** | **str** | domain in SERP | [optional] 
+**source** | **str** | reference source name or title | [optional] 
+**domain** | **str** | website domain | [optional] 
 **url** | **str** | URL | [optional] 
-**title** | **str** | title of a given shopping element | [optional] 
-**text** | **str** | reference text text snippet from the page that was used to generate the ai_overview_element | [optional] 
+**title** | **str** | title of a given link element | [optional] 
+**text** | **str** | row content | [optional] 
 
 ## Example
 

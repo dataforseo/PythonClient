@@ -35,7 +35,7 @@ class OrganicSerpElementItem(BaseSerpElementItem):
     """
     OrganicSerpElementItem
     """ # noqa: E501
-    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    domain: Optional[StrictStr] = Field(default=None, description="domain name of the reference")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     cache_url: Optional[StrictStr] = Field(default=None, description="cached version of the page")

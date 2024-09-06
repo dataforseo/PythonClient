@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **dataforseo_trends** | [**AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo**](AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **clickstream_data** | [**AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo**](AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
-**search_volume_history** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **id_list** | **float** |  | [optional] 
+**search_volume_history** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

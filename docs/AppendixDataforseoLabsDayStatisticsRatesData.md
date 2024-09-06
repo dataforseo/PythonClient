@@ -39,15 +39,15 @@ Name | Type | Description | Notes
 **app_intersection** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **bulk_app_metrics** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **search_intent** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**status** | **float** |  | [optional] 
-**amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
-**available_filters** | **float** |  | [optional] 
 **historical_bulk_traffic_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**id_list** | **float** |  | [optional] 
-**available_history** | **float** |  | [optional] 
-**categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **languages** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
+**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**status** | **float** |  | [optional] 
+**categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**available_history** | **float** |  | [optional] 
+**available_filters** | **float** |  | [optional] 
+**amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **str** | type of element | [optional] 
 **title** | **str** | title of a given link element | [optional] 
 **subtitle** | **str** | subtitle of the element | [optional] 
-**image_url** | **str** | URL of the image | [optional] 
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 
 ## Example
 

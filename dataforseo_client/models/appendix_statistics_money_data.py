@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_day_statistics_money_data import AppendixDayStatisticsMoneyData
-from dataforseo_client.models.appendix_minute_statistics_money_data import AppendixMinuteStatisticsMoneyData
+from dataforseo_client.models.appendix_minute_statistics_data_info import AppendixMinuteStatisticsDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class AppendixStatisticsMoneyData(BaseModel):
     AppendixStatisticsMoneyData
     """ # noqa: E501
     day: Optional[AppendixDayStatisticsMoneyData] = None
-    minute: Optional[AppendixMinuteStatisticsMoneyData] = None
+    minute: Optional[AppendixMinuteStatisticsDataInfo] = None
     __properties: ClassVar[List[str]] = ["day", "minute"]
 
     model_config = {
@@ -90,7 +90,7 @@ class AppendixStatisticsMoneyData(BaseModel):
 
         _obj = cls.model_validate({
             "day": AppendixDayStatisticsMoneyData.from_dict(obj["day"]) if obj.get("day") is not None else None,
-            "minute": AppendixMinuteStatisticsMoneyData.from_dict(obj["minute"]) if obj.get("minute") is not None else None
+            "minute": AppendixMinuteStatisticsDataInfo.from_dict(obj["minute"]) if obj.get("minute") is not None else None
         })
         return _obj
 

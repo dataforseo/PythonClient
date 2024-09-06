@@ -32,7 +32,7 @@ class PaidSerpElementItem(BaseSerpElementItem):
     PaidSerpElementItem
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    domain: Optional[StrictStr] = Field(default=None, description="domain name of the reference")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb in SERP")
     is_image: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains a video")

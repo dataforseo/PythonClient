@@ -34,7 +34,7 @@ class RelatedResult(BaseModel):
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description="URL of element")
+    url: Optional[StrictStr] = Field(default=None, description="reference page URL")
     cache_url: Optional[StrictStr] = Field(default=None, description="cached version of the page")
     related_search_url: Optional[StrictStr] = Field(default=None, description="URL to a similar search URL to a new search for the same keyword(s) on related sites")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb in SERP")

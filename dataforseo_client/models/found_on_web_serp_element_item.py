@@ -31,7 +31,7 @@ class FoundOnWebSerpElementItem(BaseSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     related_searches: Optional[List[Optional[StrictStr]]] = Field(default=None, description="search queries related to the elment")
-    items: Optional[List[FoundOnWebElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[FoundOnWebElement]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "related_searches", "items", "rectangle"]
 

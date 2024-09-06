@@ -28,7 +28,7 @@ class FaqBox(BaseModel):
     FaqBox
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    items: Optional[List[FaqBoxElement]] = Field(default=None, description="contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[FaqBoxElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "items"]
 
     model_config = {

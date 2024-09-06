@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of a given link element | [optional] 
 **url** | **str** | URL | [optional] 
 **domain** | **str** | website domain | [optional] 
-**image_url** | **str** | URL of the image | [optional] 
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **source** | **str** | source of the element indicates the source of information included in the top_stories_element | [optional] 
 
 ## Example

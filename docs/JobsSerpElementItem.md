@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the row | [optional] 
 **url** | **str** | source URL | [optional] 
-**items** | [**List[JobsElement]**](JobsElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[JobsElement]**](JobsElement.md) | contains arrays of specific images | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example

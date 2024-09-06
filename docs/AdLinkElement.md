@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **str** | type of element | [optional] 
 **title** | **str** | title of the element | [optional] 
 **description** | **str** | description of the results element in SERP | [optional] 
-**url** | **str** | URL | [optional] 
+**url** | **str** | URL of element | [optional] 
 **domain** | **str** | domain where a link points | [optional] 
 **ad_aclk** | **str** | the identifier of the ad | [optional] 
 

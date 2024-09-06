@@ -28,7 +28,7 @@ class FaqBoxElement(BaseModel):
     FaqBoxElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description="reference page title")
     description: Optional[StrictStr] = Field(default=None, description="description")
     links: Optional[List[LinkElement]] = Field(default=None, description="link of the element")
     __properties: ClassVar[List[str]] = ["type", "title", "description", "links"]

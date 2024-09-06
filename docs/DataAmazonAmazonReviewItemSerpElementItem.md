@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the review in SERP can take the following values: right | [optional] 
 **verified** | **bool** | indicates whether the review has the “Verified Purchase” mark | [optional] 
 **subtitle** | **str** | subtitle of the review | [optional] 
 **helpful_votes** | **int** | helpful votes count number of users who clicked on the ‘Helpful” button under the review text | [optional] 

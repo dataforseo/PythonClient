@@ -32,7 +32,7 @@ class HotelsPackSerpElementItem(BaseSerpElementItem):
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of stay in the format “year-month-date” example: 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of stay in the format “year-month-date” example: 2019-11-17")
-    items: Optional[List[HotelsPackElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[HotelsPackElement]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "date_from", "date_to", "items", "rectangle"]
 

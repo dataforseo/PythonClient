@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
+**position** | **str** | the alignment of the element in Amazon SERP can take the following values: left, right | [optional] 
 **domain** | **str** | Amazon domain | [optional] 
 **title** | **str** | product title | [optional] 
 **url** | **str** | URL of the product page | [optional] 

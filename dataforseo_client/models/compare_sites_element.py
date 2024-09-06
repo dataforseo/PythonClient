@@ -30,7 +30,7 @@ class CompareSitesElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
-    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image")
+    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
     __properties: ClassVar[List[str]] = ["type", "title", "url", "domain", "image_url", "source"]
 

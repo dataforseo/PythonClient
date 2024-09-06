@@ -32,7 +32,7 @@ class ImagesSerpElementItem(BaseSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     url: Optional[StrictStr] = Field(default=None, description="source URL")
-    items: Optional[List[ImagesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[ImagesElement]] = Field(default=None, description="contains arrays of specific images")
     related_image_searches: Optional[List[RelatedImageSearchesElement]] = Field(default=None, description="contains keywords and images related to the specified search term if there are none, equals null")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "items", "related_image_searches", "rectangle"]

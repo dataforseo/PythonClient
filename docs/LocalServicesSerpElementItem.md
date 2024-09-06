@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of the row | [optional] 
 **url** | **str** | source URL | [optional] 
 **domain** | **str** | source domain | [optional] 
-**items** | [**List[LocalServicesElement]**](LocalServicesElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[LocalServicesElement]**](LocalServicesElement.md) | contains arrays of specific images | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example

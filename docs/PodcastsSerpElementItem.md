@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List[PodcastsElement]**](PodcastsElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[PodcastsElement]**](PodcastsElement.md) | contains arrays of specific images | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example

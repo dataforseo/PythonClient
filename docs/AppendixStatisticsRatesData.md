@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **day** | [**AppendixDayStatisticsRatesData**](AppendixDayStatisticsRatesData.md) |  | [optional] 
-**minute** | [**AppendixMinuteStatisticsRatesData**](AppendixMinuteStatisticsRatesData.md) |  | [optional] 
+**minute** | [**AppendixMinuteStatisticsDataInfo**](AppendixMinuteStatisticsDataInfo.md) |  | [optional] 
 
 ## Example
 

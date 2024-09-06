@@ -30,6 +30,7 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
     DataAmazonAmazonSerpSerpElementItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP can take the following values: left, right")
     domain: Optional[StrictStr] = Field(default=None, description="Amazon domain")
     title: Optional[StrictStr] = Field(default=None, description="product title")
     url: Optional[StrictStr] = Field(default=None, description="URL of the product page")
@@ -46,7 +47,7 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
     bought_past_month: Optional[StrictInt] = Field(default=None, description="number of product purchases in the past month")
     description: Optional[StrictStr] = Field(default=None, description="description of the product")
     data_asin: Optional[StrictStr] = Field(default=None, description="unique product identifier on Amazon note that there is no full list of possible values as the data_asin is a dynamic value assigned by Amazon example: B07G82D89J")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "domain", "title", "url", "asin", "image_url", "price_from", "price_to", "currency", "special_offers", "is_best_seller", "is_amazon_choice", "rating", "delivery_info", "bought_past_month", "description", "data_asin"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "se_type", "position", "domain", "title", "url", "asin", "image_url", "price_from", "price_to", "currency", "special_offers", "is_best_seller", "is_amazon_choice", "rating", "delivery_info", "bought_past_month", "description", "data_asin"]
 
     model_config = {
         "populate_by_name": True,
@@ -108,11 +109,6 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
 
-        # set to None if position (nullable) is None
-        # and model_fields_set contains the field
-        if self.position is None and "position" in self.model_fields_set:
-            _dict['position'] = None
-
         # set to None if xpath (nullable) is None
         # and model_fields_set contains the field
         if self.xpath is None and "xpath" in self.model_fields_set:
@@ -122,6 +118,11 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
         # and model_fields_set contains the field
         if self.se_type is None and "se_type" in self.model_fields_set:
             _dict['se_type'] = None
+
+        # set to None if position (nullable) is None
+        # and model_fields_set contains the field
+        if self.position is None and "position" in self.model_fields_set:
+            _dict['position'] = None
 
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
@@ -208,9 +209,9 @@ class DataAmazonAmazonSerpSerpElementItem(BaseAmazonSerpElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "position": obj.get("position"),
             "xpath": obj.get("xpath"),
             "se_type": obj.get("se_type"),
+            "position": obj.get("position"),
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),

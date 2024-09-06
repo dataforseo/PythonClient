@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **source** | **str** | source of the element indicates the source of information included in the top_stories_element | [optional] 
 **description** | **str** | description | [optional] 
 **var_date** | **str** | the date when the page source of the element was published | [optional] 
-**image_url** | **str** | URL of the image | [optional] 
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 
 ## Example

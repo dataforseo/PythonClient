@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List[GraphElement]**](GraphElement.md) | contains arrays of specific images | [optional] 
+**items** | [**List[GraphElement]**](GraphElement.md) | contains arrays of elements available in the list | [optional] 
 **previous_items** | [**List[GraphElement]**](GraphElement.md) | previous close data contains stock price data based on the preceding time period | [optional] 
 
 ## Example

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domain** | **str** | website domain | [optional] 
+**domain** | **str** | domain name of the reference | [optional] 
 **title** | **str** | title of the result in SERP | [optional] 
 **url** | **str** | relevant URL in SERP | [optional] 
 **cache_url** | **str** | cached version of the page | [optional] 

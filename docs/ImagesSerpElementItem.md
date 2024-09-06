@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the row | [optional] 
 **url** | **str** | source URL | [optional] 
-**items** | [**List[ImagesElement]**](ImagesElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[ImagesElement]**](ImagesElement.md) | contains arrays of specific images | [optional] 
 **related_image_searches** | [**List[RelatedImageSearchesElement]**](RelatedImageSearchesElement.md) | contains keywords and images related to the specified search term if there are none, equals null | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 

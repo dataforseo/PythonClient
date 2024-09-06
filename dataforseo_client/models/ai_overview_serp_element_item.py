@@ -31,7 +31,7 @@ class AiOverviewSerpElementItem(BaseSerpElementItem):
     AiOverviewSerpElementItem
     """ # noqa: E501
     asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description="indicates whether the element is loaded asynchronically if true, the ai_overview element is loaded asynchronically; if false, the ai_overview element is loaded from cache;")
-    items: Optional[List[AiOverviewElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[AiOverviewElement]] = Field(default=None, description="contains arrays of specific images")
     references: Optional[List[AiOverviewReference]] = Field(default=None, description="additional references relevant to the item includes references to webpages that may have been used to generate the ai_overview")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "asynchronous_ai_overview", "items", "references", "rectangle"]

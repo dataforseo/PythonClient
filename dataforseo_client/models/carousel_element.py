@@ -29,7 +29,7 @@ class CarouselElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     subtitle: Optional[StrictStr] = Field(default=None, description="subtitle of the element")
-    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image")
+    image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     __properties: ClassVar[List[str]] = ["type", "title", "subtitle", "image_url"]
 
     model_config = {

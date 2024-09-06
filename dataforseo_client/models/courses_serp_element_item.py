@@ -31,7 +31,7 @@ class CoursesSerpElementItem(BaseSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description="array of course categories contains a list of categories relevant to courses")
-    items: Optional[List[CoursesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[CoursesElement]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "categories", "items", "rectangle"]
 

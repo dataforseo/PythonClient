@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **locations** | **float** |  | [optional] 
 **categories** | **float** |  | [optional] 
 **tasks_ready** | **float** |  | [optional] 
-**app_listings** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional] 
 **refund_money** | **float** |  | [optional] 
+**app_listings** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 

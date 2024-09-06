@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of a given link element | [optional] 
 **description** | **str** | description | [optional] 
 **seller** | **str** | seller of the product | [optional] 
-**image_url** | **str** | URL of the image | [optional] 
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 

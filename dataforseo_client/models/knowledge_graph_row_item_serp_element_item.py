@@ -31,7 +31,7 @@ class KnowledgeGraphRowItemSerpElementItem(BaseSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the item")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/common/topic:social media presence")
-    text: Optional[StrictStr] = Field(default=None, description="row content")
+    text: Optional[StrictStr] = Field(default=None, description="reference text text snippet from the page that was used to generate the ai_overview_element")
     links: Optional[List[LinkElement]] = Field(default=None, description="links featured in the faq_box_element")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "data_attrid", "text", "links", "rectangle"]

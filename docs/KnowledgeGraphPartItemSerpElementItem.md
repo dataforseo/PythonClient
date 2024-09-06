@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
 **data_attrid** | **str** | google defined data attribute ID example: kc:/local:place qa | [optional] 
-**text** | **str** | content within the item | [optional] 
+**text** | **str** | reference text text snippet from the page that was used to generate the ai_overview_element | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 

@@ -31,7 +31,7 @@ class KnowledgeGraphPartItemSerpElementItem(BaseSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/local:place qa")
-    text: Optional[StrictStr] = Field(default=None, description="content within the item")
+    text: Optional[StrictStr] = Field(default=None, description="reference text text snippet from the page that was used to generate the ai_overview_element")
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "data_attrid", "text", "links", "rectangle"]

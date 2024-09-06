@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List[TopStoriesElement]**](TopStoriesElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[TopStoriesElement]**](TopStoriesElement.md) | contains arrays of specific images | [optional] 
 
 ## Example
 

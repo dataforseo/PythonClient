@@ -29,7 +29,7 @@ class KnowledgeGraphDescriptionItemSerpElementItem(BaseSerpElementItem):
     """
     KnowledgeGraphDescriptionItemSerpElementItem
     """ # noqa: E501
-    text: Optional[StrictStr] = Field(default=None, description="description content")
+    text: Optional[StrictStr] = Field(default=None, description="text or description of the element in SERP")
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "text", "links", "rectangle"]

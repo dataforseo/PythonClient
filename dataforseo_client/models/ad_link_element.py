@@ -29,7 +29,7 @@ class AdLinkElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of the element")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="URL")
+    url: Optional[StrictStr] = Field(default=None, description="URL of element")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     ad_aclk: Optional[StrictStr] = Field(default=None, description="the identifier of the ad")
     __properties: ClassVar[List[str]] = ["type", "title", "description", "url", "domain", "ad_aclk"]

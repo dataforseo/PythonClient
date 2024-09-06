@@ -32,7 +32,7 @@ class LocalServicesSerpElementItem(BaseSerpElementItem):
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     url: Optional[StrictStr] = Field(default=None, description="source URL")
     domain: Optional[StrictStr] = Field(default=None, description="source domain")
-    items: Optional[List[LocalServicesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[LocalServicesElement]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "domain", "items", "rectangle"]
 

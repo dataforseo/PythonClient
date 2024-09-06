@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the row | [optional] 
-**items** | [**List[ShoppingElement]**](ShoppingElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[ShoppingElement]**](ShoppingElement.md) | contains arrays of specific images | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example

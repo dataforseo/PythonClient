@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **url** | **str** | URL | [optional] 
 **domain** | **str** | website domain | [optional] 
 **description** | **str** | description | [optional] 
-**image_url** | **str** | URL of the image | [optional] 
+**image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
 
 ## Example

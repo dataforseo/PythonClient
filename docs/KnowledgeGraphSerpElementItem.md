@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **logo_url** | **str** | URL of the logo from knowledge graph | [optional] 
 **cid** | **str** | google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | contains results featured in the ‘hotels_pack’ element of SERP | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
 
 ## Example
