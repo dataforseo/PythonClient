@@ -26,7 +26,7 @@ class KeywordsDataDataforseoTrendsExploreLiveRequestInfo(BaseModel):
     """
     KeywordsDataDataforseoTrendsExploreLiveRequestInfo
     """ # noqa: E501
-    keywords: Optional[List[StrictStr]] = Field(default=None, description="keywords required field the maximum number of keywords you can specify: 5")
+    keywords: Optional[List[StrictStr]] = Field(default=None, description="keywords required field the maximum number of keywords you can specify: 5 learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of search engine location optional field if you don’t use this field, you will recieve global results if you use this field, you don’t need to specify location_code you can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations note that the data will be provided for the country the specified location_name belongs to; example: United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description="search engine location code optional field if you don’t use this field, you will recieve global results if you use this field, you don’t need to specify location_name you can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations note that the data will be provided for the country the specified location_code belongs to; example: 2840")
     type: Optional[StrictStr] = Field(default=None, description="type of element")

@@ -19,17 +19,17 @@ import json
 
 from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_app_data_day_statistics_rates_data import AppendixAppDataDayStatisticsRatesData
+from dataforseo_client.models.appendix_app_data_statistics_rates_data_info import AppendixAppDataStatisticsRatesDataInfo
 from dataforseo_client.models.appendix_appendix_day_statistics_rates_data import AppendixAppendixDayStatisticsRatesData
 from dataforseo_client.models.appendix_backlinks_day_statistics_rates_data import AppendixBacklinksDayStatisticsRatesData
-from dataforseo_client.models.appendix_business_data_day_statistics_rates_data import AppendixBusinessDataDayStatisticsRatesData
+from dataforseo_client.models.appendix_business_data_statistics_rates_data_info import AppendixBusinessDataStatisticsRatesDataInfo
 from dataforseo_client.models.appendix_content_analysis_day_statistics_rates_data import AppendixContentAnalysisDayStatisticsRatesData
-from dataforseo_client.models.appendix_content_generation_day_statistics_rates_data import AppendixContentGenerationDayStatisticsRatesData
+from dataforseo_client.models.appendix_content_generation_statistics_rates_data_info import AppendixContentGenerationStatisticsRatesDataInfo
 from dataforseo_client.models.appendix_dataforseo_labs_day_statistics_rates_data import AppendixDataforseoLabsDayStatisticsRatesData
 from dataforseo_client.models.appendix_domain_analytics_day_statistics_rates_data import AppendixDomainAnalyticsDayStatisticsRatesData
 from dataforseo_client.models.appendix_info import AppendixInfo
 from dataforseo_client.models.appendix_keywords_data_day_statistics_rates_data import AppendixKeywordsDataDayStatisticsRatesData
-from dataforseo_client.models.appendix_merchant_day_statistics_rates_data import AppendixMerchantDayStatisticsRatesData
+from dataforseo_client.models.appendix_merchant_statistics_rates_data_info import AppendixMerchantStatisticsRatesDataInfo
 from dataforseo_client.models.appendix_on_page_day_statistics_rates_data import AppendixOnPageDayStatisticsRatesData
 from dataforseo_client.models.appendix_serp_day_statistics_rates_data import AppendixSerpDayStatisticsRatesData
 from typing import Optional, Set
@@ -50,19 +50,19 @@ class AppendixDayStatisticsRatesData(BaseModel):
     total_dataforseo_labs: Optional[Union[StrictFloat, StrictInt]] = None
     domain_analytics: Optional[AppendixDomainAnalyticsDayStatisticsRatesData] = None
     total_domain_analytics: Optional[Union[StrictFloat, StrictInt]] = None
-    merchant: Optional[AppendixMerchantDayStatisticsRatesData] = None
+    merchant: Optional[AppendixMerchantStatisticsRatesDataInfo] = None
     total_merchant: Optional[Union[StrictFloat, StrictInt]] = None
     on_page: Optional[AppendixOnPageDayStatisticsRatesData] = None
     total_on_page: Optional[Union[StrictFloat, StrictInt]] = None
-    business_data: Optional[AppendixBusinessDataDayStatisticsRatesData] = None
+    business_data: Optional[AppendixBusinessDataStatisticsRatesDataInfo] = None
     total_business_data: Optional[Union[StrictFloat, StrictInt]] = None
     backlinks: Optional[AppendixBacklinksDayStatisticsRatesData] = None
     total_backlinks: Optional[Union[StrictFloat, StrictInt]] = None
-    app_data: Optional[AppendixAppDataDayStatisticsRatesData] = None
+    app_data: Optional[AppendixAppDataStatisticsRatesDataInfo] = None
     total_app_data: Optional[Union[StrictFloat, StrictInt]] = None
     content_analysis: Optional[AppendixContentAnalysisDayStatisticsRatesData] = None
     total_content_analysis: Optional[Union[StrictFloat, StrictInt]] = None
-    content_generation: Optional[AppendixContentGenerationDayStatisticsRatesData] = None
+    content_generation: Optional[AppendixContentGenerationStatisticsRatesDataInfo] = None
     total_content_generation: Optional[Union[StrictFloat, StrictInt]] = None
     value: Optional[StrictStr] = Field(default=None, description="time period for grouping day in the yyyy-MM-dd format minute in the yyyy-MM-dd HH:mm format")
     total_traffic_analytics: Optional[Union[StrictFloat, StrictInt]] = None
@@ -251,19 +251,19 @@ class AppendixDayStatisticsRatesData(BaseModel):
             "total_dataforseo_labs": obj.get("total_dataforseo_labs"),
             "domain_analytics": AppendixDomainAnalyticsDayStatisticsRatesData.from_dict(obj["domain_analytics"]) if obj.get("domain_analytics") is not None else None,
             "total_domain_analytics": obj.get("total_domain_analytics"),
-            "merchant": AppendixMerchantDayStatisticsRatesData.from_dict(obj["merchant"]) if obj.get("merchant") is not None else None,
+            "merchant": AppendixMerchantStatisticsRatesDataInfo.from_dict(obj["merchant"]) if obj.get("merchant") is not None else None,
             "total_merchant": obj.get("total_merchant"),
             "on_page": AppendixOnPageDayStatisticsRatesData.from_dict(obj["on_page"]) if obj.get("on_page") is not None else None,
             "total_on_page": obj.get("total_on_page"),
-            "business_data": AppendixBusinessDataDayStatisticsRatesData.from_dict(obj["business_data"]) if obj.get("business_data") is not None else None,
+            "business_data": AppendixBusinessDataStatisticsRatesDataInfo.from_dict(obj["business_data"]) if obj.get("business_data") is not None else None,
             "total_business_data": obj.get("total_business_data"),
             "backlinks": AppendixBacklinksDayStatisticsRatesData.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
             "total_backlinks": obj.get("total_backlinks"),
-            "app_data": AppendixAppDataDayStatisticsRatesData.from_dict(obj["app_data"]) if obj.get("app_data") is not None else None,
+            "app_data": AppendixAppDataStatisticsRatesDataInfo.from_dict(obj["app_data"]) if obj.get("app_data") is not None else None,
             "total_app_data": obj.get("total_app_data"),
             "content_analysis": AppendixContentAnalysisDayStatisticsRatesData.from_dict(obj["content_analysis"]) if obj.get("content_analysis") is not None else None,
             "total_content_analysis": obj.get("total_content_analysis"),
-            "content_generation": AppendixContentGenerationDayStatisticsRatesData.from_dict(obj["content_generation"]) if obj.get("content_generation") is not None else None,
+            "content_generation": AppendixContentGenerationStatisticsRatesDataInfo.from_dict(obj["content_generation"]) if obj.get("content_generation") is not None else None,
             "total_content_generation": obj.get("total_content_generation"),
             "value": obj.get("value"),
             "total_traffic_analytics": obj.get("total_traffic_analytics"),

@@ -29,7 +29,7 @@ class KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
     KnowledgeGraphExpandedItemDataforseoLabsSerpElementItem
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/local:place qa")
+    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: action:listen_artist")
     expanded_element: Optional[List[KnowledgeGraphExpandedElement]] = Field(default=None, description="expanded element")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "data_attrid", "expanded_element"]
 

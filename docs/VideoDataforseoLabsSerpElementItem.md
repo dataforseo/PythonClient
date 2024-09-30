@@ -5,7 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List[VideoElement]**](VideoElement.md) | contains results featured in the ‘hotels_pack’ element of SERP | [optional] 
+**se_type** | **str** | search engine type | [optional] 
+**items** | [**List[VideoElement]**](VideoElement.md) | elements of search results found in SERP | [optional] 
 
 ## Example
 

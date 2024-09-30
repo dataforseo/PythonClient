@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
 **url** | **str** | relevant URL of the Ad element in SERP | [optional] 
-**domain** | **str** | website domain | [optional] 
+**domain** | **str** | domain where a link points | [optional] 
 **items** | [**List[LocalServicesElement]**](LocalServicesElement.md) | elements of search results found in SERP | [optional] 
 
 ## Example

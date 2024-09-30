@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
 **description** | **str** | description of the results element in SERP | [optional] 
-**domain** | **str** | website domain | [optional] 
+**domain** | **str** | domain where a link points | [optional] 
 **phone** | **str** | phone number | [optional] 
 **url** | **str** | relevant URL of the Ad element in SERP | [optional] 
 **is_paid** | **bool** | indicates whether the element is an ad | [optional] 

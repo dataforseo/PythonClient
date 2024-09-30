@@ -35,7 +35,7 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
     price: Optional[Price] = None
     url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     table: Optional[Table] = None
     graph: Optional[Graph] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "source", "snippet", "price", "url", "domain", "table", "graph"]

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.message_info import MessageInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,9 @@ class MicrodataFieldsInfo(BaseModel):
     MicrodataFieldsInfo
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="field name name of the data field")
-    types: Optional[Dict[str, Any]] = Field(default=None, description="parent microdata types for a full list of available types, please visit schema.org")
+    types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="list of microdata types")
     value: Optional[StrictStr] = Field(default=None, description="microdata value microdata value specified on a target web page")
-    test_results: Optional[Dict[str, Any]] = Field(default=None, description="microdata validation test results sub-type microdata test results that contain detected errors and related messages")
+    test_results: Optional[List[MessageInfo]] = Field(default=None, description="list of microdata types")
     fields: Optional[List[MicrodataFieldsInfo]] = Field(default=None, description="microdata fields an array of objects containing data fields related to the certain microdata type")
     __properties: ClassVar[List[str]] = ["name", "types", "value", "test_results", "fields"]
 
@@ -72,6 +73,13 @@ class MicrodataFieldsInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in test_results (list)
+        _items = []
+        if self.test_results:
+            for _item in self.test_results:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['test_results'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in fields (list)
         _items = []
         if self.fields:
@@ -119,7 +127,7 @@ class MicrodataFieldsInfo(BaseModel):
             "name": obj.get("name"),
             "types": obj.get("types"),
             "value": obj.get("value"),
-            "test_results": obj.get("test_results"),
+            "test_results": [MessageInfo.from_dict(_item) for _item in obj["test_results"]] if obj.get("test_results") is not None else None,
             "fields": [MicrodataFieldsInfo.from_dict(_item) for _item in obj["fields"]] if obj.get("fields") is not None else None
         })
         return _obj

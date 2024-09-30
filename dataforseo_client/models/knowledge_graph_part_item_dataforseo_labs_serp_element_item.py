@@ -28,9 +28,9 @@ class KnowledgeGraphPartItemDataforseoLabsSerpElementItem(BaseDataforseoLabsSerp
     """
     KnowledgeGraphPartItemDataforseoLabsSerpElementItem
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/local:place qa")
-    text: Optional[StrictStr] = Field(default=None, description="content within the item")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element")
+    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/shopping/gpc:organic-offers")
+    text: Optional[StrictStr] = Field(default=None, description="description content")
     links: Optional[List[LinkElement]] = Field(default=None, description="link of the element")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "data_attrid", "text", "links"]
 

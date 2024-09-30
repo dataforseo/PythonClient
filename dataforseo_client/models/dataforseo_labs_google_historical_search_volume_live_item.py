@@ -40,7 +40,7 @@ class DataforseoLabsGoogleHistoricalSearchVolumeLiveItem(BaseModel):
     keyword_info: Optional[KeywordInfo] = None
     keyword_info_normalized_with_bing: Optional[KeywordInfoNormalizedWithInfo] = None
     keyword_info_normalized_with_clickstream: Optional[KeywordInfoNormalizedWithInfo] = None
-    clickstream_keyword_info: Optional[Dict[str, Any]] = Field(default=None, description="clickstream data for the returned keyword to retrieve results for this field, the parameter include_clickstream_data must be set to true")
+    clickstream_keyword_info: Optional[Any] = None
     keyword_properties: Optional[KeywordProperties] = None
     impressions_info: Optional[ImpressionsInfo] = None
     serp_info: Optional[SerpInfo] = None

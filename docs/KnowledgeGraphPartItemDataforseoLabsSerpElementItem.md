@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** | title of a given link element | [optional] 
-**data_attrid** | **str** | google defined data attribute ID example: kc:/local:place qa | [optional] 
-**text** | **str** | content within the item | [optional] 
+**title** | **str** | title of the element | [optional] 
+**data_attrid** | **str** | google defined data attribute ID example: kc:/shopping/gpc:organic-offers | [optional] 
+**text** | **str** | description content | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | link of the element | [optional] 
 
 ## Example

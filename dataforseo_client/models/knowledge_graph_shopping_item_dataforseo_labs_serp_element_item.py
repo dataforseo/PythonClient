@@ -29,7 +29,7 @@ class KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
     KnowledgeGraphShoppingItemDataforseoLabsSerpElementItem
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/shopping/gpc:organic-offers")
+    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: action:listen_artist")
     items: Optional[List[KnowledgeGraphShoppingElement]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "data_attrid", "items"]
 

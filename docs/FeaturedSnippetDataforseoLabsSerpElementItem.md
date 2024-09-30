@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domain** | **str** | website domain | [optional] 
+**domain** | **str** | domain where a link points | [optional] 
 **title** | **str** | title of the result in SERP | [optional] 
 **featured_title** | **str** | the title of the featured snippets source page | [optional] 
 **description** | **str** | description of the results element in SERP | [optional] 

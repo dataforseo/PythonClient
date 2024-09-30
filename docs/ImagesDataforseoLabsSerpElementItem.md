@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**se_type** | **str** | search engine type | [optional] 
 **title** | **str** | title of the result in SERP | [optional] 
 **url** | **str** | relevant URL of the Ad element in SERP | [optional] 
 **items** | [**List[ImagesElement]**](ImagesElement.md) | elements of search results found in SERP | [optional] 
-**related_image_searches** | [**List[RelatedImageSearchesElement]**](RelatedImageSearchesElement.md) | contains keywords and images related to the specified search term if there are none, equals null | [optional] 
+**related_image_searches** | [**RelatedImageSearchesElement**](RelatedImageSearchesElement.md) |  | [optional] 
 
 ## Example
 

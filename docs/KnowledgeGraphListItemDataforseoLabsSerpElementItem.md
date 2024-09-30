@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **str** | title of a given link element | [optional] 
-**data_attrid** | **str** | google defined data attribute ID example: kc:/common/topic:social media presence | [optional] 
+**title** | **str** | title of the row | [optional] 
+**data_attrid** | **str** | google defined data attribute ID example: kc:/local:place qa | [optional] 
 **link** | [**LinkElement**](LinkElement.md) |  | [optional] 
-**items** | [**List[KnowledgeGraphListElement]**](KnowledgeGraphListElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[KnowledgeGraphListElement]**](KnowledgeGraphListElement.md) | contains arrays of specific images | [optional] 
 
 ## Example
 

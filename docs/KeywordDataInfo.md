@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **keyword_info** | [**KeywordInfo**](KeywordInfo.md) |  | [optional] 
 **keyword_info_normalized_with_bing** | [**KeywordInfoNormalizedWithInfo**](KeywordInfoNormalizedWithInfo.md) |  | [optional] 
 **keyword_info_normalized_with_clickstream** | [**KeywordInfoNormalizedWithInfo**](KeywordInfoNormalizedWithInfo.md) |  | [optional] 
-**clickstream_keyword_info** | **object** | clickstream data for the returned keyword to retrieve results for this field, the parameter include_clickstream_data must be set to true | [optional] 
+**clickstream_keyword_info** | **object** |  | [optional] 
 **keyword_properties** | [**KeywordProperties**](KeywordProperties.md) |  | [optional] 
 **impressions_info** | [**ImpressionsInfo**](ImpressionsInfo.md) |  | [optional] 
 **serp_info** | [**SerpInfo**](SerpInfo.md) |  | [optional] 

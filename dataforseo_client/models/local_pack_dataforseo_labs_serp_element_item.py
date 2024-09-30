@@ -31,7 +31,7 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     phone: Optional[StrictStr] = Field(default=None, description="phone number")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates whether the element is an ad")

@@ -21,7 +21,7 @@ from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_app_data_limits_rates_data_info import AppendixAppDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_appendixs_rates_data_info import AppendixAppendixsRatesDataInfo
-from dataforseo_client.models.appendix_backlinks_limits_rates_data_info import AppendixBacklinksLimitsRatesDataInfo
+from dataforseo_client.models.appendix_backlinks_day_statistics_rates_data import AppendixBacklinksDayStatisticsRatesData
 from dataforseo_client.models.appendix_business_data_limits_rates_data_info import AppendixBusinessDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_content_analysis_limits_rates_data_info import AppendixContentAnalysisLimitsRatesDataInfo
 from dataforseo_client.models.appendix_content_generation_limits_rates_data_info import AppendixContentGenerationLimitsRatesDataInfo
@@ -55,7 +55,7 @@ class AppendixMinuteStatisticsMoneyData(BaseModel):
     total_on_page: Optional[Union[StrictFloat, StrictInt]] = None
     business_data: Optional[AppendixBusinessDataLimitsRatesDataInfo] = None
     total_business_data: Optional[Union[StrictFloat, StrictInt]] = None
-    backlinks: Optional[AppendixBacklinksLimitsRatesDataInfo] = None
+    backlinks: Optional[AppendixBacklinksDayStatisticsRatesData] = None
     total_backlinks: Optional[Union[StrictFloat, StrictInt]] = None
     app_data: Optional[AppendixAppDataLimitsRatesDataInfo] = None
     total_app_data: Optional[Union[StrictFloat, StrictInt]] = None
@@ -240,7 +240,7 @@ class AppendixMinuteStatisticsMoneyData(BaseModel):
             "total_on_page": obj.get("total_on_page"),
             "business_data": AppendixBusinessDataLimitsRatesDataInfo.from_dict(obj["business_data"]) if obj.get("business_data") is not None else None,
             "total_business_data": obj.get("total_business_data"),
-            "backlinks": AppendixBacklinksLimitsRatesDataInfo.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
+            "backlinks": AppendixBacklinksDayStatisticsRatesData.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
             "total_backlinks": obj.get("total_backlinks"),
             "app_data": AppendixAppDataLimitsRatesDataInfo.from_dict(obj["app_data"]) if obj.get("app_data") is not None else None,
             "total_app_data": obj.get("total_app_data"),

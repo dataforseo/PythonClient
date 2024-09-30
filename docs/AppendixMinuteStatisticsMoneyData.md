@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **total_on_page** | **float** |  | [optional] 
 **business_data** | [**AppendixBusinessDataLimitsRatesDataInfo**](AppendixBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
 **total_business_data** | **float** |  | [optional] 
-**backlinks** | [**AppendixBacklinksLimitsRatesDataInfo**](AppendixBacklinksLimitsRatesDataInfo.md) |  | [optional] 
+**backlinks** | [**AppendixBacklinksDayStatisticsRatesData**](AppendixBacklinksDayStatisticsRatesData.md) |  | [optional] 
 **total_backlinks** | **float** |  | [optional] 
 **app_data** | [**AppendixAppDataLimitsRatesDataInfo**](AppendixAppDataLimitsRatesDataInfo.md) |  | [optional] 
 **total_app_data** | **float** |  | [optional] 

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of a given link element | [optional] 
-**data_attrid** | **str** | google defined data attribute ID example: kc:/local:place qa | [optional] 
+**data_attrid** | **str** | google defined data attribute ID example: action:listen_artist | [optional] 
 **expanded_element** | [**List[KnowledgeGraphExpandedElement]**](KnowledgeGraphExpandedElement.md) | expanded element | [optional] 
 
 ## Example

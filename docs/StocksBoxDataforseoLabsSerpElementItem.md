@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **snippet** | **str** | text alongside the link title | [optional] 
 **price** | [**Price**](Price.md) |  | [optional] 
 **url** | **str** | relevant URL of the Ad element in SERP | [optional] 
-**domain** | **str** | website domain | [optional] 
+**domain** | **str** | domain where a link points | [optional] 
 **table** | [**Table**](Table.md) |  | [optional] 
 **graph** | [**Graph**](Graph.md) |  | [optional] 
 

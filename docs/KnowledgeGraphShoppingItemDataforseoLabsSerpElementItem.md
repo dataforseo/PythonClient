@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
-**data_attrid** | **str** | google defined data attribute ID example: kc:/shopping/gpc:organic-offers | [optional] 
+**data_attrid** | **str** | google defined data attribute ID example: action:listen_artist | [optional] 
 **items** | [**List[KnowledgeGraphShoppingElement]**](KnowledgeGraphShoppingElement.md) | elements of search results found in SERP | [optional] 
 
 ## Example

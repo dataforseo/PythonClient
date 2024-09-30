@@ -13,10 +13,7 @@
 
 
 from setuptools import setup, find_packages  # noqa: H301
-from pathlib import Path
 
-this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text()
 # To install the library, run the following
 #
 # python setup.py install
@@ -24,7 +21,7 @@ long_description = (this_directory / "README.md").read_text()
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "dataforseo-client"
-VERSION = "1.0.33"
+VERSION = "1.0.0"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 2.1.0",
@@ -37,15 +34,16 @@ setup(
     name=NAME,
     version=VERSION,
     description="DataForSEO API documentation",
-    author="DataForSeo",
-    author_email="info@dataforseo.com",
-    url="https://github.com/dataforseo/PythonClient",
-    keywords=["OpenAPI", "DataForSEO", "DataForSEO API documentation"],
+    author="OpenAPI Generator community",
+    author_email="team@openapitools.org",
+    url="",
+    keywords=["OpenAPI", "OpenAPI-Generator", "DataForSEO API documentation"],
     install_requires=REQUIRES,
-    homepage="https://github.com/dataforseo/PythonClient",
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
-    long_description=long_description,
     long_description_content_type='text/markdown',
+    long_description="""\
+    DataForSEO API is the starting point on your journey towards building powerful SEO software. With DataForSEO you can get all the data you need to build an efficient application while also saving your time and budget. DataForSEO API is using the REST technology for interchanging data between your application and our service. The data exchange is made through the widely used HTTP protocol, which allows applying our API to almost all programming languages.
+    """,  # noqa: E501
     package_data={"dataforseo_client": ["py.typed"]},
 )

@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | field name name of the data field | [optional] 
-**types** | **object** | parent microdata types for a full list of available types, please visit schema.org | [optional] 
+**types** | **List[Optional[str]]** | list of microdata types | [optional] 
 **value** | **str** | microdata value microdata value specified on a target web page | [optional] 
-**test_results** | **object** | microdata validation test results sub-type microdata test results that contain detected errors and related messages | [optional] 
+**test_results** | [**List[MessageInfo]**](MessageInfo.md) | list of microdata types | [optional] 
 **fields** | [**List[MicrodataFieldsInfo]**](MicrodataFieldsInfo.md) | microdata fields an array of objects containing data fields related to the certain microdata type | [optional] 
 
 ## Example

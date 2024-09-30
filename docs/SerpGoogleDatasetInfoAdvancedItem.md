@@ -17,10 +17,10 @@ Name | Type | Description | Notes
 **links** | [**List[LinkElement]**](LinkElement.md) | sitelinks the links shown below some of Google Dataset’s search results if there are none, equals null | [optional] 
 **dataset_providers** | [**List[LicensesElement]**](LicensesElement.md) | the list of institutions that provided the dataset | [optional] 
 **formats** | [**List[FormatsElement]**](FormatsElement.md) | the list of file formats of the dataset | [optional] 
-**authors** | **object** | the list of authors of the dataset | [optional] 
+**authors** | [**List[AuthorsElement]**](AuthorsElement.md) |  | [optional] 
 **licenses** | [**List[LicensesElement]**](LicensesElement.md) | the list of licenses issued to the dataset | [optional] 
 **updated_date** | **str** | date and time when the result was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-11-27 02:00:00 +00:00 | [optional] 
-**area_covered** | **object** | the list of areas covered in the dataset for example: Africa, Global | [optional] 
+**area_covered** | **List[Optional[str]]** | the list of areas covered in the dataset for example: Africa, Global | [optional] 
 **period_covered** | [**PeriodCovered**](PeriodCovered.md) |  | [optional] 
 **dataset_description** | [**DatasetDescription**](DatasetDescription.md) |  | [optional] 
 

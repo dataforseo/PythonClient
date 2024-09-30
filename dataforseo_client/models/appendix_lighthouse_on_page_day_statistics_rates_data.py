@@ -31,9 +31,9 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
     task_get: Optional[Union[StrictFloat, StrictInt]] = None
     live: Optional[Union[StrictFloat, StrictInt]] = None
     audits: Optional[Union[StrictFloat, StrictInt]] = None
-    languages: Optional[Union[StrictFloat, StrictInt]] = None
     versions: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "task_get", "live", "audits", "languages", "versions"]
+    languages: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "task_get", "live", "audits", "versions", "languages"]
 
     model_config = {
         "populate_by_name": True,
@@ -99,15 +99,15 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
         if self.audits is None and "audits" in self.model_fields_set:
             _dict['audits'] = None
 
-        # set to None if languages (nullable) is None
-        # and model_fields_set contains the field
-        if self.languages is None and "languages" in self.model_fields_set:
-            _dict['languages'] = None
-
         # set to None if versions (nullable) is None
         # and model_fields_set contains the field
         if self.versions is None and "versions" in self.model_fields_set:
             _dict['versions'] = None
+
+        # set to None if languages (nullable) is None
+        # and model_fields_set contains the field
+        if self.languages is None and "languages" in self.model_fields_set:
+            _dict['languages'] = None
 
         return _dict
 
@@ -126,8 +126,8 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
             "task_get": obj.get("task_get"),
             "live": obj.get("live"),
             "audits": obj.get("audits"),
-            "languages": obj.get("languages"),
-            "versions": obj.get("versions")
+            "versions": obj.get("versions"),
+            "languages": obj.get("languages")
         })
         return _obj
 

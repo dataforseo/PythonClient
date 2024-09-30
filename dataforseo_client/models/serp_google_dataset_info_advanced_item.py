@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.authors_element import AuthorsElement
 from dataforseo_client.models.dataset_description import DatasetDescription
 from dataforseo_client.models.formats_element import FormatsElement
 from dataforseo_client.models.licenses_element import LicensesElement
@@ -43,10 +44,10 @@ class SerpGoogleDatasetInfoAdvancedItem(BaseModel):
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google Dataset’s search results if there are none, equals null")
     dataset_providers: Optional[List[LicensesElement]] = Field(default=None, description="the list of institutions that provided the dataset")
     formats: Optional[List[FormatsElement]] = Field(default=None, description="the list of file formats of the dataset")
-    authors: Optional[Dict[str, Any]] = Field(default=None, description="the list of authors of the dataset")
+    authors: Optional[List[AuthorsElement]] = None
     licenses: Optional[List[LicensesElement]] = Field(default=None, description="the list of licenses issued to the dataset")
     updated_date: Optional[StrictStr] = Field(default=None, description="date and time when the result was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-11-27 02:00:00 +00:00")
-    area_covered: Optional[Dict[str, Any]] = Field(default=None, description="the list of areas covered in the dataset for example: Africa, Global")
+    area_covered: Optional[List[Optional[StrictStr]]] = Field(default=None, description="the list of areas covered in the dataset for example: Africa, Global")
     period_covered: Optional[PeriodCovered] = None
     dataset_description: Optional[DatasetDescription] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "dataset_id", "title", "image_url", "scholarly_citations_count", "links", "dataset_providers", "formats", "authors", "licenses", "updated_date", "area_covered", "period_covered", "dataset_description"]
@@ -111,6 +112,13 @@ class SerpGoogleDatasetInfoAdvancedItem(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['formats'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in authors (list)
+        _items = []
+        if self.authors:
+            for _item in self.authors:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['authors'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in licenses (list)
         _items = []
         if self.licenses:
@@ -228,7 +236,7 @@ class SerpGoogleDatasetInfoAdvancedItem(BaseModel):
             "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
             "dataset_providers": [LicensesElement.from_dict(_item) for _item in obj["dataset_providers"]] if obj.get("dataset_providers") is not None else None,
             "formats": [FormatsElement.from_dict(_item) for _item in obj["formats"]] if obj.get("formats") is not None else None,
-            "authors": obj.get("authors"),
+            "authors": [AuthorsElement.from_dict(_item) for _item in obj["authors"]] if obj.get("authors") is not None else None,
             "licenses": [LicensesElement.from_dict(_item) for _item in obj["licenses"]] if obj.get("licenses") is not None else None,
             "updated_date": obj.get("updated_date"),
             "area_covered": obj.get("area_covered"),

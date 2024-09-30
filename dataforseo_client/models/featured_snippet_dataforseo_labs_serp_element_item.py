@@ -31,7 +31,7 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     """
     FeaturedSnippetDataforseoLabsSerpElementItem
     """ # noqa: E501
-    domain: Optional[StrictStr] = Field(default=None, description="website domain")
+    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     featured_title: Optional[StrictStr] = Field(default=None, description="the title of the featured snippets source page")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
