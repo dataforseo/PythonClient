@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +26,7 @@ class KeywordsDataGoogleTrendsExploreLiveRequestInfo(BaseModel):
     """
     KeywordsDataGoogleTrendsExploreLiveRequestInfo
     """ # noqa: E501
-    keywords: Optional[List[StrictStr]] = Field(default=None, description="keywords optional field if keywords are not specified, the results will not contain keyword-related data; The maximum number of keywords you can specify: 5 Note: comma symbols (,) in the specified keywords will be unset and ignored learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keywords: Optional[List[StrictStr]] = Field(default=None, description="keywords optional field if keywords are not specified, the results will not contain keyword-related data; The maximum number of keywords you can specify: 5 Note: the comma characters (,) in the specified keywords will be unset and ignored learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of search engine location optional field if you don’t use this field, you will recieve global results if you use this field, you don’t need to specify location_code you can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_trends/locations example: United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description="search engine location code optional field if you don’t use this field, you will recieve global results if you use this field, you don’t need to specify location_name you can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_trends/locations example: 2840")
     language_name: Optional[StrictStr] = Field(default=None, description="full name of search engine language optional field default value: English if you use this field, you don’t need to specify language_code you can receive the list of available languages of the search engine with their language_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_trends/languages example: English")
@@ -40,11 +40,11 @@ class KeywordsDataGoogleTrendsExploreLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["keywords", "location_name", "location_code", "language_name", "language_code", "type", "category_code", "date_from", "date_to", "time_range", "item_types", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

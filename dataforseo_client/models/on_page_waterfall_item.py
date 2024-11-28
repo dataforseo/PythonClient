@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from typing import Optional, Set
@@ -41,11 +41,11 @@ class OnPageWaterfallItem(BaseModel):
     resources: Optional[List[BaseOnPageResourceItemInfo]] = Field(default=None, description="resource-specific timing contains separate arrays with timing for each resource found on the page")
     __properties: ClassVar[List[str]] = ["page_url", "time_to_interactive", "dom_complete", "connection_time", "time_to_secure_connection", "request_sent_time", "waiting_time", "download_time", "duration_time", "fetch_start", "fetch_end", "resources"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -83,9 +83,9 @@ class OnPageWaterfallItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in resources (list)
         _items = []
         if self.resources:
-            for _item in self.resources:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_resources in self.resources:
+                if _item_resources:
+                    _items.append(_item_resources.to_dict())
             _dict['resources'] = _items
         # set to None if page_url (nullable) is None
         # and model_fields_set contains the field

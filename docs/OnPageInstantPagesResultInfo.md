@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of OnPageInstantPagesResultInfo from a JSON string
 on_page_instant_pages_result_info_instance = OnPageInstantPagesResultInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageInstantPagesResultInfo.to_json()
+print(OnPageInstantPagesResultInfo.to_json())
 
 # convert the object into a dict
 on_page_instant_pages_result_info_dict = on_page_instant_pages_result_info_instance.to_dict()
 # create an instance of OnPageInstantPagesResultInfo from a dict
-on_page_instant_pages_result_info_form_dict = on_page_instant_pages_result_info.from_dict(on_page_instant_pages_result_info_dict)
+on_page_instant_pages_result_info_from_dict = OnPageInstantPagesResultInfo.from_dict(on_page_instant_pages_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

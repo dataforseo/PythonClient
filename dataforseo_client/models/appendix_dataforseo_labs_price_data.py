@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,47 +28,47 @@ class AppendixDataforseoLabsPriceData(BaseModel):
     """
     AppendixDataforseoLabsPriceData
     """ # noqa: E501
-    app_competitors: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    app_intersection: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_app_metrics: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_keyword_difficulty: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_search_volume: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_traffic_estimation: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    app_competitors: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    app_intersection: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_app_metrics: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_keyword_difficulty: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_search_volume: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_traffic_estimation: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     categories: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    categories_for_domain: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    competitors_domain: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_intersection: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_metrics_by_categories: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_rank_overview: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_whois_overview: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    categories_for_domain: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    competitors_domain: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_intersection: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_metrics_by_categories: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_rank_overview: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_whois_overview: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     errors: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    historical_rank_overview: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    historical_search_volume: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    historical_serps: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    keyword_ideas: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    keywords_for_app: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    keywords_for_categories: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    keywords_for_site: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    keyword_suggestions: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    historical_rank_overview: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    historical_search_volume: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    historical_serps: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keyword_ideas: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keywords_for_app: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keywords_for_categories: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keywords_for_site: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keyword_suggestions: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     locations_and_languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    page_intersection: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    product_competitors: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    product_keyword_intersections: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    product_rank_overview: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    ranked_keywords: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    related_keywords: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    relevant_pages: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    search_intent: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    serp_competitors: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    subdomains: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    top_searches: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    page_intersection: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    product_competitors: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    product_keyword_intersections: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    product_rank_overview: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    ranked_keywords: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    related_keywords: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    relevant_pages: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    search_intent: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    serp_competitors: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    subdomains: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    top_searches: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["app_competitors", "app_intersection", "bulk_app_metrics", "bulk_keyword_difficulty", "bulk_search_volume", "bulk_traffic_estimation", "categories", "categories_for_domain", "competitors_domain", "domain_intersection", "domain_metrics_by_categories", "domain_rank_overview", "domain_whois_overview", "errors", "historical_rank_overview", "historical_search_volume", "historical_serps", "keyword_ideas", "keywords_for_app", "keywords_for_categories", "keywords_for_site", "keyword_suggestions", "locations_and_languages", "page_intersection", "product_competitors", "product_keyword_intersections", "product_rank_overview", "ranked_keywords", "related_keywords", "relevant_pages", "search_intent", "serp_competitors", "subdomains", "top_searches"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -217,40 +217,40 @@ class AppendixDataforseoLabsPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "app_competitors": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["app_competitors"]) if obj.get("app_competitors") is not None else None,
-            "app_intersection": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["app_intersection"]) if obj.get("app_intersection") is not None else None,
-            "bulk_app_metrics": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_app_metrics"]) if obj.get("bulk_app_metrics") is not None else None,
-            "bulk_keyword_difficulty": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_keyword_difficulty"]) if obj.get("bulk_keyword_difficulty") is not None else None,
-            "bulk_search_volume": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_search_volume"]) if obj.get("bulk_search_volume") is not None else None,
-            "bulk_traffic_estimation": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_traffic_estimation"]) if obj.get("bulk_traffic_estimation") is not None else None,
+            "app_competitors": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["app_competitors"]) if obj.get("app_competitors") is not None else None,
+            "app_intersection": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["app_intersection"]) if obj.get("app_intersection") is not None else None,
+            "bulk_app_metrics": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_app_metrics"]) if obj.get("bulk_app_metrics") is not None else None,
+            "bulk_keyword_difficulty": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_keyword_difficulty"]) if obj.get("bulk_keyword_difficulty") is not None else None,
+            "bulk_search_volume": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_search_volume"]) if obj.get("bulk_search_volume") is not None else None,
+            "bulk_traffic_estimation": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_traffic_estimation"]) if obj.get("bulk_traffic_estimation") is not None else None,
             "categories": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["categories"]) if obj.get("categories") is not None else None,
-            "categories_for_domain": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["categories_for_domain"]) if obj.get("categories_for_domain") is not None else None,
-            "competitors_domain": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["competitors_domain"]) if obj.get("competitors_domain") is not None else None,
-            "domain_intersection": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_intersection"]) if obj.get("domain_intersection") is not None else None,
-            "domain_metrics_by_categories": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_metrics_by_categories"]) if obj.get("domain_metrics_by_categories") is not None else None,
-            "domain_rank_overview": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_rank_overview"]) if obj.get("domain_rank_overview") is not None else None,
-            "domain_whois_overview": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_whois_overview"]) if obj.get("domain_whois_overview") is not None else None,
+            "categories_for_domain": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["categories_for_domain"]) if obj.get("categories_for_domain") is not None else None,
+            "competitors_domain": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["competitors_domain"]) if obj.get("competitors_domain") is not None else None,
+            "domain_intersection": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_intersection"]) if obj.get("domain_intersection") is not None else None,
+            "domain_metrics_by_categories": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_metrics_by_categories"]) if obj.get("domain_metrics_by_categories") is not None else None,
+            "domain_rank_overview": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_rank_overview"]) if obj.get("domain_rank_overview") is not None else None,
+            "domain_whois_overview": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_whois_overview"]) if obj.get("domain_whois_overview") is not None else None,
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
-            "historical_rank_overview": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["historical_rank_overview"]) if obj.get("historical_rank_overview") is not None else None,
-            "historical_search_volume": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["historical_search_volume"]) if obj.get("historical_search_volume") is not None else None,
-            "historical_serps": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["historical_serps"]) if obj.get("historical_serps") is not None else None,
-            "keyword_ideas": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_ideas"]) if obj.get("keyword_ideas") is not None else None,
-            "keywords_for_app": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_app"]) if obj.get("keywords_for_app") is not None else None,
-            "keywords_for_categories": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_categories"]) if obj.get("keywords_for_categories") is not None else None,
-            "keywords_for_site": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
-            "keyword_suggestions": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_suggestions"]) if obj.get("keyword_suggestions") is not None else None,
+            "historical_rank_overview": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["historical_rank_overview"]) if obj.get("historical_rank_overview") is not None else None,
+            "historical_search_volume": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["historical_search_volume"]) if obj.get("historical_search_volume") is not None else None,
+            "historical_serps": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["historical_serps"]) if obj.get("historical_serps") is not None else None,
+            "keyword_ideas": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_ideas"]) if obj.get("keyword_ideas") is not None else None,
+            "keywords_for_app": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_app"]) if obj.get("keywords_for_app") is not None else None,
+            "keywords_for_categories": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_categories"]) if obj.get("keywords_for_categories") is not None else None,
+            "keywords_for_site": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
+            "keyword_suggestions": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_suggestions"]) if obj.get("keyword_suggestions") is not None else None,
             "locations_and_languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations_and_languages"]) if obj.get("locations_and_languages") is not None else None,
-            "page_intersection": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["page_intersection"]) if obj.get("page_intersection") is not None else None,
-            "product_competitors": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["product_competitors"]) if obj.get("product_competitors") is not None else None,
-            "product_keyword_intersections": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["product_keyword_intersections"]) if obj.get("product_keyword_intersections") is not None else None,
-            "product_rank_overview": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["product_rank_overview"]) if obj.get("product_rank_overview") is not None else None,
-            "ranked_keywords": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["ranked_keywords"]) if obj.get("ranked_keywords") is not None else None,
-            "related_keywords": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["related_keywords"]) if obj.get("related_keywords") is not None else None,
-            "relevant_pages": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["relevant_pages"]) if obj.get("relevant_pages") is not None else None,
-            "search_intent": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["search_intent"]) if obj.get("search_intent") is not None else None,
-            "serp_competitors": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["serp_competitors"]) if obj.get("serp_competitors") is not None else None,
-            "subdomains": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["subdomains"]) if obj.get("subdomains") is not None else None,
-            "top_searches": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["top_searches"]) if obj.get("top_searches") is not None else None
+            "page_intersection": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["page_intersection"]) if obj.get("page_intersection") is not None else None,
+            "product_competitors": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["product_competitors"]) if obj.get("product_competitors") is not None else None,
+            "product_keyword_intersections": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["product_keyword_intersections"]) if obj.get("product_keyword_intersections") is not None else None,
+            "product_rank_overview": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["product_rank_overview"]) if obj.get("product_rank_overview") is not None else None,
+            "ranked_keywords": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["ranked_keywords"]) if obj.get("ranked_keywords") is not None else None,
+            "related_keywords": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["related_keywords"]) if obj.get("related_keywords") is not None else None,
+            "relevant_pages": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["relevant_pages"]) if obj.get("relevant_pages") is not None else None,
+            "search_intent": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["search_intent"]) if obj.get("search_intent") is not None else None,
+            "serp_competitors": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["serp_competitors"]) if obj.get("serp_competitors") is not None else None,
+            "subdomains": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["subdomains"]) if obj.get("subdomains") is not None else None,
+            "top_searches": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["top_searches"]) if obj.get("top_searches") is not None else None
         })
         return _obj
 

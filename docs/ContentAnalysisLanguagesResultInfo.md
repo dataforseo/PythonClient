@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of ContentAnalysisLanguagesResultInfo from a JSON string
 content_analysis_languages_result_info_instance = ContentAnalysisLanguagesResultInfo.from_json(json)
 # print the JSON string representation of the object
-print ContentAnalysisLanguagesResultInfo.to_json()
+print(ContentAnalysisLanguagesResultInfo.to_json())
 
 # convert the object into a dict
 content_analysis_languages_result_info_dict = content_analysis_languages_result_info_instance.to_dict()
 # create an instance of ContentAnalysisLanguagesResultInfo from a dict
-content_analysis_languages_result_info_form_dict = content_analysis_languages_result_info.from_dict(content_analysis_languages_result_info_dict)
+content_analysis_languages_result_info_from_dict = ContentAnalysisLanguagesResultInfo.from_dict(content_analysis_languages_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

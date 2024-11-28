@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of AppendixContentGenerationDayStatisticsRatesData from a JSON string
 appendix_content_generation_day_statistics_rates_data_instance = AppendixContentGenerationDayStatisticsRatesData.from_json(json)
 # print the JSON string representation of the object
-print AppendixContentGenerationDayStatisticsRatesData.to_json()
+print(AppendixContentGenerationDayStatisticsRatesData.to_json())
 
 # convert the object into a dict
 appendix_content_generation_day_statistics_rates_data_dict = appendix_content_generation_day_statistics_rates_data_instance.to_dict()
 # create an instance of AppendixContentGenerationDayStatisticsRatesData from a dict
-appendix_content_generation_day_statistics_rates_data_form_dict = appendix_content_generation_day_statistics_rates_data.from_dict(appendix_content_generation_day_statistics_rates_data_dict)
+appendix_content_generation_day_statistics_rates_data_from_dict = AppendixContentGenerationDayStatisticsRatesData.from_dict(appendix_content_generation_day_statistics_rates_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

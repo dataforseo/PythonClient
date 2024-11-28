@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of LastModified from a JSON string
 last_modified_instance = LastModified.from_json(json)
 # print the JSON string representation of the object
-print LastModified.to_json()
+print(LastModified.to_json())
 
 # convert the object into a dict
 last_modified_dict = last_modified_instance.to_dict()
 # create an instance of LastModified from a dict
-last_modified_form_dict = last_modified.from_dict(last_modified_dict)
+last_modified_from_dict = LastModified.from_dict(last_modified_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

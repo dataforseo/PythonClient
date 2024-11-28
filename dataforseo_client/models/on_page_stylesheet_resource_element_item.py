@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.cache_control import CacheControl
@@ -42,11 +42,11 @@ class OnPageStylesheetResourceElementItem(BaseOnPageResourceItemInfo):
     is_render_blocking: Optional[StrictBool] = Field(default=None, description="indicates whether the resource blocks rendering")
     __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "fetch_timing", "accept_type", "initiator", "duration_time", "fetch_start", "fetch_end", "is_render_blocking"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

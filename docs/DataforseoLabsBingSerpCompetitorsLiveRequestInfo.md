@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keywords** | **List[str]** | keywords array required field the results will be based on the keywords you specify in this array UTF-8 encoding; the keywords will be converted to lowercase format; a keyword should be at least 3 characters long; you can specify the maximum of 200 keywords learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keywords** | **List[str]** | keywords array required field the results will be based on the keywords you specify in this array UTF-8 encoding; the keywords will be converted to lowercase format; you can specify the maximum of 200 keywords learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **location_name** | **str** | full name of the location required field if you don’t specify location_code Note: it is required to specify either location_name or location_code you can receive the list of available locations with location_name parameters by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages; Note: this endpoint currently supports the US location only; example: United States | [optional] 
 **location_code** | **int** | unique location identifier required field if you don’t specify location_name Note: it is required to specify either location_name or location_code you can receive the list of available locations with their location_code parameters by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages; Note: this endpoint currently supports the US location only; example: 2840 | [optional] 
 **language_name** | **str** | full name of the language required field if you don’t specify language_code Note: it is required to specify either language_name or language_code you can receive the list of available languages with their language_name parameters by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages example: English | [optional] 
@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of DataforseoLabsBingSerpCompetitorsLiveRequestInfo from a JSON string
 dataforseo_labs_bing_serp_competitors_live_request_info_instance = DataforseoLabsBingSerpCompetitorsLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsBingSerpCompetitorsLiveRequestInfo.to_json()
+print(DataforseoLabsBingSerpCompetitorsLiveRequestInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_bing_serp_competitors_live_request_info_dict = dataforseo_labs_bing_serp_competitors_live_request_info_instance.to_dict()
 # create an instance of DataforseoLabsBingSerpCompetitorsLiveRequestInfo from a dict
-dataforseo_labs_bing_serp_competitors_live_request_info_form_dict = dataforseo_labs_bing_serp_competitors_live_request_info.from_dict(dataforseo_labs_bing_serp_competitors_live_request_info_dict)
+dataforseo_labs_bing_serp_competitors_live_request_info_from_dict = DataforseoLabsBingSerpCompetitorsLiveRequestInfo.from_dict(dataforseo_labs_bing_serp_competitors_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

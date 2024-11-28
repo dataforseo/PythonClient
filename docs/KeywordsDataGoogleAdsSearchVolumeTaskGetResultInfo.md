@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character) | [optional] 
-**spell** | [**SpellInfo**](SpellInfo.md) |  | [optional] 
+**keyword** | **str** | keyword keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character) | [optional] 
+**spell** | **str** | correct spelling of the keyword Note:if the keyword in the POST array appears to be misspelled, data will be returned for the correctly spelled keyword; we use the functionality of Google Ads API to check and validate the spelling of keywords, learn more by this link | [optional] 
 **location_code** | **int** | location code in a POST array if there is no data, then the value is null | [optional] 
 **language_code** | **str** | language code in a POST array if there is no data, then the value is null | [optional] 
 **search_partners** | **bool** | indicates whether data from partner networks included in the response | [optional] 
@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo from a JSON string
 keywords_data_google_ads_search_volume_task_get_result_info_instance = KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo.to_json()
+print(KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo.to_json())
 
 # convert the object into a dict
 keywords_data_google_ads_search_volume_task_get_result_info_dict = keywords_data_google_ads_search_volume_task_get_result_info_instance.to_dict()
 # create an instance of KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo from a dict
-keywords_data_google_ads_search_volume_task_get_result_info_form_dict = keywords_data_google_ads_search_volume_task_get_result_info.from_dict(keywords_data_google_ads_search_volume_task_get_result_info_dict)
+keywords_data_google_ads_search_volume_task_get_result_info_from_dict = KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo.from_dict(keywords_data_google_ads_search_volume_task_get_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

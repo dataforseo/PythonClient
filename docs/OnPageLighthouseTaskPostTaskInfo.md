@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **result_count** | **int** | number of elements in the result array | [optional] 
 **path** | **List[Optional[str]]** | URL path | [optional] 
 **data** | **object** | contains the same parameters that you specified in the POST request | [optional] 
-**result** | **List[Optional[object]]** | array of results in this case, the value will be null | [optional] 
+**result** | **List[Optional[object]]** |  | [optional] 
 
 ## Example
 
@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of OnPageLighthouseTaskPostTaskInfo from a JSON string
 on_page_lighthouse_task_post_task_info_instance = OnPageLighthouseTaskPostTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageLighthouseTaskPostTaskInfo.to_json()
+print(OnPageLighthouseTaskPostTaskInfo.to_json())
 
 # convert the object into a dict
 on_page_lighthouse_task_post_task_info_dict = on_page_lighthouse_task_post_task_info_instance.to_dict()
 # create an instance of OnPageLighthouseTaskPostTaskInfo from a dict
-on_page_lighthouse_task_post_task_info_form_dict = on_page_lighthouse_task_post_task_info.from_dict(on_page_lighthouse_task_post_task_info_dict)
+on_page_lighthouse_task_post_task_info_from_dict = OnPageLighthouseTaskPostTaskInfo.from_dict(on_page_lighthouse_task_post_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

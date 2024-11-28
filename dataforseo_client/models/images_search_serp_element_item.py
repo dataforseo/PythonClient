@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_google_images_serp_element_item import BaseGoogleImagesSerpElementItem
 from typing import Optional, Set
@@ -33,16 +33,16 @@ class ImagesSearchSerpElementItem(BaseGoogleImagesSerpElementItem):
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     subtitle: Optional[StrictStr] = Field(default=None, description="subtitle of the result in SERP")
     alt: Optional[StrictStr] = Field(default=None, description="the alt tag of the image")
-    url: Optional[StrictStr] = Field(default=None, description="the URL of the page where the image is hosted")
+    url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
     source_url: Optional[StrictStr] = Field(default=None, description="the URL of the source image")
     encoded_url: Optional[StrictStr] = Field(default=None, description="the URL of the cached version of the image stored on Google’s servers")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "title", "subtitle", "alt", "url", "source_url", "encoded_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of SslInfo from a JSON string
 ssl_info_instance = SslInfo.from_json(json)
 # print the JSON string representation of the object
-print SslInfo.to_json()
+print(SslInfo.to_json())
 
 # convert the object into a dict
 ssl_info_dict = ssl_info_instance.to_dict()
 # create an instance of SslInfo from a dict
-ssl_info_form_dict = ssl_info.from_dict(ssl_info_dict)
+ssl_info_from_dict = SslInfo.from_dict(ssl_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

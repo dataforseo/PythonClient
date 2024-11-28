@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of AvailableLanguages from a JSON string
 available_languages_instance = AvailableLanguages.from_json(json)
 # print the JSON string representation of the object
-print AvailableLanguages.to_json()
+print(AvailableLanguages.to_json())
 
 # convert the object into a dict
 available_languages_dict = available_languages_instance.to_dict()
 # create an instance of AvailableLanguages from a dict
-available_languages_form_dict = available_languages.from_dict(available_languages_dict)
+available_languages_from_dict = AvailableLanguages.from_dict(available_languages_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

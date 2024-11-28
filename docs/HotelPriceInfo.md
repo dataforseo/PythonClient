@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of HotelPriceInfo from a JSON string
 hotel_price_info_instance = HotelPriceInfo.from_json(json)
 # print the JSON string representation of the object
-print HotelPriceInfo.to_json()
+print(HotelPriceInfo.to_json())
 
 # convert the object into a dict
 hotel_price_info_dict = hotel_price_info_instance.to_dict()
 # create an instance of HotelPriceInfo from a dict
-hotel_price_info_form_dict = hotel_price_info.from_dict(hotel_price_info_dict)
+hotel_price_info_from_dict = HotelPriceInfo.from_dict(hotel_price_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

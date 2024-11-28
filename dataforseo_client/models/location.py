@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.location_chain import LocationChain
 from dataforseo_client.models.score_by_categories import ScoreByCategories
@@ -38,11 +38,11 @@ class Location(BaseModel):
     location_chain: Optional[List[LocationChain]] = Field(default=None, description="elements of the location chain additional parameters of each element of the location chain")
     __properties: ClassVar[List[str]] = ["neighborhood", "neighborhood_description", "maps_url", "overall_score", "score_by_categories", "latitude", "longitude", "location_chain"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -83,9 +83,9 @@ class Location(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in location_chain (list)
         _items = []
         if self.location_chain:
-            for _item in self.location_chain:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_location_chain in self.location_chain:
+                if _item_location_chain:
+                    _items.append(_item_location_chain.to_dict())
             _dict['location_chain'] = _items
         # set to None if neighborhood (nullable) is None
         # and model_fields_set contains the field

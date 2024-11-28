@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
 **job_id** | **str** | ID of the job on Google Jobs | [optional] 
-**title** | **str** | title of the job | [optional] 
+**title** | **str** | title of the element | [optional] 
 **employer_name** | **str** | name of the employer | [optional] 
 **employer_url** | **str** | URL to the employer’s website | [optional] 
 **employer_image_url** | **str** | URL to the image used in the job posting | [optional] 
@@ -34,12 +34,12 @@ json = "{}"
 # create an instance of SerpGoogleJobsTaskGetAdvancedItem from a JSON string
 serp_google_jobs_task_get_advanced_item_instance = SerpGoogleJobsTaskGetAdvancedItem.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleJobsTaskGetAdvancedItem.to_json()
+print(SerpGoogleJobsTaskGetAdvancedItem.to_json())
 
 # convert the object into a dict
 serp_google_jobs_task_get_advanced_item_dict = serp_google_jobs_task_get_advanced_item_instance.to_dict()
 # create an instance of SerpGoogleJobsTaskGetAdvancedItem from a dict
-serp_google_jobs_task_get_advanced_item_form_dict = serp_google_jobs_task_get_advanced_item.from_dict(serp_google_jobs_task_get_advanced_item_dict)
+serp_google_jobs_task_get_advanced_item_from_dict = SerpGoogleJobsTaskGetAdvancedItem.from_dict(serp_google_jobs_task_get_advanced_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

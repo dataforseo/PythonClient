@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of TopicListDataItemInfo from a JSON string
 topic_list_data_item_info_instance = TopicListDataItemInfo.from_json(json)
 # print the JSON string representation of the object
-print TopicListDataItemInfo.to_json()
+print(TopicListDataItemInfo.to_json())
 
 # convert the object into a dict
 topic_list_data_item_info_dict = topic_list_data_item_info_instance.to_dict()
 # create an instance of TopicListDataItemInfo from a dict
-topic_list_data_item_info_form_dict = topic_list_data_item_info.from_dict(topic_list_data_item_info_dict)
+topic_list_data_item_info_from_dict = TopicListDataItemInfo.from_dict(topic_list_data_item_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

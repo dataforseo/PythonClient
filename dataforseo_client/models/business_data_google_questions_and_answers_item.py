@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.google_business_answer_element import GoogleBusinessAnswerElement
 from typing import Optional, Set
@@ -42,11 +42,11 @@ class BusinessDataGoogleQuestionsAndAnswersItem(BaseModel):
     items: Optional[List[GoogleBusinessAnswerElement]] = Field(default=None, description="array of google business question items with answers possible item types: google_business_question_item")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "question_id", "url", "profile_image_url", "profile_url", "profile_name", "question_text", "original_question_text", "time_ago", "timestamp", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -84,9 +84,9 @@ class BusinessDataGoogleQuestionsAndAnswersItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

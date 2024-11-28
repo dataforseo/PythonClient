@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.availible_versions import AvailibleVersions
 from typing import Optional, Set
@@ -30,11 +30,11 @@ class OnPageLighthouseVersionsResultInfo(BaseModel):
     availible_versions: Optional[List[AvailibleVersions]] = None
     __properties: ClassVar[List[str]] = ["availible_versions"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -72,9 +72,9 @@ class OnPageLighthouseVersionsResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in availible_versions (list)
         _items = []
         if self.availible_versions:
-            for _item in self.availible_versions:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_availible_versions in self.availible_versions:
+                if _item_availible_versions:
+                    _items.append(_item_availible_versions.to_dict())
             _dict['availible_versions'] = _items
         # set to None if availible_versions (nullable) is None
         # and model_fields_set contains the field

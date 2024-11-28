@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of GoogleBusinessAnswerElement from a JSON string
 google_business_answer_element_instance = GoogleBusinessAnswerElement.from_json(json)
 # print the JSON string representation of the object
-print GoogleBusinessAnswerElement.to_json()
+print(GoogleBusinessAnswerElement.to_json())
 
 # convert the object into a dict
 google_business_answer_element_dict = google_business_answer_element_instance.to_dict()
 # create an instance of GoogleBusinessAnswerElement from a dict
-google_business_answer_element_form_dict = google_business_answer_element.from_dict(google_business_answer_element_dict)
+google_business_answer_element_from_dict = GoogleBusinessAnswerElement.from_dict(google_business_answer_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

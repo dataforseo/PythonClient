@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of PageMetrics from a JSON string
 page_metrics_instance = PageMetrics.from_json(json)
 # print the JSON string representation of the object
-print PageMetrics.to_json()
+print(PageMetrics.to_json())
 
 # convert the object into a dict
 page_metrics_dict = page_metrics_instance.to_dict()
 # create an instance of PageMetrics from a dict
-page_metrics_form_dict = page_metrics.from_dict(page_metrics_dict)
+page_metrics_from_dict = PageMetrics.from_dict(page_metrics_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

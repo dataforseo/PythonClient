@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **url** | **str** | absolute url of the business entity | [optional] 
 **contact_url** | **str** | URL of the preferred contact page | [optional] 
 **contributor_url** | **str** | URL of the user’s or entity’s Local Guides profile, if available | [optional] 
+**book_online_url** | **str** | URL in the ‘book online’ button of the element URL directing users to the online booking or order page of the business entity | [optional] 
 **domain** | **str** | domain of the business entity | [optional] 
 **logo** | **str** | URL of the logo featured in Google My Business profile | [optional] 
 **main_image** | **str** | URL of the main image featured in Google My Business profile | [optional] 
@@ -36,7 +37,7 @@ Name | Type | Description | Notes
 **price_level** | **str** | property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null | [optional] 
 **rating_distribution** | **Dict[str, Optional[int]]** | the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users | [optional] 
 **people_also_search** | [**List[PeopleAlsoSearch]**](PeopleAlsoSearch.md) | related business entities | [optional] 
-**work_time** | [**WorkInfo**](WorkInfo.md) |  | [optional] 
+**work_time** | [**WorkTime**](WorkTime.md) |  | [optional] 
 **popular_times** | [**PopularTimes**](PopularTimes.md) |  | [optional] 
 **local_business_links** | [**List[BaseLocalBusinessLink]**](BaseLocalBusinessLink.md) | available interactions with the business list of options to interact with the business directly from search results | [optional] 
 **is_directory_item** | **bool** | business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null | [optional] 
@@ -52,12 +53,12 @@ json = "{}"
 # create an instance of GoogleBusinessInfoBusinessDataSerpElementItem from a JSON string
 google_business_info_business_data_serp_element_item_instance = GoogleBusinessInfoBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print GoogleBusinessInfoBusinessDataSerpElementItem.to_json()
+print(GoogleBusinessInfoBusinessDataSerpElementItem.to_json())
 
 # convert the object into a dict
 google_business_info_business_data_serp_element_item_dict = google_business_info_business_data_serp_element_item_instance.to_dict()
 # create an instance of GoogleBusinessInfoBusinessDataSerpElementItem from a dict
-google_business_info_business_data_serp_element_item_form_dict = google_business_info_business_data_serp_element_item.from_dict(google_business_info_business_data_serp_element_item_dict)
+google_business_info_business_data_serp_element_item_from_dict = GoogleBusinessInfoBusinessDataSerpElementItem.from_dict(google_business_info_business_data_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

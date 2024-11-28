@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ShoppingSpecificationMerchantSerpElementItem from a JSON string
 shopping_specification_merchant_serp_element_item_instance = ShoppingSpecificationMerchantSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print ShoppingSpecificationMerchantSerpElementItem.to_json()
+print(ShoppingSpecificationMerchantSerpElementItem.to_json())
 
 # convert the object into a dict
 shopping_specification_merchant_serp_element_item_dict = shopping_specification_merchant_serp_element_item_instance.to_dict()
 # create an instance of ShoppingSpecificationMerchantSerpElementItem from a dict
-shopping_specification_merchant_serp_element_item_form_dict = shopping_specification_merchant_serp_element_item.from_dict(shopping_specification_merchant_serp_element_item_dict)
+shopping_specification_merchant_serp_element_item_from_dict = ShoppingSpecificationMerchantSerpElementItem.from_dict(shopping_specification_merchant_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.business_data_google_hotel_searches_item import BusinessDataGoogleHotelSearchesItem
 from typing import Optional, Set
@@ -27,7 +27,7 @@ class BusinessDataGoogleHotelSearchesLiveResultInfo(BaseModel):
     """
     BusinessDataGoogleHotelSearchesLiveResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
@@ -36,11 +36,11 @@ class BusinessDataGoogleHotelSearchesLiveResultInfo(BaseModel):
     items: Optional[List[BusinessDataGoogleHotelSearchesItem]] = Field(default=None, description="array of items note: this field always equals null; use it to facilitate integration and ensure interoperability with the Hotel Info endpoint")
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "check_url", "datetime", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -78,9 +78,9 @@ class BusinessDataGoogleHotelSearchesLiveResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field

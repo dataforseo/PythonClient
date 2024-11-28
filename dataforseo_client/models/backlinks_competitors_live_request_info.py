@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class BacklinksCompetitorsLiveRequestInfo(BaseModel):
     target: Optional[StrictStr] = Field(default=None, description="domain, subdomain or webpage to get competitor domains for required field a domain or a subdomain should be specified without https:// and www. a page should be specified with absolute URL (including http:// or https://)")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned domains optional field default value: 100 maximum value: 1000")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned domains optional field default value: 0 if you specify the 10 value, the first ten domains in the results array will be omitted and the data will be provided for the successive pages")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, =, <>, in, not_in, like, not_like, ilike, not_ilike you can use the % operator with like and not_like to match any string of zero or more characters example: [\"rank\",\">\",\"100\"] [[\"target\",\"like\",\"%forbes%\"], \"and\", [[\"rank\",\">\",\"100\"],\"or\",[\"intersections\",\">\",\"5\"]]] The full list of possible filters is available here.")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, =, <>, in, not_in, like, not_like, ilike, not_ilike you can use the % operator with like and not_like to match any string of zero or more characters example: [\"rank\",\">\",\"100\"] [[\"target\",\"like\",\"%forbes%\"], \"and\", [[\"rank\",\">\",\"100\"],\"or\",[\"intersections\",\">\",\"5\"]]] The full list of possible filters is available here.")
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to set up a sorting type example: [\"rank,desc\"] note that you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"intersections,desc\",\"rank,asc\"]")
     main_domain: Optional[StrictBool] = Field(default=None, description="indicates if only main domain of the target will be included in the search optional field if set to true, only the main domain will be included in search; default value: true")
     exclude_large_domains: Optional[StrictBool] = Field(default=None, description="indicates whether large domain will appear in results optional field if set to true, the results from the large domain (google.com, amazon.com, etc.) will be omitted; default value: true")
@@ -37,11 +37,11 @@ class BacklinksCompetitorsLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["target", "limit", "offset", "filters", "order_by", "main_domain", "exclude_large_domains", "exclude_internal_backlinks", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

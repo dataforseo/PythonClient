@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of AvailableLocations from a JSON string
 available_locations_instance = AvailableLocations.from_json(json)
 # print the JSON string representation of the object
-print AvailableLocations.to_json()
+print(AvailableLocations.to_json())
 
 # convert the object into a dict
 available_locations_dict = available_locations_instance.to_dict()
 # create an instance of AvailableLocations from a dict
-available_locations_form_dict = available_locations.from_dict(available_locations_dict)
+available_locations_from_dict = AvailableLocations.from_dict(available_locations_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

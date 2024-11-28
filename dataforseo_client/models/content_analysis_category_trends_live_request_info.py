@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,15 +33,15 @@ class ContentAnalysisCategoryTrendsLiveRequestInfo(BaseModel):
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range required field date format: \"yyyy-mm-dd\" example: \"2019-01-15\"")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field if you don’t specify this field, today’s date will be used by default date format: \"yyyy-mm-dd\" example: \"2019-01-15\"")
     date_group: Optional[StrictStr] = Field(default=None, description="time range which will be used to group the results optional field default value: month possible values: day, week, month")
-    initial_dataset_filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="initial dataset filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not you can use the % operator with like and not_like to match any string of zero or more characters example: [\"domain\",\"<>\", \"logitech.com\"] [[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]] [[\"domain\",\"<>\",\"logitech.com\"]], \"and\", [[\"content_info.connotation_types.negative\",\">\",1000], \"or\", [\"content_info.text_category\",\"has\",10994]]] for more information about filters, please refer to Content Analysis API – Filters")
+    initial_dataset_filters: Optional[List[Optional[Any]]] = Field(default=None, description="initial dataset filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not you can use the % operator with like and not_like to match any string of zero or more characters example: [\"domain\",\"<>\", \"logitech.com\"] [[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]] [[\"domain\",\"<>\",\"logitech.com\"]], \"and\", [[\"content_info.connotation_types.negative\",\">\",1000], \"or\", [\"content_info.text_category\",\"has\",10994]]] for more information about filters, please refer to Content Analysis API – Filters")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["category_code", "page_type", "search_mode", "internal_list_limit", "date_from", "date_to", "date_group", "initial_dataset_filters", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

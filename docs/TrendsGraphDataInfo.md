@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of TrendsGraphDataInfo from a JSON string
 trends_graph_data_info_instance = TrendsGraphDataInfo.from_json(json)
 # print the JSON string representation of the object
-print TrendsGraphDataInfo.to_json()
+print(TrendsGraphDataInfo.to_json())
 
 # convert the object into a dict
 trends_graph_data_info_dict = trends_graph_data_info_instance.to_dict()
 # create an instance of TrendsGraphDataInfo from a dict
-trends_graph_data_info_form_dict = trends_graph_data_info.from_dict(trends_graph_data_info_dict)
+trends_graph_data_info_from_dict = TrendsGraphDataInfo.from_dict(trends_graph_data_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

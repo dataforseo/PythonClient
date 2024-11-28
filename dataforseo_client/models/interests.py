@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.values import Values
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class Interests(BaseModel):
     values: Optional[List[Values]] = Field(default=None, description="contains data on relative keyword popularity by country or region")
     __properties: ClassVar[List[str]] = ["keyword", "values"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -73,9 +73,9 @@ class Interests(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in values (list)
         _items = []
         if self.values:
-            for _item in self.values:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_values in self.values:
+                if _item_values:
+                    _items.append(_item_values.to_dict())
             _dict['values'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field

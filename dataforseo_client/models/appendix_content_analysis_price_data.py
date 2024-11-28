@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,22 +29,22 @@ class AppendixContentAnalysisPriceData(BaseModel):
     AppendixContentAnalysisPriceData
     """ # noqa: E501
     categories: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    category_trends: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    category_trends: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     errors: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    phrase_trends: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    rating_distribution: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    search: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    sentiment_analysis: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    phrase_trends: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    rating_distribution: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    search: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    sentiment_analysis: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    summary: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["categories", "category_trends", "errors", "languages", "locations", "phrase_trends", "rating_distribution", "search", "sentiment_analysis", "summary"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -122,15 +122,15 @@ class AppendixContentAnalysisPriceData(BaseModel):
 
         _obj = cls.model_validate({
             "categories": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["categories"]) if obj.get("categories") is not None else None,
-            "category_trends": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["category_trends"]) if obj.get("category_trends") is not None else None,
+            "category_trends": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["category_trends"]) if obj.get("category_trends") is not None else None,
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
-            "phrase_trends": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["phrase_trends"]) if obj.get("phrase_trends") is not None else None,
-            "rating_distribution": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["rating_distribution"]) if obj.get("rating_distribution") is not None else None,
-            "search": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
-            "sentiment_analysis": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["sentiment_analysis"]) if obj.get("sentiment_analysis") is not None else None,
-            "summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None
+            "phrase_trends": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["phrase_trends"]) if obj.get("phrase_trends") is not None else None,
+            "rating_distribution": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["rating_distribution"]) if obj.get("rating_distribution") is not None else None,
+            "search": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["search"]) if obj.get("search") is not None else None,
+            "sentiment_analysis": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["sentiment_analysis"]) if obj.get("sentiment_analysis") is not None else None,
+            "summary": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None
         })
         return _obj
 

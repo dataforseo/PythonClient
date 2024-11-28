@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **price_level** | **str** | property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null | [optional] 
 **hotel_rating** | **int** | hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null | [optional] 
 **category_ids** | **List[str]** | global category IDs universal category IDs that do not change based on the selected country | [optional] 
-**work_hours** | [**WorkInfo**](WorkInfo.md) |  | [optional] 
+**work_hours** | [**WorkHours**](WorkHours.md) |  | [optional] 
 **feature_id** | **str** | the unique identifier of the element in SERP learn more about the identifier in this help center article | [optional] 
 **cid** | **str** | google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews learn more about the identifier in this help center article | [optional] 
 **latitude** | **float** | latitude coordinate of the local establishments in google maps example: \&quot;latitude\&quot;: 51.584091 | [optional] 
@@ -41,12 +41,12 @@ json = "{}"
 # create an instance of MapsSearchBusinessDataSerpElementItem from a JSON string
 maps_search_business_data_serp_element_item_instance = MapsSearchBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print MapsSearchBusinessDataSerpElementItem.to_json()
+print(MapsSearchBusinessDataSerpElementItem.to_json())
 
 # convert the object into a dict
 maps_search_business_data_serp_element_item_dict = maps_search_business_data_serp_element_item_instance.to_dict()
 # create an instance of MapsSearchBusinessDataSerpElementItem from a dict
-maps_search_business_data_serp_element_item_form_dict = maps_search_business_data_serp_element_item.from_dict(maps_search_business_data_serp_element_item_dict)
+maps_search_business_data_serp_element_item_from_dict = MapsSearchBusinessDataSerpElementItem.from_dict(maps_search_business_data_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

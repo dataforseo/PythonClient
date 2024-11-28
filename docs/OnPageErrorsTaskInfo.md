@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of OnPageErrorsTaskInfo from a JSON string
 on_page_errors_task_info_instance = OnPageErrorsTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageErrorsTaskInfo.to_json()
+print(OnPageErrorsTaskInfo.to_json())
 
 # convert the object into a dict
 on_page_errors_task_info_dict = on_page_errors_task_info_instance.to_dict()
 # create an instance of OnPageErrorsTaskInfo from a dict
-on_page_errors_task_info_form_dict = on_page_errors_task_info.from_dict(on_page_errors_task_info_dict)
+on_page_errors_task_info_from_dict = OnPageErrorsTaskInfo.from_dict(on_page_errors_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

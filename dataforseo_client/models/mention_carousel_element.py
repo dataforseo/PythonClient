@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.link_element import LinkElement
 from dataforseo_client.models.price_info import PriceInfo
@@ -36,11 +36,11 @@ class MentionCarouselElement(BaseModel):
     mentioned_in: Optional[List[LinkElement]] = Field(default=None, description="additional elements in the mention_carousel item")
     __properties: ClassVar[List[str]] = ["type", "title", "price", "rating", "mentioned_in"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -84,9 +84,9 @@ class MentionCarouselElement(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in mentioned_in (list)
         _items = []
         if self.mentioned_in:
-            for _item in self.mentioned_in:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mentioned_in in self.mentioned_in:
+                if _item_mentioned_in:
+                    _items.append(_item_mentioned_in.to_dict())
             _dict['mentioned_in'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

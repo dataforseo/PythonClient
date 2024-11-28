@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword received in a POST array keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character) | [optional] 
+**keyword** | **str** | keyword received in a POST array keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character) | [optional] 
 **type** | **str** | type of element | [optional] 
 **se_domain** | **str** | search engine domain in a POST array | [optional] 
 **location_code** | **int** | location code in a POST array | [optional] 
@@ -27,12 +27,12 @@ json = "{}"
 # create an instance of MerchantGoogleProductsTaskGetAdvancedResultInfo from a JSON string
 merchant_google_products_task_get_advanced_result_info_instance = MerchantGoogleProductsTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantGoogleProductsTaskGetAdvancedResultInfo.to_json()
+print(MerchantGoogleProductsTaskGetAdvancedResultInfo.to_json())
 
 # convert the object into a dict
 merchant_google_products_task_get_advanced_result_info_dict = merchant_google_products_task_get_advanced_result_info_instance.to_dict()
 # create an instance of MerchantGoogleProductsTaskGetAdvancedResultInfo from a dict
-merchant_google_products_task_get_advanced_result_info_form_dict = merchant_google_products_task_get_advanced_result_info.from_dict(merchant_google_products_task_get_advanced_result_info_dict)
+merchant_google_products_task_get_advanced_result_info_from_dict = MerchantGoogleProductsTaskGetAdvancedResultInfo.from_dict(merchant_google_products_task_get_advanced_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

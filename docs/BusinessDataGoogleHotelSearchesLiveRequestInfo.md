@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword optional field the keyword you specify is used to search for the list of hotels; if you don’t use this field, we will return the list of hotels found in a specified location; you can specify up to 700 symbols in the keyword filed all %## will be decoded (plus symbol ‘+’ will be decoded to a space character) if you need to use the “%” symbol for your keyword, please specify it as “%25”; Note: in order to obtain accurate search results, the location name is appended to the keyword automatically learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keyword** | **str** | keyword optional field the keyword you specify is used to search for the list of hotels; if you don’t use this field, we will return the list of hotels found in a specified location; you can specify up to 700 characters in the keyword filed all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your keyword, please specify it as “%25”; Note: in order to obtain accurate search results, the location name is appended to the keyword automatically learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **location_name** | **str** | full name of search engine location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available locations with location_name by making a separate request to https://api.dataforseo.com/v3/business_data/google/locations example: London,England,United Kingdom Note: in order to obtain accurate search results, the location_name you specify will be automatically appended to the keyword | [optional] 
 **location_code** | **int** | search engine location code required field if you don’t specify location_name or location_coordinate if you use this field, you don’t need to specify location_name or location_coordinate you can receive the list of available locations with location_code by making a separate request to the https://api.dataforseo.com/v3/business_data/google/locations example: 2840 | [optional] 
 **location_coordinate** | **str** | GPS coordinates of a location required field if you don’t specify location_name or location_code if you use this field, you don’t need to specify location_name or location_code location_coordinate parameter should be specified in the “latitude,longitude” format the maximum number of decimal digits for “latitude” and “longitude”: 7 Note: if the coordinates are used to set a location, the search will occur in the nearest settlement example: 53.476225,-2.243572 | [optional] 
@@ -37,12 +37,12 @@ json = "{}"
 # create an instance of BusinessDataGoogleHotelSearchesLiveRequestInfo from a JSON string
 business_data_google_hotel_searches_live_request_info_instance = BusinessDataGoogleHotelSearchesLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataGoogleHotelSearchesLiveRequestInfo.to_json()
+print(BusinessDataGoogleHotelSearchesLiveRequestInfo.to_json())
 
 # convert the object into a dict
 business_data_google_hotel_searches_live_request_info_dict = business_data_google_hotel_searches_live_request_info_instance.to_dict()
 # create an instance of BusinessDataGoogleHotelSearchesLiveRequestInfo from a dict
-business_data_google_hotel_searches_live_request_info_form_dict = business_data_google_hotel_searches_live_request_info.from_dict(business_data_google_hotel_searches_live_request_info_dict)
+business_data_google_hotel_searches_live_request_info_from_dict = BusinessDataGoogleHotelSearchesLiveRequestInfo.from_dict(business_data_google_hotel_searches_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

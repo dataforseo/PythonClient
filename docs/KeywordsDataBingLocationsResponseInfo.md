@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of KeywordsDataBingLocationsResponseInfo from a JSON string
 keywords_data_bing_locations_response_info_instance = KeywordsDataBingLocationsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataBingLocationsResponseInfo.to_json()
+print(KeywordsDataBingLocationsResponseInfo.to_json())
 
 # convert the object into a dict
 keywords_data_bing_locations_response_info_dict = keywords_data_bing_locations_response_info_instance.to_dict()
 # create an instance of KeywordsDataBingLocationsResponseInfo from a dict
-keywords_data_bing_locations_response_info_form_dict = keywords_data_bing_locations_response_info.from_dict(keywords_data_bing_locations_response_info_dict)
+keywords_data_bing_locations_response_info_from_dict = KeywordsDataBingLocationsResponseInfo.from_dict(keywords_data_bing_locations_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of ContentUrlInfo from a JSON string
 content_url_info_instance = ContentUrlInfo.from_json(json)
 # print the JSON string representation of the object
-print ContentUrlInfo.to_json()
+print(ContentUrlInfo.to_json())
 
 # convert the object into a dict
 content_url_info_dict = content_url_info_instance.to_dict()
 # create an instance of ContentUrlInfo from a dict
-content_url_info_form_dict = content_url_info.from_dict(content_url_info_dict)
+content_url_info_from_dict = ContentUrlInfo.from_dict(content_url_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of AiOverviewReference from a JSON string
 ai_overview_reference_instance = AiOverviewReference.from_json(json)
 # print the JSON string representation of the object
-print AiOverviewReference.to_json()
+print(AiOverviewReference.to_json())
 
 # convert the object into a dict
 ai_overview_reference_dict = ai_overview_reference_instance.to_dict()
 # create an instance of AiOverviewReference from a dict
-ai_overview_reference_form_dict = ai_overview_reference.from_dict(ai_overview_reference_dict)
+ai_overview_reference_from_dict = AiOverviewReference.from_dict(ai_overview_reference_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

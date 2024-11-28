@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of HotelsPackDataforseoLabsSerpElementItem from a JSON string
 hotels_pack_dataforseo_labs_serp_element_item_instance = HotelsPackDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print HotelsPackDataforseoLabsSerpElementItem.to_json()
+print(HotelsPackDataforseoLabsSerpElementItem.to_json())
 
 # convert the object into a dict
 hotels_pack_dataforseo_labs_serp_element_item_dict = hotels_pack_dataforseo_labs_serp_element_item_instance.to_dict()
 # create an instance of HotelsPackDataforseoLabsSerpElementItem from a dict
-hotels_pack_dataforseo_labs_serp_element_item_form_dict = hotels_pack_dataforseo_labs_serp_element_item.from_dict(hotels_pack_dataforseo_labs_serp_element_item_dict)
+hotels_pack_dataforseo_labs_serp_element_item_from_dict = HotelsPackDataforseoLabsSerpElementItem.from_dict(hotels_pack_dataforseo_labs_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

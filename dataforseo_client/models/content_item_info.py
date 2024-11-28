@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.content_url_info import ContentUrlInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class ContentItemInfo(BaseModel):
     urls: Optional[List[ContentUrlInfo]] = Field(default=None, description="contains other URLs and anchors found in the content element")
     __properties: ClassVar[List[str]] = ["text", "url", "urls"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,9 +74,9 @@ class ContentItemInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in urls (list)
         _items = []
         if self.urls:
-            for _item in self.urls:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_urls in self.urls:
+                if _item_urls:
+                    _items.append(_item_urls.to_dict())
             _dict['urls'] = _items
         # set to None if text (nullable) is None
         # and model_fields_set contains the field

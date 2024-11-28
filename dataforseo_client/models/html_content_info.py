@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,11 +39,11 @@ class HtmlContentInfo(BaseModel):
     meta_keywords_to_content_consistency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="consistency of meta keywordstag with the page content measured from 0 to 1")
     __properties: ClassVar[List[str]] = ["plain_text_size", "plain_text_rate", "plain_text_word_count", "automated_readability_index", "coleman_liau_readability_index", "dale_chall_readability_index", "flesch_kincaid_readability_index", "smog_readability_index", "description_to_content_consistency", "title_to_content_consistency", "meta_keywords_to_content_consistency"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

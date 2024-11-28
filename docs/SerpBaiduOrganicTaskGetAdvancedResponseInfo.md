@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpBaiduOrganicTaskGetAdvancedResponseInfo from a JSON string
 serp_baidu_organic_task_get_advanced_response_info_instance = SerpBaiduOrganicTaskGetAdvancedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBaiduOrganicTaskGetAdvancedResponseInfo.to_json()
+print(SerpBaiduOrganicTaskGetAdvancedResponseInfo.to_json())
 
 # convert the object into a dict
 serp_baidu_organic_task_get_advanced_response_info_dict = serp_baidu_organic_task_get_advanced_response_info_instance.to_dict()
 # create an instance of SerpBaiduOrganicTaskGetAdvancedResponseInfo from a dict
-serp_baidu_organic_task_get_advanced_response_info_form_dict = serp_baidu_organic_task_get_advanced_response_info.from_dict(serp_baidu_organic_task_get_advanced_response_info_dict)
+serp_baidu_organic_task_get_advanced_response_info_from_dict = SerpBaiduOrganicTaskGetAdvancedResponseInfo.from_dict(serp_baidu_organic_task_get_advanced_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

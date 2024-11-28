@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_bing_keywords_data_price_data import AppendixBingKeywordsDataPriceData
 from dataforseo_client.models.appendix_clickstream_data_keywords_data_price_data import AppendixClickstreamDataKeywordsDataPriceData
@@ -35,6 +35,7 @@ class AppendixKeywordsDataPriceData(BaseModel):
     """ # noqa: E501
     tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     ad_traffic_by_keywords: Optional[AppendixKeywordsDataPriceDataInfo] = None
+    audience_estimation: Optional[AppendixKeywordsDataPriceDataInfo] = None
     bing: Optional[AppendixBingKeywordsDataPriceData] = None
     categories: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     clickstream_data: Optional[AppendixClickstreamDataKeywordsDataPriceData] = None
@@ -43,19 +44,20 @@ class AppendixKeywordsDataPriceData(BaseModel):
     keyword_performance: Optional[AppendixKeywordsDataPriceDataInfo] = None
     keywords_for_keywords: Optional[AppendixKeywordsDataPriceDataInfo] = None
     keywords_for_site: Optional[AppendixKeywordsDataPriceDataInfo] = None
+    keyword_suggestions_for_url: Optional[AppendixKeywordsDataPriceDataInfo] = None
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations_and_languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     search_volume: Optional[AppendixKeywordsDataPriceDataInfo] = None
     dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataPriceData] = None
     explore: Optional[AppendixExploreKeywordsDataPriceData] = None
-    __properties: ClassVar[List[str]] = ["tasks_ready", "ad_traffic_by_keywords", "bing", "categories", "clickstream_data", "errors", "google_ads", "keyword_performance", "keywords_for_keywords", "keywords_for_site", "languages", "locations", "locations_and_languages", "search_volume", "dataforseo_trends", "explore"]
+    __properties: ClassVar[List[str]] = ["tasks_ready", "ad_traffic_by_keywords", "audience_estimation", "bing", "categories", "clickstream_data", "errors", "google_ads", "keyword_performance", "keywords_for_keywords", "keywords_for_site", "keyword_suggestions_for_url", "languages", "locations", "locations_and_languages", "search_volume", "dataforseo_trends", "explore"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -96,6 +98,9 @@ class AppendixKeywordsDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of ad_traffic_by_keywords
         if self.ad_traffic_by_keywords:
             _dict['ad_traffic_by_keywords'] = self.ad_traffic_by_keywords.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of audience_estimation
+        if self.audience_estimation:
+            _dict['audience_estimation'] = self.audience_estimation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of bing
         if self.bing:
             _dict['bing'] = self.bing.to_dict()
@@ -120,6 +125,9 @@ class AppendixKeywordsDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keywords_for_site
         if self.keywords_for_site:
             _dict['keywords_for_site'] = self.keywords_for_site.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_suggestions_for_url
+        if self.keyword_suggestions_for_url:
+            _dict['keyword_suggestions_for_url'] = self.keyword_suggestions_for_url.to_dict()
         # override the default output from pydantic by calling `to_dict()` of languages
         if self.languages:
             _dict['languages'] = self.languages.to_dict()
@@ -152,6 +160,7 @@ class AppendixKeywordsDataPriceData(BaseModel):
         _obj = cls.model_validate({
             "tasks_ready": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["tasks_ready"]) if obj.get("tasks_ready") is not None else None,
             "ad_traffic_by_keywords": AppendixKeywordsDataPriceDataInfo.from_dict(obj["ad_traffic_by_keywords"]) if obj.get("ad_traffic_by_keywords") is not None else None,
+            "audience_estimation": AppendixKeywordsDataPriceDataInfo.from_dict(obj["audience_estimation"]) if obj.get("audience_estimation") is not None else None,
             "bing": AppendixBingKeywordsDataPriceData.from_dict(obj["bing"]) if obj.get("bing") is not None else None,
             "categories": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["categories"]) if obj.get("categories") is not None else None,
             "clickstream_data": AppendixClickstreamDataKeywordsDataPriceData.from_dict(obj["clickstream_data"]) if obj.get("clickstream_data") is not None else None,
@@ -160,6 +169,7 @@ class AppendixKeywordsDataPriceData(BaseModel):
             "keyword_performance": AppendixKeywordsDataPriceDataInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
             "keywords_for_keywords": AppendixKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None,
             "keywords_for_site": AppendixKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
+            "keyword_suggestions_for_url": AppendixKeywordsDataPriceDataInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
             "locations_and_languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations_and_languages"]) if obj.get("locations_and_languages") is not None else None,

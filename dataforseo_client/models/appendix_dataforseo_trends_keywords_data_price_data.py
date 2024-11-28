@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,17 +27,17 @@ class AppendixDataforseoTrendsKeywordsDataPriceData(BaseModel):
     """
     AppendixDataforseoTrendsKeywordsDataPriceData
     """ # noqa: E501
-    demography: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    explore: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    merged_data: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    subregion_interests: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    demography: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    explore: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    merged_data: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    subregion_interests: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["demography", "explore", "merged_data", "subregion_interests"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -96,10 +96,10 @@ class AppendixDataforseoTrendsKeywordsDataPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "demography": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["demography"]) if obj.get("demography") is not None else None,
-            "explore": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["explore"]) if obj.get("explore") is not None else None,
-            "merged_data": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["merged_data"]) if obj.get("merged_data") is not None else None,
-            "subregion_interests": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["subregion_interests"]) if obj.get("subregion_interests") is not None else None
+            "demography": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["demography"]) if obj.get("demography") is not None else None,
+            "explore": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["explore"]) if obj.get("explore") is not None else None,
+            "merged_data": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["merged_data"]) if obj.get("merged_data") is not None else None,
+            "subregion_interests": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["subregion_interests"]) if obj.get("subregion_interests") is not None else None
         })
         return _obj
 

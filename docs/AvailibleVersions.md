@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of AvailibleVersions from a JSON string
 availible_versions_instance = AvailibleVersions.from_json(json)
 # print the JSON string representation of the object
-print AvailibleVersions.to_json()
+print(AvailibleVersions.to_json())
 
 # convert the object into a dict
 availible_versions_dict = availible_versions_instance.to_dict()
 # create an instance of AvailibleVersions from a dict
-availible_versions_form_dict = availible_versions.from_dict(availible_versions_dict)
+availible_versions_from_dict = AvailibleVersions.from_dict(availible_versions_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

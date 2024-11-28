@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.ad_link_element import AdLinkElement
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
@@ -48,11 +48,11 @@ class PaidSerpElementItem(BaseSerpElementItem):
     website_name: Optional[StrictStr] = Field(default=None, description="website name in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "breadcrumb", "is_image", "is_video", "images", "url", "highlighted", "extra", "description", "description_rows", "links", "price", "rectangle", "website_name"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -90,16 +90,16 @@ class PaidSerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in images (list)
         _items = []
         if self.images:
-            for _item in self.images:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_images in self.images:
+                if _item_images:
+                    _items.append(_item_images.to_dict())
             _dict['images'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in links (list)
         _items = []
         if self.links:
-            for _item in self.links:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_links in self.links:
+                if _item_links:
+                    _items.append(_item_links.to_dict())
             _dict['links'] = _items
         # override the default output from pydantic by calling `to_dict()` of price
         if self.price:

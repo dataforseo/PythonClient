@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **locations** | **float** |  | [optional] 
 **categories** | **float** |  | [optional] 
 **tasks_ready** | **float** |  | [optional] 
-**app_listings** | [**AppendixBusinessListingsBusinessDataLimitsRatesDataInfo**](AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
 **id_list** | **float** |  | [optional] 
+**app_listings** | [**AppendixBusinessListingsBusinessDataLimitsRatesDataInfo**](AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 
@@ -27,12 +27,12 @@ json = "{}"
 # create an instance of AppendixAppDataDayStatisticsRatesData from a JSON string
 appendix_app_data_day_statistics_rates_data_instance = AppendixAppDataDayStatisticsRatesData.from_json(json)
 # print the JSON string representation of the object
-print AppendixAppDataDayStatisticsRatesData.to_json()
+print(AppendixAppDataDayStatisticsRatesData.to_json())
 
 # convert the object into a dict
 appendix_app_data_day_statistics_rates_data_dict = appendix_app_data_day_statistics_rates_data_instance.to_dict()
 # create an instance of AppendixAppDataDayStatisticsRatesData from a dict
-appendix_app_data_day_statistics_rates_data_form_dict = appendix_app_data_day_statistics_rates_data.from_dict(appendix_app_data_day_statistics_rates_data_dict)
+appendix_app_data_day_statistics_rates_data_from_dict = AppendixAppDataDayStatisticsRatesData.from_dict(appendix_app_data_day_statistics_rates_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

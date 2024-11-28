@@ -29,12 +29,12 @@ json = "{}"
 # create an instance of ItemsWithoutAnswers from a JSON string
 items_without_answers_instance = ItemsWithoutAnswers.from_json(json)
 # print the JSON string representation of the object
-print ItemsWithoutAnswers.to_json()
+print(ItemsWithoutAnswers.to_json())
 
 # convert the object into a dict
 items_without_answers_dict = items_without_answers_instance.to_dict()
 # create an instance of ItemsWithoutAnswers from a dict
-items_without_answers_form_dict = items_without_answers.from_dict(items_without_answers_dict)
+items_without_answers_from_dict = ItemsWithoutAnswers.from_dict(items_without_answers_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

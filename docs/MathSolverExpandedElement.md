@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of MathSolverExpandedElement from a JSON string
 math_solver_expanded_element_instance = MathSolverExpandedElement.from_json(json)
 # print the JSON string representation of the object
-print MathSolverExpandedElement.to_json()
+print(MathSolverExpandedElement.to_json())
 
 # convert the object into a dict
 math_solver_expanded_element_dict = math_solver_expanded_element_instance.to_dict()
 # create an instance of MathSolverExpandedElement from a dict
-math_solver_expanded_element_form_dict = math_solver_expanded_element.from_dict(math_solver_expanded_element_dict)
+math_solver_expanded_element_from_dict = MathSolverExpandedElement.from_dict(math_solver_expanded_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

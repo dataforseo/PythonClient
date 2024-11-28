@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword received in a POST array keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character) this field will contain the cid parameter if you specified it in the keyword field when setting a task; example: cid:2946633002421908862 learn more about the parameter in this help center article | [optional] 
+**keyword** | **str** | keyword received in a POST array keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character) this field will contain the cid parameter if you specified it in the keyword field when setting a task; example: cid:2946633002421908862 learn more about the parameter in this help center article | [optional] 
 **se_domain** | **str** | search engine domain as specified in a POST array | [optional] 
 **location_code** | **int** | location code in a POST array | [optional] 
 **language_code** | **str** | language code in a POST array | [optional] 
@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of BusinessDataGoogleMyBusinessInfoTaskGetResultInfo from a JSON string
 business_data_google_my_business_info_task_get_result_info_instance = BusinessDataGoogleMyBusinessInfoTaskGetResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataGoogleMyBusinessInfoTaskGetResultInfo.to_json()
+print(BusinessDataGoogleMyBusinessInfoTaskGetResultInfo.to_json())
 
 # convert the object into a dict
 business_data_google_my_business_info_task_get_result_info_dict = business_data_google_my_business_info_task_get_result_info_instance.to_dict()
 # create an instance of BusinessDataGoogleMyBusinessInfoTaskGetResultInfo from a dict
-business_data_google_my_business_info_task_get_result_info_form_dict = business_data_google_my_business_info_task_get_result_info.from_dict(business_data_google_my_business_info_task_get_result_info_dict)
+business_data_google_my_business_info_task_get_result_info_from_dict = BusinessDataGoogleMyBusinessInfoTaskGetResultInfo.from_dict(business_data_google_my_business_info_task_get_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

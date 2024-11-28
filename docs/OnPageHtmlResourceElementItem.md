@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **onpage_score** | **float** | shows how page is optimized on a 100-point scale this field shows how page is optimized considering critical on-page issues and warnings detected; 100 is the highest possible score that means the page does not have any critical on-page issues and important warnings; learn more about how the metric is calculated in this help center article | [optional] 
 **total_dom_size** | **int** | total DOM size of a page | [optional] 
 **custom_js_response** | **object** | the result of executing a specified JS script note that you should specify a custom_js field when setting a task to receive this data and the field type and its value will totally depend on the script you specified;you can also filter the results by this value specifying filters in the following way: [\&quot;custom_js_response.url\&quot;, \&quot;like\&quot;, \&quot;pixel\&quot;] | [optional] 
+**custom_js_client_exception** | **str** | error when executing a custom js if the error occurred when executing the script you specified in the custom_js field, the error message would be displayed here | [optional] 
 **broken_resources** | **bool** | indicates whether a page contains broken resources | [optional] 
 **broken_links** | **bool** | indicates whether a page contains broken links | [optional] 
 **duplicate_title** | **bool** | indicates whether a page has duplicate title tags | [optional] 
@@ -30,12 +31,12 @@ json = "{}"
 # create an instance of OnPageHtmlResourceElementItem from a JSON string
 on_page_html_resource_element_item_instance = OnPageHtmlResourceElementItem.from_json(json)
 # print the JSON string representation of the object
-print OnPageHtmlResourceElementItem.to_json()
+print(OnPageHtmlResourceElementItem.to_json())
 
 # convert the object into a dict
 on_page_html_resource_element_item_dict = on_page_html_resource_element_item_instance.to_dict()
 # create an instance of OnPageHtmlResourceElementItem from a dict
-on_page_html_resource_element_item_form_dict = on_page_html_resource_element_item.from_dict(on_page_html_resource_element_item_dict)
+on_page_html_resource_element_item_from_dict = OnPageHtmlResourceElementItem.from_dict(on_page_html_resource_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

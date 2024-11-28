@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.technologies_info import TechnologiesInfo
 from typing import Optional, Set
@@ -43,11 +43,11 @@ class DomainAnalyticsTechnologiesDomainTechnologiesLiveResultInfo(BaseModel):
     technologies: Optional[TechnologiesInfo] = None
     __properties: ClassVar[List[str]] = ["type", "domain", "title", "description", "meta_keywords", "domain_rank", "last_visited", "country_iso_code", "language_code", "content_language_code", "phone_numbers", "emails", "social_graph_urls", "technologies"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

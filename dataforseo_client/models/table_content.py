@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.table_content_item_info import TableContentItemInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class TableContent(BaseModel):
     footer: Optional[List[TableContentItemInfo]] = Field(default=None, description="content of the footer of the table")
     __properties: ClassVar[List[str]] = ["header", "body", "footer"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,23 +74,23 @@ class TableContent(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in header (list)
         _items = []
         if self.header:
-            for _item in self.header:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_header in self.header:
+                if _item_header:
+                    _items.append(_item_header.to_dict())
             _dict['header'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in body (list)
         _items = []
         if self.body:
-            for _item in self.body:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_body in self.body:
+                if _item_body:
+                    _items.append(_item_body.to_dict())
             _dict['body'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in footer (list)
         _items = []
         if self.footer:
-            for _item in self.footer:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_footer in self.footer:
+                if _item_footer:
+                    _items.append(_item_footer.to_dict())
             _dict['footer'] = _items
         # set to None if header (nullable) is None
         # and model_fields_set contains the field

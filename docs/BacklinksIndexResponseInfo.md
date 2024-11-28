@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of BacklinksIndexResponseInfo from a JSON string
 backlinks_index_response_info_instance = BacklinksIndexResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksIndexResponseInfo.to_json()
+print(BacklinksIndexResponseInfo.to_json())
 
 # convert the object into a dict
 backlinks_index_response_info_dict = backlinks_index_response_info_instance.to_dict()
 # create an instance of BacklinksIndexResponseInfo from a dict
-backlinks_index_response_info_form_dict = backlinks_index_response_info.from_dict(backlinks_index_response_info_dict)
+backlinks_index_response_info_from_dict = BacklinksIndexResponseInfo.from_dict(backlinks_index_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

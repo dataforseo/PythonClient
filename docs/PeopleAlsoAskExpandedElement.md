@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of PeopleAlsoAskExpandedElement from a JSON string
 people_also_ask_expanded_element_instance = PeopleAlsoAskExpandedElement.from_json(json)
 # print the JSON string representation of the object
-print PeopleAlsoAskExpandedElement.to_json()
+print(PeopleAlsoAskExpandedElement.to_json())
 
 # convert the object into a dict
 people_also_ask_expanded_element_dict = people_also_ask_expanded_element_instance.to_dict()
 # create an instance of PeopleAlsoAskExpandedElement from a dict
-people_also_ask_expanded_element_form_dict = people_also_ask_expanded_element.from_dict(people_also_ask_expanded_element_dict)
+people_also_ask_expanded_element_from_dict = PeopleAlsoAskExpandedElement.from_dict(people_also_ask_expanded_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of PerspectivesElement from a JSON string
 perspectives_element_instance = PerspectivesElement.from_json(json)
 # print the JSON string representation of the object
-print PerspectivesElement.to_json()
+print(PerspectivesElement.to_json())
 
 # convert the object into a dict
 perspectives_element_dict = perspectives_element_instance.to_dict()
 # create an instance of PerspectivesElement from a dict
-perspectives_element_form_dict = perspectives_element.from_dict(perspectives_element_dict)
+perspectives_element_from_dict = PerspectivesElement.from_dict(perspectives_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

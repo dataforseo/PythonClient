@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpGoogleEventsTasksFixedResultInfo from a JSON string
 serp_google_events_tasks_fixed_result_info_instance = SerpGoogleEventsTasksFixedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleEventsTasksFixedResultInfo.to_json()
+print(SerpGoogleEventsTasksFixedResultInfo.to_json())
 
 # convert the object into a dict
 serp_google_events_tasks_fixed_result_info_dict = serp_google_events_tasks_fixed_result_info_instance.to_dict()
 # create an instance of SerpGoogleEventsTasksFixedResultInfo from a dict
-serp_google_events_tasks_fixed_result_info_form_dict = serp_google_events_tasks_fixed_result_info.from_dict(serp_google_events_tasks_fixed_result_info_dict)
+serp_google_events_tasks_fixed_result_info_from_dict = SerpGoogleEventsTasksFixedResultInfo.from_dict(serp_google_events_tasks_fixed_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -37,12 +37,12 @@ json = "{}"
 # create an instance of AppendixOnPageDayStatisticsMoneyData from a JSON string
 appendix_on_page_day_statistics_money_data_instance = AppendixOnPageDayStatisticsMoneyData.from_json(json)
 # print the JSON string representation of the object
-print AppendixOnPageDayStatisticsMoneyData.to_json()
+print(AppendixOnPageDayStatisticsMoneyData.to_json())
 
 # convert the object into a dict
 appendix_on_page_day_statistics_money_data_dict = appendix_on_page_day_statistics_money_data_instance.to_dict()
 # create an instance of AppendixOnPageDayStatisticsMoneyData from a dict
-appendix_on_page_day_statistics_money_data_form_dict = appendix_on_page_day_statistics_money_data.from_dict(appendix_on_page_day_statistics_money_data_dict)
+appendix_on_page_day_statistics_money_data_from_dict = AppendixOnPageDayStatisticsMoneyData.from_dict(appendix_on_page_day_statistics_money_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
@@ -49,11 +49,11 @@ class AppendixOnPageLimitsRatesDataInfo(BaseModel):
     content_parsing_live: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "summary", "resources", "pages", "non_indexable", "duplicate_tags", "links", "waterfall", "errors", "pages_by_resource", "duplicate_content", "raw_html", "instant_pages", "redirect_chains", "lighthouse", "keyword_density", "page_screenshot", "content_parsing", "content_parsing_live"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

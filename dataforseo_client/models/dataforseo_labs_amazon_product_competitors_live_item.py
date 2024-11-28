@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.amazon_metrics_bundle_info import AmazonMetricsBundleInfo
 from typing import Optional, Set
@@ -36,11 +36,11 @@ class DataforseoLabsAmazonProductCompetitorsLiveItem(BaseModel):
     full_metrics: Optional[AmazonMetricsBundleInfo] = None
     __properties: ClassVar[List[str]] = ["se_type", "asin", "avg_position", "sum_position", "intersections", "competitor_metrics", "full_metrics"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

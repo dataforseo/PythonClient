@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_google_maps_serp_element_item import BaseGoogleMapsSerpElementItem
@@ -33,6 +33,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
     """ # noqa: E501
     contact_url: Optional[StrictStr] = Field(default=None, description="URL of the preferred contact page")
     contributor_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s or entity’s Local Guides profile, if available")
+    book_online_url: Optional[StrictStr] = Field(default=None, description="URL in the ‘book online’ button of the element URL directing users to the online booking or order page of the business entity")
     hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
     snippet: Optional[StrictStr] = Field(default=None, description="element snippet contains the address and other information about the local establishment featured in the element")
@@ -53,13 +54,13 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
     is_claimed: Optional[StrictBool] = Field(default=None, description="indicates whether ownership of this local establishment is claimed")
     local_justifications: Optional[List[LocalJustificationInfo]] = Field(default=None, description="Google local justifications snippets of text that “justify” why the business is showing up for search query")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="indicates whether this local establishment is a directory")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution", "contact_url", "contributor_url", "hotel_rating", "price_level", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution", "contact_url", "contributor_url", "book_online_url", "hotel_rating", "price_level", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -106,9 +107,9 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in local_justifications (list)
         _items = []
         if self.local_justifications:
-            for _item in self.local_justifications:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_local_justifications in self.local_justifications:
+                if _item_local_justifications:
+                    _items.append(_item_local_justifications.to_dict())
             _dict['local_justifications'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
@@ -154,6 +155,11 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
         # and model_fields_set contains the field
         if self.contributor_url is None and "contributor_url" in self.model_fields_set:
             _dict['contributor_url'] = None
+
+        # set to None if book_online_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.book_online_url is None and "book_online_url" in self.model_fields_set:
+            _dict['book_online_url'] = None
 
         # set to None if hotel_rating (nullable) is None
         # and model_fields_set contains the field
@@ -267,6 +273,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
             "rating_distribution": obj.get("rating_distribution"),
             "contact_url": obj.get("contact_url"),
             "contributor_url": obj.get("contributor_url"),
+            "book_online_url": obj.get("book_online_url"),
             "hotel_rating": obj.get("hotel_rating"),
             "price_level": obj.get("price_level"),
             "snippet": obj.get("snippet"),

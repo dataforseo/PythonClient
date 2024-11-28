@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of AppendixSerpPriceData from a JSON string
 appendix_serp_price_data_instance = AppendixSerpPriceData.from_json(json)
 # print the JSON string representation of the object
-print AppendixSerpPriceData.to_json()
+print(AppendixSerpPriceData.to_json())
 
 # convert the object into a dict
 appendix_serp_price_data_dict = appendix_serp_price_data_instance.to_dict()
 # create an instance of AppendixSerpPriceData from a dict
-appendix_serp_price_data_form_dict = appendix_serp_price_data.from_dict(appendix_serp_price_data_dict)
+appendix_serp_price_data_from_dict = AppendixSerpPriceData.from_dict(appendix_serp_price_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

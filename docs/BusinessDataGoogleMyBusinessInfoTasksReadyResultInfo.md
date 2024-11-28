@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of BusinessDataGoogleMyBusinessInfoTasksReadyResultInfo from a JSON string
 business_data_google_my_business_info_tasks_ready_result_info_instance = BusinessDataGoogleMyBusinessInfoTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataGoogleMyBusinessInfoTasksReadyResultInfo.to_json()
+print(BusinessDataGoogleMyBusinessInfoTasksReadyResultInfo.to_json())
 
 # convert the object into a dict
 business_data_google_my_business_info_tasks_ready_result_info_dict = business_data_google_my_business_info_tasks_ready_result_info_instance.to_dict()
 # create an instance of BusinessDataGoogleMyBusinessInfoTasksReadyResultInfo from a dict
-business_data_google_my_business_info_tasks_ready_result_info_form_dict = business_data_google_my_business_info_tasks_ready_result_info.from_dict(business_data_google_my_business_info_tasks_ready_result_info_dict)
+business_data_google_my_business_info_tasks_ready_result_info_from_dict = BusinessDataGoogleMyBusinessInfoTasksReadyResultInfo.from_dict(business_data_google_my_business_info_tasks_ready_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

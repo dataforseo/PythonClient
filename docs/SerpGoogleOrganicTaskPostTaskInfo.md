@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpGoogleOrganicTaskPostTaskInfo from a JSON string
 serp_google_organic_task_post_task_info_instance = SerpGoogleOrganicTaskPostTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleOrganicTaskPostTaskInfo.to_json()
+print(SerpGoogleOrganicTaskPostTaskInfo.to_json())
 
 # convert the object into a dict
 serp_google_organic_task_post_task_info_dict = serp_google_organic_task_post_task_info_instance.to_dict()
 # create an instance of SerpGoogleOrganicTaskPostTaskInfo from a dict
-serp_google_organic_task_post_task_info_form_dict = serp_google_organic_task_post_task_info.from_dict(serp_google_organic_task_post_task_info_dict)
+serp_google_organic_task_post_task_info_from_dict = SerpGoogleOrganicTaskPostTaskInfo.from_dict(serp_google_organic_task_post_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

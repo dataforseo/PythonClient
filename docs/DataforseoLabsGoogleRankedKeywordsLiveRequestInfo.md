@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | **str** | domain required field the domain name of the target website the domain should be specified without https:// or www. if you want to get the keywords a particular webpage ranks for, specify the filter by the ranked_serp_element.serp_item.relative_url parameter example: \&quot;filters\&quot;:[ \&quot;ranked_serp_element.serp_item.relative_url\&quot;, \&quot;&#x3D;\&quot;, \&quot;/apis/rank-tracker-api\&quot;] | [optional] 
+**target** | **str** | domain name or page url required field the domain name of the target website or URL of the target webpage; the domain name must be specified without https:// or www.; the webpage URL must be specified with https:// or www. | [optional] 
 **location_name** | **str** | full name of the location optional field if you use this field, you don’t need to specify location_code you can receive the list of available locations with their location_name by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available locations example: United Kingdom | [optional] 
 **location_code** | **int** | location code optional field if you use this field, you don’t need to specify location_name you can receive the list of available locations with their location_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available locations example: 2840 | [optional] 
 **language_name** | **str** | full name of the language optional field if you use this field, you don’t need to specify language_code you can receive the list of available languages with their language_name by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available languages example: English | [optional] 
 **language_code** | **str** | language code optional field if you use this field, you don’t need to specify language_name you can receive the list of available languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available languages example: en | [optional] 
 **ignore_synonyms** | **bool** | ignore highly similar keywords optional field if set to true only core keywords will be returned, all highly similar keywords will be excluded; default value: false | [optional] 
 **item_types** | **List[str]** | display results by item type optional field indicates the type of search results included in the response Note: if the item_types array contains item types that are different from organic, the results will be ordered by the first item type in the array; you will not be able to sort and filter results by the types of search results not included in the response; possible values: [\&quot;organic\&quot;, \&quot;paid\&quot;, \&quot;featured_snippet\&quot;, \&quot;local_pack\&quot;] default value: [\&quot;organic\&quot;, \&quot;paid\&quot;] | [optional] 
-**include_clickstream_data** | **bool** | include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_keyword_info, clickstream_etv, clickstream_gender_distribution, and clickstream_age_distribution fields with clickstream data in the response default value: false with this parameter enabled, you will be charged double the price for the request learn more about how clickstream-based metrics are calculated in this help center article | [optional] 
+**include_clickstream_data** | **bool** | include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_keyword_info, clickstream_etv, clickstream_gender_distribution, clickstream_age_distribution, keyword_info_normalized_with_clickstream, and keyword_info_normalized_with_bing fields in the response default value: false with this parameter enabled, you will be charged double the price for the request learn more about how clickstream-based metrics are calculated in this help center article | [optional] 
 **limit** | **int** | the maximum number of returned keywords optional field default value: 100 maximum value: 1000 | [optional] 
 **offset** | **int** | offset in the results array of returned keywords optional field default value: 0 if you specify the 10 value, the first ten keywords in the results array will be omitted and the data will be provided for the successive keywords | [optional] 
 **load_rank_absolute** | **bool** | return rankings distribution by rank_absolute optional field default value: false if set to true, we will return the field metrics_absolute containing rankings distribution by the rank_absolute parameter that indicates the result’s position among all SERP elements | [optional] 
@@ -31,12 +31,12 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleRankedKeywordsLiveRequestInfo from a JSON string
 dataforseo_labs_google_ranked_keywords_live_request_info_instance = DataforseoLabsGoogleRankedKeywordsLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsGoogleRankedKeywordsLiveRequestInfo.to_json()
+print(DataforseoLabsGoogleRankedKeywordsLiveRequestInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_google_ranked_keywords_live_request_info_dict = dataforseo_labs_google_ranked_keywords_live_request_info_instance.to_dict()
 # create an instance of DataforseoLabsGoogleRankedKeywordsLiveRequestInfo from a dict
-dataforseo_labs_google_ranked_keywords_live_request_info_form_dict = dataforseo_labs_google_ranked_keywords_live_request_info.from_dict(dataforseo_labs_google_ranked_keywords_live_request_info_dict)
+dataforseo_labs_google_ranked_keywords_live_request_info_from_dict = DataforseoLabsGoogleRankedKeywordsLiveRequestInfo.from_dict(dataforseo_labs_google_ranked_keywords_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of AmazonRankedSerpElement from a JSON string
 amazon_ranked_serp_element_instance = AmazonRankedSerpElement.from_json(json)
 # print the JSON string representation of the object
-print AmazonRankedSerpElement.to_json()
+print(AmazonRankedSerpElement.to_json())
 
 # convert the object into a dict
 amazon_ranked_serp_element_dict = amazon_ranked_serp_element_instance.to_dict()
 # create an instance of AmazonRankedSerpElement from a dict
-amazon_ranked_serp_element_form_dict = amazon_ranked_serp_element.from_dict(amazon_ranked_serp_element_dict)
+amazon_ranked_serp_element_from_dict = AmazonRankedSerpElement.from_dict(amazon_ranked_serp_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

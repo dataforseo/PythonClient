@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_content_generation_price_data_info import AppendixContentGenerationPriceDataInfo
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,19 +29,19 @@ class AppendixContentGenerationPriceData(BaseModel):
     AppendixContentGenerationPriceData
     """ # noqa: E501
     check_grammar: Optional[AppendixContentGenerationPriceDataInfo] = None
-    generate: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    generate_meta_tags: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    generate_sub_topics: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    generate_text: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    paraphrase: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    generate: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    generate_meta_tags: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    generate_sub_topics: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    generate_text: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    paraphrase: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     text_summary: Optional[AppendixContentGenerationPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["check_grammar", "generate", "generate_meta_tags", "generate_sub_topics", "generate_text", "paraphrase", "text_summary"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -110,11 +110,11 @@ class AppendixContentGenerationPriceData(BaseModel):
 
         _obj = cls.model_validate({
             "check_grammar": AppendixContentGenerationPriceDataInfo.from_dict(obj["check_grammar"]) if obj.get("check_grammar") is not None else None,
-            "generate": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["generate"]) if obj.get("generate") is not None else None,
-            "generate_meta_tags": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["generate_meta_tags"]) if obj.get("generate_meta_tags") is not None else None,
-            "generate_sub_topics": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["generate_sub_topics"]) if obj.get("generate_sub_topics") is not None else None,
-            "generate_text": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["generate_text"]) if obj.get("generate_text") is not None else None,
-            "paraphrase": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["paraphrase"]) if obj.get("paraphrase") is not None else None,
+            "generate": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["generate"]) if obj.get("generate") is not None else None,
+            "generate_meta_tags": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["generate_meta_tags"]) if obj.get("generate_meta_tags") is not None else None,
+            "generate_sub_topics": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["generate_sub_topics"]) if obj.get("generate_sub_topics") is not None else None,
+            "generate_text": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["generate_text"]) if obj.get("generate_text") is not None else None,
+            "paraphrase": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["paraphrase"]) if obj.get("paraphrase") is not None else None,
             "text_summary": AppendixContentGenerationPriceDataInfo.from_dict(obj["text_summary"]) if obj.get("text_summary") is not None else None
         })
         return _obj

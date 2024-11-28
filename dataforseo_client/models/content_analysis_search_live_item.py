@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.analysis_content_info import AnalysisContentInfo
 from dataforseo_client.models.rating_info import RatingInfo
@@ -47,11 +47,11 @@ class ContentAnalysisSearchLiveItem(BaseModel):
     content_info: Optional[AnalysisContentInfo] = None
     __properties: ClassVar[List[str]] = ["type", "url", "domain", "main_domain", "url_rank", "spam_score", "domain_rank", "fetch_time", "country", "language", "score", "page_category", "page_types", "ratings", "social_metrics", "content_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -89,16 +89,16 @@ class ContentAnalysisSearchLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ratings (list)
         _items = []
         if self.ratings:
-            for _item in self.ratings:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ratings in self.ratings:
+                if _item_ratings:
+                    _items.append(_item_ratings.to_dict())
             _dict['ratings'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in social_metrics (list)
         _items = []
         if self.social_metrics:
-            for _item in self.social_metrics:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_social_metrics in self.social_metrics:
+                if _item_social_metrics:
+                    _items.append(_item_social_metrics.to_dict())
             _dict['social_metrics'] = _items
         # override the default output from pydantic by calling `to_dict()` of content_info
         if self.content_info:

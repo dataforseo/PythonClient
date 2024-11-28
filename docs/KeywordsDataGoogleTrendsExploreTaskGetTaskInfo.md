@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of KeywordsDataGoogleTrendsExploreTaskGetTaskInfo from a JSON string
 keywords_data_google_trends_explore_task_get_task_info_instance = KeywordsDataGoogleTrendsExploreTaskGetTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataGoogleTrendsExploreTaskGetTaskInfo.to_json()
+print(KeywordsDataGoogleTrendsExploreTaskGetTaskInfo.to_json())
 
 # convert the object into a dict
 keywords_data_google_trends_explore_task_get_task_info_dict = keywords_data_google_trends_explore_task_get_task_info_instance.to_dict()
 # create an instance of KeywordsDataGoogleTrendsExploreTaskGetTaskInfo from a dict
-keywords_data_google_trends_explore_task_get_task_info_form_dict = keywords_data_google_trends_explore_task_get_task_info.from_dict(keywords_data_google_trends_explore_task_get_task_info_dict)
+keywords_data_google_trends_explore_task_get_task_info_from_dict = KeywordsDataGoogleTrendsExploreTaskGetTaskInfo.from_dict(keywords_data_google_trends_explore_task_get_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

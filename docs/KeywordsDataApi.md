@@ -4,6 +4,12 @@ All URIs are relative to *https://api.dataforseo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**bing_audience_estimation_industries**](KeywordsDataApi.md#bing_audience_estimation_industries) | **GET** /v3/keywords_data/bing/audience_estimation/industries | 
+[**bing_audience_estimation_job_functions**](KeywordsDataApi.md#bing_audience_estimation_job_functions) | **GET** /v3/keywords_data/bing/audience_estimation/job_functions | 
+[**bing_audience_estimation_live**](KeywordsDataApi.md#bing_audience_estimation_live) | **POST** /v3/keywords_data/bing/audience_estimation/live | 
+[**bing_audience_estimation_task_get**](KeywordsDataApi.md#bing_audience_estimation_task_get) | **GET** /v3/keywords_data/bing/audience_estimation/task_get/{id} | 
+[**bing_audience_estimation_task_post**](KeywordsDataApi.md#bing_audience_estimation_task_post) | **POST** /v3/keywords_data/bing/audience_estimation/task_post | 
+[**bing_audience_estimation_tasks_ready**](KeywordsDataApi.md#bing_audience_estimation_tasks_ready) | **GET** /v3/keywords_data/bing/audience_estimation/tasks_ready | 
 [**bing_keyword_performance_live**](KeywordsDataApi.md#bing_keyword_performance_live) | **POST** /v3/keywords_data/bing/keyword_performance/live | 
 [**bing_keyword_performance_task_get**](KeywordsDataApi.md#bing_keyword_performance_task_get) | **GET** /v3/keywords_data/bing/keyword_performance/task_get/{id} | 
 [**bing_keyword_performance_task_post**](KeywordsDataApi.md#bing_keyword_performance_task_post) | **POST** /v3/keywords_data/bing/keyword_performance/task_post | 
@@ -69,6 +75,464 @@ Method | HTTP request | Description
 [**keywords_data_google_trends_locations_country**](KeywordsDataApi.md#keywords_data_google_trends_locations_country) | **GET** /v3/keywords_data/google_trends/locations/{country} | 
 [**keywords_data_id_list**](KeywordsDataApi.md#keywords_data_id_list) | **POST** /v3/keywords_data/id_list | 
 
+
+# **bing_audience_estimation_industries**
+> KeywordsDataBingAudienceEstimationIndustriesResponseInfo bing_audience_estimation_industries()
+
+
+
+By calling this API you will receive the list of industries with industry_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/industries/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_audience_estimation_industries_response_info import KeywordsDataBingAudienceEstimationIndustriesResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+
+    try:
+        api_response = api_instance.bing_audience_estimation_industries()
+        print("The response of KeywordsDataApi->bing_audience_estimation_industries:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_audience_estimation_industries: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KeywordsDataBingAudienceEstimationIndustriesResponseInfo**](KeywordsDataBingAudienceEstimationIndustriesResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_audience_estimation_job_functions**
+> KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo bing_audience_estimation_job_functions()
+
+
+
+By calling this API you will receive the list of job functions with job_function_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/job_functions/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_audience_estimation_job_functions_response_info import KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+
+    try:
+        api_response = api_instance.bing_audience_estimation_job_functions()
+        print("The response of KeywordsDataApi->bing_audience_estimation_job_functions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_audience_estimation_job_functions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo**](KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_audience_estimation_live**
+> KeywordsDataBingAudienceEstimationLiveResponseInfo bing_audience_estimation_live(keywords_data_bing_audience_estimation_live_request_info=keywords_data_bing_audience_estimation_live_request_info)
+
+
+
+This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_audience_estimation_live_request_info import KeywordsDataBingAudienceEstimationLiveRequestInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_live_response_info import KeywordsDataBingAudienceEstimationLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    keywords_data_bing_audience_estimation_live_request_info = [dataforseo_client.KeywordsDataBingAudienceEstimationLiveRequestInfo()] # List[KeywordsDataBingAudienceEstimationLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.bing_audience_estimation_live(keywords_data_bing_audience_estimation_live_request_info=keywords_data_bing_audience_estimation_live_request_info)
+        print("The response of KeywordsDataApi->bing_audience_estimation_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_audience_estimation_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keywords_data_bing_audience_estimation_live_request_info** | [**List[KeywordsDataBingAudienceEstimationLiveRequestInfo]**](KeywordsDataBingAudienceEstimationLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**KeywordsDataBingAudienceEstimationLiveResponseInfo**](KeywordsDataBingAudienceEstimationLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_audience_estimation_task_get**
+> KeywordsDataBingAudienceEstimationTaskGetResponseInfo bing_audience_estimation_task_get(id)
+
+
+
+‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_get/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_audience_estimation_task_get_response_info import KeywordsDataBingAudienceEstimationTaskGetResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    id = '8f1ba83d-1ac1-4d27-af64-dfd2d927acbc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.bing_audience_estimation_task_get(id)
+        print("The response of KeywordsDataApi->bing_audience_estimation_task_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_audience_estimation_task_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**KeywordsDataBingAudienceEstimationTaskGetResponseInfo**](KeywordsDataBingAudienceEstimationTaskGetResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_audience_estimation_task_post**
+> KeywordsDataBingAudienceEstimationTaskPostResponseInfo bing_audience_estimation_task_post(keywords_data_bing_audience_estimation_task_post_request_info=keywords_data_bing_audience_estimation_task_post_request_info)
+
+
+
+‌ This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_request_info import KeywordsDataBingAudienceEstimationTaskPostRequestInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_response_info import KeywordsDataBingAudienceEstimationTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+    keywords_data_bing_audience_estimation_task_post_request_info = [dataforseo_client.KeywordsDataBingAudienceEstimationTaskPostRequestInfo()] # List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.bing_audience_estimation_task_post(keywords_data_bing_audience_estimation_task_post_request_info=keywords_data_bing_audience_estimation_task_post_request_info)
+        print("The response of KeywordsDataApi->bing_audience_estimation_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_audience_estimation_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keywords_data_bing_audience_estimation_task_post_request_info** | [**List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]**](KeywordsDataBingAudienceEstimationTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**KeywordsDataBingAudienceEstimationTaskPostResponseInfo**](KeywordsDataBingAudienceEstimationTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bing_audience_estimation_tasks_ready**
+> KeywordsDataBingAudienceEstimationTasksReadyResponseInfo bing_audience_estimation_tasks_ready()
+
+
+
+‌ This endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.keywords_data_bing_audience_estimation_tasks_ready_response_info import KeywordsDataBingAudienceEstimationTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.KeywordsDataApi(api_client)
+
+    try:
+        api_response = api_instance.bing_audience_estimation_tasks_ready()
+        print("The response of KeywordsDataApi->bing_audience_estimation_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KeywordsDataApi->bing_audience_estimation_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KeywordsDataBingAudienceEstimationTasksReadyResponseInfo**](KeywordsDataBingAudienceEstimationTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_keyword_performance_live**
 > KeywordsDataBingKeywordPerformanceLiveResponseInfo bing_keyword_performance_live(keywords_data_bing_keyword_performance_live_request_info=keywords_data_bing_keyword_performance_live_request_info)
@@ -187,7 +651,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'c549a745-f1bf-465c-8f59-edb088c76fdc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '6545fe18-51e3-45a2-bf7c-43f60af85f2b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keyword_performance_task_get(id)
@@ -497,7 +961,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '70feed45-4e79-42d9-ad26-08c4c7c93d2f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'ee1671aa-ef1c-4917-b481-67f6b4574deb' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_keywords_task_get(id)
@@ -807,7 +1271,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'a83b3398-c57e-431b-9ef4-e339cc9a9265' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'f3c5d2da-f9a7-45af-8a9a-a48552b2c42c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_keywords_for_site_task_get(id)
@@ -1117,7 +1581,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '6fcdc139-fa19-4371-91a1-dec8a4a69437' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'f7863792-a990-46a2-95c4-6e0a411311fa' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_search_volume_history_task_get(id)
@@ -1427,7 +1891,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '2284180f-fb6a-40d4-9372-43e8c372e157' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '060ece29-f12e-4c8f-9918-d9bc3d38a0dd' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_search_volume_task_get(id)
@@ -1621,7 +2085,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clickstream_data_bulk_search_volume_live**
-> KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo clickstream_data_bulk_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+> KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo clickstream_data_bulk_search_volume_live(keywords_data_clickstream_data_bulk_search_volume_live_request_info=keywords_data_clickstream_data_bulk_search_volume_live_request_info)
 
 
 
@@ -1633,8 +2097,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_request_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo
 from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_response_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo
-from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1659,10 +2123,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    keywords_data_task_request_info = [dataforseo_client.KeywordsDataTaskRequestInfo()] # List[KeywordsDataTaskRequestInfo] |  (optional)
+    keywords_data_clickstream_data_bulk_search_volume_live_request_info = [dataforseo_client.KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo()] # List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.clickstream_data_bulk_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+        api_response = api_instance.clickstream_data_bulk_search_volume_live(keywords_data_clickstream_data_bulk_search_volume_live_request_info=keywords_data_clickstream_data_bulk_search_volume_live_request_info)
         print("The response of KeywordsDataApi->clickstream_data_bulk_search_volume_live:\n")
         pprint(api_response)
     except Exception as e:
@@ -1676,7 +2140,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords_data_task_request_info** | [**List[KeywordsDataTaskRequestInfo]**](KeywordsDataTaskRequestInfo.md)|  | [optional] 
+ **keywords_data_clickstream_data_bulk_search_volume_live_request_info** | [**List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]**](KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1779,7 +2243,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clickstream_data_global_search_volume_live**
-> KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo clickstream_data_global_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+> KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo clickstream_data_global_search_volume_live(keywords_data_clickstream_data_global_search_volume_live_request_info=keywords_data_clickstream_data_global_search_volume_live_request_info)
 
 
 
@@ -1791,8 +2255,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_request_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo
 from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_response_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo
-from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1817,10 +2281,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    keywords_data_task_request_info = [dataforseo_client.KeywordsDataTaskRequestInfo()] # List[KeywordsDataTaskRequestInfo] |  (optional)
+    keywords_data_clickstream_data_global_search_volume_live_request_info = [dataforseo_client.KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo()] # List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.clickstream_data_global_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+        api_response = api_instance.clickstream_data_global_search_volume_live(keywords_data_clickstream_data_global_search_volume_live_request_info=keywords_data_clickstream_data_global_search_volume_live_request_info)
         print("The response of KeywordsDataApi->clickstream_data_global_search_volume_live:\n")
         pprint(api_response)
     except Exception as e:
@@ -1834,7 +2298,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords_data_task_request_info** | [**List[KeywordsDataTaskRequestInfo]**](KeywordsDataTaskRequestInfo.md)|  | [optional] 
+ **keywords_data_clickstream_data_global_search_volume_live_request_info** | [**List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]**](KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2290,7 +2754,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'c0db458f-5f7f-4319-8bc0-bec569d6b637' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'cb1247bf-50e3-4635-a59b-f2fafe40e6cc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_ad_traffic_by_keywords_task_get(id)
@@ -2484,7 +2948,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_ads_keywords_for_keywords_live**
-> KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo google_ads_keywords_for_keywords_live(keywords_data_task_request_info=keywords_data_task_request_info)
+> KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo google_ads_keywords_for_keywords_live(keywords_data_google_ads_keywords_for_keywords_live_request_info=keywords_data_google_ads_keywords_for_keywords_live_request_info)
 
 
 
@@ -2496,8 +2960,8 @@ Note that Google Ads Keywords Data API is based on the latest version of the Goo
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo
 from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo
-from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -2522,10 +2986,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    keywords_data_task_request_info = [dataforseo_client.KeywordsDataTaskRequestInfo()] # List[KeywordsDataTaskRequestInfo] |  (optional)
+    keywords_data_google_ads_keywords_for_keywords_live_request_info = [dataforseo_client.KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo()] # List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_ads_keywords_for_keywords_live(keywords_data_task_request_info=keywords_data_task_request_info)
+        api_response = api_instance.google_ads_keywords_for_keywords_live(keywords_data_google_ads_keywords_for_keywords_live_request_info=keywords_data_google_ads_keywords_for_keywords_live_request_info)
         print("The response of KeywordsDataApi->google_ads_keywords_for_keywords_live:\n")
         pprint(api_response)
     except Exception as e:
@@ -2539,7 +3003,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords_data_task_request_info** | [**List[KeywordsDataTaskRequestInfo]**](KeywordsDataTaskRequestInfo.md)|  | [optional] 
+ **keywords_data_google_ads_keywords_for_keywords_live_request_info** | [**List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]**](KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2600,7 +3064,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '64e9094a-17f6-4f72-a16d-13f7932bd511' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'f438ff4f-4c17-40d3-8918-fbc779453261' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_keywords_task_get(id)
@@ -2910,7 +3374,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = '9d6ebead-d613-4d7d-894a-505ec9fec238' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '8f6f1376-14bc-42d0-ba48-d62b56567a58' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_keywords_for_site_task_get(id)
@@ -3104,7 +3568,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_ads_search_volume_live**
-> KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo google_ads_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+> KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo google_ads_search_volume_live(keywords_data_google_ads_search_volume_live_request_info=keywords_data_google_ads_search_volume_live_request_info)
 
 
 
@@ -3116,8 +3580,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.keywords_data_google_ads_search_volume_live_request_info import KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo
 from dataforseo_client.models.keywords_data_google_ads_search_volume_live_response_info import KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo
-from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -3142,10 +3606,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    keywords_data_task_request_info = [dataforseo_client.KeywordsDataTaskRequestInfo()] # List[KeywordsDataTaskRequestInfo] |  (optional)
+    keywords_data_google_ads_search_volume_live_request_info = [dataforseo_client.KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo()] # List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_ads_search_volume_live(keywords_data_task_request_info=keywords_data_task_request_info)
+        api_response = api_instance.google_ads_search_volume_live(keywords_data_google_ads_search_volume_live_request_info=keywords_data_google_ads_search_volume_live_request_info)
         print("The response of KeywordsDataApi->google_ads_search_volume_live:\n")
         pprint(api_response)
     except Exception as e:
@@ -3159,7 +3623,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords_data_task_request_info** | [**List[KeywordsDataTaskRequestInfo]**](KeywordsDataTaskRequestInfo.md)|  | [optional] 
+ **keywords_data_google_ads_search_volume_live_request_info** | [**List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]**](KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3220,7 +3684,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'b1cec4ef-62ed-4781-a51a-34e38a44838f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = '4edd7fb8-f0a4-424e-b894-2815f586827a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_ads_search_volume_task_get(id)
@@ -3261,7 +3725,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_ads_search_volume_task_post**
-> KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo google_ads_search_volume_task_post(keywords_data_task_request_info=keywords_data_task_request_info)
+> KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo google_ads_search_volume_task_post(keywords_data_google_ads_search_volume_task_post_request_info=keywords_data_google_ads_search_volume_task_post_request_info)
 
 
 
@@ -3273,8 +3737,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_request_info import KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo
 from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_response_info import KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -3299,10 +3763,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    keywords_data_task_request_info = [dataforseo_client.KeywordsDataTaskRequestInfo()] # List[KeywordsDataTaskRequestInfo] |  (optional)
+    keywords_data_google_ads_search_volume_task_post_request_info = [dataforseo_client.KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo()] # List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_ads_search_volume_task_post(keywords_data_task_request_info=keywords_data_task_request_info)
+        api_response = api_instance.google_ads_search_volume_task_post(keywords_data_google_ads_search_volume_task_post_request_info=keywords_data_google_ads_search_volume_task_post_request_info)
         print("The response of KeywordsDataApi->google_ads_search_volume_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -3316,7 +3780,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords_data_task_request_info** | [**List[KeywordsDataTaskRequestInfo]**](KeywordsDataTaskRequestInfo.md)|  | [optional] 
+ **keywords_data_google_ads_search_volume_task_post_request_info** | [**List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]**](KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3678,7 +4142,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.KeywordsDataApi(api_client)
-    id = 'f1a32932-971f-4bb5-9752-1bdd9053db18' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+    id = 'b0ff858f-25eb-484f-8532-a8d9b27dc566' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_trends_explore_task_get(id)
@@ -4398,7 +4862,7 @@ Name | Type | Description  | Notes
 
 
 
-By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
+By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
 
 ### Example
 

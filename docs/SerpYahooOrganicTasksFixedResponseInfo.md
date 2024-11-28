@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpYahooOrganicTasksFixedResponseInfo from a JSON string
 serp_yahoo_organic_tasks_fixed_response_info_instance = SerpYahooOrganicTasksFixedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpYahooOrganicTasksFixedResponseInfo.to_json()
+print(SerpYahooOrganicTasksFixedResponseInfo.to_json())
 
 # convert the object into a dict
 serp_yahoo_organic_tasks_fixed_response_info_dict = serp_yahoo_organic_tasks_fixed_response_info_instance.to_dict()
 # create an instance of SerpYahooOrganicTasksFixedResponseInfo from a dict
-serp_yahoo_organic_tasks_fixed_response_info_form_dict = serp_yahoo_organic_tasks_fixed_response_info.from_dict(serp_yahoo_organic_tasks_fixed_response_info_dict)
+serp_yahoo_organic_tasks_fixed_response_info_from_dict = SerpYahooOrganicTasksFixedResponseInfo.from_dict(serp_yahoo_organic_tasks_fixed_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

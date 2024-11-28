@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
@@ -38,11 +38,11 @@ class AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo(BaseModel):
     technology_stats: Optional[AppendixInfo] = None
     __properties: ClassVar[List[str]] = ["domain_technologies", "domains_by_technology", "languages", "locations", "technologies", "aggregation_technologies", "technologies_summary", "domains_by_html_terms", "technology_stats"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

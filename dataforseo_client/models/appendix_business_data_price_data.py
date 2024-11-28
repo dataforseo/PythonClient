@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_business_listings_business_data_price_data import AppendixBusinessListingsBusinessDataPriceData
 from dataforseo_client.models.appendix_google_business_data_price_data import AppendixGoogleBusinessDataPriceData
@@ -33,21 +33,21 @@ class AppendixBusinessDataPriceData(BaseModel):
     """ # noqa: E501
     business_listings: Optional[AppendixBusinessListingsBusinessDataPriceData] = None
     errors: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    social_media: Optional[AppendixSocialMediaBusinessDataPriceData] = None
     google: Optional[AppendixGoogleBusinessDataPriceData] = None
+    social_media: Optional[AppendixSocialMediaBusinessDataPriceData] = None
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     tripadvisor: Optional[AppendixTrBusinessDataPriceDataInfo] = None
     trustpilot: Optional[AppendixTrBusinessDataPriceDataInfo] = None
     yelp: Optional[AppendixTrBusinessDataPriceDataInfo] = None
     tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["business_listings", "errors", "social_media", "google", "languages", "locations", "tripadvisor", "trustpilot", "yelp", "tasks_ready"]
+    __properties: ClassVar[List[str]] = ["business_listings", "errors", "google", "social_media", "languages", "locations", "tripadvisor", "trustpilot", "yelp", "tasks_ready"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -88,12 +88,12 @@ class AppendixBusinessDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of errors
         if self.errors:
             _dict['errors'] = self.errors.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of social_media
-        if self.social_media:
-            _dict['social_media'] = self.social_media.to_dict()
         # override the default output from pydantic by calling `to_dict()` of google
         if self.google:
             _dict['google'] = self.google.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of social_media
+        if self.social_media:
+            _dict['social_media'] = self.social_media.to_dict()
         # override the default output from pydantic by calling `to_dict()` of languages
         if self.languages:
             _dict['languages'] = self.languages.to_dict()
@@ -126,8 +126,8 @@ class AppendixBusinessDataPriceData(BaseModel):
         _obj = cls.model_validate({
             "business_listings": AppendixBusinessListingsBusinessDataPriceData.from_dict(obj["business_listings"]) if obj.get("business_listings") is not None else None,
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
-            "social_media": AppendixSocialMediaBusinessDataPriceData.from_dict(obj["social_media"]) if obj.get("social_media") is not None else None,
             "google": AppendixGoogleBusinessDataPriceData.from_dict(obj["google"]) if obj.get("google") is not None else None,
+            "social_media": AppendixSocialMediaBusinessDataPriceData.from_dict(obj["social_media"]) if obj.get("social_media") is not None else None,
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
             "tripadvisor": AppendixTrBusinessDataPriceDataInfo.from_dict(obj["tripadvisor"]) if obj.get("tripadvisor") is not None else None,

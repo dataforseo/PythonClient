@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpNaverOrganicTasksFixedResultInfo from a JSON string
 serp_naver_organic_tasks_fixed_result_info_instance = SerpNaverOrganicTasksFixedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpNaverOrganicTasksFixedResultInfo.to_json()
+print(SerpNaverOrganicTasksFixedResultInfo.to_json())
 
 # convert the object into a dict
 serp_naver_organic_tasks_fixed_result_info_dict = serp_naver_organic_tasks_fixed_result_info_instance.to_dict()
 # create an instance of SerpNaverOrganicTasksFixedResultInfo from a dict
-serp_naver_organic_tasks_fixed_result_info_form_dict = serp_naver_organic_tasks_fixed_result_info.from_dict(serp_naver_organic_tasks_fixed_result_info_dict)
+serp_naver_organic_tasks_fixed_result_info_from_dict = SerpNaverOrganicTasksFixedResultInfo.from_dict(serp_naver_organic_tasks_fixed_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

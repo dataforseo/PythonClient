@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of PeopleAlsoSearch from a JSON string
 people_also_search_instance = PeopleAlsoSearch.from_json(json)
 # print the JSON string representation of the object
-print PeopleAlsoSearch.to_json()
+print(PeopleAlsoSearch.to_json())
 
 # convert the object into a dict
 people_also_search_dict = people_also_search_instance.to_dict()
 # create an instance of PeopleAlsoSearch from a dict
-people_also_search_form_dict = people_also_search.from_dict(people_also_search_dict)
+people_also_search_from_dict = PeopleAlsoSearch.from_dict(people_also_search_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

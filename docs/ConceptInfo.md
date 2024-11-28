@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of ConceptInfo from a JSON string
 concept_info_instance = ConceptInfo.from_json(json)
 # print the JSON string representation of the object
-print ConceptInfo.to_json()
+print(ConceptInfo.to_json())
 
 # convert the object into a dict
 concept_info_dict = concept_info_instance.to_dict()
 # create an instance of ConceptInfo from a dict
-concept_info_form_dict = concept_info.from_dict(concept_info_dict)
+concept_info_from_dict = ConceptInfo.from_dict(concept_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

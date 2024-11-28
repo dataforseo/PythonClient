@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpBingOrganicTaskGetHtmlResultInfo from a JSON string
 serp_bing_organic_task_get_html_result_info_instance = SerpBingOrganicTaskGetHtmlResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBingOrganicTaskGetHtmlResultInfo.to_json()
+print(SerpBingOrganicTaskGetHtmlResultInfo.to_json())
 
 # convert the object into a dict
 serp_bing_organic_task_get_html_result_info_dict = serp_bing_organic_task_get_html_result_info_instance.to_dict()
 # create an instance of SerpBingOrganicTaskGetHtmlResultInfo from a dict
-serp_bing_organic_task_get_html_result_info_form_dict = serp_bing_organic_task_get_html_result_info.from_dict(serp_bing_organic_task_get_html_result_info_dict)
+serp_bing_organic_task_get_html_result_info_from_dict = SerpBingOrganicTaskGetHtmlResultInfo.from_dict(serp_bing_organic_task_get_html_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tasks_ready** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
 **ad_traffic_by_keywords** | [**AppendixKeywordsDataPriceDataInfo**](AppendixKeywordsDataPriceDataInfo.md) |  | [optional] 
+**audience_estimation** | [**AppendixKeywordsDataPriceDataInfo**](AppendixKeywordsDataPriceDataInfo.md) |  | [optional] 
 **bing** | [**AppendixBingKeywordsDataPriceData**](AppendixBingKeywordsDataPriceData.md) |  | [optional] 
 **categories** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
 **clickstream_data** | [**AppendixClickstreamDataKeywordsDataPriceData**](AppendixClickstreamDataKeywordsDataPriceData.md) |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **keyword_performance** | [**AppendixKeywordsDataPriceDataInfo**](AppendixKeywordsDataPriceDataInfo.md) |  | [optional] 
 **keywords_for_keywords** | [**AppendixKeywordsDataPriceDataInfo**](AppendixKeywordsDataPriceDataInfo.md) |  | [optional] 
 **keywords_for_site** | [**AppendixKeywordsDataPriceDataInfo**](AppendixKeywordsDataPriceDataInfo.md) |  | [optional] 
+**keyword_suggestions_for_url** | [**AppendixKeywordsDataPriceDataInfo**](AppendixKeywordsDataPriceDataInfo.md) |  | [optional] 
 **languages** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
 **locations** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
 **locations_and_languages** | [**AppendixTaskKeywordsDataPriceDataInfo**](AppendixTaskKeywordsDataPriceDataInfo.md) |  | [optional] 
@@ -32,12 +34,12 @@ json = "{}"
 # create an instance of AppendixKeywordsDataPriceData from a JSON string
 appendix_keywords_data_price_data_instance = AppendixKeywordsDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print AppendixKeywordsDataPriceData.to_json()
+print(AppendixKeywordsDataPriceData.to_json())
 
 # convert the object into a dict
 appendix_keywords_data_price_data_dict = appendix_keywords_data_price_data_instance.to_dict()
 # create an instance of AppendixKeywordsDataPriceData from a dict
-appendix_keywords_data_price_data_form_dict = appendix_keywords_data_price_data.from_dict(appendix_keywords_data_price_data_dict)
+appendix_keywords_data_price_data_from_dict = AppendixKeywordsDataPriceData.from_dict(appendix_keywords_data_price_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,11 +17,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_bing_keywords_data_limits_rates_data_info import AppendixBingKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_clickstream_data_keywords_data_limits_rates_data_info import AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_dataforseo_trends_keywords_data_limits_rates_data_info import AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo
+from dataforseo_client.models.appendix_day_limits_rates_data_info import AppendixDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_google_ads_keywords_data_limits_rates_data_info import AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
@@ -47,13 +48,15 @@ class AppendixKeywordsDatasRatesDataInfo(BaseModel):
     google_ads: Optional[AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo] = None
     dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo] = None
     clickstream_data: Optional[AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo] = None
-    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data"]
+    audience_estimation: Optional[AppendixDayLimitsRatesDataInfo] = None
+    keyword_suggestions_for_url: Optional[AppendixDayLimitsRatesDataInfo] = None
+    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "audience_estimation", "keyword_suggestions_for_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -118,6 +121,12 @@ class AppendixKeywordsDatasRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of clickstream_data
         if self.clickstream_data:
             _dict['clickstream_data'] = self.clickstream_data.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of audience_estimation
+        if self.audience_estimation:
+            _dict['audience_estimation'] = self.audience_estimation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_suggestions_for_url
+        if self.keyword_suggestions_for_url:
+            _dict['keyword_suggestions_for_url'] = self.keyword_suggestions_for_url.to_dict()
         # set to None if languages (nullable) is None
         # and model_fields_set contains the field
         if self.languages is None and "languages" in self.model_fields_set:
@@ -175,7 +184,9 @@ class AppendixKeywordsDatasRatesDataInfo(BaseModel):
             "locations_and_languages": obj.get("locations_and_languages"),
             "google_ads": AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.from_dict(obj["google_ads"]) if obj.get("google_ads") is not None else None,
             "dataforseo_trends": AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.from_dict(obj["dataforseo_trends"]) if obj.get("dataforseo_trends") is not None else None,
-            "clickstream_data": AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.from_dict(obj["clickstream_data"]) if obj.get("clickstream_data") is not None else None
+            "clickstream_data": AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.from_dict(obj["clickstream_data"]) if obj.get("clickstream_data") is not None else None,
+            "audience_estimation": AppendixDayLimitsRatesDataInfo.from_dict(obj["audience_estimation"]) if obj.get("audience_estimation") is not None else None,
+            "keyword_suggestions_for_url": AppendixDayLimitsRatesDataInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None
         })
         return _obj
 

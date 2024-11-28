@@ -36,12 +36,12 @@ json = "{}"
 # create an instance of MetricsInfo from a JSON string
 metrics_info_instance = MetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print MetricsInfo.to_json()
+print(MetricsInfo.to_json())
 
 # convert the object into a dict
 metrics_info_dict = metrics_info_instance.to_dict()
 # create an instance of MetricsInfo from a dict
-metrics_info_form_dict = metrics_info.from_dict(metrics_info_dict)
+metrics_info_from_dict = MetricsInfo.from_dict(metrics_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

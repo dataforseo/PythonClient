@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of AppsInfo from a JSON string
 apps_info_instance = AppsInfo.from_json(json)
 # print the JSON string representation of the object
-print AppsInfo.to_json()
+print(AppsInfo.to_json())
 
 # convert the object into a dict
 apps_info_dict = apps_info_instance.to_dict()
 # create an instance of AppsInfo from a dict
-apps_info_form_dict = apps_info.from_dict(apps_info_dict)
+apps_info_from_dict = AppsInfo.from_dict(apps_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

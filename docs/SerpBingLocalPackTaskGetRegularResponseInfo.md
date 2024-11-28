@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpBingLocalPackTaskGetRegularResponseInfo from a JSON string
 serp_bing_local_pack_task_get_regular_response_info_instance = SerpBingLocalPackTaskGetRegularResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBingLocalPackTaskGetRegularResponseInfo.to_json()
+print(SerpBingLocalPackTaskGetRegularResponseInfo.to_json())
 
 # convert the object into a dict
 serp_bing_local_pack_task_get_regular_response_info_dict = serp_bing_local_pack_task_get_regular_response_info_instance.to_dict()
 # create an instance of SerpBingLocalPackTaskGetRegularResponseInfo from a dict
-serp_bing_local_pack_task_get_regular_response_info_form_dict = serp_bing_local_pack_task_get_regular_response_info.from_dict(serp_bing_local_pack_task_get_regular_response_info_dict)
+serp_bing_local_pack_task_get_regular_response_info_from_dict = SerpBingLocalPackTaskGetRegularResponseInfo.from_dict(serp_bing_local_pack_task_get_regular_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

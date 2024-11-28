@@ -46,12 +46,12 @@ json = "{}"
 # create an instance of PageMetaInfo from a JSON string
 page_meta_info_instance = PageMetaInfo.from_json(json)
 # print the JSON string representation of the object
-print PageMetaInfo.to_json()
+print(PageMetaInfo.to_json())
 
 # convert the object into a dict
 page_meta_info_dict = page_meta_info_instance.to_dict()
 # create an instance of PageMetaInfo from a dict
-page_meta_info_form_dict = page_meta_info.from_dict(page_meta_info_dict)
+page_meta_info_from_dict = PageMetaInfo.from_dict(page_meta_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

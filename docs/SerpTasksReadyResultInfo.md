@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpTasksReadyResultInfo from a JSON string
 serp_tasks_ready_result_info_instance = SerpTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpTasksReadyResultInfo.to_json()
+print(SerpTasksReadyResultInfo.to_json())
 
 # convert the object into a dict
 serp_tasks_ready_result_info_dict = serp_tasks_ready_result_info_instance.to_dict()
 # create an instance of SerpTasksReadyResultInfo from a dict
-serp_tasks_ready_result_info_form_dict = serp_tasks_ready_result_info.from_dict(serp_tasks_ready_result_info_dict)
+serp_tasks_ready_result_info_from_dict = SerpTasksReadyResultInfo.from_dict(serp_tasks_ready_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

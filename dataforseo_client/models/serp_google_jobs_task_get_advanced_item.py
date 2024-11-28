@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
@@ -33,7 +33,7 @@ class SerpGoogleJobsTaskGetAdvancedItem(BaseModel):
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     job_id: Optional[StrictStr] = Field(default=None, description="ID of the job on Google Jobs")
-    title: Optional[StrictStr] = Field(default=None, description="title of the job")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element")
     employer_name: Optional[StrictStr] = Field(default=None, description="name of the employer")
     employer_url: Optional[StrictStr] = Field(default=None, description="URL to the employer’s website")
     employer_image_url: Optional[StrictStr] = Field(default=None, description="URL to the image used in the job posting")
@@ -47,11 +47,11 @@ class SerpGoogleJobsTaskGetAdvancedItem(BaseModel):
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "job_id", "title", "employer_name", "employer_url", "employer_image_url", "location", "source_name", "source_url", "salary", "contract_type", "timestamp", "time_ago", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

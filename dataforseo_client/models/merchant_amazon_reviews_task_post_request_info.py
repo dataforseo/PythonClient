@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,23 +35,23 @@ class MerchantAmazonReviewsTaskPostRequestInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="search engine language code required field if you don’t specify language_name if you use this field, you don’t need to specify language_name you can receive the list of available languages with their language_code parameters by making a separate request to https://api.dataforseo.com/v3/merchant/amazon/languages example: en_GB")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain optional field we choose the relevant search engine domain automatically according to the location and language you specify however, you can set a custom search engine domain in this field example: amazon.com, amazon.co.uk, amazon.fr, etc.")
     depth: Optional[StrictInt] = Field(default=None, description="parsing depth optional field number of reviews in SERP; we strongly recommend setting the parsing depth in the multiples of ten, because our system processes ten reviews in a row; maximum value: 50 default value: 10")
-    sort_by: Optional[StrictStr] = Field(default=None, description="results sorting parameters optional field you can use this field to sort the results; possible types of sorting: helpful — sort by helpful reviews; recent — sort by recent reviews; default rule: helpful")
+    sort_by: Optional[StrictStr] = Field(default=None, description="results sorting parameters optional field possible types of sorting: helpful — for now, the only available sorting value; default rule: helpful")
     reviewer_type: Optional[StrictStr] = Field(default=None, description="filter reviews by reviewer type optional field you can use this field to filter the results; possible types of filtering: all_reviews — return reviews from all reviewers; avp_only_reviews — return reviews with the “Verified Purchase” mark only; default rule: all_reviews")
     filter_by_star: Optional[StrictStr] = Field(default=None, description="filter reviews by stars optional field you can use this field to filter the results; possible types of filtering: all_stars — return reviews with any number of stars; five_star — return five-star reviews only; four_star — return four-star reviews only; three_star — return three-star reviews only; two_star — return two-star reviews only; one_star — return one-star reviews only; positive — return positive reviews only; critical — return critical reviews only; default rule: all_stars")
-    filter_by_keyword: Optional[StrictStr] = Field(default=None, description="filter reviews by specified keyword optional field you can specify up to 300 symbols in this field; if you use this field, the response will only include reviews that contain the specified keyword")
+    filter_by_keyword: Optional[StrictStr] = Field(default=None, description="filter reviews by specified keyword optional field you can specify up to 300 characters in this field; if you use this field, the response will only include reviews that contain the specified keyword")
     media_type: Optional[StrictStr] = Field(default=None, description="filter reviews by media type optional field you can use this field to filter the results; possible types of filtering: all_contents — return text, image, and video reviews; media_reviews_only — return image and video reviews only; default rule: all_contents")
     format_type: Optional[StrictStr] = Field(default=None, description="filter reviews by product modification optional field you can use this field to filter the results; possible types of filtering: all_format — return reviews for all product modifications; current_format — return reviews for the current product modification only; default rule: all_format; Note: ASINs vary depending on a product modification. Thus, two modifications of the same product will have two different ASINs. Make sure to specify the right ASIN when setting a task with the current_format parameter")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special symbols in postback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
+    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special characters in postback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description="postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: advanced, html")
-    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special symbols in pingback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
+    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special characters in pingback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
     __properties: ClassVar[List[str]] = ["asin", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "depth", "sort_by", "reviewer_type", "filter_by_star", "filter_by_keyword", "media_type", "format_type", "tag", "postback_url", "postback_data", "pingback_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

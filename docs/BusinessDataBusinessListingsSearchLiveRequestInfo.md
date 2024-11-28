@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **categories** | **List[str]** | business categories optional field the categories you specify are used to search for business listings; if you don’t use this field, we will return business listings found in the specified location; you can specify up to 10 categories | [optional] 
-**description** | **str** | description of the element in SERP optional field the description of the business entity for which the results are collected; can contain up to 200 symbols | [optional] 
-**title** | **str** | title of the element in SERP optional field the name of the business entity for which the results are collected; can contain up to 200 symbols | [optional] 
+**description** | **str** | description of the element in SERP optional field the description of the business entity for which the results are collected; can contain up to 200 characters | [optional] 
+**title** | **str** | title of the element in SERP optional field the name of the business entity for which the results are collected; can contain up to 200 characters | [optional] 
 **is_claimed** | **bool** | indicates whether the business is verified by its owner on Google Maps optional field | [optional] 
 **location_coordinate** | **str** | GPS coordinates of a location optional field location_coordinate parameter should be specified in the “latitude,longitude,radius” format the maximum number of decimal digits for “latitude” and “longitude”: 7 the value of “radius” is specified in kilometres (km) the minimum value for “radius”: 1 the maximum value for “radius”: 100000 example: 53.476225,-2.243572,200 | [optional] 
 **filters** | **List[Optional[object]]** | array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, &lt;, &lt;&#x3D;, &gt;, &gt;&#x3D;, &#x3D;, &lt;&gt;, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\&quot;rating.value\&quot;,\&quot;&gt;\&quot;,3] you can receive the list of available filters by making a separate request to https://api.dataforseo.com/v3/business_data/business_listings/available_filters | [optional] 
@@ -27,12 +27,12 @@ json = "{}"
 # create an instance of BusinessDataBusinessListingsSearchLiveRequestInfo from a JSON string
 business_data_business_listings_search_live_request_info_instance = BusinessDataBusinessListingsSearchLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataBusinessListingsSearchLiveRequestInfo.to_json()
+print(BusinessDataBusinessListingsSearchLiveRequestInfo.to_json())
 
 # convert the object into a dict
 business_data_business_listings_search_live_request_info_dict = business_data_business_listings_search_live_request_info_instance.to_dict()
 # create an instance of BusinessDataBusinessListingsSearchLiveRequestInfo from a dict
-business_data_business_listings_search_live_request_info_form_dict = business_data_business_listings_search_live_request_info.from_dict(business_data_business_listings_search_live_request_info_dict)
+business_data_business_listings_search_live_request_info_from_dict = BusinessDataBusinessListingsSearchLiveRequestInfo.from_dict(business_data_business_listings_search_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

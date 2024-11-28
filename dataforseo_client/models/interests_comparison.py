@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.absolute_items import AbsoluteItems
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class InterestsComparison(BaseModel):
     absolute_items: Optional[List[AbsoluteItems]] = Field(default=None, description="keyword popularity rates across all locations values in this array represent percentages relative to the maximum value across all locations")
     __properties: ClassVar[List[str]] = ["items", "absolute_items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -73,16 +73,16 @@ class InterestsComparison(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in absolute_items (list)
         _items = []
         if self.absolute_items:
-            for _item in self.absolute_items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_absolute_items in self.absolute_items:
+                if _item_absolute_items:
+                    _items.append(_item_absolute_items.to_dict())
             _dict['absolute_items'] = _items
         # set to None if items (nullable) is None
         # and model_fields_set contains the field

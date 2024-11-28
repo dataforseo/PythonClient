@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of StreamingQualityElement from a JSON string
 streaming_quality_element_instance = StreamingQualityElement.from_json(json)
 # print the JSON string representation of the object
-print StreamingQualityElement.to_json()
+print(StreamingQualityElement.to_json())
 
 # convert the object into a dict
 streaming_quality_element_dict = streaming_quality_element_instance.to_dict()
 # create an instance of StreamingQualityElement from a dict
-streaming_quality_element_form_dict = streaming_quality_element.from_dict(streaming_quality_element_dict)
+streaming_quality_element_from_dict = StreamingQualityElement.from_dict(streaming_quality_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

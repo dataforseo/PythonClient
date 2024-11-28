@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of OnPageIdListTaskInfo from a JSON string
 on_page_id_list_task_info_instance = OnPageIdListTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageIdListTaskInfo.to_json()
+print(OnPageIdListTaskInfo.to_json())
 
 # convert the object into a dict
 on_page_id_list_task_info_dict = on_page_id_list_task_info_instance.to_dict()
 # create an instance of OnPageIdListTaskInfo from a dict
-on_page_id_list_task_info_form_dict = on_page_id_list_task_info.from_dict(on_page_id_list_task_info_dict)
+on_page_id_list_task_info_from_dict = OnPageIdListTaskInfo.from_dict(on_page_id_list_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

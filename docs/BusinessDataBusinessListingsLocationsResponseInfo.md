@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of BusinessDataBusinessListingsLocationsResponseInfo from a JSON string
 business_data_business_listings_locations_response_info_instance = BusinessDataBusinessListingsLocationsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataBusinessListingsLocationsResponseInfo.to_json()
+print(BusinessDataBusinessListingsLocationsResponseInfo.to_json())
 
 # convert the object into a dict
 business_data_business_listings_locations_response_info_dict = business_data_business_listings_locations_response_info_instance.to_dict()
 # create an instance of BusinessDataBusinessListingsLocationsResponseInfo from a dict
-business_data_business_listings_locations_response_info_form_dict = business_data_business_listings_locations_response_info.from_dict(business_data_business_listings_locations_response_info_dict)
+business_data_business_listings_locations_response_info_from_dict = BusinessDataBusinessListingsLocationsResponseInfo.from_dict(business_data_business_listings_locations_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

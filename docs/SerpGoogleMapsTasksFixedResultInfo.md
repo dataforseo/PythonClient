@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpGoogleMapsTasksFixedResultInfo from a JSON string
 serp_google_maps_tasks_fixed_result_info_instance = SerpGoogleMapsTasksFixedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleMapsTasksFixedResultInfo.to_json()
+print(SerpGoogleMapsTasksFixedResultInfo.to_json())
 
 # convert the object into a dict
 serp_google_maps_tasks_fixed_result_info_dict = serp_google_maps_tasks_fixed_result_info_instance.to_dict()
 # create an instance of SerpGoogleMapsTasksFixedResultInfo from a dict
-serp_google_maps_tasks_fixed_result_info_form_dict = serp_google_maps_tasks_fixed_result_info.from_dict(serp_google_maps_tasks_fixed_result_info_dict)
+serp_google_maps_tasks_fixed_result_info_from_dict = SerpGoogleMapsTasksFixedResultInfo.from_dict(serp_google_maps_tasks_fixed_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

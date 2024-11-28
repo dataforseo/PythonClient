@@ -17,12 +17,12 @@ json = "{}"
 # create an instance of GooglePlayMetricsBundleInfo from a JSON string
 google_play_metrics_bundle_info_instance = GooglePlayMetricsBundleInfo.from_json(json)
 # print the JSON string representation of the object
-print GooglePlayMetricsBundleInfo.to_json()
+print(GooglePlayMetricsBundleInfo.to_json())
 
 # convert the object into a dict
 google_play_metrics_bundle_info_dict = google_play_metrics_bundle_info_instance.to_dict()
 # create an instance of GooglePlayMetricsBundleInfo from a dict
-google_play_metrics_bundle_info_form_dict = google_play_metrics_bundle_info.from_dict(google_play_metrics_bundle_info_dict)
+google_play_metrics_bundle_info_from_dict = GooglePlayMetricsBundleInfo.from_dict(google_play_metrics_bundle_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of OnPagePageScreenshotResultInfo from a JSON string
 on_page_page_screenshot_result_info_instance = OnPagePageScreenshotResultInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPagePageScreenshotResultInfo.to_json()
+print(OnPagePageScreenshotResultInfo.to_json())
 
 # convert the object into a dict
 on_page_page_screenshot_result_info_dict = on_page_page_screenshot_result_info_instance.to_dict()
 # create an instance of OnPagePageScreenshotResultInfo from a dict
-on_page_page_screenshot_result_info_form_dict = on_page_page_screenshot_result_info.from_dict(on_page_page_screenshot_result_info_dict)
+on_page_page_screenshot_result_info_from_dict = OnPagePageScreenshotResultInfo.from_dict(on_page_page_screenshot_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

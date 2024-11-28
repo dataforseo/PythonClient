@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from pydantic import ConfigDict
 from typing import Any, ClassVar, Dict, List
 from dataforseo_client.models.base_google_maps_serp_element_item import BaseGoogleMapsSerpElementItem
 from dataforseo_client.models.rating_info import RatingInfo
@@ -29,11 +30,11 @@ class MapsPaidItemSerpElementItem(BaseGoogleMapsSerpElementItem):
     """ # noqa: E501
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

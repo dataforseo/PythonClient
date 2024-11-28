@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of JobsElement from a JSON string
 jobs_element_instance = JobsElement.from_json(json)
 # print the JSON string representation of the object
-print JobsElement.to_json()
+print(JobsElement.to_json())
 
 # convert the object into a dict
 jobs_element_dict = jobs_element_instance.to_dict()
 # create an instance of JobsElement from a dict
-jobs_element_form_dict = jobs_element.from_dict(jobs_element_dict)
+jobs_element_from_dict = JobsElement.from_dict(jobs_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

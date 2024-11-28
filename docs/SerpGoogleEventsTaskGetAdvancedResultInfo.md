@@ -13,10 +13,11 @@ Name | Type | Description | Notes
 **check_url** | **str** | direct URL to search engine results | [optional] 
 **datetime** | **str** | date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **spell** | [**SpellInfo**](SpellInfo.md) |  | [optional] 
+**refinement_chips** | [**RefinementChipsInfo**](RefinementChipsInfo.md) |  | [optional] 
 **item_types** | **List[Optional[str]]** | types of search results found in SERP possible item types: event_item | [optional] 
 **se_results_count** | **int** | total number of results in SERP in this case, the value will be 0 this search engine does not indicate the total number of results | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
-**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | items in SERP | [optional] 
+**items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | items of the element | [optional] 
 
 ## Example
 
@@ -28,12 +29,12 @@ json = "{}"
 # create an instance of SerpGoogleEventsTaskGetAdvancedResultInfo from a JSON string
 serp_google_events_task_get_advanced_result_info_instance = SerpGoogleEventsTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleEventsTaskGetAdvancedResultInfo.to_json()
+print(SerpGoogleEventsTaskGetAdvancedResultInfo.to_json())
 
 # convert the object into a dict
 serp_google_events_task_get_advanced_result_info_dict = serp_google_events_task_get_advanced_result_info_instance.to_dict()
 # create an instance of SerpGoogleEventsTaskGetAdvancedResultInfo from a dict
-serp_google_events_task_get_advanced_result_info_form_dict = serp_google_events_task_get_advanced_result_info.from_dict(serp_google_events_task_get_advanced_result_info_dict)
+serp_google_events_task_get_advanced_result_info_from_dict = SerpGoogleEventsTaskGetAdvancedResultInfo.from_dict(serp_google_events_task_get_advanced_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

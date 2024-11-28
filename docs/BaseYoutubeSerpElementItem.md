@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of BaseYoutubeSerpElementItem from a JSON string
 base_youtube_serp_element_item_instance = BaseYoutubeSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print BaseYoutubeSerpElementItem.to_json()
+print(BaseYoutubeSerpElementItem.to_json())
 
 # convert the object into a dict
 base_youtube_serp_element_item_dict = base_youtube_serp_element_item_instance.to_dict()
 # create an instance of BaseYoutubeSerpElementItem from a dict
-base_youtube_serp_element_item_form_dict = base_youtube_serp_element_item.from_dict(base_youtube_serp_element_item_dict)
+base_youtube_serp_element_item_from_dict = BaseYoutubeSerpElementItem.from_dict(base_youtube_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

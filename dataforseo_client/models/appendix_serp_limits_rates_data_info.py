@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.appendix_day_limits_rates_data_info import AppendixDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_function_type_info import AppendixFunctionTypeInfo
-from dataforseo_client.models.appendix_jobs_serp_limits_rates_data_info import AppendixJobsSerpLimitsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,15 +36,15 @@ class AppendixSerpLimitsRatesDataInfo(BaseModel):
     live: Optional[AppendixFunctionTypeInfo] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     tasks_fixed: Optional[Union[StrictFloat, StrictInt]] = None
-    jobs: Optional[AppendixJobsSerpLimitsRatesDataInfo] = None
+    jobs: Optional[AppendixDayLimitsRatesDataInfo] = None
     screenshot: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["task_post", "task_get", "tasks_ready", "locations", "languages", "live", "errors", "tasks_fixed", "jobs", "screenshot"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -143,7 +143,7 @@ class AppendixSerpLimitsRatesDataInfo(BaseModel):
             "live": AppendixFunctionTypeInfo.from_dict(obj["live"]) if obj.get("live") is not None else None,
             "errors": obj.get("errors"),
             "tasks_fixed": obj.get("tasks_fixed"),
-            "jobs": AppendixJobsSerpLimitsRatesDataInfo.from_dict(obj["jobs"]) if obj.get("jobs") is not None else None,
+            "jobs": AppendixDayLimitsRatesDataInfo.from_dict(obj["jobs"]) if obj.get("jobs") is not None else None,
             "screenshot": obj.get("screenshot")
         })
         return _obj

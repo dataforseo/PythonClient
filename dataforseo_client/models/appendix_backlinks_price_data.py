@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,34 +28,35 @@ class AppendixBacklinksPriceData(BaseModel):
     """
     AppendixBacklinksPriceData
     """ # noqa: E501
-    anchors: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    backlinks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_backlinks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_new_lost_backlinks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_new_lost_referring_domains: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_pages_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_ranks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    bulk_referring_domains: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    competitors: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    content_duplicates: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_intersection: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_pages: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_pages_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    anchors: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    backlinks: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_backlinks: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_new_lost_backlinks: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_new_lost_referring_domains: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_pages_summary: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_ranks: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_referring_domains: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    bulk_spam_score: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    competitors: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    content_duplicates: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_intersection: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_pages: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_pages_summary: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     errors: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    history: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    page_intersection: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    referring_domains: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    referring_networks: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    timeseries_new_lost_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    timeseries_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["anchors", "backlinks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_pages_summary", "bulk_ranks", "bulk_referring_domains", "competitors", "content_duplicates", "domain_intersection", "domain_pages", "domain_pages_summary", "errors", "history", "page_intersection", "referring_domains", "referring_networks", "summary", "timeseries_new_lost_summary", "timeseries_summary"]
+    history: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    page_intersection: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    referring_domains: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    referring_networks: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    summary: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    timeseries_new_lost_summary: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    timeseries_summary: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    __properties: ClassVar[List[str]] = ["anchors", "backlinks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_pages_summary", "bulk_ranks", "bulk_referring_domains", "bulk_spam_score", "competitors", "content_duplicates", "domain_intersection", "domain_pages", "domain_pages_summary", "errors", "history", "page_intersection", "referring_domains", "referring_networks", "summary", "timeseries_new_lost_summary", "timeseries_summary"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -114,6 +115,9 @@ class AppendixBacklinksPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of bulk_referring_domains
         if self.bulk_referring_domains:
             _dict['bulk_referring_domains'] = self.bulk_referring_domains.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bulk_spam_score
+        if self.bulk_spam_score:
+            _dict['bulk_spam_score'] = self.bulk_spam_score.to_dict()
         # override the default output from pydantic by calling `to_dict()` of competitors
         if self.competitors:
             _dict['competitors'] = self.competitors.to_dict()
@@ -165,27 +169,28 @@ class AppendixBacklinksPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "anchors": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["anchors"]) if obj.get("anchors") is not None else None,
-            "backlinks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
-            "bulk_backlinks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_backlinks"]) if obj.get("bulk_backlinks") is not None else None,
-            "bulk_new_lost_backlinks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_new_lost_backlinks"]) if obj.get("bulk_new_lost_backlinks") is not None else None,
-            "bulk_new_lost_referring_domains": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_new_lost_referring_domains"]) if obj.get("bulk_new_lost_referring_domains") is not None else None,
-            "bulk_pages_summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_pages_summary"]) if obj.get("bulk_pages_summary") is not None else None,
-            "bulk_ranks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_ranks"]) if obj.get("bulk_ranks") is not None else None,
-            "bulk_referring_domains": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_referring_domains"]) if obj.get("bulk_referring_domains") is not None else None,
-            "competitors": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None,
-            "content_duplicates": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["content_duplicates"]) if obj.get("content_duplicates") is not None else None,
-            "domain_intersection": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_intersection"]) if obj.get("domain_intersection") is not None else None,
-            "domain_pages": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_pages"]) if obj.get("domain_pages") is not None else None,
-            "domain_pages_summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_pages_summary"]) if obj.get("domain_pages_summary") is not None else None,
+            "anchors": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["anchors"]) if obj.get("anchors") is not None else None,
+            "backlinks": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
+            "bulk_backlinks": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_backlinks"]) if obj.get("bulk_backlinks") is not None else None,
+            "bulk_new_lost_backlinks": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_new_lost_backlinks"]) if obj.get("bulk_new_lost_backlinks") is not None else None,
+            "bulk_new_lost_referring_domains": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_new_lost_referring_domains"]) if obj.get("bulk_new_lost_referring_domains") is not None else None,
+            "bulk_pages_summary": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_pages_summary"]) if obj.get("bulk_pages_summary") is not None else None,
+            "bulk_ranks": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_ranks"]) if obj.get("bulk_ranks") is not None else None,
+            "bulk_referring_domains": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_referring_domains"]) if obj.get("bulk_referring_domains") is not None else None,
+            "bulk_spam_score": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_spam_score"]) if obj.get("bulk_spam_score") is not None else None,
+            "competitors": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None,
+            "content_duplicates": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["content_duplicates"]) if obj.get("content_duplicates") is not None else None,
+            "domain_intersection": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_intersection"]) if obj.get("domain_intersection") is not None else None,
+            "domain_pages": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_pages"]) if obj.get("domain_pages") is not None else None,
+            "domain_pages_summary": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_pages_summary"]) if obj.get("domain_pages_summary") is not None else None,
             "errors": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["errors"]) if obj.get("errors") is not None else None,
-            "history": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["history"]) if obj.get("history") is not None else None,
-            "page_intersection": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["page_intersection"]) if obj.get("page_intersection") is not None else None,
-            "referring_domains": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["referring_domains"]) if obj.get("referring_domains") is not None else None,
-            "referring_networks": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["referring_networks"]) if obj.get("referring_networks") is not None else None,
-            "summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
-            "timeseries_new_lost_summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["timeseries_new_lost_summary"]) if obj.get("timeseries_new_lost_summary") is not None else None,
-            "timeseries_summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["timeseries_summary"]) if obj.get("timeseries_summary") is not None else None
+            "history": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["history"]) if obj.get("history") is not None else None,
+            "page_intersection": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["page_intersection"]) if obj.get("page_intersection") is not None else None,
+            "referring_domains": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["referring_domains"]) if obj.get("referring_domains") is not None else None,
+            "referring_networks": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["referring_networks"]) if obj.get("referring_networks") is not None else None,
+            "summary": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
+            "timeseries_new_lost_summary": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["timeseries_new_lost_summary"]) if obj.get("timeseries_new_lost_summary") is not None else None,
+            "timeseries_summary": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["timeseries_summary"]) if obj.get("timeseries_summary") is not None else None
         })
         return _obj
 

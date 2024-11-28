@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,15 +30,15 @@ class OnPageRedirectChainsRequestInfo(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description="page URL optional field absolute URL of the target page if you use this field, the API response will return only redirect chains which contain the specified URL")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned redirect chains optional field default value: 100 maximum value: 1000")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned redirect chains optional field default value: 0 if you specify the 10 value, the first ten redirect chains in the results array will be omitted and the data will be provided for the successive redirect chains")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can use only one filtering parameter with this endpoint the following filtering parameter is supported: is_redirect_loop the following operators are supported: regex, not_regex, =, <> examples: [\"is_redirect_loop\",\"=\",\"true\"] [\"is_redirect_loop\",\"<>\",\"false\"]")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can use only one filtering parameter with this endpoint the following filtering parameter is supported: is_redirect_loop the following operators are supported: regex, not_regex, =, <> examples: [\"is_redirect_loop\",\"=\",\"true\"] [\"is_redirect_loop\",\"<>\",\"false\"]")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["id", "url", "limit", "offset", "filters", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

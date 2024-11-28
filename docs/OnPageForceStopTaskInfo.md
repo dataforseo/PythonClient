@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of OnPageForceStopTaskInfo from a JSON string
 on_page_force_stop_task_info_instance = OnPageForceStopTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageForceStopTaskInfo.to_json()
+print(OnPageForceStopTaskInfo.to_json())
 
 # convert the object into a dict
 on_page_force_stop_task_info_dict = on_page_force_stop_task_info_instance.to_dict()
 # create an instance of OnPageForceStopTaskInfo from a dict
-on_page_force_stop_task_info_form_dict = on_page_force_stop_task_info.from_dict(on_page_force_stop_task_info_dict)
+on_page_force_stop_task_info_from_dict = OnPageForceStopTaskInfo.from_dict(on_page_force_stop_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

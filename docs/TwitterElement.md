@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of TwitterElement from a JSON string
 twitter_element_instance = TwitterElement.from_json(json)
 # print the JSON string representation of the object
-print TwitterElement.to_json()
+print(TwitterElement.to_json())
 
 # convert the object into a dict
 twitter_element_dict = twitter_element_instance.to_dict()
 # create an instance of TwitterElement from a dict
-twitter_element_form_dict = twitter_element.from_dict(twitter_element_dict)
+twitter_element_from_dict = TwitterElement.from_dict(twitter_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

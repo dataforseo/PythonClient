@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of DomainAnalyticsErrorsTaskInfo from a JSON string
 domain_analytics_errors_task_info_instance = DomainAnalyticsErrorsTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print DomainAnalyticsErrorsTaskInfo.to_json()
+print(DomainAnalyticsErrorsTaskInfo.to_json())
 
 # convert the object into a dict
 domain_analytics_errors_task_info_dict = domain_analytics_errors_task_info_instance.to_dict()
 # create an instance of DomainAnalyticsErrorsTaskInfo from a dict
-domain_analytics_errors_task_info_form_dict = domain_analytics_errors_task_info.from_dict(domain_analytics_errors_task_info_dict)
+domain_analytics_errors_task_info_from_dict = DomainAnalyticsErrorsTaskInfo.from_dict(domain_analytics_errors_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

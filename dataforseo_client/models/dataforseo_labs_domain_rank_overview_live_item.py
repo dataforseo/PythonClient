@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
@@ -33,11 +33,11 @@ class DataforseoLabsDomainRankOverviewLiveItem(BaseModel):
     metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain")
     __properties: ClassVar[List[str]] = ["se_type", "location_code", "language_code", "metrics"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -75,9 +75,9 @@ class DataforseoLabsDomainRankOverviewLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in metrics (dict)
         _field_dict = {}
         if self.metrics:
-            for _key in self.metrics:
-                if self.metrics[_key]:
-                    _field_dict[_key] = self.metrics[_key].to_dict()
+            for _key_metrics in self.metrics:
+                if self.metrics[_key_metrics]:
+                    _field_dict[_key_metrics] = self.metrics[_key_metrics].to_dict()
             _dict['metrics'] = _field_dict
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field

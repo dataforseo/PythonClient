@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpYoutubeVideoSubtitlesTaskGetAdvancedTaskInfo from a JSON string
 serp_youtube_video_subtitles_task_get_advanced_task_info_instance = SerpYoutubeVideoSubtitlesTaskGetAdvancedTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpYoutubeVideoSubtitlesTaskGetAdvancedTaskInfo.to_json()
+print(SerpYoutubeVideoSubtitlesTaskGetAdvancedTaskInfo.to_json())
 
 # convert the object into a dict
 serp_youtube_video_subtitles_task_get_advanced_task_info_dict = serp_youtube_video_subtitles_task_get_advanced_task_info_instance.to_dict()
 # create an instance of SerpYoutubeVideoSubtitlesTaskGetAdvancedTaskInfo from a dict
-serp_youtube_video_subtitles_task_get_advanced_task_info_form_dict = serp_youtube_video_subtitles_task_get_advanced_task_info.from_dict(serp_youtube_video_subtitles_task_get_advanced_task_info_dict)
+serp_youtube_video_subtitles_task_get_advanced_task_info_from_dict = SerpYoutubeVideoSubtitlesTaskGetAdvancedTaskInfo.from_dict(serp_youtube_video_subtitles_task_get_advanced_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of PageSectionContentInfo from a JSON string
 page_section_content_info_instance = PageSectionContentInfo.from_json(json)
 # print the JSON string representation of the object
-print PageSectionContentInfo.to_json()
+print(PageSectionContentInfo.to_json())
 
 # convert the object into a dict
 page_section_content_info_dict = page_section_content_info_instance.to_dict()
 # create an instance of PageSectionContentInfo from a dict
-page_section_content_info_form_dict = page_section_content_info.from_dict(page_section_content_info_dict)
+page_section_content_info_from_dict = PageSectionContentInfo.from_dict(page_section_content_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

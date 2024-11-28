@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,16 +32,16 @@ class DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo(BaseModel):
     technologies: Optional[List[StrictStr]] = Field(default=None, description="target technologies required field if you don’t specify groups, technology_paths, categories, or keywords you can find the full list of technologies you can specify here on this page note: you can specify up to 10 technologies in this array example: [\"Google Pay\",\"Salesforce\"]")
     keywords: Optional[List[StrictStr]] = Field(default=None, description="target keywords in the domain’s title, description or meta keywords required field if you don’t specify groups, technology_paths, categories, or technologies you can specify the maximum of 10 keywords; UTF-8 encoding; example: [\"seo\",\"software\"] learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     mode: Optional[StrictStr] = Field(default=None, description="search mode optional field possible search mode types: as_is – search for results exactly matching the specified group ids, category ids, or technology names entry – search for results matching a part of the specified group ids, category ids, or technology names default value: as_is")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: <, <=, >, >=, =, <>, in, not_in, like,not_like you can use the % operator with like and not_like to match any string of zero or more characters you can use the following parameters to filter the results: domain_rank, last_visited, country_iso_code, language_code, content_language_code example: [[\"country_iso_code\",\"=\",\"US\"], \"and\", [\"domain_rank\",\">\",800]] for more information about filters, please refer to Domain Analytics Technologies API – Filters")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: <, <=, >, >=, =, <>, in, not_in, like,not_like you can use the % operator with like and not_like to match any string of zero or more characters you can use the following parameters to filter the results: domain_rank, last_visited, country_iso_code, language_code, content_language_code example: [[\"country_iso_code\",\"=\",\"US\"], \"and\", [\"domain_rank\",\">\",800]] for more information about filters, please refer to Domain Analytics Technologies API – Filters")
     internal_list_limit: Optional[StrictInt] = Field(default=None, description="maximum number of elements within internal arrays optional field you can use this field to limit the number of elements within the following arrays: countries, languages, content_languages, keywords default value: 10 minimum value: 1 maximum value: 10000")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["technology_paths", "groups", "categories", "technologies", "keywords", "mode", "filters", "internal_list_limit", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

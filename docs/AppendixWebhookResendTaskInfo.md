@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of AppendixWebhookResendTaskInfo from a JSON string
 appendix_webhook_resend_task_info_instance = AppendixWebhookResendTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixWebhookResendTaskInfo.to_json()
+print(AppendixWebhookResendTaskInfo.to_json())
 
 # convert the object into a dict
 appendix_webhook_resend_task_info_dict = appendix_webhook_resend_task_info_instance.to_dict()
 # create an instance of AppendixWebhookResendTaskInfo from a dict
-appendix_webhook_resend_task_info_form_dict = appendix_webhook_resend_task_info.from_dict(appendix_webhook_resend_task_info_dict)
+appendix_webhook_resend_task_info_from_dict = AppendixWebhookResendTaskInfo.from_dict(appendix_webhook_resend_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

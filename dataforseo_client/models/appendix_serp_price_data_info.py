@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
@@ -27,16 +27,16 @@ class AppendixSerpPriceDataInfo(BaseModel):
     """
     AppendixSerpPriceDataInfo
     """ # noqa: E501
-    regular: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     html: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
+    regular: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     advanced: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["regular", "html", "advanced"]
+    __properties: ClassVar[List[str]] = ["html", "regular", "advanced"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -71,12 +71,12 @@ class AppendixSerpPriceDataInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of regular
-        if self.regular:
-            _dict['regular'] = self.regular.to_dict()
         # override the default output from pydantic by calling `to_dict()` of html
         if self.html:
             _dict['html'] = self.html.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of regular
+        if self.regular:
+            _dict['regular'] = self.regular.to_dict()
         # override the default output from pydantic by calling `to_dict()` of advanced
         if self.advanced:
             _dict['advanced'] = self.advanced.to_dict()
@@ -92,8 +92,8 @@ class AppendixSerpPriceDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "regular": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["regular"]) if obj.get("regular") is not None else None,
             "html": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["html"]) if obj.get("html") is not None else None,
+            "regular": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["regular"]) if obj.get("regular") is not None else None,
             "advanced": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["advanced"]) if obj.get("advanced") is not None else None
         })
         return _obj

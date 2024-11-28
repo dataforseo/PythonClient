@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,11 @@ class BusinessDataBusinessListingsSearchLiveRequestInfo(BaseModel):
     BusinessDataBusinessListingsSearchLiveRequestInfo
     """ # noqa: E501
     categories: Optional[List[StrictStr]] = Field(default=None, description="business categories optional field the categories you specify are used to search for business listings; if you don’t use this field, we will return business listings found in the specified location; you can specify up to 10 categories")
-    description: Optional[StrictStr] = Field(default=None, description="description of the element in SERP optional field the description of the business entity for which the results are collected; can contain up to 200 symbols")
-    title: Optional[StrictStr] = Field(default=None, description="title of the element in SERP optional field the name of the business entity for which the results are collected; can contain up to 200 symbols")
+    description: Optional[StrictStr] = Field(default=None, description="description of the element in SERP optional field the description of the business entity for which the results are collected; can contain up to 200 characters")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element in SERP optional field the name of the business entity for which the results are collected; can contain up to 200 characters")
     is_claimed: Optional[StrictBool] = Field(default=None, description="indicates whether the business is verified by its owner on Google Maps optional field")
     location_coordinate: Optional[StrictStr] = Field(default=None, description="GPS coordinates of a location optional field location_coordinate parameter should be specified in the “latitude,longitude,radius” format the maximum number of decimal digits for “latitude” and “longitude”: 7 the value of “radius” is specified in kilometres (km) the minimum value for “radius”: 1 the maximum value for “radius”: 100000 example: 53.476225,-2.243572,200")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\"rating.value\",\">\",3] you can receive the list of available filters by making a separate request to https://api.dataforseo.com/v3/business_data/business_listings/available_filters")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\"rating.value\",\">\",3] you can receive the list of available filters by making a separate request to https://api.dataforseo.com/v3/business_data/business_listings/available_filters")
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to set up a sorting parameter example: [\"rating.value,desc\"]note that you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"rating.value,desc\",\"rating.votes_count,desc\"]")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned businesses optional field default value: 100 maximum value: 1000")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned businesses optional field default value: 0 if you specify the 10 value, the first ten entities in the results array will be omitted and the data will be provided for the successive entities")
@@ -39,11 +39,11 @@ class BusinessDataBusinessListingsSearchLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["categories", "description", "title", "is_claimed", "location_coordinate", "filters", "order_by", "limit", "offset", "offset_token", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

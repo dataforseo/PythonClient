@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of MerchantAmazonReviewsTasksReadyResultInfo from a JSON string
 merchant_amazon_reviews_tasks_ready_result_info_instance = MerchantAmazonReviewsTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantAmazonReviewsTasksReadyResultInfo.to_json()
+print(MerchantAmazonReviewsTasksReadyResultInfo.to_json())
 
 # convert the object into a dict
 merchant_amazon_reviews_tasks_ready_result_info_dict = merchant_amazon_reviews_tasks_ready_result_info_instance.to_dict()
 # create an instance of MerchantAmazonReviewsTasksReadyResultInfo from a dict
-merchant_amazon_reviews_tasks_ready_result_info_form_dict = merchant_amazon_reviews_tasks_ready_result_info.from_dict(merchant_amazon_reviews_tasks_ready_result_info_dict)
+merchant_amazon_reviews_tasks_ready_result_info_from_dict = MerchantAmazonReviewsTasksReadyResultInfo.from_dict(merchant_amazon_reviews_tasks_ready_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

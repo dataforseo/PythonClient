@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of MerchantAmazonAsinTaskPostTaskInfo from a JSON string
 merchant_amazon_asin_task_post_task_info_instance = MerchantAmazonAsinTaskPostTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantAmazonAsinTaskPostTaskInfo.to_json()
+print(MerchantAmazonAsinTaskPostTaskInfo.to_json())
 
 # convert the object into a dict
 merchant_amazon_asin_task_post_task_info_dict = merchant_amazon_asin_task_post_task_info_instance.to_dict()
 # create an instance of MerchantAmazonAsinTaskPostTaskInfo from a dict
-merchant_amazon_asin_task_post_task_info_form_dict = merchant_amazon_asin_task_post_task_info.from_dict(merchant_amazon_asin_task_post_task_info_dict)
+merchant_amazon_asin_task_post_task_info_from_dict = MerchantAmazonAsinTaskPostTaskInfo.from_dict(merchant_amazon_asin_task_post_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
+from dataforseo_client.models.refinement_chips_info import RefinementChipsInfo
 from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +29,7 @@ class SerpGoogleOrganicLiveAdvancedResultInfo(BaseModel):
     """
     SerpGoogleOrganicLiveAdvancedResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array the keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array the keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
@@ -36,17 +37,18 @@ class SerpGoogleOrganicLiveAdvancedResultInfo(BaseModel):
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     spell: Optional[SpellInfo] = None
+    refinement_chips: Optional[RefinementChipsInfo] = None
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item types: answer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, google_posts, images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, recipes, top_sights, scholarly_articles, popular_products, podcasts, questions_and_answers, find_results_on, stocks_box, visual_stories, commercial_units, local_services, google_hotels, math_solver, currency_box, product_considerations, found_on_web, short_videos, refine_products, explore_brands, perspectives, discussions_and_forums, compare_sites, courses, ai_overview")
     se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items"]
+    __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "refinement_chips", "item_types", "se_results_count", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -84,12 +86,15 @@ class SerpGoogleOrganicLiveAdvancedResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of spell
         if self.spell:
             _dict['spell'] = self.spell.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of refinement_chips
+        if self.refinement_chips:
+            _dict['refinement_chips'] = self.refinement_chips.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field
@@ -166,6 +171,7 @@ class SerpGoogleOrganicLiveAdvancedResultInfo(BaseModel):
             "check_url": obj.get("check_url"),
             "datetime": obj.get("datetime"),
             "spell": SpellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
+            "refinement_chips": RefinementChipsInfo.from_dict(obj["refinement_chips"]) if obj.get("refinement_chips") is not None else None,
             "item_types": obj.get("item_types"),
             "se_results_count": obj.get("se_results_count"),
             "items_count": obj.get("items_count"),

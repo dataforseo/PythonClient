@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,17 +26,17 @@ class DataforseoLabsGoogleKeywordSuggestionsLiveRequestInfo(BaseModel):
     """
     DataforseoLabsGoogleKeywordSuggestionsLiveRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword required field UTF-8 encoding a keyword should be at least 3 characters long; the keywords will be converted to lowercase format learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword required field UTF-8 encoding the keywords will be converted to lowercase format; learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location optional field if you use this field, you don’t need to specify location_code you can receive the list of available locations with their location_name by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available locations example: United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description="location code optional field if you use this field, you don’t need to specify location_name you can receive the list of available locations with their location_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available locations example: 2840")
     language_name: Optional[StrictStr] = Field(default=None, description="full name of the language optional field if you use this field, you don’t need to specify language_code you can receive the list of available languages with their language_name by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available languages example: English")
     language_code: Optional[StrictStr] = Field(default=None, description="language code optional field if you use this field, you don’t need to specify language_name you can receive the list of available languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages ignore this field to get the results for all available languages example: en")
     include_seed_keyword: Optional[StrictBool] = Field(default=None, description="include data for the seed keyword optional field if set to true, data for the seed keyword specified in the keyword field will be provided in the seed_keyword_data array of the response default value: false")
     include_serp_info: Optional[StrictBool] = Field(default=None, description="include data from SERP for each keyword optional field if set to true, we will return a serp_info array containing SERP data (number of search results, relevant URL, and SERP features) for every keyword in the response default value: false")
-    include_clickstream_data: Optional[StrictBool] = Field(default=None, description="include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_keyword_info object with clickstream data in the response default value: false with this parameter enabled, you will be charged double the price for the request learn more about how clickstream-based metrics are calculated in this help center article")
+    include_clickstream_data: Optional[StrictBool] = Field(default=None, description="include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_keyword_info, keyword_info_normalized_with_clickstream, and keyword_info_normalized_with_bing fields in the response default value: false with this parameter enabled, you will be charged double the price for the request learn more about how clickstream-based metrics are calculated in this help center article")
     exact_match: Optional[StrictBool] = Field(default=None, description="search for the exact phrase optional field if set to true, the returned keywords will include the exact keyword phrase you specified, with potentially other words before or after that phrase default value: false")
     ignore_synonyms: Optional[StrictBool] = Field(default=None, description="ignore highly similar keywords optional field if set to true only core keywords will be returned, all highly similar keywords will be excluded; default value: false")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, ilike, not_ilike, like, not_like you can use the % operator with like and not_like, as well as ilike and not_ilike to match any string of zero or more characters example: [\"keyword_info.search_volume\",\">\",0] [[\"keyword_info.search_volume\",\"in\",[0,1000]], \"and\", [\"keyword_info.competition_level\",\"=\",\"LOW\"]][[\"keyword_info.search_volume\",\">\",100], \"and\", [[\"keyword_info.cpc\",\"<\",0.5], \"or\", [\"keyword_info.high_top_of_page_bid\",\"<=\",0.5]]] for more information about filters, please refer to Dataforseo Labs – Filters or this help center guide")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, ilike, not_ilike, like, not_like you can use the % operator with like and not_like, as well as ilike and not_ilike to match any string of zero or more characters example: [\"keyword_info.search_volume\",\">\",0] [[\"keyword_info.search_volume\",\"in\",[0,1000]], \"and\", [\"keyword_info.competition_level\",\"=\",\"LOW\"]][[\"keyword_info.search_volume\",\">\",100], \"and\", [[\"keyword_info.cpc\",\"<\",0.5], \"or\", [\"keyword_info.high_top_of_page_bid\",\"<=\",0.5]]] for more information about filters, please refer to Dataforseo Labs – Filters or this help center guide")
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order a comma is used as a separator example: [\"keyword_info.competition,desc\"] default rule: [\"keyword_info.search_volume,desc\"] note that you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"keyword_info.search_volume,desc\",\"keyword_info.cpc,desc\"]")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned keywords optional field default value: 100 maximum value: 1000")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned keywords optional field default value: 0 if you specify the 10 value, the first ten keywords in the results array will be omitted and the data will be provided for the successive keywords")
@@ -44,11 +44,11 @@ class DataforseoLabsGoogleKeywordSuggestionsLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["keyword", "location_name", "location_code", "language_name", "language_code", "include_seed_keyword", "include_serp_info", "include_clickstream_data", "exact_match", "ignore_synonyms", "filters", "order_by", "limit", "offset", "offset_token", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

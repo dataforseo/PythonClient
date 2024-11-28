@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of BacklinksAvailableFiltersResultInfo from a JSON string
 backlinks_available_filters_result_info_instance = BacklinksAvailableFiltersResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksAvailableFiltersResultInfo.to_json()
+print(BacklinksAvailableFiltersResultInfo.to_json())
 
 # convert the object into a dict
 backlinks_available_filters_result_info_dict = backlinks_available_filters_result_info_instance.to_dict()
 # create an instance of BacklinksAvailableFiltersResultInfo from a dict
-backlinks_available_filters_result_info_form_dict = backlinks_available_filters_result_info.from_dict(backlinks_available_filters_result_info_dict)
+backlinks_available_filters_result_info_from_dict = BacklinksAvailableFiltersResultInfo.from_dict(backlinks_available_filters_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

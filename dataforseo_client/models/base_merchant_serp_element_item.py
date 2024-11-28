@@ -17,10 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.buy_on_google_merchant_serp_element_item import BuyOnGoogleMerchantSerpElementItem
+    from dataforseo_client.models.google_shopping_paid_merchant_serp_element_item import GoogleShoppingPaidMerchantSerpElementItem
+    from dataforseo_client.models.google_shopping_serp_merchant_serp_element_item import GoogleShoppingSerpMerchantSerpElementItem
+    from dataforseo_client.models.google_shopping_sponsored_carousel_merchant_serp_element_item import GoogleShoppingSponsoredCarouselMerchantSerpElementItem
+    from dataforseo_client.models.product_info_element_merchant_serp_element_item import ProductInfoElementMerchantSerpElementItem
+    from dataforseo_client.models.related_searches_merchant_serp_element_item import RelatedSearchesMerchantSerpElementItem
+    from dataforseo_client.models.shopping_specification_merchant_serp_element_item import ShoppingSpecificationMerchantSerpElementItem
+    from dataforseo_client.models.shops_list_merchant_serp_element_item import ShopsListMerchantSerpElementItem
 
 class BaseMerchantSerpElementItem(BaseModel):
     """
@@ -32,11 +44,11 @@ class BaseMerchantSerpElementItem(BaseModel):
     position: Optional[StrictStr] = Field(default=None, description="alignment of the element in SERP can take the following values: left, right")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -66,7 +78,7 @@ class BaseMerchantSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[BuyOnGoogleMerchantSerpElementItem, GoogleShoppingPaidMerchantSerpElementItem, GoogleShoppingSerpMerchantSerpElementItem, GoogleShoppingSponsoredCarouselMerchantSerpElementItem, ProductInfoElementMerchantSerpElementItem, RelatedSearchesMerchantSerpElementItem, ShoppingSpecificationMerchantSerpElementItem, ShopsListMerchantSerpElementItem]]:
         """Create an instance of BaseMerchantSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -111,26 +123,29 @@ class BaseMerchantSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[BuyOnGoogleMerchantSerpElementItem, GoogleShoppingPaidMerchantSerpElementItem, GoogleShoppingSerpMerchantSerpElementItem, GoogleShoppingSponsoredCarouselMerchantSerpElementItem, ProductInfoElementMerchantSerpElementItem, RelatedSearchesMerchantSerpElementItem, ShoppingSpecificationMerchantSerpElementItem, ShopsListMerchantSerpElementItem]]:
         """Create an instance of BaseMerchantSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseMerchantSerpElementItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'BuyOnGoogleMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.buy_on_google_merchant_serp_element_item").BuyOnGoogleMerchantSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleShoppingPaidMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.google_shopping_paid_merchant_serp_element_item").GoogleShoppingPaidMerchantSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleShoppingSerpMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.google_shopping_serp_merchant_serp_element_item").GoogleShoppingSerpMerchantSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleShoppingSponsoredCarouselMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.google_shopping_sponsored_carousel_merchant_serp_element_item").GoogleShoppingSponsoredCarouselMerchantSerpElementItem.from_dict(obj)
+        if object_type ==  'ProductInfoElementMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.product_info_element_merchant_serp_element_item").ProductInfoElementMerchantSerpElementItem.from_dict(obj)
+        if object_type ==  'RelatedSearchesMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.related_searches_merchant_serp_element_item").RelatedSearchesMerchantSerpElementItem.from_dict(obj)
+        if object_type ==  'ShoppingSpecificationMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.shopping_specification_merchant_serp_element_item").ShoppingSpecificationMerchantSerpElementItem.from_dict(obj)
+        if object_type ==  'ShopsListMerchantSerpElementItem':
+            return import_module("dataforseo_client.models.shops_list_merchant_serp_element_item").ShopsListMerchantSerpElementItem.from_dict(obj)
 
-from dataforseo_client.models.buy_on_google_merchant_serp_element_item import BuyOnGoogleMerchantSerpElementItem
-from dataforseo_client.models.google_shopping_paid_merchant_serp_element_item import GoogleShoppingPaidMerchantSerpElementItem
-from dataforseo_client.models.google_shopping_serp_merchant_serp_element_item import GoogleShoppingSerpMerchantSerpElementItem
-from dataforseo_client.models.google_shopping_sponsored_carousel_merchant_serp_element_item import GoogleShoppingSponsoredCarouselMerchantSerpElementItem
-from dataforseo_client.models.product_info_element_merchant_serp_element_item import ProductInfoElementMerchantSerpElementItem
-from dataforseo_client.models.related_searches_merchant_serp_element_item import RelatedSearchesMerchantSerpElementItem
-from dataforseo_client.models.shopping_specification_merchant_serp_element_item import ShoppingSpecificationMerchantSerpElementItem
-from dataforseo_client.models.shops_list_merchant_serp_element_item import ShopsListMerchantSerpElementItem
-# TODO: Rewrite to not use raise_errors
-BaseMerchantSerpElementItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseMerchantSerpElementItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

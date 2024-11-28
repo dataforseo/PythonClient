@@ -39,12 +39,12 @@ json = "{}"
 # create an instance of DataforseoLabsMetricsInfo from a JSON string
 dataforseo_labs_metrics_info_instance = DataforseoLabsMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsMetricsInfo.to_json()
+print(DataforseoLabsMetricsInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_metrics_info_dict = dataforseo_labs_metrics_info_instance.to_dict()
 # create an instance of DataforseoLabsMetricsInfo from a dict
-dataforseo_labs_metrics_info_form_dict = dataforseo_labs_metrics_info.from_dict(dataforseo_labs_metrics_info_dict)
+dataforseo_labs_metrics_info_from_dict = DataforseoLabsMetricsInfo.from_dict(dataforseo_labs_metrics_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

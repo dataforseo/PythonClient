@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of OnPageAvailableFiltersTaskInfo from a JSON string
 on_page_available_filters_task_info_instance = OnPageAvailableFiltersTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageAvailableFiltersTaskInfo.to_json()
+print(OnPageAvailableFiltersTaskInfo.to_json())
 
 # convert the object into a dict
 on_page_available_filters_task_info_dict = on_page_available_filters_task_info_instance.to_dict()
 # create an instance of OnPageAvailableFiltersTaskInfo from a dict
-on_page_available_filters_task_info_form_dict = on_page_available_filters_task_info.from_dict(on_page_available_filters_task_info_dict)
+on_page_available_filters_task_info_from_dict = OnPageAvailableFiltersTaskInfo.from_dict(on_page_available_filters_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

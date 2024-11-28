@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of MerchantIdListResultInfo from a JSON string
 merchant_id_list_result_info_instance = MerchantIdListResultInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantIdListResultInfo.to_json()
+print(MerchantIdListResultInfo.to_json())
 
 # convert the object into a dict
 merchant_id_list_result_info_dict = merchant_id_list_result_info_instance.to_dict()
 # create an instance of MerchantIdListResultInfo from a dict
-merchant_id_list_result_info_form_dict = merchant_id_list_result_info.from_dict(merchant_id_list_result_info_dict)
+merchant_id_list_result_info_from_dict = MerchantIdListResultInfo.from_dict(merchant_id_list_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

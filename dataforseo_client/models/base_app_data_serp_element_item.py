@@ -17,11 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.data_app_app_store_info_organic_serp_element_item import DataAppAppStoreInfoOrganicSerpElementItem
+    from dataforseo_client.models.data_app_app_store_reviews_search_serp_element_item import DataAppAppStoreReviewsSearchSerpElementItem
+    from dataforseo_client.models.data_app_app_store_search_organic_serp_element_item import DataAppAppStoreSearchOrganicSerpElementItem
+    from dataforseo_client.models.data_app_google_play_info_organic_serp_element_item import DataAppGooglePlayInfoOrganicSerpElementItem
+    from dataforseo_client.models.data_app_google_play_reviews_search_serp_element_item import DataAppGooglePlayReviewsSearchSerpElementItem
+    from dataforseo_client.models.data_app_google_play_search_organic_serp_element_item import DataAppGooglePlaySearchOrganicSerpElementItem
 
 class BaseAppDataSerpElementItem(BaseModel):
     """
@@ -35,11 +45,11 @@ class BaseAppDataSerpElementItem(BaseModel):
     rating: Optional[RatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "rating"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -69,7 +79,7 @@ class BaseAppDataSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[DataAppAppStoreInfoOrganicSerpElementItem, DataAppAppStoreReviewsSearchSerpElementItem, DataAppAppStoreSearchOrganicSerpElementItem, DataAppGooglePlayInfoOrganicSerpElementItem, DataAppGooglePlayReviewsSearchSerpElementItem, DataAppGooglePlaySearchOrganicSerpElementItem]]:
         """Create an instance of BaseAppDataSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -122,24 +132,25 @@ class BaseAppDataSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[DataAppAppStoreInfoOrganicSerpElementItem, DataAppAppStoreReviewsSearchSerpElementItem, DataAppAppStoreSearchOrganicSerpElementItem, DataAppGooglePlayInfoOrganicSerpElementItem, DataAppGooglePlayReviewsSearchSerpElementItem, DataAppGooglePlaySearchOrganicSerpElementItem]]:
         """Create an instance of BaseAppDataSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseAppDataSerpElementItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'DataAppAppStoreInfoOrganicSerpElementItem':
+            return import_module("dataforseo_client.models.data_app_app_store_info_organic_serp_element_item").DataAppAppStoreInfoOrganicSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAppAppStoreReviewsSearchSerpElementItem':
+            return import_module("dataforseo_client.models.data_app_app_store_reviews_search_serp_element_item").DataAppAppStoreReviewsSearchSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAppAppStoreSearchOrganicSerpElementItem':
+            return import_module("dataforseo_client.models.data_app_app_store_search_organic_serp_element_item").DataAppAppStoreSearchOrganicSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAppGooglePlayInfoOrganicSerpElementItem':
+            return import_module("dataforseo_client.models.data_app_google_play_info_organic_serp_element_item").DataAppGooglePlayInfoOrganicSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAppGooglePlayReviewsSearchSerpElementItem':
+            return import_module("dataforseo_client.models.data_app_google_play_reviews_search_serp_element_item").DataAppGooglePlayReviewsSearchSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAppGooglePlaySearchOrganicSerpElementItem':
+            return import_module("dataforseo_client.models.data_app_google_play_search_organic_serp_element_item").DataAppGooglePlaySearchOrganicSerpElementItem.from_dict(obj)
 
-from dataforseo_client.models.data_app_app_store_info_organic_serp_element_item import DataAppAppStoreInfoOrganicSerpElementItem
-from dataforseo_client.models.data_app_app_store_reviews_search_serp_element_item import DataAppAppStoreReviewsSearchSerpElementItem
-from dataforseo_client.models.data_app_app_store_search_organic_serp_element_item import DataAppAppStoreSearchOrganicSerpElementItem
-from dataforseo_client.models.data_app_google_play_info_organic_serp_element_item import DataAppGooglePlayInfoOrganicSerpElementItem
-from dataforseo_client.models.data_app_google_play_reviews_search_serp_element_item import DataAppGooglePlayReviewsSearchSerpElementItem
-from dataforseo_client.models.data_app_google_play_search_organic_serp_element_item import DataAppGooglePlaySearchOrganicSerpElementItem
-# TODO: Rewrite to not use raise_errors
-BaseAppDataSerpElementItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseAppDataSerpElementItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

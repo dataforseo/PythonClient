@@ -17,10 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.youtube_comment_serp_element_item import YoutubeCommentSerpElementItem
+    from dataforseo_client.models.youtube_subtitles_serp_element_item import YoutubeSubtitlesSerpElementItem
+    from dataforseo_client.models.youtube_video_info_serp_element_item import YoutubeVideoInfoSerpElementItem
 
 class BaseYoutubeSerpElementItem(BaseModel):
     """
@@ -31,11 +38,11 @@ class BaseYoutubeSerpElementItem(BaseModel):
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP for the target domain absolute position among all the elements in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -65,7 +72,7 @@ class BaseYoutubeSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[YoutubeCommentSerpElementItem, YoutubeSubtitlesSerpElementItem, YoutubeVideoInfoSerpElementItem]]:
         """Create an instance of BaseYoutubeSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -105,21 +112,19 @@ class BaseYoutubeSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[YoutubeCommentSerpElementItem, YoutubeSubtitlesSerpElementItem, YoutubeVideoInfoSerpElementItem]]:
         """Create an instance of BaseYoutubeSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseYoutubeSerpElementItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'YoutubeCommentSerpElementItem':
+            return import_module("dataforseo_client.models.youtube_comment_serp_element_item").YoutubeCommentSerpElementItem.from_dict(obj)
+        if object_type ==  'YoutubeSubtitlesSerpElementItem':
+            return import_module("dataforseo_client.models.youtube_subtitles_serp_element_item").YoutubeSubtitlesSerpElementItem.from_dict(obj)
+        if object_type ==  'YoutubeVideoInfoSerpElementItem':
+            return import_module("dataforseo_client.models.youtube_video_info_serp_element_item").YoutubeVideoInfoSerpElementItem.from_dict(obj)
 
-from dataforseo_client.models.youtube_comment_serp_element_item import YoutubeCommentSerpElementItem
-from dataforseo_client.models.youtube_subtitles_serp_element_item import YoutubeSubtitlesSerpElementItem
-from dataforseo_client.models.youtube_video_info_serp_element_item import YoutubeVideoInfoSerpElementItem
-# TODO: Rewrite to not use raise_errors
-BaseYoutubeSerpElementItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseYoutubeSerpElementItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

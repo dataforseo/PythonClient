@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.dataforseo_labs_google_historical_serps_live_item import DataforseoLabsGoogleHistoricalSerpsLiveItem
 from typing import Optional, Set
@@ -28,7 +28,7 @@ class DataforseoLabsGoogleHistoricalSerpsLiveResultInfo(BaseModel):
     DataforseoLabsGoogleHistoricalSerpsLiveResultInfo
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array the keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array the keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
@@ -36,11 +36,11 @@ class DataforseoLabsGoogleHistoricalSerpsLiveResultInfo(BaseModel):
     items: Optional[List[DataforseoLabsGoogleHistoricalSerpsLiveItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "total_count", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -78,9 +78,9 @@ class DataforseoLabsGoogleHistoricalSerpsLiveResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field

@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of DataforseoLabsAmazonRelatedKeywordsLiveTaskInfo from a JSON string
 dataforseo_labs_amazon_related_keywords_live_task_info_instance = DataforseoLabsAmazonRelatedKeywordsLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsAmazonRelatedKeywordsLiveTaskInfo.to_json()
+print(DataforseoLabsAmazonRelatedKeywordsLiveTaskInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_amazon_related_keywords_live_task_info_dict = dataforseo_labs_amazon_related_keywords_live_task_info_instance.to_dict()
 # create an instance of DataforseoLabsAmazonRelatedKeywordsLiveTaskInfo from a dict
-dataforseo_labs_amazon_related_keywords_live_task_info_form_dict = dataforseo_labs_amazon_related_keywords_live_task_info.from_dict(dataforseo_labs_amazon_related_keywords_live_task_info_dict)
+dataforseo_labs_amazon_related_keywords_live_task_info_from_dict = DataforseoLabsAmazonRelatedKeywordsLiveTaskInfo.from_dict(dataforseo_labs_amazon_related_keywords_live_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of BacklinksBulkReferringDomainsLiveItem from a JSON string
 backlinks_bulk_referring_domains_live_item_instance = BacklinksBulkReferringDomainsLiveItem.from_json(json)
 # print the JSON string representation of the object
-print BacklinksBulkReferringDomainsLiveItem.to_json()
+print(BacklinksBulkReferringDomainsLiveItem.to_json())
 
 # convert the object into a dict
 backlinks_bulk_referring_domains_live_item_dict = backlinks_bulk_referring_domains_live_item_instance.to_dict()
 # create an instance of BacklinksBulkReferringDomainsLiveItem from a dict
-backlinks_bulk_referring_domains_live_item_form_dict = backlinks_bulk_referring_domains_live_item.from_dict(backlinks_bulk_referring_domains_live_item_dict)
+backlinks_bulk_referring_domains_live_item_from_dict = BacklinksBulkReferringDomainsLiveItem.from_dict(backlinks_bulk_referring_domains_live_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

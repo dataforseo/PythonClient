@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +26,7 @@ class DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo(BaseModel):
     """
     DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword required field you can specify up to 700 symbols in the keyword field; all %## will be decoded (plus symbol ‘+’ will be decoded to a space character); if you need to use the “%” symbol for your keyword, please specify it as “%25”; if you need to use the “+” symbol for your keyword, please specify it as “%2B”")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword required field you can specify up to 700 characters in the keyword field; all %## will be decoded (plus character ‘+’ will be decoded to a space character); if you need to use the “%” character for your keyword, please specify it as “%25”; if you need to use the “+” character for your keyword, please specify it as “%2B”")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range optional field if you don’t specify this field, the API will return all SERPs collected for 365 days starting from the current datetime value; minimal possible value: 365 days from the current datetime value; date format: \"yyyy-mm-dd\"")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field if you don’t specify this field, the today’s date will be used by default; date format: \"yyyy-mm-dd\"; example: \"2021-09-01\"")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location required field if you don’t specify location_code Note: it is required to specify either location_name or location_code you can receive the list of available locations with their location_name by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages example: United Kingdom")
@@ -36,11 +36,11 @@ class DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["keyword", "date_from", "date_to", "location_name", "location_code", "language_name", "language_code", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

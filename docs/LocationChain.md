@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of LocationChain from a JSON string
 location_chain_instance = LocationChain.from_json(json)
 # print the JSON string representation of the object
-print LocationChain.to_json()
+print(LocationChain.to_json())
 
 # convert the object into a dict
 location_chain_dict = location_chain_instance.to_dict()
 # create an instance of LocationChain from a dict
-location_chain_form_dict = location_chain.from_dict(location_chain_dict)
+location_chain_from_dict = LocationChain.from_dict(location_chain_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

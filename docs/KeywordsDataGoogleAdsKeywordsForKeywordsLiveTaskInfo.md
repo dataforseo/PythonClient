@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of KeywordsDataGoogleAdsKeywordsForKeywordsLiveTaskInfo from a JSON string
 keywords_data_google_ads_keywords_for_keywords_live_task_info_instance = KeywordsDataGoogleAdsKeywordsForKeywordsLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataGoogleAdsKeywordsForKeywordsLiveTaskInfo.to_json()
+print(KeywordsDataGoogleAdsKeywordsForKeywordsLiveTaskInfo.to_json())
 
 # convert the object into a dict
 keywords_data_google_ads_keywords_for_keywords_live_task_info_dict = keywords_data_google_ads_keywords_for_keywords_live_task_info_instance.to_dict()
 # create an instance of KeywordsDataGoogleAdsKeywordsForKeywordsLiveTaskInfo from a dict
-keywords_data_google_ads_keywords_for_keywords_live_task_info_form_dict = keywords_data_google_ads_keywords_for_keywords_live_task_info.from_dict(keywords_data_google_ads_keywords_for_keywords_live_task_info_dict)
+keywords_data_google_ads_keywords_for_keywords_live_task_info_from_dict = KeywordsDataGoogleAdsKeywordsForKeywordsLiveTaskInfo.from_dict(keywords_data_google_ads_keywords_for_keywords_live_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

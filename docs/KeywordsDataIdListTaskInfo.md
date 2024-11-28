@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of KeywordsDataIdListTaskInfo from a JSON string
 keywords_data_id_list_task_info_instance = KeywordsDataIdListTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataIdListTaskInfo.to_json()
+print(KeywordsDataIdListTaskInfo.to_json())
 
 # convert the object into a dict
 keywords_data_id_list_task_info_dict = keywords_data_id_list_task_info_instance.to_dict()
 # create an instance of KeywordsDataIdListTaskInfo from a dict
-keywords_data_id_list_task_info_form_dict = keywords_data_id_list_task_info.from_dict(keywords_data_id_list_task_info_dict)
+keywords_data_id_list_task_info_from_dict = KeywordsDataIdListTaskInfo.from_dict(keywords_data_id_list_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

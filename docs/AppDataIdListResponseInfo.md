@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of AppDataIdListResponseInfo from a JSON string
 app_data_id_list_response_info_instance = AppDataIdListResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataIdListResponseInfo.to_json()
+print(AppDataIdListResponseInfo.to_json())
 
 # convert the object into a dict
 app_data_id_list_response_info_dict = app_data_id_list_response_info_instance.to_dict()
 # create an instance of AppDataIdListResponseInfo from a dict
-app_data_id_list_response_info_form_dict = app_data_id_list_response_info.from_dict(app_data_id_list_response_info_dict)
+app_data_id_list_response_info_from_dict = AppDataIdListResponseInfo.from_dict(app_data_id_list_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

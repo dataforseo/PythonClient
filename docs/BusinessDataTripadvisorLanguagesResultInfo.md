@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of BusinessDataTripadvisorLanguagesResultInfo from a JSON string
 business_data_tripadvisor_languages_result_info_instance = BusinessDataTripadvisorLanguagesResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataTripadvisorLanguagesResultInfo.to_json()
+print(BusinessDataTripadvisorLanguagesResultInfo.to_json())
 
 # convert the object into a dict
 business_data_tripadvisor_languages_result_info_dict = business_data_tripadvisor_languages_result_info_instance.to_dict()
 # create an instance of BusinessDataTripadvisorLanguagesResultInfo from a dict
-business_data_tripadvisor_languages_result_info_form_dict = business_data_tripadvisor_languages_result_info.from_dict(business_data_tripadvisor_languages_result_info_dict)
+business_data_tripadvisor_languages_result_info_from_dict = BusinessDataTripadvisorLanguagesResultInfo.from_dict(business_data_tripadvisor_languages_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

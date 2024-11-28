@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of BacklinksTimeseriesNewLostSummaryLiveResultInfo from a JSON string
 backlinks_timeseries_new_lost_summary_live_result_info_instance = BacklinksTimeseriesNewLostSummaryLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksTimeseriesNewLostSummaryLiveResultInfo.to_json()
+print(BacklinksTimeseriesNewLostSummaryLiveResultInfo.to_json())
 
 # convert the object into a dict
 backlinks_timeseries_new_lost_summary_live_result_info_dict = backlinks_timeseries_new_lost_summary_live_result_info_instance.to_dict()
 # create an instance of BacklinksTimeseriesNewLostSummaryLiveResultInfo from a dict
-backlinks_timeseries_new_lost_summary_live_result_info_form_dict = backlinks_timeseries_new_lost_summary_live_result_info.from_dict(backlinks_timeseries_new_lost_summary_live_result_info_dict)
+backlinks_timeseries_new_lost_summary_live_result_info_from_dict = BacklinksTimeseriesNewLostSummaryLiveResultInfo.from_dict(backlinks_timeseries_new_lost_summary_live_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

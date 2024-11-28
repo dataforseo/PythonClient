@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of AppDataAppleAppListingsSearchLiveResultInfo from a JSON string
 app_data_apple_app_listings_search_live_result_info_instance = AppDataAppleAppListingsSearchLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataAppleAppListingsSearchLiveResultInfo.to_json()
+print(AppDataAppleAppListingsSearchLiveResultInfo.to_json())
 
 # convert the object into a dict
 app_data_apple_app_listings_search_live_result_info_dict = app_data_apple_app_listings_search_live_result_info_instance.to_dict()
 # create an instance of AppDataAppleAppListingsSearchLiveResultInfo from a dict
-app_data_apple_app_listings_search_live_result_info_form_dict = app_data_apple_app_listings_search_live_result_info.from_dict(app_data_apple_app_listings_search_live_result_info_dict)
+app_data_apple_app_listings_search_live_result_info_from_dict = AppDataAppleAppListingsSearchLiveResultInfo.from_dict(app_data_apple_app_listings_search_live_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

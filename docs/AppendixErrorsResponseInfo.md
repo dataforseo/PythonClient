@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of AppendixErrorsResponseInfo from a JSON string
 appendix_errors_response_info_instance = AppendixErrorsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixErrorsResponseInfo.to_json()
+print(AppendixErrorsResponseInfo.to_json())
 
 # convert the object into a dict
 appendix_errors_response_info_dict = appendix_errors_response_info_instance.to_dict()
 # create an instance of AppendixErrorsResponseInfo from a dict
-appendix_errors_response_info_form_dict = appendix_errors_response_info.from_dict(appendix_errors_response_info_dict)
+appendix_errors_response_info_from_dict = AppendixErrorsResponseInfo.from_dict(appendix_errors_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of PodcastsElement from a JSON string
 podcasts_element_instance = PodcastsElement.from_json(json)
 # print the JSON string representation of the object
-print PodcastsElement.to_json()
+print(PodcastsElement.to_json())
 
 # convert the object into a dict
 podcasts_element_dict = podcasts_element_instance.to_dict()
 # create an instance of PodcastsElement from a dict
-podcasts_element_form_dict = podcasts_element.from_dict(podcasts_element_dict)
+podcasts_element_from_dict = PodcastsElement.from_dict(podcasts_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of CoursesElement from a JSON string
 courses_element_instance = CoursesElement.from_json(json)
 # print the JSON string representation of the object
-print CoursesElement.to_json()
+print(CoursesElement.to_json())
 
 # convert the object into a dict
 courses_element_dict = courses_element_instance.to_dict()
 # create an instance of CoursesElement from a dict
-courses_element_form_dict = courses_element.from_dict(courses_element_dict)
+courses_element_from_dict = CoursesElement.from_dict(courses_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

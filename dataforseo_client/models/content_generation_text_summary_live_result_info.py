@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -43,11 +43,11 @@ class ContentGenerationTextSummaryLiveResultInfo(BaseModel):
     grammar_errors: Optional[StrictInt] = Field(default=None, description="number of grammar errors found in the target text")
     __properties: ClassVar[List[str]] = ["sentences", "paragraphs", "words", "characters_without_spaces", "characters_with_spaces", "words_per_sentence", "characters_per_word", "vocabulary_density", "keyword_density", "automated_readability_index", "coleman_liau_index", "flesch_kincaid_grade_level", "smog_readability_index", "spelling_errors", "grammar_errors"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of KnowledgeGraphShoppingElement from a JSON string
 knowledge_graph_shopping_element_instance = KnowledgeGraphShoppingElement.from_json(json)
 # print the JSON string representation of the object
-print KnowledgeGraphShoppingElement.to_json()
+print(KnowledgeGraphShoppingElement.to_json())
 
 # convert the object into a dict
 knowledge_graph_shopping_element_dict = knowledge_graph_shopping_element_instance.to_dict()
 # create an instance of KnowledgeGraphShoppingElement from a dict
-knowledge_graph_shopping_element_form_dict = knowledge_graph_shopping_element.from_dict(knowledge_graph_shopping_element_dict)
+knowledge_graph_shopping_element_from_dict = KnowledgeGraphShoppingElement.from_dict(knowledge_graph_shopping_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

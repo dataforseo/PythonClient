@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of KeywordKpi from a JSON string
 keyword_kpi_instance = KeywordKpi.from_json(json)
 # print the JSON string representation of the object
-print KeywordKpi.to_json()
+print(KeywordKpi.to_json())
 
 # convert the object into a dict
 keyword_kpi_dict = keyword_kpi_instance.to_dict()
 # create an instance of KeywordKpi from a dict
-keyword_kpi_form_dict = keyword_kpi.from_dict(keyword_kpi_dict)
+keyword_kpi_from_dict = KeywordKpi.from_dict(keyword_kpi_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

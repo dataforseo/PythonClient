@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of AbsoluteItems from a JSON string
 absolute_items_instance = AbsoluteItems.from_json(json)
 # print the JSON string representation of the object
-print AbsoluteItems.to_json()
+print(AbsoluteItems.to_json())
 
 # convert the object into a dict
 absolute_items_dict = absolute_items_instance.to_dict()
 # create an instance of AbsoluteItems from a dict
-absolute_items_form_dict = absolute_items.from_dict(absolute_items_dict)
+absolute_items_from_dict = AbsoluteItems.from_dict(absolute_items_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

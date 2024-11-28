@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of AmazonDeliveryInfo from a JSON string
 amazon_delivery_info_instance = AmazonDeliveryInfo.from_json(json)
 # print the JSON string representation of the object
-print AmazonDeliveryInfo.to_json()
+print(AmazonDeliveryInfo.to_json())
 
 # convert the object into a dict
 amazon_delivery_info_dict = amazon_delivery_info_instance.to_dict()
 # create an instance of AmazonDeliveryInfo from a dict
-amazon_delivery_info_form_dict = amazon_delivery_info.from_dict(amazon_delivery_info_dict)
+amazon_delivery_info_from_dict = AmazonDeliveryInfo.from_dict(amazon_delivery_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

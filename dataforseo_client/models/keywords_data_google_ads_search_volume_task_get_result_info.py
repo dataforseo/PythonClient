@@ -17,10 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.monthly_searches import MonthlySearches
-from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +27,8 @@ class KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo(BaseModel):
     """
     KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
-    spell: Optional[SpellInfo] = None
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
+    spell: Optional[StrictStr] = Field(default=None, description="correct spelling of the keyword Note:if the keyword in the POST array appears to be misspelled, data will be returned for the correctly spelled keyword; we use the functionality of Google Ads API to check and validate the spelling of keywords, learn more by this link")
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
     search_partners: Optional[StrictBool] = Field(default=None, description="indicates whether data from partner networks included in the response")
@@ -42,11 +41,11 @@ class KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo(BaseModel):
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly searches represents the (approximate) number of searches on this keyword idea (as available for the past twelve months by default), targeted to the specified geographic locations; if there is no data then the value is null")
     __properties: ClassVar[List[str]] = ["keyword", "spell", "location_code", "language_code", "search_partners", "competition", "competition_index", "search_volume", "low_top_of_page_bid", "high_top_of_page_bid", "cpc", "monthly_searches"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -81,20 +80,22 @@ class KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of spell
-        if self.spell:
-            _dict['spell'] = self.spell.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in monthly_searches (list)
         _items = []
         if self.monthly_searches:
-            for _item in self.monthly_searches:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_monthly_searches in self.monthly_searches:
+                if _item_monthly_searches:
+                    _items.append(_item_monthly_searches.to_dict())
             _dict['monthly_searches'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field
         if self.keyword is None and "keyword" in self.model_fields_set:
             _dict['keyword'] = None
+
+        # set to None if spell (nullable) is None
+        # and model_fields_set contains the field
+        if self.spell is None and "spell" in self.model_fields_set:
+            _dict['spell'] = None
 
         # set to None if location_code (nullable) is None
         # and model_fields_set contains the field
@@ -159,7 +160,7 @@ class KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo(BaseModel):
 
         _obj = cls.model_validate({
             "keyword": obj.get("keyword"),
-            "spell": SpellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
+            "spell": obj.get("spell"),
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "search_partners": obj.get("search_partners"),

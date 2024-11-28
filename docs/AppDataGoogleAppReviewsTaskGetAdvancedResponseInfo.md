@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo from a JSON string
 app_data_google_app_reviews_task_get_advanced_response_info_instance = AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo.to_json()
+print(AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo.to_json())
 
 # convert the object into a dict
 app_data_google_app_reviews_task_get_advanced_response_info_dict = app_data_google_app_reviews_task_get_advanced_response_info_instance.to_dict()
 # create an instance of AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo from a dict
-app_data_google_app_reviews_task_get_advanced_response_info_form_dict = app_data_google_app_reviews_task_get_advanced_response_info.from_dict(app_data_google_app_reviews_task_get_advanced_response_info_dict)
+app_data_google_app_reviews_task_get_advanced_response_info_from_dict = AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo.from_dict(app_data_google_app_reviews_task_get_advanced_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of BacklinksTimeseriesSummaryLiveResponseInfo from a JSON string
 backlinks_timeseries_summary_live_response_info_instance = BacklinksTimeseriesSummaryLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksTimeseriesSummaryLiveResponseInfo.to_json()
+print(BacklinksTimeseriesSummaryLiveResponseInfo.to_json())
 
 # convert the object into a dict
 backlinks_timeseries_summary_live_response_info_dict = backlinks_timeseries_summary_live_response_info_instance.to_dict()
 # create an instance of BacklinksTimeseriesSummaryLiveResponseInfo from a dict
-backlinks_timeseries_summary_live_response_info_form_dict = backlinks_timeseries_summary_live_response_info.from_dict(backlinks_timeseries_summary_live_response_info_dict)
+backlinks_timeseries_summary_live_response_info_from_dict = BacklinksTimeseriesSummaryLiveResponseInfo.from_dict(backlinks_timeseries_summary_live_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

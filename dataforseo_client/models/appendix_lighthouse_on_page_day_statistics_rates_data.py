@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,15 +31,15 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
     task_get: Optional[Union[StrictFloat, StrictInt]] = None
     live: Optional[Union[StrictFloat, StrictInt]] = None
     audits: Optional[Union[StrictFloat, StrictInt]] = None
-    versions: Optional[Union[StrictFloat, StrictInt]] = None
     languages: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "task_get", "live", "audits", "versions", "languages"]
+    versions: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "task_get", "live", "audits", "languages", "versions"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -99,15 +99,15 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
         if self.audits is None and "audits" in self.model_fields_set:
             _dict['audits'] = None
 
-        # set to None if versions (nullable) is None
-        # and model_fields_set contains the field
-        if self.versions is None and "versions" in self.model_fields_set:
-            _dict['versions'] = None
-
         # set to None if languages (nullable) is None
         # and model_fields_set contains the field
         if self.languages is None and "languages" in self.model_fields_set:
             _dict['languages'] = None
+
+        # set to None if versions (nullable) is None
+        # and model_fields_set contains the field
+        if self.versions is None and "versions" in self.model_fields_set:
+            _dict['versions'] = None
 
         return _dict
 
@@ -126,8 +126,8 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
             "task_get": obj.get("task_get"),
             "live": obj.get("live"),
             "audits": obj.get("audits"),
-            "versions": obj.get("versions"),
-            "languages": obj.get("languages")
+            "languages": obj.get("languages"),
+            "versions": obj.get("versions")
         })
         return _obj
 

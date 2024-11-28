@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of HistoricalMetricsBundleInfo from a JSON string
 historical_metrics_bundle_info_instance = HistoricalMetricsBundleInfo.from_json(json)
 # print the JSON string representation of the object
-print HistoricalMetricsBundleInfo.to_json()
+print(HistoricalMetricsBundleInfo.to_json())
 
 # convert the object into a dict
 historical_metrics_bundle_info_dict = historical_metrics_bundle_info_instance.to_dict()
 # create an instance of HistoricalMetricsBundleInfo from a dict
-historical_metrics_bundle_info_form_dict = historical_metrics_bundle_info.from_dict(historical_metrics_bundle_info_dict)
+historical_metrics_bundle_info_from_dict = HistoricalMetricsBundleInfo.from_dict(historical_metrics_bundle_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

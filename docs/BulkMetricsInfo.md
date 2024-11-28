@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of BulkMetricsInfo from a JSON string
 bulk_metrics_info_instance = BulkMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print BulkMetricsInfo.to_json()
+print(BulkMetricsInfo.to_json())
 
 # convert the object into a dict
 bulk_metrics_info_dict = bulk_metrics_info_instance.to_dict()
 # create an instance of BulkMetricsInfo from a dict
-bulk_metrics_info_form_dict = bulk_metrics_info.from_dict(bulk_metrics_info_dict)
+bulk_metrics_info_from_dict = BulkMetricsInfo.from_dict(bulk_metrics_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of ContentAnalysisIdListRequestInfo from a JSON string
 content_analysis_id_list_request_info_instance = ContentAnalysisIdListRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print ContentAnalysisIdListRequestInfo.to_json()
+print(ContentAnalysisIdListRequestInfo.to_json())
 
 # convert the object into a dict
 content_analysis_id_list_request_info_dict = content_analysis_id_list_request_info_instance.to_dict()
 # create an instance of ContentAnalysisIdListRequestInfo from a dict
-content_analysis_id_list_request_info_form_dict = content_analysis_id_list_request_info.from_dict(content_analysis_id_list_request_info_dict)
+content_analysis_id_list_request_info_from_dict = ContentAnalysisIdListRequestInfo.from_dict(content_analysis_id_list_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpAiSummaryTaskInfo from a JSON string
 serp_ai_summary_task_info_instance = SerpAiSummaryTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpAiSummaryTaskInfo.to_json()
+print(SerpAiSummaryTaskInfo.to_json())
 
 # convert the object into a dict
 serp_ai_summary_task_info_dict = serp_ai_summary_task_info_instance.to_dict()
 # create an instance of SerpAiSummaryTaskInfo from a dict
-serp_ai_summary_task_info_form_dict = serp_ai_summary_task_info.from_dict(serp_ai_summary_task_info_dict)
+serp_ai_summary_task_info_from_dict = SerpAiSummaryTaskInfo.from_dict(serp_ai_summary_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

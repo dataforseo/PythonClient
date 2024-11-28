@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.index_history import IndexHistory
 from typing import Optional, Set
@@ -33,11 +33,11 @@ class BacklinksIndexResultInfo(BaseModel):
     index_history: Optional[List[IndexHistory]] = Field(default=None, description="index volume data for the past 12 months")
     __properties: ClassVar[List[str]] = ["total_backlinks", "total_pages", "total_domains", "index_history"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -75,9 +75,9 @@ class BacklinksIndexResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in index_history (list)
         _items = []
         if self.index_history:
-            for _item in self.index_history:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_index_history in self.index_history:
+                if _item_index_history:
+                    _items.append(_item_index_history.to_dict())
             _dict['index_history'] = _items
         # set to None if total_backlinks (nullable) is None
         # and model_fields_set contains the field

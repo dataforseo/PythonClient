@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of DataforseoLabsBingPageIntersectionLiveResponseInfo from a JSON string
 dataforseo_labs_bing_page_intersection_live_response_info_instance = DataforseoLabsBingPageIntersectionLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsBingPageIntersectionLiveResponseInfo.to_json()
+print(DataforseoLabsBingPageIntersectionLiveResponseInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_bing_page_intersection_live_response_info_dict = dataforseo_labs_bing_page_intersection_live_response_info_instance.to_dict()
 # create an instance of DataforseoLabsBingPageIntersectionLiveResponseInfo from a dict
-dataforseo_labs_bing_page_intersection_live_response_info_form_dict = dataforseo_labs_bing_page_intersection_live_response_info.from_dict(dataforseo_labs_bing_page_intersection_live_response_info_dict)
+dataforseo_labs_bing_page_intersection_live_response_info_from_dict = DataforseoLabsBingPageIntersectionLiveResponseInfo.from_dict(dataforseo_labs_bing_page_intersection_live_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

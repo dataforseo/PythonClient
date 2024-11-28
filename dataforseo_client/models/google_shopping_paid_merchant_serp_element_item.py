@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from typing import Optional, Set
@@ -35,11 +35,11 @@ class GoogleShoppingPaidMerchantSerpElementItem(BaseMerchantSerpElementItem):
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description="unique ad click referral parameter using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "description", "url", "shop_ad_aclk"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

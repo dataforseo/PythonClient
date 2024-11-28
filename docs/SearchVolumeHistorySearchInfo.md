@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of SearchVolumeHistorySearchInfo from a JSON string
 search_volume_history_search_info_instance = SearchVolumeHistorySearchInfo.from_json(json)
 # print the JSON string representation of the object
-print SearchVolumeHistorySearchInfo.to_json()
+print(SearchVolumeHistorySearchInfo.to_json())
 
 # convert the object into a dict
 search_volume_history_search_info_dict = search_volume_history_search_info_instance.to_dict()
 # create an instance of SearchVolumeHistorySearchInfo from a dict
-search_volume_history_search_info_form_dict = search_volume_history_search_info.from_dict(search_volume_history_search_info_dict)
+search_volume_history_search_info_from_dict = SearchVolumeHistorySearchInfo.from_dict(search_volume_history_search_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

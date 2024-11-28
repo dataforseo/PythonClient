@@ -27,6 +27,12 @@ Method | HTTP request | Description
 [**bing_organic_task_post**](SerpApi.md#bing_organic_task_post) | **POST** /v3/serp/bing/organic/task_post | 
 [**bing_organic_tasks_fixed**](SerpApi.md#bing_organic_tasks_fixed) | **GET** /v3/serp/bing/organic/tasks_fixed | 
 [**bing_organic_tasks_ready**](SerpApi.md#bing_organic_tasks_ready) | **GET** /v3/serp/bing/organic/tasks_ready | 
+[**google_ads_advertisers_task_get_advanced**](SerpApi.md#google_ads_advertisers_task_get_advanced) | **GET** /v3/serp/google/ads_advertisers/task_get/advanced/{id} | 
+[**google_ads_advertisers_task_post**](SerpApi.md#google_ads_advertisers_task_post) | **POST** /v3/serp/google/ads_advertisers/task_post | 
+[**google_ads_advertisers_tasks_ready**](SerpApi.md#google_ads_advertisers_tasks_ready) | **GET** /v3/serp/google/ads_advertisers/tasks_ready | 
+[**google_ads_search_task_get_advanced**](SerpApi.md#google_ads_search_task_get_advanced) | **GET** /v3/serp/google/ads_search/task_get/advanced/{id} | 
+[**google_ads_search_task_post**](SerpApi.md#google_ads_search_task_post) | **POST** /v3/serp/google/ads_search/task_post | 
+[**google_ads_search_tasks_ready**](SerpApi.md#google_ads_search_tasks_ready) | **GET** /v3/serp/google/ads_search/tasks_ready | 
 [**google_autocomplete_live_advanced**](SerpApi.md#google_autocomplete_live_advanced) | **POST** /v3/serp/google/autocomplete/live/advanced | 
 [**google_autocomplete_task_get_advanced**](SerpApi.md#google_autocomplete_task_get_advanced) | **GET** /v3/serp/google/autocomplete/task_get/advanced/{id} | 
 [**google_autocomplete_task_post**](SerpApi.md#google_autocomplete_task_post) | **POST** /v3/serp/google/autocomplete/task_post | 
@@ -105,6 +111,8 @@ Method | HTTP request | Description
 [**serp_bing_locations**](SerpApi.md#serp_bing_locations) | **GET** /v3/serp/bing/locations | 
 [**serp_bing_locations_country**](SerpApi.md#serp_bing_locations_country) | **GET** /v3/serp/bing/locations/{country} | 
 [**serp_errors**](SerpApi.md#serp_errors) | **POST** /v3/serp/errors | 
+[**serp_google_ads_advertisers_locations**](SerpApi.md#serp_google_ads_advertisers_locations) | **GET** /v3/serp/google/ads_advertisers/locations | 
+[**serp_google_ads_search_locations**](SerpApi.md#serp_google_ads_search_locations) | **GET** /v3/serp/google/ads_search/locations | 
 [**serp_google_languages**](SerpApi.md#serp_google_languages) | **GET** /v3/serp/google/languages | 
 [**serp_google_locations**](SerpApi.md#serp_google_locations) | **GET** /v3/serp/google/locations | 
 [**serp_google_locations_country**](SerpApi.md#serp_google_locations_country) | **GET** /v3/serp/google/locations/{country} | 
@@ -346,7 +354,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'fa2b694f-90c3-484c-8f59-4743fd6cb93e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '2a56a956-7888-4e4a-9ac8-8b8bd04b844f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.baidu_organic_task_get_html(id)
@@ -692,7 +700,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_live_html**
-> SerpBingLocalPackLiveHtmlResponseInfo bing_local_pack_live_html(serp_task_request_info=serp_task_request_info)
+> SerpBingLocalPackLiveHtmlResponseInfo bing_local_pack_live_html(serp_bing_local_pack_live_html_request_info=serp_bing_local_pack_live_html_request_info)
 
 
 
@@ -704,8 +712,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_bing_local_pack_live_html_request_info import SerpBingLocalPackLiveHtmlRequestInfo
 from dataforseo_client.models.serp_bing_local_pack_live_html_response_info import SerpBingLocalPackLiveHtmlResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -730,10 +738,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_bing_local_pack_live_html_request_info = [dataforseo_client.SerpBingLocalPackLiveHtmlRequestInfo()] # List[SerpBingLocalPackLiveHtmlRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.bing_local_pack_live_html(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.bing_local_pack_live_html(serp_bing_local_pack_live_html_request_info=serp_bing_local_pack_live_html_request_info)
         print("The response of SerpApi->bing_local_pack_live_html:\n")
         pprint(api_response)
     except Exception as e:
@@ -747,7 +755,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_bing_local_pack_live_html_request_info** | [**List[SerpBingLocalPackLiveHtmlRequestInfo]**](SerpBingLocalPackLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -771,7 +779,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_live_regular**
-> SerpBingLocalPackLiveRegularResponseInfo bing_local_pack_live_regular(serp_task_request_info=serp_task_request_info)
+> SerpBingLocalPackLiveRegularResponseInfo bing_local_pack_live_regular(serp_bing_local_pack_live_regular_request_info=serp_bing_local_pack_live_regular_request_info)
 
 
 
@@ -783,8 +791,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_bing_local_pack_live_regular_request_info import SerpBingLocalPackLiveRegularRequestInfo
 from dataforseo_client.models.serp_bing_local_pack_live_regular_response_info import SerpBingLocalPackLiveRegularResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -809,10 +817,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_bing_local_pack_live_regular_request_info = [dataforseo_client.SerpBingLocalPackLiveRegularRequestInfo()] # List[SerpBingLocalPackLiveRegularRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.bing_local_pack_live_regular(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.bing_local_pack_live_regular(serp_bing_local_pack_live_regular_request_info=serp_bing_local_pack_live_regular_request_info)
         print("The response of SerpApi->bing_local_pack_live_regular:\n")
         pprint(api_response)
     except Exception as e:
@@ -826,7 +834,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_bing_local_pack_live_regular_request_info** | [**List[SerpBingLocalPackLiveRegularRequestInfo]**](SerpBingLocalPackLiveRegularRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -887,7 +895,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'e6993b8a-7ce1-4bec-81d7-1e090b1dd84a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'e74b0d8b-c0ce-49cf-8eda-80ef88eaaecf' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_local_pack_task_get_html(id)
@@ -1006,7 +1014,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_local_pack_task_post**
-> SerpBingLocalPackTaskPostResponseInfo bing_local_pack_task_post(serp_task_request_info=serp_task_request_info)
+> SerpBingLocalPackTaskPostResponseInfo bing_local_pack_task_post(serp_bing_local_pack_task_post_request_info=serp_bing_local_pack_task_post_request_info)
 
 
 
@@ -1018,8 +1026,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_bing_local_pack_task_post_request_info import SerpBingLocalPackTaskPostRequestInfo
 from dataforseo_client.models.serp_bing_local_pack_task_post_response_info import SerpBingLocalPackTaskPostResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1044,10 +1052,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_bing_local_pack_task_post_request_info = [dataforseo_client.SerpBingLocalPackTaskPostRequestInfo()] # List[SerpBingLocalPackTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.bing_local_pack_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.bing_local_pack_task_post(serp_bing_local_pack_task_post_request_info=serp_bing_local_pack_task_post_request_info)
         print("The response of SerpApi->bing_local_pack_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1061,7 +1069,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_bing_local_pack_task_post_request_info** | [**List[SerpBingLocalPackTaskPostRequestInfo]**](SerpBingLocalPackTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1233,7 +1241,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_live_advanced**
-> SerpBingOrganicLiveAdvancedResponseInfo bing_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+> SerpBingOrganicLiveAdvancedResponseInfo bing_organic_live_advanced(serp_bing_organic_live_advanced_request_info=serp_bing_organic_live_advanced_request_info)
 
 
 
@@ -1245,8 +1253,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_bing_organic_live_advanced_request_info import SerpBingOrganicLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_bing_organic_live_advanced_response_info import SerpBingOrganicLiveAdvancedResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1271,10 +1279,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_bing_organic_live_advanced_request_info = [dataforseo_client.SerpBingOrganicLiveAdvancedRequestInfo()] # List[SerpBingOrganicLiveAdvancedRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.bing_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.bing_organic_live_advanced(serp_bing_organic_live_advanced_request_info=serp_bing_organic_live_advanced_request_info)
         print("The response of SerpApi->bing_organic_live_advanced:\n")
         pprint(api_response)
     except Exception as e:
@@ -1288,7 +1296,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_bing_organic_live_advanced_request_info** | [**List[SerpBingOrganicLiveAdvancedRequestInfo]**](SerpBingOrganicLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1312,7 +1320,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_live_html**
-> SerpBingOrganicLiveHtmlResponseInfo bing_organic_live_html(serp_task_request_info=serp_task_request_info)
+> SerpBingOrganicLiveHtmlResponseInfo bing_organic_live_html(serp_bing_organic_live_html_request_info=serp_bing_organic_live_html_request_info)
 
 
 
@@ -1324,8 +1332,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_bing_organic_live_html_request_info import SerpBingOrganicLiveHtmlRequestInfo
 from dataforseo_client.models.serp_bing_organic_live_html_response_info import SerpBingOrganicLiveHtmlResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1350,10 +1358,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_bing_organic_live_html_request_info = [dataforseo_client.SerpBingOrganicLiveHtmlRequestInfo()] # List[SerpBingOrganicLiveHtmlRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.bing_organic_live_html(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.bing_organic_live_html(serp_bing_organic_live_html_request_info=serp_bing_organic_live_html_request_info)
         print("The response of SerpApi->bing_organic_live_html:\n")
         pprint(api_response)
     except Exception as e:
@@ -1367,7 +1375,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_bing_organic_live_html_request_info** | [**List[SerpBingOrganicLiveHtmlRequestInfo]**](SerpBingOrganicLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1391,7 +1399,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_live_regular**
-> SerpBingOrganicLiveRegularResponseInfo bing_organic_live_regular(serp_task_request_info=serp_task_request_info)
+> SerpBingOrganicLiveRegularResponseInfo bing_organic_live_regular(serp_bing_organic_live_regular_request_info=serp_bing_organic_live_regular_request_info)
 
 
 
@@ -1403,8 +1411,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_bing_organic_live_regular_request_info import SerpBingOrganicLiveRegularRequestInfo
 from dataforseo_client.models.serp_bing_organic_live_regular_response_info import SerpBingOrganicLiveRegularResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1429,10 +1437,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_bing_organic_live_regular_request_info = [dataforseo_client.SerpBingOrganicLiveRegularRequestInfo()] # List[SerpBingOrganicLiveRegularRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.bing_organic_live_regular(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.bing_organic_live_regular(serp_bing_organic_live_regular_request_info=serp_bing_organic_live_regular_request_info)
         print("The response of SerpApi->bing_organic_live_regular:\n")
         pprint(api_response)
     except Exception as e:
@@ -1446,7 +1454,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_bing_organic_live_regular_request_info** | [**List[SerpBingOrganicLiveRegularRequestInfo]**](SerpBingOrganicLiveRegularRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1585,7 +1593,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '47a4425c-d583-4f57-ac52-eaea4e40c6f3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'bc3173b3-76d0-4842-8af1-357d2857867d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_organic_task_get_html(id)
@@ -1704,7 +1712,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bing_organic_task_post**
-> SerpBingOrganicTaskPostResponseInfo bing_organic_task_post(serp_task_request_info=serp_task_request_info)
+> SerpBingOrganicTaskPostResponseInfo bing_organic_task_post(serp_bing_organic_task_post_request_info=serp_bing_organic_task_post_request_info)
 
 
 
@@ -1716,8 +1724,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_bing_organic_task_post_request_info import SerpBingOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_bing_organic_task_post_response_info import SerpBingOrganicTaskPostResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1742,10 +1750,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_bing_organic_task_post_request_info = [dataforseo_client.SerpBingOrganicTaskPostRequestInfo()] # List[SerpBingOrganicTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.bing_organic_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.bing_organic_task_post(serp_bing_organic_task_post_request_info=serp_bing_organic_task_post_request_info)
         print("The response of SerpApi->bing_organic_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1759,7 +1767,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_bing_organic_task_post_request_info** | [**List[SerpBingOrganicTaskPostRequestInfo]**](SerpBingOrganicTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -1912,6 +1920,468 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**SerpBingOrganicTasksReadyResponseInfo**](SerpBingOrganicTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_ads_advertisers_task_get_advanced**
+> SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo google_ads_advertisers_task_get_advanced(id)
+
+
+
+Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_get/advanced/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_advertisers_task_get_advanced_response_info import SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    id = '00000000-0000-0000-0000-000000000000' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.google_ads_advertisers_task_get_advanced(id)
+        print("The response of SerpApi->google_ads_advertisers_task_get_advanced:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_ads_advertisers_task_get_advanced: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo**](SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_ads_advertisers_task_post**
+> SerpGoogleAdsAdvertisersTaskPostResponseInfo google_ads_advertisers_task_post(serp_google_ads_advertisers_task_post_request_info=serp_google_ads_advertisers_task_post_request_info)
+
+
+
+Google Ads Advertisers provides information on advertisers that run campaigns on Google Ads based on the Ads Transparency platform. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_advertisers_task_post_request_info import SerpGoogleAdsAdvertisersTaskPostRequestInfo
+from dataforseo_client.models.serp_google_ads_advertisers_task_post_response_info import SerpGoogleAdsAdvertisersTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    serp_google_ads_advertisers_task_post_request_info = [dataforseo_client.SerpGoogleAdsAdvertisersTaskPostRequestInfo()] # List[SerpGoogleAdsAdvertisersTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_ads_advertisers_task_post(serp_google_ads_advertisers_task_post_request_info=serp_google_ads_advertisers_task_post_request_info)
+        print("The response of SerpApi->google_ads_advertisers_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_ads_advertisers_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serp_google_ads_advertisers_task_post_request_info** | [**List[SerpGoogleAdsAdvertisersTaskPostRequestInfo]**](SerpGoogleAdsAdvertisersTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**SerpGoogleAdsAdvertisersTaskPostResponseInfo**](SerpGoogleAdsAdvertisersTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_ads_advertisers_tasks_ready**
+> SerpGoogleAdsAdvertisersTasksReadyResponseInfo google_ads_advertisers_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_advertisers_tasks_ready_response_info import SerpGoogleAdsAdvertisersTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+
+    try:
+        api_response = api_instance.google_ads_advertisers_tasks_ready()
+        print("The response of SerpApi->google_ads_advertisers_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_ads_advertisers_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SerpGoogleAdsAdvertisersTasksReadyResponseInfo**](SerpGoogleAdsAdvertisersTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_ads_search_task_get_advanced**
+> SerpGoogleAdsSearchTaskGetAdvancedResponseInfo google_ads_search_task_get_advanced(id)
+
+
+
+Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_get/advanced/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_search_task_get_advanced_response_info import SerpGoogleAdsSearchTaskGetAdvancedResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    id = '00000000-0000-0000-0000-000000000000' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.google_ads_search_task_get_advanced(id)
+        print("The response of SerpApi->google_ads_search_task_get_advanced:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_ads_search_task_get_advanced: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**SerpGoogleAdsSearchTaskGetAdvancedResponseInfo**](SerpGoogleAdsSearchTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_ads_search_task_post**
+> SerpGoogleAdsSearchTaskPostResponseInfo google_ads_search_task_post(serp_google_ads_search_task_post_request_info=serp_google_ads_search_task_post_request_info)
+
+
+
+Google Ads Search provides information on ads that are run by advertisers on Google Ads. Information is based on the Ads Transparency platform and adapted for the convenience of DataForSEO users. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_search_task_post_request_info import SerpGoogleAdsSearchTaskPostRequestInfo
+from dataforseo_client.models.serp_google_ads_search_task_post_response_info import SerpGoogleAdsSearchTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    serp_google_ads_search_task_post_request_info = [dataforseo_client.SerpGoogleAdsSearchTaskPostRequestInfo()] # List[SerpGoogleAdsSearchTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_ads_search_task_post(serp_google_ads_search_task_post_request_info=serp_google_ads_search_task_post_request_info)
+        print("The response of SerpApi->google_ads_search_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_ads_search_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serp_google_ads_search_task_post_request_info** | [**List[SerpGoogleAdsSearchTaskPostRequestInfo]**](SerpGoogleAdsSearchTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**SerpGoogleAdsSearchTaskPostResponseInfo**](SerpGoogleAdsSearchTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_ads_search_tasks_ready**
+> SerpGoogleAdsSearchTasksReadyResponseInfo google_ads_search_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_search_tasks_ready_response_info import SerpGoogleAdsSearchTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+
+    try:
+        api_response = api_instance.google_ads_search_tasks_ready()
+        print("The response of SerpApi->google_ads_search_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_ads_search_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SerpGoogleAdsSearchTasksReadyResponseInfo**](SerpGoogleAdsSearchTasksReadyResponseInfo.md)
 
 ### Authorization
 
@@ -3467,7 +3937,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_live_advanced**
-> SerpGoogleImagesLiveAdvancedResponseInfo google_images_live_advanced(serp_task_request_info=serp_task_request_info)
+> SerpGoogleImagesLiveAdvancedResponseInfo google_images_live_advanced(serp_google_images_live_advanced_request_info=serp_google_images_live_advanced_request_info)
 
 
 
@@ -3479,8 +3949,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_images_live_advanced_request_info import SerpGoogleImagesLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_images_live_advanced_response_info import SerpGoogleImagesLiveAdvancedResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -3505,10 +3975,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_images_live_advanced_request_info = [dataforseo_client.SerpGoogleImagesLiveAdvancedRequestInfo()] # List[SerpGoogleImagesLiveAdvancedRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_images_live_advanced(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_images_live_advanced(serp_google_images_live_advanced_request_info=serp_google_images_live_advanced_request_info)
         print("The response of SerpApi->google_images_live_advanced:\n")
         pprint(api_response)
     except Exception as e:
@@ -3522,7 +3992,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_images_live_advanced_request_info** | [**List[SerpGoogleImagesLiveAdvancedRequestInfo]**](SerpGoogleImagesLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3546,7 +4016,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_live_html**
-> SerpGoogleImagesLiveHtmlResponseInfo google_images_live_html(serp_task_request_info=serp_task_request_info)
+> SerpGoogleImagesLiveHtmlResponseInfo google_images_live_html(serp_google_images_live_html_request_info=serp_google_images_live_html_request_info)
 
 
 
@@ -3558,8 +4028,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_images_live_html_request_info import SerpGoogleImagesLiveHtmlRequestInfo
 from dataforseo_client.models.serp_google_images_live_html_response_info import SerpGoogleImagesLiveHtmlResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -3584,10 +4054,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_images_live_html_request_info = [dataforseo_client.SerpGoogleImagesLiveHtmlRequestInfo()] # List[SerpGoogleImagesLiveHtmlRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_images_live_html(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_images_live_html(serp_google_images_live_html_request_info=serp_google_images_live_html_request_info)
         print("The response of SerpApi->google_images_live_html:\n")
         pprint(api_response)
     except Exception as e:
@@ -3601,7 +4071,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_images_live_html_request_info** | [**List[SerpGoogleImagesLiveHtmlRequestInfo]**](SerpGoogleImagesLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -3740,7 +4210,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '53ce0032-d4ff-4a87-936d-a694c089c401' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'a7a82827-1700-4ab6-9e14-2fe0946b631a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_images_task_get_html(id)
@@ -3781,7 +4251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_images_task_post**
-> SerpGoogleImagesTaskPostResponseInfo google_images_task_post(serp_task_request_info=serp_task_request_info)
+> SerpGoogleImagesTaskPostResponseInfo google_images_task_post(serp_google_images_task_post_request_info=serp_google_images_task_post_request_info)
 
 
 
@@ -3793,8 +4263,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_images_task_post_request_info import SerpGoogleImagesTaskPostRequestInfo
 from dataforseo_client.models.serp_google_images_task_post_response_info import SerpGoogleImagesTaskPostResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -3819,10 +4289,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_images_task_post_request_info = [dataforseo_client.SerpGoogleImagesTaskPostRequestInfo()] # List[SerpGoogleImagesTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_images_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_images_task_post(serp_google_images_task_post_request_info=serp_google_images_task_post_request_info)
         print("The response of SerpApi->google_images_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -3836,7 +4306,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_images_task_post_request_info** | [**List[SerpGoogleImagesTaskPostRequestInfo]**](SerpGoogleImagesTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -4123,7 +4593,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'a337fc7b-6bbd-4012-82a6-bf794ebd814e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '5246628f-8f75-4086-b802-e10a1e1a4a45' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_jobs_task_get_html(id)
@@ -4664,7 +5134,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '1c8834aa-9075-4f04-a67b-73ad2a409722' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '6aaadcd0-2a90-4a9a-af8c-3044fa7578d1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_local_finder_task_get_html(id)
@@ -5316,7 +5786,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_live_advanced**
-> SerpGoogleNewsLiveAdvancedResponseInfo google_news_live_advanced(serp_task_request_info=serp_task_request_info)
+> SerpGoogleNewsLiveAdvancedResponseInfo google_news_live_advanced(serp_google_news_live_advanced_request_info=serp_google_news_live_advanced_request_info)
 
 
 
@@ -5328,8 +5798,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_news_live_advanced_request_info import SerpGoogleNewsLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_news_live_advanced_response_info import SerpGoogleNewsLiveAdvancedResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -5354,10 +5824,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_news_live_advanced_request_info = [dataforseo_client.SerpGoogleNewsLiveAdvancedRequestInfo()] # List[SerpGoogleNewsLiveAdvancedRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_news_live_advanced(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_news_live_advanced(serp_google_news_live_advanced_request_info=serp_google_news_live_advanced_request_info)
         print("The response of SerpApi->google_news_live_advanced:\n")
         pprint(api_response)
     except Exception as e:
@@ -5371,7 +5841,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_news_live_advanced_request_info** | [**List[SerpGoogleNewsLiveAdvancedRequestInfo]**](SerpGoogleNewsLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5395,7 +5865,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_live_html**
-> SerpGoogleNewsLiveHtmlResponseInfo google_news_live_html(serp_task_request_info=serp_task_request_info)
+> SerpGoogleNewsLiveHtmlResponseInfo google_news_live_html(serp_google_news_live_html_request_info=serp_google_news_live_html_request_info)
 
 
 
@@ -5407,8 +5877,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_news_live_html_request_info import SerpGoogleNewsLiveHtmlRequestInfo
 from dataforseo_client.models.serp_google_news_live_html_response_info import SerpGoogleNewsLiveHtmlResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -5433,10 +5903,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_news_live_html_request_info = [dataforseo_client.SerpGoogleNewsLiveHtmlRequestInfo()] # List[SerpGoogleNewsLiveHtmlRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_news_live_html(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_news_live_html(serp_google_news_live_html_request_info=serp_google_news_live_html_request_info)
         print("The response of SerpApi->google_news_live_html:\n")
         pprint(api_response)
     except Exception as e:
@@ -5450,7 +5920,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_news_live_html_request_info** | [**List[SerpGoogleNewsLiveHtmlRequestInfo]**](SerpGoogleNewsLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5589,7 +6059,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '01ac4c9b-5ebd-4f26-8e6b-eac3fd0a49a9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '42164457-4244-43b6-ba5c-53570d5bcf39' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_news_task_get_html(id)
@@ -5630,7 +6100,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_news_task_post**
-> SerpGoogleNewsTaskPostResponseInfo google_news_task_post(serp_task_request_info=serp_task_request_info)
+> SerpGoogleNewsTaskPostResponseInfo google_news_task_post(serp_google_news_task_post_request_info=serp_google_news_task_post_request_info)
 
 
 
@@ -5642,8 +6112,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_news_task_post_request_info import SerpGoogleNewsTaskPostRequestInfo
 from dataforseo_client.models.serp_google_news_task_post_response_info import SerpGoogleNewsTaskPostResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -5668,10 +6138,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_news_task_post_request_info = [dataforseo_client.SerpGoogleNewsTaskPostRequestInfo()] # List[SerpGoogleNewsTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_news_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_news_task_post(serp_google_news_task_post_request_info=serp_google_news_task_post_request_info)
         print("The response of SerpApi->google_news_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -5685,7 +6155,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_news_task_post_request_info** | [**List[SerpGoogleNewsTaskPostRequestInfo]**](SerpGoogleNewsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -5936,7 +6406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_live_html**
-> SerpGoogleOrganicLiveHtmlResponseInfo google_organic_live_html(serp_task_request_info=serp_task_request_info)
+> SerpGoogleOrganicLiveHtmlResponseInfo google_organic_live_html(serp_google_organic_live_html_request_info=serp_google_organic_live_html_request_info)
 
 
 
@@ -5948,8 +6418,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_organic_live_html_request_info import SerpGoogleOrganicLiveHtmlRequestInfo
 from dataforseo_client.models.serp_google_organic_live_html_response_info import SerpGoogleOrganicLiveHtmlResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -5974,10 +6444,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_organic_live_html_request_info = [dataforseo_client.SerpGoogleOrganicLiveHtmlRequestInfo()] # List[SerpGoogleOrganicLiveHtmlRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_organic_live_html(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_organic_live_html(serp_google_organic_live_html_request_info=serp_google_organic_live_html_request_info)
         print("The response of SerpApi->google_organic_live_html:\n")
         pprint(api_response)
     except Exception as e:
@@ -5991,7 +6461,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_organic_live_html_request_info** | [**List[SerpGoogleOrganicLiveHtmlRequestInfo]**](SerpGoogleOrganicLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -6209,7 +6679,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '2cc1f05c-844e-481b-96f2-3ee76075d5be' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'acc0fc8d-60ea-4311-8f0c-c8393c3e28fd' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_organic_task_get_html(id)
@@ -6328,7 +6798,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_organic_task_post**
-> SerpGoogleOrganicTaskPostResponseInfo google_organic_task_post(serp_task_request_info=serp_task_request_info)
+> SerpGoogleOrganicTaskPostResponseInfo google_organic_task_post(serp_google_organic_task_post_request_info=serp_google_organic_task_post_request_info)
 
 
 
@@ -6340,8 +6810,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_google_organic_task_post_request_info import SerpGoogleOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_google_organic_task_post_response_info import SerpGoogleOrganicTaskPostResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -6366,10 +6836,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_google_organic_task_post_request_info = [dataforseo_client.SerpGoogleOrganicTaskPostRequestInfo()] # List[SerpGoogleOrganicTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_organic_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.google_organic_task_post(serp_google_organic_task_post_request_info=serp_google_organic_task_post_request_info)
         print("The response of SerpApi->google_organic_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -6383,7 +6853,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_google_organic_task_post_request_info** | [**List[SerpGoogleOrganicTaskPostRequestInfo]**](SerpGoogleOrganicTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -6975,7 +7445,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'b89a6f00-6d8e-4dec-a1ab-0d386a6f1487' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'f313ce1b-5ed8-41fe-9030-6dbde0924755' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.naver_organic_task_get_html(id)
@@ -7094,7 +7564,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **naver_organic_task_post**
-> SerpNaverOrganicTaskPostResponseInfo naver_organic_task_post(serp_task_request_info=serp_task_request_info)
+> SerpNaverOrganicTaskPostResponseInfo naver_organic_task_post(serp_naver_organic_task_post_request_info=serp_naver_organic_task_post_request_info)
 
 
 
@@ -7106,8 +7576,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_naver_organic_task_post_request_info import SerpNaverOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_naver_organic_task_post_response_info import SerpNaverOrganicTaskPostResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -7132,10 +7602,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_naver_organic_task_post_request_info = [dataforseo_client.SerpNaverOrganicTaskPostRequestInfo()] # List[SerpNaverOrganicTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.naver_organic_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.naver_organic_task_post(serp_naver_organic_task_post_request_info=serp_naver_organic_task_post_request_info)
         print("The response of SerpApi->naver_organic_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -7149,7 +7619,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_naver_organic_task_post_request_info** | [**List[SerpNaverOrganicTaskPostRequestInfo]**](SerpNaverOrganicTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -7856,7 +8326,7 @@ Name | Type | Description  | Notes
 
 
 
-By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
+By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
 
 ### Example
 
@@ -7920,6 +8390,154 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **serp_google_ads_advertisers_locations**
+> SerpGoogleAdsAdvertisersLocationsResponseInfo serp_google_ads_advertisers_locations()
+
+
+
+for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/locations/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_advertisers_locations_response_info import SerpGoogleAdsAdvertisersLocationsResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+
+    try:
+        api_response = api_instance.serp_google_ads_advertisers_locations()
+        print("The response of SerpApi->serp_google_ads_advertisers_locations:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->serp_google_ads_advertisers_locations: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SerpGoogleAdsAdvertisersLocationsResponseInfo**](SerpGoogleAdsAdvertisersLocationsResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **serp_google_ads_search_locations**
+> SerpGoogleAdsSearchLocationsResponseInfo serp_google_ads_search_locations()
+
+
+
+for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/locations/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_ads_search_locations_response_info import SerpGoogleAdsSearchLocationsResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+
+    try:
+        api_response = api_instance.serp_google_ads_search_locations()
+        print("The response of SerpApi->serp_google_ads_search_locations:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->serp_google_ads_search_locations: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SerpGoogleAdsSearchLocationsResponseInfo**](SerpGoogleAdsSearchLocationsResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9029,7 +9647,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '4bac39a2-0ff0-4e92-a2ad-bb5a099b81e9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '3729ca51-2aa0-4b78-9cd9-7455320d420b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.seznam_organic_task_get_html(id)
@@ -9148,7 +9766,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **seznam_organic_task_post**
-> SerpSeznamOrganicTaskPostResponseInfo seznam_organic_task_post(serp_task_request_info=serp_task_request_info)
+> SerpSeznamOrganicTaskPostResponseInfo seznam_organic_task_post(serp_seznam_organic_task_post_request_info=serp_seznam_organic_task_post_request_info)
 
 
 
@@ -9160,8 +9778,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.serp_seznam_organic_task_post_request_info import SerpSeznamOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_seznam_organic_task_post_response_info import SerpSeznamOrganicTaskPostResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -9186,10 +9804,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_seznam_organic_task_post_request_info = [dataforseo_client.SerpSeznamOrganicTaskPostRequestInfo()] # List[SerpSeznamOrganicTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.seznam_organic_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.seznam_organic_task_post(serp_seznam_organic_task_post_request_info=serp_seznam_organic_task_post_request_info)
         print("The response of SerpApi->seznam_organic_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -9203,7 +9821,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_seznam_organic_task_post_request_info** | [**List[SerpSeznamOrganicTaskPostRequestInfo]**](SerpSeznamOrganicTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9449,7 +10067,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_live_advanced**
-> SerpYahooOrganicLiveAdvancedResponseInfo yahoo_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+> SerpYahooOrganicLiveAdvancedResponseInfo yahoo_organic_live_advanced(serp_yahoo_organic_live_advanced_request_info=serp_yahoo_organic_live_advanced_request_info)
 
 
 
@@ -9461,7 +10079,7 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
+from dataforseo_client.models.serp_yahoo_organic_live_advanced_request_info import SerpYahooOrganicLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_live_advanced_response_info import SerpYahooOrganicLiveAdvancedResponseInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
@@ -9487,10 +10105,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_yahoo_organic_live_advanced_request_info = [dataforseo_client.SerpYahooOrganicLiveAdvancedRequestInfo()] # List[SerpYahooOrganicLiveAdvancedRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.yahoo_organic_live_advanced(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.yahoo_organic_live_advanced(serp_yahoo_organic_live_advanced_request_info=serp_yahoo_organic_live_advanced_request_info)
         print("The response of SerpApi->yahoo_organic_live_advanced:\n")
         pprint(api_response)
     except Exception as e:
@@ -9504,7 +10122,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_yahoo_organic_live_advanced_request_info** | [**List[SerpYahooOrganicLiveAdvancedRequestInfo]**](SerpYahooOrganicLiveAdvancedRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9528,7 +10146,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_live_html**
-> SerpYahooOrganicLiveHtmlResponseInfo yahoo_organic_live_html(serp_task_request_info=serp_task_request_info)
+> SerpYahooOrganicLiveHtmlResponseInfo yahoo_organic_live_html(serp_yahoo_organic_live_html_request_info=serp_yahoo_organic_live_html_request_info)
 
 
 
@@ -9540,7 +10158,7 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
+from dataforseo_client.models.serp_yahoo_organic_live_html_request_info import SerpYahooOrganicLiveHtmlRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_live_html_response_info import SerpYahooOrganicLiveHtmlResponseInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
@@ -9566,10 +10184,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_yahoo_organic_live_html_request_info = [dataforseo_client.SerpYahooOrganicLiveHtmlRequestInfo()] # List[SerpYahooOrganicLiveHtmlRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.yahoo_organic_live_html(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.yahoo_organic_live_html(serp_yahoo_organic_live_html_request_info=serp_yahoo_organic_live_html_request_info)
         print("The response of SerpApi->yahoo_organic_live_html:\n")
         pprint(api_response)
     except Exception as e:
@@ -9583,7 +10201,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_yahoo_organic_live_html_request_info** | [**List[SerpYahooOrganicLiveHtmlRequestInfo]**](SerpYahooOrganicLiveHtmlRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9607,7 +10225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_live_regular**
-> SerpYahooOrganicLiveRegularResponseInfo yahoo_organic_live_regular(serp_task_request_info=serp_task_request_info)
+> SerpYahooOrganicLiveRegularResponseInfo yahoo_organic_live_regular(serp_yahoo_organic_live_regular_request_info=serp_yahoo_organic_live_regular_request_info)
 
 
 
@@ -9619,7 +10237,7 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
+from dataforseo_client.models.serp_yahoo_organic_live_regular_request_info import SerpYahooOrganicLiveRegularRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_live_regular_response_info import SerpYahooOrganicLiveRegularResponseInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
@@ -9645,10 +10263,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_yahoo_organic_live_regular_request_info = [dataforseo_client.SerpYahooOrganicLiveRegularRequestInfo()] # List[SerpYahooOrganicLiveRegularRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.yahoo_organic_live_regular(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.yahoo_organic_live_regular(serp_yahoo_organic_live_regular_request_info=serp_yahoo_organic_live_regular_request_info)
         print("The response of SerpApi->yahoo_organic_live_regular:\n")
         pprint(api_response)
     except Exception as e:
@@ -9662,7 +10280,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_yahoo_organic_live_regular_request_info** | [**List[SerpYahooOrganicLiveRegularRequestInfo]**](SerpYahooOrganicLiveRegularRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -9801,7 +10419,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '457e5da9-2db4-475c-999d-e5ca61709c1d' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '933e3a09-e1c9-472d-84b3-e773b1f3142b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.yahoo_organic_task_get_html(id)
@@ -9920,7 +10538,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **yahoo_organic_task_post**
-> SerpYahooOrganicTaskPostResponseInfo yahoo_organic_task_post(serp_task_request_info=serp_task_request_info)
+> SerpYahooOrganicTaskPostResponseInfo yahoo_organic_task_post(serp_yahoo_organic_task_post_request_info=serp_yahoo_organic_task_post_request_info)
 
 
 
@@ -9932,7 +10550,7 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
+from dataforseo_client.models.serp_yahoo_organic_task_post_request_info import SerpYahooOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_task_post_response_info import SerpYahooOrganicTaskPostResponseInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
@@ -9958,10 +10576,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    serp_task_request_info = [dataforseo_client.SerpTaskRequestInfo()] # List[SerpTaskRequestInfo] |  (optional)
+    serp_yahoo_organic_task_post_request_info = [dataforseo_client.SerpYahooOrganicTaskPostRequestInfo()] # List[SerpYahooOrganicTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.yahoo_organic_task_post(serp_task_request_info=serp_task_request_info)
+        api_response = api_instance.yahoo_organic_task_post(serp_yahoo_organic_task_post_request_info=serp_yahoo_organic_task_post_request_info)
         print("The response of SerpApi->yahoo_organic_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -9975,7 +10593,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serp_task_request_info** | [**List[SerpTaskRequestInfo]**](SerpTaskRequestInfo.md)|  | [optional] 
+ **serp_yahoo_organic_task_post_request_info** | [**List[SerpYahooOrganicTaskPostRequestInfo]**](SerpYahooOrganicTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 

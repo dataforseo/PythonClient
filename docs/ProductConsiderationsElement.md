@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ProductConsiderationsElement from a JSON string
 product_considerations_element_instance = ProductConsiderationsElement.from_json(json)
 # print the JSON string representation of the object
-print ProductConsiderationsElement.to_json()
+print(ProductConsiderationsElement.to_json())
 
 # convert the object into a dict
 product_considerations_element_dict = product_considerations_element_instance.to_dict()
 # create an instance of ProductConsiderationsElement from a dict
-product_considerations_element_form_dict = product_considerations_element.from_dict(product_considerations_element_dict)
+product_considerations_element_from_dict = ProductConsiderationsElement.from_dict(product_considerations_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

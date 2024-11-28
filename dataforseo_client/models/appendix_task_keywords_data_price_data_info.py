@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_priority_tasks_ready_keywords_data_price_data_info import AppendixPriorityTasksReadyKeywordsDataPriceDataInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class AppendixTaskKeywordsDataPriceDataInfo(BaseModel):
     priority_high: Optional[List[AppendixPriorityTasksReadyKeywordsDataPriceDataInfo]] = None
     __properties: ClassVar[List[str]] = ["priority_low", "priority_normal", "priority_high"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,23 +74,23 @@ class AppendixTaskKeywordsDataPriceDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in priority_low (list)
         _items = []
         if self.priority_low:
-            for _item in self.priority_low:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_priority_low in self.priority_low:
+                if _item_priority_low:
+                    _items.append(_item_priority_low.to_dict())
             _dict['priority_low'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in priority_normal (list)
         _items = []
         if self.priority_normal:
-            for _item in self.priority_normal:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_priority_normal in self.priority_normal:
+                if _item_priority_normal:
+                    _items.append(_item_priority_normal.to_dict())
             _dict['priority_normal'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in priority_high (list)
         _items = []
         if self.priority_high:
-            for _item in self.priority_high:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_priority_high in self.priority_high:
+                if _item_priority_high:
+                    _items.append(_item_priority_high.to_dict())
             _dict['priority_high'] = _items
         # set to None if priority_low (nullable) is None
         # and model_fields_set contains the field

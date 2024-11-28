@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,14 +29,14 @@ class OnPageNonIndexableRequestInfo(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="ID of the task required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04”")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned pages optional field default value: 100 maximum value: 1000")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned pages optional field default value: 0 if you specify the 10 value, the first ten pages in the results array will be omitted and the data will be provided for the successive pages")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\"reason\",\"=\",\"robots_txt\"][[\"reason\",\"<>\",\"robots_txt\"], \"and\", [\"url\",\"not_like\",\"%/wp-admin/%\"]] [[\"url\",\"not_like\",\"%/wp-admin/%\"], \"and\", [[\"reason\",\"<>\",\"meta_tag\"],\"or\",[\"reason\",\"<>\",\"http_header\"]]] The full list of possible filters is available by this link.")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\"reason\",\"=\",\"robots_txt\"][[\"reason\",\"<>\",\"robots_txt\"], \"and\", [\"url\",\"not_like\",\"%/wp-admin/%\"]] [[\"url\",\"not_like\",\"%/wp-admin/%\"], \"and\", [[\"reason\",\"<>\",\"meta_tag\"],\"or\",[\"reason\",\"<>\",\"http_header\"]]] The full list of possible filters is available by this link.")
     __properties: ClassVar[List[str]] = ["id", "limit", "offset", "filters"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

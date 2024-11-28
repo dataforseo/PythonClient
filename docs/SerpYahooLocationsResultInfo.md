@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of SerpYahooLocationsResultInfo from a JSON string
 serp_yahoo_locations_result_info_instance = SerpYahooLocationsResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpYahooLocationsResultInfo.to_json()
+print(SerpYahooLocationsResultInfo.to_json())
 
 # convert the object into a dict
 serp_yahoo_locations_result_info_dict = serp_yahoo_locations_result_info_instance.to_dict()
 # create an instance of SerpYahooLocationsResultInfo from a dict
-serp_yahoo_locations_result_info_form_dict = serp_yahoo_locations_result_info.from_dict(serp_yahoo_locations_result_info_dict)
+serp_yahoo_locations_result_info_from_dict = SerpYahooLocationsResultInfo.from_dict(serp_yahoo_locations_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

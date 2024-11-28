@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ContentGenerationCheckGrammarLiveRequestInfo from a JSON string
 content_generation_check_grammar_live_request_info_instance = ContentGenerationCheckGrammarLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print ContentGenerationCheckGrammarLiveRequestInfo.to_json()
+print(ContentGenerationCheckGrammarLiveRequestInfo.to_json())
 
 # convert the object into a dict
 content_generation_check_grammar_live_request_info_dict = content_generation_check_grammar_live_request_info_instance.to_dict()
 # create an instance of ContentGenerationCheckGrammarLiveRequestInfo from a dict
-content_generation_check_grammar_live_request_info_form_dict = content_generation_check_grammar_live_request_info.from_dict(content_generation_check_grammar_live_request_info_dict)
+content_generation_check_grammar_live_request_info_from_dict = ContentGenerationCheckGrammarLiveRequestInfo.from_dict(content_generation_check_grammar_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

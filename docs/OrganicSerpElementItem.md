@@ -43,12 +43,12 @@ json = "{}"
 # create an instance of OrganicSerpElementItem from a JSON string
 organic_serp_element_item_instance = OrganicSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print OrganicSerpElementItem.to_json()
+print(OrganicSerpElementItem.to_json())
 
 # convert the object into a dict
 organic_serp_element_item_dict = organic_serp_element_item_instance.to_dict()
 # create an instance of OrganicSerpElementItem from a dict
-organic_serp_element_item_form_dict = organic_serp_element_item.from_dict(organic_serp_element_item_dict)
+organic_serp_element_item_from_dict = OrganicSerpElementItem.from_dict(organic_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

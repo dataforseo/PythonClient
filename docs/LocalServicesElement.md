@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of LocalServicesElement from a JSON string
 local_services_element_instance = LocalServicesElement.from_json(json)
 # print the JSON string representation of the object
-print LocalServicesElement.to_json()
+print(LocalServicesElement.to_json())
 
 # convert the object into a dict
 local_services_element_dict = local_services_element_instance.to_dict()
 # create an instance of LocalServicesElement from a dict
-local_services_element_form_dict = local_services_element.from_dict(local_services_element_dict)
+local_services_element_from_dict = LocalServicesElement.from_dict(local_services_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

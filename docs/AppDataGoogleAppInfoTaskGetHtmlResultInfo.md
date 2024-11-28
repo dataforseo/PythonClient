@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of AppDataGoogleAppInfoTaskGetHtmlResultInfo from a JSON string
 app_data_google_app_info_task_get_html_result_info_instance = AppDataGoogleAppInfoTaskGetHtmlResultInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataGoogleAppInfoTaskGetHtmlResultInfo.to_json()
+print(AppDataGoogleAppInfoTaskGetHtmlResultInfo.to_json())
 
 # convert the object into a dict
 app_data_google_app_info_task_get_html_result_info_dict = app_data_google_app_info_task_get_html_result_info_instance.to_dict()
 # create an instance of AppDataGoogleAppInfoTaskGetHtmlResultInfo from a dict
-app_data_google_app_info_task_get_html_result_info_form_dict = app_data_google_app_info_task_get_html_result_info.from_dict(app_data_google_app_info_task_get_html_result_info_dict)
+app_data_google_app_info_task_get_html_result_info_from_dict = AppDataGoogleAppInfoTaskGetHtmlResultInfo.from_dict(app_data_google_app_info_task_get_html_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

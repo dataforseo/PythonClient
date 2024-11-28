@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_technologies_domain_analytics_limits_rates_data_info import AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo
 from dataforseo_client.models.appendix_whois_domain_analytics_limits_rates_data_info import AppendixWhoisDomainAnalyticsLimitsRatesDataInfo
@@ -32,15 +32,15 @@ class AppendixDomainAnalyticsDayStatisticsRatesData(BaseModel):
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     whois: Optional[AppendixWhoisDomainAnalyticsLimitsRatesDataInfo] = None
     technologies: Optional[AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo] = None
-    available_filters: Optional[Union[StrictFloat, StrictInt]] = None
     id_list: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["tasks_ready", "errors", "whois", "technologies", "available_filters", "id_list"]
+    available_filters: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["tasks_ready", "errors", "whois", "technologies", "id_list", "available_filters"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -91,15 +91,15 @@ class AppendixDomainAnalyticsDayStatisticsRatesData(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
-        # set to None if available_filters (nullable) is None
-        # and model_fields_set contains the field
-        if self.available_filters is None and "available_filters" in self.model_fields_set:
-            _dict['available_filters'] = None
-
         # set to None if id_list (nullable) is None
         # and model_fields_set contains the field
         if self.id_list is None and "id_list" in self.model_fields_set:
             _dict['id_list'] = None
+
+        # set to None if available_filters (nullable) is None
+        # and model_fields_set contains the field
+        if self.available_filters is None and "available_filters" in self.model_fields_set:
+            _dict['available_filters'] = None
 
         return _dict
 
@@ -117,8 +117,8 @@ class AppendixDomainAnalyticsDayStatisticsRatesData(BaseModel):
             "errors": obj.get("errors"),
             "whois": AppendixWhoisDomainAnalyticsLimitsRatesDataInfo.from_dict(obj["whois"]) if obj.get("whois") is not None else None,
             "technologies": AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo.from_dict(obj["technologies"]) if obj.get("technologies") is not None else None,
-            "available_filters": obj.get("available_filters"),
-            "id_list": obj.get("id_list")
+            "id_list": obj.get("id_list"),
+            "available_filters": obj.get("available_filters")
         })
         return _obj
 

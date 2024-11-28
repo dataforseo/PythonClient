@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.app_datale_app_listings_search_live_item import AppDataleAppListingsSearchLiveItem
 from typing import Optional, Set
@@ -34,11 +34,11 @@ class AppDataAppleAppListingsSearchLiveResultInfo(BaseModel):
     items: Optional[List[AppDataleAppListingsSearchLiveItem]] = Field(default=None, description="array of apps and related data")
     __properties: ClassVar[List[str]] = ["total_count", "count", "offset", "offset_token", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -76,9 +76,9 @@ class AppDataAppleAppListingsSearchLiveResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if total_count (nullable) is None
         # and model_fields_set contains the field

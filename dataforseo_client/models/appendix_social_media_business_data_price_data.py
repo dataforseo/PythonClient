@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,16 +27,16 @@ class AppendixSocialMediaBusinessDataPriceData(BaseModel):
     """
     AppendixSocialMediaBusinessDataPriceData
     """ # noqa: E501
-    facebook: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    pinterest: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    reddit: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    facebook: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    pinterest: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    reddit: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["facebook", "pinterest", "reddit"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -92,9 +92,9 @@ class AppendixSocialMediaBusinessDataPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "facebook": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["facebook"]) if obj.get("facebook") is not None else None,
-            "pinterest": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["pinterest"]) if obj.get("pinterest") is not None else None,
-            "reddit": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["reddit"]) if obj.get("reddit") is not None else None
+            "facebook": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["facebook"]) if obj.get("facebook") is not None else None,
+            "pinterest": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["pinterest"]) if obj.get("pinterest") is not None else None,
+            "reddit": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["reddit"]) if obj.get("reddit") is not None else None
         })
         return _obj
 

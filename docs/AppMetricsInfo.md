@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of AppMetricsInfo from a JSON string
 app_metrics_info_instance = AppMetricsInfo.from_json(json)
 # print the JSON string representation of the object
-print AppMetricsInfo.to_json()
+print(AppMetricsInfo.to_json())
 
 # convert the object into a dict
 app_metrics_info_dict = app_metrics_info_instance.to_dict()
 # create an instance of AppMetricsInfo from a dict
-app_metrics_info_form_dict = app_metrics_info.from_dict(app_metrics_info_dict)
+app_metrics_info_from_dict = AppMetricsInfo.from_dict(app_metrics_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

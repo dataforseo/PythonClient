@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword required field you can specify up to 700 symbols in the keyword field all %## will be decoded (plus symbol ‘+’ will be decoded to a space character) if you need to use the “%” symbol for your keyword, please specify it as “%25”; if you need to use the “+” symbol for your keyword, please specify it as “%2B” learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keyword** | **str** | keyword required field you can specify up to 700 characters in the keyword field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your keyword, please specify it as “%25”; if you need to use the “+” character for your keyword, please specify it as “%2B” learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **location_name** | **str** | full name of search engine location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/events/locations example: London,England,United Kingdom | [optional] 
 **location_code** | **int** | search engine location code required field if you don’t specify location_name or location_coordinate if you use this field, you don’t need to specify location_name or location_coordinate you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/events/locations example: 2840 | [optional] 
 **location_coordinate** | **str** | GPS coordinates of a location required field if you don’t specify location_name or location_code if you use this field, you don’t need to specify location_name or location_code location_coordinate parameter should be specified in the “latitude,longitude,radius” format data will be provided for the country the specified coordinates belong to the maximum number of decimal digits for “latitude” and “longitude”: 7 the minimum value for “radius”: 199.9 (mm) the maximum value for “radius”: 199999 (mm) example: 53.476225,-2.243572,200 | [optional] 
@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of SerpGoogleEventsLiveAdvancedRequestInfo from a JSON string
 serp_google_events_live_advanced_request_info_instance = SerpGoogleEventsLiveAdvancedRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleEventsLiveAdvancedRequestInfo.to_json()
+print(SerpGoogleEventsLiveAdvancedRequestInfo.to_json())
 
 # convert the object into a dict
 serp_google_events_live_advanced_request_info_dict = serp_google_events_live_advanced_request_info_instance.to_dict()
 # create an instance of SerpGoogleEventsLiveAdvancedRequestInfo from a dict
-serp_google_events_live_advanced_request_info_form_dict = serp_google_events_live_advanced_request_info.from_dict(serp_google_events_live_advanced_request_info_dict)
+serp_google_events_live_advanced_request_info_from_dict = SerpGoogleEventsLiveAdvancedRequestInfo.from_dict(serp_google_events_live_advanced_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

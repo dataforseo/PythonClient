@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **language_name** | **str** | full name of the language required field if you don’t specify language_code Note: it is required to specify either language_name or language_code you can receive the list of available locations with their language_name by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages example: English | [optional] 
 **language_code** | **str** | language code required field if you don’t specify language_name Note: it is required to specify either language_name or language_code you can receive the list of available locations with their language_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages example: en | [optional] 
 **include_serp_info** | **bool** | include data from SERP for each keyword optional field if set to true, we will return a serp_info array containing SERP data (number of search results, relevant URL, and SERP features) for every keyword in the response default value: false | [optional] 
-**include_clickstream_data** | **bool** | include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_keyword_info object with clickstream data in the response default value: false with this parameter enabled, you will be charged double the price for the request learn more about how clickstream-based metrics are calculated in this help center article | [optional] 
+**include_clickstream_data** | **bool** | include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_keyword_info, keyword_info_normalized_with_clickstream, and keyword_info_normalized_with_bing fields in the response default value: false with this parameter enabled, you will be charged double the price for the request learn more about how clickstream-based metrics are calculated in this help center article | [optional] 
 **tag** | **str** | user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response | [optional] 
 
 ## Example
@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo from a JSON string
 dataforseo_labs_google_historical_search_volume_live_request_info_instance = DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo.to_json()
+print(DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_google_historical_search_volume_live_request_info_dict = dataforseo_labs_google_historical_search_volume_live_request_info_instance.to_dict()
 # create an instance of DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo from a dict
-dataforseo_labs_google_historical_search_volume_live_request_info_form_dict = dataforseo_labs_google_historical_search_volume_live_request_info.from_dict(dataforseo_labs_google_historical_search_volume_live_request_info_dict)
+dataforseo_labs_google_historical_search_volume_live_request_info_from_dict = DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo.from_dict(dataforseo_labs_google_historical_search_volume_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -32,26 +32,43 @@ from dataforseo_client.models.serp_baidu_organic_task_post_response_info import 
 from dataforseo_client.models.serp_baidu_organic_tasks_fixed_response_info import SerpBaiduOrganicTasksFixedResponseInfo
 from dataforseo_client.models.serp_baidu_organic_tasks_ready_response_info import SerpBaiduOrganicTasksReadyResponseInfo
 from dataforseo_client.models.serp_bing_languages_response_info import SerpBingLanguagesResponseInfo
+from dataforseo_client.models.serp_bing_local_pack_live_html_request_info import SerpBingLocalPackLiveHtmlRequestInfo
 from dataforseo_client.models.serp_bing_local_pack_live_html_response_info import SerpBingLocalPackLiveHtmlResponseInfo
+from dataforseo_client.models.serp_bing_local_pack_live_regular_request_info import SerpBingLocalPackLiveRegularRequestInfo
 from dataforseo_client.models.serp_bing_local_pack_live_regular_response_info import SerpBingLocalPackLiveRegularResponseInfo
 from dataforseo_client.models.serp_bing_local_pack_task_get_html_response_info import SerpBingLocalPackTaskGetHtmlResponseInfo
 from dataforseo_client.models.serp_bing_local_pack_task_get_regular_response_info import SerpBingLocalPackTaskGetRegularResponseInfo
+from dataforseo_client.models.serp_bing_local_pack_task_post_request_info import SerpBingLocalPackTaskPostRequestInfo
 from dataforseo_client.models.serp_bing_local_pack_task_post_response_info import SerpBingLocalPackTaskPostResponseInfo
 from dataforseo_client.models.serp_bing_local_pack_tasks_fixed_response_info import SerpBingLocalPackTasksFixedResponseInfo
 from dataforseo_client.models.serp_bing_local_pack_tasks_ready_response_info import SerpBingLocalPackTasksReadyResponseInfo
 from dataforseo_client.models.serp_bing_locations_country_response_info import SerpBingLocationsCountryResponseInfo
 from dataforseo_client.models.serp_bing_locations_response_info import SerpBingLocationsResponseInfo
+from dataforseo_client.models.serp_bing_organic_live_advanced_request_info import SerpBingOrganicLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_bing_organic_live_advanced_response_info import SerpBingOrganicLiveAdvancedResponseInfo
+from dataforseo_client.models.serp_bing_organic_live_html_request_info import SerpBingOrganicLiveHtmlRequestInfo
 from dataforseo_client.models.serp_bing_organic_live_html_response_info import SerpBingOrganicLiveHtmlResponseInfo
+from dataforseo_client.models.serp_bing_organic_live_regular_request_info import SerpBingOrganicLiveRegularRequestInfo
 from dataforseo_client.models.serp_bing_organic_live_regular_response_info import SerpBingOrganicLiveRegularResponseInfo
 from dataforseo_client.models.serp_bing_organic_task_get_advanced_response_info import SerpBingOrganicTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_bing_organic_task_get_html_response_info import SerpBingOrganicTaskGetHtmlResponseInfo
 from dataforseo_client.models.serp_bing_organic_task_get_regular_response_info import SerpBingOrganicTaskGetRegularResponseInfo
+from dataforseo_client.models.serp_bing_organic_task_post_request_info import SerpBingOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_bing_organic_task_post_response_info import SerpBingOrganicTaskPostResponseInfo
 from dataforseo_client.models.serp_bing_organic_tasks_fixed_response_info import SerpBingOrganicTasksFixedResponseInfo
 from dataforseo_client.models.serp_bing_organic_tasks_ready_response_info import SerpBingOrganicTasksReadyResponseInfo
 from dataforseo_client.models.serp_errors_request_info import SerpErrorsRequestInfo
 from dataforseo_client.models.serp_errors_response_info import SerpErrorsResponseInfo
+from dataforseo_client.models.serp_google_ads_advertisers_locations_response_info import SerpGoogleAdsAdvertisersLocationsResponseInfo
+from dataforseo_client.models.serp_google_ads_advertisers_task_get_advanced_response_info import SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo
+from dataforseo_client.models.serp_google_ads_advertisers_task_post_request_info import SerpGoogleAdsAdvertisersTaskPostRequestInfo
+from dataforseo_client.models.serp_google_ads_advertisers_task_post_response_info import SerpGoogleAdsAdvertisersTaskPostResponseInfo
+from dataforseo_client.models.serp_google_ads_advertisers_tasks_ready_response_info import SerpGoogleAdsAdvertisersTasksReadyResponseInfo
+from dataforseo_client.models.serp_google_ads_search_locations_response_info import SerpGoogleAdsSearchLocationsResponseInfo
+from dataforseo_client.models.serp_google_ads_search_task_get_advanced_response_info import SerpGoogleAdsSearchTaskGetAdvancedResponseInfo
+from dataforseo_client.models.serp_google_ads_search_task_post_request_info import SerpGoogleAdsSearchTaskPostRequestInfo
+from dataforseo_client.models.serp_google_ads_search_task_post_response_info import SerpGoogleAdsSearchTaskPostResponseInfo
+from dataforseo_client.models.serp_google_ads_search_tasks_ready_response_info import SerpGoogleAdsSearchTasksReadyResponseInfo
 from dataforseo_client.models.serp_google_autocomplete_live_advanced_request_info import SerpGoogleAutocompleteLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_autocomplete_live_advanced_response_info import SerpGoogleAutocompleteLiveAdvancedResponseInfo
 from dataforseo_client.models.serp_google_autocomplete_task_get_advanced_response_info import SerpGoogleAutocompleteTaskGetAdvancedResponseInfo
@@ -80,10 +97,13 @@ from dataforseo_client.models.serp_google_events_task_post_request_info import S
 from dataforseo_client.models.serp_google_events_task_post_response_info import SerpGoogleEventsTaskPostResponseInfo
 from dataforseo_client.models.serp_google_events_tasks_fixed_response_info import SerpGoogleEventsTasksFixedResponseInfo
 from dataforseo_client.models.serp_google_events_tasks_ready_response_info import SerpGoogleEventsTasksReadyResponseInfo
+from dataforseo_client.models.serp_google_images_live_advanced_request_info import SerpGoogleImagesLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_images_live_advanced_response_info import SerpGoogleImagesLiveAdvancedResponseInfo
+from dataforseo_client.models.serp_google_images_live_html_request_info import SerpGoogleImagesLiveHtmlRequestInfo
 from dataforseo_client.models.serp_google_images_live_html_response_info import SerpGoogleImagesLiveHtmlResponseInfo
 from dataforseo_client.models.serp_google_images_task_get_advanced_response_info import SerpGoogleImagesTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_google_images_task_get_html_response_info import SerpGoogleImagesTaskGetHtmlResponseInfo
+from dataforseo_client.models.serp_google_images_task_post_request_info import SerpGoogleImagesTaskPostRequestInfo
 from dataforseo_client.models.serp_google_images_task_post_response_info import SerpGoogleImagesTaskPostResponseInfo
 from dataforseo_client.models.serp_google_images_tasks_fixed_response_info import SerpGoogleImagesTasksFixedResponseInfo
 from dataforseo_client.models.serp_google_images_tasks_ready_response_info import SerpGoogleImagesTasksReadyResponseInfo
@@ -113,21 +133,26 @@ from dataforseo_client.models.serp_google_maps_task_post_request_info import Ser
 from dataforseo_client.models.serp_google_maps_task_post_response_info import SerpGoogleMapsTaskPostResponseInfo
 from dataforseo_client.models.serp_google_maps_tasks_fixed_response_info import SerpGoogleMapsTasksFixedResponseInfo
 from dataforseo_client.models.serp_google_maps_tasks_ready_response_info import SerpGoogleMapsTasksReadyResponseInfo
+from dataforseo_client.models.serp_google_news_live_advanced_request_info import SerpGoogleNewsLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_news_live_advanced_response_info import SerpGoogleNewsLiveAdvancedResponseInfo
+from dataforseo_client.models.serp_google_news_live_html_request_info import SerpGoogleNewsLiveHtmlRequestInfo
 from dataforseo_client.models.serp_google_news_live_html_response_info import SerpGoogleNewsLiveHtmlResponseInfo
 from dataforseo_client.models.serp_google_news_task_get_advanced_response_info import SerpGoogleNewsTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_google_news_task_get_html_response_info import SerpGoogleNewsTaskGetHtmlResponseInfo
+from dataforseo_client.models.serp_google_news_task_post_request_info import SerpGoogleNewsTaskPostRequestInfo
 from dataforseo_client.models.serp_google_news_task_post_response_info import SerpGoogleNewsTaskPostResponseInfo
 from dataforseo_client.models.serp_google_news_tasks_fixed_response_info import SerpGoogleNewsTasksFixedResponseInfo
 from dataforseo_client.models.serp_google_news_tasks_ready_response_info import SerpGoogleNewsTasksReadyResponseInfo
 from dataforseo_client.models.serp_google_organic_live_advanced_request_info import SerpGoogleOrganicLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_google_organic_live_advanced_response_info import SerpGoogleOrganicLiveAdvancedResponseInfo
+from dataforseo_client.models.serp_google_organic_live_html_request_info import SerpGoogleOrganicLiveHtmlRequestInfo
 from dataforseo_client.models.serp_google_organic_live_html_response_info import SerpGoogleOrganicLiveHtmlResponseInfo
 from dataforseo_client.models.serp_google_organic_live_regular_request_info import SerpGoogleOrganicLiveRegularRequestInfo
 from dataforseo_client.models.serp_google_organic_live_regular_response_info import SerpGoogleOrganicLiveRegularResponseInfo
 from dataforseo_client.models.serp_google_organic_task_get_advanced_response_info import SerpGoogleOrganicTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_google_organic_task_get_html_response_info import SerpGoogleOrganicTaskGetHtmlResponseInfo
 from dataforseo_client.models.serp_google_organic_task_get_regular_response_info import SerpGoogleOrganicTaskGetRegularResponseInfo
+from dataforseo_client.models.serp_google_organic_task_post_request_info import SerpGoogleOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_google_organic_task_post_response_info import SerpGoogleOrganicTaskPostResponseInfo
 from dataforseo_client.models.serp_google_organic_tasks_fixed_response_info import SerpGoogleOrganicTasksFixedResponseInfo
 from dataforseo_client.models.serp_google_organic_tasks_ready_response_info import SerpGoogleOrganicTasksReadyResponseInfo
@@ -141,6 +166,7 @@ from dataforseo_client.models.serp_id_list_response_info import SerpIdListRespon
 from dataforseo_client.models.serp_naver_organic_task_get_advanced_response_info import SerpNaverOrganicTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_naver_organic_task_get_html_response_info import SerpNaverOrganicTaskGetHtmlResponseInfo
 from dataforseo_client.models.serp_naver_organic_task_get_regular_response_info import SerpNaverOrganicTaskGetRegularResponseInfo
+from dataforseo_client.models.serp_naver_organic_task_post_request_info import SerpNaverOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_naver_organic_task_post_response_info import SerpNaverOrganicTaskPostResponseInfo
 from dataforseo_client.models.serp_naver_organic_tasks_fixed_response_info import SerpNaverOrganicTasksFixedResponseInfo
 from dataforseo_client.models.serp_naver_organic_tasks_ready_response_info import SerpNaverOrganicTasksReadyResponseInfo
@@ -152,20 +178,24 @@ from dataforseo_client.models.serp_seznam_locations_response_info import SerpSez
 from dataforseo_client.models.serp_seznam_organic_task_get_advanced_response_info import SerpSeznamOrganicTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_seznam_organic_task_get_html_response_info import SerpSeznamOrganicTaskGetHtmlResponseInfo
 from dataforseo_client.models.serp_seznam_organic_task_get_regular_response_info import SerpSeznamOrganicTaskGetRegularResponseInfo
+from dataforseo_client.models.serp_seznam_organic_task_post_request_info import SerpSeznamOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_seznam_organic_task_post_response_info import SerpSeznamOrganicTaskPostResponseInfo
 from dataforseo_client.models.serp_seznam_organic_tasks_fixed_response_info import SerpSeznamOrganicTasksFixedResponseInfo
 from dataforseo_client.models.serp_seznam_organic_tasks_ready_response_info import SerpSeznamOrganicTasksReadyResponseInfo
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from dataforseo_client.models.serp_tasks_ready_response_info import SerpTasksReadyResponseInfo
 from dataforseo_client.models.serp_yahoo_languages_response_info import SerpYahooLanguagesResponseInfo
 from dataforseo_client.models.serp_yahoo_locations_country_response_info import SerpYahooLocationsCountryResponseInfo
 from dataforseo_client.models.serp_yahoo_locations_response_info import SerpYahooLocationsResponseInfo
+from dataforseo_client.models.serp_yahoo_organic_live_advanced_request_info import SerpYahooOrganicLiveAdvancedRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_live_advanced_response_info import SerpYahooOrganicLiveAdvancedResponseInfo
+from dataforseo_client.models.serp_yahoo_organic_live_html_request_info import SerpYahooOrganicLiveHtmlRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_live_html_response_info import SerpYahooOrganicLiveHtmlResponseInfo
+from dataforseo_client.models.serp_yahoo_organic_live_regular_request_info import SerpYahooOrganicLiveRegularRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_live_regular_response_info import SerpYahooOrganicLiveRegularResponseInfo
 from dataforseo_client.models.serp_yahoo_organic_task_get_advanced_response_info import SerpYahooOrganicTaskGetAdvancedResponseInfo
 from dataforseo_client.models.serp_yahoo_organic_task_get_html_response_info import SerpYahooOrganicTaskGetHtmlResponseInfo
 from dataforseo_client.models.serp_yahoo_organic_task_get_regular_response_info import SerpYahooOrganicTaskGetRegularResponseInfo
+from dataforseo_client.models.serp_yahoo_organic_task_post_request_info import SerpYahooOrganicTaskPostRequestInfo
 from dataforseo_client.models.serp_yahoo_organic_task_post_response_info import SerpYahooOrganicTaskPostResponseInfo
 from dataforseo_client.models.serp_yahoo_organic_tasks_fixed_response_info import SerpYahooOrganicTasksFixedResponseInfo
 from dataforseo_client.models.serp_yahoo_organic_tasks_ready_response_info import SerpYahooOrganicTasksReadyResponseInfo
@@ -428,7 +458,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -441,11 +471,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -699,7 +730,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -712,11 +743,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -957,7 +989,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -970,11 +1002,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1215,7 +1248,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1228,11 +1261,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1474,7 +1508,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1487,11 +1521,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -1732,7 +1767,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1743,11 +1778,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1975,7 +2011,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1986,11 +2022,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -2019,7 +2056,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_live_html(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_live_html_request_info: Optional[List[SerpBingLocalPackLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2037,8 +2074,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_live_html_request_info:
+        :type serp_bing_local_pack_live_html_request_info: List[SerpBingLocalPackLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2062,7 +2099,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_live_html_request_info=serp_bing_local_pack_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2086,7 +2123,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_live_html_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_live_html_request_info: Optional[List[SerpBingLocalPackLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2104,8 +2141,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_live_html_request_info:
+        :type serp_bing_local_pack_live_html_request_info: List[SerpBingLocalPackLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2129,7 +2166,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_live_html_request_info=serp_bing_local_pack_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2153,7 +2190,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_live_html_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_live_html_request_info: Optional[List[SerpBingLocalPackLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2171,8 +2208,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_live_html_request_info:
+        :type serp_bing_local_pack_live_html_request_info: List[SerpBingLocalPackLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2196,7 +2233,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_live_html_request_info=serp_bing_local_pack_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2215,7 +2252,7 @@ class SerpApi:
 
     def _bing_local_pack_live_html_serialize(
         self,
-        serp_task_request_info,
+        serp_bing_local_pack_live_html_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -2225,14 +2262,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpBingLocalPackLiveHtmlRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2240,16 +2277,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_bing_local_pack_live_html_request_info is not None:
+            _body_params = serp_bing_local_pack_live_html_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2291,7 +2329,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_live_regular(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_live_regular_request_info: Optional[List[SerpBingLocalPackLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2309,8 +2347,8 @@ class SerpApi:
 
         ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_live_regular_request_info:
+        :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2334,7 +2372,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_live_regular_request_info=serp_bing_local_pack_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2358,7 +2396,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_live_regular_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_live_regular_request_info: Optional[List[SerpBingLocalPackLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2376,8 +2414,8 @@ class SerpApi:
 
         ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_live_regular_request_info:
+        :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2401,7 +2439,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_live_regular_request_info=serp_bing_local_pack_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2425,7 +2463,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_live_regular_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_live_regular_request_info: Optional[List[SerpBingLocalPackLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2443,8 +2481,8 @@ class SerpApi:
 
         ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_live_regular_request_info:
+        :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2468,7 +2506,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_live_regular_request_info=serp_bing_local_pack_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2487,7 +2525,7 @@ class SerpApi:
 
     def _bing_local_pack_live_regular_serialize(
         self,
-        serp_task_request_info,
+        serp_bing_local_pack_live_regular_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -2497,14 +2535,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpBingLocalPackLiveRegularRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2512,16 +2550,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_bing_local_pack_live_regular_request_info is not None:
+            _body_params = serp_bing_local_pack_live_regular_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2775,7 +2814,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2788,11 +2827,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3033,7 +3073,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3046,11 +3086,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3079,7 +3120,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_task_post_request_info: Optional[List[SerpBingLocalPackTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3097,8 +3138,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_task_post_request_info:
+        :type serp_bing_local_pack_task_post_request_info: List[SerpBingLocalPackTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3122,7 +3163,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_task_post_request_info=serp_bing_local_pack_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3146,7 +3187,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_task_post_request_info: Optional[List[SerpBingLocalPackTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3164,8 +3205,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_task_post_request_info:
+        :type serp_bing_local_pack_task_post_request_info: List[SerpBingLocalPackTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3189,7 +3230,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_task_post_request_info=serp_bing_local_pack_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3213,7 +3254,7 @@ class SerpApi:
     @validate_call
     def bing_local_pack_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_local_pack_task_post_request_info: Optional[List[SerpBingLocalPackTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3231,8 +3272,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_local_pack_task_post_request_info:
+        :type serp_bing_local_pack_task_post_request_info: List[SerpBingLocalPackTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3256,7 +3297,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_local_pack_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_local_pack_task_post_request_info=serp_bing_local_pack_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3275,7 +3316,7 @@ class SerpApi:
 
     def _bing_local_pack_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_bing_local_pack_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -3285,14 +3326,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpBingLocalPackTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3300,16 +3341,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_bing_local_pack_task_post_request_info is not None:
+            _body_params = serp_bing_local_pack_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -3550,7 +3592,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3561,11 +3603,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3793,7 +3836,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3804,11 +3847,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3837,7 +3881,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_advanced(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_advanced_request_info: Optional[List[SerpBingOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3855,8 +3899,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_advanced_request_info:
+        :type serp_bing_organic_live_advanced_request_info: List[SerpBingOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3880,7 +3924,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_advanced_request_info=serp_bing_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3904,7 +3948,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_advanced_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_advanced_request_info: Optional[List[SerpBingOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3922,8 +3966,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_advanced_request_info:
+        :type serp_bing_organic_live_advanced_request_info: List[SerpBingOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3947,7 +3991,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_advanced_request_info=serp_bing_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3971,7 +4015,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_advanced_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_advanced_request_info: Optional[List[SerpBingOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3989,8 +4033,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. This endpoint will supply a complete overview of featured snippets and other extra elements of SERPs. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_advanced_request_info:
+        :type serp_bing_organic_live_advanced_request_info: List[SerpBingOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4014,7 +4058,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_advanced_request_info=serp_bing_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4033,7 +4077,7 @@ class SerpApi:
 
     def _bing_organic_live_advanced_serialize(
         self,
-        serp_task_request_info,
+        serp_bing_organic_live_advanced_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -4043,14 +4087,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpBingOrganicLiveAdvancedRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4058,16 +4102,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_bing_organic_live_advanced_request_info is not None:
+            _body_params = serp_bing_organic_live_advanced_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4109,7 +4154,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_html(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_html_request_info: Optional[List[SerpBingOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4127,8 +4172,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_html_request_info:
+        :type serp_bing_organic_live_html_request_info: List[SerpBingOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4152,7 +4197,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_html_request_info=serp_bing_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4176,7 +4221,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_html_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_html_request_info: Optional[List[SerpBingOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4194,8 +4239,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_html_request_info:
+        :type serp_bing_organic_live_html_request_info: List[SerpBingOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4219,7 +4264,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_html_request_info=serp_bing_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4243,7 +4288,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_html_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_html_request_info: Optional[List[SerpBingOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4261,8 +4306,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_html_request_info:
+        :type serp_bing_organic_live_html_request_info: List[SerpBingOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4286,7 +4331,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_html_request_info=serp_bing_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4305,7 +4350,7 @@ class SerpApi:
 
     def _bing_organic_live_html_serialize(
         self,
-        serp_task_request_info,
+        serp_bing_organic_live_html_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -4315,14 +4360,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpBingOrganicLiveHtmlRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4330,16 +4375,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_bing_organic_live_html_request_info is not None:
+            _body_params = serp_bing_organic_live_html_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4381,7 +4427,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_regular(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_regular_request_info: Optional[List[SerpBingOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4399,8 +4445,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_regular_request_info:
+        :type serp_bing_organic_live_regular_request_info: List[SerpBingOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4424,7 +4470,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_regular_request_info=serp_bing_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4448,7 +4494,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_regular_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_regular_request_info: Optional[List[SerpBingOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4466,8 +4512,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_regular_request_info:
+        :type serp_bing_organic_live_regular_request_info: List[SerpBingOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4491,7 +4537,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_regular_request_info=serp_bing_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4515,7 +4561,7 @@ class SerpApi:
     @validate_call
     def bing_organic_live_regular_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_live_regular_request_info: Optional[List[SerpBingOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4533,8 +4579,8 @@ class SerpApi:
 
         ‌‌ Live SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_live_regular_request_info:
+        :type serp_bing_organic_live_regular_request_info: List[SerpBingOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4558,7 +4604,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_live_regular_request_info=serp_bing_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4577,7 +4623,7 @@ class SerpApi:
 
     def _bing_organic_live_regular_serialize(
         self,
-        serp_task_request_info,
+        serp_bing_organic_live_regular_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -4587,14 +4633,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpBingOrganicLiveRegularRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4602,16 +4648,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_bing_organic_live_regular_request_info is not None:
+            _body_params = serp_bing_organic_live_regular_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4865,7 +4912,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4878,11 +4925,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5123,7 +5171,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5136,11 +5184,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5381,7 +5430,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5394,11 +5443,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5427,7 +5477,7 @@ class SerpApi:
     @validate_call
     def bing_organic_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_task_post_request_info: Optional[List[SerpBingOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5445,8 +5495,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_task_post_request_info:
+        :type serp_bing_organic_task_post_request_info: List[SerpBingOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5470,7 +5520,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_task_post_request_info=serp_bing_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5494,7 +5544,7 @@ class SerpApi:
     @validate_call
     def bing_organic_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_task_post_request_info: Optional[List[SerpBingOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5512,8 +5562,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_task_post_request_info:
+        :type serp_bing_organic_task_post_request_info: List[SerpBingOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5537,7 +5587,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_task_post_request_info=serp_bing_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5561,7 +5611,7 @@ class SerpApi:
     @validate_call
     def bing_organic_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_bing_organic_task_post_request_info: Optional[List[SerpBingOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5579,8 +5629,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_bing_organic_task_post_request_info:
+        :type serp_bing_organic_task_post_request_info: List[SerpBingOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5604,7 +5654,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._bing_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_bing_organic_task_post_request_info=serp_bing_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5623,7 +5673,7 @@ class SerpApi:
 
     def _bing_organic_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_bing_organic_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -5633,14 +5683,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpBingOrganicTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5648,16 +5698,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_bing_organic_task_post_request_info is not None:
+            _body_params = serp_bing_organic_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -5898,7 +5949,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5909,11 +5960,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -6141,7 +6193,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6152,11 +6204,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -6167,6 +6220,1558 @@ class SerpApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/v3/serp/bing/organic/tasks_ready',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def google_ads_advertisers_task_get_advanced(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo:
+        """google_ads_advertisers_task_get_advanced
+
+        Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_get/advanced/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_ads_advertisers_task_get_advanced_with_http_info(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo]:
+        """google_ads_advertisers_task_get_advanced
+
+        Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_get/advanced/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_ads_advertisers_task_get_advanced_without_preload_content(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_ads_advertisers_task_get_advanced
+
+        Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_get/advanced/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_ads_advertisers_task_get_advanced_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/serp/google/ads_advertisers/task_get/advanced/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def google_ads_advertisers_task_post(
+        self,
+        serp_google_ads_advertisers_task_post_request_info: Optional[List[SerpGoogleAdsAdvertisersTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsAdvertisersTaskPostResponseInfo:
+        """google_ads_advertisers_task_post
+
+        Google Ads Advertisers provides information on advertisers that run campaigns on Google Ads based on the Ads Transparency platform. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_post/?bash'
+
+        :param serp_google_ads_advertisers_task_post_request_info:
+        :type serp_google_ads_advertisers_task_post_request_info: List[SerpGoogleAdsAdvertisersTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_task_post_serialize(
+            serp_google_ads_advertisers_task_post_request_info=serp_google_ads_advertisers_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_ads_advertisers_task_post_with_http_info(
+        self,
+        serp_google_ads_advertisers_task_post_request_info: Optional[List[SerpGoogleAdsAdvertisersTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsAdvertisersTaskPostResponseInfo]:
+        """google_ads_advertisers_task_post
+
+        Google Ads Advertisers provides information on advertisers that run campaigns on Google Ads based on the Ads Transparency platform. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_post/?bash'
+
+        :param serp_google_ads_advertisers_task_post_request_info:
+        :type serp_google_ads_advertisers_task_post_request_info: List[SerpGoogleAdsAdvertisersTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_task_post_serialize(
+            serp_google_ads_advertisers_task_post_request_info=serp_google_ads_advertisers_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_ads_advertisers_task_post_without_preload_content(
+        self,
+        serp_google_ads_advertisers_task_post_request_info: Optional[List[SerpGoogleAdsAdvertisersTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_ads_advertisers_task_post
+
+        Google Ads Advertisers provides information on advertisers that run campaigns on Google Ads based on the Ads Transparency platform. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/task_post/?bash'
+
+        :param serp_google_ads_advertisers_task_post_request_info:
+        :type serp_google_ads_advertisers_task_post_request_info: List[SerpGoogleAdsAdvertisersTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_task_post_serialize(
+            serp_google_ads_advertisers_task_post_request_info=serp_google_ads_advertisers_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_ads_advertisers_task_post_serialize(
+        self,
+        serp_google_ads_advertisers_task_post_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'SerpGoogleAdsAdvertisersTaskPostRequestInfo': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if serp_google_ads_advertisers_task_post_request_info is not None:
+            _body_params = serp_google_ads_advertisers_task_post_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/serp/google/ads_advertisers/task_post',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def google_ads_advertisers_tasks_ready(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsAdvertisersTasksReadyResponseInfo:
+        """google_ads_advertisers_tasks_ready
+
+        ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_ads_advertisers_tasks_ready_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsAdvertisersTasksReadyResponseInfo]:
+        """google_ads_advertisers_tasks_ready
+
+        ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_ads_advertisers_tasks_ready_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_ads_advertisers_tasks_ready
+
+        ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_advertisers_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_ads_advertisers_tasks_ready_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/serp/google/ads_advertisers/tasks_ready',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def google_ads_search_task_get_advanced(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsSearchTaskGetAdvancedResponseInfo:
+        """google_ads_search_task_get_advanced
+
+        Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_get/advanced/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_ads_search_task_get_advanced_with_http_info(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsSearchTaskGetAdvancedResponseInfo]:
+        """google_ads_search_task_get_advanced
+
+        Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_get/advanced/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_ads_search_task_get_advanced_without_preload_content(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_ads_search_task_get_advanced
+
+        Description of the fields for sending a request: for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_get/advanced/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_ads_search_task_get_advanced_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/serp/google/ads_search/task_get/advanced/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def google_ads_search_task_post(
+        self,
+        serp_google_ads_search_task_post_request_info: Optional[List[SerpGoogleAdsSearchTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsSearchTaskPostResponseInfo:
+        """google_ads_search_task_post
+
+        Google Ads Search provides information on ads that are run by advertisers on Google Ads. Information is based on the Ads Transparency platform and adapted for the convenience of DataForSEO users. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_post/?bash'
+
+        :param serp_google_ads_search_task_post_request_info:
+        :type serp_google_ads_search_task_post_request_info: List[SerpGoogleAdsSearchTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_task_post_serialize(
+            serp_google_ads_search_task_post_request_info=serp_google_ads_search_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_ads_search_task_post_with_http_info(
+        self,
+        serp_google_ads_search_task_post_request_info: Optional[List[SerpGoogleAdsSearchTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsSearchTaskPostResponseInfo]:
+        """google_ads_search_task_post
+
+        Google Ads Search provides information on ads that are run by advertisers on Google Ads. Information is based on the Ads Transparency platform and adapted for the convenience of DataForSEO users. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_post/?bash'
+
+        :param serp_google_ads_search_task_post_request_info:
+        :type serp_google_ads_search_task_post_request_info: List[SerpGoogleAdsSearchTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_task_post_serialize(
+            serp_google_ads_search_task_post_request_info=serp_google_ads_search_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_ads_search_task_post_without_preload_content(
+        self,
+        serp_google_ads_search_task_post_request_info: Optional[List[SerpGoogleAdsSearchTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_ads_search_task_post
+
+        Google Ads Search provides information on ads that are run by advertisers on Google Ads. Information is based on the Ads Transparency platform and adapted for the convenience of DataForSEO users. ‌‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/task_post/?bash'
+
+        :param serp_google_ads_search_task_post_request_info:
+        :type serp_google_ads_search_task_post_request_info: List[SerpGoogleAdsSearchTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_task_post_serialize(
+            serp_google_ads_search_task_post_request_info=serp_google_ads_search_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_ads_search_task_post_serialize(
+        self,
+        serp_google_ads_search_task_post_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'SerpGoogleAdsSearchTaskPostRequestInfo': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if serp_google_ads_search_task_post_request_info is not None:
+            _body_params = serp_google_ads_search_task_post_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/serp/google/ads_search/task_post',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def google_ads_search_tasks_ready(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsSearchTasksReadyResponseInfo:
+        """google_ads_search_tasks_ready
+
+        ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_ads_search_tasks_ready_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsSearchTasksReadyResponseInfo]:
+        """google_ads_search_tasks_ready
+
+        ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_ads_search_tasks_ready_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_ads_search_tasks_ready
+
+        ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_ads_search_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_ads_search_tasks_ready_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/serp/google/ads_search/tasks_ready',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -6398,7 +8003,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6411,11 +8016,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -6669,7 +8275,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6682,11 +8288,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -6928,7 +8535,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6941,11 +8548,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -7186,7 +8794,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7197,11 +8805,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -7429,7 +9038,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7440,11 +9049,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -7686,7 +9296,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7699,11 +9309,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -7957,7 +9568,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7970,11 +9581,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -8216,7 +9828,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8229,11 +9841,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -8474,7 +10087,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8485,11 +10098,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -8717,7 +10331,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8728,11 +10342,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -8974,7 +10589,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8987,11 +10602,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -9245,7 +10861,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9258,11 +10874,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -9504,7 +11121,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9517,11 +11134,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -9762,7 +11380,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9773,11 +11391,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10005,7 +11624,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10016,11 +11635,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10262,7 +11882,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10275,11 +11895,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -10533,7 +12154,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10546,11 +12167,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10792,7 +12414,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10805,11 +12427,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -11050,7 +12673,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11061,11 +12684,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -11293,7 +12917,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11304,11 +12928,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -11337,7 +12962,7 @@ class SerpApi:
     @validate_call
     def google_images_live_advanced(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_live_advanced_request_info: Optional[List[SerpGoogleImagesLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11355,8 +12980,8 @@ class SerpApi:
 
         ‌ Live Google Images SERP provides real-time data on top 100 images results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_live_advanced_request_info:
+        :type serp_google_images_live_advanced_request_info: List[SerpGoogleImagesLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11380,7 +13005,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_live_advanced_request_info=serp_google_images_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11404,7 +13029,7 @@ class SerpApi:
     @validate_call
     def google_images_live_advanced_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_live_advanced_request_info: Optional[List[SerpGoogleImagesLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11422,8 +13047,8 @@ class SerpApi:
 
         ‌ Live Google Images SERP provides real-time data on top 100 images results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_live_advanced_request_info:
+        :type serp_google_images_live_advanced_request_info: List[SerpGoogleImagesLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11447,7 +13072,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_live_advanced_request_info=serp_google_images_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11471,7 +13096,7 @@ class SerpApi:
     @validate_call
     def google_images_live_advanced_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_live_advanced_request_info: Optional[List[SerpGoogleImagesLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11489,8 +13114,8 @@ class SerpApi:
 
         ‌ Live Google Images SERP provides real-time data on top 100 images results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_live_advanced_request_info:
+        :type serp_google_images_live_advanced_request_info: List[SerpGoogleImagesLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11514,7 +13139,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_live_advanced_request_info=serp_google_images_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11533,7 +13158,7 @@ class SerpApi:
 
     def _google_images_live_advanced_serialize(
         self,
-        serp_task_request_info,
+        serp_google_images_live_advanced_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -11543,14 +13168,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleImagesLiveAdvancedRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11558,16 +13183,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_images_live_advanced_request_info is not None:
+            _body_params = serp_google_images_live_advanced_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -11609,7 +13235,7 @@ class SerpApi:
     @validate_call
     def google_images_live_html(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_live_html_request_info: Optional[List[SerpGoogleImagesLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11627,8 +13253,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_live_html_request_info:
+        :type serp_google_images_live_html_request_info: List[SerpGoogleImagesLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11652,7 +13278,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_live_html_request_info=serp_google_images_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11676,7 +13302,7 @@ class SerpApi:
     @validate_call
     def google_images_live_html_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_live_html_request_info: Optional[List[SerpGoogleImagesLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11694,8 +13320,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_live_html_request_info:
+        :type serp_google_images_live_html_request_info: List[SerpGoogleImagesLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11719,7 +13345,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_live_html_request_info=serp_google_images_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11743,7 +13369,7 @@ class SerpApi:
     @validate_call
     def google_images_live_html_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_live_html_request_info: Optional[List[SerpGoogleImagesLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11761,8 +13387,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_live_html_request_info:
+        :type serp_google_images_live_html_request_info: List[SerpGoogleImagesLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11786,7 +13412,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_live_html_request_info=serp_google_images_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11805,7 +13431,7 @@ class SerpApi:
 
     def _google_images_live_html_serialize(
         self,
-        serp_task_request_info,
+        serp_google_images_live_html_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -11815,14 +13441,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleImagesLiveHtmlRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11830,16 +13456,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_images_live_html_request_info is not None:
+            _body_params = serp_google_images_live_html_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -12093,7 +13720,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12106,11 +13733,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -12351,7 +13979,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12364,11 +13992,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -12397,7 +14026,7 @@ class SerpApi:
     @validate_call
     def google_images_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_task_post_request_info: Optional[List[SerpGoogleImagesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12415,8 +14044,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_task_post_request_info:
+        :type serp_google_images_task_post_request_info: List[SerpGoogleImagesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12440,7 +14069,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_task_post_request_info=serp_google_images_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12464,7 +14093,7 @@ class SerpApi:
     @validate_call
     def google_images_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_task_post_request_info: Optional[List[SerpGoogleImagesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12482,8 +14111,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_task_post_request_info:
+        :type serp_google_images_task_post_request_info: List[SerpGoogleImagesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12507,7 +14136,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_task_post_request_info=serp_google_images_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12531,7 +14160,7 @@ class SerpApi:
     @validate_call
     def google_images_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_images_task_post_request_info: Optional[List[SerpGoogleImagesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12549,8 +14178,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/images/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_images_task_post_request_info:
+        :type serp_google_images_task_post_request_info: List[SerpGoogleImagesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12574,7 +14203,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_images_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_images_task_post_request_info=serp_google_images_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12593,7 +14222,7 @@ class SerpApi:
 
     def _google_images_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_google_images_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -12603,14 +14232,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleImagesTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12618,16 +14247,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_images_task_post_request_info is not None:
+            _body_params = serp_google_images_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -12868,7 +14498,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12879,11 +14509,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13111,7 +14742,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13122,11 +14753,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13367,7 +14999,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13380,11 +15012,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13625,7 +15258,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13638,11 +15271,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13884,7 +15518,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13897,11 +15531,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -14142,7 +15777,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14153,11 +15788,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -14385,7 +16021,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14396,11 +16032,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -14642,7 +16279,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14655,11 +16292,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -14914,7 +16552,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14927,11 +16565,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -15185,7 +16824,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15198,11 +16837,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -15443,7 +17083,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15456,11 +17096,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -15702,7 +17343,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15715,11 +17356,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -15960,7 +17602,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15971,11 +17613,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -16203,7 +17846,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -16214,11 +17857,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -16460,7 +18104,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -16473,11 +18117,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -16731,7 +18376,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -16744,11 +18389,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -16990,7 +18636,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -17003,11 +18649,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -17248,7 +18895,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -17259,11 +18906,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -17491,7 +19139,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -17502,11 +19150,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -17535,7 +19184,7 @@ class SerpApi:
     @validate_call
     def google_news_live_advanced(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_live_advanced_request_info: Optional[List[SerpGoogleNewsLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17553,8 +19202,8 @@ class SerpApi:
 
         ‌‌ Live Google News SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_live_advanced_request_info:
+        :type serp_google_news_live_advanced_request_info: List[SerpGoogleNewsLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17578,7 +19227,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_live_advanced_request_info=serp_google_news_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17602,7 +19251,7 @@ class SerpApi:
     @validate_call
     def google_news_live_advanced_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_live_advanced_request_info: Optional[List[SerpGoogleNewsLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17620,8 +19269,8 @@ class SerpApi:
 
         ‌‌ Live Google News SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_live_advanced_request_info:
+        :type serp_google_news_live_advanced_request_info: List[SerpGoogleNewsLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17645,7 +19294,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_live_advanced_request_info=serp_google_news_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17669,7 +19318,7 @@ class SerpApi:
     @validate_call
     def google_news_live_advanced_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_live_advanced_request_info: Optional[List[SerpGoogleNewsLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17687,8 +19336,8 @@ class SerpApi:
 
         ‌‌ Live Google News SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_live_advanced_request_info:
+        :type serp_google_news_live_advanced_request_info: List[SerpGoogleNewsLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17712,7 +19361,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_live_advanced_request_info=serp_google_news_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17731,7 +19380,7 @@ class SerpApi:
 
     def _google_news_live_advanced_serialize(
         self,
-        serp_task_request_info,
+        serp_google_news_live_advanced_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -17741,14 +19390,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleNewsLiveAdvancedRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -17756,16 +19405,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_news_live_advanced_request_info is not None:
+            _body_params = serp_google_news_live_advanced_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -17807,7 +19457,7 @@ class SerpApi:
     @validate_call
     def google_news_live_html(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_live_html_request_info: Optional[List[SerpGoogleNewsLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17825,8 +19475,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_live_html_request_info:
+        :type serp_google_news_live_html_request_info: List[SerpGoogleNewsLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17850,7 +19500,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_live_html_request_info=serp_google_news_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17874,7 +19524,7 @@ class SerpApi:
     @validate_call
     def google_news_live_html_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_live_html_request_info: Optional[List[SerpGoogleNewsLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17892,8 +19542,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_live_html_request_info:
+        :type serp_google_news_live_html_request_info: List[SerpGoogleNewsLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17917,7 +19567,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_live_html_request_info=serp_google_news_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17941,7 +19591,7 @@ class SerpApi:
     @validate_call
     def google_news_live_html_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_live_html_request_info: Optional[List[SerpGoogleNewsLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17959,8 +19609,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_live_html_request_info:
+        :type serp_google_news_live_html_request_info: List[SerpGoogleNewsLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17984,7 +19634,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_live_html_request_info=serp_google_news_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18003,7 +19653,7 @@ class SerpApi:
 
     def _google_news_live_html_serialize(
         self,
-        serp_task_request_info,
+        serp_google_news_live_html_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -18013,14 +19663,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleNewsLiveHtmlRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -18028,16 +19678,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_news_live_html_request_info is not None:
+            _body_params = serp_google_news_live_html_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -18291,7 +19942,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -18304,11 +19955,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -18549,7 +20201,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -18562,11 +20214,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -18595,7 +20248,7 @@ class SerpApi:
     @validate_call
     def google_news_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_task_post_request_info: Optional[List[SerpGoogleNewsTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18613,8 +20266,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_task_post_request_info:
+        :type serp_google_news_task_post_request_info: List[SerpGoogleNewsTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18638,7 +20291,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_task_post_request_info=serp_google_news_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18662,7 +20315,7 @@ class SerpApi:
     @validate_call
     def google_news_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_task_post_request_info: Optional[List[SerpGoogleNewsTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18680,8 +20333,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_task_post_request_info:
+        :type serp_google_news_task_post_request_info: List[SerpGoogleNewsTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18705,7 +20358,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_task_post_request_info=serp_google_news_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18729,7 +20382,7 @@ class SerpApi:
     @validate_call
     def google_news_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_news_task_post_request_info: Optional[List[SerpGoogleNewsTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18747,8 +20400,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/news/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_news_task_post_request_info:
+        :type serp_google_news_task_post_request_info: List[SerpGoogleNewsTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18772,7 +20425,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_news_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_news_task_post_request_info=serp_google_news_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18791,7 +20444,7 @@ class SerpApi:
 
     def _google_news_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_google_news_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -18801,14 +20454,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleNewsTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -18816,16 +20469,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_news_task_post_request_info is not None:
+            _body_params = serp_google_news_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -19066,7 +20720,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -19077,11 +20731,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -19309,7 +20964,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -19320,11 +20975,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -19566,7 +21222,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -19579,11 +21235,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -19625,7 +21282,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_html(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_html_request_info: Optional[List[SerpGoogleOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19643,8 +21300,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_html_request_info:
+        :type serp_google_organic_live_html_request_info: List[SerpGoogleOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19668,7 +21325,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_html_request_info=serp_google_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19692,7 +21349,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_html_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_html_request_info: Optional[List[SerpGoogleOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19710,8 +21367,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_html_request_info:
+        :type serp_google_organic_live_html_request_info: List[SerpGoogleOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19735,7 +21392,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_html_request_info=serp_google_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19759,7 +21416,7 @@ class SerpApi:
     @validate_call
     def google_organic_live_html_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_live_html_request_info: Optional[List[SerpGoogleOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -19777,8 +21434,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_live_html_request_info:
+        :type serp_google_organic_live_html_request_info: List[SerpGoogleOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -19802,7 +21459,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_live_html_request_info=serp_google_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19821,7 +21478,7 @@ class SerpApi:
 
     def _google_organic_live_html_serialize(
         self,
-        serp_task_request_info,
+        serp_google_organic_live_html_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -19831,14 +21488,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleOrganicLiveHtmlRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -19846,16 +21503,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_organic_live_html_request_info is not None:
+            _body_params = serp_google_organic_live_html_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -20110,7 +21768,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -20123,11 +21781,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -20381,7 +22040,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -20394,11 +22053,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -20639,7 +22299,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -20652,11 +22312,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -20897,7 +22558,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -20910,11 +22571,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -20943,7 +22605,7 @@ class SerpApi:
     @validate_call
     def google_organic_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_task_post_request_info: Optional[List[SerpGoogleOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -20961,8 +22623,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_task_post_request_info:
+        :type serp_google_organic_task_post_request_info: List[SerpGoogleOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -20986,7 +22648,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_task_post_request_info=serp_google_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21010,7 +22672,7 @@ class SerpApi:
     @validate_call
     def google_organic_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_task_post_request_info: Optional[List[SerpGoogleOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21028,8 +22690,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_task_post_request_info:
+        :type serp_google_organic_task_post_request_info: List[SerpGoogleOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21053,7 +22715,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_task_post_request_info=serp_google_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21077,7 +22739,7 @@ class SerpApi:
     @validate_call
     def google_organic_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_google_organic_task_post_request_info: Optional[List[SerpGoogleOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -21095,8 +22757,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top 100 search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_google_organic_task_post_request_info:
+        :type serp_google_organic_task_post_request_info: List[SerpGoogleOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -21120,7 +22782,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._google_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_google_organic_task_post_request_info=serp_google_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21139,7 +22801,7 @@ class SerpApi:
 
     def _google_organic_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_google_organic_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -21149,14 +22811,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpGoogleOrganicTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -21164,16 +22826,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_google_organic_task_post_request_info is not None:
+            _body_params = serp_google_organic_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -21414,7 +23077,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -21425,11 +23088,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -21657,7 +23321,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -21668,11 +23332,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -21913,7 +23578,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -21926,11 +23591,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -22172,7 +23838,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -22185,11 +23851,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -22430,7 +24097,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -22441,11 +24108,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -22673,7 +24341,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -22684,11 +24352,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -22929,7 +24598,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -22942,11 +24611,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -23187,7 +24857,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -23200,11 +24870,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -23445,7 +25116,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -23458,11 +25129,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -23491,7 +25163,7 @@ class SerpApi:
     @validate_call
     def naver_organic_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_naver_organic_task_post_request_info: Optional[List[SerpNaverOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23509,8 +25181,8 @@ class SerpApi:
 
         ‌‌ Naver SERP API provides top 100 search engine results. Naver search results do not vary by location and language, and the search parameters for this search engine do not contain language and location variables. However, you can specify a keyword in any language, and the search engine results may vary depending on the language you used for specifying the search query. for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_naver_organic_task_post_request_info:
+        :type serp_naver_organic_task_post_request_info: List[SerpNaverOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23534,7 +25206,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._naver_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_naver_organic_task_post_request_info=serp_naver_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23558,7 +25230,7 @@ class SerpApi:
     @validate_call
     def naver_organic_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_naver_organic_task_post_request_info: Optional[List[SerpNaverOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23576,8 +25248,8 @@ class SerpApi:
 
         ‌‌ Naver SERP API provides top 100 search engine results. Naver search results do not vary by location and language, and the search parameters for this search engine do not contain language and location variables. However, you can specify a keyword in any language, and the search engine results may vary depending on the language you used for specifying the search query. for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_naver_organic_task_post_request_info:
+        :type serp_naver_organic_task_post_request_info: List[SerpNaverOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23601,7 +25273,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._naver_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_naver_organic_task_post_request_info=serp_naver_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23625,7 +25297,7 @@ class SerpApi:
     @validate_call
     def naver_organic_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_naver_organic_task_post_request_info: Optional[List[SerpNaverOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -23643,8 +25315,8 @@ class SerpApi:
 
         ‌‌ Naver SERP API provides top 100 search engine results. Naver search results do not vary by location and language, and the search parameters for this search engine do not contain language and location variables. However, you can specify a keyword in any language, and the search engine results may vary depending on the language you used for specifying the search query. for more info please visit 'https://docs.dataforseo.com/v3/serp/naver/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_naver_organic_task_post_request_info:
+        :type serp_naver_organic_task_post_request_info: List[SerpNaverOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -23668,7 +25340,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._naver_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_naver_organic_task_post_request_info=serp_naver_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23687,7 +25359,7 @@ class SerpApi:
 
     def _naver_organic_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_naver_organic_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -23697,14 +25369,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpNaverOrganicTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -23712,16 +25384,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_naver_organic_task_post_request_info is not None:
+            _body_params = serp_naver_organic_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -23962,7 +25635,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -23973,11 +25646,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -24205,7 +25879,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -24216,11 +25890,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -24462,7 +26137,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -24475,11 +26150,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -24720,7 +26396,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -24731,11 +26407,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -24963,7 +26640,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -24974,11 +26651,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -25219,7 +26897,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -25232,11 +26910,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -25464,7 +27143,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -25475,11 +27154,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -25707,7 +27387,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -25718,11 +27398,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -25963,7 +27644,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -25976,11 +27657,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -26025,7 +27707,7 @@ class SerpApi:
     ) -> SerpErrorsResponseInfo:
         """serp_errors
 
-        By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
+        By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
 
         :param serp_errors_request_info:
         :type serp_errors_request_info: List[SerpErrorsRequestInfo]
@@ -26092,7 +27774,7 @@ class SerpApi:
     ) -> ApiResponse[SerpErrorsResponseInfo]:
         """serp_errors
 
-        By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
+        By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
 
         :param serp_errors_request_info:
         :type serp_errors_request_info: List[SerpErrorsRequestInfo]
@@ -26159,7 +27841,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """serp_errors
 
-        By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
+        By calling this endpoint you will receive information about the SERP API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/serp/errors/?bash'
 
         :param serp_errors_request_info:
         :type serp_errors_request_info: List[SerpErrorsRequestInfo]
@@ -26222,7 +27904,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -26235,11 +27917,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -26263,6 +27946,494 @@ class SerpApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/serp/errors',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def serp_google_ads_advertisers_locations(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsAdvertisersLocationsResponseInfo:
+        """serp_google_ads_advertisers_locations
+
+        for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/locations/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._serp_google_ads_advertisers_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def serp_google_ads_advertisers_locations_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsAdvertisersLocationsResponseInfo]:
+        """serp_google_ads_advertisers_locations
+
+        for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/locations/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._serp_google_ads_advertisers_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def serp_google_ads_advertisers_locations_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """serp_google_ads_advertisers_locations
+
+        for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_advertisers/locations/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._serp_google_ads_advertisers_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsAdvertisersLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _serp_google_ads_advertisers_locations_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/serp/google/ads_advertisers/locations',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def serp_google_ads_search_locations(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SerpGoogleAdsSearchLocationsResponseInfo:
+        """serp_google_ads_search_locations
+
+        for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/locations/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._serp_google_ads_search_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def serp_google_ads_search_locations_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SerpGoogleAdsSearchLocationsResponseInfo]:
+        """serp_google_ads_search_locations
+
+        for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/locations/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._serp_google_ads_search_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def serp_google_ads_search_locations_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """serp_google_ads_search_locations
+
+        for more info please visit 'https://docs_v3.dataforseo.com/v3/serp/google/ads_search/locations/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._serp_google_ads_search_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SerpGoogleAdsSearchLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _serp_google_ads_search_locations_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/serp/google/ads_search/locations',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -26480,7 +28651,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -26491,11 +28662,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -26723,7 +28895,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -26734,11 +28906,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -26979,7 +29152,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -26992,11 +29165,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -27238,7 +29412,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -27251,11 +29425,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -27496,7 +29671,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -27507,11 +29682,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -27739,7 +29915,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -27750,11 +29926,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -27995,7 +30172,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -28008,11 +30185,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -28240,7 +30418,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -28251,11 +30429,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -28483,7 +30662,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -28494,11 +30673,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -28739,7 +30919,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -28752,11 +30932,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -28984,7 +31165,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -28995,11 +31176,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -29227,7 +31409,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -29238,11 +31420,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -29483,7 +31666,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -29496,11 +31679,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -29741,7 +31925,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -29754,11 +31938,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -29999,7 +32184,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -30012,11 +32197,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -30257,7 +32443,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -30270,11 +32456,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -30303,7 +32490,7 @@ class SerpApi:
     @validate_call
     def seznam_organic_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_seznam_organic_task_post_request_info: Optional[List[SerpSeznamOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -30321,8 +32508,8 @@ class SerpApi:
 
         ‌‌ Seznam SERP API provides top 10 search engine results from one of the most popular search engines in the Czech Republic. Seznam is focused on the local search market, and thus supports the Czech language only. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_seznam_organic_task_post_request_info:
+        :type serp_seznam_organic_task_post_request_info: List[SerpSeznamOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -30346,7 +32533,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._seznam_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_seznam_organic_task_post_request_info=serp_seznam_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -30370,7 +32557,7 @@ class SerpApi:
     @validate_call
     def seznam_organic_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_seznam_organic_task_post_request_info: Optional[List[SerpSeznamOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -30388,8 +32575,8 @@ class SerpApi:
 
         ‌‌ Seznam SERP API provides top 10 search engine results from one of the most popular search engines in the Czech Republic. Seznam is focused on the local search market, and thus supports the Czech language only. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_seznam_organic_task_post_request_info:
+        :type serp_seznam_organic_task_post_request_info: List[SerpSeznamOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -30413,7 +32600,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._seznam_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_seznam_organic_task_post_request_info=serp_seznam_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -30437,7 +32624,7 @@ class SerpApi:
     @validate_call
     def seznam_organic_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_seznam_organic_task_post_request_info: Optional[List[SerpSeznamOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -30455,8 +32642,8 @@ class SerpApi:
 
         ‌‌ Seznam SERP API provides top 10 search engine results from one of the most popular search engines in the Czech Republic. Seznam is focused on the local search market, and thus supports the Czech language only. for more info please visit 'https://docs.dataforseo.com/v3/serp/seznam/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_seznam_organic_task_post_request_info:
+        :type serp_seznam_organic_task_post_request_info: List[SerpSeznamOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -30480,7 +32667,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._seznam_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_seznam_organic_task_post_request_info=serp_seznam_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -30499,7 +32686,7 @@ class SerpApi:
 
     def _seznam_organic_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_seznam_organic_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -30509,14 +32696,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpSeznamOrganicTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -30524,16 +32711,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_seznam_organic_task_post_request_info is not None:
+            _body_params = serp_seznam_organic_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -30774,7 +32962,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -30785,11 +32973,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -31017,7 +33206,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -31028,11 +33217,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -31260,7 +33450,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -31271,11 +33461,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -31304,7 +33495,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_advanced(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_advanced_request_info: Optional[List[SerpYahooOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31322,8 +33513,8 @@ class SerpApi:
 
         ‌ Live SERP provides real-time data on top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_advanced_request_info:
+        :type serp_yahoo_organic_live_advanced_request_info: List[SerpYahooOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31347,7 +33538,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_advanced_request_info=serp_yahoo_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31371,7 +33562,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_advanced_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_advanced_request_info: Optional[List[SerpYahooOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31389,8 +33580,8 @@ class SerpApi:
 
         ‌ Live SERP provides real-time data on top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_advanced_request_info:
+        :type serp_yahoo_organic_live_advanced_request_info: List[SerpYahooOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31414,7 +33605,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_advanced_request_info=serp_yahoo_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31438,7 +33629,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_advanced_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_advanced_request_info: Optional[List[SerpYahooOrganicLiveAdvancedRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31456,8 +33647,8 @@ class SerpApi:
 
         ‌ Live SERP provides real-time data on top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/advanced/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_advanced_request_info:
+        :type serp_yahoo_organic_live_advanced_request_info: List[SerpYahooOrganicLiveAdvancedRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31481,7 +33672,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_advanced_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_advanced_request_info=serp_yahoo_organic_live_advanced_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31500,7 +33691,7 @@ class SerpApi:
 
     def _yahoo_organic_live_advanced_serialize(
         self,
-        serp_task_request_info,
+        serp_yahoo_organic_live_advanced_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -31510,14 +33701,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpYahooOrganicLiveAdvancedRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -31525,16 +33716,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_yahoo_organic_live_advanced_request_info is not None:
+            _body_params = serp_yahoo_organic_live_advanced_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -31576,7 +33768,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_html(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_html_request_info: Optional[List[SerpYahooOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31594,8 +33786,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_html_request_info:
+        :type serp_yahoo_organic_live_html_request_info: List[SerpYahooOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31619,7 +33811,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_html_request_info=serp_yahoo_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31643,7 +33835,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_html_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_html_request_info: Optional[List[SerpYahooOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31661,8 +33853,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_html_request_info:
+        :type serp_yahoo_organic_live_html_request_info: List[SerpYahooOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31686,7 +33878,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_html_request_info=serp_yahoo_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31710,7 +33902,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_html_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_html_request_info: Optional[List[SerpYahooOrganicLiveHtmlRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31728,8 +33920,8 @@ class SerpApi:
 
         ‌ Live SERP HTML provides a raw HTML page of 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/html/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_html_request_info:
+        :type serp_yahoo_organic_live_html_request_info: List[SerpYahooOrganicLiveHtmlRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31753,7 +33945,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_html_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_html_request_info=serp_yahoo_organic_live_html_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31772,7 +33964,7 @@ class SerpApi:
 
     def _yahoo_organic_live_html_serialize(
         self,
-        serp_task_request_info,
+        serp_yahoo_organic_live_html_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -31782,14 +33974,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpYahooOrganicLiveHtmlRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -31797,16 +33989,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_yahoo_organic_live_html_request_info is not None:
+            _body_params = serp_yahoo_organic_live_html_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -31848,7 +34041,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_regular(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_regular_request_info: Optional[List[SerpYahooOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31866,8 +34059,8 @@ class SerpApi:
 
         ‌‌ Live Yahoo SERP provides real-time data on up to 100 top search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_regular_request_info:
+        :type serp_yahoo_organic_live_regular_request_info: List[SerpYahooOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31891,7 +34084,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_regular_request_info=serp_yahoo_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31915,7 +34108,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_regular_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_regular_request_info: Optional[List[SerpYahooOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -31933,8 +34126,8 @@ class SerpApi:
 
         ‌‌ Live Yahoo SERP provides real-time data on up to 100 top search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_regular_request_info:
+        :type serp_yahoo_organic_live_regular_request_info: List[SerpYahooOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -31958,7 +34151,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_regular_request_info=serp_yahoo_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -31982,7 +34175,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_live_regular_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_live_regular_request_info: Optional[List[SerpYahooOrganicLiveRegularRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -32000,8 +34193,8 @@ class SerpApi:
 
         ‌‌ Live Yahoo SERP provides real-time data on up to 100 top search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/live/regular/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_live_regular_request_info:
+        :type serp_yahoo_organic_live_regular_request_info: List[SerpYahooOrganicLiveRegularRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -32025,7 +34218,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_live_regular_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_live_regular_request_info=serp_yahoo_organic_live_regular_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -32044,7 +34237,7 @@ class SerpApi:
 
     def _yahoo_organic_live_regular_serialize(
         self,
-        serp_task_request_info,
+        serp_yahoo_organic_live_regular_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -32054,14 +34247,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpYahooOrganicLiveRegularRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -32069,16 +34262,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_yahoo_organic_live_regular_request_info is not None:
+            _body_params = serp_yahoo_organic_live_regular_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -32332,7 +34526,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -32345,11 +34539,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -32590,7 +34785,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -32603,11 +34798,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -32848,7 +35044,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -32861,11 +35057,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -32894,7 +35091,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_task_post(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_task_post_request_info: Optional[List[SerpYahooOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -32912,8 +35109,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_task_post_request_info:
+        :type serp_yahoo_organic_task_post_request_info: List[SerpYahooOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -32937,7 +35134,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_task_post_request_info=serp_yahoo_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -32961,7 +35158,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_task_post_with_http_info(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_task_post_request_info: Optional[List[SerpYahooOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -32979,8 +35176,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_task_post_request_info:
+        :type serp_yahoo_organic_task_post_request_info: List[SerpYahooOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -33004,7 +35201,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_task_post_request_info=serp_yahoo_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -33028,7 +35225,7 @@ class SerpApi:
     @validate_call
     def yahoo_organic_task_post_without_preload_content(
         self,
-        serp_task_request_info: Optional[List[SerpTaskRequestInfo]] = None,
+        serp_yahoo_organic_task_post_request_info: Optional[List[SerpYahooOrganicTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -33046,8 +35243,8 @@ class SerpApi:
 
         ‌‌ SERP API provides top search engine results. These results are specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/yahoo/organic/task_post/?bash'
 
-        :param serp_task_request_info:
-        :type serp_task_request_info: List[SerpTaskRequestInfo]
+        :param serp_yahoo_organic_task_post_request_info:
+        :type serp_yahoo_organic_task_post_request_info: List[SerpYahooOrganicTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -33071,7 +35268,7 @@ class SerpApi:
         """ # noqa: E501
 
         _param = self._yahoo_organic_task_post_serialize(
-            serp_task_request_info=serp_task_request_info,
+            serp_yahoo_organic_task_post_request_info=serp_yahoo_organic_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -33090,7 +35287,7 @@ class SerpApi:
 
     def _yahoo_organic_task_post_serialize(
         self,
-        serp_task_request_info,
+        serp_yahoo_organic_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -33100,14 +35297,14 @@ class SerpApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'SerpTaskRequestInfo': '',
+            'SerpYahooOrganicTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -33115,16 +35312,17 @@ class SerpApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if serp_task_request_info is not None:
-            _body_params = serp_task_request_info
+        if serp_yahoo_organic_task_post_request_info is not None:
+            _body_params = serp_yahoo_organic_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -33365,7 +35563,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -33376,11 +35574,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -33608,7 +35807,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -33619,11 +35818,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -33865,7 +36065,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -33878,11 +36078,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -34136,7 +36337,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -34149,11 +36350,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -34395,7 +36597,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -34408,11 +36610,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -34653,7 +36856,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -34664,11 +36867,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -34896,7 +37100,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -34907,11 +37111,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -35153,7 +37358,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -35166,11 +37371,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -35424,7 +37630,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -35437,11 +37643,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -35683,7 +37890,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -35696,11 +37903,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -35941,7 +38149,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -35952,11 +38160,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -36184,7 +38393,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -36195,11 +38404,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -36441,7 +38651,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -36454,11 +38664,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -36712,7 +38923,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -36725,11 +38936,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -36971,7 +39183,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -36984,11 +39196,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -37229,7 +39442,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -37240,11 +39453,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -37472,7 +39686,7 @@ class SerpApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -37483,11 +39697,12 @@ class SerpApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting

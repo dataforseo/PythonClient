@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,11 +34,11 @@ class KeywordProperties(BaseModel):
     is_another_language: Optional[StrictBool] = Field(default=None, description="detected language of the keyword is different from the set language if true, the language set in the request does not match the language determined by our system for a given keyword")
     __properties: ClassVar[List[str]] = ["se_type", "core_keyword", "synonym_clustering_algorithm", "keyword_difficulty", "detected_language", "is_another_language"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

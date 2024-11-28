@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.monthly_searches import MonthlySearches
 from typing import Optional, Set
@@ -39,11 +39,11 @@ class KeywordsDataBingSearchVolumeTaskGetResultInfo(BaseModel):
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly searches represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations if there is no data then the value is null")
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "search_partners", "device", "competition", "cpc", "search_volume", "categories", "monthly_searches"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -81,9 +81,9 @@ class KeywordsDataBingSearchVolumeTaskGetResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in monthly_searches (list)
         _items = []
         if self.monthly_searches:
-            for _item in self.monthly_searches:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_monthly_searches in self.monthly_searches:
+                if _item_monthly_searches:
+                    _items.append(_item_monthly_searches.to_dict())
             _dict['monthly_searches'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field

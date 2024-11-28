@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.available_locations import AvailableLocations
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo(BaseMode
     available_locations: Optional[List[AvailableLocations]] = Field(default=None, description="supported locations contains locations supported in combination with a specific language")
     __properties: ClassVar[List[str]] = ["language_name", "language_code", "available_locations"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,9 +74,9 @@ class KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo(BaseMode
         # override the default output from pydantic by calling `to_dict()` of each item in available_locations (list)
         _items = []
         if self.available_locations:
-            for _item in self.available_locations:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_available_locations in self.available_locations:
+                if _item_available_locations:
+                    _items.append(_item_available_locations.to_dict())
             _dict['available_locations'] = _items
         # set to None if language_name (nullable) is None
         # and model_fields_set contains the field

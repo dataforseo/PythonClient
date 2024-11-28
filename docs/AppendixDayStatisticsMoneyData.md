@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **value** | **str** | time period for grouping day in the yyyy-MM-dd format minute in the yyyy-MM-dd HH:mm format | [optional] 
 **total_traffic_analytics** | **float** |  | [optional] 
 **total_reviews** | **float** |  | [optional] 
-**reviews** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
+**reviews** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 
@@ -45,12 +45,12 @@ json = "{}"
 # create an instance of AppendixDayStatisticsMoneyData from a JSON string
 appendix_day_statistics_money_data_instance = AppendixDayStatisticsMoneyData.from_json(json)
 # print the JSON string representation of the object
-print AppendixDayStatisticsMoneyData.to_json()
+print(AppendixDayStatisticsMoneyData.to_json())
 
 # convert the object into a dict
 appendix_day_statistics_money_data_dict = appendix_day_statistics_money_data_instance.to_dict()
 # create an instance of AppendixDayStatisticsMoneyData from a dict
-appendix_day_statistics_money_data_form_dict = appendix_day_statistics_money_data.from_dict(appendix_day_statistics_money_data_dict)
+appendix_day_statistics_money_data_from_dict = AppendixDayStatisticsMoneyData.from_dict(appendix_day_statistics_money_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

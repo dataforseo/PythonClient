@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of DataforseoLabsAvailableFiltersResponseInfo from a JSON string
 dataforseo_labs_available_filters_response_info_instance = DataforseoLabsAvailableFiltersResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsAvailableFiltersResponseInfo.to_json()
+print(DataforseoLabsAvailableFiltersResponseInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_available_filters_response_info_dict = dataforseo_labs_available_filters_response_info_instance.to_dict()
 # create an instance of DataforseoLabsAvailableFiltersResponseInfo from a dict
-dataforseo_labs_available_filters_response_info_form_dict = dataforseo_labs_available_filters_response_info.from_dict(dataforseo_labs_available_filters_response_info_dict)
+dataforseo_labs_available_filters_response_info_from_dict = DataforseoLabsAvailableFiltersResponseInfo.from_dict(dataforseo_labs_available_filters_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of CommercialUnitsElement from a JSON string
 commercial_units_element_instance = CommercialUnitsElement.from_json(json)
 # print the JSON string representation of the object
-print CommercialUnitsElement.to_json()
+print(CommercialUnitsElement.to_json())
 
 # convert the object into a dict
 commercial_units_element_dict = commercial_units_element_instance.to_dict()
 # create an instance of CommercialUnitsElement from a dict
-commercial_units_element_form_dict = commercial_units_element.from_dict(commercial_units_element_dict)
+commercial_units_element_from_dict = CommercialUnitsElement.from_dict(commercial_units_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

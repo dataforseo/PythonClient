@@ -17,11 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.graph import Graph
-from dataforseo_client.models.price import Price
+from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.table import Table
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,18 +33,18 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the shopping_element")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
-    price: Optional[Price] = None
+    price: Optional[PriceInfo] = None
     url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     table: Optional[Table] = None
     graph: Optional[Graph] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "source", "snippet", "price", "url", "domain", "table", "graph"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -158,7 +158,7 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "title": obj.get("title"),
             "source": obj.get("source"),
             "snippet": obj.get("snippet"),
-            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "url": obj.get("url"),
             "domain": obj.get("domain"),
             "table": Table.from_dict(obj["table"]) if obj.get("table") is not None else None,

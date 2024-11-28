@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of AppRankedSerpElementInfo from a JSON string
 app_ranked_serp_element_info_instance = AppRankedSerpElementInfo.from_json(json)
 # print the JSON string representation of the object
-print AppRankedSerpElementInfo.to_json()
+print(AppRankedSerpElementInfo.to_json())
 
 # convert the object into a dict
 app_ranked_serp_element_info_dict = app_ranked_serp_element_info_instance.to_dict()
 # create an instance of AppRankedSerpElementInfo from a dict
-app_ranked_serp_element_info_form_dict = app_ranked_serp_element_info.from_dict(app_ranked_serp_element_info_dict)
+app_ranked_serp_element_info_from_dict = AppRankedSerpElementInfo.from_dict(app_ranked_serp_element_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

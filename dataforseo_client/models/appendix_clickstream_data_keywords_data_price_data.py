@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,17 +28,17 @@ class AppendixClickstreamDataKeywordsDataPriceData(BaseModel):
     """
     AppendixClickstreamDataKeywordsDataPriceData
     """ # noqa: E501
-    bulk_search_volume: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    dataforseo_search_volume: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    global_search_volume: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    bulk_search_volume: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    dataforseo_search_volume: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    global_search_volume: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     locations_and_languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["bulk_search_volume", "dataforseo_search_volume", "global_search_volume", "locations_and_languages"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -97,9 +97,9 @@ class AppendixClickstreamDataKeywordsDataPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bulk_search_volume": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_search_volume"]) if obj.get("bulk_search_volume") is not None else None,
-            "dataforseo_search_volume": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["dataforseo_search_volume"]) if obj.get("dataforseo_search_volume") is not None else None,
-            "global_search_volume": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["global_search_volume"]) if obj.get("global_search_volume") is not None else None,
+            "bulk_search_volume": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["bulk_search_volume"]) if obj.get("bulk_search_volume") is not None else None,
+            "dataforseo_search_volume": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["dataforseo_search_volume"]) if obj.get("dataforseo_search_volume") is not None else None,
+            "global_search_volume": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["global_search_volume"]) if obj.get("global_search_volume") is not None else None,
             "locations_and_languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations_and_languages"]) if obj.get("locations_and_languages") is not None else None
         })
         return _obj

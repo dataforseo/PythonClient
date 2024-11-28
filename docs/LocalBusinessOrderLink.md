@@ -17,12 +17,12 @@ json = "{}"
 # create an instance of LocalBusinessOrderLink from a JSON string
 local_business_order_link_instance = LocalBusinessOrderLink.from_json(json)
 # print the JSON string representation of the object
-print LocalBusinessOrderLink.to_json()
+print(LocalBusinessOrderLink.to_json())
 
 # convert the object into a dict
 local_business_order_link_dict = local_business_order_link_instance.to_dict()
 # create an instance of LocalBusinessOrderLink from a dict
-local_business_order_link_form_dict = local_business_order_link.from_dict(local_business_order_link_dict)
+local_business_order_link_from_dict = LocalBusinessOrderLink.from_dict(local_business_order_link_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

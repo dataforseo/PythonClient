@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of KeywordsDataErrorsResponseInfo from a JSON string
 keywords_data_errors_response_info_instance = KeywordsDataErrorsResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataErrorsResponseInfo.to_json()
+print(KeywordsDataErrorsResponseInfo.to_json())
 
 # convert the object into a dict
 keywords_data_errors_response_info_dict = keywords_data_errors_response_info_instance.to_dict()
 # create an instance of KeywordsDataErrorsResponseInfo from a dict
-keywords_data_errors_response_info_form_dict = keywords_data_errors_response_info.from_dict(keywords_data_errors_response_info_dict)
+keywords_data_errors_response_info_from_dict = KeywordsDataErrorsResponseInfo.from_dict(keywords_data_errors_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.link_element import LinkElement
@@ -35,16 +35,16 @@ class DictionarySerpElementItem(BaseSerpElementItem):
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb of the Ad element in SERP")
     keyword: Optional[StrictStr] = Field(default=None, description="keyword highlighted in the result")
     snippet: Optional[StrictStr] = Field(default=None, description="snippet of the element")
-    text: Optional[StrictBool] = Field(default=None, description="description of the results element in SERP")
+    text: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of search results if there are none, equals null")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "domain", "breadcrumb", "keyword", "snippet", "text", "links", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -82,9 +82,9 @@ class DictionarySerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in links (list)
         _items = []
         if self.links:
-            for _item in self.links:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_links in self.links:
+                if _item_links:
+                    _items.append(_item_links.to_dict())
             _dict['links'] = _items
         # override the default output from pydantic by calling `to_dict()` of rectangle
         if self.rectangle:

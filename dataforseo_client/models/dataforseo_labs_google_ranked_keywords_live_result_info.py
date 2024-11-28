@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.dataforseo_labs_google_ranked_keywords_live_item import DataforseoLabsGoogleRankedKeywordsLiveItem
+from dataforseo_client.models.dataforseo_labs_live_item import DataforseoLabsLiveItem
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -36,14 +36,14 @@ class DataforseoLabsGoogleRankedKeywordsLiveResultInfo(BaseModel):
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
     metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain ranking data is provided by the rank_group parameters that show the result’s rank considering only equivalent SERP elements")
     metrics_absolute: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain ranking data is provided by the rank_absolute parameters that indicate the result’s position among all SERP elements")
-    items: Optional[List[DataforseoLabsGoogleRankedKeywordsLiveItem]] = Field(default=None, description="contains ranked keywords and related data")
+    items: Optional[List[DataforseoLabsLiveItem]] = Field(default=None, description="contains ranked keywords and related data")
     __properties: ClassVar[List[str]] = ["se_type", "target", "location_code", "language_code", "total_count", "items_count", "metrics", "metrics_absolute", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -81,23 +81,23 @@ class DataforseoLabsGoogleRankedKeywordsLiveResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in metrics (dict)
         _field_dict = {}
         if self.metrics:
-            for _key in self.metrics:
-                if self.metrics[_key]:
-                    _field_dict[_key] = self.metrics[_key].to_dict()
+            for _key_metrics in self.metrics:
+                if self.metrics[_key_metrics]:
+                    _field_dict[_key_metrics] = self.metrics[_key_metrics].to_dict()
             _dict['metrics'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in metrics_absolute (dict)
         _field_dict = {}
         if self.metrics_absolute:
-            for _key in self.metrics_absolute:
-                if self.metrics_absolute[_key]:
-                    _field_dict[_key] = self.metrics_absolute[_key].to_dict()
+            for _key_metrics_absolute in self.metrics_absolute:
+                if self.metrics_absolute[_key_metrics_absolute]:
+                    _field_dict[_key_metrics_absolute] = self.metrics_absolute[_key_metrics_absolute].to_dict()
             _dict['metrics_absolute'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field
@@ -174,7 +174,7 @@ class DataforseoLabsGoogleRankedKeywordsLiveResultInfo(BaseModel):
             )
             if obj.get("metrics_absolute") is not None
             else None,
-            "items": [DataforseoLabsGoogleRankedKeywordsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [DataforseoLabsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

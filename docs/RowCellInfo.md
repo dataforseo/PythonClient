@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of RowCellInfo from a JSON string
 row_cell_info_instance = RowCellInfo.from_json(json)
 # print the JSON string representation of the object
-print RowCellInfo.to_json()
+print(RowCellInfo.to_json())
 
 # convert the object into a dict
 row_cell_info_dict = row_cell_info_instance.to_dict()
 # create an instance of RowCellInfo from a dict
-row_cell_info_form_dict = row_cell_info.from_dict(row_cell_info_dict)
+row_cell_info_from_dict = RowCellInfo.from_dict(row_cell_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

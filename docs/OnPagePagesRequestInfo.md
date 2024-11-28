@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of OnPagePagesRequestInfo from a JSON string
 on_page_pages_request_info_instance = OnPagePagesRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPagePagesRequestInfo.to_json()
+print(OnPagePagesRequestInfo.to_json())
 
 # convert the object into a dict
 on_page_pages_request_info_dict = on_page_pages_request_info_instance.to_dict()
 # create an instance of OnPagePagesRequestInfo from a dict
-on_page_pages_request_info_form_dict = on_page_pages_request_info.from_dict(on_page_pages_request_info_dict)
+on_page_pages_request_info_from_dict = OnPagePagesRequestInfo.from_dict(on_page_pages_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

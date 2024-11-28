@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of AdLinkElement from a JSON string
 ad_link_element_instance = AdLinkElement.from_json(json)
 # print the JSON string representation of the object
-print AdLinkElement.to_json()
+print(AdLinkElement.to_json())
 
 # convert the object into a dict
 ad_link_element_dict = ad_link_element_instance.to_dict()
 # create an instance of AdLinkElement from a dict
-ad_link_element_form_dict = ad_link_element.from_dict(ad_link_element_dict)
+ad_link_element_from_dict = AdLinkElement.from_dict(ad_link_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

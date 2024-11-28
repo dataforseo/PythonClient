@@ -35,12 +35,12 @@ json = "{}"
 # create an instance of ImpressionsInfo from a JSON string
 impressions_info_instance = ImpressionsInfo.from_json(json)
 # print the JSON string representation of the object
-print ImpressionsInfo.to_json()
+print(ImpressionsInfo.to_json())
 
 # convert the object into a dict
 impressions_info_dict = impressions_info_instance.to_dict()
 # create an instance of ImpressionsInfo from a dict
-impressions_info_form_dict = impressions_info.from_dict(impressions_info_dict)
+impressions_info_from_dict = ImpressionsInfo.from_dict(impressions_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

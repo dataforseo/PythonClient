@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +26,7 @@ class DataforseoLabsAmazonBulkSearchVolumeLiveRequestInfo(BaseModel):
     """
     DataforseoLabsAmazonBulkSearchVolumeLiveRequestInfo
     """ # noqa: E501
-    keywords: Optional[List[StrictStr]] = Field(default=None, description="target keywords required field UTF-8 encoding maximum number of keywords you can specify in this array: 1000; each keyword should be at least 3 characters long; the keywords will be converted to lowercase format learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keywords: Optional[List[StrictStr]] = Field(default=None, description="target keywords required field UTF-8 encoding maximum number of keywords you can specify in this array: 1000; the keywords will be converted to lowercase format learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location required field if don’t specify location_code you can receive the list of available locations with their location_name by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages;  Note: this endpoint currently supports the following locations and languages only: Australia – 2036, en Austria – 2040, de Canada – 2124, en Egypt – 2818, ar France – 2250, fr Germany – 2276, de India – 2356, en Italy – 2380, it Mexico – 2484, es Netherlands – 2528, nl Saudi Arabia – 2682, ar Singapore – 2702, en Spain – 2724, es United Arab Emirates – 2784, ar United Kingdom – 2826, en United States – 2840, en example: United States")
     location_code: Optional[StrictInt] = Field(default=None, description="location code required field if don’t specify location_name you can receive the list of available locations with their location_code by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages; Note: this endpoint currently supports these locations and languages only; example: 2840")
     language_name: Optional[StrictStr] = Field(default=None, description="full name of the language required field if don’t specify language_code you can receive the list of available languages with their language_name by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages Note: this endpoint currently supports these locations and languages only; example: English")
@@ -34,11 +34,11 @@ class DataforseoLabsAmazonBulkSearchVolumeLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["keywords", "location_name", "location_code", "language_name", "language_code", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpGoogleDatasetInfoTasksReadyResponseInfo from a JSON string
 serp_google_dataset_info_tasks_ready_response_info_instance = SerpGoogleDatasetInfoTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleDatasetInfoTasksReadyResponseInfo.to_json()
+print(SerpGoogleDatasetInfoTasksReadyResponseInfo.to_json())
 
 # convert the object into a dict
 serp_google_dataset_info_tasks_ready_response_info_dict = serp_google_dataset_info_tasks_ready_response_info_instance.to_dict()
 # create an instance of SerpGoogleDatasetInfoTasksReadyResponseInfo from a dict
-serp_google_dataset_info_tasks_ready_response_info_form_dict = serp_google_dataset_info_tasks_ready_response_info.from_dict(serp_google_dataset_info_tasks_ready_response_info_dict)
+serp_google_dataset_info_tasks_ready_response_info_from_dict = SerpGoogleDatasetInfoTasksReadyResponseInfo.from_dict(serp_google_dataset_info_tasks_ready_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

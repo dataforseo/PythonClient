@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of InterestsComparison from a JSON string
 interests_comparison_instance = InterestsComparison.from_json(json)
 # print the JSON string representation of the object
-print InterestsComparison.to_json()
+print(InterestsComparison.to_json())
 
 # convert the object into a dict
 interests_comparison_dict = interests_comparison_instance.to_dict()
 # create an instance of InterestsComparison from a dict
-interests_comparison_form_dict = interests_comparison.from_dict(interests_comparison_dict)
+interests_comparison_from_dict = InterestsComparison.from_dict(interests_comparison_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

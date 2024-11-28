@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,7 +40,7 @@ class OnPageInstantPagesRequestInfo(BaseModel):
     disable_cookie_popup: Optional[StrictBool] = Field(default=None, description="disable the cookie popup  optional field set to true if you want to disable the popup requesting cookie consent from the user; default value: false")
     return_despite_timeout: Optional[StrictBool] = Field(default=None, description="return data on pages despite the timeout error optional field if true, the data will be provided on pages that failed to load within 120 seconds and responded with a timeout error; default value: false")
     enable_xhr: Optional[StrictBool] = Field(default=None, description="enable XMLHttpRequest on a page optional field set to true if you want our crawler to request data from a web server using the XMLHttpRequest object default value: falseif you use this field, enable_javascript must be set to true;")
-    custom_js: Optional[StrictStr] = Field(default=None, description="custom javascript optional fieldNote that the execution time for the script you enter here should be 700 ms maximumfor example, you can use the following JS snippet to check if the website contains Google Tag Manager as a scr attribute: let meta = { haveGoogleAnalytics: false, haveTagManager: false };\\r\\nfor (var i = 0; i < document.scripts.length; i++) {\\r\\n let src = document.scripts[i].getAttribute(\\\"src\\\");\\r\\n if (src != undefined) {\\r\\n if (src.indexOf(\\\"analytics.js\\\") >= 0)\\r\\n      meta.haveGoogleAnalytics = true;\\r\\n\\tif (src.indexOf(\\\"gtm.js\\\") >= 0)\\r\\n      meta.haveTagManager = true;\\r\\n  }\\r\\n}\\r\\nmeta;the returned value depends on what you specified in this field. For instance, if you specify the following script: meta = {}; meta.url = document.URL; meta.test = 'test'; meta; as a response you will receive the following data: \"custom_js_response\": { \"url\": \"https://dataforseo.com/\", \"test\": \"test\" } Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
+    custom_js: Optional[StrictStr] = Field(default=None, description="custom javascript optional fieldNote that the execution time for the script you enter here should be 700 ms maximum; for example, you can use the following JS snippet to check if the website contains Google Tag Manager as a scr attribute: let meta = { haveGoogleAnalytics: false, haveTagManager: false };\\r\\nfor (var i = 0; i < document.scripts.length; i++) {\\r\\n let src = document.scripts[i].getAttribute(\\\"src\\\");\\r\\n if (src != undefined) {\\r\\n if (src.indexOf(\\\"analytics.js\\\") >= 0)\\r\\n      meta.haveGoogleAnalytics = true;\\r\\n\\tif (src.indexOf(\\\"gtm.js\\\") >= 0)\\r\\n      meta.haveTagManager = true;\\r\\n  }\\r\\n}\\r\\nmeta;the returned value depends on what you specified in this field. For instance, if you specify the following script: meta = {}; meta.url = document.URL; meta.test = 'test'; meta; as a response you will receive the following data: \"custom_js_response\": { \"url\": \"https://dataforseo.com/\", \"test\": \"test\" } Note: if you use this parameter, additional charges will apply; learn more about the cost of tasks with this parameter in our help article; the cost can be calculated on the Pricing Page")
     validate_micromarkup: Optional[StrictBool] = Field(default=None, description="enable microdata validation optional field if set to true, you can use the OnPage API Microdata endpoint with the id of the task; default value: false")
     check_spell: Optional[StrictBool] = Field(default=None, description="check spelling optional field set to true to check spelling on a website using Hunspell library default value: false")
     checks_threshold: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="custom threshold values for checks optional field you can specify custom threshold values for the parameters included in the checks array of OnPage API responses; Note: only integer threshold values can be modified;")
@@ -48,11 +48,11 @@ class OnPageInstantPagesRequestInfo(BaseModel):
     ip_pool_for_scan: Optional[StrictStr] = Field(default=None, description="proxy pool optional field you can choose a location of the proxy pool that will be used to obtain the requested data; the parameter can be used if page content is inaccessible in one of the locations, resulting in occasional site_unreachable errors possible values: us, de")
     __properties: ClassVar[List[str]] = ["url", "custom_user_agent", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "store_raw_html", "accept_language", "load_resources", "enable_javascript", "enable_browser_rendering", "disable_cookie_popup", "return_despite_timeout", "enable_xhr", "custom_js", "validate_micromarkup", "check_spell", "checks_threshold", "switch_pool", "ip_pool_for_scan"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

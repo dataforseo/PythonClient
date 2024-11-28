@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of KeywordIntentInfo from a JSON string
 keyword_intent_info_instance = KeywordIntentInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordIntentInfo.to_json()
+print(KeywordIntentInfo.to_json())
 
 # convert the object into a dict
 keyword_intent_info_dict = keyword_intent_info_instance.to_dict()
 # create an instance of KeywordIntentInfo from a dict
-keyword_intent_info_form_dict = keyword_intent_info.from_dict(keyword_intent_info_dict)
+keyword_intent_info_from_dict = KeywordIntentInfo.from_dict(keyword_intent_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo from a JSON string
 keywords_data_google_ads_keywords_for_site_task_get_response_info_instance = KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo.to_json()
+print(KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo.to_json())
 
 # convert the object into a dict
 keywords_data_google_ads_keywords_for_site_task_get_response_info_dict = keywords_data_google_ads_keywords_for_site_task_get_response_info_instance.to_dict()
 # create an instance of KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo from a dict
-keywords_data_google_ads_keywords_for_site_task_get_response_info_form_dict = keywords_data_google_ads_keywords_for_site_task_get_response_info.from_dict(keywords_data_google_ads_keywords_for_site_task_get_response_info_dict)
+keywords_data_google_ads_keywords_for_site_task_get_response_info_from_dict = KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo.from_dict(keywords_data_google_ads_keywords_for_site_task_get_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

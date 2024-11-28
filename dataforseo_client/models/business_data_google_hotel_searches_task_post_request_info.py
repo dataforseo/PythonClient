@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,16 +26,13 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
     """
     BusinessDataGoogleHotelSearchesTaskPostRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword required field the keyword you specify should indicate the name of the local establishment you can specify up to 700 symbols in the keyword filed all %## will be decoded (plus symbol ‘+’ will be decoded to a space character) if you need to use the “%” symbol for your keyword, please specify it as “%25”;  this field can also be used to pass the following parameters: cid – a unique, google-defined id of the business entity; place_id – an identifier of the business entity in Google Maps; spp – a unique identifier of local services featured in the local_pack element of Google SERP example: cid:194604053573767737 place_id:GhIJQWDl0CIeQUARxks3icF8U8A spp:CgsvZy8xdGN4cWRraBoUChIJPZDrEzLsZIgRoNrpodC5P30 learn more about the cid and place_id identifiers in this help center article learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword optional field the keyword you specify is used to search for the list of hotels; if you don’t use this field, we will return the list of hotels found in a specified location; you can specify up to 700 characters in the keyword filed all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your keyword, please specify it as “%25”; Note: in order to obtain accurate search results, the location name is appended to the keyword automatically learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     priority: Optional[StrictInt] = Field(default=None, description="task priority optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the Pricing page.")
-    location_name: Optional[StrictStr] = Field(default=None, description="full name of search engine location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available locations with location_name by making a separate request to https://api.dataforseo.com/v3/business_data/google/locations example: London,England,United Kingdom")
+    location_name: Optional[StrictStr] = Field(default=None, description="full name of search engine location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available locations with location_name by making a separate request to https://api.dataforseo.com/v3/business_data/google/locations example: London,England,United Kingdom Note: in order to obtain accurate search results, the location_name you specify will be automatically appended to the keyword")
     location_code: Optional[StrictInt] = Field(default=None, description="search engine location code required field if you don’t specify location_name or location_coordinate if you use this field, you don’t need to specify location_name or location_coordinate you can receive the list of available locations with location_code by making a separate request to the https://api.dataforseo.com/v3/business_data/google/locations example: 2840")
-    location_coordinate: Optional[StrictStr] = Field(default=None, description="GPS coordinates of a location required field if you don’t specify location_name or location_code if you use this field, you don’t need to specify location_name or location_code location_coordinate parameter should be specified in the “latitude,longitude,radius” format the maximum number of decimal digits for “latitude” and “longitude”: 7 the minimum value for “radius”: 199.9 (mm) the maximum value for “radius”: 199999 (mm) example: 53.476225,-2.243572,200")
+    location_coordinate: Optional[StrictStr] = Field(default=None, description="GPS coordinates of a location required field if you don’t specify location_name or location_code if you use this field, you don’t need to specify location_name or location_code location_coordinate parameter should be specified in the “latitude,longitude” format the maximum number of decimal digits for “latitude” and “longitude”: 7 Note: if the coordinates are used to set a location, the search will occur in the nearest settlement; example: 53.476225,-2.243572")
     language_name: Optional[StrictStr] = Field(default=None, description="full name of search engine language required field if you don’t specify language_code if you use this field, you don’t need to specify language_code you can receive the list of available languages with language_name by making a separate request to https://api.dataforseo.com/v3/business_data/google/languages example: English")
     language_code: Optional[StrictStr] = Field(default=None, description="search engine language code required field if you don’t specify language_name if you use this field, you don’t need to specify language_name you can receive the list of available languages with their language_code by making a separate request to https://api.dataforseo.com/v3/business_data/google/languages example: en")
-    tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special symbols in postback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
-    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special symbols in pingback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
     depth: Optional[StrictInt] = Field(default=None, description="parsing depth optional field number of results in Google Hotels default value: 20 organic results max value: 140 Note: your account will be billed per each 20 organic results regardless of paid listings in the response; thus, setting a depth above 20 may result in additional charges if Google Hotels return more than 20 results; if the specified depth is higher than the number of results in the response, the difference will be refunded automatically to your account balance")
     check_in: Optional[StrictStr] = Field(default=None, description="check-in date optional field if you don’t specify this field, tomorrow’s date will be used by default; date format: \"yyyy-mm-dd\" example: \"2019-01-15\" Note: the value cannot precede the today’s date")
     check_out: Optional[StrictStr] = Field(default=None, description="check-out date optional field if you don’t specify this field, our system will apply the date of two days from now by default; date format: \"yyyy-mm-dd\" example: \"2019-01-15\" Note: the value cannot be less than or equal to check_in; the range between check_in and check_out values cannot exceed 30 days")
@@ -50,13 +47,16 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
     free_cancellation: Optional[StrictBool] = Field(default=None, description="hotels with a free cancellation optional field set this field to true if you want to get the list of hotels with free cancellation of reservations default value: false")
     is_vacation_rentals: Optional[StrictBool] = Field(default=None, description="search for vacation rentals optional field set this field to true if you want to get the list of vacation rentals instead of hotels default value: false")
     amenities: Optional[List[StrictStr]] = Field(default=None, description="hotel amenities optional field you can use this field to specify different hotel amenities example:   [             \"free_parking\",             \"pets_allowed\"         ]  possible values: \"air_conditioning\", \"all_inclusive_available\", \"bar\", \"free_breakfast\", \"fitness_center\", \"kid_friendly\", \"free_parking\", \"pets_allowed\", \"pool\", \"restaurant\", \"room_service\", \"spa\", \"free_wifi\", \"parking\", \"indoor_pool\", \"outdoor_pool\", \"wheelchair_accessible\", \"beach_access\"")
-    __properties: ClassVar[List[str]] = ["keyword", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "tag", "postback_url", "pingback_url", "depth", "check_in", "check_out", "currency", "adults", "children", "stars", "min_rating", "sort_by", "min_price", "max_price", "free_cancellation", "is_vacation_rentals", "amenities"]
+    tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
+    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special characters in postback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
+    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special characters in pingback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
+    __properties: ClassVar[List[str]] = ["keyword", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "depth", "check_in", "check_out", "currency", "adults", "children", "stars", "min_rating", "sort_by", "min_price", "max_price", "free_cancellation", "is_vacation_rentals", "amenities", "tag", "postback_url", "pingback_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -91,6 +91,11 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if keyword (nullable) is None
+        # and model_fields_set contains the field
+        if self.keyword is None and "keyword" in self.model_fields_set:
+            _dict['keyword'] = None
+
         # set to None if priority (nullable) is None
         # and model_fields_set contains the field
         if self.priority is None and "priority" in self.model_fields_set:
@@ -120,21 +125,6 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
         # and model_fields_set contains the field
         if self.language_code is None and "language_code" in self.model_fields_set:
             _dict['language_code'] = None
-
-        # set to None if tag (nullable) is None
-        # and model_fields_set contains the field
-        if self.tag is None and "tag" in self.model_fields_set:
-            _dict['tag'] = None
-
-        # set to None if postback_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.postback_url is None and "postback_url" in self.model_fields_set:
-            _dict['postback_url'] = None
-
-        # set to None if pingback_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.pingback_url is None and "pingback_url" in self.model_fields_set:
-            _dict['pingback_url'] = None
 
         # set to None if depth (nullable) is None
         # and model_fields_set contains the field
@@ -206,6 +196,21 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
         if self.amenities is None and "amenities" in self.model_fields_set:
             _dict['amenities'] = None
 
+        # set to None if tag (nullable) is None
+        # and model_fields_set contains the field
+        if self.tag is None and "tag" in self.model_fields_set:
+            _dict['tag'] = None
+
+        # set to None if postback_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.postback_url is None and "postback_url" in self.model_fields_set:
+            _dict['postback_url'] = None
+
+        # set to None if pingback_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.pingback_url is None and "pingback_url" in self.model_fields_set:
+            _dict['pingback_url'] = None
+
         return _dict
 
     @classmethod
@@ -225,9 +230,6 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
             "location_coordinate": obj.get("location_coordinate"),
             "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
-            "tag": obj.get("tag"),
-            "postback_url": obj.get("postback_url"),
-            "pingback_url": obj.get("pingback_url"),
             "depth": obj.get("depth"),
             "check_in": obj.get("check_in"),
             "check_out": obj.get("check_out"),
@@ -241,7 +243,10 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
             "max_price": obj.get("max_price"),
             "free_cancellation": obj.get("free_cancellation"),
             "is_vacation_rentals": obj.get("is_vacation_rentals"),
-            "amenities": obj.get("amenities")
+            "amenities": obj.get("amenities"),
+            "tag": obj.get("tag"),
+            "postback_url": obj.get("postback_url"),
+            "pingback_url": obj.get("pingback_url")
         })
         return _obj
 

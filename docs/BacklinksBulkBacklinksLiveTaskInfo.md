@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of BacklinksBulkBacklinksLiveTaskInfo from a JSON string
 backlinks_bulk_backlinks_live_task_info_instance = BacklinksBulkBacklinksLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksBulkBacklinksLiveTaskInfo.to_json()
+print(BacklinksBulkBacklinksLiveTaskInfo.to_json())
 
 # convert the object into a dict
 backlinks_bulk_backlinks_live_task_info_dict = backlinks_bulk_backlinks_live_task_info_instance.to_dict()
 # create an instance of BacklinksBulkBacklinksLiveTaskInfo from a dict
-backlinks_bulk_backlinks_live_task_info_form_dict = backlinks_bulk_backlinks_live_task_info.from_dict(backlinks_bulk_backlinks_live_task_info_dict)
+backlinks_bulk_backlinks_live_task_info_from_dict = BacklinksBulkBacklinksLiveTaskInfo.from_dict(backlinks_bulk_backlinks_live_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

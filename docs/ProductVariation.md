@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ProductVariation from a JSON string
 product_variation_instance = ProductVariation.from_json(json)
 # print the JSON string representation of the object
-print ProductVariation.to_json()
+print(ProductVariation.to_json())
 
 # convert the object into a dict
 product_variation_dict = product_variation_instance.to_dict()
 # create an instance of ProductVariation from a dict
-product_variation_form_dict = product_variation.from_dict(product_variation_dict)
+product_variation_from_dict = ProductVariation.from_dict(product_variation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

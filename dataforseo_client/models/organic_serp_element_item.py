@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
@@ -64,11 +64,11 @@ class OrganicSerpElementItem(BaseSerpElementItem):
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "url", "cache_url", "related_search_url", "breadcrumb", "website_name", "is_image", "is_video", "is_featured_snippet", "is_malicious", "is_web_story", "description", "pre_snippet", "extended_snippet", "images", "amp_version", "rating", "price", "highlighted", "links", "faq", "extended_people_also_search", "about_this_result", "related_result", "timestamp", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -106,9 +106,9 @@ class OrganicSerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in images (list)
         _items = []
         if self.images:
-            for _item in self.images:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_images in self.images:
+                if _item_images:
+                    _items.append(_item_images.to_dict())
             _dict['images'] = _items
         # override the default output from pydantic by calling `to_dict()` of rating
         if self.rating:
@@ -119,9 +119,9 @@ class OrganicSerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in links (list)
         _items = []
         if self.links:
-            for _item in self.links:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_links in self.links:
+                if _item_links:
+                    _items.append(_item_links.to_dict())
             _dict['links'] = _items
         # override the default output from pydantic by calling `to_dict()` of faq
         if self.faq:
@@ -132,9 +132,9 @@ class OrganicSerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in related_result (list)
         _items = []
         if self.related_result:
-            for _item in self.related_result:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_related_result in self.related_result:
+                if _item_related_result:
+                    _items.append(_item_related_result.to_dict())
             _dict['related_result'] = _items
         # override the default output from pydantic by calling `to_dict()` of rectangle
         if self.rectangle:

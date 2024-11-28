@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **icon** | **str** | URL to the app icon | [optional] 
 **description** | **str** | description of the app | [optional] 
 **reviews_count** | **int** | the total number of reviews of the app | [optional] 
-**price** | [**Price**](Price.md) |  | [optional] 
+**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
 **is_free** | **bool** | indicates whether the app is free | [optional] 
 **main_category** | **str** | main category/genre of the app | [optional] 
 **categories** | **List[Optional[str]]** | all relevant categories/genres of the app | [optional] 
@@ -39,12 +39,12 @@ json = "{}"
 # create an instance of DataAppAppStoreInfoOrganicSerpElementItem from a JSON string
 data_app_app_store_info_organic_serp_element_item_instance = DataAppAppStoreInfoOrganicSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print DataAppAppStoreInfoOrganicSerpElementItem.to_json()
+print(DataAppAppStoreInfoOrganicSerpElementItem.to_json())
 
 # convert the object into a dict
 data_app_app_store_info_organic_serp_element_item_dict = data_app_app_store_info_organic_serp_element_item_instance.to_dict()
 # create an instance of DataAppAppStoreInfoOrganicSerpElementItem from a dict
-data_app_app_store_info_organic_serp_element_item_form_dict = data_app_app_store_info_organic_serp_element_item.from_dict(data_app_app_store_info_organic_serp_element_item_dict)
+data_app_app_store_info_organic_serp_element_item_from_dict = DataAppAppStoreInfoOrganicSerpElementItem.from_dict(data_app_app_store_info_organic_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

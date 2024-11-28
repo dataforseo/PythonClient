@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of RankChanges from a JSON string
 rank_changes_instance = RankChanges.from_json(json)
 # print the JSON string representation of the object
-print RankChanges.to_json()
+print(RankChanges.to_json())
 
 # convert the object into a dict
 rank_changes_dict = rank_changes_instance.to_dict()
 # create an instance of RankChanges from a dict
-rank_changes_form_dict = rank_changes.from_dict(rank_changes_dict)
+rank_changes_from_dict = RankChanges.from_dict(rank_changes_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

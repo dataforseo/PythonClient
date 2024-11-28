@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo from a JSON string
 dataforseo_labs_google_bulk_traffic_estimation_live_request_info_instance = DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo.to_json()
+print(DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_google_bulk_traffic_estimation_live_request_info_dict = dataforseo_labs_google_bulk_traffic_estimation_live_request_info_instance.to_dict()
 # create an instance of DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo from a dict
-dataforseo_labs_google_bulk_traffic_estimation_live_request_info_form_dict = dataforseo_labs_google_bulk_traffic_estimation_live_request_info.from_dict(dataforseo_labs_google_bulk_traffic_estimation_live_request_info_dict)
+dataforseo_labs_google_bulk_traffic_estimation_live_request_info_from_dict = DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo.from_dict(dataforseo_labs_google_bulk_traffic_estimation_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

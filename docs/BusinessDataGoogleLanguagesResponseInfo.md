@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of BusinessDataGoogleLanguagesResponseInfo from a JSON string
 business_data_google_languages_response_info_instance = BusinessDataGoogleLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataGoogleLanguagesResponseInfo.to_json()
+print(BusinessDataGoogleLanguagesResponseInfo.to_json())
 
 # convert the object into a dict
 business_data_google_languages_response_info_dict = business_data_google_languages_response_info_instance.to_dict()
 # create an instance of BusinessDataGoogleLanguagesResponseInfo from a dict
-business_data_google_languages_response_info_form_dict = business_data_google_languages_response_info.from_dict(business_data_google_languages_response_info_dict)
+business_data_google_languages_response_info_from_dict = BusinessDataGoogleLanguagesResponseInfo.from_dict(business_data_google_languages_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

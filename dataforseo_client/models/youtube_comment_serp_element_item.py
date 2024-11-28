@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from typing import Optional, Set
@@ -37,11 +37,11 @@ class YoutubeCommentSerpElementItem(BaseYoutubeSerpElementItem):
     reply_count: Optional[StrictInt] = Field(default=None, description="number of replies on the comment")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "author_name", "author_thumbnail", "author_url", "text", "publication_date", "timestamp", "likes_count", "reply_count"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

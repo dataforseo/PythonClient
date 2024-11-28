@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of TwitterDataforseoLabsSerpElementItem from a JSON string
 twitter_dataforseo_labs_serp_element_item_instance = TwitterDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print TwitterDataforseoLabsSerpElementItem.to_json()
+print(TwitterDataforseoLabsSerpElementItem.to_json())
 
 # convert the object into a dict
 twitter_dataforseo_labs_serp_element_item_dict = twitter_dataforseo_labs_serp_element_item_instance.to_dict()
 # create an instance of TwitterDataforseoLabsSerpElementItem from a dict
-twitter_dataforseo_labs_serp_element_item_form_dict = twitter_dataforseo_labs_serp_element_item.from_dict(twitter_dataforseo_labs_serp_element_item_dict)
+twitter_dataforseo_labs_serp_element_item_from_dict = TwitterDataforseoLabsSerpElementItem.from_dict(twitter_dataforseo_labs_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

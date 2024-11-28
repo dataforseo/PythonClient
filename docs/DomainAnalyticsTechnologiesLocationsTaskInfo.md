@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of DomainAnalyticsTechnologiesLocationsTaskInfo from a JSON string
 domain_analytics_technologies_locations_task_info_instance = DomainAnalyticsTechnologiesLocationsTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print DomainAnalyticsTechnologiesLocationsTaskInfo.to_json()
+print(DomainAnalyticsTechnologiesLocationsTaskInfo.to_json())
 
 # convert the object into a dict
 domain_analytics_technologies_locations_task_info_dict = domain_analytics_technologies_locations_task_info_instance.to_dict()
 # create an instance of DomainAnalyticsTechnologiesLocationsTaskInfo from a dict
-domain_analytics_technologies_locations_task_info_form_dict = domain_analytics_technologies_locations_task_info.from_dict(domain_analytics_technologies_locations_task_info_dict)
+domain_analytics_technologies_locations_task_info_from_dict = DomainAnalyticsTechnologiesLocationsTaskInfo.from_dict(domain_analytics_technologies_locations_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

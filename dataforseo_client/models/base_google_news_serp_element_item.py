@@ -17,11 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.news_search_serp_element_item import NewsSearchSerpElementItem
+    from dataforseo_client.models.top_stories_serp_element_item import TopStoriesSerpElementItem
 
 class BaseGoogleNewsSerpElementItem(BaseModel):
     """
@@ -32,11 +38,11 @@ class BaseGoogleNewsSerpElementItem(BaseModel):
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "title", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -66,7 +72,7 @@ class BaseGoogleNewsSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[NewsSearchSerpElementItem, TopStoriesSerpElementItem]]:
         """Create an instance of BaseGoogleNewsSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -104,20 +110,17 @@ class BaseGoogleNewsSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[NewsSearchSerpElementItem, TopStoriesSerpElementItem]]:
         """Create an instance of BaseGoogleNewsSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseGoogleNewsSerpElementItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'NewsSearchSerpElementItem':
+            return import_module("dataforseo_client.models.news_search_serp_element_item").NewsSearchSerpElementItem.from_dict(obj)
+        if object_type ==  'TopStoriesSerpElementItem':
+            return import_module("dataforseo_client.models.top_stories_serp_element_item").TopStoriesSerpElementItem.from_dict(obj)
 
-from dataforseo_client.models.news_search_serp_element_item import NewsSearchSerpElementItem
-from dataforseo_client.models.top_stories_serp_element_item import TopStoriesSerpElementItem
-# TODO: Rewrite to not use raise_errors
-BaseGoogleNewsSerpElementItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseGoogleNewsSerpElementItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

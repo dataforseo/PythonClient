@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleHistoricalRankOverviewLiveItem from a JSON string
 dataforseo_labs_google_historical_rank_overview_live_item_instance = DataforseoLabsGoogleHistoricalRankOverviewLiveItem.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsGoogleHistoricalRankOverviewLiveItem.to_json()
+print(DataforseoLabsGoogleHistoricalRankOverviewLiveItem.to_json())
 
 # convert the object into a dict
 dataforseo_labs_google_historical_rank_overview_live_item_dict = dataforseo_labs_google_historical_rank_overview_live_item_instance.to_dict()
 # create an instance of DataforseoLabsGoogleHistoricalRankOverviewLiveItem from a dict
-dataforseo_labs_google_historical_rank_overview_live_item_form_dict = dataforseo_labs_google_historical_rank_overview_live_item.from_dict(dataforseo_labs_google_historical_rank_overview_live_item_dict)
+dataforseo_labs_google_historical_rank_overview_live_item_from_dict = DataforseoLabsGoogleHistoricalRankOverviewLiveItem.from_dict(dataforseo_labs_google_historical_rank_overview_live_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

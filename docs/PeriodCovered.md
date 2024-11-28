@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of PeriodCovered from a JSON string
 period_covered_instance = PeriodCovered.from_json(json)
 # print the JSON string representation of the object
-print PeriodCovered.to_json()
+print(PeriodCovered.to_json())
 
 # convert the object into a dict
 period_covered_dict = period_covered_instance.to_dict()
 # create an instance of PeriodCovered from a dict
-period_covered_form_dict = period_covered.from_dict(period_covered_dict)
+period_covered_from_dict = PeriodCovered.from_dict(period_covered_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

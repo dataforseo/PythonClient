@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of LocalBusinessMenuLink from a JSON string
 local_business_menu_link_instance = LocalBusinessMenuLink.from_json(json)
 # print the JSON string representation of the object
-print LocalBusinessMenuLink.to_json()
+print(LocalBusinessMenuLink.to_json())
 
 # convert the object into a dict
 local_business_menu_link_dict = local_business_menu_link_instance.to_dict()
 # create an instance of LocalBusinessMenuLink from a dict
-local_business_menu_link_form_dict = local_business_menu_link.from_dict(local_business_menu_link_dict)
+local_business_menu_link_from_dict = LocalBusinessMenuLink.from_dict(local_business_menu_link_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

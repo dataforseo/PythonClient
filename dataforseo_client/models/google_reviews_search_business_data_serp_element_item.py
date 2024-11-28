@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.images_element import ImagesElement
@@ -53,11 +53,11 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
     review_highlights: Optional[List[ReviewHighlights]] = Field(default=None, description="review highlights contains highlighted review criteria and assessments")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "review_text", "original_review_text", "time_ago", "timestamp", "rating", "reviews_count", "photos_count", "local_guide", "profile_name", "profile_url", "review_url", "profile_image_url", "owner_answer", "original_owner_answer", "owner_time_ago", "owner_timestamp", "review_id", "images", "review_highlights"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -98,16 +98,16 @@ class GoogleReviewsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElement
         # override the default output from pydantic by calling `to_dict()` of each item in images (list)
         _items = []
         if self.images:
-            for _item in self.images:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_images in self.images:
+                if _item_images:
+                    _items.append(_item_images.to_dict())
             _dict['images'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in review_highlights (list)
         _items = []
         if self.review_highlights:
-            for _item in self.review_highlights:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_review_highlights in self.review_highlights:
+                if _item_review_highlights:
+                    _items.append(_item_review_highlights.to_dict())
             _dict['review_highlights'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

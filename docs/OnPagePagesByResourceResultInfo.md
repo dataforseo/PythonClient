@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of OnPagePagesByResourceResultInfo from a JSON string
 on_page_pages_by_resource_result_info_instance = OnPagePagesByResourceResultInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPagePagesByResourceResultInfo.to_json()
+print(OnPagePagesByResourceResultInfo.to_json())
 
 # convert the object into a dict
 on_page_pages_by_resource_result_info_dict = on_page_pages_by_resource_result_info_instance.to_dict()
 # create an instance of OnPagePagesByResourceResultInfo from a dict
-on_page_pages_by_resource_result_info_form_dict = on_page_pages_by_resource_result_info.from_dict(on_page_pages_by_resource_result_info_dict)
+on_page_pages_by_resource_result_info_from_dict = OnPagePagesByResourceResultInfo.from_dict(on_page_pages_by_resource_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

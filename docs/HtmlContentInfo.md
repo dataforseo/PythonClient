@@ -27,12 +27,12 @@ json = "{}"
 # create an instance of HtmlContentInfo from a JSON string
 html_content_info_instance = HtmlContentInfo.from_json(json)
 # print the JSON string representation of the object
-print HtmlContentInfo.to_json()
+print(HtmlContentInfo.to_json())
 
 # convert the object into a dict
 html_content_info_dict = html_content_info_instance.to_dict()
 # create an instance of HtmlContentInfo from a dict
-html_content_info_form_dict = html_content_info.from_dict(html_content_info_dict)
+html_content_info_from_dict = HtmlContentInfo.from_dict(html_content_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

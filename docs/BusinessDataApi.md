@@ -18,6 +18,9 @@ Method | HTTP request | Description
 [**business_listings_categories**](BusinessDataApi.md#business_listings_categories) | **GET** /v3/business_data/business_listings/categories | 
 [**business_listings_categories_aggregation_live**](BusinessDataApi.md#business_listings_categories_aggregation_live) | **POST** /v3/business_data/business_listings/categories_aggregation/live | 
 [**business_listings_search_live**](BusinessDataApi.md#business_listings_search_live) | **POST** /v3/business_data/business_listings/search/live | 
+[**google_extended_reviews_task_get**](BusinessDataApi.md#google_extended_reviews_task_get) | **GET** /v3/business_data/google/extended_reviews/task_get/{id} | 
+[**google_extended_reviews_task_post**](BusinessDataApi.md#google_extended_reviews_task_post) | **POST** /v3/business_data/google/extended_reviews/task_post | 
+[**google_extended_reviews_tasks_ready**](BusinessDataApi.md#google_extended_reviews_tasks_ready) | **GET** /v3/business_data/google/extended_reviews/tasks_ready | 
 [**google_hotel_info_live_advanced**](BusinessDataApi.md#google_hotel_info_live_advanced) | **POST** /v3/business_data/google/hotel_info/live/advanced | 
 [**google_hotel_info_live_html**](BusinessDataApi.md#google_hotel_info_live_html) | **POST** /v3/business_data/google/hotel_info/live/html | 
 [**google_hotel_info_task_get_advanced**](BusinessDataApi.md#google_hotel_info_task_get_advanced) | **GET** /v3/business_data/google/hotel_info/task_get/advanced/{id} | 
@@ -64,7 +67,7 @@ Method | HTTP request | Description
 
 
 
-You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2024-07-17). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
+You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2024-11-05). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
 
 ### Example
 
@@ -138,7 +141,7 @@ This endpoint does not need any parameter.
 
 
 
-By calling this endpoint you will receive information about the Business Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/business_data/errors/?bash'
+By calling this endpoint you will receive information about the Business Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/business_data/errors/?bash'
 
 ### Example
 
@@ -1123,6 +1126,237 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **google_extended_reviews_task_get**
+> BusinessDataGoogleExtendedReviewsTaskGetResponseInfo google_extended_reviews_task_get(id)
+
+
+
+The returned results are specific to the indicated local establishment name, search engine, location and language parameters. We emulate set location and search engine with the highest accuracy so that the results you receive will match the actual search results for the specified parameters at the time of task setting. You can always check the returned results accessing the check_url in the Incognito mode to make sure the received data is entirely relevant. Note that user preferences, search history, and other personalized search factors are ignored by our system and thus would not be reflected in the returned results. for more info please visit 'https://docs_v3.dataforseo.com/v3/business_data/google/extended_reviews/task_get/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_extended_reviews_task_get_response_info import BusinessDataGoogleExtendedReviewsTaskGetResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+    id = '00000000-0000-0000-0000-000000000000' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.google_extended_reviews_task_get(id)
+        print("The response of BusinessDataApi->google_extended_reviews_task_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_extended_reviews_task_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**BusinessDataGoogleExtendedReviewsTaskGetResponseInfo**](BusinessDataGoogleExtendedReviewsTaskGetResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_extended_reviews_task_post**
+> BusinessDataGoogleExtendedReviewsTaskPostResponseInfo google_extended_reviews_task_post(business_data_google_extended_reviews_task_post_request_info=business_data_google_extended_reviews_task_post_request_info)
+
+
+
+‌‌ This endpoint provides results from the “Reviews” element of Google SERPs, including not only Google user reviews but also reviews from other reputable sources (e.g., TripAdvisor, Yelp, Trustpilot). The results are specific to the selected location (see the List of Locations) and language (see the List of Languages) parameters. for more info please visit 'https://docs_v3.dataforseo.com/v3/business_data/google/extended_reviews/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_extended_reviews_task_post_request_info import BusinessDataGoogleExtendedReviewsTaskPostRequestInfo
+from dataforseo_client.models.business_data_google_extended_reviews_task_post_response_info import BusinessDataGoogleExtendedReviewsTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+    business_data_google_extended_reviews_task_post_request_info = [dataforseo_client.BusinessDataGoogleExtendedReviewsTaskPostRequestInfo()] # List[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_extended_reviews_task_post(business_data_google_extended_reviews_task_post_request_info=business_data_google_extended_reviews_task_post_request_info)
+        print("The response of BusinessDataApi->google_extended_reviews_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_extended_reviews_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **business_data_google_extended_reviews_task_post_request_info** | [**List[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo]**](BusinessDataGoogleExtendedReviewsTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**BusinessDataGoogleExtendedReviewsTaskPostResponseInfo**](BusinessDataGoogleExtendedReviewsTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_extended_reviews_tasks_ready**
+> BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo google_extended_reviews_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you don’t use the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/business_data/google/extended_reviews/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.business_data_google_extended_reviews_tasks_ready_response_info import BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.BusinessDataApi(api_client)
+
+    try:
+        api_response = api_instance.google_extended_reviews_tasks_ready()
+        print("The response of BusinessDataApi->google_extended_reviews_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BusinessDataApi->google_extended_reviews_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo**](BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **google_hotel_info_live_advanced**
 > BusinessDataGoogleHotelInfoLiveAdvancedResponseInfo google_hotel_info_live_advanced(business_data_google_hotel_info_live_advanced_request_info=business_data_google_hotel_info_live_advanced_request_info)
 
@@ -1397,7 +1631,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    id = 'bdf91bc7-6ab2-41de-ab57-bf134f53b943' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'fbf6a066-4a3c-4e36-8d4c-e6ce5454e6c9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_hotel_info_task_get_html(id)
@@ -1901,7 +2135,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_info_live**
-> BusinessDataGoogleMyBusinessInfoLiveResponseInfo google_my_business_info_live(business_data_task_request_info=business_data_task_request_info)
+> BusinessDataGoogleMyBusinessInfoLiveResponseInfo google_my_business_info_live(business_data_google_my_business_info_live_request_info=business_data_google_my_business_info_live_request_info)
 
 
 
@@ -1913,8 +2147,8 @@ This endpoint does not need any parameter.
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.business_data_google_my_business_info_live_request_info import BusinessDataGoogleMyBusinessInfoLiveRequestInfo
 from dataforseo_client.models.business_data_google_my_business_info_live_response_info import BusinessDataGoogleMyBusinessInfoLiveResponseInfo
-from dataforseo_client.models.business_data_task_request_info import BusinessDataTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -1939,10 +2173,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    business_data_task_request_info = [dataforseo_client.BusinessDataTaskRequestInfo()] # List[BusinessDataTaskRequestInfo] |  (optional)
+    business_data_google_my_business_info_live_request_info = [dataforseo_client.BusinessDataGoogleMyBusinessInfoLiveRequestInfo()] # List[BusinessDataGoogleMyBusinessInfoLiveRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_my_business_info_live(business_data_task_request_info=business_data_task_request_info)
+        api_response = api_instance.google_my_business_info_live(business_data_google_my_business_info_live_request_info=business_data_google_my_business_info_live_request_info)
         print("The response of BusinessDataApi->google_my_business_info_live:\n")
         pprint(api_response)
     except Exception as e:
@@ -1956,7 +2190,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **business_data_task_request_info** | [**List[BusinessDataTaskRequestInfo]**](BusinessDataTaskRequestInfo.md)|  | [optional] 
+ **business_data_google_my_business_info_live_request_info** | [**List[BusinessDataGoogleMyBusinessInfoLiveRequestInfo]**](BusinessDataGoogleMyBusinessInfoLiveRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2058,7 +2292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_my_business_info_task_post**
-> BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo google_my_business_info_task_post(business_data_task_request_info=business_data_task_request_info)
+> BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo google_my_business_info_task_post(business_data_google_my_business_info_task_post_request_info=business_data_google_my_business_info_task_post_request_info)
 
 
 
@@ -2070,8 +2304,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.business_data_google_my_business_info_task_post_request_info import BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo
 from dataforseo_client.models.business_data_google_my_business_info_task_post_response_info import BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo
-from dataforseo_client.models.business_data_task_request_info import BusinessDataTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -2096,10 +2330,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.BusinessDataApi(api_client)
-    business_data_task_request_info = [dataforseo_client.BusinessDataTaskRequestInfo()] # List[BusinessDataTaskRequestInfo] |  (optional)
+    business_data_google_my_business_info_task_post_request_info = [dataforseo_client.BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo()] # List[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_my_business_info_task_post(business_data_task_request_info=business_data_task_request_info)
+        api_response = api_instance.google_my_business_info_task_post(business_data_google_my_business_info_task_post_request_info=business_data_google_my_business_info_task_post_request_info)
         print("The response of BusinessDataApi->google_my_business_info_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -2113,7 +2347,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **business_data_task_request_info** | [**List[BusinessDataTaskRequestInfo]**](BusinessDataTaskRequestInfo.md)|  | [optional] 
+ **business_data_google_my_business_info_task_post_request_info** | [**List[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo]**](BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 

@@ -19,6 +19,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from dataforseo_client.models.keywords_data_bing_audience_estimation_industries_response_info import KeywordsDataBingAudienceEstimationIndustriesResponseInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_job_functions_response_info import KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_live_request_info import KeywordsDataBingAudienceEstimationLiveRequestInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_live_response_info import KeywordsDataBingAudienceEstimationLiveResponseInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_task_get_response_info import KeywordsDataBingAudienceEstimationTaskGetResponseInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_request_info import KeywordsDataBingAudienceEstimationTaskPostRequestInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_response_info import KeywordsDataBingAudienceEstimationTaskPostResponseInfo
+from dataforseo_client.models.keywords_data_bing_audience_estimation_tasks_ready_response_info import KeywordsDataBingAudienceEstimationTasksReadyResponseInfo
 from dataforseo_client.models.keywords_data_bing_keyword_performance_live_request_info import KeywordsDataBingKeywordPerformanceLiveRequestInfo
 from dataforseo_client.models.keywords_data_bing_keyword_performance_live_response_info import KeywordsDataBingKeywordPerformanceLiveResponseInfo
 from dataforseo_client.models.keywords_data_bing_keyword_performance_locations_and_languages_response_info import KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo
@@ -53,9 +61,11 @@ from dataforseo_client.models.keywords_data_bing_search_volume_task_get_response
 from dataforseo_client.models.keywords_data_bing_search_volume_task_post_request_info import KeywordsDataBingSearchVolumeTaskPostRequestInfo
 from dataforseo_client.models.keywords_data_bing_search_volume_task_post_response_info import KeywordsDataBingSearchVolumeTaskPostResponseInfo
 from dataforseo_client.models.keywords_data_bing_search_volume_tasks_ready_response_info import KeywordsDataBingSearchVolumeTasksReadyResponseInfo
+from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_request_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo
 from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_response_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo
 from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_request_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo
 from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_response_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo
+from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_request_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo
 from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_response_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo
 from dataforseo_client.models.keywords_data_clickstream_data_locations_and_languages_response_info import KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo
 from dataforseo_client.models.keywords_data_dataforseo_trends_demography_live_request_info import KeywordsDataDataforseoTrendsDemographyLiveRequestInfo
@@ -76,6 +86,7 @@ from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_ta
 from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo
 from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_tasks_ready_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTasksReadyResponseInfo
+from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo
 from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_get_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_post_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo
@@ -90,8 +101,10 @@ from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_tasks_r
 from dataforseo_client.models.keywords_data_google_ads_languages_response_info import KeywordsDataGoogleAdsLanguagesResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_locations_country_response_info import KeywordsDataGoogleAdsLocationsCountryResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_locations_response_info import KeywordsDataGoogleAdsLocationsResponseInfo
+from dataforseo_client.models.keywords_data_google_ads_search_volume_live_request_info import KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo
 from dataforseo_client.models.keywords_data_google_ads_search_volume_live_response_info import KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_search_volume_task_get_response_info import KeywordsDataGoogleAdsSearchVolumeTaskGetResponseInfo
+from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_request_info import KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo
 from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_response_info import KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_search_volume_tasks_ready_response_info import KeywordsDataGoogleAdsSearchVolumeTasksReadyResponseInfo
 from dataforseo_client.models.keywords_data_google_ads_status_response_info import KeywordsDataGoogleAdsStatusResponseInfo
@@ -107,7 +120,6 @@ from dataforseo_client.models.keywords_data_google_trends_locations_country_resp
 from dataforseo_client.models.keywords_data_google_trends_locations_response_info import KeywordsDataGoogleTrendsLocationsResponseInfo
 from dataforseo_client.models.keywords_data_id_list_request_info import KeywordsDataIdListRequestInfo
 from dataforseo_client.models.keywords_data_id_list_response_info import KeywordsDataIdListResponseInfo
-from dataforseo_client.models.keywords_data_task_request_info import KeywordsDataTaskRequestInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -125,6 +137,1543 @@ class KeywordsDataApi:
         if api_client is None:
             api_client = ApiClient.get_default()
         self.api_client = api_client
+
+
+    @validate_call
+    def bing_audience_estimation_industries(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> KeywordsDataBingAudienceEstimationIndustriesResponseInfo:
+        """bing_audience_estimation_industries
+
+        By calling this API you will receive the list of industries with industry_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/industries/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_industries_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationIndustriesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def bing_audience_estimation_industries_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[KeywordsDataBingAudienceEstimationIndustriesResponseInfo]:
+        """bing_audience_estimation_industries
+
+        By calling this API you will receive the list of industries with industry_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/industries/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_industries_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationIndustriesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def bing_audience_estimation_industries_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """bing_audience_estimation_industries
+
+        By calling this API you will receive the list of industries with industry_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/industries/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_industries_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationIndustriesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _bing_audience_estimation_industries_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/keywords_data/bing/audience_estimation/industries',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def bing_audience_estimation_job_functions(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo:
+        """bing_audience_estimation_job_functions
+
+        By calling this API you will receive the list of job functions with job_function_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/job_functions/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_job_functions_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def bing_audience_estimation_job_functions_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo]:
+        """bing_audience_estimation_job_functions
+
+        By calling this API you will receive the list of job functions with job_function_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/job_functions/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_job_functions_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def bing_audience_estimation_job_functions_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """bing_audience_estimation_job_functions
+
+        By calling this API you will receive the list of job functions with job_function_id supported by Bing Ads Audience Estimation endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/job_functions/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_job_functions_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _bing_audience_estimation_job_functions_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/keywords_data/bing/audience_estimation/job_functions',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def bing_audience_estimation_live(
+        self,
+        keywords_data_bing_audience_estimation_live_request_info: Optional[List[KeywordsDataBingAudienceEstimationLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> KeywordsDataBingAudienceEstimationLiveResponseInfo:
+        """bing_audience_estimation_live
+
+        This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/live/?bash'
+
+        :param keywords_data_bing_audience_estimation_live_request_info:
+        :type keywords_data_bing_audience_estimation_live_request_info: List[KeywordsDataBingAudienceEstimationLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_live_serialize(
+            keywords_data_bing_audience_estimation_live_request_info=keywords_data_bing_audience_estimation_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def bing_audience_estimation_live_with_http_info(
+        self,
+        keywords_data_bing_audience_estimation_live_request_info: Optional[List[KeywordsDataBingAudienceEstimationLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[KeywordsDataBingAudienceEstimationLiveResponseInfo]:
+        """bing_audience_estimation_live
+
+        This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/live/?bash'
+
+        :param keywords_data_bing_audience_estimation_live_request_info:
+        :type keywords_data_bing_audience_estimation_live_request_info: List[KeywordsDataBingAudienceEstimationLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_live_serialize(
+            keywords_data_bing_audience_estimation_live_request_info=keywords_data_bing_audience_estimation_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def bing_audience_estimation_live_without_preload_content(
+        self,
+        keywords_data_bing_audience_estimation_live_request_info: Optional[List[KeywordsDataBingAudienceEstimationLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """bing_audience_estimation_live
+
+        This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/live/?bash'
+
+        :param keywords_data_bing_audience_estimation_live_request_info:
+        :type keywords_data_bing_audience_estimation_live_request_info: List[KeywordsDataBingAudienceEstimationLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_live_serialize(
+            keywords_data_bing_audience_estimation_live_request_info=keywords_data_bing_audience_estimation_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _bing_audience_estimation_live_serialize(
+        self,
+        keywords_data_bing_audience_estimation_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'KeywordsDataBingAudienceEstimationLiveRequestInfo': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if keywords_data_bing_audience_estimation_live_request_info is not None:
+            _body_params = keywords_data_bing_audience_estimation_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/keywords_data/bing/audience_estimation/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def bing_audience_estimation_task_get(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> KeywordsDataBingAudienceEstimationTaskGetResponseInfo:
+        """bing_audience_estimation_task_get
+
+        ‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_get/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_task_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTaskGetResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def bing_audience_estimation_task_get_with_http_info(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[KeywordsDataBingAudienceEstimationTaskGetResponseInfo]:
+        """bing_audience_estimation_task_get
+
+        ‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_get/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_task_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTaskGetResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def bing_audience_estimation_task_get_without_preload_content(
+        self,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """bing_audience_estimation_task_get
+
+        ‌ for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_get/?bash'
+
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_task_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTaskGetResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _bing_audience_estimation_task_get_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/keywords_data/bing/audience_estimation/task_get/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def bing_audience_estimation_task_post(
+        self,
+        keywords_data_bing_audience_estimation_task_post_request_info: Optional[List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> KeywordsDataBingAudienceEstimationTaskPostResponseInfo:
+        """bing_audience_estimation_task_post
+
+        ‌ This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_post/?bash'
+
+        :param keywords_data_bing_audience_estimation_task_post_request_info:
+        :type keywords_data_bing_audience_estimation_task_post_request_info: List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_task_post_serialize(
+            keywords_data_bing_audience_estimation_task_post_request_info=keywords_data_bing_audience_estimation_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def bing_audience_estimation_task_post_with_http_info(
+        self,
+        keywords_data_bing_audience_estimation_task_post_request_info: Optional[List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[KeywordsDataBingAudienceEstimationTaskPostResponseInfo]:
+        """bing_audience_estimation_task_post
+
+        ‌ This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_post/?bash'
+
+        :param keywords_data_bing_audience_estimation_task_post_request_info:
+        :type keywords_data_bing_audience_estimation_task_post_request_info: List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_task_post_serialize(
+            keywords_data_bing_audience_estimation_task_post_request_info=keywords_data_bing_audience_estimation_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def bing_audience_estimation_task_post_without_preload_content(
+        self,
+        keywords_data_bing_audience_estimation_task_post_request_info: Optional[List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """bing_audience_estimation_task_post
+
+        ‌ This endpoint provides estimated audience size for an ad campaign based on specified targeting criteria. It returns data on the total estimated audience, such as suggested bid and budget for an ad campaign and estimated engagement metrics. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/task_post/?bash'
+
+        :param keywords_data_bing_audience_estimation_task_post_request_info:
+        :type keywords_data_bing_audience_estimation_task_post_request_info: List[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_task_post_serialize(
+            keywords_data_bing_audience_estimation_task_post_request_info=keywords_data_bing_audience_estimation_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _bing_audience_estimation_task_post_serialize(
+        self,
+        keywords_data_bing_audience_estimation_task_post_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'KeywordsDataBingAudienceEstimationTaskPostRequestInfo': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if keywords_data_bing_audience_estimation_task_post_request_info is not None:
+            _body_params = keywords_data_bing_audience_estimation_task_post_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/keywords_data/bing/audience_estimation/task_post',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def bing_audience_estimation_tasks_ready(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> KeywordsDataBingAudienceEstimationTasksReadyResponseInfo:
+        """bing_audience_estimation_tasks_ready
+
+        ‌ This endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def bing_audience_estimation_tasks_ready_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[KeywordsDataBingAudienceEstimationTasksReadyResponseInfo]:
+        """bing_audience_estimation_tasks_ready
+
+        ‌ This endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def bing_audience_estimation_tasks_ready_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """bing_audience_estimation_tasks_ready
+
+        ‌ This endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. for more info please visit 'https://docs_v3.dataforseo.com/v3/keywords_data/bing/audience_estimation/tasks_ready/?bash'
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._bing_audience_estimation_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "KeywordsDataBingAudienceEstimationTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _bing_audience_estimation_tasks_ready_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/keywords_data/bing/audience_estimation/tasks_ready',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
 
 
     @validate_call
@@ -343,7 +1892,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -356,11 +1905,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -614,7 +2164,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -627,11 +2177,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -873,7 +2424,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -886,11 +2437,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -1131,7 +2683,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1142,11 +2694,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1388,7 +2941,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1401,11 +2954,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -1659,7 +3213,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1672,11 +3226,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1918,7 +3473,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1931,11 +3486,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2176,7 +3732,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2187,11 +3743,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -2433,7 +3990,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2446,11 +4003,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2704,7 +4262,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2717,11 +4275,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -2963,7 +4522,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2976,11 +4535,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -3221,7 +4781,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3232,11 +4792,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3478,7 +5039,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3491,11 +5052,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -3749,7 +5311,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3762,11 +5324,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -4008,7 +5571,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4021,11 +5584,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4266,7 +5830,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4277,11 +5841,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -4523,7 +6088,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4536,11 +6101,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4794,7 +6360,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4807,11 +6373,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5053,7 +6620,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5066,11 +6633,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -5311,7 +6879,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5322,11 +6890,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5355,7 +6924,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_bulk_search_volume_live(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_clickstream_data_bulk_search_volume_live_request_info: Optional[List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5373,8 +6942,8 @@ class KeywordsDataApi:
 
         ‌‌  The Bulk Clickstream Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers historical search volume values for up to 12 months (depending on keywords, location, and language parameters). for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/bulk_search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_clickstream_data_bulk_search_volume_live_request_info:
+        :type keywords_data_clickstream_data_bulk_search_volume_live_request_info: List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5398,7 +6967,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._clickstream_data_bulk_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_clickstream_data_bulk_search_volume_live_request_info=keywords_data_clickstream_data_bulk_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5422,7 +6991,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_bulk_search_volume_live_with_http_info(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_clickstream_data_bulk_search_volume_live_request_info: Optional[List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5440,8 +7009,8 @@ class KeywordsDataApi:
 
         ‌‌  The Bulk Clickstream Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers historical search volume values for up to 12 months (depending on keywords, location, and language parameters). for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/bulk_search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_clickstream_data_bulk_search_volume_live_request_info:
+        :type keywords_data_clickstream_data_bulk_search_volume_live_request_info: List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5465,7 +7034,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._clickstream_data_bulk_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_clickstream_data_bulk_search_volume_live_request_info=keywords_data_clickstream_data_bulk_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5489,7 +7058,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_bulk_search_volume_live_without_preload_content(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_clickstream_data_bulk_search_volume_live_request_info: Optional[List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5507,8 +7076,8 @@ class KeywordsDataApi:
 
         ‌‌  The Bulk Clickstream Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers historical search volume values for up to 12 months (depending on keywords, location, and language parameters). for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/bulk_search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_clickstream_data_bulk_search_volume_live_request_info:
+        :type keywords_data_clickstream_data_bulk_search_volume_live_request_info: List[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5532,7 +7101,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._clickstream_data_bulk_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_clickstream_data_bulk_search_volume_live_request_info=keywords_data_clickstream_data_bulk_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5551,7 +7120,7 @@ class KeywordsDataApi:
 
     def _clickstream_data_bulk_search_volume_live_serialize(
         self,
-        keywords_data_task_request_info,
+        keywords_data_clickstream_data_bulk_search_volume_live_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -5561,14 +7130,14 @@ class KeywordsDataApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'KeywordsDataTaskRequestInfo': '',
+            'KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5576,16 +7145,17 @@ class KeywordsDataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if keywords_data_task_request_info is not None:
-            _body_params = keywords_data_task_request_info
+        if keywords_data_clickstream_data_bulk_search_volume_live_request_info is not None:
+            _body_params = keywords_data_clickstream_data_bulk_search_volume_live_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -5840,7 +7410,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5853,11 +7423,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -5899,7 +7470,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_global_search_volume_live(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_clickstream_data_global_search_volume_live_request_info: Optional[List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5917,8 +7488,8 @@ class KeywordsDataApi:
 
         ‌‌  The Clickstream Global Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers geographical distribution of clickstream search volume values across all available locations. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/global_search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_clickstream_data_global_search_volume_live_request_info:
+        :type keywords_data_clickstream_data_global_search_volume_live_request_info: List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5942,7 +7513,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._clickstream_data_global_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_clickstream_data_global_search_volume_live_request_info=keywords_data_clickstream_data_global_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5966,7 +7537,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_global_search_volume_live_with_http_info(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_clickstream_data_global_search_volume_live_request_info: Optional[List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5984,8 +7555,8 @@ class KeywordsDataApi:
 
         ‌‌  The Clickstream Global Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers geographical distribution of clickstream search volume values across all available locations. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/global_search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_clickstream_data_global_search_volume_live_request_info:
+        :type keywords_data_clickstream_data_global_search_volume_live_request_info: List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6009,7 +7580,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._clickstream_data_global_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_clickstream_data_global_search_volume_live_request_info=keywords_data_clickstream_data_global_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6033,7 +7604,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_global_search_volume_live_without_preload_content(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_clickstream_data_global_search_volume_live_request_info: Optional[List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6051,8 +7622,8 @@ class KeywordsDataApi:
 
         ‌‌  The Clickstream Global Search Volume endpoint of DataForSEO Keywords Data API is designed to provide clickstream-based search volume data for up to 1000 keywords in a single Live request. What’s more, it offers geographical distribution of clickstream search volume values across all available locations. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/clickstream_data/global_search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_clickstream_data_global_search_volume_live_request_info:
+        :type keywords_data_clickstream_data_global_search_volume_live_request_info: List[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6076,7 +7647,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._clickstream_data_global_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_clickstream_data_global_search_volume_live_request_info=keywords_data_clickstream_data_global_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6095,7 +7666,7 @@ class KeywordsDataApi:
 
     def _clickstream_data_global_search_volume_live_serialize(
         self,
-        keywords_data_task_request_info,
+        keywords_data_clickstream_data_global_search_volume_live_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -6105,14 +7676,14 @@ class KeywordsDataApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'KeywordsDataTaskRequestInfo': '',
+            'KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6120,16 +7691,17 @@ class KeywordsDataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if keywords_data_task_request_info is not None:
-            _body_params = keywords_data_task_request_info
+        if keywords_data_clickstream_data_global_search_volume_live_request_info is not None:
+            _body_params = keywords_data_clickstream_data_global_search_volume_live_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -6384,7 +7956,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6397,11 +7969,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -6656,7 +8229,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6669,11 +8242,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -6928,7 +8502,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6941,11 +8515,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -7200,7 +8775,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7213,11 +8788,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -7472,7 +9048,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7485,11 +9061,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -7743,7 +9320,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7756,11 +9333,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -8002,7 +9580,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8015,11 +9593,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -8260,7 +9839,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8271,11 +9850,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -8304,7 +9884,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_keywords_live(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_keywords_for_keywords_live_request_info: Optional[List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8322,8 +9902,8 @@ class KeywordsDataApi:
 
         Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. ‌‌ This endpoint will provide relevant keywords for the specified terms. Set up to 20 keywords in the keywords array and get keyword suggestions from Google Ads. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/keywords_for_keywords/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_keywords_for_keywords_live_request_info:
+        :type keywords_data_google_ads_keywords_for_keywords_live_request_info: List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8347,7 +9927,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_keywords_for_keywords_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_keywords_for_keywords_live_request_info=keywords_data_google_ads_keywords_for_keywords_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8371,7 +9951,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_keywords_live_with_http_info(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_keywords_for_keywords_live_request_info: Optional[List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8389,8 +9969,8 @@ class KeywordsDataApi:
 
         Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. ‌‌ This endpoint will provide relevant keywords for the specified terms. Set up to 20 keywords in the keywords array and get keyword suggestions from Google Ads. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/keywords_for_keywords/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_keywords_for_keywords_live_request_info:
+        :type keywords_data_google_ads_keywords_for_keywords_live_request_info: List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8414,7 +9994,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_keywords_for_keywords_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_keywords_for_keywords_live_request_info=keywords_data_google_ads_keywords_for_keywords_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8438,7 +10018,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_keywords_live_without_preload_content(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_keywords_for_keywords_live_request_info: Optional[List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8456,8 +10036,8 @@ class KeywordsDataApi:
 
         Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. ‌‌ This endpoint will provide relevant keywords for the specified terms. Set up to 20 keywords in the keywords array and get keyword suggestions from Google Ads. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/keywords_for_keywords/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_keywords_for_keywords_live_request_info:
+        :type keywords_data_google_ads_keywords_for_keywords_live_request_info: List[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8481,7 +10061,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_keywords_for_keywords_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_keywords_for_keywords_live_request_info=keywords_data_google_ads_keywords_for_keywords_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8500,7 +10080,7 @@ class KeywordsDataApi:
 
     def _google_ads_keywords_for_keywords_live_serialize(
         self,
-        keywords_data_task_request_info,
+        keywords_data_google_ads_keywords_for_keywords_live_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -8510,14 +10090,14 @@ class KeywordsDataApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'KeywordsDataTaskRequestInfo': '',
+            'KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8525,16 +10105,17 @@ class KeywordsDataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if keywords_data_task_request_info is not None:
-            _body_params = keywords_data_task_request_info
+        if keywords_data_google_ads_keywords_for_keywords_live_request_info is not None:
+            _body_params = keywords_data_google_ads_keywords_for_keywords_live_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -8788,7 +10369,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8801,11 +10382,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -9047,7 +10629,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9060,11 +10642,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -9305,7 +10888,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9316,11 +10899,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -9562,7 +11146,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9575,11 +11159,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -9833,7 +11418,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9846,11 +11431,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10092,7 +11678,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10105,11 +11691,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -10350,7 +11937,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10361,11 +11948,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10394,7 +11982,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_live(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_search_volume_live_request_info: Optional[List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10412,8 +12000,8 @@ class KeywordsDataApi:
 
         ‌ Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_search_volume_live_request_info:
+        :type keywords_data_google_ads_search_volume_live_request_info: List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10437,7 +12025,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_search_volume_live_request_info=keywords_data_google_ads_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10461,7 +12049,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_live_with_http_info(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_search_volume_live_request_info: Optional[List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10479,8 +12067,8 @@ class KeywordsDataApi:
 
         ‌ Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_search_volume_live_request_info:
+        :type keywords_data_google_ads_search_volume_live_request_info: List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10504,7 +12092,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_search_volume_live_request_info=keywords_data_google_ads_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10528,7 +12116,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_live_without_preload_content(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_search_volume_live_request_info: Optional[List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10546,8 +12134,8 @@ class KeywordsDataApi:
 
         ‌ Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/live/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_search_volume_live_request_info:
+        :type keywords_data_google_ads_search_volume_live_request_info: List[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10571,7 +12159,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_search_volume_live_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_search_volume_live_request_info=keywords_data_google_ads_search_volume_live_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10590,7 +12178,7 @@ class KeywordsDataApi:
 
     def _google_ads_search_volume_live_serialize(
         self,
-        keywords_data_task_request_info,
+        keywords_data_google_ads_search_volume_live_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -10600,14 +12188,14 @@ class KeywordsDataApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'KeywordsDataTaskRequestInfo': '',
+            'KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10615,16 +12203,17 @@ class KeywordsDataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if keywords_data_task_request_info is not None:
-            _body_params = keywords_data_task_request_info
+        if keywords_data_google_ads_search_volume_live_request_info is not None:
+            _body_params = keywords_data_google_ads_search_volume_live_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -10878,7 +12467,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10891,11 +12480,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10924,7 +12514,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_task_post(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_search_volume_task_post_request_info: Optional[List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10942,8 +12532,8 @@ class KeywordsDataApi:
 
         ‌ Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/task_post/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_search_volume_task_post_request_info:
+        :type keywords_data_google_ads_search_volume_task_post_request_info: List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10967,7 +12557,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_search_volume_task_post_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_search_volume_task_post_request_info=keywords_data_google_ads_search_volume_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10991,7 +12581,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_task_post_with_http_info(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_search_volume_task_post_request_info: Optional[List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11009,8 +12599,8 @@ class KeywordsDataApi:
 
         ‌ Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/task_post/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_search_volume_task_post_request_info:
+        :type keywords_data_google_ads_search_volume_task_post_request_info: List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11034,7 +12624,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_search_volume_task_post_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_search_volume_task_post_request_info=keywords_data_google_ads_search_volume_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11058,7 +12648,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_task_post_without_preload_content(
         self,
-        keywords_data_task_request_info: Optional[List[KeywordsDataTaskRequestInfo]] = None,
+        keywords_data_google_ads_search_volume_task_post_request_info: Optional[List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11076,8 +12666,8 @@ class KeywordsDataApi:
 
         ‌ Note that Google Ads Keywords Data API is based on the latest version of the Google Ads API that has replaced legacy Google AdWords API. If you’re using DataForSEO Google AdWords API, you need to upgrade to DataForSEO Google Ads API. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/task_post/?bash'
 
-        :param keywords_data_task_request_info:
-        :type keywords_data_task_request_info: List[KeywordsDataTaskRequestInfo]
+        :param keywords_data_google_ads_search_volume_task_post_request_info:
+        :type keywords_data_google_ads_search_volume_task_post_request_info: List[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11101,7 +12691,7 @@ class KeywordsDataApi:
         """ # noqa: E501
 
         _param = self._google_ads_search_volume_task_post_serialize(
-            keywords_data_task_request_info=keywords_data_task_request_info,
+            keywords_data_google_ads_search_volume_task_post_request_info=keywords_data_google_ads_search_volume_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11120,7 +12710,7 @@ class KeywordsDataApi:
 
     def _google_ads_search_volume_task_post_serialize(
         self,
-        keywords_data_task_request_info,
+        keywords_data_google_ads_search_volume_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -11130,14 +12720,14 @@ class KeywordsDataApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'KeywordsDataTaskRequestInfo': '',
+            'KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11145,16 +12735,17 @@ class KeywordsDataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if keywords_data_task_request_info is not None:
-            _body_params = keywords_data_task_request_info
+        if keywords_data_google_ads_search_volume_task_post_request_info is not None:
+            _body_params = keywords_data_google_ads_search_volume_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -11395,7 +12986,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11406,11 +12997,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -11638,7 +13230,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11649,11 +13241,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -11881,7 +13474,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -11892,11 +13485,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -12138,7 +13732,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12151,11 +13745,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -12409,7 +14004,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12422,11 +14017,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -12668,7 +14264,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12681,11 +14277,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -12926,7 +14523,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -12937,11 +14534,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13169,7 +14767,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13180,11 +14778,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13412,7 +15011,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13423,11 +15022,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13655,7 +15255,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13666,11 +15266,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -13898,7 +15499,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -13909,11 +15510,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -14141,7 +15743,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14152,11 +15754,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -14384,7 +15987,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14395,11 +15998,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -14640,7 +16244,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14653,11 +16257,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -14702,7 +16307,7 @@ class KeywordsDataApi:
     ) -> KeywordsDataErrorsResponseInfo:
         """keywords_data_errors
 
-        By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
+        By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
 
         :param keywords_data_errors_request_info:
         :type keywords_data_errors_request_info: List[KeywordsDataErrorsRequestInfo]
@@ -14769,7 +16374,7 @@ class KeywordsDataApi:
     ) -> ApiResponse[KeywordsDataErrorsResponseInfo]:
         """keywords_data_errors
 
-        By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
+        By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
 
         :param keywords_data_errors_request_info:
         :type keywords_data_errors_request_info: List[KeywordsDataErrorsRequestInfo]
@@ -14836,7 +16441,7 @@ class KeywordsDataApi:
     ) -> RESTResponseType:
         """keywords_data_errors
 
-        By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
+        By calling this endpoint you will receive information about the Keywords Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/keywords_data/errors/?bash'
 
         :param keywords_data_errors_request_info:
         :type keywords_data_errors_request_info: List[KeywordsDataErrorsRequestInfo]
@@ -14899,7 +16504,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -14912,11 +16517,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -15157,7 +16763,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15168,11 +16774,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -15400,7 +17007,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15411,11 +17018,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -15656,7 +17264,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15669,11 +17277,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -15901,7 +17510,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -15912,11 +17521,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -16144,7 +17754,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -16155,11 +17765,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -16400,7 +18011,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -16413,11 +18024,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -16659,7 +18271,7 @@ class KeywordsDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -16672,11 +18284,12 @@ class KeywordsDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:

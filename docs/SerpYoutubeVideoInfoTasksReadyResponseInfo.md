@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpYoutubeVideoInfoTasksReadyResponseInfo from a JSON string
 serp_youtube_video_info_tasks_ready_response_info_instance = SerpYoutubeVideoInfoTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpYoutubeVideoInfoTasksReadyResponseInfo.to_json()
+print(SerpYoutubeVideoInfoTasksReadyResponseInfo.to_json())
 
 # convert the object into a dict
 serp_youtube_video_info_tasks_ready_response_info_dict = serp_youtube_video_info_tasks_ready_response_info_instance.to_dict()
 # create an instance of SerpYoutubeVideoInfoTasksReadyResponseInfo from a dict
-serp_youtube_video_info_tasks_ready_response_info_form_dict = serp_youtube_video_info_tasks_ready_response_info.from_dict(serp_youtube_video_info_tasks_ready_response_info_dict)
+serp_youtube_video_info_tasks_ready_response_info_from_dict = SerpYoutubeVideoInfoTasksReadyResponseInfo.from_dict(serp_youtube_video_info_tasks_ready_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

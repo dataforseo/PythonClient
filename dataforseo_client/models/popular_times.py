@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.busy_working_time_info import BusyWorkingTimeInfo
 from typing import Optional, Set
@@ -30,11 +30,11 @@ class PopularTimes(BaseModel):
     popular_times_by_days: Optional[Dict[str, Optional[List[BusyWorkingTimeInfo]]]] = Field(default=None, description="popular hours information about busy hours of the local establishment on each day of the week")
     __properties: ClassVar[List[str]] = ["popular_times_by_days"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -72,10 +72,10 @@ class PopularTimes(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in popular_times_by_days (dict of array)
         _field_dict_of_array = {}
         if self.popular_times_by_days:
-            for _key in self.popular_times_by_days:
-                if self.popular_times_by_days[_key] is not None:
-                    _field_dict_of_array[_key] = [
-                        _item.to_dict() for _item in self.popular_times_by_days[_key]
+            for _key_popular_times_by_days in self.popular_times_by_days:
+                if self.popular_times_by_days[_key_popular_times_by_days] is not None:
+                    _field_dict_of_array[_key_popular_times_by_days] = [
+                        _item.to_dict() for _item in self.popular_times_by_days[_key_popular_times_by_days]
                     ]
             _dict['popular_times_by_days'] = _field_dict_of_array
         # set to None if popular_times_by_days (nullable) is None

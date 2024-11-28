@@ -27,12 +27,12 @@ json = "{}"
 # create an instance of GoogleShoppingSponsoredCarouselElement from a JSON string
 google_shopping_sponsored_carousel_element_instance = GoogleShoppingSponsoredCarouselElement.from_json(json)
 # print the JSON string representation of the object
-print GoogleShoppingSponsoredCarouselElement.to_json()
+print(GoogleShoppingSponsoredCarouselElement.to_json())
 
 # convert the object into a dict
 google_shopping_sponsored_carousel_element_dict = google_shopping_sponsored_carousel_element_instance.to_dict()
 # create an instance of GoogleShoppingSponsoredCarouselElement from a dict
-google_shopping_sponsored_carousel_element_form_dict = google_shopping_sponsored_carousel_element.from_dict(google_shopping_sponsored_carousel_element_dict)
+google_shopping_sponsored_carousel_element_from_dict = GoogleShoppingSponsoredCarouselElement.from_dict(google_shopping_sponsored_carousel_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of OnPageAvailableFiltersResponseInfo from a JSON string
 on_page_available_filters_response_info_instance = OnPageAvailableFiltersResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageAvailableFiltersResponseInfo.to_json()
+print(OnPageAvailableFiltersResponseInfo.to_json())
 
 # convert the object into a dict
 on_page_available_filters_response_info_dict = on_page_available_filters_response_info_instance.to_dict()
 # create an instance of OnPageAvailableFiltersResponseInfo from a dict
-on_page_available_filters_response_info_form_dict = on_page_available_filters_response_info.from_dict(on_page_available_filters_response_info_dict)
+on_page_available_filters_response_info_from_dict = OnPageAvailableFiltersResponseInfo.from_dict(on_page_available_filters_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -35,6 +35,7 @@ from dataforseo_client.models.app_data_apple_app_reviews_task_post_request_info 
 from dataforseo_client.models.app_data_apple_app_reviews_task_post_response_info import AppDataAppleAppReviewsTaskPostResponseInfo
 from dataforseo_client.models.app_data_apple_app_reviews_tasks_ready_response_info import AppDataAppleAppReviewsTasksReadyResponseInfo
 from dataforseo_client.models.app_data_apple_app_searches_task_get_advanced_response_info import AppDataAppleAppSearchesTaskGetAdvancedResponseInfo
+from dataforseo_client.models.app_data_apple_app_searches_task_post_request_info import AppDataAppleAppSearchesTaskPostRequestInfo
 from dataforseo_client.models.app_data_apple_app_searches_task_post_response_info import AppDataAppleAppSearchesTaskPostResponseInfo
 from dataforseo_client.models.app_data_apple_app_searches_tasks_ready_response_info import AppDataAppleAppSearchesTasksReadyResponseInfo
 from dataforseo_client.models.app_data_apple_categories_response_info import AppDataAppleCategoriesResponseInfo
@@ -62,6 +63,7 @@ from dataforseo_client.models.app_data_google_app_reviews_task_post_response_inf
 from dataforseo_client.models.app_data_google_app_reviews_tasks_ready_response_info import AppDataGoogleAppReviewsTasksReadyResponseInfo
 from dataforseo_client.models.app_data_google_app_searches_task_get_advanced_response_info import AppDataGoogleAppSearchesTaskGetAdvancedResponseInfo
 from dataforseo_client.models.app_data_google_app_searches_task_get_html_response_info import AppDataGoogleAppSearchesTaskGetHtmlResponseInfo
+from dataforseo_client.models.app_data_google_app_searches_task_post_request_info import AppDataGoogleAppSearchesTaskPostRequestInfo
 from dataforseo_client.models.app_data_google_app_searches_task_post_response_info import AppDataGoogleAppSearchesTaskPostResponseInfo
 from dataforseo_client.models.app_data_google_app_searches_tasks_ready_response_info import AppDataGoogleAppSearchesTasksReadyResponseInfo
 from dataforseo_client.models.app_data_google_categories_response_info import AppDataGoogleCategoriesResponseInfo
@@ -70,7 +72,6 @@ from dataforseo_client.models.app_data_google_locations_country_response_info im
 from dataforseo_client.models.app_data_google_locations_response_info import AppDataGoogleLocationsResponseInfo
 from dataforseo_client.models.app_data_id_list_request_info import AppDataIdListRequestInfo
 from dataforseo_client.models.app_data_id_list_response_info import AppDataIdListResponseInfo
-from dataforseo_client.models.app_data_task_request_info import AppDataTaskRequestInfo
 from dataforseo_client.models.app_data_tasks_ready_response_info import AppDataTasksReadyResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
@@ -293,7 +294,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -304,11 +305,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -536,7 +538,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -547,11 +549,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -596,7 +599,7 @@ class AppDataApi:
     ) -> AppDataErrorsResponseInfo:
         """app_data_errors
 
-        By calling this endpoint you will receive information about the App Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/app_data/errors/?bash'
+        By calling this endpoint you will receive information about the App Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/app_data/errors/?bash'
 
         :param app_data_errors_request_info:
         :type app_data_errors_request_info: List[AppDataErrorsRequestInfo]
@@ -663,7 +666,7 @@ class AppDataApi:
     ) -> ApiResponse[AppDataErrorsResponseInfo]:
         """app_data_errors
 
-        By calling this endpoint you will receive information about the App Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/app_data/errors/?bash'
+        By calling this endpoint you will receive information about the App Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/app_data/errors/?bash'
 
         :param app_data_errors_request_info:
         :type app_data_errors_request_info: List[AppDataErrorsRequestInfo]
@@ -730,7 +733,7 @@ class AppDataApi:
     ) -> RESTResponseType:
         """app_data_errors
 
-        By calling this endpoint you will receive information about the App Data API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/app_data/errors/?bash'
+        By calling this endpoint you will receive information about the App Data API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/app_data/errors/?bash'
 
         :param app_data_errors_request_info:
         :type app_data_errors_request_info: List[AppDataErrorsRequestInfo]
@@ -793,7 +796,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -806,11 +809,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -1051,7 +1055,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1062,11 +1066,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1294,7 +1299,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1305,11 +1310,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1550,7 +1556,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1563,11 +1569,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1809,7 +1816,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1822,11 +1829,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2067,7 +2075,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2078,11 +2086,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -2323,7 +2332,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2336,11 +2345,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -2582,7 +2592,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2595,11 +2605,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2840,7 +2851,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2851,11 +2862,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3096,7 +3108,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3109,11 +3121,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3355,7 +3368,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3368,11 +3381,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -3613,7 +3627,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3624,11 +3638,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3856,7 +3871,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3867,11 +3882,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -4113,7 +4129,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4126,11 +4142,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4384,7 +4401,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4397,11 +4414,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -4643,7 +4661,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4656,11 +4674,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4901,7 +4920,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4912,11 +4931,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5157,7 +5177,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5170,11 +5190,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5203,7 +5224,7 @@ class AppDataApi:
     @validate_call
     def apple_app_searches_task_post(
         self,
-        app_data_task_request_info: Optional[List[AppDataTaskRequestInfo]] = None,
+        app_data_apple_app_searches_task_post_request_info: Optional[List[AppDataAppleAppSearchesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5221,8 +5242,8 @@ class AppDataApi:
 
         ‌‌ This endpoint will provide you with a list of apps ranking on the App Store for the specified keyword. The returned results are specific to the indicated keyword, as well as the location and language parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_searches/task_post/?bash'
 
-        :param app_data_task_request_info:
-        :type app_data_task_request_info: List[AppDataTaskRequestInfo]
+        :param app_data_apple_app_searches_task_post_request_info:
+        :type app_data_apple_app_searches_task_post_request_info: List[AppDataAppleAppSearchesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5246,7 +5267,7 @@ class AppDataApi:
         """ # noqa: E501
 
         _param = self._apple_app_searches_task_post_serialize(
-            app_data_task_request_info=app_data_task_request_info,
+            app_data_apple_app_searches_task_post_request_info=app_data_apple_app_searches_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5270,7 +5291,7 @@ class AppDataApi:
     @validate_call
     def apple_app_searches_task_post_with_http_info(
         self,
-        app_data_task_request_info: Optional[List[AppDataTaskRequestInfo]] = None,
+        app_data_apple_app_searches_task_post_request_info: Optional[List[AppDataAppleAppSearchesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5288,8 +5309,8 @@ class AppDataApi:
 
         ‌‌ This endpoint will provide you with a list of apps ranking on the App Store for the specified keyword. The returned results are specific to the indicated keyword, as well as the location and language parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_searches/task_post/?bash'
 
-        :param app_data_task_request_info:
-        :type app_data_task_request_info: List[AppDataTaskRequestInfo]
+        :param app_data_apple_app_searches_task_post_request_info:
+        :type app_data_apple_app_searches_task_post_request_info: List[AppDataAppleAppSearchesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5313,7 +5334,7 @@ class AppDataApi:
         """ # noqa: E501
 
         _param = self._apple_app_searches_task_post_serialize(
-            app_data_task_request_info=app_data_task_request_info,
+            app_data_apple_app_searches_task_post_request_info=app_data_apple_app_searches_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5337,7 +5358,7 @@ class AppDataApi:
     @validate_call
     def apple_app_searches_task_post_without_preload_content(
         self,
-        app_data_task_request_info: Optional[List[AppDataTaskRequestInfo]] = None,
+        app_data_apple_app_searches_task_post_request_info: Optional[List[AppDataAppleAppSearchesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5355,8 +5376,8 @@ class AppDataApi:
 
         ‌‌ This endpoint will provide you with a list of apps ranking on the App Store for the specified keyword. The returned results are specific to the indicated keyword, as well as the location and language parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/apple/app_searches/task_post/?bash'
 
-        :param app_data_task_request_info:
-        :type app_data_task_request_info: List[AppDataTaskRequestInfo]
+        :param app_data_apple_app_searches_task_post_request_info:
+        :type app_data_apple_app_searches_task_post_request_info: List[AppDataAppleAppSearchesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5380,7 +5401,7 @@ class AppDataApi:
         """ # noqa: E501
 
         _param = self._apple_app_searches_task_post_serialize(
-            app_data_task_request_info=app_data_task_request_info,
+            app_data_apple_app_searches_task_post_request_info=app_data_apple_app_searches_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5399,7 +5420,7 @@ class AppDataApi:
 
     def _apple_app_searches_task_post_serialize(
         self,
-        app_data_task_request_info,
+        app_data_apple_app_searches_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -5409,14 +5430,14 @@ class AppDataApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'AppDataTaskRequestInfo': '',
+            'AppDataAppleAppSearchesTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5424,16 +5445,17 @@ class AppDataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if app_data_task_request_info is not None:
-            _body_params = app_data_task_request_info
+        if app_data_apple_app_searches_task_post_request_info is not None:
+            _body_params = app_data_apple_app_searches_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -5674,7 +5696,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5685,11 +5707,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5917,7 +5940,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5928,11 +5951,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -6173,7 +6197,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6186,11 +6210,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -6431,7 +6456,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6444,11 +6469,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -6690,7 +6716,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6703,11 +6729,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -6948,7 +6975,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -6959,11 +6986,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -7204,7 +7232,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7217,11 +7245,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -7462,7 +7491,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7475,11 +7504,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -7721,7 +7751,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7734,11 +7764,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -7979,7 +8010,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -7990,11 +8021,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -8222,7 +8254,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8233,11 +8265,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -8479,7 +8512,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8492,11 +8525,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -8750,7 +8784,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -8763,11 +8797,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -9008,7 +9043,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9021,11 +9056,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -9267,7 +9303,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9280,11 +9316,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -9525,7 +9562,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9536,11 +9573,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -9781,7 +9819,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -9794,11 +9832,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10039,7 +10078,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10052,11 +10091,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10085,7 +10125,7 @@ class AppDataApi:
     @validate_call
     def google_app_searches_task_post(
         self,
-        app_data_task_request_info: Optional[List[AppDataTaskRequestInfo]] = None,
+        app_data_google_app_searches_task_post_request_info: Optional[List[AppDataGoogleAppSearchesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10103,8 +10143,8 @@ class AppDataApi:
 
         ‌‌ This endpoint will provide you with a list of apps ranking on Google Play for the specified keyword. The returned results are specific to the indicated keyword, as well as the language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_searches/task_post/?bash'
 
-        :param app_data_task_request_info:
-        :type app_data_task_request_info: List[AppDataTaskRequestInfo]
+        :param app_data_google_app_searches_task_post_request_info:
+        :type app_data_google_app_searches_task_post_request_info: List[AppDataGoogleAppSearchesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10128,7 +10168,7 @@ class AppDataApi:
         """ # noqa: E501
 
         _param = self._google_app_searches_task_post_serialize(
-            app_data_task_request_info=app_data_task_request_info,
+            app_data_google_app_searches_task_post_request_info=app_data_google_app_searches_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10152,7 +10192,7 @@ class AppDataApi:
     @validate_call
     def google_app_searches_task_post_with_http_info(
         self,
-        app_data_task_request_info: Optional[List[AppDataTaskRequestInfo]] = None,
+        app_data_google_app_searches_task_post_request_info: Optional[List[AppDataGoogleAppSearchesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10170,8 +10210,8 @@ class AppDataApi:
 
         ‌‌ This endpoint will provide you with a list of apps ranking on Google Play for the specified keyword. The returned results are specific to the indicated keyword, as well as the language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_searches/task_post/?bash'
 
-        :param app_data_task_request_info:
-        :type app_data_task_request_info: List[AppDataTaskRequestInfo]
+        :param app_data_google_app_searches_task_post_request_info:
+        :type app_data_google_app_searches_task_post_request_info: List[AppDataGoogleAppSearchesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10195,7 +10235,7 @@ class AppDataApi:
         """ # noqa: E501
 
         _param = self._google_app_searches_task_post_serialize(
-            app_data_task_request_info=app_data_task_request_info,
+            app_data_google_app_searches_task_post_request_info=app_data_google_app_searches_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10219,7 +10259,7 @@ class AppDataApi:
     @validate_call
     def google_app_searches_task_post_without_preload_content(
         self,
-        app_data_task_request_info: Optional[List[AppDataTaskRequestInfo]] = None,
+        app_data_google_app_searches_task_post_request_info: Optional[List[AppDataGoogleAppSearchesTaskPostRequestInfo]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10237,8 +10277,8 @@ class AppDataApi:
 
         ‌‌ This endpoint will provide you with a list of apps ranking on Google Play for the specified keyword. The returned results are specific to the indicated keyword, as well as the language and location parameters. for more info please visit 'https://docs.dataforseo.com/v3/app_data/google/app_searches/task_post/?bash'
 
-        :param app_data_task_request_info:
-        :type app_data_task_request_info: List[AppDataTaskRequestInfo]
+        :param app_data_google_app_searches_task_post_request_info:
+        :type app_data_google_app_searches_task_post_request_info: List[AppDataGoogleAppSearchesTaskPostRequestInfo]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10262,7 +10302,7 @@ class AppDataApi:
         """ # noqa: E501
 
         _param = self._google_app_searches_task_post_serialize(
-            app_data_task_request_info=app_data_task_request_info,
+            app_data_google_app_searches_task_post_request_info=app_data_google_app_searches_task_post_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10281,7 +10321,7 @@ class AppDataApi:
 
     def _google_app_searches_task_post_serialize(
         self,
-        app_data_task_request_info,
+        app_data_google_app_searches_task_post_request_info,
         _request_auth,
         _content_type,
         _headers,
@@ -10291,14 +10331,14 @@ class AppDataApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'AppDataTaskRequestInfo': '',
+            'AppDataGoogleAppSearchesTaskPostRequestInfo': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10306,16 +10346,17 @@ class AppDataApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if app_data_task_request_info is not None:
-            _body_params = app_data_task_request_info
+        if app_data_google_app_searches_task_post_request_info is not None:
+            _body_params = app_data_google_app_searches_task_post_request_info
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -10556,7 +10597,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10567,11 +10608,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -10799,7 +10841,7 @@ class AppDataApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[str, Union[str, bytes]] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -10810,11 +10852,12 @@ class AppDataApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting

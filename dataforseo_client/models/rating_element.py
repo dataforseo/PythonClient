@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,19 +26,19 @@ class RatingElement(BaseModel):
     """
     RatingElement
     """ # noqa: E501
+    rating_type: Optional[StrictStr] = Field(default=None, description="the type of rating here you can find the following elements: Max5, Percents, CustomMax")
+    value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the value of the rating")
+    votes_count: Optional[StrictInt] = Field(default=None, description="the amount of feedbac")
+    rating_max: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the maximum value for a rating_type")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Google Shopping SERP possible values: left, right")
-    rating_type: Optional[StrictStr] = Field(default=None, description="the type of rating here you can find the following elements: Max5, Percents, CustomMax")
-    value: Optional[StrictStr] = Field(default=None, description="value of the rating")
-    votes_count: Optional[StrictInt] = Field(default=None, description="the amount of feedback")
-    rating_max: Optional[StrictInt] = Field(default=None, description="the maximum value for a rating_type")
-    __properties: ClassVar[List[str]] = ["type", "position", "rating_type", "value", "votes_count", "rating_max"]
+    __properties: ClassVar[List[str]] = ["rating_type", "value", "votes_count", "rating_max", "type", "position"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -73,16 +73,6 @@ class RatingElement(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if type (nullable) is None
-        # and model_fields_set contains the field
-        if self.type is None and "type" in self.model_fields_set:
-            _dict['type'] = None
-
-        # set to None if position (nullable) is None
-        # and model_fields_set contains the field
-        if self.position is None and "position" in self.model_fields_set:
-            _dict['position'] = None
-
         # set to None if rating_type (nullable) is None
         # and model_fields_set contains the field
         if self.rating_type is None and "rating_type" in self.model_fields_set:
@@ -103,6 +93,16 @@ class RatingElement(BaseModel):
         if self.rating_max is None and "rating_max" in self.model_fields_set:
             _dict['rating_max'] = None
 
+        # set to None if type (nullable) is None
+        # and model_fields_set contains the field
+        if self.type is None and "type" in self.model_fields_set:
+            _dict['type'] = None
+
+        # set to None if position (nullable) is None
+        # and model_fields_set contains the field
+        if self.position is None and "position" in self.model_fields_set:
+            _dict['position'] = None
+
         return _dict
 
     @classmethod
@@ -115,12 +115,12 @@ class RatingElement(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "position": obj.get("position"),
             "rating_type": obj.get("rating_type"),
             "value": obj.get("value"),
             "votes_count": obj.get("votes_count"),
-            "rating_max": obj.get("rating_max")
+            "rating_max": obj.get("rating_max"),
+            "type": obj.get("type"),
+            "position": obj.get("position")
         })
         return _obj
 

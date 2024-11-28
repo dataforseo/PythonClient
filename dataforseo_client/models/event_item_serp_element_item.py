@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.event_dates import EventDates
@@ -30,20 +30,20 @@ class EventItemSerpElementItem(BaseSerpElementItem):
     """
     EventItemSerpElementItem
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
+    url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image featured in the element")
     event_dates: Optional[EventDates] = None
     location_info: Optional[LocationInfo] = None
-    information_and_tickets: Optional[List[InformationAndTicketsElement]] = Field(default=None, description="additional information and ticket purchase options if there is none, equals null")
+    information_and_tickets: Optional[List[InformationAndTicketsElement]] = Field(default=None, description="additional information and ticket purchase options")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "url", "image_url", "event_dates", "location_info", "information_and_tickets"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -87,9 +87,9 @@ class EventItemSerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in information_and_tickets (list)
         _items = []
         if self.information_and_tickets:
-            for _item in self.information_and_tickets:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_information_and_tickets in self.information_and_tickets:
+                if _item_information_and_tickets:
+                    _items.append(_item_information_and_tickets.to_dict())
             _dict['information_and_tickets'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

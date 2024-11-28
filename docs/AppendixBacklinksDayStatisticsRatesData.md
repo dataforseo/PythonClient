@@ -25,13 +25,13 @@ Name | Type | Description | Notes
 **timeseries_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **timeseries_new_lost_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **competitors** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**bulk_pages_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **bulk_spam_score** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**historical_new_lost_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**id_list** | **float** |  | [optional] 
-**index** | **float** |  | [optional] 
-**available_filters** | **float** |  | [optional] 
+**bulk_pages_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **pages_summary_with_page_info** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**historical_new_lost_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**index** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
+**available_filters** | **float** |  | [optional] 
 
 ## Example
 
@@ -43,12 +43,12 @@ json = "{}"
 # create an instance of AppendixBacklinksDayStatisticsRatesData from a JSON string
 appendix_backlinks_day_statistics_rates_data_instance = AppendixBacklinksDayStatisticsRatesData.from_json(json)
 # print the JSON string representation of the object
-print AppendixBacklinksDayStatisticsRatesData.to_json()
+print(AppendixBacklinksDayStatisticsRatesData.to_json())
 
 # convert the object into a dict
 appendix_backlinks_day_statistics_rates_data_dict = appendix_backlinks_day_statistics_rates_data_instance.to_dict()
 # create an instance of AppendixBacklinksDayStatisticsRatesData from a dict
-appendix_backlinks_day_statistics_rates_data_form_dict = appendix_backlinks_day_statistics_rates_data.from_dict(appendix_backlinks_day_statistics_rates_data_dict)
+appendix_backlinks_day_statistics_rates_data_from_dict = AppendixBacklinksDayStatisticsRatesData.from_dict(appendix_backlinks_day_statistics_rates_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

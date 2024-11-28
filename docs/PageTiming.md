@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of PageTiming from a JSON string
 page_timing_instance = PageTiming.from_json(json)
 # print the JSON string representation of the object
-print PageTiming.to_json()
+print(PageTiming.to_json())
 
 # convert the object into a dict
 page_timing_dict = page_timing_instance.to_dict()
 # create an instance of PageTiming from a dict
-page_timing_form_dict = page_timing.from_dict(page_timing_dict)
+page_timing_from_dict = PageTiming.from_dict(page_timing_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

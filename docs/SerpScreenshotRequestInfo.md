@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of SerpScreenshotRequestInfo from a JSON string
 serp_screenshot_request_info_instance = SerpScreenshotRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpScreenshotRequestInfo.to_json()
+print(SerpScreenshotRequestInfo.to_json())
 
 # convert the object into a dict
 serp_screenshot_request_info_dict = serp_screenshot_request_info_instance.to_dict()
 # create an instance of SerpScreenshotRequestInfo from a dict
-serp_screenshot_request_info_form_dict = serp_screenshot_request_info.from_dict(serp_screenshot_request_info_dict)
+serp_screenshot_request_info_from_dict = SerpScreenshotRequestInfo.from_dict(serp_screenshot_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keywords** | **List[str]** | keywords optional field if keywords are not specified, the results will not contain keyword-related data; The maximum number of keywords you can specify: 5 Note: comma symbols (,) in the specified keywords will be unset and ignored learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keywords** | **List[str]** | keywords optional field if keywords are not specified, the results will not contain keyword-related data; The maximum number of keywords you can specify: 5 Note: the comma characters (,) in the specified keywords will be unset and ignored learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **location_name** | **str** | full name of search engine location optional field if you don’t use this field, you will recieve global results if you use this field, you don’t need to specify location_code you can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_trends/locations example: United Kingdom | [optional] 
 **location_code** | **int** | search engine location code optional field if you don’t use this field, you will recieve global results if you use this field, you don’t need to specify location_name you can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_trends/locations example: 2840 | [optional] 
 **language_name** | **str** | full name of search engine language optional field default value: English if you use this field, you don’t need to specify language_code you can receive the list of available languages of the search engine with their language_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_trends/languages example: English | [optional] 
@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of KeywordsDataGoogleTrendsExploreLiveRequestInfo from a JSON string
 keywords_data_google_trends_explore_live_request_info_instance = KeywordsDataGoogleTrendsExploreLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataGoogleTrendsExploreLiveRequestInfo.to_json()
+print(KeywordsDataGoogleTrendsExploreLiveRequestInfo.to_json())
 
 # convert the object into a dict
 keywords_data_google_trends_explore_live_request_info_dict = keywords_data_google_trends_explore_live_request_info_instance.to_dict()
 # create an instance of KeywordsDataGoogleTrendsExploreLiveRequestInfo from a dict
-keywords_data_google_trends_explore_live_request_info_form_dict = keywords_data_google_trends_explore_live_request_info.from_dict(keywords_data_google_trends_explore_live_request_info_dict)
+keywords_data_google_trends_explore_live_request_info_from_dict = KeywordsDataGoogleTrendsExploreLiveRequestInfo.from_dict(keywords_data_google_trends_explore_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

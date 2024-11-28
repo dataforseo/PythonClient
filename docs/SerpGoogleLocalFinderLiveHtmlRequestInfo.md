@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword required field you can specify up to 700 symbols in the keyword field all %## will be decoded (plus symbol ‘+’ will be decoded to a space character) if you need to use the “%” symbol for your keyword, please specify it as “%25”; if you need to use the “+” symbol for your keyword, please specify it as “%2B” | [optional] 
+**keyword** | **str** | keyword required field you can specify up to 700 characters in the keyword field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your keyword, please specify it as “%25”; if you need to use the “+” character for your keyword, please specify it as “%2B” | [optional] 
 **priority** | **int** | task priority optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the Pricing page. | [optional] 
 **location_name** | **str** | full name of search engine location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations example: London,England,United Kingdom | [optional] 
 **location_code** | **int** | search engine location code required field if you don’t specify location_name or location_coordinate if you use this field, you don’t need to specify location_name or location_coordinate you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations example: 2840 | [optional] 
@@ -29,12 +29,12 @@ json = "{}"
 # create an instance of SerpGoogleLocalFinderLiveHtmlRequestInfo from a JSON string
 serp_google_local_finder_live_html_request_info_instance = SerpGoogleLocalFinderLiveHtmlRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleLocalFinderLiveHtmlRequestInfo.to_json()
+print(SerpGoogleLocalFinderLiveHtmlRequestInfo.to_json())
 
 # convert the object into a dict
 serp_google_local_finder_live_html_request_info_dict = serp_google_local_finder_live_html_request_info_instance.to_dict()
 # create an instance of SerpGoogleLocalFinderLiveHtmlRequestInfo from a dict
-serp_google_local_finder_live_html_request_info_form_dict = serp_google_local_finder_live_html_request_info.from_dict(serp_google_local_finder_live_html_request_info_dict)
+serp_google_local_finder_live_html_request_info_from_dict = SerpGoogleLocalFinderLiveHtmlRequestInfo.from_dict(serp_google_local_finder_live_html_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

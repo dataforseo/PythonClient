@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpGoogleSearchByImageTaskPostTaskInfo from a JSON string
 serp_google_search_by_image_task_post_task_info_instance = SerpGoogleSearchByImageTaskPostTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleSearchByImageTaskPostTaskInfo.to_json()
+print(SerpGoogleSearchByImageTaskPostTaskInfo.to_json())
 
 # convert the object into a dict
 serp_google_search_by_image_task_post_task_info_dict = serp_google_search_by_image_task_post_task_info_instance.to_dict()
 # create an instance of SerpGoogleSearchByImageTaskPostTaskInfo from a dict
-serp_google_search_by_image_task_post_task_info_form_dict = serp_google_search_by_image_task_post_task_info.from_dict(serp_google_search_by_image_task_post_task_info_dict)
+serp_google_search_by_image_task_post_task_info_from_dict = SerpGoogleSearchByImageTaskPostTaskInfo.from_dict(serp_google_search_by_image_task_post_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

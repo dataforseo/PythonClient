@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of QAnswerBoxSerpElementItem from a JSON string
 q_answer_box_serp_element_item_instance = QAnswerBoxSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print QAnswerBoxSerpElementItem.to_json()
+print(QAnswerBoxSerpElementItem.to_json())
 
 # convert the object into a dict
 q_answer_box_serp_element_item_dict = q_answer_box_serp_element_item_instance.to_dict()
 # create an instance of QAnswerBoxSerpElementItem from a dict
-q_answer_box_serp_element_item_form_dict = q_answer_box_serp_element_item.from_dict(q_answer_box_serp_element_item_dict)
+q_answer_box_serp_element_item_from_dict = QAnswerBoxSerpElementItem.from_dict(q_answer_box_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of DataforseoLabsAppleBulkAppMetricsLiveRequestInfo from a JSON string
 dataforseo_labs_apple_bulk_app_metrics_live_request_info_instance = DataforseoLabsAppleBulkAppMetricsLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsAppleBulkAppMetricsLiveRequestInfo.to_json()
+print(DataforseoLabsAppleBulkAppMetricsLiveRequestInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_apple_bulk_app_metrics_live_request_info_dict = dataforseo_labs_apple_bulk_app_metrics_live_request_info_instance.to_dict()
 # create an instance of DataforseoLabsAppleBulkAppMetricsLiveRequestInfo from a dict
-dataforseo_labs_apple_bulk_app_metrics_live_request_info_form_dict = dataforseo_labs_apple_bulk_app_metrics_live_request_info.from_dict(dataforseo_labs_apple_bulk_app_metrics_live_request_info_dict)
+dataforseo_labs_apple_bulk_app_metrics_live_request_info_from_dict = DataforseoLabsAppleBulkAppMetricsLiveRequestInfo.from_dict(dataforseo_labs_apple_bulk_app_metrics_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

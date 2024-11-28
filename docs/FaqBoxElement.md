@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of FaqBoxElement from a JSON string
 faq_box_element_instance = FaqBoxElement.from_json(json)
 # print the JSON string representation of the object
-print FaqBoxElement.to_json()
+print(FaqBoxElement.to_json())
 
 # convert the object into a dict
 faq_box_element_dict = faq_box_element_instance.to_dict()
 # create an instance of FaqBoxElement from a dict
-faq_box_element_form_dict = faq_box_element.from_dict(faq_box_element_dict)
+faq_box_element_from_dict = FaqBoxElement.from_dict(faq_box_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

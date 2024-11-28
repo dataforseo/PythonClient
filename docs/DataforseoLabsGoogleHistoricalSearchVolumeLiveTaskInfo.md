@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo from a JSON string
 dataforseo_labs_google_historical_search_volume_live_task_info_instance = DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo.to_json()
+print(DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_google_historical_search_volume_live_task_info_dict = dataforseo_labs_google_historical_search_volume_live_task_info_instance.to_dict()
 # create an instance of DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo from a dict
-dataforseo_labs_google_historical_search_volume_live_task_info_form_dict = dataforseo_labs_google_historical_search_volume_live_task_info.from_dict(dataforseo_labs_google_historical_search_volume_live_task_info_dict)
+dataforseo_labs_google_historical_search_volume_live_task_info_from_dict = DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo.from_dict(dataforseo_labs_google_historical_search_volume_live_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

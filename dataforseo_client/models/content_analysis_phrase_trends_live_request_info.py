@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +26,7 @@ class ContentAnalysisPhraseTrendsLiveRequestInfo(BaseModel):
     """
     ContentAnalysisPhraseTrendsLiveRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="target keyword required field UTF-8 encoding a keyword should be at least 3 characters long; the keywords will be converted to a lowercase format; Note: to match an exact phrase instead of a stand-alone keyword, use double quotes and backslashes; example: \"keyword\": \"\\\"tesla palo alto\\\"\" learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keyword: Optional[StrictStr] = Field(default=None, description="target keyword required field UTF-8 encoding the keywords will be converted to a lowercase format; Note: to match an exact phrase instead of a stand-alone keyword, use double quotes and backslashes; example: \"keyword\": \"\\\"tesla palo alto\\\"\" learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     keyword_fields: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="target keyword fields and target keywords optional field use this parameter to filter the dataset by keywords that certain fields should contain; fields you can specify: title, main_title, previous_title, snippet you can indicate several fields; Note: to match an exact phrase instead of a stand-alone keyword, use double quotes and backslashes; example: \"keyword_fields\": {     \"snippet\": \"\\\"logitech mouse\\\"\",     \"main_title\": \"sale\" }")
     page_type: Optional[List[StrictStr]] = Field(default=None, description="target page types optional field use this parameter to filter the dataset by page types possible values: \"ecommerce\", \"news\", \"blogs\", \"message-boards\", \"organization\"")
     search_mode: Optional[StrictStr] = Field(default=None, description="results grouping type optional field possible grouping types: as_is – returns data on all citations for the target keyword one_per_domain – returns data on one citation of the keyword per domain default value: as_is")
@@ -38,11 +38,11 @@ class ContentAnalysisPhraseTrendsLiveRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["keyword", "keyword_fields", "page_type", "search_mode", "internal_list_limit", "date_from", "date_to", "date_group", "initial_dataset_filter", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

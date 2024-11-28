@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
@@ -39,11 +39,11 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem(BaseModel):
     metrics_difference: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="metrics difference between first_date and second_date calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date")
     __properties: ClassVar[List[str]] = ["se_type", "top_categories", "organic_etv", "organic_count", "organic_is_lost", "organic_is_new", "domain", "main_domain", "metrics_history", "metrics_difference"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -81,16 +81,16 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in metrics_history (dict)
         _field_dict = {}
         if self.metrics_history:
-            for _key in self.metrics_history:
-                if self.metrics_history[_key]:
-                    _field_dict[_key] = self.metrics_history[_key].to_dict()
+            for _key_metrics_history in self.metrics_history:
+                if self.metrics_history[_key_metrics_history]:
+                    _field_dict[_key_metrics_history] = self.metrics_history[_key_metrics_history].to_dict()
             _dict['metrics_history'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in metrics_difference (dict)
         _field_dict = {}
         if self.metrics_difference:
-            for _key in self.metrics_difference:
-                if self.metrics_difference[_key]:
-                    _field_dict[_key] = self.metrics_difference[_key].to_dict()
+            for _key_metrics_difference in self.metrics_difference:
+                if self.metrics_difference[_key_metrics_difference]:
+                    _field_dict[_key_metrics_difference] = self.metrics_difference[_key_metrics_difference].to_dict()
             _dict['metrics_difference'] = _field_dict
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field

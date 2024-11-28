@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,11 +38,11 @@ class DataforseoLabsSerpCompetitorsLiveItem(BaseModel):
     keywords_positions: Optional[Dict[str, Optional[List[Optional[StrictInt]]]]] = Field(default=None, description="keyword positions SERP positions the related domain holds in SERP for the specified keywords")
     __properties: ClassVar[List[str]] = ["se_type", "domain", "avg_position", "median_position", "rating", "etv", "keywords_count", "visibility", "relevant_serp_items", "keywords_positions"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

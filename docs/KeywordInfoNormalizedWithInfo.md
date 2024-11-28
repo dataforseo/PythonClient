@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of KeywordInfoNormalizedWithInfo from a JSON string
 keyword_info_normalized_with_info_instance = KeywordInfoNormalizedWithInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordInfoNormalizedWithInfo.to_json()
+print(KeywordInfoNormalizedWithInfo.to_json())
 
 # convert the object into a dict
 keyword_info_normalized_with_info_dict = keyword_info_normalized_with_info_instance.to_dict()
 # create an instance of KeywordInfoNormalizedWithInfo from a dict
-keyword_info_normalized_with_info_form_dict = keyword_info_normalized_with_info.from_dict(keyword_info_normalized_with_info_dict)
+keyword_info_normalized_with_info_from_dict = KeywordInfoNormalizedWithInfo.from_dict(keyword_info_normalized_with_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleAppCompetitorsLiveResultInfo from a JSON string
 dataforseo_labs_google_app_competitors_live_result_info_instance = DataforseoLabsGoogleAppCompetitorsLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsGoogleAppCompetitorsLiveResultInfo.to_json()
+print(DataforseoLabsGoogleAppCompetitorsLiveResultInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_google_app_competitors_live_result_info_dict = dataforseo_labs_google_app_competitors_live_result_info_instance.to_dict()
 # create an instance of DataforseoLabsGoogleAppCompetitorsLiveResultInfo from a dict
-dataforseo_labs_google_app_competitors_live_result_info_form_dict = dataforseo_labs_google_app_competitors_live_result_info.from_dict(dataforseo_labs_google_app_competitors_live_result_info_dict)
+dataforseo_labs_google_app_competitors_live_result_info_from_dict = DataforseoLabsGoogleAppCompetitorsLiveResultInfo.from_dict(dataforseo_labs_google_app_competitors_live_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

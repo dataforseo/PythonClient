@@ -33,12 +33,12 @@ json = "{}"
 # create an instance of BacklinksPageMeta from a JSON string
 backlinks_page_meta_instance = BacklinksPageMeta.from_json(json)
 # print the JSON string representation of the object
-print BacklinksPageMeta.to_json()
+print(BacklinksPageMeta.to_json())
 
 # convert the object into a dict
 backlinks_page_meta_dict = backlinks_page_meta_instance.to_dict()
 # create an instance of BacklinksPageMeta from a dict
-backlinks_page_meta_form_dict = backlinks_page_meta.from_dict(backlinks_page_meta_dict)
+backlinks_page_meta_from_dict = BacklinksPageMeta.from_dict(backlinks_page_meta_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

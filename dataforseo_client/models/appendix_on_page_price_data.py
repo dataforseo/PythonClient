@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_google_business_data_price_data_info import AppendixGoogleBusinessDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
@@ -50,11 +50,11 @@ class AppendixOnPagePriceData(BaseModel):
     waterfall: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["errors", "lighthouse", "content_parsing", "content_parsing_live", "duplicate_content", "duplicate_tags", "instant_pages", "keyword_density", "links", "non_indexable", "pages", "pages_by_resource", "page_screenshot", "raw_html", "redirect_chains", "resources", "summary", "task_post", "tasks_ready", "waterfall"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of GoogleFlightsElement from a JSON string
 google_flights_element_instance = GoogleFlightsElement.from_json(json)
 # print the JSON string representation of the object
-print GoogleFlightsElement.to_json()
+print(GoogleFlightsElement.to_json())
 
 # convert the object into a dict
 google_flights_element_dict = google_flights_element_instance.to_dict()
 # create an instance of GoogleFlightsElement from a dict
-google_flights_element_form_dict = google_flights_element.from_dict(google_flights_element_dict)
+google_flights_element_from_dict = GoogleFlightsElement.from_dict(google_flights_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

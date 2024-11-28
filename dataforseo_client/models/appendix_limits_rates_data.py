@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_data_info import AppendixDataInfo
 from dataforseo_client.models.appendix_day_limits_rates_data import AppendixDayLimitsRatesData
@@ -32,11 +32,11 @@ class AppendixLimitsRatesData(BaseModel):
     minute: Optional[AppendixDataInfo] = None
     __properties: ClassVar[List[str]] = ["day", "minute"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

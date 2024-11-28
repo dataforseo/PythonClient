@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_business_data_day_limits_rates_data_info import AppendixBusinessDataDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_business_data_google_info import AppendixBusinessDataGoogleInfo
@@ -43,11 +43,11 @@ class AppendixBusinessDataDayStatisticsMoneyData(BaseModel):
     refund_money: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["google", "locations", "languages", "errors", "yelp", "social_media", "tripadvisor", "trustpilot", "business_listings", "tasks_ready", "refund_money"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

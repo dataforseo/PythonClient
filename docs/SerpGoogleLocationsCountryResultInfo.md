@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of SerpGoogleLocationsCountryResultInfo from a JSON string
 serp_google_locations_country_result_info_instance = SerpGoogleLocationsCountryResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleLocationsCountryResultInfo.to_json()
+print(SerpGoogleLocationsCountryResultInfo.to_json())
 
 # convert the object into a dict
 serp_google_locations_country_result_info_dict = serp_google_locations_country_result_info_instance.to_dict()
 # create an instance of SerpGoogleLocationsCountryResultInfo from a dict
-serp_google_locations_country_result_info_form_dict = serp_google_locations_country_result_info.from_dict(serp_google_locations_country_result_info_dict)
+serp_google_locations_country_result_info_from_dict = SerpGoogleLocationsCountryResultInfo.from_dict(serp_google_locations_country_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

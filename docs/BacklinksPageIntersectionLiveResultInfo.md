@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of BacklinksPageIntersectionLiveResultInfo from a JSON string
 backlinks_page_intersection_live_result_info_instance = BacklinksPageIntersectionLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksPageIntersectionLiveResultInfo.to_json()
+print(BacklinksPageIntersectionLiveResultInfo.to_json())
 
 # convert the object into a dict
 backlinks_page_intersection_live_result_info_dict = backlinks_page_intersection_live_result_info_instance.to_dict()
 # create an instance of BacklinksPageIntersectionLiveResultInfo from a dict
-backlinks_page_intersection_live_result_info_form_dict = backlinks_page_intersection_live_result_info.from_dict(backlinks_page_intersection_live_result_info_dict)
+backlinks_page_intersection_live_result_info_from_dict = BacklinksPageIntersectionLiveResultInfo.from_dict(backlinks_page_intersection_live_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

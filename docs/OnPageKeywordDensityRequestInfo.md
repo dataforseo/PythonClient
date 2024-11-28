@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of OnPageKeywordDensityRequestInfo from a JSON string
 on_page_keyword_density_request_info_instance = OnPageKeywordDensityRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageKeywordDensityRequestInfo.to_json()
+print(OnPageKeywordDensityRequestInfo.to_json())
 
 # convert the object into a dict
 on_page_keyword_density_request_info_dict = on_page_keyword_density_request_info_instance.to_dict()
 # create an instance of OnPageKeywordDensityRequestInfo from a dict
-on_page_keyword_density_request_info_form_dict = on_page_keyword_density_request_info.from_dict(on_page_keyword_density_request_info_dict)
+on_page_keyword_density_request_info_from_dict = OnPageKeywordDensityRequestInfo.from_dict(on_page_keyword_density_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

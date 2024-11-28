@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of BusinessDataIdListTaskInfo from a JSON string
 business_data_id_list_task_info_instance = BusinessDataIdListTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataIdListTaskInfo.to_json()
+print(BusinessDataIdListTaskInfo.to_json())
 
 # convert the object into a dict
 business_data_id_list_task_info_dict = business_data_id_list_task_info_instance.to_dict()
 # create an instance of BusinessDataIdListTaskInfo from a dict
-business_data_id_list_task_info_form_dict = business_data_id_list_task_info.from_dict(business_data_id_list_task_info_dict)
+business_data_id_list_task_info_from_dict = BusinessDataIdListTaskInfo.from_dict(business_data_id_list_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

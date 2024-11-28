@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of HotelsPackElement from a JSON string
 hotels_pack_element_instance = HotelsPackElement.from_json(json)
 # print the JSON string representation of the object
-print HotelsPackElement.to_json()
+print(HotelsPackElement.to_json())
 
 # convert the object into a dict
 hotels_pack_element_dict = hotels_pack_element_instance.to_dict()
 # create an instance of HotelsPackElement from a dict
-hotels_pack_element_form_dict = hotels_pack_element.from_dict(hotels_pack_element_dict)
+hotels_pack_element_from_dict = HotelsPackElement.from_dict(hotels_pack_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

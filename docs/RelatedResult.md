@@ -37,12 +37,12 @@ json = "{}"
 # create an instance of RelatedResult from a JSON string
 related_result_instance = RelatedResult.from_json(json)
 # print the JSON string representation of the object
-print RelatedResult.to_json()
+print(RelatedResult.to_json())
 
 # convert the object into a dict
 related_result_dict = related_result_instance.to_dict()
 # create an instance of RelatedResult from a dict
-related_result_form_dict = related_result.from_dict(related_result_dict)
+related_result_from_dict = RelatedResult.from_dict(related_result_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

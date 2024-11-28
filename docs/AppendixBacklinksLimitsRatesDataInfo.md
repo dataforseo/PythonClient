@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **timeseries_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **timeseries_new_lost_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **competitors** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**bulk_spam_score** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **bulk_pages_summary** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
@@ -37,12 +38,12 @@ json = "{}"
 # create an instance of AppendixBacklinksLimitsRatesDataInfo from a JSON string
 appendix_backlinks_limits_rates_data_info_instance = AppendixBacklinksLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixBacklinksLimitsRatesDataInfo.to_json()
+print(AppendixBacklinksLimitsRatesDataInfo.to_json())
 
 # convert the object into a dict
 appendix_backlinks_limits_rates_data_info_dict = appendix_backlinks_limits_rates_data_info_instance.to_dict()
 # create an instance of AppendixBacklinksLimitsRatesDataInfo from a dict
-appendix_backlinks_limits_rates_data_info_form_dict = appendix_backlinks_limits_rates_data_info.from_dict(appendix_backlinks_limits_rates_data_info_dict)
+appendix_backlinks_limits_rates_data_info_from_dict = AppendixBacklinksLimitsRatesDataInfo.from_dict(appendix_backlinks_limits_rates_data_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

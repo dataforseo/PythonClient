@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of BusinessDataSocialMediaPinterestLiveResponseInfo from a JSON string
 business_data_social_media_pinterest_live_response_info_instance = BusinessDataSocialMediaPinterestLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataSocialMediaPinterestLiveResponseInfo.to_json()
+print(BusinessDataSocialMediaPinterestLiveResponseInfo.to_json())
 
 # convert the object into a dict
 business_data_social_media_pinterest_live_response_info_dict = business_data_social_media_pinterest_live_response_info_instance.to_dict()
 # create an instance of BusinessDataSocialMediaPinterestLiveResponseInfo from a dict
-business_data_social_media_pinterest_live_response_info_form_dict = business_data_social_media_pinterest_live_response_info.from_dict(business_data_social_media_pinterest_live_response_info_dict)
+business_data_social_media_pinterest_live_response_info_from_dict = BusinessDataSocialMediaPinterestLiveResponseInfo.from_dict(business_data_social_media_pinterest_live_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

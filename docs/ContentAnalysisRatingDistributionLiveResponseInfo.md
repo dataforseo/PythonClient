@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of ContentAnalysisRatingDistributionLiveResponseInfo from a JSON string
 content_analysis_rating_distribution_live_response_info_instance = ContentAnalysisRatingDistributionLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print ContentAnalysisRatingDistributionLiveResponseInfo.to_json()
+print(ContentAnalysisRatingDistributionLiveResponseInfo.to_json())
 
 # convert the object into a dict
 content_analysis_rating_distribution_live_response_info_dict = content_analysis_rating_distribution_live_response_info_instance.to_dict()
 # create an instance of ContentAnalysisRatingDistributionLiveResponseInfo from a dict
-content_analysis_rating_distribution_live_response_info_form_dict = content_analysis_rating_distribution_live_response_info.from_dict(content_analysis_rating_distribution_live_response_info_dict)
+content_analysis_rating_distribution_live_response_info_from_dict = ContentAnalysisRatingDistributionLiveResponseInfo.from_dict(content_analysis_rating_distribution_live_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

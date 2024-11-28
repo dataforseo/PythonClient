@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **get_shops_on_google** | **bool** | include “buy on Google” shops optional field if set to true, the response will contain the list of sellers that allow to purchase a given product directly on Google Note: if set to true, the cost of a task will be doubled | [optional] 
 **additional_specifications** | **Dict[str, Optional[str]]** | object containing additional url parameters you can get additional information about the product by using the \&quot;additional_specifications object, which you can get by making a separate request to the Google Shopping Products endpoint example: \&quot;additional_specifications\&quot;: { \&quot;eto\&quot;: \&quot;16157121050167572763_0\&quot; } | [optional] 
 **tag** | **str** | user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response | [optional] 
-**postback_url** | **str** | return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id&#x3D;$id http://your-server.com/postbackscript?id&#x3D;$id&amp;tag&#x3D;$tag Note: special symbols in postback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center | [optional] 
+**postback_url** | **str** | return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id&#x3D;$id http://your-server.com/postbackscript?id&#x3D;$id&amp;tag&#x3D;$tag Note: special characters in postback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center | [optional] 
 **postback_data** | **str** | postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: advanced, html | [optional] 
-**pingback_url** | **str** | notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id&#x3D;$id http://your-server.com/pingscript?id&#x3D;$id&amp;tag&#x3D;$tag Note: special symbols in pingback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center | [optional] 
+**pingback_url** | **str** | notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id&#x3D;$id http://your-server.com/pingscript?id&#x3D;$id&amp;tag&#x3D;$tag Note: special characters in pingback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center | [optional] 
 
 ## Example
 
@@ -30,12 +30,12 @@ json = "{}"
 # create an instance of MerchantGoogleSellersTaskPostRequestInfo from a JSON string
 merchant_google_sellers_task_post_request_info_instance = MerchantGoogleSellersTaskPostRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantGoogleSellersTaskPostRequestInfo.to_json()
+print(MerchantGoogleSellersTaskPostRequestInfo.to_json())
 
 # convert the object into a dict
 merchant_google_sellers_task_post_request_info_dict = merchant_google_sellers_task_post_request_info_instance.to_dict()
 # create an instance of MerchantGoogleSellersTaskPostRequestInfo from a dict
-merchant_google_sellers_task_post_request_info_form_dict = merchant_google_sellers_task_post_request_info.from_dict(merchant_google_sellers_task_post_request_info_dict)
+merchant_google_sellers_task_post_request_info_from_dict = MerchantGoogleSellersTaskPostRequestInfo.from_dict(merchant_google_sellers_task_post_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

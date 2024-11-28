@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,14 +27,14 @@ class AppendixWhoisDomainAnalyticsPriceData(BaseModel):
     """
     AppendixWhoisDomainAnalyticsPriceData
     """ # noqa: E501
-    overview: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    overview: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["overview"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -84,7 +84,7 @@ class AppendixWhoisDomainAnalyticsPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "overview": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["overview"]) if obj.get("overview") is not None else None
+            "overview": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["overview"]) if obj.get("overview") is not None else None
         })
         return _obj
 

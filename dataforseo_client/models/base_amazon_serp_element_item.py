@@ -17,10 +17,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.data_amazon_amazon_paid_serp_element_item import DataAmazonAmazonPaidSerpElementItem
+    from dataforseo_client.models.data_amazon_amazon_product_info_serp_element_item import DataAmazonAmazonProductInfoSerpElementItem
+    from dataforseo_client.models.data_amazon_amazon_review_item_serp_element_item import DataAmazonAmazonReviewItemSerpElementItem
+    from dataforseo_client.models.data_amazon_amazon_seller_item_serp_element_item import DataAmazonAmazonSellerItemSerpElementItem
+    from dataforseo_client.models.data_amazon_amazon_seller_main_item_serp_element_item import DataAmazonAmazonSellerMainItemSerpElementItem
+    from dataforseo_client.models.data_amazon_amazon_serp_serp_element_item import DataAmazonAmazonSerpSerpElementItem
+    from dataforseo_client.models.data_amazon_editorial_recommendations_serp_element_item import DataAmazonEditorialRecommendationsSerpElementItem
+    from dataforseo_client.models.data_amazon_related_searches_serp_element_item import DataAmazonRelatedSearchesSerpElementItem
+    from dataforseo_client.models.data_amazon_top_rated_from_our_brands_serp_element_item import DataAmazonTopRatedFromOurBrandsSerpElementItem
 
 class BaseAmazonSerpElementItem(BaseModel):
     """
@@ -32,11 +45,11 @@ class BaseAmazonSerpElementItem(BaseModel):
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -66,7 +79,7 @@ class BaseAmazonSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[DataAmazonAmazonPaidSerpElementItem, DataAmazonAmazonProductInfoSerpElementItem, DataAmazonAmazonReviewItemSerpElementItem, DataAmazonAmazonSellerItemSerpElementItem, DataAmazonAmazonSellerMainItemSerpElementItem, DataAmazonAmazonSerpSerpElementItem, DataAmazonEditorialRecommendationsSerpElementItem, DataAmazonRelatedSearchesSerpElementItem, DataAmazonTopRatedFromOurBrandsSerpElementItem]]:
         """Create an instance of BaseAmazonSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -111,27 +124,31 @@ class BaseAmazonSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self, Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[DataAmazonAmazonPaidSerpElementItem, DataAmazonAmazonProductInfoSerpElementItem, DataAmazonAmazonReviewItemSerpElementItem, DataAmazonAmazonSellerItemSerpElementItem, DataAmazonAmazonSellerMainItemSerpElementItem, DataAmazonAmazonSerpSerpElementItem, DataAmazonEditorialRecommendationsSerpElementItem, DataAmazonRelatedSearchesSerpElementItem, DataAmazonTopRatedFromOurBrandsSerpElementItem]]:
         """Create an instance of BaseAmazonSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseAmazonSerpElementItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'DataAmazonAmazonPaidSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_amazon_paid_serp_element_item").DataAmazonAmazonPaidSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonAmazonProductInfoSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_amazon_product_info_serp_element_item").DataAmazonAmazonProductInfoSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonAmazonReviewItemSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_amazon_review_item_serp_element_item").DataAmazonAmazonReviewItemSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonAmazonSellerItemSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_amazon_seller_item_serp_element_item").DataAmazonAmazonSellerItemSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonAmazonSellerMainItemSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_amazon_seller_main_item_serp_element_item").DataAmazonAmazonSellerMainItemSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonAmazonSerpSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_amazon_serp_serp_element_item").DataAmazonAmazonSerpSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonEditorialRecommendationsSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_editorial_recommendations_serp_element_item").DataAmazonEditorialRecommendationsSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonRelatedSearchesSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_related_searches_serp_element_item").DataAmazonRelatedSearchesSerpElementItem.from_dict(obj)
+        if object_type ==  'DataAmazonTopRatedFromOurBrandsSerpElementItem':
+            return import_module("dataforseo_client.models.data_amazon_top_rated_from_our_brands_serp_element_item").DataAmazonTopRatedFromOurBrandsSerpElementItem.from_dict(obj)
 
-from dataforseo_client.models.data_amazon_amazon_paid_serp_element_item import DataAmazonAmazonPaidSerpElementItem
-from dataforseo_client.models.data_amazon_amazon_product_info_serp_element_item import DataAmazonAmazonProductInfoSerpElementItem
-from dataforseo_client.models.data_amazon_amazon_review_item_serp_element_item import DataAmazonAmazonReviewItemSerpElementItem
-from dataforseo_client.models.data_amazon_amazon_seller_item_serp_element_item import DataAmazonAmazonSellerItemSerpElementItem
-from dataforseo_client.models.data_amazon_amazon_seller_main_item_serp_element_item import DataAmazonAmazonSellerMainItemSerpElementItem
-from dataforseo_client.models.data_amazon_amazon_serp_serp_element_item import DataAmazonAmazonSerpSerpElementItem
-from dataforseo_client.models.data_amazon_editorial_recommendations_serp_element_item import DataAmazonEditorialRecommendationsSerpElementItem
-from dataforseo_client.models.data_amazon_related_searches_serp_element_item import DataAmazonRelatedSearchesSerpElementItem
-from dataforseo_client.models.data_amazon_top_rated_from_our_brands_serp_element_item import DataAmazonTopRatedFromOurBrandsSerpElementItem
-# TODO: Rewrite to not use raise_errors
-BaseAmazonSerpElementItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseAmazonSerpElementItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of SerpSeznamLocationsCountryResultInfo from a JSON string
 serp_seznam_locations_country_result_info_instance = SerpSeznamLocationsCountryResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpSeznamLocationsCountryResultInfo.to_json()
+print(SerpSeznamLocationsCountryResultInfo.to_json())
 
 # convert the object into a dict
 serp_seznam_locations_country_result_info_dict = serp_seznam_locations_country_result_info_instance.to_dict()
 # create an instance of SerpSeznamLocationsCountryResultInfo from a dict
-serp_seznam_locations_country_result_info_form_dict = serp_seznam_locations_country_result_info.from_dict(serp_seznam_locations_country_result_info_dict)
+serp_seznam_locations_country_result_info_from_dict = SerpSeznamLocationsCountryResultInfo.from_dict(serp_seznam_locations_country_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo from a JSON string
 keywords_data_google_ads_search_volume_task_post_response_info_instance = KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo.to_json()
+print(KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo.to_json())
 
 # convert the object into a dict
 keywords_data_google_ads_search_volume_task_post_response_info_dict = keywords_data_google_ads_search_volume_task_post_response_info_instance.to_dict()
 # create an instance of KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo from a dict
-keywords_data_google_ads_search_volume_task_post_response_info_form_dict = keywords_data_google_ads_search_volume_task_post_response_info.from_dict(keywords_data_google_ads_search_volume_task_post_response_info_dict)
+keywords_data_google_ads_search_volume_task_post_response_info_from_dict = KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo.from_dict(keywords_data_google_ads_search_volume_task_post_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

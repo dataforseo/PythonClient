@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of FetchTiming from a JSON string
 fetch_timing_instance = FetchTiming.from_json(json)
 # print the JSON string representation of the object
-print FetchTiming.to_json()
+print(FetchTiming.to_json())
 
 # convert the object into a dict
 fetch_timing_dict = fetch_timing_instance.to_dict()
 # create an instance of FetchTiming from a dict
-fetch_timing_form_dict = fetch_timing.from_dict(fetch_timing_dict)
+fetch_timing_from_dict = FetchTiming.from_dict(fetch_timing_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

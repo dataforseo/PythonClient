@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of DataforseoLabsAmazonBulkSearchVolumeLiveResponseInfo from a JSON string
 dataforseo_labs_amazon_bulk_search_volume_live_response_info_instance = DataforseoLabsAmazonBulkSearchVolumeLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsAmazonBulkSearchVolumeLiveResponseInfo.to_json()
+print(DataforseoLabsAmazonBulkSearchVolumeLiveResponseInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_amazon_bulk_search_volume_live_response_info_dict = dataforseo_labs_amazon_bulk_search_volume_live_response_info_instance.to_dict()
 # create an instance of DataforseoLabsAmazonBulkSearchVolumeLiveResponseInfo from a dict
-dataforseo_labs_amazon_bulk_search_volume_live_response_info_form_dict = dataforseo_labs_amazon_bulk_search_volume_live_response_info.from_dict(dataforseo_labs_amazon_bulk_search_volume_live_response_info_dict)
+dataforseo_labs_amazon_bulk_search_volume_live_response_info_from_dict = DataforseoLabsAmazonBulkSearchVolumeLiveResponseInfo.from_dict(dataforseo_labs_amazon_bulk_search_volume_live_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of MathSolverDataforseoLabsSerpElementItem from a JSON string
 math_solver_dataforseo_labs_serp_element_item_instance = MathSolverDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print MathSolverDataforseoLabsSerpElementItem.to_json()
+print(MathSolverDataforseoLabsSerpElementItem.to_json())
 
 # convert the object into a dict
 math_solver_dataforseo_labs_serp_element_item_dict = math_solver_dataforseo_labs_serp_element_item_instance.to_dict()
 # create an instance of MathSolverDataforseoLabsSerpElementItem from a dict
-math_solver_dataforseo_labs_serp_element_item_form_dict = math_solver_dataforseo_labs_serp_element_item.from_dict(math_solver_dataforseo_labs_serp_element_item_dict)
+math_solver_dataforseo_labs_serp_element_item_from_dict = MathSolverDataforseoLabsSerpElementItem.from_dict(math_solver_dataforseo_labs_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

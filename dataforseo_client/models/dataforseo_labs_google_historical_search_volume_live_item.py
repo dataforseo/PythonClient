@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.avg_backlinks_info import AvgBacklinksInfo
 from dataforseo_client.models.impressions_info import ImpressionsInfo
@@ -33,7 +33,7 @@ class DataforseoLabsGoogleHistoricalSearchVolumeLiveItem(BaseModel):
     DataforseoLabsGoogleHistoricalSearchVolumeLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     search_partners: Optional[StrictBool] = Field(default=None, description="indicates data for Google and partner sites if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search; if false, the results are returned for Google search sites only")
@@ -47,11 +47,11 @@ class DataforseoLabsGoogleHistoricalSearchVolumeLiveItem(BaseModel):
     avg_backlinks_info: Optional[AvgBacklinksInfo] = None
     __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "search_partners", "keyword_info", "keyword_info_normalized_with_bing", "keyword_info_normalized_with_clickstream", "clickstream_keyword_info", "keyword_properties", "impressions_info", "serp_info", "avg_backlinks_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

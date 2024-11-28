@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **price_level** | **str** | property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null | [optional] 
 **rating_distribution** | **Dict[str, Optional[int]]** | the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users | [optional] 
 **people_also_search** | [**List[PeopleAlsoSearch]**](PeopleAlsoSearch.md) | related business entities | [optional] 
-**work_time** | [**WorkInfo**](WorkInfo.md) |  | [optional] 
+**work_time** | [**WorkTime**](WorkTime.md) |  | [optional] 
 **popular_times** | [**PopularTimes**](PopularTimes.md) |  | [optional] 
 **local_business_links** | [**List[BaseLocalBusinessLink]**](BaseLocalBusinessLink.md) | available interactions with the business list of options to interact with the business directly from search results | [optional] 
 **contact_info** | [**List[BusinessDataContactInfo]**](BusinessDataContactInfo.md) | available contacts of the business list of contacts to interact with the business | [optional] 
@@ -51,12 +51,12 @@ json = "{}"
 # create an instance of BusinessDataBusinessListingsSearchLiveItem from a JSON string
 business_data_business_listings_search_live_item_instance = BusinessDataBusinessListingsSearchLiveItem.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataBusinessListingsSearchLiveItem.to_json()
+print(BusinessDataBusinessListingsSearchLiveItem.to_json())
 
 # convert the object into a dict
 business_data_business_listings_search_live_item_dict = business_data_business_listings_search_live_item_instance.to_dict()
 # create an instance of BusinessDataBusinessListingsSearchLiveItem from a dict
-business_data_business_listings_search_live_item_form_dict = business_data_business_listings_search_live_item.from_dict(business_data_business_listings_search_live_item_dict)
+business_data_business_listings_search_live_item_from_dict = BusinessDataBusinessListingsSearchLiveItem.from_dict(business_data_business_listings_search_live_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of MicrodataInspectionInfo from a JSON string
 microdata_inspection_info_instance = MicrodataInspectionInfo.from_json(json)
 # print the JSON string representation of the object
-print MicrodataInspectionInfo.to_json()
+print(MicrodataInspectionInfo.to_json())
 
 # convert the object into a dict
 microdata_inspection_info_dict = microdata_inspection_info_instance.to_dict()
 # create an instance of MicrodataInspectionInfo from a dict
-microdata_inspection_info_form_dict = microdata_inspection_info.from_dict(microdata_inspection_info_dict)
+microdata_inspection_info_from_dict = MicrodataInspectionInfo.from_dict(microdata_inspection_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

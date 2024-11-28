@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | target keyword required field UTF-8 encoding a keyword should be at least 3 characters long; the keywords will be converted to a lowercase format; Note: to match an exact phrase instead of a stand-alone keyword, use double quotes and backslashes; example: \&quot;keyword\&quot;: \&quot;\\\&quot;tesla palo alto\\\&quot;\&quot; learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keyword** | **str** | target keyword required field UTF-8 encoding the keywords will be converted to a lowercase format; Note: to match an exact phrase instead of a stand-alone keyword, use double quotes and backslashes; example: \&quot;keyword\&quot;: \&quot;\\\&quot;tesla palo alto\\\&quot;\&quot; learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **keyword_fields** | **Dict[str, Optional[str]]** | target keyword fields and target keywords optional field use this parameter to filter the dataset by keywords that certain fields should contain; fields you can specify: title, main_title, previous_title, snippet you can indicate several fields; Note: to match an exact phrase instead of a stand-alone keyword, use double quotes and backslashes; example: \&quot;keyword_fields\&quot;: {     \&quot;snippet\&quot;: \&quot;\\\&quot;logitech mouse\\\&quot;\&quot;,     \&quot;main_title\&quot;: \&quot;sale\&quot; } | [optional] 
 **page_type** | **List[str]** | target page types optional field use this parameter to filter the dataset by page types possible values: \&quot;ecommerce\&quot;, \&quot;news\&quot;, \&quot;blogs\&quot;, \&quot;message-boards\&quot;, \&quot;organization\&quot; | [optional] 
 **internal_list_limit** | **int** | maximum number of elements within internal arrays optional field you can use this field to limit the number of elements within the following arrays: top_domains text_categories page_categories countries languages default value: 1 maximum value: 20 | [optional] 
@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of ContentAnalysisSummaryLiveRequestInfo from a JSON string
 content_analysis_summary_live_request_info_instance = ContentAnalysisSummaryLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print ContentAnalysisSummaryLiveRequestInfo.to_json()
+print(ContentAnalysisSummaryLiveRequestInfo.to_json())
 
 # convert the object into a dict
 content_analysis_summary_live_request_info_dict = content_analysis_summary_live_request_info_instance.to_dict()
 # create an instance of ContentAnalysisSummaryLiveRequestInfo from a dict
-content_analysis_summary_live_request_info_form_dict = content_analysis_summary_live_request_info.from_dict(content_analysis_summary_live_request_info_dict)
+content_analysis_summary_live_request_info_from_dict = ContentAnalysisSummaryLiveRequestInfo.from_dict(content_analysis_summary_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

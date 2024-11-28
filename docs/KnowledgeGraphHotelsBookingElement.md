@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of KnowledgeGraphHotelsBookingElement from a JSON string
 knowledge_graph_hotels_booking_element_instance = KnowledgeGraphHotelsBookingElement.from_json(json)
 # print the JSON string representation of the object
-print KnowledgeGraphHotelsBookingElement.to_json()
+print(KnowledgeGraphHotelsBookingElement.to_json())
 
 # convert the object into a dict
 knowledge_graph_hotels_booking_element_dict = knowledge_graph_hotels_booking_element_instance.to_dict()
 # create an instance of KnowledgeGraphHotelsBookingElement from a dict
-knowledge_graph_hotels_booking_element_form_dict = knowledge_graph_hotels_booking_element.from_dict(knowledge_graph_hotels_booking_element_dict)
+knowledge_graph_hotels_booking_element_from_dict = KnowledgeGraphHotelsBookingElement.from_dict(knowledge_graph_hotels_booking_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

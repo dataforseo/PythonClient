@@ -32,12 +32,12 @@ json = "{}"
 # create an instance of AmazonSerpElement from a JSON string
 amazon_serp_element_instance = AmazonSerpElement.from_json(json)
 # print the JSON string representation of the object
-print AmazonSerpElement.to_json()
+print(AmazonSerpElement.to_json())
 
 # convert the object into a dict
 amazon_serp_element_dict = amazon_serp_element_instance.to_dict()
 # create an instance of AmazonSerpElement from a dict
-amazon_serp_element_form_dict = amazon_serp_element.from_dict(amazon_serp_element_dict)
+amazon_serp_element_from_dict = AmazonSerpElement.from_dict(amazon_serp_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

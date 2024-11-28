@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo from a JSON string
 domain_analytics_technologies_domains_by_html_terms_live_response_info_instance = DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo.to_json()
+print(DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo.to_json())
 
 # convert the object into a dict
 domain_analytics_technologies_domains_by_html_terms_live_response_info_dict = domain_analytics_technologies_domains_by_html_terms_live_response_info_instance.to_dict()
 # create an instance of DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo from a dict
-domain_analytics_technologies_domains_by_html_terms_live_response_info_form_dict = domain_analytics_technologies_domains_by_html_terms_live_response_info.from_dict(domain_analytics_technologies_domains_by_html_terms_live_response_info_dict)
+domain_analytics_technologies_domains_by_html_terms_live_response_info_from_dict = DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo.from_dict(domain_analytics_technologies_domains_by_html_terms_live_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

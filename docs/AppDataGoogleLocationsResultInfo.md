@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of AppDataGoogleLocationsResultInfo from a JSON string
 app_data_google_locations_result_info_instance = AppDataGoogleLocationsResultInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataGoogleLocationsResultInfo.to_json()
+print(AppDataGoogleLocationsResultInfo.to_json())
 
 # convert the object into a dict
 app_data_google_locations_result_info_dict = app_data_google_locations_result_info_instance.to_dict()
 # create an instance of AppDataGoogleLocationsResultInfo from a dict
-app_data_google_locations_result_info_form_dict = app_data_google_locations_result_info.from_dict(app_data_google_locations_result_info_dict)
+app_data_google_locations_result_info_from_dict = AppDataGoogleLocationsResultInfo.from_dict(app_data_google_locations_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

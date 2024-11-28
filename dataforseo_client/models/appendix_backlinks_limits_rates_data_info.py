@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
@@ -47,14 +47,15 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
     timeseries_summary: Optional[AppendixInfo] = None
     timeseries_new_lost_summary: Optional[AppendixInfo] = None
     competitors: Optional[AppendixInfo] = None
+    bulk_spam_score: Optional[AppendixInfo] = None
     bulk_pages_summary: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors", "bulk_pages_summary"]
+    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors", "bulk_spam_score", "bulk_pages_summary"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -146,6 +147,9 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of competitors
         if self.competitors:
             _dict['competitors'] = self.competitors.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of bulk_spam_score
+        if self.bulk_spam_score:
+            _dict['bulk_spam_score'] = self.bulk_spam_score.to_dict()
         # override the default output from pydantic by calling `to_dict()` of bulk_pages_summary
         if self.bulk_pages_summary:
             _dict['bulk_pages_summary'] = self.bulk_pages_summary.to_dict()
@@ -186,6 +190,7 @@ class AppendixBacklinksLimitsRatesDataInfo(BaseModel):
             "timeseries_summary": AppendixInfo.from_dict(obj["timeseries_summary"]) if obj.get("timeseries_summary") is not None else None,
             "timeseries_new_lost_summary": AppendixInfo.from_dict(obj["timeseries_new_lost_summary"]) if obj.get("timeseries_new_lost_summary") is not None else None,
             "competitors": AppendixInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None,
+            "bulk_spam_score": AppendixInfo.from_dict(obj["bulk_spam_score"]) if obj.get("bulk_spam_score") is not None else None,
             "bulk_pages_summary": AppendixInfo.from_dict(obj["bulk_pages_summary"]) if obj.get("bulk_pages_summary") is not None else None
         })
         return _obj

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_google_news_serp_element_item import BaseGoogleNewsSerpElementItem
 from dataforseo_client.models.rectangle import Rectangle
@@ -31,19 +31,19 @@ class NewsSearchSerpElementItem(BaseGoogleNewsSerpElementItem):
     rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    domain: Optional[StrictStr] = Field(default=None, description="domain name of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="URL of the result in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     snippet: Optional[StrictStr] = Field(default=None, description="snippet of the result in SERP")
     time_published: Optional[StrictStr] = Field(default=None, description="indicates the time the result was published")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the news was published in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = ["type", "title", "rectangle", "rank_group", "rank_absolute", "xpath", "domain", "url", "image_url", "snippet", "time_published", "timestamp"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

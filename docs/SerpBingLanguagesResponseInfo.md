@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpBingLanguagesResponseInfo from a JSON string
 serp_bing_languages_response_info_instance = SerpBingLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBingLanguagesResponseInfo.to_json()
+print(SerpBingLanguagesResponseInfo.to_json())
 
 # convert the object into a dict
 serp_bing_languages_response_info_dict = serp_bing_languages_response_info_instance.to_dict()
 # create an instance of SerpBingLanguagesResponseInfo from a dict
-serp_bing_languages_response_info_form_dict = serp_bing_languages_response_info.from_dict(serp_bing_languages_response_info_dict)
+serp_bing_languages_response_info_from_dict = SerpBingLanguagesResponseInfo.from_dict(serp_bing_languages_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of ConceptGroupInfo from a JSON string
 concept_group_info_instance = ConceptGroupInfo.from_json(json)
 # print the JSON string representation of the object
-print ConceptGroupInfo.to_json()
+print(ConceptGroupInfo.to_json())
 
 # convert the object into a dict
 concept_group_info_dict = concept_group_info_instance.to_dict()
 # create an instance of ConceptGroupInfo from a dict
-concept_group_info_form_dict = concept_group_info.from_dict(concept_group_info_dict)
+concept_group_info_from_dict = ConceptGroupInfo.from_dict(concept_group_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

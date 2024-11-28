@@ -39,12 +39,12 @@ json = "{}"
 # create an instance of BacklinksDomainIntersectionInfo from a JSON string
 backlinks_domain_intersection_info_instance = BacklinksDomainIntersectionInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksDomainIntersectionInfo.to_json()
+print(BacklinksDomainIntersectionInfo.to_json())
 
 # convert the object into a dict
 backlinks_domain_intersection_info_dict = backlinks_domain_intersection_info_instance.to_dict()
 # create an instance of BacklinksDomainIntersectionInfo from a dict
-backlinks_domain_intersection_info_form_dict = backlinks_domain_intersection_info.from_dict(backlinks_domain_intersection_info_dict)
+backlinks_domain_intersection_info_from_dict = BacklinksDomainIntersectionInfo.from_dict(backlinks_domain_intersection_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

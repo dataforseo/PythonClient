@@ -17,10 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.google_trends_graph_element_item import GoogleTrendsGraphElementItem
+    from dataforseo_client.models.google_trends_map_element_item import GoogleTrendsMapElementItem
+    from dataforseo_client.models.google_trends_queries_list_element_item import GoogleTrendsQueriesListElementItem
+    from dataforseo_client.models.google_trends_topics_list_element_item import GoogleTrendsTopicsListElementItem
 
 class BaseGoogleTrendsItem(BaseModel):
     """
@@ -32,11 +40,11 @@ class BaseGoogleTrendsItem(BaseModel):
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the google_trends_graph element is based on the keywords listed in this array")
     __properties: ClassVar[List[str]] = ["type", "position", "title", "keywords"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -66,7 +74,7 @@ class BaseGoogleTrendsItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[GoogleTrendsGraphElementItem, GoogleTrendsMapElementItem, GoogleTrendsQueriesListElementItem, GoogleTrendsTopicsListElementItem]]:
         """Create an instance of BaseGoogleTrendsItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -111,22 +119,21 @@ class BaseGoogleTrendsItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[GoogleTrendsGraphElementItem, GoogleTrendsMapElementItem, GoogleTrendsQueriesListElementItem, GoogleTrendsTopicsListElementItem]]:
         """Create an instance of BaseGoogleTrendsItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseGoogleTrendsItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'GoogleTrendsGraphElementItem':
+            return import_module("dataforseo_client.models.google_trends_graph_element_item").GoogleTrendsGraphElementItem.from_dict(obj)
+        if object_type ==  'GoogleTrendsMapElementItem':
+            return import_module("dataforseo_client.models.google_trends_map_element_item").GoogleTrendsMapElementItem.from_dict(obj)
+        if object_type ==  'GoogleTrendsQueriesListElementItem':
+            return import_module("dataforseo_client.models.google_trends_queries_list_element_item").GoogleTrendsQueriesListElementItem.from_dict(obj)
+        if object_type ==  'GoogleTrendsTopicsListElementItem':
+            return import_module("dataforseo_client.models.google_trends_topics_list_element_item").GoogleTrendsTopicsListElementItem.from_dict(obj)
 
-from dataforseo_client.models.google_trends_graph_element_item import GoogleTrendsGraphElementItem
-from dataforseo_client.models.google_trends_map_element_item import GoogleTrendsMapElementItem
-from dataforseo_client.models.google_trends_queries_list_element_item import GoogleTrendsQueriesListElementItem
-from dataforseo_client.models.google_trends_topics_list_element_item import GoogleTrendsTopicsListElementItem
-# TODO: Rewrite to not use raise_errors
-BaseGoogleTrendsItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseGoogleTrendsItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

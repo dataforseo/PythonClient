@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of MerchantTasksReadyResponseInfo from a JSON string
 merchant_tasks_ready_response_info_instance = MerchantTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantTasksReadyResponseInfo.to_json()
+print(MerchantTasksReadyResponseInfo.to_json())
 
 # convert the object into a dict
 merchant_tasks_ready_response_info_dict = merchant_tasks_ready_response_info_instance.to_dict()
 # create an instance of MerchantTasksReadyResponseInfo from a dict
-merchant_tasks_ready_response_info_form_dict = merchant_tasks_ready_response_info.from_dict(merchant_tasks_ready_response_info_dict)
+merchant_tasks_ready_response_info_from_dict = MerchantTasksReadyResponseInfo.from_dict(merchant_tasks_ready_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

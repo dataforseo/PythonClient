@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,16 +29,16 @@ class AppendixBusinessListingsBusinessDataPriceData(BaseModel):
     AppendixBusinessListingsBusinessDataPriceData
     """ # noqa: E501
     categories: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    categories_aggregation: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    categories_aggregation: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    search: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    search: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["categories", "categories_aggregation", "locations", "search"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -98,9 +98,9 @@ class AppendixBusinessListingsBusinessDataPriceData(BaseModel):
 
         _obj = cls.model_validate({
             "categories": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["categories"]) if obj.get("categories") is not None else None,
-            "categories_aggregation": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["categories_aggregation"]) if obj.get("categories_aggregation") is not None else None,
+            "categories_aggregation": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["categories_aggregation"]) if obj.get("categories_aggregation") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
-            "search": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["search"]) if obj.get("search") is not None else None
+            "search": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["search"]) if obj.get("search") is not None else None
         })
         return _obj
 

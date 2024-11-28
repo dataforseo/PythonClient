@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of StoresCountInfo from a JSON string
 stores_count_info_instance = StoresCountInfo.from_json(json)
 # print the JSON string representation of the object
-print StoresCountInfo.to_json()
+print(StoresCountInfo.to_json())
 
 # convert the object into a dict
 stores_count_info_dict = stores_count_info_instance.to_dict()
 # create an instance of StoresCountInfo from a dict
-stores_count_info_form_dict = stores_count_info.from_dict(stores_count_info_dict)
+stores_count_info_from_dict = StoresCountInfo.from_dict(stores_count_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

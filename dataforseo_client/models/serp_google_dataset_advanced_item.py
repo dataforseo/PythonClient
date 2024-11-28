@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.authors_element import AuthorsElement
 from dataforseo_client.models.dataset_description import DatasetDescription
@@ -38,7 +38,7 @@ class SerpGoogleDatasetAdvancedItem(BaseModel):
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     dataset_id: Optional[StrictStr] = Field(default=None, description="ID of the dataset")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     scholarly_citations_count: Optional[StrictInt] = Field(default=None, description="count of articles that refer to the dataset")
     scholarly_articles_url: Optional[StrictStr] = Field(default=None, description="url of scholarly articles link to the list of scholarly articles on Google Scholar example: https://scholar.google.com/scholar?q=%2210.6084%20m9%20figshare%207427933%20v1%22")
@@ -55,11 +55,11 @@ class SerpGoogleDatasetAdvancedItem(BaseModel):
     dataset_description: Optional[DatasetDescription] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "dataset_id", "title", "image_url", "scholarly_citations_count", "scholarly_articles_url", "unique_identifier", "related_article", "links", "dataset_providers", "formats", "authors", "licenses", "updated_date", "area_covered", "period_covered", "dataset_description"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -97,37 +97,37 @@ class SerpGoogleDatasetAdvancedItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in links (list)
         _items = []
         if self.links:
-            for _item in self.links:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_links in self.links:
+                if _item_links:
+                    _items.append(_item_links.to_dict())
             _dict['links'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in dataset_providers (list)
         _items = []
         if self.dataset_providers:
-            for _item in self.dataset_providers:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_dataset_providers in self.dataset_providers:
+                if _item_dataset_providers:
+                    _items.append(_item_dataset_providers.to_dict())
             _dict['dataset_providers'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in formats (list)
         _items = []
         if self.formats:
-            for _item in self.formats:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_formats in self.formats:
+                if _item_formats:
+                    _items.append(_item_formats.to_dict())
             _dict['formats'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in authors (list)
         _items = []
         if self.authors:
-            for _item in self.authors:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_authors in self.authors:
+                if _item_authors:
+                    _items.append(_item_authors.to_dict())
             _dict['authors'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in licenses (list)
         _items = []
         if self.licenses:
-            for _item in self.licenses:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_licenses in self.licenses:
+                if _item_licenses:
+                    _items.append(_item_licenses.to_dict())
             _dict['licenses'] = _items
         # override the default output from pydantic by calling `to_dict()` of period_covered
         if self.period_covered:

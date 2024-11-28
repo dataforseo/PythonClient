@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,17 +27,19 @@ class AppendixBingKeywordsDataPriceData(BaseModel):
     """
     AppendixBingKeywordsDataPriceData
     """ # noqa: E501
-    keyword_performance: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    keywords_for_keywords: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    keywords_for_site: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    search_volume: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["keyword_performance", "keywords_for_keywords", "keywords_for_site", "search_volume"]
+    audience_estimation: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keyword_performance: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keywords_for_keywords: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keywords_for_site: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    keyword_suggestions_for_url: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    search_volume: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    __properties: ClassVar[List[str]] = ["audience_estimation", "keyword_performance", "keywords_for_keywords", "keywords_for_site", "keyword_suggestions_for_url", "search_volume"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -72,6 +74,9 @@ class AppendixBingKeywordsDataPriceData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of audience_estimation
+        if self.audience_estimation:
+            _dict['audience_estimation'] = self.audience_estimation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of keyword_performance
         if self.keyword_performance:
             _dict['keyword_performance'] = self.keyword_performance.to_dict()
@@ -81,6 +86,9 @@ class AppendixBingKeywordsDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keywords_for_site
         if self.keywords_for_site:
             _dict['keywords_for_site'] = self.keywords_for_site.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_suggestions_for_url
+        if self.keyword_suggestions_for_url:
+            _dict['keyword_suggestions_for_url'] = self.keyword_suggestions_for_url.to_dict()
         # override the default output from pydantic by calling `to_dict()` of search_volume
         if self.search_volume:
             _dict['search_volume'] = self.search_volume.to_dict()
@@ -96,10 +104,12 @@ class AppendixBingKeywordsDataPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "keyword_performance": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
-            "keywords_for_keywords": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None,
-            "keywords_for_site": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
-            "search_volume": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None
+            "audience_estimation": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["audience_estimation"]) if obj.get("audience_estimation") is not None else None,
+            "keyword_performance": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
+            "keywords_for_keywords": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None,
+            "keywords_for_site": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
+            "keyword_suggestions_for_url": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
+            "search_volume": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None
         })
         return _obj
 

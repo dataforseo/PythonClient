@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of DataforseoLabsLocationsAndLanguagesTaskInfo from a JSON string
 dataforseo_labs_locations_and_languages_task_info_instance = DataforseoLabsLocationsAndLanguagesTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsLocationsAndLanguagesTaskInfo.to_json()
+print(DataforseoLabsLocationsAndLanguagesTaskInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_locations_and_languages_task_info_dict = dataforseo_labs_locations_and_languages_task_info_instance.to_dict()
 # create an instance of DataforseoLabsLocationsAndLanguagesTaskInfo from a dict
-dataforseo_labs_locations_and_languages_task_info_form_dict = dataforseo_labs_locations_and_languages_task_info.from_dict(dataforseo_labs_locations_and_languages_task_info_dict)
+dataforseo_labs_locations_and_languages_task_info_from_dict = DataforseoLabsLocationsAndLanguagesTaskInfo.from_dict(dataforseo_labs_locations_and_languages_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

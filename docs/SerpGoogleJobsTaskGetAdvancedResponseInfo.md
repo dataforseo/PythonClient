@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpGoogleJobsTaskGetAdvancedResponseInfo from a JSON string
 serp_google_jobs_task_get_advanced_response_info_instance = SerpGoogleJobsTaskGetAdvancedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleJobsTaskGetAdvancedResponseInfo.to_json()
+print(SerpGoogleJobsTaskGetAdvancedResponseInfo.to_json())
 
 # convert the object into a dict
 serp_google_jobs_task_get_advanced_response_info_dict = serp_google_jobs_task_get_advanced_response_info_instance.to_dict()
 # create an instance of SerpGoogleJobsTaskGetAdvancedResponseInfo from a dict
-serp_google_jobs_task_get_advanced_response_info_form_dict = serp_google_jobs_task_get_advanced_response_info.from_dict(serp_google_jobs_task_get_advanced_response_info_dict)
+serp_google_jobs_task_get_advanced_response_info_from_dict = SerpGoogleJobsTaskGetAdvancedResponseInfo.from_dict(serp_google_jobs_task_get_advanced_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

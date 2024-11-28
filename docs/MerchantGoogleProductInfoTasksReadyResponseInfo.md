@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of MerchantGoogleProductInfoTasksReadyResponseInfo from a JSON string
 merchant_google_product_info_tasks_ready_response_info_instance = MerchantGoogleProductInfoTasksReadyResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantGoogleProductInfoTasksReadyResponseInfo.to_json()
+print(MerchantGoogleProductInfoTasksReadyResponseInfo.to_json())
 
 # convert the object into a dict
 merchant_google_product_info_tasks_ready_response_info_dict = merchant_google_product_info_tasks_ready_response_info_instance.to_dict()
 # create an instance of MerchantGoogleProductInfoTasksReadyResponseInfo from a dict
-merchant_google_product_info_tasks_ready_response_info_form_dict = merchant_google_product_info_tasks_ready_response_info.from_dict(merchant_google_product_info_tasks_ready_response_info_dict)
+merchant_google_product_info_tasks_ready_response_info_from_dict = MerchantGoogleProductInfoTasksReadyResponseInfo.from_dict(merchant_google_product_info_tasks_ready_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

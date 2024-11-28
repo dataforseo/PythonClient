@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of MonthlySearches from a JSON string
 monthly_searches_instance = MonthlySearches.from_json(json)
 # print the JSON string representation of the object
-print MonthlySearches.to_json()
+print(MonthlySearches.to_json())
 
 # convert the object into a dict
 monthly_searches_dict = monthly_searches_instance.to_dict()
 # create an instance of MonthlySearches from a dict
-monthly_searches_form_dict = monthly_searches.from_dict(monthly_searches_dict)
+monthly_searches_from_dict = MonthlySearches.from_dict(monthly_searches_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

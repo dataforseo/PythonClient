@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of RatingInfo from a JSON string
 rating_info_instance = RatingInfo.from_json(json)
 # print the JSON string representation of the object
-print RatingInfo.to_json()
+print(RatingInfo.to_json())
 
 # convert the object into a dict
 rating_info_dict = rating_info_instance.to_dict()
 # create an instance of RatingInfo from a dict
-rating_info_form_dict = rating_info.from_dict(rating_info_dict)
+rating_info_from_dict = RatingInfo.from_dict(rating_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.amazon_keyword_data import AmazonKeywordData
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
@@ -33,11 +33,11 @@ class DataforseoLabsAmazonProductKeywordIntersectionsLiveItem(BaseModel):
     intersection_result: Optional[Dict[str, BaseAmazonSerpElementItem]] = Field(default=None, description="data on the intersection")
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "intersection_result"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -78,9 +78,9 @@ class DataforseoLabsAmazonProductKeywordIntersectionsLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in intersection_result (dict)
         _field_dict = {}
         if self.intersection_result:
-            for _key in self.intersection_result:
-                if self.intersection_result[_key]:
-                    _field_dict[_key] = self.intersection_result[_key].to_dict()
+            for _key_intersection_result in self.intersection_result:
+                if self.intersection_result[_key_intersection_result]:
+                    _field_dict[_key_intersection_result] = self.intersection_result[_key_intersection_result].to_dict()
             _dict['intersection_result'] = _field_dict
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field

@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of KeywordProperties from a JSON string
 keyword_properties_instance = KeywordProperties.from_json(json)
 # print the JSON string representation of the object
-print KeywordProperties.to_json()
+print(KeywordProperties.to_json())
 
 # convert the object into a dict
 keyword_properties_dict = keyword_properties_instance.to_dict()
 # create an instance of KeywordProperties from a dict
-keyword_properties_form_dict = keyword_properties.from_dict(keyword_properties_dict)
+keyword_properties_from_dict = KeywordProperties.from_dict(keyword_properties_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

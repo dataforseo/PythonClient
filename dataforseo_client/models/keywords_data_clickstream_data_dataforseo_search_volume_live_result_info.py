@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_item import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveItem
+from dataforseo_client.models.keywords_data_clickstream_data_search_volume_live_item import KeywordsDataClickstreamDataSearchVolumeLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,14 +31,14 @@ class KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo(BaseModel)
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array  Note:if the keyword in the POST array appears to be misspelled, data will be returned for the correctly spelled keyword; we use the functionality of Google Ads API to check and validate the spelling of keywords, learn more by this link")
     use_clickstream: Optional[StrictBool] = Field(default=None, description="indicates if the use_clickstream parameter is active possible values: true, false")
     items_count: Optional[StrictStr] = Field(default=None, description="ithe number of results returned in the items array")
-    items: Optional[List[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveItem]] = Field(default=None, description="array of keywords contains keywords and their search volume rates")
+    items: Optional[List[KeywordsDataClickstreamDataSearchVolumeLiveItem]] = Field(default=None, description="array of keywords contains keywords and their search volume rates")
     __properties: ClassVar[List[str]] = ["location_code", "language_code", "use_clickstream", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -76,9 +76,9 @@ class KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo(BaseModel)
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if location_code (nullable) is None
         # and model_fields_set contains the field
@@ -121,7 +121,7 @@ class KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo(BaseModel)
             "language_code": obj.get("language_code"),
             "use_clickstream": obj.get("use_clickstream"),
             "items_count": obj.get("items_count"),
-            "items": [KeywordsDataClickstreamDataDataforseoSearchVolumeLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [KeywordsDataClickstreamDataSearchVolumeLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

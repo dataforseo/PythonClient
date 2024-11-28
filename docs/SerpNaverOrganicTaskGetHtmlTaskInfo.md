@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpNaverOrganicTaskGetHtmlTaskInfo from a JSON string
 serp_naver_organic_task_get_html_task_info_instance = SerpNaverOrganicTaskGetHtmlTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpNaverOrganicTaskGetHtmlTaskInfo.to_json()
+print(SerpNaverOrganicTaskGetHtmlTaskInfo.to_json())
 
 # convert the object into a dict
 serp_naver_organic_task_get_html_task_info_dict = serp_naver_organic_task_get_html_task_info_instance.to_dict()
 # create an instance of SerpNaverOrganicTaskGetHtmlTaskInfo from a dict
-serp_naver_organic_task_get_html_task_info_form_dict = serp_naver_organic_task_get_html_task_info.from_dict(serp_naver_organic_task_get_html_task_info_dict)
+serp_naver_organic_task_get_html_task_info_from_dict = SerpNaverOrganicTaskGetHtmlTaskInfo.from_dict(serp_naver_organic_task_get_html_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

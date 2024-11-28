@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **check_url** | **str** | direct URL to search engine results you can use it to make sure that we provided accurate results | [optional] 
 **datetime** | **str** | date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **spell** | [**SpellInfo**](SpellInfo.md) |  | [optional] 
-**item_types** | **List[Optional[str]]** | types of search results found in SERP contains types of all search results (items) found in the returned SERP possible item types: answer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, images, jobs, knowledge_graph, local_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, ai_overview note that this array contains all types of search results found in the returned SERP; however, this endpoint provides data for featured_snippet, organic and paid types only; to get all items (inlcuding SERP features and rich snippets) found in the returned SERP, please refer to the Google Organiс Advanced SERP endpoint | [optional] 
+**refinement_chips** | [**RefinementChipsInfo**](RefinementChipsInfo.md) |  | [optional] 
+**item_types** | **List[Optional[str]]** | types of search results found in SERP contains types of all search results (items) found in the returned SERP possible item types: answer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, images, jobs, knowledge_graph, local_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, ai_overview note that this array contains all types of search results found in the returned SERP; however, this endpoint provides data for featured_snippet, organic and paid types only; to get all items (including SERP features and rich snippets) found in the returned SERP, please refer to the Google Organiс Advanced SERP endpoint | [optional] 
 **se_results_count** | **int** | total number of results in SERP | [optional] 
 **items_count** | **int** | the number of results returned in the items array | [optional] 
 **items** | [**List[BaseSerpElementItem]**](BaseSerpElementItem.md) | items in SERP | [optional] 
@@ -28,12 +29,12 @@ json = "{}"
 # create an instance of SerpGoogleOrganicTaskGetRegularResultInfo from a JSON string
 serp_google_organic_task_get_regular_result_info_instance = SerpGoogleOrganicTaskGetRegularResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleOrganicTaskGetRegularResultInfo.to_json()
+print(SerpGoogleOrganicTaskGetRegularResultInfo.to_json())
 
 # convert the object into a dict
 serp_google_organic_task_get_regular_result_info_dict = serp_google_organic_task_get_regular_result_info_instance.to_dict()
 # create an instance of SerpGoogleOrganicTaskGetRegularResultInfo from a dict
-serp_google_organic_task_get_regular_result_info_form_dict = serp_google_organic_task_get_regular_result_info.from_dict(serp_google_organic_task_get_regular_result_info_dict)
+serp_google_organic_task_get_regular_result_info_from_dict = SerpGoogleOrganicTaskGetRegularResultInfo.from_dict(serp_google_organic_task_get_regular_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

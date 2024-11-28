@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpGoogleNewsTaskGetHtmlResponseInfo from a JSON string
 serp_google_news_task_get_html_response_info_instance = SerpGoogleNewsTaskGetHtmlResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleNewsTaskGetHtmlResponseInfo.to_json()
+print(SerpGoogleNewsTaskGetHtmlResponseInfo.to_json())
 
 # convert the object into a dict
 serp_google_news_task_get_html_response_info_dict = serp_google_news_task_get_html_response_info_instance.to_dict()
 # create an instance of SerpGoogleNewsTaskGetHtmlResponseInfo from a dict
-serp_google_news_task_get_html_response_info_form_dict = serp_google_news_task_get_html_response_info.from_dict(serp_google_news_task_get_html_response_info_dict)
+serp_google_news_task_get_html_response_info_from_dict = SerpGoogleNewsTaskGetHtmlResponseInfo.from_dict(serp_google_news_task_get_html_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

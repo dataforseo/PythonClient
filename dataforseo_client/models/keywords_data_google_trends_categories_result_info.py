@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,11 +31,11 @@ class KeywordsDataGoogleTrendsCategoriesResultInfo(BaseModel):
     category_code_parent: Optional[StrictInt] = Field(default=None, description="the code of the superordinate category example: \"category_code\": 1100, \"category_name\": \"Superhero Films\", \"category_code_parent\": 1097 where category_code_parent corresponds to: \"category_code\": 1097, \"category_name\": \"Action & Adventure Films\"")
     __properties: ClassVar[List[str]] = ["category_code", "category_name", "category_code_parent"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

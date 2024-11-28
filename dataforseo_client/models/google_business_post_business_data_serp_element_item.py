@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.link_element import LinkElement
@@ -40,11 +40,11 @@ class GoogleBusinessPostBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     links: Optional[List[LinkElement]] = Field(default=None, description="links included in the post")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "author", "snippet", "post_text", "url", "images_url", "post_date", "timestamp", "links"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -82,9 +82,9 @@ class GoogleBusinessPostBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         # override the default output from pydantic by calling `to_dict()` of each item in links (list)
         _items = []
         if self.links:
-            for _item in self.links:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_links in self.links:
+                if _item_links:
+                    _items.append(_item_links.to_dict())
             _dict['links'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

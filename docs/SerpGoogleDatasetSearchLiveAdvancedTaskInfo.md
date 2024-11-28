@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpGoogleDatasetSearchLiveAdvancedTaskInfo from a JSON string
 serp_google_dataset_search_live_advanced_task_info_instance = SerpGoogleDatasetSearchLiveAdvancedTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleDatasetSearchLiveAdvancedTaskInfo.to_json()
+print(SerpGoogleDatasetSearchLiveAdvancedTaskInfo.to_json())
 
 # convert the object into a dict
 serp_google_dataset_search_live_advanced_task_info_dict = serp_google_dataset_search_live_advanced_task_info_instance.to_dict()
 # create an instance of SerpGoogleDatasetSearchLiveAdvancedTaskInfo from a dict
-serp_google_dataset_search_live_advanced_task_info_form_dict = serp_google_dataset_search_live_advanced_task_info.from_dict(serp_google_dataset_search_live_advanced_task_info_dict)
+serp_google_dataset_search_live_advanced_task_info_from_dict = SerpGoogleDatasetSearchLiveAdvancedTaskInfo.from_dict(serp_google_dataset_search_live_advanced_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

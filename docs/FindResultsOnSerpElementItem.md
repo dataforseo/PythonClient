@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of FindResultsOnSerpElementItem from a JSON string
 find_results_on_serp_element_item_instance = FindResultsOnSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print FindResultsOnSerpElementItem.to_json()
+print(FindResultsOnSerpElementItem.to_json())
 
 # convert the object into a dict
 find_results_on_serp_element_item_dict = find_results_on_serp_element_item_instance.to_dict()
 # create an instance of FindResultsOnSerpElementItem from a dict
-find_results_on_serp_element_item_form_dict = find_results_on_serp_element_item.from_dict(find_results_on_serp_element_item_dict)
+find_results_on_serp_element_item_from_dict = FindResultsOnSerpElementItem.from_dict(find_results_on_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

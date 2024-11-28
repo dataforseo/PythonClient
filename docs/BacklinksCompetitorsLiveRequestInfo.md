@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of BacklinksCompetitorsLiveRequestInfo from a JSON string
 backlinks_competitors_live_request_info_instance = BacklinksCompetitorsLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksCompetitorsLiveRequestInfo.to_json()
+print(BacklinksCompetitorsLiveRequestInfo.to_json())
 
 # convert the object into a dict
 backlinks_competitors_live_request_info_dict = backlinks_competitors_live_request_info_instance.to_dict()
 # create an instance of BacklinksCompetitorsLiveRequestInfo from a dict
-backlinks_competitors_live_request_info_form_dict = backlinks_competitors_live_request_info.from_dict(backlinks_competitors_live_request_info_dict)
+backlinks_competitors_live_request_info_from_dict = BacklinksCompetitorsLiveRequestInfo.from_dict(backlinks_competitors_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

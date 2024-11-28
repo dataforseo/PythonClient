@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_keyword_bing_keywords_data_price_data_info import AppendixKeywordBingKeywordsDataPriceDataInfo
+from dataforseo_client.models.appendix_bing_keywords_data_price_data_info import AppendixBingKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,19 +31,19 @@ class AppendixTechnologiesDomainAnalyticsPriceData(BaseModel):
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     technologies: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    aggregation_technologies: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domains_by_html_terms: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domains_by_technology: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    domain_technologies: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    technologies_summary: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
-    technology_stats: Optional[AppendixKeywordBingKeywordsDataPriceDataInfo] = None
+    aggregation_technologies: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domains_by_html_terms: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domains_by_technology: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    domain_technologies: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    technologies_summary: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
+    technology_stats: Optional[AppendixBingKeywordsDataPriceDataInfo] = None
     __properties: ClassVar[List[str]] = ["languages", "locations", "technologies", "aggregation_technologies", "domains_by_html_terms", "domains_by_technology", "domain_technologies", "technologies_summary", "technology_stats"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -120,12 +120,12 @@ class AppendixTechnologiesDomainAnalyticsPriceData(BaseModel):
             "languages": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["languages"]) if obj.get("languages") is not None else None,
             "locations": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["locations"]) if obj.get("locations") is not None else None,
             "technologies": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["technologies"]) if obj.get("technologies") is not None else None,
-            "aggregation_technologies": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["aggregation_technologies"]) if obj.get("aggregation_technologies") is not None else None,
-            "domains_by_html_terms": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domains_by_html_terms"]) if obj.get("domains_by_html_terms") is not None else None,
-            "domains_by_technology": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domains_by_technology"]) if obj.get("domains_by_technology") is not None else None,
-            "domain_technologies": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["domain_technologies"]) if obj.get("domain_technologies") is not None else None,
-            "technologies_summary": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["technologies_summary"]) if obj.get("technologies_summary") is not None else None,
-            "technology_stats": AppendixKeywordBingKeywordsDataPriceDataInfo.from_dict(obj["technology_stats"]) if obj.get("technology_stats") is not None else None
+            "aggregation_technologies": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["aggregation_technologies"]) if obj.get("aggregation_technologies") is not None else None,
+            "domains_by_html_terms": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domains_by_html_terms"]) if obj.get("domains_by_html_terms") is not None else None,
+            "domains_by_technology": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domains_by_technology"]) if obj.get("domains_by_technology") is not None else None,
+            "domain_technologies": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["domain_technologies"]) if obj.get("domain_technologies") is not None else None,
+            "technologies_summary": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["technologies_summary"]) if obj.get("technologies_summary") is not None else None,
+            "technology_stats": AppendixBingKeywordsDataPriceDataInfo.from_dict(obj["technology_stats"]) if obj.get("technology_stats") is not None else None
         })
         return _obj
 

@@ -17,10 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_google_business_data_price_data_info import AppendixGoogleBusinessDataPriceDataInfo
 from dataforseo_client.models.appendix_hotel_info_google_business_data_price_data import AppendixHotelInfoGoogleBusinessDataPriceData
+from dataforseo_client.models.appendix_keywords_data_price_data_info import AppendixKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,19 +29,20 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
     """
     AppendixGoogleBusinessDataPriceData
     """ # noqa: E501
+    extended_reviews: Optional[AppendixKeywordsDataPriceDataInfo] = None
     hotel_info: Optional[AppendixHotelInfoGoogleBusinessDataPriceData] = None
     hotel_searches: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
     my_business_info: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
     my_business_updates: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
     questions_and_answers: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
     reviews: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["hotel_info", "hotel_searches", "my_business_info", "my_business_updates", "questions_and_answers", "reviews"]
+    __properties: ClassVar[List[str]] = ["extended_reviews", "hotel_info", "hotel_searches", "my_business_info", "my_business_updates", "questions_and_answers", "reviews"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -75,6 +77,9 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of extended_reviews
+        if self.extended_reviews:
+            _dict['extended_reviews'] = self.extended_reviews.to_dict()
         # override the default output from pydantic by calling `to_dict()` of hotel_info
         if self.hotel_info:
             _dict['hotel_info'] = self.hotel_info.to_dict()
@@ -105,6 +110,7 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "extended_reviews": AppendixKeywordsDataPriceDataInfo.from_dict(obj["extended_reviews"]) if obj.get("extended_reviews") is not None else None,
             "hotel_info": AppendixHotelInfoGoogleBusinessDataPriceData.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
             "hotel_searches": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
             "my_business_info": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["my_business_info"]) if obj.get("my_business_info") is not None else None,

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.groups import Groups
 from typing import Optional, Set
@@ -30,11 +30,11 @@ class DomainAnalyticsTechnologiesTechnologiesResultInfo(BaseModel):
     groups: Optional[List[Groups]] = Field(default=None, description="array of technology groups")
     __properties: ClassVar[List[str]] = ["groups"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -72,9 +72,9 @@ class DomainAnalyticsTechnologiesTechnologiesResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in groups (list)
         _items = []
         if self.groups:
-            for _item in self.groups:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_groups in self.groups:
+                if _item_groups:
+                    _items.append(_item_groups.to_dict())
             _dict['groups'] = _items
         # set to None if groups (nullable) is None
         # and model_fields_set contains the field

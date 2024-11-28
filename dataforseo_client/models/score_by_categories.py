@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,11 +33,11 @@ class ScoreByCategories(BaseModel):
     airport_access: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="score relative to nearby airports indicates the score of the hotel’s location in the range from 1 to 5; calculated based on data from the hotel’s proximity to nearby airports")
     __properties: ClassVar[List[str]] = ["overall", "things_to_do", "restaurants", "transit", "airport_access"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

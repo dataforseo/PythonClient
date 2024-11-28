@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_limits_money_data import AppendixLimitsMoneyData
 from dataforseo_client.models.appendix_statistics_money_data import AppendixStatisticsMoneyData
@@ -34,11 +34,11 @@ class AppendixMoneyData(BaseModel):
     statistics: Optional[AppendixStatisticsMoneyData] = None
     __properties: ClassVar[List[str]] = ["total", "balance", "limits", "statistics"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

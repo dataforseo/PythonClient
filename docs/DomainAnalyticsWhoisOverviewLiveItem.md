@@ -29,12 +29,12 @@ json = "{}"
 # create an instance of DomainAnalyticsWhoisOverviewLiveItem from a JSON string
 domain_analytics_whois_overview_live_item_instance = DomainAnalyticsWhoisOverviewLiveItem.from_json(json)
 # print the JSON string representation of the object
-print DomainAnalyticsWhoisOverviewLiveItem.to_json()
+print(DomainAnalyticsWhoisOverviewLiveItem.to_json())
 
 # convert the object into a dict
 domain_analytics_whois_overview_live_item_dict = domain_analytics_whois_overview_live_item_instance.to_dict()
 # create an instance of DomainAnalyticsWhoisOverviewLiveItem from a dict
-domain_analytics_whois_overview_live_item_form_dict = domain_analytics_whois_overview_live_item.from_dict(domain_analytics_whois_overview_live_item_dict)
+domain_analytics_whois_overview_live_item_from_dict = DomainAnalyticsWhoisOverviewLiveItem.from_dict(domain_analytics_whois_overview_live_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,11 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.maps_paid_item_serp_element_item import MapsPaidItemSerpElementItem
+    from dataforseo_client.models.maps_search_serp_element_item import MapsSearchSerpElementItem
 
 class BaseGoogleMapsSerpElementItem(BaseModel):
     """
@@ -30,18 +36,18 @@ class BaseGoogleMapsSerpElementItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="domain in the SERP element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element")
+    url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
     rating: Optional[RatingInfo] = None
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -71,7 +77,7 @@ class BaseGoogleMapsSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[MapsPaidItemSerpElementItem, MapsSearchSerpElementItem]]:
         """Create an instance of BaseGoogleMapsSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -134,20 +140,17 @@ class BaseGoogleMapsSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[MapsPaidItemSerpElementItem, MapsSearchSerpElementItem]]:
         """Create an instance of BaseGoogleMapsSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseGoogleMapsSerpElementItem failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'MapsPaidItemSerpElementItem':
+            return import_module("dataforseo_client.models.maps_paid_item_serp_element_item").MapsPaidItemSerpElementItem.from_dict(obj)
+        if object_type ==  'MapsSearchSerpElementItem':
+            return import_module("dataforseo_client.models.maps_search_serp_element_item").MapsSearchSerpElementItem.from_dict(obj)
 
-from dataforseo_client.models.maps_paid_item_serp_element_item import MapsPaidItemSerpElementItem
-from dataforseo_client.models.maps_search_serp_element_item import MapsSearchSerpElementItem
-# TODO: Rewrite to not use raise_errors
-BaseGoogleMapsSerpElementItem.model_rebuild(raise_errors=False)
+        raise ValueError("BaseGoogleMapsSerpElementItem failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

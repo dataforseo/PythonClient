@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpBingLocationsTaskInfo from a JSON string
 serp_bing_locations_task_info_instance = SerpBingLocationsTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBingLocationsTaskInfo.to_json()
+print(SerpBingLocationsTaskInfo.to_json())
 
 # convert the object into a dict
 serp_bing_locations_task_info_dict = serp_bing_locations_task_info_instance.to_dict()
 # create an instance of SerpBingLocationsTaskInfo from a dict
-serp_bing_locations_task_info_form_dict = serp_bing_locations_task_info.from_dict(serp_bing_locations_task_info_dict)
+serp_bing_locations_task_info_from_dict = SerpBingLocationsTaskInfo.from_dict(serp_bing_locations_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.business_data_google_questions_and_answers_item import BusinessDataGoogleQuestionsAndAnswersItem
 from dataforseo_client.models.items_without_answers import ItemsWithoutAnswers
@@ -28,7 +28,7 @@ class BusinessDataGoogleQuestionsAndAnswersTaskGetResultInfo(BaseModel):
     """
     BusinessDataGoogleQuestionsAndAnswersTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character) this field will contain the cid parameter if you specified it in the keyword field when setting a task; example: cid:2946633002421908862 learn more about the parameter in this help center article")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character) this field will contain the cid parameter if you specified it in the keyword field when setting a task; example: cid:2946633002421908862 learn more about the parameter in this help center article")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain as specified in a POST array")
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
@@ -42,11 +42,11 @@ class BusinessDataGoogleQuestionsAndAnswersTaskGetResultInfo(BaseModel):
     items: Optional[List[BusinessDataGoogleQuestionsAndAnswersItem]] = Field(default=None, description="array of items within google_business_question_item contains answers to the google business questions; the maximum number of answers returned for each question: 5 possible item types google_business_answer_element")
     __properties: ClassVar[List[str]] = ["keyword", "se_domain", "location_code", "language_code", "check_url", "datetime", "cid", "feature_id", "item_types", "items_without_answers", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -84,16 +84,16 @@ class BusinessDataGoogleQuestionsAndAnswersTaskGetResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items_without_answers (list)
         _items = []
         if self.items_without_answers:
-            for _item in self.items_without_answers:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items_without_answers in self.items_without_answers:
+                if _item_items_without_answers:
+                    _items.append(_item_items_without_answers.to_dict())
             _dict['items_without_answers'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **videos** | [**List[VideoElement]**](VideoElement.md) | videos of the product submitted by the reviewer | [optional] 
 **user_profile** | [**UserProfileInfo**](UserProfileInfo.md) |  | [optional] 
 **title** | **str** | title of the review | [optional] 
-**url** | **str** | URL to the review | [optional] 
+**url** | **str** | relevant url | [optional] 
 **review_text** | **str** | content of the review | [optional] 
 **publication_date** | **str** | date and time when the review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of DataAmazonAmazonReviewItemSerpElementItem from a JSON string
 data_amazon_amazon_review_item_serp_element_item_instance = DataAmazonAmazonReviewItemSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print DataAmazonAmazonReviewItemSerpElementItem.to_json()
+print(DataAmazonAmazonReviewItemSerpElementItem.to_json())
 
 # convert the object into a dict
 data_amazon_amazon_review_item_serp_element_item_dict = data_amazon_amazon_review_item_serp_element_item_instance.to_dict()
 # create an instance of DataAmazonAmazonReviewItemSerpElementItem from a dict
-data_amazon_amazon_review_item_serp_element_item_form_dict = data_amazon_amazon_review_item_serp_element_item.from_dict(data_amazon_amazon_review_item_serp_element_item_dict)
+data_amazon_amazon_review_item_serp_element_item_from_dict = DataAmazonAmazonReviewItemSerpElementItem.from_dict(data_amazon_amazon_review_item_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

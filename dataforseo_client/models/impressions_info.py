@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -47,11 +47,11 @@ class ImpressionsInfo(BaseModel):
     daily_cost_average: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the average daily charge value represents the average daily cost of the advertisement (USD)")
     __properties: ClassVar[List[str]] = ["se_type", "last_updated_time", "bid", "match_type", "ad_position_min", "ad_position_max", "ad_position_average", "cpc_min", "cpc_max", "cpc_average", "daily_impressions_min", "daily_impressions_max", "daily_impressions_average", "daily_clicks_min", "daily_clicks_max", "daily_clicks_average", "daily_cost_min", "daily_cost_max", "daily_cost_average"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

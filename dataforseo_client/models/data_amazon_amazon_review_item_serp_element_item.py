@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
 from dataforseo_client.models.images_element import ImagesElement
@@ -39,17 +39,17 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
     videos: Optional[List[VideoElement]] = Field(default=None, description="videos of the product submitted by the reviewer")
     user_profile: Optional[UserProfileInfo] = None
     title: Optional[StrictStr] = Field(default=None, description="title of the review")
-    url: Optional[StrictStr] = Field(default=None, description="URL to the review")
+    url: Optional[StrictStr] = Field(default=None, description="relevant url")
     review_text: Optional[StrictStr] = Field(default=None, description="content of the review")
     publication_date: Optional[StrictStr] = Field(default=None, description="date and time when the review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00")
     rating: Optional[RatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "verified", "subtitle", "helpful_votes", "images", "videos", "user_profile", "title", "url", "review_text", "publication_date", "rating"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -87,16 +87,16 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in images (list)
         _items = []
         if self.images:
-            for _item in self.images:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_images in self.images:
+                if _item_images:
+                    _items.append(_item_images.to_dict())
             _dict['images'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in videos (list)
         _items = []
         if self.videos:
-            for _item in self.videos:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_videos in self.videos:
+                if _item_videos:
+                    _items.append(_item_videos.to_dict())
             _dict['videos'] = _items
         # override the default output from pydantic by calling `to_dict()` of user_profile
         if self.user_profile:

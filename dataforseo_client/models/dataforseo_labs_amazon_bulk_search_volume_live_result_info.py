@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.dataforseo_labs_amazon_bulk_search_volume_live_item import DataforseoLabsAmazonBulkSearchVolumeLiveItem
 from typing import Optional, Set
@@ -35,11 +35,11 @@ class DataforseoLabsAmazonBulkSearchVolumeLiveResultInfo(BaseModel):
     items: Optional[List[DataforseoLabsAmazonBulkSearchVolumeLiveItem]] = Field(default=None, description="contains keyword search volume data data")
     __properties: ClassVar[List[str]] = ["se_type", "location_code", "language_code", "total_count", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -77,9 +77,9 @@ class DataforseoLabsAmazonBulkSearchVolumeLiveResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field

@@ -27,12 +27,12 @@ json = "{}"
 # create an instance of BusinessDataTrustpilotReviewsTaskGetResultInfo from a JSON string
 business_data_trustpilot_reviews_task_get_result_info_instance = BusinessDataTrustpilotReviewsTaskGetResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataTrustpilotReviewsTaskGetResultInfo.to_json()
+print(BusinessDataTrustpilotReviewsTaskGetResultInfo.to_json())
 
 # convert the object into a dict
 business_data_trustpilot_reviews_task_get_result_info_dict = business_data_trustpilot_reviews_task_get_result_info_instance.to_dict()
 # create an instance of BusinessDataTrustpilotReviewsTaskGetResultInfo from a dict
-business_data_trustpilot_reviews_task_get_result_info_form_dict = business_data_trustpilot_reviews_task_get_result_info.from_dict(business_data_trustpilot_reviews_task_get_result_info_dict)
+business_data_trustpilot_reviews_task_get_result_info_from_dict = BusinessDataTrustpilotReviewsTaskGetResultInfo.from_dict(business_data_trustpilot_reviews_task_get_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

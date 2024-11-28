@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **live** | [**AppendixFunctionTypeInfo**](AppendixFunctionTypeInfo.md) |  | [optional] 
 **errors** | **float** |  | [optional] 
 **tasks_fixed** | **float** |  | [optional] 
-**jobs** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
+**jobs** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
 **screenshot** | **float** |  | [optional] 
-**refund_money** | **float** |  | [optional] 
 **ai_summary** | **float** |  | [optional] 
+**refund_money** | **float** |  | [optional] 
 
 ## Example
 
@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of AppendixSerpDayStatisticsMoneyData from a JSON string
 appendix_serp_day_statistics_money_data_instance = AppendixSerpDayStatisticsMoneyData.from_json(json)
 # print the JSON string representation of the object
-print AppendixSerpDayStatisticsMoneyData.to_json()
+print(AppendixSerpDayStatisticsMoneyData.to_json())
 
 # convert the object into a dict
 appendix_serp_day_statistics_money_data_dict = appendix_serp_day_statistics_money_data_instance.to_dict()
 # create an instance of AppendixSerpDayStatisticsMoneyData from a dict
-appendix_serp_day_statistics_money_data_form_dict = appendix_serp_day_statistics_money_data.from_dict(appendix_serp_day_statistics_money_data_dict)
+appendix_serp_day_statistics_money_data_from_dict = AppendixSerpDayStatisticsMoneyData.from_dict(appendix_serp_day_statistics_money_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of DemographyComparisonInfo from a JSON string
 demography_comparison_info_instance = DemographyComparisonInfo.from_json(json)
 # print the JSON string representation of the object
-print DemographyComparisonInfo.to_json()
+print(DemographyComparisonInfo.to_json())
 
 # convert the object into a dict
 demography_comparison_info_dict = demography_comparison_info_instance.to_dict()
 # create an instance of DemographyComparisonInfo from a dict
-demography_comparison_info_form_dict = demography_comparison_info.from_dict(demography_comparison_info_dict)
+demography_comparison_info_from_dict = DemographyComparisonInfo.from_dict(demography_comparison_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

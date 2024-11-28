@@ -37,12 +37,12 @@ json = "{}"
 # create an instance of PageSummary from a JSON string
 page_summary_instance = PageSummary.from_json(json)
 # print the JSON string representation of the object
-print PageSummary.to_json()
+print(PageSummary.to_json())
 
 # convert the object into a dict
 page_summary_dict = page_summary_instance.to_dict()
 # create an instance of PageSummary from a dict
-page_summary_form_dict = page_summary.from_dict(page_summary_dict)
+page_summary_from_dict = PageSummary.from_dict(page_summary_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

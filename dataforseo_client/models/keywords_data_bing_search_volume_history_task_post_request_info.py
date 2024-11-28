@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -36,16 +36,16 @@ class KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo(BaseModel):
     period: Optional[StrictStr] = Field(default=None, description="aggregates the returned data to a certain time period optional field specify this field if you want to get the data in monthly, weekly or daily format possible values: monthly, weekly, daily monthly – returns data up to past 24 months weekly – returns data up to past 15 weeks daily – returns data up to past 45 days default value:  monthly")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range optional field minimum value: two years back from today’s date maximum value: one day from today’s date date format: \"yyyy-mm-dd\" example: \"2020-01-01\" Note: we do not recommend using a custom time range Note 2: if date_from and date_to parameters are not specified, the data will be returned for the past 24 months if you specify the period parameter: with value weekly, you will get results for the past 15 weeks with value daily, you will get results for the past 45 days")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field minimum value: two years back from today’s date; maximum value: one day from today’s date; date format: \"yyyy-mm-dd\" example: \"2020-03-15\" Note: we do not recommend using a custom time range Note 2: if date_from and date_to parameters are not specified, the data will be returned for the past 24 months if you specify the period parameter: with value weekly, you will get results for the past 15 weeks with value daily, you will get results for the past 45 days")
-    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special symbols in postback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
-    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special symbols in pingback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
+    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special characters in postback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
+    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special characters in pingback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = ["keywords", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "device", "period", "date_from", "date_to", "postback_url", "pingback_url", "tag"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

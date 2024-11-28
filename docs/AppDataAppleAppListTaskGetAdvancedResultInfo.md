@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of AppDataAppleAppListTaskGetAdvancedResultInfo from a JSON string
 app_data_apple_app_list_task_get_advanced_result_info_instance = AppDataAppleAppListTaskGetAdvancedResultInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataAppleAppListTaskGetAdvancedResultInfo.to_json()
+print(AppDataAppleAppListTaskGetAdvancedResultInfo.to_json())
 
 # convert the object into a dict
 app_data_apple_app_list_task_get_advanced_result_info_dict = app_data_apple_app_list_task_get_advanced_result_info_instance.to_dict()
 # create an instance of AppDataAppleAppListTaskGetAdvancedResultInfo from a dict
-app_data_apple_app_list_task_get_advanced_result_info_form_dict = app_data_apple_app_list_task_get_advanced_result_info.from_dict(app_data_apple_app_list_task_get_advanced_result_info_dict)
+app_data_apple_app_list_task_get_advanced_result_info_from_dict = AppDataAppleAppListTaskGetAdvancedResultInfo.from_dict(app_data_apple_app_list_task_get_advanced_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

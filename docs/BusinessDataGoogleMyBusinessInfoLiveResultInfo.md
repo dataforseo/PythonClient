@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword received in a POST array keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character) this field will contain the cid parameter if you specified it in the keyword field when setting a task; example: cid:2946633002421908862 learn more about the parameter in this help center article | [optional] 
+**keyword** | **str** | keyword received in a POST array keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character) this field will contain the cid parameter if you specified it in the keyword field when setting a task; example: cid:2946633002421908862 learn more about the parameter in this help center article | [optional] 
 **se_domain** | **str** | search engine domain as specified in a POST array | [optional] 
 **location_code** | **int** | location code in a POST array | [optional] 
 **language_code** | **str** | language code in a POST array | [optional] 
@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of BusinessDataGoogleMyBusinessInfoLiveResultInfo from a JSON string
 business_data_google_my_business_info_live_result_info_instance = BusinessDataGoogleMyBusinessInfoLiveResultInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataGoogleMyBusinessInfoLiveResultInfo.to_json()
+print(BusinessDataGoogleMyBusinessInfoLiveResultInfo.to_json())
 
 # convert the object into a dict
 business_data_google_my_business_info_live_result_info_dict = business_data_google_my_business_info_live_result_info_instance.to_dict()
 # create an instance of BusinessDataGoogleMyBusinessInfoLiveResultInfo from a dict
-business_data_google_my_business_info_live_result_info_form_dict = business_data_google_my_business_info_live_result_info.from_dict(business_data_google_my_business_info_live_result_info_dict)
+business_data_google_my_business_info_live_result_info_from_dict = BusinessDataGoogleMyBusinessInfoLiveResultInfo.from_dict(business_data_google_my_business_info_live_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

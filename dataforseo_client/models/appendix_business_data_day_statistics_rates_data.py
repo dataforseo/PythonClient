@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_business_data_day_limits_rates_data_info import AppendixBusinessDataDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_business_data_google_info import AppendixBusinessDataGoogleInfo
@@ -40,15 +40,15 @@ class AppendixBusinessDataDayStatisticsRatesData(BaseModel):
     trustpilot: Optional[AppendixBusinessDataDayLimitsRatesDataInfo] = None
     business_listings: Optional[AppendixBusinessListingsBusinessDataLimitsRatesDataInfo] = None
     tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     available_filters: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["google", "locations", "languages", "errors", "yelp", "social_media", "tripadvisor", "trustpilot", "business_listings", "tasks_ready", "id_list", "available_filters"]
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["google", "locations", "languages", "errors", "yelp", "social_media", "tripadvisor", "trustpilot", "business_listings", "tasks_ready", "available_filters", "id_list"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -121,15 +121,15 @@ class AppendixBusinessDataDayStatisticsRatesData(BaseModel):
         if self.tasks_ready is None and "tasks_ready" in self.model_fields_set:
             _dict['tasks_ready'] = None
 
-        # set to None if id_list (nullable) is None
-        # and model_fields_set contains the field
-        if self.id_list is None and "id_list" in self.model_fields_set:
-            _dict['id_list'] = None
-
         # set to None if available_filters (nullable) is None
         # and model_fields_set contains the field
         if self.available_filters is None and "available_filters" in self.model_fields_set:
             _dict['available_filters'] = None
+
+        # set to None if id_list (nullable) is None
+        # and model_fields_set contains the field
+        if self.id_list is None and "id_list" in self.model_fields_set:
+            _dict['id_list'] = None
 
         return _dict
 
@@ -153,8 +153,8 @@ class AppendixBusinessDataDayStatisticsRatesData(BaseModel):
             "trustpilot": AppendixBusinessDataDayLimitsRatesDataInfo.from_dict(obj["trustpilot"]) if obj.get("trustpilot") is not None else None,
             "business_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["business_listings"]) if obj.get("business_listings") is not None else None,
             "tasks_ready": obj.get("tasks_ready"),
-            "id_list": obj.get("id_list"),
-            "available_filters": obj.get("available_filters")
+            "available_filters": obj.get("available_filters"),
+            "id_list": obj.get("id_list")
         })
         return _obj
 

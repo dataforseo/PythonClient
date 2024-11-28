@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.content_item_info import ContentItemInfo
 from dataforseo_client.models.table_content import TableContent
@@ -33,11 +33,11 @@ class PageSectionContentInfo(BaseModel):
     table_content: Optional[List[TableContent]] = Field(default=None, description="content of the table on the page")
     __properties: ClassVar[List[str]] = ["primary_content", "secondary_content", "table_content"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -75,23 +75,23 @@ class PageSectionContentInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in primary_content (list)
         _items = []
         if self.primary_content:
-            for _item in self.primary_content:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_primary_content in self.primary_content:
+                if _item_primary_content:
+                    _items.append(_item_primary_content.to_dict())
             _dict['primary_content'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in secondary_content (list)
         _items = []
         if self.secondary_content:
-            for _item in self.secondary_content:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_secondary_content in self.secondary_content:
+                if _item_secondary_content:
+                    _items.append(_item_secondary_content.to_dict())
             _dict['secondary_content'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in table_content (list)
         _items = []
         if self.table_content:
-            for _item in self.table_content:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_table_content in self.table_content:
+                if _item_table_content:
+                    _items.append(_item_table_content.to_dict())
             _dict['table_content'] = _items
         # set to None if primary_content (nullable) is None
         # and model_fields_set contains the field

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of MerchantGoogleLocationsCountryResponseInfo from a JSON string
 merchant_google_locations_country_response_info_instance = MerchantGoogleLocationsCountryResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantGoogleLocationsCountryResponseInfo.to_json()
+print(MerchantGoogleLocationsCountryResponseInfo.to_json())
 
 # convert the object into a dict
 merchant_google_locations_country_response_info_dict = merchant_google_locations_country_response_info_instance.to_dict()
 # create an instance of MerchantGoogleLocationsCountryResponseInfo from a dict
-merchant_google_locations_country_response_info_form_dict = merchant_google_locations_country_response_info.from_dict(merchant_google_locations_country_response_info_dict)
+merchant_google_locations_country_response_info_from_dict = MerchantGoogleLocationsCountryResponseInfo.from_dict(merchant_google_locations_country_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

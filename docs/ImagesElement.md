@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ImagesElement from a JSON string
 images_element_instance = ImagesElement.from_json(json)
 # print the JSON string representation of the object
-print ImagesElement.to_json()
+print(ImagesElement.to_json())
 
 # convert the object into a dict
 images_element_dict = images_element_instance.to_dict()
 # create an instance of ImagesElement from a dict
-images_element_form_dict = images_element.from_dict(images_element_dict)
+images_element_from_dict = ImagesElement.from_dict(images_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

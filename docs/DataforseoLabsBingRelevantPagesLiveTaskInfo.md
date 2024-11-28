@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of DataforseoLabsBingRelevantPagesLiveTaskInfo from a JSON string
 dataforseo_labs_bing_relevant_pages_live_task_info_instance = DataforseoLabsBingRelevantPagesLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsBingRelevantPagesLiveTaskInfo.to_json()
+print(DataforseoLabsBingRelevantPagesLiveTaskInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_bing_relevant_pages_live_task_info_dict = dataforseo_labs_bing_relevant_pages_live_task_info_instance.to_dict()
 # create an instance of DataforseoLabsBingRelevantPagesLiveTaskInfo from a dict
-dataforseo_labs_bing_relevant_pages_live_task_info_form_dict = dataforseo_labs_bing_relevant_pages_live_task_info.from_dict(dataforseo_labs_bing_relevant_pages_live_task_info_dict)
+dataforseo_labs_bing_relevant_pages_live_task_info_from_dict = DataforseoLabsBingRelevantPagesLiveTaskInfo.from_dict(dataforseo_labs_bing_relevant_pages_live_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

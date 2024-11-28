@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of RankInfo from a JSON string
 rank_info_instance = RankInfo.from_json(json)
 # print the JSON string representation of the object
-print RankInfo.to_json()
+print(RankInfo.to_json())
 
 # convert the object into a dict
 rank_info_dict = rank_info_instance.to_dict()
 # create an instance of RankInfo from a dict
-rank_info_form_dict = rank_info.from_dict(rank_info_dict)
+rank_info_from_dict = RankInfo.from_dict(rank_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

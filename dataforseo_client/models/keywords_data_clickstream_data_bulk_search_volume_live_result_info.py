@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_item import KeywordsDataClickstreamDataBulkSearchVolumeLiveItem
+from dataforseo_client.models.keywords_data_clickstream_data_search_volume_live_item import KeywordsDataClickstreamDataSearchVolumeLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,14 +29,14 @@ class KeywordsDataClickstreamDataBulkSearchVolumeLiveResultInfo(BaseModel):
     """ # noqa: E501
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[KeywordsDataClickstreamDataBulkSearchVolumeLiveItem]] = Field(default=None, description="contains keywords and related data")
+    items: Optional[List[KeywordsDataClickstreamDataSearchVolumeLiveItem]] = Field(default=None, description="contains keywords and related data")
     __properties: ClassVar[List[str]] = ["location_code", "items_count", "items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,9 +74,9 @@ class KeywordsDataClickstreamDataBulkSearchVolumeLiveResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if location_code (nullable) is None
         # and model_fields_set contains the field
@@ -107,7 +107,7 @@ class KeywordsDataClickstreamDataBulkSearchVolumeLiveResultInfo(BaseModel):
         _obj = cls.model_validate({
             "location_code": obj.get("location_code"),
             "items_count": obj.get("items_count"),
-            "items": [KeywordsDataClickstreamDataBulkSearchVolumeLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [KeywordsDataClickstreamDataSearchVolumeLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.amazon_delivery_info import AmazonDeliveryInfo
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
@@ -45,11 +45,11 @@ class DataAmazonAmazonPaidSerpElementItem(BaseAmazonSerpElementItem):
     delivery_info: Optional[AmazonDeliveryInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "domain", "title", "url", "image_url", "bought_past_month", "price_from", "price_to", "currency", "special_offers", "data_asin", "rating", "is_amazon_choice", "is_best_seller", "delivery_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

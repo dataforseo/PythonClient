@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of QueriesListDataInfo from a JSON string
 queries_list_data_info_instance = QueriesListDataInfo.from_json(json)
 # print the JSON string representation of the object
-print QueriesListDataInfo.to_json()
+print(QueriesListDataInfo.to_json())
 
 # convert the object into a dict
 queries_list_data_info_dict = queries_list_data_info_instance.to_dict()
 # create an instance of QueriesListDataInfo from a dict
-queries_list_data_info_form_dict = queries_list_data_info.from_dict(queries_list_data_info_dict)
+queries_list_data_info_from_dict = QueriesListDataInfo.from_dict(queries_list_data_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

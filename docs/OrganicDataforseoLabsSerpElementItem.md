@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **amp_version** | **bool** | Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **highlighted** | **List[Optional[str]]** | words highlighted in bold within the results description | [optional] 
-**links** | [**List[AdLinkElement]**](AdLinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
+**links** | [**List[LinkElement]**](LinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
 **about_this_result** | [**Dict[str, AboutThisResultElement]**](AboutThisResultElement.md) | contains information from the ‘About this result’ panel ‘About this result’ panel provides additional context about why Google returned this result for the given query; this feature appears after clicking on the three dots next to most results | [optional] 
 **main_domain** | **str** | primary domain name in SERP | [optional] 
 **relative_url** | **str** | URL in SERP that does not specify the HTTPs protocol and domain name | [optional] 
@@ -43,12 +43,12 @@ json = "{}"
 # create an instance of OrganicDataforseoLabsSerpElementItem from a JSON string
 organic_dataforseo_labs_serp_element_item_instance = OrganicDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print OrganicDataforseoLabsSerpElementItem.to_json()
+print(OrganicDataforseoLabsSerpElementItem.to_json())
 
 # convert the object into a dict
 organic_dataforseo_labs_serp_element_item_dict = organic_dataforseo_labs_serp_element_item_instance.to_dict()
 # create an instance of OrganicDataforseoLabsSerpElementItem from a dict
-organic_dataforseo_labs_serp_element_item_form_dict = organic_dataforseo_labs_serp_element_item.from_dict(organic_dataforseo_labs_serp_element_item_dict)
+organic_dataforseo_labs_serp_element_item_from_dict = OrganicDataforseoLabsSerpElementItem.from_dict(organic_dataforseo_labs_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

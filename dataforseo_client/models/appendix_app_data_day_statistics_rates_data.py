@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_business_listings_business_data_limits_rates_data_info import AppendixBusinessListingsBusinessDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
@@ -37,15 +37,15 @@ class AppendixAppDataDayStatisticsRatesData(BaseModel):
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
-    app_listings: Optional[AppendixBusinessListingsBusinessDataLimitsRatesDataInfo] = None
     id_list: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories", "tasks_ready", "app_listings", "id_list"]
+    app_listings: Optional[AppendixBusinessListingsBusinessDataLimitsRatesDataInfo] = None
+    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories", "tasks_ready", "id_list", "app_listings"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -146,8 +146,8 @@ class AppendixAppDataDayStatisticsRatesData(BaseModel):
             "locations": obj.get("locations"),
             "categories": obj.get("categories"),
             "tasks_ready": obj.get("tasks_ready"),
-            "app_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["app_listings"]) if obj.get("app_listings") is not None else None,
-            "id_list": obj.get("id_list")
+            "id_list": obj.get("id_list"),
+            "app_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["app_listings"]) if obj.get("app_listings") is not None else None
         })
         return _obj
 

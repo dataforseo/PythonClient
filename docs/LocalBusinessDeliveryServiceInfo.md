@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of LocalBusinessDeliveryServiceInfo from a JSON string
 local_business_delivery_service_info_instance = LocalBusinessDeliveryServiceInfo.from_json(json)
 # print the JSON string representation of the object
-print LocalBusinessDeliveryServiceInfo.to_json()
+print(LocalBusinessDeliveryServiceInfo.to_json())
 
 # convert the object into a dict
 local_business_delivery_service_info_dict = local_business_delivery_service_info_instance.to_dict()
 # create an instance of LocalBusinessDeliveryServiceInfo from a dict
-local_business_delivery_service_info_form_dict = local_business_delivery_service_info.from_dict(local_business_delivery_service_info_dict)
+local_business_delivery_service_info_from_dict = LocalBusinessDeliveryServiceInfo.from_dict(local_business_delivery_service_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

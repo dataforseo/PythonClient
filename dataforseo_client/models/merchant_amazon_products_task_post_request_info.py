@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,33 +26,33 @@ class MerchantAmazonProductsTaskPostRequestInfo(BaseModel):
     """
     MerchantAmazonProductsTaskPostRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description="keyword required field you can specify up to 700 symbols in the keyword filed all %## will be decoded (plus symbol ‘+’ will be decoded to a space character) if you need to use the “%” symbol for your keyword, please specify it as “%25”; learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
-    url: Optional[StrictStr] = Field(default=None, description="direct URL of the search query optional field you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method. example: https://www.google.com/search?q=iphone&num=100&tbm=shop&ie=UTF-8&oe=UTF-8&tbs=vw%3A1%2Cmr%3A1%2Cprice%3A1%2Cppr_min%3A5&hl=en&gl=US&gws_rd=cr&uule=w+CAIQIFISCQs2MuSEtepUEUK33kOSuTsc")
+    keyword: Optional[StrictStr] = Field(default=None, description="keyword required field you can specify up to 700 characters in this field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your keyword, please specify it as “%25”; learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    url: Optional[StrictStr] = Field(default=None, description="direct URL of the search query optional field you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method. example: https://www.amazon.com/s/?field-keywords=shoes&language=en_US")
     priority: Optional[StrictInt] = Field(default=None, description="task priority optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the Pricing page.")
-    location_name: Optional[StrictStr] = Field(default=None, description="full name of the location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available Google Shopping locations with their location_name by making a separate request to the https://api.dataforseo.com/v3/merchant/google/locations example: London,England,United Kingdom")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code required field if you don’t specify location_name or location_coordinate if you use this field, you don’t need to specify location_name or location_coordinate you can receive the list of available Google Shopping locations with their location_code by making a separate request to the https://api.dataforseo.com/v3/merchant/google/locations example: 2840")
+    location_name: Optional[StrictStr] = Field(default=None, description="full name of search engine location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available locations with their location_name parameters by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/locations example: HA1,England,United Kingdom")
+    location_code: Optional[StrictInt] = Field(default=None, description="search engine location code required field if you don’t specify location_name or location_coordinate if you use this field, you don’t need to specify location_name or location_coordinate you can receive the list of available locations with their location_code parameters by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/locations example: 9045969")
     location_coordinate: Optional[StrictStr] = Field(default=None, description="GPS coordinates of a location required field if you don’t specify location_name or location_code if you use this field, you don’t need to specify location_name or location_code location_coordinate parameter should be specified in the “latitude,longitude,radius” format the maximum number of decimal digits for “latitude” and “longitude”: 7 the minimum value for “radius”: 199.9 example: 53.476225,-2.243572,200")
-    language_name: Optional[StrictStr] = Field(default=None, description="full name of the language required field if you don’t specify language_code if you use this field, you don’t need to specify language_code you can receive the list of available Google Shopping languages with their language_name by making a separate request to the https://api.dataforseo.com/v3/merchant/google/languages example: English")
-    language_code: Optional[StrictStr] = Field(default=None, description="language code required field if you don’t specify language_name if you use this field, you don’t need to specify language_name you can receive the list of available Google Shopping languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/merchant/google/languages example: en")
-    se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain optional field we choose the relevant search engine domain automatically according to the location and language you specify however, you can set a custom search engine domain in this field example: google.co.uk, google.com.au, google.de, etc.")
-    depth: Optional[StrictInt] = Field(default=None, description="parsing depth optional field number of results to be retrieved from the Google Shopping results page default value: 100 max value: 700 Note: your account will be billed per each results page containing up to 100 results; thus, setting a depth above 100 may result in additional charges if the search engine returns more than 100 results; if the specified depth is higher than the number of results in the response, the difference will be refunded automatically to your account balance")
+    language_name: Optional[StrictStr] = Field(default=None, description="full name of search engine language required field if you don’t specify language_code if you use this field, you don’t need to specify language_code you can receive the list of available languages with their language_name parameters by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/languages example: English (United Kingdom)")
+    language_code: Optional[StrictStr] = Field(default=None, description="search engine language code required field if you don’t specify language_name if you use this field, you don’t need to specify language_name you can receive the list of available languages with their language_code parameters by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/languages example: en_GB")
+    se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain optional field we choose the relevant search engine domain automatically according to the location and language you specify however, you can set a custom search engine domain in this field example: amazon.com, amazon.co.uk, amazon.fr, etc.")
+    depth: Optional[StrictInt] = Field(default=None, description="parsing depth optional field number of results to be retrieved from the Amazon results page default value: 100 max value: 700 Note: your account will be billed per each results page containing up to 100 results; thus, setting a depth above 100 may result in additional charges if the search engine returns more than 100 results; if the specified depth is higher than the number of results in the response, the difference will be refunded automatically to your account balance")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description="page crawl limit optional field number of search results pages to crawl max value: 7 Note: the max_crawl_pages and depth parameters complement each other; learn more at our help center")
-    search_param: Optional[StrictStr] = Field(default=None, description="additional parameters of the search query optional field you can use the following search URL parameters for customizing the search example: &tbs=ppr_min:45 – search for products that cost more than 45 USD; &tbs=ppr_max:50 – search for products that cost less than 50 USD; &tbs=p_ord:p – sort by ascending price; &tbs=p_ord:pd – sort by descending price; &tbs=p_ord:rv – sort by review score; &tbs=ppr_max:50,p_ord:rv – sort by review score with the maximum price of 50 USD")
-    price_min: Optional[StrictInt] = Field(default=None, description="minimum product price optional field minimum price of the returned products listed on Google Shopping for the specified query example: 5")
-    price_max: Optional[StrictInt] = Field(default=None, description="maximum product price optional field maximum price of the returned products listed on Google Shopping for the specified query example: 100")
-    sort_by: Optional[StrictStr] = Field(default=None, description="results sorting rules optional field the following sorting rules are supported: review_score, price_low_to_high, price_high_to_low example: sort_by:\"review_score\"")
-    tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special symbols in postback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
-    postback_data: Optional[StrictStr] = Field(default=None, description="postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: advanced, html")
-    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special symbols in pingback_url will be urlencoded; i.a., the # symbol will be encoded into %23 learn more on our Help Center")
     department: Optional[StrictStr] = Field(default=None, description="amazon product department optional field specify one of the following amazon departments for extracting product listings: \"Arts & Crafts\", \"Automotive\", \"Baby\", \"Beauty & Personal Care\", \"Books\", \"Computers\", \"Digital Music\", \"Electronics\", \"Kindle Store\", \"Prime Video\", \"Women's Fashion\", \"Men's Fashion\", \"Girls' Fashion\", \"Boys' Fashion\", \"Deals\", \"Health & Household\", \"Home & Kitchen\", \"Industrial & Scientific\", \"Luggage\", \"Movies & TV\", \"Music, CDs & Vinyl\", \"Pet Supplies\", \"Software\", \"Sports & Outdoors\", \"Tools & Home Improvement\", \"Toys & Games\", \"Video Games\"")
-    __properties: ClassVar[List[str]] = ["keyword", "url", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "depth", "max_crawl_pages", "search_param", "price_min", "price_max", "sort_by", "tag", "postback_url", "postback_data", "pingback_url", "department"]
+    search_param: Optional[StrictStr] = Field(default=None, description="additional parameters of the search query optional field you can use the following Amazon search URL parameters for customizing the search example: &low-price=52 – search for products that cost more than 52 USD; &high-price=45 – search for products that cost less than 45 USD; &sort=relevancerank – sort results by relevance; &sort=featured-rank – sort results by featured products; &sort=price-asc-rank – sort by ascending price; &sort=price-desc-rank – sort by descending price; &sort=review-rank – sort by the average customer reviews value; &sort=date-desc-rank – sort by the newest arrival Note that search_param values will be ignored if any of the following parameters is used: price_min, price_max, sort_by")
+    price_min: Optional[StrictInt] = Field(default=None, description="minimum product price optional field minimum price of the returned products listed on Amazon for the specified query example: 5 Note: if you specify price_min, the search_param parameter will be ignored")
+    price_max: Optional[StrictInt] = Field(default=None, description="maximum product price optional field maximum price of the returned products listed on Amazon for the specified query example: 100 Note: if you specify price_max, the search_param parameter will be ignored")
+    sort_by: Optional[StrictStr] = Field(default=None, description="results sorting rules optional field the following sorting rules are supported: relevance, price_low_to_high, price_high_to_low, featured, avg_customer_review, newest_arrival example: sort_by:\"relevance\" Note: if you specify sort_by, the search_param parameter will be ignored")
+    tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
+    postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special characters in postback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
+    postback_data: Optional[StrictStr] = Field(default=None, description="postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: advanced, html")
+    pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special characters in pingback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
+    __properties: ClassVar[List[str]] = ["keyword", "url", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "depth", "max_crawl_pages", "department", "search_param", "price_min", "price_max", "sort_by", "tag", "postback_url", "postback_data", "pingback_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -137,6 +137,11 @@ class MerchantAmazonProductsTaskPostRequestInfo(BaseModel):
         if self.max_crawl_pages is None and "max_crawl_pages" in self.model_fields_set:
             _dict['max_crawl_pages'] = None
 
+        # set to None if department (nullable) is None
+        # and model_fields_set contains the field
+        if self.department is None and "department" in self.model_fields_set:
+            _dict['department'] = None
+
         # set to None if search_param (nullable) is None
         # and model_fields_set contains the field
         if self.search_param is None and "search_param" in self.model_fields_set:
@@ -177,11 +182,6 @@ class MerchantAmazonProductsTaskPostRequestInfo(BaseModel):
         if self.pingback_url is None and "pingback_url" in self.model_fields_set:
             _dict['pingback_url'] = None
 
-        # set to None if department (nullable) is None
-        # and model_fields_set contains the field
-        if self.department is None and "department" in self.model_fields_set:
-            _dict['department'] = None
-
         return _dict
 
     @classmethod
@@ -205,6 +205,7 @@ class MerchantAmazonProductsTaskPostRequestInfo(BaseModel):
             "se_domain": obj.get("se_domain"),
             "depth": obj.get("depth"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
+            "department": obj.get("department"),
             "search_param": obj.get("search_param"),
             "price_min": obj.get("price_min"),
             "price_max": obj.get("price_max"),
@@ -212,8 +213,7 @@ class MerchantAmazonProductsTaskPostRequestInfo(BaseModel):
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),
-            "pingback_url": obj.get("pingback_url"),
-            "department": obj.get("department")
+            "pingback_url": obj.get("pingback_url")
         })
         return _obj
 

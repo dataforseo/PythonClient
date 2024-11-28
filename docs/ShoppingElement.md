@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of ShoppingElement from a JSON string
 shopping_element_instance = ShoppingElement.from_json(json)
 # print the JSON string representation of the object
-print ShoppingElement.to_json()
+print(ShoppingElement.to_json())
 
 # convert the object into a dict
 shopping_element_dict = shopping_element_instance.to_dict()
 # create an instance of ShoppingElement from a dict
-shopping_element_form_dict = shopping_element.from_dict(shopping_element_dict)
+shopping_element_from_dict = ShoppingElement.from_dict(shopping_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

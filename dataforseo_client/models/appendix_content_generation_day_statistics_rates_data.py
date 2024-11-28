@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_content_generation_day_limits_rates_data_info import AppendixContentGenerationDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_info import AppendixInfo
@@ -38,11 +38,11 @@ class AppendixContentGenerationDayStatisticsRatesData(BaseModel):
     grammar_rules: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["generate", "generate_meta_tags", "generate_text", "paraphrase", "check_grammar", "text_summary", "generate_sub_topics", "grammar_rules"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

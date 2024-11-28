@@ -31,12 +31,12 @@ json = "{}"
 # create an instance of PaidSerpElementItem from a JSON string
 paid_serp_element_item_instance = PaidSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print PaidSerpElementItem.to_json()
+print(PaidSerpElementItem.to_json())
 
 # convert the object into a dict
 paid_serp_element_item_dict = paid_serp_element_item_instance.to_dict()
 # create an instance of PaidSerpElementItem from a dict
-paid_serp_element_item_form_dict = paid_serp_element_item.from_dict(paid_serp_element_item_dict)
+paid_serp_element_item_from_dict = PaidSerpElementItem.from_dict(paid_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

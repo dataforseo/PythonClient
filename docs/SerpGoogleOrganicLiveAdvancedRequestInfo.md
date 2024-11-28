@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword required field you can specify up to 700 symbols in the keyword field all %## will be decoded (plus symbol ‘+’ will be decoded to a space character) if you need to use the “%” symbol for your keyword, please specify it as “%25”; if you need to use the “+” symbol for your keyword, please specify it as “%2B”; if this field contains such parameters as ‘allinanchor:’, ‘allintext:’, ‘allintitle:’, ‘allinurl:’, ‘define:’, ‘filetype:’, ‘id:’, ‘inanchor:’, ‘info:’, ‘intext:’, ‘intitle:’, ‘inurl:’, ‘link:’, ‘site:’, the charge per task will be multiplied by 5 Note: queries containing the ‘cache:’ parameter are not supported and will return a validation error learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keyword** | **str** | keyword required field you can specify up to 700 characters in the keyword field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your keyword, please specify it as “%25”; if you need to use the “+” character for your keyword, please specify it as “%2B”; if this field contains such parameters as ‘allinanchor:’, ‘allintext:’, ‘allintitle:’, ‘allinurl:’, ‘define:’, ‘filetype:’, ‘id:’, ‘inanchor:’, ‘info:’, ‘intext:’, ‘intitle:’, ‘inurl:’, ‘link:’, ‘site:’, ‘-site:’, the charge per task will be multiplied by 5 Note: queries containing the ‘cache:’ parameter are not supported and will return a validation error learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **url** | **str** | direct URL of the search query optional field you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method. example: https://www.google.co.uk/search?q&#x3D;%20rank%20tracker%20api&amp;hl&#x3D;en&amp;gl&#x3D;GB&amp;uule&#x3D;w+CAIQIFISCXXeIa8LoNhHEZkq1d1aOpZS | [optional] 
 **depth** | **int** | parsing depth optional field number of results in SERP default value: 100 max value: 700 Note: your account will be billed per each SERP containing up to 100 results; thus, setting a depth above 100 may result in additional charges if the search engine returns more than 100 results; if the specified depth is higher than the number of results in the response, the difference will be refunded automatically to your account balance | [optional] 
 **max_crawl_pages** | **int** | page crawl limit optional field number of search results pages to crawl max value: 100 Note: the max_crawl_pages and depth parameters complement each other; learn more at our help center | [optional] 
@@ -38,12 +38,12 @@ json = "{}"
 # create an instance of SerpGoogleOrganicLiveAdvancedRequestInfo from a JSON string
 serp_google_organic_live_advanced_request_info_instance = SerpGoogleOrganicLiveAdvancedRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleOrganicLiveAdvancedRequestInfo.to_json()
+print(SerpGoogleOrganicLiveAdvancedRequestInfo.to_json())
 
 # convert the object into a dict
 serp_google_organic_live_advanced_request_info_dict = serp_google_organic_live_advanced_request_info_instance.to_dict()
 # create an instance of SerpGoogleOrganicLiveAdvancedRequestInfo from a dict
-serp_google_organic_live_advanced_request_info_form_dict = serp_google_organic_live_advanced_request_info.from_dict(serp_google_organic_live_advanced_request_info_dict)
+serp_google_organic_live_advanced_request_info_from_dict = SerpGoogleOrganicLiveAdvancedRequestInfo.from_dict(serp_google_organic_live_advanced_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

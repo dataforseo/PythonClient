@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
@@ -37,11 +37,11 @@ class DataforseoLabsCompetitorsDomainLiveItem(BaseModel):
     competitor_metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="metrics for intersecting keywords ranking and traffic data relevant to the keywords that the provided domain shares with the target domain note: in this array ranking and traffic data is provided for the returned competitor’s domain")
     __properties: ClassVar[List[str]] = ["se_type", "domain", "avg_position", "sum_position", "intersections", "full_domain_metrics", "metrics", "competitor_metrics"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -79,23 +79,23 @@ class DataforseoLabsCompetitorsDomainLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in full_domain_metrics (dict)
         _field_dict = {}
         if self.full_domain_metrics:
-            for _key in self.full_domain_metrics:
-                if self.full_domain_metrics[_key]:
-                    _field_dict[_key] = self.full_domain_metrics[_key].to_dict()
+            for _key_full_domain_metrics in self.full_domain_metrics:
+                if self.full_domain_metrics[_key_full_domain_metrics]:
+                    _field_dict[_key_full_domain_metrics] = self.full_domain_metrics[_key_full_domain_metrics].to_dict()
             _dict['full_domain_metrics'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in metrics (dict)
         _field_dict = {}
         if self.metrics:
-            for _key in self.metrics:
-                if self.metrics[_key]:
-                    _field_dict[_key] = self.metrics[_key].to_dict()
+            for _key_metrics in self.metrics:
+                if self.metrics[_key_metrics]:
+                    _field_dict[_key_metrics] = self.metrics[_key_metrics].to_dict()
             _dict['metrics'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in competitor_metrics (dict)
         _field_dict = {}
         if self.competitor_metrics:
-            for _key in self.competitor_metrics:
-                if self.competitor_metrics[_key]:
-                    _field_dict[_key] = self.competitor_metrics[_key].to_dict()
+            for _key_competitor_metrics in self.competitor_metrics:
+                if self.competitor_metrics[_key_competitor_metrics]:
+                    _field_dict[_key_competitor_metrics] = self.competitor_metrics[_key_competitor_metrics].to_dict()
             _dict['competitor_metrics'] = _field_dict
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field

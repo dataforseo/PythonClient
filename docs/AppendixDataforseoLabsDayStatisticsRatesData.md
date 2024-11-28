@@ -39,15 +39,15 @@ Name | Type | Description | Notes
 **app_intersection** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **bulk_app_metrics** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **search_intent** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
-**available_history** | **float** |  | [optional] 
 **id_list** | **float** |  | [optional] 
 **historical_bulk_traffic_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**available_history** | **float** |  | [optional] 
 **status** | **float** |  | [optional] 
-**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**languages** | **float** |  | [optional] 
 **available_filters** | **float** |  | [optional] 
+**amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
+**languages** | **float** |  | [optional] 
+**categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 
@@ -59,12 +59,12 @@ json = "{}"
 # create an instance of AppendixDataforseoLabsDayStatisticsRatesData from a JSON string
 appendix_dataforseo_labs_day_statistics_rates_data_instance = AppendixDataforseoLabsDayStatisticsRatesData.from_json(json)
 # print the JSON string representation of the object
-print AppendixDataforseoLabsDayStatisticsRatesData.to_json()
+print(AppendixDataforseoLabsDayStatisticsRatesData.to_json())
 
 # convert the object into a dict
 appendix_dataforseo_labs_day_statistics_rates_data_dict = appendix_dataforseo_labs_day_statistics_rates_data_instance.to_dict()
 # create an instance of AppendixDataforseoLabsDayStatisticsRatesData from a dict
-appendix_dataforseo_labs_day_statistics_rates_data_form_dict = appendix_dataforseo_labs_day_statistics_rates_data.from_dict(appendix_dataforseo_labs_day_statistics_rates_data_dict)
+appendix_dataforseo_labs_day_statistics_rates_data_from_dict = AppendixDataforseoLabsDayStatisticsRatesData.from_dict(appendix_dataforseo_labs_day_statistics_rates_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

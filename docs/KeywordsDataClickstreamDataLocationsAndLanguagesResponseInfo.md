@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo from a JSON string
 keywords_data_clickstream_data_locations_and_languages_response_info_instance = KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo.to_json()
+print(KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo.to_json())
 
 # convert the object into a dict
 keywords_data_clickstream_data_locations_and_languages_response_info_dict = keywords_data_clickstream_data_locations_and_languages_response_info_instance.to_dict()
 # create an instance of KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo from a dict
-keywords_data_clickstream_data_locations_and_languages_response_info_form_dict = keywords_data_clickstream_data_locations_and_languages_response_info.from_dict(keywords_data_clickstream_data_locations_and_languages_response_info_dict)
+keywords_data_clickstream_data_locations_and_languages_response_info_from_dict = KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo.from_dict(keywords_data_clickstream_data_locations_and_languages_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

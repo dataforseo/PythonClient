@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from dataforseo_client.models.delivery_info import DeliveryInfo
@@ -54,11 +54,11 @@ class GoogleShoppingSerpMerchantSerpElementItem(BaseMerchantSerpElementItem):
     stores_count_info: Optional[StoresCountInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "description", "url", "shopping_url", "tags", "price", "old_price", "currency", "product_id", "data_docid", "seller", "additional_specifications", "reviews_count", "is_best_match", "product_rating", "shop_rating", "product_images", "shop_ad_aclk", "delivery_info", "stores_count_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

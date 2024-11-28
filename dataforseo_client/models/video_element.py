@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,14 +31,13 @@ class VideoElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    preview: Optional[StrictStr] = Field(default=None, description="URL to the video preview image")
-    __properties: ClassVar[List[str]] = ["type", "source", "title", "timestamp", "url", "preview"]
+    __properties: ClassVar[List[str]] = ["type", "source", "title", "timestamp", "url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -98,11 +97,6 @@ class VideoElement(BaseModel):
         if self.url is None and "url" in self.model_fields_set:
             _dict['url'] = None
 
-        # set to None if preview (nullable) is None
-        # and model_fields_set contains the field
-        if self.preview is None and "preview" in self.model_fields_set:
-            _dict['preview'] = None
-
         return _dict
 
     @classmethod
@@ -119,8 +113,7 @@ class VideoElement(BaseModel):
             "source": obj.get("source"),
             "title": obj.get("title"),
             "timestamp": obj.get("timestamp"),
-            "url": obj.get("url"),
-            "preview": obj.get("preview")
+            "url": obj.get("url")
         })
         return _obj
 

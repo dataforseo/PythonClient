@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.delivery_info import DeliveryInfo
-from dataforseo_client.models.price import Price
+from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_element import RatingElement
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,15 +34,15 @@ class ProductSeller(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description="seller url url of the page where the product is sold")
     seller_rating: Optional[RatingElement] = None
     seller_review_count: Optional[StrictInt] = Field(default=None, description="number of seller reviews number of reviews on the product seller’s account")
-    price: Optional[Price] = None
+    price: Optional[PriceInfo] = None
     delivery_info: Optional[DeliveryInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "url", "seller_rating", "seller_review_count", "price", "delivery_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -123,7 +123,7 @@ class ProductSeller(BaseModel):
             "url": obj.get("url"),
             "seller_rating": RatingElement.from_dict(obj["seller_rating"]) if obj.get("seller_rating") is not None else None,
             "seller_review_count": obj.get("seller_review_count"),
-            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "delivery_info": DeliveryInfo.from_dict(obj["delivery_info"]) if obj.get("delivery_info") is not None else None
         })
         return _obj

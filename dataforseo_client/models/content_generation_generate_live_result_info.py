@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,11 +33,11 @@ class ContentGenerationGenerateLiveResultInfo(BaseModel):
     supplement_token: Optional[StrictStr] = Field(default=None, description="token for generating subsequent results you can use this parameter to continue the generation from the end of the current result; supplement_token values are unique for each subsequent task")
     __properties: ClassVar[List[str]] = ["input_tokens", "output_tokens", "new_tokens", "generated_text", "supplement_token"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

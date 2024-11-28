@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 
 **dataset_id** | **str** | ID of the dataset | [optional] 
-**title** | **str** | title of the result in SERP | [optional] 
+**title** | **str** | title of the element | [optional] 
 **image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **scholarly_citations_count** | **int** | count of articles that refer to the dataset | [optional] 
 **scholarly_articles_url** | **str** | url of scholarly articles link to the list of scholarly articles on Google Scholar example: https://scholar.google.com/scholar?q&#x3D;%2210.6084%20m9%20figshare%207427933%20v1%22 | [optional] 
@@ -37,12 +37,12 @@ json = "{}"
 # create an instance of SerpGoogleDatasetAdvancedItem from a JSON string
 serp_google_dataset_advanced_item_instance = SerpGoogleDatasetAdvancedItem.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleDatasetAdvancedItem.to_json()
+print(SerpGoogleDatasetAdvancedItem.to_json())
 
 # convert the object into a dict
 serp_google_dataset_advanced_item_dict = serp_google_dataset_advanced_item_instance.to_dict()
 # create an instance of SerpGoogleDatasetAdvancedItem from a dict
-serp_google_dataset_advanced_item_form_dict = serp_google_dataset_advanced_item.from_dict(serp_google_dataset_advanced_item_dict)
+serp_google_dataset_advanced_item_from_dict = SerpGoogleDatasetAdvancedItem.from_dict(serp_google_dataset_advanced_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

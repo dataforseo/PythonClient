@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpGoogleAutocompleteTasksReadyResultInfo from a JSON string
 serp_google_autocomplete_tasks_ready_result_info_instance = SerpGoogleAutocompleteTasksReadyResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleAutocompleteTasksReadyResultInfo.to_json()
+print(SerpGoogleAutocompleteTasksReadyResultInfo.to_json())
 
 # convert the object into a dict
 serp_google_autocomplete_tasks_ready_result_info_dict = serp_google_autocomplete_tasks_ready_result_info_instance.to_dict()
 # create an instance of SerpGoogleAutocompleteTasksReadyResultInfo from a dict
-serp_google_autocomplete_tasks_ready_result_info_form_dict = serp_google_autocomplete_tasks_ready_result_info.from_dict(serp_google_autocomplete_tasks_ready_result_info_dict)
+serp_google_autocomplete_tasks_ready_result_info_from_dict = SerpGoogleAutocompleteTasksReadyResultInfo.from_dict(serp_google_autocomplete_tasks_ready_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_page_intersection_info import BacklinksPageIntersectionInfo
 from dataforseo_client.models.intersection_summary_info import IntersectionSummaryInfo
@@ -32,11 +32,11 @@ class BacklinksPageIntersectionLiveItem(BaseModel):
     summary: Optional[IntersectionSummaryInfo] = None
     __properties: ClassVar[List[str]] = ["page_intersection", "summary"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,10 +74,10 @@ class BacklinksPageIntersectionLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in page_intersection (dict of array)
         _field_dict_of_array = {}
         if self.page_intersection:
-            for _key in self.page_intersection:
-                if self.page_intersection[_key] is not None:
-                    _field_dict_of_array[_key] = [
-                        _item.to_dict() for _item in self.page_intersection[_key]
+            for _key_page_intersection in self.page_intersection:
+                if self.page_intersection[_key_page_intersection] is not None:
+                    _field_dict_of_array[_key_page_intersection] = [
+                        _item.to_dict() for _item in self.page_intersection[_key_page_intersection]
                     ]
             _dict['page_intersection'] = _field_dict_of_array
         # override the default output from pydantic by calling `to_dict()` of summary

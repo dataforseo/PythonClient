@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from dataforseo_client.models.channel_subscribers_count import ChannelSubscribersCount
@@ -55,11 +55,11 @@ class YoutubeVideoInfoSerpElementItem(BaseYoutubeSerpElementItem):
     streaming_quality: Optional[List[StreamingQualityElement]] = Field(default=None, description="array of elements that contain information about all possible streaming qualities of the video")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "channel_subscribers_count", "publication_date", "timestamp", "keywords", "category", "is_live", "is_embeddable", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -100,16 +100,16 @@ class YoutubeVideoInfoSerpElementItem(BaseYoutubeSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in subtitles (list)
         _items = []
         if self.subtitles:
-            for _item in self.subtitles:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_subtitles in self.subtitles:
+                if _item_subtitles:
+                    _items.append(_item_subtitles.to_dict())
             _dict['subtitles'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in streaming_quality (list)
         _items = []
         if self.streaming_quality:
-            for _item in self.streaming_quality:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_streaming_quality in self.streaming_quality:
+                if _item_streaming_quality:
+                    _items.append(_item_streaming_quality.to_dict())
             _dict['streaming_quality'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

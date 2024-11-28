@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of PodcastsSerpElementItem from a JSON string
 podcasts_serp_element_item_instance = PodcastsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print PodcastsSerpElementItem.to_json()
+print(PodcastsSerpElementItem.to_json())
 
 # convert the object into a dict
 podcasts_serp_element_item_dict = podcasts_serp_element_item_instance.to_dict()
 # create an instance of PodcastsSerpElementItem from a dict
-podcasts_serp_element_item_form_dict = podcasts_serp_element_item.from_dict(podcasts_serp_element_item_dict)
+podcasts_serp_element_item_from_dict = PodcastsSerpElementItem.from_dict(podcasts_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -21,9 +21,13 @@ Name | Type | Description | Notes
 **google_ads** | [**AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo**](AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **dataforseo_trends** | [**AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo**](AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **clickstream_data** | [**AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo**](AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
+**audience_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**keyword_suggestions_for_url** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
+**id_list** | **float** |  | [optional] 
+**industries** | **float** |  | [optional] 
 **search_volume_history** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
-**id_list** | **float** |  | [optional] 
+**job_functions** | **float** |  | [optional] 
 
 ## Example
 
@@ -35,12 +39,12 @@ json = "{}"
 # create an instance of AppendixKeywordsDataDayStatisticsRatesData from a JSON string
 appendix_keywords_data_day_statistics_rates_data_instance = AppendixKeywordsDataDayStatisticsRatesData.from_json(json)
 # print the JSON string representation of the object
-print AppendixKeywordsDataDayStatisticsRatesData.to_json()
+print(AppendixKeywordsDataDayStatisticsRatesData.to_json())
 
 # convert the object into a dict
 appendix_keywords_data_day_statistics_rates_data_dict = appendix_keywords_data_day_statistics_rates_data_instance.to_dict()
 # create an instance of AppendixKeywordsDataDayStatisticsRatesData from a dict
-appendix_keywords_data_day_statistics_rates_data_form_dict = appendix_keywords_data_day_statistics_rates_data.from_dict(appendix_keywords_data_day_statistics_rates_data_dict)
+appendix_keywords_data_day_statistics_rates_data_from_dict = AppendixKeywordsDataDayStatisticsRatesData.from_dict(appendix_keywords_data_day_statistics_rates_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of SerpGoogleImagesTaskGetAdvancedResponseInfo from a JSON string
 serp_google_images_task_get_advanced_response_info_instance = SerpGoogleImagesTaskGetAdvancedResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleImagesTaskGetAdvancedResponseInfo.to_json()
+print(SerpGoogleImagesTaskGetAdvancedResponseInfo.to_json())
 
 # convert the object into a dict
 serp_google_images_task_get_advanced_response_info_dict = serp_google_images_task_get_advanced_response_info_instance.to_dict()
 # create an instance of SerpGoogleImagesTaskGetAdvancedResponseInfo from a dict
-serp_google_images_task_get_advanced_response_info_form_dict = serp_google_images_task_get_advanced_response_info.from_dict(serp_google_images_task_get_advanced_response_info_dict)
+serp_google_images_task_get_advanced_response_info_from_dict = SerpGoogleImagesTaskGetAdvancedResponseInfo.from_dict(serp_google_images_task_get_advanced_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

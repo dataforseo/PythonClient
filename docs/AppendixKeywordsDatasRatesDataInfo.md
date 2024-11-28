@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **google_ads** | [**AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo**](AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **dataforseo_trends** | [**AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo**](AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **clickstream_data** | [**AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo**](AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
+**audience_estimation** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
+**keyword_suggestions_for_url** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 
@@ -32,12 +34,12 @@ json = "{}"
 # create an instance of AppendixKeywordsDatasRatesDataInfo from a JSON string
 appendix_keywords_datas_rates_data_info_instance = AppendixKeywordsDatasRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixKeywordsDatasRatesDataInfo.to_json()
+print(AppendixKeywordsDatasRatesDataInfo.to_json())
 
 # convert the object into a dict
 appendix_keywords_datas_rates_data_info_dict = appendix_keywords_datas_rates_data_info_instance.to_dict()
 # create an instance of AppendixKeywordsDatasRatesDataInfo from a dict
-appendix_keywords_datas_rates_data_info_form_dict = appendix_keywords_datas_rates_data_info.from_dict(appendix_keywords_datas_rates_data_info_dict)
+appendix_keywords_datas_rates_data_info_from_dict = AppendixKeywordsDatasRatesDataInfo.from_dict(appendix_keywords_datas_rates_data_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of AppendixUserDataTaskInfo from a JSON string
 appendix_user_data_task_info_instance = AppendixUserDataTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixUserDataTaskInfo.to_json()
+print(AppendixUserDataTaskInfo.to_json())
 
 # convert the object into a dict
 appendix_user_data_task_info_dict = appendix_user_data_task_info_instance.to_dict()
 # create an instance of AppendixUserDataTaskInfo from a dict
-appendix_user_data_task_info_form_dict = appendix_user_data_task_info.from_dict(appendix_user_data_task_info_dict)
+appendix_user_data_task_info_from_dict = AppendixUserDataTaskInfo.from_dict(appendix_user_data_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

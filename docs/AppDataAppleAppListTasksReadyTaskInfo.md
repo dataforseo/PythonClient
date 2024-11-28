@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of AppDataAppleAppListTasksReadyTaskInfo from a JSON string
 app_data_apple_app_list_tasks_ready_task_info_instance = AppDataAppleAppListTasksReadyTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataAppleAppListTasksReadyTaskInfo.to_json()
+print(AppDataAppleAppListTasksReadyTaskInfo.to_json())
 
 # convert the object into a dict
 app_data_apple_app_list_tasks_ready_task_info_dict = app_data_apple_app_list_tasks_ready_task_info_instance.to_dict()
 # create an instance of AppDataAppleAppListTasksReadyTaskInfo from a dict
-app_data_apple_app_list_tasks_ready_task_info_form_dict = app_data_apple_app_list_tasks_ready_task_info.from_dict(app_data_apple_app_list_tasks_ready_task_info_dict)
+app_data_apple_app_list_tasks_ready_task_info_from_dict = AppDataAppleAppListTasksReadyTaskInfo.from_dict(app_data_apple_app_list_tasks_ready_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contact_url** | **str** | URL of the preferred contact page | [optional] 
 **contributor_url** | **str** | URL of the user’s or entity’s Local Guides profile, if available | [optional] 
+**book_online_url** | **str** | URL in the ‘book online’ button of the element URL directing users to the online booking or order page of the business entity | [optional] 
 **hotel_rating** | **int** | hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null | [optional] 
 **price_level** | **str** | property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null | [optional] 
 **snippet** | **str** | element snippet contains the address and other information about the local establishment featured in the element | [optional] 
@@ -38,12 +39,12 @@ json = "{}"
 # create an instance of MapsSearchSerpElementItem from a JSON string
 maps_search_serp_element_item_instance = MapsSearchSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print MapsSearchSerpElementItem.to_json()
+print(MapsSearchSerpElementItem.to_json())
 
 # convert the object into a dict
 maps_search_serp_element_item_dict = maps_search_serp_element_item_instance.to_dict()
 # create an instance of MapsSearchSerpElementItem from a dict
-maps_search_serp_element_item_form_dict = maps_search_serp_element_item.from_dict(maps_search_serp_element_item_dict)
+maps_search_serp_element_item_from_dict = MapsSearchSerpElementItem.from_dict(maps_search_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

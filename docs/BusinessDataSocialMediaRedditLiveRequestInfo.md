@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of BusinessDataSocialMediaRedditLiveRequestInfo from a JSON string
 business_data_social_media_reddit_live_request_info_instance = BusinessDataSocialMediaRedditLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataSocialMediaRedditLiveRequestInfo.to_json()
+print(BusinessDataSocialMediaRedditLiveRequestInfo.to_json())
 
 # convert the object into a dict
 business_data_social_media_reddit_live_request_info_dict = business_data_social_media_reddit_live_request_info_instance.to_dict()
 # create an instance of BusinessDataSocialMediaRedditLiveRequestInfo from a dict
-business_data_social_media_reddit_live_request_info_form_dict = business_data_social_media_reddit_live_request_info.from_dict(business_data_social_media_reddit_live_request_info_dict)
+business_data_social_media_reddit_live_request_info_from_dict = BusinessDataSocialMediaRedditLiveRequestInfo.from_dict(business_data_social_media_reddit_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

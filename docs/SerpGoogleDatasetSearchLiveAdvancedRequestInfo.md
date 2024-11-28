@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword required field you can specify up to 700 symbols in the keyword field all %## will be decoded (plus symbol ‘+’ will be decoded to a space character) if you need to use the “%” symbol for your keyword, please specify it as “%25”; if you need to use the “+” symbol for your keyword, please specify it as “%2B”; learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keyword** | **str** | keyword required field you can specify up to 700 characters in the keyword field all %## will be decoded (plus character ‘+’ will be decoded to a space character) if you need to use the “%” character for your keyword, please specify it as “%25”; if you need to use the “+” character for your keyword, please specify it as “%2B”; learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **language_name** | **str** | full name of search engine language optional field if you use this field, you don’t need to specify language_code possible value: English | [optional] 
 **language_code** | **str** | search engine language code optional field if you don’t specify language_name if you use this field, you don’t need to specify language_name possible value: en | [optional] 
 **device** | **str** | device type optional field possible value: desktop | [optional] 
@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of SerpGoogleDatasetSearchLiveAdvancedRequestInfo from a JSON string
 serp_google_dataset_search_live_advanced_request_info_instance = SerpGoogleDatasetSearchLiveAdvancedRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpGoogleDatasetSearchLiveAdvancedRequestInfo.to_json()
+print(SerpGoogleDatasetSearchLiveAdvancedRequestInfo.to_json())
 
 # convert the object into a dict
 serp_google_dataset_search_live_advanced_request_info_dict = serp_google_dataset_search_live_advanced_request_info_instance.to_dict()
 # create an instance of SerpGoogleDatasetSearchLiveAdvancedRequestInfo from a dict
-serp_google_dataset_search_live_advanced_request_info_form_dict = serp_google_dataset_search_live_advanced_request_info.from_dict(serp_google_dataset_search_live_advanced_request_info_dict)
+serp_google_dataset_search_live_advanced_request_info_from_dict = SerpGoogleDatasetSearchLiveAdvancedRequestInfo.from_dict(serp_google_dataset_search_live_advanced_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

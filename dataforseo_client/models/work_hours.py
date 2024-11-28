@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.work_day_info import WorkDayInfo
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class WorkHours(BaseModel):
     current_status: Optional[StrictStr] = Field(default=None, description="current status of the establishment indicates whether the establishment is opened or closed")
     __properties: ClassVar[List[str]] = ["timetable", "current_status"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -73,10 +73,10 @@ class WorkHours(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in timetable (dict of array)
         _field_dict_of_array = {}
         if self.timetable:
-            for _key in self.timetable:
-                if self.timetable[_key] is not None:
-                    _field_dict_of_array[_key] = [
-                        _item.to_dict() for _item in self.timetable[_key]
+            for _key_timetable in self.timetable:
+                if self.timetable[_key_timetable] is not None:
+                    _field_dict_of_array[_key_timetable] = [
+                        _item.to_dict() for _item in self.timetable[_key_timetable]
                     ]
             _dict['timetable'] = _field_dict_of_array
         # set to None if timetable (nullable) is None

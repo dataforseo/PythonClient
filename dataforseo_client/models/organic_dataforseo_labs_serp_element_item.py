@@ -17,12 +17,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
-from dataforseo_client.models.ad_link_element import AdLinkElement
 from dataforseo_client.models.backlinks_info import BacklinksInfo
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
+from dataforseo_client.models.link_element import LinkElement
 from dataforseo_client.models.rank_changes import RankChanges
 from dataforseo_client.models.rank_info import RankInfo
 from dataforseo_client.models.rating_info import RatingInfo
@@ -49,7 +49,7 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version")
     rating: Optional[RatingInfo] = None
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="words highlighted in bold within the results description")
-    links: Optional[List[AdLinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
+    links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     about_this_result: Optional[Dict[str, AboutThisResultElement]] = Field(default=None, description="contains information from the ‘About this result’ panel ‘About this result’ panel provides additional context about why Google returned this result for the given query; this feature appears after clicking on the three dots next to most results")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
     relative_url: Optional[StrictStr] = Field(default=None, description="URL in SERP that does not specify the HTTPs protocol and domain name")
@@ -62,11 +62,11 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     rank_info: Optional[RankInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "domain", "title", "url", "breadcrumb", "website_name", "is_image", "is_video", "is_featured_snippet", "is_malicious", "description", "pre_snippet", "extended_snippet", "amp_version", "rating", "highlighted", "links", "about_this_result", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "clickstream_etv", "rank_changes", "backlinks_info", "rank_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -107,16 +107,16 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in links (list)
         _items = []
         if self.links:
-            for _item in self.links:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_links in self.links:
+                if _item_links:
+                    _items.append(_item_links.to_dict())
             _dict['links'] = _items
         # override the default output from pydantic by calling `to_dict()` of each value in about_this_result (dict)
         _field_dict = {}
         if self.about_this_result:
-            for _key in self.about_this_result:
-                if self.about_this_result[_key]:
-                    _field_dict[_key] = self.about_this_result[_key].to_dict()
+            for _key_about_this_result in self.about_this_result:
+                if self.about_this_result[_key_about_this_result]:
+                    _field_dict[_key_about_this_result] = self.about_this_result[_key_about_this_result].to_dict()
             _dict['about_this_result'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of rank_changes
         if self.rank_changes:
@@ -300,7 +300,7 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "amp_version": obj.get("amp_version"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "highlighted": obj.get("highlighted"),
-            "links": [AdLinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
+            "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
             "about_this_result": dict(
                 (_k, AboutThisResultElement.from_dict(_v))
                 for _k, _v in obj["about_this_result"].items()

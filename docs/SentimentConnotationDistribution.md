@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of SentimentConnotationDistribution from a JSON string
 sentiment_connotation_distribution_instance = SentimentConnotationDistribution.from_json(json)
 # print the JSON string representation of the object
-print SentimentConnotationDistribution.to_json()
+print(SentimentConnotationDistribution.to_json())
 
 # convert the object into a dict
 sentiment_connotation_distribution_dict = sentiment_connotation_distribution_instance.to_dict()
 # create an instance of SentimentConnotationDistribution from a dict
-sentiment_connotation_distribution_form_dict = sentiment_connotation_distribution.from_dict(sentiment_connotation_distribution_dict)
+sentiment_connotation_distribution_from_dict = SentimentConnotationDistribution.from_dict(sentiment_connotation_distribution_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

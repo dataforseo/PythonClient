@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictInt
+from pydantic import ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_trends_item import BaseDataforseoTrendsItem
 from dataforseo_client.models.trends_graph_data_info import TrendsGraphDataInfo
@@ -32,11 +32,11 @@ class DataforseoTrendsDataforseoTrendsGraphElementItem(BaseDataforseoTrendsItem)
     averages: Optional[List[Optional[StrictInt]]] = Field(default=None, description="keyword popularity values averaged over the whole time range")
     __properties: ClassVar[List[str]] = ["type", "position", "keywords", "data", "averages"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,9 +74,9 @@ class DataforseoTrendsDataforseoTrendsGraphElementItem(BaseDataforseoTrendsItem)
         # override the default output from pydantic by calling `to_dict()` of each item in data (list)
         _items = []
         if self.data:
-            for _item in self.data:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
             _dict['data'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

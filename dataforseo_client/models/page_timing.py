@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,11 +40,11 @@ class PageTiming(BaseModel):
     fetch_end: Optional[StrictInt] = Field(default=None, description="time to complete downloading the HTML resource the amount of time the browser needs to complete downloading a page")
     __properties: ClassVar[List[str]] = ["time_to_interactive", "dom_complete", "largest_contentful_paint", "first_input_delay", "connection_time", "time_to_secure_connection", "request_sent_time", "waiting_time", "download_time", "duration_time", "fetch_start", "fetch_end"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

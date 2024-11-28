@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,14 +34,14 @@ class OnPageLighthouseTaskPostTaskInfo(BaseModel):
     result_count: Optional[StrictInt] = Field(default=None, description="number of elements in the result array")
     path: Optional[List[Optional[StrictStr]]] = Field(default=None, description="URL path")
     data: Optional[Dict[str, Any]] = Field(default=None, description="contains the same parameters that you specified in the POST request")
-    result: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results in this case, the value will be null")
+    result: Optional[List[Optional[Dict[str, Any]]]] = None
     __properties: ClassVar[List[str]] = ["id", "status_code", "status_message", "time", "cost", "result_count", "path", "data", "result"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

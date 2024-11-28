@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of AppDataGoogleAppListingsCategoriesResponseInfo from a JSON string
 app_data_google_app_listings_categories_response_info_instance = AppDataGoogleAppListingsCategoriesResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print AppDataGoogleAppListingsCategoriesResponseInfo.to_json()
+print(AppDataGoogleAppListingsCategoriesResponseInfo.to_json())
 
 # convert the object into a dict
 app_data_google_app_listings_categories_response_info_dict = app_data_google_app_listings_categories_response_info_instance.to_dict()
 # create an instance of AppDataGoogleAppListingsCategoriesResponseInfo from a dict
-app_data_google_app_listings_categories_response_info_form_dict = app_data_google_app_listings_categories_response_info.from_dict(app_data_google_app_listings_categories_response_info_dict)
+app_data_google_app_listings_categories_response_info_from_dict = AppDataGoogleAppListingsCategoriesResponseInfo.from_dict(app_data_google_app_listings_categories_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

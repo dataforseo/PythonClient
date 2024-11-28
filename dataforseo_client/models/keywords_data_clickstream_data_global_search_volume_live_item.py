@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.country_distribution import CountryDistribution
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem(BaseModel):
     country_distribution: Optional[List[CountryDistribution]] = Field(default=None, description="distribution of clickstream by countries represents clickstream-based search volume in available countries, as well as its respective percentage of global search volume")
     __properties: ClassVar[List[str]] = ["keyword", "search_volume", "country_distribution"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,9 +74,9 @@ class KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in country_distribution (list)
         _items = []
         if self.country_distribution:
-            for _item in self.country_distribution:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_country_distribution in self.country_distribution:
+                if _item_country_distribution:
+                    _items.append(_item_country_distribution.to_dict())
             _dict['country_distribution'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field

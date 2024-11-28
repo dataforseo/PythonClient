@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of TopStoriesElement from a JSON string
 top_stories_element_instance = TopStoriesElement.from_json(json)
 # print the JSON string representation of the object
-print TopStoriesElement.to_json()
+print(TopStoriesElement.to_json())
 
 # convert the object into a dict
 top_stories_element_dict = top_stories_element_instance.to_dict()
 # create an instance of TopStoriesElement from a dict
-top_stories_element_form_dict = top_stories_element.from_dict(top_stories_element_dict)
+top_stories_element_from_dict = TopStoriesElement.from_dict(top_stories_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

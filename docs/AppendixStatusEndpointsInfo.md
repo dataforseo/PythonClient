@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of AppendixStatusEndpointsInfo from a JSON string
 appendix_status_endpoints_info_instance = AppendixStatusEndpointsInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixStatusEndpointsInfo.to_json()
+print(AppendixStatusEndpointsInfo.to_json())
 
 # convert the object into a dict
 appendix_status_endpoints_info_dict = appendix_status_endpoints_info_instance.to_dict()
 # create an instance of AppendixStatusEndpointsInfo from a dict
-appendix_status_endpoints_info_form_dict = appendix_status_endpoints_info.from_dict(appendix_status_endpoints_info_dict)
+appendix_status_endpoints_info_from_dict = AppendixStatusEndpointsInfo.from_dict(appendix_status_endpoints_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keywords** | **List[str]** | keywords required field The maximum number of keywords you can specify: 1000 The maximum number of characters for each keyword: 80 The maximum number of words for each keyword phrase: 10 the keywords you specify will be converted to a lowercase format Note: Google Ads may return no data for certain groups of keywords visit our Help Center to learn more Also note that Google Ads doesn’t allow using certain symbols and characters (e.g., UTF symbols, emojis), so you can’t use them when setting a task; to learn more about which symbols can be used, please refer to this article learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keywords** | **List[str]** | keywords required field The maximum number of keywords you can specify: 1000 The maximum number of characters for each keyword: 80 The maximum number of words for each keyword phrase: 10 the keywords you specify will be converted to a lowercase format Note: Google Ads may return no data for certain groups of keywords visit our Help Center to learn more Also note that Google Ads doesn’t allow using certain symbols and characters (e.g., UTF symbols, emojis), so you can’t use them when setting a task; to learn more about which symbols and characters can be used, please refer to this article learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **bid** | **int** | the maximum custom bid required field the collected data will be based on this value it stands for the price you are willing to pay for an ad; the higher value you specify here, the higher values you will get in the returned metrics learn more in this help center article | [optional] 
 **match** | **str** | keywords match-type required field can take the following values: exact, broad, phrase | [optional] 
 **search_partners** | **bool** | include Google search partners optional field if you specify true, the results will be delivered for owned, operated, and syndicated networks across Google and partner sites that host Google search; default value: false – results are returned for Google search sites | [optional] 
@@ -30,12 +30,12 @@ json = "{}"
 # create an instance of KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo from a JSON string
 keywords_data_google_ads_ad_traffic_by_keywords_live_request_info_instance = KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo.to_json()
+print(KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo.to_json())
 
 # convert the object into a dict
 keywords_data_google_ads_ad_traffic_by_keywords_live_request_info_dict = keywords_data_google_ads_ad_traffic_by_keywords_live_request_info_instance.to_dict()
 # create an instance of KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo from a dict
-keywords_data_google_ads_ad_traffic_by_keywords_live_request_info_form_dict = keywords_data_google_ads_ad_traffic_by_keywords_live_request_info.from_dict(keywords_data_google_ads_ad_traffic_by_keywords_live_request_info_dict)
+keywords_data_google_ads_ad_traffic_by_keywords_live_request_info_from_dict = KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo.from_dict(keywords_data_google_ads_ad_traffic_by_keywords_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

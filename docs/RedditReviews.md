@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of RedditReviews from a JSON string
 reddit_reviews_instance = RedditReviews.from_json(json)
 # print the JSON string representation of the object
-print RedditReviews.to_json()
+print(RedditReviews.to_json())
 
 # convert the object into a dict
 reddit_reviews_dict = reddit_reviews_instance.to_dict()
 # create an instance of RedditReviews from a dict
-reddit_reviews_form_dict = reddit_reviews.from_dict(reddit_reviews_dict)
+reddit_reviews_from_dict = RedditReviews.from_dict(reddit_reviews_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

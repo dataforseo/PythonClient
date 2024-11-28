@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of CrawlStatusInfo from a JSON string
 crawl_status_info_instance = CrawlStatusInfo.from_json(json)
 # print the JSON string representation of the object
-print CrawlStatusInfo.to_json()
+print(CrawlStatusInfo.to_json())
 
 # convert the object into a dict
 crawl_status_info_dict = crawl_status_info_instance.to_dict()
 # create an instance of CrawlStatusInfo from a dict
-crawl_status_info_form_dict = crawl_status_info.from_dict(crawl_status_info_dict)
+crawl_status_info_from_dict = CrawlStatusInfo.from_dict(crawl_status_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

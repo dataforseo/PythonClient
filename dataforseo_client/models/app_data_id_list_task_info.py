@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.app_data_id_list_result_info import AppDataIdListResultInfo
 from typing import Optional, Set
@@ -38,11 +38,11 @@ class AppDataIdListTaskInfo(BaseModel):
     result: Optional[List[AppDataIdListResultInfo]] = Field(default=None, description="array of results")
     __properties: ClassVar[List[str]] = ["id", "status_code", "status_message", "time", "cost", "result_count", "path", "data", "result"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -80,9 +80,9 @@ class AppDataIdListTaskInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in result (list)
         _items = []
         if self.result:
-            for _item in self.result:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_result in self.result:
+                if _item_result:
+                    _items.append(_item_result.to_dict())
             _dict['result'] = _items
         # set to None if id (nullable) is None
         # and model_fields_set contains the field

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.keyword_kpi_info import KeywordKpiInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class KeywordKpi(BaseModel):
     tablet: Optional[List[KeywordKpiInfo]] = Field(default=None, description="keyword data aggregated for tablet devices if there is no data, then the value is null")
     __properties: ClassVar[List[str]] = ["desktop", "mobile", "tablet"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,23 +74,23 @@ class KeywordKpi(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in desktop (list)
         _items = []
         if self.desktop:
-            for _item in self.desktop:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_desktop in self.desktop:
+                if _item_desktop:
+                    _items.append(_item_desktop.to_dict())
             _dict['desktop'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in mobile (list)
         _items = []
         if self.mobile:
-            for _item in self.mobile:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mobile in self.mobile:
+                if _item_mobile:
+                    _items.append(_item_mobile.to_dict())
             _dict['mobile'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in tablet (list)
         _items = []
         if self.tablet:
-            for _item in self.tablet:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_tablet in self.tablet:
+                if _item_tablet:
+                    _items.append(_item_tablet.to_dict())
             _dict['tablet'] = _items
         # set to None if desktop (nullable) is None
         # and model_fields_set contains the field

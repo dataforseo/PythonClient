@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of AppendixHotelInfoGoogleBusinessDataPriceData from a JSON string
 appendix_hotel_info_google_business_data_price_data_instance = AppendixHotelInfoGoogleBusinessDataPriceData.from_json(json)
 # print the JSON string representation of the object
-print AppendixHotelInfoGoogleBusinessDataPriceData.to_json()
+print(AppendixHotelInfoGoogleBusinessDataPriceData.to_json())
 
 # convert the object into a dict
 appendix_hotel_info_google_business_data_price_data_dict = appendix_hotel_info_google_business_data_price_data_instance.to_dict()
 # create an instance of AppendixHotelInfoGoogleBusinessDataPriceData from a dict
-appendix_hotel_info_google_business_data_price_data_form_dict = appendix_hotel_info_google_business_data_price_data.from_dict(appendix_hotel_info_google_business_data_price_data_dict)
+appendix_hotel_info_google_business_data_price_data_from_dict = AppendixHotelInfoGoogleBusinessDataPriceData.from_dict(appendix_hotel_info_google_business_data_price_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.other_sites_reviews_info import OtherSitesReviewsInfo
 from dataforseo_client.models.review_mention_info import ReviewMentionInfo
@@ -35,11 +35,11 @@ class HotelReviewInfo(BaseModel):
     other_sites_reviews: Optional[List[OtherSitesReviewsInfo]] = Field(default=None, description="reviews on third-party sites reviews from third-paty sites")
     __properties: ClassVar[List[str]] = ["value", "votes_count", "mentions", "rating_distribution", "other_sites_reviews"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -77,16 +77,16 @@ class HotelReviewInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in mentions (list)
         _items = []
         if self.mentions:
-            for _item in self.mentions:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mentions in self.mentions:
+                if _item_mentions:
+                    _items.append(_item_mentions.to_dict())
             _dict['mentions'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in other_sites_reviews (list)
         _items = []
         if self.other_sites_reviews:
-            for _item in self.other_sites_reviews:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_other_sites_reviews in self.other_sites_reviews:
+                if _item_other_sites_reviews:
+                    _items.append(_item_other_sites_reviews.to_dict())
             _dict['other_sites_reviews'] = _items
         # set to None if value (nullable) is None
         # and model_fields_set contains the field

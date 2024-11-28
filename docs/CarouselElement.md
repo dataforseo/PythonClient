@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of CarouselElement from a JSON string
 carousel_element_instance = CarouselElement.from_json(json)
 # print the JSON string representation of the object
-print CarouselElement.to_json()
+print(CarouselElement.to_json())
 
 # convert the object into a dict
 carousel_element_dict = carousel_element_instance.to_dict()
 # create an instance of CarouselElement from a dict
-carousel_element_form_dict = carousel_element.from_dict(carousel_element_dict)
+carousel_element_from_dict = CarouselElement.from_dict(carousel_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

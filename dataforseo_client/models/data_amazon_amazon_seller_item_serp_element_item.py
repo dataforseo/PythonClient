@@ -17,11 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.amazon_delivery_info import AmazonDeliveryInfo
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
-from dataforseo_client.models.price import Price
+from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_element import RatingElement
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,18 +34,18 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
     seller_name: Optional[StrictStr] = Field(default=None, description="business name of the seller")
     seller_url: Optional[StrictStr] = Field(default=None, description="url forwarding to the seller’s page on Amazon")
     ships_from: Optional[StrictStr] = Field(default=None, description="sender company name")
-    price: Optional[Price] = None
+    price: Optional[PriceInfo] = None
     rating: Optional[RatingElement] = None
     condition: Optional[StrictStr] = Field(default=None, description="product condition condition of the product offered by the seller")
     condition_description: Optional[StrictStr] = Field(default=None, description="product condition details expanded details on the condition of the product offered by the seller")
     delivery_info: Optional[AmazonDeliveryInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "seller_name", "seller_url", "ships_from", "price", "rating", "condition", "condition_description", "delivery_info"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -159,7 +159,7 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
             "seller_name": obj.get("seller_name"),
             "seller_url": obj.get("seller_url"),
             "ships_from": obj.get("ships_from"),
-            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "condition": obj.get("condition"),
             "condition_description": obj.get("condition_description"),

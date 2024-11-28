@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of SpellInfo from a JSON string
 spell_info_instance = SpellInfo.from_json(json)
 # print the JSON string representation of the object
-print SpellInfo.to_json()
+print(SpellInfo.to_json())
 
 # convert the object into a dict
 spell_info_dict = spell_info_instance.to_dict()
 # create an instance of SpellInfo from a dict
-spell_info_form_dict = spell_info.from_dict(spell_info_dict)
+spell_info_from_dict = SpellInfo.from_dict(spell_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

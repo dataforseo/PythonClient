@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo from a JSON string
 keywords_data_dataforseo_trends_merged_data_live_request_info_instance = KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo.to_json()
+print(KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo.to_json())
 
 # convert the object into a dict
 keywords_data_dataforseo_trends_merged_data_live_request_info_dict = keywords_data_dataforseo_trends_merged_data_live_request_info_instance.to_dict()
 # create an instance of KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo from a dict
-keywords_data_dataforseo_trends_merged_data_live_request_info_form_dict = keywords_data_dataforseo_trends_merged_data_live_request_info.from_dict(keywords_data_dataforseo_trends_merged_data_live_request_info_dict)
+keywords_data_dataforseo_trends_merged_data_live_request_info_from_dict = KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo.from_dict(keywords_data_dataforseo_trends_merged_data_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

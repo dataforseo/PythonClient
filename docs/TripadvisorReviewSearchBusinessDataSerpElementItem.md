@@ -27,12 +27,12 @@ json = "{}"
 # create an instance of TripadvisorReviewSearchBusinessDataSerpElementItem from a JSON string
 tripadvisor_review_search_business_data_serp_element_item_instance = TripadvisorReviewSearchBusinessDataSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print TripadvisorReviewSearchBusinessDataSerpElementItem.to_json()
+print(TripadvisorReviewSearchBusinessDataSerpElementItem.to_json())
 
 # convert the object into a dict
 tripadvisor_review_search_business_data_serp_element_item_dict = tripadvisor_review_search_business_data_serp_element_item_instance.to_dict()
 # create an instance of TripadvisorReviewSearchBusinessDataSerpElementItem from a dict
-tripadvisor_review_search_business_data_serp_element_item_form_dict = tripadvisor_review_search_business_data_serp_element_item.from_dict(tripadvisor_review_search_business_data_serp_element_item_dict)
+tripadvisor_review_search_business_data_serp_element_item_from_dict = TripadvisorReviewSearchBusinessDataSerpElementItem.from_dict(tripadvisor_review_search_business_data_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

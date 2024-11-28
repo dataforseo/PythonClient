@@ -36,12 +36,12 @@ json = "{}"
 # create an instance of AppendixOnPageLimitsRatesDataInfo from a JSON string
 appendix_on_page_limits_rates_data_info_instance = AppendixOnPageLimitsRatesDataInfo.from_json(json)
 # print the JSON string representation of the object
-print AppendixOnPageLimitsRatesDataInfo.to_json()
+print(AppendixOnPageLimitsRatesDataInfo.to_json())
 
 # convert the object into a dict
 appendix_on_page_limits_rates_data_info_dict = appendix_on_page_limits_rates_data_info_instance.to_dict()
 # create an instance of AppendixOnPageLimitsRatesDataInfo from a dict
-appendix_on_page_limits_rates_data_info_form_dict = appendix_on_page_limits_rates_data_info.from_dict(appendix_on_page_limits_rates_data_info_dict)
+appendix_on_page_limits_rates_data_info_from_dict = AppendixOnPageLimitsRatesDataInfo.from_dict(appendix_on_page_limits_rates_data_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

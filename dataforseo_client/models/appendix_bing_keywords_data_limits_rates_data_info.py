@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
@@ -31,13 +31,15 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
     search_volume: Optional[AppendixInfo] = None
     keywords_for_site: Optional[AppendixInfo] = None
     keywords_for_keywords: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["keyword_performance", "search_volume", "keywords_for_site", "keywords_for_keywords"]
+    audience_estimation: Optional[AppendixInfo] = None
+    keyword_suggestions_for_url: Optional[AppendixInfo] = None
+    __properties: ClassVar[List[str]] = ["keyword_performance", "search_volume", "keywords_for_site", "keywords_for_keywords", "audience_estimation", "keyword_suggestions_for_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -84,6 +86,12 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keywords_for_keywords
         if self.keywords_for_keywords:
             _dict['keywords_for_keywords'] = self.keywords_for_keywords.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of audience_estimation
+        if self.audience_estimation:
+            _dict['audience_estimation'] = self.audience_estimation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_suggestions_for_url
+        if self.keyword_suggestions_for_url:
+            _dict['keyword_suggestions_for_url'] = self.keyword_suggestions_for_url.to_dict()
         return _dict
 
     @classmethod
@@ -99,7 +107,9 @@ class AppendixBingKeywordsDataLimitsRatesDataInfo(BaseModel):
             "keyword_performance": AppendixInfo.from_dict(obj["keyword_performance"]) if obj.get("keyword_performance") is not None else None,
             "search_volume": AppendixInfo.from_dict(obj["search_volume"]) if obj.get("search_volume") is not None else None,
             "keywords_for_site": AppendixInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
-            "keywords_for_keywords": AppendixInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None
+            "keywords_for_keywords": AppendixInfo.from_dict(obj["keywords_for_keywords"]) if obj.get("keywords_for_keywords") is not None else None,
+            "audience_estimation": AppendixInfo.from_dict(obj["audience_estimation"]) if obj.get("audience_estimation") is not None else None,
+            "keyword_suggestions_for_url": AppendixInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None
         })
         return _obj
 

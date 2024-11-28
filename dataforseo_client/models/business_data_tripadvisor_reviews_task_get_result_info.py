@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.rating_info import RatingInfo
@@ -43,11 +43,11 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     __properties: ClassVar[List[str]] = ["url_path", "type", "se_domain", "check_url", "datetime", "title", "location", "reviews_count", "rating", "rating_distribution", "items_count", "items", "language_code"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -88,9 +88,9 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # set to None if url_path (nullable) is None
         # and model_fields_set contains the field

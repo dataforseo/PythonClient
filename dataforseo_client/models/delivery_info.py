@@ -17,10 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.stores_count_info import StoresCountInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,14 +29,13 @@ class DeliveryInfo(BaseModel):
     """ # noqa: E501
     delivery_message: Optional[StrictStr] = Field(default=None, description="delivery information message accompanying the delivery information as posted by the seller")
     delivery_price: Optional[PriceInfo] = None
-    stores_count_info: Optional[StoresCountInfo] = None
-    __properties: ClassVar[List[str]] = ["delivery_message", "delivery_price", "stores_count_info"]
+    __properties: ClassVar[List[str]] = ["delivery_message", "delivery_price"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -75,9 +73,6 @@ class DeliveryInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of delivery_price
         if self.delivery_price:
             _dict['delivery_price'] = self.delivery_price.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of stores_count_info
-        if self.stores_count_info:
-            _dict['stores_count_info'] = self.stores_count_info.to_dict()
         # set to None if delivery_message (nullable) is None
         # and model_fields_set contains the field
         if self.delivery_message is None and "delivery_message" in self.model_fields_set:
@@ -96,8 +91,7 @@ class DeliveryInfo(BaseModel):
 
         _obj = cls.model_validate({
             "delivery_message": obj.get("delivery_message"),
-            "delivery_price": PriceInfo.from_dict(obj["delivery_price"]) if obj.get("delivery_price") is not None else None,
-            "stores_count_info": StoresCountInfo.from_dict(obj["stores_count_info"]) if obj.get("stores_count_info") is not None else None
+            "delivery_price": PriceInfo.from_dict(obj["delivery_price"]) if obj.get("delivery_price") is not None else None
         })
         return _obj
 

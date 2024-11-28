@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of RefineProductsElement from a JSON string
 refine_products_element_instance = RefineProductsElement.from_json(json)
 # print the JSON string representation of the object
-print RefineProductsElement.to_json()
+print(RefineProductsElement.to_json())
 
 # convert the object into a dict
 refine_products_element_dict = refine_products_element_instance.to_dict()
 # create an instance of RefineProductsElement from a dict
-refine_products_element_form_dict = refine_products_element.from_dict(refine_products_element_dict)
+refine_products_element_from_dict = RefineProductsElement.from_dict(refine_products_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

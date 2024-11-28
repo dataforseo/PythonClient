@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of BusinessDataContactInfo from a JSON string
 business_data_contact_info_instance = BusinessDataContactInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataContactInfo.to_json()
+print(BusinessDataContactInfo.to_json())
 
 # convert the object into a dict
 business_data_contact_info_dict = business_data_contact_info_instance.to_dict()
 # create an instance of BusinessDataContactInfo from a dict
-business_data_contact_info_form_dict = business_data_contact_info.from_dict(business_data_contact_info_dict)
+business_data_contact_info_from_dict = BusinessDataContactInfo.from_dict(business_data_contact_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

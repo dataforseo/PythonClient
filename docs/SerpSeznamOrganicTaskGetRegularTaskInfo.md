@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpSeznamOrganicTaskGetRegularTaskInfo from a JSON string
 serp_seznam_organic_task_get_regular_task_info_instance = SerpSeznamOrganicTaskGetRegularTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpSeznamOrganicTaskGetRegularTaskInfo.to_json()
+print(SerpSeznamOrganicTaskGetRegularTaskInfo.to_json())
 
 # convert the object into a dict
 serp_seznam_organic_task_get_regular_task_info_dict = serp_seznam_organic_task_get_regular_task_info_instance.to_dict()
 # create an instance of SerpSeznamOrganicTaskGetRegularTaskInfo from a dict
-serp_seznam_organic_task_get_regular_task_info_form_dict = serp_seznam_organic_task_get_regular_task_info.from_dict(serp_seznam_organic_task_get_regular_task_info_dict)
+serp_seznam_organic_task_get_regular_task_info_from_dict = SerpSeznamOrganicTaskGetRegularTaskInfo.from_dict(serp_seznam_organic_task_get_regular_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of AuthorsElement from a JSON string
 authors_element_instance = AuthorsElement.from_json(json)
 # print the JSON string representation of the object
-print AuthorsElement.to_json()
+print(AuthorsElement.to_json())
 
 # convert the object into a dict
 authors_element_dict = authors_element_instance.to_dict()
 # create an instance of AuthorsElement from a dict
-authors_element_form_dict = authors_element.from_dict(authors_element_dict)
+authors_element_from_dict = AuthorsElement.from_dict(authors_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

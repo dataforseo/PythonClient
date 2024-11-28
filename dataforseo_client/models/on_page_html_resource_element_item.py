@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.cache_control import CacheControl
@@ -37,6 +37,7 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
     onpage_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="shows how page is optimized on a 100-point scale this field shows how page is optimized considering critical on-page issues and warnings detected; 100 is the highest possible score that means the page does not have any critical on-page issues and important warnings; learn more about how the metric is calculated in this help center article")
     total_dom_size: Optional[StrictInt] = Field(default=None, description="total DOM size of a page")
     custom_js_response: Optional[Dict[str, Any]] = Field(default=None, description="the result of executing a specified JS script note that you should specify a custom_js field when setting a task to receive this data and the field type and its value will totally depend on the script you specified;you can also filter the results by this value specifying filters in the following way: [\"custom_js_response.url\", \"like\", \"pixel\"]")
+    custom_js_client_exception: Optional[StrictStr] = Field(default=None, description="error when executing a custom js if the error occurred when executing the script you specified in the custom_js field, the error message would be displayed here")
     broken_resources: Optional[StrictBool] = Field(default=None, description="indicates whether a page contains broken resources")
     broken_links: Optional[StrictBool] = Field(default=None, description="indicates whether a page contains broken links")
     duplicate_title: Optional[StrictBool] = Field(default=None, description="indicates whether a page has duplicate title tags")
@@ -46,13 +47,13 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
     is_resource: Optional[StrictBool] = Field(default=None, description="indicates whether a page is a single resource")
     url_length: Optional[StrictInt] = Field(default=None, description="page URL length in characters")
     relative_url_length: Optional[StrictInt] = Field(default=None, description="relative URL length in characters")
-    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "page_timing", "onpage_score", "total_dom_size", "custom_js_response", "broken_resources", "broken_links", "duplicate_title", "duplicate_description", "duplicate_content", "click_depth", "is_resource", "url_length", "relative_url_length"]
+    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "page_timing", "onpage_score", "total_dom_size", "custom_js_response", "custom_js_client_exception", "broken_resources", "broken_links", "duplicate_title", "duplicate_description", "duplicate_content", "click_depth", "is_resource", "url_length", "relative_url_length"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -177,6 +178,11 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
         if self.custom_js_response is None and "custom_js_response" in self.model_fields_set:
             _dict['custom_js_response'] = None
 
+        # set to None if custom_js_client_exception (nullable) is None
+        # and model_fields_set contains the field
+        if self.custom_js_client_exception is None and "custom_js_client_exception" in self.model_fields_set:
+            _dict['custom_js_client_exception'] = None
+
         # set to None if broken_resources (nullable) is None
         # and model_fields_set contains the field
         if self.broken_resources is None and "broken_resources" in self.model_fields_set:
@@ -254,6 +260,7 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
             "onpage_score": obj.get("onpage_score"),
             "total_dom_size": obj.get("total_dom_size"),
             "custom_js_response": obj.get("custom_js_response"),
+            "custom_js_client_exception": obj.get("custom_js_client_exception"),
             "broken_resources": obj.get("broken_resources"),
             "broken_links": obj.get("broken_links"),
             "duplicate_title": obj.get("duplicate_title"),

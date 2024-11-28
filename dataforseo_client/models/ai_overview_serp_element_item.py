@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool
+from pydantic import ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.ai_overview_element import AiOverviewElement
 from dataforseo_client.models.ai_overview_reference import AiOverviewReference
@@ -36,11 +36,11 @@ class AiOverviewSerpElementItem(BaseSerpElementItem):
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "asynchronous_ai_overview", "items", "references", "rectangle"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -78,16 +78,16 @@ class AiOverviewSerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in references (list)
         _items = []
         if self.references:
-            for _item in self.references:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_references in self.references:
+                if _item_references:
+                    _items.append(_item_references.to_dict())
             _dict['references'] = _items
         # override the default output from pydantic by calling `to_dict()` of rectangle
         if self.rectangle:

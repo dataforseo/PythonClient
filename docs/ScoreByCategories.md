@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of ScoreByCategories from a JSON string
 score_by_categories_instance = ScoreByCategories.from_json(json)
 # print the JSON string representation of the object
-print ScoreByCategories.to_json()
+print(ScoreByCategories.to_json())
 
 # convert the object into a dict
 score_by_categories_dict = score_by_categories_instance.to_dict()
 # create an instance of ScoreByCategories from a dict
-score_by_categories_form_dict = score_by_categories.from_dict(score_by_categories_dict)
+score_by_categories_from_dict = ScoreByCategories.from_dict(score_by_categories_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

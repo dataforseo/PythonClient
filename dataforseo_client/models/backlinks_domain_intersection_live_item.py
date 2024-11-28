@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.backlinks_domain_intersection_info import BacklinksDomainIntersectionInfo
 from dataforseo_client.models.intersection_summary_info import IntersectionSummaryInfo
@@ -32,11 +32,11 @@ class BacklinksDomainIntersectionLiveItem(BaseModel):
     summary: Optional[IntersectionSummaryInfo] = None
     __properties: ClassVar[List[str]] = ["domain_intersection", "summary"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,9 +74,9 @@ class BacklinksDomainIntersectionLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in domain_intersection (dict)
         _field_dict = {}
         if self.domain_intersection:
-            for _key in self.domain_intersection:
-                if self.domain_intersection[_key]:
-                    _field_dict[_key] = self.domain_intersection[_key].to_dict()
+            for _key_domain_intersection in self.domain_intersection:
+                if self.domain_intersection[_key_domain_intersection]:
+                    _field_dict[_key_domain_intersection] = self.domain_intersection[_key_domain_intersection].to_dict()
             _dict['domain_intersection'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of summary
         if self.summary:

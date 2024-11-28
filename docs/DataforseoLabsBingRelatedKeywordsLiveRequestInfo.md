@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyword** | **str** | keyword required field UTF-8 encoding a keyword should be at least 3 characters long; the keywords will be converted to lowercase format learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
+**keyword** | **str** | keyword required field UTF-8 encoding the keywords will be converted to lowercase format learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article | [optional] 
 **location_name** | **str** | full name of the location required field if you don’t specify location_code Note: it is required to specify either location_name or location_code you can receive the list of available locations with their location_name by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages; Note: this endpoint currently supports the US location only; example: United States | [optional] 
 **location_code** | **int** | location code required field if you don’t specify location_name Note: it is required to specify either location_name or location_code you can receive the list of available locations with their location_code by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages; Note: this endpoint currently supports the US location only; example: 2840 | [optional] 
 **language_name** | **str** | full name of the language required field if you don’t specify language_code Note: it is required to specify either language_name or language_code you can receive the list of available locations with their language_name by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages example: English | [optional] 
@@ -31,12 +31,12 @@ json = "{}"
 # create an instance of DataforseoLabsBingRelatedKeywordsLiveRequestInfo from a JSON string
 dataforseo_labs_bing_related_keywords_live_request_info_instance = DataforseoLabsBingRelatedKeywordsLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsBingRelatedKeywordsLiveRequestInfo.to_json()
+print(DataforseoLabsBingRelatedKeywordsLiveRequestInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_bing_related_keywords_live_request_info_dict = dataforseo_labs_bing_related_keywords_live_request_info_instance.to_dict()
 # create an instance of DataforseoLabsBingRelatedKeywordsLiveRequestInfo from a dict
-dataforseo_labs_bing_related_keywords_live_request_info_form_dict = dataforseo_labs_bing_related_keywords_live_request_info.from_dict(dataforseo_labs_bing_related_keywords_live_request_info_dict)
+dataforseo_labs_bing_related_keywords_live_request_info_from_dict = DataforseoLabsBingRelatedKeywordsLiveRequestInfo.from_dict(dataforseo_labs_bing_related_keywords_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

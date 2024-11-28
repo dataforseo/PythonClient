@@ -17,12 +17,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from dataforseo_client.models.rating_info import RatingInfo
-from dataforseo_client.models.work_info import WorkInfo
+from dataforseo_client.models.work_hours import WorkHours
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -47,7 +47,7 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
     hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     category_ids: Optional[List[StrictStr]] = Field(default=None, description="global category IDs universal category IDs that do not change based on the selected country")
-    work_hours: Optional[WorkInfo] = None
+    work_hours: Optional[WorkHours] = None
     feature_id: Optional[StrictStr] = Field(default=None, description="the unique identifier of the element in SERP learn more about the identifier in this help center article")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews learn more about the identifier in this help center article")
     latitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="latitude coordinate of the local establishments in google maps example: \"latitude\": 51.584091")
@@ -57,11 +57,11 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
     is_directory_item: Optional[StrictBool] = Field(default=None, description="business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "price_level", "hotel_rating", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -262,7 +262,7 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
             "price_level": obj.get("price_level"),
             "hotel_rating": obj.get("hotel_rating"),
             "category_ids": obj.get("category_ids"),
-            "work_hours": WorkInfo.from_dict(obj["work_hours"]) if obj.get("work_hours") is not None else None,
+            "work_hours": WorkHours.from_dict(obj["work_hours"]) if obj.get("work_hours") is not None else None,
             "feature_id": obj.get("feature_id"),
             "cid": obj.get("cid"),
             "latitude": obj.get("latitude"),

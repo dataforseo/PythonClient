@@ -1210,7 +1210,7 @@ Name | Type | Description  | Notes
 
 
 
-‌‌ This endpoint returns a list of pages that are blocked from being indexed by Google and other search engines by robots.txt, HTTP headers, or meta tags settings. for more info please visit 'https://docs.dataforseo.com/v3/on_page/non_indexable/?bash'
+‌‌ This endpoint returns a list of pages that are blocked from being indexed by Google and other search engines through robots.txt, HTTP headers, or meta tags settings. for more info please visit 'https://docs.dataforseo.com/v3/on_page/non_indexable/?bash'
 
 ### Example
 
@@ -1363,7 +1363,7 @@ This endpoint does not need any parameter.
 
 
 
-By calling this endpoint you will receive information about the OnPage API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/on_page/errors/?bash'
+By calling this endpoint you will receive information about the OnPage API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/on_page/errors/?bash'
 
 ### Example
 
@@ -2217,7 +2217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **task_post**
-> OnPageTaskPostResponseInfo task_post(on_page_task_request_info=on_page_task_request_info)
+> OnPageTaskPostResponseInfo task_post(on_page_task_post_request_info=on_page_task_post_request_info)
 
 
 
@@ -2229,8 +2229,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.on_page_task_post_request_info import OnPageTaskPostRequestInfo
 from dataforseo_client.models.on_page_task_post_response_info import OnPageTaskPostResponseInfo
-from dataforseo_client.models.on_page_task_request_info import OnPageTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -2255,10 +2255,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.OnPageApi(api_client)
-    on_page_task_request_info = [dataforseo_client.OnPageTaskRequestInfo()] # List[OnPageTaskRequestInfo] |  (optional)
+    on_page_task_post_request_info = [dataforseo_client.OnPageTaskPostRequestInfo()] # List[OnPageTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.task_post(on_page_task_request_info=on_page_task_request_info)
+        api_response = api_instance.task_post(on_page_task_post_request_info=on_page_task_post_request_info)
         print("The response of OnPageApi->task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -2272,7 +2272,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **on_page_task_request_info** | [**List[OnPageTaskRequestInfo]**](OnPageTaskRequestInfo.md)|  | [optional] 
+ **on_page_task_post_request_info** | [**List[OnPageTaskPostRequestInfo]**](OnPageTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 

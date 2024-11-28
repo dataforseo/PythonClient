@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.page_section_content_info import PageSectionContentInfo
 from dataforseo_client.models.topic_info import TopicInfo
@@ -34,11 +34,11 @@ class PageContentInfo(BaseModel):
     secondary_topic: Optional[List[TopicInfo]] = Field(default=None, description="secondary topic on the page you can find more information about topic priority calculation in this help center article")
     __properties: ClassVar[List[str]] = ["header", "footer", "main_topic", "secondary_topic"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -82,16 +82,16 @@ class PageContentInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in main_topic (list)
         _items = []
         if self.main_topic:
-            for _item in self.main_topic:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_main_topic in self.main_topic:
+                if _item_main_topic:
+                    _items.append(_item_main_topic.to_dict())
             _dict['main_topic'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in secondary_topic (list)
         _items = []
         if self.secondary_topic:
-            for _item in self.secondary_topic:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_secondary_topic in self.secondary_topic:
+                if _item_secondary_topic:
+                    _items.append(_item_secondary_topic.to_dict())
             _dict['secondary_topic'] = _items
         # set to None if main_topic (nullable) is None
         # and model_fields_set contains the field

@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo from a JSON string
 keywords_data_bing_search_volume_history_task_get_result_info_instance = KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo.to_json()
+print(KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo.to_json())
 
 # convert the object into a dict
 keywords_data_bing_search_volume_history_task_get_result_info_dict = keywords_data_bing_search_volume_history_task_get_result_info_instance.to_dict()
 # create an instance of KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo from a dict
-keywords_data_bing_search_volume_history_task_get_result_info_form_dict = keywords_data_bing_search_volume_history_task_get_result_info.from_dict(keywords_data_bing_search_volume_history_task_get_result_info_dict)
+keywords_data_bing_search_volume_history_task_get_result_info_from_dict = KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo.from_dict(keywords_data_bing_search_volume_history_task_get_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

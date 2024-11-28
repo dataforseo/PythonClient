@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.amazon_product_newer_model_info import AmazonProductNewerModelInfo
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
@@ -52,13 +52,15 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
     product_videos_list: Optional[List[Optional[StrictStr]]] = Field(default=None, description="contains URLs for all videos of the product displayed on the right side of the main video")
     description: Optional[StrictStr] = Field(default=None, description="contains description of the product")
     is_available: Optional[StrictBool] = Field(default=None, description="indicates whether the product is available for ordering if the value is true, the product can be ordered")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "title", "details", "image_url", "author", "data_asin", "parent_asin", "product_asins", "price_from", "price_to", "currency", "is_amazon_choice", "rating", "is_newer_model_available", "newer_model", "categories", "product_information", "product_images_list", "product_videos_list", "description", "is_available"]
+    top_local_reviews: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="array of objects with top reviews from target location to obtain additional local reviews, you can specify the load_more_local_reviews parameter in Task POST")
+    top_global_reviews: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="array of objects with top reviews from around the world")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "title", "details", "image_url", "author", "data_asin", "parent_asin", "product_asins", "price_from", "price_to", "currency", "is_amazon_choice", "rating", "is_newer_model_available", "newer_model", "categories", "product_information", "product_images_list", "product_videos_list", "description", "is_available", "top_local_reviews", "top_global_reviews"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -102,17 +104,31 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in categories (list)
         _items = []
         if self.categories:
-            for _item in self.categories:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_categories in self.categories:
+                if _item_categories:
+                    _items.append(_item_categories.to_dict())
             _dict['categories'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in product_information (list)
         _items = []
         if self.product_information:
-            for _item in self.product_information:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_product_information in self.product_information:
+                if _item_product_information:
+                    _items.append(_item_product_information.to_dict())
             _dict['product_information'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in top_local_reviews (list)
+        _items = []
+        if self.top_local_reviews:
+            for _item_top_local_reviews in self.top_local_reviews:
+                if _item_top_local_reviews:
+                    _items.append(_item_top_local_reviews.to_dict())
+            _dict['top_local_reviews'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in top_global_reviews (list)
+        _items = []
+        if self.top_global_reviews:
+            for _item_top_global_reviews in self.top_global_reviews:
+                if _item_top_global_reviews:
+                    _items.append(_item_top_global_reviews.to_dict())
+            _dict['top_global_reviews'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -228,6 +244,16 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
         if self.is_available is None and "is_available" in self.model_fields_set:
             _dict['is_available'] = None
 
+        # set to None if top_local_reviews (nullable) is None
+        # and model_fields_set contains the field
+        if self.top_local_reviews is None and "top_local_reviews" in self.model_fields_set:
+            _dict['top_local_reviews'] = None
+
+        # set to None if top_global_reviews (nullable) is None
+        # and model_fields_set contains the field
+        if self.top_global_reviews is None and "top_global_reviews" in self.model_fields_set:
+            _dict['top_global_reviews'] = None
+
         return _dict
 
     @classmethod
@@ -264,7 +290,9 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
             "product_images_list": obj.get("product_images_list"),
             "product_videos_list": obj.get("product_videos_list"),
             "description": obj.get("description"),
-            "is_available": obj.get("is_available")
+            "is_available": obj.get("is_available"),
+            "top_local_reviews": [BaseAmazonSerpElementItem.from_dict(_item) for _item in obj["top_local_reviews"]] if obj.get("top_local_reviews") is not None else None,
+            "top_global_reviews": [BaseAmazonSerpElementItem.from_dict(_item) for _item in obj["top_global_reviews"]] if obj.get("top_global_reviews") is not None else None
         })
         return _obj
 

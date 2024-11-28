@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of ContentGenerationTextSummaryLiveRequestInfo from a JSON string
 content_generation_text_summary_live_request_info_instance = ContentGenerationTextSummaryLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print ContentGenerationTextSummaryLiveRequestInfo.to_json()
+print(ContentGenerationTextSummaryLiveRequestInfo.to_json())
 
 # convert the object into a dict
 content_generation_text_summary_live_request_info_dict = content_generation_text_summary_live_request_info_instance.to_dict()
 # create an instance of ContentGenerationTextSummaryLiveRequestInfo from a dict
-content_generation_text_summary_live_request_info_form_dict = content_generation_text_summary_live_request_info.from_dict(content_generation_text_summary_live_request_info_dict)
+content_generation_text_summary_live_request_info_from_dict = ContentGenerationTextSummaryLiveRequestInfo.from_dict(content_generation_text_summary_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.content_analysis_categories_info import ContentAnalysisCategoriesInfo
 from dataforseo_client.models.top_domain_info import TopDomainInfo
@@ -42,11 +42,11 @@ class ContentAnalysisCategoryTrendsLiveResultInfo(BaseModel):
     languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="languages contains languages and citation count in each language to obtain a full list of available languages, refer to the Languages endpoint")
     __properties: ClassVar[List[str]] = ["type", "date", "total_count", "rank", "top_domains", "sentiment_connotations", "connotation_types", "text_categories", "page_categories", "page_types", "countries", "languages"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -84,23 +84,23 @@ class ContentAnalysisCategoryTrendsLiveResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in top_domains (list)
         _items = []
         if self.top_domains:
-            for _item in self.top_domains:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_top_domains in self.top_domains:
+                if _item_top_domains:
+                    _items.append(_item_top_domains.to_dict())
             _dict['top_domains'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in text_categories (list)
         _items = []
         if self.text_categories:
-            for _item in self.text_categories:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_text_categories in self.text_categories:
+                if _item_text_categories:
+                    _items.append(_item_text_categories.to_dict())
             _dict['text_categories'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in page_categories (list)
         _items = []
         if self.page_categories:
-            for _item in self.page_categories:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_page_categories in self.page_categories:
+                if _item_page_categories:
+                    _items.append(_item_page_categories.to_dict())
             _dict['page_categories'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field

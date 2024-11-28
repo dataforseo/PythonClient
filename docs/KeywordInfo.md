@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of KeywordInfo from a JSON string
 keyword_info_instance = KeywordInfo.from_json(json)
 # print the JSON string representation of the object
-print KeywordInfo.to_json()
+print(KeywordInfo.to_json())
 
 # convert the object into a dict
 keyword_info_dict = keyword_info_instance.to_dict()
 # create an instance of KeywordInfo from a dict
-keyword_info_form_dict = keyword_info.from_dict(keyword_info_dict)
+keyword_info_from_dict = KeywordInfo.from_dict(keyword_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

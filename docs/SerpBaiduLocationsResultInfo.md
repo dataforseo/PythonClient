@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of SerpBaiduLocationsResultInfo from a JSON string
 serp_baidu_locations_result_info_instance = SerpBaiduLocationsResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBaiduLocationsResultInfo.to_json()
+print(SerpBaiduLocationsResultInfo.to_json())
 
 # convert the object into a dict
 serp_baidu_locations_result_info_dict = serp_baidu_locations_result_info_instance.to_dict()
 # create an instance of SerpBaiduLocationsResultInfo from a dict
-serp_baidu_locations_result_info_form_dict = serp_baidu_locations_result_info.from_dict(serp_baidu_locations_result_info_dict)
+serp_baidu_locations_result_info_from_dict = SerpBaiduLocationsResultInfo.from_dict(serp_baidu_locations_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

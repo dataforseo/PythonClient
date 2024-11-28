@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **icon** | **str** | URL to the app icon | [optional] 
 **description** | **str** | description of the app | [optional] 
 **reviews_count** | **int** | the total number of reviews the app has | [optional] 
-**price** | [**Price**](Price.md) |  | [optional] 
+**price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
 **is_free** | **bool** | indicates whether the app is free | [optional] 
 **main_category** | **str** | main category of the app | [optional] 
 **installs** | **str** | number of installs of the app approximate number of installs as displayed on the app page | [optional] 
@@ -44,12 +44,12 @@ json = "{}"
 # create an instance of DataAppGooglePlayInfoOrganicSerpElementItem from a JSON string
 data_app_google_play_info_organic_serp_element_item_instance = DataAppGooglePlayInfoOrganicSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print DataAppGooglePlayInfoOrganicSerpElementItem.to_json()
+print(DataAppGooglePlayInfoOrganicSerpElementItem.to_json())
 
 # convert the object into a dict
 data_app_google_play_info_organic_serp_element_item_dict = data_app_google_play_info_organic_serp_element_item_instance.to_dict()
 # create an instance of DataAppGooglePlayInfoOrganicSerpElementItem from a dict
-data_app_google_play_info_organic_serp_element_item_form_dict = data_app_google_play_info_organic_serp_element_item.from_dict(data_app_google_play_info_organic_serp_element_item_dict)
+data_app_google_play_info_organic_serp_element_item_from_dict = DataAppGooglePlayInfoOrganicSerpElementItem.from_dict(data_app_google_play_info_organic_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

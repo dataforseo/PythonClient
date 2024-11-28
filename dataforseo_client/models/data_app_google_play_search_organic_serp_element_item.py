@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
-from dataforseo_client.models.price import Price
+from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,16 +34,16 @@ class DataAppGooglePlaySearchOrganicSerpElementItem(BaseAppDataSerpElementItem):
     icon: Optional[StrictStr] = Field(default=None, description="URL to the app icon")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews of the app")
     is_free: Optional[StrictBool] = Field(default=None, description="indicates whether the app is free")
-    price: Optional[Price] = None
+    price: Optional[PriceInfo] = None
     developer: Optional[StrictStr] = Field(default=None, description="name of the app developer")
     developer_url: Optional[StrictStr] = Field(default=None, description="URL to the developer page on Google Play")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "rating", "app_id", "url", "icon", "reviews_count", "is_free", "price", "developer", "developer_url"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -167,7 +167,7 @@ class DataAppGooglePlaySearchOrganicSerpElementItem(BaseAppDataSerpElementItem):
             "icon": obj.get("icon"),
             "reviews_count": obj.get("reviews_count"),
             "is_free": obj.get("is_free"),
-            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "developer": obj.get("developer"),
             "developer_url": obj.get("developer_url")
         })

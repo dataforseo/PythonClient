@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of DomainAnalyticsIdListResultInfo from a JSON string
 domain_analytics_id_list_result_info_instance = DomainAnalyticsIdListResultInfo.from_json(json)
 # print the JSON string representation of the object
-print DomainAnalyticsIdListResultInfo.to_json()
+print(DomainAnalyticsIdListResultInfo.to_json())
 
 # convert the object into a dict
 domain_analytics_id_list_result_info_dict = domain_analytics_id_list_result_info_instance.to_dict()
 # create an instance of DomainAnalyticsIdListResultInfo from a dict
-domain_analytics_id_list_result_info_form_dict = domain_analytics_id_list_result_info.from_dict(domain_analytics_id_list_result_info_dict)
+domain_analytics_id_list_result_info_from_dict = DomainAnalyticsIdListResultInfo.from_dict(domain_analytics_id_list_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -163,7 +163,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = '2f7c1600-7651-4975-b71f-204457f22109' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'f22ed298-6c1c-452f-95d0-d5c83d4bea3f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_asin_task_get_html(id)
@@ -472,7 +472,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = 'aa3d89e5-9f1a-4e73-88dc-ee2680492e9b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '2d87c879-e41d-4cbd-adf6-32b190a3d6a4' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_products_task_get_html(id)
@@ -781,7 +781,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = '9521f0ae-6feb-4019-bcc4-7a76b6935a31' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '98c5eb5a-4634-4361-aceb-017a1d10616e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_reviews_task_get_html(id)
@@ -1090,7 +1090,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = '2fd59353-4eeb-4d71-8cfc-db82cab743b3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'c002c7dd-7b79-426b-95cf-63a75f1e80a1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.amazon_sellers_task_get_html(id)
@@ -1630,7 +1630,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = 'd3ab0391-2c67-41cd-94e4-f0502ab89fb9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '373ed7e1-c351-498a-9314-d0fce870d48f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_product_spec_task_get_html(id)
@@ -1939,7 +1939,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = '3cb6f2e3-9e03-42ef-b416-8a9c6763dba6' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '98814f66-29d6-49d9-bc02-61147917271e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_products_task_get_html(id)
@@ -1980,7 +1980,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **google_products_task_post**
-> MerchantGoogleProductsTaskPostResponseInfo google_products_task_post(merchant_task_request_info=merchant_task_request_info)
+> MerchantGoogleProductsTaskPostResponseInfo google_products_task_post(merchant_google_products_task_post_request_info=merchant_google_products_task_post_request_info)
 
 
 
@@ -1992,8 +1992,8 @@ Name | Type | Description  | Notes
 
 ```python
 import dataforseo_client
+from dataforseo_client.models.merchant_google_products_task_post_request_info import MerchantGoogleProductsTaskPostRequestInfo
 from dataforseo_client.models.merchant_google_products_task_post_response_info import MerchantGoogleProductsTaskPostResponseInfo
-from dataforseo_client.models.merchant_task_request_info import MerchantTaskRequestInfo
 from dataforseo_client.rest import ApiException
 from pprint import pprint
 
@@ -2018,10 +2018,10 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    merchant_task_request_info = [dataforseo_client.MerchantTaskRequestInfo()] # List[MerchantTaskRequestInfo] |  (optional)
+    merchant_google_products_task_post_request_info = [dataforseo_client.MerchantGoogleProductsTaskPostRequestInfo()] # List[MerchantGoogleProductsTaskPostRequestInfo] |  (optional)
 
     try:
-        api_response = api_instance.google_products_task_post(merchant_task_request_info=merchant_task_request_info)
+        api_response = api_instance.google_products_task_post(merchant_google_products_task_post_request_info=merchant_google_products_task_post_request_info)
         print("The response of MerchantApi->google_products_task_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -2035,7 +2035,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_task_request_info** | [**List[MerchantTaskRequestInfo]**](MerchantTaskRequestInfo.md)|  | [optional] 
+ **merchant_google_products_task_post_request_info** | [**List[MerchantGoogleProductsTaskPostRequestInfo]**](MerchantGoogleProductsTaskPostRequestInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -2326,7 +2326,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.MerchantApi(api_client)
-    id = '8f539449-e9c4-41bb-918f-4adeec292ff6' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '4ab3aba9-5885-4038-b1f1-86204d8caedb' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_sellers_task_get_html(id)
@@ -2750,7 +2750,7 @@ Name | Type | Description  | Notes
 
 
 
-By calling this endpoint you will receive information about the Merchant API tasks that returned an error within the past 24 hours. for more info please visit 'https://docs.dataforseo.com/v3/merchant/errors/?bash'
+By calling this endpoint you will receive information about the Merchant API tasks that returned an error within the past 7 days. for more info please visit 'https://docs.dataforseo.com/v3/merchant/errors/?bash'
 
 ### Example
 

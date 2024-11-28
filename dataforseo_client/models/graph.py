@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.graph_element import GraphElement
 from typing import Optional, Set
@@ -31,11 +31,11 @@ class Graph(BaseModel):
     previous_items: Optional[List[GraphElement]] = Field(default=None, description="previous close data contains stock price data based on the preceding time period")
     __properties: ClassVar[List[str]] = ["items", "previous_items"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -73,16 +73,16 @@ class Graph(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
-            for _item in self.items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
             _dict['items'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in previous_items (list)
         _items = []
         if self.previous_items:
-            for _item in self.previous_items:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_previous_items in self.previous_items:
+                if _item_previous_items:
+                    _items.append(_item_previous_items.to_dict())
             _dict['previous_items'] = _items
         # set to None if items (nullable) is None
         # and model_fields_set contains the field

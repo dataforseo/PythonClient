@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpBingOrganicLiveRegularTaskInfo from a JSON string
 serp_bing_organic_live_regular_task_info_instance = SerpBingOrganicLiveRegularTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBingOrganicLiveRegularTaskInfo.to_json()
+print(SerpBingOrganicLiveRegularTaskInfo.to_json())
 
 # convert the object into a dict
 serp_bing_organic_live_regular_task_info_dict = serp_bing_organic_live_regular_task_info_instance.to_dict()
 # create an instance of SerpBingOrganicLiveRegularTaskInfo from a dict
-serp_bing_organic_live_regular_task_info_form_dict = serp_bing_organic_live_regular_task_info.from_dict(serp_bing_organic_live_regular_task_info_dict)
+serp_bing_organic_live_regular_task_info_from_dict = SerpBingOrganicLiveRegularTaskInfo.from_dict(serp_bing_organic_live_regular_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

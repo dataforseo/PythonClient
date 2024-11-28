@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of RelatedSearchesElement from a JSON string
 related_searches_element_instance = RelatedSearchesElement.from_json(json)
 # print the JSON string representation of the object
-print RelatedSearchesElement.to_json()
+print(RelatedSearchesElement.to_json())
 
 # convert the object into a dict
 related_searches_element_dict = related_searches_element_instance.to_dict()
 # create an instance of RelatedSearchesElement from a dict
-related_searches_element_form_dict = related_searches_element.from_dict(related_searches_element_dict)
+related_searches_element_from_dict = RelatedSearchesElement.from_dict(related_searches_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

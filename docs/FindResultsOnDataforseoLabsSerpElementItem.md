@@ -17,12 +17,12 @@ json = "{}"
 # create an instance of FindResultsOnDataforseoLabsSerpElementItem from a JSON string
 find_results_on_dataforseo_labs_serp_element_item_instance = FindResultsOnDataforseoLabsSerpElementItem.from_json(json)
 # print the JSON string representation of the object
-print FindResultsOnDataforseoLabsSerpElementItem.to_json()
+print(FindResultsOnDataforseoLabsSerpElementItem.to_json())
 
 # convert the object into a dict
 find_results_on_dataforseo_labs_serp_element_item_dict = find_results_on_dataforseo_labs_serp_element_item_instance.to_dict()
 # create an instance of FindResultsOnDataforseoLabsSerpElementItem from a dict
-find_results_on_dataforseo_labs_serp_element_item_form_dict = find_results_on_dataforseo_labs_serp_element_item.from_dict(find_results_on_dataforseo_labs_serp_element_item_dict)
+find_results_on_dataforseo_labs_serp_element_item_from_dict = FindResultsOnDataforseoLabsSerpElementItem.from_dict(find_results_on_dataforseo_labs_serp_element_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

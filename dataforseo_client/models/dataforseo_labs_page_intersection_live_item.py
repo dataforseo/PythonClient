@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
-from dataforseo_client.models.keyword_data_keyword_data_info import KeywordDataKeywordDataInfo
+from dataforseo_client.models.keyword_data_info import KeywordDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,15 +29,15 @@ class DataforseoLabsPageIntersectionLiveItem(BaseModel):
     DataforseoLabsPageIntersectionLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    keyword_data: Optional[KeywordDataKeywordDataInfo] = None
+    keyword_data: Optional[KeywordDataInfo] = None
     intersection_result: Optional[Dict[str, BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="contains data on the SERP elements found for the returned keyword data will be provided in separate arrays for each URL you specified in the pages object when setting a task; depending on the number of specified URLs, it can contain from 1 to 20 arrays named respectively")
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "intersection_result"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -78,9 +78,9 @@ class DataforseoLabsPageIntersectionLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in intersection_result (dict)
         _field_dict = {}
         if self.intersection_result:
-            for _key in self.intersection_result:
-                if self.intersection_result[_key]:
-                    _field_dict[_key] = self.intersection_result[_key].to_dict()
+            for _key_intersection_result in self.intersection_result:
+                if self.intersection_result[_key_intersection_result]:
+                    _field_dict[_key_intersection_result] = self.intersection_result[_key_intersection_result].to_dict()
             _dict['intersection_result'] = _field_dict
         # set to None if se_type (nullable) is None
         # and model_fields_set contains the field
@@ -105,7 +105,7 @@ class DataforseoLabsPageIntersectionLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
-            "keyword_data": KeywordDataKeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
+            "keyword_data": KeywordDataInfo.from_dict(obj["keyword_data"]) if obj.get("keyword_data") is not None else None,
             "intersection_result": dict(
                 (_k, BaseDataforseoLabsSerpElementItem.from_dict(_v))
                 for _k, _v in obj["intersection_result"].items()

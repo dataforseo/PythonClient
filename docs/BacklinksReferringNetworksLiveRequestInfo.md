@@ -29,12 +29,12 @@ json = "{}"
 # create an instance of BacklinksReferringNetworksLiveRequestInfo from a JSON string
 backlinks_referring_networks_live_request_info_instance = BacklinksReferringNetworksLiveRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print BacklinksReferringNetworksLiveRequestInfo.to_json()
+print(BacklinksReferringNetworksLiveRequestInfo.to_json())
 
 # convert the object into a dict
 backlinks_referring_networks_live_request_info_dict = backlinks_referring_networks_live_request_info_instance.to_dict()
 # create an instance of BacklinksReferringNetworksLiveRequestInfo from a dict
-backlinks_referring_networks_live_request_info_form_dict = backlinks_referring_networks_live_request_info.from_dict(backlinks_referring_networks_live_request_info_dict)
+backlinks_referring_networks_live_request_info_from_dict = BacklinksReferringNetworksLiveRequestInfo.from_dict(backlinks_referring_networks_live_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

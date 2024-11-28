@@ -17,12 +17,12 @@ json = "{}"
 # create an instance of IntersectionSummaryInfo from a JSON string
 intersection_summary_info_instance = IntersectionSummaryInfo.from_json(json)
 # print the JSON string representation of the object
-print IntersectionSummaryInfo.to_json()
+print(IntersectionSummaryInfo.to_json())
 
 # convert the object into a dict
 intersection_summary_info_dict = intersection_summary_info_instance.to_dict()
 # create an instance of IntersectionSummaryInfo from a dict
-intersection_summary_info_form_dict = intersection_summary_info.from_dict(intersection_summary_info_dict)
+intersection_summary_info_from_dict = IntersectionSummaryInfo.from_dict(intersection_summary_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

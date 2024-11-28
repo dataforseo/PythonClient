@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.row_cell_info import RowCellInfo
 from typing import Optional, Set
@@ -30,11 +30,11 @@ class TableContentItemInfo(BaseModel):
     row_cells: Optional[List[RowCellInfo]] = Field(default=None, description="content of the row cells of the header")
     __properties: ClassVar[List[str]] = ["row_cells"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -72,9 +72,9 @@ class TableContentItemInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in row_cells (list)
         _items = []
         if self.row_cells:
-            for _item in self.row_cells:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_row_cells in self.row_cells:
+                if _item_row_cells:
+                    _items.append(_item_row_cells.to_dict())
             _dict['row_cells'] = _items
         # set to None if row_cells (nullable) is None
         # and model_fields_set contains the field

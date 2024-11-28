@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_info import AppendixInfo
 from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
@@ -34,13 +34,14 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
     hotel_searches: Optional[AppendixInfo] = None
     reviews: Optional[AppendixInfo] = None
     questions_and_answers: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["my_business_info", "my_business_updates", "hotel_info", "hotel_searches", "reviews", "questions_and_answers"]
+    extended_reviews: Optional[AppendixInfo] = None
+    __properties: ClassVar[List[str]] = ["my_business_info", "my_business_updates", "hotel_info", "hotel_searches", "reviews", "questions_and_answers", "extended_reviews"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -93,6 +94,9 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of questions_and_answers
         if self.questions_and_answers:
             _dict['questions_and_answers'] = self.questions_and_answers.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of extended_reviews
+        if self.extended_reviews:
+            _dict['extended_reviews'] = self.extended_reviews.to_dict()
         return _dict
 
     @classmethod
@@ -110,7 +114,8 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
             "hotel_info": AppendixSerpLimitsRatesDataInfo.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
             "hotel_searches": AppendixInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
             "reviews": AppendixInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
-            "questions_and_answers": AppendixInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None
+            "questions_and_answers": AppendixInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None,
+            "extended_reviews": AppendixInfo.from_dict(obj["extended_reviews"]) if obj.get("extended_reviews") is not None else None
         })
         return _obj
 

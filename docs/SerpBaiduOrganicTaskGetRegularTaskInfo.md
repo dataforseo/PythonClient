@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpBaiduOrganicTaskGetRegularTaskInfo from a JSON string
 serp_baidu_organic_task_get_regular_task_info_instance = SerpBaiduOrganicTaskGetRegularTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBaiduOrganicTaskGetRegularTaskInfo.to_json()
+print(SerpBaiduOrganicTaskGetRegularTaskInfo.to_json())
 
 # convert the object into a dict
 serp_baidu_organic_task_get_regular_task_info_dict = serp_baidu_organic_task_get_regular_task_info_instance.to_dict()
 # create an instance of SerpBaiduOrganicTaskGetRegularTaskInfo from a dict
-serp_baidu_organic_task_get_regular_task_info_form_dict = serp_baidu_organic_task_get_regular_task_info.from_dict(serp_baidu_organic_task_get_regular_task_info_dict)
+serp_baidu_organic_task_get_regular_task_info_from_dict = SerpBaiduOrganicTaskGetRegularTaskInfo.from_dict(serp_baidu_organic_task_get_regular_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

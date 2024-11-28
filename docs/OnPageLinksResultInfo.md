@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of OnPageLinksResultInfo from a JSON string
 on_page_links_result_info_instance = OnPageLinksResultInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageLinksResultInfo.to_json()
+print(OnPageLinksResultInfo.to_json())
 
 # convert the object into a dict
 on_page_links_result_info_dict = on_page_links_result_info_instance.to_dict()
 # create an instance of OnPageLinksResultInfo from a dict
-on_page_links_result_info_form_dict = on_page_links_result_info.from_dict(on_page_links_result_info_dict)
+on_page_links_result_info_from_dict = OnPageLinksResultInfo.from_dict(on_page_links_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

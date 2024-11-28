@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.keyword_intent_info import KeywordIntentInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class DataforseoLabsGoogleSearchIntentLiveItem(BaseModel):
     secondary_keyword_intents: Optional[List[KeywordIntentInfo]] = Field(default=None, description="contains objects with other possible search intents for the specified keyword")
     __properties: ClassVar[List[str]] = ["keyword", "keyword_intent", "secondary_keyword_intents"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -77,9 +77,9 @@ class DataforseoLabsGoogleSearchIntentLiveItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in secondary_keyword_intents (list)
         _items = []
         if self.secondary_keyword_intents:
-            for _item in self.secondary_keyword_intents:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_secondary_keyword_intents in self.secondary_keyword_intents:
+                if _item_secondary_keyword_intents:
+                    _items.append(_item_secondary_keyword_intents.to_dict())
             _dict['secondary_keyword_intents'] = _items
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field

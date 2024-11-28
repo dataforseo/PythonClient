@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of SerpBingLocationsCountryResultInfo from a JSON string
 serp_bing_locations_country_result_info_instance = SerpBingLocationsCountryResultInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpBingLocationsCountryResultInfo.to_json()
+print(SerpBingLocationsCountryResultInfo.to_json())
 
 # convert the object into a dict
 serp_bing_locations_country_result_info_dict = serp_bing_locations_country_result_info_instance.to_dict()
 # create an instance of SerpBingLocationsCountryResultInfo from a dict
-serp_bing_locations_country_result_info_form_dict = serp_bing_locations_country_result_info.from_dict(serp_bing_locations_country_result_info_dict)
+serp_bing_locations_country_result_info_from_dict = SerpBingLocationsCountryResultInfo.from_dict(serp_bing_locations_country_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

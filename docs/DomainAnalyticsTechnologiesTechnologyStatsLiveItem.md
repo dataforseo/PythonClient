@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of DomainAnalyticsTechnologiesTechnologyStatsLiveItem from a JSON string
 domain_analytics_technologies_technology_stats_live_item_instance = DomainAnalyticsTechnologiesTechnologyStatsLiveItem.from_json(json)
 # print the JSON string representation of the object
-print DomainAnalyticsTechnologiesTechnologyStatsLiveItem.to_json()
+print(DomainAnalyticsTechnologiesTechnologyStatsLiveItem.to_json())
 
 # convert the object into a dict
 domain_analytics_technologies_technology_stats_live_item_dict = domain_analytics_technologies_technology_stats_live_item_instance.to_dict()
 # create an instance of DomainAnalyticsTechnologiesTechnologyStatsLiveItem from a dict
-domain_analytics_technologies_technology_stats_live_item_form_dict = domain_analytics_technologies_technology_stats_live_item.from_dict(domain_analytics_technologies_technology_stats_live_item_dict)
+domain_analytics_technologies_technology_stats_live_item_from_dict = DomainAnalyticsTechnologiesTechnologyStatsLiveItem.from_dict(domain_analytics_technologies_technology_stats_live_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

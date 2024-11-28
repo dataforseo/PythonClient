@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of OnPageIdListResultInfo from a JSON string
 on_page_id_list_result_info_instance = OnPageIdListResultInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageIdListResultInfo.to_json()
+print(OnPageIdListResultInfo.to_json())
 
 # convert the object into a dict
 on_page_id_list_result_info_dict = on_page_id_list_result_info_instance.to_dict()
 # create an instance of OnPageIdListResultInfo from a dict
-on_page_id_list_result_info_form_dict = on_page_id_list_result_info.from_dict(on_page_id_list_result_info_dict)
+on_page_id_list_result_info_from_dict = OnPageIdListResultInfo.from_dict(on_page_id_list_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

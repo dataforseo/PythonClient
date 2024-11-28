@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_status_endpoints_info import AppendixStatusEndpointsInfo
 from typing import Optional, Set
@@ -32,11 +32,11 @@ class AppendixStatusResultInfo(BaseModel):
     endpoints: Optional[List[AppendixStatusEndpointsInfo]] = Field(default=None, description="array of objects that contain status information for API endpoints")
     __properties: ClassVar[List[str]] = ["api", "status", "endpoints"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -74,9 +74,9 @@ class AppendixStatusResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in endpoints (list)
         _items = []
         if self.endpoints:
-            for _item in self.endpoints:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_endpoints in self.endpoints:
+                if _item_endpoints:
+                    _items.append(_item_endpoints.to_dict())
             _dict['endpoints'] = _items
         # set to None if api (nullable) is None
         # and model_fields_set contains the field

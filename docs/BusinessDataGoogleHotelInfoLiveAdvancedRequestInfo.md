@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo from a JSON string
 business_data_google_hotel_info_live_advanced_request_info_instance = BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.to_json()
+print(BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.to_json())
 
 # convert the object into a dict
 business_data_google_hotel_info_live_advanced_request_info_dict = business_data_google_hotel_info_live_advanced_request_info_instance.to_dict()
 # create an instance of BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo from a dict
-business_data_google_hotel_info_live_advanced_request_info_form_dict = business_data_google_hotel_info_live_advanced_request_info.from_dict(business_data_google_hotel_info_live_advanced_request_info_dict)
+business_data_google_hotel_info_live_advanced_request_info_from_dict = BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo.from_dict(business_data_google_hotel_info_live_advanced_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

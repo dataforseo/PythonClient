@@ -17,13 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+from importlib import import_module
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.cache_control import CacheControl
 from dataforseo_client.models.last_modified import LastModified
 from dataforseo_client.models.on_page_resource_issue_info import OnPageResourceIssueInfo
 from typing import Optional, Set
 from typing_extensions import Self
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from dataforseo_client.models.on_page_broken_resource_element_item import OnPageBrokenResourceElementItem
+    from dataforseo_client.models.on_page_html_resource_element_item import OnPageHtmlResourceElementItem
+    from dataforseo_client.models.on_page_image_resource_element_item import OnPageImageResourceElementItem
+    from dataforseo_client.models.on_page_script_resource_element_item import OnPageScriptResourceElementItem
+    from dataforseo_client.models.on_page_stylesheet_resource_element_item import OnPageStylesheetResourceElementItem
 
 class BaseOnPageResourceItemInfo(BaseModel):
     """
@@ -46,11 +55,11 @@ class BaseOnPageResourceItemInfo(BaseModel):
     last_modified: Optional[LastModified] = None
     __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     # JSON field name that stores the object type
@@ -80,7 +89,7 @@ class BaseOnPageResourceItemInfo(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[Self, Self, Self, Self, Self]]:
+    def from_json(cls, json_str: str) -> Optional[Union[OnPageBrokenResourceElementItem, OnPageHtmlResourceElementItem, OnPageImageResourceElementItem, OnPageScriptResourceElementItem, OnPageStylesheetResourceElementItem]]:
         """Create an instance of BaseOnPageResourceItemInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -174,23 +183,23 @@ class BaseOnPageResourceItemInfo(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[Self, Self, Self, Self, Self]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[OnPageBrokenResourceElementItem, OnPageHtmlResourceElementItem, OnPageImageResourceElementItem, OnPageScriptResourceElementItem, OnPageStylesheetResourceElementItem]]:
         """Create an instance of BaseOnPageResourceItemInfo from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type:
-            klass = globals()[object_type]
-            return klass.from_dict(obj)
-        else:
-            raise ValueError("BaseOnPageResourceItemInfo failed to lookup discriminator value from " +
-                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                             ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        if object_type ==  'OnPageBrokenResourceElementItem':
+            return import_module("dataforseo_client.models.on_page_broken_resource_element_item").OnPageBrokenResourceElementItem.from_dict(obj)
+        if object_type ==  'OnPageHtmlResourceElementItem':
+            return import_module("dataforseo_client.models.on_page_html_resource_element_item").OnPageHtmlResourceElementItem.from_dict(obj)
+        if object_type ==  'OnPageImageResourceElementItem':
+            return import_module("dataforseo_client.models.on_page_image_resource_element_item").OnPageImageResourceElementItem.from_dict(obj)
+        if object_type ==  'OnPageScriptResourceElementItem':
+            return import_module("dataforseo_client.models.on_page_script_resource_element_item").OnPageScriptResourceElementItem.from_dict(obj)
+        if object_type ==  'OnPageStylesheetResourceElementItem':
+            return import_module("dataforseo_client.models.on_page_stylesheet_resource_element_item").OnPageStylesheetResourceElementItem.from_dict(obj)
 
-from dataforseo_client.models.on_page_broken_resource_element_item import OnPageBrokenResourceElementItem
-from dataforseo_client.models.on_page_html_resource_element_item import OnPageHtmlResourceElementItem
-from dataforseo_client.models.on_page_image_resource_element_item import OnPageImageResourceElementItem
-from dataforseo_client.models.on_page_script_resource_element_item import OnPageScriptResourceElementItem
-from dataforseo_client.models.on_page_stylesheet_resource_element_item import OnPageStylesheetResourceElementItem
-# TODO: Rewrite to not use raise_errors
-BaseOnPageResourceItemInfo.model_rebuild(raise_errors=False)
+        raise ValueError("BaseOnPageResourceItemInfo failed to lookup discriminator value from " +
+                            json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
+                            ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+
 

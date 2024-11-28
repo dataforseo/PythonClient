@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of DataforseoLabsGoogleBulkKeywordDifficultyLiveTaskInfo from a JSON string
 dataforseo_labs_google_bulk_keyword_difficulty_live_task_info_instance = DataforseoLabsGoogleBulkKeywordDifficultyLiveTaskInfo.from_json(json)
 # print the JSON string representation of the object
-print DataforseoLabsGoogleBulkKeywordDifficultyLiveTaskInfo.to_json()
+print(DataforseoLabsGoogleBulkKeywordDifficultyLiveTaskInfo.to_json())
 
 # convert the object into a dict
 dataforseo_labs_google_bulk_keyword_difficulty_live_task_info_dict = dataforseo_labs_google_bulk_keyword_difficulty_live_task_info_instance.to_dict()
 # create an instance of DataforseoLabsGoogleBulkKeywordDifficultyLiveTaskInfo from a dict
-dataforseo_labs_google_bulk_keyword_difficulty_live_task_info_form_dict = dataforseo_labs_google_bulk_keyword_difficulty_live_task_info.from_dict(dataforseo_labs_google_bulk_keyword_difficulty_live_task_info_dict)
+dataforseo_labs_google_bulk_keyword_difficulty_live_task_info_from_dict = DataforseoLabsGoogleBulkKeywordDifficultyLiveTaskInfo.from_dict(dataforseo_labs_google_bulk_keyword_difficulty_live_task_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

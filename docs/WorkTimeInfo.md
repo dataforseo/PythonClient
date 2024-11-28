@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of WorkTimeInfo from a JSON string
 work_time_info_instance = WorkTimeInfo.from_json(json)
 # print the JSON string representation of the object
-print WorkTimeInfo.to_json()
+print(WorkTimeInfo.to_json())
 
 # convert the object into a dict
 work_time_info_dict = work_time_info_instance.to_dict()
 # create an instance of WorkTimeInfo from a dict
-work_time_info_form_dict = work_time_info.from_dict(work_time_info_dict)
+work_time_info_from_dict = WorkTimeInfo.from_dict(work_time_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

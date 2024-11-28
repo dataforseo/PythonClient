@@ -17,11 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.apps_info import AppsInfo
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
-from dataforseo_client.models.price import Price
+from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
     icon: Optional[StrictStr] = Field(default=None, description="URL to the app icon")
     description: Optional[StrictStr] = Field(default=None, description="description of the app")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews of the app")
-    price: Optional[Price] = None
+    price: Optional[PriceInfo] = None
     is_free: Optional[StrictBool] = Field(default=None, description="indicates whether the app is free")
     main_category: Optional[StrictStr] = Field(default=None, description="main category/genre of the app")
     categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description="all relevant categories/genres of the app")
@@ -55,11 +55,11 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
     more_apps_by_developer: Optional[List[AppsInfo]] = Field(default=None, description="similar apps information about apps built by the same developer")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "rating", "app_id", "url", "icon", "description", "reviews_count", "price", "is_free", "main_category", "categories", "languages", "advisories", "developer", "developer_id", "developer_url", "version", "minimum_os_version", "size", "released_date", "last_update_date", "update_notes", "images", "similar_apps", "more_apps_by_developer"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -103,16 +103,16 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of each item in similar_apps (list)
         _items = []
         if self.similar_apps:
-            for _item in self.similar_apps:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_similar_apps in self.similar_apps:
+                if _item_similar_apps:
+                    _items.append(_item_similar_apps.to_dict())
             _dict['similar_apps'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in more_apps_by_developer (list)
         _items = []
         if self.more_apps_by_developer:
-            for _item in self.more_apps_by_developer:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_more_apps_by_developer in self.more_apps_by_developer:
+                if _item_more_apps_by_developer:
+                    _items.append(_item_more_apps_by_developer.to_dict())
             _dict['more_apps_by_developer'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
@@ -272,7 +272,7 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
             "icon": obj.get("icon"),
             "description": obj.get("description"),
             "reviews_count": obj.get("reviews_count"),
-            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "is_free": obj.get("is_free"),
             "main_category": obj.get("main_category"),
             "categories": obj.get("categories"),

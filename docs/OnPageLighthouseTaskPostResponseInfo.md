@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of OnPageLighthouseTaskPostResponseInfo from a JSON string
 on_page_lighthouse_task_post_response_info_instance = OnPageLighthouseTaskPostResponseInfo.from_json(json)
 # print the JSON string representation of the object
-print OnPageLighthouseTaskPostResponseInfo.to_json()
+print(OnPageLighthouseTaskPostResponseInfo.to_json())
 
 # convert the object into a dict
 on_page_lighthouse_task_post_response_info_dict = on_page_lighthouse_task_post_response_info_instance.to_dict()
 # create an instance of OnPageLighthouseTaskPostResponseInfo from a dict
-on_page_lighthouse_task_post_response_info_form_dict = on_page_lighthouse_task_post_response_info.from_dict(on_page_lighthouse_task_post_response_info_dict)
+on_page_lighthouse_task_post_response_info_from_dict = OnPageLighthouseTaskPostResponseInfo.from_dict(on_page_lighthouse_task_post_response_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

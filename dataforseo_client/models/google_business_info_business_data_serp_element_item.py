@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
@@ -27,7 +27,7 @@ from dataforseo_client.models.business_directory_info import BusinessDirectoryIn
 from dataforseo_client.models.people_also_search import PeopleAlsoSearch
 from dataforseo_client.models.popular_times import PopularTimes
 from dataforseo_client.models.rating_info import RatingInfo
-from dataforseo_client.models.work_info import WorkInfo
+from dataforseo_client.models.work_time import WorkTime
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -50,6 +50,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     url: Optional[StrictStr] = Field(default=None, description="absolute url of the business entity")
     contact_url: Optional[StrictStr] = Field(default=None, description="URL of the preferred contact page")
     contributor_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s or entity’s Local Guides profile, if available")
+    book_online_url: Optional[StrictStr] = Field(default=None, description="URL in the ‘book online’ button of the element URL directing users to the online booking or order page of the business entity")
     domain: Optional[StrictStr] = Field(default=None, description="domain of the business entity")
     logo: Optional[StrictStr] = Field(default=None, description="URL of the logo featured in Google My Business profile")
     main_image: Optional[StrictStr] = Field(default=None, description="URL of the main image featured in Google My Business profile")
@@ -66,18 +67,18 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     people_also_search: Optional[List[PeopleAlsoSearch]] = Field(default=None, description="related business entities")
-    work_time: Optional[WorkInfo] = None
+    work_time: Optional[WorkTime] = None
     popular_times: Optional[PopularTimes] = None
     local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null")
     directory: Optional[BusinessDirectoryInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "contributor_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "questions_and_answers_count", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "contributor_url", "book_online_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "questions_and_answers_count", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -124,9 +125,9 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         # override the default output from pydantic by calling `to_dict()` of each item in people_also_search (list)
         _items = []
         if self.people_also_search:
-            for _item in self.people_also_search:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_people_also_search in self.people_also_search:
+                if _item_people_also_search:
+                    _items.append(_item_people_also_search.to_dict())
             _dict['people_also_search'] = _items
         # override the default output from pydantic by calling `to_dict()` of work_time
         if self.work_time:
@@ -137,9 +138,9 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         # override the default output from pydantic by calling `to_dict()` of each item in local_business_links (list)
         _items = []
         if self.local_business_links:
-            for _item in self.local_business_links:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_local_business_links in self.local_business_links:
+                if _item_local_business_links:
+                    _items.append(_item_local_business_links.to_dict())
             _dict['local_business_links'] = _items
         # override the default output from pydantic by calling `to_dict()` of directory
         if self.directory:
@@ -228,6 +229,11 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         # and model_fields_set contains the field
         if self.contributor_url is None and "contributor_url" in self.model_fields_set:
             _dict['contributor_url'] = None
+
+        # set to None if book_online_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.book_online_url is None and "book_online_url" in self.model_fields_set:
+            _dict['book_online_url'] = None
 
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
@@ -339,6 +345,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
             "url": obj.get("url"),
             "contact_url": obj.get("contact_url"),
             "contributor_url": obj.get("contributor_url"),
+            "book_online_url": obj.get("book_online_url"),
             "domain": obj.get("domain"),
             "logo": obj.get("logo"),
             "main_image": obj.get("main_image"),
@@ -355,7 +362,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
             "price_level": obj.get("price_level"),
             "rating_distribution": obj.get("rating_distribution"),
             "people_also_search": [PeopleAlsoSearch.from_dict(_item) for _item in obj["people_also_search"]] if obj.get("people_also_search") is not None else None,
-            "work_time": WorkInfo.from_dict(obj["work_time"]) if obj.get("work_time") is not None else None,
+            "work_time": WorkTime.from_dict(obj["work_time"]) if obj.get("work_time") is not None else None,
             "popular_times": PopularTimes.from_dict(obj["popular_times"]) if obj.get("popular_times") is not None else None,
             "local_business_links": [BaseLocalBusinessLink.from_dict(_item) for _item in obj["local_business_links"]] if obj.get("local_business_links") is not None else None,
             "is_directory_item": obj.get("is_directory_item"),

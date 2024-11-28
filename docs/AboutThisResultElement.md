@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of AboutThisResultElement from a JSON string
 about_this_result_element_instance = AboutThisResultElement.from_json(json)
 # print the JSON string representation of the object
-print AboutThisResultElement.to_json()
+print(AboutThisResultElement.to_json())
 
 # convert the object into a dict
 about_this_result_element_dict = about_this_result_element_instance.to_dict()
 # create an instance of AboutThisResultElement from a dict
-about_this_result_element_form_dict = about_this_result_element.from_dict(about_this_result_element_dict)
+about_this_result_element_from_dict = AboutThisResultElement.from_dict(about_this_result_element_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

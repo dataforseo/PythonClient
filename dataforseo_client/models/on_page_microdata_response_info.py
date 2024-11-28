@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.on_page_microdata_task_info import OnPageMicrodataTaskInfo
 from typing import Optional, Set
@@ -37,11 +37,11 @@ class OnPageMicrodataResponseInfo(BaseModel):
     tasks: Optional[List[OnPageMicrodataTaskInfo]] = Field(default=None, description="array of tasks")
     __properties: ClassVar[List[str]] = ["version", "status_code", "status_message", "time", "cost", "tasks_count", "tasks_error", "tasks"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -79,9 +79,9 @@ class OnPageMicrodataResponseInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in tasks (list)
         _items = []
         if self.tasks:
-            for _item in self.tasks:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_tasks in self.tasks:
+                if _item_tasks:
+                    _items.append(_item_tasks.to_dict())
             _dict['tasks'] = _items
         # set to None if version (nullable) is None
         # and model_fields_set contains the field

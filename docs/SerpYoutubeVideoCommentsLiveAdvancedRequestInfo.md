@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of SerpYoutubeVideoCommentsLiveAdvancedRequestInfo from a JSON string
 serp_youtube_video_comments_live_advanced_request_info_instance = SerpYoutubeVideoCommentsLiveAdvancedRequestInfo.from_json(json)
 # print the JSON string representation of the object
-print SerpYoutubeVideoCommentsLiveAdvancedRequestInfo.to_json()
+print(SerpYoutubeVideoCommentsLiveAdvancedRequestInfo.to_json())
 
 # convert the object into a dict
 serp_youtube_video_comments_live_advanced_request_info_dict = serp_youtube_video_comments_live_advanced_request_info_instance.to_dict()
 # create an instance of SerpYoutubeVideoCommentsLiveAdvancedRequestInfo from a dict
-serp_youtube_video_comments_live_advanced_request_info_form_dict = serp_youtube_video_comments_live_advanced_request_info.from_dict(serp_youtube_video_comments_live_advanced_request_info_dict)
+serp_youtube_video_comments_live_advanced_request_info_from_dict = SerpYoutubeVideoCommentsLiveAdvancedRequestInfo.from_dict(serp_youtube_video_comments_live_advanced_request_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

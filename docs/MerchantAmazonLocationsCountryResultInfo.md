@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of MerchantAmazonLocationsCountryResultInfo from a JSON string
 merchant_amazon_locations_country_result_info_instance = MerchantAmazonLocationsCountryResultInfo.from_json(json)
 # print the JSON string representation of the object
-print MerchantAmazonLocationsCountryResultInfo.to_json()
+print(MerchantAmazonLocationsCountryResultInfo.to_json())
 
 # convert the object into a dict
 merchant_amazon_locations_country_result_info_dict = merchant_amazon_locations_country_result_info_instance.to_dict()
 # create an instance of MerchantAmazonLocationsCountryResultInfo from a dict
-merchant_amazon_locations_country_result_info_form_dict = merchant_amazon_locations_country_result_info.from_dict(merchant_amazon_locations_country_result_info_dict)
+merchant_amazon_locations_country_result_info_from_dict = MerchantAmazonLocationsCountryResultInfo.from_dict(merchant_amazon_locations_country_result_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
