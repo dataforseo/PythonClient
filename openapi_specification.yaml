@@ -29760,6 +29760,21 @@ components:
           description: monthly average search volume rate
           format: int64
           nullable: true
+    SearchVolumeTrendInfo:
+      type: object 
+      properties:
+        monthly:
+          type: integer
+          description: "search volume change in percent compared to the previous month"
+          nullable: true
+        quarterly:
+          type: integer
+          description: "search volume change in percent compared to the previous quarter"
+          nullable: true
+        yearly:
+          type: integer
+          description: "search volume change in percent compared to the previous year"
+          nullable: true
     KeywordInfo:
       type: object
       properties:
@@ -29812,6 +29827,8 @@ components:
             $ref: '#/components/schemas/MonthlySearches'
           description: "monthly searches\nrepresents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations"
           nullable: true
+        search_volume_trend:
+          $ref: '#/components/schemas/SearchVolumeTrendInfo'
     KeywordInfoNormalizedWithInfo:
       type: object
       properties:

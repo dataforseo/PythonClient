@@ -7,26 +7,7 @@ def camel_to_snake(name):
 
 def __getattr__(name):
     file_name = camel_to_snake(name)
-
-    modules_to_try = [
-        'dataforseo_client',
-        'dataforseo_client.api',
-        'dataforseo_client.models',
-    ]
-
-    for module in modules_to_try:
-        try:
-            imported_module = importlib.import_module(f'{module}.{file_name}')
-            model = getattr(imported_module, name)
-            globals()[name] = model
-            return model
-        except:
-            try:
-                imported_module = importlib.import_module(f'{module}')
-                model = getattr(imported_module, name)
-                globals()[name] = model
-                return model
-            except:
-                continue
-    
-    raise ImportError(f"Cannot find {name} in any of the specified modules")
+    module = importlib.import_module(f'dataforseo_client.models.{file_name}')
+    model = getattr(module, name)
+    globals()[name] = model
+    return model

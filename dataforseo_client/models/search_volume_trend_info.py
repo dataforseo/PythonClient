@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OnPageNonIndexableRequestInfo(BaseModel):
+class SearchVolumeTrendInfo(BaseModel):
     """
-    OnPageNonIndexableRequestInfo
+    SearchVolumeTrendInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="ID of the task required field you can get this ID in the response of the Task POST endpoint example: “07131248-1535-0216-1000-17384017ad04”")
-    limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned pages optional field default value: 100 maximum value: 1000")
-    offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned pages optional field default value: 0 if you specify the 10 value, the first ten pages in the results array will be omitted and the data will be provided for the successive pages")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\"reason\",\"=\",\"robots_txt\"][[\"reason\",\"<>\",\"robots_txt\"], \"and\", [\"url\",\"not_like\",\"%/wp-admin/%\"]] [[\"url\",\"not_like\",\"%/wp-admin/%\"], \"and\", [[\"reason\",\"<>\",\"meta_tag\"],\"or\",[\"reason\",\"<>\",\"http_header\"]]] The full list of possible filters is available by this link.")
-    __properties: ClassVar[List[str]] = ["id", "limit", "offset", "filters"]
+    monthly: Optional[StrictInt] = Field(default=None, description="search volume change in percent compared to the previous month")
+    quarterly: Optional[StrictInt] = Field(default=None, description="search volume change in percent compared to the previous quarter")
+    yearly: Optional[StrictInt] = Field(default=None, description="search volume change in percent compared to the previous year")
+    __properties: ClassVar[List[str]] = ["monthly", "quarterly", "yearly"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class OnPageNonIndexableRequestInfo(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OnPageNonIndexableRequestInfo from a JSON string"""
+        """Create an instance of SearchVolumeTrendInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,26 +70,26 @@ class OnPageNonIndexableRequestInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if limit (nullable) is None
+        # set to None if monthly (nullable) is None
         # and model_fields_set contains the field
-        if self.limit is None and "limit" in self.model_fields_set:
-            _dict['limit'] = None
+        if self.monthly is None and "monthly" in self.model_fields_set:
+            _dict['monthly'] = None
 
-        # set to None if offset (nullable) is None
+        # set to None if quarterly (nullable) is None
         # and model_fields_set contains the field
-        if self.offset is None and "offset" in self.model_fields_set:
-            _dict['offset'] = None
+        if self.quarterly is None and "quarterly" in self.model_fields_set:
+            _dict['quarterly'] = None
 
-        # set to None if filters (nullable) is None
+        # set to None if yearly (nullable) is None
         # and model_fields_set contains the field
-        if self.filters is None and "filters" in self.model_fields_set:
-            _dict['filters'] = None
+        if self.yearly is None and "yearly" in self.model_fields_set:
+            _dict['yearly'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OnPageNonIndexableRequestInfo from a dict"""
+        """Create an instance of SearchVolumeTrendInfo from a dict"""
         if obj is None:
             return None
 
@@ -98,10 +97,9 @@ class OnPageNonIndexableRequestInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "limit": obj.get("limit"),
-            "offset": obj.get("offset"),
-            "filters": obj.get("filters")
+            "monthly": obj.get("monthly"),
+            "quarterly": obj.get("quarterly"),
+            "yearly": obj.get("yearly")
         })
         return _obj
 
