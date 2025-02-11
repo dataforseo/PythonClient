@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.monthly_searches import MonthlySearches
 from typing import Optional, Set
@@ -29,8 +29,9 @@ class KeywordInfoNormalizedWithInfo(BaseModel):
     """ # noqa: E501
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the clickstream dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
     search_volume: Optional[StrictInt] = Field(default=None, description="monthly average clickstream search volume rate")
+    is_normalized: Optional[StrictBool] = Field(default=None, description="keyword info is normalized if true, values are normalized with Bing data")
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly clickstream search volume rates array of objects with clickstream search volume rates in a certain month of a year")
-    __properties: ClassVar[List[str]] = ["last_updated_time", "search_volume", "monthly_searches"]
+    __properties: ClassVar[List[str]] = ["last_updated_time", "search_volume", "is_normalized", "monthly_searches"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,11 @@ class KeywordInfoNormalizedWithInfo(BaseModel):
         if self.search_volume is None and "search_volume" in self.model_fields_set:
             _dict['search_volume'] = None
 
+        # set to None if is_normalized (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_normalized is None and "is_normalized" in self.model_fields_set:
+            _dict['is_normalized'] = None
+
         # set to None if monthly_searches (nullable) is None
         # and model_fields_set contains the field
         if self.monthly_searches is None and "monthly_searches" in self.model_fields_set:
@@ -107,6 +113,7 @@ class KeywordInfoNormalizedWithInfo(BaseModel):
         _obj = cls.model_validate({
             "last_updated_time": obj.get("last_updated_time"),
             "search_volume": obj.get("search_volume"),
+            "is_normalized": obj.get("is_normalized"),
             "monthly_searches": [MonthlySearches.from_dict(_item) for _item in obj["monthly_searches"]] if obj.get("monthly_searches") is not None else None
         })
         return _obj

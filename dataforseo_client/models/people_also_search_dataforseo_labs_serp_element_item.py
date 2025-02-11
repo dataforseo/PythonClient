@@ -27,9 +27,10 @@ class PeopleAlsoSearchDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElemen
     """
     PeopleAlsoSearchDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     items: Optional[List[Optional[StrictStr]]] = Field(default=None, description="elements of search results found in SERP")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "items"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,11 @@ class PeopleAlsoSearchDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElemen
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -122,6 +128,7 @@ class PeopleAlsoSearchDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElemen
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "items": obj.get("items")
         })

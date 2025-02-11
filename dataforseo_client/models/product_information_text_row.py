@@ -27,7 +27,7 @@ class ProductInformationTextRow(BaseProductInformationRowItem):
     """
     ProductInformationTextRow
     """ # noqa: E501
-    text: Optional[StrictStr] = Field(default=None, description="text specified under the given title within the section_name")
+    text: Optional[StrictStr] = Field(default=None, description="text of the voucher")
     __properties: ClassVar[List[str]] = ["type", "text"]
 
     model_config = ConfigDict(

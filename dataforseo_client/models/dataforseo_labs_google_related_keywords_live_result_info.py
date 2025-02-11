@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.dataforseo_labs_related_keywords_live_item import DataforseoLabsRelatedKeywordsLiveItem
+from dataforseo_client.models.keyword_data_info import KeywordDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,7 @@ class DataforseoLabsGoogleRelatedKeywordsLiveResultInfo(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     seed_keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    seed_keyword_data: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="keyword data for the seed keyword fields in the array are identical to that of keyword_data")
+    seed_keyword_data: Optional[KeywordDataInfo] = None
     location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
@@ -76,6 +77,9 @@ class DataforseoLabsGoogleRelatedKeywordsLiveResultInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of seed_keyword_data
+        if self.seed_keyword_data:
+            _dict['seed_keyword_data'] = self.seed_keyword_data.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
@@ -92,11 +96,6 @@ class DataforseoLabsGoogleRelatedKeywordsLiveResultInfo(BaseModel):
         # and model_fields_set contains the field
         if self.seed_keyword is None and "seed_keyword" in self.model_fields_set:
             _dict['seed_keyword'] = None
-
-        # set to None if seed_keyword_data (nullable) is None
-        # and model_fields_set contains the field
-        if self.seed_keyword_data is None and "seed_keyword_data" in self.model_fields_set:
-            _dict['seed_keyword_data'] = None
 
         # set to None if location_code (nullable) is None
         # and model_fields_set contains the field
@@ -137,7 +136,7 @@ class DataforseoLabsGoogleRelatedKeywordsLiveResultInfo(BaseModel):
         _obj = cls.model_validate({
             "se_type": obj.get("se_type"),
             "seed_keyword": obj.get("seed_keyword"),
-            "seed_keyword_data": obj.get("seed_keyword_data"),
+            "seed_keyword_data": KeywordDataInfo.from_dict(obj["seed_keyword_data"]) if obj.get("seed_keyword_data") is not None else None,
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),

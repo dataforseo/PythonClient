@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
 **format** | **str** | type of file format of the dataset for example: zip, html, csv | [optional] 
-**size** | **str** | file size in bytes | [optional] 
+**size** | **int** | file size in bytes | [optional] 
 
 ## Example
 

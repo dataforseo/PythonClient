@@ -38,7 +38,7 @@ class RelatedResult(BaseModel):
     cache_url: Optional[StrictStr] = Field(default=None, description="cached version of the page")
     related_search_url: Optional[StrictStr] = Field(default=None, description="URL to a similar search URL to a new search for the same keyword(s) on related sites")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb in SERP")
-    website_name: Optional[StrictStr] = Field(default=None, description="name of the website in SERP")
+    website_name: Optional[StrictStr] = Field(default=None, description="name of the website in the ad element")
     is_image: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains a video")
     description: Optional[StrictStr] = Field(default=None, description="description of the hotel booking element")

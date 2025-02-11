@@ -24,14 +24,14 @@ from typing_extensions import Self
 
 class ContentAnalysisRatingInfo(BaseModel):
     """
-    content rating rating related to content_info
+    ContentAnalysisRatingInfo
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="rating name here you can find the following elements: Max5, Percents, CustomMax")
     rating_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the value of the rating")
+    max_rating_value: Optional[StrictInt] = Field(default=None, description="maximum value for the rating name")
     rating_count: Optional[StrictInt] = Field(default=None, description="number of votes")
-    max_rating_value: Optional[StrictStr] = Field(default=None, description=" maximum value for the rating name")
     relative_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="relative rating")
-    __properties: ClassVar[List[str]] = ["name", "rating_value", "rating_count", "max_rating_value", "relative_rating"]
+    __properties: ClassVar[List[str]] = ["name", "rating_value", "max_rating_value", "rating_count", "relative_rating"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,15 +82,15 @@ class ContentAnalysisRatingInfo(BaseModel):
         if self.rating_value is None and "rating_value" in self.model_fields_set:
             _dict['rating_value'] = None
 
-        # set to None if rating_count (nullable) is None
-        # and model_fields_set contains the field
-        if self.rating_count is None and "rating_count" in self.model_fields_set:
-            _dict['rating_count'] = None
-
         # set to None if max_rating_value (nullable) is None
         # and model_fields_set contains the field
         if self.max_rating_value is None and "max_rating_value" in self.model_fields_set:
             _dict['max_rating_value'] = None
+
+        # set to None if rating_count (nullable) is None
+        # and model_fields_set contains the field
+        if self.rating_count is None and "rating_count" in self.model_fields_set:
+            _dict['rating_count'] = None
 
         # set to None if relative_rating (nullable) is None
         # and model_fields_set contains the field
@@ -111,8 +111,8 @@ class ContentAnalysisRatingInfo(BaseModel):
         _obj = cls.model_validate({
             "name": obj.get("name"),
             "rating_value": obj.get("rating_value"),
-            "rating_count": obj.get("rating_count"),
             "max_rating_value": obj.get("max_rating_value"),
+            "rating_count": obj.get("rating_count"),
             "relative_rating": obj.get("relative_rating")
         })
         return _obj

@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **developer_website** | **str** | official website of the developer | [optional] 
 **version** | **str** | current version of the app | [optional] 
 **minimum_os_version** | **str** | minimum OS version required to install the app | [optional] 
-**size** | **str** | size of the app | [optional] 
+**size** | **float** | size of the app | [optional] 
 **released_date** | **str** | date and time when the app was released in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **last_update_date** | **str** | date and time when the app was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **update_notes** | **str** | update notes contains the latest update notes from the developer | [optional] 

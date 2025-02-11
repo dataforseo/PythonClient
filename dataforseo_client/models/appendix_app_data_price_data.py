@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.appendix_app_listings_app_data_price_data import AppendixAppListingsAppDataPriceData
 from dataforseo_client.models.appendix_price_data_info import AppendixPriceDataInfo
 from dataforseo_client.models.appendix_product_google_merchant_price_data_info import AppendixProductGoogleMerchantPriceDataInfo
 from dataforseo_client.models.appendix_task_keywords_data_price_data_info import AppendixTaskKeywordsDataPriceDataInfo
@@ -30,6 +31,7 @@ class AppendixAppDataPriceData(BaseModel):
     AppendixAppDataPriceData
     """ # noqa: E501
     app_info: Optional[AppendixProductGoogleMerchantPriceDataInfo] = None
+    app_listings: Optional[AppendixAppListingsAppDataPriceData] = None
     app_list: Optional[AppendixProductGoogleMerchantPriceDataInfo] = None
     app_reviews: Optional[AppendixPriceDataInfo] = None
     app_searches: Optional[AppendixProductGoogleMerchantPriceDataInfo] = None
@@ -38,7 +40,7 @@ class AppendixAppDataPriceData(BaseModel):
     languages: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     locations: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     tasks_ready: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "categories", "errors", "languages", "locations", "tasks_ready"]
+    __properties: ClassVar[List[str]] = ["app_info", "app_listings", "app_list", "app_reviews", "app_searches", "categories", "errors", "languages", "locations", "tasks_ready"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +84,9 @@ class AppendixAppDataPriceData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of app_info
         if self.app_info:
             _dict['app_info'] = self.app_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of app_listings
+        if self.app_listings:
+            _dict['app_listings'] = self.app_listings.to_dict()
         # override the default output from pydantic by calling `to_dict()` of app_list
         if self.app_list:
             _dict['app_list'] = self.app_list.to_dict()
@@ -119,6 +124,7 @@ class AppendixAppDataPriceData(BaseModel):
 
         _obj = cls.model_validate({
             "app_info": AppendixProductGoogleMerchantPriceDataInfo.from_dict(obj["app_info"]) if obj.get("app_info") is not None else None,
+            "app_listings": AppendixAppListingsAppDataPriceData.from_dict(obj["app_listings"]) if obj.get("app_listings") is not None else None,
             "app_list": AppendixProductGoogleMerchantPriceDataInfo.from_dict(obj["app_list"]) if obj.get("app_list") is not None else None,
             "app_reviews": AppendixPriceDataInfo.from_dict(obj["app_reviews"]) if obj.get("app_reviews") is not None else None,
             "app_searches": AppendixProductGoogleMerchantPriceDataInfo.from_dict(obj["app_searches"]) if obj.get("app_searches") is not None else None,

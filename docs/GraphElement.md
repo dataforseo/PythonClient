@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
 **var_date** | **str** | the posting date | [optional] 
-**value** | **int** | the value of the rating | [optional] 
+**value** | **float** | the value of the rating | [optional] 
 
 ## Example
 

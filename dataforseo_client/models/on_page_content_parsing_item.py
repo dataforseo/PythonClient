@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.page_content_info import PageContentInfo
+from dataforseo_client.models.on_page_content_parsing_item_page_content import OnPageContentParsingItemPageContent
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class OnPageContentParsingItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     fetch_time: Optional[StrictStr] = Field(default=None, description="date and time when the content was fethced example: \"2022-11-01 10:02:52 +00:00\"")
     status_code: Optional[StrictInt] = Field(default=None, description="status code of the page")
-    page_content: Optional[PageContentInfo] = None
+    page_content: Optional[OnPageContentParsingItemPageContent] = None
     __properties: ClassVar[List[str]] = ["type", "fetch_time", "status_code", "page_content"]
 
     model_config = ConfigDict(
@@ -90,6 +90,11 @@ class OnPageContentParsingItem(BaseModel):
         if self.status_code is None and "status_code" in self.model_fields_set:
             _dict['status_code'] = None
 
+        # set to None if page_content (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_content is None and "page_content" in self.model_fields_set:
+            _dict['page_content'] = None
+
         return _dict
 
     @classmethod
@@ -105,7 +110,7 @@ class OnPageContentParsingItem(BaseModel):
             "type": obj.get("type"),
             "fetch_time": obj.get("fetch_time"),
             "status_code": obj.get("status_code"),
-            "page_content": PageContentInfo.from_dict(obj["page_content"]) if obj.get("page_content") is not None else None
+            "page_content": OnPageContentParsingItemPageContent.from_dict(obj["page_content"]) if obj.get("page_content") is not None else None
         })
         return _obj
 

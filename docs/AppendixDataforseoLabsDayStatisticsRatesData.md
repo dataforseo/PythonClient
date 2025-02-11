@@ -39,15 +39,15 @@ Name | Type | Description | Notes
 **app_intersection** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **bulk_app_metrics** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **search_intent** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**id_list** | **float** |  | [optional] 
 **historical_bulk_traffic_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **available_history** | **float** |  | [optional] 
 **status** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
+**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**languages** | **float** |  | [optional] 
 **available_filters** | **float** |  | [optional] 
 **amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
-**languages** | **float** |  | [optional] 
-**categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

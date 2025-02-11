@@ -19,9 +19,6 @@ Name | Type | Description | Notes
 **estimated_paid_traffic_cost** | **float** | estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article | [optional] 
 **rank_changes** | [**RankChanges**](RankChanges.md) |  | [optional] 
 **clickstream_etv** | **int** | estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated | [optional] 
-**se_type** | **str** | search engine type | [optional] 
-**backlinks_info** | [**BacklinksInfo**](BacklinksInfo.md) |  | [optional] 
-**rank_info** | [**RankInfo**](RankInfo.md) |  | [optional] 
 
 ## Example
 

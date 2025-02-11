@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**text** | **str** | text specified under the given title within the section_name | [optional] 
+**text** | **str** | text of the voucher | [optional] 
 
 ## Example
 

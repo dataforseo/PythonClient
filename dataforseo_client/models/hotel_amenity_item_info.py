@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class HotelAmenityItemInfo(BaseModel):
     amenity_label: Optional[StrictStr] = Field(default=None, description="displayed amenity name")
     hint: Optional[StrictStr] = Field(default=None, description="standardised details about the amenity")
     hint_label: Optional[StrictStr] = Field(default=None, description="displayed details about the amenity")
-    __properties: ClassVar[List[str]] = ["amenity", "amenity_label", "hint", "hint_label"]
+    is_available: Optional[StrictBool] = Field(default=None, description="indicates whether the amenity is available in the hotel")
+    __properties: ClassVar[List[str]] = ["amenity", "amenity_label", "hint", "hint_label", "is_available"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,11 @@ class HotelAmenityItemInfo(BaseModel):
         if self.hint_label is None and "hint_label" in self.model_fields_set:
             _dict['hint_label'] = None
 
+        # set to None if is_available (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_available is None and "is_available" in self.model_fields_set:
+            _dict['is_available'] = None
+
         return _dict
 
     @classmethod
@@ -106,7 +112,8 @@ class HotelAmenityItemInfo(BaseModel):
             "amenity": obj.get("amenity"),
             "amenity_label": obj.get("amenity_label"),
             "hint": obj.get("hint"),
-            "hint_label": obj.get("hint_label")
+            "hint_label": obj.get("hint_label"),
+            "is_available": obj.get("is_available")
         })
         return _obj
 

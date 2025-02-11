@@ -19,9 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.appendix_a_keywords_data_price_data_info import AppendixAKeywordsDataPriceDataInfo
 from dataforseo_client.models.appendix_google_business_data_price_data_info import AppendixGoogleBusinessDataPriceDataInfo
 from dataforseo_client.models.appendix_hotel_info_google_business_data_price_data import AppendixHotelInfoGoogleBusinessDataPriceData
-from dataforseo_client.models.appendix_keywords_data_price_data_info import AppendixKeywordsDataPriceDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
     """
     AppendixGoogleBusinessDataPriceData
     """ # noqa: E501
-    extended_reviews: Optional[AppendixKeywordsDataPriceDataInfo] = None
+    extended_reviews: Optional[AppendixAKeywordsDataPriceDataInfo] = None
     hotel_info: Optional[AppendixHotelInfoGoogleBusinessDataPriceData] = None
     hotel_searches: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
     my_business_info: Optional[AppendixGoogleBusinessDataPriceDataInfo] = None
@@ -110,7 +110,7 @@ class AppendixGoogleBusinessDataPriceData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "extended_reviews": AppendixKeywordsDataPriceDataInfo.from_dict(obj["extended_reviews"]) if obj.get("extended_reviews") is not None else None,
+            "extended_reviews": AppendixAKeywordsDataPriceDataInfo.from_dict(obj["extended_reviews"]) if obj.get("extended_reviews") is not None else None,
             "hotel_info": AppendixHotelInfoGoogleBusinessDataPriceData.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
             "hotel_searches": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
             "my_business_info": AppendixGoogleBusinessDataPriceDataInfo.from_dict(obj["my_business_info"]) if obj.get("my_business_info") is not None else None,

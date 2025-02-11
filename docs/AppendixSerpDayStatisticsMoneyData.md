@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **live** | [**AppendixFunctionTypeInfo**](AppendixFunctionTypeInfo.md) |  | [optional] 
 **errors** | **float** |  | [optional] 
 **tasks_fixed** | **float** |  | [optional] 
-**jobs** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
+**jobs** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
 **screenshot** | **float** |  | [optional] 
-**ai_summary** | **float** |  | [optional] 
 **refund_money** | **float** |  | [optional] 
+**ai_summary** | **float** |  | [optional] 
 
 ## Example
 

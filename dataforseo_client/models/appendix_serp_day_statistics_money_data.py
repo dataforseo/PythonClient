@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_day_limits_rates_data_info import AppendixDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_function_type_info import AppendixFunctionTypeInfo
+from dataforseo_client.models.appendix_jobs_serp_limits_rates_data_info import AppendixJobsSerpLimitsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,11 +36,11 @@ class AppendixSerpDayStatisticsMoneyData(BaseModel):
     live: Optional[AppendixFunctionTypeInfo] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     tasks_fixed: Optional[Union[StrictFloat, StrictInt]] = None
-    jobs: Optional[AppendixDayLimitsRatesDataInfo] = None
+    jobs: Optional[AppendixJobsSerpLimitsRatesDataInfo] = None
     screenshot: Optional[Union[StrictFloat, StrictInt]] = None
-    ai_summary: Optional[Union[StrictFloat, StrictInt]] = None
     refund_money: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["task_post", "task_get", "tasks_ready", "locations", "languages", "live", "errors", "tasks_fixed", "jobs", "screenshot", "ai_summary", "refund_money"]
+    ai_summary: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["task_post", "task_get", "tasks_ready", "locations", "languages", "live", "errors", "tasks_fixed", "jobs", "screenshot", "refund_money", "ai_summary"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -125,15 +125,15 @@ class AppendixSerpDayStatisticsMoneyData(BaseModel):
         if self.screenshot is None and "screenshot" in self.model_fields_set:
             _dict['screenshot'] = None
 
-        # set to None if ai_summary (nullable) is None
-        # and model_fields_set contains the field
-        if self.ai_summary is None and "ai_summary" in self.model_fields_set:
-            _dict['ai_summary'] = None
-
         # set to None if refund_money (nullable) is None
         # and model_fields_set contains the field
         if self.refund_money is None and "refund_money" in self.model_fields_set:
             _dict['refund_money'] = None
+
+        # set to None if ai_summary (nullable) is None
+        # and model_fields_set contains the field
+        if self.ai_summary is None and "ai_summary" in self.model_fields_set:
+            _dict['ai_summary'] = None
 
         return _dict
 
@@ -155,10 +155,10 @@ class AppendixSerpDayStatisticsMoneyData(BaseModel):
             "live": AppendixFunctionTypeInfo.from_dict(obj["live"]) if obj.get("live") is not None else None,
             "errors": obj.get("errors"),
             "tasks_fixed": obj.get("tasks_fixed"),
-            "jobs": AppendixDayLimitsRatesDataInfo.from_dict(obj["jobs"]) if obj.get("jobs") is not None else None,
+            "jobs": AppendixJobsSerpLimitsRatesDataInfo.from_dict(obj["jobs"]) if obj.get("jobs") is not None else None,
             "screenshot": obj.get("screenshot"),
-            "ai_summary": obj.get("ai_summary"),
-            "refund_money": obj.get("refund_money")
+            "refund_money": obj.get("refund_money"),
+            "ai_summary": obj.get("ai_summary")
         })
         return _obj
 

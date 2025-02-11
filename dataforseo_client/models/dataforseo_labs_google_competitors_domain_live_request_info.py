@@ -33,15 +33,16 @@ class DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code required field if you don’t specify language_name Note: it is required to specify either language_name or language_code you can receive the list of available languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages example: en")
     item_types: Optional[List[StrictStr]] = Field(default=None, description="display results by item type optional field indicates the type of search results included in the response Note: if the item_types array contains item types that are different from organic, the results will be ordered by the first item type in the array; you will not be able to sort and filter results by the types of search results not included in the response; possible values: [\"organic\", \"paid\", \"featured_snippet\", \"local_pack\"] default value: [\"organic\", \"paid\"]")
     include_clickstream_data: Optional[StrictBool] = Field(default=None, description="include or exclude data from clickstream-based metrics in the result optional field if the parameter is set to true, you will receive clickstream_etv, clickstream_gender_distribution, and clickstream_age_distribution fields with clickstream data in the response default value: false with this parameter enabled, you will be charged double the price for the request learn more about how clickstream-based metrics are calculated in this help center article")
-    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in example: [\"metrics.organic.count\",\">\",50] [[\"metrics.organic.pos_1\",\"<>\",0],\"and\",[\"metrics.organic.impressions_etv\",\">=\",\"10\"]] [[[\"metrics.organic.count\",\">=\",50],\"and\",[\"metrics.organic.pos_1\",\"in\",[1,5]]], \"or\", [\"metrics.organic.etv\",\">=\",\"100\"]] for more information about filters, please refer to Dataforseo Labs – Filters or this help center guide")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in example: [\"metrics.organic.count\",\">\",50] [[\"metrics.organic.pos_1\",\"<>\",0],\"and\",[\"metrics.organic.impressions_etv\",\">=\",\"10\"]] [[[\"metrics.organic.count\",\">=\",50],\"and\",[\"metrics.organic.pos_1\",\"in\",[1,5]]], \"or\", [\"metrics.organic.etv\",\">=\",\"100\"]] for more information about filters, please refer to Dataforseo Labs – Filters or this help center guide")
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to specify a sorting type example: [\"metrics.paid.etv,asc\"] Note: you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"metrics.organic.etv,desc\",\"metrics.paid.count,asc\"] default rule: [\"metrics.organic.count,desc\"] Note: if the item_types array contains item types that are different from organic, the results will be ordered by the first item type in the array")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned domains optional field default value: 100 maximum value: 1000")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned domains optional field default value: 0 if you specify the 10 value, the first ten keywords in the results array will be omitted and the data will be provided for the successive keywords")
     max_rank_group: Optional[StrictInt] = Field(default=None, description="maximum rank up to which competitors will be considered optional field default value: 100 if you specify 10 here, we will extract competitors from the top 10 Google search results only")
     exclude_top_domains: Optional[StrictBool] = Field(default=None, description="indicates whether to exclude world’s largest websites optional field default value: false set to true if you want to get highly-relevant competitors excluding the websites listed below: wikipedia.org pinterest.com amazon.com google.com facebook.com wordpress.com medium.com quora.com reddit.com youtube.com ebay.com uol.com.br instagram.com olx.com twitter.com linkedin.com slideshare.net")
     intersecting_domains: Optional[List[StrictStr]] = Field(default=None, description="additional domains for improving results accuracy optional field to improve the accuracy of the result, you can specify domains that are known to intersect with the target in SERPs; if you use this array, metrics in the result will be based on SERPs where both target website and intersecting_domains appear; Note: you can specify up to 20 domains in this array")
+    ignore_synonyms: Optional[StrictBool] = Field(default=None, description="ignore highly similar keywords optional field if set to true, only core keywords will be returned, all highly similar keywords will be excluded; default value: false")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "location_name", "location_code", "language_name", "language_code", "item_types", "include_clickstream_data", "filters", "order_by", "limit", "offset", "max_rank_group", "exclude_top_domains", "intersecting_domains", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "location_name", "location_code", "language_name", "language_code", "item_types", "include_clickstream_data", "filters", "order_by", "limit", "offset", "max_rank_group", "exclude_top_domains", "intersecting_domains", "ignore_synonyms", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -147,6 +148,11 @@ class DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(BaseModel):
         if self.intersecting_domains is None and "intersecting_domains" in self.model_fields_set:
             _dict['intersecting_domains'] = None
 
+        # set to None if ignore_synonyms (nullable) is None
+        # and model_fields_set contains the field
+        if self.ignore_synonyms is None and "ignore_synonyms" in self.model_fields_set:
+            _dict['ignore_synonyms'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -178,6 +184,7 @@ class DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(BaseModel):
             "max_rank_group": obj.get("max_rank_group"),
             "exclude_top_domains": obj.get("exclude_top_domains"),
             "intersecting_domains": obj.get("intersecting_domains"),
+            "ignore_synonyms": obj.get("ignore_synonyms"),
             "tag": obj.get("tag")
         })
         return _obj

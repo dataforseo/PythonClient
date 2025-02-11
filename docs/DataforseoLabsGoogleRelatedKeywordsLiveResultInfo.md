@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
 **seed_keyword** | **str** | keyword in a POST array | [optional] 
-**seed_keyword_data** | **Dict[str, Optional[str]]** | keyword data for the seed keyword fields in the array are identical to that of keyword_data | [optional] 
+**seed_keyword_data** | [**KeywordDataInfo**](KeywordDataInfo.md) |  | [optional] 
 **location_code** | **int** | location code in a POST array | [optional] 
 **language_code** | **str** | language code in a POST array | [optional] 
 **total_count** | **int** | total amount of results in our database relevant to your request | [optional] 

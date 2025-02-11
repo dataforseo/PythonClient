@@ -23,7 +23,6 @@ from dataforseo_client.models.appendix_bing_keywords_data_day_statistics_data_in
 from dataforseo_client.models.appendix_bing_keywords_data_limits_rates_data_info import AppendixBingKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_clickstream_data_keywords_data_limits_rates_data_info import AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_dataforseo_trends_keywords_data_limits_rates_data_info import AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo
-from dataforseo_client.models.appendix_day_limits_rates_data_info import AppendixDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_google_ads_keywords_data_limits_rates_data_info import AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_info import AppendixInfo
 from typing import Optional, Set
@@ -50,13 +49,13 @@ class AppendixKeywordsDataDayStatisticsRatesData(BaseModel):
     dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo] = None
     clickstream_data: Optional[AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo] = None
     audience_estimation: Optional[AppendixInfo] = None
-    keyword_suggestions_for_url: Optional[AppendixDayLimitsRatesDataInfo] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
-    industries: Optional[Union[StrictFloat, StrictInt]] = None
+    keyword_suggestions_for_url: Optional[AppendixInfo] = None
+    job_functions: Optional[Union[StrictFloat, StrictInt]] = None
     search_volume_history: Optional[AppendixInfo] = None
     google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
-    job_functions: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "audience_estimation", "keyword_suggestions_for_url", "id_list", "industries", "search_volume_history", "google", "job_functions"]
+    industries: Optional[Union[StrictFloat, StrictInt]] = None
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "audience_estimation", "keyword_suggestions_for_url", "job_functions", "search_volume_history", "google", "industries", "id_list"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -169,20 +168,20 @@ class AppendixKeywordsDataDayStatisticsRatesData(BaseModel):
         if self.locations_and_languages is None and "locations_and_languages" in self.model_fields_set:
             _dict['locations_and_languages'] = None
 
-        # set to None if id_list (nullable) is None
+        # set to None if job_functions (nullable) is None
         # and model_fields_set contains the field
-        if self.id_list is None and "id_list" in self.model_fields_set:
-            _dict['id_list'] = None
+        if self.job_functions is None and "job_functions" in self.model_fields_set:
+            _dict['job_functions'] = None
 
         # set to None if industries (nullable) is None
         # and model_fields_set contains the field
         if self.industries is None and "industries" in self.model_fields_set:
             _dict['industries'] = None
 
-        # set to None if job_functions (nullable) is None
+        # set to None if id_list (nullable) is None
         # and model_fields_set contains the field
-        if self.job_functions is None and "job_functions" in self.model_fields_set:
-            _dict['job_functions'] = None
+        if self.id_list is None and "id_list" in self.model_fields_set:
+            _dict['id_list'] = None
 
         return _dict
 
@@ -213,12 +212,12 @@ class AppendixKeywordsDataDayStatisticsRatesData(BaseModel):
             "dataforseo_trends": AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.from_dict(obj["dataforseo_trends"]) if obj.get("dataforseo_trends") is not None else None,
             "clickstream_data": AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.from_dict(obj["clickstream_data"]) if obj.get("clickstream_data") is not None else None,
             "audience_estimation": AppendixInfo.from_dict(obj["audience_estimation"]) if obj.get("audience_estimation") is not None else None,
-            "keyword_suggestions_for_url": AppendixDayLimitsRatesDataInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
-            "id_list": obj.get("id_list"),
-            "industries": obj.get("industries"),
+            "keyword_suggestions_for_url": AppendixInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
+            "job_functions": obj.get("job_functions"),
             "search_volume_history": AppendixInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
             "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None,
-            "job_functions": obj.get("job_functions")
+            "industries": obj.get("industries"),
+            "id_list": obj.get("id_list")
         })
         return _obj
 

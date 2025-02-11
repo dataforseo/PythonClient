@@ -26,7 +26,8 @@ class MerchantGoogleSellersTaskPostRequestInfo(BaseModel):
     """
     MerchantGoogleSellersTaskPostRequestInfo
     """ # noqa: E501
-    product_id: Optional[StrictStr] = Field(default=None, description="unique product identifier on Google Shopping required field you can get this value making a separate request to the Google Shopping Products endpoint note that there is no full list of possible values as the product_id is a dynamic value assigned by Google example: 4485466949985702538 learn more about the parameter in this help center guide")
+    product_id: Optional[StrictStr] = Field(default=None, description="unique product identifier on Google Shopping required field if data_docid is not specified you can get this value for a certain product by making a separate request to the Google Shopping Products endpoint example: 4485466949985702538 learn more about the parameter in this help center guide")
+    data_docid: Optional[StrictStr] = Field(default=None, description="unique identifier of the SERP data element required field if product_id is not specified you can get this value for a certain element by making a separate request to the Google Shopping Products endpoint example: 13071766526042404278")
     priority: Optional[StrictInt] = Field(default=None, description="task priority optional field can take the following values: 1 – normal execution priority (set by default) 2 – high execution priority You will be additionally charged for the tasks with high execution priority. The cost can be calculated on the Pricing page.")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location required field if you don’t specify location_code or location_coordinate if you use this field, you don’t need to specify location_code or location_coordinate you can receive the list of available Google Shopping locations with their location_name by making a separate request to the https://api.dataforseo.com/v3/merchant/google/locations example: London,England,United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description="location code required field if you don’t specify location_name or location_coordinate if you use this field, you don’t need to specify location_name or location_coordinate you can receive the list of available Google Shopping locations with their location_code by making a separate request to the https://api.dataforseo.com/v3/merchant/google/locations example: 2840")
@@ -40,7 +41,7 @@ class MerchantGoogleSellersTaskPostRequestInfo(BaseModel):
     postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special characters in postback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description="postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: advanced, html")
     pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special characters in pingback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
-    __properties: ClassVar[List[str]] = ["product_id", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "get_shops_on_google", "additional_specifications", "tag", "postback_url", "postback_data", "pingback_url"]
+    __properties: ClassVar[List[str]] = ["product_id", "data_docid", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "get_shops_on_google", "additional_specifications", "tag", "postback_url", "postback_data", "pingback_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +82,16 @@ class MerchantGoogleSellersTaskPostRequestInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if product_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.product_id is None and "product_id" in self.model_fields_set:
+            _dict['product_id'] = None
+
+        # set to None if data_docid (nullable) is None
+        # and model_fields_set contains the field
+        if self.data_docid is None and "data_docid" in self.model_fields_set:
+            _dict['data_docid'] = None
+
         # set to None if priority (nullable) is None
         # and model_fields_set contains the field
         if self.priority is None and "priority" in self.model_fields_set:
@@ -159,6 +170,7 @@ class MerchantGoogleSellersTaskPostRequestInfo(BaseModel):
 
         _obj = cls.model_validate({
             "product_id": obj.get("product_id"),
+            "data_docid": obj.get("data_docid"),
             "priority": obj.get("priority"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),

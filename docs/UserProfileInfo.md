@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | the name of the reviewer | [optional] 
 **avatar** | **str** | URL to the profile picture of the reviewer | [optional] 
-**url** | **str** | URL of the video | [optional] 
+**url** | **str** | relevant url | [optional] 
 **reviews_count** | **int** | total number of reviews submitted by the reviewer | [optional] 
 **locations** | **str** | country of the reviewer | [optional] 
 

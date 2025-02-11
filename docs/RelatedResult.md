@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **cache_url** | **str** | cached version of the page | [optional] 
 **related_search_url** | **str** | URL to a similar search URL to a new search for the same keyword(s) on related sites | [optional] 
 **breadcrumb** | **str** | breadcrumb in SERP | [optional] 
-**website_name** | **str** | name of the website in SERP | [optional] 
+**website_name** | **str** | name of the website in the ad element | [optional] 
 **is_image** | **bool** | indicates whether the element contains an image | [optional] 
 **is_video** | **bool** | indicates whether the element contains a video | [optional] 
 **description** | **str** | description of the hotel booking element | [optional] 

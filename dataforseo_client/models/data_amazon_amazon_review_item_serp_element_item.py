@@ -39,7 +39,7 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
     videos: Optional[List[VideoElement]] = Field(default=None, description="videos of the product submitted by the reviewer")
     user_profile: Optional[UserProfileInfo] = None
     title: Optional[StrictStr] = Field(default=None, description="title of the review")
-    url: Optional[StrictStr] = Field(default=None, description="relevant url")
+    url: Optional[StrictStr] = Field(default=None, description="URL to the reviewer’s profile")
     review_text: Optional[StrictStr] = Field(default=None, description="content of the review")
     publication_date: Optional[StrictStr] = Field(default=None, description="date and time when the review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00")
     rating: Optional[RatingInfo] = None

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **live** | [**AppendixFunctionTypeInfo**](AppendixFunctionTypeInfo.md) |  | [optional] 
 **errors** | **float** |  | [optional] 
 **tasks_fixed** | **float** |  | [optional] 
-**jobs** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
+**jobs** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
 **screenshot** | **float** |  | [optional] 
 **id_list** | **float** |  | [optional] 
 **ai_summary** | **float** |  | [optional] 

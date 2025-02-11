@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
 **domain** | **str** | domain name of the reference | [optional] 
+**website_name** | **str** | name of the website in SERP | [optional] 
 **breadcrumb** | **str** | breadcrumb in SERP | [optional] 
 **is_image** | **bool** | indicates whether the element contains an image | [optional] 
 **is_video** | **bool** | indicates whether the element contains a video | [optional] 
@@ -18,8 +19,8 @@ Name | Type | Description | Notes
 **description_rows** | **List[Optional[str]]** | extended description if there is none, equals null | [optional] 
 **links** | [**List[AdLinkElement]**](AdLinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
 **price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
+**rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 
-**website_name** | **str** | website name in SERP | [optional] 
 
 ## Example
 

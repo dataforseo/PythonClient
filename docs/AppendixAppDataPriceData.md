@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **app_info** | [**AppendixProductGoogleMerchantPriceDataInfo**](AppendixProductGoogleMerchantPriceDataInfo.md) |  | [optional] 
+**app_listings** | [**AppendixAppListingsAppDataPriceData**](AppendixAppListingsAppDataPriceData.md) |  | [optional] 
 **app_list** | [**AppendixProductGoogleMerchantPriceDataInfo**](AppendixProductGoogleMerchantPriceDataInfo.md) |  | [optional] 
 **app_reviews** | [**AppendixPriceDataInfo**](AppendixPriceDataInfo.md) |  | [optional] 
 **app_searches** | [**AppendixProductGoogleMerchantPriceDataInfo**](AppendixProductGoogleMerchantPriceDataInfo.md) |  | [optional] 

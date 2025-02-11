@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **high_top_of_page_bid** | **float** | maximum bid for the ad to be displayed at the top of the first page indicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers) the value may differ depending on the location specified in a POST request | [optional] 
 **categories** | **List[int]** | product and service categories you can download the full list of possible categories | [optional] 
 **monthly_searches** | [**List[MonthlySearches]**](MonthlySearches.md) | monthly searches represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations | [optional] 
-**search_volume_trend** | [**SearchVolumeTrendInfo**](SearchVolumeTrendInfo.md) |  | [optional] 
+**search_volume_trend** | [**SearchVolumeTrend**](SearchVolumeTrend.md) |  | [optional] 
 
 ## Example
 

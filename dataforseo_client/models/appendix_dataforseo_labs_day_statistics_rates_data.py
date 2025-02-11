@@ -62,16 +62,16 @@ class AppendixDataforseoLabsDayStatisticsRatesData(BaseModel):
     app_intersection: Optional[AppendixInfo] = None
     bulk_app_metrics: Optional[AppendixInfo] = None
     search_intent: Optional[AppendixInfo] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     historical_bulk_traffic_estimation: Optional[AppendixInfo] = None
+    categories_for_keywords: Optional[AppendixInfo] = None
     available_history: Optional[Union[StrictFloat, StrictInt]] = None
     status: Optional[Union[StrictFloat, StrictInt]] = None
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
+    top_google_searches: Optional[AppendixInfo] = None
+    languages: Optional[Union[StrictFloat, StrictInt]] = None
     available_filters: Optional[Union[StrictFloat, StrictInt]] = None
     amazon: Optional[AppendixDataforseoLabsLimitsRatesDataInfo] = None
-    languages: Optional[Union[StrictFloat, StrictInt]] = None
-    categories_for_keywords: Optional[AppendixInfo] = None
-    top_google_searches: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["locations_and_languages", "categories", "errors", "product_competitors", "product_keyword_intersections", "product_rank_overview", "ranked_keywords", "serp_competitors", "subdomains", "relevant_pages", "competitors_domain", "related_keywords", "domain_rank_overview", "domain_intersection", "page_intersection", "bulk_traffic_estimation", "bulk_keyword_difficulty", "bulk_search_volume", "keywords_for_site", "keyword_suggestions", "keyword_ideas", "historical_search_volume", "categories_for_domain", "domain_metrics_by_categories", "top_searches", "domain_whois_overview", "historical_rank_overview", "keywords_for_categories", "historical_serps", "app_competitors", "keywords_for_app", "app_intersection", "bulk_app_metrics", "search_intent", "id_list", "historical_bulk_traffic_estimation", "available_history", "status", "available_filters", "amazon", "languages", "categories_for_keywords", "top_google_searches"]
+    __properties: ClassVar[List[str]] = ["locations_and_languages", "categories", "errors", "product_competitors", "product_keyword_intersections", "product_rank_overview", "ranked_keywords", "serp_competitors", "subdomains", "relevant_pages", "competitors_domain", "related_keywords", "domain_rank_overview", "domain_intersection", "page_intersection", "bulk_traffic_estimation", "bulk_keyword_difficulty", "bulk_search_volume", "keywords_for_site", "keyword_suggestions", "keyword_ideas", "historical_search_volume", "categories_for_domain", "domain_metrics_by_categories", "top_searches", "domain_whois_overview", "historical_rank_overview", "keywords_for_categories", "historical_serps", "app_competitors", "keywords_for_app", "app_intersection", "bulk_app_metrics", "search_intent", "historical_bulk_traffic_estimation", "categories_for_keywords", "available_history", "status", "id_list", "top_google_searches", "languages", "available_filters", "amazon"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -208,15 +208,15 @@ class AppendixDataforseoLabsDayStatisticsRatesData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of historical_bulk_traffic_estimation
         if self.historical_bulk_traffic_estimation:
             _dict['historical_bulk_traffic_estimation'] = self.historical_bulk_traffic_estimation.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of amazon
-        if self.amazon:
-            _dict['amazon'] = self.amazon.to_dict()
         # override the default output from pydantic by calling `to_dict()` of categories_for_keywords
         if self.categories_for_keywords:
             _dict['categories_for_keywords'] = self.categories_for_keywords.to_dict()
         # override the default output from pydantic by calling `to_dict()` of top_google_searches
         if self.top_google_searches:
             _dict['top_google_searches'] = self.top_google_searches.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of amazon
+        if self.amazon:
+            _dict['amazon'] = self.amazon.to_dict()
         # set to None if locations_and_languages (nullable) is None
         # and model_fields_set contains the field
         if self.locations_and_languages is None and "locations_and_languages" in self.model_fields_set:
@@ -232,11 +232,6 @@ class AppendixDataforseoLabsDayStatisticsRatesData(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
-        # set to None if id_list (nullable) is None
-        # and model_fields_set contains the field
-        if self.id_list is None and "id_list" in self.model_fields_set:
-            _dict['id_list'] = None
-
         # set to None if available_history (nullable) is None
         # and model_fields_set contains the field
         if self.available_history is None and "available_history" in self.model_fields_set:
@@ -247,15 +242,20 @@ class AppendixDataforseoLabsDayStatisticsRatesData(BaseModel):
         if self.status is None and "status" in self.model_fields_set:
             _dict['status'] = None
 
-        # set to None if available_filters (nullable) is None
+        # set to None if id_list (nullable) is None
         # and model_fields_set contains the field
-        if self.available_filters is None and "available_filters" in self.model_fields_set:
-            _dict['available_filters'] = None
+        if self.id_list is None and "id_list" in self.model_fields_set:
+            _dict['id_list'] = None
 
         # set to None if languages (nullable) is None
         # and model_fields_set contains the field
         if self.languages is None and "languages" in self.model_fields_set:
             _dict['languages'] = None
+
+        # set to None if available_filters (nullable) is None
+        # and model_fields_set contains the field
+        if self.available_filters is None and "available_filters" in self.model_fields_set:
+            _dict['available_filters'] = None
 
         return _dict
 
@@ -303,15 +303,15 @@ class AppendixDataforseoLabsDayStatisticsRatesData(BaseModel):
             "app_intersection": AppendixInfo.from_dict(obj["app_intersection"]) if obj.get("app_intersection") is not None else None,
             "bulk_app_metrics": AppendixInfo.from_dict(obj["bulk_app_metrics"]) if obj.get("bulk_app_metrics") is not None else None,
             "search_intent": AppendixInfo.from_dict(obj["search_intent"]) if obj.get("search_intent") is not None else None,
-            "id_list": obj.get("id_list"),
             "historical_bulk_traffic_estimation": AppendixInfo.from_dict(obj["historical_bulk_traffic_estimation"]) if obj.get("historical_bulk_traffic_estimation") is not None else None,
+            "categories_for_keywords": AppendixInfo.from_dict(obj["categories_for_keywords"]) if obj.get("categories_for_keywords") is not None else None,
             "available_history": obj.get("available_history"),
             "status": obj.get("status"),
-            "available_filters": obj.get("available_filters"),
-            "amazon": AppendixDataforseoLabsLimitsRatesDataInfo.from_dict(obj["amazon"]) if obj.get("amazon") is not None else None,
+            "id_list": obj.get("id_list"),
+            "top_google_searches": AppendixInfo.from_dict(obj["top_google_searches"]) if obj.get("top_google_searches") is not None else None,
             "languages": obj.get("languages"),
-            "categories_for_keywords": AppendixInfo.from_dict(obj["categories_for_keywords"]) if obj.get("categories_for_keywords") is not None else None,
-            "top_google_searches": AppendixInfo.from_dict(obj["top_google_searches"]) if obj.get("top_google_searches") is not None else None
+            "available_filters": obj.get("available_filters"),
+            "amazon": AppendixDataforseoLabsLimitsRatesDataInfo.from_dict(obj["amazon"]) if obj.get("amazon") is not None else None
         })
         return _obj
 

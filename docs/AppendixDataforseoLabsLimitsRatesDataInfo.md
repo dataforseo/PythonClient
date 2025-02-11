@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 **app_intersection** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **bulk_app_metrics** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **search_intent** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**historical_bulk_traffic_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

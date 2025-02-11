@@ -22,12 +22,12 @@ Name | Type | Description | Notes
 **dataforseo_trends** | [**AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo**](AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **clickstream_data** | [**AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo**](AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **audience_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**keyword_suggestions_for_url** | [**AppendixDayLimitsRatesDataInfo**](AppendixDayLimitsRatesDataInfo.md) |  | [optional] 
-**id_list** | **float** |  | [optional] 
-**industries** | **float** |  | [optional] 
+**keyword_suggestions_for_url** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**job_functions** | **float** |  | [optional] 
 **search_volume_history** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
-**job_functions** | **float** |  | [optional] 
+**industries** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
 
 ## Example
 

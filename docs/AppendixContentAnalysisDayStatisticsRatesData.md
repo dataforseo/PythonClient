@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **languages** | **float** |  | [optional] 
 **categories** | **float** |  | [optional] 
 **errors** | **float** |  | [optional] 
-**available_filters** | **float** |  | [optional] 
 **id_list** | **float** |  | [optional] 
+**available_filters** | **float** |  | [optional] 
 
 ## Example
 

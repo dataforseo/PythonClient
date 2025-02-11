@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **languages** | **float** |  | [optional] 
 **locations** | **float** |  | [optional] 
 **categories** | **float** |  | [optional] 
+**app_listings** | [**AppendixBusinessListingsBusinessDataLimitsRatesDataInfo**](AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
 **tasks_ready** | **float** |  | [optional] 
 
 ## Example

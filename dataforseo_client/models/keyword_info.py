@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.monthly_searches import MonthlySearches
-from dataforseo_client.models.search_volume_trend_info import SearchVolumeTrendInfo
+from dataforseo_client.models.search_volume_trend import SearchVolumeTrend
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,7 +38,7 @@ class KeywordInfo(BaseModel):
     high_top_of_page_bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="maximum bid for the ad to be displayed at the top of the first page indicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers) the value may differ depending on the location specified in a POST request")
     categories: Optional[List[StrictInt]] = Field(default=None, description="product and service categories you can download the full list of possible categories")
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly searches represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations")
-    search_volume_trend: Optional[SearchVolumeTrendInfo] = None
+    search_volume_trend: Optional[SearchVolumeTrend] = None
     __properties: ClassVar[List[str]] = ["se_type", "last_updated_time", "competition", "competition_level", "cpc", "search_volume", "low_top_of_page_bid", "high_top_of_page_bid", "categories", "monthly_searches", "search_volume_trend"]
 
     model_config = ConfigDict(
@@ -162,7 +162,7 @@ class KeywordInfo(BaseModel):
             "high_top_of_page_bid": obj.get("high_top_of_page_bid"),
             "categories": obj.get("categories"),
             "monthly_searches": [MonthlySearches.from_dict(_item) for _item in obj["monthly_searches"]] if obj.get("monthly_searches") is not None else None,
-            "search_volume_trend": SearchVolumeTrendInfo.from_dict(obj["search_volume_trend"]) if obj.get("search_volume_trend") is not None else None
+            "search_volume_trend": SearchVolumeTrend.from_dict(obj["search_volume_trend"]) if obj.get("search_volume_trend") is not None else None
         })
         return _obj
 

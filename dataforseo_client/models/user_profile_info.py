@@ -28,7 +28,7 @@ class UserProfileInfo(BaseModel):
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="the name of the reviewer")
     avatar: Optional[StrictStr] = Field(default=None, description="URL to the profile picture of the reviewer")
-    url: Optional[StrictStr] = Field(default=None, description="URL of the video")
+    url: Optional[StrictStr] = Field(default=None, description="relevant url")
     reviews_count: Optional[StrictInt] = Field(default=None, description="total number of reviews submitted by the reviewer")
     locations: Optional[StrictStr] = Field(default=None, description="country of the reviewer")
     __properties: ClassVar[List[str]] = ["name", "avatar", "url", "reviews_count", "locations"]

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class GraphElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     var_date: Optional[StrictStr] = Field(default=None, description="the posting date", alias="date")
-    value: Optional[StrictInt] = Field(default=None, description="the value of the rating")
+    value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the value of the rating")
     __properties: ClassVar[List[str]] = ["type", "date", "value"]
 
     model_config = ConfigDict(

@@ -23,6 +23,7 @@ from dataforseo_client.models.ad_link_element import AdLinkElement
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.images_element import ImagesElement
 from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,6 +34,7 @@ class PaidSerpElementItem(BaseSerpElementItem):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain name of the reference")
+    website_name: Optional[StrictStr] = Field(default=None, description="name of the website in SERP")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb in SERP")
     is_image: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains a video")
@@ -44,9 +46,9 @@ class PaidSerpElementItem(BaseSerpElementItem):
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description="extended description if there is none, equals null")
     links: Optional[List[AdLinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     price: Optional[PriceInfo] = None
+    rating: Optional[RatingInfo] = None
     rectangle: Optional[Rectangle] = None
-    website_name: Optional[StrictStr] = Field(default=None, description="website name in SERP")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "breadcrumb", "is_image", "is_video", "images", "url", "highlighted", "extra", "description", "description_rows", "links", "price", "rectangle", "website_name"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "domain", "website_name", "breadcrumb", "is_image", "is_video", "images", "url", "highlighted", "extra", "description", "description_rows", "links", "price", "rating", "rectangle"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +106,9 @@ class PaidSerpElementItem(BaseSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of price
         if self.price:
             _dict['price'] = self.price.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of rating
+        if self.rating:
+            _dict['rating'] = self.rating.to_dict()
         # override the default output from pydantic by calling `to_dict()` of rectangle
         if self.rectangle:
             _dict['rectangle'] = self.rectangle.to_dict()
@@ -141,6 +146,11 @@ class PaidSerpElementItem(BaseSerpElementItem):
         # and model_fields_set contains the field
         if self.domain is None and "domain" in self.model_fields_set:
             _dict['domain'] = None
+
+        # set to None if website_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.website_name is None and "website_name" in self.model_fields_set:
+            _dict['website_name'] = None
 
         # set to None if breadcrumb (nullable) is None
         # and model_fields_set contains the field
@@ -192,11 +202,6 @@ class PaidSerpElementItem(BaseSerpElementItem):
         if self.links is None and "links" in self.model_fields_set:
             _dict['links'] = None
 
-        # set to None if website_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.website_name is None and "website_name" in self.model_fields_set:
-            _dict['website_name'] = None
-
         return _dict
 
     @classmethod
@@ -216,6 +221,7 @@ class PaidSerpElementItem(BaseSerpElementItem):
             "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "domain": obj.get("domain"),
+            "website_name": obj.get("website_name"),
             "breadcrumb": obj.get("breadcrumb"),
             "is_image": obj.get("is_image"),
             "is_video": obj.get("is_video"),
@@ -227,8 +233,8 @@ class PaidSerpElementItem(BaseSerpElementItem):
             "description_rows": obj.get("description_rows"),
             "links": [AdLinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
-            "website_name": obj.get("website_name")
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
         })
         return _obj
 

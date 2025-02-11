@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **tasks_ready** | **float** |  | [optional] 
 **task_get** | **float** |  | [optional] 
 **live** | **float** |  | [optional] 
-**audits** | **float** |  | [optional] 
-**languages** | **float** |  | [optional] 
 **versions** | **float** |  | [optional] 
+**languages** | **float** |  | [optional] 
+**audits** | **float** |  | [optional] 
 
 ## Example
 

@@ -19,6 +19,7 @@ import json
 
 from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.amazon_applicable_vouchers_item import AmazonApplicableVouchersItem
 from dataforseo_client.models.amazon_product_newer_model_info import AmazonProductNewerModelInfo
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
 from dataforseo_client.models.base_product_information_item import BaseProductInformationItem
@@ -45,6 +46,7 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
     is_amazon_choice: Optional[StrictBool] = Field(default=None, description="“Amazon’s choice” label if the value is true, the product is marked with the “Amazon’s choice” label")
     rating: Optional[RatingElement] = None
     is_newer_model_available: Optional[StrictBool] = Field(default=None, description="indicates whether the newer model of the product is available")
+    applicable_vouchers: Optional[List[AmazonApplicableVouchersItem]] = Field(default=None, description="array of objects containing information about applicable vouchers")
     newer_model: Optional[AmazonProductNewerModelInfo] = None
     categories: Optional[List[ProductCategoryInfo]] = Field(default=None, description="contains related product categories")
     product_information: Optional[List[BaseProductInformationItem]] = Field(default=None, description="contains related product information")
@@ -54,7 +56,7 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
     is_available: Optional[StrictBool] = Field(default=None, description="indicates whether the product is available for ordering if the value is true, the product can be ordered")
     top_local_reviews: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="array of objects with top reviews from target location to obtain additional local reviews, you can specify the load_more_local_reviews parameter in Task POST")
     top_global_reviews: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="array of objects with top reviews from around the world")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "title", "details", "image_url", "author", "data_asin", "parent_asin", "product_asins", "price_from", "price_to", "currency", "is_amazon_choice", "rating", "is_newer_model_available", "newer_model", "categories", "product_information", "product_images_list", "product_videos_list", "description", "is_available", "top_local_reviews", "top_global_reviews"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "title", "details", "image_url", "author", "data_asin", "parent_asin", "product_asins", "price_from", "price_to", "currency", "is_amazon_choice", "rating", "is_newer_model_available", "applicable_vouchers", "newer_model", "categories", "product_information", "product_images_list", "product_videos_list", "description", "is_available", "top_local_reviews", "top_global_reviews"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +100,13 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of rating
         if self.rating:
             _dict['rating'] = self.rating.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in applicable_vouchers (list)
+        _items = []
+        if self.applicable_vouchers:
+            for _item_applicable_vouchers in self.applicable_vouchers:
+                if _item_applicable_vouchers:
+                    _items.append(_item_applicable_vouchers.to_dict())
+            _dict['applicable_vouchers'] = _items
         # override the default output from pydantic by calling `to_dict()` of newer_model
         if self.newer_model:
             _dict['newer_model'] = self.newer_model.to_dict()
@@ -214,6 +223,11 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
         if self.is_newer_model_available is None and "is_newer_model_available" in self.model_fields_set:
             _dict['is_newer_model_available'] = None
 
+        # set to None if applicable_vouchers (nullable) is None
+        # and model_fields_set contains the field
+        if self.applicable_vouchers is None and "applicable_vouchers" in self.model_fields_set:
+            _dict['applicable_vouchers'] = None
+
         # set to None if categories (nullable) is None
         # and model_fields_set contains the field
         if self.categories is None and "categories" in self.model_fields_set:
@@ -284,6 +298,7 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
             "is_amazon_choice": obj.get("is_amazon_choice"),
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "is_newer_model_available": obj.get("is_newer_model_available"),
+            "applicable_vouchers": [AmazonApplicableVouchersItem.from_dict(_item) for _item in obj["applicable_vouchers"]] if obj.get("applicable_vouchers") is not None else None,
             "newer_model": AmazonProductNewerModelInfo.from_dict(obj["newer_model"]) if obj.get("newer_model") is not None else None,
             "categories": [ProductCategoryInfo.from_dict(_item) for _item in obj["categories"]] if obj.get("categories") is not None else None,
             "product_information": [BaseProductInformationItem.from_dict(_item) for _item in obj["product_information"]] if obj.get("product_information") is not None else None,

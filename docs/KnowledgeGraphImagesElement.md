@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
 **url** | **str** | relevant URL in SERP | [optional] 
-**domain** | **str** | domain in SERP of the Ad element | [optional] 
+**domain** | **str** | domain in SERP of the ad element | [optional] 
 **alt** | **str** | alt tag of the image | [optional] 
 **image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 
 **xpath** | **str** | the XPath of the element | [optional] 

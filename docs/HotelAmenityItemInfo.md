@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **amenity_label** | **str** | displayed amenity name | [optional] 
 **hint** | **str** | standardised details about the amenity | [optional] 
 **hint_label** | **str** | displayed details about the amenity | [optional] 
+**is_available** | **bool** | indicates whether the amenity is available in the hotel | [optional] 
 
 ## Example
 

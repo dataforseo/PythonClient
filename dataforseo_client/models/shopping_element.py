@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,7 +36,8 @@ class ShoppingElement(BaseModel):
     marketplace: Optional[StrictStr] = Field(default=None, description="merchant account provider commerce site that hosts products or websites of individual sellers under the same merchant account example: by Google")
     marketplace_url: Optional[StrictStr] = Field(default=None, description="relevant marketplace URL URL of the page on the marketplace website where the product is hosted")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    __properties: ClassVar[List[str]] = ["type", "title", "price", "source", "description", "marketplace", "marketplace_url", "url"]
+    rating: Optional[RatingInfo] = None
+    __properties: ClassVar[List[str]] = ["type", "title", "price", "source", "description", "marketplace", "marketplace_url", "url", "rating"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +81,9 @@ class ShoppingElement(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of price
         if self.price:
             _dict['price'] = self.price.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of rating
+        if self.rating:
+            _dict['rating'] = self.rating.to_dict()
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -133,7 +138,8 @@ class ShoppingElement(BaseModel):
             "description": obj.get("description"),
             "marketplace": obj.get("marketplace"),
             "marketplace_url": obj.get("marketplace_url"),
-            "url": obj.get("url")
+            "url": obj.get("url"),
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

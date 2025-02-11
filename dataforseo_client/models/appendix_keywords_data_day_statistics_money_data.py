@@ -23,9 +23,9 @@ from dataforseo_client.models.appendix_bing_keywords_data_day_statistics_data_in
 from dataforseo_client.models.appendix_bing_keywords_data_limits_rates_data_info import AppendixBingKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_clickstream_data_keywords_data_limits_rates_data_info import AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_dataforseo_trends_keywords_data_limits_rates_data_info import AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo
-from dataforseo_client.models.appendix_day_limits_rates_data_info import AppendixDayLimitsRatesDataInfo
 from dataforseo_client.models.appendix_google_ads_keywords_data_limits_rates_data_info import AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_info import AppendixInfo
+from dataforseo_client.models.appendix_jobs_serp_limits_rates_data_info import AppendixJobsSerpLimitsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -49,9 +49,9 @@ class AppendixKeywordsDataDayStatisticsMoneyData(BaseModel):
     google_ads: Optional[AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo] = None
     dataforseo_trends: Optional[AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo] = None
     clickstream_data: Optional[AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo] = None
-    audience_estimation: Optional[AppendixDayLimitsRatesDataInfo] = None
-    keyword_suggestions_for_url: Optional[AppendixDayLimitsRatesDataInfo] = None
-    search_volume_history: Optional[AppendixDayLimitsRatesDataInfo] = None
+    audience_estimation: Optional[AppendixInfo] = None
+    keyword_suggestions_for_url: Optional[AppendixInfo] = None
+    search_volume_history: Optional[AppendixJobsSerpLimitsRatesDataInfo] = None
     google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
     __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "audience_estimation", "keyword_suggestions_for_url", "search_volume_history", "google"]
 
@@ -194,9 +194,9 @@ class AppendixKeywordsDataDayStatisticsMoneyData(BaseModel):
             "google_ads": AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo.from_dict(obj["google_ads"]) if obj.get("google_ads") is not None else None,
             "dataforseo_trends": AppendixDataforseoTrendsKeywordsDataLimitsRatesDataInfo.from_dict(obj["dataforseo_trends"]) if obj.get("dataforseo_trends") is not None else None,
             "clickstream_data": AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.from_dict(obj["clickstream_data"]) if obj.get("clickstream_data") is not None else None,
-            "audience_estimation": AppendixDayLimitsRatesDataInfo.from_dict(obj["audience_estimation"]) if obj.get("audience_estimation") is not None else None,
-            "keyword_suggestions_for_url": AppendixDayLimitsRatesDataInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
-            "search_volume_history": AppendixDayLimitsRatesDataInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
+            "audience_estimation": AppendixInfo.from_dict(obj["audience_estimation"]) if obj.get("audience_estimation") is not None else None,
+            "keyword_suggestions_for_url": AppendixInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
+            "search_volume_history": AppendixJobsSerpLimitsRatesDataInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
             "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None
         })
         return _obj

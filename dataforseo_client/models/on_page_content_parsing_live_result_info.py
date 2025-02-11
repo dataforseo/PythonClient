@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
-from dataforseo_client.models.on_page_content_parsing_item import OnPageContentParsingItem
+from dataforseo_client.models.on_page_content_parsing_live_item import OnPageContentParsingLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class OnPageContentParsingLiveResultInfo(BaseModel):
     crawl_progress: Optional[StrictStr] = Field(default=None, description="status of the crawling session possible values: in_progress, finished")
     crawl_status: Optional[CrawlStatusInfo] = None
     items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
-    items: Optional[List[OnPageContentParsingItem]] = Field(default=None, description="items array")
+    items: Optional[List[OnPageContentParsingLiveItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "items_count", "items"]
 
     model_config = ConfigDict(
@@ -113,7 +113,7 @@ class OnPageContentParsingLiveResultInfo(BaseModel):
             "crawl_progress": obj.get("crawl_progress"),
             "crawl_status": CrawlStatusInfo.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
             "items_count": obj.get("items_count"),
-            "items": [OnPageContentParsingItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [OnPageContentParsingLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

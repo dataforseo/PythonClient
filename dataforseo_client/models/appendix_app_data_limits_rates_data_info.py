@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.appendix_business_listings_business_data_limits_rates_data_info import AppendixBusinessListingsBusinessDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,8 +36,9 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
+    app_listings: Optional[AppendixBusinessListingsBusinessDataLimitsRatesDataInfo] = None
     tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories", "tasks_ready"]
+    __properties: ClassVar[List[str]] = ["app_info", "app_list", "app_reviews", "app_searches", "errors", "languages", "locations", "categories", "app_listings", "tasks_ready"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +91,9 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of app_searches
         if self.app_searches:
             _dict['app_searches'] = self.app_searches.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of app_listings
+        if self.app_listings:
+            _dict['app_listings'] = self.app_listings.to_dict()
         # set to None if errors (nullable) is None
         # and model_fields_set contains the field
         if self.errors is None and "errors" in self.model_fields_set:
@@ -134,6 +139,7 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
             "languages": obj.get("languages"),
             "locations": obj.get("locations"),
             "categories": obj.get("categories"),
+            "app_listings": AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.from_dict(obj["app_listings"]) if obj.get("app_listings") is not None else None,
             "tasks_ready": obj.get("tasks_ready")
         })
         return _obj

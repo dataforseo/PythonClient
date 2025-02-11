@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **videos** | [**List[VideoElement]**](VideoElement.md) | videos of the product submitted by the reviewer | [optional] 
 **user_profile** | [**UserProfileInfo**](UserProfileInfo.md) |  | [optional] 
 **title** | **str** | title of the review | [optional] 
-**url** | **str** | relevant url | [optional] 
+**url** | **str** | URL to the reviewer’s profile | [optional] 
 **review_text** | **str** | content of the review | [optional] 
 **publication_date** | **str** | date and time when the review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
