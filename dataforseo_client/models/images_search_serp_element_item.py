@@ -29,14 +29,13 @@ class ImagesSearchSerpElementItem(BaseGoogleImagesSerpElementItem):
     """ # noqa: E501
     rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP for the target domain absolute position among all the elements in SERP")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     subtitle: Optional[StrictStr] = Field(default=None, description="subtitle of the result in SERP")
     alt: Optional[StrictStr] = Field(default=None, description="the alt tag of the image")
     url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
     source_url: Optional[StrictStr] = Field(default=None, description="the URL of the source image")
     encoded_url: Optional[StrictStr] = Field(default=None, description="the URL of the cached version of the image stored on Google’s servers")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "title", "subtitle", "alt", "url", "source_url", "encoded_url"]
+    __properties: ClassVar[List[str]] = ["type", "xpath", "rank_group", "rank_absolute", "title", "subtitle", "alt", "url", "source_url", "encoded_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +81,11 @@ class ImagesSearchSerpElementItem(BaseGoogleImagesSerpElementItem):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
+
         # set to None if rank_group (nullable) is None
         # and model_fields_set contains the field
         if self.rank_group is None and "rank_group" in self.model_fields_set:
@@ -91,11 +95,6 @@ class ImagesSearchSerpElementItem(BaseGoogleImagesSerpElementItem):
         # and model_fields_set contains the field
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
-
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
 
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
@@ -140,9 +139,9 @@ class ImagesSearchSerpElementItem(BaseGoogleImagesSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
+            "xpath": obj.get("xpath"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "subtitle": obj.get("subtitle"),
             "alt": obj.get("alt"),

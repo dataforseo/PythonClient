@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **text** | **List[Optional[str]]** | text if there is none, equals null | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | link of the element | [optional] 
 **rectangle** | [**Rectangle**](Rectangle.md) |  | [optional] 

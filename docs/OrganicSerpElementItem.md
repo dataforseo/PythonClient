@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **domain** | **str** | domain name of the reference | [optional] 
 **title** | **str** | title of the result in SERP | [optional] 
 **url** | **str** | relevant URL in SERP | [optional] 

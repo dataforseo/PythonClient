@@ -25,9 +25,9 @@ Name | Type | Description | Notes
 **page_screenshot** | **float** |  | [optional] 
 **content_parsing** | **float** |  | [optional] 
 **content_parsing_live** | **float** |  | [optional] 
-**id_list** | **float** |  | [optional] 
 **force_stop** | **float** |  | [optional] 
 **available_filters** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
 **microdata** | **float** |  | [optional] 
 
 ## Example

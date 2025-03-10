@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of the result in SERP | [optional] 
 **featured_title** | **str** | the title of the featured snippets source page | [optional] 
 **description** | **str** | description of the results element in SERP | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | relevant URL | [optional] 
 **table** | [**Table**](Table.md) |  | [optional] 
 **se_type** | **str** | search engine type | [optional] 
 **main_domain** | **str** | primary domain name in SERP | [optional] 

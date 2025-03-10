@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **referring_main_domains** | **float** | average number of referring main domains | [optional] 
 **rank** | **float** | average rank learn more about the metric and its calculation formula in this help center article | [optional] 
 **main_domain_rank** | **float** | average main domain rank learn more about the metric and its calculation formula in this help center article | [optional] 
-**last_updated_time** | **str** | date and time when search intent data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
+**last_updated_time** | **str** | date and time when SERP data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 
 ## Example
 

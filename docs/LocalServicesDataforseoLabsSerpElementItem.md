@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | relevant URL | [optional] 
 **domain** | **str** | domain where a link points | [optional] 
-**items** | [**List[LocalServicesElement]**](LocalServicesElement.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[LocalServicesElement]**](LocalServicesElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

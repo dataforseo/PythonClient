@@ -29,6 +29,8 @@ class GoogleReviewsSerpElementItem(BaseSerpElementItem):
     """
     GoogleReviewsSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the number of reviews")
     rating: Optional[RatingInfo] = None
     place_id: Optional[StrictStr] = Field(default=None, description="the identifier of a place")

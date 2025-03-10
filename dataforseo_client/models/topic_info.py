@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.content_item_info import ContentItemInfo
-from dataforseo_client.models.table_content import TableContent
+from dataforseo_client.models.section_content_item_info import SectionContentItemInfo
+from dataforseo_client.models.table_content_info import TableContentInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,10 +32,10 @@ class TopicInfo(BaseModel):
     main_title: Optional[StrictStr] = Field(default=None, description="main title of the block")
     author: Optional[StrictStr] = Field(default=None, description="content author name")
     language: Optional[StrictStr] = Field(default=None, description="content language")
-    level: Optional[StrictStr] = Field(default=None, description="HTML level")
-    primary_content: Optional[List[ContentItemInfo]] = Field(default=None, description="primary content on the page you can find more information about content priority calculation in this help center article")
-    secondary_content: Optional[List[ContentItemInfo]] = Field(default=None, description="secondary content on the page you can find more information about content priority calculation in this help center article")
-    table_content: Optional[List[TableContent]] = Field(default=None, description="content of the table on the page")
+    level: Optional[StrictInt] = Field(default=None, description="HTML level")
+    primary_content: Optional[List[SectionContentItemInfo]] = Field(default=None, description="primary content on the page you can find more information about content priority calculation in this help center article")
+    secondary_content: Optional[List[SectionContentItemInfo]] = Field(default=None, description="secondary content on the page you can find more information about content priority calculation in this help center article")
+    table_content: Optional[List[TableContentInfo]] = Field(default=None, description="content of the table on the page")
     __properties: ClassVar[List[str]] = ["h_title", "main_title", "author", "language", "level", "primary_content", "secondary_content", "table_content"]
 
     model_config = ConfigDict(
@@ -155,9 +155,9 @@ class TopicInfo(BaseModel):
             "author": obj.get("author"),
             "language": obj.get("language"),
             "level": obj.get("level"),
-            "primary_content": [ContentItemInfo.from_dict(_item) for _item in obj["primary_content"]] if obj.get("primary_content") is not None else None,
-            "secondary_content": [ContentItemInfo.from_dict(_item) for _item in obj["secondary_content"]] if obj.get("secondary_content") is not None else None,
-            "table_content": [TableContent.from_dict(_item) for _item in obj["table_content"]] if obj.get("table_content") is not None else None
+            "primary_content": [SectionContentItemInfo.from_dict(_item) for _item in obj["primary_content"]] if obj.get("primary_content") is not None else None,
+            "secondary_content": [SectionContentItemInfo.from_dict(_item) for _item in obj["secondary_content"]] if obj.get("secondary_content") is not None else None,
+            "table_content": [TableContentInfo.from_dict(_item) for _item in obj["table_content"]] if obj.get("table_content") is not None else None
         })
         return _obj
 

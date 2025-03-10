@@ -34,7 +34,7 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the shopping_element")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
     price: Optional[PriceInfo] = None
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     table: Optional[Table] = None
     graph: Optional[Graph] = None

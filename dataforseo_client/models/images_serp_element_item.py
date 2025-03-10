@@ -30,6 +30,8 @@ class ImagesSerpElementItem(BaseSerpElementItem):
     """
     ImagesSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     url: Optional[StrictStr] = Field(default=None, description="source URL")
     items: Optional[List[ImagesElement]] = Field(default=None, description="contains arrays of specific images")

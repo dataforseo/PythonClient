@@ -26,7 +26,7 @@ class ContentUrlInfo(BaseModel):
     """
     ContentUrlInfo
     """ # noqa: E501
-    url: Optional[StrictStr] = Field(default=None, description="other URL found in the content element")
+    url: Optional[StrictStr] = Field(default=None, description="contains other URLs and anchors found in the content element")
     anchor_text: Optional[StrictStr] = Field(default=None, description="text of the URL’s anchor")
     __properties: ClassVar[List[str]] = ["url", "anchor_text"]
 

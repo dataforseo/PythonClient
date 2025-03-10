@@ -28,9 +28,9 @@ class AppendixAppendixDayStatisticsRatesData(BaseModel):
     """ # noqa: E501
     user_data: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
-    webhook_resend: Optional[Union[StrictFloat, StrictInt]] = None
     status: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["user_data", "errors", "webhook_resend", "status"]
+    webhook_resend: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["user_data", "errors", "status", "webhook_resend"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,15 +81,15 @@ class AppendixAppendixDayStatisticsRatesData(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
-        # set to None if webhook_resend (nullable) is None
-        # and model_fields_set contains the field
-        if self.webhook_resend is None and "webhook_resend" in self.model_fields_set:
-            _dict['webhook_resend'] = None
-
         # set to None if status (nullable) is None
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
             _dict['status'] = None
+
+        # set to None if webhook_resend (nullable) is None
+        # and model_fields_set contains the field
+        if self.webhook_resend is None and "webhook_resend" in self.model_fields_set:
+            _dict['webhook_resend'] = None
 
         return _dict
 
@@ -105,8 +105,8 @@ class AppendixAppendixDayStatisticsRatesData(BaseModel):
         _obj = cls.model_validate({
             "user_data": obj.get("user_data"),
             "errors": obj.get("errors"),
-            "webhook_resend": obj.get("webhook_resend"),
-            "status": obj.get("status")
+            "status": obj.get("status"),
+            "webhook_resend": obj.get("webhook_resend")
         })
         return _obj
 

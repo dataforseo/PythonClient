@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **title** | **str** | title of the result in SERP | [optional] 
 **date_from** | **str** | starting date of stay in the format “year-month-date” example: 2019-11-15 | [optional] 
 **date_to** | **str** | ending date of stay in the format “year-month-date” example: 2019-11-17 | [optional] 
-**items** | [**List[HotelsPackElement]**](HotelsPackElement.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[HotelsPackElement]**](HotelsPackElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

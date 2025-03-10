@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List[TopStoriesElement]**](TopStoriesElement.md) | contains results featured in the ‘hotels_pack’ element of SERP | [optional] 
+**items** | [**List[TopStoriesElement]**](TopStoriesElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

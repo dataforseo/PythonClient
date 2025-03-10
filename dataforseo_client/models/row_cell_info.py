@@ -27,9 +27,9 @@ class RowCellInfo(BaseModel):
     """
     RowCellInfo
     """ # noqa: E501
-    text: Optional[StrictStr] = Field(default=None, description="content text")
+    text: Optional[StrictStr] = Field(default=None, description="content of the row cells of the header")
     urls: Optional[List[ContentUrlInfo]] = Field(default=None, description="contains other URLs and anchors found in the content element")
-    is_header: Optional[StrictBool] = Field(default=None, description="indicates if the text belongs to the header")
+    is_header: Optional[StrictBool] = Field(default=None, description="content of the row cells of the header")
     __properties: ClassVar[List[str]] = ["text", "urls", "is_header"]
 
     model_config = ConfigDict(

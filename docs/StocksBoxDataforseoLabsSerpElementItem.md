@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **source** | **str** | source of the element indicates the source of information included in the shopping_element | [optional] 
 **snippet** | **str** | text alongside the link title | [optional] 
 **price** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | relevant URL | [optional] 
 **domain** | **str** | domain where a link points | [optional] 
 **table** | [**Table**](Table.md) |  | [optional] 
 **graph** | [**Graph**](Graph.md) |  | [optional] 

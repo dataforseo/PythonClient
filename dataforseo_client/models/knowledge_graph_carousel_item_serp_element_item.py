@@ -30,6 +30,8 @@ class KnowledgeGraphCarouselItemSerpElementItem(BaseSerpElementItem):
     """
     KnowledgeGraphCarouselItemSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: action:listen_artist")
     link: Optional[LinkElement] = None

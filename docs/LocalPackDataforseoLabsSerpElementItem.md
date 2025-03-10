@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** | description of the results element in SERP | [optional] 
 **domain** | **str** | domain where a link points | [optional] 
 **phone** | **str** | phone number | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | relevant URL | [optional] 
 **is_paid** | **bool** | indicates whether the element is an ad | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **main_domain** | **str** | primary domain name in SERP | [optional] 

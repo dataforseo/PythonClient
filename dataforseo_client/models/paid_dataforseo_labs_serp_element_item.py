@@ -35,7 +35,7 @@ class PaidDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb of the Ad element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="words highlighted in bold within the results description")
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="additional information about the result")
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description="extended description if there is none, equals null")

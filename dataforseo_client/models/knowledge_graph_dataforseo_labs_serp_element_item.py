@@ -32,11 +32,11 @@ class KnowledgeGraphDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementI
     sub_title: Optional[StrictStr] = Field(default=None, description="subtitle of the item")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     card_id: Optional[StrictStr] = Field(default=None, description="card id")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image from knowledge graph")
     logo_url: Optional[StrictStr] = Field(default=None, description="URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
-    items: Optional[List[BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "sub_title", "description", "card_id", "url", "image_url", "logo_url", "cid", "items"]
 
     model_config = ConfigDict(

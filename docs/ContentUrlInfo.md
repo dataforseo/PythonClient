@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **str** | other URL found in the content element | [optional] 
+**url** | **str** | contains other URLs and anchors found in the content element | [optional] 
 **anchor_text** | **str** | text of the URL’s anchor | [optional] 
 
 ## Example

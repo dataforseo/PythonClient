@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
-**items** | [**List[CarouselElement]**](CarouselElement.md) | contains results featured in the ‘hotels_pack’ element of SERP | [optional] 
+**items** | [**List[CarouselElement]**](CarouselElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

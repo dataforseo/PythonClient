@@ -29,9 +29,9 @@ class LocalServicesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
     LocalServicesDataforseoLabsSerpElementItem
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    items: Optional[List[LocalServicesElement]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[LocalServicesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "domain", "items"]
 
     model_config = ConfigDict(

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
-**items** | [**List[TopSightsElement]**](TopSightsElement.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[TopSightsElement]**](TopSightsElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rank_group** | **int** | group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
 **rank_absolute** | **int** | absolute rank in SERP for the target domain absolute position among all the elements in SERP | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
 **title** | **str** | title of the result in SERP | [optional] 
 **subtitle** | **str** | subtitle of the result in SERP | [optional] 
 **alt** | **str** | the alt tag of the image | [optional] 

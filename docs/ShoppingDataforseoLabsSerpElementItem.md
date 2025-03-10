@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
-**items** | [**List[ShoppingElement]**](ShoppingElement.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[ShoppingElement]**](ShoppingElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

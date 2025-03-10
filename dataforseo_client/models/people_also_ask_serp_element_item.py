@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.people_also_ask_element import PeopleAlsoAskElement
@@ -29,6 +29,8 @@ class PeopleAlsoAskSerpElementItem(BaseSerpElementItem):
     """
     PeopleAlsoAskSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     items: Optional[List[PeopleAlsoAskElement]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items", "rectangle"]

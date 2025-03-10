@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_data** | **float** |  | [optional] 
 **errors** | **float** |  | [optional] 
-**webhook_resend** | **float** |  | [optional] 
 **status** | **float** |  | [optional] 
+**webhook_resend** | **float** |  | [optional] 
 
 ## Example
 

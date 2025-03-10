@@ -52,10 +52,10 @@ class AppendixKeywordsDataDayStatisticsRatesData(BaseModel):
     keyword_suggestions_for_url: Optional[AppendixInfo] = None
     job_functions: Optional[Union[StrictFloat, StrictInt]] = None
     search_volume_history: Optional[AppendixInfo] = None
-    google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
     industries: Optional[Union[StrictFloat, StrictInt]] = None
+    google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
     id_list: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "audience_estimation", "keyword_suggestions_for_url", "job_functions", "search_volume_history", "google", "industries", "id_list"]
+    __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "audience_estimation", "keyword_suggestions_for_url", "job_functions", "search_volume_history", "industries", "google", "id_list"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -215,8 +215,8 @@ class AppendixKeywordsDataDayStatisticsRatesData(BaseModel):
             "keyword_suggestions_for_url": AppendixInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
             "job_functions": obj.get("job_functions"),
             "search_volume_history": AppendixInfo.from_dict(obj["search_volume_history"]) if obj.get("search_volume_history") is not None else None,
-            "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None,
             "industries": obj.get("industries"),
+            "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None,
             "id_list": obj.get("id_list")
         })
         return _obj

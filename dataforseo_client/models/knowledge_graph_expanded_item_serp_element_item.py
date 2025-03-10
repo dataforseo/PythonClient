@@ -29,6 +29,8 @@ class KnowledgeGraphExpandedItemSerpElementItem(BaseSerpElementItem):
     """
     KnowledgeGraphExpandedItemSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the link")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/local:place qa")
     expanded_element: Optional[List[KnowledgeGraphExpandedElement]] = Field(default=None, description="link of the element")

@@ -28,7 +28,7 @@ class FindResultsOnDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
     """
     FindResultsOnDataforseoLabsSerpElementItem
     """ # noqa: E501
-    items: Optional[List[ShortVideosElement]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[ShortVideosElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 
     model_config = ConfigDict(

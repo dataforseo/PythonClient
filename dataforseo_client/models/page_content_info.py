@@ -19,6 +19,10 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.contacts import Contacts
+from dataforseo_client.models.content_comment_info import ContentCommentInfo
+from dataforseo_client.models.content_offer_info import ContentOfferInfo
+from dataforseo_client.models.content_rating_info import ContentRatingInfo
 from dataforseo_client.models.page_section_content_info import PageSectionContentInfo
 from dataforseo_client.models.topic_info import TopicInfo
 from typing import Optional, Set
@@ -32,7 +36,11 @@ class PageContentInfo(BaseModel):
     footer: Optional[PageSectionContentInfo] = None
     main_topic: Optional[List[TopicInfo]] = Field(default=None, description="main topic on the page you can find more information about topic priority calculation in this help center article")
     secondary_topic: Optional[List[TopicInfo]] = Field(default=None, description="secondary topic on the page you can find more information about topic priority calculation in this help center article")
-    __properties: ClassVar[List[str]] = ["header", "footer", "main_topic", "secondary_topic"]
+    ratings: Optional[List[ContentRatingInfo]] = Field(default=None, description="contains objects with rating information for the products displayed on the page")
+    offers: Optional[List[ContentOfferInfo]] = Field(default=None, description="array of products displayed on the page contains objects with information on products displayed on the page")
+    comments: Optional[List[ContentCommentInfo]] = Field(default=None, description="array of comments displayed on the page contains objects with information on comments related to displayed products")
+    contacts: Optional[Contacts] = None
+    __properties: ClassVar[List[str]] = ["header", "footer", "main_topic", "secondary_topic", "ratings", "offers", "comments", "contacts"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +101,30 @@ class PageContentInfo(BaseModel):
                 if _item_secondary_topic:
                     _items.append(_item_secondary_topic.to_dict())
             _dict['secondary_topic'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in ratings (list)
+        _items = []
+        if self.ratings:
+            for _item_ratings in self.ratings:
+                if _item_ratings:
+                    _items.append(_item_ratings.to_dict())
+            _dict['ratings'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in offers (list)
+        _items = []
+        if self.offers:
+            for _item_offers in self.offers:
+                if _item_offers:
+                    _items.append(_item_offers.to_dict())
+            _dict['offers'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in comments (list)
+        _items = []
+        if self.comments:
+            for _item_comments in self.comments:
+                if _item_comments:
+                    _items.append(_item_comments.to_dict())
+            _dict['comments'] = _items
+        # override the default output from pydantic by calling `to_dict()` of contacts
+        if self.contacts:
+            _dict['contacts'] = self.contacts.to_dict()
         # set to None if main_topic (nullable) is None
         # and model_fields_set contains the field
         if self.main_topic is None and "main_topic" in self.model_fields_set:
@@ -102,6 +134,21 @@ class PageContentInfo(BaseModel):
         # and model_fields_set contains the field
         if self.secondary_topic is None and "secondary_topic" in self.model_fields_set:
             _dict['secondary_topic'] = None
+
+        # set to None if ratings (nullable) is None
+        # and model_fields_set contains the field
+        if self.ratings is None and "ratings" in self.model_fields_set:
+            _dict['ratings'] = None
+
+        # set to None if offers (nullable) is None
+        # and model_fields_set contains the field
+        if self.offers is None and "offers" in self.model_fields_set:
+            _dict['offers'] = None
+
+        # set to None if comments (nullable) is None
+        # and model_fields_set contains the field
+        if self.comments is None and "comments" in self.model_fields_set:
+            _dict['comments'] = None
 
         return _dict
 
@@ -118,7 +165,11 @@ class PageContentInfo(BaseModel):
             "header": PageSectionContentInfo.from_dict(obj["header"]) if obj.get("header") is not None else None,
             "footer": PageSectionContentInfo.from_dict(obj["footer"]) if obj.get("footer") is not None else None,
             "main_topic": [TopicInfo.from_dict(_item) for _item in obj["main_topic"]] if obj.get("main_topic") is not None else None,
-            "secondary_topic": [TopicInfo.from_dict(_item) for _item in obj["secondary_topic"]] if obj.get("secondary_topic") is not None else None
+            "secondary_topic": [TopicInfo.from_dict(_item) for _item in obj["secondary_topic"]] if obj.get("secondary_topic") is not None else None,
+            "ratings": [ContentRatingInfo.from_dict(_item) for _item in obj["ratings"]] if obj.get("ratings") is not None else None,
+            "offers": [ContentOfferInfo.from_dict(_item) for _item in obj["offers"]] if obj.get("offers") is not None else None,
+            "comments": [ContentCommentInfo.from_dict(_item) for _item in obj["comments"]] if obj.get("comments") is not None else None,
+            "contacts": Contacts.from_dict(obj["contacts"]) if obj.get("contacts") is not None else None
         })
         return _obj
 

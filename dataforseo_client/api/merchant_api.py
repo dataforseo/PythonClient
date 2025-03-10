@@ -2696,7 +2696,7 @@ class MerchantApi:
     ) -> MerchantAmazonReviewsTaskPostResponseInfo:
         """amazon_reviews_task_post
 
-        ‌‌ This endpoint will provide you with a list of reviews for the target Amazon product. for more info please visit 'https://docs.dataforseo.com/v3/merchant/amazon/reviews/task_post/?bash'
+        ‌‌ for more info please visit 'https://docs.dataforseo.com/v3/merchant/amazon/reviews/task_post/?bash'
 
         :param merchant_amazon_reviews_task_post_request_info:
         :type merchant_amazon_reviews_task_post_request_info: List[MerchantAmazonReviewsTaskPostRequestInfo]
@@ -2763,7 +2763,7 @@ class MerchantApi:
     ) -> ApiResponse[MerchantAmazonReviewsTaskPostResponseInfo]:
         """amazon_reviews_task_post
 
-        ‌‌ This endpoint will provide you with a list of reviews for the target Amazon product. for more info please visit 'https://docs.dataforseo.com/v3/merchant/amazon/reviews/task_post/?bash'
+        ‌‌ for more info please visit 'https://docs.dataforseo.com/v3/merchant/amazon/reviews/task_post/?bash'
 
         :param merchant_amazon_reviews_task_post_request_info:
         :type merchant_amazon_reviews_task_post_request_info: List[MerchantAmazonReviewsTaskPostRequestInfo]
@@ -2830,7 +2830,7 @@ class MerchantApi:
     ) -> RESTResponseType:
         """amazon_reviews_task_post
 
-        ‌‌ This endpoint will provide you with a list of reviews for the target Amazon product. for more info please visit 'https://docs.dataforseo.com/v3/merchant/amazon/reviews/task_post/?bash'
+        ‌‌ for more info please visit 'https://docs.dataforseo.com/v3/merchant/amazon/reviews/task_post/?bash'
 
         :param merchant_amazon_reviews_task_post_request_info:
         :type merchant_amazon_reviews_task_post_request_info: List[MerchantAmazonReviewsTaskPostRequestInfo]

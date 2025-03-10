@@ -29,6 +29,8 @@ class KnowledgeGraphDescriptionItemSerpElementItem(BaseSerpElementItem):
     """
     KnowledgeGraphDescriptionItemSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     text: Optional[StrictStr] = Field(default=None, description="text or description of the element in SERP")
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     rectangle: Optional[Rectangle] = None

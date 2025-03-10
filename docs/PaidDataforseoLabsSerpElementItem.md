@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **domain** | **str** | domain where a link points | [optional] 
 **description** | **str** | description of the results element in SERP | [optional] 
 **breadcrumb** | **str** | breadcrumb of the Ad element in SERP | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | relevant URL | [optional] 
 **highlighted** | **List[Optional[str]]** | words highlighted in bold within the results description | [optional] 
 **extra** | **Dict[str, Optional[str]]** | additional information about the result | [optional] 
 **description_rows** | **List[Optional[str]]** | extended description if there is none, equals null | [optional] 

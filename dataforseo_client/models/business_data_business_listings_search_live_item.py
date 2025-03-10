@@ -36,6 +36,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of the element in SERP the name of the business entity for which the results are collected")
+    original_title: Optional[StrictStr] = Field(default=None, description="original title of the element original title not translated by Google")
     description: Optional[StrictStr] = Field(default=None, description="description of the element in SERP the description of the business entity for which the results are collected")
     category: Optional[StrictStr] = Field(default=None, description="business category Google My Business general category that best describes the services provided by the business entity")
     category_ids: Optional[List[Optional[StrictStr]]] = Field(default=None, description="global category IDs universal category IDs that do not change based on the selected country")
@@ -69,7 +70,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the data was last updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-01-26 09:03:15 +00:00")
     first_seen: Optional[StrictStr] = Field(default=None, description="date and time when our crawler found the business listing element for the first time in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-03-11 10:04:11 +00:00")
-    __properties: ClassVar[List[str]] = ["type", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "contact_info", "check_url", "last_updated_time", "first_seen"]
+    __properties: ClassVar[List[str]] = ["type", "title", "original_title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "contact_info", "check_url", "last_updated_time", "first_seen"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -155,6 +156,11 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
             _dict['title'] = None
+
+        # set to None if original_title (nullable) is None
+        # and model_fields_set contains the field
+        if self.original_title is None and "original_title" in self.model_fields_set:
+            _dict['original_title'] = None
 
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
@@ -310,6 +316,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
         _obj = cls.model_validate({
             "type": obj.get("type"),
             "title": obj.get("title"),
+            "original_title": obj.get("original_title"),
             "description": obj.get("description"),
             "category": obj.get("category"),
             "category_ids": obj.get("category_ids"),

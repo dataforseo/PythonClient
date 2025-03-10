@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **title** | **str** | title of the place | [optional] 
 **data_attrid** | **str** | google defined data attribute ID example: kc:/shopping/gpc:organic-offers | [optional] 
 **items** | [**List[KnowledgeGraphShoppingElement]**](KnowledgeGraphShoppingElement.md) | additional items present in the element if there are none, equals null | [optional] 

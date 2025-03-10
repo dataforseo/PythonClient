@@ -31,7 +31,7 @@ class OnPageContentParsingResultInfo(BaseModel):
     crawl_progress: Optional[StrictStr] = Field(default=None, description="status of the crawling session possible values: in_progress, finished")
     crawl_status: Optional[CrawlStatusInfo] = None
     items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
-    items: Optional[OnPageContentParsingItem] = None
+    items: Optional[List[OnPageContentParsingItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "items_count", "items"]
 
     model_config = ConfigDict(
@@ -76,9 +76,13 @@ class OnPageContentParsingResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of crawl_status
         if self.crawl_status:
             _dict['crawl_status'] = self.crawl_status.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of items
+        # override the default output from pydantic by calling `to_dict()` of each item in items (list)
+        _items = []
         if self.items:
-            _dict['items'] = self.items.to_dict()
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
+            _dict['items'] = _items
         # set to None if crawl_progress (nullable) is None
         # and model_fields_set contains the field
         if self.crawl_progress is None and "crawl_progress" in self.model_fields_set:
@@ -88,6 +92,11 @@ class OnPageContentParsingResultInfo(BaseModel):
         # and model_fields_set contains the field
         if self.items_count is None and "items_count" in self.model_fields_set:
             _dict['items_count'] = None
+
+        # set to None if items (nullable) is None
+        # and model_fields_set contains the field
+        if self.items is None and "items" in self.model_fields_set:
+            _dict['items'] = None
 
         return _dict
 
@@ -104,7 +113,7 @@ class OnPageContentParsingResultInfo(BaseModel):
             "crawl_progress": obj.get("crawl_progress"),
             "crawl_status": CrawlStatusInfo.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
             "items_count": obj.get("items_count"),
-            "items": OnPageContentParsingItem.from_dict(obj["items"]) if obj.get("items") is not None else None
+            "items": [OnPageContentParsingItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

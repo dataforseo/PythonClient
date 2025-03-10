@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **title** | **str** | title of the row | [optional] 
 **categories** | **List[Optional[str]]** | array of course categories contains a list of categories relevant to courses | [optional] 
 **items** | [**List[CoursesElement]**](CoursesElement.md) | contains arrays of specific images | [optional] 

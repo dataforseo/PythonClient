@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
-**last_updated_time** | **str** | date and time when SERP data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
+**last_updated_time** | **str** | date and time when the clickstream dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” | [optional] 
 **bid** | **int** | the maximum CPC it stands for the price you are willing to pay for an ad. The higher value, the higher positions and price you will getwe return the results for the 999 bid value to provide the highest number of impressions and level down the account-specific factors | [optional] 
 **match_type** | **str** | type of keyword match can take the following values: exact, broad, phrase | [optional] 
 **ad_position_min** | **float** | the minimum ad position represents the minimum position of the advertisement | [optional] 

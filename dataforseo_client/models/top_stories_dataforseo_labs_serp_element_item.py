@@ -28,7 +28,7 @@ class TopStoriesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
     """
     TopStoriesDataforseoLabsSerpElementItem
     """ # noqa: E501
-    items: Optional[List[TopStoriesElement]] = Field(default=None, description="contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[TopStoriesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 
     model_config = ConfigDict(

@@ -28,6 +28,8 @@ class GoogleHotelsSerpElementItem(BaseSerpElementItem):
     """
     GoogleHotelsSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     hotel_identifier: Optional[StrictStr] = Field(default=None, description="unique hotel identifier unique hotel identifier assigned by Google; example: \"CgoIjaeSlI6CnNpVEAE\"")
     url: Optional[StrictStr] = Field(default=None, description="source URL")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")

@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **reviews_count** | **int** | the number of reviews | [optional] 
 **rating** | [**RatingInfo**](RatingInfo.md) |  | [optional] 
 **place_id** | **str** | the identifier of a place | [optional] 

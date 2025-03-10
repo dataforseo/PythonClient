@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**original_title** | **str** | original title of the element original title not translated by Google | [optional] 
 **contact_url** | **str** | URL of the preferred contact page | [optional] 
 **contributor_url** | **str** | URL of the user’s or entity’s Local Guides profile, if available | [optional] 
 **book_online_url** | **str** | URL in the ‘book online’ button of the element URL directing users to the online booking or order page of the business entity | [optional] 

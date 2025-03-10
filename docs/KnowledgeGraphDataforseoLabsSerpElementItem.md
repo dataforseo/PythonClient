@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **sub_title** | **str** | subtitle of the item | [optional] 
 **description** | **str** | description of the results element in SERP | [optional] 
 **card_id** | **str** | card id | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
+**url** | **str** | relevant URL in SERP | [optional] 
 **image_url** | **str** | URL of the image from knowledge graph | [optional] 
 **logo_url** | **str** | URL of the logo from knowledge graph | [optional] 
 **cid** | **str** | google-defined client id | [optional] 
-**items** | [**List[BaseDataforseoLabsSerpElementItem]**](BaseDataforseoLabsSerpElementItem.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[BaseDataforseoLabsSerpElementItem]**](BaseDataforseoLabsSerpElementItem.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

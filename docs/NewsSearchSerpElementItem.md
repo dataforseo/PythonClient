@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rank_group** | **int** | group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group | [optional] 
 **rank_absolute** | **int** | absolute rank in SERP absolute position among all the elements in SERP | [optional] 
-**xpath** | **str** | the XPath of the element | [optional] 
 **domain** | **str** | domain in SERP | [optional] 
 **url** | **str** | search URL with refinement parameters | [optional] 
 **image_url** | **str** | URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) | [optional] 

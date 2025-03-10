@@ -5,10 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**se_type** | **str** | search engine type | [optional] 
 **title** | **str** | title of the result in SERP | [optional] 
-**url** | **str** | relevant URL of the Ad element in SERP | [optional] 
-**items** | [**List[TwitterElement]**](TwitterElement.md) | elements of search results found in SERP | [optional] 
+**url** | **str** | relevant URL | [optional] 
+**items** | [**List[TwitterElement]**](TwitterElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

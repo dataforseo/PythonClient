@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | title of the result in SERP | [optional] 
 **result** | **str** | solution to the equation solution to the mathematical equation specified in the keyword field when setting a task | [optional] 
-**items** | [**List[MathSolverElement]**](MathSolverElement.md) | contains results featured in the ‘hotels_pack’ element of SERP | [optional] 
+**items** | [**List[MathSolverElement]**](MathSolverElement.md) | additional items present in the element if there are none, equals null | [optional] 
 **links** | [**List[LinkElement]**](LinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
 
 ## Example

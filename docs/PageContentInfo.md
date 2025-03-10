@@ -9,6 +9,10 @@ Name | Type | Description | Notes
 **footer** | [**PageSectionContentInfo**](PageSectionContentInfo.md) |  | [optional] 
 **main_topic** | [**List[TopicInfo]**](TopicInfo.md) | main topic on the page you can find more information about topic priority calculation in this help center article | [optional] 
 **secondary_topic** | [**List[TopicInfo]**](TopicInfo.md) | secondary topic on the page you can find more information about topic priority calculation in this help center article | [optional] 
+**ratings** | [**List[ContentRatingInfo]**](ContentRatingInfo.md) | contains objects with rating information for the products displayed on the page | [optional] 
+**offers** | [**List[ContentOfferInfo]**](ContentOfferInfo.md) | array of products displayed on the page contains objects with information on products displayed on the page | [optional] 
+**comments** | [**List[ContentCommentInfo]**](ContentCommentInfo.md) | array of comments displayed on the page contains objects with information on comments related to displayed products | [optional] 
+**contacts** | [**Contacts**](Contacts.md) |  | [optional] 
 
 ## Example
 

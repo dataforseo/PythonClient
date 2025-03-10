@@ -49,12 +49,12 @@ class AppendixBacklinksDayStatisticsRatesData(BaseModel):
     competitors: Optional[AppendixInfo] = None
     bulk_spam_score: Optional[AppendixInfo] = None
     bulk_pages_summary: Optional[AppendixInfo] = None
+    index: Optional[Union[StrictFloat, StrictInt]] = None
     pages_summary_with_page_info: Optional[AppendixInfo] = None
     id_list: Optional[Union[StrictFloat, StrictInt]] = None
     available_filters: Optional[Union[StrictFloat, StrictInt]] = None
     historical_new_lost_summary: Optional[AppendixInfo] = None
-    index: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors", "bulk_spam_score", "bulk_pages_summary", "pages_summary_with_page_info", "id_list", "available_filters", "historical_new_lost_summary", "index"]
+    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors", "bulk_spam_score", "bulk_pages_summary", "index", "pages_summary_with_page_info", "id_list", "available_filters", "historical_new_lost_summary"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -169,6 +169,11 @@ class AppendixBacklinksDayStatisticsRatesData(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
+        # set to None if index (nullable) is None
+        # and model_fields_set contains the field
+        if self.index is None and "index" in self.model_fields_set:
+            _dict['index'] = None
+
         # set to None if id_list (nullable) is None
         # and model_fields_set contains the field
         if self.id_list is None and "id_list" in self.model_fields_set:
@@ -178,11 +183,6 @@ class AppendixBacklinksDayStatisticsRatesData(BaseModel):
         # and model_fields_set contains the field
         if self.available_filters is None and "available_filters" in self.model_fields_set:
             _dict['available_filters'] = None
-
-        # set to None if index (nullable) is None
-        # and model_fields_set contains the field
-        if self.index is None and "index" in self.model_fields_set:
-            _dict['index'] = None
 
         return _dict
 
@@ -218,11 +218,11 @@ class AppendixBacklinksDayStatisticsRatesData(BaseModel):
             "competitors": AppendixInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None,
             "bulk_spam_score": AppendixInfo.from_dict(obj["bulk_spam_score"]) if obj.get("bulk_spam_score") is not None else None,
             "bulk_pages_summary": AppendixInfo.from_dict(obj["bulk_pages_summary"]) if obj.get("bulk_pages_summary") is not None else None,
+            "index": obj.get("index"),
             "pages_summary_with_page_info": AppendixInfo.from_dict(obj["pages_summary_with_page_info"]) if obj.get("pages_summary_with_page_info") is not None else None,
             "id_list": obj.get("id_list"),
             "available_filters": obj.get("available_filters"),
-            "historical_new_lost_summary": AppendixInfo.from_dict(obj["historical_new_lost_summary"]) if obj.get("historical_new_lost_summary") is not None else None,
-            "index": obj.get("index")
+            "historical_new_lost_summary": AppendixInfo.from_dict(obj["historical_new_lost_summary"]) if obj.get("historical_new_lost_summary") is not None else None
         })
         return _obj
 

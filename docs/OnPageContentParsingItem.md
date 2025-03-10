@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **str** | type of element | [optional] 
 **fetch_time** | **str** | date and time when the content was fethced example: \&quot;2022-11-01 10:02:52 +00:00\&quot; | [optional] 
 **status_code** | **int** | status code of the page | [optional] 
-**page_content** | [**OnPageContentParsingItemPageContent**](OnPageContentParsingItemPageContent.md) |  | [optional] 
+**page_content** | [**PageContentInfo**](PageContentInfo.md) |  | [optional] 
 
 ## Example
 

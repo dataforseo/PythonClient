@@ -28,7 +28,7 @@ class GoogleHotelsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIte
     GoogleHotelsDataforseoLabsSerpElementItem
     """ # noqa: E501
     hotel_identifier: Optional[StrictStr] = Field(default=None, description="unique hotel identifier unique hotel identifier assigned by Google; example: \"CgoIjaeSlI6CnNpVEAE\"")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "hotel_identifier", "url"]
 
     model_config = ConfigDict(

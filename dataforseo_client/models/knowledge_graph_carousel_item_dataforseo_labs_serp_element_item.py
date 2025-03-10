@@ -29,10 +29,10 @@ class KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem(BaseDataforseoLabs
     """
     KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description="title of the link")
-    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: ss:/webfacts:net_worth")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: action:listen_artist")
     link: Optional[LinkElement] = None
-    items: Optional[List[KnowledgeGraphListElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[KnowledgeGraphListElement]] = Field(default=None, description="elements of search results found in SERP")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "data_attrid", "link", "items"]
 
     model_config = ConfigDict(

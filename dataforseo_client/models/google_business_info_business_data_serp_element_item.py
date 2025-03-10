@@ -37,6 +37,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     """ # noqa: E501
     position: Optional[StrictStr] = Field(default=None, description="the alignment in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the element in SERP the name of the business entity for which the results are collected")
+    original_title: Optional[StrictStr] = Field(default=None, description="original title of the element original title not translated by Google")
     description: Optional[StrictStr] = Field(default=None, description="description of the element in SERP the description of the business entity for which the results are collected")
     category: Optional[StrictStr] = Field(default=None, description="business category Google My Business general category that best describes the services provided by the business entity")
     category_ids: Optional[List[StrictStr]] = Field(default=None, description="global category IDs universal category IDs that do not change based on the selected country")
@@ -72,7 +73,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
     local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="business establishment is a part of the directory indicates whether the business establishment is a part of the directory; if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre); note: if the business establishment is a parent item in the directory, the value will be null")
     directory: Optional[BusinessDirectoryInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "contributor_url", "book_online_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "questions_and_answers_count", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "original_title", "description", "category", "category_ids", "additional_categories", "cid", "feature_id", "address", "address_info", "place_id", "phone", "url", "contact_url", "contributor_url", "book_online_url", "domain", "logo", "main_image", "total_photos", "snippet", "latitude", "longitude", "is_claimed", "questions_and_answers_count", "attributes", "place_topics", "rating", "hotel_rating", "price_level", "rating_distribution", "people_also_search", "work_time", "popular_times", "local_business_links", "is_directory_item", "directory"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -169,6 +170,11 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
             _dict['title'] = None
+
+        # set to None if original_title (nullable) is None
+        # and model_fields_set contains the field
+        if self.original_title is None and "original_title" in self.model_fields_set:
+            _dict['original_title'] = None
 
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
@@ -332,6 +338,7 @@ class GoogleBusinessInfoBusinessDataSerpElementItem(BaseBusinessDataSerpElementI
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "title": obj.get("title"),
+            "original_title": obj.get("original_title"),
             "description": obj.get("description"),
             "category": obj.get("category"),
             "category_ids": obj.get("category_ids"),

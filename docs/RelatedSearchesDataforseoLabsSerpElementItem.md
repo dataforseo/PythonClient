@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
-**items** | **List[Optional[str]]** | elements of search results found in SERP | [optional] 
+**items** | **List[Optional[str]]** | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **posts_id** | **str** | the identifier of the google_posts feature | [optional] 
 **feature** | **str** | the additional feature of the review | [optional] 
 **cid** | **str** | google-defined client id | [optional] 

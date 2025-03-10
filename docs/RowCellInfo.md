@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**text** | **str** | content text | [optional] 
+**text** | **str** | content of the row cells of the header | [optional] 
 **urls** | [**List[ContentUrlInfo]**](ContentUrlInfo.md) | contains other URLs and anchors found in the content element | [optional] 
-**is_header** | **bool** | indicates if the text belongs to the header | [optional] 
+**is_header** | **bool** | content of the row cells of the header | [optional] 
 
 ## Example
 

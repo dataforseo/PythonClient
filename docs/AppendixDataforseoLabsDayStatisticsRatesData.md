@@ -41,13 +41,13 @@ Name | Type | Description | Notes
 **search_intent** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **historical_bulk_traffic_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**available_history** | **float** |  | [optional] 
-**status** | **float** |  | [optional] 
-**id_list** | **float** |  | [optional] 
-**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**languages** | **float** |  | [optional] 
-**available_filters** | **float** |  | [optional] 
 **amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
+**languages** | **float** |  | [optional] 
+**top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**status** | **float** |  | [optional] 
+**available_history** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
+**available_filters** | **float** |  | [optional] 
 
 ## Example
 

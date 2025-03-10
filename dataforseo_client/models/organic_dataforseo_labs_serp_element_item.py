@@ -49,7 +49,7 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version")
     rating: Optional[RatingInfo] = None
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="words highlighted in bold within the results description")
-    links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
+    links: Optional[LinkElement] = None
     about_this_result: Optional[Dict[str, AboutThisResultElement]] = Field(default=None, description="contains information from the ‘About this result’ panel ‘About this result’ panel provides additional context about why Google returned this result for the given query; this feature appears after clicking on the three dots next to most results")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
     relative_url: Optional[StrictStr] = Field(default=None, description="URL in SERP that does not specify the HTTPs protocol and domain name")
@@ -104,13 +104,9 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of rating
         if self.rating:
             _dict['rating'] = self.rating.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in links (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
-            for _item_links in self.links:
-                if _item_links:
-                    _items.append(_item_links.to_dict())
-            _dict['links'] = _items
+            _dict['links'] = self.links.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each value in about_this_result (dict)
         _field_dict = {}
         if self.about_this_result:
@@ -227,11 +223,6 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.highlighted is None and "highlighted" in self.model_fields_set:
             _dict['highlighted'] = None
 
-        # set to None if links (nullable) is None
-        # and model_fields_set contains the field
-        if self.links is None and "links" in self.model_fields_set:
-            _dict['links'] = None
-
         # set to None if about_this_result (nullable) is None
         # and model_fields_set contains the field
         if self.about_this_result is None and "about_this_result" in self.model_fields_set:
@@ -300,7 +291,7 @@ class OrganicDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "amp_version": obj.get("amp_version"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "highlighted": obj.get("highlighted"),
-            "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
+            "links": LinkElement.from_dict(obj["links"]) if obj.get("links") is not None else None,
             "about_this_result": dict(
                 (_k, AboutThisResultElement.from_dict(_v))
                 for _k, _v in obj["about_this_result"].items()

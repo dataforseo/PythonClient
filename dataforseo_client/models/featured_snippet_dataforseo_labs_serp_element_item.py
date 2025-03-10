@@ -35,7 +35,7 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     featured_title: Optional[StrictStr] = Field(default=None, description="the title of the featured snippets source page")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
     table: Optional[Table] = None
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")

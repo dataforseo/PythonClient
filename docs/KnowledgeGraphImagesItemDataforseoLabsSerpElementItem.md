@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | [**LinkElement**](LinkElement.md) |  | [optional] 
-**items** | [**List[KnowledgeGraphImagesElement]**](KnowledgeGraphImagesElement.md) | additional items present in the element if there are none, equals null | [optional] 
+**items** | [**List[KnowledgeGraphImagesElement]**](KnowledgeGraphImagesElement.md) | contains results featured in the ‘hotels_pack’ element of SERP | [optional] 
 
 ## Example
 

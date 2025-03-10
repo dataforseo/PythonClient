@@ -30,14 +30,13 @@ class NewsSearchSerpElementItem(BaseGoogleNewsSerpElementItem):
     """ # noqa: E501
     rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     snippet: Optional[StrictStr] = Field(default=None, description="snippet of the result in SERP")
     time_published: Optional[StrictStr] = Field(default=None, description="indicates the time the result was published")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the news was published in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: 2019-11-15 12:57:46 +00:00")
-    __properties: ClassVar[List[str]] = ["type", "title", "rectangle", "rank_group", "rank_absolute", "xpath", "domain", "url", "image_url", "snippet", "time_published", "timestamp"]
+    __properties: ClassVar[List[str]] = ["type", "xpath", "title", "rectangle", "rank_group", "rank_absolute", "domain", "url", "image_url", "snippet", "time_published", "timestamp"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +85,11 @@ class NewsSearchSerpElementItem(BaseGoogleNewsSerpElementItem):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -100,11 +104,6 @@ class NewsSearchSerpElementItem(BaseGoogleNewsSerpElementItem):
         # and model_fields_set contains the field
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
-
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
 
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
@@ -149,11 +148,11 @@ class NewsSearchSerpElementItem(BaseGoogleNewsSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
+            "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "xpath": obj.get("xpath"),
             "domain": obj.get("domain"),
             "url": obj.get("url"),
             "image_url": obj.get("image_url"),

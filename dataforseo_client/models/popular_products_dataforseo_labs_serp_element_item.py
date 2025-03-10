@@ -28,7 +28,7 @@ class PopularProductsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     """
     PopularProductsDataforseoLabsSerpElementItem
     """ # noqa: E501
-    items: Optional[List[PopularProductsElement]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[PopularProductsElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 
     model_config = ConfigDict(

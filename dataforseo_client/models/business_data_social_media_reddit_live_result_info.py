@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.reddit_reviews import RedditReviews
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +28,7 @@ class BusinessDataSocialMediaRedditLiveResultInfo(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     page_url: Optional[StrictStr] = Field(default=None, description="URL of the page the data is provided for corresponding URL you specified in the targets array when setting a task")
-    reddit_reviews: Optional[List[RedditReviews]] = Field(default=None, description="reddit reviews for the page_url")
+    reddit_reviews: Optional[Dict[str, Any]] = Field(default=None, description="reddit reviews for the page_url")
     __properties: ClassVar[List[str]] = ["type", "page_url", "reddit_reviews"]
 
     model_config = ConfigDict(
@@ -71,13 +70,6 @@ class BusinessDataSocialMediaRedditLiveResultInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in reddit_reviews (list)
-        _items = []
-        if self.reddit_reviews:
-            for _item_reddit_reviews in self.reddit_reviews:
-                if _item_reddit_reviews:
-                    _items.append(_item_reddit_reviews.to_dict())
-            _dict['reddit_reviews'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -107,7 +99,7 @@ class BusinessDataSocialMediaRedditLiveResultInfo(BaseModel):
         _obj = cls.model_validate({
             "type": obj.get("type"),
             "page_url": obj.get("page_url"),
-            "reddit_reviews": [RedditReviews.from_dict(_item) for _item in obj["reddit_reviews"]] if obj.get("reddit_reviews") is not None else None
+            "reddit_reviews": obj.get("reddit_reviews")
         })
         return _obj
 

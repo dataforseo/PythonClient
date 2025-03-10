@@ -28,7 +28,7 @@ class MapDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     MapDataforseoLabsSerpElementItem
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url"]
 
     model_config = ConfigDict(

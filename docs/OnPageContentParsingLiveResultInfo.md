@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **crawl_progress** | **str** | status of the crawling session possible values: in_progress, finished | [optional] 
 **crawl_status** | [**CrawlStatusInfo**](CrawlStatusInfo.md) |  | [optional] 
 **items_count** | **int** | number of items in the results array | [optional] 
-**items** | [**List[OnPageContentParsingLiveItem]**](OnPageContentParsingLiveItem.md) | items array | [optional] 
+**items** | [**List[OnPageContentParsingItem]**](OnPageContentParsingItem.md) | items array | [optional] 
 
 ## Example
 

@@ -31,7 +31,7 @@ class HotelsPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of stay in the format “year-month-date” example: 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of stay in the format “year-month-date” example: 2019-11-17")
-    items: Optional[List[HotelsPackElement]] = Field(default=None, description="elements of search results found in SERP")
+    items: Optional[List[HotelsPackElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "date_from", "date_to", "items"]
 
     model_config = ConfigDict(

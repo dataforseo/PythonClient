@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
 **page_url** | **str** | URL of the page the data is provided for corresponding URL you specified in the targets array when setting a task | [optional] 
-**reddit_reviews** | [**List[RedditReviews]**](RedditReviews.md) | reddit reviews for the page_url | [optional] 
+**reddit_reviews** | **object** | reddit reviews for the page_url | [optional] 
 
 ## Example
 

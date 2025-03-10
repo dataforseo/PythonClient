@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **title** | **str** | title of the item | [optional] 
 **data_attrid** | **str** | google defined data attribute ID example: kc:/common/topic:social media presence | [optional] 
 **text** | **str** | reference text text snippet from the page that was used to generate the ai_overview_element | [optional] 

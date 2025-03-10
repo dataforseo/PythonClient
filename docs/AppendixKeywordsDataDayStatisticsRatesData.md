@@ -25,8 +25,8 @@ Name | Type | Description | Notes
 **keyword_suggestions_for_url** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **job_functions** | **float** |  | [optional] 
 **search_volume_history** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **industries** | **float** |  | [optional] 
+**google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **id_list** | **float** |  | [optional] 
 
 ## Example

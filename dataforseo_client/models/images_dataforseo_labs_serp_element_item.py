@@ -31,8 +31,8 @@ class ImagesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
-    items: Optional[List[ImagesElement]] = Field(default=None, description="elements of search results found in SERP")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
+    items: Optional[List[ImagesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     related_image_searches: Optional[RelatedImageSearchesElement] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "url", "items", "related_image_searches"]
 

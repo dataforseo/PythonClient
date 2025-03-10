@@ -31,6 +31,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
     """
     MapsSearchSerpElementItem
     """ # noqa: E501
+    original_title: Optional[StrictStr] = Field(default=None, description="original title of the element original title not translated by Google")
     contact_url: Optional[StrictStr] = Field(default=None, description="URL of the preferred contact page")
     contributor_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s or entity’s Local Guides profile, if available")
     book_online_url: Optional[StrictStr] = Field(default=None, description="URL in the ‘book online’ button of the element URL directing users to the online booking or order page of the business entity")
@@ -54,7 +55,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
     is_claimed: Optional[StrictBool] = Field(default=None, description="indicates whether ownership of this local establishment is claimed")
     local_justifications: Optional[List[LocalJustificationInfo]] = Field(default=None, description="Google local justifications snippets of text that “justify” why the business is showing up for search query")
     is_directory_item: Optional[StrictBool] = Field(default=None, description="indicates whether this local establishment is a directory")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution", "contact_url", "contributor_url", "book_online_url", "hotel_rating", "price_level", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution", "original_title", "contact_url", "contributor_url", "book_online_url", "hotel_rating", "price_level", "snippet", "address", "address_info", "place_id", "phone", "main_image", "total_photos", "category", "additional_categories", "category_ids", "work_hours", "feature_id", "cid", "latitude", "longitude", "is_claimed", "local_justifications", "is_directory_item"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -145,6 +146,11 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
         # and model_fields_set contains the field
         if self.rating_distribution is None and "rating_distribution" in self.model_fields_set:
             _dict['rating_distribution'] = None
+
+        # set to None if original_title (nullable) is None
+        # and model_fields_set contains the field
+        if self.original_title is None and "original_title" in self.model_fields_set:
+            _dict['original_title'] = None
 
         # set to None if contact_url (nullable) is None
         # and model_fields_set contains the field
@@ -271,6 +277,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
             "url": obj.get("url"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution"),
+            "original_title": obj.get("original_title"),
             "contact_url": obj.get("contact_url"),
             "contributor_url": obj.get("contributor_url"),
             "book_online_url": obj.get("book_online_url"),

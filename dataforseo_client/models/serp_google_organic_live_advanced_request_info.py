@@ -47,8 +47,9 @@ class SerpGoogleOrganicLiveAdvancedRequestInfo(BaseModel):
     people_also_ask_click_depth: Optional[StrictInt] = Field(default=None, description="clicks on the corresponding element optional field specify the click depth on the people_also_ask element to get additional people_also_ask_element items; Note your account will be billed $0.00015 extra for each click; if the element is absent or we perform fewer clicks than you specified, all extra charges will be returned to your account balance possible values: from 1 to 4")
     load_async_ai_overview: Optional[StrictBool] = Field(default=None, description="load asynchronous ai overview optional field set to true to obtain ai_overview items is SERPs even if they are loaded asynchronically; if set to false, you will only obtain ai_overview items from cache; default value: false Note your account will be billed $0.002 extra for each request; if the element is absent or contains \"asynchronous_ai_overview\": false, all extra charges will be returned to your account balance")
     search_param: Optional[StrictStr] = Field(default=None, description="additional parameters of the search query optional field get the list of available parameters and additional details here")
+    remove_from_url: Optional[List[StrictStr]] = Field(default=None, description="remove specific parameters from URLs optional field using this field, you can specify up to 10 parameters to remove from URLs in the result example: \"remove_from_url\": [\"srsltid\"] Note: if the target field is specified, the specified URL parameters will be removed before the search")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["keyword", "url", "depth", "max_crawl_pages", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "device", "os", "target", "group_organic_results", "calculate_rectangles", "browser_screen_width", "browser_screen_height", "browser_screen_resolution_ratio", "people_also_ask_click_depth", "load_async_ai_overview", "search_param", "tag"]
+    __properties: ClassVar[List[str]] = ["keyword", "url", "depth", "max_crawl_pages", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "se_domain", "device", "os", "target", "group_organic_results", "calculate_rectangles", "browser_screen_width", "browser_screen_height", "browser_screen_resolution_ratio", "people_also_ask_click_depth", "load_async_ai_overview", "search_param", "remove_from_url", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -189,6 +190,11 @@ class SerpGoogleOrganicLiveAdvancedRequestInfo(BaseModel):
         if self.search_param is None and "search_param" in self.model_fields_set:
             _dict['search_param'] = None
 
+        # set to None if remove_from_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.remove_from_url is None and "remove_from_url" in self.model_fields_set:
+            _dict['remove_from_url'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -227,6 +233,7 @@ class SerpGoogleOrganicLiveAdvancedRequestInfo(BaseModel):
             "people_also_ask_click_depth": obj.get("people_also_ask_click_depth"),
             "load_async_ai_overview": obj.get("load_async_ai_overview"),
             "search_param": obj.get("search_param"),
+            "remove_from_url": obj.get("remove_from_url"),
             "tag": obj.get("tag")
         })
         return _obj

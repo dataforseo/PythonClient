@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
 **items** | [**List[TopStoriesElement]**](TopStoriesElement.md) | contains arrays of specific images | [optional] 
 
 ## Example

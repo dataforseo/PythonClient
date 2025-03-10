@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**primary_content** | [**List[ContentItemInfo]**](ContentItemInfo.md) | primary content on the page you can find more information about content priority calculation in this help center article | [optional] 
-**secondary_content** | [**List[ContentItemInfo]**](ContentItemInfo.md) | secondary content on the page you can find more information about content priority calculation in this help center article | [optional] 
-**table_content** | [**List[TableContent]**](TableContent.md) | content of the table on the page | [optional] 
+**primary_content** | [**List[SectionContentItemInfo]**](SectionContentItemInfo.md) | primary content on the page you can find more information about content priority calculation in this help center article | [optional] 
+**secondary_content** | [**List[SectionContentItemInfo]**](SectionContentItemInfo.md) | secondary content on the page you can find more information about content priority calculation in this help center article | [optional] 
+**table_content** | [**List[TableContentInfo]**](TableContentInfo.md) | content of the table on the page | [optional] 
 
 ## Example
 

@@ -35,6 +35,8 @@ class OrganicSerpElementItem(BaseSerpElementItem):
     """
     OrganicSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description="domain name of the reference")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")

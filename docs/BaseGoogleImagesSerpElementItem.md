@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | type of element | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 
 ## Example
 

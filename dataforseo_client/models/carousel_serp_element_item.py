@@ -29,10 +29,11 @@ class CarouselSerpElementItem(BaseSerpElementItem):
     """
     CarouselSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     items: Optional[List[CarouselElement]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "items", "rectangle"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "items", "rectangle"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,11 +104,6 @@ class CarouselSerpElementItem(BaseSerpElementItem):
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
 
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
-
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -134,7 +130,6 @@ class CarouselSerpElementItem(BaseSerpElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
-            "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "items": [CarouselElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None

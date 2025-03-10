@@ -28,6 +28,8 @@ class GooglePostsSerpElementItem(BaseSerpElementItem):
     """
     GooglePostsSerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     posts_id: Optional[StrictStr] = Field(default=None, description="the identifier of the google_posts feature")
     feature: Optional[StrictStr] = Field(default=None, description="the additional feature of the review")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")

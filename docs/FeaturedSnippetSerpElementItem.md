@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **description** | **str** | description of the ad element in SERP | [optional] 
 **url** | **str** | relevant URL of the ad element in SERP | [optional] 
 **breadcrumb** | **str** | breadcrumb of the ad element in SERP | [optional] 
+**position** | **str** | the alignment of the element in SERP can take the following values: left, right | [optional] 
+**xpath** | **str** | the XPath of the element | [optional] 
 **featured_title** | **str** | title | [optional] 
 **timestamp** | **str** | date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 | [optional] 
 **images** | [**List[ImagesElement]**](ImagesElement.md) | images of the element | [optional] 

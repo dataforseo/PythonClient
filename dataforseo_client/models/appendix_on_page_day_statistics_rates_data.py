@@ -47,11 +47,11 @@ class AppendixOnPageDayStatisticsRatesData(BaseModel):
     page_screenshot: Optional[Union[StrictFloat, StrictInt]] = None
     content_parsing: Optional[Union[StrictFloat, StrictInt]] = None
     content_parsing_live: Optional[Union[StrictFloat, StrictInt]] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     force_stop: Optional[Union[StrictFloat, StrictInt]] = None
     available_filters: Optional[Union[StrictFloat, StrictInt]] = None
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     microdata: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "summary", "resources", "pages", "non_indexable", "duplicate_tags", "links", "waterfall", "errors", "pages_by_resource", "duplicate_content", "raw_html", "instant_pages", "redirect_chains", "lighthouse", "keyword_density", "page_screenshot", "content_parsing", "content_parsing_live", "id_list", "force_stop", "available_filters", "microdata"]
+    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "summary", "resources", "pages", "non_indexable", "duplicate_tags", "links", "waterfall", "errors", "pages_by_resource", "duplicate_content", "raw_html", "instant_pages", "redirect_chains", "lighthouse", "keyword_density", "page_screenshot", "content_parsing", "content_parsing_live", "force_stop", "available_filters", "id_list", "microdata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -190,11 +190,6 @@ class AppendixOnPageDayStatisticsRatesData(BaseModel):
         if self.content_parsing_live is None and "content_parsing_live" in self.model_fields_set:
             _dict['content_parsing_live'] = None
 
-        # set to None if id_list (nullable) is None
-        # and model_fields_set contains the field
-        if self.id_list is None and "id_list" in self.model_fields_set:
-            _dict['id_list'] = None
-
         # set to None if force_stop (nullable) is None
         # and model_fields_set contains the field
         if self.force_stop is None and "force_stop" in self.model_fields_set:
@@ -204,6 +199,11 @@ class AppendixOnPageDayStatisticsRatesData(BaseModel):
         # and model_fields_set contains the field
         if self.available_filters is None and "available_filters" in self.model_fields_set:
             _dict['available_filters'] = None
+
+        # set to None if id_list (nullable) is None
+        # and model_fields_set contains the field
+        if self.id_list is None and "id_list" in self.model_fields_set:
+            _dict['id_list'] = None
 
         # set to None if microdata (nullable) is None
         # and model_fields_set contains the field
@@ -242,9 +242,9 @@ class AppendixOnPageDayStatisticsRatesData(BaseModel):
             "page_screenshot": obj.get("page_screenshot"),
             "content_parsing": obj.get("content_parsing"),
             "content_parsing_live": obj.get("content_parsing_live"),
-            "id_list": obj.get("id_list"),
             "force_stop": obj.get("force_stop"),
             "available_filters": obj.get("available_filters"),
+            "id_list": obj.get("id_list"),
             "microdata": obj.get("microdata")
         })
         return _obj

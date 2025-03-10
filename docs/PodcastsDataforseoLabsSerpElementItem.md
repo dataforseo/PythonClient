@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List[PodcastsElement]**](PodcastsElement.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[PodcastsElement]**](PodcastsElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

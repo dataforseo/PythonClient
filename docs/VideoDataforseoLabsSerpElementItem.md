@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **se_type** | **str** | search engine type | [optional] 
-**items** | [**List[VideoElement]**](VideoElement.md) | elements of search results found in SERP | [optional] 
+**items** | [**List[VideoElement]**](VideoElement.md) | additional items present in the element if there are none, equals null | [optional] 
 
 ## Example
 

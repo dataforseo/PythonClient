@@ -29,6 +29,8 @@ class DictionarySerpElementItem(BaseSerpElementItem):
     """
     DictionarySerpElementItem
     """ # noqa: E501
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
+    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description="relevant URL of the Ad element in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
