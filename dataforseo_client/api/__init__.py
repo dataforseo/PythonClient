@@ -1,16 +1,13 @@
-# flake8: noqa
+import re
+import importlib
 
-# import apis into api package
-from dataforseo_client.api.app_data_api import AppDataApi
-from dataforseo_client.api.appendix_api import AppendixApi
-from dataforseo_client.api.backlinks_api import BacklinksApi
-from dataforseo_client.api.business_data_api import BusinessDataApi
-from dataforseo_client.api.content_analysis_api import ContentAnalysisApi
-from dataforseo_client.api.content_generation_api import ContentGenerationApi
-from dataforseo_client.api.dataforseo_labs_api import DataforseoLabsApi
-from dataforseo_client.api.domain_analytics_api import DomainAnalyticsApi
-from dataforseo_client.api.keywords_data_api import KeywordsDataApi
-from dataforseo_client.api.merchant_api import MerchantApi
-from dataforseo_client.api.on_page_api import OnPageApi
-from dataforseo_client.api.serp_api import SerpApi
+def camel_to_snake(name):
+    name = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', name).lower()
 
+def __getattr__(name):
+    file_name = camel_to_snake(name)
+    module = importlib.import_module(f'dataforseo_client.api.{file_name}')
+    model = getattr(module, name)
+    globals()[name] = model
+    return model

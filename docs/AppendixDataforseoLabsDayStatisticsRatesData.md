@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **keywords_for_site** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_suggestions** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_ideas** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**historical_search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **categories_for_domain** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **domain_metrics_by_categories** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **top_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
@@ -41,13 +40,16 @@ Name | Type | Description | Notes
 **search_intent** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **historical_bulk_traffic_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
+**keyword_overview** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**historical_keyword_data** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**id_list** | **float** |  | [optional] 
+**historical_search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**available_filters** | **float** |  | [optional] 
+**available_history** | **float** |  | [optional] 
 **languages** | **float** |  | [optional] 
 **top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
 **status** | **float** |  | [optional] 
-**available_history** | **float** |  | [optional] 
-**id_list** | **float** |  | [optional] 
-**available_filters** | **float** |  | [optional] 
 
 ## Example
 

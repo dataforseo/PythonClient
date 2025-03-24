@@ -46,10 +46,11 @@ Method | HTTP request | Description
 [**google_domain_rank_overview_live**](DataforseoLabsApi.md#google_domain_rank_overview_live) | **POST** /v3/dataforseo_labs/google/domain_rank_overview/live | 
 [**google_domain_whois_overview_live**](DataforseoLabsApi.md#google_domain_whois_overview_live) | **POST** /v3/dataforseo_labs/google/domain_whois_overview/live | 
 [**google_historical_bulk_traffic_estimation_live**](DataforseoLabsApi.md#google_historical_bulk_traffic_estimation_live) | **POST** /v3/dataforseo_labs/google/historical_bulk_traffic_estimation/live | 
+[**google_historical_keyword_data_live**](DataforseoLabsApi.md#google_historical_keyword_data_live) | **POST** /v3/dataforseo_labs/google/historical_keyword_data/live | 
 [**google_historical_rank_overview_live**](DataforseoLabsApi.md#google_historical_rank_overview_live) | **POST** /v3/dataforseo_labs/google/historical_rank_overview/live | 
-[**google_historical_search_volume_live**](DataforseoLabsApi.md#google_historical_search_volume_live) | **POST** /v3/dataforseo_labs/google/historical_search_volume/live | 
 [**google_historical_serps_live**](DataforseoLabsApi.md#google_historical_serps_live) | **POST** /v3/dataforseo_labs/google/historical_serps/live | 
 [**google_keyword_ideas_live**](DataforseoLabsApi.md#google_keyword_ideas_live) | **POST** /v3/dataforseo_labs/google/keyword_ideas/live | 
+[**google_keyword_overview_live**](DataforseoLabsApi.md#google_keyword_overview_live) | **POST** /v3/dataforseo_labs/google/keyword_overview/live | 
 [**google_keyword_suggestions_live**](DataforseoLabsApi.md#google_keyword_suggestions_live) | **POST** /v3/dataforseo_labs/google/keyword_suggestions/live | 
 [**google_keywords_for_app_live**](DataforseoLabsApi.md#google_keywords_for_app_live) | **POST** /v3/dataforseo_labs/google/keywords_for_app/live | 
 [**google_keywords_for_categories_live**](DataforseoLabsApi.md#google_keywords_for_categories_live) | **POST** /v3/dataforseo_labs/google/keywords_for_categories/live | 
@@ -3352,6 +3353,85 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **google_historical_keyword_data_live**
+> DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo google_historical_keyword_data_live(dataforseo_labs_google_historical_keyword_data_live_request_info=dataforseo_labs_google_historical_keyword_data_live_request_info)
+
+
+
+‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.dataforseo_labs_google_historical_keyword_data_live_request_info import DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo
+from dataforseo_client.models.dataforseo_labs_google_historical_keyword_data_live_response_info import DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.DataforseoLabsApi(api_client)
+    dataforseo_labs_google_historical_keyword_data_live_request_info = [dataforseo_client.DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo()] # List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_historical_keyword_data_live(dataforseo_labs_google_historical_keyword_data_live_request_info=dataforseo_labs_google_historical_keyword_data_live_request_info)
+        print("The response of DataforseoLabsApi->google_historical_keyword_data_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataforseoLabsApi->google_historical_keyword_data_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dataforseo_labs_google_historical_keyword_data_live_request_info** | [**List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]**](DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo**](DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **google_historical_rank_overview_live**
 > DataforseoLabsGoogleHistoricalRankOverviewLiveResponseInfo google_historical_rank_overview_live(dataforseo_labs_google_historical_rank_overview_live_request_info=dataforseo_labs_google_historical_rank_overview_live_request_info)
 
@@ -3413,85 +3493,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DataforseoLabsGoogleHistoricalRankOverviewLiveResponseInfo**](DataforseoLabsGoogleHistoricalRankOverviewLiveResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **google_historical_search_volume_live**
-> DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo google_historical_search_volume_live(dataforseo_labs_google_historical_search_volume_live_request_info=dataforseo_labs_google_historical_search_volume_live_request_info)
-
-
-
-‌‌  This endpoint will provide you with Google historical search volume, current cost-per-click, and competition values for paid search, as well as current impressions and SERP. You can get historical search volume data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_search_volume/live/?bash'
-
-### Example
-
-* Basic Authentication (basicAuth):
-
-```python
-import dataforseo_client
-from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_request_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo
-from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_response_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo
-from dataforseo_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.dataforseo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dataforseo_client.Configuration(
-    host = "https://api.dataforseo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: basicAuth
-configuration = dataforseo_client.Configuration(
-    username = os.environ["USERNAME"],
-    password = os.environ["PASSWORD"]
-)
-
-# Enter a context with an instance of the API client
-with dataforseo_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dataforseo_client.DataforseoLabsApi(api_client)
-    dataforseo_labs_google_historical_search_volume_live_request_info = [dataforseo_client.DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo()] # List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo] |  (optional)
-
-    try:
-        api_response = api_instance.google_historical_search_volume_live(dataforseo_labs_google_historical_search_volume_live_request_info=dataforseo_labs_google_historical_search_volume_live_request_info)
-        print("The response of DataforseoLabsApi->google_historical_search_volume_live:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DataforseoLabsApi->google_historical_search_volume_live: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dataforseo_labs_google_historical_search_volume_live_request_info** | [**List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]**](DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo.md)|  | [optional] 
-
-### Return type
-
-[**DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo**](DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo.md)
 
 ### Authorization
 
@@ -3650,6 +3651,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DataforseoLabsGoogleKeywordIdeasLiveResponseInfo**](DataforseoLabsGoogleKeywordIdeasLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_keyword_overview_live**
+> DataforseoLabsGoogleKeywordOverviewLiveResponseInfo google_keyword_overview_live(dataforseo_labs_google_keyword_overview_live_request_info=dataforseo_labs_google_keyword_overview_live_request_info)
+
+
+
+‌‌  This endpoint provides Google keyword data for specified keywords. For each keyword, you will receive current cost-per-click, competition values for paid search, search volume, search intent, monthly searches, as well as SERP and backlink information. Additionally, you can obtain clickstream data, such as clickstream search volume, by specifying the include_clickstream_data parameter. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keyword_overview/live/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.dataforseo_labs_google_keyword_overview_live_request_info import DataforseoLabsGoogleKeywordOverviewLiveRequestInfo
+from dataforseo_client.models.dataforseo_labs_google_keyword_overview_live_response_info import DataforseoLabsGoogleKeywordOverviewLiveResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.DataforseoLabsApi(api_client)
+    dataforseo_labs_google_keyword_overview_live_request_info = [dataforseo_client.DataforseoLabsGoogleKeywordOverviewLiveRequestInfo()] # List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_keyword_overview_live(dataforseo_labs_google_keyword_overview_live_request_info=dataforseo_labs_google_keyword_overview_live_request_info)
+        print("The response of DataforseoLabsApi->google_keyword_overview_live:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataforseoLabsApi->google_keyword_overview_live: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dataforseo_labs_google_keyword_overview_live_request_info** | [**List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo]**](DataforseoLabsGoogleKeywordOverviewLiveRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**DataforseoLabsGoogleKeywordOverviewLiveResponseInfo**](DataforseoLabsGoogleKeywordOverviewLiveResponseInfo.md)
 
 ### Authorization
 

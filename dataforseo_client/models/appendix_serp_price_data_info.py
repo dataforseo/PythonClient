@@ -28,9 +28,9 @@ class AppendixSerpPriceDataInfo(BaseModel):
     AppendixSerpPriceDataInfo
     """ # noqa: E501
     regular: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    html: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
     advanced: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
-    __properties: ClassVar[List[str]] = ["regular", "html", "advanced"]
+    html: Optional[AppendixTaskKeywordsDataPriceDataInfo] = None
+    __properties: ClassVar[List[str]] = ["regular", "advanced", "html"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,12 +74,12 @@ class AppendixSerpPriceDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of regular
         if self.regular:
             _dict['regular'] = self.regular.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of html
-        if self.html:
-            _dict['html'] = self.html.to_dict()
         # override the default output from pydantic by calling `to_dict()` of advanced
         if self.advanced:
             _dict['advanced'] = self.advanced.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of html
+        if self.html:
+            _dict['html'] = self.html.to_dict()
         return _dict
 
     @classmethod
@@ -93,8 +93,8 @@ class AppendixSerpPriceDataInfo(BaseModel):
 
         _obj = cls.model_validate({
             "regular": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["regular"]) if obj.get("regular") is not None else None,
-            "html": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["html"]) if obj.get("html") is not None else None,
-            "advanced": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["advanced"]) if obj.get("advanced") is not None else None
+            "advanced": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["advanced"]) if obj.get("advanced") is not None else None,
+            "html": AppendixTaskKeywordsDataPriceDataInfo.from_dict(obj["html"]) if obj.get("html") is not None else None
         })
         return _obj
 

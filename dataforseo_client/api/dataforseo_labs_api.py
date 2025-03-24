@@ -91,14 +91,16 @@ from dataforseo_client.models.dataforseo_labs_google_domain_whois_overview_live_
 from dataforseo_client.models.dataforseo_labs_google_domain_whois_overview_live_response_info import DataforseoLabsGoogleDomainWhoisOverviewLiveResponseInfo
 from dataforseo_client.models.dataforseo_labs_google_historical_bulk_traffic_estimation_live_request_info import DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveRequestInfo
 from dataforseo_client.models.dataforseo_labs_google_historical_bulk_traffic_estimation_live_response_info import DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResponseInfo
+from dataforseo_client.models.dataforseo_labs_google_historical_keyword_data_live_request_info import DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo
+from dataforseo_client.models.dataforseo_labs_google_historical_keyword_data_live_response_info import DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo
 from dataforseo_client.models.dataforseo_labs_google_historical_rank_overview_live_request_info import DataforseoLabsGoogleHistoricalRankOverviewLiveRequestInfo
 from dataforseo_client.models.dataforseo_labs_google_historical_rank_overview_live_response_info import DataforseoLabsGoogleHistoricalRankOverviewLiveResponseInfo
-from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_request_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo
-from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_response_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo
 from dataforseo_client.models.dataforseo_labs_google_historical_serps_live_request_info import DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo
 from dataforseo_client.models.dataforseo_labs_google_historical_serps_live_response_info import DataforseoLabsGoogleHistoricalSerpsLiveResponseInfo
 from dataforseo_client.models.dataforseo_labs_google_keyword_ideas_live_request_info import DataforseoLabsGoogleKeywordIdeasLiveRequestInfo
 from dataforseo_client.models.dataforseo_labs_google_keyword_ideas_live_response_info import DataforseoLabsGoogleKeywordIdeasLiveResponseInfo
+from dataforseo_client.models.dataforseo_labs_google_keyword_overview_live_request_info import DataforseoLabsGoogleKeywordOverviewLiveRequestInfo
+from dataforseo_client.models.dataforseo_labs_google_keyword_overview_live_response_info import DataforseoLabsGoogleKeywordOverviewLiveResponseInfo
 from dataforseo_client.models.dataforseo_labs_google_keyword_suggestions_live_request_info import DataforseoLabsGoogleKeywordSuggestionsLiveRequestInfo
 from dataforseo_client.models.dataforseo_labs_google_keyword_suggestions_live_response_info import DataforseoLabsGoogleKeywordSuggestionsLiveResponseInfo
 from dataforseo_client.models.dataforseo_labs_google_keywords_for_app_live_request_info import DataforseoLabsGoogleKeywordsForAppLiveRequestInfo
@@ -11439,6 +11441,279 @@ class DataforseoLabsApi:
 
 
     @validate_call
+    def google_historical_keyword_data_live(
+        self,
+        dataforseo_labs_google_historical_keyword_data_live_request_info: Optional[List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo:
+        """google_historical_keyword_data_live
+
+        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
+
+        :param dataforseo_labs_google_historical_keyword_data_live_request_info:
+        :type dataforseo_labs_google_historical_keyword_data_live_request_info: List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_historical_keyword_data_live_serialize(
+            dataforseo_labs_google_historical_keyword_data_live_request_info=dataforseo_labs_google_historical_keyword_data_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_historical_keyword_data_live_with_http_info(
+        self,
+        dataforseo_labs_google_historical_keyword_data_live_request_info: Optional[List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo]:
+        """google_historical_keyword_data_live
+
+        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
+
+        :param dataforseo_labs_google_historical_keyword_data_live_request_info:
+        :type dataforseo_labs_google_historical_keyword_data_live_request_info: List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_historical_keyword_data_live_serialize(
+            dataforseo_labs_google_historical_keyword_data_live_request_info=dataforseo_labs_google_historical_keyword_data_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_historical_keyword_data_live_without_preload_content(
+        self,
+        dataforseo_labs_google_historical_keyword_data_live_request_info: Optional[List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_historical_keyword_data_live
+
+        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
+
+        :param dataforseo_labs_google_historical_keyword_data_live_request_info:
+        :type dataforseo_labs_google_historical_keyword_data_live_request_info: List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_historical_keyword_data_live_serialize(
+            dataforseo_labs_google_historical_keyword_data_live_request_info=dataforseo_labs_google_historical_keyword_data_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_historical_keyword_data_live_serialize(
+        self,
+        dataforseo_labs_google_historical_keyword_data_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if dataforseo_labs_google_historical_keyword_data_live_request_info is not None:
+            _body_params = dataforseo_labs_google_historical_keyword_data_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/dataforseo_labs/google/historical_keyword_data/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def google_historical_rank_overview_live(
         self,
         dataforseo_labs_google_historical_rank_overview_live_request_info: Optional[List[DataforseoLabsGoogleHistoricalRankOverviewLiveRequestInfo]] = None,
@@ -11696,279 +11971,6 @@ class DataforseoLabsApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/dataforseo_labs/google/historical_rank_overview/live',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def google_historical_search_volume_live(
-        self,
-        dataforseo_labs_google_historical_search_volume_live_request_info: Optional[List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo:
-        """google_historical_search_volume_live
-
-        ‌‌  This endpoint will provide you with Google historical search volume, current cost-per-click, and competition values for paid search, as well as current impressions and SERP. You can get historical search volume data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_search_volume/live/?bash'
-
-        :param dataforseo_labs_google_historical_search_volume_live_request_info:
-        :type dataforseo_labs_google_historical_search_volume_live_request_info: List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._google_historical_search_volume_live_serialize(
-            dataforseo_labs_google_historical_search_volume_live_request_info=dataforseo_labs_google_historical_search_volume_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def google_historical_search_volume_live_with_http_info(
-        self,
-        dataforseo_labs_google_historical_search_volume_live_request_info: Optional[List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo]:
-        """google_historical_search_volume_live
-
-        ‌‌  This endpoint will provide you with Google historical search volume, current cost-per-click, and competition values for paid search, as well as current impressions and SERP. You can get historical search volume data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_search_volume/live/?bash'
-
-        :param dataforseo_labs_google_historical_search_volume_live_request_info:
-        :type dataforseo_labs_google_historical_search_volume_live_request_info: List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._google_historical_search_volume_live_serialize(
-            dataforseo_labs_google_historical_search_volume_live_request_info=dataforseo_labs_google_historical_search_volume_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def google_historical_search_volume_live_without_preload_content(
-        self,
-        dataforseo_labs_google_historical_search_volume_live_request_info: Optional[List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """google_historical_search_volume_live
-
-        ‌‌  This endpoint will provide you with Google historical search volume, current cost-per-click, and competition values for paid search, as well as current impressions and SERP. You can get historical search volume data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_search_volume/live/?bash'
-
-        :param dataforseo_labs_google_historical_search_volume_live_request_info:
-        :type dataforseo_labs_google_historical_search_volume_live_request_info: List[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._google_historical_search_volume_live_serialize(
-            dataforseo_labs_google_historical_search_volume_live_request_info=dataforseo_labs_google_historical_search_volume_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _google_historical_search_volume_live_serialize(
-        self,
-        dataforseo_labs_google_historical_search_volume_live_request_info,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo': '',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if dataforseo_labs_google_historical_search_volume_live_request_info is not None:
-            _body_params = dataforseo_labs_google_historical_search_volume_live_request_info
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/v3/dataforseo_labs/google/historical_search_volume/live',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -12515,6 +12517,279 @@ class DataforseoLabsApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/dataforseo_labs/google/keyword_ideas/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def google_keyword_overview_live(
+        self,
+        dataforseo_labs_google_keyword_overview_live_request_info: Optional[List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> DataforseoLabsGoogleKeywordOverviewLiveResponseInfo:
+        """google_keyword_overview_live
+
+        ‌‌  This endpoint provides Google keyword data for specified keywords. For each keyword, you will receive current cost-per-click, competition values for paid search, search volume, search intent, monthly searches, as well as SERP and backlink information. Additionally, you can obtain clickstream data, such as clickstream search volume, by specifying the include_clickstream_data parameter. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keyword_overview/live/?bash'
+
+        :param dataforseo_labs_google_keyword_overview_live_request_info:
+        :type dataforseo_labs_google_keyword_overview_live_request_info: List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_keyword_overview_live_serialize(
+            dataforseo_labs_google_keyword_overview_live_request_info=dataforseo_labs_google_keyword_overview_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleKeywordOverviewLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def google_keyword_overview_live_with_http_info(
+        self,
+        dataforseo_labs_google_keyword_overview_live_request_info: Optional[List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[DataforseoLabsGoogleKeywordOverviewLiveResponseInfo]:
+        """google_keyword_overview_live
+
+        ‌‌  This endpoint provides Google keyword data for specified keywords. For each keyword, you will receive current cost-per-click, competition values for paid search, search volume, search intent, monthly searches, as well as SERP and backlink information. Additionally, you can obtain clickstream data, such as clickstream search volume, by specifying the include_clickstream_data parameter. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keyword_overview/live/?bash'
+
+        :param dataforseo_labs_google_keyword_overview_live_request_info:
+        :type dataforseo_labs_google_keyword_overview_live_request_info: List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_keyword_overview_live_serialize(
+            dataforseo_labs_google_keyword_overview_live_request_info=dataforseo_labs_google_keyword_overview_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleKeywordOverviewLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_keyword_overview_live_without_preload_content(
+        self,
+        dataforseo_labs_google_keyword_overview_live_request_info: Optional[List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo]] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """google_keyword_overview_live
+
+        ‌‌  This endpoint provides Google keyword data for specified keywords. For each keyword, you will receive current cost-per-click, competition values for paid search, search volume, search intent, monthly searches, as well as SERP and backlink information. Additionally, you can obtain clickstream data, such as clickstream search volume, by specifying the include_clickstream_data parameter. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keyword_overview/live/?bash'
+
+        :param dataforseo_labs_google_keyword_overview_live_request_info:
+        :type dataforseo_labs_google_keyword_overview_live_request_info: List[DataforseoLabsGoogleKeywordOverviewLiveRequestInfo]
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._google_keyword_overview_live_serialize(
+            dataforseo_labs_google_keyword_overview_live_request_info=dataforseo_labs_google_keyword_overview_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleKeywordOverviewLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_keyword_overview_live_serialize(
+        self,
+        dataforseo_labs_google_keyword_overview_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'DataforseoLabsGoogleKeywordOverviewLiveRequestInfo': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if dataforseo_labs_google_keyword_overview_live_request_info is not None:
+            _body_params = dataforseo_labs_google_keyword_overview_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/dataforseo_labs/google/keyword_overview/live',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

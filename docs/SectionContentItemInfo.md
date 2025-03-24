@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**text** | **str** | content text | [optional] 
+**text** | **str** | secondary content on the page you can find more information about content priority calculation in this help center article | [optional] 
 **url** | **str** | page URL. displayed in case the text is a link anchor | [optional] 
 **urls** | [**List[ContentUrlInfo]**](ContentUrlInfo.md) | contains other URLs and anchors found in the content element | [optional] 
 

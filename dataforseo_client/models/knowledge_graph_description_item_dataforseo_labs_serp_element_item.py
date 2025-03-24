@@ -20,7 +20,7 @@ import json
 from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
-from dataforseo_client.models.link_element import LinkElement
+from dataforseo_client.models.knowledge_graph_link_element_info import KnowledgeGraphLinkElementInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem(BaseDataforseoL
     KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem
     """ # noqa: E501
     text: Optional[StrictStr] = Field(default=None, description="description content")
-    links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
+    links: Optional[List[KnowledgeGraphLinkElementInfo]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "text", "links"]
 
     model_config = ConfigDict(
@@ -131,7 +131,7 @@ class KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem(BaseDataforseoL
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
             "text": obj.get("text"),
-            "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None
+            "links": [KnowledgeGraphLinkElementInfo.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None
         })
         return _obj
 

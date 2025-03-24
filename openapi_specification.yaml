@@ -274,7 +274,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 84f37f50-8e1b-4cf6-b27c-0e6e3a735b84
+          example: 0b3dc0eb-8076-4393-9611-69c5173e42f9
       responses:
         '200':
           description: Successful operation
@@ -535,7 +535,7 @@ paths:
           required: true
           schema:
             type: string
-          example: bf5853f1-a077-4795-995e-4ceb5b1f58e5
+          example: 5e73dd45-f9d0-4250-a1c3-bb9c2f7dd3ab
       responses:
         '200':
           description: Successful operation
@@ -677,7 +677,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4e9cb494-d61c-4fcc-b038-29c9a67f479f
+          example: 075720d2-9a44-41a9-a820-935dc61af0b0
       responses:
         '200':
           description: Successful operation
@@ -916,7 +916,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 26417bdd-a6c5-4388-b3b7-539c08fd9e4a
+          example: 5701826d-1bbe-495d-a722-2ba6ba73bb53
       responses:
         '200':
           description: Successful operation
@@ -1133,7 +1133,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4b2e4e9f-9446-403d-856c-fc28362c6e41
+          example: e5ee1e05-4edf-4d92-aca6-3d8c6778d8d0
       responses:
         '200':
           description: Successful operation
@@ -1748,7 +1748,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 266ed11e-f6c5-414b-8f62-e554fd4b0b23
+          example: fe7e2d37-5d48-4864-95cf-4a1fd8ee483a
       responses:
         '200':
           description: Successful operation
@@ -1912,7 +1912,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8e4d065b-ec21-44d9-8afe-c095933dcc98
+          example: 423c9887-45a3-4bbd-9b37-cfb6742a695e
       responses:
         '200':
           description: Successful operation
@@ -2474,7 +2474,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1b1b3b59-d0a8-4bee-9f98-bf972211b664
+          example: 4b43985b-3c53-4c70-8def-87cca476d4bf
       responses:
         '200':
           description: Successful operation
@@ -2714,7 +2714,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 18ac935d-0614-47c6-b5ed-8fd7e9965ef9
+          example: 951fbace-c46f-4532-95be-6771e0dac421
       responses:
         '200':
           description: Successful operation
@@ -2835,7 +2835,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a07fc385-4b5e-4989-b331-5f8d03dfecf9
+          example: aa2fcda6-1556-4958-8243-7e8a3b326d04
       responses:
         '200':
           description: Successful operation
@@ -3009,7 +3009,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0fb36a51-4164-443c-a3bf-b7216300c9f7
+          example: 59fff0c5-b45a-462a-807b-803c7a5bed5b
       responses:
         '200':
           description: Successful operation
@@ -3092,7 +3092,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a468dfeb-a716-4093-af4f-ae5f5f4d3fb5
+          example: 70940376-b99e-4dec-a3d9-8269597c6b61
       responses:
         '200':
           description: Successful operation
@@ -3219,7 +3219,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 13fdf338-f483-4b43-bd33-58131fa9137e
+          example: 44fea317-355d-4a3c-a23a-98da9cbfec6c
       responses:
         '200':
           description: Successful operation
@@ -3345,7 +3345,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 35c81eb8-4031-414b-a1fe-8c9a13449bfc
+          example: 7f275c4d-f0c2-476f-b493-4bf4be5f48b5
       responses:
         '200':
           description: Successful operation
@@ -3397,6 +3397,88 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SerpGoogleFinanceQuoteLiveHtmlResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/serp/google/finance_ticker_search/task_post:
+    post:
+      tags:
+        - Serp
+      description: "‌\nGoogle Finance Ticker Search allows you to search for financial instruments available on Google Finance along with additional information. The result is specific to the parameters you specify in the request: keyword (name of a company or financial instrument) in the keyword field, location and language.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/task_post/?bash'"
+      operationId: GoogleFinanceTickerSearchTaskPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTaskPostRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTaskPostResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/serp/google/finance_ticker_search/tasks_ready:
+    get:
+      tags:
+        - Serp
+      description: "‌\nThe ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint.\nLearn more about task completion and obtaining a list of completed tasks in this help center article.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/tasks_ready/?bash'"
+      operationId: GoogleFinanceTickerSearchTasksReady
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTasksReadyResponseInfo'
+      security:
+        - basicAuth: [ ]
+  '/v3/serp/google/finance_ticker_search/task_get/advanced/{id}':
+    get:
+      tags:
+        - Serp
+      description: "‌\nGoogle Finance Ticker Search allows you to search for financial instruments available on Google Finance along with additional information. The result is specific to the parameters you specify in the request: keyword (name of a company or financial instrument) in the keyword field, location and language.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/task_get/advanced/?bash'"
+      operationId: GoogleFinanceTickerSearchTaskGetAdvanced
+      parameters:
+        - name: id
+          in: path
+          description: "task identifier\nunique task identifier in our system in the UUID format\nyou will be able to use it within 30 days to request the results of the task at any time"
+          required: true
+          schema:
+            type: string
+          example: 00000000-0000-0000-0000-000000000000
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTaskGetAdvancedResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/serp/google/finance_ticker_search/live/advanced:
+    post:
+      tags:
+        - Serp
+      description: "‌\nLive Google Finance Ticker Search allows you to search for financial instruments available on Google Finance along with additional information. The result is specific to the parameters you specify in the request: keyword (name of a company or financial instrument) in the keyword field, location and language.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/live/advanced/?bash'"
+      operationId: GoogleFinanceTickerSearchLiveAdvanced
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchLiveAdvancedResponseInfo'
       security:
         - basicAuth: [ ]
   /v3/domain_analytics/id_list:
@@ -3879,28 +3961,6 @@ paths:
                 $ref: '#/components/schemas/DataforseoLabsGoogleKeywordIdeasLiveResponseInfo'
       security:
         - basicAuth: [ ]
-  /v3/dataforseo_labs/google/historical_search_volume/live:
-    post:
-      tags:
-        - DataforseoLabs
-      description: "‌‌ \nThis endpoint will provide you with Google historical search volume, current cost-per-click, and competition values for paid search, as well as current impressions and SERP. You can get historical search volume data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_search_volume/live/?bash'"
-      operationId: GoogleHistoricalSearchVolumeLive
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo'
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo'
-      security:
-        - basicAuth: [ ]
   /v3/dataforseo_labs/google/bulk_keyword_difficulty/live:
     post:
       tags:
@@ -4354,6 +4414,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/dataforseo_labs/google/historical_keyword_data/live:
+    post:
+      tags:
+        - DataforseoLabs
+      description: "‌‌ \nThis endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'"
+      operationId: GoogleHistoricalKeywordDataLive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo'
+      security:
+        - basicAuth: [ ]
+  /v3/dataforseo_labs/google/keyword_overview/live:
+    post:
+      tags:
+        - DataforseoLabs
+      description: "‌‌ \nThis endpoint provides Google keyword data for specified keywords. For each keyword, you will receive current cost-per-click, competition values for paid search, search volume, search intent, monthly searches, as well as SERP and backlink information. Additionally, you can obtain clickstream data, such as clickstream search volume, by specifying the include_clickstream_data parameter.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keyword_overview/live/?bash'"
+      operationId: GoogleKeywordOverviewLive
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleKeywordOverviewLiveRequestInfo'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataforseoLabsGoogleKeywordOverviewLiveResponseInfo'
       security:
         - basicAuth: [ ]
   /v3/dataforseo_labs/amazon/bulk_search_volume/live:
@@ -5069,7 +5173,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 66f84358-a854-470c-8b3e-6bede7c01392
+          example: 185e66e7-b530-4c23-b98e-997d09becf84
       responses:
         '200':
           description: Successful operation
@@ -5151,7 +5255,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0c6ac981-b658-4ccc-95bb-93e32e6f02ed
+          example: 2fdea4e0-5441-4a92-a3fe-9fc1d6c69c42
       responses:
         '200':
           description: Successful operation
@@ -5233,7 +5337,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e0168277-d0ae-4752-8abe-35fa62f6aed4
+          example: b9e85c26-af35-4e52-b9c1-a5ef88142bd8
       responses:
         '200':
           description: Successful operation
@@ -5315,7 +5419,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 519d088b-5ef4-4ff8-bdb4-f8c0309332bf
+          example: 0fd17104-174b-4355-89fb-d42ebe6a00a1
       responses:
         '200':
           description: Successful operation
@@ -5465,7 +5569,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 70670b1a-db42-4ea9-9c7d-a791124f255c
+          example: c3ee2731-7231-4647-93bf-3d9e6586db9d
       responses:
         '200':
           description: Successful operation
@@ -5703,7 +5807,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b5d7bcc2-70ce-4a08-91f0-fd5d546904e4
+          example: 5c6f99ea-f6e5-49d3-9e47-7d9de6008b34
       responses:
         '200':
           description: Successful operation
@@ -5815,7 +5919,7 @@ paths:
           required: true
           schema:
             type: string
-          example: acec6295-0c19-4266-a969-6e2a179dc697
+          example: 1d898e1a-9afb-4fe8-a38d-df1c141d5f5d
       responses:
         '200':
           description: Successful operation
@@ -5897,7 +6001,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 274b35d8-a422-4309-a305-52ae15b3f6f5
+          example: f216fb5b-9d88-4638-a2fa-d3a94fc6f595
       responses:
         '200':
           description: Successful operation
@@ -5979,7 +6083,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 17fce2bd-637b-492d-a70a-7c107d47070b
+          example: 5e9adbe5-be3e-447a-8d26-2f3a81c5aa1e
       responses:
         '200':
           description: Successful operation
@@ -6076,7 +6180,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4473762e-ccc9-4976-96eb-7cbcaf9c33de
+          example: 5c08f7f8-8551-4874-9dbc-2f08fd014a30
       responses:
         '200':
           description: Successful operation
@@ -6173,7 +6277,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8590d83d-35a8-4ecc-9069-0f58ccadcc59
+          example: 75e45158-71d0-4019-8f22-3f28f22f6eb1
       responses:
         '200':
           description: Successful operation
@@ -8018,7 +8122,7 @@ paths:
           required: true
           schema:
             type: string
-          example: a86c6928-6866-4e57-af8c-110664b345da
+          example: 476084d4-faf0-4d76-98a4-ef78d8f39df9
       responses:
         '200':
           description: Successful operation
@@ -8101,7 +8205,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9def534d-fb6a-4447-b32d-9e67344bdae1
+          example: 11ef35fc-a8b7-4333-a4b4-b27bfb666a45
       responses:
         '200':
           description: Successful operation
@@ -8184,7 +8288,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d407bb1b-57fb-447b-b9e7-758dab4e5065
+          example: 0aea0dad-7969-4196-8b2f-5feb12f62537
       responses:
         '200':
           description: Successful operation
@@ -8403,7 +8507,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f057e05b-5d47-439a-851e-63e921aeb59b
+          example: 025cc326-2d4e-4080-89ac-06326a29ae91
       responses:
         '200':
           description: Successful operation
@@ -8486,7 +8590,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f73c805f-89b2-4a5b-946e-52cbb1f4292c
+          example: 05b22c4c-fe30-47a2-b368-98509992dc13
       responses:
         '200':
           description: Successful operation
@@ -8569,7 +8673,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 8c629d7a-71a2-4f82-a3bb-1058369c62ef
+          example: dc1124ba-3204-4659-8089-5318288cb427
       responses:
         '200':
           description: Successful operation
@@ -8652,7 +8756,7 @@ paths:
           required: true
           schema:
             type: string
-          example: dad8f4b1-e06d-4105-b2c5-793819bb6097
+          example: c7aa69bc-c350-4802-bf52-d7c763faa79a
       responses:
         '200':
           description: Successful operation
@@ -8840,7 +8944,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 67f93c95-b356-4951-8a09-0ebe7ff364cb
+          example: 5572b829-2f17-46a9-b892-9f7ea412ecea
       responses:
         '200':
           description: Successful operation
@@ -8863,7 +8967,7 @@ paths:
           required: true
           schema:
             type: string
-          example: df5c7e9b-aa3d-40b8-bd48-f3e1fb5cea1c
+          example: d92af1e6-b20a-4940-98e2-0e329d390ca7
       responses:
         '200':
           description: Successful operation
@@ -8923,7 +9027,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f9f0bbbe-0c73-4d63-a01e-59caf1fa9f34
+          example: 84d5cff0-f05e-4e84-ad92-5b6da3ede9f9
       responses:
         '200':
           description: Successful operation
@@ -8946,7 +9050,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 36af0481-c859-46e2-a03f-44a255307416
+          example: cca74058-ec8d-4035-83f0-902da5dccfce
       responses:
         '200':
           description: Successful operation
@@ -9006,7 +9110,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 779b1038-69a7-4f4a-94e8-dee2ee6a16fa
+          example: 40891fb3-370b-4d75-88e3-924b7bd94c86
       responses:
         '200':
           description: Successful operation
@@ -9029,7 +9133,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ee862562-6bb2-4db0-9c63-f099faad2567
+          example: 9dcd111d-4620-4a36-bb55-7dc61aebd0c4
       responses:
         '200':
           description: Successful operation
@@ -9089,7 +9193,7 @@ paths:
           required: true
           schema:
             type: string
-          example: cadcc491-f9f6-4dd4-bb7e-865175afb6ed
+          example: 2e662569-9f7b-4834-bb5f-f16511675670
       responses:
         '200':
           description: Successful operation
@@ -9112,7 +9216,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4cf3984f-4d56-4b89-b466-c6e1f1910b13
+          example: 80024923-4f5f-41c1-bc61-b82029a4f963
       responses:
         '200':
           description: Successful operation
@@ -9254,7 +9358,7 @@ paths:
           required: true
           schema:
             type: string
-          example: ce9f6344-2e3f-4e04-a7c2-d5c0d1a8906c
+          example: 9c0d2cdf-7b97-4c73-9a20-45c11e457eaa
       responses:
         '200':
           description: Successful operation
@@ -9314,7 +9418,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b3dcf205-7143-4f6d-9589-e0094fd966b9
+          example: 1dd87c32-6f4b-40cd-b022-3cb22e34888c
       responses:
         '200':
           description: Successful operation
@@ -9374,7 +9478,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e0958be6-9041-4ce5-96f2-698ef25cfe2c
+          example: fd2fc06f-867a-4846-92c8-7baab631f44b
       responses:
         '200':
           description: Successful operation
@@ -9434,7 +9538,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 481a8f6d-caa3-4550-8926-a1ed6c8c0845
+          example: 5b6d0957-b1f9-4edb-9573-8d9f21cb190e
       responses:
         '200':
           description: Successful operation
@@ -9529,7 +9633,7 @@ paths:
     get:
       tags:
         - BusinessData
-      description: "You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2024-11-05).\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'"
+      description: "You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2025-03-04).\nfor more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'"
       operationId: BusinessDataBusinessListingsLocations
       responses:
         '200':
@@ -9979,7 +10083,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fbb756f9-0897-4444-9f87-ab9b2318d16a
+          example: fce22b3c-9ab5-4899-8790-0dbf71a204d4
       responses:
         '200':
           description: Successful operation
@@ -10760,6 +10864,57 @@ components:
       additionalProperties: false
       discriminator:
         propertyName: type
+    BaseGoogleFinanceTickerSearchSerpElementItem:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        rank_group:
+          type: integer
+          description: "group rank in SERP\nposition within a group of elements with identical type values\npositions of elements with different type values are omitted from rank_group"
+          nullable: true
+        rank_absolute:
+          type: integer
+          description: "absolute rank in SERP\nabsolute position among all the elements in SERP"
+          nullable: true
+        identifier:
+          type: string
+          description: "identifier of the element\nfull identifier of the element that consists from ticker and market_identifier\nexample: PX1:INDEXDB"
+          nullable: true
+        displayed_name:
+          type: string
+          description: "name of the market index as displayed on Google Finance\nexample: CAC 40"
+          nullable: true
+        url:
+          type: string
+          description: URL to the page of the market index on Google Finance
+          nullable: true
+        location:
+          type: string
+          description: "location of the market index\nexample: Europe/Paris"
+          nullable: true
+        trend:
+          type: string
+          description: "growth trend of the market index\npossible values: up, down, stable"
+          nullable: true
+        timestamp:
+          type: string
+          description: "date and time of the value readout\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2025-02-10 09:40:00 +00:00"
+          nullable: true
+        percentage_delta:
+          type: number
+          description: percentage of change in value of the market index
+          format: float
+          nullable: true
+      additionalProperties: false
+      discriminator:
+        propertyName: type
+        mapping:
+          google_finance_asset_pair: '#/components/schemas/GoogleFinanceAssetPairSerpElementItem'
+          google_finance_market_instrument: '#/components/schemas/GoogleFinanceMarketInstrumentSerpElementItem'
+          google_finance_market_index: '#/components/schemas/GoogleFinanceMarketIndexSerpElementItem'
     BaseDataforseoLabsSerpElementItem:
       type: object
       properties:
@@ -11956,7 +12111,7 @@ components:
       properties:
         text:
           type: string
-          description: content text
+          description: "secondary content on the page\nyou can find more information about content priority calculation in this help center article"
           nullable: true
         url:
           type: string
@@ -11967,6 +12122,27 @@ components:
           items:
             $ref: '#/components/schemas/ContentUrlInfo'
           description: contains other URLs and anchors found in the content element
+          nullable: true
+    KeywordInfoNormalizedWithInfo:
+      type: object
+      properties:
+        last_updated_time:
+          type: string
+          description: "date and time when the dataset was updated\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
+          nullable: true
+        search_volume:
+          type: string
+          description: current search volume rate of a keyword
+          nullable: true
+        is_normalized:
+          type: string
+          description: "keyword info is normalized\nif true, values are normalized with Bing data"
+          nullable: true
+        monthly_searches:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonthlySearches'
+          description: "monthly search volume rates\narray of objects with search volume rates in a certain month of a year"
           nullable: true
     ContentUrlInfo:
       type: object
@@ -12103,11 +12279,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:35:59 +00:00'
+          example: '2024-12-24 07:31:26 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:35:59 +00:00'
+          example: '2025-02-24 07:31:26 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -12758,7 +12934,7 @@ components:
           nullable: true
         se_type:
           type: string
-          description: "type of search engine\nexample: finance_quote"
+          description: "type of search engine\nexample: finance_ticker_search"
           nullable: true
         date_posted:
           type: string
@@ -18652,7 +18828,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BaseGoogleNewsSerpElementItem'
-          description: items of the element
+          description: elements of search results found in SERP
           nullable: true
     SerpGoogleNewsLiveAdvancedTaskInfo:
       type: object
@@ -30467,17 +30643,427 @@ components:
                 $ref: '#/components/schemas/SerpGoogleFinanceQuoteLiveHtmlTaskInfo'
               description: array of tasks
               nullable: true
+    SerpGoogleFinanceTickerSearchTaskPostRequestInfo:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: "company or financial instrument name\nrequired field\nin this field, you can enter the name of a company or financial instrument to search for relevant tickers;\nyou can specify up to 700 characters in the keyword field;\nall %## will be decoded (plus character ‘+’ will be decoded to a space character)\nif you need to use the “%” character for your keyword, please specify it as “%25”;\nif you need to use the “+” character for your keyword, please specify it as “%2B”;\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          example: DJ
+        location_name:
+          type: string
+          description: "full name of search engine location\nrequired field if you don’t specify location_code\nif you use this field, you don’t need to specify location_code\nyou can receive the list of available locations of the search engine with their location_name by making a separate request to  https://api.dataforseo.com/v3/serp/google/locations\nexample:\nLondon,England,United Kingdom"
+          nullable: true
+        location_code:
+          type: integer
+          description: "search engine location code\nrequired field if you don’t specify location_name\nif you use this field, you don’t need to specify location_name\nyou can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/serp/google/locations\nexample:\n2840"
+          nullable: true
+          example: 2840
+        language_name:
+          type: string
+          description: "full name of search engine language\nrequired field if you don’t specify language_code \nif you use this field, you don’t need to specify language_code\nyou can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/languages\nexample:\nEnglish"
+          nullable: true
+          example: English
+        language_code:
+          type: string
+          description: "search engine language code\nrequired field if you don’t specify language_name\nif you use this field, you don’t need to specify language_name\nyou can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/languages\nexample:\nen"
+          nullable: true
+        priority:
+          type: integer
+          description: "task priority\noptional field\ncan take the following values:\n1 – normal execution priority (set by default);\n2 – high execution priority\nYou will be additionally charged for the tasks with high execution priority;\nThe cost can be calculated on the Pricing page"
+          nullable: true
+          example: 2
+        category:
+          type: string
+          description: "category of financial instruments to search for\noptional field\npossible values: all, stock, index, mutual_fund, currency, futures\ndefault value: all"
+          nullable: true
+          example: all
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+        postback_url:
+          type: string
+          description: "return URL for sending task results\noptional field\nonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request\nexample:\nhttp://your-server.com/postbackscript?id=$id\nhttp://your-server.com/postbackscript?id=$id&tag=$tag\nNote: special characters in postback_url will be urlencoded;\ni.a., the # character will be encoded into %23\nlearn more on our Help Center"
+          nullable: true
+        postback_data:
+          type: string
+          description: "postback_url datatype\nrequired field if you specify postback_url\ncorresponds to the datatype that will be sent to your server\npossible values:: advanced, html"
+          nullable: true
+        pingback_url:
+          type: string
+          description: "notification URL of a completed task\noptional field\nwhen a task is completed we will notify you by GET request sent to the URL you have specified\nyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.\nexample:\nhttp://your-server.com/pingscript?id=$id\nhttp://your-server.com/pingscript?id=$id&tag=$tag\nNote: special characters in pingback_url will be urlencoded;\ni.a., the # character will be encoded into %23\nlearn more on our Help Center"
+          nullable: true
+    SerpGoogleFinanceTickerSearchTaskPostTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: object
+              description: "array of results\nin this case, the value will be null"
+              nullable: true
+    SerpGoogleFinanceTickerSearchTaskPostResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTaskPostTaskInfo'
+              description: array of tasks
+              nullable: true
+    SerpGoogleFinanceTickerSearchTasksReadyResultInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "task identifier of the completed task\nunique task identifier in our system in the UUID format"
+          nullable: true
+        se:
+          type: string
+          description: search engine specified when setting the task
+          nullable: true
+        se_type:
+          type: string
+          description: "type of search engine\nexample: finance_ticker_search"
+          nullable: true
+        date_posted:
+          type: string
+          description: date when the task was posted (in the UTC format)
+          nullable: true
+        tag:
+          type: string
+          description: user-defined task identifier
+          nullable: true
+        endpoint_regular:
+          type: string
+          description: "URL for collecting the results of the SERP Regular task\nif SERP Regular is not supported in the specified endpoint, the value will be null"
+          nullable: true
+        endpoint_advanced:
+          type: string
+          description: "URL for collecting the results of the SERP Advanced task\nif SERP Advanced is not supported in the specified endpoint, the value will be null"
+          nullable: true
+        endpoint_html:
+          type: string
+          description: "URL for collecting the results of the SERP HTML task\nif SERP HTML is not supported in the specified endpoint, the value will be null"
+          nullable: true
+    SerpGoogleFinanceTickerSearchTasksReadyTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTasksReadyResultInfo'
+              description: array of results
+              nullable: true
+    SerpGoogleFinanceTickerSearchTasksReadyResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTasksReadyTaskInfo'
+              description: array of tasks
+              nullable: true
+    GoogleFinanceAssetPairSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseGoogleFinanceTickerSearchSerpElementItem'
+        - type: object
+          properties:
+            base_symbol:
+              type: string
+              description: "identifier of the base asset in a pair\nexample: EUR"
+              nullable: true
+            quote_symbol:
+              type: string
+              description: "identifier of the quote asset in a pair\nexample: USD"
+              nullable: true
+            base_display_name:
+              type: string
+              description: "full name of the base asset in a pair\nexample: Euro"
+              nullable: true
+            quote_display_name:
+              type: string
+              description: "full name of the base asset in a pair\nexample: Euro"
+              nullable: true
+            price:
+              type: number
+              description: value of the base asset compared to the quote asset
+              format: float
+              nullable: true
+            price_delta:
+              type: number
+              description: "change in price\nchange in price at a given timestamp"
+              format: float
+              nullable: true
+    GoogleFinanceMarketInstrumentSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseGoogleFinanceTickerSearchSerpElementItem'
+        - type: object
+          properties:
+            ticker:
+              type: string
+              description: "ticker of the market index\nexample: DAX"
+              nullable: true
+            price:
+              type: number
+              description: value of the base asset compared to the quote asset
+              format: float
+              nullable: true
+            price_delta:
+              type: number
+              description: "change in price\nchange in price at a given timestamp"
+              format: float
+              nullable: true
+            price_currency:
+              type: string
+              description: "price currency\nexample: USD"
+              nullable: true
+    GoogleFinanceMarketIndexSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseGoogleFinanceTickerSearchSerpElementItem'
+        - type: object
+          properties:
+            ticker:
+              type: string
+              description: "ticker of the market index\nexample: DAX"
+              nullable: true
+            market_identifier:
+              type: string
+              description: "market identifier\nexample: INDEXDB"
+              nullable: true
+            index_value:
+              type: number
+              description: "value of the market index\nnumerical value of the index at a given timestamp"
+              format: float
+              nullable: true
+            index_value_delta:
+              type: number
+              description: "change in value of the market index\nchange in the index_value at a given timestamp"
+              format: float
+              nullable: true
+    SerpGoogleFinanceTickerSearchTaskGetAdvancedResultInfo:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: "keyword received in a POST array\nthe keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)"
+          nullable: true
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        se_domain:
+          type: string
+          description: search engine domain in a POST array
+          nullable: true
+        location_code:
+          type: string
+          description: location code in a POST array
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        check_url:
+          type: string
+          description: "direct URL to search engine results\nyou can use it to make sure that we provided accurate results"
+          nullable: true
+        datetime:
+          type: string
+          description: "date and time when the result was received\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
+          nullable: true
+        spell:
+          $ref: '#/components/schemas/SpellInfo'
+        refinement_chips:
+          $ref: '#/components/schemas/RefinementChipsInfo'
+        item_types:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: "types of search results in SERP\ncontains types of search results (items) found in SERP;\npossible item types: google_finance_market_index, google_finance_asset_pair, google_finance_market_instrument"
+          nullable: true
+        se_results_count:
+          type: integer
+          description: total number of results in SERP
+          format: int64
+          nullable: true
+        items_count:
+          type: integer
+          description: the number of results returned in the items array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseGoogleFinanceTickerSearchSerpElementItem'
+          description: "items of search results found in SERP\narray of items containing market indexes data;\npossible type of items: google_finance_market_index, google_finance_asset_pair, google_finance_market_instrument"
+          nullable: true
+    SerpGoogleFinanceTickerSearchTaskGetAdvancedTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTaskGetAdvancedResultInfo'
+              description: array of results
+              nullable: true
+    SerpGoogleFinanceTickerSearchTaskGetAdvancedResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchTaskGetAdvancedTaskInfo'
+              description: array of tasks
+              nullable: true
+    SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: "company or financial instrument name\nrequired field\nin this field, you can enter the name of a company or financial instrument to search for relevant tickers;\nyou can specify up to 700 characters in the keyword field;\nall %## will be decoded (plus character ‘+’ will be decoded to a space character)\nif you need to use the “%” character for your keyword, please specify it as “%25”;\nif you need to use the “+” character for your keyword, please specify it as “%2B”;\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          example: DJ
+        location_name:
+          type: string
+          description: "full name of search engine location\nrequired field if you don’t specify location_code\nif you use this field, you don’t need to specify location_code\nyou can receive the list of available locations of the search engine with their location_name by making a separate request to  https://api.dataforseo.com/v3/serp/google/locations\nexample:\nLondon,England,United Kingdom"
+          nullable: true
+        location_code:
+          type: integer
+          description: "search engine location code\nrequired field if you don’t specify location_name\nif you use this field, you don’t need to specify location_name\nyou can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/serp/google/locations\nexample:\n2840"
+          nullable: true
+          example: 2840
+        language_name:
+          type: string
+          description: "full name of search engine language\nrequired field if you don’t specify language_code \nif you use this field, you don’t need to specify language_code\nyou can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/languages\nexample:\nEnglish"
+          nullable: true
+          example: English
+        language_code:
+          type: string
+          description: "search engine language code\nrequired field if you don’t specify language_name\nif you use this field, you don’t need to specify language_name\nyou can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/languages\nexample:\nen"
+          nullable: true
+        category:
+          type: string
+          description: "category of financial instruments to search for\noptional field\npossible values: all, stock, index, mutual_fund, currency, futures\ndefault value: all"
+          nullable: true
+          example: all
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+    SerpGoogleFinanceTickerSearchLiveAdvancedResultInfo:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: "keyword received in a POST array\nthe keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)"
+          nullable: true
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        se_domain:
+          type: string
+          description: search engine domain in a POST array
+          nullable: true
+        location_code:
+          type: string
+          description: location code in a POST array
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        check_url:
+          type: string
+          description: "direct URL to search engine results\nyou can use it to make sure that we provided accurate results"
+          nullable: true
+        datetime:
+          type: string
+          description: "date and time when the result was received\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2019-11-15 12:57:46 +00:00"
+          nullable: true
+        spell:
+          $ref: '#/components/schemas/SpellInfo'
+        refinement_chips:
+          $ref: '#/components/schemas/RefinementChipsInfo'
+        item_types:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: "types of search results in SERP\ncontains types of search results (items) found in SERP;\npossible item types: google_finance_market_index, google_finance_asset_pair, google_finance_market_instrument"
+          nullable: true
+        se_results_count:
+          type: integer
+          description: total number of results in SERP
+          format: int64
+          nullable: true
+        items_count:
+          type: integer
+          description: the number of results returned in the items array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseGoogleFinanceTickerSearchSerpElementItem'
+          description: "items of search results found in SERP\narray of items containing market indexes data;\npossible type of items: google_finance_market_index, google_finance_asset_pair, google_finance_market_instrument"
+          nullable: true
+    SerpGoogleFinanceTickerSearchLiveAdvancedTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchLiveAdvancedResultInfo'
+              description: array of results
+              nullable: true
+    SerpGoogleFinanceTickerSearchLiveAdvancedResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerpGoogleFinanceTickerSearchLiveAdvancedTaskInfo'
+              description: array of tasks
+              nullable: true
     DomainAnalyticsIdListRequestInfo:
       type: object
       properties:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:40:26 +00:00'
+          example: '2024-12-24 07:35:42 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:40:26 +00:00'
+          example: '2025-02-24 07:35:42 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -31894,11 +32480,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:40:44 +00:00'
+          example: '2024-12-24 07:36:13 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:40:44 +00:00'
+          example: '2025-02-24 07:36:13 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -33033,28 +33619,6 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
-    KeywordInfoNormalizedWithInfo:
-      type: object
-      properties:
-        last_updated_time:
-          type: string
-          description: "date and time when the clickstream dataset was updated\nin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”"
-          nullable: true
-        search_volume:
-          type: integer
-          description: monthly average clickstream search volume rate
-          format: int64
-          nullable: true
-        is_normalized:
-          type: boolean
-          description: "keyword info is normalized\nif true, values are normalized with Bing data"
-          nullable: true
-        monthly_searches:
-          type: array
-          items:
-            $ref: '#/components/schemas/MonthlySearches'
-          description: "monthly clickstream search volume rates\narray of objects with clickstream search volume rates in a certain month of a year"
-          nullable: true
     DataforseoLabsRelatedKeywordsLiveItem:
       type: object
       properties:
@@ -33426,137 +33990,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/DataforseoLabsGoogleKeywordIdeasLiveTaskInfo'
-              description: array of tasks
-              nullable: true
-    DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo:
-      type: object
-      properties:
-        keywords:
-          type: array
-          items:
-            type: string
-          description: "keywords\nrequired field\nThe maximum number of keywords you can specify: 700\nThe maximum number of characters for each keyword: 80\nThe maximum number of words for each keyword phrase: 10\nthe specified keywords will be converted to lowercase format, data will be provided in a separate array\nnote that if some of the keywords specified in this array are omitted in the results you receive, then our database doesn’t contain such keywords and cannot return data on them\nyou will not be charged for the keywords omitted in the results\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
-          example:
-            - phone
-            - watch
-        location_name:
-          type: string
-          description: "full name of the location\nrequired field if you don’t specify location_code\nNote: it is required to specify either location_name or location_code\nyou can receive the list of available locations with their location_name by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nUnited Kingdom"
-          nullable: true
-        location_code:
-          type: integer
-          description: "location code\nrequired field if you don’t specify location_name\nNote: it is required to specify either location_name or location_code\nyou can receive the list of available locations with their location_code by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\n2840"
-          nullable: true
-          example: 2840
-        language_name:
-          type: string
-          description: "full name of the language\nrequired field if you don’t specify language_code\nNote: it is required to specify either language_name or language_code\nyou can receive the list of available locations with their language_name by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nEnglish"
-          nullable: true
-          example: English
-        language_code:
-          type: string
-          description: "language code\nrequired field if you don’t specify language_name\nNote: it is required to specify either language_name or language_code\nyou can receive the list of available locations with their language_code by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nen"
-          nullable: true
-        include_serp_info:
-          type: boolean
-          description: "include data from SERP for each keyword\noptional field\nif set to true, we will return a serp_info array containing SERP data (number of search results, relevant URL, and SERP features) for every keyword in the response\ndefault value: false"
-          nullable: true
-          example: true
-        include_clickstream_data:
-          type: boolean
-          description: "include or exclude data from clickstream-based metrics in the result\noptional field\nif the parameter is set to true, you will receive clickstream_keyword_info, keyword_info_normalized_with_clickstream, and keyword_info_normalized_with_bing fields in the response\ndefault value: false\nwith this parameter enabled, you will be charged double the price for the request\nlearn more about how clickstream-based metrics are calculated in this help center article"
-          nullable: true
-        tag:
-          type: string
-          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
-          nullable: true
-    DataforseoLabsGoogleHistoricalSearchVolumeLiveItem:
-      type: object
-      properties:
-        se_type:
-          type: string
-          description: search engine type
-          nullable: true
-        keyword:
-          type: string
-          description: "keyword\nkeyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)"
-          nullable: true
-        location_code:
-          type: integer
-          description: "location code in a POST array\nif there is no data, then the value is null"
-          nullable: true
-        language_code:
-          type: string
-          description: language code in a POST array
-          nullable: true
-        search_partners:
-          type: boolean
-          description: "indicates data for Google and partner sites\nif true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search;\nif false, the results are returned for Google search sites only"
-          nullable: true
-        keyword_info:
-          $ref: '#/components/schemas/KeywordInfo'
-        keyword_info_normalized_with_bing:
-          $ref: '#/components/schemas/KeywordInfoNormalizedWithInfo'
-        keyword_info_normalized_with_clickstream:
-          $ref: '#/components/schemas/KeywordInfoNormalizedWithInfo'
-        clickstream_keyword_info:
-          $ref: '#/components/schemas/ClickstreamKeywordInfo'
-        keyword_properties:
-          $ref: '#/components/schemas/KeywordProperties'
-        impressions_info:
-          $ref: '#/components/schemas/ImpressionsInfo'
-        serp_info:
-          $ref: '#/components/schemas/SerpInfo'
-        avg_backlinks_info:
-          $ref: '#/components/schemas/AvgBacklinksInfo'
-    DataforseoLabsGoogleHistoricalSearchVolumeLiveResultInfo:
-      type: object
-      properties:
-        se_type:
-          type: string
-          description: search engine type
-          nullable: true
-        location_code:
-          type: integer
-          description: location code in a POST array
-          nullable: true
-        language_code:
-          type: string
-          description: language code in a POST array
-          nullable: true
-        items_count:
-          type: integer
-          description: the number of results returned in the items array
-          format: int64
-          nullable: true
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalSearchVolumeLiveItem'
-          description: contains keywords and related data
-          nullable: true
-    DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseTaskInfo'
-        - type: object
-          properties:
-            result:
-              type: array
-              items:
-                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalSearchVolumeLiveResultInfo'
-              description: array of results
-              nullable: true
-    DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseResponseInfo'
-        - type: object
-          properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalSearchVolumeLiveTaskInfo'
               description: array of tasks
               nullable: true
     DataforseoLabsGoogleBulkKeywordDifficultyLiveRequestInfo:
@@ -34915,7 +35348,11 @@ components:
               description: words highlighted in bold within the results description
               nullable: true
             links:
-              $ref: '#/components/schemas/LinkElement'
+              type: array
+              items:
+                $ref: '#/components/schemas/LinkElement'
+              description: "sitelinks\nthe links shown below some of Google’s search results\nif there are none, equals null"
+              nullable: true
             about_this_result:
               type: object
               additionalProperties:
@@ -36041,6 +36478,33 @@ components:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
           nullable: true
+    KnowledgeGraphLinkElementInfo:
+      type: object
+      properties:
+        type:
+          type: string
+          description: type of element
+          nullable: true
+        title:
+          type: string
+          description: title of the result in SERP
+          nullable: true
+        url:
+          type: string
+          description: sitelink URL
+          nullable: true
+        domain:
+          type: string
+          description: domain in SERP
+          nullable: true
+        snippet:
+          type: string
+          description: text alongside the link title
+          nullable: true
+        xpath:
+          type: string
+          description: the XPath of the element
+          nullable: true
     KnowledgeGraphDescriptionItemDataforseoLabsSerpElementItem:
       type: object
       allOf:
@@ -36054,7 +36518,7 @@ components:
             links:
               type: array
               items:
-                $ref: '#/components/schemas/LinkElement'
+                $ref: '#/components/schemas/KnowledgeGraphLinkElementInfo'
               description: "sitelinks\nthe links shown below some of Google’s search results\nif there are none, equals null"
               nullable: true
     KnowledgeGraphCarouselItemDataforseoLabsSerpElementItem:
@@ -36462,9 +36926,13 @@ components:
         - $ref: '#/components/schemas/BaseDataforseoLabsSerpElementItem'
         - type: object
           properties:
+            se_type:
+              type: string
+              description: search engine type
+              nullable: true
             domain:
               type: string
-              description: domain where a link points
+              description: subdomain in SERP
               nullable: true
             title:
               type: string
@@ -36480,30 +36948,26 @@ components:
               nullable: true
             url:
               type: string
-              description: relevant URL
+              description: relevant URL in SERP
               nullable: true
             table:
               $ref: '#/components/schemas/Table'
-            se_type:
-              type: string
-              description: search engine type
-              nullable: true
             main_domain:
               type: string
               description: primary domain name in SERP
               nullable: true
             relative_url:
               type: string
-              description: URL in SERP that does not specify the HTTPs protocol and domain name
+              description: relative URL in SERP
               nullable: true
             etv:
               type: number
-              description: "estimated traffic volume\nestimated paid monthly traffic to the domain\ncalculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for\nlearn more about how the metric is calculated in this help center article"
+              description: "estimated traffic volume\nestimated organic monthly traffic to the domain;\ncalculated as the product of CTR (click-through-rate) and search volume values of the returned keyword\nlearn more about how the metric is calculated in this help center article"
               format: float
               nullable: true
             estimated_paid_traffic_cost:
               type: number
-              description: "estimated cost of monthly search traffic\nrepresents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for\nlearn more about how the metric is calculated in this help center article"
+              description: "estimated cost of converting organic search traffic into paid\nrepresents the estimated monthly cost of running ads (USD) for the returned keyword;\nthe metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Bing Search\nlearn more about how the metric is calculated in this help center article"
               format: float
               nullable: true
             rank_changes:
@@ -37764,6 +38228,257 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveTaskInfo'
+              description: array of tasks
+              nullable: true
+    DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+          description: "keywords\nrequired field\nThe maximum number of keywords you can specify: 700\nThe maximum number of characters for each keyword: 80\nThe maximum number of words for each keyword phrase: 10\nthe specified keywords will be converted to lowercase format, data will be provided in a separate array\nnote that if some of the keywords specified in this array are omitted in the results you receive, then our database doesn’t contain such keywords and cannot return data on them\nyou will not be charged for the keywords omitted in the results\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          example:
+            - iphone
+        location_name:
+          type: string
+          description: "full name of the location\nrequired field if you don’t specify location_code\nNote: it is required to specify either location_name or location_code\nyou can receive the list of available locations with their location_name by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nUnited Kingdom"
+          nullable: true
+        location_code:
+          type: integer
+          description: "location code\nrequired field if you don’t specify location_name\nNote: it is required to specify either location_name or location_code\nyou can receive the list of available locations with their location_code by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\n2840"
+          nullable: true
+          example: 2840
+        language_name:
+          type: string
+          description: "full name of the language\nrequired field if you don’t specify language_code\nNote: it is required to specify either language_name or language_code\nyou can receive the list of available locations with their language_name by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nEnglish"
+          nullable: true
+        language_code:
+          type: string
+          description: "language code\nrequired field if you don’t specify language_name\nNote: it is required to specify either language_name or language_code\nyou can receive the list of available locations with their language_code by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nen"
+          nullable: true
+          example: en
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+    History:
+      type: object
+      properties:
+        year:
+          type: integer
+          description: year
+          nullable: true
+        month:
+          type: integer
+          description: month
+          nullable: true
+        keyword_info:
+          $ref: '#/components/schemas/KeywordInfo'
+    DataforseoLabsGoogleHistoricalKeywordDataLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: search engine type
+          nullable: true
+        keyword:
+          type: string
+          description: "keyword\nkeyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)"
+          nullable: true
+        location_code:
+          type: integer
+          description: "location code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        history:
+          type: array
+          items:
+            $ref: '#/components/schemas/History'
+          description: array of objects with historical data for the keyword
+          nullable: true
+    DataforseoLabsGoogleHistoricalKeywordDataLiveResultInfo:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: search engine type
+          nullable: true
+        location_code:
+          type: integer
+          description: location code in a POST array
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        items_count:
+          type: integer
+          description: the number of results returned in the items array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalKeywordDataLiveItem'
+          description: contains keywords and related data
+          nullable: true
+    DataforseoLabsGoogleHistoricalKeywordDataLiveTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalKeywordDataLiveResultInfo'
+              description: array of results
+              nullable: true
+    DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleHistoricalKeywordDataLiveTaskInfo'
+              description: array of tasks
+              nullable: true
+    DataforseoLabsGoogleKeywordOverviewLiveRequestInfo:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+          description: "keywords\nrequired field\nThe maximum number of keywords you can specify: 700\nThe maximum number of characters for each keyword: 80\nThe maximum number of words for each keyword phrase: 10\nthe specified keywords will be converted to lowercase format, data will be provided in a separate array\nnote that if some of the keywords specified in this array are omitted in the results you receive, then our database doesn’t contain such keywords and cannot return data on them\nyou will not be charged for the keywords omitted in the results\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          example:
+            - iphone
+        location_name:
+          type: string
+          description: "full name of the location\nrequired field if you don’t specify location_code\nNote: it is required to specify either location_name or location_code\nyou can receive the list of available locations with their location_name by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nUnited Kingdom"
+          nullable: true
+        location_code:
+          type: integer
+          description: "location code\nrequired field if you don’t specify location_name\nNote: it is required to specify either location_name or location_code\nyou can receive the list of available locations with their location_code by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\n2840"
+          nullable: true
+          example: 2840
+        language_name:
+          type: string
+          description: "full name of the language\nrequired field if you don’t specify language_code\nNote: it is required to specify either language_name or language_code\nyou can receive the list of available locations with their language_name by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nEnglish"
+          nullable: true
+        language_code:
+          type: string
+          description: "language code\nrequired field if you don’t specify language_name\nNote: it is required to specify either language_name or language_code\nyou can receive the list of available locations with their language_code by making a separate request to the\nhttps://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\nexample:\nen"
+          nullable: true
+          example: en
+        include_serp_info:
+          type: boolean
+          description: "include data from SERP for each keyword\noptional field\nif set to true, we will return a serp_info array containing SERP data (number of search results, relevant URL, and SERP features) for every keyword in the response\ndefault value: false"
+          nullable: true
+          example: true
+        include_clickstream_data:
+          type: boolean
+          description: "include or exclude data from clickstream-based metrics in the result\noptional field\nif the parameter is set to true, you will receive clickstream_keyword_info, keyword_info_normalized_with_clickstream, and keyword_info_normalized_with_bing fields in the response\ndefault value: false\nwith this parameter enabled, you will be charged double the price for the request\nlearn more about how clickstream-based metrics are calculated in this help center article"
+          nullable: true
+          example: true
+        tag:
+          type: string
+          description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
+          nullable: true
+    DataforseoLabsGoogleKeywordOverviewLiveItem:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: search engine type
+          nullable: true
+        keyword:
+          type: string
+          description: "keyword\nkeyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)"
+          nullable: true
+        location_code:
+          type: integer
+          description: "location code in a POST array\nif there is no data, then the value is null"
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        search_partners:
+          type: boolean
+          description: "indicates data for Google and partner sites\nif true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search;\nif false, the results are returned for Google search sites only"
+          nullable: true
+        keyword_info:
+          $ref: '#/components/schemas/KeywordInfo'
+        keyword_info_normalized_with_bing:
+          $ref: '#/components/schemas/KeywordInfoNormalizedWithInfo'
+        keyword_info_normalized_with_clickstream:
+          $ref: '#/components/schemas/KeywordInfoNormalizedWithInfo'
+        clickstream_keyword_info:
+          $ref: '#/components/schemas/ClickstreamKeywordInfo'
+        keyword_properties:
+          $ref: '#/components/schemas/KeywordProperties'
+        serp_info:
+          $ref: '#/components/schemas/SerpInfo'
+        avg_backlinks_info:
+          $ref: '#/components/schemas/AvgBacklinksInfo'
+        search_intent_info:
+          $ref: '#/components/schemas/SearchIntentInfo'
+    DataforseoLabsGoogleKeywordOverviewLiveResultInfo:
+      type: object
+      properties:
+        se_type:
+          type: string
+          description: search engine type
+          nullable: true
+        location_code:
+          type: integer
+          description: location code in a POST array
+          nullable: true
+        language_code:
+          type: string
+          description: language code in a POST array
+          nullable: true
+        items_count:
+          type: integer
+          description: the number of results returned in the items array
+          format: int64
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataforseoLabsGoogleKeywordOverviewLiveItem'
+          description: contains keywords and related data
+          nullable: true
+    DataforseoLabsGoogleKeywordOverviewLiveTaskInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseTaskInfo'
+        - type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleKeywordOverviewLiveResultInfo'
+              description: array of results
+              nullable: true
+    DataforseoLabsGoogleKeywordOverviewLiveResponseInfo:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseResponseInfo'
+        - type: object
+          properties:
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataforseoLabsGoogleKeywordOverviewLiveTaskInfo'
               description: array of tasks
               nullable: true
     DataforseoLabsAmazonBulkSearchVolumeLiveRequestInfo:
@@ -41064,11 +41779,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:42:26 +00:00'
+          example: '2024-12-24 07:38:10 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:42:26 +00:00'
+          example: '2025-02-24 07:38:10 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -43068,7 +43783,7 @@ components:
           type: array
           items:
             type: string
-          description: "keywords\nrequired field\nThe maximum number of keywords you can specify: 5\ncomma characters (,) in the specified keywords will be unset and ignored\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          description: "keywords\nrequired field\nthe maximum number of keywords you can specify: 5\nthe minimum number of symbols must be greater than 1\ncomma characters (,) in the specified keywords will be unset and ignored\nNote: keywords cannot consist of a combination of the following characters: < > | \\ \" - + = ~ ! : * ( ) [ ] { }\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
           example:
             - seo api
             - rank api
@@ -43394,7 +44109,7 @@ components:
           type: array
           items:
             type: string
-          description: "keywords\nrequired field\nif keywords are not specified, the results will not contain keyword-related data;\nThe maximum number of keywords you can specify: 5\ncomma characters (,) in the specified keywords will be unset and ignored;\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword;\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          description: "keywords\nrequired field\nif keywords are not specified, the results will not contain keyword-related data;\nthe maximum number of keywords you can specify: 5\nthe minimum number of symbols must be greater than 1\ncomma characters (,) in the specified keywords will be unset and ignored\nNote: keywords cannot consist of a combination of the following characters: < > | \\ \" - + = ~ ! : * ( ) [ ] { }\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
           example:
             - rugby
             - cricket
@@ -46911,11 +47626,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:43:57 +00:00'
+          example: '2024-12-24 07:39:41 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:43:57 +00:00'
+          example: '2025-02-24 07:39:41 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -51098,11 +51813,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:44:37 +00:00'
+          example: '2024-12-24 07:40:09 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:44:37 +00:00'
+          example: '2025-02-24 07:40:09 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -52489,20 +53204,6 @@ components:
               type: boolean
               description: indicates whether the resource blocks rendering
               nullable: true
-    OnPageScriptResourceElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
-        - type: object
-          properties:
-            meta:
-              $ref: '#/components/schemas/ResourceMetaInfo'
-            fetch_timing:
-              $ref: '#/components/schemas/FetchTiming'
-            accept_type:
-              type: string
-              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
-              nullable: true
     OnPageResourcesResultInfo:
       type: object
       properties:
@@ -52539,6 +53240,20 @@ components:
               items:
                 $ref: '#/components/schemas/OnPageResourcesResultInfo'
               description: array of results
+              nullable: true
+    OnPageScriptResourceElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
+        - type: object
+          properties:
+            meta:
+              $ref: '#/components/schemas/ResourceMetaInfo'
+            fetch_timing:
+              $ref: '#/components/schemas/FetchTiming'
+            accept_type:
+              type: string
+              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
               nullable: true
     OnPageImageResourceElementItem:
       type: object
@@ -54360,11 +55075,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:45:22 +00:00'
+          example: '2024-12-24 07:40:58 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:45:22 +00:00'
+          example: '2025-02-24 07:40:58 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -56270,11 +56985,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:45:38 +00:00'
+          example: '2024-12-24 07:41:23 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:45:38 +00:00'
+          example: '2025-02-24 07:41:23 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -60126,11 +60841,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:46:11 +00:00'
+          example: '2024-12-24 07:42:47 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:46:11 +00:00'
+          example: '2025-02-24 07:42:47 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -63132,11 +63847,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-10 01:46:41 +00:00'
+          example: '2024-12-24 07:43:39 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-10 01:46:41 +00:00'
+          example: '2025-02-24 07:43:39 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -68960,7 +69675,7 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         keyword_suggestions_for_url:
           $ref: '#/components/schemas/AppendixInfo'
-    AppendixAppendixsRatesDataInfo:
+    AppendixAppendixDaysRatesDataInfo:
       type: object
       properties:
         user_data:
@@ -69022,8 +69737,6 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         keyword_ideas:
           $ref: '#/components/schemas/AppendixInfo'
-        historical_search_volume:
-          $ref: '#/components/schemas/AppendixInfo'
         categories_for_domain:
           $ref: '#/components/schemas/AppendixInfo'
         domain_metrics_by_categories:
@@ -69051,6 +69764,10 @@ components:
         historical_bulk_traffic_estimation:
           $ref: '#/components/schemas/AppendixInfo'
         categories_for_keywords:
+          $ref: '#/components/schemas/AppendixInfo'
+        keyword_overview:
+          $ref: '#/components/schemas/AppendixInfo'
+        historical_keyword_data:
           $ref: '#/components/schemas/AppendixInfo'
     AppendixWhoisDomainAnalyticsLimitsRatesDataInfo:
       type: object
@@ -69483,7 +70200,7 @@ components:
           format: double
           nullable: true
         appendix:
-          $ref: '#/components/schemas/AppendixAppendixsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixAppendixDaysRatesDataInfo'
         total_appendix:
           type: number
           format: double
@@ -69855,41 +70572,22 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         keyword_suggestions_for_url:
           $ref: '#/components/schemas/AppendixInfo'
-        job_functions:
-          type: number
-          format: double
-          nullable: true
         search_volume_history:
           $ref: '#/components/schemas/AppendixInfo'
         industries:
           type: number
           format: double
           nullable: true
-        google:
-          $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
+        job_functions:
+          type: number
+          format: double
+          nullable: true
         id_list:
           type: number
           format: double
           nullable: true
-    AppendixAppendixDayStatisticsRatesData:
-      type: object
-      properties:
-        user_data:
-          type: number
-          format: double
-          nullable: true
-        errors:
-          type: number
-          format: double
-          nullable: true
-        status:
-          type: number
-          format: double
-          nullable: true
-        webhook_resend:
-          type: number
-          format: double
-          nullable: true
+        google:
+          $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
     AppendixDataforseoLabsDayStatisticsRatesData:
       type: object
       properties:
@@ -69941,8 +70639,6 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         keyword_ideas:
           $ref: '#/components/schemas/AppendixInfo'
-        historical_search_volume:
-          $ref: '#/components/schemas/AppendixInfo'
         categories_for_domain:
           $ref: '#/components/schemas/AppendixInfo'
         domain_metrics_by_categories:
@@ -69971,15 +70667,17 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         categories_for_keywords:
           $ref: '#/components/schemas/AppendixInfo'
-        amazon:
-          $ref: '#/components/schemas/AppendixDataforseoLabsLimitsRatesDataInfo'
-        languages:
+        keyword_overview:
+          $ref: '#/components/schemas/AppendixInfo'
+        historical_keyword_data:
+          $ref: '#/components/schemas/AppendixInfo'
+        id_list:
           type: number
           format: double
           nullable: true
-        top_google_searches:
+        historical_search_volume:
           $ref: '#/components/schemas/AppendixInfo'
-        status:
+        available_filters:
           type: number
           format: double
           nullable: true
@@ -69987,11 +70685,15 @@ components:
           type: number
           format: double
           nullable: true
-        id_list:
+        languages:
           type: number
           format: double
           nullable: true
-        available_filters:
+        top_google_searches:
+          $ref: '#/components/schemas/AppendixInfo'
+        amazon:
+          $ref: '#/components/schemas/AppendixDataforseoLabsLimitsRatesDataInfo'
+        status:
           type: number
           format: double
           nullable: true
@@ -70066,15 +70768,15 @@ components:
           type: number
           format: double
           nullable: true
+        audits:
+          type: number
+          format: double
+          nullable: true
         versions:
           type: number
           format: double
           nullable: true
         languages:
-          type: number
-          format: double
-          nullable: true
-        audits:
           type: number
           format: double
           nullable: true
@@ -70159,11 +70861,7 @@ components:
           type: number
           format: double
           nullable: true
-        force_stop:
-          type: number
-          format: double
-          nullable: true
-        available_filters:
+        microdata:
           type: number
           format: double
           nullable: true
@@ -70171,7 +70869,11 @@ components:
           type: number
           format: double
           nullable: true
-        microdata:
+        force_stop:
+          type: number
+          format: double
+          nullable: true
+        available_filters:
           type: number
           format: double
           nullable: true
@@ -70263,12 +70965,14 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         bulk_pages_summary:
           $ref: '#/components/schemas/AppendixInfo'
+        historical_new_lost_summary:
+          $ref: '#/components/schemas/AppendixInfo'
+        pages_summary_with_page_info:
+          $ref: '#/components/schemas/AppendixInfo'
         index:
           type: number
           format: double
           nullable: true
-        pages_summary_with_page_info:
-          $ref: '#/components/schemas/AppendixInfo'
         id_list:
           type: number
           format: double
@@ -70277,8 +70981,6 @@ components:
           type: number
           format: double
           nullable: true
-        historical_new_lost_summary:
-          $ref: '#/components/schemas/AppendixInfo'
     AppendixAppDataDayStatisticsRatesData:
       type: object
       properties:
@@ -70347,11 +71049,11 @@ components:
           type: number
           format: double
           nullable: true
-        available_filters:
+        id_list:
           type: number
           format: double
           nullable: true
-        id_list:
+        available_filters:
           type: number
           format: double
           nullable: true
@@ -70397,7 +71099,7 @@ components:
           format: double
           nullable: true
         appendix:
-          $ref: '#/components/schemas/AppendixAppendixDayStatisticsRatesData'
+          $ref: '#/components/schemas/AppendixAppendixDaysRatesDataInfo'
         total_appendix:
           type: number
           format: double
@@ -70491,7 +71193,7 @@ components:
           format: double
           nullable: true
         appendix:
-          $ref: '#/components/schemas/AppendixAppendixsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixAppendixDaysRatesDataInfo'
         total_appendix:
           type: number
           format: double
@@ -70575,51 +71277,6 @@ components:
           $ref: '#/components/schemas/AppendixDataInfo'
         minute:
           $ref: '#/components/schemas/AppendixDataInfo'
-    AppendixSerpDayStatisticsMoneyData:
-      type: object
-      properties:
-        task_post:
-          type: number
-          format: double
-          nullable: true
-        task_get:
-          $ref: '#/components/schemas/AppendixFunctionTypeInfo'
-        tasks_ready:
-          type: number
-          format: double
-          nullable: true
-        locations:
-          type: number
-          format: double
-          nullable: true
-        languages:
-          type: number
-          format: double
-          nullable: true
-        live:
-          $ref: '#/components/schemas/AppendixFunctionTypeInfo'
-        errors:
-          type: number
-          format: double
-          nullable: true
-        tasks_fixed:
-          type: number
-          format: double
-          nullable: true
-        jobs:
-          $ref: '#/components/schemas/AppendixJobsSerpLimitsRatesDataInfo'
-        screenshot:
-          type: number
-          format: double
-          nullable: true
-        ai_summary:
-          type: number
-          format: double
-          nullable: true
-        refund_money:
-          type: number
-          format: double
-          nullable: true
     AppendixKeywordsDataDayStatisticsMoneyData:
       type: object
       properties:
@@ -70671,172 +71328,15 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         keyword_suggestions_for_url:
           $ref: '#/components/schemas/AppendixInfo'
-        search_volume_history:
-          $ref: '#/components/schemas/AppendixJobsSerpLimitsRatesDataInfo'
         google:
           $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
-    AppendixOnPageDayStatisticsMoneyData:
-      type: object
-      properties:
-        task_post:
-          type: number
-          format: double
-          nullable: true
-        tasks_ready:
-          type: number
-          format: double
-          nullable: true
-        summary:
-          type: number
-          format: double
-          nullable: true
-        resources:
-          type: number
-          format: double
-          nullable: true
-        pages:
-          type: number
-          format: double
-          nullable: true
-        non_indexable:
-          type: number
-          format: double
-          nullable: true
-        duplicate_tags:
-          type: number
-          format: double
-          nullable: true
-        links:
-          type: number
-          format: double
-          nullable: true
-        waterfall:
-          type: number
-          format: double
-          nullable: true
-        errors:
-          type: number
-          format: double
-          nullable: true
-        pages_by_resource:
-          type: number
-          format: double
-          nullable: true
-        duplicate_content:
-          type: number
-          format: double
-          nullable: true
-        raw_html:
-          type: number
-          format: double
-          nullable: true
-        instant_pages:
-          type: number
-          format: double
-          nullable: true
-        redirect_chains:
-          type: number
-          format: double
-          nullable: true
-        lighthouse:
-          $ref: '#/components/schemas/AppendixInfo'
-        keyword_density:
-          type: number
-          format: double
-          nullable: true
-        page_screenshot:
-          type: number
-          format: double
-          nullable: true
-        content_parsing:
-          type: number
-          format: double
-          nullable: true
-        content_parsing_live:
-          type: number
-          format: double
-          nullable: true
-        refund_money:
-          type: number
-          format: double
-          nullable: true
-    AppendixBusinessDataDayStatisticsMoneyData:
-      type: object
-      properties:
-        google:
-          $ref: '#/components/schemas/AppendixBusinessDataGoogleInfo'
-        locations:
-          type: number
-          format: double
-          nullable: true
-        languages:
-          type: number
-          format: double
-          nullable: true
-        errors:
-          type: number
-          format: double
-          nullable: true
-        yelp:
-          $ref: '#/components/schemas/AppendixBusinessDataDayLimitsRatesDataInfo'
-        social_media:
-          $ref: '#/components/schemas/AppendixSocialMediaBusinessDataLimitsRatesDataInfo'
-        tripadvisor:
-          $ref: '#/components/schemas/AppendixBusinessDataDayLimitsRatesDataInfo'
-        trustpilot:
-          $ref: '#/components/schemas/AppendixBusinessDataDayLimitsRatesDataInfo'
-        business_listings:
-          $ref: '#/components/schemas/AppendixBusinessListingsBusinessDataLimitsRatesDataInfo'
-        tasks_ready:
-          type: number
-          format: double
-          nullable: true
-        refund_money:
-          type: number
-          format: double
-          nullable: true
-    AppendixAppDataDayStatisticsMoneyData:
-      type: object
-      properties:
-        app_info:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
-        app_list:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
-        app_reviews:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
-        app_searches:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
-        errors:
-          type: number
-          format: double
-          nullable: true
-        languages:
-          type: number
-          format: double
-          nullable: true
-        locations:
-          type: number
-          format: double
-          nullable: true
-        categories:
-          type: number
-          format: double
-          nullable: true
-        app_listings:
-          $ref: '#/components/schemas/AppendixBusinessListingsBusinessDataLimitsRatesDataInfo'
-        tasks_ready:
-          type: number
-          format: double
-          nullable: true
-        refund_money:
-          type: number
-          format: double
-          nullable: true
+        search_volume_history:
+          $ref: '#/components/schemas/AppendixJobsSerpLimitsRatesDataInfo'
     AppendixDayStatisticsMoneyData:
       type: object
       properties:
         serp:
-          $ref: '#/components/schemas/AppendixSerpDayStatisticsMoneyData'
+          $ref: '#/components/schemas/AppendixSerpDayStatisticsRatesData'
         total:
           type: number
           description: total amount of money deposited to your account
@@ -70853,7 +71353,7 @@ components:
           format: double
           nullable: true
         appendix:
-          $ref: '#/components/schemas/AppendixAppendixsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixAppendixDaysRatesDataInfo'
         total_appendix:
           type: number
           format: double
@@ -70877,13 +71377,13 @@ components:
           format: double
           nullable: true
         on_page:
-          $ref: '#/components/schemas/AppendixOnPageDayStatisticsMoneyData'
+          $ref: '#/components/schemas/AppendixOnPageLimitsRatesDataInfo'
         total_on_page:
           type: number
           format: double
           nullable: true
         business_data:
-          $ref: '#/components/schemas/AppendixBusinessDataDayStatisticsMoneyData'
+          $ref: '#/components/schemas/AppendixBusinessDataLimitsRatesDataInfo'
         total_business_data:
           type: number
           format: double
@@ -70895,7 +71395,7 @@ components:
           format: double
           nullable: true
         app_data:
-          $ref: '#/components/schemas/AppendixAppDataDayStatisticsMoneyData'
+          $ref: '#/components/schemas/AppendixAppDataLimitsRatesDataInfo'
         total_app_data:
           type: number
           format: double
@@ -71173,9 +71673,9 @@ components:
       properties:
         regular:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-        html:
-          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         advanced:
+          $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
+        html:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
     AppendixSerpPriceData:
       type: object
@@ -71455,13 +71955,15 @@ components:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         historical_bulk_traffic_estimation:
           $ref: '#/components/schemas/AppendixBingKeywordsDataPriceDataInfo'
-        historical_rank_overview:
+        historical_keyword_data:
           $ref: '#/components/schemas/AppendixBingKeywordsDataPriceDataInfo'
-        historical_search_volume:
+        historical_rank_overview:
           $ref: '#/components/schemas/AppendixBingKeywordsDataPriceDataInfo'
         historical_serps:
           $ref: '#/components/schemas/AppendixBingKeywordsDataPriceDataInfo'
         keyword_ideas:
+          $ref: '#/components/schemas/AppendixBingKeywordsDataPriceDataInfo'
+        keyword_overview:
           $ref: '#/components/schemas/AppendixBingKeywordsDataPriceDataInfo'
         keywords_for_app:
           $ref: '#/components/schemas/AppendixBingKeywordsDataPriceDataInfo'

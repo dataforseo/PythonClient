@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **clickstream_data** | [**AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo**](AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **audience_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_suggestions_for_url** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**search_volume_history** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
 **google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
+**search_volume_history** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 

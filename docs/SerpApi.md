@@ -71,6 +71,10 @@ Method | HTTP request | Description
 [**google_finance_quote_task_get_html**](SerpApi.md#google_finance_quote_task_get_html) | **GET** /v3/serp/google/finance_quote/task_get/html/{id} | 
 [**google_finance_quote_task_post**](SerpApi.md#google_finance_quote_task_post) | **POST** /v3/serp/google/finance_quote/task_post | 
 [**google_finance_quote_tasks_ready**](SerpApi.md#google_finance_quote_tasks_ready) | **GET** /v3/serp/google/finance_quote/tasks_ready | 
+[**google_finance_ticker_search_live_advanced**](SerpApi.md#google_finance_ticker_search_live_advanced) | **POST** /v3/serp/google/finance_ticker_search/live/advanced | 
+[**google_finance_ticker_search_task_get_advanced**](SerpApi.md#google_finance_ticker_search_task_get_advanced) | **GET** /v3/serp/google/finance_ticker_search/task_get/advanced/{id} | 
+[**google_finance_ticker_search_task_post**](SerpApi.md#google_finance_ticker_search_task_post) | **POST** /v3/serp/google/finance_ticker_search/task_post | 
+[**google_finance_ticker_search_tasks_ready**](SerpApi.md#google_finance_ticker_search_tasks_ready) | **GET** /v3/serp/google/finance_ticker_search/tasks_ready | 
 [**google_images_live_advanced**](SerpApi.md#google_images_live_advanced) | **POST** /v3/serp/google/images/live/advanced | 
 [**google_images_live_html**](SerpApi.md#google_images_live_html) | **POST** /v3/serp/google/images/live/html | 
 [**google_images_task_get_advanced**](SerpApi.md#google_images_task_get_advanced) | **GET** /v3/serp/google/images/task_get/advanced/{id} | 
@@ -372,7 +376,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '18ac935d-0614-47c6-b5ed-8fd7e9965ef9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '951fbace-c46f-4532-95be-6771e0dac421' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.baidu_organic_task_get_html(id)
@@ -913,7 +917,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '8e4d065b-ec21-44d9-8afe-c095933dcc98' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '423c9887-45a3-4bbd-9b37-cfb6742a695e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_local_pack_task_get_html(id)
@@ -1611,7 +1615,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '266ed11e-f6c5-414b-8f62-e554fd4b0b23' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'fe7e2d37-5d48-4864-95cf-4a1fd8ee483a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_organic_task_get_html(id)
@@ -4228,7 +4232,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'a468dfeb-a716-4093-af4f-ae5f5f4d3fb5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '70940376-b99e-4dec-a3d9-8269597c6b61' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_finance_explore_task_get_html(id)
@@ -4695,7 +4699,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '13fdf338-f483-4b43-bd33-58131fa9137e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '44fea317-355d-4a3c-a23a-98da9cbfec6c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_finance_markets_task_get_html(id)
@@ -5162,7 +5166,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '35c81eb8-4031-414b-a1fe-8c9a13449bfc' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '7f275c4d-f0c2-476f-b493-4bf4be5f48b5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_finance_quote_task_get_html(id)
@@ -5337,6 +5341,316 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**SerpGoogleFinanceQuoteTasksReadyResponseInfo**](SerpGoogleFinanceQuoteTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_finance_ticker_search_live_advanced**
+> SerpGoogleFinanceTickerSearchLiveAdvancedResponseInfo google_finance_ticker_search_live_advanced(serp_google_finance_ticker_search_live_advanced_request_info=serp_google_finance_ticker_search_live_advanced_request_info)
+
+
+
+‌ Live Google Finance Ticker Search allows you to search for financial instruments available on Google Finance along with additional information. The result is specific to the parameters you specify in the request: keyword (name of a company or financial instrument) in the keyword field, location and language. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/live/advanced/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_finance_ticker_search_live_advanced_request_info import SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo
+from dataforseo_client.models.serp_google_finance_ticker_search_live_advanced_response_info import SerpGoogleFinanceTickerSearchLiveAdvancedResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    serp_google_finance_ticker_search_live_advanced_request_info = [dataforseo_client.SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo()] # List[SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_finance_ticker_search_live_advanced(serp_google_finance_ticker_search_live_advanced_request_info=serp_google_finance_ticker_search_live_advanced_request_info)
+        print("The response of SerpApi->google_finance_ticker_search_live_advanced:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_finance_ticker_search_live_advanced: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serp_google_finance_ticker_search_live_advanced_request_info** | [**List[SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo]**](SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**SerpGoogleFinanceTickerSearchLiveAdvancedResponseInfo**](SerpGoogleFinanceTickerSearchLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_finance_ticker_search_task_get_advanced**
+> SerpGoogleFinanceTickerSearchTaskGetAdvancedResponseInfo google_finance_ticker_search_task_get_advanced(id)
+
+
+
+‌ Google Finance Ticker Search allows you to search for financial instruments available on Google Finance along with additional information. The result is specific to the parameters you specify in the request: keyword (name of a company or financial instrument) in the keyword field, location and language. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/task_get/advanced/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_finance_ticker_search_task_get_advanced_response_info import SerpGoogleFinanceTickerSearchTaskGetAdvancedResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    id = '00000000-0000-0000-0000-000000000000' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
+
+    try:
+        api_response = api_instance.google_finance_ticker_search_task_get_advanced(id)
+        print("The response of SerpApi->google_finance_ticker_search_task_get_advanced:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_finance_ticker_search_task_get_advanced: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
+
+### Return type
+
+[**SerpGoogleFinanceTickerSearchTaskGetAdvancedResponseInfo**](SerpGoogleFinanceTickerSearchTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_finance_ticker_search_task_post**
+> SerpGoogleFinanceTickerSearchTaskPostResponseInfo google_finance_ticker_search_task_post(serp_google_finance_ticker_search_task_post_request_info=serp_google_finance_ticker_search_task_post_request_info)
+
+
+
+‌ Google Finance Ticker Search allows you to search for financial instruments available on Google Finance along with additional information. The result is specific to the parameters you specify in the request: keyword (name of a company or financial instrument) in the keyword field, location and language. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/task_post/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_finance_ticker_search_task_post_request_info import SerpGoogleFinanceTickerSearchTaskPostRequestInfo
+from dataforseo_client.models.serp_google_finance_ticker_search_task_post_response_info import SerpGoogleFinanceTickerSearchTaskPostResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+    serp_google_finance_ticker_search_task_post_request_info = [dataforseo_client.SerpGoogleFinanceTickerSearchTaskPostRequestInfo()] # List[SerpGoogleFinanceTickerSearchTaskPostRequestInfo] |  (optional)
+
+    try:
+        api_response = api_instance.google_finance_ticker_search_task_post(serp_google_finance_ticker_search_task_post_request_info=serp_google_finance_ticker_search_task_post_request_info)
+        print("The response of SerpApi->google_finance_ticker_search_task_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_finance_ticker_search_task_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serp_google_finance_ticker_search_task_post_request_info** | [**List[SerpGoogleFinanceTickerSearchTaskPostRequestInfo]**](SerpGoogleFinanceTickerSearchTaskPostRequestInfo.md)|  | [optional] 
+
+### Return type
+
+[**SerpGoogleFinanceTickerSearchTaskPostResponseInfo**](SerpGoogleFinanceTickerSearchTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **google_finance_ticker_search_tasks_ready**
+> SerpGoogleFinanceTickerSearchTasksReadyResponseInfo google_finance_ticker_search_tasks_ready()
+
+
+
+‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_ticker_search/tasks_ready/?bash'
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import dataforseo_client
+from dataforseo_client.models.serp_google_finance_ticker_search_tasks_ready_response_info import SerpGoogleFinanceTickerSearchTasksReadyResponseInfo
+from dataforseo_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.dataforseo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = dataforseo_client.Configuration(
+    host = "https://api.dataforseo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = dataforseo_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+with dataforseo_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = dataforseo_client.SerpApi(api_client)
+
+    try:
+        api_response = api_instance.google_finance_ticker_search_tasks_ready()
+        print("The response of SerpApi->google_finance_ticker_search_tasks_ready:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SerpApi->google_finance_ticker_search_tasks_ready: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SerpGoogleFinanceTickerSearchTasksReadyResponseInfo**](SerpGoogleFinanceTickerSearchTasksReadyResponseInfo.md)
 
 ### Authorization
 
@@ -5629,7 +5943,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '26417bdd-a6c5-4388-b3b7-539c08fd9e4a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '5701826d-1bbe-495d-a722-2ba6ba73bb53' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_images_task_get_html(id)
@@ -6012,7 +6326,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '4b2e4e9f-9446-403d-856c-fc28362c6e41' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'e5ee1e05-4edf-4d92-aca6-3d8c6778d8d0' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_jobs_task_get_html(id)
@@ -6553,7 +6867,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'bf5853f1-a077-4795-995e-4ceb5b1f58e5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '5e73dd45-f9d0-4250-a1c3-bb9c2f7dd3ab' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_local_finder_task_get_html(id)
@@ -7478,7 +7792,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '4e9cb494-d61c-4fcc-b038-29c9a67f479f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '075720d2-9a44-41a9-a820-935dc61af0b0' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_news_task_get_html(id)
@@ -8098,7 +8412,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '84f37f50-8e1b-4cf6-b27c-0e6e3a735b84' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '0b3dc0eb-8076-4393-9611-69c5173e42f9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_organic_task_get_html(id)
@@ -8864,7 +9178,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'a07fc385-4b5e-4989-b331-5f8d03dfecf9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'aa2fcda6-1556-4958-8243-7e8a3b326d04' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.naver_organic_task_get_html(id)
@@ -11066,7 +11380,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '0fb36a51-4164-443c-a3bf-b7216300c9f7' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '59fff0c5-b45a-462a-807b-803c7a5bed5b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.seznam_organic_task_get_html(id)
@@ -11838,7 +12152,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '1b1b3b59-d0a8-4bee-9f98-bf972211b664' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '4b43985b-3c53-4c70-8def-87cca476d4bf' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.yahoo_organic_task_get_html(id)

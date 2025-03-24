@@ -19,10 +19,10 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.appendix_app_data_day_statistics_money_data import AppendixAppDataDayStatisticsMoneyData
-from dataforseo_client.models.appendix_appendixs_rates_data_info import AppendixAppendixsRatesDataInfo
+from dataforseo_client.models.appendix_app_data_limits_rates_data_info import AppendixAppDataLimitsRatesDataInfo
+from dataforseo_client.models.appendix_appendix_days_rates_data_info import AppendixAppendixDaysRatesDataInfo
 from dataforseo_client.models.appendix_backlinks_day_statistics_rates_data import AppendixBacklinksDayStatisticsRatesData
-from dataforseo_client.models.appendix_business_data_day_statistics_money_data import AppendixBusinessDataDayStatisticsMoneyData
+from dataforseo_client.models.appendix_business_data_limits_rates_data_info import AppendixBusinessDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_content_analysis_limits_rates_data_info import AppendixContentAnalysisLimitsRatesDataInfo
 from dataforseo_client.models.appendix_content_generation_limits_rates_data_info import AppendixContentGenerationLimitsRatesDataInfo
 from dataforseo_client.models.appendix_dataforseo_labs_day_statistics_rates_data import AppendixDataforseoLabsDayStatisticsRatesData
@@ -30,8 +30,8 @@ from dataforseo_client.models.appendix_domain_analytics_limits_rates_data_info i
 from dataforseo_client.models.appendix_jobs_serp_limits_rates_data_info import AppendixJobsSerpLimitsRatesDataInfo
 from dataforseo_client.models.appendix_keywords_data_day_statistics_money_data import AppendixKeywordsDataDayStatisticsMoneyData
 from dataforseo_client.models.appendix_merchant_limits_rates_data_info import AppendixMerchantLimitsRatesDataInfo
-from dataforseo_client.models.appendix_on_page_day_statistics_money_data import AppendixOnPageDayStatisticsMoneyData
-from dataforseo_client.models.appendix_serp_day_statistics_money_data import AppendixSerpDayStatisticsMoneyData
+from dataforseo_client.models.appendix_on_page_limits_rates_data_info import AppendixOnPageLimitsRatesDataInfo
+from dataforseo_client.models.appendix_serp_day_statistics_rates_data import AppendixSerpDayStatisticsRatesData
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,12 +39,12 @@ class AppendixDayStatisticsMoneyData(BaseModel):
     """
     AppendixDayStatisticsMoneyData
     """ # noqa: E501
-    serp: Optional[AppendixSerpDayStatisticsMoneyData] = None
+    serp: Optional[AppendixSerpDayStatisticsRatesData] = None
     total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of money deposited to your account")
     total_serp: Optional[Union[StrictFloat, StrictInt]] = None
     keywords_data: Optional[AppendixKeywordsDataDayStatisticsMoneyData] = None
     total_keywords_data: Optional[Union[StrictFloat, StrictInt]] = None
-    appendix: Optional[AppendixAppendixsRatesDataInfo] = None
+    appendix: Optional[AppendixAppendixDaysRatesDataInfo] = None
     total_appendix: Optional[Union[StrictFloat, StrictInt]] = None
     dataforseo_labs: Optional[AppendixDataforseoLabsDayStatisticsRatesData] = None
     total_dataforseo_labs: Optional[Union[StrictFloat, StrictInt]] = None
@@ -52,13 +52,13 @@ class AppendixDayStatisticsMoneyData(BaseModel):
     total_domain_analytics: Optional[Union[StrictFloat, StrictInt]] = None
     merchant: Optional[AppendixMerchantLimitsRatesDataInfo] = None
     total_merchant: Optional[Union[StrictFloat, StrictInt]] = None
-    on_page: Optional[AppendixOnPageDayStatisticsMoneyData] = None
+    on_page: Optional[AppendixOnPageLimitsRatesDataInfo] = None
     total_on_page: Optional[Union[StrictFloat, StrictInt]] = None
-    business_data: Optional[AppendixBusinessDataDayStatisticsMoneyData] = None
+    business_data: Optional[AppendixBusinessDataLimitsRatesDataInfo] = None
     total_business_data: Optional[Union[StrictFloat, StrictInt]] = None
     backlinks: Optional[AppendixBacklinksDayStatisticsRatesData] = None
     total_backlinks: Optional[Union[StrictFloat, StrictInt]] = None
-    app_data: Optional[AppendixAppDataDayStatisticsMoneyData] = None
+    app_data: Optional[AppendixAppDataLimitsRatesDataInfo] = None
     total_app_data: Optional[Union[StrictFloat, StrictInt]] = None
     content_analysis: Optional[AppendixContentAnalysisLimitsRatesDataInfo] = None
     total_content_analysis: Optional[Union[StrictFloat, StrictInt]] = None
@@ -240,12 +240,12 @@ class AppendixDayStatisticsMoneyData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "serp": AppendixSerpDayStatisticsMoneyData.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
+            "serp": AppendixSerpDayStatisticsRatesData.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
             "total": obj.get("total"),
             "total_serp": obj.get("total_serp"),
             "keywords_data": AppendixKeywordsDataDayStatisticsMoneyData.from_dict(obj["keywords_data"]) if obj.get("keywords_data") is not None else None,
             "total_keywords_data": obj.get("total_keywords_data"),
-            "appendix": AppendixAppendixsRatesDataInfo.from_dict(obj["appendix"]) if obj.get("appendix") is not None else None,
+            "appendix": AppendixAppendixDaysRatesDataInfo.from_dict(obj["appendix"]) if obj.get("appendix") is not None else None,
             "total_appendix": obj.get("total_appendix"),
             "dataforseo_labs": AppendixDataforseoLabsDayStatisticsRatesData.from_dict(obj["dataforseo_labs"]) if obj.get("dataforseo_labs") is not None else None,
             "total_dataforseo_labs": obj.get("total_dataforseo_labs"),
@@ -253,13 +253,13 @@ class AppendixDayStatisticsMoneyData(BaseModel):
             "total_domain_analytics": obj.get("total_domain_analytics"),
             "merchant": AppendixMerchantLimitsRatesDataInfo.from_dict(obj["merchant"]) if obj.get("merchant") is not None else None,
             "total_merchant": obj.get("total_merchant"),
-            "on_page": AppendixOnPageDayStatisticsMoneyData.from_dict(obj["on_page"]) if obj.get("on_page") is not None else None,
+            "on_page": AppendixOnPageLimitsRatesDataInfo.from_dict(obj["on_page"]) if obj.get("on_page") is not None else None,
             "total_on_page": obj.get("total_on_page"),
-            "business_data": AppendixBusinessDataDayStatisticsMoneyData.from_dict(obj["business_data"]) if obj.get("business_data") is not None else None,
+            "business_data": AppendixBusinessDataLimitsRatesDataInfo.from_dict(obj["business_data"]) if obj.get("business_data") is not None else None,
             "total_business_data": obj.get("total_business_data"),
             "backlinks": AppendixBacklinksDayStatisticsRatesData.from_dict(obj["backlinks"]) if obj.get("backlinks") is not None else None,
             "total_backlinks": obj.get("total_backlinks"),
-            "app_data": AppendixAppDataDayStatisticsMoneyData.from_dict(obj["app_data"]) if obj.get("app_data") is not None else None,
+            "app_data": AppendixAppDataLimitsRatesDataInfo.from_dict(obj["app_data"]) if obj.get("app_data") is not None else None,
             "total_app_data": obj.get("total_app_data"),
             "content_analysis": AppendixContentAnalysisLimitsRatesDataInfo.from_dict(obj["content_analysis"]) if obj.get("content_analysis") is not None else None,
             "total_content_analysis": obj.get("total_content_analysis"),

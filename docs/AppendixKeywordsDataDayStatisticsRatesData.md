@@ -23,11 +23,11 @@ Name | Type | Description | Notes
 **clickstream_data** | [**AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo**](AppendixClickstreamDataKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 **audience_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_suggestions_for_url** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**job_functions** | **float** |  | [optional] 
 **search_volume_history** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **industries** | **float** |  | [optional] 
-**google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
+**job_functions** | **float** |  | [optional] 
 **id_list** | **float** |  | [optional] 
+**google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 

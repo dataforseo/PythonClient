@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **total_serp** | **float** |  | [optional] 
 **keywords_data** | [**AppendixKeywordsDatasRatesDataInfo**](AppendixKeywordsDatasRatesDataInfo.md) |  | [optional] 
 **total_keywords_data** | **float** |  | [optional] 
-**appendix** | [**AppendixAppendixsRatesDataInfo**](AppendixAppendixsRatesDataInfo.md) |  | [optional] 
+**appendix** | [**AppendixAppendixDaysRatesDataInfo**](AppendixAppendixDaysRatesDataInfo.md) |  | [optional] 
 **total_appendix** | **float** |  | [optional] 
 **dataforseo_labs** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
 **total_dataforseo_labs** | **float** |  | [optional] 

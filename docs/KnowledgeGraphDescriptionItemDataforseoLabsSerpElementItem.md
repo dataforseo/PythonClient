@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **text** | **str** | description content | [optional] 
-**links** | [**List[LinkElement]**](LinkElement.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
+**links** | [**List[KnowledgeGraphLinkElementInfo]**](KnowledgeGraphLinkElementInfo.md) | sitelinks the links shown below some of Google’s search results if there are none, equals null | [optional] 
 
 ## Example
 

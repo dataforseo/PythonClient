@@ -48,7 +48,6 @@ class AppendixDataforseoLabsLimitsRatesDataInfo(BaseModel):
     keywords_for_site: Optional[AppendixInfo] = None
     keyword_suggestions: Optional[AppendixInfo] = None
     keyword_ideas: Optional[AppendixInfo] = None
-    historical_search_volume: Optional[AppendixInfo] = None
     categories_for_domain: Optional[AppendixInfo] = None
     domain_metrics_by_categories: Optional[AppendixInfo] = None
     top_searches: Optional[AppendixInfo] = None
@@ -63,7 +62,9 @@ class AppendixDataforseoLabsLimitsRatesDataInfo(BaseModel):
     search_intent: Optional[AppendixInfo] = None
     historical_bulk_traffic_estimation: Optional[AppendixInfo] = None
     categories_for_keywords: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["locations_and_languages", "categories", "errors", "product_competitors", "product_keyword_intersections", "product_rank_overview", "ranked_keywords", "serp_competitors", "subdomains", "relevant_pages", "competitors_domain", "related_keywords", "domain_rank_overview", "domain_intersection", "page_intersection", "bulk_traffic_estimation", "bulk_keyword_difficulty", "bulk_search_volume", "keywords_for_site", "keyword_suggestions", "keyword_ideas", "historical_search_volume", "categories_for_domain", "domain_metrics_by_categories", "top_searches", "domain_whois_overview", "historical_rank_overview", "keywords_for_categories", "historical_serps", "app_competitors", "keywords_for_app", "app_intersection", "bulk_app_metrics", "search_intent", "historical_bulk_traffic_estimation", "categories_for_keywords"]
+    keyword_overview: Optional[AppendixInfo] = None
+    historical_keyword_data: Optional[AppendixInfo] = None
+    __properties: ClassVar[List[str]] = ["locations_and_languages", "categories", "errors", "product_competitors", "product_keyword_intersections", "product_rank_overview", "ranked_keywords", "serp_competitors", "subdomains", "relevant_pages", "competitors_domain", "related_keywords", "domain_rank_overview", "domain_intersection", "page_intersection", "bulk_traffic_estimation", "bulk_keyword_difficulty", "bulk_search_volume", "keywords_for_site", "keyword_suggestions", "keyword_ideas", "categories_for_domain", "domain_metrics_by_categories", "top_searches", "domain_whois_overview", "historical_rank_overview", "keywords_for_categories", "historical_serps", "app_competitors", "keywords_for_app", "app_intersection", "bulk_app_metrics", "search_intent", "historical_bulk_traffic_estimation", "categories_for_keywords", "keyword_overview", "historical_keyword_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -158,9 +159,6 @@ class AppendixDataforseoLabsLimitsRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of keyword_ideas
         if self.keyword_ideas:
             _dict['keyword_ideas'] = self.keyword_ideas.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of historical_search_volume
-        if self.historical_search_volume:
-            _dict['historical_search_volume'] = self.historical_search_volume.to_dict()
         # override the default output from pydantic by calling `to_dict()` of categories_for_domain
         if self.categories_for_domain:
             _dict['categories_for_domain'] = self.categories_for_domain.to_dict()
@@ -203,6 +201,12 @@ class AppendixDataforseoLabsLimitsRatesDataInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of categories_for_keywords
         if self.categories_for_keywords:
             _dict['categories_for_keywords'] = self.categories_for_keywords.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of keyword_overview
+        if self.keyword_overview:
+            _dict['keyword_overview'] = self.keyword_overview.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of historical_keyword_data
+        if self.historical_keyword_data:
+            _dict['historical_keyword_data'] = self.historical_keyword_data.to_dict()
         # set to None if locations_and_languages (nullable) is None
         # and model_fields_set contains the field
         if self.locations_and_languages is None and "locations_and_languages" in self.model_fields_set:
@@ -251,7 +255,6 @@ class AppendixDataforseoLabsLimitsRatesDataInfo(BaseModel):
             "keywords_for_site": AppendixInfo.from_dict(obj["keywords_for_site"]) if obj.get("keywords_for_site") is not None else None,
             "keyword_suggestions": AppendixInfo.from_dict(obj["keyword_suggestions"]) if obj.get("keyword_suggestions") is not None else None,
             "keyword_ideas": AppendixInfo.from_dict(obj["keyword_ideas"]) if obj.get("keyword_ideas") is not None else None,
-            "historical_search_volume": AppendixInfo.from_dict(obj["historical_search_volume"]) if obj.get("historical_search_volume") is not None else None,
             "categories_for_domain": AppendixInfo.from_dict(obj["categories_for_domain"]) if obj.get("categories_for_domain") is not None else None,
             "domain_metrics_by_categories": AppendixInfo.from_dict(obj["domain_metrics_by_categories"]) if obj.get("domain_metrics_by_categories") is not None else None,
             "top_searches": AppendixInfo.from_dict(obj["top_searches"]) if obj.get("top_searches") is not None else None,
@@ -265,7 +268,9 @@ class AppendixDataforseoLabsLimitsRatesDataInfo(BaseModel):
             "bulk_app_metrics": AppendixInfo.from_dict(obj["bulk_app_metrics"]) if obj.get("bulk_app_metrics") is not None else None,
             "search_intent": AppendixInfo.from_dict(obj["search_intent"]) if obj.get("search_intent") is not None else None,
             "historical_bulk_traffic_estimation": AppendixInfo.from_dict(obj["historical_bulk_traffic_estimation"]) if obj.get("historical_bulk_traffic_estimation") is not None else None,
-            "categories_for_keywords": AppendixInfo.from_dict(obj["categories_for_keywords"]) if obj.get("categories_for_keywords") is not None else None
+            "categories_for_keywords": AppendixInfo.from_dict(obj["categories_for_keywords"]) if obj.get("categories_for_keywords") is not None else None,
+            "keyword_overview": AppendixInfo.from_dict(obj["keyword_overview"]) if obj.get("keyword_overview") is not None else None,
+            "historical_keyword_data": AppendixInfo.from_dict(obj["historical_keyword_data"]) if obj.get("historical_keyword_data") is not None else None
         })
         return _obj
 

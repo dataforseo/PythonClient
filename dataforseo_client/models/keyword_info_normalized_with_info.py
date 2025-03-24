@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.monthly_searches import MonthlySearches
 from typing import Optional, Set
@@ -27,10 +27,10 @@ class KeywordInfoNormalizedWithInfo(BaseModel):
     """
     KeywordInfoNormalizedWithInfo
     """ # noqa: E501
-    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the clickstream dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
-    search_volume: Optional[StrictInt] = Field(default=None, description="monthly average clickstream search volume rate")
-    is_normalized: Optional[StrictBool] = Field(default=None, description="keyword info is normalized if true, values are normalized with Bing data")
-    monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly clickstream search volume rates array of objects with clickstream search volume rates in a certain month of a year")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
+    search_volume: Optional[StrictStr] = Field(default=None, description="current search volume rate of a keyword")
+    is_normalized: Optional[StrictStr] = Field(default=None, description="keyword info is normalized if true, values are normalized with Bing data")
+    monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly search volume rates array of objects with search volume rates in a certain month of a year")
     __properties: ClassVar[List[str]] = ["last_updated_time", "search_volume", "is_normalized", "monthly_searches"]
 
     model_config = ConfigDict(

@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **keywords_for_site** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_suggestions** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_ideas** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**historical_search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **categories_for_domain** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **domain_metrics_by_categories** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **top_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
@@ -41,6 +40,8 @@ Name | Type | Description | Notes
 **search_intent** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **historical_bulk_traffic_estimation** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**keyword_overview** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**historical_keyword_data** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 
 ## Example
 

@@ -49,12 +49,12 @@ class AppendixBacklinksDayStatisticsRatesData(BaseModel):
     competitors: Optional[AppendixInfo] = None
     bulk_spam_score: Optional[AppendixInfo] = None
     bulk_pages_summary: Optional[AppendixInfo] = None
-    index: Optional[Union[StrictFloat, StrictInt]] = None
+    historical_new_lost_summary: Optional[AppendixInfo] = None
     pages_summary_with_page_info: Optional[AppendixInfo] = None
+    index: Optional[Union[StrictFloat, StrictInt]] = None
     id_list: Optional[Union[StrictFloat, StrictInt]] = None
     available_filters: Optional[Union[StrictFloat, StrictInt]] = None
-    historical_new_lost_summary: Optional[AppendixInfo] = None
-    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors", "bulk_spam_score", "bulk_pages_summary", "index", "pages_summary_with_page_info", "id_list", "available_filters", "historical_new_lost_summary"]
+    __properties: ClassVar[List[str]] = ["summary", "history", "content_duplicates", "domain_intersection", "backlinks", "domain_pages", "anchors", "referring_domains", "page_intersection", "referring_networks", "bulk_ranks", "bulk_backlinks", "bulk_new_lost_backlinks", "bulk_new_lost_referring_domains", "bulk_referring_domains", "errors", "domain_pages_summary", "timeseries_summary", "timeseries_new_lost_summary", "competitors", "bulk_spam_score", "bulk_pages_summary", "historical_new_lost_summary", "pages_summary_with_page_info", "index", "id_list", "available_filters"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -158,12 +158,12 @@ class AppendixBacklinksDayStatisticsRatesData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of bulk_pages_summary
         if self.bulk_pages_summary:
             _dict['bulk_pages_summary'] = self.bulk_pages_summary.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of pages_summary_with_page_info
-        if self.pages_summary_with_page_info:
-            _dict['pages_summary_with_page_info'] = self.pages_summary_with_page_info.to_dict()
         # override the default output from pydantic by calling `to_dict()` of historical_new_lost_summary
         if self.historical_new_lost_summary:
             _dict['historical_new_lost_summary'] = self.historical_new_lost_summary.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of pages_summary_with_page_info
+        if self.pages_summary_with_page_info:
+            _dict['pages_summary_with_page_info'] = self.pages_summary_with_page_info.to_dict()
         # set to None if errors (nullable) is None
         # and model_fields_set contains the field
         if self.errors is None and "errors" in self.model_fields_set:
@@ -218,11 +218,11 @@ class AppendixBacklinksDayStatisticsRatesData(BaseModel):
             "competitors": AppendixInfo.from_dict(obj["competitors"]) if obj.get("competitors") is not None else None,
             "bulk_spam_score": AppendixInfo.from_dict(obj["bulk_spam_score"]) if obj.get("bulk_spam_score") is not None else None,
             "bulk_pages_summary": AppendixInfo.from_dict(obj["bulk_pages_summary"]) if obj.get("bulk_pages_summary") is not None else None,
-            "index": obj.get("index"),
+            "historical_new_lost_summary": AppendixInfo.from_dict(obj["historical_new_lost_summary"]) if obj.get("historical_new_lost_summary") is not None else None,
             "pages_summary_with_page_info": AppendixInfo.from_dict(obj["pages_summary_with_page_info"]) if obj.get("pages_summary_with_page_info") is not None else None,
+            "index": obj.get("index"),
             "id_list": obj.get("id_list"),
-            "available_filters": obj.get("available_filters"),
-            "historical_new_lost_summary": AppendixInfo.from_dict(obj["historical_new_lost_summary"]) if obj.get("historical_new_lost_summary") is not None else None
+            "available_filters": obj.get("available_filters")
         })
         return _obj
 

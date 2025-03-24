@@ -31,21 +31,21 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     """
     FeaturedSnippetDataforseoLabsSerpElementItem
     """ # noqa: E501
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
+    domain: Optional[StrictStr] = Field(default=None, description="subdomain in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     featured_title: Optional[StrictStr] = Field(default=None, description="the title of the featured snippets source page")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     table: Optional[Table] = None
-    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
-    relative_url: Optional[StrictStr] = Field(default=None, description="URL in SERP that does not specify the HTTPs protocol and domain name")
-    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
-    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of monthly search traffic represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    relative_url: Optional[StrictStr] = Field(default=None, description="relative URL in SERP")
+    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated organic monthly traffic to the domain; calculated as the product of CTR (click-through-rate) and search volume values of the returned keyword learn more about how the metric is calculated in this help center article")
+    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads (USD) for the returned keyword; the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Bing Search learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = None
     backlinks_info: Optional[BacklinksInfo] = None
     rank_info: Optional[RankInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "featured_title", "description", "url", "table", "se_type", "main_domain", "relative_url", "etv", "estimated_paid_traffic_cost", "rank_changes", "backlinks_info", "rank_info"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "domain", "title", "featured_title", "description", "url", "table", "main_domain", "relative_url", "etv", "estimated_paid_traffic_cost", "rank_changes", "backlinks_info", "rank_info"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -123,6 +123,11 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if domain (nullable) is None
         # and model_fields_set contains the field
         if self.domain is None and "domain" in self.model_fields_set:
@@ -147,11 +152,6 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
         # and model_fields_set contains the field
         if self.url is None and "url" in self.model_fields_set:
             _dict['url'] = None
-
-        # set to None if se_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.se_type is None and "se_type" in self.model_fields_set:
-            _dict['se_type'] = None
 
         # set to None if main_domain (nullable) is None
         # and model_fields_set contains the field
@@ -190,13 +190,13 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "featured_title": obj.get("featured_title"),
             "description": obj.get("description"),
             "url": obj.get("url"),
             "table": Table.from_dict(obj["table"]) if obj.get("table") is not None else None,
-            "se_type": obj.get("se_type"),
             "main_domain": obj.get("main_domain"),
             "relative_url": obj.get("relative_url"),
             "etv": obj.get("etv"),

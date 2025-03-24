@@ -27,7 +27,7 @@ class SectionContentItemInfo(BaseModel):
     """
     SectionContentItemInfo
     """ # noqa: E501
-    text: Optional[StrictStr] = Field(default=None, description="content text")
+    text: Optional[StrictStr] = Field(default=None, description="secondary content on the page you can find more information about content priority calculation in this help center article")
     url: Optional[StrictStr] = Field(default=None, description="page URL. displayed in case the text is a link anchor")
     urls: Optional[List[ContentUrlInfo]] = Field(default=None, description="contains other URLs and anchors found in the content element")
     __properties: ClassVar[List[str]] = ["text", "url", "urls"]

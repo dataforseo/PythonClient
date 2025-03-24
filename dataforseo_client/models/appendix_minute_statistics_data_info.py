@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_app_data_limits_rates_data_info import AppendixAppDataLimitsRatesDataInfo
-from dataforseo_client.models.appendix_appendixs_rates_data_info import AppendixAppendixsRatesDataInfo
+from dataforseo_client.models.appendix_appendix_days_rates_data_info import AppendixAppendixDaysRatesDataInfo
 from dataforseo_client.models.appendix_backlinks_limits_rates_data_info import AppendixBacklinksLimitsRatesDataInfo
 from dataforseo_client.models.appendix_business_data_limits_rates_data_info import AppendixBusinessDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_content_analysis_limits_rates_data_info import AppendixContentAnalysisLimitsRatesDataInfo
@@ -43,7 +43,7 @@ class AppendixMinuteStatisticsDataInfo(BaseModel):
     total_serp: Optional[Union[StrictFloat, StrictInt]] = None
     keywords_data: Optional[AppendixKeywordsDatasRatesDataInfo] = None
     total_keywords_data: Optional[Union[StrictFloat, StrictInt]] = None
-    appendix: Optional[AppendixAppendixsRatesDataInfo] = None
+    appendix: Optional[AppendixAppendixDaysRatesDataInfo] = None
     total_appendix: Optional[Union[StrictFloat, StrictInt]] = None
     dataforseo_labs: Optional[AppendixDataforseoLabsLimitsRatesDataInfo] = None
     total_dataforseo_labs: Optional[Union[StrictFloat, StrictInt]] = None
@@ -228,7 +228,7 @@ class AppendixMinuteStatisticsDataInfo(BaseModel):
             "total_serp": obj.get("total_serp"),
             "keywords_data": AppendixKeywordsDatasRatesDataInfo.from_dict(obj["keywords_data"]) if obj.get("keywords_data") is not None else None,
             "total_keywords_data": obj.get("total_keywords_data"),
-            "appendix": AppendixAppendixsRatesDataInfo.from_dict(obj["appendix"]) if obj.get("appendix") is not None else None,
+            "appendix": AppendixAppendixDaysRatesDataInfo.from_dict(obj["appendix"]) if obj.get("appendix") is not None else None,
             "total_appendix": obj.get("total_appendix"),
             "dataforseo_labs": AppendixDataforseoLabsLimitsRatesDataInfo.from_dict(obj["dataforseo_labs"]) if obj.get("dataforseo_labs") is not None else None,
             "total_dataforseo_labs": obj.get("total_dataforseo_labs"),
