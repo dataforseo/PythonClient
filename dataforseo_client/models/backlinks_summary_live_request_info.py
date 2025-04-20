@@ -32,9 +32,10 @@ class BacklinksSummaryLiveRequestInfo(BaseModel):
     exclude_internal_backlinks: Optional[StrictBool] = Field(default=None, description="indicates if internal backlinks from subdomains to the target will be excluded from the results optional field if set to true, the results will not include data on internal backlinks from subdomains of the same domain as target if set to false, internal links will be included in the results default value: true")
     internal_list_limit: Optional[StrictInt] = Field(default=None, description="maximum number of elements within internal arrays optional field you can use this field to limit the number of elements within the following arrays: referring_links_tld referring_links_types referring_links_attributes referring_links_platform_types referring_links_semantic_locations default value: 10 maximum value: 1000")
     backlinks_status_type: Optional[StrictStr] = Field(default=None, description="set what backlinks to return and count optional field you can use this field to choose what backlinks will be returned and used for aggregated metrics for your target; possible values: all – all backlinks will be returned and counted; live – backlinks found during the last check will be returned and counted; lost – lost backlinks will be returned and counted; default value: live")
-    backlinks_filters: Optional[List[Optional[Any]]] = Field(default=None, description="filter the backlinks of your target optional field you can use this field to filter the initial backlinks that will be included in the dataset for aggregated metrics for your target you can filter the backlinks by all fields available in the response of this endpoint using this parameter, you can include only dofollow backlinks in the response and create a flexible backlinks dataset to calculate the metrics for example: \"backlinks_filters\": [\"dofollow\", \"=\", true]")
+    backlinks_filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="filter the backlinks of your target optional field you can use this field to filter the initial backlinks that will be included in the dataset for aggregated metrics for your target you can filter the backlinks by all fields available in the response of this endpoint using this parameter, you can include only dofollow backlinks in the response and create a flexible backlinks dataset to calculate the metrics for example: \"backlinks_filters\": [\"dofollow\", \"=\", true]")
+    rank_scale: Optional[StrictStr] = Field(default=None, description="defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values optional field you can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale possible values: one_hundred — rank values are displayed on a 0–100 scale one_thousand — rank values are displayed on a 0–1000 scale default value: one_thousand learn more about how this parameter works and how ranking metrics are calculated in this Help Center article")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "include_subdomains", "include_indirect_links", "exclude_internal_backlinks", "internal_list_limit", "backlinks_status_type", "backlinks_filters", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "include_subdomains", "include_indirect_links", "exclude_internal_backlinks", "internal_list_limit", "backlinks_status_type", "backlinks_filters", "rank_scale", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,6 +106,11 @@ class BacklinksSummaryLiveRequestInfo(BaseModel):
         if self.backlinks_filters is None and "backlinks_filters" in self.model_fields_set:
             _dict['backlinks_filters'] = None
 
+        # set to None if rank_scale (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_scale is None and "rank_scale" in self.model_fields_set:
+            _dict['rank_scale'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -129,6 +135,7 @@ class BacklinksSummaryLiveRequestInfo(BaseModel):
             "internal_list_limit": obj.get("internal_list_limit"),
             "backlinks_status_type": obj.get("backlinks_status_type"),
             "backlinks_filters": obj.get("backlinks_filters"),
+            "rank_scale": obj.get("rank_scale"),
             "tag": obj.get("tag")
         })
         return _obj

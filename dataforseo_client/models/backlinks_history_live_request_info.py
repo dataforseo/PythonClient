@@ -29,8 +29,9 @@ class BacklinksHistoryLiveRequestInfo(BaseModel):
     target: Optional[StrictStr] = Field(default=None, description="domain required field a domain should be specified without https:// and www.")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range optional field minimum value 2019-01-01 if you don’t specify this field, the minimum value will be used by default date format: \"yyyy-mm-dd\" example: \"2019-01-15\"")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field if you don’t specify this field, the today’s date will be used by default date format: \"yyyy-mm-dd\" example: \"2019-01-15\"")
+    rank_scale: Optional[StrictStr] = Field(default=None, description="defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values optional field you can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale possible values: one_hundred — rank values are displayed on a 0–100 scale one_thousand — rank values are displayed on a 0–1000 scale default value: one_thousand learn more about how this parameter works and how ranking metrics are calculated in this Help Center article")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "rank_scale", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +82,11 @@ class BacklinksHistoryLiveRequestInfo(BaseModel):
         if self.date_to is None and "date_to" in self.model_fields_set:
             _dict['date_to'] = None
 
+        # set to None if rank_scale (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_scale is None and "rank_scale" in self.model_fields_set:
+            _dict['rank_scale'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -101,6 +107,7 @@ class BacklinksHistoryLiveRequestInfo(BaseModel):
             "target": obj.get("target"),
             "date_from": obj.get("date_from"),
             "date_to": obj.get("date_to"),
+            "rank_scale": obj.get("rank_scale"),
             "tag": obj.get("tag")
         })
         return _obj

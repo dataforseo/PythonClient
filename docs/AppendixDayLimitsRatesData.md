@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**serp** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**serp** | [**AppendixSerpsRatesDataInfo**](AppendixSerpsRatesDataInfo.md) |  | [optional] 
 **total** | **float** | total amount of money deposited to your account | [optional] 
 **total_serp** | **float** |  | [optional] 
 **keywords_data** | [**AppendixKeywordsDatasRatesDataInfo**](AppendixKeywordsDatasRatesDataInfo.md) |  | [optional] 

@@ -31,8 +31,9 @@ class BacklinksTimeseriesSummaryLiveRequestInfo(BaseModel):
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range optional field if you don’t specify this field, the today’s date will be used by default minimum value shouldn’t preceed the date specified in the date_from maximum value: today’s date date format: \"yyyy-mm-dd\" example: \"2021-01-15\"")
     group_range: Optional[StrictStr] = Field(default=None, description="time range which will be used to group the results optional field default value: month possible values: day, week, month, year note: for day, we will return items corresponding to all dates between and including date_from and date_to; for week/month/year, we will return items corresponding to full weeks/months/years, where each item will indicate the last day of the week/month/year for example, if you specify: \"group_range\": \"month\", \"date_from\": \"2022-03-23\", \"date_to\": \"2022-05-13\" we will return items falling between 2022-03-01 and 2022-05-31, namely, three items corresponding to the following dates: 2022-03-31, 2022-04-30, 2022-05-31 if there is no data for a certain  day/week/month/year, we will return 0")
     include_subdomains: Optional[StrictBool] = Field(default=None, description="indicates if the subdomains of the target will be included in the search optional field if set to false, the subdomains will be ignored default value: true")
+    rank_scale: Optional[StrictStr] = Field(default=None, description="defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values optional field you can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale possible values: one_hundred — rank values are displayed on a 0–100 scale one_thousand — rank values are displayed on a 0–1000 scale default value: one_thousand learn more about how this parameter works and how ranking metrics are calculated in this Help Center article")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "group_range", "include_subdomains", "tag"]
+    __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "group_range", "include_subdomains", "rank_scale", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,11 @@ class BacklinksTimeseriesSummaryLiveRequestInfo(BaseModel):
         if self.include_subdomains is None and "include_subdomains" in self.model_fields_set:
             _dict['include_subdomains'] = None
 
+        # set to None if rank_scale (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_scale is None and "rank_scale" in self.model_fields_set:
+            _dict['rank_scale'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -115,6 +121,7 @@ class BacklinksTimeseriesSummaryLiveRequestInfo(BaseModel):
             "date_to": obj.get("date_to"),
             "group_range": obj.get("group_range"),
             "include_subdomains": obj.get("include_subdomains"),
+            "rank_scale": obj.get("rank_scale"),
             "tag": obj.get("tag")
         })
         return _obj

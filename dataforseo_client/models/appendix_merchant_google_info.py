@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_sellers_google_merchant_limits_rates_data_info import AppendixSellersGoogleMerchantLimitsRatesDataInfo
-from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
+from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +28,10 @@ class AppendixMerchantGoogleInfo(BaseModel):
     """
     AppendixMerchantGoogleInfo
     """ # noqa: E501
-    products: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    products: Optional[AppendixSerpsRatesDataInfo] = None
     sellers: Optional[AppendixSellersGoogleMerchantLimitsRatesDataInfo] = None
-    product_spec: Optional[AppendixSerpLimitsRatesDataInfo] = None
-    product_info: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    product_spec: Optional[AppendixSerpsRatesDataInfo] = None
+    product_info: Optional[AppendixSerpsRatesDataInfo] = None
     __properties: ClassVar[List[str]] = ["products", "sellers", "product_spec", "product_info"]
 
     model_config = ConfigDict(
@@ -97,10 +97,10 @@ class AppendixMerchantGoogleInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "products": AppendixSerpLimitsRatesDataInfo.from_dict(obj["products"]) if obj.get("products") is not None else None,
+            "products": AppendixSerpsRatesDataInfo.from_dict(obj["products"]) if obj.get("products") is not None else None,
             "sellers": AppendixSellersGoogleMerchantLimitsRatesDataInfo.from_dict(obj["sellers"]) if obj.get("sellers") is not None else None,
-            "product_spec": AppendixSerpLimitsRatesDataInfo.from_dict(obj["product_spec"]) if obj.get("product_spec") is not None else None,
-            "product_info": AppendixSerpLimitsRatesDataInfo.from_dict(obj["product_info"]) if obj.get("product_info") is not None else None
+            "product_spec": AppendixSerpsRatesDataInfo.from_dict(obj["product_spec"]) if obj.get("product_spec") is not None else None,
+            "product_info": AppendixSerpsRatesDataInfo.from_dict(obj["product_info"]) if obj.get("product_info") is not None else None
         })
         return _obj
 

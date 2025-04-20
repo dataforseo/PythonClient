@@ -27,10 +27,10 @@ from dataforseo_client.models.appendix_content_analysis_limits_rates_data_info i
 from dataforseo_client.models.appendix_content_generation_limits_rates_data_info import AppendixContentGenerationLimitsRatesDataInfo
 from dataforseo_client.models.appendix_dataforseo_labs_day_statistics_rates_data import AppendixDataforseoLabsDayStatisticsRatesData
 from dataforseo_client.models.appendix_domain_analytics_limits_rates_data_info import AppendixDomainAnalyticsLimitsRatesDataInfo
-from dataforseo_client.models.appendix_jobs_serp_limits_rates_data_info import AppendixJobsSerpLimitsRatesDataInfo
 from dataforseo_client.models.appendix_keywords_data_day_statistics_money_data import AppendixKeywordsDataDayStatisticsMoneyData
 from dataforseo_client.models.appendix_merchant_limits_rates_data_info import AppendixMerchantLimitsRatesDataInfo
 from dataforseo_client.models.appendix_on_page_limits_rates_data_info import AppendixOnPageLimitsRatesDataInfo
+from dataforseo_client.models.appendix_reviews_day_statistics_money_data import AppendixReviewsDayStatisticsMoneyData
 from dataforseo_client.models.appendix_serp_day_statistics_rates_data import AppendixSerpDayStatisticsRatesData
 from typing import Optional, Set
 from typing_extensions import Self
@@ -67,7 +67,7 @@ class AppendixDayStatisticsMoneyData(BaseModel):
     value: Optional[StrictStr] = Field(default=None, description="time period for grouping day in the yyyy-MM-dd format minute in the yyyy-MM-dd HH:mm format")
     total_traffic_analytics: Optional[Union[StrictFloat, StrictInt]] = None
     total_reviews: Optional[Union[StrictFloat, StrictInt]] = None
-    reviews: Optional[AppendixJobsSerpLimitsRatesDataInfo] = None
+    reviews: Optional[AppendixReviewsDayStatisticsMoneyData] = None
     __properties: ClassVar[List[str]] = ["serp", "total", "total_serp", "keywords_data", "total_keywords_data", "appendix", "total_appendix", "dataforseo_labs", "total_dataforseo_labs", "domain_analytics", "total_domain_analytics", "merchant", "total_merchant", "on_page", "total_on_page", "business_data", "total_business_data", "backlinks", "total_backlinks", "app_data", "total_app_data", "content_analysis", "total_content_analysis", "content_generation", "total_content_generation", "value", "total_traffic_analytics", "total_reviews", "reviews"]
 
     model_config = ConfigDict(
@@ -268,7 +268,7 @@ class AppendixDayStatisticsMoneyData(BaseModel):
             "value": obj.get("value"),
             "total_traffic_analytics": obj.get("total_traffic_analytics"),
             "total_reviews": obj.get("total_reviews"),
-            "reviews": AppendixJobsSerpLimitsRatesDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
+            "reviews": AppendixReviewsDayStatisticsMoneyData.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None
         })
         return _obj
 

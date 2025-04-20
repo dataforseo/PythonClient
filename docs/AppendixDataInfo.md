@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**serp** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**serp** | [**AppendixSerpDataInfo**](AppendixSerpDataInfo.md) |  | [optional] 
 **total** | **float** | total amount of money deposited to your account | [optional] 
 **total_serp** | **float** |  | [optional] 
 **keywords_data** | [**AppendixKeywordsDataDataInfo**](AppendixKeywordsDataDataInfo.md) |  | [optional] 
@@ -31,11 +31,11 @@ Name | Type | Description | Notes
 **content_generation** | [**AppendixContentGenerationLimitsRatesDataInfo**](AppendixContentGenerationLimitsRatesDataInfo.md) |  | [optional] 
 **total_content_generation** | **float** |  | [optional] 
 **total_reviews** | **float** |  | [optional] 
-**reviews** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**reviews** | [**AppendixSerpsRatesDataInfo**](AppendixSerpsRatesDataInfo.md) |  | [optional] 
 **total_social** | **float** |  | [optional] 
-**social** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**social** | [**AppendixSerpsRatesDataInfo**](AppendixSerpsRatesDataInfo.md) |  | [optional] 
 **total_traffic_analytics** | **float** |  | [optional] 
-**traffic_analytics** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**traffic_analytics** | [**AppendixSerpsRatesDataInfo**](AppendixSerpsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 

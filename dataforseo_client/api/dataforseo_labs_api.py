@@ -3414,7 +3414,7 @@ class DataforseoLabsApi:
     ) -> DataforseoLabsBingBulkTrafficEstimationLiveResponseInfo:
         """bing_bulk_traffic_estimation_live
 
-        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'
+        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, and pages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'
 
         :param dataforseo_labs_bing_bulk_traffic_estimation_live_request_info:
         :type dataforseo_labs_bing_bulk_traffic_estimation_live_request_info: List[DataforseoLabsBingBulkTrafficEstimationLiveRequestInfo]
@@ -3481,7 +3481,7 @@ class DataforseoLabsApi:
     ) -> ApiResponse[DataforseoLabsBingBulkTrafficEstimationLiveResponseInfo]:
         """bing_bulk_traffic_estimation_live
 
-        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'
+        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, and pages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'
 
         :param dataforseo_labs_bing_bulk_traffic_estimation_live_request_info:
         :type dataforseo_labs_bing_bulk_traffic_estimation_live_request_info: List[DataforseoLabsBingBulkTrafficEstimationLiveRequestInfo]
@@ -3548,7 +3548,7 @@ class DataforseoLabsApi:
     ) -> RESTResponseType:
         """bing_bulk_traffic_estimation_live
 
-        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'
+        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, and pages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'
 
         :param dataforseo_labs_bing_bulk_traffic_estimation_live_request_info:
         :type dataforseo_labs_bing_bulk_traffic_estimation_live_request_info: List[DataforseoLabsBingBulkTrafficEstimationLiveRequestInfo]
@@ -5325,7 +5325,7 @@ class DataforseoLabsApi:
     ) -> DataforseoLabsBingRelevantPagesLiveResponseInfo:
         """bing_relevant_pages_live
 
-        ‌ for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'
+        ‌ This endpoint will provide you with rankings and traffic data for the web pages of the specified domain. You will be able to review each page’s ranking distribution and estimated monthly traffic volume from both organic and paid searches. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'
 
         :param dataforseo_labs_bing_relevant_pages_live_request_info:
         :type dataforseo_labs_bing_relevant_pages_live_request_info: List[DataforseoLabsBingRelevantPagesLiveRequestInfo]
@@ -5392,7 +5392,7 @@ class DataforseoLabsApi:
     ) -> ApiResponse[DataforseoLabsBingRelevantPagesLiveResponseInfo]:
         """bing_relevant_pages_live
 
-        ‌ for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'
+        ‌ This endpoint will provide you with rankings and traffic data for the web pages of the specified domain. You will be able to review each page’s ranking distribution and estimated monthly traffic volume from both organic and paid searches. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'
 
         :param dataforseo_labs_bing_relevant_pages_live_request_info:
         :type dataforseo_labs_bing_relevant_pages_live_request_info: List[DataforseoLabsBingRelevantPagesLiveRequestInfo]
@@ -5459,7 +5459,7 @@ class DataforseoLabsApi:
     ) -> RESTResponseType:
         """bing_relevant_pages_live
 
-        ‌ for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'
+        ‌ This endpoint will provide you with rankings and traffic data for the web pages of the specified domain. You will be able to review each page’s ranking distribution and estimated monthly traffic volume from both organic and paid searches. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'
 
         :param dataforseo_labs_bing_relevant_pages_live_request_info:
         :type dataforseo_labs_bing_relevant_pages_live_request_info: List[DataforseoLabsBingRelevantPagesLiveRequestInfo]
@@ -9002,7 +9002,7 @@ class DataforseoLabsApi:
     ) -> DataforseoLabsGoogleBulkTrafficEstimationLiveResponseInfo:
         """google_bulk_traffic_estimation_live
 
-        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'
+        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, or webpages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'
 
         :param dataforseo_labs_google_bulk_traffic_estimation_live_request_info:
         :type dataforseo_labs_google_bulk_traffic_estimation_live_request_info: List[DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo]
@@ -9069,7 +9069,7 @@ class DataforseoLabsApi:
     ) -> ApiResponse[DataforseoLabsGoogleBulkTrafficEstimationLiveResponseInfo]:
         """google_bulk_traffic_estimation_live
 
-        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'
+        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, or webpages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'
 
         :param dataforseo_labs_google_bulk_traffic_estimation_live_request_info:
         :type dataforseo_labs_google_bulk_traffic_estimation_live_request_info: List[DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo]
@@ -9136,7 +9136,7 @@ class DataforseoLabsApi:
     ) -> RESTResponseType:
         """google_bulk_traffic_estimation_live
 
-        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'
+        ‌ This endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, or webpages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'
 
         :param dataforseo_labs_google_bulk_traffic_estimation_live_request_info:
         :type dataforseo_labs_google_bulk_traffic_estimation_live_request_info: List[DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo]

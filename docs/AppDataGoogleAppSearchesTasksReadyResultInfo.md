@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **se_type** | **str** | search engine type | [optional] 
 **date_posted** | **str** | date when the task was posted (in the UTC format) | [optional] 
 **tag** | **str** | user-defined task identifier | [optional] 
-**endpoint_advanced** | **str** | URL for collecting the results of the Google App Searches task | [optional] 
-**endpoint_html** | **str** | URL for collecting the results of the Google App Searches HTML task if HTML tasks are not supported in the specified endpoint, the value will be null | [optional] 
+**endpoint_advanced** | **str** | URL for collecting the results of the Google app_searches task | [optional] 
+**endpoint_html** | **str** | URL for collecting the results of the Google app_searches HTML task if HTML tasks are not supported in the specified endpoint, the value will be null | [optional] 
 
 ## Example
 

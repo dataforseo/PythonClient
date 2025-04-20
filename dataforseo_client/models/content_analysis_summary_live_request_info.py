@@ -32,9 +32,10 @@ class ContentAnalysisSummaryLiveRequestInfo(BaseModel):
     internal_list_limit: Optional[StrictInt] = Field(default=None, description="maximum number of elements within internal arrays optional field you can use this field to limit the number of elements within the following arrays: top_domains text_categories page_categories countries languages default value: 1 maximum value: 20")
     positive_connotation_threshold: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="positive connotation threshold optional field specified as the probability index threshold for positive sentiment related to the citation content if you specify this field, connotation_types object in the response will only contain data on citations with positive sentiment probability more than or equal to the specified value possible values: from 0 to 1 default value: 0.4")
     sentiments_connotation_threshold: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="sentiment connotation threshold optional field specified as the probability index threshold for sentiment connotations related to the citation content if you specify this field, sentiment_connotations object in the response will only contain data on citations where the probability per each sentiment is more than or equal to the specified value possible values: from 0 to 1 default value: 0.4")
-    initial_dataset_filters: Optional[List[Optional[Any]]] = Field(default=None, description="initial dataset filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not you can use the % operator with like and not_like to match any string of zero or more characters example: [\"domain\",\"<>\", \"logitech.com\"] [[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]] [[\"domain\",\"<>\",\"logitech.com\"]], \"and\", [[\"content_info.connotation_types.negative\",\">\",1000], \"or\", [\"content_info.text_category\",\"has\",10994]]] for more information about filters, please refer to Content Analysis API – Filters")
+    initial_dataset_filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="initial dataset filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not you can use the % operator with like and not_like to match any string of zero or more characters example: [\"domain\",\"<>\", \"logitech.com\"] [[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]] [[\"domain\",\"<>\",\"logitech.com\"]], \"and\", [[\"content_info.connotation_types.negative\",\">\",1000], \"or\", [\"content_info.text_category\",\"has\",10994]]] for more information about filters, please refer to Content Analysis API – Filters")
+    rank_scale: Optional[StrictStr] = Field(default=None, description="defines the scale used for calculating and displaying the rank values optional field you can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale possible values: one_hundred — rank values are displayed on a 0–100 scale one_thousand — rank values are displayed on a 0–1000 scale default value: one_thousand learn more about how this parameter works in this Help Center article")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["keyword", "keyword_fields", "page_type", "internal_list_limit", "positive_connotation_threshold", "sentiments_connotation_threshold", "initial_dataset_filters", "tag"]
+    __properties: ClassVar[List[str]] = ["keyword", "keyword_fields", "page_type", "internal_list_limit", "positive_connotation_threshold", "sentiments_connotation_threshold", "initial_dataset_filters", "rank_scale", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,6 +106,11 @@ class ContentAnalysisSummaryLiveRequestInfo(BaseModel):
         if self.initial_dataset_filters is None and "initial_dataset_filters" in self.model_fields_set:
             _dict['initial_dataset_filters'] = None
 
+        # set to None if rank_scale (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_scale is None and "rank_scale" in self.model_fields_set:
+            _dict['rank_scale'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -129,6 +135,7 @@ class ContentAnalysisSummaryLiveRequestInfo(BaseModel):
             "positive_connotation_threshold": obj.get("positive_connotation_threshold"),
             "sentiments_connotation_threshold": obj.get("sentiments_connotation_threshold"),
             "initial_dataset_filters": obj.get("initial_dataset_filters"),
+            "rank_scale": obj.get("rank_scale"),
             "tag": obj.get("tag")
         })
         return _obj

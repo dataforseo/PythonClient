@@ -37,9 +37,9 @@ class AppendixContentAnalysisDayStatisticsRatesData(BaseModel):
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     categories: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     available_filters: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["search", "summary", "sentiment_analysis", "rating_distribution", "phrase_trends", "category_trends", "locations", "languages", "categories", "errors", "id_list", "available_filters"]
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["search", "summary", "sentiment_analysis", "rating_distribution", "phrase_trends", "category_trends", "locations", "languages", "categories", "errors", "available_filters", "id_list"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,15 +118,15 @@ class AppendixContentAnalysisDayStatisticsRatesData(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
-        # set to None if id_list (nullable) is None
-        # and model_fields_set contains the field
-        if self.id_list is None and "id_list" in self.model_fields_set:
-            _dict['id_list'] = None
-
         # set to None if available_filters (nullable) is None
         # and model_fields_set contains the field
         if self.available_filters is None and "available_filters" in self.model_fields_set:
             _dict['available_filters'] = None
+
+        # set to None if id_list (nullable) is None
+        # and model_fields_set contains the field
+        if self.id_list is None and "id_list" in self.model_fields_set:
+            _dict['id_list'] = None
 
         return _dict
 
@@ -150,8 +150,8 @@ class AppendixContentAnalysisDayStatisticsRatesData(BaseModel):
             "languages": obj.get("languages"),
             "categories": obj.get("categories"),
             "errors": obj.get("errors"),
-            "id_list": obj.get("id_list"),
-            "available_filters": obj.get("available_filters")
+            "available_filters": obj.get("available_filters"),
+            "id_list": obj.get("id_list")
         })
         return _obj
 

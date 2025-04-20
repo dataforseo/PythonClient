@@ -30,7 +30,7 @@ from dataforseo_client.models.appendix_domain_analytics_limits_rates_data_info i
 from dataforseo_client.models.appendix_keywords_datas_rates_data_info import AppendixKeywordsDatasRatesDataInfo
 from dataforseo_client.models.appendix_merchant_limits_rates_data_info import AppendixMerchantLimitsRatesDataInfo
 from dataforseo_client.models.appendix_on_page_limits_rates_data_info import AppendixOnPageLimitsRatesDataInfo
-from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
+from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,7 +38,7 @@ class AppendixDayLimitsRatesData(BaseModel):
     """
     AppendixDayLimitsRatesData
     """ # noqa: E501
-    serp: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    serp: Optional[AppendixSerpsRatesDataInfo] = None
     total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of money deposited to your account")
     total_serp: Optional[Union[StrictFloat, StrictInt]] = None
     keywords_data: Optional[AppendixKeywordsDatasRatesDataInfo] = None
@@ -235,7 +235,7 @@ class AppendixDayLimitsRatesData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "serp": AppendixSerpLimitsRatesDataInfo.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
+            "serp": AppendixSerpsRatesDataInfo.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
             "total": obj.get("total"),
             "total_serp": obj.get("total_serp"),
             "keywords_data": AppendixKeywordsDatasRatesDataInfo.from_dict(obj["keywords_data"]) if obj.get("keywords_data") is not None else None,

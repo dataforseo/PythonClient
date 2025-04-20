@@ -2378,7 +2378,7 @@ class SerpApi:
     ) -> SerpBingLocalPackLiveRegularResponseInfo:
         """bing_local_pack_live_regular
 
-        ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
+        ‌‌ Live Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
         :param serp_bing_local_pack_live_regular_request_info:
         :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
@@ -2445,7 +2445,7 @@ class SerpApi:
     ) -> ApiResponse[SerpBingLocalPackLiveRegularResponseInfo]:
         """bing_local_pack_live_regular
 
-        ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
+        ‌‌ Live Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
         :param serp_bing_local_pack_live_regular_request_info:
         :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
@@ -2512,7 +2512,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """bing_local_pack_live_regular
 
-        ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
+        ‌‌ Live Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
         :param serp_bing_local_pack_live_regular_request_info:
         :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
@@ -16703,7 +16703,7 @@ class SerpApi:
     @validate_call
     def google_finance_quote_task_get_advanced(
         self,
-        id: StrictStr,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16721,7 +16721,7 @@ class SerpApi:
 
         ‌ Live Google Finance Quote provides real-time data from the ‘Quote’ tab of Google Finance. These results are specific to the parameters you specify in the request: ticker in the keyword field, location and language. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_quote/task_get/advanced/?bash'
 
-        :param id: (required)
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
         :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -16770,7 +16770,7 @@ class SerpApi:
     @validate_call
     def google_finance_quote_task_get_advanced_with_http_info(
         self,
-        id: StrictStr,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16788,7 +16788,7 @@ class SerpApi:
 
         ‌ Live Google Finance Quote provides real-time data from the ‘Quote’ tab of Google Finance. These results are specific to the parameters you specify in the request: ticker in the keyword field, location and language. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_quote/task_get/advanced/?bash'
 
-        :param id: (required)
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
         :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -16837,7 +16837,7 @@ class SerpApi:
     @validate_call
     def google_finance_quote_task_get_advanced_without_preload_content(
         self,
-        id: StrictStr,
+        id: Annotated[StrictStr, Field(description="task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -16855,7 +16855,7 @@ class SerpApi:
 
         ‌ Live Google Finance Quote provides real-time data from the ‘Quote’ tab of Google Finance. These results are specific to the parameters you specify in the request: ticker in the keyword field, location and language. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/finance_quote/task_get/advanced/?bash'
 
-        :param id: (required)
+        :param id: task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time (required)
         :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -21907,7 +21907,7 @@ class SerpApi:
     ) -> SerpGoogleLocalFinderLiveAdvancedResponseInfo:
         """google_local_finder_live_advanced
 
-        ‌‌ Live Google Local finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
+        ‌‌ Live Google Local_finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
 
         :param serp_google_local_finder_live_advanced_request_info:
         :type serp_google_local_finder_live_advanced_request_info: List[SerpGoogleLocalFinderLiveAdvancedRequestInfo]
@@ -21974,7 +21974,7 @@ class SerpApi:
     ) -> ApiResponse[SerpGoogleLocalFinderLiveAdvancedResponseInfo]:
         """google_local_finder_live_advanced
 
-        ‌‌ Live Google Local finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
+        ‌‌ Live Google Local_finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
 
         :param serp_google_local_finder_live_advanced_request_info:
         :type serp_google_local_finder_live_advanced_request_info: List[SerpGoogleLocalFinderLiveAdvancedRequestInfo]
@@ -22041,7 +22041,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """google_local_finder_live_advanced
 
-        ‌‌ Live Google Local finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
+        ‌‌ Live Google Local_finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
 
         :param serp_google_local_finder_live_advanced_request_info:
         :type serp_google_local_finder_live_advanced_request_info: List[SerpGoogleLocalFinderLiveAdvancedRequestInfo]
@@ -22180,7 +22180,7 @@ class SerpApi:
     ) -> SerpGoogleLocalFinderLiveHtmlResponseInfo:
         """google_local_finder_live_html
 
-        ‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
+        ‌ Live Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
         :param serp_google_local_finder_live_html_request_info:
         :type serp_google_local_finder_live_html_request_info: List[SerpGoogleLocalFinderLiveHtmlRequestInfo]
@@ -22247,7 +22247,7 @@ class SerpApi:
     ) -> ApiResponse[SerpGoogleLocalFinderLiveHtmlResponseInfo]:
         """google_local_finder_live_html
 
-        ‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
+        ‌ Live Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
         :param serp_google_local_finder_live_html_request_info:
         :type serp_google_local_finder_live_html_request_info: List[SerpGoogleLocalFinderLiveHtmlRequestInfo]
@@ -22314,7 +22314,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """google_local_finder_live_html
 
-        ‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
+        ‌ Live Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
         :param serp_google_local_finder_live_html_request_info:
         :type serp_google_local_finder_live_html_request_info: List[SerpGoogleLocalFinderLiveHtmlRequestInfo]
@@ -22971,7 +22971,7 @@ class SerpApi:
     ) -> SerpGoogleLocalFinderTaskPostResponseInfo:
         """google_local_finder_task_post
 
-        ‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
+        ‌‌ Google local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
         :param serp_google_local_finder_task_post_request_info:
         :type serp_google_local_finder_task_post_request_info: List[SerpGoogleLocalFinderTaskPostRequestInfo]
@@ -23038,7 +23038,7 @@ class SerpApi:
     ) -> ApiResponse[SerpGoogleLocalFinderTaskPostResponseInfo]:
         """google_local_finder_task_post
 
-        ‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
+        ‌‌ Google local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
         :param serp_google_local_finder_task_post_request_info:
         :type serp_google_local_finder_task_post_request_info: List[SerpGoogleLocalFinderTaskPostRequestInfo]
@@ -23105,7 +23105,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """google_local_finder_task_post
 
-        ‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
+        ‌‌ Google local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
         :param serp_google_local_finder_task_post_request_info:
         :type serp_google_local_finder_task_post_request_info: List[SerpGoogleLocalFinderTaskPostRequestInfo]

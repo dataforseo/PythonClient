@@ -30,10 +30,10 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
     tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
     task_get: Optional[Union[StrictFloat, StrictInt]] = None
     live: Optional[Union[StrictFloat, StrictInt]] = None
+    languages: Optional[Union[StrictFloat, StrictInt]] = None
     audits: Optional[Union[StrictFloat, StrictInt]] = None
     versions: Optional[Union[StrictFloat, StrictInt]] = None
-    languages: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "task_get", "live", "audits", "versions", "languages"]
+    __properties: ClassVar[List[str]] = ["task_post", "tasks_ready", "task_get", "live", "languages", "audits", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +94,11 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
         if self.live is None and "live" in self.model_fields_set:
             _dict['live'] = None
 
+        # set to None if languages (nullable) is None
+        # and model_fields_set contains the field
+        if self.languages is None and "languages" in self.model_fields_set:
+            _dict['languages'] = None
+
         # set to None if audits (nullable) is None
         # and model_fields_set contains the field
         if self.audits is None and "audits" in self.model_fields_set:
@@ -103,11 +108,6 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
         # and model_fields_set contains the field
         if self.versions is None and "versions" in self.model_fields_set:
             _dict['versions'] = None
-
-        # set to None if languages (nullable) is None
-        # and model_fields_set contains the field
-        if self.languages is None and "languages" in self.model_fields_set:
-            _dict['languages'] = None
 
         return _dict
 
@@ -125,9 +125,9 @@ class AppendixLighthouseOnPageDayStatisticsRatesData(BaseModel):
             "tasks_ready": obj.get("tasks_ready"),
             "task_get": obj.get("task_get"),
             "live": obj.get("live"),
+            "languages": obj.get("languages"),
             "audits": obj.get("audits"),
-            "versions": obj.get("versions"),
-            "languages": obj.get("languages")
+            "versions": obj.get("versions")
         })
         return _obj
 

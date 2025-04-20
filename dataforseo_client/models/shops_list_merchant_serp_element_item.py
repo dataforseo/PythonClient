@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import ConfigDict, Field, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from dataforseo_client.models.rating_element import RatingElement
 from typing import Optional, Set
@@ -34,9 +34,9 @@ class ShopsListMerchantSerpElementItem(BaseMerchantSerpElementItem):
     url: Optional[StrictStr] = Field(default=None, description="Google Shopping URL forwarding to the product page on the seller’s website if you want to obtain a URL of the advertisement forwarding to the product page on the seller’s website, please refer to the Google Shopping Sellers Ad URL endpoint")
     details: Optional[StrictStr] = Field(default=None, description="details and special offers if there are no details, the value will be null")
     base_price: Optional[StrictInt] = Field(default=None, description="product price without tax and shipping")
-    tax: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the amount of tax tax is specified as the actual amount of money, not as the percentage")
+    tax: Optional[StrictInt] = Field(default=None, description="the amount of tax tax is specified as the actual amount of money, not as the percentage")
     shipping_price: Optional[StrictInt] = Field(default=None, description="product shipping price")
-    total_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="product price including tax and shipping")
+    total_price: Optional[StrictInt] = Field(default=None, description="product price including tax and shipping")
     currency: Optional[StrictStr] = Field(default=None, description="currency in the ISO format example: USD")
     price_multiplier: Optional[StrictInt] = Field(default=None, description="monthly price multiplier indicates the number of months covered by the monthly payment for the product")
     seller_name: Optional[StrictStr] = Field(default=None, description="name of the seller the name of the company that placed a corresponding product on Google Shopping")

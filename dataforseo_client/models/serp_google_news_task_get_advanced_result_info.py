@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_google_news_serp_element_item import BaseGoogleNewsSerpElementItem
 from dataforseo_client.models.refinement_chips_info import RefinementChipsInfo
@@ -38,11 +38,12 @@ class SerpGoogleNewsTaskGetAdvancedResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     spell: Optional[SpellInfo] = None
     refinement_chips: Optional[RefinementChipsInfo] = None
+    includes_non_news_search_results: Optional[StrictBool] = Field(default=None, description="indicates whether the response contains non-news search results in addition to news content")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item types: top_stories, news_search")
     se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseGoogleNewsSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
-    __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "refinement_chips", "item_types", "se_results_count", "items_count", "items"]
+    __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "refinement_chips", "includes_non_news_search_results", "item_types", "se_results_count", "items_count", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,6 +132,11 @@ class SerpGoogleNewsTaskGetAdvancedResultInfo(BaseModel):
         if self.datetime is None and "datetime" in self.model_fields_set:
             _dict['datetime'] = None
 
+        # set to None if includes_non_news_search_results (nullable) is None
+        # and model_fields_set contains the field
+        if self.includes_non_news_search_results is None and "includes_non_news_search_results" in self.model_fields_set:
+            _dict['includes_non_news_search_results'] = None
+
         # set to None if item_types (nullable) is None
         # and model_fields_set contains the field
         if self.item_types is None and "item_types" in self.model_fields_set:
@@ -172,6 +178,7 @@ class SerpGoogleNewsTaskGetAdvancedResultInfo(BaseModel):
             "datetime": obj.get("datetime"),
             "spell": SpellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
             "refinement_chips": RefinementChipsInfo.from_dict(obj["refinement_chips"]) if obj.get("refinement_chips") is not None else None,
+            "includes_non_news_search_results": obj.get("includes_non_news_search_results"),
             "item_types": obj.get("item_types"),
             "se_results_count": obj.get("se_results_count"),
             "items_count": obj.get("items_count"),

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
+from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +27,9 @@ class AppendixMerchantAmazonInfo(BaseModel):
     """
     AppendixMerchantAmazonInfo
     """ # noqa: E501
-    asin: Optional[AppendixSerpLimitsRatesDataInfo] = None
-    products: Optional[AppendixSerpLimitsRatesDataInfo] = None
-    sellers: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    asin: Optional[AppendixSerpsRatesDataInfo] = None
+    products: Optional[AppendixSerpsRatesDataInfo] = None
+    sellers: Optional[AppendixSerpsRatesDataInfo] = None
     __properties: ClassVar[List[str]] = ["asin", "products", "sellers"]
 
     model_config = ConfigDict(
@@ -92,9 +92,9 @@ class AppendixMerchantAmazonInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "asin": AppendixSerpLimitsRatesDataInfo.from_dict(obj["asin"]) if obj.get("asin") is not None else None,
-            "products": AppendixSerpLimitsRatesDataInfo.from_dict(obj["products"]) if obj.get("products") is not None else None,
-            "sellers": AppendixSerpLimitsRatesDataInfo.from_dict(obj["sellers"]) if obj.get("sellers") is not None else None
+            "asin": AppendixSerpsRatesDataInfo.from_dict(obj["asin"]) if obj.get("asin") is not None else None,
+            "products": AppendixSerpsRatesDataInfo.from_dict(obj["products"]) if obj.get("products") is not None else None,
+            "sellers": AppendixSerpsRatesDataInfo.from_dict(obj["sellers"]) if obj.get("sellers") is not None else None
         })
         return _obj
 

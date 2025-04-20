@@ -38,9 +38,9 @@ class AppendixSerpDayStatisticsRatesData(BaseModel):
     tasks_fixed: Optional[Union[StrictFloat, StrictInt]] = None
     jobs: Optional[AppendixJobsSerpLimitsRatesDataInfo] = None
     screenshot: Optional[Union[StrictFloat, StrictInt]] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     ai_summary: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["task_post", "task_get", "tasks_ready", "locations", "languages", "live", "errors", "tasks_fixed", "jobs", "screenshot", "id_list", "ai_summary"]
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["task_post", "task_get", "tasks_ready", "locations", "languages", "live", "errors", "tasks_fixed", "jobs", "screenshot", "ai_summary", "id_list"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -125,15 +125,15 @@ class AppendixSerpDayStatisticsRatesData(BaseModel):
         if self.screenshot is None and "screenshot" in self.model_fields_set:
             _dict['screenshot'] = None
 
-        # set to None if id_list (nullable) is None
-        # and model_fields_set contains the field
-        if self.id_list is None and "id_list" in self.model_fields_set:
-            _dict['id_list'] = None
-
         # set to None if ai_summary (nullable) is None
         # and model_fields_set contains the field
         if self.ai_summary is None and "ai_summary" in self.model_fields_set:
             _dict['ai_summary'] = None
+
+        # set to None if id_list (nullable) is None
+        # and model_fields_set contains the field
+        if self.id_list is None and "id_list" in self.model_fields_set:
+            _dict['id_list'] = None
 
         return _dict
 
@@ -157,8 +157,8 @@ class AppendixSerpDayStatisticsRatesData(BaseModel):
             "tasks_fixed": obj.get("tasks_fixed"),
             "jobs": AppendixJobsSerpLimitsRatesDataInfo.from_dict(obj["jobs"]) if obj.get("jobs") is not None else None,
             "screenshot": obj.get("screenshot"),
-            "id_list": obj.get("id_list"),
-            "ai_summary": obj.get("ai_summary")
+            "ai_summary": obj.get("ai_summary"),
+            "id_list": obj.get("id_list")
         })
         return _obj
 

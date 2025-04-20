@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **my_business_info** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **my_business_updates** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**hotel_info** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**hotel_info** | [**AppendixSerpsRatesDataInfo**](AppendixSerpsRatesDataInfo.md) |  | [optional] 
 **hotel_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **reviews** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **questions_and_answers** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 

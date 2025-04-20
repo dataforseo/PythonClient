@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **value** | **str** | time period for grouping day in the yyyy-MM-dd format minute in the yyyy-MM-dd HH:mm format | [optional] 
 **total_traffic_analytics** | **float** |  | [optional] 
 **total_reviews** | **float** |  | [optional] 
-**reviews** | [**AppendixJobsSerpLimitsRatesDataInfo**](AppendixJobsSerpLimitsRatesDataInfo.md) |  | [optional] 
+**reviews** | [**AppendixReviewsDayStatisticsMoneyData**](AppendixReviewsDayStatisticsMoneyData.md) |  | [optional] 
 
 ## Example
 

@@ -32,9 +32,9 @@ class AppendixDomainAnalyticsDayStatisticsRatesData(BaseModel):
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     whois: Optional[AppendixWhoisDomainAnalyticsLimitsRatesDataInfo] = None
     technologies: Optional[AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo] = None
-    id_list: Optional[Union[StrictFloat, StrictInt]] = None
     available_filters: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["tasks_ready", "errors", "whois", "technologies", "id_list", "available_filters"]
+    id_list: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["tasks_ready", "errors", "whois", "technologies", "available_filters", "id_list"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,15 +91,15 @@ class AppendixDomainAnalyticsDayStatisticsRatesData(BaseModel):
         if self.errors is None and "errors" in self.model_fields_set:
             _dict['errors'] = None
 
-        # set to None if id_list (nullable) is None
-        # and model_fields_set contains the field
-        if self.id_list is None and "id_list" in self.model_fields_set:
-            _dict['id_list'] = None
-
         # set to None if available_filters (nullable) is None
         # and model_fields_set contains the field
         if self.available_filters is None and "available_filters" in self.model_fields_set:
             _dict['available_filters'] = None
+
+        # set to None if id_list (nullable) is None
+        # and model_fields_set contains the field
+        if self.id_list is None and "id_list" in self.model_fields_set:
+            _dict['id_list'] = None
 
         return _dict
 
@@ -117,8 +117,8 @@ class AppendixDomainAnalyticsDayStatisticsRatesData(BaseModel):
             "errors": obj.get("errors"),
             "whois": AppendixWhoisDomainAnalyticsLimitsRatesDataInfo.from_dict(obj["whois"]) if obj.get("whois") is not None else None,
             "technologies": AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo.from_dict(obj["technologies"]) if obj.get("technologies") is not None else None,
-            "id_list": obj.get("id_list"),
-            "available_filters": obj.get("available_filters")
+            "available_filters": obj.get("available_filters"),
+            "id_list": obj.get("id_list")
         })
         return _obj
 

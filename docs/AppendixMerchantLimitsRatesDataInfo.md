@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **locations** | **float** |  | [optional] 
 **languages** | **float** |  | [optional] 
 **errors** | **float** |  | [optional] 
-**reviews** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**reviews** | [**AppendixSerpsRatesDataInfo**](AppendixSerpsRatesDataInfo.md) |  | [optional] 
 **tasks_ready** | **float** |  | [optional] 
 
 ## Example

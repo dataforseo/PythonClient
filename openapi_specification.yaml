@@ -274,7 +274,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0b3dc0eb-8076-4393-9611-69c5173e42f9
+          example: bd350566-9848-4627-ad5e-82682be7c3b2
       responses:
         '200':
           description: Successful operation
@@ -451,7 +451,7 @@ paths:
     post:
       tags:
         - Serp
-      description: "‌‌\nGoogle Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'"
+      description: "‌‌\nGoogle local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'"
       operationId: GoogleLocalFinderTaskPost
       requestBody:
         content:
@@ -535,7 +535,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5e73dd45-f9d0-4250-a1c3-bb9c2f7dd3ab
+          example: b6b633f2-44d0-4354-8384-b9ef1e90b065
       responses:
         '200':
           description: Successful operation
@@ -549,7 +549,7 @@ paths:
     post:
       tags:
         - Serp
-      description: "‌‌\nLive Google Local finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'"
+      description: "‌‌\nLive Google Local_finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'"
       operationId: GoogleLocalFinderLiveAdvanced
       requestBody:
         content:
@@ -571,7 +571,7 @@ paths:
     post:
       tags:
         - Serp
-      description: "‌\nLive Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'"
+      description: "‌\nLive Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'"
       operationId: GoogleLocalFinderLiveHtml
       requestBody:
         content:
@@ -677,7 +677,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 075720d2-9a44-41a9-a820-935dc61af0b0
+          example: 7f9a1e3b-1ed6-4f51-8651-05daa9712c63
       responses:
         '200':
           description: Successful operation
@@ -916,7 +916,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5701826d-1bbe-495d-a722-2ba6ba73bb53
+          example: 0a1f486a-88fe-4593-a98e-56b52c9febdb
       responses:
         '200':
           description: Successful operation
@@ -1133,7 +1133,7 @@ paths:
           required: true
           schema:
             type: string
-          example: e5ee1e05-4edf-4d92-aca6-3d8c6778d8d0
+          example: b89e31c7-b59c-4382-a926-527de229529f
       responses:
         '200':
           description: Successful operation
@@ -1748,7 +1748,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fe7e2d37-5d48-4864-95cf-4a1fd8ee483a
+          example: dc352e3e-5632-4140-a4a1-4fb3c5338ebe
       responses:
         '200':
           description: Successful operation
@@ -1912,7 +1912,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 423c9887-45a3-4bbd-9b37-cfb6742a695e
+          example: f17106c5-43ba-44bd-a0cb-6a33c4dd53ea
       responses:
         '200':
           description: Successful operation
@@ -1926,7 +1926,7 @@ paths:
     post:
       tags:
         - Serp
-      description: "‌‌\nLive Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'"
+      description: "‌‌\nLive Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location.\nfor more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'"
       operationId: BingLocalPackLiveRegular
       requestBody:
         content:
@@ -2474,7 +2474,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 4b43985b-3c53-4c70-8def-87cca476d4bf
+          example: f445242d-b633-480c-9e47-b3860628a4d5
       responses:
         '200':
           description: Successful operation
@@ -2714,7 +2714,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 951fbace-c46f-4532-95be-6771e0dac421
+          example: a73d3b58-9708-4adc-9e7a-dee7a84c7676
       responses:
         '200':
           description: Successful operation
@@ -2835,7 +2835,7 @@ paths:
           required: true
           schema:
             type: string
-          example: aa2fcda6-1556-4958-8243-7e8a3b326d04
+          example: 6c6a699d-bac4-4b63-80c0-61e2568e47b1
       responses:
         '200':
           description: Successful operation
@@ -3009,7 +3009,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 59fff0c5-b45a-462a-807b-803c7a5bed5b
+          example: 22f76705-efc0-411f-9e3c-3990439e2db5
       responses:
         '200':
           description: Successful operation
@@ -3092,7 +3092,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 70940376-b99e-4dec-a3d9-8269597c6b61
+          example: 78a9d8e7-d4bc-4101-b8be-659958b4afd3
       responses:
         '200':
           description: Successful operation
@@ -3219,7 +3219,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 44fea317-355d-4a3c-a23a-98da9cbfec6c
+          example: c8c5a862-f7c2-4d9b-95c7-3fee7a284fb9
       responses:
         '200':
           description: Successful operation
@@ -3319,6 +3319,7 @@ paths:
       parameters:
         - name: id
           in: path
+          description: "task identifier\nunique task identifier in our system in the UUID format\nyou will be able to use it within 30 days to request the results of the task at any time"
           required: true
           schema:
             type: string
@@ -3345,7 +3346,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 7f275c4d-f0c2-476f-b493-4bf4be5f48b5
+          example: 108fc499-866c-4cec-9644-0428ed812013
       responses:
         '200':
           description: Successful operation
@@ -4376,7 +4377,7 @@ paths:
     post:
       tags:
         - DataforseoLabs
-      description: "‌\nThis endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'"
+      description: "‌\nThis endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, or webpages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/bulk_traffic_estimation/live/?bash'"
       operationId: GoogleBulkTrafficEstimationLive
       requestBody:
         content:
@@ -4618,7 +4619,7 @@ paths:
     post:
       tags:
         - DataforseoLabs
-      description: "‌\nThis endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'"
+      description: "‌\nThis endpoint will provide you with estimated monthly traffic volumes for up to 1,000 domains, subdomains, and pages. Along with organic search traffic estimations, you will also get separate values for paid search, featured snippet, and local pack results.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/bulk_traffic_estimation/live/?bash'"
       operationId: BingBulkTrafficEstimationLive
       requestBody:
         content:
@@ -4772,7 +4773,7 @@ paths:
     post:
       tags:
         - DataforseoLabs
-      description: "‌\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'"
+      description: "‌\nThis endpoint will provide you with rankings and traffic data for the web pages of the specified domain. You will be able to review each page’s ranking distribution and estimated monthly traffic volume from both organic and paid searches.\nfor more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/bing/relevant_pages/live/?bash'"
       operationId: BingRelevantPagesLive
       requestBody:
         content:
@@ -5173,7 +5174,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 185e66e7-b530-4c23-b98e-997d09becf84
+          example: 1ffcdc28-ea42-45c3-b68e-5402b937a478
       responses:
         '200':
           description: Successful operation
@@ -5255,7 +5256,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2fdea4e0-5441-4a92-a3fe-9fc1d6c69c42
+          example: 9ea51b5d-2283-435a-ae90-8f373ccbc630
       responses:
         '200':
           description: Successful operation
@@ -5337,7 +5338,7 @@ paths:
           required: true
           schema:
             type: string
-          example: b9e85c26-af35-4e52-b9c1-a5ef88142bd8
+          example: 76cd4c2d-bfc7-4460-81ac-ca80735c2658
       responses:
         '200':
           description: Successful operation
@@ -5419,7 +5420,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0fd17104-174b-4355-89fb-d42ebe6a00a1
+          example: 5c20baef-c3d0-438e-b6dd-bf35db9ca9dc
       responses:
         '200':
           description: Successful operation
@@ -5569,7 +5570,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c3ee2731-7231-4647-93bf-3d9e6586db9d
+          example: a4ed314c-b760-415b-99f0-90d285d325de
       responses:
         '200':
           description: Successful operation
@@ -5807,7 +5808,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5c6f99ea-f6e5-49d3-9e47-7d9de6008b34
+          example: 5d11cac5-a284-453c-bfcb-4a9585f20630
       responses:
         '200':
           description: Successful operation
@@ -5919,7 +5920,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1d898e1a-9afb-4fe8-a38d-df1c141d5f5d
+          example: a4a1b939-d5e4-40c3-be42-7bf792563b40
       responses:
         '200':
           description: Successful operation
@@ -6001,7 +6002,7 @@ paths:
           required: true
           schema:
             type: string
-          example: f216fb5b-9d88-4638-a2fa-d3a94fc6f595
+          example: 48241f81-1909-4b4a-b0df-bea07078a44d
       responses:
         '200':
           description: Successful operation
@@ -6083,7 +6084,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5e9adbe5-be3e-447a-8d26-2f3a81c5aa1e
+          example: 3d0785fc-d695-4c5e-a922-0ea869f4b3ae
       responses:
         '200':
           description: Successful operation
@@ -6180,7 +6181,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5c08f7f8-8551-4874-9dbc-2f08fd014a30
+          example: 0ee40bed-a979-4862-b9f9-ecc50243518d
       responses:
         '200':
           description: Successful operation
@@ -6277,7 +6278,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 75e45158-71d0-4019-8f22-3f28f22f6eb1
+          example: 4a7a559d-bb65-4fcc-86a4-45c56edf2509
       responses:
         '200':
           description: Successful operation
@@ -8122,7 +8123,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 476084d4-faf0-4d76-98a4-ef78d8f39df9
+          example: 48006dfe-9291-4f95-8857-9fb6a4cb18a3
       responses:
         '200':
           description: Successful operation
@@ -8205,7 +8206,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 11ef35fc-a8b7-4333-a4b4-b27bfb666a45
+          example: 2a4c259d-7dbc-4038-ba55-96be2799680a
       responses:
         '200':
           description: Successful operation
@@ -8288,7 +8289,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 0aea0dad-7969-4196-8b2f-5feb12f62537
+          example: 5fe27954-de98-4545-a7cc-fb6c004f93fa
       responses:
         '200':
           description: Successful operation
@@ -8507,7 +8508,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 025cc326-2d4e-4080-89ac-06326a29ae91
+          example: b4b44ad9-e7eb-47c1-b950-c900c3d2aa01
       responses:
         '200':
           description: Successful operation
@@ -8590,7 +8591,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 05b22c4c-fe30-47a2-b368-98509992dc13
+          example: 4db59c3b-39c3-4122-92b8-10979409c4dc
       responses:
         '200':
           description: Successful operation
@@ -8673,7 +8674,7 @@ paths:
           required: true
           schema:
             type: string
-          example: dc1124ba-3204-4659-8089-5318288cb427
+          example: 24c561e5-6cac-4cda-8962-9993d8a0eab6
       responses:
         '200':
           description: Successful operation
@@ -8756,7 +8757,7 @@ paths:
           required: true
           schema:
             type: string
-          example: c7aa69bc-c350-4802-bf52-d7c763faa79a
+          example: 3595c771-ffc9-451b-b2f0-ba4245de8277
       responses:
         '200':
           description: Successful operation
@@ -8944,7 +8945,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5572b829-2f17-46a9-b892-9f7ea412ecea
+          example: 4041d8ad-75ef-4c9d-a9fc-5b44a3a44965
       responses:
         '200':
           description: Successful operation
@@ -8967,7 +8968,7 @@ paths:
           required: true
           schema:
             type: string
-          example: d92af1e6-b20a-4940-98e2-0e329d390ca7
+          example: 6efb961f-bb81-4e51-833f-60592a4c87d7
       responses:
         '200':
           description: Successful operation
@@ -9027,7 +9028,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 84d5cff0-f05e-4e84-ad92-5b6da3ede9f9
+          example: 4abf09ed-24cf-4baf-a080-d703f4b08bc3
       responses:
         '200':
           description: Successful operation
@@ -9050,7 +9051,7 @@ paths:
           required: true
           schema:
             type: string
-          example: cca74058-ec8d-4035-83f0-902da5dccfce
+          example: 9a173d90-ca0f-43a0-a142-d4bbfa40ed1b
       responses:
         '200':
           description: Successful operation
@@ -9110,7 +9111,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 40891fb3-370b-4d75-88e3-924b7bd94c86
+          example: 17f96bbc-6d14-47ef-b811-afe68079d827
       responses:
         '200':
           description: Successful operation
@@ -9133,7 +9134,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9dcd111d-4620-4a36-bb55-7dc61aebd0c4
+          example: 78db88c1-366f-4728-a33d-ad2733848534
       responses:
         '200':
           description: Successful operation
@@ -9193,7 +9194,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 2e662569-9f7b-4834-bb5f-f16511675670
+          example: d401cf85-294b-41ab-9be7-66cc1629f552
       responses:
         '200':
           description: Successful operation
@@ -9216,7 +9217,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 80024923-4f5f-41c1-bc61-b82029a4f963
+          example: fc5e00f9-351c-403d-b0b2-070845db19e3
       responses:
         '200':
           description: Successful operation
@@ -9358,7 +9359,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 9c0d2cdf-7b97-4c73-9a20-45c11e457eaa
+          example: 8d1d2559-a1a5-4a66-a27a-b6b2ccfc01f9
       responses:
         '200':
           description: Successful operation
@@ -9418,7 +9419,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 1dd87c32-6f4b-40cd-b022-3cb22e34888c
+          example: 65dd669e-0d17-461b-891c-821c862b71d1
       responses:
         '200':
           description: Successful operation
@@ -9478,7 +9479,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fd2fc06f-867a-4846-92c8-7baab631f44b
+          example: 310ee395-0683-4b68-b2e1-7757aea44f3c
       responses:
         '200':
           description: Successful operation
@@ -9538,7 +9539,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 5b6d0957-b1f9-4edb-9573-8d9f21cb190e
+          example: 0294027f-ee61-4717-80fb-8841b96a9528
       responses:
         '200':
           description: Successful operation
@@ -10083,7 +10084,7 @@ paths:
           required: true
           schema:
             type: string
-          example: fce22b3c-9ab5-4899-8790-0dbf71a204d4
+          example: 6d5d97dc-711a-4d2c-82e1-cffe4a608416
       responses:
         '200':
           description: Successful operation
@@ -10845,6 +10846,7 @@ components:
           compare_sites: '#/components/schemas/CompareSitesSerpElementItem'
           courses: '#/components/schemas/CoursesSerpElementItem'
           ai_overview: '#/components/schemas/AiOverviewSerpElementItem'
+          third_party_reviews: '#/components/schemas/ThirdPartyReviewsSerpElementItem'
           event_item: '#/components/schemas/EventItemSerpElementItem'
           dictionary: '#/components/schemas/DictionarySerpElementItem'
           google_finance_hero_groups: '#/components/schemas/GoogleFinanceHeroGroupsSerpElementItem'
@@ -11225,8 +11227,8 @@ components:
         propertyName: resource_type
         mapping:
           html: '#/components/schemas/OnPageHtmlResourceElementItem'
-          stylesheet: '#/components/schemas/OnPageStylesheetResourceElementItem'
           script: '#/components/schemas/OnPageScriptResourceElementItem'
+          stylesheet: '#/components/schemas/OnPageStylesheetResourceElementItem'
           image: '#/components/schemas/OnPageImageResourceElementItem'
           broken: '#/components/schemas/OnPageBrokenResourceElementItem'
     ReviewResponseItemInfo:
@@ -12279,11 +12281,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:31:26 +00:00'
+          example: '2025-01-18 03:17:37 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:31:26 +00:00'
+          example: '2025-03-18 03:17:37 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -16364,6 +16366,37 @@ components:
               nullable: true
             rectangle:
               $ref: '#/components/schemas/Rectangle'
+    ThirdPartyReviewsSerpElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseSerpElementItem'
+        - type: object
+          properties:
+            position:
+              type: string
+              description: "the alignment of the element in SERP\ncan take the following values:\nleft, right"
+              nullable: true
+            xpath:
+              type: string
+              description: the XPath of the element
+              nullable: true
+            reviews_count:
+              type: integer
+              description: the number of reviews
+              format: int64
+              nullable: true
+            title:
+              type: string
+              description: title of the row
+              nullable: true
+            url:
+              type: string
+              description: source URL
+              nullable: true
+            rating:
+              $ref: '#/components/schemas/RatingInfo'
+            rectangle:
+              $ref: '#/components/schemas/Rectangle'
     SerpGoogleOrganicTaskGetAdvancedResultInfo:
       type: object
       properties:
@@ -18593,6 +18626,10 @@ components:
           $ref: '#/components/schemas/SpellInfo'
         refinement_chips:
           $ref: '#/components/schemas/RefinementChipsInfo'
+        includes_non_news_search_results:
+          type: boolean
+          description: indicates whether the response contains non-news search results in addition to news content
+          nullable: true
         item_types:
           type: array
           items:
@@ -18807,6 +18844,10 @@ components:
           $ref: '#/components/schemas/SpellInfo'
         refinement_chips:
           $ref: '#/components/schemas/RefinementChipsInfo'
+        includes_non_news_search_results:
+          type: boolean
+          description: indicates whether the response contains non-news search results in addition to news content
+          nullable: true
         item_types:
           type: array
           items:
@@ -23453,7 +23494,7 @@ components:
           items:
             type: string
             nullable: true
-          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, carousel, events, featured_snippet, hotels_pack, images, jobs, local_pack, map, organic, paid, people_also_ask, people_also_search, questions_and_answers,recipes, related_searches, shopping, top_stories, video"
+          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, carousel, events, featured_snippet, hotels_pack, images, jobs, local_pack, map, organic, paid, people_also_ask, people_also_search, questions_and_answers,recipes, related_searches, shopping, top_stories, video, ai_overview"
           nullable: true
         se_results_count:
           type: integer
@@ -23670,7 +23711,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BaseSerpElementItem'
-          description: "items inside the element\narray of 8 search queries related to the keyword"
+          description: items in SERP
           nullable: true
     SerpBingOrganicLiveRegularTaskInfo:
       type: object
@@ -23814,7 +23855,7 @@ components:
           items:
             type: string
             nullable: true
-          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, carousel, events, featured_snippet, hotels_pack, images, jobs, local_pack, map, organic, paid, people_also_ask, people_also_search, questions_and_answers,recipes, related_searches, shopping, top_stories, video"
+          description: "types of search results in SERP\ncontains types of search results (items) found in SERP.\npossible item types:\nanswer_box, carousel, events, featured_snippet, hotels_pack, images, jobs, local_pack, map, organic, paid, people_also_ask, people_also_search, questions_and_answers,recipes, related_searches, shopping, top_stories, video, ai_overview"
           nullable: true
         se_results_count:
           type: integer
@@ -31059,11 +31100,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:35:42 +00:00'
+          example: '2025-01-18 03:35:25 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:35:42 +00:00'
+          example: '2025-03-18 03:35:25 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -32480,11 +32521,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:36:13 +00:00'
+          example: '2025-01-18 03:35:58 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:36:13 +00:00'
+          example: '2025-03-18 03:35:58 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -34111,7 +34152,7 @@ components:
             - milk store new york
         language_name:
           type: string
-          description: "full name of the language\nrequired field if don’t specify language_code\nyou can receive the list of available languages with their language_name by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\n\nNote: this endpoint currently supports the following languages only:\nArabic, ar,\nChinese(Traditional), zh-TW,\nCzech, cs,\nDanish, da,\nDutch, nl,\nEnglish, en,\nFinnish, fi,\nFrench, fr,\nGerman, de,\nHebrew, he,\nHindi, hi,\nItalian, it,\nJapanese, ja,\nKorean, ko,\nMalay, ms,\nNorwegian(Bokmål), nb,\nPolish, pl,\nPortuguese, pt,\nRomanian, ro,\nRussian, ru,\nSpanish, es,\nSwedish, sv,\nThai, th,\nUkrainian, uk,\nVietnamese, vi\nexample:\nEnglish"
+          description: "full name of the language\nrequired field if don’t specify language_code\nyou can receive the list of available languages with their language_name by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages\n\nNote: this endpoint currently supports the following languages only:\nArabic, ar,\nChinese(Traditional), zh-TW,\nCzech, cs,\nDanish, da,\nDutch, nl,\nEnglish, en,\nFinnish, fi,\nFrench, fr,\nGerman, de,\nHebrew, he,\nHindi, hi,\nItalian, it,\nJapanese, ja,\nKorean, ko,\nMalay, ms,\nNorwegian(Bokmål), nb,\nPolish, pl,\nPortuguese, pt,\nRomanian, ro,\nRussian, ru,\nSpanish, es,\nSwedish, sv,\nThai, th,\nUkrainian, uk,\nVietnamese, vi,\nBulgarian, bg,\nCroatian, hr,\nSerbian, sr,\nSlovenian, sl,\nBosnian, bs\nexample:\nEnglish"
           nullable: true
         language_code:
           type: string
@@ -37924,7 +37965,7 @@ components:
           type: array
           items:
             type: string
-          description: "target domains and websites\nrequired field\nyou can specify domains, subdomains, and webpages in this field;\ndomains and subdomains should be specified without https:// and www.;\npages should be specified with absolute URL, including https:// and www.;\nyou can set up to 1000 domains, subdomains or webpages"
+          description: "target domains, subdomains, and webpages\nrequired field\nyou can specify domains, subdomains, and webpages in this field;\ndomains and subdomains should be specified without https:// and www.;\npages should be specified with absolute URL, including https:// and www.;\nyou can set up to 1000 domains, subdomains or webpages"
           example:
             - dataforseo.com
             - cnn.com
@@ -39461,7 +39502,7 @@ components:
           type: array
           items:
             type: string
-          description: "target domains and websites\nrequired field\nyou can specify domains, subdomains, and webpages in this field;\ndomains and subdomains should be specified without https:// and www.;\npages should be specified with absolute URL, including https:// and www.;\nyou can set up to 1000 domains, subdomains or webpages"
+          description: "target domains, subdomains, and webpages\nrequired field\nyou can specify domains, subdomains, and webpages in this field;\ndomains and subdomains should be specified without https:// and www.;\npages should be specified with absolute URL, including https:// and www.;\nyou can set up to 1000 domains, subdomains or webpages"
           example:
             - dataforseo.com
             - cnn.com
@@ -41779,11 +41820,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:38:10 +00:00'
+          example: '2025-01-18 03:37:51 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:38:10 +00:00'
+          example: '2025-03-18 03:37:51 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -43783,7 +43824,7 @@ components:
           type: array
           items:
             type: string
-          description: "keywords\nrequired field\nthe maximum number of keywords you can specify: 5\nthe minimum number of symbols must be greater than 1\ncomma characters (,) in the specified keywords will be unset and ignored\nNote: keywords cannot consist of a combination of the following characters: < > | \\ \" - + = ~ ! : * ( ) [ ] { }\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          description: "keywords\nrequired field\nthe maximum number of keywords you can specify: 5\nthe maximum number of characters you can specify in a keyword: 100\nthe minimum number of characters must be greater than 1\ncomma characters (,) in the specified keywords will be unset and ignored\nNote: keywords cannot consist of a combination of the following characters: < > | \\ \" - + = ~ ! : * ( ) [ ] { }\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
           example:
             - seo api
             - rank api
@@ -44109,7 +44150,7 @@ components:
           type: array
           items:
             type: string
-          description: "keywords\nrequired field\nif keywords are not specified, the results will not contain keyword-related data;\nthe maximum number of keywords you can specify: 5\nthe minimum number of symbols must be greater than 1\ncomma characters (,) in the specified keywords will be unset and ignored\nNote: keywords cannot consist of a combination of the following characters: < > | \\ \" - + = ~ ! : * ( ) [ ] { }\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
+          description: "keywords\nrequired field\nthe maximum number of keywords you can specify: 5\nthe maximum number of characters you can specify in a keyword: 100\nthe minimum number of characters must be greater than 1\ncomma characters (,) in the specified keywords will be unset and ignored\nNote: keywords cannot consist of a combination of the following characters: < > | \\ \" - + = ~ ! : * ( ) [ ] { }\nNote: to obtain google_trends_topics_list and google_trends_queries_list items, specify no more than 1 keyword\nlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article"
           example:
             - rugby
             - cricket
@@ -47626,11 +47667,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:39:41 +00:00'
+          example: '2025-01-18 03:39:11 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:39:41 +00:00'
+          example: '2025-03-18 03:39:11 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -47996,6 +48037,10 @@ components:
             - 
             - 
             - 
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -48153,7 +48198,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and and link count per each platform\nexample values:\ncms, blogs, unknown, ecommerce, message-boards"
+          description: "types of referring platforms\nindicates referring platform types and and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -48217,6 +48262,10 @@ components:
           description: "ending date of the time range\noptional field\nif you don’t specify this field, the today’s date will be used by default\ndate format: \"yyyy-mm-dd\"\nexample:\n\"2019-01-15\""
           nullable: true
           example: '2021-01-01'
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -48356,7 +48405,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and and link count per each platform"
+          description: "types of referring platforms\nindicates referring platform types and and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -48493,6 +48542,10 @@ components:
           type: boolean
           description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the results\ndefault value: true"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -48594,7 +48647,7 @@ components:
           items:
             type: string
             nullable: true
-          description: "platform types of the referring domain\nexample:\n\"cms\",\n\"blogs\""
+          description: "platform types of the referring domain\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         domain_from_is_ip:
           type: boolean
@@ -48847,6 +48900,10 @@ components:
           type: boolean
           description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, the backlinks from subdomains of the target will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -48963,7 +49020,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and and link count per each platform"
+          description: "types of referring platforms\nindicates referring platform types and and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -49079,6 +49136,10 @@ components:
         exclude_internal_backlinks:
           type: boolean
           description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the results\ndefault value: true"
+          nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
           nullable: true
         tag:
           type: string
@@ -49288,7 +49349,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and and link count per each platform"
+          description: "types of referring platforms\nindicates referring platform types and and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -49480,6 +49541,10 @@ components:
           type: boolean
           description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, backlinks from the subdomains of the target domain will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -49561,6 +49626,11 @@ components:
           description: indicates the number of pages pointing to the relevant url
           format: int64
           nullable: true
+        referring_pages_nofollow:
+          type: integer
+          description: number of referring pages pointing at least one nofollow link to the page
+          format: int64
+          nullable: true
         referring_links_tld:
           type: object
           additionalProperties:
@@ -49591,7 +49661,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and and link count per each platform"
+          description: "types of referring platforms\nindicates referring platform types and and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -49608,11 +49678,6 @@ components:
             format: int64
             nullable: true
           description: "ISO country codes of the referring links\nindicates ISO country codes of the domains where the referring links are located and the link count per each country"
-          nullable: true
-        referring_pages_nofollow:
-          type: integer
-          description: number of referring pages pointing at least one nofollow link to the page
-          format: int64
           nullable: true
     BacklinksDomainPagesSummaryLiveResultInfo:
       type: object
@@ -49722,6 +49787,10 @@ components:
           description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, the backlinks from subdomains of the target will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
           nullable: true
           example: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -49838,7 +49907,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and link count per each platform"
+          description: "types of referring platforms\nindicates referring platform types and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -49969,6 +50038,10 @@ components:
           description: "indicates whether the backlinks from subdomains of the target are excluded\noptional field\nif set to false, the backlinks from subdomains of the target will be ommited and you won’t receive the same domain in the response;\ndefault value: true"
           nullable: true
           example: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -50080,7 +50153,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and and link count per each platform"
+          description: "types of referring platforms\nindicates referring platform types and and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -50185,6 +50258,10 @@ components:
         exclude_internal_backlinks:
           type: boolean
           description: "indicates if internal backlinks from subdomains to the target will be excluded from the results\noptional field\nif set to true, the results will not include data on internal backlinks from subdomains of the same domain as target\nif set to false, internal links will be included in the results\ndefault value: true"
+          nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
           nullable: true
         tag:
           type: string
@@ -50328,6 +50405,10 @@ components:
           type: string
           description: "indicates whether to intersect backlinks\noptional field\nuse this field to intersect or merge results for the specified domains\npossible values: all, partial\nall – results are based on all backlinks;\npartial – results are based on the intersecting backlinks only;\ndefault value: all"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -50444,7 +50525,7 @@ components:
             type: integer
             format: int64
             nullable: true
-          description: "types of referring platforms\nindicates referring platform types and link count per each platform"
+          description: "types of referring platforms\nindicates referring platform types and link count per each platform\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         referring_links_semantic_locations:
           type: object
@@ -50598,6 +50679,10 @@ components:
           type: string
           description: "indicates whether to intersect backlinks\noptional field\nuse this field to intersect or merge results for the specified URLs\npossible values: all, partial\nall – results are based on all backlinks;\npartial – results are based on the intersecting backlinks only;\ndefault value: all"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -50666,7 +50751,7 @@ components:
           items:
             type: string
             nullable: true
-          description: "platform types of the referring domain\nexample:\n\"cms\",\n\"blogs\""
+          description: "platform types of the referring domain\npossible values: cms, blogs, ecommerce, message-boards, wikis, news, organization"
           nullable: true
         domain_from_is_ip:
           type: boolean
@@ -50883,6 +50968,10 @@ components:
         include_subdomains:
           type: boolean
           description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
+          nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
           nullable: true
         tag:
           type: string
@@ -51151,6 +51240,10 @@ components:
             - https://variety.com/
             - https://stackoverflow.com/
             - www.trustpilot.com
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -51632,6 +51725,10 @@ components:
           type: boolean
           description: "indicates if the subdomains of the target will be included in the search\noptional field\nif set to false, the subdomains will be ignored\ndefault value: true"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank, domain_from_rank, and page_from_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works and how ranking metrics are calculated in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -51813,11 +51910,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:40:09 +00:00'
+          example: '2025-01-18 03:39:41 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:40:09 +00:00'
+          example: '2025-03-18 03:39:41 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -53170,6 +53267,20 @@ components:
           type: integer
           description: "time to complete downloading the resource\nthe amount of time a browser needs to complete downloading a resource"
           nullable: true
+    OnPageScriptResourceElementItem:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
+        - type: object
+          properties:
+            meta:
+              $ref: '#/components/schemas/ResourceMetaInfo'
+            fetch_timing:
+              $ref: '#/components/schemas/FetchTiming'
+            accept_type:
+              type: string
+              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
+              nullable: true
     OnPageStylesheetResourceElementItem:
       type: object
       allOf:
@@ -53240,20 +53351,6 @@ components:
               items:
                 $ref: '#/components/schemas/OnPageResourcesResultInfo'
               description: array of results
-              nullable: true
-    OnPageScriptResourceElementItem:
-      type: object
-      allOf:
-        - $ref: '#/components/schemas/BaseOnPageResourceItemInfo'
-        - type: object
-          properties:
-            meta:
-              $ref: '#/components/schemas/ResourceMetaInfo'
-            fetch_timing:
-              $ref: '#/components/schemas/FetchTiming'
-            accept_type:
-              type: string
-              description: "indicates the expected type of resource\nfor example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource\npossible values:\nany, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font"
               nullable: true
     OnPageImageResourceElementItem:
       type: object
@@ -55075,11 +55172,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:40:58 +00:00'
+          example: '2025-01-18 03:40:27 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:40:58 +00:00'
+          example: '2025-03-18 03:40:27 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -55354,6 +55451,10 @@ components:
           type: string
           description: "offset token for subsequent requests\noptional field\nprovided in the identical field of the response to each request;\nuse this parameter to avoid timeouts while trying to obtain over 10,000 results in a single request;\nby specifying the unique offset_token value from the response array, you will get the subsequent results of the initial task;\noffset_token values are unique for each subsequent task\nNote: if the offset_token is specified in the request, all other parameters except limit will not be taken into account when processing a task"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the domain_rank, and url_rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -55616,6 +55717,10 @@ components:
             nullable: true
           description: "initial dataset filtering parameters\noptional field\nyou can add several filters at once (8 filters maximum)\nyou should set a logical operator and, or between the conditions\nthe following operators are supported:\nregex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not\nyou can use the % operator with like and not_like to match any string of zero or more characters\nexample:\n[\"domain\",\"<>\", \"logitech.com\"]\n[[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]]\n[[\"domain\",\"<>\",\"logitech.com\"]],\n\"and\",\n[[\"content_info.connotation_types.negative\",\">\",1000],\n\"or\",\n[\"content_info.text_category\",\"has\",10994]]]\nfor more information about filters, please refer to Content Analysis API – Filters"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -55760,6 +55865,10 @@ components:
             nullable: true
           description: "initial dataset filtering parameters\noptional field\nyou can add several filters at once (8 filters maximum)\nyou should set a logical operator and, or between the conditions\nthe following operators are supported:\nregex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not, match, not_match\nyou can use the % operator with like and not_like to match any string of zero or more characters\nexample:\n[\"domain\",\"<>\", \"logitech.com\"]\n[[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]]\n[[\"domain\",\"<>\",\"logitech.com\"]],\n\"and\",\n[[\"content_info.connotation_types.negative\",\">\",1000],\n\"or\",\n[\"content_info.text_category\",\"has\",10994]]]\nfor more information about filters, please refer to Content Analysis API – Filters"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -55867,6 +55976,10 @@ components:
             nullable: true
           description: "initial dataset filtering parameters\noptional field\nyou can add several filters at once (8 filters maximum)\nyou should set a logical operator and, or between the conditions\nthe following operators are supported:\nregex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not, match, not_match\nyou can use the % operator with like and not_like to match any string of zero or more characters\nexample:\n[\"domain\",\"<>\", \"logitech.com\"]\n[[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]]\n[[\"domain\",\"<>\",\"logitech.com\"]],\n\"and\",\n[[\"content_info.connotation_types.negative\",\">\",1000],\n\"or\",\n[\"content_info.text_category\",\"has\",10994]]]\nfor more information about filters, please refer to Content Analysis API – Filters"
           nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works in this Help Center article"
+          nullable: true
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -55961,6 +56074,10 @@ components:
           items:
             type: string
           description: "initial dataset filtering parameters\noptional field\nyou can add several filters at once (8 filters maximum)\nyou should set a logical operator and, or between the conditions\nthe following operators are supported:\nregex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not, match, not_match\nyou can use the % operator with like and not_like to match any string of zero or more characters\nexample:\n[\"domain\",\"<>\", \"logitech.com\"]\n[[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]]\n[[\"domain\",\"<>\",\"logitech.com\"]],\n\"and\",\n[[\"content_info.connotation_types.negative\",\">\",1000],\n\"or\",\n[\"content_info.text_category\",\"has\",10994]]]\nfor more information about filters, please refer to Content Analysis API – Filters"
+          nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works in this Help Center article"
           nullable: true
         tag:
           type: string
@@ -56109,6 +56226,10 @@ components:
             type: object
             nullable: true
           description: "initial dataset filtering parameters\noptional field\nyou can add several filters at once (8 filters maximum)\nyou should set a logical operator and, or between the conditions\nthe following operators are supported:\nregex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, has, has_not, match, not_match\nyou can use the % operator with like and not_like to match any string of zero or more characters\nexample:\n[\"domain\",\"<>\", \"logitech.com\"]\n[[\"domain\",\"<>\",\"logitech.com\"],\"and\",[\"content_info.connotation_types.negative\",\">\",1000]]\n[[\"domain\",\"<>\",\"logitech.com\"]],\n\"and\",\n[[\"content_info.connotation_types.negative\",\">\",1000],\n\"or\",\n[\"content_info.text_category\",\"has\",10994]]]\nfor more information about filters, please refer to Content Analysis API – Filters"
+          nullable: true
+        rank_scale:
+          type: string
+          description: "defines the scale used for calculating and displaying the rank values\noptional field\nyou can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale\npossible values:\none_hundred — rank values are displayed on a 0–100 scale\none_thousand — rank values are displayed on a 0–1000 scale\ndefault value: one_thousand\nlearn more about how this parameter works in this Help Center article"
           nullable: true
         tag:
           type: string
@@ -56985,11 +57106,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:41:23 +00:00'
+          example: '2025-01-18 03:40:45 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:41:23 +00:00'
+          example: '2025-03-18 03:40:45 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -58055,7 +58176,7 @@ components:
               description: product price without tax and shipping
               nullable: true
             tax:
-              type: number
+              type: integer
               description: "the amount of tax\ntax is specified as the actual amount of money, not as the percentage"
               nullable: true
             shipping_price:
@@ -58063,7 +58184,7 @@ components:
               description: product shipping price
               nullable: true
             total_price:
-              type: number
+              type: integer
               description: product price including tax and shipping
               format: int64
               nullable: true
@@ -60841,11 +60962,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:42:47 +00:00'
+          example: '2025-01-18 03:41:46 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:42:47 +00:00'
+          example: '2025-03-18 03:41:46 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -61209,9 +61330,9 @@ components:
           nullable: true
         depth:
           type: integer
-          description: "parsing depth\noptional field\nnumber of results to be returned to be returned from the Google Play SERP;\nwe strongly recommend setting the parsing depth in the multiples of 100, because our system processes 100 results in a row;\nNote: your account will be billed per each SERP containing up to 100 results;\nthus, setting a depth above 100 may result in additional charges if the search engine returns more than 100 results;\nif the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically\ndefault value: 100;\nmaximum value: 200"
+          description: "parsing depth\noptional field\nnumber of results to be returned to be returned from the Google Play SERP;\nwe strongly recommend setting the parsing depth in the multiples of 30, because our system processes 30 results in a row;\nNote: your account will be billed per each SERP containing up to 30 results;\nthus, setting a depth above 30 may result in additional charges if the search engine returns more than 30 results;\nif the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically\ndefault value: 30;\nmaximum value: 200"
           nullable: true
-          example: 100
+          example: 30
         tag:
           type: string
           description: "user-defined task identifier\noptional field\nthe character limit is 255\nyou can use this parameter to identify the task and match it with the result\nyou will find the specified tag value in the data object of the response"
@@ -61275,11 +61396,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Google App Searches task
+          description: URL for collecting the results of the Google app_searches task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Google App Searches HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Google app_searches HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataGoogleAppSearchesTasksReadyTaskInfo:
       type: object
@@ -61330,11 +61451,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Apple App Reviews task
+          description: URL for collecting the results of the Apple app_reviews task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Apple App Reviews HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Apple app_reviews HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataTasksReadyTaskInfo:
       type: object
@@ -61594,11 +61715,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Google App List task
+          description: URL for collecting the results of the Google app_list task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Google App List HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Google app_list HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataGoogleAppListTasksReadyTaskInfo:
       type: object
@@ -61845,11 +61966,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Google App Info task
+          description: URL for collecting the results of the Google app_info task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Google App Info HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Google app_info HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataGoogleAppInfoTasksReadyTaskInfo:
       type: object
@@ -62259,11 +62380,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Google App Reviews task
+          description: URL for collecting the results of the Google app_reviews task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Google App Reviews HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Google app_reviews HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataGoogleAppReviewsTasksReadyTaskInfo:
       type: object
@@ -62873,11 +62994,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Apple App Searches task
+          description: URL for collecting the results of the Apple app_searches task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Apple App Searches HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Apple app_searches HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataAppleAppSearchesTasksReadyTaskInfo:
       type: object
@@ -63062,11 +63183,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Apple App Info task
+          description: URL for collecting the results of the Apple app_info task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Apple App Info HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Apple app_info HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataAppleAppInfoTasksReadyTaskInfo:
       type: object
@@ -63374,11 +63495,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Apple App List task
+          description: URL for collecting the results of the Apple app_list task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Apple App List HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Apple app_list HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataAppleAppListTasksReadyTaskInfo:
       type: object
@@ -63572,11 +63693,11 @@ components:
           nullable: true
         endpoint_advanced:
           type: string
-          description: URL for collecting the results of the Apple App Reviews task
+          description: URL for collecting the results of the Apple app_reviews task
           nullable: true
         endpoint_html:
           type: string
-          description: "URL for collecting the results of the Apple App Reviews HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
+          description: "URL for collecting the results of the Apple app_reviews HTML task\nif HTML tasks are not supported in the specified endpoint, the value will be null"
           nullable: true
     AppDataAppleAppReviewsTasksReadyTaskInfo:
       type: object
@@ -63847,11 +63968,11 @@ components:
         datetime_from:
           type: string
           description: "start time for filtering results\nrequired field\nif include_metadata is set to true, maximum value: a month from current datetime;\nif include_metadata is set to false, maximum value: six months from current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-15 12:57:46 +00:00"
-          example: '2024-12-24 07:43:39 +00:00'
+          example: '2025-01-18 03:42:51 +00:00'
         datetime_to:
           type: string
           description: "finish time for filtering results\nrequired field\nmaximum value: current datetime;\nmust be specified in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”\nexample:\n2023-01-31 13:57:46 +00:00"
-          example: '2025-02-24 07:43:39 +00:00'
+          example: '2025-03-18 03:42:51 +00:00'
         limit:
           type: integer
           description: "the maximum number of returned task IDs\noptional field\ndefault value: 1000\nmaximum value: 1000"
@@ -67473,7 +67594,7 @@ components:
           nullable: true
         depth:
           type: integer
-          description: "parsing depth\noptional field\nnumber of reviews in SERP\nwe strongly recommend setting the parsing depth in the multiples of twenty, because our systems processes twenty reviews in a row\ndefault value: 20\nmaximum value: 700"
+          description: "parsing depth\noptional field\nnumber of reviews in SERP\nwe strongly recommend setting the parsing depth in the multiples of twenty, because our systems processes twenty reviews in a row\ndefault value: 20\nmaximum value: 1000"
           nullable: true
         tag:
           type: string
@@ -69518,7 +69639,7 @@ components:
           type: number
           format: double
           nullable: true
-    AppendixSerpLimitsRatesDataInfo:
+    AppendixSerpsRatesDataInfo:
       type: object
       properties:
         task_post:
@@ -69837,22 +69958,22 @@ components:
       type: object
       properties:
         products:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         sellers:
           $ref: '#/components/schemas/AppendixSellersGoogleMerchantLimitsRatesDataInfo'
         product_spec:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         product_info:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
     AppendixMerchantAmazonInfo:
       type: object
       properties:
         asin:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         products:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         sellers:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
     AppendixMerchantLimitsRatesDataInfo:
       type: object
       properties:
@@ -69873,7 +69994,7 @@ components:
           format: double
           nullable: true
         reviews:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         tasks_ready:
           type: number
           format: double
@@ -69967,7 +70088,7 @@ components:
         my_business_updates:
           $ref: '#/components/schemas/AppendixInfo'
         hotel_info:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         hotel_searches:
           $ref: '#/components/schemas/AppendixInfo'
         reviews:
@@ -70091,13 +70212,13 @@ components:
       type: object
       properties:
         app_info:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         app_list:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         app_reviews:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         app_searches:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         errors:
           type: number
           format: double
@@ -70183,7 +70304,7 @@ components:
       type: object
       properties:
         serp:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         total:
           type: number
           description: total amount of money deposited to your account
@@ -70271,6 +70392,47 @@ components:
           type: number
           format: double
           nullable: true
+    AppendixSerpDataInfo:
+      type: object
+      properties:
+        task_post:
+          type: number
+          format: double
+          nullable: true
+        task_get:
+          $ref: '#/components/schemas/AppendixFunctionTypeInfo'
+        tasks_ready:
+          type: number
+          format: double
+          nullable: true
+        locations:
+          type: number
+          format: double
+          nullable: true
+        languages:
+          type: number
+          format: double
+          nullable: true
+        live:
+          $ref: '#/components/schemas/AppendixFunctionTypeInfo'
+        errors:
+          type: number
+          format: double
+          nullable: true
+        tasks_fixed:
+          type: number
+          format: double
+          nullable: true
+        jobs:
+          $ref: '#/components/schemas/AppendixJobsSerpLimitsRatesDataInfo'
+        screenshot:
+          type: number
+          format: double
+          nullable: true
+        tasks_ready_queue:
+          type: number
+          format: double
+          nullable: true
     AppendixNaverKeywordsDataDataInfo:
       type: object
       properties:
@@ -70334,7 +70496,7 @@ components:
         google:
           $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
         keyword_ideas_ads_api:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
     AppendixAppendixDataInfo:
       type: object
       properties:
@@ -70358,7 +70520,7 @@ components:
       type: object
       properties:
         serp:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpDataInfo'
         total:
           type: number
           description: total amount of money deposited to your account
@@ -70439,19 +70601,19 @@ components:
           format: double
           nullable: true
         reviews:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         total_social:
           type: number
           format: double
           nullable: true
         social:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         total_traffic_analytics:
           type: number
           format: double
           nullable: true
         traffic_analytics:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
     AppendixLimitsRatesData:
       type: object
       properties:
@@ -70496,11 +70658,11 @@ components:
           type: number
           format: double
           nullable: true
-        id_list:
+        ai_summary:
           type: number
           format: double
           nullable: true
-        ai_summary:
+        id_list:
           type: number
           format: double
           nullable: true
@@ -70572,13 +70734,9 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         keyword_suggestions_for_url:
           $ref: '#/components/schemas/AppendixInfo'
-        search_volume_history:
-          $ref: '#/components/schemas/AppendixInfo'
+        google:
+          $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
         industries:
-          type: number
-          format: double
-          nullable: true
-        job_functions:
           type: number
           format: double
           nullable: true
@@ -70586,8 +70744,12 @@ components:
           type: number
           format: double
           nullable: true
-        google:
-          $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
+        search_volume_history:
+          $ref: '#/components/schemas/AppendixInfo'
+        job_functions:
+          type: number
+          format: double
+          nullable: true
     AppendixDataforseoLabsDayStatisticsRatesData:
       type: object
       properties:
@@ -70671,13 +70833,21 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         historical_keyword_data:
           $ref: '#/components/schemas/AppendixInfo'
-        id_list:
+        top_google_searches:
+          $ref: '#/components/schemas/AppendixInfo'
+        languages:
           type: number
           format: double
           nullable: true
+        amazon:
+          $ref: '#/components/schemas/AppendixDataforseoLabsLimitsRatesDataInfo'
         historical_search_volume:
           $ref: '#/components/schemas/AppendixInfo'
-        available_filters:
+        status:
+          type: number
+          format: double
+          nullable: true
+        id_list:
           type: number
           format: double
           nullable: true
@@ -70685,15 +70855,7 @@ components:
           type: number
           format: double
           nullable: true
-        languages:
-          type: number
-          format: double
-          nullable: true
-        top_google_searches:
-          $ref: '#/components/schemas/AppendixInfo'
-        amazon:
-          $ref: '#/components/schemas/AppendixDataforseoLabsLimitsRatesDataInfo'
-        status:
+        available_filters:
           type: number
           format: double
           nullable: true
@@ -70712,11 +70874,11 @@ components:
           $ref: '#/components/schemas/AppendixWhoisDomainAnalyticsLimitsRatesDataInfo'
         technologies:
           $ref: '#/components/schemas/AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo'
-        id_list:
+        available_filters:
           type: number
           format: double
           nullable: true
-        available_filters:
+        id_list:
           type: number
           format: double
           nullable: true
@@ -70740,7 +70902,7 @@ components:
           format: double
           nullable: true
         reviews:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         tasks_ready:
           type: number
           format: double
@@ -70768,15 +70930,15 @@ components:
           type: number
           format: double
           nullable: true
+        languages:
+          type: number
+          format: double
+          nullable: true
         audits:
           type: number
           format: double
           nullable: true
         versions:
-          type: number
-          format: double
-          nullable: true
-        languages:
           type: number
           format: double
           nullable: true
@@ -70865,15 +71027,15 @@ components:
           type: number
           format: double
           nullable: true
+        available_filters:
+          type: number
+          format: double
+          nullable: true
         id_list:
           type: number
           format: double
           nullable: true
         force_stop:
-          type: number
-          format: double
-          nullable: true
-        available_filters:
           type: number
           format: double
           nullable: true
@@ -70908,11 +71070,11 @@ components:
           type: number
           format: double
           nullable: true
-        id_list:
+        available_filters:
           type: number
           format: double
           nullable: true
-        available_filters:
+        id_list:
           type: number
           format: double
           nullable: true
@@ -70965,14 +71127,8 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         bulk_pages_summary:
           $ref: '#/components/schemas/AppendixInfo'
-        historical_new_lost_summary:
-          $ref: '#/components/schemas/AppendixInfo'
         pages_summary_with_page_info:
           $ref: '#/components/schemas/AppendixInfo'
-        index:
-          type: number
-          format: double
-          nullable: true
         id_list:
           type: number
           format: double
@@ -70981,17 +71137,23 @@ components:
           type: number
           format: double
           nullable: true
+        historical_new_lost_summary:
+          $ref: '#/components/schemas/AppendixInfo'
+        index:
+          type: number
+          format: double
+          nullable: true
     AppendixAppDataDayStatisticsRatesData:
       type: object
       properties:
         app_info:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         app_list:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         app_reviews:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         app_searches:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         errors:
           type: number
           format: double
@@ -71049,11 +71211,11 @@ components:
           type: number
           format: double
           nullable: true
-        id_list:
+        available_filters:
           type: number
           format: double
           nullable: true
-        available_filters:
+        id_list:
           type: number
           format: double
           nullable: true
@@ -71172,11 +71334,11 @@ components:
           nullable: true
         reviews:
           $ref: '#/components/schemas/AppendixInfo'
-    AppendixMinuteStatisticsDataInfo:
+    AppendixMinuteStatisticsRatesData:
       type: object
       properties:
         serp:
-          $ref: '#/components/schemas/AppendixSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixSerpsRatesDataInfo'
         total:
           type: number
           description: total amount of money deposited to your account
@@ -71199,7 +71361,7 @@ components:
           format: double
           nullable: true
         dataforseo_labs:
-          $ref: '#/components/schemas/AppendixDataforseoLabsLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixDataforseoLabsDayStatisticsRatesData'
         total_dataforseo_labs:
           type: number
           format: double
@@ -71262,7 +71424,7 @@ components:
         day:
           $ref: '#/components/schemas/AppendixDayStatisticsRatesData'
         minute:
-          $ref: '#/components/schemas/AppendixMinuteStatisticsDataInfo'
+          $ref: '#/components/schemas/AppendixMinuteStatisticsRatesData'
     AppendixRatesData:
       type: object
       properties:
@@ -71328,10 +71490,21 @@ components:
           $ref: '#/components/schemas/AppendixInfo'
         keyword_suggestions_for_url:
           $ref: '#/components/schemas/AppendixInfo'
-        google:
-          $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
         search_volume_history:
           $ref: '#/components/schemas/AppendixJobsSerpLimitsRatesDataInfo'
+        google:
+          $ref: '#/components/schemas/AppendixBingKeywordsDataLimitsRatesDataInfo'
+    AppendixReviewsDayStatisticsMoneyData:
+      type: object
+      properties:
+        task_post:
+          type: number
+          format: double
+          nullable: true
+        refund_money:
+          type: number
+          format: double
+          nullable: true
     AppendixDayStatisticsMoneyData:
       type: object
       properties:
@@ -71425,14 +71598,98 @@ components:
           format: double
           nullable: true
         reviews:
-          $ref: '#/components/schemas/AppendixJobsSerpLimitsRatesDataInfo'
+          $ref: '#/components/schemas/AppendixReviewsDayStatisticsMoneyData'
+    AppendixMinuteStatisticsMoneyData:
+      type: object
+      properties:
+        serp:
+          $ref: '#/components/schemas/AppendixSerpDayStatisticsRatesData'
+        total:
+          type: number
+          description: total amount of money deposited to your account
+          format: double
+          nullable: true
+        total_serp:
+          type: number
+          format: double
+          nullable: true
+        keywords_data:
+          $ref: '#/components/schemas/AppendixKeywordsDatasRatesDataInfo'
+        total_keywords_data:
+          type: number
+          format: double
+          nullable: true
+        appendix:
+          $ref: '#/components/schemas/AppendixAppendixDaysRatesDataInfo'
+        total_appendix:
+          type: number
+          format: double
+          nullable: true
+        dataforseo_labs:
+          $ref: '#/components/schemas/AppendixDataforseoLabsDayStatisticsRatesData'
+        total_dataforseo_labs:
+          type: number
+          format: double
+          nullable: true
+        domain_analytics:
+          $ref: '#/components/schemas/AppendixDomainAnalyticsLimitsRatesDataInfo'
+        total_domain_analytics:
+          type: number
+          format: double
+          nullable: true
+        merchant:
+          $ref: '#/components/schemas/AppendixMerchantLimitsRatesDataInfo'
+        total_merchant:
+          type: number
+          format: double
+          nullable: true
+        on_page:
+          $ref: '#/components/schemas/AppendixOnPageLimitsRatesDataInfo'
+        total_on_page:
+          type: number
+          format: double
+          nullable: true
+        business_data:
+          $ref: '#/components/schemas/AppendixBusinessDataLimitsRatesDataInfo'
+        total_business_data:
+          type: number
+          format: double
+          nullable: true
+        backlinks:
+          $ref: '#/components/schemas/AppendixBacklinksLimitsRatesDataInfo'
+        total_backlinks:
+          type: number
+          format: double
+          nullable: true
+        app_data:
+          $ref: '#/components/schemas/AppendixAppDataLimitsRatesDataInfo'
+        total_app_data:
+          type: number
+          format: double
+          nullable: true
+        content_analysis:
+          $ref: '#/components/schemas/AppendixContentAnalysisLimitsRatesDataInfo'
+        total_content_analysis:
+          type: number
+          format: double
+          nullable: true
+        content_generation:
+          $ref: '#/components/schemas/AppendixContentGenerationLimitsRatesDataInfo'
+        total_content_generation:
+          type: number
+          format: double
+          nullable: true
+        value:
+          type: string
+          description: "time period for grouping\nday in the yyyy-MM-dd format\nminute in the yyyy-MM-dd HH:mm format"
+          nullable: true
     AppendixStatisticsMoneyData:
       type: object
       properties:
         day:
           $ref: '#/components/schemas/AppendixDayStatisticsMoneyData'
         minute:
-          $ref: '#/components/schemas/AppendixMinuteStatisticsDataInfo'
+          $ref: '#/components/schemas/AppendixMinuteStatisticsMoneyData'
     AppendixMoneyData:
       type: object
       properties:
@@ -71671,11 +71928,11 @@ components:
     AppendixSerpPriceDataInfo:
       type: object
       properties:
-        regular:
+        html:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
         advanced:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
-        html:
+        regular:
           $ref: '#/components/schemas/AppendixTaskKeywordsDataPriceDataInfo'
     AppendixSerpPriceData:
       type: object

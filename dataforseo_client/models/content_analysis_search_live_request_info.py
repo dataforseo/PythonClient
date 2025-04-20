@@ -31,12 +31,13 @@ class ContentAnalysisSearchLiveRequestInfo(BaseModel):
     page_type: Optional[List[StrictStr]] = Field(default=None, description="target page types optional field use this parameter to filter the dataset by page types possible values: \"ecommerce\", \"news\", \"blogs\", \"message-boards\", \"organization\"")
     search_mode: Optional[StrictStr] = Field(default=None, description="results grouping type optional field possible grouping types: as_is – returns all citations for the target keyword one_per_domain – returns one citation of the keyword per domain default value: as_is")
     limit: Optional[StrictInt] = Field(default=None, description="the maximum number of returned citations optional field default value: 100 maximum value: 1000")
-    filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, match, not_match you can use the % operator with like and not_like to match any string of zero or more characters example: [\"country\",\"=\", \"US\"] [[\"domain_rank\",\">\",800],\"and\",[\"content_info.connotation_types.negative\",\">\",0.9]] [[\"domain_rank\",\">\",800], \"and\", [[\"page_types\",\"has\",\"ecommerce\"], \"or\", [\"content_info.text_category\",\"has\",10994]]] for more information about filters, please refer to Content Analysis API – Filters")
+    filters: Optional[List[Optional[Dict[str, Any]]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like,not_like, match, not_match you can use the % operator with like and not_like to match any string of zero or more characters example: [\"country\",\"=\", \"US\"] [[\"domain_rank\",\">\",800],\"and\",[\"content_info.connotation_types.negative\",\">\",0.9]] [[\"domain_rank\",\">\",800], \"and\", [[\"page_types\",\"has\",\"ecommerce\"], \"or\", [\"content_info.text_category\",\"has\",10994]]] for more information about filters, please refer to Content Analysis API – Filters")
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to set up a sorting type example: [\"content_info.sentiment_connotations.anger,desc\"] default rule: [\"content_info.sentiment_connotations.anger,desc\"] note that you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"content_info.sentiment_connotations.anger,desc\",\"keyword_data.keyword_info.cpc,desc\"]")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned citations optional field default value: 0 if you specify the 10 value, the first ten citations in the results array will be omitted and the data will be provided for the successive citations")
     offset_token: Optional[StrictStr] = Field(default=None, description="offset token for subsequent requests optional field provided in the identical field of the response to each request; use this parameter to avoid timeouts while trying to obtain over 10,000 results in a single request; by specifying the unique offset_token value from the response array, you will get the subsequent results of the initial task; offset_token values are unique for each subsequent task Note: if the offset_token is specified in the request, all other parameters except limit will not be taken into account when processing a task")
+    rank_scale: Optional[StrictStr] = Field(default=None, description="defines the scale used for calculating and displaying the domain_rank, and url_rank values optional field you can use this parameter to choose whether rank values are presented on a 0–100 or 0–1000 scale possible values: one_hundred — rank values are displayed on a 0–100 scale one_thousand — rank values are displayed on a 0–1000 scale default value: one_thousand learn more about how this parameter works in this Help Center article")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["keyword", "keyword_fields", "page_type", "search_mode", "limit", "filters", "order_by", "offset", "offset_token", "tag"]
+    __properties: ClassVar[List[str]] = ["keyword", "keyword_fields", "page_type", "search_mode", "limit", "filters", "order_by", "offset", "offset_token", "rank_scale", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -117,6 +118,11 @@ class ContentAnalysisSearchLiveRequestInfo(BaseModel):
         if self.offset_token is None and "offset_token" in self.model_fields_set:
             _dict['offset_token'] = None
 
+        # set to None if rank_scale (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_scale is None and "rank_scale" in self.model_fields_set:
+            _dict['rank_scale'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -143,6 +149,7 @@ class ContentAnalysisSearchLiveRequestInfo(BaseModel):
             "order_by": obj.get("order_by"),
             "offset": obj.get("offset"),
             "offset_token": obj.get("offset_token"),
+            "rank_scale": obj.get("rank_scale"),
             "tag": obj.get("tag")
         })
         return _obj

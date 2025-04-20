@@ -42,14 +42,14 @@ Name | Type | Description | Notes
 **categories_for_keywords** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **keyword_overview** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **historical_keyword_data** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**id_list** | **float** |  | [optional] 
-**historical_search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
-**available_filters** | **float** |  | [optional] 
-**available_history** | **float** |  | [optional] 
-**languages** | **float** |  | [optional] 
 **top_google_searches** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
+**languages** | **float** |  | [optional] 
 **amazon** | [**AppendixDataforseoLabsLimitsRatesDataInfo**](AppendixDataforseoLabsLimitsRatesDataInfo.md) |  | [optional] 
+**historical_search_volume** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **status** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
+**available_history** | **float** |  | [optional] 
+**available_filters** | **float** |  | [optional] 
 
 ## Example
 

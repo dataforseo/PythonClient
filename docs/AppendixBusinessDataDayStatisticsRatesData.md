@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **trustpilot** | [**AppendixBusinessDataDayLimitsRatesDataInfo**](AppendixBusinessDataDayLimitsRatesDataInfo.md) |  | [optional] 
 **business_listings** | [**AppendixBusinessListingsBusinessDataLimitsRatesDataInfo**](AppendixBusinessListingsBusinessDataLimitsRatesDataInfo.md) |  | [optional] 
 **tasks_ready** | **float** |  | [optional] 
-**id_list** | **float** |  | [optional] 
 **available_filters** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
 
 ## Example
 

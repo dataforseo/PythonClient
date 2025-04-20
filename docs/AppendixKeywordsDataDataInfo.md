@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **keyword_suggestions_for_url** | [**AppendixInfo**](AppendixInfo.md) |  | [optional] 
 **naver** | [**AppendixNaverKeywordsDataDataInfo**](AppendixNaverKeywordsDataDataInfo.md) |  | [optional] 
 **google** | [**AppendixBingKeywordsDataLimitsRatesDataInfo**](AppendixBingKeywordsDataLimitsRatesDataInfo.md) |  | [optional] 
-**keyword_ideas_ads_api** | [**AppendixSerpLimitsRatesDataInfo**](AppendixSerpLimitsRatesDataInfo.md) |  | [optional] 
+**keyword_ideas_ads_api** | [**AppendixSerpsRatesDataInfo**](AppendixSerpsRatesDataInfo.md) |  | [optional] 
 
 ## Example
 

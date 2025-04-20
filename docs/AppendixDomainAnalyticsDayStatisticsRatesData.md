@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **errors** | **float** |  | [optional] 
 **whois** | [**AppendixWhoisDomainAnalyticsLimitsRatesDataInfo**](AppendixWhoisDomainAnalyticsLimitsRatesDataInfo.md) |  | [optional] 
 **technologies** | [**AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo**](AppendixTechnologiesDomainAnalyticsLimitsRatesDataInfo.md) |  | [optional] 
-**id_list** | **float** |  | [optional] 
 **available_filters** | **float** |  | [optional] 
+**id_list** | **float** |  | [optional] 
 
 ## Example
 

@@ -30,7 +30,8 @@ from dataforseo_client.models.appendix_domain_analytics_limits_rates_data_info i
 from dataforseo_client.models.appendix_keywords_data_data_info import AppendixKeywordsDataDataInfo
 from dataforseo_client.models.appendix_merchant_limits_rates_data_info import AppendixMerchantLimitsRatesDataInfo
 from dataforseo_client.models.appendix_on_page_limits_rates_data_info import AppendixOnPageLimitsRatesDataInfo
-from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
+from dataforseo_client.models.appendix_serp_data_info import AppendixSerpDataInfo
+from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,7 +39,7 @@ class AppendixDataInfo(BaseModel):
     """
     AppendixDataInfo
     """ # noqa: E501
-    serp: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    serp: Optional[AppendixSerpDataInfo] = None
     total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of money deposited to your account")
     total_serp: Optional[Union[StrictFloat, StrictInt]] = None
     keywords_data: Optional[AppendixKeywordsDataDataInfo] = None
@@ -64,11 +65,11 @@ class AppendixDataInfo(BaseModel):
     content_generation: Optional[AppendixContentGenerationLimitsRatesDataInfo] = None
     total_content_generation: Optional[Union[StrictFloat, StrictInt]] = None
     total_reviews: Optional[Union[StrictFloat, StrictInt]] = None
-    reviews: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    reviews: Optional[AppendixSerpsRatesDataInfo] = None
     total_social: Optional[Union[StrictFloat, StrictInt]] = None
-    social: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    social: Optional[AppendixSerpsRatesDataInfo] = None
     total_traffic_analytics: Optional[Union[StrictFloat, StrictInt]] = None
-    traffic_analytics: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    traffic_analytics: Optional[AppendixSerpsRatesDataInfo] = None
     __properties: ClassVar[List[str]] = ["serp", "total", "total_serp", "keywords_data", "total_keywords_data", "appendix", "total_appendix", "dataforseo_labs", "total_dataforseo_labs", "domain_analytics", "total_domain_analytics", "merchant", "total_merchant", "on_page", "total_on_page", "business_data", "total_business_data", "backlinks", "total_backlinks", "app_data", "total_app_data", "content_analysis", "total_content_analysis", "content_generation", "total_content_generation", "total_reviews", "reviews", "total_social", "social", "total_traffic_analytics", "traffic_analytics"]
 
     model_config = ConfigDict(
@@ -247,7 +248,7 @@ class AppendixDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "serp": AppendixSerpLimitsRatesDataInfo.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
+            "serp": AppendixSerpDataInfo.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
             "total": obj.get("total"),
             "total_serp": obj.get("total_serp"),
             "keywords_data": AppendixKeywordsDataDataInfo.from_dict(obj["keywords_data"]) if obj.get("keywords_data") is not None else None,
@@ -273,11 +274,11 @@ class AppendixDataInfo(BaseModel):
             "content_generation": AppendixContentGenerationLimitsRatesDataInfo.from_dict(obj["content_generation"]) if obj.get("content_generation") is not None else None,
             "total_content_generation": obj.get("total_content_generation"),
             "total_reviews": obj.get("total_reviews"),
-            "reviews": AppendixSerpLimitsRatesDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "reviews": AppendixSerpsRatesDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
             "total_social": obj.get("total_social"),
-            "social": AppendixSerpLimitsRatesDataInfo.from_dict(obj["social"]) if obj.get("social") is not None else None,
+            "social": AppendixSerpsRatesDataInfo.from_dict(obj["social"]) if obj.get("social") is not None else None,
             "total_traffic_analytics": obj.get("total_traffic_analytics"),
-            "traffic_analytics": AppendixSerpLimitsRatesDataInfo.from_dict(obj["traffic_analytics"]) if obj.get("traffic_analytics") is not None else None
+            "traffic_analytics": AppendixSerpsRatesDataInfo.from_dict(obj["traffic_analytics"]) if obj.get("traffic_analytics") is not None else None
         })
         return _obj
 

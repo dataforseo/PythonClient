@@ -376,7 +376,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '951fbace-c46f-4532-95be-6771e0dac421' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'a73d3b58-9708-4adc-9e7a-dee7a84c7676' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.baidu_organic_task_get_html(id)
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 
 
 
-‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
+‌‌ Live Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
 ### Example
 
@@ -917,7 +917,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '423c9887-45a3-4bbd-9b37-cfb6742a695e' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'f17106c5-43ba-44bd-a0cb-6a33c4dd53ea' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_local_pack_task_get_html(id)
@@ -1615,7 +1615,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'fe7e2d37-5d48-4864-95cf-4a1fd8ee483a' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'dc352e3e-5632-4140-a4a1-4fb3c5338ebe' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.bing_organic_task_get_html(id)
@@ -4232,7 +4232,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '70940376-b99e-4dec-a3d9-8269597c6b61' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '78a9d8e7-d4bc-4101-b8be-659958b4afd3' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_finance_explore_task_get_html(id)
@@ -4699,7 +4699,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '44fea317-355d-4a3c-a23a-98da9cbfec6c' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'c8c5a862-f7c2-4d9b-95c7-3fee7a284fb9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_finance_markets_task_get_html(id)
@@ -5088,7 +5088,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '00000000-0000-0000-0000-000000000000' # str | 
+    id = '00000000-0000-0000-0000-000000000000' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_finance_quote_task_get_advanced(id)
@@ -5105,7 +5105,7 @@ with dataforseo_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **id** | **str**| task identifier unique task identifier in our system in the UUID format you will be able to use it within 30 days to request the results of the task at any time | 
 
 ### Return type
 
@@ -5166,7 +5166,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '7f275c4d-f0c2-476f-b493-4bf4be5f48b5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '108fc499-866c-4cec-9644-0428ed812013' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_finance_quote_task_get_html(id)
@@ -5943,7 +5943,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '5701826d-1bbe-495d-a722-2ba6ba73bb53' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '0a1f486a-88fe-4593-a98e-56b52c9febdb' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_images_task_get_html(id)
@@ -6326,7 +6326,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'e5ee1e05-4edf-4d92-aca6-3d8c6778d8d0' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'b89e31c7-b59c-4382-a926-527de229529f' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_jobs_task_get_html(id)
@@ -6598,7 +6598,7 @@ This endpoint does not need any parameter.
 
 
 
-‌‌ Live Google Local finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
+‌‌ Live Google Local_finder SERP provides real-time search engine results for the specified keyword and location. By default, you can get up to 20 results for desktop and up to 10 results for mobile. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/advanced/?bash'
 
 ### Example
 
@@ -6677,7 +6677,7 @@ Name | Type | Description  | Notes
 
 
 
-‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
+‌ Live Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
 ### Example
 
@@ -6867,7 +6867,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '5e73dd45-f9d0-4250-a1c3-bb9c2f7dd3ab' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'b6b633f2-44d0-4354-8384-b9ef1e90b065' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_local_finder_task_get_html(id)
@@ -6912,7 +6912,7 @@ Name | Type | Description  | Notes
 
 
 
-‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
+‌‌ Google local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
 ### Example
 
@@ -7792,7 +7792,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '075720d2-9a44-41a9-a820-935dc61af0b0' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '7f9a1e3b-1ed6-4f51-8651-05daa9712c63' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_news_task_get_html(id)
@@ -8412,7 +8412,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '0b3dc0eb-8076-4393-9611-69c5173e42f9' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'bd350566-9848-4627-ad5e-82682be7c3b2' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.google_organic_task_get_html(id)
@@ -9178,7 +9178,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = 'aa2fcda6-1556-4958-8243-7e8a3b326d04' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '6c6a699d-bac4-4b63-80c0-61e2568e47b1' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.naver_organic_task_get_html(id)
@@ -11380,7 +11380,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '59fff0c5-b45a-462a-807b-803c7a5bed5b' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = '22f76705-efc0-411f-9e3c-3990439e2db5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.seznam_organic_task_get_html(id)
@@ -12152,7 +12152,7 @@ configuration = dataforseo_client.Configuration(
 with dataforseo_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dataforseo_client.SerpApi(api_client)
-    id = '4b43985b-3c53-4c70-8def-87cca476d4bf' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
+    id = 'f445242d-b633-480c-9e47-b3860628a4d5' # str | task identifier unique task identifier in our system in the UUID format you will be able to use it within 7 days to request the results of the task at any time
 
     try:
         api_response = api_instance.yahoo_organic_task_get_html(id)

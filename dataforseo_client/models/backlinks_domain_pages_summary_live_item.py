@@ -42,14 +42,14 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
     referring_ips: Optional[StrictInt] = Field(default=None, description="number of referring IP addresses number of IP addresses pointing to this page")
     referring_subnets: Optional[StrictInt] = Field(default=None, description="number of referring subnetworks")
     referring_pages: Optional[StrictInt] = Field(default=None, description="indicates the number of pages pointing to the relevant url")
+    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the page")
     referring_links_tld: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="top-level domains of the referring links contains top level domains and referring link count per each")
     referring_links_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="types of referring links indicates the types of the referring links and link count per each type possible values: anchor, image, link, meta, canonical, alternate, redirect")
     referring_links_attributes: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="link attributes of the referring links indicates link attributes of the referring links and link count per each attribute")
-    referring_links_platform_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="types of referring platforms indicates referring platform types and and link count per each platform")
+    referring_links_platform_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="types of referring platforms indicates referring platform types and and link count per each platform possible values: cms, blogs, ecommerce, message-boards, wikis, news, organization")
     referring_links_semantic_locations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="semantic locations of the referring links indicates semantic elements in HTML where the referring links are located and link count per each semantic location you can get the full list of semantic elements here examples: article, section, footer")
     referring_links_countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="ISO country codes of the referring links indicates ISO country codes of the domains where the referring links are located and the link count per each country")
-    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the page")
-    __properties: ClassVar[List[str]] = ["type", "url", "rank", "backlinks", "first_seen", "lost_date", "backlinks_spam_score", "broken_backlinks", "broken_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets", "referring_pages", "referring_links_tld", "referring_links_types", "referring_links_attributes", "referring_links_platform_types", "referring_links_semantic_locations", "referring_links_countries", "referring_pages_nofollow"]
+    __properties: ClassVar[List[str]] = ["type", "url", "rank", "backlinks", "first_seen", "lost_date", "backlinks_spam_score", "broken_backlinks", "broken_pages", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow", "referring_ips", "referring_subnets", "referring_pages", "referring_pages_nofollow", "referring_links_tld", "referring_links_types", "referring_links_attributes", "referring_links_platform_types", "referring_links_semantic_locations", "referring_links_countries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -170,6 +170,11 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
         if self.referring_pages is None and "referring_pages" in self.model_fields_set:
             _dict['referring_pages'] = None
 
+        # set to None if referring_pages_nofollow (nullable) is None
+        # and model_fields_set contains the field
+        if self.referring_pages_nofollow is None and "referring_pages_nofollow" in self.model_fields_set:
+            _dict['referring_pages_nofollow'] = None
+
         # set to None if referring_links_tld (nullable) is None
         # and model_fields_set contains the field
         if self.referring_links_tld is None and "referring_links_tld" in self.model_fields_set:
@@ -200,11 +205,6 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
         if self.referring_links_countries is None and "referring_links_countries" in self.model_fields_set:
             _dict['referring_links_countries'] = None
 
-        # set to None if referring_pages_nofollow (nullable) is None
-        # and model_fields_set contains the field
-        if self.referring_pages_nofollow is None and "referring_pages_nofollow" in self.model_fields_set:
-            _dict['referring_pages_nofollow'] = None
-
         return _dict
 
     @classmethod
@@ -233,13 +233,13 @@ class BacklinksDomainPagesSummaryLiveItem(BaseModel):
             "referring_ips": obj.get("referring_ips"),
             "referring_subnets": obj.get("referring_subnets"),
             "referring_pages": obj.get("referring_pages"),
+            "referring_pages_nofollow": obj.get("referring_pages_nofollow"),
             "referring_links_tld": obj.get("referring_links_tld"),
             "referring_links_types": obj.get("referring_links_types"),
             "referring_links_attributes": obj.get("referring_links_attributes"),
             "referring_links_platform_types": obj.get("referring_links_platform_types"),
             "referring_links_semantic_locations": obj.get("referring_links_semantic_locations"),
-            "referring_links_countries": obj.get("referring_links_countries"),
-            "referring_pages_nofollow": obj.get("referring_pages_nofollow")
+            "referring_links_countries": obj.get("referring_links_countries")
         })
         return _obj
 

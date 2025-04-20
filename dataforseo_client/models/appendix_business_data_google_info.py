@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.appendix_info import AppendixInfo
-from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
+from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
     """ # noqa: E501
     my_business_info: Optional[AppendixInfo] = None
     my_business_updates: Optional[AppendixInfo] = None
-    hotel_info: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    hotel_info: Optional[AppendixSerpsRatesDataInfo] = None
     hotel_searches: Optional[AppendixInfo] = None
     reviews: Optional[AppendixInfo] = None
     questions_and_answers: Optional[AppendixInfo] = None
@@ -111,7 +111,7 @@ class AppendixBusinessDataGoogleInfo(BaseModel):
         _obj = cls.model_validate({
             "my_business_info": AppendixInfo.from_dict(obj["my_business_info"]) if obj.get("my_business_info") is not None else None,
             "my_business_updates": AppendixInfo.from_dict(obj["my_business_updates"]) if obj.get("my_business_updates") is not None else None,
-            "hotel_info": AppendixSerpLimitsRatesDataInfo.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
+            "hotel_info": AppendixSerpsRatesDataInfo.from_dict(obj["hotel_info"]) if obj.get("hotel_info") is not None else None,
             "hotel_searches": AppendixInfo.from_dict(obj["hotel_searches"]) if obj.get("hotel_searches") is not None else None,
             "reviews": AppendixInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
             "questions_and_answers": AppendixInfo.from_dict(obj["questions_and_answers"]) if obj.get("questions_and_answers") is not None else None,
