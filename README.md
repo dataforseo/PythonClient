@@ -110,7 +110,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
         start_time = time.time()
 
         while GoogleOrganicTaskReady(task_id) is not True and (time.time() - start_time) < 60:
-           asyncio.sleep(1) 
+           time.sleep(1) 
 
         api_response = serp_api.google_organic_task_get_advanced(id=task_id)
         
