@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.ssl_info import SslInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,15 +32,15 @@ class DomainInfo(BaseModel):
     ip: Optional[StrictStr] = Field(default=None, description="domain ip address")
     server: Optional[StrictStr] = Field(default=None, description="website server the version of the server detected on a website the content of the server header the information is taken from the first page which response code is 200")
     crawl_start: Optional[StrictStr] = Field(default=None, description="time when the crawling start date and time when the website was sent for crawling in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    crawl_end: Optional[StrictStr] = Field(default=None, description="time when the crawling ended date and time when the crawling was finished in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00note: informative only if \"crawl_progress\" is \"finished\" if \"crawl_progress\" is in_progress, the value will be null")
+    crawl_end: Optional[StrictStr] = Field(default=None, description="time when the crawling ended date and time when the crawling was finished in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00 Note: informative only if \"crawl_progress\" is \"finished\" if \"crawl_progress\" is in_progress, the value will be null")
     extended_crawl_status: Optional[StrictStr] = Field(default=None, description="crawl status and errors indicates the reason why a website was not crawled; can take the following values: no_errors – no crawling errors were detected; site_unreachable – our crawler could not reach a website and thus was not able to obtain a status code; invalid_page_status_code – status code of the first crawled page >= 400; forbidden_meta_tag – the first crawled page contains the <meta robots=”noindex”> tag; forbidden_robots – robots.txt forbids crawling the page; forbidden_http_header – HTTP header of the page contains “X-Robots-Tag: noindex” ; too_many_redirects – the first crawled page has more than 10 redirects; unknown – the reason is unknown")
     ssl_info: Optional[SslInfo] = None
     checks: Optional[Dict[str, Optional[StrictBool]]] = Field(default=None, description="website checks other on-page check-ups related to the website")
-    total_pages: Optional[StrictInt] = Field(default=None, description="total crawled pages the total number of crawled pages")
-    page_not_found_status_code: Optional[StrictInt] = Field(default=None, description="status code returned by a non-existent page in most cases, it is recommended a server returns a 404 response code")
-    canonicalization_status_code: Optional[StrictInt] = Field(default=None, description="status code returned by a canonicalized page the checkup of the server behavior when our crawler tries to access the website via IP; in most cases, it is recommended that canonicalized pages respond with a 301 or 302 status code")
-    directory_browsing_status_code: Optional[StrictInt] = Field(default=None, description="status code returned by a directory the status code returned by a directory page on a target website in most cases, it is recommended that directories respond with a 403 or 401 status code")
-    www_redirect_status_code: Optional[StrictInt] = Field(default=None, description="redirect status code the status code of the www to non-www redirect in most cases, it is recommended that redirect returns a 301 status code")
+    total_pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total crawled pages the total number of crawled pages")
+    page_not_found_status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="status code returned by a non-existent page in most cases, it is recommended a server returns a 404 response code")
+    canonicalization_status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="status code returned by a canonicalized page the checkup of the server behavior when our crawler tries to access the website via IP; in most cases, it is recommended that canonicalized pages respond with a 301 or 302 status code")
+    directory_browsing_status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="status code returned by a directory the status code returned by a directory page on a target website in most cases, it is recommended that directories respond with a 403 or 401 status code")
+    www_redirect_status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="redirect status code the status code of the www to non-www redirect in most cases, it is recommended that redirect returns a 301 status code")
     main_domain: Optional[StrictStr] = Field(default=None, description="root domain name")
     __properties: ClassVar[List[str]] = ["name", "cms", "ip", "server", "crawl_start", "crawl_end", "extended_crawl_status", "ssl_info", "checks", "total_pages", "page_not_found_status_code", "canonicalization_status_code", "directory_browsing_status_code", "www_redirect_status_code", "main_domain"]
 

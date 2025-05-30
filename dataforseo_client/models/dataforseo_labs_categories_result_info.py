@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class DataforseoLabsCategoriesResultInfo(BaseModel):
     """
     DataforseoLabsCategoriesResultInfo
     """ # noqa: E501
-    category_code: Optional[StrictInt] = Field(default=None, description="category code")
+    category_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="category code")
     category_name: Optional[StrictStr] = Field(default=None, description="full name of the category")
-    category_code_parent: Optional[StrictInt] = Field(default=None, description="the code of the superordinate category example: \"category_code\": 10178, \"category_name\": \"Apparel Accessories\", \"category_code_parent\": 10021 where category_code_parent corresponds to: \"category_code\": 10021, \"category_name\": \"Apparel\" \"category_code_parent\": null")
+    category_code_parent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the code of the superordinate category example: \"category_code\": 10178, \"category_name\": \"Apparel Accessories\", \"category_code_parent\": 10021 where category_code_parent corresponds to: \"category_code\": 10021, \"category_name\": \"Apparel\" \"category_code_parent\": null")
     __properties: ClassVar[List[str]] = ["category_code", "category_name", "category_code_parent"]
 
     model_config = ConfigDict(

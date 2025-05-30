@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_dataforseo_trends_item import BaseDataforseoTrendsItem
 from dataforseo_client.models.trends_graph_data_info import TrendsGraphDataInfo
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class DataforseoTrendsDataforseoTrendsGraphElementItem(BaseDataforseoTrendsItem)
     DataforseoTrendsDataforseoTrendsGraphElementItem
     """ # noqa: E501
     data: Optional[List[TrendsGraphDataInfo]] = Field(default=None, description="DataForSEO Trends data for the specified parameters")
-    averages: Optional[List[Optional[StrictInt]]] = Field(default=None, description="keyword popularity values averaged over the whole time range")
+    averages: Optional[List[Optional[Union[StrictFloat, StrictInt]]]] = Field(default=None, description="keyword popularity values averaged over the whole time range")
     __properties: ClassVar[List[str]] = ["type", "position", "keywords", "data", "averages"]
 
     model_config = ConfigDict(

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.authors_element import AuthorsElement
 from dataforseo_client.models.dataset_description import DatasetDescription
 from dataforseo_client.models.formats_element import FormatsElement
@@ -33,14 +33,14 @@ class SerpGoogleDatasetAdvancedItem(BaseModel):
     SerpGoogleDatasetAdvancedItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     dataset_id: Optional[StrictStr] = Field(default=None, description="ID of the dataset")
     title: Optional[StrictStr] = Field(default=None, description="title of the element")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    scholarly_citations_count: Optional[StrictInt] = Field(default=None, description="count of articles that refer to the dataset")
+    scholarly_citations_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="count of articles that refer to the dataset")
     scholarly_articles_url: Optional[StrictStr] = Field(default=None, description="url of scholarly articles link to the list of scholarly articles on Google Scholar example: https://scholar.google.com/scholar?q=%2210.6084%20m9%20figshare%207427933%20v1%22")
     unique_identifier: Optional[StrictStr] = Field(default=None, description="digital identifier of an object unique digital identifier of the dataset example: https://doi.org/10.5061/dryad.hmgqnk9m3")
     related_article: Optional[StrictStr] = Field(default=None, description="link to related article link to the published article that is related to the dataset")

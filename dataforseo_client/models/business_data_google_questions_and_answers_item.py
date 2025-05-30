@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.google_business_answer_element import GoogleBusinessAnswerElement
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class BusinessDataGoogleQuestionsAndAnswersItem(BaseModel):
     BusinessDataGoogleQuestionsAndAnswersItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the elements")
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank among all the elements")
     question_id: Optional[StrictStr] = Field(default=None, description="ID of the question")
     url: Optional[StrictStr] = Field(default=None, description="URL of the question")
     profile_image_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s profile image")

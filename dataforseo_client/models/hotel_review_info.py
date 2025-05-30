@@ -29,7 +29,7 @@ class HotelReviewInfo(BaseModel):
     HotelReviewInfo
     """ # noqa: E501
     value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="overall hotel rating based on customer votes")
-    votes_count: Optional[StrictInt] = Field(default=None, description="number of customer votes the number of customer votes included in the calculation of the hotel rating")
+    votes_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of customer votes the number of customer votes included in the calculation of the hotel rating")
     mentions: Optional[List[ReviewMentionInfo]] = Field(default=None, description="hotel mentions information about hotel reviews by criteria")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="rating distribution by votes the distribution of votes across the rating in the range from 1 to 5")
     other_sites_reviews: Optional[List[OtherSitesReviewsInfo]] = Field(default=None, description="reviews on third-party sites reviews from third-paty sites")

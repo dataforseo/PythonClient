@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.country_distribution import CountryDistribution
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem(BaseModel):
     KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
-    search_volume: Optional[StrictInt] = Field(default=None, description="clickstream-based average monthly search volume rate represents the (approximate) number of searches for the given keyword idea based on clickstream you can learn more about clickstream search volume in this Help Center article")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="clickstream-based average monthly search volume rate represents the (approximate) number of searches for the given keyword idea based on clickstream you can learn more about clickstream search volume in this Help Center article")
     country_distribution: Optional[List[CountryDistribution]] = Field(default=None, description="distribution of clickstream by countries represents clickstream-based search volume in available countries, as well as its respective percentage of global search volume")
     __properties: ClassVar[List[str]] = ["keyword", "search_volume", "country_distribution"]
 

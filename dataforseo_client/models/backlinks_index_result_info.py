@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.index_history import IndexHistory
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,10 @@ class BacklinksIndexResultInfo(BaseModel):
     """
     BacklinksIndexResultInfo
     """ # noqa: E501
-    total_backlinks: Optional[StrictInt] = Field(default=None, description="total number of backlinks our database contains for the moment of checking")
-    total_pages: Optional[StrictInt] = Field(default=None, description="total number of pages our database contains for the moment of checking")
-    total_domains: Optional[StrictInt] = Field(default=None, description="total number of domains our database contains for the moment of checking")
+    total_backlinks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of backlinks our database contains for the moment of checking")
+    total_pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of pages our database contains for the moment of checking")
     index_history: Optional[List[IndexHistory]] = Field(default=None, description="index volume data for the past 12 months")
-    __properties: ClassVar[List[str]] = ["total_backlinks", "total_pages", "total_domains", "index_history"]
+    __properties: ClassVar[List[str]] = ["total_backlinks", "total_pages", "index_history"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,11 +88,6 @@ class BacklinksIndexResultInfo(BaseModel):
         if self.total_pages is None and "total_pages" in self.model_fields_set:
             _dict['total_pages'] = None
 
-        # set to None if total_domains (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_domains is None and "total_domains" in self.model_fields_set:
-            _dict['total_domains'] = None
-
         # set to None if index_history (nullable) is None
         # and model_fields_set contains the field
         if self.index_history is None and "index_history" in self.model_fields_set:
@@ -113,7 +107,6 @@ class BacklinksIndexResultInfo(BaseModel):
         _obj = cls.model_validate({
             "total_backlinks": obj.get("total_backlinks"),
             "total_pages": obj.get("total_pages"),
-            "total_domains": obj.get("total_domains"),
             "index_history": [IndexHistory.from_dict(_item) for _item in obj["index_history"]] if obj.get("index_history") is not None else None
         })
         return _obj

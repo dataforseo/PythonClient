@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.keyword_info import KeywordInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class History(BaseModel):
     """
     History
     """ # noqa: E501
-    year: Optional[StrictInt] = Field(default=None, description="year")
-    month: Optional[StrictInt] = Field(default=None, description="month")
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="year")
+    month: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="month")
     keyword_info: Optional[KeywordInfo] = None
     __properties: ClassVar[List[str]] = ["year", "month", "keyword_info"]
 

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.keyword_data_info import KeywordDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class DataforseoLabsRelatedKeywordsLiveItem(BaseModel):
     """
     DataforseoLabsRelatedKeywordsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type possible values: google")
     keyword_data: Optional[KeywordDataInfo] = None
-    depth: Optional[StrictInt] = Field(default=None, description="keyword search depth")
+    depth: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="keyword search depth")
     related_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="list of related keywords represents the list of search queries which are related to the keyword returned in the array above")
     __properties: ClassVar[List[str]] = ["se_type", "keyword_data", "depth", "related_keywords"]
 

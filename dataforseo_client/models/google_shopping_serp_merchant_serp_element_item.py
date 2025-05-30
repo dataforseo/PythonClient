@@ -38,13 +38,14 @@ class GoogleShoppingSerpMerchantSerpElementItem(BaseMerchantSerpElementItem):
     shopping_url: Optional[StrictStr] = Field(default=None, description="URL to the product page on Google Shopping")
     tags: Optional[List[Optional[StrictStr]]] = Field(default=None, description="tags assigned to the product")
     price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="product price example: 384.99")
+    price_multiplier: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="price multiplier for instalment plan indicates the number of months covered by the monthly payment for the product")
     old_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="product old price displayed if the product price has been changed example: 499")
     currency: Optional[StrictStr] = Field(default=None, description="currency in the ISO format example: USD")
     product_id: Optional[StrictStr] = Field(default=None, description="unique product identifier on Google Shopping note that there is no full list of possible values as the product_id is a dynamic value assigned by Google if there are no values, you will get null example: 4485466949985702538 learn more about the parameter in this help center guide")
     data_docid: Optional[StrictStr] = Field(default=None, description="unique identifier of the SERP data element note that there is no full list of possible values as the data_docid is a dynamic value assigned by Google example: 17363035694596624076")
     seller: Optional[StrictStr] = Field(default=None, description="name of the seller the name of the company that placed a corresponding product on Google Shopping")
     additional_specifications: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="object containing additional url parameters you can get more details about the product by using this object in the POST request to the Google Shopping Product Specification and Google Shopping Sellers endpoint")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="number of product reviews indicates the number of reviews left by users on Google Shopping if there are no values, you will get null")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of product reviews indicates the number of reviews left by users on Google Shopping if there are no values, you will get null")
     is_best_match: Optional[StrictBool] = Field(default=None, description="“best match” label if the value is true, the product is marked with the “best match” label if there are no values, you will get null")
     product_rating: Optional[RatingElement] = None
     shop_rating: Optional[RatingElement] = None
@@ -52,7 +53,7 @@ class GoogleShoppingSerpMerchantSerpElementItem(BaseMerchantSerpElementItem):
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description="unique ad click referral parameter using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
     delivery_info: Optional[DeliveryInfo] = None
     stores_count_info: Optional[StoresCountInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "description", "url", "shopping_url", "tags", "price", "old_price", "currency", "product_id", "data_docid", "seller", "additional_specifications", "reviews_count", "is_best_match", "product_rating", "shop_rating", "product_images", "shop_ad_aclk", "delivery_info", "stores_count_info"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "domain", "title", "description", "url", "shopping_url", "tags", "price", "price_multiplier", "old_price", "currency", "product_id", "data_docid", "seller", "additional_specifications", "reviews_count", "is_best_match", "product_rating", "shop_rating", "product_images", "shop_ad_aclk", "delivery_info", "stores_count_info"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -165,6 +166,11 @@ class GoogleShoppingSerpMerchantSerpElementItem(BaseMerchantSerpElementItem):
         if self.price is None and "price" in self.model_fields_set:
             _dict['price'] = None
 
+        # set to None if price_multiplier (nullable) is None
+        # and model_fields_set contains the field
+        if self.price_multiplier is None and "price_multiplier" in self.model_fields_set:
+            _dict['price_multiplier'] = None
+
         # set to None if old_price (nullable) is None
         # and model_fields_set contains the field
         if self.old_price is None and "old_price" in self.model_fields_set:
@@ -239,6 +245,7 @@ class GoogleShoppingSerpMerchantSerpElementItem(BaseMerchantSerpElementItem):
             "shopping_url": obj.get("shopping_url"),
             "tags": obj.get("tags"),
             "price": obj.get("price"),
+            "price_multiplier": obj.get("price_multiplier"),
             "old_price": obj.get("old_price"),
             "currency": obj.get("currency"),
             "product_id": obj.get("product_id"),

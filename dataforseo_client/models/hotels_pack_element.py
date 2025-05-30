@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,7 +36,7 @@ class HotelsPackElement(BaseModel):
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates whether the element is an ad")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "price", "title", "description", "hotel_identifier", "domain", "url", "is_paid", "rating"]
 
     model_config = ConfigDict(
@@ -139,7 +139,7 @@ class HotelsPackElement(BaseModel):
             "domain": obj.get("domain"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

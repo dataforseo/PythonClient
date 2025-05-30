@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,11 +27,12 @@ class VideoElement(BaseModel):
     VideoElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
+    source: Optional[StrictStr] = Field(default=None, description="URL to the video source")
+    preview: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="URL to the video preview image")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    __properties: ClassVar[List[str]] = ["type", "source", "title", "timestamp", "url"]
+    __properties: ClassVar[List[str]] = ["type", "source", "preview", "title", "timestamp", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,11 @@ class VideoElement(BaseModel):
         if self.source is None and "source" in self.model_fields_set:
             _dict['source'] = None
 
+        # set to None if preview (nullable) is None
+        # and model_fields_set contains the field
+        if self.preview is None and "preview" in self.model_fields_set:
+            _dict['preview'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -111,6 +117,7 @@ class VideoElement(BaseModel):
         _obj = cls.model_validate({
             "type": obj.get("type"),
             "source": obj.get("source"),
+            "preview": obj.get("preview"),
             "title": obj.get("title"),
             "timestamp": obj.get("timestamp"),
             "url": obj.get("url")

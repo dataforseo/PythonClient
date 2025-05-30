@@ -11459,7 +11459,7 @@ class DataforseoLabsApi:
     ) -> DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo:
         """google_historical_keyword_data_live
 
-        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
+        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since August, 2021, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
 
         :param dataforseo_labs_google_historical_keyword_data_live_request_info:
         :type dataforseo_labs_google_historical_keyword_data_live_request_info: List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]
@@ -11526,7 +11526,7 @@ class DataforseoLabsApi:
     ) -> ApiResponse[DataforseoLabsGoogleHistoricalKeywordDataLiveResponseInfo]:
         """google_historical_keyword_data_live
 
-        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
+        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since August, 2021, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
 
         :param dataforseo_labs_google_historical_keyword_data_live_request_info:
         :type dataforseo_labs_google_historical_keyword_data_live_request_info: List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]
@@ -11593,7 +11593,7 @@ class DataforseoLabsApi:
     ) -> RESTResponseType:
         """google_historical_keyword_data_live
 
-        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since the beginning of 2019, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
+        ‌‌  This endpoint provides Google historical keyword data for specified keywords, including search volume, cost-per-click, competition values for paid search, monthly searches, and search volume trends. You can get historical keyword  data since August, 2021, depending on keywords along with location and language combination. You can find the list of supported locations and languages here. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/historical_keyword_data/live/?bash'
 
         :param dataforseo_labs_google_historical_keyword_data_live_request_info:
         :type dataforseo_labs_google_historical_keyword_data_live_request_info: List[DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo]
@@ -13370,7 +13370,7 @@ class DataforseoLabsApi:
     ) -> DataforseoLabsGoogleKeywordsForCategoriesLiveResponseInfo:
         """google_keywords_for_categories_live
 
-        ‌ This endpoint will provide you with a list of keywords relevant to the specified product categories. You will get the search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values for each keyword. Moreover, this endpoint supplies minimum, maximum, and average values of daily impressions, clicks, and CPC for each result. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keywords_for_categories/live/?bash'
+        ‌ This endpoint will provide you with a list of keywords relevant to the specified product categories. You will get the search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values for each keyword. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keywords_for_categories/live/?bash'
 
         :param dataforseo_labs_google_keywords_for_categories_live_request_info:
         :type dataforseo_labs_google_keywords_for_categories_live_request_info: List[DataforseoLabsGoogleKeywordsForCategoriesLiveRequestInfo]
@@ -13437,7 +13437,7 @@ class DataforseoLabsApi:
     ) -> ApiResponse[DataforseoLabsGoogleKeywordsForCategoriesLiveResponseInfo]:
         """google_keywords_for_categories_live
 
-        ‌ This endpoint will provide you with a list of keywords relevant to the specified product categories. You will get the search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values for each keyword. Moreover, this endpoint supplies minimum, maximum, and average values of daily impressions, clicks, and CPC for each result. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keywords_for_categories/live/?bash'
+        ‌ This endpoint will provide you with a list of keywords relevant to the specified product categories. You will get the search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values for each keyword. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keywords_for_categories/live/?bash'
 
         :param dataforseo_labs_google_keywords_for_categories_live_request_info:
         :type dataforseo_labs_google_keywords_for_categories_live_request_info: List[DataforseoLabsGoogleKeywordsForCategoriesLiveRequestInfo]
@@ -13504,7 +13504,7 @@ class DataforseoLabsApi:
     ) -> RESTResponseType:
         """google_keywords_for_categories_live
 
-        ‌ This endpoint will provide you with a list of keywords relevant to the specified product categories. You will get the search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values for each keyword. Moreover, this endpoint supplies minimum, maximum, and average values of daily impressions, clicks, and CPC for each result. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keywords_for_categories/live/?bash'
+        ‌ This endpoint will provide you with a list of keywords relevant to the specified product categories. You will get the search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values for each keyword. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/keywords_for_categories/live/?bash'
 
         :param dataforseo_labs_google_keywords_for_categories_live_request_info:
         :type dataforseo_labs_google_keywords_for_categories_live_request_info: List[DataforseoLabsGoogleKeywordsForCategoriesLiveRequestInfo]
@@ -13916,7 +13916,7 @@ class DataforseoLabsApi:
     ) -> DataforseoLabsGooglePageIntersectionLiveResponseInfo:
         """google_page_intersection_live
 
-        ‌ This endpoint will provide you with the keywords for which specified pages rank within the same SERP. You will get search volume, competition, cost-per-click and impressions data on each intersecting keyword. Along with that, you will get data on SERP elements that specified pages rank for in search results, as well as the estimated traffic volume and cost of ad traffic. Page Intersection endpoint supports organic, paid, local pack and featured snippet results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/page_intersection/live/?bash'
+        ‌ This endpoint will provide you with the keywords for which specified pages rank within the same SERP. You will get search volume, competition, cost-per-click data on each intersecting keyword. Along with that, you will get data on SERP elements that specified pages rank for in search results, as well as the estimated traffic volume and cost of ad traffic. Page Intersection endpoint supports organic, paid, local pack and featured snippet results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/page_intersection/live/?bash'
 
         :param dataforseo_labs_google_page_intersection_live_request_info:
         :type dataforseo_labs_google_page_intersection_live_request_info: List[DataforseoLabsGooglePageIntersectionLiveRequestInfo]
@@ -13983,7 +13983,7 @@ class DataforseoLabsApi:
     ) -> ApiResponse[DataforseoLabsGooglePageIntersectionLiveResponseInfo]:
         """google_page_intersection_live
 
-        ‌ This endpoint will provide you with the keywords for which specified pages rank within the same SERP. You will get search volume, competition, cost-per-click and impressions data on each intersecting keyword. Along with that, you will get data on SERP elements that specified pages rank for in search results, as well as the estimated traffic volume and cost of ad traffic. Page Intersection endpoint supports organic, paid, local pack and featured snippet results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/page_intersection/live/?bash'
+        ‌ This endpoint will provide you with the keywords for which specified pages rank within the same SERP. You will get search volume, competition, cost-per-click data on each intersecting keyword. Along with that, you will get data on SERP elements that specified pages rank for in search results, as well as the estimated traffic volume and cost of ad traffic. Page Intersection endpoint supports organic, paid, local pack and featured snippet results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/page_intersection/live/?bash'
 
         :param dataforseo_labs_google_page_intersection_live_request_info:
         :type dataforseo_labs_google_page_intersection_live_request_info: List[DataforseoLabsGooglePageIntersectionLiveRequestInfo]
@@ -14050,7 +14050,7 @@ class DataforseoLabsApi:
     ) -> RESTResponseType:
         """google_page_intersection_live
 
-        ‌ This endpoint will provide you with the keywords for which specified pages rank within the same SERP. You will get search volume, competition, cost-per-click and impressions data on each intersecting keyword. Along with that, you will get data on SERP elements that specified pages rank for in search results, as well as the estimated traffic volume and cost of ad traffic. Page Intersection endpoint supports organic, paid, local pack and featured snippet results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/page_intersection/live/?bash'
+        ‌ This endpoint will provide you with the keywords for which specified pages rank within the same SERP. You will get search volume, competition, cost-per-click data on each intersecting keyword. Along with that, you will get data on SERP elements that specified pages rank for in search results, as well as the estimated traffic volume and cost of ad traffic. Page Intersection endpoint supports organic, paid, local pack and featured snippet results. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/page_intersection/live/?bash'
 
         :param dataforseo_labs_google_page_intersection_live_request_info:
         :type dataforseo_labs_google_page_intersection_live_request_info: List[DataforseoLabsGooglePageIntersectionLiveRequestInfo]
@@ -14462,7 +14462,7 @@ class DataforseoLabsApi:
     ) -> DataforseoLabsGoogleRelatedKeywordsLiveResponseInfo:
         """google_related_keywords_live
 
-        The Related Keywords endpoint provides keywords appearing in the   \"searches related to\" SERP element You can get up to 4680 keyword ideas by specifying the search depth. Each related keyword comes with the list of relevant product categories, search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values. Moreover, this endpoint supplies minimum, maximum and average values of daily impressions, clicks and CPC for each result. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/related_keywords/live/?bash'
+        The Related Keywords endpoint provides keywords appearing in the   \"searches related to\" SERP element You can get up to 4680 keyword ideas by specifying the search depth. Each related keyword comes with the list of relevant product categories, search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/related_keywords/live/?bash'
 
         :param dataforseo_labs_google_related_keywords_live_request_info:
         :type dataforseo_labs_google_related_keywords_live_request_info: List[DataforseoLabsGoogleRelatedKeywordsLiveRequestInfo]
@@ -14529,7 +14529,7 @@ class DataforseoLabsApi:
     ) -> ApiResponse[DataforseoLabsGoogleRelatedKeywordsLiveResponseInfo]:
         """google_related_keywords_live
 
-        The Related Keywords endpoint provides keywords appearing in the   \"searches related to\" SERP element You can get up to 4680 keyword ideas by specifying the search depth. Each related keyword comes with the list of relevant product categories, search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values. Moreover, this endpoint supplies minimum, maximum and average values of daily impressions, clicks and CPC for each result. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/related_keywords/live/?bash'
+        The Related Keywords endpoint provides keywords appearing in the   \"searches related to\" SERP element You can get up to 4680 keyword ideas by specifying the search depth. Each related keyword comes with the list of relevant product categories, search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/related_keywords/live/?bash'
 
         :param dataforseo_labs_google_related_keywords_live_request_info:
         :type dataforseo_labs_google_related_keywords_live_request_info: List[DataforseoLabsGoogleRelatedKeywordsLiveRequestInfo]
@@ -14596,7 +14596,7 @@ class DataforseoLabsApi:
     ) -> RESTResponseType:
         """google_related_keywords_live
 
-        The Related Keywords endpoint provides keywords appearing in the   \"searches related to\" SERP element You can get up to 4680 keyword ideas by specifying the search depth. Each related keyword comes with the list of relevant product categories, search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values. Moreover, this endpoint supplies minimum, maximum and average values of daily impressions, clicks and CPC for each result. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/related_keywords/live/?bash'
+        The Related Keywords endpoint provides keywords appearing in the   \"searches related to\" SERP element You can get up to 4680 keyword ideas by specifying the search depth. Each related keyword comes with the list of relevant product categories, search volume rate for the last month, search volume trend for the previous 12 months, as well as current cost-per-click and competition values. for more info please visit 'https://docs.dataforseo.com/v3/dataforseo_labs/google/related_keywords/live/?bash'
 
         :param dataforseo_labs_google_related_keywords_live_request_info:
         :type dataforseo_labs_google_related_keywords_live_request_info: List[DataforseoLabsGoogleRelatedKeywordsLiveRequestInfo]

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class MerchantGoogleProductSpecTaskGetAdvancedResultInfo(BaseModel):
     product_id: Optional[StrictStr] = Field(default=None, description="product ID in a POST array learn more about the parameter in this help center guide")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     title: Optional[StrictStr] = Field(default=None, description="title of the product")
     description: Optional[StrictStr] = Field(default=None, description="description of the product")
@@ -39,7 +39,7 @@ class MerchantGoogleProductSpecTaskGetAdvancedResultInfo(BaseModel):
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes” example: 2019-11-15 12:57:46 +00:00")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of items found on the product specification page possible item types: shopping_specification")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseMerchantSerpElementItem]] = Field(default=None, description="items on the product specification page contains all product attributes and related data listed on the product specification page")
     __properties: ClassVar[List[str]] = ["product_id", "type", "se_domain", "location_code", "language_code", "title", "description", "image_url", "tags", "check_url", "datetime", "item_types", "items_count", "items"]
 

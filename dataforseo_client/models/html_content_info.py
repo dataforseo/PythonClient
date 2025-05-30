@@ -26,7 +26,7 @@ class HtmlContentInfo(BaseModel):
     """
     HtmlContentInfo
     """ # noqa: E501
-    plain_text_size: Optional[StrictInt] = Field(default=None, description="total size of the text on the page measured in bytes")
+    plain_text_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total size of the text on the page measured in bytes")
     plain_text_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="plaintext rate value plain_text_size to size ratio")
     plain_text_word_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of words on the page")
     automated_readability_index: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Automated Readability Index")

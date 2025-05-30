@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class QueriesListDataItemInfo(BaseModel):
     QueriesListDataItemInfo
     """ # noqa: E501
     query: Optional[StrictStr] = Field(default=None, description="related query")
-    value: Optional[StrictStr] = Field(default=None, description="search term popularity represents the popularity of the topic. Scoring is on a relative scale where a value of 100 is the most commonly searched topic and a value of 50 is a topic searched half as often as the most popular term, and so on.")
+    value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="search term popularity represents the popularity of the topic. Scoring is on a relative scale where a value of 100 is the most commonly searched topic and a value of 50 is a topic searched half as often as the most popular term, and so on.")
     __properties: ClassVar[List[str]] = ["query", "value"]
 
     model_config = ConfigDict(

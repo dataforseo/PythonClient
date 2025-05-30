@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class TopicListDataItemInfo(BaseModel):
     topic_id: Optional[StrictStr] = Field(default=None, description="unique topic identifier in Google Trends")
     topic_title: Optional[StrictStr] = Field(default=None, description="title of the topic")
     topic_type: Optional[StrictStr] = Field(default=None, description="type of the topic represents the general type of the topic")
-    value: Optional[StrictStr] = Field(default=None, description="search term popularity represents the popularity of the topic. Scoring is on a relative scale where a value of 100 is the most commonly searched topic and a value of 50 is a topic searched half as often as the most popular term, and so on.")
+    value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="search term popularity represents the popularity of the topic. Scoring is on a relative scale where a value of 100 is the most commonly searched topic and a value of 50 is a topic searched half as often as the most popular term, and so on.")
     __properties: ClassVar[List[str]] = ["topic_id", "topic_title", "topic_type", "value"]
 
     model_config = ConfigDict(

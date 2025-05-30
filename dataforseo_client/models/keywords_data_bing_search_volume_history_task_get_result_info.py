@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.search_volume_history_search_info import SearchVolumeHistorySearchInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo(BaseModel):
     KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
     device: Optional[List[Optional[StrictStr]]] = None
     period: Optional[StrictStr] = Field(default=None, description="time period indicates if returned data is aggregated to a certain time period default value monthly")

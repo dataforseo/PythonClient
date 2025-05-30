@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_google_domain_whois_overview_live_item import DataforseoLabsGoogleDomainWhoisOverviewLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class DataforseoLabsGoogleDomainWhoisOverviewLiveResultInfo(BaseModel):
     DataforseoLabsGoogleDomainWhoisOverviewLiveResultInfo
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[DataforseoLabsGoogleDomainWhoisOverviewLiveItem]] = Field(default=None, description="contains ranking and traffic data")
     __properties: ClassVar[List[str]] = ["se_type", "total_count", "items_count", "items"]
 

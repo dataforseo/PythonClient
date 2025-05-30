@@ -31,14 +31,12 @@ class StocksBoxSerpElementItem(BaseSerpElementItem):
     """
     StocksBoxSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
-    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of the video")
+    source: Optional[StrictStr] = Field(default=None, description="reference source name or title")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
     price: Optional[PriceInfo] = None
-    url: Optional[StrictStr] = Field(default=None, description="source URL")
-    domain: Optional[StrictStr] = Field(default=None, description="source domain")
+    url: Optional[StrictStr] = Field(default=None, description="URL")
+    domain: Optional[StrictStr] = Field(default=None, description="domain in the URL")
     rectangle: Optional[Rectangle] = None
     table: Optional[Table] = None
     graph: Optional[Graph] = None

@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.dataforseo_labs_bulk_traffic_estimation_live_item import DataforseoLabsBulkTrafficEstimationLiveItem
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.dataforseo_labs_bing_bulk_traffic_estimation_live_item import DataforseoLabsBingBulkTrafficEstimationLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,11 +28,11 @@ class DataforseoLabsBingBulkTrafficEstimationLiveResultInfo(BaseModel):
     DataforseoLabsBingBulkTrafficEstimationLiveResultInfo
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[DataforseoLabsBulkTrafficEstimationLiveItem]] = Field(default=None, description="array of items with relevant traffic estimation data")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
+    items: Optional[List[DataforseoLabsBingBulkTrafficEstimationLiveItem]] = Field(default=None, description="array of items with relevant traffic estimation data")
     __properties: ClassVar[List[str]] = ["se_type", "location_code", "language_code", "total_count", "items_count", "items"]
 
     model_config = ConfigDict(
@@ -128,7 +128,7 @@ class DataforseoLabsBingBulkTrafficEstimationLiveResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),
             "items_count": obj.get("items_count"),
-            "items": [DataforseoLabsBulkTrafficEstimationLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [DataforseoLabsBingBulkTrafficEstimationLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

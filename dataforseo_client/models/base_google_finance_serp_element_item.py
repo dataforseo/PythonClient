@@ -25,13 +25,23 @@ from typing_extensions import Self
 
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
+    from dataforseo_client.models.google_finance_about_serp_element_item import GoogleFinanceAboutSerpElementItem
+    from dataforseo_client.models.google_finance_asset_pair_element_serp_element_item import GoogleFinanceAssetPairElementSerpElementItem
+    from dataforseo_client.models.google_finance_compare_to_serp_element_item import GoogleFinanceCompareToSerpElementItem
+    from dataforseo_client.models.google_finance_details_serp_element_item import GoogleFinanceDetailsSerpElementItem
     from dataforseo_client.models.google_finance_earnings_calendar_serp_element_item import GoogleFinanceEarningsCalendarSerpElementItem
+    from dataforseo_client.models.google_finance_explore_market_trends_serp_element_item import GoogleFinanceExploreMarketTrendsSerpElementItem
+    from dataforseo_client.models.google_finance_financial_serp_element_item import GoogleFinanceFinancialSerpElementItem
+    from dataforseo_client.models.google_finance_futures_chain_serp_element_item import GoogleFinanceFuturesChainSerpElementItem
     from dataforseo_client.models.google_finance_hero_groups_serp_element_item import GoogleFinanceHeroGroupsSerpElementItem
     from dataforseo_client.models.google_finance_interested_serp_element_item import GoogleFinanceInterestedSerpElementItem
+    from dataforseo_client.models.google_finance_market_index_element_serp_element_item import GoogleFinanceMarketIndexElementSerpElementItem
+    from dataforseo_client.models.google_finance_market_instrument_element_serp_element_item import GoogleFinanceMarketInstrumentElementSerpElementItem
     from dataforseo_client.models.google_finance_market_trends_serp_element_item import GoogleFinanceMarketTrendsSerpElementItem
     from dataforseo_client.models.google_finance_most_followed_serp_element_item import GoogleFinanceMostFollowedSerpElementItem
     from dataforseo_client.models.google_finance_news_serp_element_item import GoogleFinanceNewsSerpElementItem
     from dataforseo_client.models.google_finance_people_also_search_serp_element_item import GoogleFinancePeopleAlsoSearchSerpElementItem
+    from dataforseo_client.models.google_finance_quote_serp_element_item import GoogleFinanceQuoteSerpElementItem
 
 class BaseGoogleFinanceSerpElementItem(BaseModel):
     """
@@ -52,7 +62,7 @@ class BaseGoogleFinanceSerpElementItem(BaseModel):
 
     # discriminator mappings
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'GoogleFinanceEarningsCalendarSerpElementItem': 'GoogleFinanceEarningsCalendarSerpElementItem','GoogleFinanceHeroGroupsSerpElementItem': 'GoogleFinanceHeroGroupsSerpElementItem','GoogleFinanceInterestedSerpElementItem': 'GoogleFinanceInterestedSerpElementItem','GoogleFinanceMarketTrendsSerpElementItem': 'GoogleFinanceMarketTrendsSerpElementItem','GoogleFinanceMostFollowedSerpElementItem': 'GoogleFinanceMostFollowedSerpElementItem','GoogleFinanceNewsSerpElementItem': 'GoogleFinanceNewsSerpElementItem','GoogleFinancePeopleAlsoSearchSerpElementItem': 'GoogleFinancePeopleAlsoSearchSerpElementItem'
+        'google_finance_about': 'GoogleFinanceAboutSerpElementItem','google_finance_asset_pair_element': 'GoogleFinanceAssetPairElementSerpElementItem','google_finance_compare_to': 'GoogleFinanceCompareToSerpElementItem','google_finance_details': 'GoogleFinanceDetailsSerpElementItem','google_finance_earnings_calendar': 'GoogleFinanceEarningsCalendarSerpElementItem','google_finance_explore_market_trends': 'GoogleFinanceExploreMarketTrendsSerpElementItem','google_finance_financial': 'GoogleFinanceFinancialSerpElementItem','google_finance_futures_chain': 'GoogleFinanceFuturesChainSerpElementItem','google_finance_hero_groups': 'GoogleFinanceHeroGroupsSerpElementItem','google_finance_interested': 'GoogleFinanceInterestedSerpElementItem','google_finance_market_index_element': 'GoogleFinanceMarketIndexElementSerpElementItem','google_finance_market_instrument_element': 'GoogleFinanceMarketInstrumentElementSerpElementItem','google_finance_market_trends': 'GoogleFinanceMarketTrendsSerpElementItem','google_finance_most_followed': 'GoogleFinanceMostFollowedSerpElementItem','google_finance_news': 'GoogleFinanceNewsSerpElementItem','google_finance_people_also_search': 'GoogleFinancePeopleAlsoSearchSerpElementItem','google_finance_quote': 'GoogleFinanceQuoteSerpElementItem'
     }
 
     @classmethod
@@ -74,7 +84,7 @@ class BaseGoogleFinanceSerpElementItem(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[GoogleFinanceEarningsCalendarSerpElementItem, GoogleFinanceHeroGroupsSerpElementItem, GoogleFinanceInterestedSerpElementItem, GoogleFinanceMarketTrendsSerpElementItem, GoogleFinanceMostFollowedSerpElementItem, GoogleFinanceNewsSerpElementItem, GoogleFinancePeopleAlsoSearchSerpElementItem]]:
+    def from_json(cls, json_str: str) -> Optional[Union[GoogleFinanceAboutSerpElementItem, GoogleFinanceAssetPairElementSerpElementItem, GoogleFinanceCompareToSerpElementItem, GoogleFinanceDetailsSerpElementItem, GoogleFinanceEarningsCalendarSerpElementItem, GoogleFinanceExploreMarketTrendsSerpElementItem, GoogleFinanceFinancialSerpElementItem, GoogleFinanceFuturesChainSerpElementItem, GoogleFinanceHeroGroupsSerpElementItem, GoogleFinanceInterestedSerpElementItem, GoogleFinanceMarketIndexElementSerpElementItem, GoogleFinanceMarketInstrumentElementSerpElementItem, GoogleFinanceMarketTrendsSerpElementItem, GoogleFinanceMostFollowedSerpElementItem, GoogleFinanceNewsSerpElementItem, GoogleFinancePeopleAlsoSearchSerpElementItem, GoogleFinanceQuoteSerpElementItem]]:
         """Create an instance of BaseGoogleFinanceSerpElementItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -104,16 +114,34 @@ class BaseGoogleFinanceSerpElementItem(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[GoogleFinanceEarningsCalendarSerpElementItem, GoogleFinanceHeroGroupsSerpElementItem, GoogleFinanceInterestedSerpElementItem, GoogleFinanceMarketTrendsSerpElementItem, GoogleFinanceMostFollowedSerpElementItem, GoogleFinanceNewsSerpElementItem, GoogleFinancePeopleAlsoSearchSerpElementItem]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[GoogleFinanceAboutSerpElementItem, GoogleFinanceAssetPairElementSerpElementItem, GoogleFinanceCompareToSerpElementItem, GoogleFinanceDetailsSerpElementItem, GoogleFinanceEarningsCalendarSerpElementItem, GoogleFinanceExploreMarketTrendsSerpElementItem, GoogleFinanceFinancialSerpElementItem, GoogleFinanceFuturesChainSerpElementItem, GoogleFinanceHeroGroupsSerpElementItem, GoogleFinanceInterestedSerpElementItem, GoogleFinanceMarketIndexElementSerpElementItem, GoogleFinanceMarketInstrumentElementSerpElementItem, GoogleFinanceMarketTrendsSerpElementItem, GoogleFinanceMostFollowedSerpElementItem, GoogleFinanceNewsSerpElementItem, GoogleFinancePeopleAlsoSearchSerpElementItem, GoogleFinanceQuoteSerpElementItem]]:
         """Create an instance of BaseGoogleFinanceSerpElementItem from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
+        if object_type ==  'GoogleFinanceAboutSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_about_serp_element_item").GoogleFinanceAboutSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceAssetPairElementSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_asset_pair_element_serp_element_item").GoogleFinanceAssetPairElementSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceCompareToSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_compare_to_serp_element_item").GoogleFinanceCompareToSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceDetailsSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_details_serp_element_item").GoogleFinanceDetailsSerpElementItem.from_dict(obj)
         if object_type ==  'GoogleFinanceEarningsCalendarSerpElementItem':
             return import_module("dataforseo_client.models.google_finance_earnings_calendar_serp_element_item").GoogleFinanceEarningsCalendarSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceExploreMarketTrendsSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_explore_market_trends_serp_element_item").GoogleFinanceExploreMarketTrendsSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceFinancialSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_financial_serp_element_item").GoogleFinanceFinancialSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceFuturesChainSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_futures_chain_serp_element_item").GoogleFinanceFuturesChainSerpElementItem.from_dict(obj)
         if object_type ==  'GoogleFinanceHeroGroupsSerpElementItem':
             return import_module("dataforseo_client.models.google_finance_hero_groups_serp_element_item").GoogleFinanceHeroGroupsSerpElementItem.from_dict(obj)
         if object_type ==  'GoogleFinanceInterestedSerpElementItem':
             return import_module("dataforseo_client.models.google_finance_interested_serp_element_item").GoogleFinanceInterestedSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceMarketIndexElementSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_market_index_element_serp_element_item").GoogleFinanceMarketIndexElementSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceMarketInstrumentElementSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_market_instrument_element_serp_element_item").GoogleFinanceMarketInstrumentElementSerpElementItem.from_dict(obj)
         if object_type ==  'GoogleFinanceMarketTrendsSerpElementItem':
             return import_module("dataforseo_client.models.google_finance_market_trends_serp_element_item").GoogleFinanceMarketTrendsSerpElementItem.from_dict(obj)
         if object_type ==  'GoogleFinanceMostFollowedSerpElementItem':
@@ -122,6 +150,8 @@ class BaseGoogleFinanceSerpElementItem(BaseModel):
             return import_module("dataforseo_client.models.google_finance_news_serp_element_item").GoogleFinanceNewsSerpElementItem.from_dict(obj)
         if object_type ==  'GoogleFinancePeopleAlsoSearchSerpElementItem':
             return import_module("dataforseo_client.models.google_finance_people_also_search_serp_element_item").GoogleFinancePeopleAlsoSearchSerpElementItem.from_dict(obj)
+        if object_type ==  'GoogleFinanceQuoteSerpElementItem':
+            return import_module("dataforseo_client.models.google_finance_quote_serp_element_item").GoogleFinanceQuoteSerpElementItem.from_dict(obj)
 
         raise ValueError("BaseGoogleFinanceSerpElementItem failed to lookup discriminator value from " +
                             json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +

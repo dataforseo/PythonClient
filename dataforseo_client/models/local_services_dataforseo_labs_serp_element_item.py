@@ -28,11 +28,12 @@ class LocalServicesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
     """
     LocalServicesDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
-    items: Optional[List[LocalServicesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "domain", "items"]
+    url: Optional[StrictStr] = Field(default=None, description="sitelink URL")
+    domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
+    items: Optional[List[LocalServicesElement]] = Field(default=None, description="elements of search results found in SERP")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "url", "domain", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,6 +106,11 @@ class LocalServicesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -142,6 +148,7 @@ class LocalServicesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "url": obj.get("url"),
             "domain": obj.get("domain"),

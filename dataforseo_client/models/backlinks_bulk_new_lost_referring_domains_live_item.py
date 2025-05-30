@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,10 +27,10 @@ class BacklinksBulkNewLostReferringDomainsLiveItem(BaseModel):
     BacklinksBulkNewLostReferringDomainsLiveItem
     """ # noqa: E501
     target: Optional[StrictStr] = Field(default=None, description="domain, subdomain or webpage from a POST array")
-    new_referring_domains: Optional[StrictInt] = Field(default=None, description="number of new referring domains number of new referring domains pointing to the target")
-    lost_referring_domains: Optional[StrictInt] = Field(default=None, description="number of lost referring domains number of lost referring domains of the target")
-    new_referring_main_domains: Optional[StrictInt] = Field(default=None, description="number of new referring main domains pointing to the target")
-    lost_referring_main_domains: Optional[StrictInt] = Field(default=None, description="number of lost referring main domains pointing to the target")
+    new_referring_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new referring domains number of new referring domains pointing to the target")
+    lost_referring_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of lost referring domains number of lost referring domains of the target")
+    new_referring_main_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new referring main domains pointing to the target")
+    lost_referring_main_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of lost referring main domains pointing to the target")
     __properties: ClassVar[List[str]] = ["target", "new_referring_domains", "lost_referring_domains", "new_referring_main_domains", "lost_referring_main_domains"]
 
     model_config = ConfigDict(

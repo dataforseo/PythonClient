@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,10 +26,10 @@ class TestSummary(BaseModel):
     """
     TestSummary
     """ # noqa: E501
-    fatal: Optional[StrictInt] = Field(default=None, description="number of fatal microdata errors")
-    error: Optional[StrictInt] = Field(default=None, description="number of serious microdata errors")
-    warning: Optional[StrictInt] = Field(default=None, description="number of microdata warnings")
-    info: Optional[StrictInt] = Field(default=None, description="number of microdata information flags")
+    fatal: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of fatal microdata errors")
+    error: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of serious microdata errors")
+    warning: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of microdata warnings")
+    info: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of microdata information flags")
     __properties: ClassVar[List[str]] = ["fatal", "error", "warning", "info"]
 
     model_config = ConfigDict(

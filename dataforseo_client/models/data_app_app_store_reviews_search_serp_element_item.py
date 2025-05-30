@@ -21,7 +21,7 @@ from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.app_user_profile_info import AppUserProfileInfo
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -143,7 +143,7 @@ class DataAppAppStoreReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "title": obj.get("title"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "version": obj.get("version"),
             "timestamp": obj.get("timestamp"),
             "id": obj.get("id"),

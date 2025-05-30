@@ -19,9 +19,11 @@ import json
 
 from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.backlinks_info import BacklinksInfo
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.rank_changes import RankChanges
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.rank_info import RankInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,21 +31,23 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """
     LocalPackDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    domain: Optional[StrictStr] = Field(default=None, description="subdomain in SERP")
     phone: Optional[StrictStr] = Field(default=None, description="phone number")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
+    url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates whether the element is an ad")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
     relative_url: Optional[StrictStr] = Field(default=None, description="URL in SERP that does not specify the HTTPs protocol and domain name")
-    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of the returned keyword learn more about how the metric is calculated in this help center article")
-    impressions_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on impressions estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and impressions values of the returned keyword learn more about how the metric is calculated in this help center article")
-    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads for the returned keyword the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article")
+    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of monthly search traffic represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    clickstream_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = None
-    clickstream_etv: Optional[StrictInt] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "domain", "phone", "url", "is_paid", "rating", "main_domain", "relative_url", "etv", "impressions_etv", "estimated_paid_traffic_cost", "rank_changes", "clickstream_etv"]
+    backlinks_info: Optional[BacklinksInfo] = None
+    rank_info: Optional[RankInfo] = None
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "description", "domain", "phone", "url", "is_paid", "rating", "main_domain", "relative_url", "etv", "estimated_paid_traffic_cost", "clickstream_etv", "rank_changes", "backlinks_info", "rank_info"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +94,12 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of rank_changes
         if self.rank_changes:
             _dict['rank_changes'] = self.rank_changes.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of backlinks_info
+        if self.backlinks_info:
+            _dict['backlinks_info'] = self.backlinks_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of rank_info
+        if self.rank_info:
+            _dict['rank_info'] = self.rank_info.to_dict()
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -114,6 +124,11 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         # and model_fields_set contains the field
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
+
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
 
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
@@ -160,11 +175,6 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.etv is None and "etv" in self.model_fields_set:
             _dict['etv'] = None
 
-        # set to None if impressions_etv (nullable) is None
-        # and model_fields_set contains the field
-        if self.impressions_etv is None and "impressions_etv" in self.model_fields_set:
-            _dict['impressions_etv'] = None
-
         # set to None if estimated_paid_traffic_cost (nullable) is None
         # and model_fields_set contains the field
         if self.estimated_paid_traffic_cost is None and "estimated_paid_traffic_cost" in self.model_fields_set:
@@ -192,20 +202,22 @@ class LocalPackDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "description": obj.get("description"),
             "domain": obj.get("domain"),
             "phone": obj.get("phone"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "main_domain": obj.get("main_domain"),
             "relative_url": obj.get("relative_url"),
             "etv": obj.get("etv"),
-            "impressions_etv": obj.get("impressions_etv"),
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
+            "clickstream_etv": obj.get("clickstream_etv"),
             "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None,
-            "clickstream_etv": obj.get("clickstream_etv")
+            "backlinks_info": BacklinksInfo.from_dict(obj["backlinks_info"]) if obj.get("backlinks_info") is not None else None,
+            "rank_info": RankInfo.from_dict(obj["rank_info"]) if obj.get("rank_info") is not None else None
         })
         return _obj
 

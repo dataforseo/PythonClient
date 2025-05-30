@@ -31,8 +31,9 @@ class OnPagePagesRequestInfo(BaseModel):
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned pages optional field default value: 0 if you specify the 10 value, the first ten pages in the results array will be omitted and the data will be provided for the successive pages")
     filters: Optional[List[Optional[Any]]] = Field(default=None, description="array of results filtering parameters optional field you can add several filters at once (8 filters maximum) you should set a logical operator and, or between the conditions the following operators are supported: regex, not_regex, <, <=, >, >=, =, <>, in, not_in, like, not_like you can use the % operator with like and not_like to match any string of zero or more characters example: [\"meta.external_links_count\",\"<=\",50][\"url\",\"like\",\"https://dataforseo.com/apis/dataforseo-labs-api\"][[\"checks.high_waiting_time\",\"=\",false], \"and\",[\"resource_type\",\"=\",\"html\"]][[\"page_timing.duration_time\",\"<\",100],\"and\",[[\"checks.large_page_size\",\"=\",false],\"or\",[\"checks.high_waiting_time\",\"=\",false]]]The full list of possible filters is available by this link.")
     order_by: Optional[List[StrictStr]] = Field(default=None, description="results sorting rules optional field you can use the same values as in the filters array to sort the results possible sorting types: asc – results will be sorted in the ascending order desc – results will be sorted in the descending order you should use a comma to set up a sorting type example: [\"meta.external_links_count,desc\"] note that you can set no more than three sorting rules in a single request you should use a comma to separate several sorting rules example: [\"page_timing.dom_complete,asc\",\"size,desc\"]")
+    search_after_token: Optional[StrictStr] = Field(default=None, description="token for subsequent requests optional field provided in the identical filed of the response to each request; use this parameter to avoid timeouts while trying to obtain over 20,000 results in a single request; by specifying the unique search_after_token value from the response array, you will get the subsequent results of the initial task; search_after_token values are unique for each subsequent task ; Note: if the search_after_token is specified in the request, all other parameters should be identical to the previous request")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255 you can use this parameter to identify the task and match it with the result you will find the specified tag value in the data object of the response")
-    __properties: ClassVar[List[str]] = ["id", "limit", "offset", "filters", "order_by", "tag"]
+    __properties: ClassVar[List[str]] = ["id", "limit", "offset", "filters", "order_by", "search_after_token", "tag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,11 @@ class OnPagePagesRequestInfo(BaseModel):
         if self.order_by is None and "order_by" in self.model_fields_set:
             _dict['order_by'] = None
 
+        # set to None if search_after_token (nullable) is None
+        # and model_fields_set contains the field
+        if self.search_after_token is None and "search_after_token" in self.model_fields_set:
+            _dict['search_after_token'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -115,6 +121,7 @@ class OnPagePagesRequestInfo(BaseModel):
             "offset": obj.get("offset"),
             "filters": obj.get("filters"),
             "order_by": obj.get("order_by"),
+            "search_after_token": obj.get("search_after_token"),
             "tag": obj.get("tag")
         })
         return _obj

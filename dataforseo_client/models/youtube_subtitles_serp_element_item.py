@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,9 @@ class YoutubeSubtitlesSerpElementItem(BaseYoutubeSerpElementItem):
     YoutubeSubtitlesSerpElementItem
     """ # noqa: E501
     text: Optional[StrictStr] = Field(default=None, description="text translated in subtitles")
-    start_time: Optional[StrictInt] = Field(default=None, description="the second subtitled text starts")
-    end_time: Optional[StrictInt] = Field(default=None, description="the second subtitled text ends")
-    duration_time: Optional[StrictInt] = Field(default=None, description="duration of subtitles in seconds")
+    start_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the second subtitled text starts")
+    end_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the second subtitled text ends")
+    duration_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="duration of subtitles in seconds")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "text", "start_time", "end_time", "duration_time"]
 
     model_config = ConfigDict(

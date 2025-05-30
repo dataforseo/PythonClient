@@ -28,13 +28,13 @@ class KeywordsDataBingKeywordsForKeywordsLiveResultInfo(BaseModel):
     KeywordsDataBingKeywordsForKeywordsLiveResultInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
     search_partners: Optional[StrictBool] = Field(default=None, description="indicates whether data from partner networks is included in the response")
     device: Optional[StrictStr] = Field(default=None, description="device type indicates for what device type the data is provided; possible values: all, mobile, desktop, tablet")
     competition: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="competition represents the relative amount of competition associated with the given keyword in paid SERP only. This value is based on Bing Ads data. Possible values: 0.1, 0.5,0.90.1 – low competition, 0.5 – medium competition, 0.9 – high competition; if there is no data the value is null")
     cpc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="cost-per-click represents the average cost per click (USD) historically paid for the keyword. if there is no data, then the value is null")
-    search_volume: Optional[StrictInt] = Field(default=None, description="monthly average search volume rate represents the (approximate) number of searches for the keyword on the Bing search engine, depending on the user’s targetingsearch volume is rounded to the closest decimal values if there is no data, then the value is null")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="monthly average search volume rate represents the (approximate) number of searches for the keyword on the Bing search engine, depending on the user’s targetingsearch volume is rounded to the closest decimal values if there is no data, then the value is null")
     categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description="product and service categories legacy field, the value will always be null")
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly searches represents the (approximate) number of searches on this keyword (as available for the past twelve months), targeted to the specified geographic locations. if there is no data, then the value is null")
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "search_partners", "device", "competition", "cpc", "search_volume", "categories", "monthly_searches"]

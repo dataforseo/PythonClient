@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
 from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
@@ -31,15 +31,15 @@ class MerchantAmazonProductsTaskGetAdvancedResultInfo(BaseModel):
     keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to Amazon results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     spell: Optional[SpellInfo] = None
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results found in Amazon SERP contains types of all search results (items) found in the returned SERP possible item types: amazon_serp, amazon_paid, editorial_recommendations, top_rated_from_our_brands, related_searches")
-    se_results_count: Optional[StrictInt] = Field(default=None, description="search engine results count")
+    se_results_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="search engine results count")
     categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description="amazon product departments and subcategories")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="Amazon product items within the editorial_recommendations element")
     __properties: ClassVar[List[str]] = ["keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "categories", "items_count", "items"]
 

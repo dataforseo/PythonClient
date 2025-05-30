@@ -39,13 +39,14 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
     url: Optional[StrictStr] = Field(default=None, description="relevant URL in SERP")
     table: Optional[Table] = None
     main_domain: Optional[StrictStr] = Field(default=None, description="primary domain name in SERP")
-    relative_url: Optional[StrictStr] = Field(default=None, description="relative URL in SERP")
-    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated organic monthly traffic to the domain; calculated as the product of CTR (click-through-rate) and search volume values of the returned keyword learn more about how the metric is calculated in this help center article")
-    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost of running ads (USD) for the returned keyword; the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Bing Search learn more about how the metric is calculated in this help center article")
+    relative_url: Optional[StrictStr] = Field(default=None, description="URL in SERP that does not specify the HTTPs protocol and domain name")
+    etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated paid monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of monthly search traffic represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the domain ranks for learn more about how the metric is calculated in this help center article")
+    clickstream_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = None
     backlinks_info: Optional[BacklinksInfo] = None
     rank_info: Optional[RankInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "domain", "title", "featured_title", "description", "url", "table", "main_domain", "relative_url", "etv", "estimated_paid_traffic_cost", "rank_changes", "backlinks_info", "rank_info"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "domain", "title", "featured_title", "description", "url", "table", "main_domain", "relative_url", "etv", "estimated_paid_traffic_cost", "clickstream_etv", "rank_changes", "backlinks_info", "rank_info"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -173,6 +174,11 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
         if self.estimated_paid_traffic_cost is None and "estimated_paid_traffic_cost" in self.model_fields_set:
             _dict['estimated_paid_traffic_cost'] = None
 
+        # set to None if clickstream_etv (nullable) is None
+        # and model_fields_set contains the field
+        if self.clickstream_etv is None and "clickstream_etv" in self.model_fields_set:
+            _dict['clickstream_etv'] = None
+
         return _dict
 
     @classmethod
@@ -201,6 +207,7 @@ class FeaturedSnippetDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElement
             "relative_url": obj.get("relative_url"),
             "etv": obj.get("etv"),
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
+            "clickstream_etv": obj.get("clickstream_etv"),
             "rank_changes": RankChanges.from_dict(obj["rank_changes"]) if obj.get("rank_changes") is not None else None,
             "backlinks_info": BacklinksInfo.from_dict(obj["backlinks_info"]) if obj.get("backlinks_info") is not None else None,
             "rank_info": RankInfo.from_dict(obj["rank_info"]) if obj.get("rank_info") is not None else None

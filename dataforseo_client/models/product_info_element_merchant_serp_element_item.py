@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_merchant_serp_element_item import BaseMerchantSerpElementItem
 from dataforseo_client.models.product_seller import ProductSeller
 from dataforseo_client.models.product_variation import ProductVariation
@@ -37,7 +37,7 @@ class ProductInfoElementMerchantSerpElementItem(BaseMerchantSerpElementItem):
     images: Optional[List[Optional[StrictStr]]] = Field(default=None, description="product images contains urls to product images")
     features: Optional[List[Optional[StrictStr]]] = Field(default=None, description="product features contains snippets with the description of product features")
     rating: Optional[RatingElement] = None
-    seller_reviews_count: Optional[StrictInt] = Field(default=None, description="number of seller reviews number of reviews on the product seller’s account")
+    seller_reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of seller reviews number of reviews on the product seller’s account")
     sellers: Optional[List[ProductSeller]] = Field(default=None, description="sellers of the product number of reviews on the product seller’s account")
     variations: Optional[List[ProductVariation]] = Field(default=None, description="variations of the product contains brief information about different product variations")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "product_id", "title", "description", "url", "images", "features", "rating", "seller_reviews_count", "sellers", "variations"]

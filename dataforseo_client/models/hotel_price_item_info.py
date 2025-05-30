@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.hotel_info_price_offer import HotelInfoPriceOffer
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class HotelPriceItemInfo(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of the hotel")
-    price: Optional[StrictInt] = Field(default=None, description="price per night")
+    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="price per night")
     currency: Optional[StrictStr] = Field(default=None, description="price currency USD is applied by default, unless specified in the POST array")
     url: Optional[StrictStr] = Field(default=None, description="third-party page url URL to the third-party website page with pricing information")
     domain: Optional[StrictStr] = Field(default=None, description="third-party domain domain of the third-party website page with pricing information")

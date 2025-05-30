@@ -28,9 +28,9 @@ class ReviewMentionInfo(BaseModel):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the evaluated criterion")
     positive_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="positive score by criterion")
-    positive_count: Optional[StrictInt] = Field(default=None, description="count of positive reviews by criterion")
-    negative_count: Optional[StrictInt] = Field(default=None, description="count of negative reviews by criterion")
-    total_count: Optional[StrictInt] = Field(default=None, description="count of all reviews by criterion")
+    positive_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="count of positive reviews by criterion")
+    negative_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="count of negative reviews by criterion")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="count of all reviews by criterion")
     visible_by_default: Optional[StrictBool] = Field(default=None, description="element is visible by default indicates whether the review element is visible by default")
     __properties: ClassVar[List[str]] = ["title", "positive_score", "positive_count", "negative_count", "total_count", "visible_by_default"]
 

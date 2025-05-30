@@ -17,12 +17,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.apps_info import AppsInfo
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +34,7 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
     url: Optional[StrictStr] = Field(default=None, description="URL to the app page on App Store")
     icon: Optional[StrictStr] = Field(default=None, description="URL to the app icon")
     description: Optional[StrictStr] = Field(default=None, description="description of the app")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews of the app")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of reviews of the app")
     price: Optional[PriceInfo] = None
     is_free: Optional[StrictBool] = Field(default=None, description="indicates whether the app is free")
     main_category: Optional[StrictStr] = Field(default=None, description="main category/genre of the app")
@@ -266,7 +266,7 @@ class DataAppAppStoreInfoOrganicSerpElementItem(BaseAppDataSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "title": obj.get("title"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "app_id": obj.get("app_id"),
             "url": obj.get("url"),
             "icon": obj.get("icon"),

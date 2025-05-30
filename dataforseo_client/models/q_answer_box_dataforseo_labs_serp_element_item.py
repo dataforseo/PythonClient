@@ -28,9 +28,10 @@ class QAnswerBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
     """
     QAnswerBoxDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     text: Optional[List[Optional[StrictStr]]] = Field(default=None, description="text if there is none, equals null")
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "text", "links"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "text", "links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +104,11 @@ class QAnswerBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if text (nullable) is None
         # and model_fields_set contains the field
         if self.text is None and "text" in self.model_fields_set:
@@ -130,6 +136,7 @@ class QAnswerBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "text": obj.get("text"),
             "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None
         })

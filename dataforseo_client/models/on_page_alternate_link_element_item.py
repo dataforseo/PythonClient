@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict
+from typing import Any, ClassVar, Dict, List
 from dataforseo_client.models.base_on_page_link_item_info import BaseOnPageLinkItemInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,6 @@ class OnPageAlternateLinkElementItem(BaseOnPageLinkItemInfo):
     """
     OnPageAlternateLinkElementItem
     """ # noqa: E501
-    page_to_status_code: Optional[StrictInt] = Field(default=None, description="status code of the referenced page status code of the page to which the link is pointing")
     __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict", "page_to_status_code"]
 
     model_config = ConfigDict(

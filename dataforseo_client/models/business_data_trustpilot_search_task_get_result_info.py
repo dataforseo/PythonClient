@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,7 @@ class BusinessDataTrustpilotSearchTaskGetResultInfo(BaseModel):
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of items in the results array you can get more results by using the depth parameter when setting a task")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of items in the results array you can get more results by using the depth parameter when setting a task")
     items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="found reviews you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = ["keyword", "se_domain", "check_url", "datetime", "items_count", "items"]
 

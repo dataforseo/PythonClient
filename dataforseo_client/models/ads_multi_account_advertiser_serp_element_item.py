@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.advertiser import Advertiser
 from dataforseo_client.models.base_google_ads_advertisers_serp_element_item import BaseGoogleAdsAdvertisersSerpElementItem
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class AdsMultiAccountAdvertiserSerpElementItem(BaseGoogleAdsAdvertisersSerpEleme
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="title of the element")
     location: Optional[StrictStr] = Field(default=None, description="advertiser location")
-    approx_ads_count: Optional[StrictInt] = Field(default=None, description="ads count the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
+    approx_ads_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="ads count the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
     advertisers: Optional[List[Advertiser]] = Field(default=None, description="associated advertiser accounts contains objects with data on associated advertiser accounts")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "title", "location", "approx_ads_count", "advertisers"]
 

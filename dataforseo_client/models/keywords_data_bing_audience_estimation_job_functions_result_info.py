@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class KeywordsDataBingAudienceEstimationJobFunctionsResultInfo(BaseModel):
     """
     KeywordsDataBingAudienceEstimationJobFunctionsResultInfo
     """ # noqa: E501
-    job_function_id: Optional[StrictInt] = Field(default=None, description="ID of the job function")
+    job_function_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="ID of the job function")
     job_function_name: Optional[StrictStr] = Field(default=None, description="name of the job function")
     __properties: ClassVar[List[str]] = ["job_function_id", "job_function_name"]
 

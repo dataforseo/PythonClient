@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.refinement_chips_info import RefinementChipsInfo
 from dataforseo_client.models.spell_info import SpellInfo
@@ -33,15 +33,15 @@ class SerpGoogleSearchByImageTaskGetAdvancedResultInfo(BaseModel):
     keyword: Optional[StrictStr] = Field(default=None, description="keyword Google associated with the specified image")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     spell: Optional[SpellInfo] = None
     refinement_chips: Optional[RefinementChipsInfo] = None
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item types: organic, images")
-    se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    se_results_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of results in SERP")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseSerpElementItem]] = Field(default=None, description="items featured in the faq_box")
     __properties: ClassVar[List[str]] = ["image_url", "keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "refinement_chips", "item_types", "se_results_count", "items_count", "items"]
 

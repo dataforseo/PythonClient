@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class BaseGoogleTrendsItem(BaseModel):
     BaseGoogleTrendsItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    position: Optional[StrictInt] = Field(default=None, description="the alignment of the element in Google Trends can take the following values: 1, 2, 3, 4, etc.")
+    position: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the alignment of the element in Google Trends can take the following values: 1, 2, 3, 4, etc.")
     title: Optional[StrictStr] = Field(default=None, description="title of the element in Google Trends")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the google_trends_graph element is based on the keywords listed in this array")
     __properties: ClassVar[List[str]] = ["type", "position", "title", "keywords"]

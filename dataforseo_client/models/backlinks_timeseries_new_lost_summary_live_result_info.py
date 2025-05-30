@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.backlinks_timeseries_new_lost_summary_live_item import BacklinksTimeseriesNewLostSummaryLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,7 @@ class BacklinksTimeseriesNewLostSummaryLiveResultInfo(BaseModel):
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range in the UTC format: “yyyy-mm-dd” example: 2019-01-01")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range in the UTC format: \"yyyy-mm-dd\" example: \"2019-01-15\"")
     group_range: Optional[StrictStr] = Field(default=None, description="group_range from the POST array")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BacklinksTimeseriesNewLostSummaryLiveItem]] = Field(default=None, description="contains relevant backlinks and referring domains data")
     __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "group_range", "items_count", "items"]
 

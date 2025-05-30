@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class AvailableLocations(BaseModel):
     """
     AvailableLocations
     """ # noqa: E501
-    location_code: Optional[StrictStr] = Field(default=None, description="location code")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code")
     location_name: Optional[StrictStr] = Field(default=None, description="location name")
     country_iso_code: Optional[StrictStr] = Field(default=None, description="ISO country code of the location")
     location_type: Optional[StrictStr] = Field(default=None, description="location type possible values: Country, Region")

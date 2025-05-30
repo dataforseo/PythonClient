@@ -25,7 +25,7 @@ from dataforseo_client.models.appendix_dataforseo_trends_keywords_data_limits_ra
 from dataforseo_client.models.appendix_google_ads_keywords_data_limits_rates_data_info import AppendixGoogleAdsKeywordsDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_info import AppendixInfo
 from dataforseo_client.models.appendix_naver_keywords_data_data_info import AppendixNaverKeywordsDataDataInfo
-from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
+from dataforseo_client.models.appendix_serp_days_rates_data_info import AppendixSerpDaysRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -53,7 +53,7 @@ class AppendixKeywordsDataDataInfo(BaseModel):
     keyword_suggestions_for_url: Optional[AppendixInfo] = None
     naver: Optional[AppendixNaverKeywordsDataDataInfo] = None
     google: Optional[AppendixBingKeywordsDataLimitsRatesDataInfo] = None
-    keyword_ideas_ads_api: Optional[AppendixSerpsRatesDataInfo] = None
+    keyword_ideas_ads_api: Optional[AppendixSerpDaysRatesDataInfo] = None
     __properties: ClassVar[List[str]] = ["keywords_for_keywords", "keywords_for_site", "search_volume", "ad_traffic_by_keywords", "languages", "locations", "tasks_ready", "explore", "categories", "errors", "bing", "keyword_performance", "locations_and_languages", "google_ads", "dataforseo_trends", "clickstream_data", "audience_estimation", "keyword_suggestions_for_url", "naver", "google", "keyword_ideas_ads_api"]
 
     model_config = ConfigDict(
@@ -202,7 +202,7 @@ class AppendixKeywordsDataDataInfo(BaseModel):
             "keyword_suggestions_for_url": AppendixInfo.from_dict(obj["keyword_suggestions_for_url"]) if obj.get("keyword_suggestions_for_url") is not None else None,
             "naver": AppendixNaverKeywordsDataDataInfo.from_dict(obj["naver"]) if obj.get("naver") is not None else None,
             "google": AppendixBingKeywordsDataLimitsRatesDataInfo.from_dict(obj["google"]) if obj.get("google") is not None else None,
-            "keyword_ideas_ads_api": AppendixSerpsRatesDataInfo.from_dict(obj["keyword_ideas_ads_api"]) if obj.get("keyword_ideas_ads_api") is not None else None
+            "keyword_ideas_ads_api": AppendixSerpDaysRatesDataInfo.from_dict(obj["keyword_ideas_ads_api"]) if obj.get("keyword_ideas_ads_api") is not None else None
         })
         return _obj
 

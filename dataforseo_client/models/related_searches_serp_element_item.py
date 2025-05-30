@@ -28,10 +28,9 @@ class RelatedSearchesSerpElementItem(BaseSerpElementItem):
     """
     RelatedSearchesSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     items: Optional[List[Optional[StrictStr]]] = Field(default=None, description="contains arrays of specific images")
     rectangle: Optional[Rectangle] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "items", "rectangle"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items", "rectangle"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +94,11 @@ class RelatedSearchesSerpElementItem(BaseSerpElementItem):
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
 
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
+
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -116,6 +120,7 @@ class RelatedSearchesSerpElementItem(BaseSerpElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
+            "xpath": obj.get("xpath"),
             "items": obj.get("items"),
             "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
         })

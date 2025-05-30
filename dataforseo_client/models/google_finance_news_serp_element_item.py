@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_google_finance_serp_element_item import BaseGoogleFinanceSerpElementItem
-from dataforseo_client.models.google_finance_news_element import GoogleFinanceNewsElement
+from dataforseo_client.models.news import News
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +28,12 @@ class GoogleFinanceNewsSerpElementItem(BaseGoogleFinanceSerpElementItem):
     """
     GoogleFinanceNewsSerpElementItem
     """ # noqa: E501
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the news element example: In the news")
     sub_title: Optional[StrictStr] = Field(default=None, description="sub-title of the news element example: Based on Europe, Middle East, and Africa")
-    items: Optional[List[GoogleFinanceNewsElement]] = Field(default=None, description="market indexes data array of items containing market indexes data; possible type of items: google_finance_asset_pair_element, google_finance_market_instrument_element, google_finance_market_index_element")
-    __properties: ClassVar[List[str]] = ["type", "title", "sub_title", "items"]
+    items: Optional[List[News]] = Field(default=None, description="market indexes data array of items containing market indexes data; possible type of items: google_finance_asset_pair_element, google_finance_market_instrument_element, google_finance_market_index_element")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "title", "sub_title", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +86,16 @@ class GoogleFinanceNewsSerpElementItem(BaseGoogleFinanceSerpElementItem):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
+        # set to None if rank_group (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_group is None and "rank_group" in self.model_fields_set:
+            _dict['rank_group'] = None
+
+        # set to None if rank_absolute (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
+            _dict['rank_absolute'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -112,9 +124,11 @@ class GoogleFinanceNewsSerpElementItem(BaseGoogleFinanceSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
+            "rank_group": obj.get("rank_group"),
+            "rank_absolute": obj.get("rank_absolute"),
             "title": obj.get("title"),
             "sub_title": obj.get("sub_title"),
-            "items": [GoogleFinanceNewsElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [News.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

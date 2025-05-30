@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.people_also_ask_expanded_element import PeopleAlsoAskExpandedElement
+from dataforseo_client.models.base_people_also_ask_expanded_element_item import BasePeopleAlsoAskExpandedElementItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class PeopleAlsoAskElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     seed_question: Optional[StrictStr] = Field(default=None, description="question that triggered additional expanded elements")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    expanded_element: Optional[List[PeopleAlsoAskExpandedElement]] = Field(default=None, description="expanded element")
+    expanded_element: Optional[List[BasePeopleAlsoAskExpandedElementItem]] = Field(default=None, description="expanded element")
     __properties: ClassVar[List[str]] = ["type", "title", "seed_question", "xpath", "expanded_element"]
 
     model_config = ConfigDict(
@@ -121,7 +121,7 @@ class PeopleAlsoAskElement(BaseModel):
             "title": obj.get("title"),
             "seed_question": obj.get("seed_question"),
             "xpath": obj.get("xpath"),
-            "expanded_element": [PeopleAlsoAskExpandedElement.from_dict(_item) for _item in obj["expanded_element"]] if obj.get("expanded_element") is not None else None
+            "expanded_element": [BasePeopleAlsoAskExpandedElementItem.from_dict(_item) for _item in obj["expanded_element"]] if obj.get("expanded_element") is not None else None
         })
         return _obj
 

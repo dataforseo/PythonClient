@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,9 +35,9 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     title: Optional[StrictStr] = Field(default=None, description="title of the ‘reviews’ element on Trustpilot the name of the business entity for which the reviews are collected")
     location: Optional[StrictStr] = Field(default=None, description="location of the business entity as specified on Trustpilot address of the business entity for which the reviews are collected")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
-    rating: Optional[RatingInfo] = None
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of items in the results array you can get more results by using the depth parameter when setting a task")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of reviews")
+    rating: Optional[BusinessDataRatingInfo] = None
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of items in the results array you can get more results by using the depth parameter when setting a task")
     items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="found reviews you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = ["domain", "type", "se_domain", "check_url", "datetime", "title", "location", "reviews_count", "rating", "items_count", "items"]
 
@@ -160,7 +160,7 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
             "title": obj.get("title"),
             "location": obj.get("location"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "items_count": obj.get("items_count"),
             "items": [BaseBusinessDataSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })

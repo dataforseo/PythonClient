@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_amazon_bulk_search_volume_live_item import DataforseoLabsAmazonBulkSearchVolumeLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,10 @@ class DataforseoLabsAmazonBulkSearchVolumeLiveResultInfo(BaseModel):
     DataforseoLabsAmazonBulkSearchVolumeLiveResultInfo
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[DataforseoLabsAmazonBulkSearchVolumeLiveItem]] = Field(default=None, description="contains keyword search volume data data")
     __properties: ClassVar[List[str]] = ["se_type", "location_code", "language_code", "total_count", "items_count", "items"]
 

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
 from typing import Optional, Set
@@ -31,7 +31,7 @@ class OnPageInstantPagesResultInfo(BaseModel):
     crawl_progress: Optional[StrictStr] = Field(default=None, description="status of the crawling session possible values: in_progress, finished")
     crawl_status: Optional[CrawlStatusInfo] = None
     crawl_gateway_address: Optional[StrictStr] = Field(default=None, description="crawler ip address displays the IP address used by the crawler to initiate the current crawling session you can find the full list of IPs used by our crawler in the Overview section")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
     items: Optional[List[BaseOnPageResourceItemInfo]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "crawl_gateway_address", "items_count", "items"]
 

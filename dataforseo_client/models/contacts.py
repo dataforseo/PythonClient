@@ -27,7 +27,8 @@ class Contacts(BaseModel):
     Contacts
     """ # noqa: E501
     telephones: Optional[List[Optional[StrictStr]]] = Field(default=None, description="array of telephone numbers")
-    __properties: ClassVar[List[str]] = ["telephones"]
+    emails: Optional[List[Optional[StrictStr]]] = Field(default=None, description="array of emails")
+    __properties: ClassVar[List[str]] = ["telephones", "emails"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +74,11 @@ class Contacts(BaseModel):
         if self.telephones is None and "telephones" in self.model_fields_set:
             _dict['telephones'] = None
 
+        # set to None if emails (nullable) is None
+        # and model_fields_set contains the field
+        if self.emails is None and "emails" in self.model_fields_set:
+            _dict['emails'] = None
+
         return _dict
 
     @classmethod
@@ -85,7 +91,8 @@ class Contacts(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "telephones": obj.get("telephones")
+            "telephones": obj.get("telephones"),
+            "emails": obj.get("emails")
         })
         return _obj
 

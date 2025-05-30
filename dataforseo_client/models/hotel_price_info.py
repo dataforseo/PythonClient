@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.hotel_price_item_info import HotelPriceItemInfo
+from dataforseo_client.models.prices_by_dates import PricesByDates
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +28,16 @@ class HotelPriceInfo(BaseModel):
     """
     HotelPriceInfo
     """ # noqa: E501
-    price: Optional[StrictInt] = Field(default=None, description="price per night")
-    price_without_discount: Optional[StrictInt] = Field(default=None, description="full price per night without a discount applied")
+    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="price per night")
+    price_without_discount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="full price per night without a discount applied")
     currency: Optional[StrictStr] = Field(default=None, description="price currency USD is applied by default, unless specified in the POST array")
     discount_text: Optional[StrictStr] = Field(default=None, description="text about a discount applied")
     check_in: Optional[StrictStr] = Field(default=None, description="check-in date and time in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     check_out: Optional[StrictStr] = Field(default=None, description="check-out date and time in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    visitors: Optional[StrictInt] = Field(default=None, description="number of hotel visitors for this price")
+    visitors: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of hotel visitors for this price")
     items: Optional[List[HotelPriceItemInfo]] = Field(default=None, description="encountered item types types of search engine results encountered in the items array; possible item types: hotel_search_item")
-    __properties: ClassVar[List[str]] = ["price", "price_without_discount", "currency", "discount_text", "check_in", "check_out", "visitors", "items"]
+    prices_by_dates: Optional[List[PricesByDates]] = None
+    __properties: ClassVar[List[str]] = ["price", "price_without_discount", "currency", "discount_text", "check_in", "check_out", "visitors", "items", "prices_by_dates"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +85,13 @@ class HotelPriceInfo(BaseModel):
                 if _item_items:
                     _items.append(_item_items.to_dict())
             _dict['items'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in prices_by_dates (list)
+        _items = []
+        if self.prices_by_dates:
+            for _item_prices_by_dates in self.prices_by_dates:
+                if _item_prices_by_dates:
+                    _items.append(_item_prices_by_dates.to_dict())
+            _dict['prices_by_dates'] = _items
         # set to None if price (nullable) is None
         # and model_fields_set contains the field
         if self.price is None and "price" in self.model_fields_set:
@@ -123,6 +132,11 @@ class HotelPriceInfo(BaseModel):
         if self.items is None and "items" in self.model_fields_set:
             _dict['items'] = None
 
+        # set to None if prices_by_dates (nullable) is None
+        # and model_fields_set contains the field
+        if self.prices_by_dates is None and "prices_by_dates" in self.model_fields_set:
+            _dict['prices_by_dates'] = None
+
         return _dict
 
     @classmethod
@@ -142,7 +156,8 @@ class HotelPriceInfo(BaseModel):
             "check_in": obj.get("check_in"),
             "check_out": obj.get("check_out"),
             "visitors": obj.get("visitors"),
-            "items": [HotelPriceItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [HotelPriceItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "prices_by_dates": [PricesByDates.from_dict(_item) for _item in obj["prices_by_dates"]] if obj.get("prices_by_dates") is not None else None
         })
         return _obj
 

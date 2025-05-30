@@ -20,7 +20,7 @@ import json
 from pydantic import ConfigDict
 from typing import Any, ClassVar, Dict, List
 from dataforseo_client.models.base_google_maps_serp_element_item import BaseGoogleMapsSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -125,7 +125,7 @@ class MapsPaidItemSerpElementItem(BaseGoogleMapsSerpElementItem):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution")
         })
         return _obj

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.backlinks_domain_intersection_info import BacklinksDomainIntersectionInfo
+from dataforseo_client.models.backlinks_domain_intersection import BacklinksDomainIntersection
 from dataforseo_client.models.intersection_summary_info import IntersectionSummaryInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class BacklinksDomainIntersectionLiveItem(BaseModel):
     """
     BacklinksDomainIntersectionLiveItem
     """ # noqa: E501
-    domain_intersection: Optional[Dict[str, BacklinksDomainIntersectionInfo]] = Field(default=None, description="contains data on domains that link to the corresponding targets specified in the POST array data is provided in separate objects corresponding to domains, subdomains or pages specified in the targets object")
+    domain_intersection: Optional[Dict[str, BacklinksDomainIntersection]] = Field(default=None, description="contains data on domains that link to the corresponding targets specified in the POST array data is provided in separate objects corresponding to domains, subdomains or pages specified in the targets object")
     summary: Optional[IntersectionSummaryInfo] = None
     __properties: ClassVar[List[str]] = ["domain_intersection", "summary"]
 
@@ -99,7 +99,7 @@ class BacklinksDomainIntersectionLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "domain_intersection": dict(
-                (_k, BacklinksDomainIntersectionInfo.from_dict(_v))
+                (_k, BacklinksDomainIntersection.from_dict(_v))
                 for _k, _v in obj["domain_intersection"].items()
             )
             if obj.get("domain_intersection") is not None

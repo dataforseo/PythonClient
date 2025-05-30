@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class UserProfileInfo(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="the name of the reviewer")
     avatar: Optional[StrictStr] = Field(default=None, description="URL to the profile picture of the reviewer")
     url: Optional[StrictStr] = Field(default=None, description="relevant url")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="total number of reviews submitted by the reviewer")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of reviews submitted by the reviewer")
     locations: Optional[StrictStr] = Field(default=None, description="country of the reviewer")
     __properties: ClassVar[List[str]] = ["name", "avatar", "url", "reviews_count", "locations"]
 

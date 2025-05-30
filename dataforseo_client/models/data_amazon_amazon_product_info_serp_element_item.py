@@ -32,7 +32,6 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
     """
     DataAmazonAmazonProductInfoSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP possible values: left, right")
     title: Optional[StrictStr] = Field(default=None, description="product title")
     details: Optional[StrictStr] = Field(default=None, description="product specs and other details")
     image_url: Optional[StrictStr] = Field(default=None, description="the URL of the product image")
@@ -56,7 +55,7 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
     is_available: Optional[StrictBool] = Field(default=None, description="indicates whether the product is available for ordering if the value is true, the product can be ordered")
     top_local_reviews: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="array of objects with top reviews from target location to obtain additional local reviews, you can specify the load_more_local_reviews parameter in Task POST")
     top_global_reviews: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="array of objects with top reviews from around the world")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "title", "details", "image_url", "author", "data_asin", "parent_asin", "product_asins", "price_from", "price_to", "currency", "is_amazon_choice", "rating", "is_newer_model_available", "applicable_vouchers", "newer_model", "categories", "product_information", "product_images_list", "product_videos_list", "description", "is_available", "top_local_reviews", "top_global_reviews"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "details", "image_url", "author", "data_asin", "parent_asin", "product_asins", "price_from", "price_to", "currency", "is_amazon_choice", "rating", "is_newer_model_available", "applicable_vouchers", "newer_model", "categories", "product_information", "product_images_list", "product_videos_list", "description", "is_available", "top_local_reviews", "top_global_reviews"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -153,15 +152,15 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
 
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
-
         # set to None if position (nullable) is None
         # and model_fields_set contains the field
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
+
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
 
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
@@ -283,8 +282,8 @@ class DataAmazonAmazonProductInfoSerpElementItem(BaseAmazonSerpElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "xpath": obj.get("xpath"),
             "position": obj.get("position"),
+            "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "details": obj.get("details"),
             "image_url": obj.get("image_url"),

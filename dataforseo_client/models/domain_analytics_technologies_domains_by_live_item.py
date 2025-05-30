@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.technologies_info import TechnologiesInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,7 @@ class DomainAnalyticsTechnologiesDomainsByLiveItem(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="domain meta title")
     description: Optional[StrictStr] = Field(default=None, description="domain meta description")
     meta_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="domain meta keywords")
-    domain_rank: Optional[StrictStr] = Field(default=None, description="backlink rank of the target domain learn more about the metric and how it is calculated in this help center article")
+    domain_rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="backlink rank of the target domain learn more about the metric and how it is calculated in this help center article")
     last_visited: Optional[StrictStr] = Field(default=None, description="most recent date when our crawler visited the domain in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-10-10 12:57:46 +00:00")
     country_iso_code: Optional[StrictStr] = Field(default=None, description="domain ISO code ISO code of the country that target domain is determined to belong to")
     language_code: Optional[StrictStr] = Field(default=None, description="domain language code of the language that target domain is determined to be associated with")

@@ -19,8 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.est_c_info import EstCInfo
-from dataforseo_client.models.est_info import EstInfo
+from dataforseo_client.models.audience_estimation_info import AudienceEstimationInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,16 +27,16 @@ class KeywordsDataBingAudienceEstimationLiveResultInfo(BaseModel):
     """
     KeywordsDataBingAudienceEstimationLiveResultInfo
     """ # noqa: E501
-    est_impressions: Optional[EstInfo] = None
-    est_audience_size: Optional[EstInfo] = None
-    est_clicks: Optional[EstInfo] = None
-    est_spend: Optional[EstInfo] = None
-    est_cost_per_event: Optional[EstCInfo] = None
-    est_ctr: Optional[EstCInfo] = None
+    est_impressions: Optional[AudienceEstimationInfo] = None
+    est_audience_size: Optional[AudienceEstimationInfo] = None
+    est_clicks: Optional[AudienceEstimationInfo] = None
+    est_spend: Optional[AudienceEstimationInfo] = None
+    est_cost_per_event: Optional[AudienceEstimationInfo] = None
+    est_ctr: Optional[AudienceEstimationInfo] = None
     suggested_bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="suggested bid value under the current targeting")
     suggested_budget: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="suggested daily budget value under the current targeting and bid")
-    events_lost_to_bid: Optional[StrictInt] = Field(default=None, description="indicates event lost count due to insufficient input bid")
-    events_lost_to_budget: Optional[StrictInt] = Field(default=None, description="indicates the event lost count due to insufficient input budget")
+    events_lost_to_bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates event lost count due to insufficient input bid")
+    events_lost_to_budget: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the event lost count due to insufficient input budget")
     est_reach_audience_size: Optional[StrictInt] = Field(default=None, description="monthly estimated user count")
     est_reach_impressions: Optional[StrictInt] = Field(default=None, description="monthly estimated impressions")
     currency: Optional[StrictStr] = Field(default=None, description="currency name example: USDollar")
@@ -147,12 +146,12 @@ class KeywordsDataBingAudienceEstimationLiveResultInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "est_impressions": EstInfo.from_dict(obj["est_impressions"]) if obj.get("est_impressions") is not None else None,
-            "est_audience_size": EstInfo.from_dict(obj["est_audience_size"]) if obj.get("est_audience_size") is not None else None,
-            "est_clicks": EstInfo.from_dict(obj["est_clicks"]) if obj.get("est_clicks") is not None else None,
-            "est_spend": EstInfo.from_dict(obj["est_spend"]) if obj.get("est_spend") is not None else None,
-            "est_cost_per_event": EstCInfo.from_dict(obj["est_cost_per_event"]) if obj.get("est_cost_per_event") is not None else None,
-            "est_ctr": EstCInfo.from_dict(obj["est_ctr"]) if obj.get("est_ctr") is not None else None,
+            "est_impressions": AudienceEstimationInfo.from_dict(obj["est_impressions"]) if obj.get("est_impressions") is not None else None,
+            "est_audience_size": AudienceEstimationInfo.from_dict(obj["est_audience_size"]) if obj.get("est_audience_size") is not None else None,
+            "est_clicks": AudienceEstimationInfo.from_dict(obj["est_clicks"]) if obj.get("est_clicks") is not None else None,
+            "est_spend": AudienceEstimationInfo.from_dict(obj["est_spend"]) if obj.get("est_spend") is not None else None,
+            "est_cost_per_event": AudienceEstimationInfo.from_dict(obj["est_cost_per_event"]) if obj.get("est_cost_per_event") is not None else None,
+            "est_ctr": AudienceEstimationInfo.from_dict(obj["est_ctr"]) if obj.get("est_ctr") is not None else None,
             "suggested_bid": obj.get("suggested_bid"),
             "suggested_budget": obj.get("suggested_budget"),
             "events_lost_to_bid": obj.get("events_lost_to_bid"),

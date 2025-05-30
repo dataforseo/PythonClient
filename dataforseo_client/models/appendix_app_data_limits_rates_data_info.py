@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_business_listings_business_data_limits_rates_data_info import AppendixBusinessListingsBusinessDataLimitsRatesDataInfo
-from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
+from dataforseo_client.models.appendix_serp_days_rates_data_info import AppendixSerpDaysRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +28,10 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
     """
     AppendixAppDataLimitsRatesDataInfo
     """ # noqa: E501
-    app_info: Optional[AppendixSerpsRatesDataInfo] = None
-    app_list: Optional[AppendixSerpsRatesDataInfo] = None
-    app_reviews: Optional[AppendixSerpsRatesDataInfo] = None
-    app_searches: Optional[AppendixSerpsRatesDataInfo] = None
+    app_info: Optional[AppendixSerpDaysRatesDataInfo] = None
+    app_list: Optional[AppendixSerpDaysRatesDataInfo] = None
+    app_reviews: Optional[AppendixSerpDaysRatesDataInfo] = None
+    app_searches: Optional[AppendixSerpDaysRatesDataInfo] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     locations: Optional[Union[StrictFloat, StrictInt]] = None
@@ -131,10 +131,10 @@ class AppendixAppDataLimitsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "app_info": AppendixSerpsRatesDataInfo.from_dict(obj["app_info"]) if obj.get("app_info") is not None else None,
-            "app_list": AppendixSerpsRatesDataInfo.from_dict(obj["app_list"]) if obj.get("app_list") is not None else None,
-            "app_reviews": AppendixSerpsRatesDataInfo.from_dict(obj["app_reviews"]) if obj.get("app_reviews") is not None else None,
-            "app_searches": AppendixSerpsRatesDataInfo.from_dict(obj["app_searches"]) if obj.get("app_searches") is not None else None,
+            "app_info": AppendixSerpDaysRatesDataInfo.from_dict(obj["app_info"]) if obj.get("app_info") is not None else None,
+            "app_list": AppendixSerpDaysRatesDataInfo.from_dict(obj["app_list"]) if obj.get("app_list") is not None else None,
+            "app_reviews": AppendixSerpDaysRatesDataInfo.from_dict(obj["app_reviews"]) if obj.get("app_reviews") is not None else None,
+            "app_searches": AppendixSerpDaysRatesDataInfo.from_dict(obj["app_searches"]) if obj.get("app_searches") is not None else None,
             "errors": obj.get("errors"),
             "languages": obj.get("languages"),
             "locations": obj.get("locations"),

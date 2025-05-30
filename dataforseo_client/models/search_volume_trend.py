@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class SearchVolumeTrend(BaseModel):
     """
     SearchVolumeTrend
     """ # noqa: E501
-    monthly: Optional[StrictInt] = Field(default=None, description="search volume change in percent compared to the previous month")
-    quarterly: Optional[StrictInt] = Field(default=None, description="search volume change in percent compared to the previous quarter")
-    yearly: Optional[StrictInt] = Field(default=None, description="search volume change in percent compared to the previous year")
+    monthly: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="search volume change in percent compared to the previous month")
+    quarterly: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="search volume change in percent compared to the previous quarter")
+    yearly: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="search volume change in percent compared to the previous year")
     __properties: ClassVar[List[str]] = ["monthly", "quarterly", "yearly"]
 
     model_config = ConfigDict(

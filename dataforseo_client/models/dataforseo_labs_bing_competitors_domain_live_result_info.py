@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_competitors_domain_live_item import DataforseoLabsCompetitorsDomainLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,10 +29,10 @@ class DataforseoLabsBingCompetitorsDomainLiveResultInfo(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     target: Optional[StrictStr] = Field(default=None, description="target domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[DataforseoLabsCompetitorsDomainLiveItem]] = Field(default=None, description="contains data related to the target and competitor domains")
     __properties: ClassVar[List[str]] = ["se_type", "target", "location_code", "language_code", "total_count", "items_count", "items"]
 

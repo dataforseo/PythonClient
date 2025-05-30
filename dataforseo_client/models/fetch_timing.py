@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class FetchTiming(BaseModel):
     """
     FetchTiming
     """ # noqa: E501
-    duration_time: Optional[StrictInt] = Field(default=None, description="indicates how many milliseconds it took to fetch a resource")
-    fetch_start: Optional[StrictInt] = Field(default=None, description="time to start downloading the resource the amount of time a browser needs to start downloading a resource")
-    fetch_end: Optional[StrictInt] = Field(default=None, description="time to complete downloading the resource the amount of time a browser needs to complete downloading a resource")
+    duration_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates how many seconds it took to download a page")
+    fetch_start: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="time to start downloading the HTML resource the amount of time the browser needs to start downloading a page")
+    fetch_end: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="time to complete downloading the HTML resource the amount of time the browser needs to complete downloading a page")
     __properties: ClassVar[List[str]] = ["duration_time", "fetch_start", "fetch_end"]
 
     model_config = ConfigDict(

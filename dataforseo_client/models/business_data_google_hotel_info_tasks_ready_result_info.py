@@ -31,9 +31,8 @@ class BusinessDataGoogleHotelInfoTasksReadyResultInfo(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description="search engine specified when setting the task")
     date_posted: Optional[StrictStr] = Field(default=None, description="date when the task was posted (in the UTC format)")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier")
-    endpoint_advanced: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the task")
-    endpoint_html: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the task")
-    __properties: ClassVar[List[str]] = ["id", "se", "se_type", "date_posted", "tag", "endpoint_advanced", "endpoint_html"]
+    endpoint: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the task")
+    __properties: ClassVar[List[str]] = ["id", "se", "se_type", "date_posted", "tag", "endpoint"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,15 +98,10 @@ class BusinessDataGoogleHotelInfoTasksReadyResultInfo(BaseModel):
         if self.tag is None and "tag" in self.model_fields_set:
             _dict['tag'] = None
 
-        # set to None if endpoint_advanced (nullable) is None
+        # set to None if endpoint (nullable) is None
         # and model_fields_set contains the field
-        if self.endpoint_advanced is None and "endpoint_advanced" in self.model_fields_set:
-            _dict['endpoint_advanced'] = None
-
-        # set to None if endpoint_html (nullable) is None
-        # and model_fields_set contains the field
-        if self.endpoint_html is None and "endpoint_html" in self.model_fields_set:
-            _dict['endpoint_html'] = None
+        if self.endpoint is None and "endpoint" in self.model_fields_set:
+            _dict['endpoint'] = None
 
         return _dict
 
@@ -126,8 +120,7 @@ class BusinessDataGoogleHotelInfoTasksReadyResultInfo(BaseModel):
             "se_type": obj.get("se_type"),
             "date_posted": obj.get("date_posted"),
             "tag": obj.get("tag"),
-            "endpoint_advanced": obj.get("endpoint_advanced"),
-            "endpoint_html": obj.get("endpoint_html")
+            "endpoint": obj.get("endpoint")
         })
         return _obj
 

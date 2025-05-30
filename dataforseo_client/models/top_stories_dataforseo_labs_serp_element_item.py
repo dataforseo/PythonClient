@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.top_stories_element import TopStoriesElement
@@ -28,8 +28,10 @@ class TopStoriesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
     """
     TopStoriesDataforseoLabsSerpElementItem
     """ # noqa: E501
-    items: Optional[List[TopStoriesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
+    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
+    items: Optional[List[TopStoriesElement]] = Field(default=None, description="elements of search results found in SERP")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,6 +104,16 @@ class TopStoriesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
+        # set to None if title (nullable) is None
+        # and model_fields_set contains the field
+        if self.title is None and "title" in self.model_fields_set:
+            _dict['title'] = None
+
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -124,6 +136,8 @@ class TopStoriesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
+            "title": obj.get("title"),
             "items": [TopStoriesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

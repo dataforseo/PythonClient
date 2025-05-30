@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,12 @@ class ContentAnalysisLanguagesResultInfo(BaseModel):
     """
     ContentAnalysisLanguagesResultInfo
     """ # noqa: E501
-    language_name: Optional[StrictStr] = Field(default=None, description="language name")
-    language_code: Optional[StrictStr] = Field(default=None, description="language code according to ISO 639-1")
-    __properties: ClassVar[List[str]] = ["language_name", "language_code"]
+    location_code: Optional[Union[StrictFloat, StrictInt]] = None
+    location_name: Optional[StrictStr] = None
+    location_code_parent: Optional[Union[StrictFloat, StrictInt]] = None
+    country_iso_code: Optional[StrictStr] = None
+    location_type: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["location_code", "location_name", "location_code_parent", "country_iso_code", "location_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -69,15 +72,30 @@ class ContentAnalysisLanguagesResultInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if language_name (nullable) is None
+        # set to None if location_code (nullable) is None
         # and model_fields_set contains the field
-        if self.language_name is None and "language_name" in self.model_fields_set:
-            _dict['language_name'] = None
+        if self.location_code is None and "location_code" in self.model_fields_set:
+            _dict['location_code'] = None
 
-        # set to None if language_code (nullable) is None
+        # set to None if location_name (nullable) is None
         # and model_fields_set contains the field
-        if self.language_code is None and "language_code" in self.model_fields_set:
-            _dict['language_code'] = None
+        if self.location_name is None and "location_name" in self.model_fields_set:
+            _dict['location_name'] = None
+
+        # set to None if location_code_parent (nullable) is None
+        # and model_fields_set contains the field
+        if self.location_code_parent is None and "location_code_parent" in self.model_fields_set:
+            _dict['location_code_parent'] = None
+
+        # set to None if country_iso_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.country_iso_code is None and "country_iso_code" in self.model_fields_set:
+            _dict['country_iso_code'] = None
+
+        # set to None if location_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.location_type is None and "location_type" in self.model_fields_set:
+            _dict['location_type'] = None
 
         return _dict
 
@@ -91,8 +109,11 @@ class ContentAnalysisLanguagesResultInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "language_name": obj.get("language_name"),
-            "language_code": obj.get("language_code")
+            "location_code": obj.get("location_code"),
+            "location_name": obj.get("location_name"),
+            "location_code_parent": obj.get("location_code_parent"),
+            "country_iso_code": obj.get("country_iso_code"),
+            "location_type": obj.get("location_type")
         })
         return _obj
 

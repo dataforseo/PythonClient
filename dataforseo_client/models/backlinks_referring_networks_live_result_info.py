@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.backlinks_referring_networks_live_item import BacklinksReferringNetworksLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class BacklinksReferringNetworksLiveResultInfo(BaseModel):
     BacklinksReferringNetworksLiveResultInfo
     """ # noqa: E501
     target: Optional[StrictStr] = Field(default=None, description="target in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of relevant items in the database")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the items array")
     items: Optional[List[BacklinksReferringNetworksLiveItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["target", "total_count", "items_count", "items"]
 

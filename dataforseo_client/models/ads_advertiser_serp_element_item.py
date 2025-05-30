@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_google_ads_advertisers_serp_element_item import BaseGoogleAdsAdvertisersSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,7 @@ class AdsAdvertiserSerpElementItem(BaseGoogleAdsAdvertisersSerpElementItem):
     advertiser_id: Optional[StrictStr] = Field(default=None, description="unique identifier of the advertiser account can be used to obtain data on advertising campaigns from the Google Ads Search endpoint")
     location: Optional[StrictStr] = Field(default=None, description="advertiser location")
     verified: Optional[StrictBool] = Field(default=None, description="verified advertiser account equals true if advertiser account is verified by Google Ads")
-    approx_ads_count: Optional[StrictInt] = Field(default=None, description="ads count the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
+    approx_ads_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="ads count the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "title", "advertiser_id", "location", "verified", "approx_ads_count"]
 
     model_config = ConfigDict(

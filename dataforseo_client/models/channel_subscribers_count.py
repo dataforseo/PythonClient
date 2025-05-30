@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class ChannelSubscribersCount(BaseModel):
     ChannelSubscribersCount
     """ # noqa: E501
     displayed_count: Optional[StrictStr] = Field(default=None, description="displayed subscriber count subscriber count as displayed on YouTube")
-    count: Optional[StrictInt] = Field(default=None, description="subscriber count")
+    count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="subscriber count")
     __properties: ClassVar[List[str]] = ["displayed_count", "count"]
 
     model_config = ConfigDict(

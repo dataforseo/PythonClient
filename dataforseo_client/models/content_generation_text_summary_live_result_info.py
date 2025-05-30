@@ -26,11 +26,11 @@ class ContentGenerationTextSummaryLiveResultInfo(BaseModel):
     """
     ContentGenerationTextSummaryLiveResultInfo
     """ # noqa: E501
-    sentences: Optional[StrictInt] = Field(default=None, description="number of sentences found in the target text")
-    paragraphs: Optional[StrictInt] = Field(default=None, description="number of paragraphs found in the target text")
-    words: Optional[StrictInt] = Field(default=None, description="number of words found in the target text")
-    characters_without_spaces: Optional[StrictInt] = Field(default=None, description="number of characters without spaces found in the target text")
-    characters_with_spaces: Optional[StrictInt] = Field(default=None, description="number of characters with spaces found in the target text")
+    sentences: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of sentences found in the target text")
+    paragraphs: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of paragraphs found in the target text")
+    words: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of words found in the target text")
+    characters_without_spaces: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of characters without spaces found in the target text")
+    characters_with_spaces: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of characters with spaces found in the target text")
     words_per_sentence: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average number of words per sentence in the target text")
     characters_per_word: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average number of characters per word in the target text")
     vocabulary_density: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="vocabulary density of the target text")
@@ -39,8 +39,8 @@ class ContentGenerationTextSummaryLiveResultInfo(BaseModel):
     coleman_liau_index: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Coleman–Liau Index")
     flesch_kincaid_grade_level: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Flesch–Kincaid Readability Index")
     smog_readability_index: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="SMOG Readability Index")
-    spelling_errors: Optional[StrictInt] = Field(default=None, description="number of spelling errors found in the target text")
-    grammar_errors: Optional[StrictInt] = Field(default=None, description="number of grammar errors found in the target text")
+    spelling_errors: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of spelling errors found in the target text")
+    grammar_errors: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of grammar errors found in the target text")
     __properties: ClassVar[List[str]] = ["sentences", "paragraphs", "words", "characters_without_spaces", "characters_with_spaces", "words_per_sentence", "characters_per_word", "vocabulary_density", "keyword_density", "automated_readability_index", "coleman_liau_index", "flesch_kincaid_grade_level", "smog_readability_index", "spelling_errors", "grammar_errors"]
 
     model_config = ConfigDict(

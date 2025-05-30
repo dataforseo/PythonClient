@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class KeywordsDataBingAudienceEstimationIndustriesResultInfo(BaseModel):
     """
     KeywordsDataBingAudienceEstimationIndustriesResultInfo
     """ # noqa: E501
-    industry_id: Optional[StrictInt] = Field(default=None, description="ID of the industry")
+    industry_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="ID of the industry")
     industry_name: Optional[StrictStr] = Field(default=None, description="name of the industry")
     __properties: ClassVar[List[str]] = ["industry_id", "industry_name"]
 

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.domain_analytics_technologies_technology_stats_live_item import DomainAnalyticsTechnologiesTechnologyStatsLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class DomainAnalyticsTechnologiesTechnologyStatsLiveResultInfo(BaseModel):
     technology: Optional[StrictStr] = Field(default=None, description="target technology")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
     items: Optional[List[DomainAnalyticsTechnologiesTechnologyStatsLiveItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["technology", "date_from", "date_to", "items_count", "items"]
 

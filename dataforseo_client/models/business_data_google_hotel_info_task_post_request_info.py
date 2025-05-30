@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,11 +39,15 @@ class BusinessDataGoogleHotelInfoTaskPostRequestInfo(BaseModel):
     currency: Optional[StrictStr] = Field(default=None, description="currency optional field example: \"USD\"")
     adults: Optional[StrictInt] = Field(default=None, description="number of adults optional field if you don’t specify this field, two adults will be used by default example: 1")
     children: Optional[List[StrictStr]] = Field(default=None, description="number and age of children optional field if you don’t specify this field, no children will be included in the search; set the following value if you want to include one 14-years-old child: [14] set the following value if you want to include one 13-years-old child and one 8-years-old child: [13,8]")
+    load_prices_by_dates: Optional[StrictBool] = Field(default=None, description="load hotel stay prices by dates optional field if you specify this parameter with true, the response will include the prices_by_dates array with hotel stay prices divided by dates if you use this parameter, you will be charged double the base price for a request")
+    prices_start_date: Optional[StrictStr] = Field(default=None, description="start date to load prices by dates optional field to use this parameter, you must specify load_prices_by_dates with true if this parameter is not specified, the start date is set to check_in date date format: yyyy-mm-dd example: 2025-05-20")
+    prices_end_date: Optional[StrictStr] = Field(default=None, description="end date to load prices by dates optional field to use this parameter, you must specify load_prices_by_dates with true if this parameter is not specified, you will get prices by date for the month date format: yyyy-mm-dd example: 2025-05-21")
+    prices_date_range: Optional[StrictStr] = Field(default=None, description="predefined period for retrieving daily price data optional field to use this parameter, you must specify load_prices_by_dates with true if the prices_start_date is not specified, the start date is set to check_in date possible values: month, three_months, six_months, year default value: month")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier optional field the character limit is 255; you can use this parameter to identify the task and match it with the result; you will find the specified tag value in the data object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description="return URL for sending task results optional field once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified; you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request; example: http://your-server.com/postbackscript?id=$id http://your-server.com/postbackscript?id=$id&tag=$tag Note: special characters in postback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description="postback_url datatype required field if you specify postback_url corresponds to the datatype that will be sent to your server possible values: advanced, html")
     pingback_url: Optional[StrictStr] = Field(default=None, description="notification URL of a completed task optional field when a task is completed we will notify you by GET request sent to the URL you have specified; you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable; we will set the necessary values before sending the request; example: http://your-server.com/pingscript?id=$id http://your-server.com/pingscript?id=$id&tag=$tag Note: special characters in pingback_url will be urlencoded; i.a., the # character will be encoded into %23 learn more on our Help Center")
-    __properties: ClassVar[List[str]] = ["hotel_identifier", "keyword", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "check_in", "check_out", "currency", "adults", "children", "tag", "postback_url", "postback_data", "pingback_url"]
+    __properties: ClassVar[List[str]] = ["hotel_identifier", "keyword", "priority", "location_name", "location_code", "location_coordinate", "language_name", "language_code", "check_in", "check_out", "currency", "adults", "children", "load_prices_by_dates", "prices_start_date", "prices_end_date", "prices_date_range", "tag", "postback_url", "postback_data", "pingback_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -149,6 +153,26 @@ class BusinessDataGoogleHotelInfoTaskPostRequestInfo(BaseModel):
         if self.children is None and "children" in self.model_fields_set:
             _dict['children'] = None
 
+        # set to None if load_prices_by_dates (nullable) is None
+        # and model_fields_set contains the field
+        if self.load_prices_by_dates is None and "load_prices_by_dates" in self.model_fields_set:
+            _dict['load_prices_by_dates'] = None
+
+        # set to None if prices_start_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.prices_start_date is None and "prices_start_date" in self.model_fields_set:
+            _dict['prices_start_date'] = None
+
+        # set to None if prices_end_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.prices_end_date is None and "prices_end_date" in self.model_fields_set:
+            _dict['prices_end_date'] = None
+
+        # set to None if prices_date_range (nullable) is None
+        # and model_fields_set contains the field
+        if self.prices_date_range is None and "prices_date_range" in self.model_fields_set:
+            _dict['prices_date_range'] = None
+
         # set to None if tag (nullable) is None
         # and model_fields_set contains the field
         if self.tag is None and "tag" in self.model_fields_set:
@@ -194,6 +218,10 @@ class BusinessDataGoogleHotelInfoTaskPostRequestInfo(BaseModel):
             "currency": obj.get("currency"),
             "adults": obj.get("adults"),
             "children": obj.get("children"),
+            "load_prices_by_dates": obj.get("load_prices_by_dates"),
+            "prices_start_date": obj.get("prices_start_date"),
+            "prices_end_date": obj.get("prices_end_date"),
+            "prices_date_range": obj.get("prices_date_range"),
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),

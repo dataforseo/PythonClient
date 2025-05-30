@@ -21,8 +21,8 @@ from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, Stri
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
-from dataforseo_client.models.work_hours import WorkHours
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
+from dataforseo_client.models.business_work_hours_info import BusinessWorkHoursInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +33,7 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
     domain: Optional[StrictStr] = Field(default=None, description="domain of the business entity")
     title: Optional[StrictStr] = Field(default=None, description="directory title can take the following values: At this place, Directory")
     url: Optional[StrictStr] = Field(default=None, description="URL to view the menu")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     snippet: Optional[StrictStr] = Field(default=None, description="additional information about the business entity")
     address: Optional[StrictStr] = Field(default=None, description="address of the business entity")
@@ -41,13 +41,13 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
     place_id: Optional[StrictStr] = Field(default=None, description="unique place identifier place id of the local establishment featured in the element learn more about the identifier in this help center article")
     phone: Optional[StrictStr] = Field(default=None, description="phone number of the business entity")
     main_image: Optional[StrictStr] = Field(default=None, description="URL of the main image featured in Google My Business profile")
-    total_photos: Optional[StrictInt] = Field(default=None, description="total count of images featured in Google My Business profile")
+    total_photos: Optional[StrictStr] = Field(default=None, description="total count of images featured in Google My Business profile")
     category: Optional[StrictStr] = Field(default=None, description="business category Google My Business general category that best describes the services provided by the business entity")
     additional_categories: Optional[List[StrictStr]] = Field(default=None, description="additional business categories additional Google My Business categories that describe the services provided by the business entity in more detail")
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
-    hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
+    hotel_rating: Optional[StrictStr] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     category_ids: Optional[List[StrictStr]] = Field(default=None, description="global category IDs universal category IDs that do not change based on the selected country")
-    work_hours: Optional[WorkHours] = None
+    work_hours: Optional[BusinessWorkHoursInfo] = None
     feature_id: Optional[StrictStr] = Field(default=None, description="the unique identifier of the element in SERP learn more about the identifier in this help center article")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews learn more about the identifier in this help center article")
     latitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="latitude coordinate of the local establishments in google maps example: \"latitude\": 51.584091")
@@ -248,7 +248,7 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution"),
             "snippet": obj.get("snippet"),
             "address": obj.get("address"),
@@ -262,7 +262,7 @@ class MapsSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElementItem):
             "price_level": obj.get("price_level"),
             "hotel_rating": obj.get("hotel_rating"),
             "category_ids": obj.get("category_ids"),
-            "work_hours": WorkHours.from_dict(obj["work_hours"]) if obj.get("work_hours") is not None else None,
+            "work_hours": BusinessWorkHoursInfo.from_dict(obj["work_hours"]) if obj.get("work_hours") is not None else None,
             "feature_id": obj.get("feature_id"),
             "cid": obj.get("cid"),
             "latitude": obj.get("latitude"),

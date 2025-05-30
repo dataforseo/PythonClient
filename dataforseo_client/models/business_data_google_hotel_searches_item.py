@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.gps_coordinates_location_info import GpsCoordinatesLocationInfo
 from dataforseo_client.models.hotel_price_info import HotelPriceInfo
 from dataforseo_client.models.hotel_review_info import HotelReviewInfo
@@ -32,7 +32,7 @@ class BusinessDataGoogleHotelSearchesItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     hotel_identifier: Optional[StrictStr] = Field(default=None, description="unique identifier of a hotel entity in Google search example: CgoI-KWyzenM_MV3EAE")
     title: Optional[StrictStr] = Field(default=None, description="title of the hotel")
-    stars: Optional[StrictInt] = Field(default=None, description="hotel class rating class rating that ranges between 1-5 stars")
+    stars: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="hotel class rating class rating that ranges between 1-5 stars")
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates a paid hotel listing if true, related hotel_search_item is a paid ad if false, related hotel_search_item is an organic hotel listing")
     location: Optional[GpsCoordinatesLocationInfo] = None
     reviews: Optional[HotelReviewInfo] = None

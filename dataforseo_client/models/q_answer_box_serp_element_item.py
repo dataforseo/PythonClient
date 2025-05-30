@@ -29,8 +29,6 @@ class QAnswerBoxSerpElementItem(BaseSerpElementItem):
     """
     QAnswerBoxSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     text: Optional[List[Optional[StrictStr]]] = Field(default=None, description="text if there is none, equals null")
     links: Optional[List[LinkElement]] = Field(default=None, description="link of the element")
     rectangle: Optional[Rectangle] = None

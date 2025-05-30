@@ -19,7 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.metrics_info import MetricsInfo
+from dataforseo_client.models.organic_metrics_info import OrganicMetricsInfo
+from dataforseo_client.models.paid_metrics_info import PaidMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class MetricsBundleInfo(BaseModel):
     """
     MetricsBundleInfo
     """ # noqa: E501
-    organic: Optional[MetricsInfo] = None
-    paid: Optional[MetricsInfo] = None
+    organic: Optional[OrganicMetricsInfo] = None
+    paid: Optional[PaidMetricsInfo] = None
     __properties: ClassVar[List[str]] = ["organic", "paid"]
 
     model_config = ConfigDict(
@@ -88,8 +89,8 @@ class MetricsBundleInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "organic": MetricsInfo.from_dict(obj["organic"]) if obj.get("organic") is not None else None,
-            "paid": MetricsInfo.from_dict(obj["paid"]) if obj.get("paid") is not None else None
+            "organic": OrganicMetricsInfo.from_dict(obj["organic"]) if obj.get("organic") is not None else None,
+            "paid": PaidMetricsInfo.from_dict(obj["paid"]) if obj.get("paid") is not None else None
         })
         return _obj
 

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,12 +26,12 @@ class MerchantGoogleLocationsCountryResultInfo(BaseModel):
     """
     MerchantGoogleLocationsCountryResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description="location code")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location")
-    location_name_parent: Optional[StrictStr] = Field(default=None, description="the name of the superordinate location example: \"location_name\": \"Arkansas,United States\", \"location_name_parent\": \"United States\"")
+    location_code_parent: Optional[Union[StrictFloat, StrictInt]] = None
     country_iso_code: Optional[StrictStr] = Field(default=None, description="ISO country code of the location")
     location_type: Optional[StrictStr] = Field(default=None, description="location type")
-    __properties: ClassVar[List[str]] = ["location_code", "location_name", "location_name_parent", "country_iso_code", "location_type"]
+    __properties: ClassVar[List[str]] = ["location_code", "location_name", "location_code_parent", "country_iso_code", "location_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,10 +82,10 @@ class MerchantGoogleLocationsCountryResultInfo(BaseModel):
         if self.location_name is None and "location_name" in self.model_fields_set:
             _dict['location_name'] = None
 
-        # set to None if location_name_parent (nullable) is None
+        # set to None if location_code_parent (nullable) is None
         # and model_fields_set contains the field
-        if self.location_name_parent is None and "location_name_parent" in self.model_fields_set:
-            _dict['location_name_parent'] = None
+        if self.location_code_parent is None and "location_code_parent" in self.model_fields_set:
+            _dict['location_code_parent'] = None
 
         # set to None if country_iso_code (nullable) is None
         # and model_fields_set contains the field
@@ -111,7 +111,7 @@ class MerchantGoogleLocationsCountryResultInfo(BaseModel):
         _obj = cls.model_validate({
             "location_code": obj.get("location_code"),
             "location_name": obj.get("location_name"),
-            "location_name_parent": obj.get("location_name_parent"),
+            "location_code_parent": obj.get("location_code_parent"),
             "country_iso_code": obj.get("country_iso_code"),
             "location_type": obj.get("location_type")
         })

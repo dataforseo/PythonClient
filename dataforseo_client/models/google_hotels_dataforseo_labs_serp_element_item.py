@@ -27,9 +27,10 @@ class GoogleHotelsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIte
     """
     GoogleHotelsDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     hotel_identifier: Optional[StrictStr] = Field(default=None, description="unique hotel identifier unique hotel identifier assigned by Google; example: \"CgoIjaeSlI6CnNpVEAE\"")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "hotel_identifier", "url"]
+    url: Optional[StrictStr] = Field(default=None, description="sitelink URL")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "hotel_identifier", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,11 @@ class GoogleHotelsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIte
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if hotel_identifier (nullable) is None
         # and model_fields_set contains the field
         if self.hotel_identifier is None and "hotel_identifier" in self.model_fields_set:
@@ -122,6 +128,7 @@ class GoogleHotelsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIte
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "hotel_identifier": obj.get("hotel_identifier"),
             "url": obj.get("url")
         })

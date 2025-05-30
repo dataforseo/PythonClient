@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.monthly_searches import MonthlySearches
+from dataforseo_client.models.monthly_searches_info import MonthlySearchesInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class KeywordInfoNormalizedWithInfo(BaseModel):
     last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     search_volume: Optional[StrictStr] = Field(default=None, description="current search volume rate of a keyword")
     is_normalized: Optional[StrictStr] = Field(default=None, description="keyword info is normalized if true, values are normalized with Bing data")
-    monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly search volume rates array of objects with search volume rates in a certain month of a year")
+    monthly_searches: Optional[List[MonthlySearchesInfo]] = Field(default=None, description="monthly search volume rates array of objects with search volume rates in a certain month of a year")
     __properties: ClassVar[List[str]] = ["last_updated_time", "search_volume", "is_normalized", "monthly_searches"]
 
     model_config = ConfigDict(
@@ -114,7 +114,7 @@ class KeywordInfoNormalizedWithInfo(BaseModel):
             "last_updated_time": obj.get("last_updated_time"),
             "search_volume": obj.get("search_volume"),
             "is_normalized": obj.get("is_normalized"),
-            "monthly_searches": [MonthlySearches.from_dict(_item) for _item in obj["monthly_searches"]] if obj.get("monthly_searches") is not None else None
+            "monthly_searches": [MonthlySearchesInfo.from_dict(_item) for _item in obj["monthly_searches"]] if obj.get("monthly_searches") is not None else None
         })
         return _obj
 

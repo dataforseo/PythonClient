@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class DataforseoLabsBulkKeywordDifficultyLiveItem(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    keyword_difficulty: Optional[StrictInt] = Field(default=None, description="difficulty of ranking in the first top-10 organic results for a keyword indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100; calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP; learn more about the metric in this help center guide")
+    keyword_difficulty: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="difficulty of ranking in the first top-10 organic results for a keyword indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100; calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP; learn more about the metric in this help center guide")
     __properties: ClassVar[List[str]] = ["se_type", "keyword", "keyword_difficulty"]
 
     model_config = ConfigDict(

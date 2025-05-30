@@ -34,8 +34,7 @@ class BaseGoogleImagesSerpElementItem(BaseModel):
     BaseGoogleImagesSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    __properties: ClassVar[List[str]] = ["type", "xpath"]
+    __properties: ClassVar[List[str]] = ["type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,11 +96,6 @@ class BaseGoogleImagesSerpElementItem(BaseModel):
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
-
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
 
         return _dict
 

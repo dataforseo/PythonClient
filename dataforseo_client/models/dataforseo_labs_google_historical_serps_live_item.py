@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
@@ -32,17 +32,16 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
     keyword: Optional[StrictStr] = Field(default=None, description="keyword obtained as a result of search engine autocorrection the results will be provided for the corrected keyword")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     spell: Optional[SpellInfo] = None
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item types: answer_box, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, google_posts, images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, recipes, top_sights, scholarly_articles, popular_products, podcasts, questions_and_answers, find_results_on, stocks_box, visual_stories, commercial_units,  local_services, google_hotels, math_solver")
-    se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    se_results_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of results in SERP")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseDataforseoLabsSerpElementItem]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    clickstream_etv: Optional[StrictInt] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated")
-    __properties: ClassVar[List[str]] = ["se_type", "keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items", "clickstream_etv"]
+    __properties: ClassVar[List[str]] = ["se_type", "keyword", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "se_results_count", "items_count", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -153,11 +152,6 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
         if self.items is None and "items" in self.model_fields_set:
             _dict['items'] = None
 
-        # set to None if clickstream_etv (nullable) is None
-        # and model_fields_set contains the field
-        if self.clickstream_etv is None and "clickstream_etv" in self.model_fields_set:
-            _dict['clickstream_etv'] = None
-
         return _dict
 
     @classmethod
@@ -182,8 +176,7 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
             "item_types": obj.get("item_types"),
             "se_results_count": obj.get("se_results_count"),
             "items_count": obj.get("items_count"),
-            "items": [BaseDataforseoLabsSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
-            "clickstream_etv": obj.get("clickstream_etv")
+            "items": [BaseDataforseoLabsSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

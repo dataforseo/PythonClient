@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +28,8 @@ class BusinessListingAggregationInfo(BaseModel):
     """ # noqa: E501
     top_categories: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the most mentioned related categories top categories displayed with the number of businesses in each category")
     top_countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the most mentioned counties country codes with the biggest number of businesses in the category")
-    websites_count: Optional[StrictInt] = Field(default=None, description="number of unique websites")
-    count: Optional[StrictInt] = Field(default=None, description="number of unique entities")
+    websites_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of unique websites")
+    count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of unique entities")
     top_attributes: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the most mentioned service details service details of a business entity displayed in a form of checks and the number of entities mentioning each attribute")
     top_place_topics: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="top keywords mentioned in customer reviews contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword")
     __properties: ClassVar[List[str]] = ["top_categories", "top_countries", "websites_count", "count", "top_attributes", "top_place_topics"]

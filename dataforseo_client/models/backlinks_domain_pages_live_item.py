@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.backlinks_page_meta import BacklinksPageMeta
 from dataforseo_client.models.page_summary import PageSummary
 from typing import Optional, Set
@@ -37,10 +37,10 @@ class BacklinksDomainPagesLiveItem(BaseModel):
     first_visited: Optional[StrictStr] = Field(default=None, description="date and time of the first page visit date and time when our crawler visited this page for the first time in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
     prev_visited: Optional[StrictStr] = Field(default=None, description="previous to the most recent date when our crawler visited the page in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
     fetch_time: Optional[StrictStr] = Field(default=None, description="most recent date and time when our crawler visited the page in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
-    status_code: Optional[StrictInt] = Field(default=None, description="HTTP status code of the page")
+    status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="HTTP status code of the page")
     location: Optional[StrictStr] = Field(default=None, description="location header indicates the URL to redirect a page to if exists")
-    size: Optional[StrictInt] = Field(default=None, description="indicates the page size, in bytes")
-    encoded_size: Optional[StrictInt] = Field(default=None, description="page size after encoding indicates the size of the encoded page, in bytes")
+    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the page size, in bytes")
+    encoded_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="page size after encoding indicates the size of the encoded page, in bytes")
     content_encoding: Optional[StrictStr] = Field(default=None, description="type of encoding")
     media_type: Optional[StrictStr] = Field(default=None, description="types of media used to display a page")
     server: Optional[StrictStr] = Field(default=None, description="server version")

@@ -27,10 +27,11 @@ class GooglePostsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem
     """
     GooglePostsDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     posts_id: Optional[StrictStr] = Field(default=None, description="the identifier of the google_posts feature")
     feature: Optional[StrictStr] = Field(default=None, description="the additional feature of the review")
-    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "posts_id", "feature", "cid"]
+    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "posts_id", "feature", "cid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,11 @@ class GooglePostsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if posts_id (nullable) is None
         # and model_fields_set contains the field
         if self.posts_id is None and "posts_id" in self.model_fields_set:
@@ -128,6 +134,7 @@ class GooglePostsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "posts_id": obj.get("posts_id"),
             "feature": obj.get("feature"),
             "cid": obj.get("cid")

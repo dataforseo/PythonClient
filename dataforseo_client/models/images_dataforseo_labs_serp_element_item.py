@@ -31,9 +31,9 @@ class ImagesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
-    items: Optional[List[ImagesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    related_image_searches: Optional[RelatedImageSearchesElement] = None
+    url: Optional[StrictStr] = Field(default=None, description="sitelink URL")
+    items: Optional[List[ImagesElement]] = Field(default=None, description="elements of search results found in SERP")
+    related_image_searches: Optional[List[RelatedImageSearchesElement]] = Field(default=None, description="contains keywords and images related to the specified search term if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "url", "items", "related_image_searches"]
 
     model_config = ConfigDict(
@@ -82,9 +82,13 @@ class ImagesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
                 if _item_items:
                     _items.append(_item_items.to_dict())
             _dict['items'] = _items
-        # override the default output from pydantic by calling `to_dict()` of related_image_searches
+        # override the default output from pydantic by calling `to_dict()` of each item in related_image_searches (list)
+        _items = []
         if self.related_image_searches:
-            _dict['related_image_searches'] = self.related_image_searches.to_dict()
+            for _item_related_image_searches in self.related_image_searches:
+                if _item_related_image_searches:
+                    _items.append(_item_related_image_searches.to_dict())
+            _dict['related_image_searches'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -130,6 +134,11 @@ class ImagesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.items is None and "items" in self.model_fields_set:
             _dict['items'] = None
 
+        # set to None if related_image_searches (nullable) is None
+        # and model_fields_set contains the field
+        if self.related_image_searches is None and "related_image_searches" in self.model_fields_set:
+            _dict['related_image_searches'] = None
+
         return _dict
 
     @classmethod
@@ -151,7 +160,7 @@ class ImagesDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "items": [ImagesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
-            "related_image_searches": RelatedImageSearchesElement.from_dict(obj["related_image_searches"]) if obj.get("related_image_searches") is not None else None
+            "related_image_searches": [RelatedImageSearchesElement.from_dict(_item) for _item in obj["related_image_searches"]] if obj.get("related_image_searches") is not None else None
         })
         return _obj
 

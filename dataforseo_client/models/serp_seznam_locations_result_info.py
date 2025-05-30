@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class SerpSeznamLocationsResultInfo(BaseModel):
     """
     SerpSeznamLocationsResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description="location code")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location")
-    location_code_parent: Optional[StrictInt] = Field(default=None, description="the code of the superordinate location only City location_type is supported for all countries except China (where Country is also supported); don’t match locations by location_code_parent because the results for Region and Country-level results for most countries are not supported by Baidu SERP API")
+    location_code_parent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the code of the superordinate location only City location_type is supported for all countries except China (where Country is also supported); don’t match locations by location_code_parent because the results for Region and Country-level results for most countries are not supported by Baidu SERP API")
     country_iso_code: Optional[StrictStr] = Field(default=None, description="ISO country code of the location")
     location_type: Optional[StrictStr] = Field(default=None, description="location type")
     __properties: ClassVar[List[str]] = ["location_code", "location_name", "location_code_parent", "country_iso_code", "location_type"]

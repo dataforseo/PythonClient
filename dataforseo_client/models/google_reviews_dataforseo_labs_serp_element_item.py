@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,12 +28,13 @@ class GoogleReviewsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
     """
     GoogleReviewsDataforseoLabsSerpElementItem
     """ # noqa: E501
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the number of reviews")
-    rating: Optional[RatingInfo] = None
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of reviews")
+    rating: Optional[BusinessDataRatingInfo] = None
     place_id: Optional[StrictStr] = Field(default=None, description="the identifier of a place")
     feature: Optional[StrictStr] = Field(default=None, description="the additional feature of the review")
-    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id unique id of a local establishment; can be used with Google Reviews API to get a full list of reviews")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "reviews_count", "rating", "place_id", "feature", "cid"]
+    cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "reviews_count", "rating", "place_id", "feature", "cid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,6 +103,11 @@ class GoogleReviewsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if reviews_count (nullable) is None
         # and model_fields_set contains the field
         if self.reviews_count is None and "reviews_count" in self.model_fields_set:
@@ -139,8 +145,9 @@ class GoogleReviewsDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementIt
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "place_id": obj.get("place_id"),
             "feature": obj.get("feature"),
             "cid": obj.get("cid")

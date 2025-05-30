@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class RedditReviews(BaseModel):
     author_name: Optional[StrictStr] = Field(default=None, description="nickname of the author nicknname of the user who published the post in the subreddit and shared the URL")
     title: Optional[StrictStr] = Field(default=None, description="title of the subreddit post")
     permalink: Optional[StrictStr] = Field(default=None, description="URL to the subreddit post")
-    subreddit_members: Optional[StrictInt] = Field(default=None, description="number of subreddit members")
+    subreddit_members: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of subreddit members")
     __properties: ClassVar[List[str]] = ["subreddit", "author_name", "title", "permalink", "subreddit_members"]
 
     model_config = ConfigDict(

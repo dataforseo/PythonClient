@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,10 +27,10 @@ class BacklinksBulkReferringDomainsLiveItem(BaseModel):
     BacklinksBulkReferringDomainsLiveItem
     """ # noqa: E501
     target: Optional[StrictStr] = Field(default=None, description="domain, subdomain or webpage from a POST array")
-    referring_domains: Optional[StrictInt] = Field(default=None, description="number of referring domains pointing to the target note that we calculate main domains (root domains, like example.com) and their subdomains (e.g. blog.example.com) separately for this metric")
-    referring_domains_nofollow: Optional[StrictInt] = Field(default=None, description="number of domains pointing at least one nofollow link to the target")
-    referring_main_domains: Optional[StrictInt] = Field(default=None, description="number of referring main domains pointing to the target the number of primary (root) domains referring to your target")
-    referring_main_domains_nofollow: Optional[StrictInt] = Field(default=None, description="number of main domains pointing at least one nofollow link to the target")
+    referring_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of referring domains pointing to the target note that we calculate main domains (root domains, like example.com) and their subdomains (e.g. blog.example.com) separately for this metric")
+    referring_domains_nofollow: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of domains pointing at least one nofollow link to the target")
+    referring_main_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of referring main domains pointing to the target the number of primary (root) domains referring to your target")
+    referring_main_domains_nofollow: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of main domains pointing at least one nofollow link to the target")
     __properties: ClassVar[List[str]] = ["target", "referring_domains", "referring_domains_nofollow", "referring_main_domains", "referring_main_domains_nofollow"]
 
     model_config = ConfigDict(

@@ -31,7 +31,8 @@ class SerpScreenshotRequestInfo(BaseModel):
     browser_screen_width: Optional[StrictInt] = Field(default=None, description="width of the browser resolution optional field can be specified in the following range: 240-9999")
     browser_screen_height: Optional[StrictInt] = Field(default=None, description="height of the browser resolution optional field can be specified in the following range: 240-9999")
     browser_screen_scale_factor: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="browser scale factor optional field can be specified in the following range: 0.5-3")
-    __properties: ClassVar[List[str]] = ["task_id", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor"]
+    page: Optional[StrictInt] = Field(default=None, description="number of SERP pages optional field if depth in the corresponding Task POST request exceeds 100 results (or 1 SERP page), specify the number of SERP pages to screenshot; default value: 1")
+    __properties: ClassVar[List[str]] = ["task_id", "browser_preset", "browser_screen_width", "browser_screen_height", "browser_screen_scale_factor", "page"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,6 +93,11 @@ class SerpScreenshotRequestInfo(BaseModel):
         if self.browser_screen_scale_factor is None and "browser_screen_scale_factor" in self.model_fields_set:
             _dict['browser_screen_scale_factor'] = None
 
+        # set to None if page (nullable) is None
+        # and model_fields_set contains the field
+        if self.page is None and "page" in self.model_fields_set:
+            _dict['page'] = None
+
         return _dict
 
     @classmethod
@@ -108,7 +114,8 @@ class SerpScreenshotRequestInfo(BaseModel):
             "browser_preset": obj.get("browser_preset"),
             "browser_screen_width": obj.get("browser_screen_width"),
             "browser_screen_height": obj.get("browser_screen_height"),
-            "browser_screen_scale_factor": obj.get("browser_screen_scale_factor")
+            "browser_screen_scale_factor": obj.get("browser_screen_scale_factor"),
+            "page": obj.get("page")
         })
         return _obj
 

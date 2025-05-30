@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class BacklinksBulkBacklinksLiveItem(BaseModel):
     BacklinksBulkBacklinksLiveItem
     """ # noqa: E501
     target: Optional[StrictStr] = Field(default=None, description="domain, subdomain or webpage from a POST array")
-    backlinks: Optional[StrictInt] = Field(default=None, description="number of backlinks pointing to the target")
+    backlinks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of backlinks pointing to the target")
     __properties: ClassVar[List[str]] = ["target", "backlinks"]
 
     model_config = ConfigDict(

@@ -34,7 +34,7 @@ class AmazonSerpElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="product title")
     url: Optional[StrictStr] = Field(default=None, description="the URL of the product page")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the product image featured in the results")
-    bought_past_month: Optional[StrictInt] = Field(default=None, description="number of product purchases in the past month")
+    bought_past_month: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of product purchases in the past month")
     price_from: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the regular price of a product example: 49.98")
     price_to: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the upper limit of the product price range example: 384.99")
     currency: Optional[StrictStr] = Field(default=None, description="currency in the ISO format example: USD")

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class SerpGoogleJobsTaskGetAdvancedItem(BaseModel):
     SerpGoogleJobsTaskGetAdvancedItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     job_id: Optional[StrictStr] = Field(default=None, description="ID of the job on Google Jobs")

@@ -29,8 +29,8 @@ class HistoricalMetricsBundleInfo(BaseModel):
     """ # noqa: E501
     organic: Optional[List[HistoricalMetricsInfo]] = Field(default=None, description="traffic data from organic search")
     paid: Optional[List[HistoricalMetricsInfo]] = Field(default=None, description="traffic data from paid search")
-    local_pack: Optional[List[HistoricalMetricsInfo]] = Field(default=None, description="traffic data from the featured snippet results in Google SERP")
-    featured_snippet: Optional[List[HistoricalMetricsInfo]] = Field(default=None, description="traffic data from the local pack results in SERP")
+    local_pack: Optional[List[HistoricalMetricsInfo]] = Field(default=None, description="traffic data from the local pack results in SERP")
+    featured_snippet: Optional[List[HistoricalMetricsInfo]] = Field(default=None, description="traffic data from the featured snippet results in Google SERP")
     __properties: ClassVar[List[str]] = ["organic", "paid", "local_pack", "featured_snippet"]
 
     model_config = ConfigDict(

@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,10 +29,8 @@ class GoogleReviewsSerpElementItem(BaseSerpElementItem):
     """
     GoogleReviewsSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the number of reviews")
-    rating: Optional[RatingInfo] = None
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of reviews")
+    rating: Optional[BusinessDataRatingInfo] = None
     place_id: Optional[StrictStr] = Field(default=None, description="the identifier of a place")
     feature: Optional[StrictStr] = Field(default=None, description="the additional feature of the review")
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
@@ -147,7 +145,7 @@ class GoogleReviewsSerpElementItem(BaseSerpElementItem):
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "place_id": obj.get("place_id"),
             "feature": obj.get("feature"),
             "cid": obj.get("cid"),

@@ -26,30 +26,29 @@ class DataforseoLabsMetricsInfo(BaseModel):
     """
     DataforseoLabsMetricsInfo
     """ # noqa: E501
-    pos_1: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #1")
-    pos_2_3: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #2-3")
-    pos_4_10: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #4-10")
-    pos_11_20: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #11-20")
-    pos_21_30: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #21-30")
-    pos_31_40: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #31-40")
-    pos_41_50: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #41-50")
-    pos_51_60: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #51-60")
-    pos_61_70: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #61-70")
-    pos_71_80: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #71-80")
-    pos_81_90: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #81-90")
-    pos_91_100: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #91-100")
+    pos_1: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #1")
+    pos_2_3: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #2-3")
+    pos_4_10: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #4-10")
+    pos_11_20: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #11-20")
+    pos_21_30: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #21-30")
+    pos_31_40: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #31-40")
+    pos_41_50: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #41-50")
+    pos_51_60: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #51-60")
+    pos_61_70: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #61-70")
+    pos_71_80: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #71-80")
+    pos_81_90: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #81-90")
+    pos_91_100: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the domain or subdomain ranks #91-100")
     etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated organic monthly traffic to the domain or subdomain calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the domain or subdomain ranks for learn more about how the metric is calculated in this help center article")
-    impressions_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on impressions estimated organic monthly traffic to the domain or subdomain calculated as the product of CTR (click-through-rate) and impressions values of all keywords in the category that the domain or subdomain ranks for learn more about how the metric is calculated in this help center article")
-    count: Optional[StrictInt] = Field(default=None, description="total count of organic SERPs that contain the domain or subdomain")
+    count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total count of organic SERPs that contain the domain or subdomain")
     estimated_paid_traffic_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated cost of converting organic search traffic into paid represents the estimated monthly cost (USD) of running ads for all keywords in the category that the domain or subdomain ranks for the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search learn more about how the metric is calculated in this help center article")
-    is_new: Optional[StrictInt] = Field(default=None, description="number of new ranked elements indicates how many new ranked elements were found for the indicated target")
-    is_up: Optional[StrictInt] = Field(default=None, description="rank went up indicates how many ranked elements of the indicated target went up")
-    is_down: Optional[StrictInt] = Field(default=None, description="rank went down indicates how many ranked elements of the indicated target went down")
-    is_lost: Optional[StrictInt] = Field(default=None, description="lost ranked elements indicates how many ranked elements of the indicated target were previously presented in SERPs, but weren’t found during the last check")
-    clickstream_etv: Optional[StrictInt] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article")
+    is_new: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new ranked elements indicates how many new ranked elements were found for the indicated target")
+    is_up: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="rank went up indicates how many ranked elements of the indicated target went up")
+    is_down: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="rank went down indicates how many ranked elements of the indicated target went down")
+    is_lost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="lost ranked elements indicates how many ranked elements of the indicated target were previously presented in SERPs, but weren’t found during the last check")
+    clickstream_etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article")
     clickstream_gender_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of estimated clickstream-based metrics by gender to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article")
     clickstream_age_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of clickstream-based metrics by age to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article")
-    __properties: ClassVar[List[str]] = ["pos_1", "pos_2_3", "pos_4_10", "pos_11_20", "pos_21_30", "pos_31_40", "pos_41_50", "pos_51_60", "pos_61_70", "pos_71_80", "pos_81_90", "pos_91_100", "etv", "impressions_etv", "count", "estimated_paid_traffic_cost", "is_new", "is_up", "is_down", "is_lost", "clickstream_etv", "clickstream_gender_distribution", "clickstream_age_distribution"]
+    __properties: ClassVar[List[str]] = ["pos_1", "pos_2_3", "pos_4_10", "pos_11_20", "pos_21_30", "pos_31_40", "pos_41_50", "pos_51_60", "pos_61_70", "pos_71_80", "pos_81_90", "pos_91_100", "etv", "count", "estimated_paid_traffic_cost", "is_new", "is_up", "is_down", "is_lost", "clickstream_etv", "clickstream_gender_distribution", "clickstream_age_distribution"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -155,11 +154,6 @@ class DataforseoLabsMetricsInfo(BaseModel):
         if self.etv is None and "etv" in self.model_fields_set:
             _dict['etv'] = None
 
-        # set to None if impressions_etv (nullable) is None
-        # and model_fields_set contains the field
-        if self.impressions_etv is None and "impressions_etv" in self.model_fields_set:
-            _dict['impressions_etv'] = None
-
         # set to None if count (nullable) is None
         # and model_fields_set contains the field
         if self.count is None and "count" in self.model_fields_set:
@@ -230,7 +224,6 @@ class DataforseoLabsMetricsInfo(BaseModel):
             "pos_81_90": obj.get("pos_81_90"),
             "pos_91_100": obj.get("pos_91_100"),
             "etv": obj.get("etv"),
-            "impressions_etv": obj.get("impressions_etv"),
             "count": obj.get("count"),
             "estimated_paid_traffic_cost": obj.get("estimated_paid_traffic_cost"),
             "is_new": obj.get("is_new"),

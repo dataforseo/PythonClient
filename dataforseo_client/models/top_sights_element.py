@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class TopSightsElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     description: Optional[StrictStr] = Field(default=None, description="description")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "url", "description", "rating"]
 
     model_config = ConfigDict(
@@ -112,7 +112,7 @@ class TopSightsElement(BaseModel):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "description": obj.get("description"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

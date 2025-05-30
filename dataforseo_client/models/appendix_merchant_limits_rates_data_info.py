@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_merchant_amazon_info import AppendixMerchantAmazonInfo
 from dataforseo_client.models.appendix_merchant_google_info import AppendixMerchantGoogleInfo
-from dataforseo_client.models.appendix_serps_rates_data_info import AppendixSerpsRatesDataInfo
+from dataforseo_client.models.appendix_serp_days_rates_data_info import AppendixSerpDaysRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +34,7 @@ class AppendixMerchantLimitsRatesDataInfo(BaseModel):
     locations: Optional[Union[StrictFloat, StrictInt]] = None
     languages: Optional[Union[StrictFloat, StrictInt]] = None
     errors: Optional[Union[StrictFloat, StrictInt]] = None
-    reviews: Optional[AppendixSerpsRatesDataInfo] = None
+    reviews: Optional[AppendixSerpDaysRatesDataInfo] = None
     tasks_ready: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["google", "amazon", "locations", "languages", "errors", "reviews", "tasks_ready"]
 
@@ -123,7 +123,7 @@ class AppendixMerchantLimitsRatesDataInfo(BaseModel):
             "locations": obj.get("locations"),
             "languages": obj.get("languages"),
             "errors": obj.get("errors"),
-            "reviews": AppendixSerpsRatesDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
+            "reviews": AppendixSerpDaysRatesDataInfo.from_dict(obj["reviews"]) if obj.get("reviews") is not None else None,
             "tasks_ready": obj.get("tasks_ready")
         })
         return _obj

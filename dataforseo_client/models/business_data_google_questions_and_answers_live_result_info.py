@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.business_data_google_questions_and_answers_item import BusinessDataGoogleQuestionsAndAnswersItem
 from dataforseo_client.models.items_without_answers import ItemsWithoutAnswers
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class BusinessDataGoogleQuestionsAndAnswersLiveResultInfo(BaseModel):
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character) this field will contain the cid parameter if you specified it in the keyword field when setting a task; example: cid:2946633002421908862 learn more about the parameter in this help center article")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain as specified in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
@@ -38,7 +38,7 @@ class BusinessDataGoogleQuestionsAndAnswersLiveResultInfo(BaseModel):
     feature_id: Optional[StrictStr] = Field(default=None, description="unique identifier of the SERP feature")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="item types types of search engine results encountered in the items array; possible item types: google_business_question_item")
     items_without_answers: Optional[List[ItemsWithoutAnswers]] = Field(default=None, description="array of google business question items without answers")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of items in the items array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of items in the items array")
     items: Optional[List[BusinessDataGoogleQuestionsAndAnswersItem]] = Field(default=None, description="array of items within google_business_question_item contains answers to the google business questions; possible item types google_business_answer_element")
     __properties: ClassVar[List[str]] = ["keyword", "se_domain", "location_code", "language_code", "check_url", "datetime", "cid", "feature_id", "item_types", "items_without_answers", "items_count", "items"]
 

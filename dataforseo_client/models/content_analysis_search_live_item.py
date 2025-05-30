@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.analysis_content_info import AnalysisContentInfo
 from dataforseo_client.models.content_rating_info import ContentRatingInfo
 from dataforseo_client.models.social_metrics_info import SocialMetricsInfo
@@ -33,14 +33,14 @@ class ContentAnalysisSearchLiveItem(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description="URL where the citation was found")
     domain: Optional[StrictStr] = Field(default=None, description="domain name")
     main_domain: Optional[StrictStr] = Field(default=None, description="main domain")
-    url_rank: Optional[StrictInt] = Field(default=None, description="rank of the url this value is based on backlink data for the given URL from DataForSEO Backlink Index; url_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
-    spam_score: Optional[StrictStr] = Field(default=None, description="backlink spam score of the url this value is based on backlink data for the given URL from DataForSEO Backlink Index; learn more about how the metric is calculated on this help center page")
-    domain_rank: Optional[StrictStr] = Field(default=None, description="rank of the domain this value is based on backlink data for the given domain from DataForSEO Backlink Index; domain_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
+    url_rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="rank of the url this value is based on backlink data for the given URL from DataForSEO Backlink Index; url_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
+    spam_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="backlink spam score of the url this value is based on backlink data for the given URL from DataForSEO Backlink Index; learn more about how the metric is calculated on this help center page")
+    domain_rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="rank of the domain this value is based on backlink data for the given domain from DataForSEO Backlink Index; domain_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
     fetch_time: Optional[StrictStr] = Field(default=None, description="date and time when our crawler visited the page in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
     country: Optional[StrictStr] = Field(default=None, description="country code of the domain registration to obtain a full list of available countries, refer to the Locations endpoint")
     language: Optional[StrictStr] = Field(default=None, description="main language of the domain to obtain a full list of available languages, refer to the Languages endpoint")
-    score: Optional[StrictStr] = Field(default=None, description="citation prominence score this value is based on url_rank, domain_rank, keyword presence in title, main_title, url, snippet the higher the score, the more value the related citation has")
-    page_category: Optional[List[StrictInt]] = Field(default=None, description="contains all relevant page categories product and service categories relevant for the page to obtain a full list of available categories, refer to the Categories endpoint")
+    score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="citation prominence score this value is based on url_rank, domain_rank, keyword presence in title, main_title, url, snippet the higher the score, the more value the related citation has")
+    page_category: Optional[List[Union[StrictFloat, StrictInt]]] = Field(default=None, description="contains all relevant page categories product and service categories relevant for the page to obtain a full list of available categories, refer to the Categories endpoint")
     page_types: Optional[List[StrictStr]] = Field(default=None, description="page types")
     ratings: Optional[List[ContentRatingInfo]] = Field(default=None, description="ratings found on the page all ratings found on the page based on microdata")
     social_metrics: Optional[List[SocialMetricsInfo]] = Field(default=None, description="social media engagement metrics data on social media interactions associated with the content based on website embeds developed and supported by social media platforms")

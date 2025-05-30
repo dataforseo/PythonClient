@@ -30,8 +30,8 @@ class DataforseoLabsGoogleAppCompetitorsLiveItem(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     app_id: Optional[StrictStr] = Field(default=None, description="id of the competitor app")
     avg_position: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average position of the app in Google Play SERP Note: average position is calculated for intersected keywords only; the value for a given application may differ when combined with different target applications")
-    sum_position: Optional[StrictInt] = Field(default=None, description="sum of all app positions in Google Play SERP Note: sum position is calculated for intersected keywords only; the value for a given application may differ when combined with different target applications")
-    intersections: Optional[StrictInt] = Field(default=None, description="number of intersecting keywords")
+    sum_position: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="sum of all app positions in Google Play SERP Note: sum position is calculated for intersected keywords only; the value for a given application may differ when combined with different target applications")
+    intersections: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of intersecting keywords")
     competitor_metrics: Optional[GooglePlayMetricsBundleInfo] = None
     full_metrics: Optional[GooglePlayMetricsBundleInfo] = None
     __properties: ClassVar[List[str]] = ["se_type", "app_id", "avg_position", "sum_position", "intersections", "competitor_metrics", "full_metrics"]

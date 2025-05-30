@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class AppDataleAppListingsSearchLiveItem(BaseModel):
     """ # noqa: E501
     app_id: Optional[StrictStr] = Field(default=None, description="ID of the returned app")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     time_update: Optional[StrictStr] = Field(default=None, description="date and time when SERP data was last updated in the ISO 8601 format: “YYYY-MM-DDThh:mm:ss.sssssssZ” example: 2023-05-23 10:16:19 +00:00")

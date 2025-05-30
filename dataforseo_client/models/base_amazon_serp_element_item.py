@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,10 +40,11 @@ class BaseAmazonSerpElementItem(BaseModel):
     BaseAmazonSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in Amazon SERP absolute position among all the elements in SERP")
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank in Amazon SERP absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP can take the following values: left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,6 +116,11 @@ class BaseAmazonSerpElementItem(BaseModel):
         # and model_fields_set contains the field
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
+
+        # set to None if position (nullable) is None
+        # and model_fields_set contains the field
+        if self.position is None and "position" in self.model_fields_set:
+            _dict['position'] = None
 
         # set to None if xpath (nullable) is None
         # and model_fields_set contains the field

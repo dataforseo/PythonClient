@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class SslInfo(BaseModel):
     valid_certificate: Optional[StrictBool] = Field(default=None, description="ssl certificate validity indicates whether the ssl certificate detected on a website is not expired, suspended, revoked or invalid")
     certificate_issuer: Optional[StrictStr] = Field(default=None, description="ssl certificate authority the entity that issued the detected ssl certificate")
     certificate_subject: Optional[StrictStr] = Field(default=None, description="ssl certificate subject the entity associated with the public key")
-    certificate_version: Optional[StrictStr] = Field(default=None, description="ssl certificate version indicates the version of X.509 used by an ssl certificate")
+    certificate_version: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="ssl certificate version indicates the version of X.509 used by an ssl certificate")
     certificate_hash: Optional[StrictStr] = Field(default=None, description="ssl certificate hash the version of the ssl certificate’s hash function")
     certificate_expiration_date: Optional[StrictStr] = Field(default=None, description="ssl certificate expiration date the date and time when the ssl certificate expires in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = ["valid_certificate", "certificate_issuer", "certificate_subject", "certificate_version", "certificate_hash", "certificate_expiration_date"]

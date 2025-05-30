@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.cache_control import CacheControl
@@ -35,12 +35,7 @@ class OnPageStylesheetResourceElementItem(BaseOnPageResourceItemInfo):
     meta: Optional[ResourceMetaInfo] = None
     fetch_timing: Optional[FetchTiming] = None
     accept_type: Optional[StrictStr] = Field(default=None, description="indicates the expected type of resource for example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource possible values: any, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font")
-    initiator: Optional[StrictStr] = Field(default=None, description="resource initiator")
-    duration_time: Optional[StrictInt] = Field(default=None, description="total time it takes until a browser receives a complete response from a server (in milliseconds)")
-    fetch_start: Optional[StrictInt] = Field(default=None, description="time to start downloading the resource the amount of time the browser needs to start downloading a resource")
-    fetch_end: Optional[StrictInt] = Field(default=None, description="time to complete downloading the resource the amount of time the browser needs to complete downloading a resource")
-    is_render_blocking: Optional[StrictBool] = Field(default=None, description="indicates whether the resource blocks rendering")
-    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "fetch_timing", "accept_type", "initiator", "duration_time", "fetch_start", "fetch_end", "is_render_blocking"]
+    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "fetch_timing", "accept_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -161,31 +156,6 @@ class OnPageStylesheetResourceElementItem(BaseOnPageResourceItemInfo):
         if self.accept_type is None and "accept_type" in self.model_fields_set:
             _dict['accept_type'] = None
 
-        # set to None if initiator (nullable) is None
-        # and model_fields_set contains the field
-        if self.initiator is None and "initiator" in self.model_fields_set:
-            _dict['initiator'] = None
-
-        # set to None if duration_time (nullable) is None
-        # and model_fields_set contains the field
-        if self.duration_time is None and "duration_time" in self.model_fields_set:
-            _dict['duration_time'] = None
-
-        # set to None if fetch_start (nullable) is None
-        # and model_fields_set contains the field
-        if self.fetch_start is None and "fetch_start" in self.model_fields_set:
-            _dict['fetch_start'] = None
-
-        # set to None if fetch_end (nullable) is None
-        # and model_fields_set contains the field
-        if self.fetch_end is None and "fetch_end" in self.model_fields_set:
-            _dict['fetch_end'] = None
-
-        # set to None if is_render_blocking (nullable) is None
-        # and model_fields_set contains the field
-        if self.is_render_blocking is None and "is_render_blocking" in self.model_fields_set:
-            _dict['is_render_blocking'] = None
-
         return _dict
 
     @classmethod
@@ -215,12 +185,7 @@ class OnPageStylesheetResourceElementItem(BaseOnPageResourceItemInfo):
             "last_modified": LastModified.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None,
             "meta": ResourceMetaInfo.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
             "fetch_timing": FetchTiming.from_dict(obj["fetch_timing"]) if obj.get("fetch_timing") is not None else None,
-            "accept_type": obj.get("accept_type"),
-            "initiator": obj.get("initiator"),
-            "duration_time": obj.get("duration_time"),
-            "fetch_start": obj.get("fetch_start"),
-            "fetch_end": obj.get("fetch_end"),
-            "is_render_blocking": obj.get("is_render_blocking")
+            "accept_type": obj.get("accept_type")
         })
         return _obj
 

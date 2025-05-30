@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class RankChanges(BaseModel):
     """
     RankChanges
     """ # noqa: E501
-    previous_rank_absolute: Optional[StrictInt] = Field(default=None, description="previous absolute rank in SERP indicates previous rank of the element in Google SERP; if this element is new, the value will be null")
+    previous_rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="previous absolute rank in SERP indicates previous rank of the element in Google SERP; if this element is new, the value will be null")
     is_new: Optional[StrictBool] = Field(default=None, description="element was previously present in SERP if the value is true, previously collected SERP didn’t contain this element")
     is_up: Optional[StrictBool] = Field(default=None, description="rank of this element went up if the value is true, position of the element in SERP is higher compared to the previous check")
     is_down: Optional[StrictBool] = Field(default=None, description="rank of this element went down if the value is true, position of the element in SERP is lower compared to the previous check")

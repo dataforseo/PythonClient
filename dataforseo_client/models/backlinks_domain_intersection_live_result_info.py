@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.backlinks_domain_intersection_live_item import BacklinksDomainIntersectionLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class BacklinksDomainIntersectionLiveResultInfo(BaseModel):
     BacklinksDomainIntersectionLiveResultInfo
     """ # noqa: E501
     targets: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="target domains, subdomains or webpages in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BacklinksDomainIntersectionLiveItem]] = Field(default=None, description="contains domain that link to all targets from the POST array")
     __properties: ClassVar[List[str]] = ["targets", "total_count", "items_count", "items"]
 

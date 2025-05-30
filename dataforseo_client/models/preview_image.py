@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +27,8 @@ class PreviewImage(BaseModel):
     PreviewImage
     """ # noqa: E501
     url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
-    height: Optional[StrictInt] = Field(default=None, description="height of the preview image")
-    width: Optional[StrictInt] = Field(default=None, description="width of the preview image")
+    height: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="height of the preview image")
+    width: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="width of the preview image")
     __properties: ClassVar[List[str]] = ["url", "height", "width"]
 
     model_config = ConfigDict(

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class KeywordsDataGoogleTrendsCategoriesResultInfo(BaseModel):
     """
     KeywordsDataGoogleTrendsCategoriesResultInfo
     """ # noqa: E501
-    category_code: Optional[StrictInt] = Field(default=None, description="unique google trends category identifier")
+    category_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="unique google trends category identifier")
     category_name: Optional[StrictStr] = Field(default=None, description="name of the google trends category")
-    category_code_parent: Optional[StrictInt] = Field(default=None, description="the code of the superordinate category example: \"category_code\": 1100, \"category_name\": \"Superhero Films\", \"category_code_parent\": 1097 where category_code_parent corresponds to: \"category_code\": 1097, \"category_name\": \"Action & Adventure Films\"")
+    category_code_parent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the code of the superordinate category example: \"category_code\": 1100, \"category_name\": \"Superhero Films\", \"category_code_parent\": 1097 where category_code_parent corresponds to: \"category_code\": 1097, \"category_name\": \"Action & Adventure Films\"")
     __properties: ClassVar[List[str]] = ["category_code", "category_name", "category_code_parent"]
 
     model_config = ConfigDict(

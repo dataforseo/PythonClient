@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,10 +26,10 @@ class OnPageResourceIssueItemInfo(BaseModel):
     """
     OnPageResourceIssueItemInfo
     """ # noqa: E501
-    line: Optional[StrictInt] = Field(default=None, description="line where the error was found")
-    column: Optional[StrictInt] = Field(default=None, description="column where the error was found")
+    line: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="line where the error was found")
+    column: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="column where the error was found")
     message: Optional[StrictStr] = Field(default=None, description="text message of the error the full list of possible HTML errors can be found here")
-    status_code: Optional[StrictInt] = Field(default=None, description="status code of the error possible values: 0 — Unidentified Error; 501 — Html Parse Error; 1501 — JS Parse Error; 2501 — CSS Parse Error; 3501 — Image Parse Error; 3502 — Image Scale Is Zero; 3503 — Image Size Is Zero; 3504 — Image Format Invalid")
+    status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="status code of the error possible values: 0 — Unidentified Error; 501 — Html Parse Error; 1501 — JS Parse Error; 2501 — CSS Parse Error; 3501 — Image Parse Error; 3502 — Image Scale Is Zero; 3503 — Image Size Is Zero; 3504 — Image Format Invalid")
     __properties: ClassVar[List[str]] = ["line", "column", "message", "status_code"]
 
     model_config = ConfigDict(

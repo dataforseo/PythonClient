@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.domain_analytics_whois_overview_live_item import DomainAnalyticsWhoisOverviewLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class DomainAnalyticsWhoisOverviewLiveResultInfo(BaseModel):
     """
     DomainAnalyticsWhoisOverviewLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[DomainAnalyticsWhoisOverviewLiveItem]] = Field(default=None, description="contains ranking and traffic data")
     __properties: ClassVar[List[str]] = ["total_count", "items_count", "items"]
 

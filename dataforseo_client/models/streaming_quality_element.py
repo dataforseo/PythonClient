@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,11 +28,11 @@ class StreamingQualityElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     label: Optional[StrictStr] = Field(default=None, description="label of the quality element")
-    width: Optional[StrictInt] = Field(default=None, description="video width in pixels")
-    height: Optional[StrictInt] = Field(default=None, description="video height in pixels")
-    bitrate: Optional[StrictInt] = Field(default=None, description="bit rate of the video")
+    width: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="video width in pixels")
+    height: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="video height in pixels")
+    bitrate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="bit rate of the video")
     mime_type: Optional[StrictStr] = Field(default=None, description="media type of the video")
-    fps: Optional[StrictInt] = Field(default=None, description="frame rate of the video")
+    fps: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="frame rate of the video")
     __properties: ClassVar[List[str]] = ["type", "label", "width", "height", "bitrate", "mime_type", "fps"]
 
     model_config = ConfigDict(

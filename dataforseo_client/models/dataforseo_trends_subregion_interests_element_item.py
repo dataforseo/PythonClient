@@ -20,7 +20,7 @@ import json
 from pydantic import ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_trends_item import BaseDataforseoTrendsItem
-from dataforseo_client.models.interests import Interests
+from dataforseo_client.models.dataforseo_trendsinterests_info import DataforseoTrendsinterestsInfo
 from dataforseo_client.models.interests_comparison import InterestsComparison
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class DataforseoTrendsSubregionInterestsElementItem(BaseDataforseoTrendsItem):
     """
     DataforseoTrendsSubregionInterestsElementItem
     """ # noqa: E501
-    interests: Optional[List[Interests]] = Field(default=None, description="subregional keyword popuarity data for each specified term")
+    interests: Optional[List[DataforseoTrendsinterestsInfo]] = Field(default=None, description="subregional keyword popuarity data for each specified term")
     interests_comparison: Optional[InterestsComparison] = None
     __properties: ClassVar[List[str]] = ["type", "position", "keywords", "interests", "interests_comparison"]
 
@@ -117,7 +117,7 @@ class DataforseoTrendsSubregionInterestsElementItem(BaseDataforseoTrendsItem):
             "type": obj.get("type"),
             "position": obj.get("position"),
             "keywords": obj.get("keywords"),
-            "interests": [Interests.from_dict(_item) for _item in obj["interests"]] if obj.get("interests") is not None else None,
+            "interests": [DataforseoTrendsinterestsInfo.from_dict(_item) for _item in obj["interests"]] if obj.get("interests") is not None else None,
             "interests_comparison": InterestsComparison.from_dict(obj["interests_comparison"]) if obj.get("interests_comparison") is not None else None
         })
         return _obj

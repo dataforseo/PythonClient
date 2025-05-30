@@ -20,8 +20,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.html_content_info import HtmlContentInfo
+from dataforseo_client.models.hunspell_info import HunspellInfo
 from dataforseo_client.models.on_page_resource_issue_info import OnPageResourceIssueInfo
-from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class PageMetaInfo(BaseModel):
     PageMetaInfo
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="page title")
-    charset: Optional[StrictInt] = Field(default=None, description="code page example: 65001")
+    charset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="code page example: 65001")
     follow: Optional[StrictBool] = Field(default=None, description="indicates whether a page’s ‘meta robots’ allows crawlers to follow the links on the page if false, the page’s ‘meta robots’ tag contains “nofollow” parameter instructing crawlers not to follow the links on the page")
     generator: Optional[StrictStr] = Field(default=None, description="meta tag generator")
     htags: Optional[Dict[str, Optional[List[StrictStr]]]] = Field(default=None, description="HTML header tags")
@@ -38,25 +38,25 @@ class PageMetaInfo(BaseModel):
     favicon: Optional[StrictStr] = Field(default=None, description="favicon of the page")
     meta_keywords: Optional[StrictStr] = Field(default=None, description="content of the keywords meta tag")
     canonical: Optional[StrictStr] = Field(default=None, description="canonical page")
-    internal_links_count: Optional[StrictInt] = Field(default=None, description="number of internal links on the page")
-    external_links_count: Optional[StrictInt] = Field(default=None, description="number of external links on the page")
-    inbound_links_count: Optional[StrictInt] = Field(default=None, description="number of internal links pointing at the page")
-    images_count: Optional[StrictInt] = Field(default=None, description="number of images on the page")
-    images_size: Optional[StrictInt] = Field(default=None, description="total size of images on the page measured in bytes")
-    scripts_count: Optional[StrictInt] = Field(default=None, description="number of scripts on the page")
-    scripts_size: Optional[StrictInt] = Field(default=None, description="total size of scripts on the page measured in bytes")
-    stylesheets_count: Optional[StrictInt] = Field(default=None, description="number of stylesheets on the page")
-    stylesheets_size: Optional[StrictInt] = Field(default=None, description="total size of stylesheets on the page measured in bytes")
-    title_length: Optional[StrictInt] = Field(default=None, description="length of the title tag in characters")
-    description_length: Optional[StrictInt] = Field(default=None, description="length of the description tag in characters")
-    render_blocking_scripts_count: Optional[StrictInt] = Field(default=None, description="number of scripts on the page that block page rendering")
-    render_blocking_stylesheets_count: Optional[StrictInt] = Field(default=None, description="number of CSS styles on the page that block page rendering")
+    internal_links_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of internal links on the page")
+    external_links_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of external links on the page")
+    inbound_links_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of internal links pointing at the page")
+    images_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of images on the page")
+    images_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total size of images on the page measured in bytes")
+    scripts_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of scripts on the page")
+    scripts_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total size of scripts on the page measured in bytes")
+    stylesheets_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of stylesheets on the page")
+    stylesheets_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total size of stylesheets on the page measured in bytes")
+    title_length: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="length of the title tag in characters")
+    description_length: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="length of the description tag in characters")
+    render_blocking_scripts_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of scripts on the page that block page rendering")
+    render_blocking_stylesheets_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of CSS styles on the page that block page rendering")
     cumulative_layout_shift: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Core Web Vitals metric measuring the layout stability of the page measures the sum total of all individual layout shift scores for every unexpected layout shift that occurs during the entire lifespan of the page. Learn more.")
     meta_title: Optional[StrictStr] = Field(default=None, description="meta title of the page meta tag in the head section of an HTML document that defines the title of a page")
     content: Optional[HtmlContentInfo] = None
     deprecated_tags: Optional[List[Optional[StrictStr]]] = Field(default=None, description="deprecated tags on the page")
     duplicate_meta_tags: Optional[List[Optional[StrictStr]]] = Field(default=None, description="duplicate meta tags on the page")
-    spell: Optional[SpellInfo] = None
+    spell: Optional[HunspellInfo] = None
     social_media_tags: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="object of social media tags found on the page contains social media tags and their content supported tags include but are not limited to Open Graph and Twitter card")
     broken_html: Optional[OnPageResourceIssueInfo] = None
     __properties: ClassVar[List[str]] = ["title", "charset", "follow", "generator", "htags", "description", "favicon", "meta_keywords", "canonical", "internal_links_count", "external_links_count", "inbound_links_count", "images_count", "images_size", "scripts_count", "scripts_size", "stylesheets_count", "stylesheets_size", "title_length", "description_length", "render_blocking_scripts_count", "render_blocking_stylesheets_count", "cumulative_layout_shift", "meta_title", "content", "deprecated_tags", "duplicate_meta_tags", "spell", "social_media_tags", "broken_html"]
@@ -283,7 +283,7 @@ class PageMetaInfo(BaseModel):
             "content": HtmlContentInfo.from_dict(obj["content"]) if obj.get("content") is not None else None,
             "deprecated_tags": obj.get("deprecated_tags"),
             "duplicate_meta_tags": obj.get("duplicate_meta_tags"),
-            "spell": SpellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
+            "spell": HunspellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
             "social_media_tags": obj.get("social_media_tags"),
             "broken_html": OnPageResourceIssueInfo.from_dict(obj["broken_html"]) if obj.get("broken_html") is not None else None
         })

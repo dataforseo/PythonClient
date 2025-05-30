@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.keyword_data_info import KeywordDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,11 +30,11 @@ class DataforseoLabsGoogleKeywordSuggestionsLiveResultInfo(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     seed_keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
     seed_keyword_data: Optional[KeywordDataInfo] = None
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    offset: Optional[StrictInt] = Field(default=None, description="current offset value")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
+    language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
+    offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="current offset value")
     offset_token: Optional[StrictStr] = Field(default=None, description="offset token for subsequent requests you can use the string provided in this field to get the subsequent results of the initial task; note: offset_token values are unique for each subsequent task")
     items: Optional[List[KeywordDataInfo]] = Field(default=None, description="contains keywords and related data")
     __properties: ClassVar[List[str]] = ["se_type", "seed_keyword", "seed_keyword_data", "location_code", "language_code", "total_count", "items_count", "offset", "offset_token", "items"]

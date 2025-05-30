@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.cache_control import CacheControl
 from dataforseo_client.models.last_modified import LastModified
@@ -31,6 +31,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.on_page_broken_resource_element_item import OnPageBrokenResourceElementItem
     from dataforseo_client.models.on_page_html_resource_element_item import OnPageHtmlResourceElementItem
     from dataforseo_client.models.on_page_image_resource_element_item import OnPageImageResourceElementItem
+    from dataforseo_client.models.on_page_redirect_resource_element_item import OnPageRedirectResourceElementItem
     from dataforseo_client.models.on_page_script_resource_element_item import OnPageScriptResourceElementItem
     from dataforseo_client.models.on_page_stylesheet_resource_element_item import OnPageStylesheetResourceElementItem
 
@@ -39,13 +40,13 @@ class BaseOnPageResourceItemInfo(BaseModel):
     BaseOnPageResourceItemInfo
     """ # noqa: E501
     resource_type: Optional[StrictStr] = Field(default=None, description="type of the returned resource")
-    status_code: Optional[StrictInt] = Field(default=None, description="status code of the page")
+    status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="status code of the page")
     location: Optional[StrictStr] = Field(default=None, description="location header indicates the URL to redirect a page to")
     url: Optional[StrictStr] = Field(default=None, description="page URL")
     resource_errors: Optional[OnPageResourceIssueInfo] = None
-    size: Optional[StrictInt] = Field(default=None, description="resource size indicates the size of a given page measured in bytes")
-    encoded_size: Optional[StrictInt] = Field(default=None, description="page size after encoding indicates the size of the encoded page measured in bytes")
-    total_transfer_size: Optional[StrictInt] = Field(default=None, description="compressed page size indicates the compressed size of a given page")
+    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="resource size indicates the size of a given page measured in bytes")
+    encoded_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="page size after encoding indicates the size of the encoded page measured in bytes")
+    total_transfer_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="compressed page size indicates the compressed size of a given page")
     fetch_time: Optional[StrictStr] = Field(default=None, description="date and time when a resource was fetched in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     cache_control: Optional[CacheControl] = None
     checks: Optional[Dict[str, Optional[StrictBool]]] = Field(default=None, description="website checks on-page check-ups related to the page")
@@ -67,7 +68,7 @@ class BaseOnPageResourceItemInfo(BaseModel):
 
     # discriminator mappings
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'broken': 'OnPageBrokenResourceElementItem','html': 'OnPageHtmlResourceElementItem','image': 'OnPageImageResourceElementItem','script': 'OnPageScriptResourceElementItem','stylesheet': 'OnPageStylesheetResourceElementItem'
+        'broken': 'OnPageBrokenResourceElementItem','html': 'OnPageHtmlResourceElementItem','image': 'OnPageImageResourceElementItem','redirect': 'OnPageRedirectResourceElementItem','script': 'OnPageScriptResourceElementItem','stylesheet': 'OnPageStylesheetResourceElementItem'
     }
 
     @classmethod
@@ -89,7 +90,7 @@ class BaseOnPageResourceItemInfo(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[OnPageBrokenResourceElementItem, OnPageHtmlResourceElementItem, OnPageImageResourceElementItem, OnPageScriptResourceElementItem, OnPageStylesheetResourceElementItem]]:
+    def from_json(cls, json_str: str) -> Optional[Union[OnPageBrokenResourceElementItem, OnPageHtmlResourceElementItem, OnPageImageResourceElementItem, OnPageRedirectResourceElementItem, OnPageScriptResourceElementItem, OnPageStylesheetResourceElementItem]]:
         """Create an instance of BaseOnPageResourceItemInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -183,7 +184,7 @@ class BaseOnPageResourceItemInfo(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[OnPageBrokenResourceElementItem, OnPageHtmlResourceElementItem, OnPageImageResourceElementItem, OnPageScriptResourceElementItem, OnPageStylesheetResourceElementItem]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[OnPageBrokenResourceElementItem, OnPageHtmlResourceElementItem, OnPageImageResourceElementItem, OnPageRedirectResourceElementItem, OnPageScriptResourceElementItem, OnPageStylesheetResourceElementItem]]:
         """Create an instance of BaseOnPageResourceItemInfo from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -193,6 +194,8 @@ class BaseOnPageResourceItemInfo(BaseModel):
             return import_module("dataforseo_client.models.on_page_html_resource_element_item").OnPageHtmlResourceElementItem.from_dict(obj)
         if object_type ==  'OnPageImageResourceElementItem':
             return import_module("dataforseo_client.models.on_page_image_resource_element_item").OnPageImageResourceElementItem.from_dict(obj)
+        if object_type ==  'OnPageRedirectResourceElementItem':
+            return import_module("dataforseo_client.models.on_page_redirect_resource_element_item").OnPageRedirectResourceElementItem.from_dict(obj)
         if object_type ==  'OnPageScriptResourceElementItem':
             return import_module("dataforseo_client.models.on_page_script_resource_element_item").OnPageScriptResourceElementItem.from_dict(obj)
         if object_type ==  'OnPageStylesheetResourceElementItem':

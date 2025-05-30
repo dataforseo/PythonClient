@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
 from dataforseo_client.models.images_element import ImagesElement
 from dataforseo_client.models.rating_element import RatingElement
@@ -33,7 +33,7 @@ class MerchantAmazonReviewsTaskGetAdvancedResultInfo(BaseModel):
     asin: Optional[StrictStr] = Field(default=None, description="asin received in a POST array")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
@@ -41,9 +41,9 @@ class MerchantAmazonReviewsTaskGetAdvancedResultInfo(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of the product on Amazon the title of the product for which the reviews are collected")
     image: Optional[ImagesElement] = None
     rating: Optional[RatingElement] = None
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of reviews")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="type of search results in Amazon SERP contains types of search results (items) found in Amazon SERP; possible item types: amazon_review_item")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of reviews items in the results array you can get more results by using the depth parameter when setting a task")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of reviews items in the results array you can get more results by using the depth parameter when setting a task")
     items: Optional[List[BaseAmazonSerpElementItem]] = Field(default=None, description="found reviews you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = ["asin", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "title", "image", "rating", "reviews_count", "item_types", "items_count", "items"]
 

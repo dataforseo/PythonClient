@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.domain_analytics_technologies_domains_by_live_item import DomainAnalyticsTechnologiesDomainsByLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class DomainAnalyticsTechnologiesDomainsByTechnologyLiveResultInfo(BaseModel):
     """
     DomainAnalyticsTechnologiesDomainsByTechnologyLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description="total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
-    offset: Optional[StrictInt] = Field(default=None, description="specified offset value")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of relevant items in the database")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
+    offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="specified offset value")
     offset_token: Optional[StrictStr] = Field(default=None, description="token for subsequent requests by specifying the unique offset_token when setting a new task, you will get the subsequent results of the initial task; offset_token values are unique for each subsequent task")
     items: Optional[List[DomainAnalyticsTechnologiesDomainsByLiveItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["total_count", "items_count", "offset", "offset_token", "items"]

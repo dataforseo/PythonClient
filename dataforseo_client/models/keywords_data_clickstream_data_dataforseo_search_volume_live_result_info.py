@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.keywords_data_clickstream_data_search_volume_live_item import KeywordsDataClickstreamDataSearchVolumeLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,10 +27,10 @@ class KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo(BaseModel)
     """
     KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictStr] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array  Note:if the keyword in the POST array appears to be misspelled, data will be returned for the correctly spelled keyword; we use the functionality of Google Ads API to check and validate the spelling of keywords, learn more by this link")
     use_clickstream: Optional[StrictBool] = Field(default=None, description="indicates if the use_clickstream parameter is active possible values: true, false")
-    items_count: Optional[StrictStr] = Field(default=None, description="ithe number of results returned in the items array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="ithe number of results returned in the items array")
     items: Optional[List[KeywordsDataClickstreamDataSearchVolumeLiveItem]] = Field(default=None, description="array of keywords contains keywords and their search volume rates")
     __properties: ClassVar[List[str]] = ["location_code", "language_code", "use_clickstream", "items_count", "items"]
 

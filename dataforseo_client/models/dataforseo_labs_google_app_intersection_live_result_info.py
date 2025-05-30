@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.dataforseo_labsle_app_intersection_live_item import DataforseoLabsleAppIntersectionLiveItem
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.dataforseo_labs_google_app_intersection_live_item import DataforseoLabsGoogleAppIntersectionLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,11 +29,11 @@ class DataforseoLabsGoogleAppIntersectionLiveResultInfo(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     app_ids: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="ids of the apps in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[DataforseoLabsleAppIntersectionLiveItem]] = Field(default=None, description="contains data related to the ranking keywords for the app specified in the app_id field")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
+    items: Optional[List[DataforseoLabsGoogleAppIntersectionLiveItem]] = Field(default=None, description="contains data related to the ranking keywords for the app specified in the app_id field")
     __properties: ClassVar[List[str]] = ["se_type", "app_ids", "location_code", "language_code", "total_count", "items_count", "items"]
 
     model_config = ConfigDict(
@@ -135,7 +135,7 @@ class DataforseoLabsGoogleAppIntersectionLiveResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),
             "items_count": obj.get("items_count"),
-            "items": [DataforseoLabsleAppIntersectionLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [DataforseoLabsGoogleAppIntersectionLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

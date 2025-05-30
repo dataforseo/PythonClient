@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.available_locations import AvailableLocations
 from typing import Optional, Set
@@ -27,7 +27,7 @@ class KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo(BaseMode
     """
     KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo
     """ # noqa: E501
-    language_name: Optional[StrictInt] = Field(default=None, description="language name")
+    language_name: Optional[StrictStr] = Field(default=None, description="language name")
     language_code: Optional[StrictStr] = Field(default=None, description="language code")
     available_locations: Optional[List[AvailableLocations]] = Field(default=None, description="supported locations contains locations supported in combination with a specific language")
     __properties: ClassVar[List[str]] = ["language_name", "language_code", "available_locations"]

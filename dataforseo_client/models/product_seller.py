@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.delivery_info import DeliveryInfo
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_element import RatingElement
@@ -33,7 +33,7 @@ class ProductSeller(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="product title")
     url: Optional[StrictStr] = Field(default=None, description="seller url url of the page where the product is sold")
     seller_rating: Optional[RatingElement] = None
-    seller_review_count: Optional[StrictInt] = Field(default=None, description="number of seller reviews number of reviews on the product seller’s account")
+    seller_review_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of seller reviews number of reviews on the product seller’s account")
     price: Optional[PriceInfo] = None
     delivery_info: Optional[DeliveryInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "url", "seller_rating", "seller_review_count", "price", "delivery_info"]

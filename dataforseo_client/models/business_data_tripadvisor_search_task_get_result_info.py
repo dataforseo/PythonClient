@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,13 +29,13 @@ class BusinessDataTripadvisorSearchTaskGetResultInfo(BaseModel):
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword received in a POST array this field will contain the alias parameter if it was specified in a POST array")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictStr] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to Tripadvisor results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="item types encountered in the result possible item types: tripadvisor_search_organic")
-    se_results_count: Optional[StrictInt] = Field(default=None, description="the total number of results")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of items in the results array you can get more results by using the depth parameter when setting a task")
+    se_results_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of results")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of items in the results array you can get more results by using the depth parameter when setting a task")
     items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="Tripadvisor search listing results you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = ["keyword", "se_domain", "location_code", "language_code", "check_url", "datetime", "item_types", "se_results_count", "items_count", "items"]
 

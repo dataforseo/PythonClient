@@ -35,18 +35,18 @@ class OnPageHtmlResourceElementItem(BaseOnPageResourceItemInfo):
     meta: Optional[PageMetaInfo] = None
     page_timing: Optional[PageTiming] = None
     onpage_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="shows how page is optimized on a 100-point scale this field shows how page is optimized considering critical on-page issues and warnings detected; 100 is the highest possible score that means the page does not have any critical on-page issues and important warnings; learn more about how the metric is calculated in this help center article")
-    total_dom_size: Optional[StrictInt] = Field(default=None, description="total DOM size of a page")
-    custom_js_response: Optional[Dict[str, Any]] = Field(default=None, description="the result of executing a specified JS script note that you should specify a custom_js field when setting a task to receive this data and the field type and its value will totally depend on the script you specified;you can also filter the results by this value specifying filters in the following way: [\"custom_js_response.url\", \"like\", \"pixel\"]")
+    total_dom_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total DOM size of a page")
+    custom_js_response: Optional[Dict[str, Any]] = Field(default=None, description="the result of executing a specified JS script note that you should specify a custom_js field when setting a task to receive this data and the field type and its value will totally depend on the script you specified; you can also filter the results by this value specifying filters in the following way: [\"custom_js_response.url\", \"like\", \"pixel\"]")
     custom_js_client_exception: Optional[StrictStr] = Field(default=None, description="error when executing a custom js if the error occurred when executing the script you specified in the custom_js field, the error message would be displayed here")
     broken_resources: Optional[StrictBool] = Field(default=None, description="indicates whether a page contains broken resources")
     broken_links: Optional[StrictBool] = Field(default=None, description="indicates whether a page contains broken links")
     duplicate_title: Optional[StrictBool] = Field(default=None, description="indicates whether a page has duplicate title tags")
     duplicate_description: Optional[StrictBool] = Field(default=None, description="indicates whether a page has a duplicate description")
     duplicate_content: Optional[StrictBool] = Field(default=None, description="indicates whether a page has duplicate content")
-    click_depth: Optional[StrictInt] = Field(default=None, description="number of clicks it takes to get to the page indicates the number of clicks from the homepage needed before landing at the target page")
+    click_depth: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of clicks it takes to get to the page indicates the number of clicks from the homepage needed before landing at the target page")
     is_resource: Optional[StrictBool] = Field(default=None, description="indicates whether a page is a single resource")
-    url_length: Optional[StrictInt] = Field(default=None, description="page URL length in characters")
-    relative_url_length: Optional[StrictInt] = Field(default=None, description="relative URL length in characters")
+    url_length: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="page URL length in characters")
+    relative_url_length: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="relative URL length in characters")
     __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "page_timing", "onpage_score", "total_dom_size", "custom_js_response", "custom_js_client_exception", "broken_resources", "broken_links", "duplicate_title", "duplicate_description", "duplicate_content", "click_depth", "is_resource", "url_length", "relative_url_length"]
 
     model_config = ConfigDict(

@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,10 +35,10 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     title: Optional[StrictStr] = Field(default=None, description="title of the ‘reviews’ element in SERP the name of the local establishment for which the reviews are collected")
     location: Optional[StrictStr] = Field(default=None, description="location of the local establishment address of the local establishment for which the reviews are collected")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
-    rating: Optional[RatingInfo] = None
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of reviews")
+    rating: Optional[BusinessDataRatingInfo] = None
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="rating distribution by votes the distribution of votes across the rating in the range from 1 to 5")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of reviews items in the results array you can get more results by using the depth parameter when setting a task")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of reviews items in the results array you can get more results by using the depth parameter when setting a task")
     items: Optional[List[BaseBusinessDataSerpElementItem]] = Field(default=None, description="found reviews you can get more results by using the depth parameter when setting a task")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     __properties: ClassVar[List[str]] = ["url_path", "type", "se_domain", "check_url", "datetime", "title", "location", "reviews_count", "rating", "rating_distribution", "items_count", "items", "language_code"]
@@ -172,7 +172,7 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
             "title": obj.get("title"),
             "location": obj.get("location"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution"),
             "items_count": obj.get("items_count"),
             "items": [BaseBusinessDataSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,

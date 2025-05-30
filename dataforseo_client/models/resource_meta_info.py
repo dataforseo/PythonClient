@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,12 +26,12 @@ class ResourceMetaInfo(BaseModel):
     """
     ResourceMetaInfo
     """ # noqa: E501
-    alternative_text: Optional[StrictStr] = Field(default=None, description="content of the image alt attribute the value depends on the resource_type")
+    alternative_text: Optional[StrictStr] = Field(default=None, description="content of the image alt attribute")
     title: Optional[StrictStr] = Field(default=None, description="title")
-    original_width: Optional[StrictInt] = Field(default=None, description="original image width in px")
-    original_height: Optional[StrictInt] = Field(default=None, description="original image height in px")
-    width: Optional[StrictInt] = Field(default=None, description="image width in px")
-    height: Optional[StrictInt] = Field(default=None, description="image height in px")
+    original_width: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="original image width in px")
+    original_height: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="original image height in px")
+    width: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="image width in px")
+    height: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="image height in px")
     __properties: ClassVar[List[str]] = ["alternative_text", "title", "original_width", "original_height", "width", "height"]
 
     model_config = ConfigDict(

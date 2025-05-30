@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.screenshot_item import ScreenshotItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class OnPagePageScreenshotResultInfo(BaseModel):
     """ # noqa: E501
     crawl_progress: Optional[StrictStr] = Field(default=None, description="status of the crawling session possible values: in_progress, finished")
     error_message: Optional[StrictStr] = Field(default=None, description="error message if the url you indicated returns a 404 status code or is not a valid URL, you will obtain \"error_message\":\"Screenshot is empty\" if no error is encountered, the value will be null")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
     items: Optional[List[ScreenshotItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["crawl_progress", "error_message", "items_count", "items"]
 

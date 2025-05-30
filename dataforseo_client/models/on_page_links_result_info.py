@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_on_page_link_item_info import BaseOnPageLinkItemInfo
-from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
+from dataforseo_client.models.crawl_status import CrawlStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,11 +29,13 @@ class OnPageLinksResultInfo(BaseModel):
     OnPageLinksResultInfo
     """ # noqa: E501
     crawl_progress: Optional[StrictStr] = Field(default=None, description="status of the crawling session possible values: in_progress, finished")
-    crawl_status: Optional[CrawlStatusInfo] = None
-    total_items_count: Optional[StrictInt] = Field(default=None, description="total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    crawl_status: Optional[CrawlStatus] = None
+    search_after_token: Optional[StrictStr] = None
+    current_offset: Optional[Union[StrictFloat, StrictInt]] = None
+    total_items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of relevant items in the database")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
     items: Optional[List[BaseOnPageLinkItemInfo]] = Field(default=None, description="items array")
-    __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "total_items_count", "items_count", "items"]
+    __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "search_after_token", "current_offset", "total_items_count", "items_count", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +91,16 @@ class OnPageLinksResultInfo(BaseModel):
         if self.crawl_progress is None and "crawl_progress" in self.model_fields_set:
             _dict['crawl_progress'] = None
 
+        # set to None if search_after_token (nullable) is None
+        # and model_fields_set contains the field
+        if self.search_after_token is None and "search_after_token" in self.model_fields_set:
+            _dict['search_after_token'] = None
+
+        # set to None if current_offset (nullable) is None
+        # and model_fields_set contains the field
+        if self.current_offset is None and "current_offset" in self.model_fields_set:
+            _dict['current_offset'] = None
+
         # set to None if total_items_count (nullable) is None
         # and model_fields_set contains the field
         if self.total_items_count is None and "total_items_count" in self.model_fields_set:
@@ -117,7 +129,9 @@ class OnPageLinksResultInfo(BaseModel):
 
         _obj = cls.model_validate({
             "crawl_progress": obj.get("crawl_progress"),
-            "crawl_status": CrawlStatusInfo.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
+            "crawl_status": CrawlStatus.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
+            "search_after_token": obj.get("search_after_token"),
+            "current_offset": obj.get("current_offset"),
             "total_items_count": obj.get("total_items_count"),
             "items_count": obj.get("items_count"),
             "items": [BaseOnPageLinkItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None

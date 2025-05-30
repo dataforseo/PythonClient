@@ -26,17 +26,17 @@ class PageMetrics(BaseModel):
     """
     PageMetrics
     """ # noqa: E501
-    links_external: Optional[StrictInt] = Field(default=None, description="number of external links the number of links pointing to other websites")
-    links_internal: Optional[StrictInt] = Field(default=None, description="number of internal links the number of links pointing to other pages within the target website")
-    duplicate_title: Optional[StrictInt] = Field(default=None, description="number of pages with duplicate titles")
-    duplicate_description: Optional[StrictInt] = Field(default=None, description="number of pages with duplicate descriptions")
-    duplicate_content: Optional[StrictInt] = Field(default=None, description="number of pages with duplicate content")
-    broken_links: Optional[StrictInt] = Field(default=None, description="number of broken links number of broken links across all crawled pages on a target website")
-    broken_resources: Optional[StrictInt] = Field(default=None, description="number of broken resources the number of images and other resources with broken links")
-    links_relation_conflict: Optional[StrictInt] = Field(default=None, description="number of links present on the target website that may have a conflict for example, if \"links_relation_conflict\": 2, the target website is referring to the same source by at least one internal link with the rel=\"nofollow\" attribute and by at least one dofollow link")
-    redirect_loop: Optional[StrictInt] = Field(default=None, description="number of redirect chains that start and end at the same URL number of redirect chains where the destination URL redirects back to the original URL")
+    links_external: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of external links the number of links pointing to other websites")
+    links_internal: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of internal links the number of links pointing to other pages within the target website")
+    duplicate_title: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of pages with duplicate titles")
+    duplicate_description: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of pages with duplicate descriptions")
+    duplicate_content: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of pages with duplicate content")
+    broken_links: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of broken links number of broken links across all crawled pages on a target website")
+    broken_resources: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of broken resources the number of images and other resources with broken links")
+    links_relation_conflict: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of links present on the target website that may have a conflict for example, if \"links_relation_conflict\": 2, the target website is referring to the same source by at least one internal link with the rel=\"nofollow\" attribute and by at least one dofollow link")
+    redirect_loop: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of redirect chains that start and end at the same URL number of redirect chains where the destination URL redirects back to the original URL")
     onpage_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="shows how website is optimized on a 100-point scale this field shows how website is optimized considering critical on-page issues and warnings detected; 100 is the highest possible score that means website does not have any critical on-page issues and important warnings; note that this value depends on the number of crawled pages; learn more about how the metric is calculated in this help center article")
-    non_indexable: Optional[StrictInt] = Field(default=None, description="number of non-indexable pages number of pages that are blocked from being indexed by Google and other search engines by robots.txt, HTTP headers, or meta tags settings; you can receive a list of non-indexable URLs using this endpoint")
+    non_indexable: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of non-indexable pages number of pages that are blocked from being indexed by Google and other search engines by robots.txt, HTTP headers, or meta tags settings; you can receive a list of non-indexable URLs using this endpoint")
     checks: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="page-specific on-page check-ups")
     __properties: ClassVar[List[str]] = ["links_external", "links_internal", "duplicate_title", "duplicate_description", "duplicate_content", "broken_links", "broken_resources", "links_relation_conflict", "redirect_loop", "onpage_score", "non_indexable", "checks"]
 

@@ -29,8 +29,6 @@ class KnowledgeGraphRowItemSerpElementItem(BaseSerpElementItem):
     """
     KnowledgeGraphRowItemSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the item")
     data_attrid: Optional[StrictStr] = Field(default=None, description="google defined data attribute ID example: kc:/common/topic:social media presence")
     text: Optional[StrictStr] = Field(default=None, description="reference text text snippet from the page that was used to generate the ai_overview_element")

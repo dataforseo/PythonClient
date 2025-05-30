@@ -30,8 +30,8 @@ class DataforseoLabsAmazonProductCompetitorsLiveItem(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     asin: Optional[StrictStr] = Field(default=None, description="ASIN of the product unique product identifier on Amazon; for more information, refer to this help center guide")
     avg_position: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average position of the product in Amazon SERP Note: average position is calculated for intersected keywords only; the value for a given product may differ when combined with different target products")
-    sum_position: Optional[StrictInt] = Field(default=None, description="sum of all product positions in Amazon SERP Note: average position is calculated for intersected keywords only; the value for a given product may differ when combined with different target products")
-    intersections: Optional[StrictInt] = Field(default=None, description="number of intersecting keywords")
+    sum_position: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="sum of all product positions in Amazon SERP Note: average position is calculated for intersected keywords only; the value for a given product may differ when combined with different target products")
+    intersections: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of intersecting keywords")
     competitor_metrics: Optional[AmazonMetricsBundleInfo] = None
     full_metrics: Optional[AmazonMetricsBundleInfo] = None
     __properties: ClassVar[List[str]] = ["se_type", "asin", "avg_position", "sum_position", "intersections", "competitor_metrics", "full_metrics"]

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class DataforseoLabsGoogleCategoriesForKeywordsLiveItem(BaseModel):
     DataforseoLabsGoogleCategoriesForKeywordsLiveItem
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    categories: Optional[List[StrictInt]] = Field(default=None, description="product and service categories you can download the full list of possible categories")
+    categories: Optional[List[Union[StrictFloat, StrictInt]]] = Field(default=None, description="product and service categories you can download the full list of possible categories")
     __properties: ClassVar[List[str]] = ["keyword", "categories"]
 
     model_config = ConfigDict(

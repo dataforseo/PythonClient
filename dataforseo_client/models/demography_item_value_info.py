@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class DemographyItemValueInfo(BaseModel):
     DemographyItemValueInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    value: Optional[StrictInt] = Field(default=None, description="keyword popularity rate within the specified age range using this value you can understand how popular a keyword is within each age range; calculation: we determine the highest popularity value for the relevant keyword across all age groups, and then express all other values as a percentage of that highest value (100); a value of 100 is the highest popularity for the term a value of 0 means there was not enough data for this term")
+    value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="keyword popularity rate within the specified age range using this value you can understand how popular a keyword is within each age range; calculation: we determine the highest popularity value for the relevant keyword across all age groups, and then express all other values as a percentage of that highest value (100); a value of 100 is the highest popularity for the term a value of 0 means there was not enough data for this term")
     __properties: ClassVar[List[str]] = ["type", "value"]
 
     model_config = ConfigDict(

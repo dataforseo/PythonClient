@@ -17,12 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.app_user_profile_info import AppUserProfileInfo
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
-from dataforseo_client.models.response_data_info import ResponseDataInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,10 +32,10 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
     version: Optional[StrictStr] = Field(default=None, description="version of the app version of the app for which the review is submitted")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00")
     id: Optional[StrictStr] = Field(default=None, description="id of the review")
-    helpful_count: Optional[StrictInt] = Field(default=None, description="number of helpful votes indicates how many users considered the review helpful and voted with the thumbs up icon")
+    helpful_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of helpful votes indicates how many users considered the review helpful and voted with the thumbs up icon")
     review_text: Optional[StrictStr] = Field(default=None, description="content of the review")
     user_profile: Optional[AppUserProfileInfo] = None
-    responses: Optional[List[ResponseDataInfo]] = Field(default=None, description="response from the developer")
+    responses: Optional[Dict[str, Any]] = Field(default=None, description="response from the developer")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "title", "rating", "version", "timestamp", "id", "helpful_count", "review_text", "user_profile", "responses"]
 
     model_config = ConfigDict(
@@ -84,13 +83,6 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
         # override the default output from pydantic by calling `to_dict()` of user_profile
         if self.user_profile:
             _dict['user_profile'] = self.user_profile.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in responses (list)
-        _items = []
-        if self.responses:
-            for _item_responses in self.responses:
-                if _item_responses:
-                    _items.append(_item_responses.to_dict())
-            _dict['responses'] = _items
         # set to None if type (nullable) is None
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
@@ -163,14 +155,14 @@ class DataAppGooglePlayReviewsSearchSerpElementItem(BaseAppDataSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "title": obj.get("title"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "version": obj.get("version"),
             "timestamp": obj.get("timestamp"),
             "id": obj.get("id"),
             "helpful_count": obj.get("helpful_count"),
             "review_text": obj.get("review_text"),
             "user_profile": AppUserProfileInfo.from_dict(obj["user_profile"]) if obj.get("user_profile") is not None else None,
-            "responses": [ResponseDataInfo.from_dict(_item) for _item in obj["responses"]] if obj.get("responses") is not None else None
+            "responses": obj.get("responses")
         })
         return _obj
 

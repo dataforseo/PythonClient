@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class QuestionsAndAnswersElement(BaseModel):
     answer_text: Optional[StrictStr] = Field(default=None, description="answer included in the item")
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
-    votes: Optional[StrictInt] = Field(default=None, description="answer upvotes from the source")
+    votes: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="answer upvotes from the source")
     __properties: ClassVar[List[str]] = ["type", "url", "question_text", "answer_text", "source", "domain", "votes"]
 
     model_config = ConfigDict(

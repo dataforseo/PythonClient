@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.html_item import HtmlItem
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.serp_html_item_info import SerpHtmlItemInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,11 +28,11 @@ class BusinessDataGoogleHotelInfoTaskGetHtmlResultInfo(BaseModel):
     BusinessDataGoogleHotelInfoTaskGetHtmlResultInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="identifier received in a POST array this field will contain the hotel_identifier parameter specified when setting a task; example: CgoI-KWyzenM_MV3EAE")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[HtmlItem]] = Field(default=None, description="HTML pages")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
+    items: Optional[List[SerpHtmlItemInfo]] = Field(default=None, description="HTML pages")
     type: Optional[StrictStr] = None
     se_domain: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "datetime", "items_count", "items", "type", "se_domain"]
@@ -140,7 +140,7 @@ class BusinessDataGoogleHotelInfoTaskGetHtmlResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "datetime": obj.get("datetime"),
             "items_count": obj.get("items_count"),
-            "items": [HtmlItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [SerpHtmlItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "type": obj.get("type"),
             "se_domain": obj.get("se_domain")
         })

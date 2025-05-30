@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class AbsoluteItems(BaseModel):
     """ # noqa: E501
     geo_id: Optional[StrictStr] = Field(default=None, description="location identifier you can use this field for matching obtained results with location parameters specified in the request see the full list of available locations with their geo_id here or by making a separate request to https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations example: US-NY")
     geo_name: Optional[StrictStr] = Field(default=None, description="location name you can use this field for matching obtained results with location parameters specified in the request see the full list of available locations with their geo_name here or by making a separate request to https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations example: Andorra")
-    values: Optional[List[Optional[StrictInt]]] = Field(default=None, description="keyword popularity rates within a given location represents location-specific keyword popularity rate over the specified time range; using these values, you can understand which of the specified keywords is more popular in the related location; the first value in the array is provided for the first term from the keywords array, the second value is provided for the second keyword, and so on; calculation: we determine the highest popularity value across all specified keywords within a given location, and then express the popularity values of each keyword as a percentage of the highest value (100); a value of 100 is the peak popularity for the term a value of 50 means that the term is half as popular a value of 0 means there was not enough data for this term")
+    values: Optional[List[Optional[StrictStr]]] = Field(default=None, description="keyword popularity rates within a given location represents location-specific keyword popularity rate over the specified time range; using these values, you can understand which of the specified keywords is more popular in the related location; the first value in the array is provided for the first term from the keywords array, the second value is provided for the second keyword, and so on; calculation: we determine the highest popularity value across all specified keywords within a given location, and then express the popularity values of each keyword as a percentage of the highest value (100); a value of 100 is the peak popularity for the term a value of 50 means that the term is half as popular a value of 0 means there was not enough data for this term")
     __properties: ClassVar[List[str]] = ["geo_id", "geo_name", "values"]
 
     model_config = ConfigDict(

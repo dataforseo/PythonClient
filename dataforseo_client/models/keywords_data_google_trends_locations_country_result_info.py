@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,14 +26,13 @@ class KeywordsDataGoogleTrendsLocationsCountryResultInfo(BaseModel):
     """
     KeywordsDataGoogleTrendsLocationsCountryResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description="location code")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location")
-    location_code_parent: Optional[StrictInt] = Field(default=None, description="the code of the superordinate location example: \"location_code\": 9041134, \"location_name\": \"Vienna International Airport,Lower Austria,Austria\", \"location_code_parent\": 20044 where location_code_parent corresponds to: \"location_code\": 20044, \"location_name\": \"Lower Austria,Austria\"")
+    location_code_parent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the code of the superordinate location example: \"location_code\": 9041134, \"location_name\": \"Vienna International Airport,Lower Austria,Austria\", \"location_code_parent\": 20044 where location_code_parent corresponds to: \"location_code\": 20044, \"location_name\": \"Lower Austria,Austria\"")
     country_iso_code: Optional[StrictStr] = Field(default=None, description="ISO country code of the location")
     location_type: Optional[StrictStr] = Field(default=None, description="location type possible values according to Google’s target types")
-    geo_name: Optional[StrictStr] = Field(default=None, description="google trends location name you can use this field for matching obtained results with the location_name parameter specified in the request")
     geo_id: Optional[StrictStr] = Field(default=None, description="google trends location identifier you can use this field for matching obtained results with the location_code parameter specified in the request")
-    __properties: ClassVar[List[str]] = ["location_code", "location_name", "location_code_parent", "country_iso_code", "location_type", "geo_name", "geo_id"]
+    __properties: ClassVar[List[str]] = ["location_code", "location_name", "location_code_parent", "country_iso_code", "location_type", "geo_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,11 +98,6 @@ class KeywordsDataGoogleTrendsLocationsCountryResultInfo(BaseModel):
         if self.location_type is None and "location_type" in self.model_fields_set:
             _dict['location_type'] = None
 
-        # set to None if geo_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.geo_name is None and "geo_name" in self.model_fields_set:
-            _dict['geo_name'] = None
-
         # set to None if geo_id (nullable) is None
         # and model_fields_set contains the field
         if self.geo_id is None and "geo_id" in self.model_fields_set:
@@ -126,7 +120,6 @@ class KeywordsDataGoogleTrendsLocationsCountryResultInfo(BaseModel):
             "location_code_parent": obj.get("location_code_parent"),
             "country_iso_code": obj.get("country_iso_code"),
             "location_type": obj.get("location_type"),
-            "geo_name": obj.get("geo_name"),
             "geo_id": obj.get("geo_id")
         })
         return _obj

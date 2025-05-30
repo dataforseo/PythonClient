@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,7 +36,7 @@ class ShoppingElement(BaseModel):
     marketplace: Optional[StrictStr] = Field(default=None, description="merchant account provider commerce site that hosts products or websites of individual sellers under the same merchant account example: by Google")
     marketplace_url: Optional[StrictStr] = Field(default=None, description="relevant marketplace URL URL of the page on the marketplace website where the product is hosted")
     url: Optional[StrictStr] = Field(default=None, description="URL")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "price", "source", "description", "marketplace", "marketplace_url", "url", "rating"]
 
     model_config = ConfigDict(
@@ -139,7 +139,7 @@ class ShoppingElement(BaseModel):
             "marketplace": obj.get("marketplace"),
             "marketplace_url": obj.get("marketplace_url"),
             "url": obj.get("url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

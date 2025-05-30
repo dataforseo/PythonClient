@@ -32,7 +32,7 @@ class BusinessDataIdListResultInfo(BaseModel):
     datetime_done: Optional[StrictStr] = Field(default=None, description="date and time when the task was completed in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2023-01-15 12:57:46 +00:00")
     status: Optional[StrictStr] = Field(default=None, description="informational message of the task you can find the full list of general informational messages here")
     cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="cost of the task, USD")
-    metadata: Optional[Dict[str, Any]] = Field(default=None, description="contains parameters you specified in the POST request")
+    metadata: Optional[List[Optional[StrictStr]]] = Field(default=None, description="contains parameters you specified in the POST request")
     __properties: ClassVar[List[str]] = ["id", "url", "datetime_posted", "datetime_done", "status", "cost", "metadata"]
 
     model_config = ConfigDict(

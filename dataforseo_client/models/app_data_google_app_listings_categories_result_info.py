@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,9 +26,14 @@ class AppDataGoogleAppListingsCategoriesResultInfo(BaseModel):
     """
     AppDataGoogleAppListingsCategoriesResultInfo
     """ # noqa: E501
-    category: Optional[StrictStr] = Field(default=None, description="name of the supported app category")
-    count: Optional[StrictInt] = Field(default=None, description="number of app listings that make up the supported app category")
-    __properties: ClassVar[List[str]] = ["category", "count"]
+    id: Optional[StrictStr] = Field(default=None, description="task identifier unique task identifier in our system in the UUID format")
+    se: Optional[StrictStr] = None
+    se_type: Optional[StrictStr] = None
+    date_posted: Optional[StrictStr] = None
+    tag: Optional[StrictStr] = None
+    endpoint_advanced: Optional[StrictStr] = None
+    endpoint_html: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "se", "se_type", "date_posted", "tag", "endpoint_advanced", "endpoint_html"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -69,15 +74,40 @@ class AppDataGoogleAppListingsCategoriesResultInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if category (nullable) is None
+        # set to None if id (nullable) is None
         # and model_fields_set contains the field
-        if self.category is None and "category" in self.model_fields_set:
-            _dict['category'] = None
+        if self.id is None and "id" in self.model_fields_set:
+            _dict['id'] = None
 
-        # set to None if count (nullable) is None
+        # set to None if se (nullable) is None
         # and model_fields_set contains the field
-        if self.count is None and "count" in self.model_fields_set:
-            _dict['count'] = None
+        if self.se is None and "se" in self.model_fields_set:
+            _dict['se'] = None
+
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
+        # set to None if date_posted (nullable) is None
+        # and model_fields_set contains the field
+        if self.date_posted is None and "date_posted" in self.model_fields_set:
+            _dict['date_posted'] = None
+
+        # set to None if tag (nullable) is None
+        # and model_fields_set contains the field
+        if self.tag is None and "tag" in self.model_fields_set:
+            _dict['tag'] = None
+
+        # set to None if endpoint_advanced (nullable) is None
+        # and model_fields_set contains the field
+        if self.endpoint_advanced is None and "endpoint_advanced" in self.model_fields_set:
+            _dict['endpoint_advanced'] = None
+
+        # set to None if endpoint_html (nullable) is None
+        # and model_fields_set contains the field
+        if self.endpoint_html is None and "endpoint_html" in self.model_fields_set:
+            _dict['endpoint_html'] = None
 
         return _dict
 
@@ -91,8 +121,13 @@ class AppDataGoogleAppListingsCategoriesResultInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "category": obj.get("category"),
-            "count": obj.get("count")
+            "id": obj.get("id"),
+            "se": obj.get("se"),
+            "se_type": obj.get("se_type"),
+            "date_posted": obj.get("date_posted"),
+            "tag": obj.get("tag"),
+            "endpoint_advanced": obj.get("endpoint_advanced"),
+            "endpoint_html": obj.get("endpoint_html")
         })
         return _obj
 

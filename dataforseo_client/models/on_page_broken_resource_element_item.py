@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
 from dataforseo_client.models.cache_control import CacheControl
@@ -32,10 +32,11 @@ class OnPageBrokenResourceElementItem(BaseOnPageResourceItemInfo):
     """
     OnPageBrokenResourceElementItem
     """ # noqa: E501
-    meta: Optional[PageMetaInfo] = None
     fetch_timing: Optional[FetchTiming] = None
+    is_resource: Optional[StrictBool] = Field(default=None, description="indicates whether a page is a single resource")
+    meta: Optional[PageMetaInfo] = None
     accept_type: Optional[StrictStr] = Field(default=None, description="indicates the expected type of resource for example, if \"resource_type\": \"broken\", accept_type will indicate the type of the broken resource possible values: any, none, image, sitemap, robots, script, stylesheet, redirect, html, text, other, font")
-    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "meta", "fetch_timing", "accept_type"]
+    __properties: ClassVar[List[str]] = ["resource_type", "status_code", "location", "url", "resource_errors", "size", "encoded_size", "total_transfer_size", "fetch_time", "cache_control", "checks", "content_encoding", "media_type", "server", "last_modified", "fetch_timing", "is_resource", "meta", "accept_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,12 +86,12 @@ class OnPageBrokenResourceElementItem(BaseOnPageResourceItemInfo):
         # override the default output from pydantic by calling `to_dict()` of last_modified
         if self.last_modified:
             _dict['last_modified'] = self.last_modified.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of meta
-        if self.meta:
-            _dict['meta'] = self.meta.to_dict()
         # override the default output from pydantic by calling `to_dict()` of fetch_timing
         if self.fetch_timing:
             _dict['fetch_timing'] = self.fetch_timing.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
         # set to None if resource_type (nullable) is None
         # and model_fields_set contains the field
         if self.resource_type is None and "resource_type" in self.model_fields_set:
@@ -151,6 +152,11 @@ class OnPageBrokenResourceElementItem(BaseOnPageResourceItemInfo):
         if self.server is None and "server" in self.model_fields_set:
             _dict['server'] = None
 
+        # set to None if is_resource (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_resource is None and "is_resource" in self.model_fields_set:
+            _dict['is_resource'] = None
+
         # set to None if accept_type (nullable) is None
         # and model_fields_set contains the field
         if self.accept_type is None and "accept_type" in self.model_fields_set:
@@ -183,8 +189,9 @@ class OnPageBrokenResourceElementItem(BaseOnPageResourceItemInfo):
             "media_type": obj.get("media_type"),
             "server": obj.get("server"),
             "last_modified": LastModified.from_dict(obj["last_modified"]) if obj.get("last_modified") is not None else None,
-            "meta": PageMetaInfo.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
             "fetch_timing": FetchTiming.from_dict(obj["fetch_timing"]) if obj.get("fetch_timing") is not None else None,
+            "is_resource": obj.get("is_resource"),
+            "meta": PageMetaInfo.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
             "accept_type": obj.get("accept_type")
         })
         return _obj

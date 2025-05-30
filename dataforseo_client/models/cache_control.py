@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class CacheControl(BaseModel):
     CacheControl
     """ # noqa: E501
     cachable: Optional[StrictBool] = Field(default=None, description="indicates whether the page is cacheable")
-    ttl: Optional[StrictInt] = Field(default=None, description="time to live the amount of time the browser caches a resource")
+    ttl: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="time to live the amount of time the browser caches a resource")
     __properties: ClassVar[List[str]] = ["cachable", "ttl"]
 
     model_config = ConfigDict(

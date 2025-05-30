@@ -20,8 +20,8 @@ import json
 from pydantic import ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.business_data_user_profile_info import BusinessDataUserProfileInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.review_response_item_info import ReviewResponseItemInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,7 @@ class TrustpilotReviewSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElem
     """ # noqa: E501
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the review in SERP can take the following values: right")
     url: Optional[StrictStr] = Field(default=None, description="the URL of the review")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     verified: Optional[StrictBool] = Field(default=None, description="indicates whether the review has the “Verified” mark")
     language: Optional[StrictStr] = Field(default=None, description="the language of the review")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when a review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
@@ -172,7 +172,7 @@ class TrustpilotReviewSearchBusinessDataSerpElementItem(BaseBusinessDataSerpElem
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "url": obj.get("url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "verified": obj.get("verified"),
             "language": obj.get("language"),
             "timestamp": obj.get("timestamp"),

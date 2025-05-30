@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +28,10 @@ class HotelInfoPriceOffer(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of the hotel")
-    price: Optional[StrictInt] = Field(default=None, description="price per night")
+    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="price per night")
     currency: Optional[StrictStr] = Field(default=None, description="price currency USD is applied by default, unless specified in the POST array")
     url: Optional[StrictStr] = Field(default=None, description="url of the price offer URL to the page of the website where price offer appears")
-    max_visitors: Optional[StrictInt] = Field(default=None, description="the maximal number of visitors the maximum number of visitors for which the price offer is valid")
+    max_visitors: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the maximal number of visitors the maximum number of visitors for which the price offer is valid")
     offer_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description="price offer images URLs of the images featured in the price offer")
     free_cancellation_until: Optional[StrictStr] = Field(default=None, description="date until free cancellation is available in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” equals null if free cancellation is not available for the selected dates")
     __properties: ClassVar[List[str]] = ["type", "title", "price", "currency", "url", "max_visitors", "offer_images", "free_cancellation_until"]

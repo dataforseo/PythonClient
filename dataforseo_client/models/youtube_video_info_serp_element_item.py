@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from dataforseo_client.models.channel_subscribers_count import ChannelSubscribersCount
 from dataforseo_client.models.streaming_quality_element import StreamingQualityElement
@@ -39,9 +39,9 @@ class YoutubeVideoInfoSerpElementItem(BaseYoutubeSerpElementItem):
     channel_url: Optional[StrictStr] = Field(default=None, description="the URL of the channel where the video is published")
     channel_logo: Optional[StrictStr] = Field(default=None, description="the URL of the page where the logo image of the channel is hosted")
     description: Optional[StrictStr] = Field(default=None, description="description of the video")
-    views_count: Optional[StrictInt] = Field(default=None, description="number of views of the video")
-    likes_count: Optional[StrictInt] = Field(default=None, description="number of likes on the video")
-    comments_count: Optional[StrictInt] = Field(default=None, description="number of comments on the video")
+    views_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of views of the video")
+    likes_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of likes on the video")
+    comments_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of comments on the video")
     channel_subscribers_count: Optional[ChannelSubscribersCount] = None
     publication_date: Optional[StrictStr] = Field(default=None, description="the date when the video is published")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result is published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-11-15 12:57:46 +00:00")
@@ -50,7 +50,7 @@ class YoutubeVideoInfoSerpElementItem(BaseYoutubeSerpElementItem):
     is_live: Optional[StrictBool] = Field(default=None, description="indicates whether the video is on live")
     is_embeddable: Optional[StrictBool] = Field(default=None, description="indicates whether the video is embeddable")
     duration_time: Optional[StrictStr] = Field(default=None, description="duration of the video")
-    duration_time_seconds: Optional[StrictInt] = Field(default=None, description="duration of the video in seconds")
+    duration_time_seconds: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="duration of the video in seconds")
     subtitles: Optional[List[Subtitles]] = Field(default=None, description="array of elements describing properties of subtitles in the video")
     streaming_quality: Optional[List[StreamingQualityElement]] = Field(default=None, description="array of elements that contain information about all possible streaming qualities of the video")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "video_id", "title", "url", "thumbnail_url", "channel_id", "channel_name", "channel_url", "channel_logo", "description", "views_count", "likes_count", "comments_count", "channel_subscribers_count", "publication_date", "timestamp", "keywords", "category", "is_live", "is_embeddable", "duration_time", "duration_time_seconds", "subtitles", "streaming_quality"]

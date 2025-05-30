@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +28,8 @@ class BacklinksCompetitorsLiveItem(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     target: Optional[StrictStr] = Field(default=None, description="competitor domain")
-    rank: Optional[StrictInt] = Field(default=None, description="domain rank domain rank across all domains in the database rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
-    intersections: Optional[StrictInt] = Field(default=None, description="indicates the number of backlink intersections with the target specified in the POST array")
+    rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="domain rank domain rank across all domains in the database rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
+    intersections: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the number of backlink intersections with the target specified in the POST array")
     __properties: ClassVar[List[str]] = ["type", "target", "rank", "intersections"]
 
     model_config = ConfigDict(

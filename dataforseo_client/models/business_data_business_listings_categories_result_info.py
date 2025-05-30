@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class BusinessDataBusinessListingsCategoriesResultInfo(BaseModel):
     BusinessDataBusinessListingsCategoriesResultInfo
     """ # noqa: E501
     category_name: Optional[StrictStr] = Field(default=None, description="full name of the category")
-    business_count: Optional[StrictInt] = Field(default=None, description="number of businesses in the category")
+    business_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of businesses in the category")
     __properties: ClassVar[List[str]] = ["category_name", "business_count"]
 
     model_config = ConfigDict(

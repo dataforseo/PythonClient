@@ -21,8 +21,8 @@ from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, Stri
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_google_maps_serp_element_item import BaseGoogleMapsSerpElementItem
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.local_justification_info import LocalJustificationInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.work_hours import WorkHours
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
     contact_url: Optional[StrictStr] = Field(default=None, description="URL of the preferred contact page")
     contributor_url: Optional[StrictStr] = Field(default=None, description="URL of the user’s or entity’s Local Guides profile, if available")
     book_online_url: Optional[StrictStr] = Field(default=None, description="URL in the ‘book online’ button of the element URL directing users to the online booking or order page of the business entity")
-    hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
+    hotel_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
     snippet: Optional[StrictStr] = Field(default=None, description="element snippet contains the address and other information about the local establishment featured in the element")
     address: Optional[StrictStr] = Field(default=None, description="address line address of the local establishment featured in the element")
@@ -43,7 +43,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
     place_id: Optional[StrictStr] = Field(default=None, description="unique place identifier place id of the local establishment featured in the element")
     phone: Optional[StrictStr] = Field(default=None, description="phone number phone number of the local establishment featured in the element")
     main_image: Optional[StrictStr] = Field(default=None, description="URL of the main image featured in Google My Business profile")
-    total_photos: Optional[StrictInt] = Field(default=None, description="total count of images featured in Google My Business profile")
+    total_photos: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total count of images featured in Google My Business profile")
     category: Optional[StrictStr] = Field(default=None, description="business category Google My Business general category that best describes the services provided by the business entity")
     additional_categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description="additional business categories additional Google My Business categories that describe the services provided by the business entity in more detail")
     category_ids: Optional[List[Optional[StrictStr]]] = Field(default=None, description="global category IDs universal category IDs that do not change based on the selected country")
@@ -275,7 +275,7 @@ class MapsSearchSerpElementItem(BaseGoogleMapsSerpElementItem):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution"),
             "original_title": obj.get("original_title"),
             "contact_url": obj.get("contact_url"),

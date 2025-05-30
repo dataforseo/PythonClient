@@ -1,0 +1,15 @@
+# DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+**keyword** | **StrictStr** | keyword<br>required field<br>you can specify up to 700 characters in the keyword field;<br>all %## will be decoded (plus character ‘+’ will be decoded to a space character);<br>if you need to use the “%” character for your keyword, please specify it as “%25”;<br>if you need to use the “+” character for your keyword, please specify it as “%2B” |[optional]|
+**date_from** | **StrictStr** | starting date of the time range<br>optional field<br>if you don’t specify this field, the API will return all SERPs collected for 365 days starting from the current datetime value;<br>minimal possible value: 365 days from the current datetime value;<br>date format: 'yyyy-mm-dd' |[optional]|
+**date_to** | **StrictStr** | ending date of the time range<br>optional field<br>if you don’t specify this field, the today’s date will be used by default;<br>date format: 'yyyy-mm-dd';<br>example:<br>'2021-09-01' |[optional]|
+**location_name** | **StrictStr** | full name of the location<br>required field if you don’t specify location_code<br>Note: it is required to specify either location_name or location_code<br>you can receive the list of available locations with their location_name by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages<br>example:<br>United Kingdom |[optional]|
+**location_code** | **StrictInt** | unique location identifier<br>required field if you don’t specify location_name<br>Note: it is required to specify either location_name or location_code<br>you can receive the list of available locations with their location_code by making a separate request to https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages<br>example:<br>2840 |[optional]|
+**language_name** | **StrictStr** | full name of the language<br>required field if you don’t specify language_code<br>Note: it is required to specify either language_name or language_code<br>you can receive the list of available languages with their language_name parameters by making a separate request to the<br>https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages<br>example:<br>English |[optional]|
+**language_code** | **StrictStr** | unique language identifier<br>required field if you don’t specify language_name<br>Note: it is required to specify either language_name or language_code<br>you can receive the list of available languages with their language_code parameters by making a separate request to the<br>https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages<br>example:<br>en |[optional]|
+**tag** | **StrictStr** | user-defined task identifier<br>optional field<br>the character limit is 255<br>you can use this parameter to identify the task and match it with the result<br>you will find the specified tag value in the data object of the response |[optional]|

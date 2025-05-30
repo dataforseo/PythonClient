@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.busy_working_time_info import BusyWorkingTimeInfo
+from dataforseo_client.models.popular_work_time_info import PopularWorkTimeInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class PopularTimes(BaseModel):
     """
     PopularTimes
     """ # noqa: E501
-    popular_times_by_days: Optional[Dict[str, Optional[List[BusyWorkingTimeInfo]]]] = Field(default=None, description="popular hours information about busy hours of the local establishment on each day of the week")
+    popular_times_by_days: Optional[Dict[str, Optional[List[PopularWorkTimeInfo]]]] = Field(default=None, description="popular hours information about busy hours of the local establishment on each day of the week")
     __properties: ClassVar[List[str]] = ["popular_times_by_days"]
 
     model_config = ConfigDict(
@@ -97,7 +97,7 @@ class PopularTimes(BaseModel):
         _obj = cls.model_validate({
             "popular_times_by_days": dict(
                 (_k,
-                        [BusyWorkingTimeInfo.from_dict(_item) for _item in _v]
+                        [PopularWorkTimeInfo.from_dict(_item) for _item in _v]
                         if _v is not None
                         else None
                 )

@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.images_element import ImagesElement
-from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.review_highlights import ReviewHighlights
 from dataforseo_client.models.source import Source
 from typing import Optional, Set
@@ -31,17 +31,17 @@ class BusinessDataGoogleExtendedReviewsTaskGetItem(BaseModel):
     BusinessDataGoogleExtendedReviewsTaskGetItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the listed reviews absolute position among all reviews on the list")
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank among all the listed reviews absolute position among all reviews on the list")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the review in SERP can take the following values: right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the review")
     review_text: Optional[StrictStr] = Field(default=None, description="the content of the review")
     original_review_text: Optional[StrictStr] = Field(default=None, description="original content of the review the original content of the review, no auto-translate applied")
     time_ago: Optional[StrictStr] = Field(default=None, description="the time of publication indicates the time (in the ‘time ago’ format) when the review was listed")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when a review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    rating: Optional[RatingInfo] = None
-    reviews_count: Optional[StrictInt] = Field(default=None, description="total number of reviews submitted by the reviewer")
-    photos_count: Optional[StrictInt] = Field(default=None, description="total number of photos submitted by the reviewer")
+    rating: Optional[BusinessDataRatingInfo] = None
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of reviews submitted by the reviewer")
+    photos_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of photos submitted by the reviewer")
     local_guide: Optional[StrictBool] = Field(default=None, description="indicates whether the reviewer has a ‘local guide’ status")
     profile_name: Optional[StrictStr] = Field(default=None, description="profile name of the reviewer")
     profile_url: Optional[StrictStr] = Field(default=None, description="URL of the reviewer’s profile")
@@ -252,7 +252,7 @@ class BusinessDataGoogleExtendedReviewsTaskGetItem(BaseModel):
             "original_review_text": obj.get("original_review_text"),
             "time_ago": obj.get("time_ago"),
             "timestamp": obj.get("timestamp"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "reviews_count": obj.get("reviews_count"),
             "photos_count": obj.get("photos_count"),
             "local_guide": obj.get("local_guide"),

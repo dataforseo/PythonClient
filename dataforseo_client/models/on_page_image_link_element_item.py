@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_on_page_link_item_info import BaseOnPageLinkItemInfo
 from typing import Optional, Set
@@ -31,8 +31,7 @@ class OnPageImageLinkElementItem(BaseOnPageLinkItemInfo):
     text: Optional[StrictStr] = Field(default=None, description="anchor text")
     image_alt: Optional[StrictStr] = Field(default=None, description="alternative text for the image")
     image_src: Optional[StrictStr] = Field(default=None, description="url of the image")
-    page_to_status_code: Optional[StrictInt] = Field(default=None, description="status code of the referenced page status code of the page to which the link is pointing")
-    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict", "link_attribute", "text", "image_alt", "image_src", "page_to_status_code"]
+    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict", "page_to_status_code", "link_attribute", "text", "image_alt", "image_src"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -138,6 +137,11 @@ class OnPageImageLinkElementItem(BaseOnPageLinkItemInfo):
         if self.is_link_relation_conflict is None and "is_link_relation_conflict" in self.model_fields_set:
             _dict['is_link_relation_conflict'] = None
 
+        # set to None if page_to_status_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_to_status_code is None and "page_to_status_code" in self.model_fields_set:
+            _dict['page_to_status_code'] = None
+
         # set to None if link_attribute (nullable) is None
         # and model_fields_set contains the field
         if self.link_attribute is None and "link_attribute" in self.model_fields_set:
@@ -157,11 +161,6 @@ class OnPageImageLinkElementItem(BaseOnPageLinkItemInfo):
         # and model_fields_set contains the field
         if self.image_src is None and "image_src" in self.model_fields_set:
             _dict['image_src'] = None
-
-        # set to None if page_to_status_code (nullable) is None
-        # and model_fields_set contains the field
-        if self.page_to_status_code is None and "page_to_status_code" in self.model_fields_set:
-            _dict['page_to_status_code'] = None
 
         return _dict
 
@@ -188,11 +187,11 @@ class OnPageImageLinkElementItem(BaseOnPageLinkItemInfo):
             "direction": obj.get("direction"),
             "is_broken": obj.get("is_broken"),
             "is_link_relation_conflict": obj.get("is_link_relation_conflict"),
+            "page_to_status_code": obj.get("page_to_status_code"),
             "link_attribute": obj.get("link_attribute"),
             "text": obj.get("text"),
             "image_alt": obj.get("image_alt"),
-            "image_src": obj.get("image_src"),
-            "page_to_status_code": obj.get("page_to_status_code")
+            "image_src": obj.get("image_src")
         })
         return _obj
 

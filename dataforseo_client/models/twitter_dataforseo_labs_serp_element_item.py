@@ -28,10 +28,11 @@ class TwitterDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """
     TwitterDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
-    items: Optional[List[TwitterElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url", "items"]
+    url: Optional[StrictStr] = Field(default=None, description="sitelink URL")
+    items: Optional[List[TwitterElement]] = Field(default=None, description="elements of search results found in SERP")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "url", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +105,11 @@ class TwitterDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -136,6 +142,7 @@ class TwitterDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "url": obj.get("url"),
             "items": [TwitterElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None

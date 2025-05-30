@@ -34,7 +34,8 @@ class AppendixUserDataResultInfo(BaseModel):
     rates: Optional[AppendixRatesData] = None
     money: Optional[AppendixMoneyData] = None
     price: Optional[AppendixPriceData] = None
-    __properties: ClassVar[List[str]] = ["login", "timezone", "rates", "money", "price"]
+    backlinks_subscription_expiry_date: Optional[StrictStr] = Field(default=None, description="expiry date of the backlinks api subscription date and time when the current subscription to Backlinks API expires; in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2025-06-15 12:57:46 +00:00 Note: if there is no active subscription to Backlinks API, the value equals null")
+    __properties: ClassVar[List[str]] = ["login", "timezone", "rates", "money", "price", "backlinks_subscription_expiry_date"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +95,11 @@ class AppendixUserDataResultInfo(BaseModel):
         if self.timezone is None and "timezone" in self.model_fields_set:
             _dict['timezone'] = None
 
+        # set to None if backlinks_subscription_expiry_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.backlinks_subscription_expiry_date is None and "backlinks_subscription_expiry_date" in self.model_fields_set:
+            _dict['backlinks_subscription_expiry_date'] = None
+
         return _dict
 
     @classmethod
@@ -110,7 +116,8 @@ class AppendixUserDataResultInfo(BaseModel):
             "timezone": obj.get("timezone"),
             "rates": AppendixRatesData.from_dict(obj["rates"]) if obj.get("rates") is not None else None,
             "money": AppendixMoneyData.from_dict(obj["money"]) if obj.get("money") is not None else None,
-            "price": AppendixPriceData.from_dict(obj["price"]) if obj.get("price") is not None else None
+            "price": AppendixPriceData.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "backlinks_subscription_expiry_date": obj.get("backlinks_subscription_expiry_date")
         })
         return _obj
 

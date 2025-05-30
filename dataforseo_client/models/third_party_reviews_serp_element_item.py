@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,12 +29,10 @@ class ThirdPartyReviewsSerpElementItem(BaseSerpElementItem):
     """
     ThirdPartyReviewsSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the number of reviews")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of reviews")
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
-    url: Optional[StrictStr] = Field(default=None, description="source URL")
-    rating: Optional[RatingInfo] = None
+    url: Optional[StrictStr] = Field(default=None, description="URL")
+    rating: Optional[BusinessDataRatingInfo] = None
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "reviews_count", "title", "url", "rating", "rectangle"]
 
@@ -143,7 +141,7 @@ class ThirdPartyReviewsSerpElementItem(BaseSerpElementItem):
             "reviews_count": obj.get("reviews_count"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
         })
         return _obj

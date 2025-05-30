@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class RankedKeywordsInfo(BaseModel):
     """
     RankedKeywordsInfo
     """ # noqa: E501
-    page_from_keywords_count_top_3: Optional[StrictInt] = Field(default=None, description="number of keywords for which the page is ranked in top 3 search results")
-    page_from_keywords_count_top_10: Optional[StrictInt] = Field(default=None, description="number of keywords for which the page is ranked in top 10 search results")
-    page_from_keywords_count_top_100: Optional[StrictInt] = Field(default=None, description="number of keywords for which the page is ranked in top 100 search results")
+    page_from_keywords_count_top_3: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of keywords for which the page is ranked in top 3 search results")
+    page_from_keywords_count_top_10: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of keywords for which the page is ranked in top 10 search results")
+    page_from_keywords_count_top_100: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of keywords for which the page is ranked in top 100 search results")
     __properties: ClassVar[List[str]] = ["page_from_keywords_count_top_3", "page_from_keywords_count_top_10", "page_from_keywords_count_top_100"]
 
     model_config = ConfigDict(

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class ContentGenerationGenerateLiveResultInfo(BaseModel):
     """
     ContentGenerationGenerateLiveResultInfo
     """ # noqa: E501
-    input_tokens: Optional[StrictInt] = Field(default=None, description="number of input tokens")
-    output_tokens: Optional[StrictInt] = Field(default=None, description="number of output tokens")
-    new_tokens: Optional[StrictInt] = Field(default=None, description="number of new tokens")
+    input_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of input tokens")
+    output_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of output tokens")
+    new_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new tokens")
     generated_text: Optional[StrictStr] = Field(default=None, description="resulting text")
     supplement_token: Optional[StrictStr] = Field(default=None, description="token for generating subsequent results you can use this parameter to continue the generation from the end of the current result; supplement_token values are unique for each subsequent task")
     __properties: ClassVar[List[str]] = ["input_tokens", "output_tokens", "new_tokens", "generated_text", "supplement_token"]

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.backlinks_domain_pages_summary_live_item import BacklinksDomainPagesSummaryLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class BacklinksDomainPagesSummaryLiveResultInfo(BaseModel):
     BacklinksDomainPagesSummaryLiveResultInfo
     """ # noqa: E501
     target: Optional[StrictStr] = Field(default=None, description="target in the post array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of relevant items in the database")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
     items: Optional[List[BacklinksDomainPagesSummaryLiveItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["target", "total_count", "items_count", "items"]
 

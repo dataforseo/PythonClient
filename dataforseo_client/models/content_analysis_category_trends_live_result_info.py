@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.content_analysis_categories_info import ContentAnalysisCategoriesInfo
-from dataforseo_client.models.top_domain_info import TopDomainInfo
+from dataforseo_client.models.top_domain_count_info import TopDomainCountInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,9 +30,9 @@ class ContentAnalysisCategoryTrendsLiveResultInfo(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     var_date: Optional[StrictStr] = Field(default=None, description="date for which the data is provided", alias="date")
-    total_count: Optional[StrictInt] = Field(default=None, description="total number of results in our database relevant to your request")
-    rank: Optional[StrictInt] = Field(default=None, description="rank of all URLs citing the keyword normalized sum of ranks of all URLs citing the target keyword for the given date")
-    top_domains: Optional[List[TopDomainInfo]] = Field(default=None, description="top domains citing the target keyword contains objects with top domains citing the target category and citation count per each domain")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of results in our database relevant to your request")
+    rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="rank of all URLs citing the keyword normalized sum of ranks of all URLs citing the target keyword for the given date")
+    top_domains: Optional[List[TopDomainCountInfo]] = Field(default=None, description="top domains citing the target keyword contains objects with top domains citing the target category and citation count per each domain")
     sentiment_connotations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="sentiment connotations contains sentiments (emotional reactions) related to the target category citation and the number of citations per each sentiment possible connotations: \"anger\", \"fear\", \"happiness\", \"love\", \"sadness\", \"share\", \"neutral\", \"fun\"")
     connotation_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="connotation types contains types of sentiments (sentiment polarity) related to the category citation and citation count per each sentiment type possible connotation types: \"positive\", \"negative\", \"neutral\"")
     text_categories: Optional[List[ContentAnalysisCategoriesInfo]] = Field(default=None, description="text categories contains objects with text categories and citation count in each text category to obtain a full list of available categories, refer to the Categories endpoint")
@@ -178,7 +178,7 @@ class ContentAnalysisCategoryTrendsLiveResultInfo(BaseModel):
             "date": obj.get("date"),
             "total_count": obj.get("total_count"),
             "rank": obj.get("rank"),
-            "top_domains": [TopDomainInfo.from_dict(_item) for _item in obj["top_domains"]] if obj.get("top_domains") is not None else None,
+            "top_domains": [TopDomainCountInfo.from_dict(_item) for _item in obj["top_domains"]] if obj.get("top_domains") is not None else None,
             "sentiment_connotations": obj.get("sentiment_connotations"),
             "connotation_types": obj.get("connotation_types"),
             "text_categories": [ContentAnalysisCategoriesInfo.from_dict(_item) for _item in obj["text_categories"]] if obj.get("text_categories") is not None else None,

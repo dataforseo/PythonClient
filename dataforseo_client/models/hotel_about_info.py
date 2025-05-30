@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.hotel_amenity_info import HotelAmenityInfo
 from dataforseo_client.models.hotel_amenity_item_info import HotelAmenityItemInfo
-from dataforseo_client.models.work_time_info import WorkTimeInfo
+from dataforseo_client.models.info import Info
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,8 +31,8 @@ class HotelAboutInfo(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = Field(default=None, description="description of the hotel the description of the hotel entity for which the results are collected")
     sub_descriptions: Optional[List[Optional[StrictStr]]] = Field(default=None, description="additional description of the hotel details about the hotel provided in addition to the description")
-    check_in_time: Optional[WorkTimeInfo] = None
-    check_out_time: Optional[WorkTimeInfo] = None
+    check_in_time: Optional[Info] = None
+    check_out_time: Optional[Info] = None
     full_address: Optional[StrictStr] = Field(default=None, description="full address of the hotel address of the hotel indicated in the standardised format")
     domain: Optional[StrictStr] = Field(default=None, description="hotel domain domain of the hotel’s website")
     url: Optional[StrictStr] = Field(default=None, description="hotel url URL to the hotel’s website indicated in the listing")
@@ -148,8 +148,8 @@ class HotelAboutInfo(BaseModel):
         _obj = cls.model_validate({
             "description": obj.get("description"),
             "sub_descriptions": obj.get("sub_descriptions"),
-            "check_in_time": WorkTimeInfo.from_dict(obj["check_in_time"]) if obj.get("check_in_time") is not None else None,
-            "check_out_time": WorkTimeInfo.from_dict(obj["check_out_time"]) if obj.get("check_out_time") is not None else None,
+            "check_in_time": Info.from_dict(obj["check_in_time"]) if obj.get("check_in_time") is not None else None,
+            "check_out_time": Info.from_dict(obj["check_out_time"]) if obj.get("check_out_time") is not None else None,
             "full_address": obj.get("full_address"),
             "domain": obj.get("domain"),
             "url": obj.get("url"),

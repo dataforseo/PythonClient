@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,12 +26,12 @@ class AppMetricsInfo(BaseModel):
     """
     AppMetricsInfo
     """ # noqa: E501
-    pos_1: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the product ranks #1")
-    pos_2_3: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the product ranks #2-3")
-    pos_4_10: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the product ranks #4-10")
-    pos_11_100: Optional[StrictInt] = Field(default=None, description="number of organic SERPs where the product ranks #11-100")
-    count: Optional[StrictInt] = Field(default=None, description="total count of Amazon organic SERPs that contain the product")
-    search_volume: Optional[StrictInt] = Field(default=None, description="total search volume of the product’s ranking keywords in organic SERP")
+    pos_1: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the product ranks #1")
+    pos_2_3: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the product ranks #2-3")
+    pos_4_10: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the product ranks #4-10")
+    pos_11_100: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of organic SERPs where the product ranks #11-100")
+    count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total count of Amazon organic SERPs that contain the product")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total search volume of the product’s ranking keywords in organic SERP")
     __properties: ClassVar[List[str]] = ["pos_1", "pos_2_3", "pos_4_10", "pos_11_100", "count", "search_volume"]
 
     model_config = ConfigDict(

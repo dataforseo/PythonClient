@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class BacklinksBulkSpamScoreLiveItem(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     target: Optional[StrictStr] = Field(default=None, description="domain, subdomain or webpage from a POST array")
-    spam_score: Optional[StrictInt] = Field(default=None, description="average spam score the target learn more about how the metric is calculated")
+    spam_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average spam score the target learn more about how the metric is calculated")
     __properties: ClassVar[List[str]] = ["type", "target", "spam_score"]
 
     model_config = ConfigDict(

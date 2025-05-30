@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.domain_analytics_technologies_aggregation_technologies_live_item import DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo(BaseModel
     """
     DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned domains")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
+    offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="offset in the results array of returned domains")
     items: Optional[List[DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["total_count", "items_count", "offset", "items"]
 

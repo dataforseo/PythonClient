@@ -29,8 +29,6 @@ class CoursesSerpElementItem(BaseSerpElementItem):
     """
     CoursesSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description="array of course categories contains a list of categories relevant to courses")
     items: Optional[List[CoursesElement]] = Field(default=None, description="contains arrays of specific images")

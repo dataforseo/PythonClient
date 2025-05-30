@@ -18,9 +18,9 @@ import re  # noqa: F401
 import json
 
 from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,12 +34,12 @@ class BaseGoogleMapsSerpElementItem(BaseModel):
     BaseGoogleMapsSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the element")
     url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "domain", "title", "url", "rating", "rating_distribution"]
 

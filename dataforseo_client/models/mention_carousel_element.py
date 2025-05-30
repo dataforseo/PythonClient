@@ -19,9 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.link_element import LinkElement
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class MentionCarouselElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     price: Optional[PriceInfo] = None
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     mentioned_in: Optional[List[LinkElement]] = Field(default=None, description="additional elements in the mention_carousel item")
     __properties: ClassVar[List[str]] = ["type", "title", "price", "rating", "mentioned_in"]
 
@@ -118,7 +118,7 @@ class MentionCarouselElement(BaseModel):
             "type": obj.get("type"),
             "title": obj.get("title"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "mentioned_in": [LinkElement.from_dict(_item) for _item in obj["mentioned_in"]] if obj.get("mentioned_in") is not None else None
         })
         return _obj

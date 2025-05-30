@@ -29,8 +29,6 @@ class KnowledgeGraphHotelsBookingItemSerpElementItem(BaseSerpElementItem):
     """
     KnowledgeGraphHotelsBookingItemSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of stay in the format “year-month-date” example: 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of stay in the format “year-month-date” example: 2019-11-17")

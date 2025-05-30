@@ -29,11 +29,11 @@ class OnPageErrorsResultInfo(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="id of the task")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when an error occurred in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     function: Optional[StrictStr] = Field(default=None, description="corresponding API function")
-    error_code: Optional[StrictInt] = Field(default=None, description="error code")
+    error_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="error code")
     error_message: Optional[StrictStr] = Field(default=None, description="error message or error URL error message (see full list) or URL that caused an error")
     http_url: Optional[StrictStr] = Field(default=None, description="URL that caused an error URL you used for making an API call or pingback/postback URL")
     http_method: Optional[StrictStr] = Field(default=None, description="HTTP method")
-    http_code: Optional[StrictInt] = Field(default=None, description="HTTP status code")
+    http_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="HTTP status code")
     http_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="time taken by HTTP request for tasks set with a pingback/postback, this field will show the time it took your server to respond")
     http_response: Optional[StrictStr] = Field(default=None, description="HTTP response server response")
     __properties: ClassVar[List[str]] = ["id", "datetime", "function", "error_code", "error_message", "http_url", "http_method", "http_code", "http_time", "http_response"]

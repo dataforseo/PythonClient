@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.crawl_status import CrawlStatus
 from dataforseo_client.models.on_page_duplicate_content_item import OnPageDuplicateContentItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,8 @@ class OnPageDuplicateContentResultInfo(BaseModel):
     OnPageDuplicateContentResultInfo
     """ # noqa: E501
     crawl_progress: Optional[StrictStr] = Field(default=None, description="status of the crawling session possible values: in_progress, finished")
-    crawl_status: Optional[CrawlStatusInfo] = None
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    crawl_status: Optional[CrawlStatus] = None
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
     items: Optional[List[OnPageDuplicateContentItem]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "items_count", "items"]
 
@@ -111,7 +111,7 @@ class OnPageDuplicateContentResultInfo(BaseModel):
 
         _obj = cls.model_validate({
             "crawl_progress": obj.get("crawl_progress"),
-            "crawl_status": CrawlStatusInfo.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
+            "crawl_status": CrawlStatus.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
             "items_count": obj.get("items_count"),
             "items": [OnPageDuplicateContentItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })

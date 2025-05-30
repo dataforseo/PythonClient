@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,8 +29,8 @@ class AvailableLanguages(BaseModel):
     available_sources: Optional[List[Optional[StrictStr]]] = Field(default=None, description="supported sources contains the sources of data supported for a specific location and language combination only google and bing are currently available")
     language_name: Optional[StrictStr] = Field(default=None, description="language name")
     language_code: Optional[StrictStr] = Field(default=None, description="language code according to ISO 639-1")
-    keywords: Optional[StrictInt] = Field(default=None, description="the number of keywords available for the given location and language")
-    serps: Optional[StrictInt] = Field(default=None, description="the number of SERP pages available for the given location and language")
+    keywords: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of keywords available for the given location and language")
+    serps: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of SERP pages available for the given location and language")
     __properties: ClassVar[List[str]] = ["available_sources", "language_name", "language_code", "keywords", "serps"]
 
     model_config = ConfigDict(

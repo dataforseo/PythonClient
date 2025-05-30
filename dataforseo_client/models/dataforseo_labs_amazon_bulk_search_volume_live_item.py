@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class DataforseoLabsAmazonBulkSearchVolumeLiveItem(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    search_volume: Optional[StrictInt] = Field(default=None, description="average monthly search volume rate represents the (approximate) number of searches for the returned keyword on Amazon")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average monthly search volume rate represents the (approximate) number of searches for the returned keyword on Amazon")
     __properties: ClassVar[List[str]] = ["se_type", "keyword", "search_volume"]
 
     model_config = ConfigDict(

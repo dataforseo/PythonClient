@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,8 +31,8 @@ class TrustpilotSearchOrganicBusinessDataSerpElementItem(BaseBusinessDataSerpEle
     title: Optional[StrictStr] = Field(default=None, description="title of the establishment")
     domain: Optional[StrictStr] = Field(default=None, description="domain of the establishment")
     url: Optional[StrictStr] = Field(default=None, description="URL to the establishment")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
-    rating: Optional[RatingInfo] = None
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of reviews")
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "title", "domain", "url", "reviews_count", "rating"]
 
     model_config = ConfigDict(
@@ -131,7 +131,7 @@ class TrustpilotSearchOrganicBusinessDataSerpElementItem(BaseBusinessDataSerpEle
             "domain": obj.get("domain"),
             "url": obj.get("url"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

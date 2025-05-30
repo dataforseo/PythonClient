@@ -135,7 +135,7 @@ class BusinessDataApi:
     ) -> BusinessDataBusinessListingsLocationsResponseInfo:
         """business_data_business_listings_locations
 
-        You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2025-03-04). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
+        You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2025-04-15). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -198,7 +198,7 @@ class BusinessDataApi:
     ) -> ApiResponse[BusinessDataBusinessListingsLocationsResponseInfo]:
         """business_data_business_listings_locations
 
-        You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2025-03-04). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
+        You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2025-04-15). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -261,7 +261,7 @@ class BusinessDataApi:
     ) -> RESTResponseType:
         """business_data_business_listings_locations
 
-        You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2025-03-04). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
+        You will receive the list of locations by this API call. You can also download the full list of supported locations in the CSV format (last updated 2025-04-15). for more info please visit 'https://docs.dataforseo.com/v3/business_data/business_listings/locations/?bash'
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

@@ -28,7 +28,7 @@ class MicrodataInspectionInfo(BaseModel):
     MicrodataInspectionInfo
     """ # noqa: E501
     types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="parent microdata types for a full list of available types, please visit schema.org")
-    fields: Optional[List[MicrodataFieldsInfo]] = Field(default=None, description="microdata fields an array of objects containing data fields related to the certain microdata type")
+    fields: Optional[MicrodataFieldsInfo] = None
     __properties: ClassVar[List[str]] = ["types", "fields"]
 
     model_config = ConfigDict(
@@ -70,22 +70,13 @@ class MicrodataInspectionInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in fields (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of fields
         if self.fields:
-            for _item_fields in self.fields:
-                if _item_fields:
-                    _items.append(_item_fields.to_dict())
-            _dict['fields'] = _items
+            _dict['fields'] = self.fields.to_dict()
         # set to None if types (nullable) is None
         # and model_fields_set contains the field
         if self.types is None and "types" in self.model_fields_set:
             _dict['types'] = None
-
-        # set to None if fields (nullable) is None
-        # and model_fields_set contains the field
-        if self.fields is None and "fields" in self.model_fields_set:
-            _dict['fields'] = None
 
         return _dict
 
@@ -100,7 +91,7 @@ class MicrodataInspectionInfo(BaseModel):
 
         _obj = cls.model_validate({
             "types": obj.get("types"),
-            "fields": [MicrodataFieldsInfo.from_dict(_item) for _item in obj["fields"]] if obj.get("fields") is not None else None
+            "fields": MicrodataFieldsInfo.from_dict(obj["fields"]) if obj.get("fields") is not None else None
         })
         return _obj
 

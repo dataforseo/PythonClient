@@ -17,10 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
-from dataforseo_client.models.refinement_chips_info import RefinementChipsInfo
 from dataforseo_client.models.spell_info import SpellInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,18 +30,17 @@ class SerpYoutubeVideoCommentsLiveAdvancedResultInfo(BaseModel):
     """ # noqa: E501
     video_id: Optional[StrictStr] = Field(default=None, description="ID of the video received in a POST array")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     spell: Optional[SpellInfo] = None
-    refinement_chips: Optional[RefinementChipsInfo] = None
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP contains types of search results (items) found in SERP. possible item: youtube_comment")
     title: Optional[StrictStr] = Field(default=None, description="title of the video")
-    comments_count: Optional[StrictInt] = Field(default=None, description="number of comments on the video")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    comments_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of comments on the video")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BaseYoutubeSerpElementItem]] = Field(default=None, description="elements of search results found in SERP")
-    __properties: ClassVar[List[str]] = ["video_id", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "refinement_chips", "item_types", "title", "comments_count", "items_count", "items"]
+    __properties: ClassVar[List[str]] = ["video_id", "se_domain", "location_code", "language_code", "check_url", "datetime", "spell", "item_types", "title", "comments_count", "items_count", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,9 +84,6 @@ class SerpYoutubeVideoCommentsLiveAdvancedResultInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of spell
         if self.spell:
             _dict['spell'] = self.spell.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of refinement_chips
-        if self.refinement_chips:
-            _dict['refinement_chips'] = self.refinement_chips.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
@@ -170,7 +165,6 @@ class SerpYoutubeVideoCommentsLiveAdvancedResultInfo(BaseModel):
             "check_url": obj.get("check_url"),
             "datetime": obj.get("datetime"),
             "spell": SpellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
-            "refinement_chips": RefinementChipsInfo.from_dict(obj["refinement_chips"]) if obj.get("refinement_chips") is not None else None,
             "item_types": obj.get("item_types"),
             "title": obj.get("title"),
             "comments_count": obj.get("comments_count"),

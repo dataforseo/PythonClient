@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class BusinessDataBusinessListingsLocationsResultInfo(BaseModel):
     """ # noqa: E501
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location")
     country_iso_code: Optional[StrictStr] = Field(default=None, description="ISO country code of the location")
-    business_count: Optional[StrictInt] = Field(default=None, description="number of businesses in this location in our database")
+    business_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of businesses in this location in our database")
     __properties: ClassVar[List[str]] = ["location_name", "country_iso_code", "business_count"]
 
     model_config = ConfigDict(

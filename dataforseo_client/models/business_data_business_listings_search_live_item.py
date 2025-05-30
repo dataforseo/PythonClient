@@ -23,10 +23,10 @@ from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.base_local_business_link import BaseLocalBusinessLink
 from dataforseo_client.models.business_data_attributes_info import BusinessDataAttributesInfo
 from dataforseo_client.models.business_data_contact_info import BusinessDataContactInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
+from dataforseo_client.models.business_work_hours_info import BusinessWorkHoursInfo
 from dataforseo_client.models.people_also_search import PeopleAlsoSearch
 from dataforseo_client.models.popular_times import PopularTimes
-from dataforseo_client.models.rating_info import RatingInfo
-from dataforseo_client.models.work_time import WorkTime
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -51,19 +51,19 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     domain: Optional[StrictStr] = Field(default=None, description="domain of the business entity")
     logo: Optional[StrictStr] = Field(default=None, description="URL of the logo featured in Google My Business profile")
     main_image: Optional[StrictStr] = Field(default=None, description="URL of the main image featured in Google My Business profile")
-    total_photos: Optional[StrictInt] = Field(default=None, description="total count of images featured in Google My Business profile")
+    total_photos: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total count of images featured in Google My Business profile")
     snippet: Optional[StrictStr] = Field(default=None, description="additional information on the business entity")
     latitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="latitude coordinate of the local establishments in google maps example: \"latitude\": 51.584091")
     longitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="longitude coordinate of the local establishment in google maps example: \"longitude\": -0.31365919999999997")
     is_claimed: Optional[StrictBool] = Field(default=None, description="shows whether the entity is verified by its owner on Google Maps")
     attributes: Optional[BusinessDataAttributesInfo] = None
     place_topics: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="keywords mentioned in customer reviews contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword example:  \"place_topics\": { \"egg roll\": 48, \"birthday\": 33 }")
-    rating: Optional[RatingInfo] = None
-    hotel_rating: Optional[StrictInt] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
+    rating: Optional[BusinessDataRatingInfo] = None
+    hotel_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="hotel class rating class ratings range between 1-5 stars, learn more if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description="property price level can take values: inexpensive, moderate, expensive, very_expensive if there is no price level information, the value will be null")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="the distribution of ratings of the business entity the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     people_also_search: Optional[List[PeopleAlsoSearch]] = Field(default=None, description="related business entities")
-    work_time: Optional[WorkTime] = None
+    work_time: Optional[BusinessWorkHoursInfo] = None
     popular_times: Optional[PopularTimes] = None
     local_business_links: Optional[List[BaseLocalBusinessLink]] = Field(default=None, description="available interactions with the business list of options to interact with the business directly from search results")
     contact_info: Optional[List[BusinessDataContactInfo]] = Field(default=None, description="available contacts of the business list of contacts to interact with the business")
@@ -338,12 +338,12 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
             "is_claimed": obj.get("is_claimed"),
             "attributes": BusinessDataAttributesInfo.from_dict(obj["attributes"]) if obj.get("attributes") is not None else None,
             "place_topics": obj.get("place_topics"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "hotel_rating": obj.get("hotel_rating"),
             "price_level": obj.get("price_level"),
             "rating_distribution": obj.get("rating_distribution"),
             "people_also_search": [PeopleAlsoSearch.from_dict(_item) for _item in obj["people_also_search"]] if obj.get("people_also_search") is not None else None,
-            "work_time": WorkTime.from_dict(obj["work_time"]) if obj.get("work_time") is not None else None,
+            "work_time": BusinessWorkHoursInfo.from_dict(obj["work_time"]) if obj.get("work_time") is not None else None,
             "popular_times": PopularTimes.from_dict(obj["popular_times"]) if obj.get("popular_times") is not None else None,
             "local_business_links": [BaseLocalBusinessLink.from_dict(_item) for _item in obj["local_business_links"]] if obj.get("local_business_links") is not None else None,
             "contact_info": [BusinessDataContactInfo.from_dict(_item) for _item in obj["contact_info"]] if obj.get("contact_info") is not None else None,

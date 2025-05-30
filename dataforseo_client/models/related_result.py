@@ -20,9 +20,9 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.images_element import ImagesElement
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -46,7 +46,7 @@ class RelatedResult(BaseModel):
     extended_snippet: Optional[StrictStr] = Field(default=None, description="includes additional information appended after the result description in SERP")
     images: Optional[List[ImagesElement]] = Field(default=None, description="images of the element")
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages indicates whether an item has the Accelerated Mobile Page (AMP) version")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     price: Optional[PriceInfo] = None
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="words highlighted in bold within the results description")
     about_this_result: Optional[AboutThisResultElement] = None
@@ -226,7 +226,7 @@ class RelatedResult(BaseModel):
             "extended_snippet": obj.get("extended_snippet"),
             "images": [ImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "amp_version": obj.get("amp_version"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "highlighted": obj.get("highlighted"),
             "about_this_result": AboutThisResultElement.from_dict(obj["about_this_result"]) if obj.get("about_this_result") is not None else None,

@@ -1,0 +1,20 @@
+# MerchantAmazonProductsTaskGetAdvancedResultInfo
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+**keyword** | **StrictStr** | keyword received in a POST array<br>keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character) |[optional]|
+**type** | **StrictStr** | type of element |[optional]|
+**se_domain** | **StrictStr** | search engine domain in a POST array |[optional]|
+**location_code** | **StrictFloat** | location code in a POST array |[optional]|
+**language_code** | **StrictStr** | language code in a POST array |[optional]|
+**check_url** | **StrictStr** | direct URL to Amazon results<br>you can use it to make sure that we provided accurate results |[optional]|
+**datetime** | **StrictStr** | date and time when the result was received<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
+**spell** | **SpellInfo** | autocorrection of the search engine<br>if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection |[optional]|
+**item_types** | **List[Optional[StrictStr]]** | types of search results found in Amazon SERP<br>contains types of all search results (items) found in the returned SERP<br>possible item types:<br>amazon_serp, amazon_paid, editorial_recommendations, top_rated_from_our_brands, related_searches |[optional]|
+**se_results_count** | **StrictFloat** | search engine results count |[optional]|
+**categories** | **List[Optional[StrictStr]]** | amazon product departments and subcategories |[optional]|
+**items_count** | **StrictFloat** | the number of results returned in the items array |[optional]|
+**items** | **List[Optional[BaseAmazonSerpElementItem]]** | Amazon product items within the editorial_recommendations element |[optional]|

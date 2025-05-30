@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,8 +29,8 @@ class ContentGenerationCheckGrammarLiveItem(BaseModel):
     message: Optional[StrictStr] = Field(default=None, description="message of the grammar or spelling error")
     description: Optional[StrictStr] = Field(default=None, description="description of the grammar or spelling error")
     suggestions: Optional[List[Optional[StrictStr]]] = Field(default=None, description="suggested corrections")
-    offset: Optional[StrictInt] = Field(default=None, description="offset token for subsequent requests")
-    length: Optional[StrictInt] = Field(default=None, description="offset token for subsequent requests")
+    offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="offset token for subsequent requests")
+    length: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="offset token for subsequent requests")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     rule_id: Optional[StrictStr] = Field(default=None, description="id of the grammar or spelling rule see the List of Grammar Rules for Content Generation API")
     rule_description: Optional[StrictStr] = Field(default=None, description="description of the grammar or spelling rule")

@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_google_finance_serp_element_item import BaseGoogleFinanceSerpElementItem
-from dataforseo_client.models.google_finance_markets_info import GoogleFinanceMarketsInfo
+from dataforseo_client.models.markets import Markets
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +28,10 @@ class GoogleFinanceHeroGroupsSerpElementItem(BaseGoogleFinanceSerpElementItem):
     """
     GoogleFinanceHeroGroupsSerpElementItem
     """ # noqa: E501
-    markets: Optional[List[GoogleFinanceMarketsInfo]] = Field(default=None, description="financial markets data array of items containing market indexes and other financial information related to these indexes")
-    __properties: ClassVar[List[str]] = ["type", "markets"]
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="group rank in SERP position within a group of elements with identical type values positions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank in SERP absolute position among all the elements in SERP")
+    markets: Optional[List[Markets]] = Field(default=None, description="financial markets data array of items containing market indexes and other financial information related to these indexes")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "markets"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +84,16 @@ class GoogleFinanceHeroGroupsSerpElementItem(BaseGoogleFinanceSerpElementItem):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
+        # set to None if rank_group (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_group is None and "rank_group" in self.model_fields_set:
+            _dict['rank_group'] = None
+
+        # set to None if rank_absolute (nullable) is None
+        # and model_fields_set contains the field
+        if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
+            _dict['rank_absolute'] = None
+
         # set to None if markets (nullable) is None
         # and model_fields_set contains the field
         if self.markets is None and "markets" in self.model_fields_set:
@@ -100,7 +112,9 @@ class GoogleFinanceHeroGroupsSerpElementItem(BaseGoogleFinanceSerpElementItem):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "markets": [GoogleFinanceMarketsInfo.from_dict(_item) for _item in obj["markets"]] if obj.get("markets") is not None else None
+            "rank_group": obj.get("rank_group"),
+            "rank_absolute": obj.get("rank_absolute"),
+            "markets": [Markets.from_dict(_item) for _item in obj["markets"]] if obj.get("markets") is not None else None
         })
         return _obj
 

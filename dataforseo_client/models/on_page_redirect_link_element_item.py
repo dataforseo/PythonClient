@@ -27,7 +27,7 @@ class OnPageRedirectLinkElementItem(BaseOnPageLinkItemInfo):
     """
     OnPageRedirectLinkElementItem
     """ # noqa: E501
-    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict"]
+    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict", "page_to_status_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -133,6 +133,11 @@ class OnPageRedirectLinkElementItem(BaseOnPageLinkItemInfo):
         if self.is_link_relation_conflict is None and "is_link_relation_conflict" in self.model_fields_set:
             _dict['is_link_relation_conflict'] = None
 
+        # set to None if page_to_status_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_to_status_code is None and "page_to_status_code" in self.model_fields_set:
+            _dict['page_to_status_code'] = None
+
         return _dict
 
     @classmethod
@@ -157,7 +162,8 @@ class OnPageRedirectLinkElementItem(BaseOnPageLinkItemInfo):
             "page_to_scheme": obj.get("page_to_scheme"),
             "direction": obj.get("direction"),
             "is_broken": obj.get("is_broken"),
-            "is_link_relation_conflict": obj.get("is_link_relation_conflict")
+            "is_link_relation_conflict": obj.get("is_link_relation_conflict"),
+            "page_to_status_code": obj.get("page_to_status_code")
         })
         return _obj
 

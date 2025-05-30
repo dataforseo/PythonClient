@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.monthly_searches import MonthlySearches
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class KeywordsDataClickstreamDataSearchVolumeLiveItem(BaseModel):
     KeywordsDataClickstreamDataSearchVolumeLiveItem
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword provided in the POST array")
-    search_volume: Optional[StrictInt] = Field(default=None, description="current search volume rate of a keyword")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="current search volume rate of a keyword")
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly search volume rates array of objects with search volume rates in a certain month of a year")
     __properties: ClassVar[List[str]] = ["keyword", "search_volume", "monthly_searches"]
 

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class BusinessDataSocialMediaFacebookLiveResultInfo(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     page_url: Optional[StrictStr] = Field(default=None, description="URL of the page the data is provided for corresponding URL you specified in the targets array when setting a task")
-    like_count: Optional[StrictInt] = Field(default=None, description="number of likes for the related page_url this field shows the number of likes a page received through the Facebook Like Button embed")
+    like_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of likes for the related page_url this field shows the number of likes a page received through the Facebook Like Button embed")
     __properties: ClassVar[List[str]] = ["type", "page_url", "like_count"]
 
     model_config = ConfigDict(

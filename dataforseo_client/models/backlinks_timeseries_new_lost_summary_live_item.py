@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,12 +28,12 @@ class BacklinksTimeseriesNewLostSummaryLiveItem(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     var_date: Optional[StrictStr] = Field(default=None, description="date and time when the data for the target was stored in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00", alias="date")
-    new_backlinks: Optional[StrictInt] = Field(default=None, description="number of new backlinks number of new backlinks pointing to the target")
-    lost_backlinks: Optional[StrictInt] = Field(default=None, description="number of lost backlinks number of lost backlinks of the target")
-    new_referring_domains: Optional[StrictInt] = Field(default=None, description="number of new referring domains number of new referring domains pointing to the target")
-    lost_referring_domains: Optional[StrictInt] = Field(default=None, description="number of lost referring domains number of lost referring domains of the target")
-    new_referring_main_domains: Optional[StrictInt] = Field(default=None, description="number of new referring main domains number of new referring main domains pointing to the target")
-    lost_referring_main_domains: Optional[StrictInt] = Field(default=None, description="number of lost referring main domains number of lost referring main domains of the target")
+    new_backlinks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new backlinks number of new backlinks pointing to the target")
+    lost_backlinks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of lost backlinks number of lost backlinks of the target")
+    new_referring_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new referring domains number of new referring domains pointing to the target")
+    lost_referring_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of lost referring domains number of lost referring domains of the target")
+    new_referring_main_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new referring main domains number of new referring main domains pointing to the target")
+    lost_referring_main_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of lost referring main domains number of lost referring main domains of the target")
     __properties: ClassVar[List[str]] = ["type", "date", "new_backlinks", "lost_backlinks", "new_referring_domains", "lost_referring_domains", "new_referring_main_domains", "lost_referring_main_domains"]
 
     model_config = ConfigDict(

@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from dataforseo_client.models.keyword_annotations import KeywordAnnotations
 from dataforseo_client.models.monthly_searches import MonthlySearches
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,18 +28,18 @@ class KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResultInfo(BaseModel):
     KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResultInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, the value is null")
+    spell: Optional[StrictStr] = None
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, the value is null")
     search_partners: Optional[StrictBool] = Field(default=None, description="include Google search partners the value you specified when setting the task if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search; if false, the results are returned for Google search sites only")
     competition: Optional[StrictStr] = Field(default=None, description="competition represents the relative level of competition associated with the given keyword in paid SERP only possible values: LOW, MEDIUM, HIGH if competition level is unknown, the value is null; learn more about the metric in this help center article")
-    competition_index: Optional[StrictInt] = Field(default=None, description="competition index the competition index for the query indicating how competitive ad placement is for the keyword can take values from 0 to 100 the level of competition from 0 to 100 is determined by the number of ad slots filled divided by the total number of ad slots available if not enough data is available, the value is null; learn more about the metric in this help center article")
-    search_volume: Optional[StrictInt] = Field(default=None, description="monthly average search volume rate represents the (approximate) number of searches for the given keyword idea either on google.com or google.com and partners, depending on the user’s targeting if there is no data, the value is null")
+    competition_index: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="competition index the competition index for the query indicating how competitive ad placement is for the keyword can take values from 0 to 100 the level of competition from 0 to 100 is determined by the number of ad slots filled divided by the total number of ad slots available if not enough data is available, the value is null; learn more about the metric in this help center article")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="monthly average search volume rate represents the (approximate) number of searches for the given keyword idea either on google.com or google.com and partners, depending on the user’s targeting if there is no data, the value is null")
     low_top_of_page_bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="minimum bid for the ad to be displayed at the top of the first page indicates the value greater than about 20% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers) the value may differ depending on the location specified in a POST request")
     high_top_of_page_bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="maximum bid for the ad to be displayed at the top of the first page indicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers) the value may differ depending on the location specified in a POST request")
     cpc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="cost per click indicates the amount paid for each click on the ad displayed for a given keyword")
     monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly searches represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations if there is no data, the value is null")
-    keyword_annotations: Optional[KeywordAnnotations] = None
-    __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "search_partners", "competition", "competition_index", "search_volume", "low_top_of_page_bid", "high_top_of_page_bid", "cpc", "monthly_searches", "keyword_annotations"]
+    __properties: ClassVar[List[str]] = ["keyword", "spell", "location_code", "language_code", "search_partners", "competition", "competition_index", "search_volume", "low_top_of_page_bid", "high_top_of_page_bid", "cpc", "monthly_searches"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,13 +87,15 @@ class KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResultInfo(BaseModel):
                 if _item_monthly_searches:
                     _items.append(_item_monthly_searches.to_dict())
             _dict['monthly_searches'] = _items
-        # override the default output from pydantic by calling `to_dict()` of keyword_annotations
-        if self.keyword_annotations:
-            _dict['keyword_annotations'] = self.keyword_annotations.to_dict()
         # set to None if keyword (nullable) is None
         # and model_fields_set contains the field
         if self.keyword is None and "keyword" in self.model_fields_set:
             _dict['keyword'] = None
+
+        # set to None if spell (nullable) is None
+        # and model_fields_set contains the field
+        if self.spell is None and "spell" in self.model_fields_set:
+            _dict['spell'] = None
 
         # set to None if location_code (nullable) is None
         # and model_fields_set contains the field
@@ -159,6 +160,7 @@ class KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResultInfo(BaseModel):
 
         _obj = cls.model_validate({
             "keyword": obj.get("keyword"),
+            "spell": obj.get("spell"),
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "search_partners": obj.get("search_partners"),
@@ -168,8 +170,7 @@ class KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResultInfo(BaseModel):
             "low_top_of_page_bid": obj.get("low_top_of_page_bid"),
             "high_top_of_page_bid": obj.get("high_top_of_page_bid"),
             "cpc": obj.get("cpc"),
-            "monthly_searches": [MonthlySearches.from_dict(_item) for _item in obj["monthly_searches"]] if obj.get("monthly_searches") is not None else None,
-            "keyword_annotations": KeywordAnnotations.from_dict(obj["keyword_annotations"]) if obj.get("keyword_annotations") is not None else None
+            "monthly_searches": [MonthlySearches.from_dict(_item) for _item in obj["monthly_searches"]] if obj.get("monthly_searches") is not None else None
         })
         return _obj
 

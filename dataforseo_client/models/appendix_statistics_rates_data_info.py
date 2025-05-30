@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.appendix_app_data_limits_rates_data_info import AppendixAppDataLimitsRatesDataInfo
 from dataforseo_client.models.appendix_appendix_days_rates_data_info import AppendixAppendixDaysRatesDataInfo
@@ -30,7 +30,7 @@ from dataforseo_client.models.appendix_domain_analytics_limits_rates_data_info i
 from dataforseo_client.models.appendix_keywords_data_days_rates_data_info import AppendixKeywordsDataDaysRatesDataInfo
 from dataforseo_client.models.appendix_merchant_limits_rates_data_info import AppendixMerchantLimitsRatesDataInfo
 from dataforseo_client.models.appendix_on_page_limits_rates_data_info import AppendixOnPageLimitsRatesDataInfo
-from dataforseo_client.models.appendix_serp_limits_rates_data_info import AppendixSerpLimitsRatesDataInfo
+from dataforseo_client.models.appendix_serp_days_rates_data_info import AppendixSerpDaysRatesDataInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,7 +38,7 @@ class AppendixStatisticsRatesDataInfo(BaseModel):
     """
     AppendixStatisticsRatesDataInfo
     """ # noqa: E501
-    serp: Optional[AppendixSerpLimitsRatesDataInfo] = None
+    serp: Optional[AppendixSerpDaysRatesDataInfo] = None
     total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of money deposited to your account")
     total_serp: Optional[Union[StrictFloat, StrictInt]] = None
     keywords_data: Optional[AppendixKeywordsDataDaysRatesDataInfo] = None
@@ -66,11 +66,11 @@ class AppendixStatisticsRatesDataInfo(BaseModel):
     value: Optional[StrictStr] = Field(default=None, description="time period for grouping day in the yyyy-MM-dd format minute in the yyyy-MM-dd HH:mm format")
     __properties: ClassVar[List[str]] = ["serp", "total", "total_serp", "keywords_data", "total_keywords_data", "appendix", "total_appendix", "dataforseo_labs", "total_dataforseo_labs", "domain_analytics", "total_domain_analytics", "merchant", "total_merchant", "on_page", "total_on_page", "business_data", "total_business_data", "backlinks", "total_backlinks", "app_data", "total_app_data", "content_analysis", "total_content_analysis", "content_generation", "total_content_generation", "value"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -223,7 +223,7 @@ class AppendixStatisticsRatesDataInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "serp": AppendixSerpLimitsRatesDataInfo.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
+            "serp": AppendixSerpDaysRatesDataInfo.from_dict(obj["serp"]) if obj.get("serp") is not None else None,
             "total": obj.get("total"),
             "total_serp": obj.get("total_serp"),
             "keywords_data": AppendixKeywordsDataDaysRatesDataInfo.from_dict(obj["keywords_data"]) if obj.get("keywords_data") is not None else None,

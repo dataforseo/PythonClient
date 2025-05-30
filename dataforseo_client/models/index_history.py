@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,10 +27,9 @@ class IndexHistory(BaseModel):
     IndexHistory
     """ # noqa: E501
     var_date: Optional[StrictStr] = Field(default=None, description="date for which index volume data is provided in the UTC format: “yyyy-mm-dd” example: 2021-10-01", alias="date")
-    total_backlinks: Optional[StrictInt] = Field(default=None, description="total number of backlinks our database contained on the given date")
-    total_pages: Optional[StrictInt] = Field(default=None, description="total number of pages our database contained on the given date")
-    total_domains: Optional[StrictInt] = Field(default=None, description="total number of domains our database contained on the given date")
-    __properties: ClassVar[List[str]] = ["date", "total_backlinks", "total_pages", "total_domains"]
+    total_backlinks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of backlinks our database contained on the given date")
+    total_pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of pages our database contained on the given date")
+    __properties: ClassVar[List[str]] = ["date", "total_backlinks", "total_pages"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,11 +85,6 @@ class IndexHistory(BaseModel):
         if self.total_pages is None and "total_pages" in self.model_fields_set:
             _dict['total_pages'] = None
 
-        # set to None if total_domains (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_domains is None and "total_domains" in self.model_fields_set:
-            _dict['total_domains'] = None
-
         return _dict
 
     @classmethod
@@ -105,8 +99,7 @@ class IndexHistory(BaseModel):
         _obj = cls.model_validate({
             "date": obj.get("date"),
             "total_backlinks": obj.get("total_backlinks"),
-            "total_pages": obj.get("total_pages"),
-            "total_domains": obj.get("total_domains")
+            "total_pages": obj.get("total_pages")
         })
         return _obj
 

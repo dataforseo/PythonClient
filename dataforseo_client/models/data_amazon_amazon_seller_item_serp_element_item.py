@@ -30,7 +30,6 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
     """
     DataAmazonAmazonSellerItemSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="alignment of the element in SERP possible values: left, right")
     seller_name: Optional[StrictStr] = Field(default=None, description="business name of the seller")
     seller_url: Optional[StrictStr] = Field(default=None, description="url forwarding to the seller’s page on Amazon")
     ships_from: Optional[StrictStr] = Field(default=None, description="sender company name")
@@ -39,7 +38,7 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
     condition: Optional[StrictStr] = Field(default=None, description="product condition condition of the product offered by the seller")
     condition_description: Optional[StrictStr] = Field(default=None, description="product condition details expanded details on the condition of the product offered by the seller")
     delivery_info: Optional[AmazonDeliveryInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "seller_name", "seller_url", "ships_from", "price", "rating", "condition", "condition_description", "delivery_info"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "seller_name", "seller_url", "ships_from", "price", "rating", "condition", "condition_description", "delivery_info"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,15 +103,15 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
 
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
-
         # set to None if position (nullable) is None
         # and model_fields_set contains the field
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
+
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
 
         # set to None if seller_name (nullable) is None
         # and model_fields_set contains the field
@@ -154,8 +153,8 @@ class DataAmazonAmazonSellerItemSerpElementItem(BaseAmazonSerpElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "xpath": obj.get("xpath"),
             "position": obj.get("position"),
+            "xpath": obj.get("xpath"),
             "seller_name": obj.get("seller_name"),
             "seller_url": obj.get("seller_url"),
             "ships_from": obj.get("ships_from"),

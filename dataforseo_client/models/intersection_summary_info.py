@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class IntersectionSummaryInfo(BaseModel):
     """
     IntersectionSummaryInfo
     """ # noqa: E501
-    intersections_count: Optional[StrictInt] = Field(default=None, description="total number of intersections")
+    intersections_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of intersections")
     __properties: ClassVar[List[str]] = ["intersections_count"]
 
     model_config = ConfigDict(

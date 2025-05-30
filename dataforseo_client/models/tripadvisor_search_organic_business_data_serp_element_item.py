@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_business_data_serp_element_item import BaseBusinessDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,10 +31,10 @@ class TripadvisorSearchOrganicBusinessDataSerpElementItem(BaseBusinessDataSerpEl
     title: Optional[StrictStr] = Field(default=None, description="name of the business entity")
     url_path: Optional[StrictStr] = Field(default=None, description="URL path of the business entity URL path to the Tripadvisor page of the business entity you can use this identifier to collect reviews for the business entity using Tripadvisor Reviews")
     is_sponsored: Optional[StrictBool] = Field(default=None, description="indicates a sponsored placement if true, related tripadvisor_search_organic item is a paid advertising on Tripadvisor")
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of reviews")
     category: Optional[StrictStr] = Field(default=None, description="place category")
     price_rate: Optional[StrictStr] = Field(default=None, description="average price rate")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "title", "url_path", "is_sponsored", "reviews_count", "category", "price_rate", "rating"]
 
     model_config = ConfigDict(
@@ -145,7 +145,7 @@ class TripadvisorSearchOrganicBusinessDataSerpElementItem(BaseBusinessDataSerpEl
             "reviews_count": obj.get("reviews_count"),
             "category": obj.get("category"),
             "price_rate": obj.get("price_rate"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictStr
+from pydantic import ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.ai_overview_element import AiOverviewElement
 from dataforseo_client.models.ai_overview_reference import AiOverviewReference
@@ -30,8 +30,6 @@ class AiOverviewSerpElementItem(BaseSerpElementItem):
     """
     AiOverviewSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description="indicates whether the element is loaded asynchronically if true, the ai_overview element is loaded asynchronically; if false, the ai_overview element is loaded from cache;")
     items: Optional[List[AiOverviewElement]] = Field(default=None, description="contains arrays of specific images")
     references: Optional[List[AiOverviewReference]] = Field(default=None, description="additional references relevant to the item includes references to webpages that may have been used to generate the ai_overview")

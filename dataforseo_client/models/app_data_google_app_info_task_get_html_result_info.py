@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.html_item import HtmlItem
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.serp_html_item_info import SerpHtmlItemInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,11 +30,11 @@ class AppDataGoogleAppInfoTaskGetHtmlResultInfo(BaseModel):
     app_id: Optional[StrictStr] = Field(default=None, description="application ID received in a POST request")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[HtmlItem]] = Field(default=None, description="HTML pages and related data")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
+    items: Optional[List[SerpHtmlItemInfo]] = Field(default=None, description="HTML pages and related data")
     __properties: ClassVar[List[str]] = ["app_id", "type", "se_domain", "location_code", "language_code", "datetime", "items_count", "items"]
 
     model_config = ConfigDict(
@@ -142,7 +142,7 @@ class AppDataGoogleAppInfoTaskGetHtmlResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "datetime": obj.get("datetime"),
             "items_count": obj.get("items_count"),
-            "items": [HtmlItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
+            "items": [SerpHtmlItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

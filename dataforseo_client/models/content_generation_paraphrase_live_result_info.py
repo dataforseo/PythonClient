@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class ContentGenerationParaphraseLiveResultInfo(BaseModel):
     """
     ContentGenerationParaphraseLiveResultInfo
     """ # noqa: E501
-    input_tokens: Optional[StrictInt] = Field(default=None, description="number of input tokens in the POST request")
-    output_tokens: Optional[StrictInt] = Field(default=None, description="number of output tokens in the response")
-    new_tokens: Optional[StrictInt] = Field(default=None, description="number of new tokens in the response")
+    input_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of input tokens in the POST request")
+    output_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of output tokens in the response")
+    new_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new tokens in the response")
     generated_text: Optional[StrictStr] = Field(default=None, description="paraphrased version of the given text")
     __properties: ClassVar[List[str]] = ["input_tokens", "output_tokens", "new_tokens", "generated_text"]
 

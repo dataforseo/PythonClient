@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class DataforseoLabsGoogleHistoricalRankOverviewLiveItem(BaseModel):
     DataforseoLabsGoogleHistoricalRankOverviewLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    year: Optional[StrictInt] = Field(default=None, description="year for which the data is provided")
-    month: Optional[StrictInt] = Field(default=None, description="month for which the data is provided")
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="year for which the data is provided")
+    month: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="month for which the data is provided")
     metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain")
     __properties: ClassVar[List[str]] = ["se_type", "year", "month", "metrics"]
 

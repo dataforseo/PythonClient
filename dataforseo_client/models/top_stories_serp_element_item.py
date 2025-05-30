@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictStr
+from pydantic import ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
 from dataforseo_client.models.top_stories_element import TopStoriesElement
@@ -28,9 +28,8 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
     """
     TopStoriesSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
     items: Optional[List[TopStoriesElement]] = Field(default=None, description="contains arrays of specific images")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "items"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +97,11 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
 
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
+
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -119,6 +123,7 @@ class TopStoriesSerpElementItem(BaseSerpElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
+            "xpath": obj.get("xpath"),
             "items": [TopStoriesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

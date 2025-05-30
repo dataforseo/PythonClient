@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class DataforseoLabsGoogleCategoriesForDomainLiveItem(BaseModel):
     DataforseoLabsGoogleCategoriesForDomainLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
-    categories: Optional[List[StrictInt]] = Field(default=None, description="product and service categories you can download the full list of possible categories")
+    categories: Optional[List[Union[StrictFloat, StrictInt]]] = Field(default=None, description="product and service categories you can download the full list of possible categories")
     metrics: Optional[Dict[str, DataforseoLabsMetricsInfo]] = Field(default=None, description="ranking data relevant to the specified domain or subdomain")
     __properties: ClassVar[List[str]] = ["se_type", "categories", "metrics"]
 

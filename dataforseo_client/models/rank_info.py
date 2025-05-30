@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,8 +26,8 @@ class RankInfo(BaseModel):
     """
     RankInfo
     """ # noqa: E501
-    page_rank: Optional[StrictInt] = Field(default=None, description="page rank page_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm; learn more about the metric and how it is calculated in this help center article")
-    main_domain_rank: Optional[StrictInt] = Field(default=None, description="main domain rank main_domain_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
+    page_rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="page rank page_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm; learn more about the metric and how it is calculated in this help center article")
+    main_domain_rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="main domain rank main_domain_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
     __properties: ClassVar[List[str]] = ["page_rank", "main_domain_rank"]
 
     model_config = ConfigDict(

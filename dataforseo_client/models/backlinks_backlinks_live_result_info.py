@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.backlinks_backlinks_live_item import BacklinksBacklinksLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,8 +30,8 @@ class BacklinksBacklinksLiveResultInfo(BaseModel):
     target: Optional[StrictStr] = Field(default=None, description="target domain in a POST array")
     mode: Optional[StrictStr] = Field(default=None, description="mode specified in a POST array")
     custom_mode: Optional[Dict[str, Optional[Dict[str, Any]]]] = Field(default=None, description="custom mode specified in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results relevant the request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results relevant the request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BacklinksBacklinksLiveItem]] = Field(default=None, description="contains relevant backlinks and referring domains data")
     search_after_token: Optional[StrictStr] = Field(default=None, description="token for subsequent requests by specifying the unique search_after_token when setting a new task, you will get the subsequent results of the initial task; search_after_token values are unique for each subsequent task")
     __properties: ClassVar[List[str]] = ["target", "mode", "custom_mode", "total_count", "items_count", "items", "search_after_token"]

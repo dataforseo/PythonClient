@@ -2378,7 +2378,7 @@ class SerpApi:
     ) -> SerpBingLocalPackLiveRegularResponseInfo:
         """bing_local_pack_live_regular
 
-        ‌‌ Live Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
+        ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
         :param serp_bing_local_pack_live_regular_request_info:
         :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
@@ -2445,7 +2445,7 @@ class SerpApi:
     ) -> ApiResponse[SerpBingLocalPackLiveRegularResponseInfo]:
         """bing_local_pack_live_regular
 
-        ‌‌ Live Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
+        ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
         :param serp_bing_local_pack_live_regular_request_info:
         :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
@@ -2512,7 +2512,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """bing_local_pack_live_regular
 
-        ‌‌ Live Bing local_pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
+        ‌‌ Live Bing Local Pack SERP provides real-time data on top 100 search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/bing/local_pack/live/regular/?bash'
 
         :param serp_bing_local_pack_live_regular_request_info:
         :type serp_bing_local_pack_live_regular_request_info: List[SerpBingLocalPackLiveRegularRequestInfo]
@@ -22180,7 +22180,7 @@ class SerpApi:
     ) -> SerpGoogleLocalFinderLiveHtmlResponseInfo:
         """google_local_finder_live_html
 
-        ‌ Live Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
+        ‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
         :param serp_google_local_finder_live_html_request_info:
         :type serp_google_local_finder_live_html_request_info: List[SerpGoogleLocalFinderLiveHtmlRequestInfo]
@@ -22247,7 +22247,7 @@ class SerpApi:
     ) -> ApiResponse[SerpGoogleLocalFinderLiveHtmlResponseInfo]:
         """google_local_finder_live_html
 
-        ‌ Live Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
+        ‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
         :param serp_google_local_finder_live_html_request_info:
         :type serp_google_local_finder_live_html_request_info: List[SerpGoogleLocalFinderLiveHtmlRequestInfo]
@@ -22314,7 +22314,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """google_local_finder_live_html
 
-        ‌ Live Google local_finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
+        ‌ Live Google Local Finder SERP HTML provides a raw HTML page of the search engine results for the specified keyword, search engine, and location. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/live/html/?bash'
 
         :param serp_google_local_finder_live_html_request_info:
         :type serp_google_local_finder_live_html_request_info: List[SerpGoogleLocalFinderLiveHtmlRequestInfo]
@@ -22971,7 +22971,7 @@ class SerpApi:
     ) -> SerpGoogleLocalFinderTaskPostResponseInfo:
         """google_local_finder_task_post
 
-        ‌‌ Google local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
+        ‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
         :param serp_google_local_finder_task_post_request_info:
         :type serp_google_local_finder_task_post_request_info: List[SerpGoogleLocalFinderTaskPostRequestInfo]
@@ -23038,7 +23038,7 @@ class SerpApi:
     ) -> ApiResponse[SerpGoogleLocalFinderTaskPostResponseInfo]:
         """google_local_finder_task_post
 
-        ‌‌ Google local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
+        ‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
         :param serp_google_local_finder_task_post_request_info:
         :type serp_google_local_finder_task_post_request_info: List[SerpGoogleLocalFinderTaskPostRequestInfo]
@@ -23105,7 +23105,7 @@ class SerpApi:
     ) -> RESTResponseType:
         """google_local_finder_task_post
 
-        ‌‌ Google local_finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
+        ‌‌ Google Local Finder SERP API provides top search engine results specific to the selected location (see the List of Locations) and language (see the List of Languages) settings. for more info please visit 'https://docs.dataforseo.com/v3/serp/google/local_finder/task_post/?bash'
 
         :param serp_google_local_finder_task_post_request_info:
         :type serp_google_local_finder_task_post_request_info: List[SerpGoogleLocalFinderTaskPostRequestInfo]

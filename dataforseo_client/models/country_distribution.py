@@ -27,7 +27,7 @@ class CountryDistribution(BaseModel):
     CountryDistribution
     """ # noqa: E501
     country_iso_code: Optional[StrictStr] = Field(default=None, description="country ISO code")
-    search_volume: Optional[StrictInt] = Field(default=None, description="search volume in a given country")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="search volume in a given country")
     percentage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="percentage of global search volume")
     __properties: ClassVar[List[str]] = ["country_iso_code", "search_volume", "percentage"]
 

@@ -17,11 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.images_element import ImagesElement
-from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.user_profile_info import UserProfileInfo
 from dataforseo_client.models.video_element import VideoElement
 from typing import Optional, Set
@@ -31,10 +31,9 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
     """
     DataAmazonAmazonReviewItemSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the review in SERP can take the following values: right")
     verified: Optional[StrictBool] = Field(default=None, description="indicates whether the review has the “Verified Purchase” mark")
     subtitle: Optional[StrictStr] = Field(default=None, description="subtitle of the review")
-    helpful_votes: Optional[StrictInt] = Field(default=None, description="helpful votes count number of users who clicked on the ‘Helpful” button under the review text")
+    helpful_votes: Optional[StrictStr] = Field(default=None, description="helpful votes count number of users who clicked on the ‘Helpful” button under the review text")
     images: Optional[List[ImagesElement]] = Field(default=None, description="images of the product submitted by the reviewer")
     videos: Optional[List[VideoElement]] = Field(default=None, description="videos of the product submitted by the reviewer")
     user_profile: Optional[UserProfileInfo] = None
@@ -42,8 +41,8 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
     url: Optional[StrictStr] = Field(default=None, description="URL to the reviewer’s profile")
     review_text: Optional[StrictStr] = Field(default=None, description="content of the review")
     publication_date: Optional[StrictStr] = Field(default=None, description="date and time when the review was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”; example: 2019-11-15 12:57:46 +00:00")
-    rating: Optional[RatingInfo] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "verified", "subtitle", "helpful_votes", "images", "videos", "user_profile", "title", "url", "review_text", "publication_date", "rating"]
+    rating: Optional[BusinessDataRatingInfo] = None
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "verified", "subtitle", "helpful_votes", "images", "videos", "user_profile", "title", "url", "review_text", "publication_date", "rating"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,15 +118,15 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
 
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
-
         # set to None if position (nullable) is None
         # and model_fields_set contains the field
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
+
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
 
         # set to None if verified (nullable) is None
         # and model_fields_set contains the field
@@ -189,8 +188,8 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "xpath": obj.get("xpath"),
             "position": obj.get("position"),
+            "xpath": obj.get("xpath"),
             "verified": obj.get("verified"),
             "subtitle": obj.get("subtitle"),
             "helpful_votes": obj.get("helpful_votes"),
@@ -201,7 +200,7 @@ class DataAmazonAmazonReviewItemSerpElementItem(BaseAmazonSerpElementItem):
             "url": obj.get("url"),
             "review_text": obj.get("review_text"),
             "publication_date": obj.get("publication_date"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

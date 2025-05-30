@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +26,9 @@ class MonthlySearches(BaseModel):
     """
     MonthlySearches
     """ # noqa: E501
-    year: Optional[StrictInt] = Field(default=None, description="year")
-    month: Optional[StrictInt] = Field(default=None, description="month")
-    search_volume: Optional[StrictInt] = Field(default=None, description="monthly average search volume rate")
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="year")
+    month: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="month")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="monthly average search volume rate")
     __properties: ClassVar[List[str]] = ["year", "month", "search_volume"]
 
     model_config = ConfigDict(

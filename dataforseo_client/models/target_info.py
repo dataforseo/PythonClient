@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class TargetInfo(BaseModel):
     ip_address: Optional[StrictStr] = Field(default=None, description="IP address of the target")
     country: Optional[StrictStr] = Field(default=None, description="country code that the target domain is determined to belong to")
     is_ip: Optional[StrictBool] = Field(default=None, description="indicates if the target is IP if true, the domain, subdomain or webpage functions as an IP address and does not have a domain name")
-    target_spam_score: Optional[StrictInt] = Field(default=None, description="spam score of the target if the target is a domain/subdomain, this fields indicates the average spam score of all pages of that domain/subdomain; learn more about how the metric is calculated on this help center page")
+    target_spam_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="spam score of the target if the target is a domain/subdomain, this fields indicates the average spam score of all pages of that domain/subdomain; learn more about how the metric is calculated on this help center page")
     __properties: ClassVar[List[str]] = ["server", "cms", "platform_type", "ip_address", "country", "is_ip", "target_spam_score"]
 
     model_config = ConfigDict(

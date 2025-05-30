@@ -30,7 +30,7 @@ class KnowledgeGraphImagesItemDataforseoLabsSerpElementItem(BaseDataforseoLabsSe
     KnowledgeGraphImagesItemDataforseoLabsSerpElementItem
     """ # noqa: E501
     link: Optional[LinkElement] = None
-    items: Optional[List[KnowledgeGraphImagesElement]] = Field(default=None, description="contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[KnowledgeGraphImagesElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "link", "items"]
 
     model_config = ConfigDict(

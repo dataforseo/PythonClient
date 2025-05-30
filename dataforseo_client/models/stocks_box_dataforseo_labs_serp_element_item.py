@@ -30,15 +30,16 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """
     StocksBoxDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the shopping_element")
+    source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
     price: Optional[PriceInfo] = None
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
+    url: Optional[StrictStr] = Field(default=None, description="sitelink URL")
+    domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     table: Optional[Table] = None
     graph: Optional[Graph] = None
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "source", "snippet", "price", "url", "domain", "table", "graph"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "source", "snippet", "price", "url", "domain", "table", "graph"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +114,11 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -155,6 +161,7 @@ class StocksBoxDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "source": obj.get("source"),
             "snippet": obj.get("snippet"),

@@ -27,11 +27,11 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsLiveResultInfo(BaseModel):
     KeywordsDataGoogleAdsAdTrafficByKeywordsLiveResultInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
     date_interval: Optional[StrictStr] = Field(default=None, description="forecasting date interval in a POST array")
     search_partners: Optional[StrictBool] = Field(default=None, description="include Google search partners the value you specified when setting the task if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search; if false, the results are returned for Google search sites only")
-    bid: Optional[StrictInt] = Field(default=None, description="the maximum custom bid the bid you have specified when setting the task represents the price you are willing to pay for an ad the higher value you have specified, the higher metrics and cost you receive in response learn more in this help center article")
+    bid: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the maximum custom bid the bid you have specified when setting the task represents the price you are willing to pay for an ad the higher value you have specified, the higher metrics and cost you receive in response learn more in this help center article")
     match: Optional[StrictStr] = Field(default=None, description="keywords match-type can take the following values: exact, broad, phrase")
     impressions: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="projected number of ad impressions number of impressions an ad is projected to get within the specified time period if there is no data, then the value is null learn more about impressions in this help center article")
     ctr: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="projected click through rate (CTR) of the advertisement number of clicks an ad is projected to receive divided by the number of ad impressions; the CTR is projected for the specified time period if there is no data, then the value is null")

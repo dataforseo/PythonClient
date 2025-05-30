@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class FormatsElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     format: Optional[StrictStr] = Field(default=None, description="type of file format of the dataset for example: zip, html, csv")
-    size: Optional[StrictInt] = Field(default=None, description="file size in bytes")
+    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="file size in bytes")
     __properties: ClassVar[List[str]] = ["type", "format", "size"]
 
     model_config = ConfigDict(

@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_app_data_serp_element_item import BaseAppDataSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,14 +31,14 @@ class AppDataGoogleAppReviewsTaskGetAdvancedResultInfo(BaseModel):
     app_id: Optional[StrictStr] = Field(default=None, description="application id received in a POST array")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description="search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     check_url: Optional[StrictStr] = Field(default=None, description="direct URL to search engine results you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     title: Optional[StrictStr] = Field(default=None, description="title of the app title of the application for which the reviews are collected")
-    rating: Optional[RatingInfo] = None
-    reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of reviews items in the results array you can get more results by using the depth parameter when setting a task")
+    rating: Optional[BusinessDataRatingInfo] = None
+    reviews_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of reviews")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of reviews items in the results array you can get more results by using the depth parameter when setting a task")
     items: Optional[List[BaseAppDataSerpElementItem]] = Field(default=None, description="found reviews you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = ["app_id", "type", "se_domain", "location_code", "language_code", "check_url", "datetime", "title", "rating", "reviews_count", "items_count", "items"]
 
@@ -166,7 +166,7 @@ class AppDataGoogleAppReviewsTaskGetAdvancedResultInfo(BaseModel):
             "check_url": obj.get("check_url"),
             "datetime": obj.get("datetime"),
             "title": obj.get("title"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "reviews_count": obj.get("reviews_count"),
             "items_count": obj.get("items_count"),
             "items": [BaseAppDataSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None

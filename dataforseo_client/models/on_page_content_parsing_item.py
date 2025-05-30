@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.page_content_info import PageContentInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class OnPageContentParsingItem(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     fetch_time: Optional[StrictStr] = Field(default=None, description="date and time when the content was fethced example: \"2022-11-01 10:02:52 +00:00\"")
-    status_code: Optional[StrictInt] = Field(default=None, description="status code of the page")
+    status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="status code of the page")
     page_content: Optional[PageContentInfo] = None
     __properties: ClassVar[List[str]] = ["type", "fetch_time", "status_code", "page_content"]
 

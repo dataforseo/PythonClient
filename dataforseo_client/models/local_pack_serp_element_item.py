@@ -20,7 +20,7 @@ import json
 from pydantic import ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_serp_element_item import BaseSerpElementItem
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.rectangle import Rectangle
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,15 +29,13 @@ class LocalPackSerpElementItem(BaseSerpElementItem):
     """
     LocalPackSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP can take the following values: left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description="source domain")
+    domain: Optional[StrictStr] = Field(default=None, description="domain in the URL")
     phone: Optional[StrictStr] = Field(default=None, description="phone number")
-    url: Optional[StrictStr] = Field(default=None, description="source URL")
+    url: Optional[StrictStr] = Field(default=None, description="URL")
     is_paid: Optional[StrictBool] = Field(default=None, description="indicates whether the element is an ad")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     cid: Optional[StrictStr] = Field(default=None, description="google-defined client id")
     rectangle: Optional[Rectangle] = None
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "description", "domain", "phone", "url", "is_paid", "rating", "cid", "rectangle"]
@@ -170,7 +168,7 @@ class LocalPackSerpElementItem(BaseSerpElementItem):
             "phone": obj.get("phone"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "cid": obj.get("cid"),
             "rectangle": Rectangle.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None
         })

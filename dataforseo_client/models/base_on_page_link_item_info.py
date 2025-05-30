@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,10 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from dataforseo_client.models.on_page_alternate_link_element_item import OnPageAlternateLinkElementItem
     from dataforseo_client.models.on_page_anchor_link_element_item import OnPageAnchorLinkElementItem
+    from dataforseo_client.models.on_page_canonical_link_element_item import OnPageCanonicalLinkElementItem
     from dataforseo_client.models.on_page_image_link_element_item import OnPageImageLinkElementItem
+    from dataforseo_client.models.on_page_link_link_element_item import OnPageLinkLinkElementItem
+    from dataforseo_client.models.on_page_meta_link_element_item import OnPageMetaLinkElementItem
     from dataforseo_client.models.on_page_redirect_link_element_item import OnPageRedirectLinkElementItem
 
 class BaseOnPageLinkItemInfo(BaseModel):
@@ -47,7 +50,8 @@ class BaseOnPageLinkItemInfo(BaseModel):
     direction: Optional[StrictStr] = Field(default=None, description="direction of the link possible values: internal, external")
     is_broken: Optional[StrictBool] = Field(default=None, description="link is broken indicates whether a link is directing to a broken page or resource")
     is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description="indicates that the link may have a conflict with another link if true, at least one link pointing to link_to has a rel=\"nofollow\" attribute and at least one is dofollow")
-    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict"]
+    page_to_status_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="status code of the referenced page status code of the page to which the link is pointing")
+    __properties: ClassVar[List[str]] = ["type", "domain_from", "domain_to", "page_from", "page_to", "link_from", "link_to", "dofollow", "page_from_scheme", "page_to_scheme", "direction", "is_broken", "is_link_relation_conflict", "page_to_status_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -61,7 +65,7 @@ class BaseOnPageLinkItemInfo(BaseModel):
 
     # discriminator mappings
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'alternate': 'OnPageAlternateLinkElementItem','anchor': 'OnPageAnchorLinkElementItem','image': 'OnPageImageLinkElementItem','redirect': 'OnPageRedirectLinkElementItem'
+        'alternate': 'OnPageAlternateLinkElementItem','anchor': 'OnPageAnchorLinkElementItem','canonical': 'OnPageCanonicalLinkElementItem','image': 'OnPageImageLinkElementItem','link': 'OnPageLinkLinkElementItem','meta': 'OnPageMetaLinkElementItem','redirect': 'OnPageRedirectLinkElementItem'
     }
 
     @classmethod
@@ -83,7 +87,7 @@ class BaseOnPageLinkItemInfo(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[OnPageAlternateLinkElementItem, OnPageAnchorLinkElementItem, OnPageImageLinkElementItem, OnPageRedirectLinkElementItem]]:
+    def from_json(cls, json_str: str) -> Optional[Union[OnPageAlternateLinkElementItem, OnPageAnchorLinkElementItem, OnPageCanonicalLinkElementItem, OnPageImageLinkElementItem, OnPageLinkLinkElementItem, OnPageMetaLinkElementItem, OnPageRedirectLinkElementItem]]:
         """Create an instance of BaseOnPageLinkItemInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -170,10 +174,15 @@ class BaseOnPageLinkItemInfo(BaseModel):
         if self.is_link_relation_conflict is None and "is_link_relation_conflict" in self.model_fields_set:
             _dict['is_link_relation_conflict'] = None
 
+        # set to None if page_to_status_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.page_to_status_code is None and "page_to_status_code" in self.model_fields_set:
+            _dict['page_to_status_code'] = None
+
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[OnPageAlternateLinkElementItem, OnPageAnchorLinkElementItem, OnPageImageLinkElementItem, OnPageRedirectLinkElementItem]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[OnPageAlternateLinkElementItem, OnPageAnchorLinkElementItem, OnPageCanonicalLinkElementItem, OnPageImageLinkElementItem, OnPageLinkLinkElementItem, OnPageMetaLinkElementItem, OnPageRedirectLinkElementItem]]:
         """Create an instance of BaseOnPageLinkItemInfo from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -181,8 +190,14 @@ class BaseOnPageLinkItemInfo(BaseModel):
             return import_module("dataforseo_client.models.on_page_alternate_link_element_item").OnPageAlternateLinkElementItem.from_dict(obj)
         if object_type ==  'OnPageAnchorLinkElementItem':
             return import_module("dataforseo_client.models.on_page_anchor_link_element_item").OnPageAnchorLinkElementItem.from_dict(obj)
+        if object_type ==  'OnPageCanonicalLinkElementItem':
+            return import_module("dataforseo_client.models.on_page_canonical_link_element_item").OnPageCanonicalLinkElementItem.from_dict(obj)
         if object_type ==  'OnPageImageLinkElementItem':
             return import_module("dataforseo_client.models.on_page_image_link_element_item").OnPageImageLinkElementItem.from_dict(obj)
+        if object_type ==  'OnPageLinkLinkElementItem':
+            return import_module("dataforseo_client.models.on_page_link_link_element_item").OnPageLinkLinkElementItem.from_dict(obj)
+        if object_type ==  'OnPageMetaLinkElementItem':
+            return import_module("dataforseo_client.models.on_page_meta_link_element_item").OnPageMetaLinkElementItem.from_dict(obj)
         if object_type ==  'OnPageRedirectLinkElementItem':
             return import_module("dataforseo_client.models.on_page_redirect_link_element_item").OnPageRedirectLinkElementItem.from_dict(obj)
 

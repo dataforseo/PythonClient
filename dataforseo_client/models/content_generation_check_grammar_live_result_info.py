@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.content_generation_check_grammar_live_item import ContentGenerationCheckGrammarLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,12 +27,12 @@ class ContentGenerationCheckGrammarLiveResultInfo(BaseModel):
     """
     ContentGenerationCheckGrammarLiveResultInfo
     """ # noqa: E501
-    input_tokens: Optional[StrictInt] = Field(default=None, description="number of input tokens in the POST request")
-    output_tokens: Optional[StrictInt] = Field(default=None, description="number of output tokens in the response")
-    new_tokens: Optional[StrictInt] = Field(default=None, description="number of new tokens in the response")
+    input_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of input tokens in the POST request")
+    output_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of output tokens in the response")
+    new_tokens: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of new tokens in the response")
     initial_text: Optional[StrictStr] = Field(default=None, description="initial text in the POST request")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in the POST request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[ContentGenerationCheckGrammarLiveItem]] = Field(default=None, description="contains grammar or spelling errors and related data")
     __properties: ClassVar[List[str]] = ["input_tokens", "output_tokens", "new_tokens", "initial_text", "language_code", "items_count", "items"]
 

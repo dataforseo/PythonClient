@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.business_data_business_listings_search_live_item import BusinessDataBusinessListingsSearchLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class BusinessDataBusinessListingsSearchLiveResultInfo(BaseModel):
     """
     BusinessDataBusinessListingsSearchLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description="total number of results in our database relevant to your request")
-    count: Optional[StrictInt] = Field(default=None, description="item types the number of items in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of results in our database relevant to your request")
+    count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="item types the number of items in the items array")
     offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned businesses")
     offset_token: Optional[StrictStr] = Field(default=None, description="token for subsequent requests by specifying the unique offset_token when setting a new task, you will get the subsequent results of the initial task; offset_token values are unique for each subsequent task")
     items: Optional[List[BusinessDataBusinessListingsSearchLiveItem]] = Field(default=None, description="encountered item types types of search engine results encountered in the items array; possible item types: business_listing")

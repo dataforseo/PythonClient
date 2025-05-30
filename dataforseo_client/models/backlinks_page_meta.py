@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,11 +28,11 @@ class BacklinksPageMeta(BaseModel):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description="page title")
     canonical: Optional[StrictStr] = Field(default=None, description="canonical page")
-    internal_links_count: Optional[StrictInt] = Field(default=None, description="number of internal links on the page")
-    external_links_count: Optional[StrictInt] = Field(default=None, description="number of external links on the page")
-    images_count: Optional[StrictInt] = Field(default=None, description="number of images on the page")
-    words_count: Optional[StrictInt] = Field(default=None, description="number of words on the page")
-    page_spam_score: Optional[StrictInt] = Field(default=None, description="spam score of the page learn more about how the metric is calculated on this help center page")
+    internal_links_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of internal links on the page")
+    external_links_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of external links on the page")
+    images_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of images on the page")
+    words_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of words on the page")
+    page_spam_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="spam score of the page learn more about how the metric is calculated on this help center page")
     social_media_tags: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="array of social media tags found on the page contains social media tags and their content supported tags include but are not limited to Open Graph and Twitter card")
     h1: Optional[List[Optional[StrictStr]]] = Field(default=None, description="h1 tag content of h1 tags")
     h2: Optional[List[Optional[StrictStr]]] = Field(default=None, description="h2 tag content of h2 tags")

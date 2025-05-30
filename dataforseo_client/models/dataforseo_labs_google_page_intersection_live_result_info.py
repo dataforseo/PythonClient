@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.dataforseo_labs_page_intersection_live_item import DataforseoLabsPageIntersectionLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,10 +30,10 @@ class DataforseoLabsGooglePageIntersectionLiveResultInfo(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     pages: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="URLs you specified a POST array")
     exclude_pages: Optional[List[Optional[StrictStr]]] = Field(default=None, description="URLs you specified in a POST array that will be excluded from the results")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description="total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total amount of results in our database relevant to your request")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[DataforseoLabsPageIntersectionLiveItem]] = Field(default=None, description="contains keywords, relevant SERP elements and related data")
     __properties: ClassVar[List[str]] = ["se_type", "pages", "exclude_pages", "location_code", "language_code", "total_count", "items_count", "items"]
 

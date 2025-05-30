@@ -28,7 +28,7 @@ class RatingElement(BaseModel):
     """ # noqa: E501
     rating_type: Optional[StrictStr] = Field(default=None, description="the type of rating here you can find the following elements: Max5, Percents, CustomMax")
     value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the value of the rating")
-    votes_count: Optional[StrictInt] = Field(default=None, description="the amount of feedbac")
+    votes_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the amount of feedbac")
     rating_max: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the maximum value for a rating_type")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Google Shopping SERP possible values: left, right")

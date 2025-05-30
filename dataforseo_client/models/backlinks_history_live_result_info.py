@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.backlinks_history_live_item import BacklinksHistoryLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class BacklinksHistoryLiveResultInfo(BaseModel):
     target: Optional[StrictStr] = Field(default=None, description="target from the POST array")
     date_from: Optional[StrictStr] = Field(default=None, description="starting date of the time range in the UTC format: “yyyy-mm-dd” example: 2019-01-01")
     date_to: Optional[StrictStr] = Field(default=None, description="ending date of the time range in the UTC format: \"yyyy-mm-dd\" example: \"2019-01-15\"")
-    items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of results returned in the items array")
     items: Optional[List[BacklinksHistoryLiveItem]] = Field(default=None, description="contains historical backlink data for the specified domain the data is provided month-by-month; the metrics are aggregated according to the backlinks the specified domain had on the first day of each given month")
     __properties: ClassVar[List[str]] = ["target", "date_from", "date_to", "items_count", "items"]
 

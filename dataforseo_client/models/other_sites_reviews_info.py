@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class OtherSitesReviewsInfo(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="review title contains a name of the third-party site where review initially appeared")
     url: Optional[StrictStr] = Field(default=None, description="review url URL to the a third-party site where review initially appeared")
     review_text: Optional[StrictStr] = Field(default=None, description="review text text of the review")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["title", "url", "review_text", "rating"]
 
     model_config = ConfigDict(
@@ -105,7 +105,7 @@ class OtherSitesReviewsInfo(BaseModel):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "review_text": obj.get("review_text"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

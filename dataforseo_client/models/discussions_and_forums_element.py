@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +33,7 @@ class DiscussionsAndForumsElement(BaseModel):
     source: Optional[StrictStr] = Field(default=None, description="source of the element indicates the source of information included in the top_stories_element")
     description: Optional[StrictStr] = Field(default=None, description="description")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
-    posts_count: Optional[StrictInt] = Field(default=None, description="number of posts from the discussion on the related source")
+    posts_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of posts from the discussion on the related source")
     __properties: ClassVar[List[str]] = ["type", "title", "url", "domain", "source", "description", "timestamp", "posts_count"]
 
     model_config = ConfigDict(

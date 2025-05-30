@@ -27,9 +27,10 @@ class MapDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
     """
     MapDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "url"]
+    url: Optional[StrictStr] = Field(default=None, description="sitelink URL")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,11 @@ class MapDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -122,6 +128,7 @@ class MapDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "url": obj.get("url")
         })

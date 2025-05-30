@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_info import RatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +34,7 @@ class PopularProductsElement(BaseModel):
     seller: Optional[StrictStr] = Field(default=None, description="seller of the product")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     price: Optional[PriceInfo] = None
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "description", "seller", "image_url", "price", "rating"]
 
     model_config = ConfigDict(
@@ -125,7 +125,7 @@ class PopularProductsElement(BaseModel):
             "seller": obj.get("seller"),
             "image_url": obj.get("image_url"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

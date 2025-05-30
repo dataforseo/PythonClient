@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field
+from pydantic import ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.base_dataforseo_labs_serp_element_item import BaseDataforseoLabsSerpElementItem
 from dataforseo_client.models.questions_and_answers_element import QuestionsAndAnswersElement
@@ -28,8 +28,9 @@ class QuestionsAndAnswersDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpEle
     """
     QuestionsAndAnswersDataforseoLabsSerpElementItem
     """ # noqa: E501
-    items: Optional[List[QuestionsAndAnswersElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
+    items: Optional[List[QuestionsAndAnswersElement]] = Field(default=None, description="elements of search results found in SERP")
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,6 +103,11 @@ class QuestionsAndAnswersDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpEle
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
@@ -124,6 +130,7 @@ class QuestionsAndAnswersDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpEle
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "items": [QuestionsAndAnswersElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.keyword_kpi import KeywordKpi
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,10 @@ class KeywordsDataBingKeywordPerformanceTaskGetResultInfo(BaseModel):
     KeywordsDataBingKeywordPerformanceTaskGetResultInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description="keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array if there is no data, then the value is null")
-    year: Optional[StrictInt] = Field(default=None, description="indicates the year for which the data is provided for example: 2020")
-    month: Optional[StrictInt] = Field(default=None, description="indicates the month for which the data is provided for example: 10")
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the year for which the data is provided for example: 2020")
+    month: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the month for which the data is provided for example: 10")
     keyword_kpi: Optional[KeywordKpi] = None
     __properties: ClassVar[List[str]] = ["keyword", "location_code", "language_code", "year", "month", "keyword_kpi"]
 

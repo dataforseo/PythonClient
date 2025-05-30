@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class LocalServicesElement(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description="URL")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
     description: Optional[StrictStr] = Field(default=None, description="description")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     profile_image_url: Optional[StrictStr] = Field(default=None, description="URL of the image featured in the element")
     __properties: ClassVar[List[str]] = ["type", "title", "url", "domain", "description", "rating", "profile_image_url"]
 
@@ -125,7 +125,7 @@ class LocalServicesElement(BaseModel):
             "url": obj.get("url"),
             "domain": obj.get("domain"),
             "description": obj.get("description"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "profile_image_url": obj.get("profile_image_url")
         })
         return _obj

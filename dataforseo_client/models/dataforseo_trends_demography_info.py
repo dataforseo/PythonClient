@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.demography import Demography
 from dataforseo_client.models.demography_comparison_info import DemographyComparisonInfo
 from typing import Optional, Set
@@ -28,7 +28,7 @@ class DataforseoTrendsDemographyInfo(BaseModel):
     """
     DataforseoTrendsDemographyInfo
     """ # noqa: E501
-    position: Optional[StrictInt] = Field(default=None, description="the alignment of the element can take the following values: 1, 2, 3, 4, etc.")
+    position: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the alignment of the element can take the following values: 1, 2, 3, 4, etc.")
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords the data included in the demography and demography_comparison is based on the keywords listed in this array")
     demography: Optional[Demography] = None

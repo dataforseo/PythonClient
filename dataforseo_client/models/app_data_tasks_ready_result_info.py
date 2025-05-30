@@ -31,8 +31,8 @@ class AppDataTasksReadyResultInfo(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     date_posted: Optional[StrictStr] = Field(default=None, description="date when the task was posted (in the UTC format)")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier")
-    endpoint_advanced: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the Apple app_reviews task")
-    endpoint_html: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the Apple app_reviews HTML task if HTML tasks are not supported in the specified endpoint, the value will be null")
+    endpoint_advanced: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the Apple App Reviews task")
+    endpoint_html: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the Apple App Reviews HTML task if HTML tasks are not supported in the specified endpoint, the value will be null")
     __properties: ClassVar[List[str]] = ["id", "se", "se_type", "date_posted", "tag", "endpoint_advanced", "endpoint_html"]
 
     model_config = ConfigDict(

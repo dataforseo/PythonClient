@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.available_languages import AvailableLanguages
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class KeywordsDataClickstreamDataLocationsAndLanguagesResultInfo(BaseModel):
     """
     KeywordsDataClickstreamDataLocationsAndLanguagesResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description="location code")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location")
-    location_code_parent: Optional[StrictInt] = Field(default=None, description="the code of the superordinate location the value will be null as Country is the only supported location_type for this API")
+    location_code_parent: Optional[StrictStr] = Field(default=None, description="the code of the superordinate location the value will be null as Country is the only supported location_type for this API")
     country_iso_code: Optional[StrictStr] = Field(default=None, description="ISO country code of the location")
     location_type: Optional[StrictStr] = Field(default=None, description="location type possible values: Country")
     available_languages: Optional[List[AvailableLanguages]] = Field(default=None, description="supported languages contains the languages which are supported for a specific location")

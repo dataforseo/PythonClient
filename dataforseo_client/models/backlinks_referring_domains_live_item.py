@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,21 +28,21 @@ class BacklinksReferringDomainsLiveItem(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     domain: Optional[StrictStr] = Field(default=None, description="referring domain")
-    rank: Optional[StrictInt] = Field(default=None, description="domain rank rank volume that a referring website passes to the target rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
-    backlinks: Optional[StrictInt] = Field(default=None, description="indicates the number of backlinks pointing to the target")
+    rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="domain rank rank volume that a referring website passes to the target rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm learn more about the metric and how it is calculated in this help center article")
+    backlinks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the number of backlinks pointing to the target")
     first_seen: Optional[StrictStr] = Field(default=None, description="date and time when our crawler found the backlink for the first time in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     lost_date: Optional[StrictStr] = Field(default=None, description="date and time when the last backlink from this domain was lost indicates the date and time when our crawler visited the page and it responded with 4xx or 5xx status code or the last backlink was removed in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2017-01-24 13:20:59 +00:00")
-    backlinks_spam_score: Optional[StrictInt] = Field(default=None, description="average spam score of all backlinks pointing to the domain learn more about how the metric is calculated on this help center page")
-    broken_backlinks: Optional[StrictInt] = Field(default=None, description="number of broken backlinks number of broken backlinks pointing to the domain")
-    broken_pages: Optional[StrictInt] = Field(default=None, description="number of broken pages number of pages that respond with 4xx or 5xx status codes where backlinks are pointing to")
-    referring_domains: Optional[StrictInt] = Field(default=None, description="indicates the number of referring domains note that we calculate main domains (root domains, like example.com) and their subdomains (e.g. blog.example.com) separately for this metric")
-    referring_domains_nofollow: Optional[StrictInt] = Field(default=None, description="number of domains pointing at least one nofollow link to the target")
-    referring_main_domains: Optional[StrictInt] = Field(default=None, description="indicates the number of referring main domains the number of primary (root) domains referring to your target")
+    backlinks_spam_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="average spam score of all backlinks pointing to the domain learn more about how the metric is calculated on this help center page")
+    broken_backlinks: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of broken backlinks number of broken backlinks pointing to the domain")
+    broken_pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of broken pages number of pages that respond with 4xx or 5xx status codes where backlinks are pointing to")
+    referring_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the number of referring domains note that we calculate main domains (root domains, like example.com) and their subdomains (e.g. blog.example.com) separately for this metric")
+    referring_domains_nofollow: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of domains pointing at least one nofollow link to the target")
+    referring_main_domains: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the number of referring main domains the number of primary (root) domains referring to your target")
     referring_main_domains_nofollow: Optional[StrictInt] = Field(default=None, description="number of main domains pointing at least one nofollow link to the target")
-    referring_ips: Optional[StrictInt] = Field(default=None, description="number of referring IP addresses number of IP addresses pointing to this page")
-    referring_subnets: Optional[StrictInt] = Field(default=None, description="number of referring subnetworks")
-    referring_pages: Optional[StrictInt] = Field(default=None, description="indicates the number of pages pointing to the target specified")
-    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the target")
+    referring_ips: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of referring IP addresses number of IP addresses pointing to this page")
+    referring_subnets: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of referring subnetworks")
+    referring_pages: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="indicates the number of pages pointing to the target specified")
+    referring_pages_nofollow: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of referring pages pointing at least one nofollow link to the target")
     referring_links_tld: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="top-level domains of the referring links contains top level domains and referring link count per each")
     referring_links_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="types of referring links indicates the types of the referring links and link count per each type possible values: anchor, image, link, meta, canonical, alternate, redirect")
     referring_links_attributes: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="link attributes of the referring links indicates link attributes of the referring links and link count per each attribute")

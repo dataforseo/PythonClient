@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_youtube_serp_element_item import BaseYoutubeSerpElementItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,8 +33,8 @@ class YoutubeCommentSerpElementItem(BaseYoutubeSerpElementItem):
     text: Optional[StrictStr] = Field(default=None, description="text of the comment")
     publication_date: Optional[StrictStr] = Field(default=None, description="displayed publication date")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2022-11-15 12:57:46 +00:00")
-    likes_count: Optional[StrictInt] = Field(default=None, description="number of likes on the comment")
-    reply_count: Optional[StrictInt] = Field(default=None, description="number of replies on the comment")
+    likes_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of likes on the comment")
+    reply_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of replies on the comment")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "author_name", "author_thumbnail", "author_url", "text", "publication_date", "timestamp", "likes_count", "reply_count"]
 
     model_config = ConfigDict(

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.app_datale_app_listings_search_live_item import AppDataleAppListingsSearchLiveItem
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class AppDataGoogleAppListingsSearchLiveResultInfo(BaseModel):
     """
     AppDataGoogleAppListingsSearchLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description="the total number of relevant results in the database")
-    count: Optional[StrictInt] = Field(default=None, description="the number of items in the results array")
-    offset: Optional[StrictInt] = Field(default=None, description="offset in the results array of returned apps")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the total number of relevant results in the database")
+    count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="the number of items in the results array")
+    offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="offset in the results array of returned apps")
     offset_token: Optional[StrictStr] = Field(default=None, description="token for subsequent requests you can use this parameter in the POST request to avoid timeouts while trying to obtain over 100,000 results in a single request")
     items: Optional[List[AppDataleAppListingsSearchLiveItem]] = Field(default=None, description="array of apps and related data")
     __properties: ClassVar[List[str]] = ["total_count", "count", "offset", "offset_token", "items"]

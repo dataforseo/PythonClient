@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class BusinessDataSocialMediaPinterestLiveResultInfo(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     page_url: Optional[StrictStr] = Field(default=None, description="URL of the page the data is provided for corresponding URL you specified in the targets array when setting a task")
-    pins_count: Optional[StrictInt] = Field(default=None, description="number of pins for the related page_url pins on Pinterest correspond to content saves; this field shows the number of content saves made from the related page_url using the Pinterest Save Button")
+    pins_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of pins for the related page_url pins on Pinterest correspond to content saves; this field shows the number of content saves made from the related page_url using the Pinterest Save Button")
     __properties: ClassVar[List[str]] = ["type", "page_url", "pins_count"]
 
     model_config = ConfigDict(

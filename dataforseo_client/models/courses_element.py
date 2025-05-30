@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.business_data_rating_info import BusinessDataRatingInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,7 +35,7 @@ class CoursesElement(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="description")
     var_date: Optional[StrictStr] = Field(default=None, description="the date when the page source of the element was published", alias="date")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    rating: Optional[RatingInfo] = None
+    rating: Optional[BusinessDataRatingInfo] = None
     __properties: ClassVar[List[str]] = ["type", "title", "url", "domain", "source", "description", "date", "image_url", "rating"]
 
     model_config = ConfigDict(
@@ -140,7 +140,7 @@ class CoursesElement(BaseModel):
             "description": obj.get("description"),
             "date": obj.get("date"),
             "image_url": obj.get("image_url"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
+            "rating": BusinessDataRatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None
         })
         return _obj
 

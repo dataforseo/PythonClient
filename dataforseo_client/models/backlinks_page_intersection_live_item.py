@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.backlinks_page_intersection_info import BacklinksPageIntersectionInfo
+from dataforseo_client.models.backlinks_page_intersection import BacklinksPageIntersection
 from dataforseo_client.models.intersection_summary_info import IntersectionSummaryInfo
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class BacklinksPageIntersectionLiveItem(BaseModel):
     """
     BacklinksPageIntersectionLiveItem
     """ # noqa: E501
-    page_intersection: Optional[Dict[str, List[BacklinksPageIntersectionInfo]]] = Field(default=None, description="contains data on pages that link to the corresponding targets specified in the POST array data is provided in separate objects corresponding to pages specified in the targets object")
+    page_intersection: Optional[Dict[str, Optional[List[BacklinksPageIntersection]]]] = Field(default=None, description="contains data on pages that link to the corresponding targets specified in the POST array data is provided in separate objects corresponding to pages specified in the targets object")
     summary: Optional[IntersectionSummaryInfo] = None
     __properties: ClassVar[List[str]] = ["page_intersection", "summary"]
 
@@ -102,7 +102,7 @@ class BacklinksPageIntersectionLiveItem(BaseModel):
         _obj = cls.model_validate({
             "page_intersection": dict(
                 (_k,
-                        [BacklinksPageIntersectionInfo.from_dict(_item) for _item in _v]
+                        [BacklinksPageIntersection.from_dict(_item) for _item in _v]
                         if _v is not None
                         else None
                 )

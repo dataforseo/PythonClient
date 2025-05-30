@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.history import History
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class DataforseoLabsGoogleHistoricalKeywordDataLiveItem(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     keyword: Optional[StrictStr] = Field(default=None, description="keyword keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
-    location_code: Optional[StrictInt] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
+    location_code: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="location code in a POST array if there is no data, then the value is null")
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     history: Optional[List[History]] = Field(default=None, description="array of objects with historical data for the keyword")
     __properties: ClassVar[List[str]] = ["se_type", "keyword", "location_code", "language_code", "history"]

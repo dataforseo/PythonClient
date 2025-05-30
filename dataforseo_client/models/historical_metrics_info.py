@@ -26,12 +26,11 @@ class HistoricalMetricsInfo(BaseModel):
     """
     HistoricalMetricsInfo
     """ # noqa: E501
-    year: Optional[StrictInt] = Field(default=None, description="year for which the data is provided")
-    month: Optional[StrictInt] = Field(default=None, description="month for which the data is provided")
+    year: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="year for which the data is provided")
+    month: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="month for which the data is provided")
     etv: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="estimated traffic volume estimated organic monthly traffic to the domain calculated as the product of CTR (click-through-rate) and search volume values of all keywords the domain ranks for learn more about how the metric is calculated in this help center article")
-    count: Optional[StrictInt] = Field(default=None, description="total count of organic SERPs that contain the domain")
-    clickstream_etv: Optional[StrictInt] = Field(default=None, description="estimated traffic volume based on clickstream data calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for to retrieve results for this field, the parameter include_clickstream_data must be set to true learn more about how the metric is calculated in this help center article https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated")
-    __properties: ClassVar[List[str]] = ["year", "month", "etv", "count", "clickstream_etv"]
+    count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total count of organic SERPs that contain the domain")
+    __properties: ClassVar[List[str]] = ["year", "month", "etv", "count"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,11 +91,6 @@ class HistoricalMetricsInfo(BaseModel):
         if self.count is None and "count" in self.model_fields_set:
             _dict['count'] = None
 
-        # set to None if clickstream_etv (nullable) is None
-        # and model_fields_set contains the field
-        if self.clickstream_etv is None and "clickstream_etv" in self.model_fields_set:
-            _dict['clickstream_etv'] = None
-
         return _dict
 
     @classmethod
@@ -112,8 +106,7 @@ class HistoricalMetricsInfo(BaseModel):
             "year": obj.get("year"),
             "month": obj.get("month"),
             "etv": obj.get("etv"),
-            "count": obj.get("count"),
-            "clickstream_etv": obj.get("clickstream_etv")
+            "count": obj.get("count")
         })
         return _obj
 

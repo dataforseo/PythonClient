@@ -29,11 +29,12 @@ class MathSolverDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
     """
     MathSolverDataforseoLabsSerpElementItem
     """ # noqa: E501
+    se_type: Optional[StrictStr] = Field(default=None, description="search engine type")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     result: Optional[StrictStr] = Field(default=None, description="solution to the equation solution to the mathematical equation specified in the keyword field when setting a task")
-    items: Optional[List[MathSolverElement]] = Field(default=None, description="additional items present in the element if there are none, equals null")
+    items: Optional[List[MathSolverElement]] = Field(default=None, description="elements of search results found in SERP")
     links: Optional[List[LinkElement]] = Field(default=None, description="sitelinks the links shown below some of Google’s search results if there are none, equals null")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "title", "result", "items", "links"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "se_type", "title", "result", "items", "links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +114,11 @@ class MathSolverDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
         if self.xpath is None and "xpath" in self.model_fields_set:
             _dict['xpath'] = None
 
+        # set to None if se_type (nullable) is None
+        # and model_fields_set contains the field
+        if self.se_type is None and "se_type" in self.model_fields_set:
+            _dict['se_type'] = None
+
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -150,6 +156,7 @@ class MathSolverDataforseoLabsSerpElementItem(BaseDataforseoLabsSerpElementItem)
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
+            "se_type": obj.get("se_type"),
             "title": obj.get("title"),
             "result": obj.get("result"),
             "items": [MathSolverElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,

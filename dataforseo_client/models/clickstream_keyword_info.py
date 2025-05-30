@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.monthly_searches import MonthlySearches
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,18 +27,18 @@ class ClickstreamKeywordInfo(BaseModel):
     """
     ClickstreamKeywordInfo
     """ # noqa: E501
-    search_volume: Optional[StrictInt] = Field(default=None, description="monthly average clickstream search volume rate")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when the clickstream dataset was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
+    search_volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="current search volume rate of a keyword")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description="date and time when backlink data was updated in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00” example: 2019-11-15 12:57:46 +00:00")
     gender_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of estimated clickstream-based metrics by gender learn more about how the metric is calculated in this help center article")
     age_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description="distribution of clickstream-based metrics by age learn more about how the metric is calculated in this help center article")
-    monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly clickstream search volume rates array of objects with clickstream search volume rates in a certain month of a year")
+    monthly_searches: Optional[List[MonthlySearches]] = Field(default=None, description="monthly searches represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations")
     __properties: ClassVar[List[str]] = ["search_volume", "last_updated_time", "gender_distribution", "age_distribution", "monthly_searches"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -76,9 +76,9 @@ class ClickstreamKeywordInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in monthly_searches (list)
         _items = []
         if self.monthly_searches:
-            for _item in self.monthly_searches:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_monthly_searches in self.monthly_searches:
+                if _item_monthly_searches:
+                    _items.append(_item_monthly_searches.to_dict())
             _dict['monthly_searches'] = _items
         # set to None if search_volume (nullable) is None
         # and model_fields_set contains the field

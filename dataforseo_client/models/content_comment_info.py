@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.content_rating_info import ContentRatingInfo
 from dataforseo_client.models.section_content_item_info import SectionContentItemInfo
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class ContentCommentInfo(BaseModel):
     ContentCommentInfo
     """ # noqa: E501
     rating: Optional[ContentRatingInfo] = None
-    title: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="title of the customer’s comment")
+    title: Optional[StrictStr] = Field(default=None, description="title of the customer’s comment")
     publish_date: Optional[StrictStr] = Field(default=None, description="date when the comment was published")
     author: Optional[StrictStr] = Field(default=None, description="author of the comment")
     have_form: Optional[StrictBool] = None

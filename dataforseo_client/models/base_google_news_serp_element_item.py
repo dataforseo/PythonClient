@@ -34,10 +34,9 @@ class BaseGoogleNewsSerpElementItem(BaseModel):
     BaseGoogleNewsSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     rectangle: Optional[Rectangle] = None
-    __properties: ClassVar[List[str]] = ["type", "xpath", "title", "rectangle"]
+    __properties: ClassVar[List[str]] = ["type", "title", "rectangle"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,11 +101,6 @@ class BaseGoogleNewsSerpElementItem(BaseModel):
         # and model_fields_set contains the field
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
-
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
 
         # set to None if title (nullable) is None
         # and model_fields_set contains the field

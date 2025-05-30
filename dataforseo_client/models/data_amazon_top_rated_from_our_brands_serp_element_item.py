@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import ConfigDict, Field, StrictStr
+from pydantic import ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from dataforseo_client.models.amazon_serp_element import AmazonSerpElement
 from dataforseo_client.models.base_amazon_serp_element_item import BaseAmazonSerpElementItem
@@ -28,9 +28,8 @@ class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
     """
     DataAmazonTopRatedFromOurBrandsSerpElementItem
     """ # noqa: E501
-    position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in Amazon SERP possible values: left, right")
     items: Optional[List[AmazonSerpElement]] = Field(default=None, description="Amazon product items")
-    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "xpath", "position", "items"]
+    __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute", "position", "xpath", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,15 +92,15 @@ class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
         if self.rank_absolute is None and "rank_absolute" in self.model_fields_set:
             _dict['rank_absolute'] = None
 
-        # set to None if xpath (nullable) is None
-        # and model_fields_set contains the field
-        if self.xpath is None and "xpath" in self.model_fields_set:
-            _dict['xpath'] = None
-
         # set to None if position (nullable) is None
         # and model_fields_set contains the field
         if self.position is None and "position" in self.model_fields_set:
             _dict['position'] = None
+
+        # set to None if xpath (nullable) is None
+        # and model_fields_set contains the field
+        if self.xpath is None and "xpath" in self.model_fields_set:
+            _dict['xpath'] = None
 
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
@@ -123,8 +122,8 @@ class DataAmazonTopRatedFromOurBrandsSerpElementItem(BaseAmazonSerpElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "xpath": obj.get("xpath"),
             "position": obj.get("position"),
+            "xpath": obj.get("xpath"),
             "items": [AmazonSerpElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

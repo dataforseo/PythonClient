@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,9 +30,9 @@ class DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem(BaseModel):
     group: Optional[StrictStr] = Field(default=None, description="technology group id")
     category: Optional[StrictStr] = Field(default=None, description="technology category id")
     technology: Optional[StrictStr] = Field(default=None, description="technology name")
-    groups_count: Optional[StrictInt] = Field(default=None, description="technology groups count number of domains that match the parameters you specified and are using technologies from the indicated group")
-    categories_count: Optional[StrictInt] = Field(default=None, description="technology categories count number of domains that match the parameters you specified and are using technologies from the indicated category")
-    technologies_count: Optional[StrictInt] = Field(default=None, description="technologies count number of domains that match the parameters you specified and are using the indicated technology")
+    groups_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="technology groups count number of domains that match the parameters you specified and are using technologies from the indicated group")
+    categories_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="technology categories count number of domains that match the parameters you specified and are using technologies from the indicated category")
+    technologies_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="technologies count number of domains that match the parameters you specified and are using the indicated technology")
     __properties: ClassVar[List[str]] = ["type", "group", "category", "technology", "groups_count", "categories_count", "technologies_count"]
 
     model_config = ConfigDict(

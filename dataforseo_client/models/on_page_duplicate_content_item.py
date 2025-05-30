@@ -17,9 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from dataforseo_client.models.pages import Pages
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dataforseo_client.models.duplicate_page_info import DuplicatePageInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +28,8 @@ class OnPageDuplicateContentItem(BaseModel):
     OnPageDuplicateContentItem
     """ # noqa: E501
     url: Optional[StrictStr] = Field(default=None, description="URL of the specified page")
-    total_count: Optional[StrictInt] = Field(default=None, description="total count of duplicate pages")
-    pages: Optional[List[Pages]] = Field(default=None, description="pages with duplicate content")
+    total_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total count of duplicate pages")
+    pages: Optional[List[DuplicatePageInfo]] = Field(default=None, description="pages with duplicate content")
     __properties: ClassVar[List[str]] = ["url", "total_count", "pages"]
 
     model_config = ConfigDict(
@@ -107,7 +107,7 @@ class OnPageDuplicateContentItem(BaseModel):
         _obj = cls.model_validate({
             "url": obj.get("url"),
             "total_count": obj.get("total_count"),
-            "pages": [Pages.from_dict(_item) for _item in obj["pages"]] if obj.get("pages") is not None else None
+            "pages": [DuplicatePageInfo.from_dict(_item) for _item in obj["pages"]] if obj.get("pages") is not None else None
         })
         return _obj
 

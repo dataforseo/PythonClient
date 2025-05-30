@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from importlib import import_module
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,8 +39,8 @@ class BaseBusinessDataSerpElementItem(BaseModel):
     BaseBusinessDataSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from the rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank among all the elements")
+    rank_group: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="position within a group of elements with identical type values positions of elements with different type values are omitted from the rank_group")
+    rank_absolute: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="absolute rank among all the elements")
     __properties: ClassVar[List[str]] = ["type", "rank_group", "rank_absolute"]
 
     model_config = ConfigDict(

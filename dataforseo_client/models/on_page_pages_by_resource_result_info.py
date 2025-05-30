@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from dataforseo_client.models.base_on_page_resource_item_info import BaseOnPageResourceItemInfo
-from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
+from dataforseo_client.models.crawl_status import CrawlStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,9 +29,9 @@ class OnPagePagesByResourceResultInfo(BaseModel):
     OnPagePagesByResourceResultInfo
     """ # noqa: E501
     crawl_progress: Optional[StrictStr] = Field(default=None, description="status of the crawling session possible values: in_progress, finished")
-    crawl_status: Optional[CrawlStatusInfo] = None
-    total_items_count: Optional[StrictInt] = Field(default=None, description="total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
+    crawl_status: Optional[CrawlStatus] = None
+    total_items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="total number of relevant items in the database")
+    items_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of items in the results array")
     items: Optional[List[BaseOnPageResourceItemInfo]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = ["crawl_progress", "crawl_status", "total_items_count", "items_count", "items"]
 
@@ -117,7 +117,7 @@ class OnPagePagesByResourceResultInfo(BaseModel):
 
         _obj = cls.model_validate({
             "crawl_progress": obj.get("crawl_progress"),
-            "crawl_status": CrawlStatusInfo.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
+            "crawl_status": CrawlStatus.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
             "total_items_count": obj.get("total_items_count"),
             "items_count": obj.get("items_count"),
             "items": [BaseOnPageResourceItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
