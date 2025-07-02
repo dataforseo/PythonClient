@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **link** | **LinkElement** | link of the element |[optional]|
-**items** | **List[Optional[KnowledgeGraphImagesElement]]** | additional items present in the element<br>if there are none, equals null |[optional]|
+**items** | **List[Optional[KnowledgeGraphImagesElement]]** | contains results featured in the ‘hotels_pack’ element of SERP |[optional]|

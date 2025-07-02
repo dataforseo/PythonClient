@@ -45,17 +45,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_id_list([BacklinksIdListRequestInfo(
-                datetime_from="2025-02-28 10:59:59 +00:00",
-                datetime_to="2025-04-30 10:59:59 +00:00",
+                datetime_from="2025-01-18 03:39:12 +00:00",
+                datetime_to="2025-03-18 03:39:12 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -102,6 +106,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -110,7 +117,8 @@ try:
                 limit=10,
                 offset=0,
                 filtered_function="backlinks/content_duplicates",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -156,6 +164,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -206,6 +217,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -257,6 +271,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -266,7 +283,8 @@ try:
                 include_subdomains=True,
                 internal_list_limit=10,
                 backlinks_status_type="all",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -313,15 +331,19 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.history_live([BacklinksHistoryLiveRequestInfo(
                 target="cnn.com",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2020-01-01",
+                date_to="2021-01-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -368,6 +390,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -376,7 +401,8 @@ try:
                 target="forbes.com",
                 mode="as_is",
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -423,6 +449,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -430,7 +459,8 @@ try:
         response = backlinks_api.anchors_live([BacklinksAnchorsLiveRequestInfo(
                 target="forbes.com",
                 limit=4,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -477,6 +507,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -484,7 +517,8 @@ try:
         response = backlinks_api.domain_pages_live([BacklinksDomainPagesLiveRequestInfo(
                 target="forbes.com",
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -531,6 +565,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -538,7 +575,8 @@ try:
         response = backlinks_api.domain_pages_summary_live([BacklinksDomainPagesSummaryLiveRequestInfo(
                 target="forbes.com",
                 limit=4,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -585,6 +623,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -593,7 +634,8 @@ try:
                 target="backlinko.com",
                 limit=5,
                 exclude_internal_backlinks=True,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -640,6 +682,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -649,7 +694,8 @@ try:
                 network_address_type="subnet",
                 limit=5,
                 exclude_internal_backlinks=True,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -696,6 +742,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -703,7 +752,8 @@ try:
         response = backlinks_api.competitors_live([BacklinksCompetitorsLiveRequestInfo(
                 target="dataforseo.com",
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -750,6 +800,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -765,7 +818,8 @@ try:
                 limit=5,
                 include_subdomains=False,
                 exclude_internal_backlinks=True,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -812,6 +866,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -825,7 +882,8 @@ try:
                         "skysports.com",
                     ],
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -872,16 +930,20 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.timeseries_summary_live([BacklinksTimeseriesSummaryLiveRequestInfo(
                 target="dataforseo.com",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
+                date_from="2021-12-01",
+                date_to="2022-02-01",
                 group_range="month",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -928,16 +990,20 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.timeseries_new_lost_summary_live([BacklinksTimeseriesNewLostSummaryLiveRequestInfo(
                 target="dataforseo.com",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
+                date_from="2021-12-01",
+                date_to="2022-02-01",
                 group_range="month",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -984,6 +1050,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -1001,7 +1070,8 @@ try:
                         "https://stackoverflow.com/",
                         "www.trustpilot.com",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1048,6 +1118,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -1065,7 +1138,8 @@ try:
                         "https://stackoverflow.com/",
                         "www.trustpilot.com",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1112,6 +1186,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -1129,7 +1206,8 @@ try:
                         "https://stackoverflow.com/",
                         "www.trustpilot.com",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1176,6 +1254,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -1193,7 +1274,8 @@ try:
                         "https://stackoverflow.com/",
                         "www.trustpilot.com",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1240,6 +1322,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -1257,8 +1342,9 @@ try:
                         "https://stackoverflow.com/",
                         "www.trustpilot.com",
                     ],
-                date_from="2025-02-28",
-        )])
+                date_from="2021-01-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1305,6 +1391,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -1322,8 +1411,9 @@ try:
                         "https://stackoverflow.com/",
                         "www.trustpilot.com",
                     ],
-                date_from="2025-02-28",
-        )])
+                date_from="2023-09-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1370,6 +1460,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         backlinks_api = BacklinksApi(api_client)
@@ -1379,7 +1472,8 @@ try:
                         "https://dataforseo.com/solutions",
                         "https://dataforseo.com/about-us",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```

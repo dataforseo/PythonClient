@@ -25,20 +25,20 @@
 **domain** | **StrictStr** | domain of the business entity |[optional]|
 **logo** | **StrictStr** | URL of the logo featured in Google My Business profile |[optional]|
 **main_image** | **StrictStr** | URL of the main image featured in Google My Business profile |[optional]|
-**total_photos** | **StrictFloat** | total count of images featured in Google My Business profile |[optional]|
+**total_photos** | **StrictInt** | total count of images featured in Google My Business profile |[optional]|
 **snippet** | **StrictStr** | additional information on the business entity |[optional]|
 **latitude** | **StrictFloat** | latitude coordinate of the local establishments in google maps<br>example:<br>'latitude': 51.584091 |[optional]|
 **longitude** | **StrictFloat** | longitude coordinate of the local establishment in google maps<br>example:<br>'longitude': -0.31365919999999997 |[optional]|
 **is_claimed** | **StrictBool** | shows whether the entity is verified by its owner on Google Maps |[optional]|
-**questions_and_answers_count** | **StrictFloat** |  |[optional]|
+**questions_and_answers_count** | **StrictInt** |  |[optional]|
 **attributes** | **BusinessDataAttributesInfo** | service details in a form of user-reviewed checks;<br>service details of a business entity displayed in a form of checks and based on user feedback and business category |[optional]|
 **place_topics** | **Dict[str, Optional[StrictInt]]** | keywords mentioned in customer reviews<br>contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword<br>example: <br>'place_topics': {<br>'egg roll': 48,<br>'birthday': 33<br>} |[optional]|
 **rating** | **RatingInfo** | the element’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
-**hotel_rating** | **StrictFloat** | hotel class rating<br>class ratings range between 1-5 stars, learn more<br>if there is no hotel class rating information, the value will be null |[optional]|
+**hotel_rating** | **StrictInt** | hotel class rating<br>class ratings range between 1-5 stars, learn more<br>if there is no hotel class rating information, the value will be null |[optional]|
 **price_level** | **StrictStr** | property price level<br>can take values: inexpensive, moderate, expensive, very_expensive<br>if there is no price level information, the value will be null |[optional]|
 **rating_distribution** | **Dict[str, Optional[StrictInt]]** | the distribution of ratings of the business entity<br>the object displays the number of 1-star to 5-star ratings, as reviewed by users |[optional]|
 **people_also_search** | **List[Optional[PeopleAlsoSearch]]** | related business entities |[optional]|
-**work_time** | **BusinessWorkHoursInfo** | work time details<br>information related to operational hours of the business entity |[optional]|
+**work_time** | **WorkTime** | work time details<br>information related to operational hours of the business entity |[optional]|
 **popular_times** | **PopularTimes** | popular times<br>information related to busy hours of the business entity |[optional]|
 **local_business_links** | **List[Optional[BaseLocalBusinessLink]]** | available interactions with the business<br>list of options to interact with the business directly from search results |[optional]|
 **is_directory_item** | **StrictBool** | business establishment is a part of the directory<br>indicates whether the business establishment is a part of the directory;<br>if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre);<br>note: if the business establishment is a parent item in the directory, the value will be null |[optional]|

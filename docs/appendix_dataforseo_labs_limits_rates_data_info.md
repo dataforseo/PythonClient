@@ -26,7 +26,6 @@
 **keywords_for_site** | **AppendixInfo** |  |[optional]|
 **keyword_suggestions** | **AppendixInfo** |  |[optional]|
 **keyword_ideas** | **AppendixInfo** |  |[optional]|
-**historical_search_volume** | **AppendixInfo** |  |[optional]|
 **categories_for_domain** | **AppendixInfo** |  |[optional]|
 **domain_metrics_by_categories** | **AppendixInfo** |  |[optional]|
 **top_searches** | **AppendixInfo** |  |[optional]|

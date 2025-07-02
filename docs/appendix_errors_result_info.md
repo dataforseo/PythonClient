@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**code** | **StrictFloat** | code |[optional]|
+**code** | **StrictInt** | code |[optional]|
 **message** | **StrictStr** | message |[optional]|

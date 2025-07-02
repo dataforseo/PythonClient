@@ -11,9 +11,9 @@
 **original_review_text** | **StrictStr** | original content of the review<br>the original content of the review, no auto-translate applied |[optional]|
 **time_ago** | **StrictStr** | the time of publication<br>indicates the time (in the ‘time ago’ format) when the review was listed |[optional]|
 **timestamp** | **StrictStr** | date and time when a review was published<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
-**rating** | **BusinessDataRatingInfo** | the rating score submitted by the reviewer |[optional]|
-**reviews_count** | **StrictFloat** | total number of reviews submitted by the reviewer |[optional]|
-**photos_count** | **StrictFloat** | total number of photos submitted by the reviewer |[optional]|
+**rating** | **RatingInfo** | the rating score submitted by the reviewer |[optional]|
+**reviews_count** | **StrictInt** | total number of reviews submitted by the reviewer |[optional]|
+**photos_count** | **StrictInt** | total number of photos submitted by the reviewer |[optional]|
 **local_guide** | **StrictBool** | indicates whether the reviewer has a ‘local guide’ status |[optional]|
 **profile_name** | **StrictStr** | profile name of the reviewer |[optional]|
 **profile_url** | **StrictStr** | URL of the reviewer’s profile |[optional]|

@@ -80,17 +80,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_id_list([DataforseoLabsIdListRequestInfo(
-                datetime_from="2025-02-28 10:57:34 +00:00",
-                datetime_to="2025-04-30 10:57:34 +00:00",
+                datetime_from="2025-01-18 03:35:56 +00:00",
+                datetime_to="2025-03-18 03:35:56 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -136,6 +140,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -187,6 +194,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -194,7 +204,8 @@ try:
         response = dataforseo_labs_api.dataforseo_labs_errors([DataforseoLabsErrorsRequestInfo(
                 limit=10,
                 offset=0,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -240,6 +251,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -290,6 +304,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -340,6 +357,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -390,6 +410,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -441,6 +464,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -452,7 +478,8 @@ try:
                 include_serp_info=True,
                 include_subdomains=True,
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -499,6 +526,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -508,7 +538,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -555,6 +586,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -566,7 +600,8 @@ try:
                 include_seed_keyword=True,
                 include_serp_info=True,
                 limit=1,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -613,6 +648,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -626,7 +664,8 @@ try:
                 language_code="en",
                 include_serp_info=True,
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -673,6 +712,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -685,7 +727,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -732,6 +775,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -744,7 +790,8 @@ try:
                         "milk store new york",
                     ],
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -790,6 +837,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -841,6 +891,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -856,7 +909,8 @@ try:
                         "local_pack",
                     ],
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -903,6 +957,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -914,7 +971,8 @@ try:
                         "car dealer los angeles",
                     ],
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -961,6 +1019,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -974,7 +1035,8 @@ try:
                 language_name="English",
                 include_serp_info=True,
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1021,6 +1083,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1030,12 +1095,13 @@ try:
                         "13418",
                         "11494",
                     ],
-                first_date="2025-02-28",
-                second_date="2025-04-30",
+                first_date="2021-06-01",
+                second_date="2021-10-01",
                 location_code=2840,
                 language_code="en",
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1082,6 +1148,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1090,7 +1159,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1137,13 +1207,17 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_domain_whois_overview_live([DataforseoLabsGoogleDomainWhoisOverviewLiveRequestInfo(
                 limit=2,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1190,6 +1264,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1200,7 +1277,8 @@ try:
                 language_name="English",
                 limit=3,
                 load_rank_absolute=True,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1247,6 +1325,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1261,7 +1342,8 @@ try:
                         "organic",
                     ],
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1308,6 +1390,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1322,7 +1407,8 @@ try:
                         "health.com",
                         "trysnow.com",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1369,6 +1455,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1380,7 +1469,8 @@ try:
                 language_code="en",
                 include_serp_info=True,
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1427,6 +1517,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1435,7 +1528,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1482,6 +1576,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1491,7 +1588,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1538,6 +1636,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1546,7 +1647,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1593,17 +1695,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_historical_serps_live([DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo(
                 keyword="albert einstein",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
+                date_from="2021-08-01",
+                date_to="2021-09-01",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1650,6 +1756,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1658,9 +1767,10 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_code="en",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2021-01-01",
+                date_to="2021-03-29",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1707,6 +1817,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1720,7 +1833,8 @@ try:
                 language_name="English",
                 limit=3,
                 include_serp_info=True,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1767,6 +1881,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1783,7 +1900,8 @@ try:
                         "organic",
                         "paid",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1830,6 +1948,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1842,13 +1963,14 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
+                date_from="2021-01-01",
+                date_to="2021-03-29",
                 item_types=[
                         "organic",
                         "paid",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1895,6 +2017,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1905,7 +2030,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1952,6 +2078,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -1964,7 +2093,8 @@ try:
                 language_code="en",
                 include_serp_info=True,
                 include_clickstream_data=True,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2011,6 +2141,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2023,7 +2156,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2070,6 +2204,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2080,7 +2217,8 @@ try:
                 language_name="English",
                 include_seed_keyword=True,
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2127,6 +2265,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2135,7 +2276,8 @@ try:
                 asin="B00R92CL5E",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2182,6 +2324,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2193,7 +2338,8 @@ try:
                     ],
                 location_code=2840,
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2240,6 +2386,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2248,7 +2397,8 @@ try:
                 asin="019005476X",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2295,6 +2445,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2307,7 +2460,8 @@ try:
                     },
                 location_code=2840,
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2354,6 +2508,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2366,7 +2523,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2413,6 +2571,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2429,7 +2590,8 @@ try:
                         "organic",
                         "paid",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2476,6 +2638,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2490,7 +2655,8 @@ try:
                         "health.com",
                         "trysnow.com",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2537,6 +2703,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2547,7 +2716,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2594,6 +2764,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2602,7 +2775,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2649,6 +2823,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2661,7 +2838,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2708,6 +2886,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2718,7 +2899,8 @@ try:
                 language_name="English",
                 limit=3,
                 load_rank_absolute=True,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2765,6 +2947,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2774,7 +2959,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=3,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2821,6 +3007,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2830,7 +3019,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2877,6 +3067,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2891,7 +3084,8 @@ try:
                         "organic",
                     ],
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2938,6 +3132,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -2947,7 +3144,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2994,6 +3192,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -3005,7 +3206,8 @@ try:
                     ],
                 location_code=2840,
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3052,6 +3254,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -3061,7 +3266,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3108,6 +3314,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -3117,7 +3326,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3164,19 +3374,16 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_app_intersection_live([DataforseoLabsGoogleAppIntersectionLiveRequestInfo(
-                app_ids={
-                        "1": "686449807",
-                        "2": "382617920",
-                    },
-                location_code=2840,
-                language_name="English",
-                limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3223,6 +3430,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -3234,7 +3444,8 @@ try:
                     ],
                 location_code=2840,
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3281,6 +3492,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -3290,7 +3504,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3337,6 +3552,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -3346,7 +3564,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3393,6 +3612,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         dataforseo_labs_api = DataforseoLabsApi(api_client)
@@ -3405,7 +3627,8 @@ try:
                 location_code=2840,
                 language_name="English",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```

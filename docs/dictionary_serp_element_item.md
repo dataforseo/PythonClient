@@ -5,6 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+**position** | **StrictStr** | the alignment of the element in SERP<br>can take the following values:<br>left, right |[optional]|
+**xpath** | **StrictStr** | the XPath of the element |[optional]|
 **title** | **StrictStr** | title of the result in SERP |[optional]|
 **url** | **StrictStr** | relevant URL of the Ad element in SERP |[optional]|
 **domain** | **StrictStr** | domain in SERP |[optional]|

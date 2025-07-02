@@ -7,11 +7,11 @@
 |------------ | ------------- | ------------- | -------------|
 **title** | **StrictStr** | page title |[optional]|
 **canonical** | **StrictStr** | canonical page |[optional]|
-**internal_links_count** | **StrictFloat** | number of internal links on the page |[optional]|
-**external_links_count** | **StrictFloat** | number of external links on the page |[optional]|
-**images_count** | **StrictFloat** | number of images on the page |[optional]|
-**words_count** | **StrictFloat** | number of words on the page |[optional]|
-**page_spam_score** | **StrictFloat** | spam score of the page<br>learn more about how the metric is calculated on this help center page |[optional]|
+**internal_links_count** | **StrictInt** | number of internal links on the page |[optional]|
+**external_links_count** | **StrictInt** | number of external links on the page |[optional]|
+**images_count** | **StrictInt** | number of images on the page |[optional]|
+**words_count** | **StrictInt** | number of words on the page |[optional]|
+**page_spam_score** | **StrictInt** | spam score of the page<br>learn more about how the metric is calculated on this help center page |[optional]|
 **social_media_tags** | **Dict[str, Optional[StrictStr]]** | array of social media tags found on the page<br>contains social media tags and their content<br>supported tags include but are not limited to Open Graph and Twitter card |[optional]|
 **h_1** | **List[Optional[StrictStr]]** | h1 tag<br>content of h1 tags |[optional]|
 **h_2** | **List[Optional[StrictStr]]** | h2 tag<br>content of h2 tags |[optional]|

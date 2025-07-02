@@ -35,17 +35,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.domain_analytics_id_list([DomainAnalyticsIdListRequestInfo(
-                datetime_from="2025-02-28 10:59:02 +00:00",
-                datetime_to="2025-04-30 10:59:02 +00:00",
+                datetime_from="2025-01-18 03:35:25 +00:00",
+                datetime_to="2025-03-18 03:35:25 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -92,6 +96,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -100,7 +107,8 @@ try:
                 limit=10,
                 offset=0,
                 filtered_function="pingback_url",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -146,6 +154,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -196,6 +207,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -246,6 +260,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -296,6 +313,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -347,6 +367,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -356,7 +379,8 @@ try:
                 keyword="WordPress",
                 mode="entry",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -403,6 +427,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -415,7 +442,8 @@ try:
                         "WordPress",
                     ],
                 mode="entry",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -462,15 +490,19 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_technology_stats_live([DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo(
                 technology="jQuery",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2022-10-31",
+                date_to="2023-06-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -517,6 +549,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -526,7 +561,8 @@ try:
                         "Nginx",
                     ],
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -573,6 +609,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -583,7 +622,8 @@ try:
                     ],
                 limit=10,
                 offset=0,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -630,13 +670,17 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_domain_technologies_live([DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo(
                 target="dataforseo.com",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -682,6 +726,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
@@ -733,13 +780,17 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.whois_overview_live([DomainAnalyticsWhoisOverviewLiveRequestInfo(
                 limit=2,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```

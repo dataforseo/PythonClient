@@ -5,6 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+**position** | **StrictStr** | the alignment of the element in SERP<br>can take the following values:<br>left, right |[optional]|
+**xpath** | **StrictStr** | the XPath of the element |[optional]|
 **title** | **StrictStr** | title of the row |[optional]|
 **result** | **StrictStr** | solution to the equation<br>solution to the mathematical equation specified in the keyword field when setting a task |[optional]|
 **items** | **List[Optional[MathSolverElement]]** | contains arrays of specific images |[optional]|

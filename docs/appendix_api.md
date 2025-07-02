@@ -24,6 +24,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         appendix_api = AppendixApi(api_client)
@@ -74,6 +77,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         appendix_api = AppendixApi(api_client)
@@ -125,13 +131,17 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         appendix_api = AppendixApi(api_client)
 
         response = appendix_api.webhook_resend([AppendixWebhookResendRequestInfo(
                 id="08161139-0001-0066-1000-06491d097ed5",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -177,6 +187,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         appendix_api = AppendixApi(api_client)

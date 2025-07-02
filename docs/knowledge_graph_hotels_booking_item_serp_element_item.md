@@ -5,6 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+**position** | **StrictStr** | the alignment of the element in SERP<br>can take the following values:<br>left, right |[optional]|
+**xpath** | **StrictStr** | the XPath of the element |[optional]|
 **title** | **StrictStr** | title of a given link element |[optional]|
 **date_from** | **StrictStr** | starting date of stay<br>in the format “year-month-date”<br>example:<br>2019-11-15 |[optional]|
 **date_to** | **StrictStr** | ending date of stay<br>in the format “year-month-date”<br>example:<br>2019-11-17 |[optional]|

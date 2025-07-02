@@ -5,6 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+**position** | **StrictStr** | the alignment of the element in SERP<br>can take the following values:<br>left, right |[optional]|
+**xpath** | **StrictStr** | the XPath of the element |[optional]|
 **title** | **StrictStr** | title of the result in SERP |[optional]|
 **data_attrid** | **StrictStr** | google defined data attribute ID<br>example:<br>action:listen_artist |[optional]|
 **link** | **LinkElement** | link of the element |[optional]|

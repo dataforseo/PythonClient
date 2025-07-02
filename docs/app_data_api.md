@@ -63,17 +63,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.app_data_id_list([AppDataIdListRequestInfo(
-                datetime_from="2025-02-28 11:02:06 +00:00",
-                datetime_to="2025-04-30 11:02:06 +00:00",
+                datetime_from="2025-01-18 03:41:46 +00:00",
+                datetime_to="2025-03-18 03:41:46 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -120,6 +124,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -128,7 +135,8 @@ try:
                 limit=10,
                 offset=0,
                 filtered_function="pingback_url",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -174,6 +182,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -224,6 +235,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -274,6 +288,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -325,6 +342,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -376,6 +396,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -385,7 +408,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 depth=30,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -431,6 +455,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -481,6 +508,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -531,11 +561,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "56ab389d-7d71-4bbf-9673-57d3637c5289"
+        id = "4041d8ad-75ef-4c9d-a9fc-5b44a3a44965"
         response = app_data_api.google_app_searches_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -582,11 +615,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "9f34e94e-6325-4b20-8170-eda129fede55"
+        id = "6efb961f-bb81-4e51-833f-60592a4c87d7"
         response = app_data_api.google_app_searches_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -634,6 +670,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -643,7 +682,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 depth=100,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -689,6 +729,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -739,11 +782,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "f4da2498-af5d-4140-af6d-2f3810373d8d"
+        id = "4abf09ed-24cf-4baf-a080-d703f4b08bc3"
         response = app_data_api.google_app_list_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -790,11 +836,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "785fe2b3-9a53-494a-add4-d498dbf5f8a5"
+        id = "9a173d90-ca0f-43a0-a142-d4bbfa40ed1b"
         response = app_data_api.google_app_list_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -842,6 +891,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -850,7 +902,8 @@ try:
                 app_id="org.telegram.messenger",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -896,6 +949,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -946,11 +1002,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "accfd6da-b68e-4a40-bba0-de16f09bb0c0"
+        id = "17f96bbc-6d14-47ef-b811-afe68079d827"
         response = app_data_api.google_app_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -997,11 +1056,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "3005591c-60b5-4333-a456-a314c25502ad"
+        id = "78db88c1-366f-4728-a33d-ad2733848534"
         response = app_data_api.google_app_info_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1049,6 +1111,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1058,7 +1123,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 depth=150,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1104,6 +1170,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1154,11 +1223,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "2a851e3a-e5fc-47ca-8186-607250c43ae4"
+        id = "d401cf85-294b-41ab-9be7-66cc1629f552"
         response = app_data_api.google_app_reviews_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1205,11 +1277,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "e2f1fad6-04fb-45a2-b524-9f67a99fc014"
+        id = "fc5e00f9-351c-403d-b0b2-070845db19e3"
         response = app_data_api.google_app_reviews_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1256,6 +1331,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1307,6 +1385,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1318,7 +1399,8 @@ try:
                 description="vpn",
                 title="vpn",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1364,6 +1446,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1414,6 +1499,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1464,6 +1552,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1515,6 +1606,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1524,7 +1618,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 depth=200,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1570,6 +1665,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1620,11 +1718,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "a950c217-8459-49fe-8834-fe5f83e5e84e"
+        id = "8d1d2559-a1a5-4a66-a27a-b6b2ccfc01f9"
         response = app_data_api.apple_app_searches_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1672,6 +1773,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1680,7 +1784,8 @@ try:
                 app_id="835599320",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1726,6 +1831,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1776,11 +1884,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "96a03976-e950-4ffe-91d5-644011d719e4"
+        id = "65dd669e-0d17-461b-891c-821c862b71d1"
         response = app_data_api.apple_app_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1828,6 +1939,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1838,7 +1952,8 @@ try:
                 language_code="en",
                 depth=200,
                 app_category="games",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1884,6 +1999,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1934,11 +2052,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "9370611b-cb73-4dde-b838-d39aa5e31ae0"
+        id = "310ee395-0683-4b68-b2e1-7757aea44f3c"
         response = app_data_api.apple_app_list_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1986,6 +2107,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -1995,7 +2119,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 depth=200,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2041,6 +2166,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -2091,11 +2219,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "e769bee6-6874-4872-9721-cb34ac1bf953"
+        id = "0294027f-ee61-4717-80fb-8841b96a9528"
         response = app_data_api.apple_app_reviews_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2142,6 +2273,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -2193,6 +2327,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
@@ -2204,7 +2341,8 @@ try:
                 description="vpn",
                 title="vpn",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```

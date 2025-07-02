@@ -9,4 +9,4 @@
 **url** | **StrictStr** | URL to the reviewer’s profile |[optional]|
 **image_url** | **StrictStr** | URL to the reviewer’s profile picture |[optional]|
 **location** | **StrictStr** | country of the reviewer |[optional]|
-**reviews_count** | **StrictFloat** | total number of reviews submitted by the reviewer |[optional]|
+**reviews_count** | **StrictInt** | total number of reviews submitted by the reviewer |[optional]|

@@ -30,9 +30,9 @@
 **total_content_analysis** | **StrictFloat** |  |[optional]|
 **content_generation** | **AppendixContentGenerationLimitsRatesDataInfo** |  |[optional]|
 **total_content_generation** | **StrictFloat** |  |[optional]|
-**total_traffic_analytics** | **StrictFloat** |  |[optional]|
-**traffic_analytics** | **AppendixSerpDaysRatesDataInfo** |  |[optional]|
 **total_reviews** | **StrictFloat** |  |[optional]|
-**reviews** | **AppendixSerpDaysRatesDataInfo** |  |[optional]|
+**reviews** | **AppendixSerpsRatesDataInfo** |  |[optional]|
 **total_social** | **StrictFloat** |  |[optional]|
-**social** | **AppendixSerpDaysRatesDataInfo** |  |[optional]|
+**social** | **AppendixSerpsRatesDataInfo** |  |[optional]|
+**total_traffic_analytics** | **StrictFloat** |  |[optional]|
+**traffic_analytics** | **AppendixSerpsRatesDataInfo** |  |[optional]|

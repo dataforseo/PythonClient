@@ -13,4 +13,4 @@
 **domain** | **StrictStr** | website domain |[optional]|
 **url** | **StrictStr** | URL |[optional]|
 **is_paid** | **StrictBool** | indicates whether the element is an ad |[optional]|
-**rating** | **BusinessDataRatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
+**rating** | **RatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|

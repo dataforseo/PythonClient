@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**location_code** | **StrictFloat** | location code |[optional]|
+**location_code** | **StrictInt** | location code |[optional]|
 **location_name** | **StrictStr** | full name of the location |[optional]|
-**location_code_parent** | **StrictFloat** |  |[optional]|
+**location_name_parent** | **StrictStr** | the name of the superordinate location<br>example:<br>'location_code': 1006473,<br>'location_name': 'Altrincham,England,United Kingdom',<br>'location_name_parent': 'England,United Kingdom', where location_name_parent corresponds to:<br>'location_code': 20339,<br>'location_name': 'England,United Kingdom' |[optional]|
 **country_iso_code** | **StrictStr** | ISO country code of the location |[optional]|
 **location_type** | **StrictStr** | location type |[optional]|

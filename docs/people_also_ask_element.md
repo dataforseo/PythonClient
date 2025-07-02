@@ -9,4 +9,4 @@
 **title** | **StrictStr** | title of a given link element |[optional]|
 **seed_question** | **StrictStr** | question that triggered additional expanded elements |[optional]|
 **xpath** | **StrictStr** | the XPath of the element |[optional]|
-**expanded_element** | **List[Optional[BasePeopleAlsoAskExpandedElementItem]]** | expanded element |[optional]|
+**expanded_element** | **List[Optional[PeopleAlsoAskExpandedElement]]** | expanded element |[optional]|

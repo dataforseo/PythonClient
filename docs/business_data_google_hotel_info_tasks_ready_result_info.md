@@ -10,4 +10,5 @@
 **se_type** | **StrictStr** | search engine specified when setting the task |[optional]|
 **date_posted** | **StrictStr** | date when the task was posted (in the UTC format) |[optional]|
 **tag** | **StrictStr** | user-defined task identifier |[optional]|
-**endpoint** | **StrictStr** | URL for collecting the results of the task |[optional]|
+**endpoint_advanced** | **StrictStr** | URL for collecting the results of the task |[optional]|
+**endpoint_html** | **StrictStr** | URL for collecting the results of the task |[optional]|

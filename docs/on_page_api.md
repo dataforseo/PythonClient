@@ -51,17 +51,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.on_page_id_list([OnPageIdListRequestInfo(
-                datetime_from="2025-02-28 11:00:14 +00:00",
-                datetime_to="2025-04-30 11:00:14 +00:00",
+                datetime_from="2025-01-18 03:39:43 +00:00",
+                datetime_to="2025-03-18 03:39:43 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -108,6 +112,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -116,7 +123,8 @@ try:
                 limit=10,
                 offset=0,
                 filtered_function="pingback_url",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -163,13 +171,17 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.force_stop([OnPageForceStopRequestInfo(
                 id="08121600-1535-0216-0000-37b4c7a34453",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -215,6 +227,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -266,6 +281,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -278,7 +296,8 @@ try:
                 custom_js="meta = {}; meta.url = document.URL; meta;",
                 tag="some_string_123",
                 pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -324,6 +343,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -374,6 +396,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -426,6 +451,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -433,7 +461,8 @@ try:
         response = on_page_api.pages([OnPagePagesRequestInfo(
                 id="07281559-0695-0216-0000-c269be8b7592",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -480,6 +509,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -487,7 +519,8 @@ try:
         response = on_page_api.pages_by_resource([OnPagePagesByResourceRequestInfo(
                 id="02241700-1535-0216-0000-034137259bc1",
                 url="https://www.etsy.com/about/jobs.workco2018.js?",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -534,6 +567,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -541,7 +577,8 @@ try:
         response = on_page_api.resources([OnPageResourcesRequestInfo(
                 id="07281559-0695-0216-0000-c269be8b7592",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -588,6 +625,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -596,7 +636,8 @@ try:
                 id="07281559-0695-0216-0000-c269be8b7592",
                 type="duplicate_description",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -643,6 +684,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -650,7 +694,8 @@ try:
         response = on_page_api.duplicate_content([OnPageDuplicateContentRequestInfo(
                 id="07281559-0695-0216-0000-c269be8b7592",
                 url="https://www.etsy.com/",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -697,6 +742,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -705,7 +753,8 @@ try:
                 id="07281559-0695-0216-0000-c269be8b7592",
                 page_from="/apis/google-trends-api",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -752,6 +801,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -759,7 +811,8 @@ try:
         response = on_page_api.redirect_chains([OnPageRedirectChainsRequestInfo(
                 id="03051327-4536-0216-1000-3b458a2cfcca",
                 url="https://test_rdr.dataforseo.com/a/",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -806,6 +859,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -813,7 +869,8 @@ try:
         response = on_page_api.non_indexable([OnPageNonIndexableRequestInfo(
                 id="07281559-0695-0216-0000-c269be8b7592",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -860,6 +917,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -867,7 +927,8 @@ try:
         response = on_page_api.waterfall([OnPageWaterfallRequestInfo(
                 id="08101204-0696-0216-0000-644a7b21a48a",
                 url="https://dataforseo.com/tag/broken-links",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -914,6 +975,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -922,7 +986,8 @@ try:
                 id="09101923-1535-0216-0000-2389a8854b70",
                 keyword_length=2,
                 url="https://dataforseo.com/",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -969,6 +1034,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -976,7 +1044,8 @@ try:
         response = on_page_api.microdata([OnPageMicrodataRequestInfo(
                 id="02241700-1535-0216-0000-034137259bc1",
                 url="https://dataforseo.com/apis",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1023,6 +1092,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1030,7 +1102,8 @@ try:
         response = on_page_api.raw_html([OnPageRawHtmlRequestInfo(
                 id="07281559-0695-0216-0000-c269be8b7592",
                 url="https://dataforseo.com/apis",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1077,13 +1150,17 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.page_screenshot([OnPagePageScreenshotRequestInfo(
                 url="https://dataforseo.com/apis",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1130,6 +1207,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1137,7 +1217,8 @@ try:
         response = on_page_api.content_parsing([OnPageContentParsingRequestInfo(
                 url="https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api",
                 id="11161551-1535-0216-0000-500b3f307f92",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1184,13 +1265,17 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.content_parsing_live([OnPageContentParsingLiveRequestInfo(
                 url="https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1237,6 +1322,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1245,7 +1333,8 @@ try:
                 url="https://dataforseo.com/blog",
                 enable_javascript=True,
                 custom_js="meta = {}; meta.url = document.URL; meta;",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1291,6 +1380,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1341,6 +1433,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1391,6 +1486,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1442,6 +1540,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1451,7 +1552,8 @@ try:
                 for_mobile=True,
                 tag="some_string_123",
                 pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1497,6 +1599,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1547,6 +1652,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1599,6 +1707,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
@@ -1607,7 +1718,8 @@ try:
                 url="https://dataforseo.com",
                 for_mobile=True,
                 tag="some_string_123",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```

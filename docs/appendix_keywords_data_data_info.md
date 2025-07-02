@@ -25,4 +25,4 @@
 **keyword_suggestions_for_url** | **AppendixInfo** |  |[optional]|
 **naver** | **AppendixNaverKeywordsDataDataInfo** |  |[optional]|
 **google** | **AppendixBingKeywordsDataLimitsRatesDataInfo** |  |[optional]|
-**keyword_ideas_ads_api** | **AppendixSerpDaysRatesDataInfo** |  |[optional]|
+**keyword_ideas_ads_api** | **AppendixSerpsRatesDataInfo** |  |[optional]|

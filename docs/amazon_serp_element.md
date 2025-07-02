@@ -11,7 +11,7 @@
 **title** | **StrictStr** | product title |[optional]|
 **url** | **StrictStr** | the URL of the product page |[optional]|
 **image_url** | **StrictStr** | URL of the product image featured in the results |[optional]|
-**bought_past_month** | **StrictFloat** | number of product purchases in the past month |[optional]|
+**bought_past_month** | **StrictInt** | number of product purchases in the past month |[optional]|
 **price_from** | **StrictFloat** | the regular price of a product<br>example:<br>49.98 |[optional]|
 **price_to** | **StrictFloat** | the upper limit of the product price range<br>example:<br>384.99 |[optional]|
 **currency** | **StrictStr** | currency in the ISO format<br>example:<br>USD |[optional]|

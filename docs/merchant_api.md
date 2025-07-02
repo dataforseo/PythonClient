@@ -62,17 +62,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.merchant_id_list([MerchantIdListRequestInfo(
-                datetime_from="2025-02-28 11:01:45 +00:00",
-                datetime_to="2025-04-30 11:01:45 +00:00",
+                datetime_from="2025-01-18 03:40:44 +00:00",
+                datetime_to="2025-03-18 03:40:44 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -119,6 +123,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -127,7 +134,8 @@ try:
                 limit=10,
                 offset=0,
                 filtered_function="pingback_url",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -173,6 +181,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -223,6 +234,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -273,6 +287,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -325,6 +342,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -334,7 +354,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 price_min=5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -380,6 +401,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -430,6 +454,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -480,6 +507,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -531,11 +561,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "bd06b326-8968-4d9f-9e21-da9a45d0ea64"
+        id = "48006dfe-9291-4f95-8857-9fb6a4cb18a3"
         response = merchant_api.google_products_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -583,6 +616,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -591,7 +627,8 @@ try:
                 product_id="1113158713975221117",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -637,6 +674,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -687,6 +727,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -738,11 +781,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "3cfcc7d0-42b1-40c2-95bc-acf765dfaaf2"
+        id = "2a4c259d-7dbc-4038-ba55-96be2799680a"
         response = merchant_api.google_sellers_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -790,6 +836,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -798,7 +847,8 @@ try:
                 product_id="1113158713975221117",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -844,6 +894,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -894,6 +947,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -945,11 +1001,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "4c364fa9-7142-4b55-9ddc-a3697c0b3f58"
+        id = "5fe27954-de98-4545-a7cc-fb6c004f93fa"
         response = merchant_api.google_product_spec_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -997,6 +1056,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1005,7 +1067,8 @@ try:
                 product_id="1113158713975221117",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1051,6 +1114,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1101,6 +1167,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1152,6 +1221,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1203,6 +1275,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1253,6 +1328,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1304,6 +1382,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1355,6 +1436,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1363,7 +1447,8 @@ try:
                 keyword="shoes",
                 location_code=2840,
                 language_code="en_US",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1409,6 +1494,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1459,6 +1547,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1510,11 +1601,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "b25b2e54-c0d7-46bc-9756-4da16315c690"
+        id = "b4b44ad9-e7eb-47c1-b950-c900c3d2aa01"
         response = merchant_api.amazon_products_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1562,6 +1656,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1570,7 +1667,8 @@ try:
                 asin="B0756FCPPN",
                 location_code=2840,
                 language_code="en_US",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1616,6 +1714,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1666,6 +1767,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1717,11 +1821,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "3ea483df-14f6-4962-806a-ca0cb905fce8"
+        id = "4db59c3b-39c3-4122-92b8-10979409c4dc"
         response = merchant_api.amazon_asin_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1769,6 +1876,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1777,7 +1887,8 @@ try:
                 asin="B085RFFC9Q",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1823,6 +1934,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1873,6 +1987,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1924,11 +2041,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "ba31e277-244c-4584-bb69-38222eda5f86"
+        id = "24c561e5-6cac-4cda-8962-9993d8a0eab6"
         response = merchant_api.amazon_sellers_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1976,6 +2096,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -1984,7 +2107,8 @@ try:
                 asin="B0773ZY26F",
                 location_code=2840,
                 language_code="en_US",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2030,6 +2154,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -2080,6 +2207,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
@@ -2131,11 +2261,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "d94388d4-1bd6-455a-97a3-e1336640234a"
+        id = "3595c771-ffc9-451b-b2f0-ba4245de8277"
         response = merchant_api.amazon_reviews_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)

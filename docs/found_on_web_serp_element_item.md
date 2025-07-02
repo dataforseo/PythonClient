@@ -5,6 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+**position** | **StrictStr** | the alignment of the element in SERP<br>can take the following values:<br>left, right |[optional]|
+**xpath** | **StrictStr** | the XPath of the element |[optional]|
 **title** | **StrictStr** | title of the row |[optional]|
 **related_searches** | **List[Optional[StrictStr]]** | search queries related to the elment |[optional]|
 **items** | **List[Optional[FoundOnWebElement]]** | contains arrays of specific images |[optional]|

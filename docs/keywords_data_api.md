@@ -91,17 +91,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
-                datetime_from="2025-02-28 10:59:09 +00:00",
-                datetime_to="2025-04-30 10:59:09 +00:00",
+                datetime_from="2025-01-18 03:37:55 +00:00",
+                datetime_to="2025-03-18 03:37:55 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -148,6 +152,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -156,7 +163,8 @@ try:
                 limit=10,
                 offset=0,
                 filtered_function="pingback_url",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -202,6 +210,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -252,6 +263,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -302,6 +316,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -353,6 +370,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -404,6 +424,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -415,7 +438,8 @@ try:
                         "purchase laptop",
                     ],
                 location_name="United States",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -461,6 +485,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -511,11 +538,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "d834a40e-f40a-4ed1-a6a4-c2b2baf4a2a0"
+        id = "1ffcdc28-ea42-45c3-b68e-5402b937a478"
         response = keywords_data_api.google_ads_search_volume_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -563,6 +593,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -575,8 +608,9 @@ try:
                     ],
                 location_code=2840,
                 search_partners=True,
-                date_from="2025-02-28",
-        )])
+                date_from="2021-08-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -623,6 +657,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -630,7 +667,8 @@ try:
         response = keywords_data_api.google_ads_keywords_for_site_task_post([KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo(
                 target="dataforseo.com",
                 location_code=2840,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -676,6 +714,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -726,11 +767,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "bad8ee00-da51-45c6-8036-a3f13b92e24d"
+        id = "9ea51b5d-2283-435a-ae90-8f373ccbc630"
         response = keywords_data_api.google_ads_keywords_for_site_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -778,6 +822,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -785,7 +832,8 @@ try:
         response = keywords_data_api.google_ads_keywords_for_site_live([KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo(
                 target="dataforseo.com",
                 location_code=2840,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -832,6 +880,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -842,7 +893,8 @@ try:
                         "cellphone",
                     ],
                 location_code=2840,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -888,6 +940,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -938,11 +993,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "d60381bc-f1df-403b-aaa0-75345b9f4aba"
+        id = "76cd4c2d-bfc7-4460-81ac-ca80735c2658"
         response = keywords_data_api.google_ads_keywords_for_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -990,6 +1048,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1000,7 +1061,8 @@ try:
                         "cellphone",
                     ],
                 location_code=2840,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1047,6 +1109,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1059,7 +1124,8 @@ try:
                 match="exact",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1105,6 +1171,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1155,11 +1224,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "18f982f3-f063-43d6-a864-2d7947178658"
+        id = "5c20baef-c3d0-438e-b6dd-bf35db9ca9dc"
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1207,6 +1279,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1219,7 +1294,8 @@ try:
                 match="exact",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1265,6 +1341,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1315,6 +1394,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1366,6 +1448,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1416,6 +1501,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1467,6 +1555,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1478,9 +1569,10 @@ try:
                     ],
                 type="youtube",
                 category_code=3,
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2019-01-01",
+                date_to="2020-01-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1526,6 +1618,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1576,11 +1671,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "8ce93c6b-28bb-4622-b734-0ba1b00a03b5"
+        id = "a4ed314c-b760-415b-99f0-90d285d325de"
         response = keywords_data_api.google_trends_explore_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1628,6 +1726,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1637,12 +1738,12 @@ try:
                         "rugby",
                         "cricket",
                     ],
-                location_name="United States",
                 type="youtube",
                 category_code=3,
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2019-01-01",
+                date_to="2020-01-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1688,6 +1789,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1738,6 +1842,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1790,6 +1897,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1800,7 +1910,8 @@ try:
                         "samsung s23",
                     ],
                 location_code=2840,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1847,6 +1958,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1858,9 +1972,10 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2023-01-01",
+                date_to="2024-01-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1907,6 +2022,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1918,9 +2036,10 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2023-01-01",
+                date_to="2024-01-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1967,6 +2086,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -1978,9 +2100,10 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-02-28",
-                date_to="2025-04-30",
-        )])
+                date_from="2023-01-01",
+                date_to="2024-01-01",
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2026,6 +2149,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2076,6 +2202,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2127,6 +2256,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2139,7 +2271,8 @@ try:
                     ],
                 location_name="United States",
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2185,6 +2318,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2235,11 +2371,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "b688bf32-eb78-4ab8-aa6b-5646c1117386"
+        id = "5d11cac5-a284-453c-bfcb-4a9585f20630"
         response = keywords_data_api.bing_search_volume_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2287,6 +2426,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2299,7 +2441,8 @@ try:
                     ],
                 location_name="United States",
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2345,6 +2488,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2395,6 +2541,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2446,6 +2595,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2469,7 +2621,8 @@ try:
                 job_function=[
                         "806298607",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2515,6 +2668,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2565,11 +2721,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "7ee481a1-3df7-4dfe-a2d8-675699038c90"
+        id = "a4a1b939-d5e4-40c3-be42-7bf792563b40"
         response = keywords_data_api.bing_audience_estimation_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2617,6 +2776,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2640,7 +2802,8 @@ try:
                 job_function=[
                         "806298607",
                     ],
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2687,6 +2850,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2695,7 +2861,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2741,6 +2908,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2791,11 +2961,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "83eed903-7f9f-44fe-816f-d49211da0739"
+        id = "48241f81-1909-4b4a-b0df-bea07078a44d"
         response = keywords_data_api.bing_keywords_for_site_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2843,6 +3016,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2851,7 +3027,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2898,6 +3075,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -2910,7 +3090,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2956,6 +3137,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3006,11 +3190,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "a544caaa-b3e3-4c34-8f44-3a0bf6d82f8d"
+        id = "3d0785fc-d695-4c5e-a922-0ea869f4b3ae"
         response = keywords_data_api.bing_keywords_for_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3058,6 +3245,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3070,7 +3260,8 @@ try:
                     ],
                 location_name="United States",
                 language_name="English",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3116,6 +3307,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3167,6 +3361,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3179,7 +3376,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3225,6 +3423,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3275,11 +3476,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "3a1ec5f1-5783-4436-8b20-045bf9e094d5"
+        id = "0ee40bed-a979-4862-b9f9-ecc50243518d"
         response = keywords_data_api.bing_keyword_performance_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3327,6 +3531,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3339,7 +3546,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3385,6 +3593,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3436,6 +3647,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3446,7 +3660,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3492,6 +3707,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3542,11 +3760,14 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "2b125792-bac0-4e9c-9a4c-cf7a20e887a6"
+        id = "4a7a559d-bb65-4fcc-86a4-45c56edf2509"
         response = keywords_data_api.bing_search_volume_history_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3594,6 +3815,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3604,7 +3828,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3650,6 +3875,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3701,6 +3929,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3714,7 +3945,8 @@ try:
                 location_code=2840,
                 language_code="en",
                 tag="test-tag",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3761,6 +3993,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3772,7 +4007,8 @@ try:
                         "youtub",
                     ],
                 tag="test-tag",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3819,6 +4055,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
@@ -3831,7 +4070,8 @@ try:
                     ],
                 location_code=2840,
                 tag="test-tag",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```

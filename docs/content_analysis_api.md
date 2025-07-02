@@ -32,17 +32,21 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.content_analysis_id_list([ContentAnalysisIdListRequestInfo(
-                datetime_from="2025-02-28 11:01:34 +00:00",
-                datetime_to="2025-04-30 11:01:34 +00:00",
+                datetime_from="2025-01-18 03:40:30 +00:00",
+                datetime_to="2025-03-18 03:40:30 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -88,6 +92,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -138,6 +145,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -188,6 +198,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -238,6 +251,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -289,6 +305,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -307,7 +326,8 @@ try:
                     ],
                 search_mode="as_is",
                 limit=10,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -354,6 +374,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -369,7 +392,8 @@ try:
                     ],
                 internal_list_limit=8,
                 positive_connotation_threshold=0.5,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -416,6 +440,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -423,7 +450,8 @@ try:
         response = content_analysis_api.sentiment_analysis_live([ContentAnalysisSentimentAnalysisLiveRequestInfo(
                 keyword="logitech",
                 internal_list_limit=1,
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -470,15 +498,16 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.rating_distribution_live([ContentAnalysisRatingDistributionLiveRequestInfo(
-                keyword="logitech",
-                internal_list_limit=10,
-                search_mode="as_is",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -525,6 +554,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -532,9 +564,10 @@ try:
         response = content_analysis_api.phrase_trends_live([ContentAnalysisPhraseTrendsLiveRequestInfo(
                 keyword="logitech",
                 search_mode="as_is",
-                date_from="2025-02-28",
+                date_from="2022-09-01",
                 date_group="month",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -581,6 +614,9 @@ from pprint import pprint
 try:
     # Configure HTTP basic authorization: basicAuth
     configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
     with dfs_api_provider.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
@@ -588,9 +624,10 @@ try:
         response = content_analysis_api.category_trends_live([ContentAnalysisCategoryTrendsLiveRequestInfo(
                 category_code="10994",
                 search_mode="as_is",
-                date_from="2025-02-28",
+                date_from="2022-09-01",
                 date_group="month",
-        )])
+        )]
+        )
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**popular_times_by_days** | **Dict[str, Optional[List[Optional[PopularWorkTimeInfo]]]]** | popular hours<br>information about busy hours of the local establishment on each day of the week |[optional]|
+**popular_times_by_days** | **Dict[str, Optional[List[Optional[BusyWorkingTimeInfo]]]]** | popular hours<br>information about busy hours of the local establishment on each day of the week |[optional]|

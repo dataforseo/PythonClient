@@ -9,12 +9,12 @@
 **url** | **StrictStr** | URL to the app page on Google Play |[optional]|
 **icon** | **StrictStr** | URL to the app icon |[optional]|
 **description** | **StrictStr** | description of the app |[optional]|
-**reviews_count** | **StrictFloat** | the total number of reviews the app has |[optional]|
+**reviews_count** | **StrictInt** | the total number of reviews the app has |[optional]|
 **price** | **PriceInfo** | price of the app |[optional]|
 **is_free** | **StrictBool** | indicates whether the app is free |[optional]|
 **main_category** | **StrictStr** | main category of the app |[optional]|
 **installs** | **StrictStr** | number of installs of the app<br>approximate number of installs as displayed on the app page |[optional]|
-**installs_count** | **StrictFloat** | number of installs of the app<br>the exact number of installs of the app |[optional]|
+**installs_count** | **StrictInt** | number of installs of the app<br>the exact number of installs of the app |[optional]|
 **developer** | **StrictStr** | name of the app developer |[optional]|
 **developer_id** | **StrictStr** | ID of the app developer |[optional]|
 **developer_url** | **StrictStr** | URL to the developer page on Google Play |[optional]|

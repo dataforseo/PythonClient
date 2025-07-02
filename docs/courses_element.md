@@ -13,4 +13,4 @@
 **description** | **StrictStr** | description |[optional]|
 **date** | **StrictStr** | the date when the page source of the element was published |[optional]|
 **image_url** | **StrictStr** | URL of the image<br>the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) |[optional]|
-**rating** | **BusinessDataRatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
+**rating** | **RatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
