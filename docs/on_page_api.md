@@ -59,8 +59,8 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.on_page_id_list([OnPageIdListRequestInfo(
-                datetime_from="2025-01-18 03:39:43 +00:00",
-                datetime_to="2025-03-18 03:39:43 +00:00",
+                datetime_from="2025-04-17 06:09:01 +00:00",
+                datetime_to="2025-06-17 06:09:01 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -179,7 +179,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.force_stop([OnPageForceStopRequestInfo(
-                id="08121600-1535-0216-0000-37b4c7a34453",
+                id="00000000-0000-0000-0000-000000000000",
         )]
         )
 except ApiException as e:
@@ -459,7 +459,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.pages([OnPagePagesRequestInfo(
-                id="07281559-0695-0216-0000-c269be8b7592",
+                id="00000000-0000-0000-0000-000000000000",
                 limit=10,
         )]
         )
@@ -517,7 +517,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.pages_by_resource([OnPagePagesByResourceRequestInfo(
-                id="02241700-1535-0216-0000-034137259bc1",
+                id="00000000-0000-0000-0000-000000000000",
                 url="https://www.etsy.com/about/jobs.workco2018.js?",
         )]
         )
@@ -575,7 +575,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.resources([OnPageResourcesRequestInfo(
-                id="07281559-0695-0216-0000-c269be8b7592",
+                id="00000000-0000-0000-0000-000000000000",
                 limit=10,
         )]
         )
@@ -633,7 +633,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.duplicate_tags([OnPageDuplicateTagsRequestInfo(
-                id="07281559-0695-0216-0000-c269be8b7592",
+                id="00000000-0000-0000-0000-000000000000",
                 type="duplicate_description",
                 limit=10,
         )]
@@ -692,7 +692,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.duplicate_content([OnPageDuplicateContentRequestInfo(
-                id="07281559-0695-0216-0000-c269be8b7592",
+                id="00000000-0000-0000-0000-000000000000",
                 url="https://www.etsy.com/",
         )]
         )
@@ -750,7 +750,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.links([OnPageLinksRequestInfo(
-                id="07281559-0695-0216-0000-c269be8b7592",
+                id="00000000-0000-0000-0000-000000000000",
                 page_from="/apis/google-trends-api",
                 limit=10,
         )]
@@ -809,7 +809,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.redirect_chains([OnPageRedirectChainsRequestInfo(
-                id="03051327-4536-0216-1000-3b458a2cfcca",
+                id="00000000-0000-0000-0000-000000000000",
                 url="https://test_rdr.dataforseo.com/a/",
         )]
         )
@@ -867,7 +867,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.non_indexable([OnPageNonIndexableRequestInfo(
-                id="07281559-0695-0216-0000-c269be8b7592",
+                id="00000000-0000-0000-0000-000000000000",
                 limit=10,
         )]
         )
@@ -925,7 +925,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.waterfall([OnPageWaterfallRequestInfo(
-                id="08101204-0696-0216-0000-644a7b21a48a",
+                id="00000000-0000-0000-0000-000000000000",
                 url="https://dataforseo.com/tag/broken-links",
         )]
         )
@@ -983,7 +983,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.keyword_density([OnPageKeywordDensityRequestInfo(
-                id="09101923-1535-0216-0000-2389a8854b70",
+                id="00000000-0000-0000-0000-000000000000",
                 keyword_length=2,
                 url="https://dataforseo.com/",
         )]
@@ -1042,7 +1042,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.microdata([OnPageMicrodataRequestInfo(
-                id="02241700-1535-0216-0000-034137259bc1",
+                id="00000000-0000-0000-0000-000000000000",
                 url="https://dataforseo.com/apis",
         )]
         )
@@ -1100,7 +1100,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.raw_html([OnPageRawHtmlRequestInfo(
-                id="07281559-0695-0216-0000-c269be8b7592",
+                id="00000000-0000-0000-0000-000000000000",
                 url="https://dataforseo.com/apis",
         )]
         )
@@ -1216,7 +1216,7 @@ try:
 
         response = on_page_api.content_parsing([OnPageContentParsingRequestInfo(
                 url="https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api",
-                id="11161551-1535-0216-0000-500b3f307f92",
+                id="00000000-0000-0000-0000-000000000000",
         )]
         )
 except ApiException as e:

@@ -51,4 +51,4 @@
 **url_to_redirect_target** | **StrictStr** | target url of the redirect<br>target page the redirect is pointing to |[optional]|
 **ranked_keywords_info** | **RankedKeywordsInfo** | number of keywords for which the page is ranked in top search results |[optional]|
 **is_indirect_link** | **StrictBool** | indicates whether the backlink is an indirect link<br>if true, the backlink is an indirect link pointing to a page that either redirects to url_to, or points to a canonical page |[optional]|
-**indirect_link_path** | **List[Optional[Redirect]]** | indirect link path<br>indicates a URL or a sequence of URLs that lead to url_to |[optional]|
+**indirect_link_path** | **List[Optional[BacklinksRedirectInfo]]** | indirect link path<br>indicates a URL or a sequence of URLs that lead to url_to |[optional]|

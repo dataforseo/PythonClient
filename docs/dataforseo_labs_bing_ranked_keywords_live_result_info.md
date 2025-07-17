@@ -13,4 +13,4 @@
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
 **metrics** | **Dict[str, Optional[DataforseoLabsMetricsInfo]]** | ranking data relevant to the specified domain<br>ranking data is provided by the rank_group parameters that show the result’s rank considering only equivalent SERP elements |[optional]|
 **metrics_absolute** | **Dict[str, Optional[DataforseoLabsMetricsInfo]]** | ranking data relevant to the specified domain<br>ranking data is provided by the rank_absolute parameters that indicate the result’s position among all SERP elements |[optional]|
-**items** | **List[Optional[DataforseoLabsLiveItem]]** | contains ranked keywords and related data |[optional]|
+**items** | **List[Optional[DataforseoLabsRankedKeywordsLiveItem]]** | contains ranked keywords and related data |[optional]|

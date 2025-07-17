@@ -32,6 +32,6 @@
 **content** | **HtmlContentInfo** | overall information about content of the page |[optional]|
 **deprecated_tags** | **List[Optional[StrictStr]]** | deprecated tags on the page |[optional]|
 **duplicate_meta_tags** | **List[Optional[StrictStr]]** | duplicate meta tags on the page |[optional]|
-**spell** | **SpellInfo** | autocorrection of the search engine<br>if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection |[optional]|
+**spell** | **HunspellInfo** | spellcheck<br>hunspell spellcheck errors |[optional]|
 **social_media_tags** | **Dict[str, Optional[StrictStr]]** | object of social media tags found on the page<br>contains social media tags and their content<br>supported tags include but are not limited to Open Graph and Twitter card |[optional]|
 **broken_html** | **OnPageResourceIssueInfo** | resource errors and warnings |[optional]|

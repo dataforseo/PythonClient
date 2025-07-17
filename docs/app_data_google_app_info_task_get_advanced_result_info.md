@@ -13,4 +13,4 @@
 **datetime** | **StrictStr** | date and time when the result was received<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **se_results_count** | **StrictInt** | the total number of results |[optional]|
 **items_count** | **StrictInt** | the number of items in the results array |[optional]|
-**items** | **List[Optional[BaseAppDataSerpElementItem]]** | found app info |[optional]|
+**items** | **List[Optional[GooglePlayInfoOrganic]]** | found app info |[optional]|

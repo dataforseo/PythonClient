@@ -88,8 +88,8 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_id_list([DataforseoLabsIdListRequestInfo(
-                datetime_from="2025-01-18 03:35:56 +00:00",
-                datetime_to="2025-03-18 03:35:56 +00:00",
+                datetime_from="2025-04-17 06:07:06 +00:00",
+                datetime_to="2025-06-17 06:07:06 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -1095,8 +1095,8 @@ try:
                         "13418",
                         "11494",
                     ],
-                first_date="2021-06-01",
-                second_date="2021-10-01",
+                first_date="2025-04-17",
+                second_date="2025-06-17",
                 location_code=2840,
                 language_code="en",
                 limit=3,
@@ -1704,8 +1704,8 @@ try:
 
         response = dataforseo_labs_api.google_historical_serps_live([DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo(
                 keyword="albert einstein",
-                date_from="2021-08-01",
-                date_to="2021-09-01",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
                 location_code=2840,
                 language_code="en",
         )]
@@ -1767,8 +1767,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_code="en",
-                date_from="2021-01-01",
-                date_to="2021-03-29",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
         )]
         )
 except ApiException as e:
@@ -1963,8 +1963,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-                date_from="2021-01-01",
-                date_to="2021-03-29",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
                 item_types=[
                         "organic",
                         "paid",
@@ -3382,6 +3382,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_app_intersection_live([DataforseoLabsGoogleAppIntersectionLiveRequestInfo(
+                app_ids={
+                        "1": "686449807",
+                        "2": "382617920",
+                    },
+                location_code=2840,
+                language_name="English",
+                limit=10,
         )]
         )
 except ApiException as e:

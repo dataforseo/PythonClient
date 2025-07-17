@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **keyword** | **StrictStr** | keyword in a POST array |[optional]|
+**spell** | **StrictStr** |  |[optional]|
 **location_code** | **StrictInt** | location code in a POST array<br>if there is no data, the value is null |[optional]|
 **language_code** | **StrictStr** | language code in a POST array<br>if there is no data, the value is null |[optional]|
 **search_partners** | **StrictBool** | include Google search partners<br>the value you specified when setting the task<br>if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search;<br>if false, the results are returned for Google search sites only |[optional]|
@@ -15,5 +16,4 @@
 **low_top_of_page_bid** | **StrictFloat** | minimum bid for the ad to be displayed at the top of the first page<br>indicates the value greater than about 20% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers)<br>the value may differ depending on the location specified in a POST request |[optional]|
 **high_top_of_page_bid** | **StrictFloat** | maximum bid for the ad to be displayed at the top of the first page<br>indicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers)<br>the value may differ depending on the location specified in a POST request |[optional]|
 **cpc** | **StrictFloat** | cost per click<br>indicates the amount paid for each click on the ad displayed for a given keyword |[optional]|
-**monthly_searches** | **List[Optional[MonthlySearches]]** | monthly searches<br>represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations<br>if there is no data, the value is null |[optional]|
-**keyword_annotations** | **KeywordAnnotations** | the annotations for the keyword |[optional]|
+**monthly_searches** | **List[Optional[MonthlySearchesInfo]]** | monthly searches<br>represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations<br>if there is no data, the value is null |[optional]|

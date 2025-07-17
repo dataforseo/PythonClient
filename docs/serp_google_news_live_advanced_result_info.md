@@ -18,4 +18,4 @@
 **item_types** | **List[Optional[StrictStr]]** | types of search results in SERP<br>contains types of search results (items) found in SERP.<br>possible item types:<br>top_stories, news_search |[optional]|
 **se_results_count** | **StrictInt** | total number of results in SERP |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[BaseGoogleNewsSerpElementItem]]** | elements of search results found in SERP |[optional]|
+**items** | **List[Optional[BaseSerpApiGoogleNewsElementItem]]** | elements of search results found in SERP |[optional]|

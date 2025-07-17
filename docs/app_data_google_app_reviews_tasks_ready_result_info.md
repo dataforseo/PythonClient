@@ -10,5 +10,5 @@
 **se_type** | **StrictStr** | search engine type |[optional]|
 **date_posted** | **StrictStr** | date when the task was posted (in the UTC format) |[optional]|
 **tag** | **StrictStr** | user-defined task identifier |[optional]|
-**endpoint_advanced** | **StrictStr** | URL for collecting the results of the Google app_reviews task |[optional]|
-**endpoint_html** | **StrictStr** | URL for collecting the results of the Google app_reviews HTML task<br>if HTML tasks are not supported in the specified endpoint, the value will be null |[optional]|
+**endpoint_advanced** | **StrictStr** | URL for collecting the results of the Google App Reviews task |[optional]|
+**endpoint_html** | **StrictStr** | URL for collecting the results of the Google App Reviews HTML task<br>if HTML tasks are not supported in the specified endpoint, the value will be null |[optional]|

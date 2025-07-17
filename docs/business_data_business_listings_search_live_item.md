@@ -34,7 +34,7 @@
 **price_level** | **StrictStr** | property price level<br>can take values: inexpensive, moderate, expensive, very_expensive<br>if there is no price level information, the value will be null |[optional]|
 **rating_distribution** | **Dict[str, Optional[StrictInt]]** | the distribution of ratings of the business entity<br>the object displays the number of 1-star to 5-star ratings, as reviewed by users |[optional]|
 **people_also_search** | **List[Optional[PeopleAlsoSearch]]** | related business entities |[optional]|
-**work_time** | **WorkTime** | work time details<br>information related to operational hours of the business entity |[optional]|
+**work_time** | **BusinessWorkHoursInfo** | work time details<br>information related to operational hours of the business entity |[optional]|
 **popular_times** | **PopularTimes** | popular times<br>information related to busy hours of the business entity |[optional]|
 **local_business_links** | **List[Optional[BaseLocalBusinessLink]]** | available interactions with the business<br>list of options to interact with the business directly from search results |[optional]|
 **contact_info** | **List[Optional[BusinessDataContactInfo]]** | available contacts of the business<br>list of contacts to interact with the business |[optional]|

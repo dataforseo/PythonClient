@@ -17,4 +17,4 @@
 **item_types** | **List[Optional[StrictStr]]** | types of search results in SERP<br>contains types of search results (items) found in SERP.<br>possible item types:<br>images, local_pack, map, organic, paid, related_searches, video |[optional]|
 **se_results_count** | **StrictInt** | total number of results in SERP |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[BaseSerpElementItem]]** | additional items present in the element<br>if there are none, equals null |[optional]|
+**items** | **List[Optional[BaseSerpApiElementItem]]** | additional items present in the element<br>if there are none, equals null |[optional]|

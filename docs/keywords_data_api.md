@@ -99,8 +99,8 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
-                datetime_from="2025-01-18 03:37:55 +00:00",
-                datetime_to="2025-03-18 03:37:55 +00:00",
+                datetime_from="2025-04-17 06:08:20 +00:00",
+                datetime_to="2025-06-17 06:08:20 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -545,7 +545,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "1ffcdc28-ea42-45c3-b68e-5402b937a478"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.google_ads_search_volume_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -608,7 +608,7 @@ try:
                     ],
                 location_code=2840,
                 search_partners=True,
-                date_from="2021-08-01",
+                date_from="2025-04-17",
         )]
         )
 except ApiException as e:
@@ -774,7 +774,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "9ea51b5d-2283-435a-ae90-8f373ccbc630"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.google_ads_keywords_for_site_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1000,7 +1000,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "76cd4c2d-bfc7-4460-81ac-ca80735c2658"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.google_ads_keywords_for_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1231,7 +1231,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "5c20baef-c3d0-438e-b6dd-bf35db9ca9dc"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1569,8 +1569,8 @@ try:
                     ],
                 type="youtube",
                 category_code=3,
-                date_from="2019-01-01",
-                date_to="2020-01-01",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
         )]
         )
 except ApiException as e:
@@ -1678,7 +1678,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "a4ed314c-b760-415b-99f0-90d285d325de"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.google_trends_explore_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1738,10 +1738,11 @@ try:
                         "rugby",
                         "cricket",
                     ],
+                location_name="United States",
                 type="youtube",
                 category_code=3,
-                date_from="2019-01-01",
-                date_to="2020-01-01",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
         )]
         )
 except ApiException as e:
@@ -1972,8 +1973,8 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2023-01-01",
-                date_to="2024-01-01",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
         )]
         )
 except ApiException as e:
@@ -2036,8 +2037,8 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2023-01-01",
-                date_to="2024-01-01",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
         )]
         )
 except ApiException as e:
@@ -2100,8 +2101,8 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2023-01-01",
-                date_to="2024-01-01",
+                date_from="2025-04-17",
+                date_to="2025-06-17",
         )]
         )
 except ApiException as e:
@@ -2378,7 +2379,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "5d11cac5-a284-453c-bfcb-4a9585f20630"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.bing_search_volume_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2728,7 +2729,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "a4a1b939-d5e4-40c3-be42-7bf792563b40"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.bing_audience_estimation_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2968,7 +2969,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "48241f81-1909-4b4a-b0df-bea07078a44d"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.bing_keywords_for_site_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3197,7 +3198,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "3d0785fc-d695-4c5e-a922-0ea869f4b3ae"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.bing_keywords_for_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3483,7 +3484,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "0ee40bed-a979-4862-b9f9-ecc50243518d"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.bing_keyword_performance_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3767,7 +3768,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "4a7a559d-bb65-4fcc-86a4-45c56edf2509"
+        id = "00000000-0000-0000-0000-000000000000"
         response = keywords_data_api.bing_search_volume_history_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)

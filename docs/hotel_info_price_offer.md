@@ -7,7 +7,7 @@
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
 **title** | **StrictStr** | title of the hotel |[optional]|
-**price** | **StrictInt** | price per night |[optional]|
+**price** | **StrictFloat** | price per night |[optional]|
 **currency** | **StrictStr** | price currency<br>USD is applied by default, unless specified in the POST array |[optional]|
 **url** | **StrictStr** | url of the price offer<br>URL to the page of the website where price offer appears |[optional]|
 **max_visitors** | **StrictInt** | the maximal number of visitors<br>the maximum number of visitors for which the price offer is valid |[optional]|

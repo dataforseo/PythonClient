@@ -28,5 +28,5 @@ def __getattr__(name):
                 return model
             except:
                 continue
-    
+
     raise ImportError(f"Cannot find {name} in any of the specified modules")

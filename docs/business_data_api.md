@@ -85,8 +85,8 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_id_list([BusinessDataIdListRequestInfo(
-                datetime_from="2025-01-18 03:42:51 +00:00",
-                datetime_to="2025-03-18 03:42:51 +00:00",
+                datetime_from="2025-04-17 06:10:40 +00:00",
+                datetime_to="2025-06-17 06:10:40 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -1507,7 +1507,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "6d5d97dc-711a-4d2c-82e1-cffe4a608416"
+        id = "00000000-0000-0000-0000-000000000000"
         response = business_data_api.google_hotel_info_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)

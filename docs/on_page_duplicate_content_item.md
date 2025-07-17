@@ -7,4 +7,4 @@
 |------------ | ------------- | ------------- | -------------|
 **url** | **StrictStr** | URL of the specified page |[optional]|
 **total_count** | **StrictInt** | total count of duplicate pages |[optional]|
-**pages** | **List[Optional[Pages]]** | pages with duplicate content |[optional]|
+**pages** | **List[Optional[DuplicatePageInfo]]** | pages with duplicate content |[optional]|

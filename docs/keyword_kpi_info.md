@@ -10,5 +10,5 @@
 **impressions** | **StrictInt** | ad impressions<br>the number of impressions that the keyword and match type generated during the last month |[optional]|
 **average_cpc** | **StrictFloat** | average cost per click, USD<br>calculated by dividing the cost of all clicks by the number of clicks |[optional]|
 **ctr** | **StrictFloat** | click-through rate as a percentage<br>calculated by dividing the number of clicks by the number of impressions and multiplying the result by 100 |[optional]|
-**total_cost** | **StrictInt** | total cost of an ad, USD<br>the cost of using the specified keyword and match type during the last month |[optional]|
+**total_cost** | **StrictFloat** | total cost of an ad, USD<br>the cost of using the specified keyword and match type during the last month |[optional]|
 **average_bid** | **StrictFloat** | average bid of the keyword |[optional]|

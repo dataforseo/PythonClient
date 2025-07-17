@@ -7,4 +7,4 @@
 |------------ | ------------- | ------------- | -------------|
 **accumulator** | **StrictStr** | contains the value of duplicated tag |[optional]|
 **total_count** | **StrictInt** | total count of duplicate pages |[optional]|
-**pages** | **List[Optional[BaseOnPageResourceItemInfo]]** | pages with duplicate tags |[optional]|
+**pages** | **List[Optional[BaseOnPageResourceItem]]** | pages with duplicate tags |[optional]|

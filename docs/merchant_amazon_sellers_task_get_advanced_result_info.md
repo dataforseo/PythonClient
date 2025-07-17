@@ -16,4 +16,4 @@
 **image** | **StrictStr** | product image url<br>image URL of the product relevant to the asin received in a POST array |[optional]|
 **item_types** | **List[Optional[StrictStr]]** | types of search results found in Amazon Sellers SERP<br>contains types of all search results (items) found in the returned SERP<br>possible item types:<br>amazon_seller_main_item, amazon_seller_item |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[BaseAmazonSerpElementItem]]** | items in SERP |[optional]|
+**items** | **List[Optional[BaseMerchantAmazonSellersElementItem]]** | items in SERP |[optional]|

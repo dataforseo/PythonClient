@@ -18,7 +18,7 @@
 **referring_domains** | **StrictInt** | indicates the number domains referring to the page |[optional]|
 **referring_domains_nofollow** | **StrictInt** | number of domains pointing at least one nofollow link to the target |[optional]|
 **referring_main_domains** | **StrictInt** | indicates the number of referring main domains |[optional]|
-**referring_main_domains_nofollow** | **StrictInt** | number of main domains pointing at least one nofollow link to the target |[optional]|
+**referring_main_domains_nofollow** | **StrictInt** |  |[optional]|
 **referring_ips** | **StrictInt** | number of referring IP addresses<br>number of IP addresses pointing to this page |[optional]|
 **referring_subnets** | **StrictInt** | number of referring subnetworks |[optional]|
 **referring_pages** | **StrictInt** | indicates the number of pages pointing to the relevant url |[optional]|

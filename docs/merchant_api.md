@@ -70,8 +70,8 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.merchant_id_list([MerchantIdListRequestInfo(
-                datetime_from="2025-01-18 03:40:44 +00:00",
-                datetime_to="2025-03-18 03:40:44 +00:00",
+                datetime_from="2025-04-17 06:10:12 +00:00",
+                datetime_to="2025-06-17 06:10:12 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -568,7 +568,7 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "48006dfe-9291-4f95-8857-9fb6a4cb18a3"
+        id = "00000000-0000-0000-0000-000000000000"
         response = merchant_api.google_products_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -788,7 +788,7 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "2a4c259d-7dbc-4038-ba55-96be2799680a"
+        id = "00000000-0000-0000-0000-000000000000"
         response = merchant_api.google_sellers_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1008,7 +1008,7 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "5fe27954-de98-4545-a7cc-fb6c004f93fa"
+        id = "00000000-0000-0000-0000-000000000000"
         response = merchant_api.google_product_spec_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1608,7 +1608,7 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "b4b44ad9-e7eb-47c1-b950-c900c3d2aa01"
+        id = "00000000-0000-0000-0000-000000000000"
         response = merchant_api.amazon_products_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1828,7 +1828,7 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "4db59c3b-39c3-4122-92b8-10979409c4dc"
+        id = "00000000-0000-0000-0000-000000000000"
         response = merchant_api.amazon_asin_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1886,7 +1886,7 @@ try:
         response = merchant_api.amazon_sellers_task_post([MerchantAmazonSellersTaskPostRequestInfo(
                 asin="B085RFFC9Q",
                 location_code=2840,
-                language_code="en",
+                language_code="en_US",
         )]
         )
 except ApiException as e:
@@ -2048,7 +2048,7 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "24c561e5-6cac-4cda-8962-9993d8a0eab6"
+        id = "00000000-0000-0000-0000-000000000000"
         response = merchant_api.amazon_sellers_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2268,7 +2268,7 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        id = "3595c771-ffc9-451b-b2f0-ba4245de8277"
+        id = "00000000-0000-0000-0000-000000000000"
         response = merchant_api.amazon_reviews_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)

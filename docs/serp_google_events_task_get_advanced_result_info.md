@@ -17,4 +17,4 @@
 **item_types** | **List[Optional[StrictStr]]** | types of search results found in SERP<br>possible item types:<br>event_item |[optional]|
 **se_results_count** | **StrictInt** | total number of results in SERP<br>in this case, the value will be 0<br>this search engine does not indicate the total number of results |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[BaseSerpElementItem]]** | items of the element |[optional]|
+**items** | **List[Optional[EventItem]]** | items of the element |[optional]|

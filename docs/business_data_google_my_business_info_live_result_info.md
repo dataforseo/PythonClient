@@ -13,4 +13,4 @@
 **datetime** | **StrictStr** | date and time when the result was received<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **item_types** | **List[Optional[StrictStr]]** | item types<br>types of search engine results encountered in the items array;<br>possible item types: google_business_info |[optional]|
 **items_count** | **StrictInt** | item types<br>the number of items in the items array |[optional]|
-**items** | **List[Optional[BaseBusinessDataSerpElementItem]]** | encountered item types<br>types of search engine results encountered in the items array;<br>possible item types: google_business_info |[optional]|
+**items** | **List[Optional[ItemsGoogleBusinessInfo]]** | encountered item types<br>types of search engine results encountered in the items array;<br>possible item types: google_business_info |[optional]|

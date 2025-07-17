@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**open** | **WorkTimeInfo** | opening time |[optional]|
-**close** | **WorkTimeInfo** | closing time |[optional]|
+**open** | **TimeInfo** | opening time |[optional]|
+**close** | **TimeInfo** | closing time |[optional]|

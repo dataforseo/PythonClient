@@ -14,6 +14,13 @@ All URIs are relative to *https://api.dataforseo.com*
 [**googleOrganicTaskPost**](SerpApi.md#googleOrganicTaskPost) | **POST**  /v3/serp/google/organic/task_post  |
 [**googleOrganicTasksReady**](SerpApi.md#googleOrganicTasksReady) | **GET**  /v3/serp/google/organic/tasks_ready  |
 [**tasksReady**](SerpApi.md#tasksReady) | **GET**  /v3/serp/tasks_ready  |
+[**googleOrganicTasksFixed**](SerpApi.md#googleOrganicTasksFixed) | **GET**  /v3/serp/google/organic/tasks_fixed  |
+[**googleOrganicTaskGetRegular**](SerpApi.md#googleOrganicTaskGetRegular) | **GET**  /v3/serp/google/organic/task_get/regular/{id}  |
+[**googleOrganicTaskGetAdvanced**](SerpApi.md#googleOrganicTaskGetAdvanced) | **GET**  /v3/serp/google/organic/task_get/advanced/{id}  |
+[**googleOrganicTaskGetHtml**](SerpApi.md#googleOrganicTaskGetHtml) | **GET**  /v3/serp/google/organic/task_get/html/{id}  |
+[**googleOrganicLiveRegular**](SerpApi.md#googleOrganicLiveRegular) | **POST**  /v3/serp/google/organic/live/regular  |
+[**googleOrganicLiveAdvanced**](SerpApi.md#googleOrganicLiveAdvanced) | **POST**  /v3/serp/google/organic/live/advanced  |
+[**googleOrganicLiveHtml**](SerpApi.md#googleOrganicLiveHtml) | **POST**  /v3/serp/google/organic/live/html  |
 [**serpGoogleAiModeLanguages**](SerpApi.md#serpGoogleAiModeLanguages) | **GET**  /v3/serp/google/ai_mode/languages  |
 [**googleAiModeTaskPost**](SerpApi.md#googleAiModeTaskPost) | **POST**  /v3/serp/google/ai_mode/task_post  |
 [**googleAiModeTasksReady**](SerpApi.md#googleAiModeTasksReady) | **GET**  /v3/serp/google/ai_mode/tasks_ready  |
@@ -22,13 +29,6 @@ All URIs are relative to *https://api.dataforseo.com*
 [**googleAiModeTaskGetHtml**](SerpApi.md#googleAiModeTaskGetHtml) | **GET**  /v3/serp/google/ai_mode/task_get/html/{id}  |
 [**googleAiModeLiveAdvanced**](SerpApi.md#googleAiModeLiveAdvanced) | **POST**  /v3/serp/google/ai_mode/live/advanced  |
 [**googleAiModeLiveHtml**](SerpApi.md#googleAiModeLiveHtml) | **POST**  /v3/serp/google/ai_mode/live/html  |
-[**googleOrganicTasksFixed**](SerpApi.md#googleOrganicTasksFixed) | **GET**  /v3/serp/google/organic/tasks_fixed  |
-[**googleOrganicTaskGetRegular**](SerpApi.md#googleOrganicTaskGetRegular) | **GET**  /v3/serp/google/organic/task_get/regular/{id}  |
-[**googleOrganicTaskGetAdvanced**](SerpApi.md#googleOrganicTaskGetAdvanced) | **GET**  /v3/serp/google/organic/task_get/advanced/{id}  |
-[**googleOrganicTaskGetHtml**](SerpApi.md#googleOrganicTaskGetHtml) | **GET**  /v3/serp/google/organic/task_get/html/{id}  |
-[**googleOrganicLiveRegular**](SerpApi.md#googleOrganicLiveRegular) | **POST**  /v3/serp/google/organic/live/regular  |
-[**googleOrganicLiveAdvanced**](SerpApi.md#googleOrganicLiveAdvanced) | **POST**  /v3/serp/google/organic/live/advanced  |
-[**googleOrganicLiveHtml**](SerpApi.md#googleOrganicLiveHtml) | **POST**  /v3/serp/google/organic/live/html  |
 [**googleMapsTaskPost**](SerpApi.md#googleMapsTaskPost) | **POST**  /v3/serp/google/maps/task_post  |
 [**googleMapsTasksReady**](SerpApi.md#googleMapsTasksReady) | **GET**  /v3/serp/google/maps/tasks_ready  |
 [**googleMapsTasksFixed**](SerpApi.md#googleMapsTasksFixed) | **GET**  /v3/serp/google/maps/tasks_fixed  |
@@ -212,8 +212,8 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.serp_id_list([SerpIdListRequestInfo(
-                datetime_from="2025-01-18 03:17:37 +00:00",
-                datetime_to="2025-03-18 03:17:37 +00:00",
+                datetime_from="2025-04-17 06:05:20 +00:00",
+                datetime_to="2025-06-17 06:05:20 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -332,7 +332,7 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.screenshot([SerpScreenshotRequestInfo(
-                task_id="06211235-0696-0139-1000-36727fbd3c90",
+                task_id="00000000-0000-0000-0000-000000000000",
                 browser_screen_scale_factor=0.5,
         )]
         )
@@ -390,7 +390,7 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.ai_summary([SerpAiSummaryRequestInfo(
-                task_id="07031739-1535-0139-0000-9d1e639a5b7d",
+                task_id="00000000-0000-0000-0000-000000000000",
                 prompt="explain what DataForSEO is",
                 fetch_content=True,
                 include_links=True,
@@ -751,6 +751,399 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
+<a id="googleOrganicTasksFixed"></a>
+# **googleOrganicTasksFixed**
+> SerpGoogleOrganicTasksFixedResponseInfo googleOrganicTasksFixed()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_organic_tasks_fixed()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleOrganicTasksFixedResponseInfo**](SerpGoogleOrganicTasksFixedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleOrganicTaskGetRegular"></a>
+# **googleOrganicTaskGetRegular**
+> SerpGoogleOrganicTaskGetRegularResponseInfo googleOrganicTaskGetRegular()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        id = "00000000-0000-0000-0000-000000000000"
+        response = serp_api.google_organic_task_get_regular(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleOrganicTaskGetRegularResponseInfo**](SerpGoogleOrganicTaskGetRegularResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleOrganicTaskGetAdvanced"></a>
+# **googleOrganicTaskGetAdvanced**
+> SerpGoogleOrganicTaskGetAdvancedResponseInfo googleOrganicTaskGetAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        id = "00000000-0000-0000-0000-000000000000"
+        response = serp_api.google_organic_task_get_advanced(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleOrganicTaskGetAdvancedResponseInfo**](SerpGoogleOrganicTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleOrganicTaskGetHtml"></a>
+# **googleOrganicTaskGetHtml**
+> SerpGoogleOrganicTaskGetHtmlResponseInfo googleOrganicTaskGetHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        id = "00000000-0000-0000-0000-000000000000"
+        response = serp_api.google_organic_task_get_html(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleOrganicTaskGetHtmlResponseInfo**](SerpGoogleOrganicTaskGetHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleOrganicLiveRegular"></a>
+# **googleOrganicLiveRegular**
+> SerpGoogleOrganicLiveRegularResponseInfo googleOrganicLiveRegular()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_google_organic_live_regular_request_info import List[Optional[SerpGoogleOrganicLiveRegularRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_organic_live_regular([SerpGoogleOrganicLiveRegularRequestInfo(
+                keyword="albert einstein",
+                location_code=2840,
+                language_code="en",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpGoogleOrganicLiveRegularRequestInfo]]&gt;**](List[Optional[SerpGoogleOrganicLiveRegularRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpGoogleOrganicLiveRegularResponseInfo**](SerpGoogleOrganicLiveRegularResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleOrganicLiveAdvanced"></a>
+# **googleOrganicLiveAdvanced**
+> SerpGoogleOrganicLiveAdvancedResponseInfo googleOrganicLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_google_organic_live_advanced_request_info import List[Optional[SerpGoogleOrganicLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_organic_live_advanced([SerpGoogleOrganicLiveAdvancedRequestInfo(
+                keyword="albert einstein",
+                location_code=2840,
+                language_code="en",
+                calculate_rectangles=True,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpGoogleOrganicLiveAdvancedRequestInfo]]&gt;**](List[Optional[SerpGoogleOrganicLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpGoogleOrganicLiveAdvancedResponseInfo**](SerpGoogleOrganicLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleOrganicLiveHtml"></a>
+# **googleOrganicLiveHtml**
+> SerpGoogleOrganicLiveHtmlResponseInfo googleOrganicLiveHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_google_organic_live_html_request_info import List[Optional[SerpGoogleOrganicLiveHtmlRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_organic_live_html([SerpGoogleOrganicLiveHtmlRequestInfo(
+                keyword="albert einstein",
+                location_code=2840,
+                language_code="en",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpGoogleOrganicLiveHtmlRequestInfo]]&gt;**](List[Optional[SerpGoogleOrganicLiveHtmlRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpGoogleOrganicLiveHtmlResponseInfo**](SerpGoogleOrganicLiveHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
 <a id="serpGoogleAiModeLanguages"></a>
 # **serpGoogleAiModeLanguages**
 > SerpGoogleAiModeLanguagesResponseInfo serpGoogleAiModeLanguages()
@@ -1045,7 +1438,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "a39ec28a-4827-42ea-a3c8-b3e97b6d0777"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_ai_mode_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1180,399 +1573,6 @@ except ApiException as e:
 ### Return type
 
 [**SerpGoogleAiModeLiveHtmlResponseInfo**](SerpGoogleAiModeLiveHtmlResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleOrganicTasksFixed"></a>
-# **googleOrganicTasksFixed**
-> SerpGoogleOrganicTasksFixedResponseInfo googleOrganicTasksFixed()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.google_organic_tasks_fixed()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpGoogleOrganicTasksFixedResponseInfo**](SerpGoogleOrganicTasksFixedResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleOrganicTaskGetRegular"></a>
-# **googleOrganicTaskGetRegular**
-> SerpGoogleOrganicTaskGetRegularResponseInfo googleOrganicTaskGetRegular()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        id = "00000000-0000-0000-0000-000000000000"
-        response = serp_api.google_organic_task_get_regular(id)
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpGoogleOrganicTaskGetRegularResponseInfo**](SerpGoogleOrganicTaskGetRegularResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleOrganicTaskGetAdvanced"></a>
-# **googleOrganicTaskGetAdvanced**
-> SerpGoogleOrganicTaskGetAdvancedResponseInfo googleOrganicTaskGetAdvanced()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        id = "00000000-0000-0000-0000-000000000000"
-        response = serp_api.google_organic_task_get_advanced(id)
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpGoogleOrganicTaskGetAdvancedResponseInfo**](SerpGoogleOrganicTaskGetAdvancedResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleOrganicTaskGetHtml"></a>
-# **googleOrganicTaskGetHtml**
-> SerpGoogleOrganicTaskGetHtmlResponseInfo googleOrganicTaskGetHtml()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        id = "bd350566-9848-4627-ad5e-82682be7c3b2"
-        response = serp_api.google_organic_task_get_html(id)
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpGoogleOrganicTaskGetHtmlResponseInfo**](SerpGoogleOrganicTaskGetHtmlResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleOrganicLiveRegular"></a>
-# **googleOrganicLiveRegular**
-> SerpGoogleOrganicLiveRegularResponseInfo googleOrganicLiveRegular()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_serp_google_organic_live_regular_request_info import List[Optional[SerpGoogleOrganicLiveRegularRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.google_organic_live_regular([SerpGoogleOrganicLiveRegularRequestInfo(
-                keyword="albert einstein",
-                location_code=2840,
-                language_code="en",
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[SerpGoogleOrganicLiveRegularRequestInfo]]&gt;**](List[Optional[SerpGoogleOrganicLiveRegularRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**SerpGoogleOrganicLiveRegularResponseInfo**](SerpGoogleOrganicLiveRegularResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleOrganicLiveAdvanced"></a>
-# **googleOrganicLiveAdvanced**
-> SerpGoogleOrganicLiveAdvancedResponseInfo googleOrganicLiveAdvanced()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_serp_google_organic_live_advanced_request_info import List[Optional[SerpGoogleOrganicLiveAdvancedRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.google_organic_live_advanced([SerpGoogleOrganicLiveAdvancedRequestInfo(
-                keyword="albert einstein",
-                location_code=2840,
-                language_code="en",
-                calculate_rectangles=True,
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[SerpGoogleOrganicLiveAdvancedRequestInfo]]&gt;**](List[Optional[SerpGoogleOrganicLiveAdvancedRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**SerpGoogleOrganicLiveAdvancedResponseInfo**](SerpGoogleOrganicLiveAdvancedResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleOrganicLiveHtml"></a>
-# **googleOrganicLiveHtml**
-> SerpGoogleOrganicLiveHtmlResponseInfo googleOrganicLiveHtml()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_serp_google_organic_live_html_request_info import List[Optional[SerpGoogleOrganicLiveHtmlRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.google_organic_live_html([SerpGoogleOrganicLiveHtmlRequestInfo(
-                keyword="albert einstein",
-                location_code=2840,
-                language_code="en",
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[SerpGoogleOrganicLiveHtmlRequestInfo]]&gt;**](List[Optional[SerpGoogleOrganicLiveHtmlRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**SerpGoogleOrganicLiveHtmlResponseInfo**](SerpGoogleOrganicLiveHtmlResponseInfo.md)
 
 ### Authorization
 
@@ -2109,7 +2109,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "b6b633f2-44d0-4354-8384-b9ef1e90b065"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_local_finder_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2502,7 +2502,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "7f9a1e3b-1ed6-4f51-8651-05daa9712c63"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_news_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3171,7 +3171,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "0a1f486a-88fe-4593-a98e-56b52c9febdb"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_images_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3781,7 +3781,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "b89e31c7-b59c-4382-a926-527de229529f"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_jobs_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5558,7 +5558,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "dc352e3e-5632-4140-a4a1-4fb3c5338ebe"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.bing_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6008,7 +6008,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "f17106c5-43ba-44bd-a0cb-6a33c4dd53ea"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.bing_local_pack_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7607,7 +7607,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "f445242d-b633-480c-9e47-b3860628a4d5"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.yahoo_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8272,7 +8272,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "a73d3b58-9708-4adc-9e7a-dee7a84c7676"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.baidu_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8601,7 +8601,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "6c6a699d-bac4-4b63-80c0-61e2568e47b1"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.naver_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9088,7 +9088,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "22f76705-efc0-411f-9e3c-3990439e2db5"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.seznam_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9307,7 +9307,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "78a9d8e7-d4bc-4101-b8be-659958b4afd3"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_explore_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9642,7 +9642,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "c8c5a862-f7c2-4d9b-95c7-3fee7a284fb9"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_markets_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9978,7 +9978,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = "108fc499-866c-4cec-9644-0428ed812013"
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_quote_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)

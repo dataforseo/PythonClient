@@ -16,4 +16,4 @@
 **duration_time** | **StrictInt** | total time it takes until a browser receives a complete response from a server (in milliseconds) |[optional]|
 **fetch_start** | **StrictInt** | time to start downloading the HTML resource<br>the amount of time the browser needs to start downloading a page |[optional]|
 **fetch_end** | **StrictInt** | time to complete downloading the HTML resource<br>the amount of time the browser needs to complete downloading a page |[optional]|
-**resources** | **List[Optional[BaseOnPageResourceItemInfo]]** | resource-specific timing<br>contains separate arrays with timing for each resource found on the page |[optional]|
+**resources** | **List[Optional[WaterfallResourceInfo]]** | resource-specific timing<br>contains separate arrays with timing for each resource found on the page |[optional]|

@@ -6,6 +6,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**title** | **StrictStr** | reference page title |[optional]|
-**description** | **StrictStr** | description |[optional]|
+**title** | **StrictStr** | title of the element in SERP |[optional]|
+**description** | **StrictStr** | description of the link |[optional]|
 **links** | **List[Optional[LinkElement]]** | link of the element |[optional]|

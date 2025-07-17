@@ -16,7 +16,7 @@
 **address** | **StrictStr** | hotel address<br>physical address of the hotel |[optional]|
 **phone** | **StrictStr** | hotel phone number<br>contact phone number of the hotel |[optional]|
 **about** | **HotelAboutInfo** | information about the hotel |[optional]|
-**location** | **Location** | information about the hotel location<br>information about the location where the hotel is located |[optional]|
+**location** | **HotelLocationInfo** | information about the hotel location<br>information about the location where the hotel is located |[optional]|
 **reviews** | **HotelReviewInfo** | hotel reviews by criteria<br>information about reviews of the hotel entity |[optional]|
 **overview_images** | **List[Optional[StrictStr]]** | images displayed in the hotel overview<br>array containing URLs to images displayed in the hotel overview |[optional]|
 **prices** | **HotelPriceInfo** | pricing details of the hotel entity<br>contains information about the hotel’s prices |[optional]|

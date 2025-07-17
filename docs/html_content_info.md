@@ -7,7 +7,7 @@
 |------------ | ------------- | ------------- | -------------|
 **plain_text_size** | **StrictInt** | total size of the text on the page measured in bytes |[optional]|
 **plain_text_rate** | **StrictFloat** | plaintext rate value<br>plain_text_size to size ratio |[optional]|
-**plain_text_word_count** | **StrictFloat** | number of words on the page |[optional]|
+**plain_text_word_count** | **StrictInt** | number of words on the page |[optional]|
 **automated_readability_index** | **StrictFloat** | Automated Readability Index |[optional]|
 **coleman_liau_readability_index** | **StrictFloat** | Coleman–Liau Index |[optional]|
 **dale_chall_readability_index** | **StrictFloat** | Dale–Chall Readability Index |[optional]|

@@ -9,4 +9,4 @@
 **crawl_status** | **CrawlStatusInfo** | details of the crawling session |[optional]|
 **test_summary** | **TestSummary** | microdata validation test results |[optional]|
 **items_count** | **StrictInt** | number of items in the results array |[optional]|
-**items** | **List[Optional[OnPageMicrodataItem]]** | items array |[optional]|
+**items** | **List[Optional[OnPageMicrodataInfoItem]]** | items array |[optional]|

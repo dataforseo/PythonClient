@@ -17,4 +17,4 @@
 **item_types** | **List[Optional[StrictStr]]** | types of search results in SERP<br>contains types of search results (items) found in SERP.<br>possible item types:<br>carousel, images_search, related_searches |[optional]|
 **se_results_count** | **StrictInt** | total number of results in SERP |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[BaseGoogleImagesSerpElementItem]]** | elements of search results found in SERP |[optional]|
+**items** | **List[Optional[BaseSerpApiGoogleImagesElementItem]]** | elements of search results found in SERP |[optional]|

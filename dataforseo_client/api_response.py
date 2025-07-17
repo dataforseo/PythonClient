@@ -1,4 +1,3 @@
-"""API response object."""
 
 from __future__ import annotations
 from typing import Optional, Generic, Mapping, TypeVar

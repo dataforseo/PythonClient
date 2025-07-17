@@ -71,8 +71,8 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.app_data_id_list([AppDataIdListRequestInfo(
-                datetime_from="2025-01-18 03:41:46 +00:00",
-                datetime_to="2025-03-18 03:41:46 +00:00",
+                datetime_from="2025-04-17 06:10:25 +00:00",
+                datetime_to="2025-06-17 06:10:25 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -568,7 +568,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "4041d8ad-75ef-4c9d-a9fc-5b44a3a44965"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_searches_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -622,7 +622,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "6efb961f-bb81-4e51-833f-60592a4c87d7"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_searches_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -789,7 +789,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "4abf09ed-24cf-4baf-a080-d703f4b08bc3"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_list_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -843,7 +843,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "9a173d90-ca0f-43a0-a142-d4bbfa40ed1b"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_list_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1009,7 +1009,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "17f96bbc-6d14-47ef-b811-afe68079d827"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1063,7 +1063,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "78db88c1-366f-4728-a33d-ad2733848534"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_info_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1230,7 +1230,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "d401cf85-294b-41ab-9be7-66cc1629f552"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_reviews_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1284,7 +1284,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "fc5e00f9-351c-403d-b0b2-070845db19e3"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.google_app_reviews_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1725,7 +1725,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "8d1d2559-a1a5-4a66-a27a-b6b2ccfc01f9"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.apple_app_searches_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1891,7 +1891,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "65dd669e-0d17-461b-891c-821c862b71d1"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.apple_app_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2059,7 +2059,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "310ee395-0683-4b68-b2e1-7757aea44f3c"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.apple_app_list_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2226,7 +2226,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "0294027f-ee61-4717-80fb-8841b96a9528"
+        id = "00000000-0000-0000-0000-000000000000"
         response = app_data_api.apple_app_reviews_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
