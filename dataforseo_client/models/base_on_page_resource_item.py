@@ -60,7 +60,7 @@ class BaseOnPageResourceItem(BaseModel):
         "server", 
         "last_modified", 
         ]
-    __discriminator_property_name: ClassVar[str] = 'type'
+    __discriminator_property_name: ClassVar[str] = 'resource_type'
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
         'html': 'OnPageHtmlResourceItem',
         'broken': 'OnPageBrokenResourceItem',
