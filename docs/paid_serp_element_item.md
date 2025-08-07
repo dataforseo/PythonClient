@@ -15,7 +15,7 @@
 **website_name** | **StrictStr** | name of the website in SERP |[optional]|
 **is_image** | **StrictBool** | indicates whether the element contains an image |[optional]|
 **is_video** | **StrictBool** | indicates whether the element contains a video |[optional]|
-**images** | **List[Optional[AiModeImagesElement]]** | images of the element<br>if there are none, equals null |[optional]|
+**images** | **List[Optional[AiModeImagesElementInfo]]** | images of the element<br>if there are none, equals null |[optional]|
 **highlighted** | **List[Optional[StrictStr]]** | words highlighted in bold within the results description |[optional]|
 **extra** | **Dict[str, Optional[StrictStr]]** | additional information about the result |[optional]|
 **description_rows** | **List[Optional[StrictStr]]** | extended description<br>if there is none, equals null |[optional]|

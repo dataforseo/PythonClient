@@ -212,8 +212,8 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.serp_id_list([SerpIdListRequestInfo(
-                datetime_from="2025-04-17 06:05:20 +00:00",
-                datetime_to="2025-06-17 06:05:20 +00:00",
+                datetime_from="2025-05-06 08:27:31 +00:00",
+                datetime_to="2025-07-06 08:27:31 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -332,7 +332,7 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.screenshot([SerpScreenshotRequestInfo(
-                task_id="00000000-0000-0000-0000-000000000000",
+                task_id="06211235-0696-0139-1000-36727fbd3c90",
                 browser_screen_scale_factor=0.5,
         )]
         )
@@ -390,7 +390,7 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.ai_summary([SerpAiSummaryRequestInfo(
-                task_id="00000000-0000-0000-0000-000000000000",
+                task_id="07031739-1535-0139-0000-9d1e639a5b7d",
                 prompt="explain what DataForSEO is",
                 fetch_content=True,
                 include_links=True,
@@ -4120,14 +4120,14 @@ try:
                 keyword="water quality",
                 last_updated="1m",
                 file_formats=[
-                        "archive",
-                        "image",
+                    "archive",
+                    "image",
                     ],
                 usage_rights="noncommercial",
                 is_free=True,
                 topics=[
-                        "natural_sciences",
-                        "geo",
+                    "natural_sciences",
+                    "geo",
                     ],
         )]
         )
@@ -4348,14 +4348,14 @@ try:
                 keyword="water quality",
                 last_updated="1m",
                 file_formats=[
-                        "archive",
-                        "image",
+                    "archive",
+                    "image",
                     ],
                 usage_rights="noncommercial",
                 is_free=True,
                 topics=[
-                        "natural_sciences",
-                        "geo",
+                    "natural_sciences",
+                    "geo",
                     ],
         )]
         )
@@ -4959,8 +4959,8 @@ try:
 
         response = serp_api.google_ads_search_task_post([SerpGoogleAdsSearchTaskPostRequestInfo(
                 advertiser_ids=[
-                        "AR13752565271262920705",
-                        "AR02439908557932462081",
+                    "AR13752565271262920705",
+                    "AR02439908557932462081",
                     ],
                 location_code=2840,
                 platform="google_search",

@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.ai_overview_expanded_component import AiOverviewExpandedComponent
-from dataforseo_client.models.ai_ai_overview_reference_info import AiAiOverviewReferenceInfo
+from dataforseo_client.models.ai_mode_ai_overview_reference_info import AiModeAiOverviewReferenceInfo
 from dataforseo_client.models.base_serp_api_ai_overview_element_item import BaseSerpApiAiOverviewElementItem
 
 
@@ -20,10 +20,10 @@ class SerpApiAiOverviewExpandedElementItem(BaseSerpApiAiOverviewElementItem):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
-    title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
-    text: Optional[StrictStr] = Field(default=None, description="text or description of the element in SERP")
+    title: Optional[StrictStr] = Field(default=None, description="title of the element")
+    text: Optional[StrictStr] = Field(default=None, description="text of the component")
     components: Optional[List[Optional[AiOverviewExpandedComponent]]] = Field(default=None, description="array of components of the element")
-    references: Optional[List[Optional[AiAiOverviewReferenceInfo]]] = Field(default=None, description="references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description="additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
@@ -90,7 +90,7 @@ class SerpApiAiOverviewExpandedElementItem(BaseSerpApiAiOverviewElementItem):
             "title": obj.get("title"),
             "text": obj.get("text"),
             "components": [AiOverviewExpandedComponent.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None,
-            "references": [AiAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "references": [AiModeAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

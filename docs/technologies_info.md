@@ -13,6 +13,7 @@
 **sales** | **Dict[str, Optional[List[Optional[StrictStr]]]]** |  |[optional]|
 **other** | **Dict[str, Optional[List[Optional[StrictStr]]]]** |  |[optional]|
 **user_generated_content** | **Dict[str, Optional[List[Optional[StrictStr]]]]** |  |[optional]|
+**booking** | **Dict[str, Optional[List[Optional[StrictStr]]]]** |  |[optional]|
 **privacy** | **Dict[str, Optional[List[Optional[StrictStr]]]]** |  |[optional]|
 **servers** | **Dict[str, Optional[List[Optional[StrictStr]]]]** |  |[optional]|
 **location** | **Dict[str, Optional[List[Optional[StrictStr]]]]** |  |[optional]|

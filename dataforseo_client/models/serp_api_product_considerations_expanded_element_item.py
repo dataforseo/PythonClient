@@ -21,7 +21,7 @@ class SerpApiProductConsiderationsExpandedElementItem(BaseSerpApiProductConsider
     title: Optional[StrictStr] = Field(default=None, description="title of the row")
     featured_title: Optional[StrictStr] = Field(default=None, description="the title of the featured snippets source page")
     breadcrumb: Optional[StrictStr] = Field(default=None, description="breadcrumb of the Ad element in SERP")
-    snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
+    snippet: Optional[StrictStr] = Field(default=None, description="text alongside the title")
     domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     url: Optional[StrictStr] = Field(default=None, description="URL of element")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")

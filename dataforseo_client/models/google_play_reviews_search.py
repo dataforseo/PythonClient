@@ -10,6 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.rating_element import RatingElement
 from dataforseo_client.models.app_user_profile_info import AppUserProfileInfo
+from dataforseo_client.models.response_data_info import ResponseDataInfo
 
 
 
@@ -29,7 +30,7 @@ class GooglePlayReviewsSearch(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of the review. Google Play doesn’t provide an option to title reviews, so this parameter will always equal null")
     review_text: Optional[StrictStr] = Field(default=None, description="content of the review")
     user_profile: Optional[AppUserProfileInfo] = Field(default=None, description="user profile of the reviewer")
-    responses: Optional[Any] = Field(default=None, description="response from the developer")
+    responses: Optional[List[Optional[ResponseDataInfo]]] = Field(default=None, description="response from the developer")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -82,7 +83,12 @@ class GooglePlayReviewsSearch(BaseModel):
         _dict['title'] = self.title
         _dict['review_text'] = self.review_text
         _dict['user_profile'] = self.user_profile.to_dict() if self.user_profile else None
-        _dict['responses'] = self.responses
+        responses_items = []
+        if self.responses:
+            for _item in self.responses:
+                if _item:
+                    responses_items.append(_item.to_dict())
+            _dict['responses'] = responses_items
         return _dict
 
 
@@ -107,7 +113,7 @@ class GooglePlayReviewsSearch(BaseModel):
             "title": obj.get("title"),
             "review_text": obj.get("review_text"),
             "user_profile": AppUserProfileInfo.from_dict(obj["user_profile"]) if obj.get("user_profile") is not None else None,
-            "responses": obj.get("responses"),
+            "responses": [ResponseDataInfo.from_dict(_item) for _item in obj["responses"]] if obj.get("responses") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

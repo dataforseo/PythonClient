@@ -23,7 +23,7 @@ class DataforseoLabsErrorsResultInfo(BaseModel):
     http_url: Optional[StrictStr] = Field(default=None, description="URL that caused an error. URL you used for making an API call")
     http_method: Optional[StrictStr] = Field(default=None, description="HTTP method")
     http_code: Optional[StrictInt] = Field(default=None, description="HTTP status code")
-    http_time: Optional[StrictInt] = Field(default=None, description="time taken by HTTP request")
+    http_time: Optional[StrictFloat] = Field(default=None, description="time taken by HTTP request")
     http_response: Optional[StrictStr] = Field(default=None, description="HTTP response. server response")
     __properties: ClassVar[List[str]] = [
         "id", 

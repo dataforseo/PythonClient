@@ -17,13 +17,13 @@ class MerchantAmazonLocationsResultInfo(BaseModel):
     """ # noqa: E501
     location_code: Optional[StrictInt] = Field(default=None, description="location code")
     location_name: Optional[StrictStr] = Field(default=None, description="full name of the location")
-    location_code_parent: Optional[StrictInt] = Field(default=None, description="")
+    location_name_parent: Optional[StrictStr] = Field(default=None, description="the name of the superordinate location. example:. 'location_code': 9041134,. 'location_name': '90290,California,United States',. 'location_name_parent': 'California,United States'")
     country_iso_code: Optional[StrictStr] = Field(default=None, description="ISO country code of the location")
     location_type: Optional[StrictStr] = Field(default=None, description="location type")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 
-        "location_code_parent", 
+        "location_name_parent", 
         "country_iso_code", 
         "location_type", 
         ]
@@ -54,7 +54,7 @@ class MerchantAmazonLocationsResultInfo(BaseModel):
 
         _dict['location_code'] = self.location_code
         _dict['location_name'] = self.location_name
-        _dict['location_code_parent'] = self.location_code_parent
+        _dict['location_name_parent'] = self.location_name_parent
         _dict['country_iso_code'] = self.country_iso_code
         _dict['location_type'] = self.location_type
         return _dict
@@ -71,7 +71,7 @@ class MerchantAmazonLocationsResultInfo(BaseModel):
         _obj = cls.model_validate({
             "location_code": obj.get("location_code"),
             "location_name": obj.get("location_name"),
-            "location_code_parent": obj.get("location_code_parent"),
+            "location_name_parent": obj.get("location_name_parent"),
             "country_iso_code": obj.get("country_iso_code"),
             "location_type": obj.get("location_type"),
         })

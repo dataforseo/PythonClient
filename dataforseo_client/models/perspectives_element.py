@@ -17,7 +17,7 @@ class PerspectivesElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
     date: Optional[StrictStr] = Field(default=None, description="the date when the page source of the element was published")

@@ -17,7 +17,8 @@ class JobsElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
+    location: Optional[StrictStr] = Field(default=None, description="location for which the job vacancy is posted")
     author: Optional[StrictStr] = Field(default=None, description="author")
     job_posted_time: Optional[StrictStr] = Field(default=None, description="the time when the job was posted")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
@@ -28,6 +29,7 @@ class JobsElement(BaseModel):
         "type", 
         "title", 
         "description", 
+        "location", 
         "author", 
         "job_posted_time", 
         "timestamp", 
@@ -63,6 +65,7 @@ class JobsElement(BaseModel):
         _dict['type'] = self.type
         _dict['title'] = self.title
         _dict['description'] = self.description
+        _dict['location'] = self.location
         _dict['author'] = self.author
         _dict['job_posted_time'] = self.job_posted_time
         _dict['timestamp'] = self.timestamp
@@ -84,6 +87,7 @@ class JobsElement(BaseModel):
             "type": obj.get("type"),
             "title": obj.get("title"),
             "description": obj.get("description"),
+            "location": obj.get("location"),
             "author": obj.get("author"),
             "job_posted_time": obj.get("job_posted_time"),
             "timestamp": obj.get("timestamp"),

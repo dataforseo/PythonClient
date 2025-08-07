@@ -8,12 +8,12 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.ad_link_element import AdLinkElement
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_element import RatingElement
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
 
 
@@ -24,7 +24,7 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP. absolute position among all the elements found in SERP. note values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results;. to get all items (including SERP features and rich snippets) with their positions, please refer to the Google Organiс Advanced SERP endpoint")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
@@ -35,7 +35,7 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
     website_name: Optional[StrictStr] = Field(default=None, description="name of the website in SERP")
     is_image: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description="indicates whether the element contains a video")
-    images: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="images of the element. if there are none, equals null")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="images of the element. if there are none, equals null")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description="words highlighted in bold within the results description")
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description="additional information about the result")
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description="extended description. if there is none, equals null")
@@ -136,7 +136,7 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
             "type": obj.get("type"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "domain": obj.get("domain"),
@@ -147,7 +147,7 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
             "website_name": obj.get("website_name"),
             "is_image": obj.get("is_image"),
             "is_video": obj.get("is_video"),
-            "images": [AiModeImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "highlighted": obj.get("highlighted"),
             "extra": obj.get("extra"),
             "description_rows": obj.get("description_rows"),

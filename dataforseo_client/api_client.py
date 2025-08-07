@@ -62,7 +62,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python-client/2.0.0'
+        self.user_agent = 'python-client/2.0.6'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):

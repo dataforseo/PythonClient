@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.crawl_status_info import CrawlStatusInfo
-from dataforseo_client.models.base_on_page_resource_item import BaseOnPageResourceItem
+from dataforseo_client.models.on_page_html_resource_item import OnPageHtmlResourceItem
 
 
 
@@ -21,7 +21,7 @@ class OnPagePagesByResourceResultInfo(BaseModel):
     crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description="details of the crawling session")
     total_items_count: Optional[StrictInt] = Field(default=None, description="total number of relevant items in the database")
     items_count: Optional[StrictInt] = Field(default=None, description="number of items in the results array")
-    items: Optional[List[Optional[BaseOnPageResourceItem]]] = Field(default=None, description="items array")
+    items: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description="items array")
     __properties: ClassVar[List[str]] = [
         "crawl_progress", 
         "crawl_status", 
@@ -80,7 +80,7 @@ class OnPagePagesByResourceResultInfo(BaseModel):
             "crawl_status": CrawlStatusInfo.from_dict(obj["crawl_status"]) if obj.get("crawl_status") is not None else None,
             "total_items_count": obj.get("total_items_count"),
             "items_count": obj.get("items_count"),
-            "items": [BaseOnPageResourceItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [OnPageHtmlResourceItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.trends_graph_data_info import TrendsGraphDataInfo
+from dataforseo_client.models.dataforseo_trends_graph_data_trends_graph_data_info import DataforseoTrendsGraphDataTrendsGraphDataInfo
 from dataforseo_client.models.base_keyword_data_dataforseo_trends_item import BaseKeywordDataDataforseoTrendsItem
 
 
@@ -20,7 +20,7 @@ class DataforseoTrendsDataforseoTrendsGraphElementItem(BaseKeywordDataDataforseo
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictInt] = Field(default=None, description="the alignment of the element. can take the following values: 1, 2, 3, 4, etc.")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords. the data included in the dataforseo_trends_graph element is based on the keywords listed in this array")
-    data: Optional[List[Optional[TrendsGraphDataInfo]]] = Field(default=None, description="DataForSEO Trends data for the specified parameters")
+    data: Optional[List[Optional[DataforseoTrendsGraphDataTrendsGraphDataInfo]]] = Field(default=None, description="DataForSEO Trends data for the specified parameters")
     averages: Optional[List[Optional[StrictInt]]] = Field(default=None, description="keyword popularity values averaged over the whole time range")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -79,7 +79,7 @@ class DataforseoTrendsDataforseoTrendsGraphElementItem(BaseKeywordDataDataforseo
             "type": obj.get("type"),
             "position": obj.get("position"),
             "keywords": obj.get("keywords"),
-            "data": [TrendsGraphDataInfo.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
+            "data": [DataforseoTrendsGraphDataTrendsGraphDataInfo.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
             "averages": obj.get("averages"),
         })
 

@@ -10,7 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.app_element import AppElement
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
 
 
@@ -21,7 +21,7 @@ class AppSerpElementItem(BaseSerpApiElementItem):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
     items: Optional[List[Optional[AppElement]]] = Field(default=None, description="contains arrays of specific images")
@@ -86,7 +86,7 @@ class AppSerpElementItem(BaseSerpApiElementItem):
             "type": obj.get("type"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "items": [AppElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,

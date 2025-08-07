@@ -9,9 +9,9 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.base_serp_api_knowledge_graph_ai_overview_element_item import BaseSerpApiKnowledgeGraphAiOverviewElementItem
-from dataforseo_client.models.ai_ai_overview_reference_info import AiAiOverviewReferenceInfo
+from dataforseo_client.models.ai_mode_ai_overview_reference_info import AiModeAiOverviewReferenceInfo
 from dataforseo_client.models.base_serp_api_knowledge_graph_element_item import BaseSerpApiKnowledgeGraphElementItem
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
 
 
@@ -22,10 +22,10 @@ class SerpApiKnowledgeGraphAiOverviewItemElementItem(BaseSerpApiKnowledgeGraphEl
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description="indicates whether the element is loaded asynchronically. if true, the ai_overview element is loaded asynchronically;. if false, the ai_overview element is loaded from cache;")
     items: Optional[List[Optional[BaseSerpApiKnowledgeGraphAiOverviewElementItem]]] = Field(default=None, description="additional items present in the element. if there are none, equals null")
-    references: Optional[List[Optional[AiAiOverviewReferenceInfo]]] = Field(default=None, description="additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description="additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
@@ -92,10 +92,10 @@ class SerpApiKnowledgeGraphAiOverviewItemElementItem(BaseSerpApiKnowledgeGraphEl
             "type": obj.get("type"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "asynchronous_ai_overview": obj.get("asynchronous_ai_overview"),
             "items": [BaseSerpApiKnowledgeGraphAiOverviewElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
-            "references": [AiAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "references": [AiModeAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

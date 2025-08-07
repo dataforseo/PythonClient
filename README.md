@@ -26,7 +26,7 @@ API Contains 2 types of requests:
 
 1) Live (Simple HTTP request/response message)
 2) Task-based (Requires sending a 'Task' entity to execute, waiting until the 'Task' status is ready, and getting the 'Task' result in a special endpoint. Usually, it is represented by 3 types of endpoints: 'TaskPost', 'TaskReady', and 'TaskGet')
-For more details - please follow [here](https://docs.dataforseo.com/v3/?bash)
+   For more details - please follow [here](https://docs.dataforseo.com/v3/?bash)
 
 ## YAML Spec
 
@@ -81,7 +81,7 @@ Example of Task-Based request
 from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
 from dataforseo_client.api.serp_api import SerpApi
 from dataforseo_client.rest import ApiException
-from dataforseo_client.models.serp_google_organic_task_post_request_info import SerpGoogleOrganicTaskPostRequestInfo
+from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
 from pprint import pprint
 import asyncio
 import time
@@ -99,7 +99,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
 
     try:
 
-        task_post = serp_api.google_organic_task_post([SerpGoogleOrganicTaskPostRequestInfo(
+        task_post = serp_api.google_organic_task_post([SerpTaskRequestInfo(
             language_name="English",
             location_name="United States",
             keyword="albert einstein"
@@ -110,7 +110,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
         start_time = time.time()
 
         while GoogleOrganicTaskReady(task_id) is not True and (time.time() - start_time) < 60:
-           time.sleep(1) 
+           asyncio.sleep(1) 
 
         api_response = serp_api.google_organic_task_get_advanced(id=task_id)
         

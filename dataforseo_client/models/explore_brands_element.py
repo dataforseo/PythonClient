@@ -19,7 +19,7 @@ class ExploreBrandsElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     __properties: ClassVar[List[str]] = [

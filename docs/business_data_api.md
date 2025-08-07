@@ -85,8 +85,8 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_id_list([BusinessDataIdListRequestInfo(
-                datetime_from="2025-04-17 06:10:40 +00:00",
-                datetime_to="2025-06-17 06:10:40 +00:00",
+                datetime_from="2025-05-06 08:32:32 +00:00",
+                datetime_to="2025-07-06 08:32:32 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -365,7 +365,7 @@ try:
 
         response = business_data_api.business_listings_search_live([BusinessDataBusinessListingsSearchLiveRequestInfo(
                 categories=[
-                        "pizza_restaurant",
+                    "pizza_restaurant",
                     ],
                 description="pizza",
                 title="pizza",
@@ -429,7 +429,7 @@ try:
 
         response = business_data_api.business_listings_categories_aggregation_live([BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo(
                 categories=[
-                        "pizza_restaurant",
+                    "pizza_restaurant",
                     ],
                 description="pizza",
                 title="pizza",
@@ -1105,7 +1105,7 @@ try:
                 currency="USD",
                 adults=2,
                 children=[
-                        "14",
+                    "14",
                     ],
                 sort_by="highest_rating",
                 tag="example",
@@ -1280,7 +1280,7 @@ try:
                 currency="USD",
                 adults=2,
                 children=[
-                        "14",
+                    "14",
                     ],
                 sort_by="highest_rating",
                 tag="example",
@@ -3064,9 +3064,9 @@ try:
 
         response = business_data_api.social_media_pinterest_live([BusinessDataSocialMediaPinterestLiveRequestInfo(
                 targets=[
-                        "https://www.simplyrecipes.com/recipes/grilled_salmon_with_cucumber_mango_salsa/",
-                        "https://tasty.co/recipe/classic-lasagna",
-                        "https://www.allrecipes.com/recipe/255263/sicilian-roasted-chicken/",
+                    "https://www.simplyrecipes.com/recipes/grilled_salmon_with_cucumber_mango_salsa/",
+                    "https://tasty.co/recipe/classic-lasagna",
+                    "https://www.allrecipes.com/recipe/255263/sicilian-roasted-chicken/",
                     ],
                 tag="some_string_123",
         )]
@@ -3126,9 +3126,9 @@ try:
 
         response = business_data_api.social_media_facebook_live([BusinessDataSocialMediaFacebookLiveRequestInfo(
                 targets=[
-                        "https://prnt.sc/",
-                        "https://developers.facebook.com/docs/plugins/like-button/",
-                        "https://www.shbarcelona.com/blog/en/salsa-dance-clubs-in-barcelona/",
+                    "https://prnt.sc/",
+                    "https://developers.facebook.com/docs/plugins/like-button/",
+                    "https://www.shbarcelona.com/blog/en/salsa-dance-clubs-in-barcelona/",
                     ],
                 tag="some_string_123",
         )]
@@ -3188,12 +3188,12 @@ try:
 
         response = business_data_api.social_media_reddit_live([BusinessDataSocialMediaRedditLiveRequestInfo(
                 targets=[
-                        "https://vk.com/",
-                        "https://ahrefs.com/",
-                        "https://google.com/",
-                        "https://twitter.com/",
-                        "https://reddit.com/",
-                        "https://facebook.com/",
+                    "https://vk.com/",
+                    "https://ahrefs.com/",
+                    "https://google.com/",
+                    "https://twitter.com/",
+                    "https://reddit.com/",
+                    "https://facebook.com/",
                     ],
                 tag="some_string_123",
         )]

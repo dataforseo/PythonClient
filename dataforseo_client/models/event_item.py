@@ -10,7 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.event_dates import EventDates
 from dataforseo_client.models.location_info import LocationInfo
-from dataforseo_client.models.information_and_tickets_element import InformationAndTicketsElement
+from dataforseo_client.models.ai_mode_link_element_info import AiModeLinkElementInfo
 
 
 
@@ -29,7 +29,7 @@ class EventItem(BaseModel):
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image featured in the element")
     event_dates: Optional[EventDates] = Field(default=None, description="dates when the event takes place. if there are none, equals null")
     location_info: Optional[LocationInfo] = Field(default=None, description="information about the event’s venue")
-    information_and_tickets: Optional[List[Optional[InformationAndTicketsElement]]] = Field(default=None, description="additional information and ticket purchase options")
+    information_and_tickets: Optional[List[Optional[AiModeLinkElementInfo]]] = Field(default=None, description="additional information and ticket purchase options")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -109,7 +109,7 @@ class EventItem(BaseModel):
             "image_url": obj.get("image_url"),
             "event_dates": EventDates.from_dict(obj["event_dates"]) if obj.get("event_dates") is not None else None,
             "location_info": LocationInfo.from_dict(obj["location_info"]) if obj.get("location_info") is not None else None,
-            "information_and_tickets": [InformationAndTicketsElement.from_dict(_item) for _item in obj["information_and_tickets"]] if obj.get("information_and_tickets") is not None else None,
+            "information_and_tickets": [AiModeLinkElementInfo.from_dict(_item) for _item in obj["information_and_tickets"]] if obj.get("information_and_tickets") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

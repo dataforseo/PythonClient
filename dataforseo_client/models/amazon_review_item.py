@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.video_element import VideoElement
 from dataforseo_client.models.user_profile_info import UserProfileInfo
 from dataforseo_client.models.rating_element import RatingElement
@@ -27,7 +27,7 @@ class AmazonReviewItem(BaseModel):
     verified: Optional[StrictBool] = Field(default=None, description="indicates whether the review has the “Verified Purchase” mark")
     subtitle: Optional[StrictStr] = Field(default=None, description="subtitle of the review")
     helpful_votes: Optional[StrictStr] = Field(default=None, description="helpful votes count. number of users who clicked on the ‘Helpful” button under the review text")
-    images: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="images of the product submitted by the reviewer")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="images of the product submitted by the reviewer")
     videos: Optional[List[Optional[VideoElement]]] = Field(default=None, description="videos of the product submitted by the reviewer")
     user_profile: Optional[UserProfileInfo] = Field(default=None, description="user profile of the reviewer")
     title: Optional[StrictStr] = Field(default=None, description="title of the review")
@@ -124,7 +124,7 @@ class AmazonReviewItem(BaseModel):
             "verified": obj.get("verified"),
             "subtitle": obj.get("subtitle"),
             "helpful_votes": obj.get("helpful_votes"),
-            "images": [AiModeImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "videos": [VideoElement.from_dict(_item) for _item in obj["videos"]] if obj.get("videos") is not None else None,
             "user_profile": UserProfileInfo.from_dict(obj["user_profile"]) if obj.get("user_profile") is not None else None,
             "title": obj.get("title"),

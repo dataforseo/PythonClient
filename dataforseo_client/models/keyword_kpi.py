@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.keyword_kpi_info import KeywordKpiInfo
+from dataforseo_client.models.keyword_kpi_item_info import KeywordKpiItemInfo
 
 
 
@@ -16,9 +16,9 @@ class KeywordKpi(BaseModel):
     """
     KeywordKpi
     """ # noqa: E501
-    desktop: Optional[List[Optional[KeywordKpiInfo]]] = Field(default=None, description="keyword data aggregated for desktop devices. if there is no data, then the value is null")
-    mobile: Optional[List[Optional[KeywordKpiInfo]]] = Field(default=None, description="keyword data aggregated for mobile devices. if there is no data, then the value is null")
-    tablet: Optional[List[Optional[KeywordKpiInfo]]] = Field(default=None, description="keyword data aggregated for tablet devices. if there is no data, then the value is null")
+    desktop: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description="keyword data aggregated for desktop devices. if there is no data, then the value is null")
+    mobile: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description="keyword data aggregated for mobile devices. if there is no data, then the value is null")
+    tablet: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description="keyword data aggregated for tablet devices. if there is no data, then the value is null")
     __properties: ClassVar[List[str]] = [
         "desktop", 
         "mobile", 
@@ -79,9 +79,9 @@ class KeywordKpi(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "desktop": [KeywordKpiInfo.from_dict(_item) for _item in obj["desktop"]] if obj.get("desktop") is not None else None,
-            "mobile": [KeywordKpiInfo.from_dict(_item) for _item in obj["mobile"]] if obj.get("mobile") is not None else None,
-            "tablet": [KeywordKpiInfo.from_dict(_item) for _item in obj["tablet"]] if obj.get("tablet") is not None else None,
+            "desktop": [KeywordKpiItemInfo.from_dict(_item) for _item in obj["desktop"]] if obj.get("desktop") is not None else None,
+            "mobile": [KeywordKpiItemInfo.from_dict(_item) for _item in obj["mobile"]] if obj.get("mobile") is not None else None,
+            "tablet": [KeywordKpiItemInfo.from_dict(_item) for _item in obj["tablet"]] if obj.get("tablet") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

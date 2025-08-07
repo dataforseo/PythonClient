@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 
 
 
@@ -19,7 +19,7 @@ class FoundOnWebElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     subtitle: Optional[StrictStr] = Field(default=None, description="subtitle of the element")
-    image: Optional[AiModeImagesElement] = Field(default=None, description="image of the element")
+    image: Optional[AiModeImagesElementInfo] = Field(default=None, description="image of the element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -70,7 +70,7 @@ class FoundOnWebElement(BaseModel):
             "type": obj.get("type"),
             "title": obj.get("title"),
             "subtitle": obj.get("subtitle"),
-            "image": AiModeImagesElement.from_dict(obj["image"]) if obj.get("image") is not None else None,
+            "image": AiModeImagesElementInfo.from_dict(obj["image"]) if obj.get("image") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -20,7 +20,7 @@ class DiscussionsAndForumsElement(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description="URL")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
     source: Optional[StrictStr] = Field(default=None, description="source of the element. indicates the source of information included in the top_stories_element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     posts_count: Optional[StrictInt] = Field(default=None, description="number of posts from the discussion on the related source")
     __properties: ClassVar[List[str]] = [

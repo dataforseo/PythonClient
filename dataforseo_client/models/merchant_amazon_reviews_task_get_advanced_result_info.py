@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.spell_info import SpellInfo
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.rating_element import RatingElement
 from dataforseo_client.models.amazon_review_item import AmazonReviewItem
 
@@ -28,7 +28,7 @@ class MerchantAmazonReviewsTaskGetAdvancedResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     spell: Optional[SpellInfo] = Field(default=None, description="autocorrection of the search engine. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
     title: Optional[StrictStr] = Field(default=None, description="title of the product on Amazon. the title of the product for which the reviews are collected")
-    image: Optional[AiModeImagesElement] = Field(default=None, description="product image data")
+    image: Optional[AiModeImagesElementInfo] = Field(default=None, description="product image data")
     rating: Optional[RatingElement] = Field(default=None, description="rating of the product on Amazon. popularity rate based on reviews and displayed in SERP")
     reviews_count: Optional[StrictInt] = Field(default=None, description="the total number of reviews")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="type of search results in Amazon SERP. contains types of search results (items) found in Amazon SERP;. possible item types:. amazon_review_item")
@@ -117,7 +117,7 @@ class MerchantAmazonReviewsTaskGetAdvancedResultInfo(BaseModel):
             "datetime": obj.get("datetime"),
             "spell": SpellInfo.from_dict(obj["spell"]) if obj.get("spell") is not None else None,
             "title": obj.get("title"),
-            "image": AiModeImagesElement.from_dict(obj["image"]) if obj.get("image") is not None else None,
+            "image": AiModeImagesElementInfo.from_dict(obj["image"]) if obj.get("image") is not None else None,
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "reviews_count": obj.get("reviews_count"),
             "item_types": obj.get("item_types"),

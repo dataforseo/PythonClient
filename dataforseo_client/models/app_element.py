@@ -18,7 +18,7 @@ class AppElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     price: Optional[PriceInfo] = Field(default=None, description="price indicated in the element")
     __properties: ClassVar[List[str]] = [

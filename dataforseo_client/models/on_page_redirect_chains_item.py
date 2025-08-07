@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.base_on_page_link_item import BaseOnPageLinkItem
+from dataforseo_client.models.on_page_redirect_link_item import OnPageRedirectLinkItem
 
 
 
@@ -17,7 +17,7 @@ class OnPageRedirectChainsItem(BaseModel):
     OnPageRedirectChainsItem
     """ # noqa: E501
     is_redirect_loop: Optional[StrictBool] = Field(default=None, description="indicates if redirects in chain start and end at the same URL. if true, the last URL from the chain redirects back to the original URL")
-    chain: Optional[List[Optional[BaseOnPageLinkItem]]] = Field(default=None, description="contains links that form a chain")
+    chain: Optional[List[Optional[OnPageRedirectLinkItem]]] = Field(default=None, description="contains links that form a chain")
     __properties: ClassVar[List[str]] = [
         "is_redirect_loop", 
         "chain", 
@@ -67,7 +67,7 @@ class OnPageRedirectChainsItem(BaseModel):
 
         _obj = cls.model_validate({
             "is_redirect_loop": obj.get("is_redirect_loop"),
-            "chain": [BaseOnPageLinkItem.from_dict(_item) for _item in obj["chain"]] if obj.get("chain") is not None else None,
+            "chain": [OnPageRedirectLinkItem.from_dict(_item) for _item in obj["chain"]] if obj.get("chain") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

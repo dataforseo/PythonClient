@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.base_on_page_resource_item import BaseOnPageResourceItem
+from dataforseo_client.models.on_page_html_resource_item import OnPageHtmlResourceItem
 
 
 
@@ -17,7 +17,7 @@ class DuplicatePageInfo(BaseModel):
     DuplicatePageInfo
     """ # noqa: E501
     similarity: Optional[StrictInt] = Field(default=None, description="content similarity score. by default, the content is considered duplicate if the value is greater than or equals 6. can take values from 0 to 10")
-    page: Optional[List[Optional[BaseOnPageResourceItem]]] = Field(default=None, description="information about the page with duplicate content")
+    page: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description="information about the page with duplicate content")
     __properties: ClassVar[List[str]] = [
         "similarity", 
         "page", 
@@ -67,7 +67,7 @@ class DuplicatePageInfo(BaseModel):
 
         _obj = cls.model_validate({
             "similarity": obj.get("similarity"),
-            "page": [BaseOnPageResourceItem.from_dict(_item) for _item in obj["page"]] if obj.get("page") is not None else None,
+            "page": [OnPageHtmlResourceItem.from_dict(_item) for _item in obj["page"]] if obj.get("page") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

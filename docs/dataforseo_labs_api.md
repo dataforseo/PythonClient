@@ -88,8 +88,8 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_id_list([DataforseoLabsIdListRequestInfo(
-                datetime_from="2025-04-17 06:07:06 +00:00",
-                datetime_to="2025-06-17 06:07:06 +00:00",
+                datetime_from="2025-05-06 08:28:57 +00:00",
+                datetime_to="2025-07-06 08:28:57 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -657,8 +657,8 @@ try:
 
         response = dataforseo_labs_api.google_keyword_ideas_live([DataforseoLabsGoogleKeywordIdeasLiveRequestInfo(
                 keywords=[
-                        "phone",
-                        "watch",
+                    "phone",
+                    "watch",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -721,9 +721,9 @@ try:
 
         response = dataforseo_labs_api.google_bulk_keyword_difficulty_live([DataforseoLabsGoogleBulkKeywordDifficultyLiveRequestInfo(
                 keywords=[
-                        "dentist new york",
-                        "pizza brooklyn",
-                        "car dealer los angeles",
+                    "dentist new york",
+                    "pizza brooklyn",
+                    "car dealer los angeles",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -784,10 +784,10 @@ try:
 
         response = dataforseo_labs_api.google_search_intent_live([DataforseoLabsGoogleSearchIntentLiveRequestInfo(
                 keywords=[
-                        "login page",
-                        "audi a7",
-                        "elon musk",
-                        "milk store new york",
+                    "login page",
+                    "audi a7",
+                    "elon musk",
+                    "milk store new york",
                     ],
                 language_code="en",
         )]
@@ -903,10 +903,10 @@ try:
                 location_name="United States",
                 language_code="en",
                 item_types=[
-                        "paid",
-                        "organic",
-                        "featured_snippet",
-                        "local_pack",
+                    "paid",
+                    "organic",
+                    "featured_snippet",
+                    "local_pack",
                     ],
                 limit=3,
         )]
@@ -966,9 +966,9 @@ try:
 
         response = dataforseo_labs_api.google_categories_for_keywords_live([DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo(
                 keywords=[
-                        "dentist new york",
-                        "pizza brooklyn",
-                        "car dealer los angeles",
+                    "dentist new york",
+                    "pizza brooklyn",
+                    "car dealer los angeles",
                     ],
                 language_code="en",
         )]
@@ -1028,8 +1028,8 @@ try:
 
         response = dataforseo_labs_api.google_keywords_for_categories_live([DataforseoLabsGoogleKeywordsForCategoriesLiveRequestInfo(
                 category_codes=[
-                        "12191",
-                        "12193",
+                    "12191",
+                    "12193",
                     ],
                 location_code=2840,
                 language_name="English",
@@ -1092,11 +1092,11 @@ try:
 
         response = dataforseo_labs_api.google_domain_metrics_by_categories_live([DataforseoLabsGoogleDomainMetricsByCategoriesLiveRequestInfo(
                 category_codes=[
-                        "13418",
-                        "11494",
+                    "13418",
+                    "11494",
                     ],
-                first_date="2025-04-17",
-                second_date="2025-06-17",
+                first_date="2025-05-06",
+                second_date="2025-07-06",
                 location_code=2840,
                 language_code="en",
                 limit=3,
@@ -1334,12 +1334,12 @@ try:
 
         response = dataforseo_labs_api.google_serp_competitors_live([DataforseoLabsGoogleSerpCompetitorsLiveRequestInfo(
                 keywords=[
-                        "phone",
+                    "phone",
                     ],
                 location_code=2840,
                 language_name="English",
                 item_types=[
-                        "organic",
+                    "organic",
                     ],
                 limit=5,
         )]
@@ -1403,9 +1403,9 @@ try:
                 language_name="English",
                 limit=3,
                 intersecting_domains=[
-                        "dentaly.org",
-                        "health.com",
-                        "trysnow.com",
+                    "dentaly.org",
+                    "health.com",
+                    "trysnow.com",
                     ],
         )]
         )
@@ -1704,8 +1704,8 @@ try:
 
         response = dataforseo_labs_api.google_historical_serps_live([DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo(
                 keyword="albert einstein",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
                 location_code=2840,
                 language_code="en",
         )]
@@ -1767,8 +1767,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_code="en",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -1826,8 +1826,6 @@ try:
 
         response = dataforseo_labs_api.google_page_intersection_live([DataforseoLabsGooglePageIntersectionLiveRequestInfo(
                 pages={
-                        "1": "https://forbes.com",
-                        "2": "https://cnn.com/*",
                     },
                 location_code=2840,
                 language_name="English",
@@ -1890,15 +1888,15 @@ try:
 
         response = dataforseo_labs_api.google_bulk_traffic_estimation_live([DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo(
                 targets=[
-                        "dataforseo.com",
-                        "cnn.com",
-                        "forbes.com",
+                    "dataforseo.com",
+                    "cnn.com",
+                    "forbes.com",
                     ],
                 location_code=2840,
                 language_code="en",
                 item_types=[
-                        "organic",
-                        "paid",
+                    "organic",
+                    "paid",
                     ],
         )]
         )
@@ -1957,17 +1955,17 @@ try:
 
         response = dataforseo_labs_api.google_historical_bulk_traffic_estimation_live([DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveRequestInfo(
                 targets=[
-                        "dataforseo.com",
-                        "cnn.com",
-                        "forbes.com",
+                    "dataforseo.com",
+                    "cnn.com",
+                    "forbes.com",
                     ],
                 location_code=2840,
                 language_code="en",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
                 item_types=[
-                        "organic",
-                        "paid",
+                    "organic",
+                    "paid",
                     ],
         )]
         )
@@ -2026,7 +2024,7 @@ try:
 
         response = dataforseo_labs_api.google_historical_keyword_data_live([DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo(
                 keywords=[
-                        "iphone",
+                    "iphone",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -2087,7 +2085,7 @@ try:
 
         response = dataforseo_labs_api.google_keyword_overview_live([DataforseoLabsGoogleKeywordOverviewLiveRequestInfo(
                 keywords=[
-                        "iphone",
+                    "iphone",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -2150,9 +2148,9 @@ try:
 
         response = dataforseo_labs_api.amazon_bulk_search_volume_live([DataforseoLabsAmazonBulkSearchVolumeLiveRequestInfo(
                 keywords=[
-                        "buy laptop",
-                        "cheap laptops for sale",
-                        "purchase laptop",
+                    "buy laptop",
+                    "cheap laptops for sale",
+                    "purchase laptop",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -2333,8 +2331,8 @@ try:
 
         response = dataforseo_labs_api.amazon_product_rank_overview_live([DataforseoLabsAmazonProductRankOverviewLiveRequestInfo(
                 asins=[
-                        "B001TJ3HUG",
-                        "B01LW2SL7R",
+                    "B001TJ3HUG",
+                    "B01LW2SL7R",
                     ],
                 location_code=2840,
                 language_name="English",
@@ -2454,9 +2452,6 @@ try:
 
         response = dataforseo_labs_api.amazon_product_keyword_intersections_live([DataforseoLabsAmazonProductKeywordIntersectionsLiveRequestInfo(
                 asins={
-                        "1": "B09172433Z",
-                        "2": "B07GBZ4Q68",
-                        "3": "B07GCKQD77",
                     },
                 location_code=2840,
                 language_name="English",
@@ -2517,9 +2512,9 @@ try:
 
         response = dataforseo_labs_api.bing_bulk_keyword_difficulty_live([DataforseoLabsBingBulkKeywordDifficultyLiveRequestInfo(
                 keywords=[
-                        "dentist new york",
-                        "pizza brooklyn",
-                        "car dealer los angeles",
+                    "dentist new york",
+                    "pizza brooklyn",
+                    "car dealer los angeles",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -2580,15 +2575,15 @@ try:
 
         response = dataforseo_labs_api.bing_bulk_traffic_estimation_live([DataforseoLabsBingBulkTrafficEstimationLiveRequestInfo(
                 targets=[
-                        "dataforseo.com",
-                        "cnn.com",
-                        "forbes.com",
+                    "dataforseo.com",
+                    "cnn.com",
+                    "forbes.com",
                     ],
                 location_code=2840,
                 language_code="en",
                 item_types=[
-                        "organic",
-                        "paid",
+                    "organic",
+                    "paid",
                     ],
         )]
         )
@@ -2651,9 +2646,9 @@ try:
                 language_name="English",
                 limit=3,
                 intersecting_domains=[
-                        "dentaly.org",
-                        "health.com",
-                        "trysnow.com",
+                    "dentaly.org",
+                    "health.com",
+                    "trysnow.com",
                     ],
         )]
         )
@@ -2832,8 +2827,6 @@ try:
 
         response = dataforseo_labs_api.bing_page_intersection_live([DataforseoLabsBingPageIntersectionLiveRequestInfo(
                 pages={
-                        "1": "https://dataforseo.com",
-                        "2": "https://ahrefs.com/*",
                     },
                 location_code=2840,
                 language_name="English",
@@ -3076,12 +3069,12 @@ try:
 
         response = dataforseo_labs_api.bing_serp_competitors_live([DataforseoLabsBingSerpCompetitorsLiveRequestInfo(
                 keywords=[
-                        "phone",
+                    "phone",
                     ],
                 location_code=2840,
                 language_name="English",
                 item_types=[
-                        "organic",
+                    "organic",
                     ],
                 limit=5,
         )]
@@ -3201,8 +3194,8 @@ try:
 
         response = dataforseo_labs_api.google_bulk_app_metrics_live([DataforseoLabsGoogleBulkAppMetricsLiveRequestInfo(
                 app_ids=[
-                        "org.telegram.messenger",
-                        "com.zhiliaoapp.musically",
+                    "org.telegram.messenger",
+                    "com.zhiliaoapp.musically",
                     ],
                 location_code=2840,
                 language_name="English",
@@ -3383,8 +3376,6 @@ try:
 
         response = dataforseo_labs_api.google_app_intersection_live([DataforseoLabsGoogleAppIntersectionLiveRequestInfo(
                 app_ids={
-                        "1": "686449807",
-                        "2": "382617920",
                     },
                 location_code=2840,
                 language_name="English",
@@ -3446,8 +3437,8 @@ try:
 
         response = dataforseo_labs_api.apple_bulk_app_metrics_live([DataforseoLabsAppleBulkAppMetricsLiveRequestInfo(
                 app_ids=[
-                        "686449807",
-                        "382617920",
+                    "686449807",
+                    "382617920",
                     ],
                 location_code=2840,
                 language_name="English",
@@ -3628,8 +3619,6 @@ try:
 
         response = dataforseo_labs_api.apple_app_intersection_live([DataforseoLabsAppleAppIntersectionLiveRequestInfo(
                 app_ids={
-                        "1": "686449807",
-                        "2": "382617920",
                     },
                 location_code=2840,
                 language_name="English",

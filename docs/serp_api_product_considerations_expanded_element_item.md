@@ -8,7 +8,7 @@
 **title** | **StrictStr** | title of the row |[optional]|
 **featured_title** | **StrictStr** | the title of the featured snippets source page |[optional]|
 **breadcrumb** | **StrictStr** | breadcrumb of the Ad element in SERP |[optional]|
-**snippet** | **StrictStr** | text alongside the link title |[optional]|
+**snippet** | **StrictStr** | text alongside the title |[optional]|
 **domain** | **StrictStr** | domain where a link points |[optional]|
 **url** | **StrictStr** | URL of element |[optional]|
 **timestamp** | **StrictStr** | date and time when the result was published<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|

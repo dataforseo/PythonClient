@@ -40,8 +40,8 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.content_analysis_id_list([ContentAnalysisIdListRequestInfo(
-                datetime_from="2025-04-17 06:10:06 +00:00",
-                datetime_to="2025-06-17 06:10:06 +00:00",
+                datetime_from="2025-05-06 08:32:04 +00:00",
+                datetime_to="2025-07-06 08:32:04 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -315,14 +315,13 @@ try:
         response = content_analysis_api.search_live([ContentAnalysisSearchLiveRequestInfo(
                 keyword="logitech",
                 keyword_fields={
-                        "snippet": "logitech",
                     },
                 page_type=[
-                        "ecommerce",
-                        "news",
-                        "blogs",
-                        "message-boards",
-                        "organization",
+                    "ecommerce",
+                    "news",
+                    "blogs",
+                    "message-boards",
+                    "organization",
                     ],
                 search_mode="as_is",
                 limit=10,
@@ -384,11 +383,11 @@ try:
         response = content_analysis_api.content_analysis_summary_live([ContentAnalysisSummaryLiveRequestInfo(
                 keyword="logitech",
                 page_type=[
-                        "ecommerce",
-                        "news",
-                        "blogs",
-                        "message-boards",
-                        "organization",
+                    "ecommerce",
+                    "news",
+                    "blogs",
+                    "message-boards",
+                    "organization",
                     ],
                 internal_list_limit=8,
                 positive_connotation_threshold=0.5,
@@ -567,7 +566,7 @@ try:
         response = content_analysis_api.phrase_trends_live([ContentAnalysisPhraseTrendsLiveRequestInfo(
                 keyword="logitech",
                 search_mode="as_is",
-                date_from="2025-04-17",
+                date_from="2025-05-06",
                 date_group="month",
         )]
         )
@@ -627,7 +626,7 @@ try:
         response = content_analysis_api.category_trends_live([ContentAnalysisCategoryTrendsLiveRequestInfo(
                 category_code="10994",
                 search_mode="as_is",
-                date_from="2025-04-17",
+                date_from="2025-05-06",
                 date_group="month",
         )]
         )

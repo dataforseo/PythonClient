@@ -99,8 +99,8 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
-                datetime_from="2025-04-17 06:08:20 +00:00",
-                datetime_to="2025-06-17 06:08:20 +00:00",
+                datetime_from="2025-05-06 08:30:18 +00:00",
+                datetime_to="2025-07-06 08:30:18 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -433,9 +433,9 @@ try:
 
         response = keywords_data_api.google_ads_search_volume_task_post([KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo(
                 keywords=[
-                        "buy laptop",
-                        "cheap laptops for sale",
-                        "purchase laptop",
+                    "buy laptop",
+                    "cheap laptops for sale",
+                    "purchase laptop",
                     ],
                 location_name="United States",
         )]
@@ -602,13 +602,13 @@ try:
 
         response = keywords_data_api.google_ads_search_volume_live([KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo(
                 keywords=[
-                        "buy laptop",
-                        "cheap laptops for sale",
-                        "purchase laptop",
+                    "buy laptop",
+                    "cheap laptops for sale",
+                    "purchase laptop",
                     ],
                 location_code=2840,
                 search_partners=True,
-                date_from="2025-04-17",
+                date_from="2025-05-06",
         )]
         )
 except ApiException as e:
@@ -889,8 +889,8 @@ try:
 
         response = keywords_data_api.google_ads_keywords_for_keywords_task_post([KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo(
                 keywords=[
-                        "phone",
-                        "cellphone",
+                    "phone",
+                    "cellphone",
                     ],
                 location_code=2840,
         )]
@@ -1057,8 +1057,8 @@ try:
 
         response = keywords_data_api.google_ads_keywords_for_keywords_live([KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo(
                 keywords=[
-                        "phone",
-                        "cellphone",
+                    "phone",
+                    "cellphone",
                     ],
                 location_code=2840,
         )]
@@ -1118,7 +1118,7 @@ try:
 
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_task_post([KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo(
                 keywords=[
-                        "seo marketing",
+                    "seo marketing",
                     ],
                 bid=999,
                 match="exact",
@@ -1288,7 +1288,7 @@ try:
 
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_live([KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(
                 keywords=[
-                        "seo marketing",
+                    "seo marketing",
                     ],
                 bid=999,
                 match="exact",
@@ -1564,13 +1564,13 @@ try:
 
         response = keywords_data_api.google_trends_explore_task_post([KeywordsDataGoogleTrendsExploreTaskPostRequestInfo(
                 keywords=[
-                        "seo api",
-                        "rank api",
+                    "seo api",
+                    "rank api",
                     ],
                 type="youtube",
                 category_code=3,
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -1735,14 +1735,14 @@ try:
 
         response = keywords_data_api.google_trends_explore_live([KeywordsDataGoogleTrendsExploreLiveRequestInfo(
                 keywords=[
-                        "rugby",
-                        "cricket",
+                    "rugby",
+                    "cricket",
                     ],
                 location_name="United States",
                 type="youtube",
                 category_code=3,
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -1907,8 +1907,8 @@ try:
 
         response = keywords_data_api.dataforseo_trends_explore_live([KeywordsDataDataforseoTrendsExploreLiveRequestInfo(
                 keywords=[
-                        "iphone 14",
-                        "samsung s23",
+                    "iphone 14",
+                    "samsung s23",
                     ],
                 location_code=2840,
         )]
@@ -1968,13 +1968,13 @@ try:
 
         response = keywords_data_api.dataforseo_trends_subregion_interests_live([KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo(
                 keywords=[
-                        "rugby",
-                        "cricket",
+                    "rugby",
+                    "cricket",
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -2032,13 +2032,13 @@ try:
 
         response = keywords_data_api.dataforseo_trends_demography_live([KeywordsDataDataforseoTrendsDemographyLiveRequestInfo(
                 keywords=[
-                        "rugby",
-                        "cricket",
+                    "rugby",
+                    "cricket",
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -2096,13 +2096,13 @@ try:
 
         response = keywords_data_api.dataforseo_trends_merged_data_live([KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo(
                 keywords=[
-                        "rugby",
-                        "cricket",
+                    "rugby",
+                    "cricket",
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -2266,9 +2266,9 @@ try:
 
         response = keywords_data_api.bing_search_volume_task_post([KeywordsDataBingSearchVolumeTaskPostRequestInfo(
                 keywords=[
-                        "average page rpm adsense",
-                        "adsense blank ads how long",
-                        "leads and prospects",
+                    "average page rpm adsense",
+                    "adsense blank ads how long",
+                    "leads and prospects",
                     ],
                 location_name="United States",
                 language_name="English",
@@ -2436,9 +2436,9 @@ try:
 
         response = keywords_data_api.bing_search_volume_live([KeywordsDataBingSearchVolumeLiveRequestInfo(
                 keywords=[
-                        "tom and jerry",
-                        "silicon valley",
-                        "spider man",
+                    "tom and jerry",
+                    "silicon valley",
+                    "spider man",
                     ],
                 location_name="United States",
                 language_code="en",
@@ -2606,21 +2606,21 @@ try:
         response = keywords_data_api.bing_audience_estimation_task_post([KeywordsDataBingAudienceEstimationTaskPostRequestInfo(
                 location_coordinate="29.6821525,-82.4098881,100",
                 age=[
-                        "twenty_five_to_thirty_four",
-                        "eighteen_to_twenty_four",
-                        "unknown",
+                    "twenty_five_to_thirty_four",
+                    "eighteen_to_twenty_four",
+                    "unknown",
                     ],
                 bid=1,
                 daily_budget=24,
                 gender=[
-                        "male",
+                    "male",
                     ],
                 industry=[
-                        "806303407",
-                        "806301758",
+                    "806303407",
+                    "806301758",
                     ],
                 job_function=[
-                        "806298607",
+                    "806298607",
                     ],
         )]
         )
@@ -2787,21 +2787,21 @@ try:
         response = keywords_data_api.bing_audience_estimation_live([KeywordsDataBingAudienceEstimationLiveRequestInfo(
                 location_coordinate="29.6821525,-82.4098881,100",
                 age=[
-                        "twenty_five_to_thirty_four",
-                        "eighteen_to_twenty_four",
-                        "unknown",
+                    "twenty_five_to_thirty_four",
+                    "eighteen_to_twenty_four",
+                    "unknown",
                     ],
                 bid=1,
                 daily_budget=24,
                 gender=[
-                        "male",
+                    "male",
                     ],
                 industry=[
-                        "806303407",
-                        "806301758",
+                    "806303407",
+                    "806301758",
                     ],
                 job_function=[
-                        "806298607",
+                    "806298607",
                     ],
         )]
         )
@@ -3085,9 +3085,9 @@ try:
 
         response = keywords_data_api.bing_keywords_for_keywords_task_post([KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo(
                 keywords=[
-                        "average page rpm adsense",
-                        "adsense blank ads how long",
-                        "leads and prospects",
+                    "average page rpm adsense",
+                    "adsense blank ads how long",
+                    "leads and prospects",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -3255,9 +3255,9 @@ try:
 
         response = keywords_data_api.bing_keywords_for_keywords_live([KeywordsDataBingKeywordsForKeywordsLiveRequestInfo(
                 keywords=[
-                        "average page rpm adsense",
-                        "adsense blank ads how long",
-                        "leads and prospects",
+                    "average page rpm adsense",
+                    "adsense blank ads how long",
+                    "leads and prospects",
                     ],
                 location_name="United States",
                 language_name="English",
@@ -3371,9 +3371,9 @@ try:
 
         response = keywords_data_api.bing_keyword_performance_task_post([KeywordsDataBingKeywordPerformanceTaskPostRequestInfo(
                 keywords=[
-                        "dataforseo",
-                        "seo",
-                        "ranking",
+                    "dataforseo",
+                    "seo",
+                    "ranking",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -3541,9 +3541,9 @@ try:
 
         response = keywords_data_api.bing_keyword_performance_live([KeywordsDataBingKeywordPerformanceLiveRequestInfo(
                 keywords=[
-                        "dataforseo",
-                        "seo",
-                        "ranking",
+                    "dataforseo",
+                    "seo",
+                    "ranking",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -3657,7 +3657,7 @@ try:
 
         response = keywords_data_api.bing_search_volume_history_task_post([KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo(
                 keywords=[
-                        "10 minute timer",
+                    "10 minute timer",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -3825,7 +3825,7 @@ try:
 
         response = keywords_data_api.bing_search_volume_history_live([KeywordsDataBingSearchVolumeHistoryLiveRequestInfo(
                 keywords=[
-                        "10 minute timer",
+                    "10 minute timer",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -3939,9 +3939,9 @@ try:
 
         response = keywords_data_api.clickstream_data_dataforseo_search_volume_live([KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo(
                 keywords=[
-                        "you tube",
-                        "youtube",
-                        "youtub",
+                    "you tube",
+                    "youtube",
+                    "youtub",
                     ],
                 location_code=2840,
                 language_code="en",
@@ -4003,9 +4003,9 @@ try:
 
         response = keywords_data_api.clickstream_data_global_search_volume_live([KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo(
                 keywords=[
-                        "you tube",
-                        "youtube",
-                        "youtub",
+                    "you tube",
+                    "youtube",
+                    "youtub",
                     ],
                 tag="test-tag",
         )]
@@ -4065,9 +4065,9 @@ try:
 
         response = keywords_data_api.clickstream_data_bulk_search_volume_live([KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo(
                 keywords=[
-                        "you tube",
-                        "youtube",
-                        "youtub",
+                    "you tube",
+                    "youtube",
+                    "youtub",
                     ],
                 location_code=2840,
                 tag="test-tag",

@@ -16,4 +16,4 @@
 **image_url** | **StrictStr** | URL of the image featured in the element |[optional]|
 **event_dates** | **EventDates** | dates when the event takes place<br>if there are none, equals null |[optional]|
 **location_info** | **LocationInfo** | information about the event’s venue |[optional]|
-**information_and_tickets** | **List[Optional[InformationAndTicketsElement]]** | additional information and ticket purchase options |[optional]|
+**information_and_tickets** | **List[Optional[AiModeLinkElementInfo]]** | additional information and ticket purchase options |[optional]|

@@ -15,17 +15,17 @@ class ReviewResponseItemInfo(BaseModel):
     """
     ReviewResponseItemInfo
     """ # noqa: E501
+    response_id: Optional[StrictStr] = Field(default=None, description="the time of publication")
     title: Optional[StrictStr] = Field(default=None, description="the title of response")
     text: Optional[StrictStr] = Field(default=None, description="the content of response")
-    language: Optional[StrictStr] = Field(default=None, description="language of content")
-    response_id: Optional[StrictStr] = Field(default=None, description="response id")
     timestamp: Optional[StrictStr] = Field(default=None, description="the time of publication")
+    language: Optional[StrictStr] = Field(default=None, description="the time of publication")
     __properties: ClassVar[List[str]] = [
+        "response_id", 
         "title", 
         "text", 
-        "language", 
-        "response_id", 
         "timestamp", 
+        "language", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -52,11 +52,11 @@ class ReviewResponseItemInfo(BaseModel):
 
         _dict = {}
 
+        _dict['response_id'] = self.response_id
         _dict['title'] = self.title
         _dict['text'] = self.text
-        _dict['language'] = self.language
-        _dict['response_id'] = self.response_id
         _dict['timestamp'] = self.timestamp
+        _dict['language'] = self.language
         return _dict
 
 
@@ -69,11 +69,11 @@ class ReviewResponseItemInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "response_id": obj.get("response_id"),
             "title": obj.get("title"),
             "text": obj.get("text"),
-            "language": obj.get("language"),
-            "response_id": obj.get("response_id"),
             "timestamp": obj.get("timestamp"),
+            "language": obj.get("language"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

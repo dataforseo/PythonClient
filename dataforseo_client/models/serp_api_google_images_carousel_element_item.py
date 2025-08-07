@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.serp_api_carousel_element import SerpApiCarouselElement
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 from dataforseo_client.models.base_serp_api_google_images_element_item import BaseSerpApiGoogleImagesElementItem
 
 
@@ -25,7 +25,7 @@ class SerpApiGoogleImagesCarouselElementItem(BaseSerpApiGoogleImagesElementItem)
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     title: Optional[StrictStr] = Field(default=None, description="title of the element")
     items: Optional[List[Optional[SerpApiCarouselElement]]] = Field(default=None, description="items of the element")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. note: calculate_rectangles parameter is not yet available when setting tasks for this search engine type, that’s why rectangle always equals null")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. note: calculate_rectangles parameter is not yet available when setting tasks for this search engine type, that’s why rectangle always equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -93,7 +93,7 @@ class SerpApiGoogleImagesCarouselElementItem(BaseSerpApiGoogleImagesElementItem)
             "position": obj.get("position"),
             "title": obj.get("title"),
             "items": [SerpApiCarouselElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

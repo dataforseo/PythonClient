@@ -11,7 +11,7 @@ from typing_extensions import Self
 from dataforseo_client.models.link_element import LinkElement
 from dataforseo_client.models.knowledge_graph_images_element import KnowledgeGraphImagesElement
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
 
 
@@ -22,7 +22,7 @@ class KnowledgeGraphImagesItemSerpElementItem(BaseSerpApiElementItem):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description="group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description="absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
     link: Optional[LinkElement] = Field(default=None, description="link of the element")
@@ -90,7 +90,7 @@ class KnowledgeGraphImagesItemSerpElementItem(BaseSerpApiElementItem):
             "type": obj.get("type"),
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "link": LinkElement.from_dict(obj["link"]) if obj.get("link") is not None else None,

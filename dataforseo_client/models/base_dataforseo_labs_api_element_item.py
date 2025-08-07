@@ -12,7 +12,7 @@ from typing_extensions import Self
 from importlib import import_module
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from dataforseo_client.models.data_labs_organic_serp_element_item import DataLabsOrganicSerpElementItem;
+    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
     from dataforseo_client.models.data_labs_paid_serp_element_item import DataLabsPaidSerpElementItem;
     from dataforseo_client.models.data_labs_featured_snippet_serp_element_item import DataLabsFeaturedSnippetSerpElementItem;
     from dataforseo_client.models.data_labs_answer_box_serp_element_item import DataLabsAnswerBoxSerpElementItem;
@@ -24,9 +24,9 @@ if TYPE_CHECKING:
     from dataforseo_client.models.data_labs_images_serp_element_item import DataLabsImagesSerpElementItem;
     from dataforseo_client.models.data_labs_jobs_serp_element_item import DataLabsJobsSerpElementItem;
     from dataforseo_client.models.data_labs_knowledge_graph_serp_element_item import DataLabsKnowledgeGraphSerpElementItem;
-    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
     from dataforseo_client.models.data_labs_hotels_pack_serp_element_item import DataLabsHotelsPackSerpElementItem;
     from dataforseo_client.models.data_labs_map_serp_element_item import DataLabsMapSerpElementItem;
+    from dataforseo_client.models.data_labs_organic_serp_element_item import DataLabsOrganicSerpElementItem;
     from dataforseo_client.models.data_labs_people_also_ask_serp_element_item import DataLabsPeopleAlsoAskSerpElementItem;
     from dataforseo_client.models.data_labs_related_searches_serp_element_item import DataLabsRelatedSearchesSerpElementItem;
     from dataforseo_client.models.data_labs_people_also_search_serp_element_item import DataLabsPeopleAlsoSearchSerpElementItem;
@@ -71,7 +71,7 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         ]
     __discriminator_property_name: ClassVar[str] = 'type'
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'organic': 'DataLabsOrganicSerpElementItem',
+        'local_pack': 'DataLabsLocalPackSerpElementItem',
         'paid': 'DataLabsPaidSerpElementItem',
         'featured_snippet': 'DataLabsFeaturedSnippetSerpElementItem',
         'answer_box': 'DataLabsAnswerBoxSerpElementItem',
@@ -83,9 +83,9 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         'images': 'DataLabsImagesSerpElementItem',
         'jobs': 'DataLabsJobsSerpElementItem',
         'knowledge_graph': 'DataLabsKnowledgeGraphSerpElementItem',
-        'local_pack': 'DataLabsLocalPackSerpElementItem',
         'hotels_pack': 'DataLabsHotelsPackSerpElementItem',
         'map': 'DataLabsMapSerpElementItem',
+        'organic': 'DataLabsOrganicSerpElementItem',
         'people_also_ask': 'DataLabsPeopleAlsoAskSerpElementItem',
         'related_searches': 'DataLabsRelatedSearchesSerpElementItem',
         'people_also_search': 'DataLabsPeopleAlsoSearchSerpElementItem',
@@ -152,7 +152,7 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
     
     @classmethod
     def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[
-        DataLabsOrganicSerpElementItem, 
+        DataLabsLocalPackSerpElementItem, 
         DataLabsPaidSerpElementItem, 
         DataLabsFeaturedSnippetSerpElementItem, 
         DataLabsAnswerBoxSerpElementItem, 
@@ -164,9 +164,9 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         DataLabsImagesSerpElementItem, 
         DataLabsJobsSerpElementItem, 
         DataLabsKnowledgeGraphSerpElementItem, 
-        DataLabsLocalPackSerpElementItem, 
         DataLabsHotelsPackSerpElementItem, 
         DataLabsMapSerpElementItem, 
+        DataLabsOrganicSerpElementItem, 
         DataLabsPeopleAlsoAskSerpElementItem, 
         DataLabsRelatedSearchesSerpElementItem, 
         DataLabsPeopleAlsoSearchSerpElementItem, 
@@ -192,8 +192,8 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
         
-        if object_type == 'DataLabsOrganicSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_organic_serp_element_item").DataLabsOrganicSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsLocalPackSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsPaidSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_paid_serp_element_item").DataLabsPaidSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsFeaturedSnippetSerpElementItem':
@@ -216,12 +216,12 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.data_labs_jobs_serp_element_item").DataLabsJobsSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsKnowledgeGraphSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_knowledge_graph_serp_element_item").DataLabsKnowledgeGraphSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsLocalPackSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsHotelsPackSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_hotels_pack_serp_element_item").DataLabsHotelsPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsMapSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_map_serp_element_item").DataLabsMapSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsOrganicSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_organic_serp_element_item").DataLabsOrganicSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsPeopleAlsoAskSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_people_also_ask_serp_element_item").DataLabsPeopleAlsoAskSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsRelatedSearchesSerpElementItem':

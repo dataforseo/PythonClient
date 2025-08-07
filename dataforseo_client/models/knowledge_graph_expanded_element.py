@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.table import Table
 
 
@@ -23,7 +23,7 @@ class KnowledgeGraphExpandedElement(BaseModel):
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description="title of the result in SERP")
     snippet: Optional[StrictStr] = Field(default=None, description="text alongside the link title")
-    images: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="images of the element")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="images of the element")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     table: Optional[Table] = Field(default=None, description="table present in the element. the header and content of the table present in the element")
     __properties: ClassVar[List[str]] = [
@@ -94,7 +94,7 @@ class KnowledgeGraphExpandedElement(BaseModel):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "snippet": obj.get("snippet"),
-            "images": [AiModeImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "timestamp": obj.get("timestamp"),
             "table": Table.from_dict(obj["table"]) if obj.get("table") is not None else None,
         })

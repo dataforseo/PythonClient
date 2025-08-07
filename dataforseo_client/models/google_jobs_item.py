@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
 
 
@@ -33,7 +33,7 @@ class GoogleJobsItem(BaseModel):
     contract_type: Optional[StrictStr] = Field(default=None, description="employment contract type")
     timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     time_ago: Optional[StrictStr] = Field(default=None, description="indicates how long ago the job vacancy was posted")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP;. in this case, will equal null")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP;. in this case, will equal null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -126,7 +126,7 @@ class GoogleJobsItem(BaseModel):
             "contract_type": obj.get("contract_type"),
             "timestamp": obj.get("timestamp"),
             "time_ago": obj.get("time_ago"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

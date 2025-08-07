@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.rating_element import RatingElement
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.review_highlights import ReviewHighlights
 
 
@@ -40,7 +40,7 @@ class GoogleReviewsSearch(BaseModel):
     owner_time_ago: Optional[StrictStr] = Field(default=None, description="publication time. indicates the time (in the ‘time ago’ format) when the owner submitted the response to the review")
     owner_timestamp: Optional[StrictStr] = Field(default=None, description="date and time of the owner’s reply to the review. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     review_id: Optional[StrictStr] = Field(default=None, description="the unique identifier of a review on Google. example:. ChZDSUhNMG9nS0VJQ0FnSUMxbHFyMFlnEAE")
-    images: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="images submitted by the reviewer")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="images submitted by the reviewer")
     review_highlights: Optional[List[Optional[ReviewHighlights]]] = Field(default=None, description="review highlights. contains highlighted review criteria and assessments")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -161,7 +161,7 @@ class GoogleReviewsSearch(BaseModel):
             "owner_time_ago": obj.get("owner_time_ago"),
             "owner_timestamp": obj.get("owner_timestamp"),
             "review_id": obj.get("review_id"),
-            "images": [AiModeImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "review_highlights": [ReviewHighlights.from_dict(_item) for _item in obj["review_highlights"]] if obj.get("review_highlights") is not None else None,
         })
 

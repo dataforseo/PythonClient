@@ -16,10 +16,10 @@ class ContentRatingInfo(BaseModel):
     ContentRatingInfo
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="rating name. here you can find the following elements: Max5, Percents, CustomMax")
-    rating_value: Optional[StrictStr] = Field(default=None, description="the value of the rating")
-    rating_count: Optional[StrictStr] = Field(default=None, description="number of votes")
-    max_rating_value: Optional[StrictStr] = Field(default=None, description="maximum value for the rating name")
-    relative_rating: Optional[StrictStr] = Field(default=None, description="relative rating")
+    rating_value: Optional[StrictFloat] = Field(default=None, description="the value of the rating")
+    rating_count: Optional[StrictFloat] = Field(default=None, description="number of votes")
+    max_rating_value: Optional[StrictFloat] = Field(default=None, description="maximum value for the rating name")
+    relative_rating: Optional[StrictFloat] = Field(default=None, description="relative rating")
     __properties: ClassVar[List[str]] = [
         "name", 
         "rating_value", 

@@ -19,13 +19,13 @@ class SerpApiAiOverviewVideoElementItem(BaseSerpApiAiOverviewElementItem):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     title: Optional[StrictStr] = Field(default=None, description="reference page title")
-    snippet: Optional[StrictStr] = Field(default=None, description="additional information for the video")
-    url: Optional[StrictStr] = Field(default=None, description="original URL of the featured image. the URL leading to the image on the original resource")
-    domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
+    snippet: Optional[StrictStr] = Field(default=None, description="snippet of the element")
+    url: Optional[StrictStr] = Field(default=None, description="recipes_element URL")
+    domain: Optional[StrictStr] = Field(default=None, description="domain where a link points")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    source: Optional[StrictStr] = Field(default=None, description="source of the element")
-    date: Optional[StrictStr] = Field(default=None, description="date and time. in the yyyy-mm-ddThh:mm:ss ISO 8601 format. indicates the date and time for which the value field provides previous close price. for example, 'date': '2020-10-28T15:45:00' and 'value': 11080.2857 mean the stock was traded at 11080.2857 on Oct. 27, 2020 at 15:45:00")
-    timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the video was published or indexed. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
+    source: Optional[StrictStr] = Field(default=None, description="reference source name or title")
+    date: Optional[StrictStr] = Field(default=None, description="date and time. in the yyyy-mm-ddThh:mm:ss ISO 8601 format. indicates date and time for which the exchange rate in the value field is provided")
+    timestamp: Optional[StrictStr] = Field(default=None, description="date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

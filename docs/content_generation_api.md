@@ -43,13 +43,13 @@ try:
                 max_new_tokens=100,
                 creativity_index=1,
                 avoid_starting_words=[
-                        "SEO",
-                        "search engine optimization",
-                        "SEO is",
+                    "SEO",
+                    "search engine optimization",
+                    "SEO is",
                     ],
                 stop_words=[
-                        "123",
-                        "\n",
+                    "123",
+                    "\n",
                     ],
         )]
         )
@@ -110,15 +110,15 @@ try:
                 topic="Steve Jobs",
                 word_count=50,
                 sub_topics=[
-                        "Apple",
-                        "Pixar",
-                        "Amazing Products",
+                    "Apple",
+                    "Pixar",
+                    "Amazing Products",
                     ],
                 description="Take a closer look at Steve Jobs' life and his incredible impact on the tech industry, with a special focus on the development of the iPhone.",
                 meta_keywords=[
-                        "iPhone",
-                        "sell",
-                        "CEO",
+                    "iPhone",
+                    "sell",
+                    "CEO",
                     ],
                 creativity_index=0.8,
                 include_conclusion=True,

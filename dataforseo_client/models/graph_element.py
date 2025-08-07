@@ -16,7 +16,7 @@ class GraphElement(BaseModel):
     GraphElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    date: Optional[StrictStr] = Field(default=None, description="the posting date")
+    date: Optional[StrictStr] = Field(default=None, description="date when the video was published or indexed. example:. Apr 26, 2024")
     value: Optional[StrictFloat] = Field(default=None, description="the value of the rating")
     __properties: ClassVar[List[str]] = [
         "type", 

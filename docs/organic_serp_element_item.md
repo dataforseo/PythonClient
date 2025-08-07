@@ -22,7 +22,7 @@
 **is_web_story** | **StrictBool** | indicates whether the element is marked as Google web story |[optional]|
 **pre_snippet** | **StrictStr** | includes additional information appended before the result description in SERP |[optional]|
 **extended_snippet** | **StrictStr** | includes additional information appended after the result description in SERP |[optional]|
-**images** | **List[Optional[AiModeImagesElement]]** | images of the element<br>if there are none, equals null |[optional]|
+**images** | **List[Optional[AiModeImagesElementInfo]]** | images of the element<br>if there are none, equals null |[optional]|
 **amp_version** | **StrictBool** | Accelerated Mobile Pages<br>indicates whether an item has the Accelerated Mobile Page (AMP) version |[optional]|
 **rating** | **RatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
 **price** | **PriceInfo** | pricing details<br>contains the pricing details of the product or service featured in the result |[optional]|

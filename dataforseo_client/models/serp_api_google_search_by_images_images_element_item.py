@@ -8,10 +8,10 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.related_image_searches_element import RelatedImageSearchesElement
 from dataforseo_client.models.base_serp_api_google_search_by_images_element_item import BaseSerpApiGoogleSearchByImagesElementItem
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
 
 
@@ -26,8 +26,8 @@ class SerpApiGoogleSearchByImagesImagesElementItem(BaseSerpApiGoogleSearchByImag
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the element")
     url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    items: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="elements of search results found in SERP")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
+    items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="elements of search results found in SERP")
     related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description="contains keywords and images related to the specified search term. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -105,8 +105,8 @@ class SerpApiGoogleSearchByImagesImagesElementItem(BaseSerpApiGoogleSearchByImag
             "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
-            "items": [AiModeImagesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "items": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "related_image_searches": [RelatedImageSearchesElement.from_dict(_item) for _item in obj["related_image_searches"]] if obj.get("related_image_searches") is not None else None,
         })
 

@@ -19,8 +19,8 @@ class SerpApiAiOverviewTableElementItem(BaseSerpApiAiOverviewElementItem):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
-    markdown: Optional[StrictStr] = Field(default=None, description="content of the element in markdown format")
-    table: Optional[Table] = Field(default=None, description="results table. if there are none, equals null")
+    markdown: Optional[StrictStr] = Field(default=None, description="text of the component in the markdwon format")
+    table: Optional[Table] = Field(default=None, description="table present in the element. the header and content of the table present in the element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

@@ -23,6 +23,7 @@ class TechnologiesInfo(BaseModel):
     sales: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="")
     other: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="")
     user_generated_content: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="")
+    booking: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="")
     privacy: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="")
     servers: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="")
     location: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description="")
@@ -40,6 +41,7 @@ class TechnologiesInfo(BaseModel):
         "sales", 
         "other", 
         "user_generated_content", 
+        "booking", 
         "privacy", 
         "servers", 
         "location", 
@@ -82,6 +84,7 @@ class TechnologiesInfo(BaseModel):
         _dict['sales'] = self.sales
         _dict['other'] = self.other
         _dict['user_generated_content'] = self.user_generated_content
+        _dict['booking'] = self.booking
         _dict['privacy'] = self.privacy
         _dict['servers'] = self.servers
         _dict['location'] = self.location
@@ -110,6 +113,7 @@ class TechnologiesInfo(BaseModel):
             "sales": obj.get("sales"),
             "other": obj.get("other"),
             "user_generated_content": obj.get("user_generated_content"),
+            "booking": obj.get("booking"),
             "privacy": obj.get("privacy"),
             "servers": obj.get("servers"),
             "location": obj.get("location"),

@@ -10,7 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.spell_info import SpellInfo
 from dataforseo_client.models.refinement_chips_info import RefinementChipsInfo
-from dataforseo_client.models.local_pack import LocalPack
+from dataforseo_client.models.local_pack_serp_element_item import LocalPackSerpElementItem
 
 
 
@@ -30,7 +30,7 @@ class SerpGoogleLocalFinderLiveAdvancedResultInfo(BaseModel):
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description="types of search results in SERP. contains types of search results (items) found in SERP.. possible item types:. local_pack")
     se_results_count: Optional[StrictInt] = Field(default=None, description="total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[Optional[LocalPack]]] = Field(default=None, description="items of the element")
+    items: Optional[List[Optional[LocalPackSerpElementItem]]] = Field(default=None, description="items of the element")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 
@@ -113,7 +113,7 @@ class SerpGoogleLocalFinderLiveAdvancedResultInfo(BaseModel):
             "item_types": obj.get("item_types"),
             "se_results_count": obj.get("se_results_count"),
             "items_count": obj.get("items_count"),
-            "items": [LocalPack.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [LocalPackSerpElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

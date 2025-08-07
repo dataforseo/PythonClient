@@ -10,6 +10,6 @@
 **domain** | **StrictStr** | domain where a link points |[optional]|
 **title** | **StrictStr** | title of the row |[optional]|
 **description** | **StrictStr** | description of the results element in SERP |[optional]|
-**images** | **List[Optional[AiModeImagesElement]]** | images of the element |[optional]|
+**images** | **List[Optional[AiModeImagesElementInfo]]** | images of the element |[optional]|
 **timestamp** | **StrictStr** | date and time when the result was published<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **table** | **Table** | results table<br>if there are none, equals null |[optional]|

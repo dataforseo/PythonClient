@@ -16,9 +16,9 @@ class RelatedImageSearchesElement(BaseModel):
     RelatedImageSearchesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description="type of element")
-    title: Optional[StrictStr] = Field(default=None, description="title of the element")
+    title: Optional[StrictStr] = Field(default=None, description="title of a given shopping element")
     alt: Optional[StrictStr] = Field(default=None, description="alt tag of the image")
-    url: Optional[StrictStr] = Field(default=None, description="relevant URL")
+    url: Optional[StrictStr] = Field(default=None, description="URL")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     __properties: ClassVar[List[str]] = [
         "type", 

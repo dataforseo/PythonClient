@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_table import AiModeTable
+from dataforseo_client.models.ai_mode_table_info import AiModeTableInfo
 from dataforseo_client.models.base_serp_api_ai_mode_ai_overview_element_item import BaseSerpApiAiModeAiOverviewElementItem
 
 
@@ -20,7 +20,7 @@ class SerpApiAiModeAiOverviewTableElementItem(BaseSerpApiAiModeAiOverviewElement
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     markdown: Optional[StrictStr] = Field(default=None, description="text of the component in the markdwon format")
-    table: Optional[AiModeTable] = Field(default=None, description="table present in the element. the header and content of the table present in the element")
+    table: Optional[AiModeTableInfo] = Field(default=None, description="table present in the element. the header and content of the table present in the element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
@@ -71,7 +71,7 @@ class SerpApiAiModeAiOverviewTableElementItem(BaseSerpApiAiModeAiOverviewElement
             "type": obj.get("type"),
             "position": obj.get("position"),
             "markdown": obj.get("markdown"),
-            "table": AiModeTable.from_dict(obj["table"]) if obj.get("table") is not None else None,
+            "table": AiModeTableInfo.from_dict(obj["table"]) if obj.get("table") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

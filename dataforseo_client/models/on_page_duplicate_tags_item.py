@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.base_on_page_resource_item import BaseOnPageResourceItem
+from dataforseo_client.models.on_page_html_resource_item import OnPageHtmlResourceItem
 
 
 
@@ -18,7 +18,7 @@ class OnPageDuplicateTagsItem(BaseModel):
     """ # noqa: E501
     accumulator: Optional[StrictStr] = Field(default=None, description="contains the value of duplicated tag")
     total_count: Optional[StrictInt] = Field(default=None, description="total count of duplicate pages")
-    pages: Optional[List[Optional[BaseOnPageResourceItem]]] = Field(default=None, description="pages with duplicate tags")
+    pages: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description="pages with duplicate tags")
     __properties: ClassVar[List[str]] = [
         "accumulator", 
         "total_count", 
@@ -71,7 +71,7 @@ class OnPageDuplicateTagsItem(BaseModel):
         _obj = cls.model_validate({
             "accumulator": obj.get("accumulator"),
             "total_count": obj.get("total_count"),
-            "pages": [BaseOnPageResourceItem.from_dict(_item) for _item in obj["pages"]] if obj.get("pages") is not None else None,
+            "pages": [OnPageHtmlResourceItem.from_dict(_item) for _item in obj["pages"]] if obj.get("pages") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

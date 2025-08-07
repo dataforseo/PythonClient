@@ -17,17 +17,19 @@ class KeywordsDataBingKeywordPerformanceTasksReadyResultInfo(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="task identifier of the completed task. unique task identifier in our system in the UUID format")
     se: Optional[StrictStr] = Field(default=None, description="search engine specified when setting the task")
-    function: Optional[StrictStr] = Field(default=None, description="type of the task")
+    se_type: Optional[StrictStr] = Field(default=None, description="")
     date_posted: Optional[StrictStr] = Field(default=None, description="date when the task was posted (in the UTC format)")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier")
     endpoint: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the task")
+    function: Optional[StrictStr] = Field(default=None, description="")
     __properties: ClassVar[List[str]] = [
         "id", 
         "se", 
-        "function", 
+        "se_type", 
         "date_posted", 
         "tag", 
         "endpoint", 
+        "function", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -56,10 +58,11 @@ class KeywordsDataBingKeywordPerformanceTasksReadyResultInfo(BaseModel):
 
         _dict['id'] = self.id
         _dict['se'] = self.se
-        _dict['function'] = self.function
+        _dict['se_type'] = self.se_type
         _dict['date_posted'] = self.date_posted
         _dict['tag'] = self.tag
         _dict['endpoint'] = self.endpoint
+        _dict['function'] = self.function
         return _dict
 
 
@@ -74,10 +77,11 @@ class KeywordsDataBingKeywordPerformanceTasksReadyResultInfo(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "se": obj.get("se"),
-            "function": obj.get("function"),
+            "se_type": obj.get("se_type"),
             "date_posted": obj.get("date_posted"),
             "tag": obj.get("tag"),
             "endpoint": obj.get("endpoint"),
+            "function": obj.get("function"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -18,7 +18,7 @@
 **description** | **StrictStr** | description of the results element in SERP |[optional]|
 **pre_snippet** | **StrictStr** | includes additional information appended before the result description in SERP |[optional]|
 **extended_snippet** | **StrictStr** | includes additional information appended after the result description in SERP |[optional]|
-**images** | **List[Optional[AiModeImagesElement]]** | images of the element |[optional]|
+**images** | **List[Optional[AiModeImagesElementInfo]]** | images of the element |[optional]|
 **amp_version** | **StrictBool** | Accelerated Mobile Pages<br>indicates whether an item has the Accelerated Mobile Page (AMP) version |[optional]|
 **rating** | **RatingElement** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
 **price** | **PriceInfo** | pricing details<br>contains the pricing details of the product or service featured in the result |[optional]|

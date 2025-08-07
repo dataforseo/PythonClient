@@ -21,7 +21,7 @@ class ShoppingElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     price: Optional[PriceInfo] = Field(default=None, description="price indicated in the element")
     source: Optional[StrictStr] = Field(default=None, description="source of the element. indicates the source of information included in the top_stories_element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     marketplace: Optional[StrictStr] = Field(default=None, description="merchant account provider. commerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")
     marketplace_url: Optional[StrictStr] = Field(default=None, description="relevant marketplace URL. URL of the page on the marketplace website where the product is hosted")
     url: Optional[StrictStr] = Field(default=None, description="URL")

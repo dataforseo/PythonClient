@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.rating_element import RatingElement
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
@@ -33,7 +33,7 @@ class RelatedResult(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="description of the hotel booking element")
     pre_snippet: Optional[StrictStr] = Field(default=None, description="includes additional information appended before the result description in SERP")
     extended_snippet: Optional[StrictStr] = Field(default=None, description="includes additional information appended after the result description in SERP")
-    images: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="images of the component. if there are none, equals null")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="images of the component. if there are none, equals null")
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages. indicates whether an item has the Accelerated Mobile Page (AMP) version")
     rating: Optional[RatingElement] = Field(default=None, description="the item’s rating . the popularity rate based on reviews and displayed in SERP")
     price: Optional[PriceInfo] = Field(default=None, description="price of booking a place for the specified dates of stay")
@@ -140,7 +140,7 @@ class RelatedResult(BaseModel):
             "description": obj.get("description"),
             "pre_snippet": obj.get("pre_snippet"),
             "extended_snippet": obj.get("extended_snippet"),
-            "images": [AiModeImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "amp_version": obj.get("amp_version"),
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,

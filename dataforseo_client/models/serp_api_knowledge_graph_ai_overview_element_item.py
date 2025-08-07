@@ -9,8 +9,8 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.link_element import LinkElement
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
-from dataforseo_client.models.ai_ai_overview_reference_info import AiAiOverviewReferenceInfo
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
+from dataforseo_client.models.ai_mode_ai_overview_reference_info import AiModeAiOverviewReferenceInfo
 from dataforseo_client.models.base_serp_api_knowledge_graph_ai_overview_element_item import BaseSerpApiKnowledgeGraphAiOverviewElementItem
 
 
@@ -25,8 +25,8 @@ class SerpApiKnowledgeGraphAiOverviewElementItem(BaseSerpApiKnowledgeGraphAiOver
     text: Optional[StrictStr] = Field(default=None, description="additional text of the element in SERP")
     markdown: Optional[StrictStr] = Field(default=None, description="content of the element in markdown format")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description="sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
-    images: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="images of the element")
-    references: Optional[List[Optional[AiAiOverviewReferenceInfo]]] = Field(default=None, description="references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="images of the element")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description="references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
@@ -103,8 +103,8 @@ class SerpApiKnowledgeGraphAiOverviewElementItem(BaseSerpApiKnowledgeGraphAiOver
             "text": obj.get("text"),
             "markdown": obj.get("markdown"),
             "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
-            "images": [AiModeImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
-            "references": [AiAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "references": [AiModeAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

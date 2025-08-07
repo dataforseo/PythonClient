@@ -18,7 +18,7 @@ class SerpNaverOrganicTasksFixedResultInfo(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="task identifier of the completed task. unique task identifier in our system in the UUID format")
     se: Optional[StrictStr] = Field(default=None, description="search engine specified when setting the task")
     se_type: Optional[StrictStr] = Field(default=None, description="type of search engine. can take the following values: organic")
-    date_fixed: Optional[StrictStr] = Field(default=None, description="date when the task was fixed (in the UTC format)")
+    date_posted: Optional[StrictStr] = Field(default=None, description="")
     tag: Optional[StrictStr] = Field(default=None, description="user-defined task identifier")
     endpoint_regular: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the SERP Regular task. if SERP Regular is not supported in the specified endpoint, the value will be null")
     endpoint_advanced: Optional[StrictStr] = Field(default=None, description="URL for collecting the results of the SERP Advanced task. if SERP Advanced is not supported in the specified endpoint, the value will be null")
@@ -27,7 +27,7 @@ class SerpNaverOrganicTasksFixedResultInfo(BaseModel):
         "id", 
         "se", 
         "se_type", 
-        "date_fixed", 
+        "date_posted", 
         "tag", 
         "endpoint_regular", 
         "endpoint_advanced", 
@@ -61,7 +61,7 @@ class SerpNaverOrganicTasksFixedResultInfo(BaseModel):
         _dict['id'] = self.id
         _dict['se'] = self.se
         _dict['se_type'] = self.se_type
-        _dict['date_fixed'] = self.date_fixed
+        _dict['date_posted'] = self.date_posted
         _dict['tag'] = self.tag
         _dict['endpoint_regular'] = self.endpoint_regular
         _dict['endpoint_advanced'] = self.endpoint_advanced
@@ -81,7 +81,7 @@ class SerpNaverOrganicTasksFixedResultInfo(BaseModel):
             "id": obj.get("id"),
             "se": obj.get("se"),
             "se_type": obj.get("se_type"),
-            "date_fixed": obj.get("date_fixed"),
+            "date_posted": obj.get("date_posted"),
             "tag": obj.get("tag"),
             "endpoint_regular": obj.get("endpoint_regular"),
             "endpoint_advanced": obj.get("endpoint_advanced"),

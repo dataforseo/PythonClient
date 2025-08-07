@@ -21,7 +21,7 @@ class CoursesElement(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description="URL")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
     source: Optional[StrictStr] = Field(default=None, description="source of the element. indicates the source of information included in the top_stories_element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     date: Optional[StrictStr] = Field(default=None, description="the date when the page source of the element was published")
     image_url: Optional[StrictStr] = Field(default=None, description="URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     rating: Optional[RatingElement] = Field(default=None, description="the item’s rating . the popularity rate based on reviews and displayed in SERP")

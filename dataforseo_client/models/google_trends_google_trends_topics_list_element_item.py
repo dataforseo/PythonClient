@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.trends_topic_list_data_info import TrendsTopicListDataInfo
+from dataforseo_client.models.list_data_info import ListDataInfo
 from dataforseo_client.models.base_keyword_data_google_trends_item import BaseKeywordDataGoogleTrendsItem
 
 
@@ -21,7 +21,7 @@ class GoogleTrendsGoogleTrendsTopicsListElementItem(BaseKeywordDataGoogleTrendsI
     position: Optional[StrictInt] = Field(default=None, description="the alignment of the element in Google Trends. can take the following values: 1, 2, 3, 4, etc.")
     title: Optional[StrictStr] = Field(default=None, description="title of the element in Google Trends")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description="relevant keywords. the data included in the google_trends_graph element is based on the keywords listed in this array")
-    data: Optional[TrendsTopicListDataInfo] = Field(default=None, description="Google Trends data from the corresponding item")
+    data: Optional[ListDataInfo] = Field(default=None, description="Google Trends data from the corresponding item")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
@@ -75,7 +75,7 @@ class GoogleTrendsGoogleTrendsTopicsListElementItem(BaseKeywordDataGoogleTrendsI
             "position": obj.get("position"),
             "title": obj.get("title"),
             "keywords": obj.get("keywords"),
-            "data": TrendsTopicListDataInfo.from_dict(obj["data"]) if obj.get("data") is not None else None,
+            "data": ListDataInfo.from_dict(obj["data"]) if obj.get("data") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

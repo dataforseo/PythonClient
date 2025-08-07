@@ -9,5 +9,5 @@
 **rank_absolute** | **StrictInt** | absolute rank in SERP<br>absolute position among all the elements in SERP<br>always equals 0 for desktop |[optional]|
 **title** | **StrictStr** | reference page title |[optional]|
 **url** | **StrictStr** | URL |[optional]|
-**domain** | **StrictStr** | domain in the URL |[optional]|
+**domain** | **StrictStr** | domain name of the reference |[optional]|
 **items** | **List[Optional[LocalServicesElement]]** | contains arrays of specific images |[optional]|

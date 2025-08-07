@@ -43,8 +43,8 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.domain_analytics_id_list([DomainAnalyticsIdListRequestInfo(
-                datetime_from="2025-04-17 06:08:16 +00:00",
-                datetime_to="2025-06-17 06:08:16 +00:00",
+                datetime_from="2025-05-06 08:30:14 +00:00",
+                datetime_to="2025-07-06 08:30:14 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -436,10 +436,10 @@ try:
 
         response = domain_analytics_api.technologies_technologies_summary_live([DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo(
                 technologies=[
-                        "Ngi",
+                    "Ngi",
                     ],
                 keywords=[
-                        "WordPress",
+                    "WordPress",
                     ],
                 mode="entry",
         )]
@@ -499,8 +499,8 @@ try:
 
         response = domain_analytics_api.technologies_technology_stats_live([DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo(
                 technology="jQuery",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -558,7 +558,7 @@ try:
 
         response = domain_analytics_api.technologies_domains_by_technology_live([DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo(
                 technologies=[
-                        "Nginx",
+                    "Nginx",
                     ],
                 limit=10,
         )]
@@ -618,7 +618,7 @@ try:
 
         response = domain_analytics_api.technologies_domains_by_html_terms_live([DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo(
                 search_terms=[
-                        "data-attrid",
+                    "data-attrid",
                     ],
                 limit=10,
                 offset=0,

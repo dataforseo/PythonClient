@@ -19,7 +19,7 @@ class TrendsGraphDataInfo(BaseModel):
     date_to: Optional[StrictStr] = Field(default=None, description="end date of the corresponding time range. in the UTC format: “yyyy-mm-dd”")
     timestamp: Optional[StrictInt] = Field(default=None, description="a point in time in the Unix time format")
     missing_data: Optional[StrictBool] = Field(default=None, description="indicates whether the data is unavailable. if true the data on the graph in the Google Trends interface is missing and thus labelled with a dotted line")
-    values: Optional[List[Optional[StrictInt]]] = Field(default=None, description="relative keyword popularity rate at a specific timestamp. represents the keyword popularity rate over the given time range. if you specify more than one keyword, the values will be averaged to the highest value across all specified keywords. a value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term")
+    values: Optional[List[Optional[StrictFloat]]] = Field(default=None, description="relative keyword popularity rate at a specific timestamp. represents the keyword popularity rate over the given time range. if you specify more than one keyword, the values will be averaged to the highest value across all specified keywords. a value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term")
     __properties: ClassVar[List[str]] = [
         "date_from", 
         "date_to", 

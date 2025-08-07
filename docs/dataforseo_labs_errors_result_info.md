@@ -13,5 +13,5 @@
 **http_url** | **StrictStr** | URL that caused an error<br>URL you used for making an API call |[optional]|
 **http_method** | **StrictStr** | HTTP method |[optional]|
 **http_code** | **StrictInt** | HTTP status code |[optional]|
-**http_time** | **StrictInt** | time taken by HTTP request |[optional]|
+**http_time** | **StrictFloat** | time taken by HTTP request |[optional]|
 **http_response** | **StrictStr** | HTTP response<br>server response |[optional]|

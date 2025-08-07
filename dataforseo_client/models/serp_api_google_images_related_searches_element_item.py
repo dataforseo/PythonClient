@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 from dataforseo_client.models.base_serp_api_google_images_element_item import BaseSerpApiGoogleImagesElementItem
 
 
@@ -23,7 +23,7 @@ class SerpApiGoogleImagesRelatedSearchesElementItem(BaseSerpApiGoogleImagesEleme
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     position: Optional[StrictStr] = Field(default=None, description="the alignment of the element in SERP. can take the following values:. left, right")
     items: Optional[List[Optional[StrictStr]]] = Field(default=None, description="items of the element")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. note: calculate_rectangles parameter is not yet available when setting tasks for this search engine type, that’s why rectangle always equals null")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. note: calculate_rectangles parameter is not yet available when setting tasks for this search engine type, that’s why rectangle always equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -83,7 +83,7 @@ class SerpApiGoogleImagesRelatedSearchesElementItem(BaseSerpApiGoogleImagesEleme
             "xpath": obj.get("xpath"),
             "position": obj.get("position"),
             "items": obj.get("items"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

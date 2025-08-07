@@ -17,4 +17,4 @@
 **item_types** | **List[Optional[StrictStr]]** | types of search results in SERP<br>contains types of search results (items) found in SERP.<br>possible item types:<br>ai_overview |[optional]|
 **se_results_count** | **StrictInt** | total number of results in SERP |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[AiModeAiOverview]]** | elements of search results found in SERP |[optional]|
+**items** | **List[Optional[AiModeAiOverviewInfo]]** | elements of search results found in SERP |[optional]|

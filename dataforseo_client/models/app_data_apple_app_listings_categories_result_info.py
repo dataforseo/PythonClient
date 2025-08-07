@@ -15,21 +15,11 @@ class AppDataAppleAppListingsCategoriesResultInfo(BaseModel):
     """
     AppDataAppleAppListingsCategoriesResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="task identifier. unique task identifier in our system in the UUID format")
-    se: Optional[StrictStr] = Field(default=None, description="")
-    se_type: Optional[StrictStr] = Field(default=None, description="")
-    date_posted: Optional[StrictStr] = Field(default=None, description="")
-    tag: Optional[StrictStr] = Field(default=None, description="")
-    endpoint_advanced: Optional[StrictStr] = Field(default=None, description="")
-    endpoint_html: Optional[StrictStr] = Field(default=None, description="")
+    category: Optional[StrictStr] = Field(default=None, description="name of the supported app category")
+    count: Optional[StrictInt] = Field(default=None, description="number of app listings that make up the supported app category")
     __properties: ClassVar[List[str]] = [
-        "id", 
-        "se", 
-        "se_type", 
-        "date_posted", 
-        "tag", 
-        "endpoint_advanced", 
-        "endpoint_html", 
+        "category", 
+        "count", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -56,13 +46,8 @@ class AppDataAppleAppListingsCategoriesResultInfo(BaseModel):
 
         _dict = {}
 
-        _dict['id'] = self.id
-        _dict['se'] = self.se
-        _dict['se_type'] = self.se_type
-        _dict['date_posted'] = self.date_posted
-        _dict['tag'] = self.tag
-        _dict['endpoint_advanced'] = self.endpoint_advanced
-        _dict['endpoint_html'] = self.endpoint_html
+        _dict['category'] = self.category
+        _dict['count'] = self.count
         return _dict
 
 
@@ -75,13 +60,8 @@ class AppDataAppleAppListingsCategoriesResultInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "se": obj.get("se"),
-            "se_type": obj.get("se_type"),
-            "date_posted": obj.get("date_posted"),
-            "tag": obj.get("tag"),
-            "endpoint_advanced": obj.get("endpoint_advanced"),
-            "endpoint_html": obj.get("endpoint_html"),
+            "category": obj.get("category"),
+            "count": obj.get("count"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

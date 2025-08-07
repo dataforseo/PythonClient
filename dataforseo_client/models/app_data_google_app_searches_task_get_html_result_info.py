@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.serp_html_item_info import SerpHtmlItemInfo
+from dataforseo_client.models.html_item_info import HtmlItemInfo
 
 
 
@@ -23,7 +23,7 @@ class AppDataGoogleAppSearchesTaskGetHtmlResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description="language code in a POST array")
     datetime: Optional[StrictStr] = Field(default=None, description="date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     items_count: Optional[StrictInt] = Field(default=None, description="the number of results returned in the items array")
-    items: Optional[List[Optional[SerpHtmlItemInfo]]] = Field(default=None, description="HTML pages and related data")
+    items: Optional[List[Optional[HtmlItemInfo]]] = Field(default=None, description="HTML pages and related data")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 
@@ -91,7 +91,7 @@ class AppDataGoogleAppSearchesTaskGetHtmlResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "datetime": obj.get("datetime"),
             "items_count": obj.get("items_count"),
-            "items": [SerpHtmlItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [HtmlItemInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element import AiModeImagesElement
+from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.rating_element import RatingElement
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.link_element import LinkElement
@@ -16,7 +16,7 @@ from dataforseo_client.models.faq_box import FaqBox
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from dataforseo_client.models.related_result import RelatedResult
 from dataforseo_client.models.base_serp_api_google_search_by_images_element_item import BaseSerpApiGoogleSearchByImagesElementItem
-from dataforseo_client.models.rectangle_info import RectangleInfo
+from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
 
 
@@ -31,7 +31,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
     xpath: Optional[StrictStr] = Field(default=None, description="the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description="title of the element")
     url: Optional[StrictStr] = Field(default=None, description="search URL with refinement parameters")
-    rectangle: Optional[RectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description="rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     domain: Optional[StrictStr] = Field(default=None, description="domain in SERP")
     cache_url: Optional[StrictStr] = Field(default=None, description="cached version of the page")
     related_search_url: Optional[StrictStr] = Field(default=None, description="URL to a similar search. URL to a new search for the same keyword(s) on related sites")
@@ -45,7 +45,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
     description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     pre_snippet: Optional[StrictStr] = Field(default=None, description="includes additional information appended before the result description in SERP")
     extended_snippet: Optional[StrictStr] = Field(default=None, description="includes additional information appended after the result description in SERP")
-    images: Optional[List[Optional[AiModeImagesElement]]] = Field(default=None, description="images of the element")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description="images of the element")
     amp_version: Optional[StrictBool] = Field(default=None, description="Accelerated Mobile Pages. indicates whether an item has the Accelerated Mobile Page (AMP) version")
     rating: Optional[RatingElement] = Field(default=None, description="the item’s rating . the popularity rate based on reviews and displayed in SERP")
     price: Optional[PriceInfo] = Field(default=None, description="pricing details. contains the pricing details of the product or service featured in the result")
@@ -181,7 +181,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
             "xpath": obj.get("xpath"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rectangle": RectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
+            "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "domain": obj.get("domain"),
             "cache_url": obj.get("cache_url"),
             "related_search_url": obj.get("related_search_url"),
@@ -195,7 +195,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
             "description": obj.get("description"),
             "pre_snippet": obj.get("pre_snippet"),
             "extended_snippet": obj.get("extended_snippet"),
-            "images": [AiModeImagesElement.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
+            "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "amp_version": obj.get("amp_version"),
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,

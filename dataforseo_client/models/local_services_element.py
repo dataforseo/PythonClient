@@ -20,7 +20,7 @@ class LocalServicesElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description="URL")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     rating: Optional[RatingElement] = Field(default=None, description="the item’s rating . the popularity rate based on reviews and displayed in SERP")
     profile_image_url: Optional[StrictStr] = Field(default=None, description="URL of the image featured in the element")
     __properties: ClassVar[List[str]] = [

@@ -20,7 +20,7 @@ class HotelsPackElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="type of element")
     price: Optional[PriceInfo] = Field(default=None, description="price indicated in the element")
     title: Optional[StrictStr] = Field(default=None, description="title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description="description")
+    description: Optional[StrictStr] = Field(default=None, description="description of the results element in SERP")
     hotel_identifier: Optional[StrictStr] = Field(default=None, description="unique hotel identifier. unique hotel identifier assigned by Google;. example: 'CgoIjaeSlI6CnNpVEAE'")
     domain: Optional[StrictStr] = Field(default=None, description="website domain")
     url: Optional[StrictStr] = Field(default=None, description="URL")

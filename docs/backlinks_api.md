@@ -53,8 +53,8 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_id_list([BacklinksIdListRequestInfo(
-                datetime_from="2025-04-17 06:08:53 +00:00",
-                datetime_to="2025-06-17 06:08:53 +00:00",
+                datetime_from="2025-05-06 08:30:37 +00:00",
+                datetime_to="2025-07-06 08:30:37 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -340,8 +340,8 @@ try:
 
         response = backlinks_api.history_live([BacklinksHistoryLiveRequestInfo(
                 target="cnn.com",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
         )]
         )
 except ApiException as e:
@@ -809,11 +809,9 @@ try:
 
         response = backlinks_api.domain_intersection_live([BacklinksDomainIntersectionLiveRequestInfo(
                 targets={
-                        "1": "moz.com",
-                        "2": "ahrefs.com",
                     },
                 exclude_targets=[
-                        "semrush.com",
+                    "semrush.com",
                     ],
                 limit=5,
                 include_subdomains=False,
@@ -875,11 +873,9 @@ try:
 
         response = backlinks_api.page_intersection_live([BacklinksPageIntersectionLiveRequestInfo(
                 targets={
-                        "1": "football.com",
-                        "2": "fifa.com",
                     },
                 exclude_targets=[
-                        "skysports.com",
+                    "skysports.com",
                     ],
                 limit=5,
         )]
@@ -939,8 +935,8 @@ try:
 
         response = backlinks_api.timeseries_summary_live([BacklinksTimeseriesSummaryLiveRequestInfo(
                 target="dataforseo.com",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
                 group_range="month",
         )]
         )
@@ -999,8 +995,8 @@ try:
 
         response = backlinks_api.timeseries_new_lost_summary_live([BacklinksTimeseriesNewLostSummaryLiveRequestInfo(
                 target="dataforseo.com",
-                date_from="2025-04-17",
-                date_to="2025-06-17",
+                date_from="2025-05-06",
+                date_to="2025-07-06",
                 group_range="month",
         )]
         )
@@ -1059,16 +1055,16 @@ try:
 
         response = backlinks_api.bulk_ranks_live([BacklinksBulkRanksLiveRequestInfo(
                 targets=[
-                        "forbes.com",
-                        "cnn.com",
-                        "bbc.com",
-                        "yelp.com",
-                        "https://www.apple.com/iphone/",
-                        "https://ahrefs.com/blog/",
-                        "ibm.com",
-                        "https://variety.com/",
-                        "https://stackoverflow.com/",
-                        "www.trustpilot.com",
+                    "forbes.com",
+                    "cnn.com",
+                    "bbc.com",
+                    "yelp.com",
+                    "https://www.apple.com/iphone/",
+                    "https://ahrefs.com/blog/",
+                    "ibm.com",
+                    "https://variety.com/",
+                    "https://stackoverflow.com/",
+                    "www.trustpilot.com",
                     ],
         )]
         )
@@ -1127,16 +1123,16 @@ try:
 
         response = backlinks_api.bulk_backlinks_live([BacklinksBulkBacklinksLiveRequestInfo(
                 targets=[
-                        "forbes.com",
-                        "cnn.com",
-                        "bbc.com",
-                        "yelp.com",
-                        "https://www.apple.com/iphone/",
-                        "https://ahrefs.com/blog/",
-                        "ibm.com",
-                        "https://variety.com/",
-                        "https://stackoverflow.com/",
-                        "www.trustpilot.com",
+                    "forbes.com",
+                    "cnn.com",
+                    "bbc.com",
+                    "yelp.com",
+                    "https://www.apple.com/iphone/",
+                    "https://ahrefs.com/blog/",
+                    "ibm.com",
+                    "https://variety.com/",
+                    "https://stackoverflow.com/",
+                    "www.trustpilot.com",
                     ],
         )]
         )
@@ -1195,16 +1191,16 @@ try:
 
         response = backlinks_api.bulk_spam_score_live([BacklinksBulkSpamScoreLiveRequestInfo(
                 targets=[
-                        "forbes.com",
-                        "cnn.com",
-                        "bbc.com",
-                        "yelp.com",
-                        "https://www.apple.com/iphone/",
-                        "https://ahrefs.com/blog/",
-                        "ibm.com",
-                        "https://variety.com/",
-                        "https://stackoverflow.com/",
-                        "www.trustpilot.com",
+                    "forbes.com",
+                    "cnn.com",
+                    "bbc.com",
+                    "yelp.com",
+                    "https://www.apple.com/iphone/",
+                    "https://ahrefs.com/blog/",
+                    "ibm.com",
+                    "https://variety.com/",
+                    "https://stackoverflow.com/",
+                    "www.trustpilot.com",
                     ],
         )]
         )
@@ -1263,16 +1259,16 @@ try:
 
         response = backlinks_api.bulk_referring_domains_live([BacklinksBulkReferringDomainsLiveRequestInfo(
                 targets=[
-                        "forbes.com",
-                        "cnn.com",
-                        "bbc.com",
-                        "yelp.com",
-                        "https://www.apple.com/iphone/",
-                        "https://ahrefs.com/blog/",
-                        "ibm.com",
-                        "https://variety.com/",
-                        "https://stackoverflow.com/",
-                        "www.trustpilot.com",
+                    "forbes.com",
+                    "cnn.com",
+                    "bbc.com",
+                    "yelp.com",
+                    "https://www.apple.com/iphone/",
+                    "https://ahrefs.com/blog/",
+                    "ibm.com",
+                    "https://variety.com/",
+                    "https://stackoverflow.com/",
+                    "www.trustpilot.com",
                     ],
         )]
         )
@@ -1331,18 +1327,18 @@ try:
 
         response = backlinks_api.bulk_new_lost_backlinks_live([BacklinksBulkNewLostBacklinksLiveRequestInfo(
                 targets=[
-                        "forbes.com",
-                        "cnn.com",
-                        "bbc.com",
-                        "yelp.com",
-                        "https://www.apple.com/iphone/",
-                        "https://ahrefs.com/blog/",
-                        "ibm.com",
-                        "https://variety.com/",
-                        "https://stackoverflow.com/",
-                        "www.trustpilot.com",
+                    "forbes.com",
+                    "cnn.com",
+                    "bbc.com",
+                    "yelp.com",
+                    "https://www.apple.com/iphone/",
+                    "https://ahrefs.com/blog/",
+                    "ibm.com",
+                    "https://variety.com/",
+                    "https://stackoverflow.com/",
+                    "www.trustpilot.com",
                     ],
-                date_from="2025-04-17",
+                date_from="2025-05-06",
         )]
         )
 except ApiException as e:
@@ -1400,18 +1396,18 @@ try:
 
         response = backlinks_api.bulk_new_lost_referring_domains_live([BacklinksBulkNewLostReferringDomainsLiveRequestInfo(
                 targets=[
-                        "forbes.com",
-                        "cnn.com",
-                        "bbc.com",
-                        "yelp.com",
-                        "https://www.apple.com/iphone/",
-                        "https://ahrefs.com/blog/",
-                        "ibm.com",
-                        "https://variety.com/",
-                        "https://stackoverflow.com/",
-                        "www.trustpilot.com",
+                    "forbes.com",
+                    "cnn.com",
+                    "bbc.com",
+                    "yelp.com",
+                    "https://www.apple.com/iphone/",
+                    "https://ahrefs.com/blog/",
+                    "ibm.com",
+                    "https://variety.com/",
+                    "https://stackoverflow.com/",
+                    "www.trustpilot.com",
                     ],
-                date_from="2025-04-17",
+                date_from="2025-05-06",
         )]
         )
 except ApiException as e:
@@ -1469,8 +1465,8 @@ try:
 
         response = backlinks_api.bulk_pages_summary_live([BacklinksBulkPagesSummaryLiveRequestInfo(
                 targets=[
-                        "https://dataforseo.com/solutions",
-                        "https://dataforseo.com/about-us",
+                    "https://dataforseo.com/solutions",
+                    "https://dataforseo.com/about-us",
                     ],
         )]
         )
