@@ -7,8 +7,9 @@ This is a Python client providing you, as a developer, with a tool for obtaining
 
 DataForSEO API uses REST technology for interchanging data between your application and our service. The data exchange is made through the widely used HTTP protocol, which allows using our API with almost any programming language.
 
-Client contains 12 sections (aka APIs):
+Client contains 13 sections (aka APIs):
 
+- AI Optimization API ([source docs](./docs/AiOptimizationApi.md) | [api docs](https://docs.dataforseo.com/v3/ai_optimization/overview/?bash))
 - SERP ([source docs](./docs/SerpApi.md) | [api docs](https://docs.dataforseo.com/v3/serp/overview/?bash))
 - Keywords Data ([source docs](./docs/KeywordsDataApi.md) | [api docs](https://docs.dataforseo.com/v3/keywords_data/overview/?bash))
 - Domain Analytics ([source docs](./docs/DomainAnalyticsApi.md) | [api docs](https://docs.dataforseo.com/v3/domain_analytics/overview/?bash))
