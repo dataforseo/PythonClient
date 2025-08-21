@@ -1,34 +1,35 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_models_response_info import AiOptimizationChatGptLlmResponsesModelsResponseInfo
-from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_live_request_info import AiOptimizationChatGptLlmResponsesLiveRequestInfo
-from dataforseo_client.models.llm_message_chain_item import LlmMessageChainItem
-from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_live_response_info import AiOptimizationChatGptLlmResponsesLiveResponseInfo
-from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_post_request_info import AiOptimizationChatGptLlmResponsesTaskPostRequestInfo
-from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_post_response_info import AiOptimizationChatGptLlmResponsesTaskPostResponseInfo
-from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_tasks_ready_response_info import AiOptimizationChatGptLlmResponsesTasksReadyResponseInfo
-from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_get_response_info import AiOptimizationChatGptLlmResponsesTaskGetResponseInfo
-from dataforseo_client.models.ai_optimization_claude_llm_responses_models_response_info import AiOptimizationClaudeLlmResponsesModelsResponseInfo
-from dataforseo_client.models.ai_optimization_claude_llm_responses_live_request_info import AiOptimizationClaudeLlmResponsesLiveRequestInfo
-from dataforseo_client.models.ai_optimization_claude_llm_responses_live_response_info import AiOptimizationClaudeLlmResponsesLiveResponseInfo
-from dataforseo_client.models.ai_optimization_claude_llm_responses_task_post_request_info import AiOptimizationClaudeLlmResponsesTaskPostRequestInfo
-from dataforseo_client.models.ai_optimization_claude_llm_responses_task_post_response_info import AiOptimizationClaudeLlmResponsesTaskPostResponseInfo
-from dataforseo_client.models.ai_optimization_claude_llm_responses_tasks_ready_response_info import AiOptimizationClaudeLlmResponsesTasksReadyResponseInfo
-from dataforseo_client.models.ai_optimization_claude_llm_responses_task_get_response_info import AiOptimizationClaudeLlmResponsesTaskGetResponseInfo
-from dataforseo_client.models.ai_optimization_gemini_llm_responses_models_response_info import AiOptimizationGeminiLlmResponsesModelsResponseInfo
-from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_request_info import AiOptimizationGeminiLlmResponsesLiveRequestInfo
-from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_response_info import AiOptimizationGeminiLlmResponsesLiveResponseInfo
-from dataforseo_client.models.ai_optimization_perplexity_llm_responses_models_response_info import AiOptimizationPerplexityLlmResponsesModelsResponseInfo
-from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_request_info import AiOptimizationPerplexityLlmResponsesLiveRequestInfo
-from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_response_info import AiOptimizationPerplexityLlmResponsesLiveResponseInfo
-from dataforseo_client.models.ai_optimization_ai_keyword_data_available_filters_response_info import AiOptimizationAiKeywordDataAvailableFiltersResponseInfo
-from dataforseo_client.models.ai_optimization_ai_keyword_data_locations_and_languages_response_info import AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo
-from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo
-from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_response_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_models_response_info import AiOptimizationChatGptLlmResponsesModelsResponseInfo
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_live_request_info import AiOptimizationChatGptLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.llm_message_chain_item import LlmMessageChainItem
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_live_response_info import AiOptimizationChatGptLlmResponsesLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_post_request_info import AiOptimizationChatGptLlmResponsesTaskPostRequestInfo
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_post_response_info import AiOptimizationChatGptLlmResponsesTaskPostResponseInfo
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_tasks_ready_response_info import AiOptimizationChatGptLlmResponsesTasksReadyResponseInfo
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_get_response_info import AiOptimizationChatGptLlmResponsesTaskGetResponseInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_models_response_info import AiOptimizationClaudeLlmResponsesModelsResponseInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_live_request_info import AiOptimizationClaudeLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_live_response_info import AiOptimizationClaudeLlmResponsesLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_task_post_request_info import AiOptimizationClaudeLlmResponsesTaskPostRequestInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_task_post_response_info import AiOptimizationClaudeLlmResponsesTaskPostResponseInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_tasks_ready_response_info import AiOptimizationClaudeLlmResponsesTasksReadyResponseInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_task_get_response_info import AiOptimizationClaudeLlmResponsesTaskGetResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_responses_models_response_info import AiOptimizationGeminiLlmResponsesModelsResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_request_info import AiOptimizationGeminiLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_response_info import AiOptimizationGeminiLlmResponsesLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_perplexity_llm_responses_models_response_info import AiOptimizationPerplexityLlmResponsesModelsResponseInfo
+    from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_request_info import AiOptimizationPerplexityLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_response_info import AiOptimizationPerplexityLlmResponsesLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_available_filters_response_info import AiOptimizationAiKeywordDataAvailableFiltersResponseInfo
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_locations_and_languages_response_info import AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_response_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -41,7 +42,9 @@ class AiOptimizationApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_models_response_info import AiOptimizationChatGptLlmResponsesModelsResponseInfo
     @validate_call
     def chat_gpt_llm_responses_models(
         self,
@@ -94,7 +97,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationChatGptLlmResponsesModelsResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationChatGptLlmResponsesModelsResponseInfo]':
 
         _param = self._chat_gpt_llm_responses_models_serialize(
             _request_auth=_request_auth,
@@ -197,10 +200,12 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_live_request_info import AiOptimizationChatGptLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_live_response_info import AiOptimizationChatGptLlmResponsesLiveResponseInfo
     @validate_call
     def chat_gpt_llm_responses_live(
         self,
-        list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info: List[Optional[AiOptimizationChatGptLlmResponsesLiveRequestInfo]] = None,
+        list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info: 'List[Optional[AiOptimizationChatGptLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -241,7 +246,7 @@ class AiOptimizationApi:
     @validate_call
     def chat_gpt_llm_responses_live_with_http_info(
         self,
-        list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationChatGptLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info: 'List[Optional[AiOptimizationChatGptLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -254,7 +259,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationChatGptLlmResponsesLiveResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationChatGptLlmResponsesLiveResponseInfo]':
 
         _param = self._chat_gpt_llm_responses_live_serialize(
             list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info=list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info,
@@ -281,7 +286,7 @@ class AiOptimizationApi:
     @validate_call
     def chat_gpt_llm_responses_live_without_preload_content(
         self,
-        list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationChatGptLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_chat_gpt_llm_responses_live_request_info: 'List[Optional[AiOptimizationChatGptLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -387,10 +392,12 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_post_request_info import AiOptimizationChatGptLlmResponsesTaskPostRequestInfo
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_post_response_info import AiOptimizationChatGptLlmResponsesTaskPostResponseInfo
     @validate_call
     def chat_gpt_llm_responses_task_post(
         self,
-        list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info: List[Optional[AiOptimizationChatGptLlmResponsesTaskPostRequestInfo]] = None,
+        list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info: 'List[Optional[AiOptimizationChatGptLlmResponsesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -431,7 +438,7 @@ class AiOptimizationApi:
     @validate_call
     def chat_gpt_llm_responses_task_post_with_http_info(
         self,
-        list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info: Optional[List[List[Optional[AiOptimizationChatGptLlmResponsesTaskPostRequestInfo]]]] = None,
+        list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info: 'List[Optional[AiOptimizationChatGptLlmResponsesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -444,7 +451,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationChatGptLlmResponsesTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationChatGptLlmResponsesTaskPostResponseInfo]':
 
         _param = self._chat_gpt_llm_responses_task_post_serialize(
             list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info=list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info,
@@ -471,7 +478,7 @@ class AiOptimizationApi:
     @validate_call
     def chat_gpt_llm_responses_task_post_without_preload_content(
         self,
-        list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info: Optional[List[List[Optional[AiOptimizationChatGptLlmResponsesTaskPostRequestInfo]]]] = None,
+        list_optional_ai_optimization_chat_gpt_llm_responses_task_post_request_info: 'List[Optional[AiOptimizationChatGptLlmResponsesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -577,6 +584,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_tasks_ready_response_info import AiOptimizationChatGptLlmResponsesTasksReadyResponseInfo
     @validate_call
     def chat_gpt_llm_responses_tasks_ready(
         self,
@@ -629,7 +637,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationChatGptLlmResponsesTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationChatGptLlmResponsesTasksReadyResponseInfo]':
 
         _param = self._chat_gpt_llm_responses_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -732,6 +740,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_task_get_response_info import AiOptimizationChatGptLlmResponsesTaskGetResponseInfo
     @validate_call
     def chat_gpt_llm_responses_task_get(
         self,
@@ -787,7 +796,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationChatGptLlmResponsesTaskGetResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationChatGptLlmResponsesTaskGetResponseInfo]':
 
         _param = self._chat_gpt_llm_responses_task_get_serialize(
             id=id,
@@ -896,6 +905,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_models_response_info import AiOptimizationClaudeLlmResponsesModelsResponseInfo
     @validate_call
     def claude_llm_responses_models(
         self,
@@ -948,7 +958,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationClaudeLlmResponsesModelsResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationClaudeLlmResponsesModelsResponseInfo]':
 
         _param = self._claude_llm_responses_models_serialize(
             _request_auth=_request_auth,
@@ -1051,10 +1061,12 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_live_request_info import AiOptimizationClaudeLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_live_response_info import AiOptimizationClaudeLlmResponsesLiveResponseInfo
     @validate_call
     def claude_llm_responses_live(
         self,
-        list_optional_ai_optimization_claude_llm_responses_live_request_info: List[Optional[AiOptimizationClaudeLlmResponsesLiveRequestInfo]] = None,
+        list_optional_ai_optimization_claude_llm_responses_live_request_info: 'List[Optional[AiOptimizationClaudeLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1095,7 +1107,7 @@ class AiOptimizationApi:
     @validate_call
     def claude_llm_responses_live_with_http_info(
         self,
-        list_optional_ai_optimization_claude_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationClaudeLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_claude_llm_responses_live_request_info: 'List[Optional[AiOptimizationClaudeLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1108,7 +1120,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationClaudeLlmResponsesLiveResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationClaudeLlmResponsesLiveResponseInfo]':
 
         _param = self._claude_llm_responses_live_serialize(
             list_optional_ai_optimization_claude_llm_responses_live_request_info=list_optional_ai_optimization_claude_llm_responses_live_request_info,
@@ -1135,7 +1147,7 @@ class AiOptimizationApi:
     @validate_call
     def claude_llm_responses_live_without_preload_content(
         self,
-        list_optional_ai_optimization_claude_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationClaudeLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_claude_llm_responses_live_request_info: 'List[Optional[AiOptimizationClaudeLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1241,10 +1253,12 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_task_post_request_info import AiOptimizationClaudeLlmResponsesTaskPostRequestInfo
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_task_post_response_info import AiOptimizationClaudeLlmResponsesTaskPostResponseInfo
     @validate_call
     def claude_llm_responses_task_post(
         self,
-        list_optional_ai_optimization_claude_llm_responses_task_post_request_info: List[Optional[AiOptimizationClaudeLlmResponsesTaskPostRequestInfo]] = None,
+        list_optional_ai_optimization_claude_llm_responses_task_post_request_info: 'List[Optional[AiOptimizationClaudeLlmResponsesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1285,7 +1299,7 @@ class AiOptimizationApi:
     @validate_call
     def claude_llm_responses_task_post_with_http_info(
         self,
-        list_optional_ai_optimization_claude_llm_responses_task_post_request_info: Optional[List[List[Optional[AiOptimizationClaudeLlmResponsesTaskPostRequestInfo]]]] = None,
+        list_optional_ai_optimization_claude_llm_responses_task_post_request_info: 'List[Optional[AiOptimizationClaudeLlmResponsesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1298,7 +1312,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationClaudeLlmResponsesTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationClaudeLlmResponsesTaskPostResponseInfo]':
 
         _param = self._claude_llm_responses_task_post_serialize(
             list_optional_ai_optimization_claude_llm_responses_task_post_request_info=list_optional_ai_optimization_claude_llm_responses_task_post_request_info,
@@ -1325,7 +1339,7 @@ class AiOptimizationApi:
     @validate_call
     def claude_llm_responses_task_post_without_preload_content(
         self,
-        list_optional_ai_optimization_claude_llm_responses_task_post_request_info: Optional[List[List[Optional[AiOptimizationClaudeLlmResponsesTaskPostRequestInfo]]]] = None,
+        list_optional_ai_optimization_claude_llm_responses_task_post_request_info: 'List[Optional[AiOptimizationClaudeLlmResponsesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1431,6 +1445,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_tasks_ready_response_info import AiOptimizationClaudeLlmResponsesTasksReadyResponseInfo
     @validate_call
     def claude_llm_responses_tasks_ready(
         self,
@@ -1483,7 +1498,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationClaudeLlmResponsesTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationClaudeLlmResponsesTasksReadyResponseInfo]':
 
         _param = self._claude_llm_responses_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -1586,6 +1601,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_claude_llm_responses_task_get_response_info import AiOptimizationClaudeLlmResponsesTaskGetResponseInfo
     @validate_call
     def claude_llm_responses_task_get(
         self,
@@ -1641,7 +1657,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationClaudeLlmResponsesTaskGetResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationClaudeLlmResponsesTaskGetResponseInfo]':
 
         _param = self._claude_llm_responses_task_get_serialize(
             id=id,
@@ -1750,6 +1766,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_gemini_llm_responses_models_response_info import AiOptimizationGeminiLlmResponsesModelsResponseInfo
     @validate_call
     def gemini_llm_responses_models(
         self,
@@ -1802,7 +1819,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationGeminiLlmResponsesModelsResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmResponsesModelsResponseInfo]':
 
         _param = self._gemini_llm_responses_models_serialize(
             _request_auth=_request_auth,
@@ -1905,10 +1922,12 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_request_info import AiOptimizationGeminiLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_response_info import AiOptimizationGeminiLlmResponsesLiveResponseInfo
     @validate_call
     def gemini_llm_responses_live(
         self,
-        list_optional_ai_optimization_gemini_llm_responses_live_request_info: List[Optional[AiOptimizationGeminiLlmResponsesLiveRequestInfo]] = None,
+        list_optional_ai_optimization_gemini_llm_responses_live_request_info: 'List[Optional[AiOptimizationGeminiLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1949,7 +1968,7 @@ class AiOptimizationApi:
     @validate_call
     def gemini_llm_responses_live_with_http_info(
         self,
-        list_optional_ai_optimization_gemini_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationGeminiLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_gemini_llm_responses_live_request_info: 'List[Optional[AiOptimizationGeminiLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1962,7 +1981,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationGeminiLlmResponsesLiveResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmResponsesLiveResponseInfo]':
 
         _param = self._gemini_llm_responses_live_serialize(
             list_optional_ai_optimization_gemini_llm_responses_live_request_info=list_optional_ai_optimization_gemini_llm_responses_live_request_info,
@@ -1989,7 +2008,7 @@ class AiOptimizationApi:
     @validate_call
     def gemini_llm_responses_live_without_preload_content(
         self,
-        list_optional_ai_optimization_gemini_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationGeminiLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_gemini_llm_responses_live_request_info: 'List[Optional[AiOptimizationGeminiLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2095,6 +2114,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_perplexity_llm_responses_models_response_info import AiOptimizationPerplexityLlmResponsesModelsResponseInfo
     @validate_call
     def perplexity_llm_responses_models(
         self,
@@ -2147,7 +2167,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationPerplexityLlmResponsesModelsResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationPerplexityLlmResponsesModelsResponseInfo]':
 
         _param = self._perplexity_llm_responses_models_serialize(
             _request_auth=_request_auth,
@@ -2250,10 +2270,12 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_request_info import AiOptimizationPerplexityLlmResponsesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_response_info import AiOptimizationPerplexityLlmResponsesLiveResponseInfo
     @validate_call
     def perplexity_llm_responses_live(
         self,
-        list_optional_ai_optimization_perplexity_llm_responses_live_request_info: List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]] = None,
+        list_optional_ai_optimization_perplexity_llm_responses_live_request_info: 'List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2294,7 +2316,7 @@ class AiOptimizationApi:
     @validate_call
     def perplexity_llm_responses_live_with_http_info(
         self,
-        list_optional_ai_optimization_perplexity_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_perplexity_llm_responses_live_request_info: 'List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2307,7 +2329,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationPerplexityLlmResponsesLiveResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationPerplexityLlmResponsesLiveResponseInfo]':
 
         _param = self._perplexity_llm_responses_live_serialize(
             list_optional_ai_optimization_perplexity_llm_responses_live_request_info=list_optional_ai_optimization_perplexity_llm_responses_live_request_info,
@@ -2334,7 +2356,7 @@ class AiOptimizationApi:
     @validate_call
     def perplexity_llm_responses_live_without_preload_content(
         self,
-        list_optional_ai_optimization_perplexity_llm_responses_live_request_info: Optional[List[List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_perplexity_llm_responses_live_request_info: 'List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2440,6 +2462,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_available_filters_response_info import AiOptimizationAiKeywordDataAvailableFiltersResponseInfo
     @validate_call
     def ai_keyword_data_available_filters(
         self,
@@ -2492,7 +2515,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationAiKeywordDataAvailableFiltersResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationAiKeywordDataAvailableFiltersResponseInfo]':
 
         _param = self._ai_keyword_data_available_filters_serialize(
             _request_auth=_request_auth,
@@ -2595,6 +2618,7 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_locations_and_languages_response_info import AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo
     @validate_call
     def ai_optimization_ai_keyword_data_locations_and_languages(
         self,
@@ -2647,7 +2671,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo]':
 
         _param = self._ai_optimization_ai_keyword_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
@@ -2750,10 +2774,12 @@ class AiOptimizationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_response_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo
     @validate_call
     def ai_keyword_data_keywords_search_volume_live(
         self,
-        list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info: List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo]] = None,
+        list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info: 'List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2794,7 +2820,7 @@ class AiOptimizationApi:
     @validate_call
     def ai_keyword_data_keywords_search_volume_live_with_http_info(
         self,
-        list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info: Optional[List[List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info: 'List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2807,7 +2833,7 @@ class AiOptimizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo]:
+    ) -> 'ApiResponse[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo]':
 
         _param = self._ai_keyword_data_keywords_search_volume_live_serialize(
             list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info=list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info,
@@ -2834,7 +2860,7 @@ class AiOptimizationApi:
     @validate_call
     def ai_keyword_data_keywords_search_volume_live_without_preload_content(
         self,
-        list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info: Optional[List[List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info: 'List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

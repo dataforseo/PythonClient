@@ -1,26 +1,27 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.content_generation_generate_live_request_info import ContentGenerationGenerateLiveRequestInfo
-from dataforseo_client.models.content_generation_generate_live_response_info import ContentGenerationGenerateLiveResponseInfo
-from dataforseo_client.models.content_generation_generate_text_live_request_info import ContentGenerationGenerateTextLiveRequestInfo
-from dataforseo_client.models.content_generation_generate_text_live_response_info import ContentGenerationGenerateTextLiveResponseInfo
-from dataforseo_client.models.content_generation_generate_meta_tags_live_request_info import ContentGenerationGenerateMetaTagsLiveRequestInfo
-from dataforseo_client.models.content_generation_generate_meta_tags_live_response_info import ContentGenerationGenerateMetaTagsLiveResponseInfo
-from dataforseo_client.models.content_generation_generate_sub_topics_live_request_info import ContentGenerationGenerateSubTopicsLiveRequestInfo
-from dataforseo_client.models.content_generation_generate_sub_topics_live_response_info import ContentGenerationGenerateSubTopicsLiveResponseInfo
-from dataforseo_client.models.content_generation_paraphrase_live_request_info import ContentGenerationParaphraseLiveRequestInfo
-from dataforseo_client.models.content_generation_paraphrase_live_response_info import ContentGenerationParaphraseLiveResponseInfo
-from dataforseo_client.models.content_generation_check_grammar_live_request_info import ContentGenerationCheckGrammarLiveRequestInfo
-from dataforseo_client.models.content_generation_check_grammar_live_response_info import ContentGenerationCheckGrammarLiveResponseInfo
-from dataforseo_client.models.content_generation_check_grammar_languages_response_info import ContentGenerationCheckGrammarLanguagesResponseInfo
-from dataforseo_client.models.content_generation_grammar_rules_response_info import ContentGenerationGrammarRulesResponseInfo
-from dataforseo_client.models.content_generation_text_summary_live_request_info import ContentGenerationTextSummaryLiveRequestInfo
-from dataforseo_client.models.content_generation_text_summary_live_response_info import ContentGenerationTextSummaryLiveResponseInfo
-from dataforseo_client.models.content_generation_text_summary_languages_response_info import ContentGenerationTextSummaryLanguagesResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.content_generation_generate_live_request_info import ContentGenerationGenerateLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_live_response_info import ContentGenerationGenerateLiveResponseInfo
+    from dataforseo_client.models.content_generation_generate_text_live_request_info import ContentGenerationGenerateTextLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_text_live_response_info import ContentGenerationGenerateTextLiveResponseInfo
+    from dataforseo_client.models.content_generation_generate_meta_tags_live_request_info import ContentGenerationGenerateMetaTagsLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_meta_tags_live_response_info import ContentGenerationGenerateMetaTagsLiveResponseInfo
+    from dataforseo_client.models.content_generation_generate_sub_topics_live_request_info import ContentGenerationGenerateSubTopicsLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_sub_topics_live_response_info import ContentGenerationGenerateSubTopicsLiveResponseInfo
+    from dataforseo_client.models.content_generation_paraphrase_live_request_info import ContentGenerationParaphraseLiveRequestInfo
+    from dataforseo_client.models.content_generation_paraphrase_live_response_info import ContentGenerationParaphraseLiveResponseInfo
+    from dataforseo_client.models.content_generation_check_grammar_live_request_info import ContentGenerationCheckGrammarLiveRequestInfo
+    from dataforseo_client.models.content_generation_check_grammar_live_response_info import ContentGenerationCheckGrammarLiveResponseInfo
+    from dataforseo_client.models.content_generation_check_grammar_languages_response_info import ContentGenerationCheckGrammarLanguagesResponseInfo
+    from dataforseo_client.models.content_generation_grammar_rules_response_info import ContentGenerationGrammarRulesResponseInfo
+    from dataforseo_client.models.content_generation_text_summary_live_request_info import ContentGenerationTextSummaryLiveRequestInfo
+    from dataforseo_client.models.content_generation_text_summary_live_response_info import ContentGenerationTextSummaryLiveResponseInfo
+    from dataforseo_client.models.content_generation_text_summary_languages_response_info import ContentGenerationTextSummaryLanguagesResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -33,11 +34,14 @@ class ContentGenerationApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.content_generation_generate_live_request_info import ContentGenerationGenerateLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_live_response_info import ContentGenerationGenerateLiveResponseInfo
     @validate_call
     def generate_live(
         self,
-        list_optional_content_generation_generate_live_request_info: List[Optional[ContentGenerationGenerateLiveRequestInfo]] = None,
+        list_optional_content_generation_generate_live_request_info: 'List[Optional[ContentGenerationGenerateLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -78,7 +82,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_live_with_http_info(
         self,
-        list_optional_content_generation_generate_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_live_request_info: 'List[Optional[ContentGenerationGenerateLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -91,7 +95,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationGenerateLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationGenerateLiveResponseInfo]':
 
         _param = self._generate_live_serialize(
             list_optional_content_generation_generate_live_request_info=list_optional_content_generation_generate_live_request_info,
@@ -118,7 +122,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_live_without_preload_content(
         self,
-        list_optional_content_generation_generate_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_live_request_info: 'List[Optional[ContentGenerationGenerateLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -224,10 +228,12 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_generate_text_live_request_info import ContentGenerationGenerateTextLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_text_live_response_info import ContentGenerationGenerateTextLiveResponseInfo
     @validate_call
     def generate_text_live(
         self,
-        list_optional_content_generation_generate_text_live_request_info: List[Optional[ContentGenerationGenerateTextLiveRequestInfo]] = None,
+        list_optional_content_generation_generate_text_live_request_info: 'List[Optional[ContentGenerationGenerateTextLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -268,7 +274,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_text_live_with_http_info(
         self,
-        list_optional_content_generation_generate_text_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateTextLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_text_live_request_info: 'List[Optional[ContentGenerationGenerateTextLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -281,7 +287,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationGenerateTextLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationGenerateTextLiveResponseInfo]':
 
         _param = self._generate_text_live_serialize(
             list_optional_content_generation_generate_text_live_request_info=list_optional_content_generation_generate_text_live_request_info,
@@ -308,7 +314,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_text_live_without_preload_content(
         self,
-        list_optional_content_generation_generate_text_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateTextLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_text_live_request_info: 'List[Optional[ContentGenerationGenerateTextLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -414,10 +420,12 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_generate_meta_tags_live_request_info import ContentGenerationGenerateMetaTagsLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_meta_tags_live_response_info import ContentGenerationGenerateMetaTagsLiveResponseInfo
     @validate_call
     def generate_meta_tags_live(
         self,
-        list_optional_content_generation_generate_meta_tags_live_request_info: List[Optional[ContentGenerationGenerateMetaTagsLiveRequestInfo]] = None,
+        list_optional_content_generation_generate_meta_tags_live_request_info: 'List[Optional[ContentGenerationGenerateMetaTagsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -458,7 +466,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_meta_tags_live_with_http_info(
         self,
-        list_optional_content_generation_generate_meta_tags_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateMetaTagsLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_meta_tags_live_request_info: 'List[Optional[ContentGenerationGenerateMetaTagsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -471,7 +479,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationGenerateMetaTagsLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationGenerateMetaTagsLiveResponseInfo]':
 
         _param = self._generate_meta_tags_live_serialize(
             list_optional_content_generation_generate_meta_tags_live_request_info=list_optional_content_generation_generate_meta_tags_live_request_info,
@@ -498,7 +506,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_meta_tags_live_without_preload_content(
         self,
-        list_optional_content_generation_generate_meta_tags_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateMetaTagsLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_meta_tags_live_request_info: 'List[Optional[ContentGenerationGenerateMetaTagsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -604,10 +612,12 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_generate_sub_topics_live_request_info import ContentGenerationGenerateSubTopicsLiveRequestInfo
+    from dataforseo_client.models.content_generation_generate_sub_topics_live_response_info import ContentGenerationGenerateSubTopicsLiveResponseInfo
     @validate_call
     def generate_sub_topics_live(
         self,
-        list_optional_content_generation_generate_sub_topics_live_request_info: List[Optional[ContentGenerationGenerateSubTopicsLiveRequestInfo]] = None,
+        list_optional_content_generation_generate_sub_topics_live_request_info: 'List[Optional[ContentGenerationGenerateSubTopicsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -648,7 +658,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_sub_topics_live_with_http_info(
         self,
-        list_optional_content_generation_generate_sub_topics_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateSubTopicsLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_sub_topics_live_request_info: 'List[Optional[ContentGenerationGenerateSubTopicsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -661,7 +671,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationGenerateSubTopicsLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationGenerateSubTopicsLiveResponseInfo]':
 
         _param = self._generate_sub_topics_live_serialize(
             list_optional_content_generation_generate_sub_topics_live_request_info=list_optional_content_generation_generate_sub_topics_live_request_info,
@@ -688,7 +698,7 @@ class ContentGenerationApi:
     @validate_call
     def generate_sub_topics_live_without_preload_content(
         self,
-        list_optional_content_generation_generate_sub_topics_live_request_info: Optional[List[List[Optional[ContentGenerationGenerateSubTopicsLiveRequestInfo]]]] = None,
+        list_optional_content_generation_generate_sub_topics_live_request_info: 'List[Optional[ContentGenerationGenerateSubTopicsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -794,10 +804,12 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_paraphrase_live_request_info import ContentGenerationParaphraseLiveRequestInfo
+    from dataforseo_client.models.content_generation_paraphrase_live_response_info import ContentGenerationParaphraseLiveResponseInfo
     @validate_call
     def paraphrase_live(
         self,
-        list_optional_content_generation_paraphrase_live_request_info: List[Optional[ContentGenerationParaphraseLiveRequestInfo]] = None,
+        list_optional_content_generation_paraphrase_live_request_info: 'List[Optional[ContentGenerationParaphraseLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -838,7 +850,7 @@ class ContentGenerationApi:
     @validate_call
     def paraphrase_live_with_http_info(
         self,
-        list_optional_content_generation_paraphrase_live_request_info: Optional[List[List[Optional[ContentGenerationParaphraseLiveRequestInfo]]]] = None,
+        list_optional_content_generation_paraphrase_live_request_info: 'List[Optional[ContentGenerationParaphraseLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -851,7 +863,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationParaphraseLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationParaphraseLiveResponseInfo]':
 
         _param = self._paraphrase_live_serialize(
             list_optional_content_generation_paraphrase_live_request_info=list_optional_content_generation_paraphrase_live_request_info,
@@ -878,7 +890,7 @@ class ContentGenerationApi:
     @validate_call
     def paraphrase_live_without_preload_content(
         self,
-        list_optional_content_generation_paraphrase_live_request_info: Optional[List[List[Optional[ContentGenerationParaphraseLiveRequestInfo]]]] = None,
+        list_optional_content_generation_paraphrase_live_request_info: 'List[Optional[ContentGenerationParaphraseLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -984,10 +996,12 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_check_grammar_live_request_info import ContentGenerationCheckGrammarLiveRequestInfo
+    from dataforseo_client.models.content_generation_check_grammar_live_response_info import ContentGenerationCheckGrammarLiveResponseInfo
     @validate_call
     def check_grammar_live(
         self,
-        list_optional_content_generation_check_grammar_live_request_info: List[Optional[ContentGenerationCheckGrammarLiveRequestInfo]] = None,
+        list_optional_content_generation_check_grammar_live_request_info: 'List[Optional[ContentGenerationCheckGrammarLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1028,7 +1042,7 @@ class ContentGenerationApi:
     @validate_call
     def check_grammar_live_with_http_info(
         self,
-        list_optional_content_generation_check_grammar_live_request_info: Optional[List[List[Optional[ContentGenerationCheckGrammarLiveRequestInfo]]]] = None,
+        list_optional_content_generation_check_grammar_live_request_info: 'List[Optional[ContentGenerationCheckGrammarLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1041,7 +1055,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationCheckGrammarLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationCheckGrammarLiveResponseInfo]':
 
         _param = self._check_grammar_live_serialize(
             list_optional_content_generation_check_grammar_live_request_info=list_optional_content_generation_check_grammar_live_request_info,
@@ -1068,7 +1082,7 @@ class ContentGenerationApi:
     @validate_call
     def check_grammar_live_without_preload_content(
         self,
-        list_optional_content_generation_check_grammar_live_request_info: Optional[List[List[Optional[ContentGenerationCheckGrammarLiveRequestInfo]]]] = None,
+        list_optional_content_generation_check_grammar_live_request_info: 'List[Optional[ContentGenerationCheckGrammarLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1174,6 +1188,7 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_check_grammar_languages_response_info import ContentGenerationCheckGrammarLanguagesResponseInfo
     @validate_call
     def content_generation_check_grammar_languages(
         self,
@@ -1226,7 +1241,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationCheckGrammarLanguagesResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationCheckGrammarLanguagesResponseInfo]':
 
         _param = self._content_generation_check_grammar_languages_serialize(
             _request_auth=_request_auth,
@@ -1329,6 +1344,7 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_grammar_rules_response_info import ContentGenerationGrammarRulesResponseInfo
     @validate_call
     def grammar_rules(
         self,
@@ -1381,7 +1397,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationGrammarRulesResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationGrammarRulesResponseInfo]':
 
         _param = self._grammar_rules_serialize(
             _request_auth=_request_auth,
@@ -1484,10 +1500,12 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_text_summary_live_request_info import ContentGenerationTextSummaryLiveRequestInfo
+    from dataforseo_client.models.content_generation_text_summary_live_response_info import ContentGenerationTextSummaryLiveResponseInfo
     @validate_call
     def text_summary_live(
         self,
-        list_optional_content_generation_text_summary_live_request_info: List[Optional[ContentGenerationTextSummaryLiveRequestInfo]] = None,
+        list_optional_content_generation_text_summary_live_request_info: 'List[Optional[ContentGenerationTextSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1528,7 +1546,7 @@ class ContentGenerationApi:
     @validate_call
     def text_summary_live_with_http_info(
         self,
-        list_optional_content_generation_text_summary_live_request_info: Optional[List[List[Optional[ContentGenerationTextSummaryLiveRequestInfo]]]] = None,
+        list_optional_content_generation_text_summary_live_request_info: 'List[Optional[ContentGenerationTextSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1541,7 +1559,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationTextSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationTextSummaryLiveResponseInfo]':
 
         _param = self._text_summary_live_serialize(
             list_optional_content_generation_text_summary_live_request_info=list_optional_content_generation_text_summary_live_request_info,
@@ -1568,7 +1586,7 @@ class ContentGenerationApi:
     @validate_call
     def text_summary_live_without_preload_content(
         self,
-        list_optional_content_generation_text_summary_live_request_info: Optional[List[List[Optional[ContentGenerationTextSummaryLiveRequestInfo]]]] = None,
+        list_optional_content_generation_text_summary_live_request_info: 'List[Optional[ContentGenerationTextSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1674,6 +1692,7 @@ class ContentGenerationApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_generation_text_summary_languages_response_info import ContentGenerationTextSummaryLanguagesResponseInfo
     @validate_call
     def content_generation_text_summary_languages(
         self,
@@ -1726,7 +1745,7 @@ class ContentGenerationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentGenerationTextSummaryLanguagesResponseInfo]:
+    ) -> 'ApiResponse[ContentGenerationTextSummaryLanguagesResponseInfo]':
 
         _param = self._content_generation_text_summary_languages_serialize(
             _request_auth=_request_auth,

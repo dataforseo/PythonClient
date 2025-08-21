@@ -1,14 +1,15 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.appendix_user_data_response_info import AppendixUserDataResponseInfo
-from dataforseo_client.models.appendix_errors_response_info import AppendixErrorsResponseInfo
-from dataforseo_client.models.appendix_webhook_resend_request_info import AppendixWebhookResendRequestInfo
-from dataforseo_client.models.appendix_webhook_resend_response_info import AppendixWebhookResendResponseInfo
-from dataforseo_client.models.appendix_status_response_info import AppendixStatusResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.appendix_user_data_response_info import AppendixUserDataResponseInfo
+    from dataforseo_client.models.appendix_errors_response_info import AppendixErrorsResponseInfo
+    from dataforseo_client.models.appendix_webhook_resend_request_info import AppendixWebhookResendRequestInfo
+    from dataforseo_client.models.appendix_webhook_resend_response_info import AppendixWebhookResendResponseInfo
+    from dataforseo_client.models.appendix_status_response_info import AppendixStatusResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -21,7 +22,9 @@ class AppendixApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.appendix_user_data_response_info import AppendixUserDataResponseInfo
     @validate_call
     def user_data(
         self,
@@ -74,7 +77,7 @@ class AppendixApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppendixUserDataResponseInfo]:
+    ) -> 'ApiResponse[AppendixUserDataResponseInfo]':
 
         _param = self._user_data_serialize(
             _request_auth=_request_auth,
@@ -177,6 +180,7 @@ class AppendixApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.appendix_errors_response_info import AppendixErrorsResponseInfo
     @validate_call
     def appendix_errors(
         self,
@@ -229,7 +233,7 @@ class AppendixApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppendixErrorsResponseInfo]:
+    ) -> 'ApiResponse[AppendixErrorsResponseInfo]':
 
         _param = self._appendix_errors_serialize(
             _request_auth=_request_auth,
@@ -332,10 +336,12 @@ class AppendixApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.appendix_webhook_resend_request_info import AppendixWebhookResendRequestInfo
+    from dataforseo_client.models.appendix_webhook_resend_response_info import AppendixWebhookResendResponseInfo
     @validate_call
     def webhook_resend(
         self,
-        list_optional_appendix_webhook_resend_request_info: List[Optional[AppendixWebhookResendRequestInfo]] = None,
+        list_optional_appendix_webhook_resend_request_info: 'List[Optional[AppendixWebhookResendRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -376,7 +382,7 @@ class AppendixApi:
     @validate_call
     def webhook_resend_with_http_info(
         self,
-        list_optional_appendix_webhook_resend_request_info: Optional[List[List[Optional[AppendixWebhookResendRequestInfo]]]] = None,
+        list_optional_appendix_webhook_resend_request_info: 'List[Optional[AppendixWebhookResendRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -389,7 +395,7 @@ class AppendixApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppendixWebhookResendResponseInfo]:
+    ) -> 'ApiResponse[AppendixWebhookResendResponseInfo]':
 
         _param = self._webhook_resend_serialize(
             list_optional_appendix_webhook_resend_request_info=list_optional_appendix_webhook_resend_request_info,
@@ -416,7 +422,7 @@ class AppendixApi:
     @validate_call
     def webhook_resend_without_preload_content(
         self,
-        list_optional_appendix_webhook_resend_request_info: Optional[List[List[Optional[AppendixWebhookResendRequestInfo]]]] = None,
+        list_optional_appendix_webhook_resend_request_info: 'List[Optional[AppendixWebhookResendRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -522,6 +528,7 @@ class AppendixApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.appendix_status_response_info import AppendixStatusResponseInfo
     @validate_call
     def appendix_status(
         self,
@@ -574,7 +581,7 @@ class AppendixApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppendixStatusResponseInfo]:
+    ) -> 'ApiResponse[AppendixStatusResponseInfo]':
 
         _param = self._appendix_status_serialize(
             _request_auth=_request_auth,

@@ -1,32 +1,33 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.domain_analytics_id_list_request_info import DomainAnalyticsIdListRequestInfo
-from dataforseo_client.models.domain_analytics_id_list_response_info import DomainAnalyticsIdListResponseInfo
-from dataforseo_client.models.domain_analytics_errors_request_info import DomainAnalyticsErrorsRequestInfo
-from dataforseo_client.models.domain_analytics_errors_response_info import DomainAnalyticsErrorsResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_available_filters_response_info import DomainAnalyticsTechnologiesAvailableFiltersResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_locations_response_info import DomainAnalyticsTechnologiesLocationsResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_languages_response_info import DomainAnalyticsTechnologiesLanguagesResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_technologies_response_info import DomainAnalyticsTechnologiesTechnologiesResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_aggregation_technologies_live_request_info import DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo
-from dataforseo_client.models.domain_analytics_technologies_aggregation_technologies_live_response_info import DomainAnalyticsTechnologiesAggregationTechnologiesLiveResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_technologies_summary_live_request_info import DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo
-from dataforseo_client.models.domain_analytics_technologies_technologies_summary_live_response_info import DomainAnalyticsTechnologiesTechnologiesSummaryLiveResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_technology_stats_live_request_info import DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo
-from dataforseo_client.models.domain_analytics_technologies_technology_stats_live_response_info import DomainAnalyticsTechnologiesTechnologyStatsLiveResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_domains_by_technology_live_request_info import DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo
-from dataforseo_client.models.domain_analytics_technologies_domains_by_technology_live_response_info import DomainAnalyticsTechnologiesDomainsByTechnologyLiveResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_domains_by_html_terms_live_request_info import DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo
-from dataforseo_client.models.domain_analytics_technologies_domains_by_html_terms_live_response_info import DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo
-from dataforseo_client.models.domain_analytics_technologies_domain_technologies_live_request_info import DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo
-from dataforseo_client.models.domain_analytics_technologies_domain_technologies_live_response_info import DomainAnalyticsTechnologiesDomainTechnologiesLiveResponseInfo
-from dataforseo_client.models.domain_analytics_whois_available_filters_response_info import DomainAnalyticsWhoisAvailableFiltersResponseInfo
-from dataforseo_client.models.domain_analytics_whois_overview_live_request_info import DomainAnalyticsWhoisOverviewLiveRequestInfo
-from dataforseo_client.models.domain_analytics_whois_overview_live_response_info import DomainAnalyticsWhoisOverviewLiveResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.domain_analytics_id_list_request_info import DomainAnalyticsIdListRequestInfo
+    from dataforseo_client.models.domain_analytics_id_list_response_info import DomainAnalyticsIdListResponseInfo
+    from dataforseo_client.models.domain_analytics_errors_request_info import DomainAnalyticsErrorsRequestInfo
+    from dataforseo_client.models.domain_analytics_errors_response_info import DomainAnalyticsErrorsResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_available_filters_response_info import DomainAnalyticsTechnologiesAvailableFiltersResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_locations_response_info import DomainAnalyticsTechnologiesLocationsResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_languages_response_info import DomainAnalyticsTechnologiesLanguagesResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_technologies_response_info import DomainAnalyticsTechnologiesTechnologiesResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_aggregation_technologies_live_request_info import DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_aggregation_technologies_live_response_info import DomainAnalyticsTechnologiesAggregationTechnologiesLiveResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_technologies_summary_live_request_info import DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_technologies_summary_live_response_info import DomainAnalyticsTechnologiesTechnologiesSummaryLiveResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_technology_stats_live_request_info import DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_technology_stats_live_response_info import DomainAnalyticsTechnologiesTechnologyStatsLiveResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_technology_live_request_info import DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_technology_live_response_info import DomainAnalyticsTechnologiesDomainsByTechnologyLiveResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_html_terms_live_request_info import DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_html_terms_live_response_info import DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo
+    from dataforseo_client.models.domain_analytics_technologies_domain_technologies_live_request_info import DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_domain_technologies_live_response_info import DomainAnalyticsTechnologiesDomainTechnologiesLiveResponseInfo
+    from dataforseo_client.models.domain_analytics_whois_available_filters_response_info import DomainAnalyticsWhoisAvailableFiltersResponseInfo
+    from dataforseo_client.models.domain_analytics_whois_overview_live_request_info import DomainAnalyticsWhoisOverviewLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_whois_overview_live_response_info import DomainAnalyticsWhoisOverviewLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -39,11 +40,14 @@ class DomainAnalyticsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.domain_analytics_id_list_request_info import DomainAnalyticsIdListRequestInfo
+    from dataforseo_client.models.domain_analytics_id_list_response_info import DomainAnalyticsIdListResponseInfo
     @validate_call
     def domain_analytics_id_list(
         self,
-        list_optional_domain_analytics_id_list_request_info: List[Optional[DomainAnalyticsIdListRequestInfo]] = None,
+        list_optional_domain_analytics_id_list_request_info: 'List[Optional[DomainAnalyticsIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -84,7 +88,7 @@ class DomainAnalyticsApi:
     @validate_call
     def domain_analytics_id_list_with_http_info(
         self,
-        list_optional_domain_analytics_id_list_request_info: Optional[List[List[Optional[DomainAnalyticsIdListRequestInfo]]]] = None,
+        list_optional_domain_analytics_id_list_request_info: 'List[Optional[DomainAnalyticsIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -97,7 +101,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsIdListResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsIdListResponseInfo]':
 
         _param = self._domain_analytics_id_list_serialize(
             list_optional_domain_analytics_id_list_request_info=list_optional_domain_analytics_id_list_request_info,
@@ -124,7 +128,7 @@ class DomainAnalyticsApi:
     @validate_call
     def domain_analytics_id_list_without_preload_content(
         self,
-        list_optional_domain_analytics_id_list_request_info: Optional[List[List[Optional[DomainAnalyticsIdListRequestInfo]]]] = None,
+        list_optional_domain_analytics_id_list_request_info: 'List[Optional[DomainAnalyticsIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -230,10 +234,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_errors_request_info import DomainAnalyticsErrorsRequestInfo
+    from dataforseo_client.models.domain_analytics_errors_response_info import DomainAnalyticsErrorsResponseInfo
     @validate_call
     def domain_analytics_errors(
         self,
-        list_optional_domain_analytics_errors_request_info: List[Optional[DomainAnalyticsErrorsRequestInfo]] = None,
+        list_optional_domain_analytics_errors_request_info: 'List[Optional[DomainAnalyticsErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -274,7 +280,7 @@ class DomainAnalyticsApi:
     @validate_call
     def domain_analytics_errors_with_http_info(
         self,
-        list_optional_domain_analytics_errors_request_info: Optional[List[List[Optional[DomainAnalyticsErrorsRequestInfo]]]] = None,
+        list_optional_domain_analytics_errors_request_info: 'List[Optional[DomainAnalyticsErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -287,7 +293,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsErrorsResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsErrorsResponseInfo]':
 
         _param = self._domain_analytics_errors_serialize(
             list_optional_domain_analytics_errors_request_info=list_optional_domain_analytics_errors_request_info,
@@ -314,7 +320,7 @@ class DomainAnalyticsApi:
     @validate_call
     def domain_analytics_errors_without_preload_content(
         self,
-        list_optional_domain_analytics_errors_request_info: Optional[List[List[Optional[DomainAnalyticsErrorsRequestInfo]]]] = None,
+        list_optional_domain_analytics_errors_request_info: 'List[Optional[DomainAnalyticsErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -420,6 +426,7 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_available_filters_response_info import DomainAnalyticsTechnologiesAvailableFiltersResponseInfo
     @validate_call
     def technologies_available_filters(
         self,
@@ -472,7 +479,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesAvailableFiltersResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesAvailableFiltersResponseInfo]':
 
         _param = self._technologies_available_filters_serialize(
             _request_auth=_request_auth,
@@ -575,6 +582,7 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_locations_response_info import DomainAnalyticsTechnologiesLocationsResponseInfo
     @validate_call
     def domain_analytics_technologies_locations(
         self,
@@ -627,7 +635,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesLocationsResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesLocationsResponseInfo]':
 
         _param = self._domain_analytics_technologies_locations_serialize(
             _request_auth=_request_auth,
@@ -730,6 +738,7 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_languages_response_info import DomainAnalyticsTechnologiesLanguagesResponseInfo
     @validate_call
     def domain_analytics_technologies_languages(
         self,
@@ -782,7 +791,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesLanguagesResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesLanguagesResponseInfo]':
 
         _param = self._domain_analytics_technologies_languages_serialize(
             _request_auth=_request_auth,
@@ -885,6 +894,7 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_technologies_response_info import DomainAnalyticsTechnologiesTechnologiesResponseInfo
     @validate_call
     def technologies_technologies(
         self,
@@ -937,7 +947,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesTechnologiesResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesTechnologiesResponseInfo]':
 
         _param = self._technologies_technologies_serialize(
             _request_auth=_request_auth,
@@ -1040,10 +1050,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_aggregation_technologies_live_request_info import DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_aggregation_technologies_live_response_info import DomainAnalyticsTechnologiesAggregationTechnologiesLiveResponseInfo
     @validate_call
     def technologies_aggregation_technologies_live(
         self,
-        list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info: List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo]] = None,
+        list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1084,7 +1096,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_aggregation_technologies_live_with_http_info(
         self,
-        list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1097,7 +1109,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesAggregationTechnologiesLiveResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesAggregationTechnologiesLiveResponseInfo]':
 
         _param = self._technologies_aggregation_technologies_live_serialize(
             list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info=list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info,
@@ -1124,7 +1136,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_aggregation_technologies_live_without_preload_content(
         self,
-        list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_aggregation_technologies_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1230,10 +1242,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_technologies_summary_live_request_info import DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_technologies_summary_live_response_info import DomainAnalyticsTechnologiesTechnologiesSummaryLiveResponseInfo
     @validate_call
     def technologies_technologies_summary_live(
         self,
-        list_optional_domain_analytics_technologies_technologies_summary_live_request_info: List[Optional[DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo]] = None,
+        list_optional_domain_analytics_technologies_technologies_summary_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1274,7 +1288,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_technologies_summary_live_with_http_info(
         self,
-        list_optional_domain_analytics_technologies_technologies_summary_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_technologies_summary_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1287,7 +1301,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesTechnologiesSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesTechnologiesSummaryLiveResponseInfo]':
 
         _param = self._technologies_technologies_summary_live_serialize(
             list_optional_domain_analytics_technologies_technologies_summary_live_request_info=list_optional_domain_analytics_technologies_technologies_summary_live_request_info,
@@ -1314,7 +1328,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_technologies_summary_live_without_preload_content(
         self,
-        list_optional_domain_analytics_technologies_technologies_summary_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_technologies_summary_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1420,10 +1434,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_technology_stats_live_request_info import DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_technology_stats_live_response_info import DomainAnalyticsTechnologiesTechnologyStatsLiveResponseInfo
     @validate_call
     def technologies_technology_stats_live(
         self,
-        list_optional_domain_analytics_technologies_technology_stats_live_request_info: List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo]] = None,
+        list_optional_domain_analytics_technologies_technology_stats_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1464,7 +1480,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_technology_stats_live_with_http_info(
         self,
-        list_optional_domain_analytics_technologies_technology_stats_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_technology_stats_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1477,7 +1493,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesTechnologyStatsLiveResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesTechnologyStatsLiveResponseInfo]':
 
         _param = self._technologies_technology_stats_live_serialize(
             list_optional_domain_analytics_technologies_technology_stats_live_request_info=list_optional_domain_analytics_technologies_technology_stats_live_request_info,
@@ -1504,7 +1520,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_technology_stats_live_without_preload_content(
         self,
-        list_optional_domain_analytics_technologies_technology_stats_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_technology_stats_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1610,10 +1626,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_technology_live_request_info import DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_technology_live_response_info import DomainAnalyticsTechnologiesDomainsByTechnologyLiveResponseInfo
     @validate_call
     def technologies_domains_by_technology_live(
         self,
-        list_optional_domain_analytics_technologies_domains_by_technology_live_request_info: List[Optional[DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo]] = None,
+        list_optional_domain_analytics_technologies_domains_by_technology_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1654,7 +1672,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_domains_by_technology_live_with_http_info(
         self,
-        list_optional_domain_analytics_technologies_domains_by_technology_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_domains_by_technology_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1667,7 +1685,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesDomainsByTechnologyLiveResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesDomainsByTechnologyLiveResponseInfo]':
 
         _param = self._technologies_domains_by_technology_live_serialize(
             list_optional_domain_analytics_technologies_domains_by_technology_live_request_info=list_optional_domain_analytics_technologies_domains_by_technology_live_request_info,
@@ -1694,7 +1712,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_domains_by_technology_live_without_preload_content(
         self,
-        list_optional_domain_analytics_technologies_domains_by_technology_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_domains_by_technology_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1800,10 +1818,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_html_terms_live_request_info import DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_domains_by_html_terms_live_response_info import DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo
     @validate_call
     def technologies_domains_by_html_terms_live(
         self,
-        list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info: List[Optional[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo]] = None,
+        list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1844,7 +1864,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_domains_by_html_terms_live_with_http_info(
         self,
-        list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1857,7 +1877,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResponseInfo]':
 
         _param = self._technologies_domains_by_html_terms_live_serialize(
             list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info=list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info,
@@ -1884,7 +1904,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_domains_by_html_terms_live_without_preload_content(
         self,
-        list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_domains_by_html_terms_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1990,10 +2010,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_technologies_domain_technologies_live_request_info import DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_technologies_domain_technologies_live_response_info import DomainAnalyticsTechnologiesDomainTechnologiesLiveResponseInfo
     @validate_call
     def technologies_domain_technologies_live(
         self,
-        list_optional_domain_analytics_technologies_domain_technologies_live_request_info: List[Optional[DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo]] = None,
+        list_optional_domain_analytics_technologies_domain_technologies_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2034,7 +2056,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_domain_technologies_live_with_http_info(
         self,
-        list_optional_domain_analytics_technologies_domain_technologies_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_domain_technologies_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2047,7 +2069,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsTechnologiesDomainTechnologiesLiveResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsTechnologiesDomainTechnologiesLiveResponseInfo]':
 
         _param = self._technologies_domain_technologies_live_serialize(
             list_optional_domain_analytics_technologies_domain_technologies_live_request_info=list_optional_domain_analytics_technologies_domain_technologies_live_request_info,
@@ -2074,7 +2096,7 @@ class DomainAnalyticsApi:
     @validate_call
     def technologies_domain_technologies_live_without_preload_content(
         self,
-        list_optional_domain_analytics_technologies_domain_technologies_live_request_info: Optional[List[List[Optional[DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_technologies_domain_technologies_live_request_info: 'List[Optional[DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2180,6 +2202,7 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_whois_available_filters_response_info import DomainAnalyticsWhoisAvailableFiltersResponseInfo
     @validate_call
     def whois_available_filters(
         self,
@@ -2232,7 +2255,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsWhoisAvailableFiltersResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsWhoisAvailableFiltersResponseInfo]':
 
         _param = self._whois_available_filters_serialize(
             _request_auth=_request_auth,
@@ -2335,10 +2358,12 @@ class DomainAnalyticsApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.domain_analytics_whois_overview_live_request_info import DomainAnalyticsWhoisOverviewLiveRequestInfo
+    from dataforseo_client.models.domain_analytics_whois_overview_live_response_info import DomainAnalyticsWhoisOverviewLiveResponseInfo
     @validate_call
     def whois_overview_live(
         self,
-        list_optional_domain_analytics_whois_overview_live_request_info: List[Optional[DomainAnalyticsWhoisOverviewLiveRequestInfo]] = None,
+        list_optional_domain_analytics_whois_overview_live_request_info: 'List[Optional[DomainAnalyticsWhoisOverviewLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2379,7 +2404,7 @@ class DomainAnalyticsApi:
     @validate_call
     def whois_overview_live_with_http_info(
         self,
-        list_optional_domain_analytics_whois_overview_live_request_info: Optional[List[List[Optional[DomainAnalyticsWhoisOverviewLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_whois_overview_live_request_info: 'List[Optional[DomainAnalyticsWhoisOverviewLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2392,7 +2417,7 @@ class DomainAnalyticsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DomainAnalyticsWhoisOverviewLiveResponseInfo]:
+    ) -> 'ApiResponse[DomainAnalyticsWhoisOverviewLiveResponseInfo]':
 
         _param = self._whois_overview_live_serialize(
             list_optional_domain_analytics_whois_overview_live_request_info=list_optional_domain_analytics_whois_overview_live_request_info,
@@ -2419,7 +2444,7 @@ class DomainAnalyticsApi:
     @validate_call
     def whois_overview_live_without_preload_content(
         self,
-        list_optional_domain_analytics_whois_overview_live_request_info: Optional[List[List[Optional[DomainAnalyticsWhoisOverviewLiveRequestInfo]]]] = None,
+        list_optional_domain_analytics_whois_overview_live_request_info: 'List[Optional[DomainAnalyticsWhoisOverviewLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

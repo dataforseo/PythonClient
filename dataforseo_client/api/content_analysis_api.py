@@ -1,27 +1,28 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.content_analysis_id_list_request_info import ContentAnalysisIdListRequestInfo
-from dataforseo_client.models.content_analysis_id_list_response_info import ContentAnalysisIdListResponseInfo
-from dataforseo_client.models.content_analysis_available_filters_response_info import ContentAnalysisAvailableFiltersResponseInfo
-from dataforseo_client.models.content_analysis_locations_response_info import ContentAnalysisLocationsResponseInfo
-from dataforseo_client.models.content_analysis_languages_response_info import ContentAnalysisLanguagesResponseInfo
-from dataforseo_client.models.content_analysis_categories_response_info import ContentAnalysisCategoriesResponseInfo
-from dataforseo_client.models.content_analysis_search_live_request_info import ContentAnalysisSearchLiveRequestInfo
-from dataforseo_client.models.content_analysis_search_live_response_info import ContentAnalysisSearchLiveResponseInfo
-from dataforseo_client.models.content_analysis_summary_live_request_info import ContentAnalysisSummaryLiveRequestInfo
-from dataforseo_client.models.content_analysis_summary_live_response_info import ContentAnalysisSummaryLiveResponseInfo
-from dataforseo_client.models.content_analysis_sentiment_analysis_live_request_info import ContentAnalysisSentimentAnalysisLiveRequestInfo
-from dataforseo_client.models.content_analysis_sentiment_analysis_live_response_info import ContentAnalysisSentimentAnalysisLiveResponseInfo
-from dataforseo_client.models.content_analysis_rating_distribution_live_request_info import ContentAnalysisRatingDistributionLiveRequestInfo
-from dataforseo_client.models.content_analysis_rating_distribution_live_response_info import ContentAnalysisRatingDistributionLiveResponseInfo
-from dataforseo_client.models.content_analysis_phrase_trends_live_request_info import ContentAnalysisPhraseTrendsLiveRequestInfo
-from dataforseo_client.models.content_analysis_phrase_trends_live_response_info import ContentAnalysisPhraseTrendsLiveResponseInfo
-from dataforseo_client.models.content_analysis_category_trends_live_request_info import ContentAnalysisCategoryTrendsLiveRequestInfo
-from dataforseo_client.models.content_analysis_category_trends_live_response_info import ContentAnalysisCategoryTrendsLiveResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.content_analysis_id_list_request_info import ContentAnalysisIdListRequestInfo
+    from dataforseo_client.models.content_analysis_id_list_response_info import ContentAnalysisIdListResponseInfo
+    from dataforseo_client.models.content_analysis_available_filters_response_info import ContentAnalysisAvailableFiltersResponseInfo
+    from dataforseo_client.models.content_analysis_locations_response_info import ContentAnalysisLocationsResponseInfo
+    from dataforseo_client.models.content_analysis_languages_response_info import ContentAnalysisLanguagesResponseInfo
+    from dataforseo_client.models.content_analysis_categories_response_info import ContentAnalysisCategoriesResponseInfo
+    from dataforseo_client.models.content_analysis_search_live_request_info import ContentAnalysisSearchLiveRequestInfo
+    from dataforseo_client.models.content_analysis_search_live_response_info import ContentAnalysisSearchLiveResponseInfo
+    from dataforseo_client.models.content_analysis_summary_live_request_info import ContentAnalysisSummaryLiveRequestInfo
+    from dataforseo_client.models.content_analysis_summary_live_response_info import ContentAnalysisSummaryLiveResponseInfo
+    from dataforseo_client.models.content_analysis_sentiment_analysis_live_request_info import ContentAnalysisSentimentAnalysisLiveRequestInfo
+    from dataforseo_client.models.content_analysis_sentiment_analysis_live_response_info import ContentAnalysisSentimentAnalysisLiveResponseInfo
+    from dataforseo_client.models.content_analysis_rating_distribution_live_request_info import ContentAnalysisRatingDistributionLiveRequestInfo
+    from dataforseo_client.models.content_analysis_rating_distribution_live_response_info import ContentAnalysisRatingDistributionLiveResponseInfo
+    from dataforseo_client.models.content_analysis_phrase_trends_live_request_info import ContentAnalysisPhraseTrendsLiveRequestInfo
+    from dataforseo_client.models.content_analysis_phrase_trends_live_response_info import ContentAnalysisPhraseTrendsLiveResponseInfo
+    from dataforseo_client.models.content_analysis_category_trends_live_request_info import ContentAnalysisCategoryTrendsLiveRequestInfo
+    from dataforseo_client.models.content_analysis_category_trends_live_response_info import ContentAnalysisCategoryTrendsLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -34,11 +35,14 @@ class ContentAnalysisApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.content_analysis_id_list_request_info import ContentAnalysisIdListRequestInfo
+    from dataforseo_client.models.content_analysis_id_list_response_info import ContentAnalysisIdListResponseInfo
     @validate_call
     def content_analysis_id_list(
         self,
-        list_optional_content_analysis_id_list_request_info: List[Optional[ContentAnalysisIdListRequestInfo]] = None,
+        list_optional_content_analysis_id_list_request_info: 'List[Optional[ContentAnalysisIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -79,7 +83,7 @@ class ContentAnalysisApi:
     @validate_call
     def content_analysis_id_list_with_http_info(
         self,
-        list_optional_content_analysis_id_list_request_info: Optional[List[List[Optional[ContentAnalysisIdListRequestInfo]]]] = None,
+        list_optional_content_analysis_id_list_request_info: 'List[Optional[ContentAnalysisIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -92,7 +96,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisIdListResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisIdListResponseInfo]':
 
         _param = self._content_analysis_id_list_serialize(
             list_optional_content_analysis_id_list_request_info=list_optional_content_analysis_id_list_request_info,
@@ -119,7 +123,7 @@ class ContentAnalysisApi:
     @validate_call
     def content_analysis_id_list_without_preload_content(
         self,
-        list_optional_content_analysis_id_list_request_info: Optional[List[List[Optional[ContentAnalysisIdListRequestInfo]]]] = None,
+        list_optional_content_analysis_id_list_request_info: 'List[Optional[ContentAnalysisIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -225,6 +229,7 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_available_filters_response_info import ContentAnalysisAvailableFiltersResponseInfo
     @validate_call
     def content_analysis_available_filters(
         self,
@@ -277,7 +282,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisAvailableFiltersResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisAvailableFiltersResponseInfo]':
 
         _param = self._content_analysis_available_filters_serialize(
             _request_auth=_request_auth,
@@ -380,6 +385,7 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_locations_response_info import ContentAnalysisLocationsResponseInfo
     @validate_call
     def content_analysis_locations(
         self,
@@ -432,7 +438,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisLocationsResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisLocationsResponseInfo]':
 
         _param = self._content_analysis_locations_serialize(
             _request_auth=_request_auth,
@@ -535,6 +541,7 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_languages_response_info import ContentAnalysisLanguagesResponseInfo
     @validate_call
     def content_analysis_languages(
         self,
@@ -587,7 +594,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisLanguagesResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisLanguagesResponseInfo]':
 
         _param = self._content_analysis_languages_serialize(
             _request_auth=_request_auth,
@@ -690,6 +697,7 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_categories_response_info import ContentAnalysisCategoriesResponseInfo
     @validate_call
     def content_analysis_categories(
         self,
@@ -742,7 +750,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisCategoriesResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisCategoriesResponseInfo]':
 
         _param = self._content_analysis_categories_serialize(
             _request_auth=_request_auth,
@@ -845,10 +853,12 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_search_live_request_info import ContentAnalysisSearchLiveRequestInfo
+    from dataforseo_client.models.content_analysis_search_live_response_info import ContentAnalysisSearchLiveResponseInfo
     @validate_call
     def search_live(
         self,
-        list_optional_content_analysis_search_live_request_info: List[Optional[ContentAnalysisSearchLiveRequestInfo]] = None,
+        list_optional_content_analysis_search_live_request_info: 'List[Optional[ContentAnalysisSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -889,7 +899,7 @@ class ContentAnalysisApi:
     @validate_call
     def search_live_with_http_info(
         self,
-        list_optional_content_analysis_search_live_request_info: Optional[List[List[Optional[ContentAnalysisSearchLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_search_live_request_info: 'List[Optional[ContentAnalysisSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -902,7 +912,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisSearchLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisSearchLiveResponseInfo]':
 
         _param = self._search_live_serialize(
             list_optional_content_analysis_search_live_request_info=list_optional_content_analysis_search_live_request_info,
@@ -929,7 +939,7 @@ class ContentAnalysisApi:
     @validate_call
     def search_live_without_preload_content(
         self,
-        list_optional_content_analysis_search_live_request_info: Optional[List[List[Optional[ContentAnalysisSearchLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_search_live_request_info: 'List[Optional[ContentAnalysisSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1035,10 +1045,12 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_summary_live_request_info import ContentAnalysisSummaryLiveRequestInfo
+    from dataforseo_client.models.content_analysis_summary_live_response_info import ContentAnalysisSummaryLiveResponseInfo
     @validate_call
     def content_analysis_summary_live(
         self,
-        list_optional_content_analysis_summary_live_request_info: List[Optional[ContentAnalysisSummaryLiveRequestInfo]] = None,
+        list_optional_content_analysis_summary_live_request_info: 'List[Optional[ContentAnalysisSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1079,7 +1091,7 @@ class ContentAnalysisApi:
     @validate_call
     def content_analysis_summary_live_with_http_info(
         self,
-        list_optional_content_analysis_summary_live_request_info: Optional[List[List[Optional[ContentAnalysisSummaryLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_summary_live_request_info: 'List[Optional[ContentAnalysisSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1092,7 +1104,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisSummaryLiveResponseInfo]':
 
         _param = self._content_analysis_summary_live_serialize(
             list_optional_content_analysis_summary_live_request_info=list_optional_content_analysis_summary_live_request_info,
@@ -1119,7 +1131,7 @@ class ContentAnalysisApi:
     @validate_call
     def content_analysis_summary_live_without_preload_content(
         self,
-        list_optional_content_analysis_summary_live_request_info: Optional[List[List[Optional[ContentAnalysisSummaryLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_summary_live_request_info: 'List[Optional[ContentAnalysisSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1225,10 +1237,12 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_sentiment_analysis_live_request_info import ContentAnalysisSentimentAnalysisLiveRequestInfo
+    from dataforseo_client.models.content_analysis_sentiment_analysis_live_response_info import ContentAnalysisSentimentAnalysisLiveResponseInfo
     @validate_call
     def sentiment_analysis_live(
         self,
-        list_optional_content_analysis_sentiment_analysis_live_request_info: List[Optional[ContentAnalysisSentimentAnalysisLiveRequestInfo]] = None,
+        list_optional_content_analysis_sentiment_analysis_live_request_info: 'List[Optional[ContentAnalysisSentimentAnalysisLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1269,7 +1283,7 @@ class ContentAnalysisApi:
     @validate_call
     def sentiment_analysis_live_with_http_info(
         self,
-        list_optional_content_analysis_sentiment_analysis_live_request_info: Optional[List[List[Optional[ContentAnalysisSentimentAnalysisLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_sentiment_analysis_live_request_info: 'List[Optional[ContentAnalysisSentimentAnalysisLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1282,7 +1296,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisSentimentAnalysisLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisSentimentAnalysisLiveResponseInfo]':
 
         _param = self._sentiment_analysis_live_serialize(
             list_optional_content_analysis_sentiment_analysis_live_request_info=list_optional_content_analysis_sentiment_analysis_live_request_info,
@@ -1309,7 +1323,7 @@ class ContentAnalysisApi:
     @validate_call
     def sentiment_analysis_live_without_preload_content(
         self,
-        list_optional_content_analysis_sentiment_analysis_live_request_info: Optional[List[List[Optional[ContentAnalysisSentimentAnalysisLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_sentiment_analysis_live_request_info: 'List[Optional[ContentAnalysisSentimentAnalysisLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1415,10 +1429,12 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_rating_distribution_live_request_info import ContentAnalysisRatingDistributionLiveRequestInfo
+    from dataforseo_client.models.content_analysis_rating_distribution_live_response_info import ContentAnalysisRatingDistributionLiveResponseInfo
     @validate_call
     def rating_distribution_live(
         self,
-        list_optional_content_analysis_rating_distribution_live_request_info: List[Optional[ContentAnalysisRatingDistributionLiveRequestInfo]] = None,
+        list_optional_content_analysis_rating_distribution_live_request_info: 'List[Optional[ContentAnalysisRatingDistributionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1459,7 +1475,7 @@ class ContentAnalysisApi:
     @validate_call
     def rating_distribution_live_with_http_info(
         self,
-        list_optional_content_analysis_rating_distribution_live_request_info: Optional[List[List[Optional[ContentAnalysisRatingDistributionLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_rating_distribution_live_request_info: 'List[Optional[ContentAnalysisRatingDistributionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1472,7 +1488,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisRatingDistributionLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisRatingDistributionLiveResponseInfo]':
 
         _param = self._rating_distribution_live_serialize(
             list_optional_content_analysis_rating_distribution_live_request_info=list_optional_content_analysis_rating_distribution_live_request_info,
@@ -1499,7 +1515,7 @@ class ContentAnalysisApi:
     @validate_call
     def rating_distribution_live_without_preload_content(
         self,
-        list_optional_content_analysis_rating_distribution_live_request_info: Optional[List[List[Optional[ContentAnalysisRatingDistributionLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_rating_distribution_live_request_info: 'List[Optional[ContentAnalysisRatingDistributionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1605,10 +1621,12 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_phrase_trends_live_request_info import ContentAnalysisPhraseTrendsLiveRequestInfo
+    from dataforseo_client.models.content_analysis_phrase_trends_live_response_info import ContentAnalysisPhraseTrendsLiveResponseInfo
     @validate_call
     def phrase_trends_live(
         self,
-        list_optional_content_analysis_phrase_trends_live_request_info: List[Optional[ContentAnalysisPhraseTrendsLiveRequestInfo]] = None,
+        list_optional_content_analysis_phrase_trends_live_request_info: 'List[Optional[ContentAnalysisPhraseTrendsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1649,7 +1667,7 @@ class ContentAnalysisApi:
     @validate_call
     def phrase_trends_live_with_http_info(
         self,
-        list_optional_content_analysis_phrase_trends_live_request_info: Optional[List[List[Optional[ContentAnalysisPhraseTrendsLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_phrase_trends_live_request_info: 'List[Optional[ContentAnalysisPhraseTrendsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1662,7 +1680,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisPhraseTrendsLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisPhraseTrendsLiveResponseInfo]':
 
         _param = self._phrase_trends_live_serialize(
             list_optional_content_analysis_phrase_trends_live_request_info=list_optional_content_analysis_phrase_trends_live_request_info,
@@ -1689,7 +1707,7 @@ class ContentAnalysisApi:
     @validate_call
     def phrase_trends_live_without_preload_content(
         self,
-        list_optional_content_analysis_phrase_trends_live_request_info: Optional[List[List[Optional[ContentAnalysisPhraseTrendsLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_phrase_trends_live_request_info: 'List[Optional[ContentAnalysisPhraseTrendsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1795,10 +1813,12 @@ class ContentAnalysisApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.content_analysis_category_trends_live_request_info import ContentAnalysisCategoryTrendsLiveRequestInfo
+    from dataforseo_client.models.content_analysis_category_trends_live_response_info import ContentAnalysisCategoryTrendsLiveResponseInfo
     @validate_call
     def category_trends_live(
         self,
-        list_optional_content_analysis_category_trends_live_request_info: List[Optional[ContentAnalysisCategoryTrendsLiveRequestInfo]] = None,
+        list_optional_content_analysis_category_trends_live_request_info: 'List[Optional[ContentAnalysisCategoryTrendsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1839,7 +1859,7 @@ class ContentAnalysisApi:
     @validate_call
     def category_trends_live_with_http_info(
         self,
-        list_optional_content_analysis_category_trends_live_request_info: Optional[List[List[Optional[ContentAnalysisCategoryTrendsLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_category_trends_live_request_info: 'List[Optional[ContentAnalysisCategoryTrendsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1852,7 +1872,7 @@ class ContentAnalysisApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContentAnalysisCategoryTrendsLiveResponseInfo]:
+    ) -> 'ApiResponse[ContentAnalysisCategoryTrendsLiveResponseInfo]':
 
         _param = self._category_trends_live_serialize(
             list_optional_content_analysis_category_trends_live_request_info=list_optional_content_analysis_category_trends_live_request_info,
@@ -1879,7 +1899,7 @@ class ContentAnalysisApi:
     @validate_call
     def category_trends_live_without_preload_content(
         self,
-        list_optional_content_analysis_category_trends_live_request_info: Optional[List[List[Optional[ContentAnalysisCategoryTrendsLiveRequestInfo]]]] = None,
+        list_optional_content_analysis_category_trends_live_request_info: 'List[Optional[ContentAnalysisCategoryTrendsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

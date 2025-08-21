@@ -1,61 +1,62 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.on_page_id_list_request_info import OnPageIdListRequestInfo
-from dataforseo_client.models.on_page_id_list_response_info import OnPageIdListResponseInfo
-from dataforseo_client.models.on_page_errors_request_info import OnPageErrorsRequestInfo
-from dataforseo_client.models.on_page_errors_response_info import OnPageErrorsResponseInfo
-from dataforseo_client.models.on_page_force_stop_request_info import OnPageForceStopRequestInfo
-from dataforseo_client.models.on_page_force_stop_response_info import OnPageForceStopResponseInfo
-from dataforseo_client.models.on_page_available_filters_response_info import OnPageAvailableFiltersResponseInfo
-from dataforseo_client.models.on_page_task_post_request_info import OnPageTaskPostRequestInfo
-from dataforseo_client.models.on_page_task_post_response_info import OnPageTaskPostResponseInfo
-from dataforseo_client.models.on_page_tasks_ready_response_info import OnPageTasksReadyResponseInfo
-from dataforseo_client.models.on_page_summary_response_info import OnPageSummaryResponseInfo
-from dataforseo_client.models.on_page_pages_request_info import OnPagePagesRequestInfo
-from dataforseo_client.models.on_page_pages_response_info import OnPagePagesResponseInfo
-from dataforseo_client.models.on_page_pages_by_resource_request_info import OnPagePagesByResourceRequestInfo
-from dataforseo_client.models.on_page_pages_by_resource_response_info import OnPagePagesByResourceResponseInfo
-from dataforseo_client.models.on_page_resources_request_info import OnPageResourcesRequestInfo
-from dataforseo_client.models.on_page_resources_response_info import OnPageResourcesResponseInfo
-from dataforseo_client.models.on_page_duplicate_tags_request_info import OnPageDuplicateTagsRequestInfo
-from dataforseo_client.models.on_page_duplicate_tags_response_info import OnPageDuplicateTagsResponseInfo
-from dataforseo_client.models.on_page_duplicate_content_request_info import OnPageDuplicateContentRequestInfo
-from dataforseo_client.models.on_page_duplicate_content_response_info import OnPageDuplicateContentResponseInfo
-from dataforseo_client.models.on_page_links_request_info import OnPageLinksRequestInfo
-from dataforseo_client.models.on_page_links_response_info import OnPageLinksResponseInfo
-from dataforseo_client.models.on_page_redirect_chains_request_info import OnPageRedirectChainsRequestInfo
-from dataforseo_client.models.on_page_redirect_chains_response_info import OnPageRedirectChainsResponseInfo
-from dataforseo_client.models.on_page_non_indexable_request_info import OnPageNonIndexableRequestInfo
-from dataforseo_client.models.on_page_non_indexable_response_info import OnPageNonIndexableResponseInfo
-from dataforseo_client.models.on_page_waterfall_request_info import OnPageWaterfallRequestInfo
-from dataforseo_client.models.on_page_waterfall_response_info import OnPageWaterfallResponseInfo
-from dataforseo_client.models.on_page_keyword_density_request_info import OnPageKeywordDensityRequestInfo
-from dataforseo_client.models.on_page_keyword_density_response_info import OnPageKeywordDensityResponseInfo
-from dataforseo_client.models.on_page_microdata_request_info import OnPageMicrodataRequestInfo
-from dataforseo_client.models.on_page_microdata_response_info import OnPageMicrodataResponseInfo
-from dataforseo_client.models.on_page_raw_html_request_info import OnPageRawHtmlRequestInfo
-from dataforseo_client.models.on_page_raw_html_response_info import OnPageRawHtmlResponseInfo
-from dataforseo_client.models.on_page_page_screenshot_request_info import OnPagePageScreenshotRequestInfo
-from dataforseo_client.models.on_page_page_screenshot_response_info import OnPagePageScreenshotResponseInfo
-from dataforseo_client.models.on_page_content_parsing_request_info import OnPageContentParsingRequestInfo
-from dataforseo_client.models.on_page_content_parsing_response_info import OnPageContentParsingResponseInfo
-from dataforseo_client.models.on_page_content_parsing_live_request_info import OnPageContentParsingLiveRequestInfo
-from dataforseo_client.models.on_page_content_parsing_live_response_info import OnPageContentParsingLiveResponseInfo
-from dataforseo_client.models.on_page_instant_pages_request_info import OnPageInstantPagesRequestInfo
-from dataforseo_client.models.on_page_instant_pages_response_info import OnPageInstantPagesResponseInfo
-from dataforseo_client.models.on_page_lighthouse_languages_response_info import OnPageLighthouseLanguagesResponseInfo
-from dataforseo_client.models.on_page_lighthouse_audits_response_info import OnPageLighthouseAuditsResponseInfo
-from dataforseo_client.models.on_page_lighthouse_versions_response_info import OnPageLighthouseVersionsResponseInfo
-from dataforseo_client.models.on_page_lighthouse_task_post_request_info import OnPageLighthouseTaskPostRequestInfo
-from dataforseo_client.models.on_page_lighthouse_task_post_response_info import OnPageLighthouseTaskPostResponseInfo
-from dataforseo_client.models.on_page_lighthouse_tasks_ready_response_info import OnPageLighthouseTasksReadyResponseInfo
-from dataforseo_client.models.on_page_lighthouse_task_get_json_response_info import OnPageLighthouseTaskGetJsonResponseInfo
-from dataforseo_client.models.on_page_lighthouse_live_json_request_info import OnPageLighthouseLiveJsonRequestInfo
-from dataforseo_client.models.on_page_lighthouse_live_json_response_info import OnPageLighthouseLiveJsonResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.on_page_id_list_request_info import OnPageIdListRequestInfo
+    from dataforseo_client.models.on_page_id_list_response_info import OnPageIdListResponseInfo
+    from dataforseo_client.models.on_page_errors_request_info import OnPageErrorsRequestInfo
+    from dataforseo_client.models.on_page_errors_response_info import OnPageErrorsResponseInfo
+    from dataforseo_client.models.on_page_force_stop_request_info import OnPageForceStopRequestInfo
+    from dataforseo_client.models.on_page_force_stop_response_info import OnPageForceStopResponseInfo
+    from dataforseo_client.models.on_page_available_filters_response_info import OnPageAvailableFiltersResponseInfo
+    from dataforseo_client.models.on_page_task_post_request_info import OnPageTaskPostRequestInfo
+    from dataforseo_client.models.on_page_task_post_response_info import OnPageTaskPostResponseInfo
+    from dataforseo_client.models.on_page_tasks_ready_response_info import OnPageTasksReadyResponseInfo
+    from dataforseo_client.models.on_page_summary_response_info import OnPageSummaryResponseInfo
+    from dataforseo_client.models.on_page_pages_request_info import OnPagePagesRequestInfo
+    from dataforseo_client.models.on_page_pages_response_info import OnPagePagesResponseInfo
+    from dataforseo_client.models.on_page_pages_by_resource_request_info import OnPagePagesByResourceRequestInfo
+    from dataforseo_client.models.on_page_pages_by_resource_response_info import OnPagePagesByResourceResponseInfo
+    from dataforseo_client.models.on_page_resources_request_info import OnPageResourcesRequestInfo
+    from dataforseo_client.models.on_page_resources_response_info import OnPageResourcesResponseInfo
+    from dataforseo_client.models.on_page_duplicate_tags_request_info import OnPageDuplicateTagsRequestInfo
+    from dataforseo_client.models.on_page_duplicate_tags_response_info import OnPageDuplicateTagsResponseInfo
+    from dataforseo_client.models.on_page_duplicate_content_request_info import OnPageDuplicateContentRequestInfo
+    from dataforseo_client.models.on_page_duplicate_content_response_info import OnPageDuplicateContentResponseInfo
+    from dataforseo_client.models.on_page_links_request_info import OnPageLinksRequestInfo
+    from dataforseo_client.models.on_page_links_response_info import OnPageLinksResponseInfo
+    from dataforseo_client.models.on_page_redirect_chains_request_info import OnPageRedirectChainsRequestInfo
+    from dataforseo_client.models.on_page_redirect_chains_response_info import OnPageRedirectChainsResponseInfo
+    from dataforseo_client.models.on_page_non_indexable_request_info import OnPageNonIndexableRequestInfo
+    from dataforseo_client.models.on_page_non_indexable_response_info import OnPageNonIndexableResponseInfo
+    from dataforseo_client.models.on_page_waterfall_request_info import OnPageWaterfallRequestInfo
+    from dataforseo_client.models.on_page_waterfall_response_info import OnPageWaterfallResponseInfo
+    from dataforseo_client.models.on_page_keyword_density_request_info import OnPageKeywordDensityRequestInfo
+    from dataforseo_client.models.on_page_keyword_density_response_info import OnPageKeywordDensityResponseInfo
+    from dataforseo_client.models.on_page_microdata_request_info import OnPageMicrodataRequestInfo
+    from dataforseo_client.models.on_page_microdata_response_info import OnPageMicrodataResponseInfo
+    from dataforseo_client.models.on_page_raw_html_request_info import OnPageRawHtmlRequestInfo
+    from dataforseo_client.models.on_page_raw_html_response_info import OnPageRawHtmlResponseInfo
+    from dataforseo_client.models.on_page_page_screenshot_request_info import OnPagePageScreenshotRequestInfo
+    from dataforseo_client.models.on_page_page_screenshot_response_info import OnPagePageScreenshotResponseInfo
+    from dataforseo_client.models.on_page_content_parsing_request_info import OnPageContentParsingRequestInfo
+    from dataforseo_client.models.on_page_content_parsing_response_info import OnPageContentParsingResponseInfo
+    from dataforseo_client.models.on_page_content_parsing_live_request_info import OnPageContentParsingLiveRequestInfo
+    from dataforseo_client.models.on_page_content_parsing_live_response_info import OnPageContentParsingLiveResponseInfo
+    from dataforseo_client.models.on_page_instant_pages_request_info import OnPageInstantPagesRequestInfo
+    from dataforseo_client.models.on_page_instant_pages_response_info import OnPageInstantPagesResponseInfo
+    from dataforseo_client.models.on_page_lighthouse_languages_response_info import OnPageLighthouseLanguagesResponseInfo
+    from dataforseo_client.models.on_page_lighthouse_audits_response_info import OnPageLighthouseAuditsResponseInfo
+    from dataforseo_client.models.on_page_lighthouse_versions_response_info import OnPageLighthouseVersionsResponseInfo
+    from dataforseo_client.models.on_page_lighthouse_task_post_request_info import OnPageLighthouseTaskPostRequestInfo
+    from dataforseo_client.models.on_page_lighthouse_task_post_response_info import OnPageLighthouseTaskPostResponseInfo
+    from dataforseo_client.models.on_page_lighthouse_tasks_ready_response_info import OnPageLighthouseTasksReadyResponseInfo
+    from dataforseo_client.models.on_page_lighthouse_task_get_json_response_info import OnPageLighthouseTaskGetJsonResponseInfo
+    from dataforseo_client.models.on_page_lighthouse_live_json_request_info import OnPageLighthouseLiveJsonRequestInfo
+    from dataforseo_client.models.on_page_lighthouse_live_json_response_info import OnPageLighthouseLiveJsonResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -68,11 +69,14 @@ class OnPageApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.on_page_id_list_request_info import OnPageIdListRequestInfo
+    from dataforseo_client.models.on_page_id_list_response_info import OnPageIdListResponseInfo
     @validate_call
     def on_page_id_list(
         self,
-        list_optional_on_page_id_list_request_info: List[Optional[OnPageIdListRequestInfo]] = None,
+        list_optional_on_page_id_list_request_info: 'List[Optional[OnPageIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -113,7 +117,7 @@ class OnPageApi:
     @validate_call
     def on_page_id_list_with_http_info(
         self,
-        list_optional_on_page_id_list_request_info: Optional[List[List[Optional[OnPageIdListRequestInfo]]]] = None,
+        list_optional_on_page_id_list_request_info: 'List[Optional[OnPageIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -126,7 +130,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageIdListResponseInfo]:
+    ) -> 'ApiResponse[OnPageIdListResponseInfo]':
 
         _param = self._on_page_id_list_serialize(
             list_optional_on_page_id_list_request_info=list_optional_on_page_id_list_request_info,
@@ -153,7 +157,7 @@ class OnPageApi:
     @validate_call
     def on_page_id_list_without_preload_content(
         self,
-        list_optional_on_page_id_list_request_info: Optional[List[List[Optional[OnPageIdListRequestInfo]]]] = None,
+        list_optional_on_page_id_list_request_info: 'List[Optional[OnPageIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -259,10 +263,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_errors_request_info import OnPageErrorsRequestInfo
+    from dataforseo_client.models.on_page_errors_response_info import OnPageErrorsResponseInfo
     @validate_call
     def on_page_errors(
         self,
-        list_optional_on_page_errors_request_info: List[Optional[OnPageErrorsRequestInfo]] = None,
+        list_optional_on_page_errors_request_info: 'List[Optional[OnPageErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -303,7 +309,7 @@ class OnPageApi:
     @validate_call
     def on_page_errors_with_http_info(
         self,
-        list_optional_on_page_errors_request_info: Optional[List[List[Optional[OnPageErrorsRequestInfo]]]] = None,
+        list_optional_on_page_errors_request_info: 'List[Optional[OnPageErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -316,7 +322,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageErrorsResponseInfo]:
+    ) -> 'ApiResponse[OnPageErrorsResponseInfo]':
 
         _param = self._on_page_errors_serialize(
             list_optional_on_page_errors_request_info=list_optional_on_page_errors_request_info,
@@ -343,7 +349,7 @@ class OnPageApi:
     @validate_call
     def on_page_errors_without_preload_content(
         self,
-        list_optional_on_page_errors_request_info: Optional[List[List[Optional[OnPageErrorsRequestInfo]]]] = None,
+        list_optional_on_page_errors_request_info: 'List[Optional[OnPageErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -449,10 +455,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_force_stop_request_info import OnPageForceStopRequestInfo
+    from dataforseo_client.models.on_page_force_stop_response_info import OnPageForceStopResponseInfo
     @validate_call
     def force_stop(
         self,
-        list_optional_on_page_force_stop_request_info: List[Optional[OnPageForceStopRequestInfo]] = None,
+        list_optional_on_page_force_stop_request_info: 'List[Optional[OnPageForceStopRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -493,7 +501,7 @@ class OnPageApi:
     @validate_call
     def force_stop_with_http_info(
         self,
-        list_optional_on_page_force_stop_request_info: Optional[List[List[Optional[OnPageForceStopRequestInfo]]]] = None,
+        list_optional_on_page_force_stop_request_info: 'List[Optional[OnPageForceStopRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -506,7 +514,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageForceStopResponseInfo]:
+    ) -> 'ApiResponse[OnPageForceStopResponseInfo]':
 
         _param = self._force_stop_serialize(
             list_optional_on_page_force_stop_request_info=list_optional_on_page_force_stop_request_info,
@@ -533,7 +541,7 @@ class OnPageApi:
     @validate_call
     def force_stop_without_preload_content(
         self,
-        list_optional_on_page_force_stop_request_info: Optional[List[List[Optional[OnPageForceStopRequestInfo]]]] = None,
+        list_optional_on_page_force_stop_request_info: 'List[Optional[OnPageForceStopRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -639,6 +647,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_available_filters_response_info import OnPageAvailableFiltersResponseInfo
     @validate_call
     def on_page_available_filters(
         self,
@@ -691,7 +700,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageAvailableFiltersResponseInfo]:
+    ) -> 'ApiResponse[OnPageAvailableFiltersResponseInfo]':
 
         _param = self._on_page_available_filters_serialize(
             _request_auth=_request_auth,
@@ -794,10 +803,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_task_post_request_info import OnPageTaskPostRequestInfo
+    from dataforseo_client.models.on_page_task_post_response_info import OnPageTaskPostResponseInfo
     @validate_call
     def task_post(
         self,
-        list_optional_on_page_task_post_request_info: List[Optional[OnPageTaskPostRequestInfo]] = None,
+        list_optional_on_page_task_post_request_info: 'List[Optional[OnPageTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -838,7 +849,7 @@ class OnPageApi:
     @validate_call
     def task_post_with_http_info(
         self,
-        list_optional_on_page_task_post_request_info: Optional[List[List[Optional[OnPageTaskPostRequestInfo]]]] = None,
+        list_optional_on_page_task_post_request_info: 'List[Optional[OnPageTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -851,7 +862,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageTaskPostResponseInfo]:
+    ) -> 'ApiResponse[OnPageTaskPostResponseInfo]':
 
         _param = self._task_post_serialize(
             list_optional_on_page_task_post_request_info=list_optional_on_page_task_post_request_info,
@@ -878,7 +889,7 @@ class OnPageApi:
     @validate_call
     def task_post_without_preload_content(
         self,
-        list_optional_on_page_task_post_request_info: Optional[List[List[Optional[OnPageTaskPostRequestInfo]]]] = None,
+        list_optional_on_page_task_post_request_info: 'List[Optional[OnPageTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -984,6 +995,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_tasks_ready_response_info import OnPageTasksReadyResponseInfo
     @validate_call
     def on_page_tasks_ready(
         self,
@@ -1036,7 +1048,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[OnPageTasksReadyResponseInfo]':
 
         _param = self._on_page_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -1139,6 +1151,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_summary_response_info import OnPageSummaryResponseInfo
     @validate_call
     def summary(
         self,
@@ -1194,7 +1207,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageSummaryResponseInfo]:
+    ) -> 'ApiResponse[OnPageSummaryResponseInfo]':
 
         _param = self._summary_serialize(
             id=id,
@@ -1303,10 +1316,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_pages_request_info import OnPagePagesRequestInfo
+    from dataforseo_client.models.on_page_pages_response_info import OnPagePagesResponseInfo
     @validate_call
     def pages(
         self,
-        list_optional_on_page_pages_request_info: List[Optional[OnPagePagesRequestInfo]] = None,
+        list_optional_on_page_pages_request_info: 'List[Optional[OnPagePagesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1347,7 +1362,7 @@ class OnPageApi:
     @validate_call
     def pages_with_http_info(
         self,
-        list_optional_on_page_pages_request_info: Optional[List[List[Optional[OnPagePagesRequestInfo]]]] = None,
+        list_optional_on_page_pages_request_info: 'List[Optional[OnPagePagesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1360,7 +1375,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPagePagesResponseInfo]:
+    ) -> 'ApiResponse[OnPagePagesResponseInfo]':
 
         _param = self._pages_serialize(
             list_optional_on_page_pages_request_info=list_optional_on_page_pages_request_info,
@@ -1387,7 +1402,7 @@ class OnPageApi:
     @validate_call
     def pages_without_preload_content(
         self,
-        list_optional_on_page_pages_request_info: Optional[List[List[Optional[OnPagePagesRequestInfo]]]] = None,
+        list_optional_on_page_pages_request_info: 'List[Optional[OnPagePagesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1493,10 +1508,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_pages_by_resource_request_info import OnPagePagesByResourceRequestInfo
+    from dataforseo_client.models.on_page_pages_by_resource_response_info import OnPagePagesByResourceResponseInfo
     @validate_call
     def pages_by_resource(
         self,
-        list_optional_on_page_pages_by_resource_request_info: List[Optional[OnPagePagesByResourceRequestInfo]] = None,
+        list_optional_on_page_pages_by_resource_request_info: 'List[Optional[OnPagePagesByResourceRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1537,7 +1554,7 @@ class OnPageApi:
     @validate_call
     def pages_by_resource_with_http_info(
         self,
-        list_optional_on_page_pages_by_resource_request_info: Optional[List[List[Optional[OnPagePagesByResourceRequestInfo]]]] = None,
+        list_optional_on_page_pages_by_resource_request_info: 'List[Optional[OnPagePagesByResourceRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1550,7 +1567,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPagePagesByResourceResponseInfo]:
+    ) -> 'ApiResponse[OnPagePagesByResourceResponseInfo]':
 
         _param = self._pages_by_resource_serialize(
             list_optional_on_page_pages_by_resource_request_info=list_optional_on_page_pages_by_resource_request_info,
@@ -1577,7 +1594,7 @@ class OnPageApi:
     @validate_call
     def pages_by_resource_without_preload_content(
         self,
-        list_optional_on_page_pages_by_resource_request_info: Optional[List[List[Optional[OnPagePagesByResourceRequestInfo]]]] = None,
+        list_optional_on_page_pages_by_resource_request_info: 'List[Optional[OnPagePagesByResourceRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1683,10 +1700,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_resources_request_info import OnPageResourcesRequestInfo
+    from dataforseo_client.models.on_page_resources_response_info import OnPageResourcesResponseInfo
     @validate_call
     def resources(
         self,
-        list_optional_on_page_resources_request_info: List[Optional[OnPageResourcesRequestInfo]] = None,
+        list_optional_on_page_resources_request_info: 'List[Optional[OnPageResourcesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1727,7 +1746,7 @@ class OnPageApi:
     @validate_call
     def resources_with_http_info(
         self,
-        list_optional_on_page_resources_request_info: Optional[List[List[Optional[OnPageResourcesRequestInfo]]]] = None,
+        list_optional_on_page_resources_request_info: 'List[Optional[OnPageResourcesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1740,7 +1759,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageResourcesResponseInfo]:
+    ) -> 'ApiResponse[OnPageResourcesResponseInfo]':
 
         _param = self._resources_serialize(
             list_optional_on_page_resources_request_info=list_optional_on_page_resources_request_info,
@@ -1767,7 +1786,7 @@ class OnPageApi:
     @validate_call
     def resources_without_preload_content(
         self,
-        list_optional_on_page_resources_request_info: Optional[List[List[Optional[OnPageResourcesRequestInfo]]]] = None,
+        list_optional_on_page_resources_request_info: 'List[Optional[OnPageResourcesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1873,10 +1892,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_duplicate_tags_request_info import OnPageDuplicateTagsRequestInfo
+    from dataforseo_client.models.on_page_duplicate_tags_response_info import OnPageDuplicateTagsResponseInfo
     @validate_call
     def duplicate_tags(
         self,
-        list_optional_on_page_duplicate_tags_request_info: List[Optional[OnPageDuplicateTagsRequestInfo]] = None,
+        list_optional_on_page_duplicate_tags_request_info: 'List[Optional[OnPageDuplicateTagsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1917,7 +1938,7 @@ class OnPageApi:
     @validate_call
     def duplicate_tags_with_http_info(
         self,
-        list_optional_on_page_duplicate_tags_request_info: Optional[List[List[Optional[OnPageDuplicateTagsRequestInfo]]]] = None,
+        list_optional_on_page_duplicate_tags_request_info: 'List[Optional[OnPageDuplicateTagsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1930,7 +1951,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageDuplicateTagsResponseInfo]:
+    ) -> 'ApiResponse[OnPageDuplicateTagsResponseInfo]':
 
         _param = self._duplicate_tags_serialize(
             list_optional_on_page_duplicate_tags_request_info=list_optional_on_page_duplicate_tags_request_info,
@@ -1957,7 +1978,7 @@ class OnPageApi:
     @validate_call
     def duplicate_tags_without_preload_content(
         self,
-        list_optional_on_page_duplicate_tags_request_info: Optional[List[List[Optional[OnPageDuplicateTagsRequestInfo]]]] = None,
+        list_optional_on_page_duplicate_tags_request_info: 'List[Optional[OnPageDuplicateTagsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2063,10 +2084,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_duplicate_content_request_info import OnPageDuplicateContentRequestInfo
+    from dataforseo_client.models.on_page_duplicate_content_response_info import OnPageDuplicateContentResponseInfo
     @validate_call
     def duplicate_content(
         self,
-        list_optional_on_page_duplicate_content_request_info: List[Optional[OnPageDuplicateContentRequestInfo]] = None,
+        list_optional_on_page_duplicate_content_request_info: 'List[Optional[OnPageDuplicateContentRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2107,7 +2130,7 @@ class OnPageApi:
     @validate_call
     def duplicate_content_with_http_info(
         self,
-        list_optional_on_page_duplicate_content_request_info: Optional[List[List[Optional[OnPageDuplicateContentRequestInfo]]]] = None,
+        list_optional_on_page_duplicate_content_request_info: 'List[Optional[OnPageDuplicateContentRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2120,7 +2143,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageDuplicateContentResponseInfo]:
+    ) -> 'ApiResponse[OnPageDuplicateContentResponseInfo]':
 
         _param = self._duplicate_content_serialize(
             list_optional_on_page_duplicate_content_request_info=list_optional_on_page_duplicate_content_request_info,
@@ -2147,7 +2170,7 @@ class OnPageApi:
     @validate_call
     def duplicate_content_without_preload_content(
         self,
-        list_optional_on_page_duplicate_content_request_info: Optional[List[List[Optional[OnPageDuplicateContentRequestInfo]]]] = None,
+        list_optional_on_page_duplicate_content_request_info: 'List[Optional[OnPageDuplicateContentRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2253,10 +2276,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_links_request_info import OnPageLinksRequestInfo
+    from dataforseo_client.models.on_page_links_response_info import OnPageLinksResponseInfo
     @validate_call
     def links(
         self,
-        list_optional_on_page_links_request_info: List[Optional[OnPageLinksRequestInfo]] = None,
+        list_optional_on_page_links_request_info: 'List[Optional[OnPageLinksRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2297,7 +2322,7 @@ class OnPageApi:
     @validate_call
     def links_with_http_info(
         self,
-        list_optional_on_page_links_request_info: Optional[List[List[Optional[OnPageLinksRequestInfo]]]] = None,
+        list_optional_on_page_links_request_info: 'List[Optional[OnPageLinksRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2310,7 +2335,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLinksResponseInfo]:
+    ) -> 'ApiResponse[OnPageLinksResponseInfo]':
 
         _param = self._links_serialize(
             list_optional_on_page_links_request_info=list_optional_on_page_links_request_info,
@@ -2337,7 +2362,7 @@ class OnPageApi:
     @validate_call
     def links_without_preload_content(
         self,
-        list_optional_on_page_links_request_info: Optional[List[List[Optional[OnPageLinksRequestInfo]]]] = None,
+        list_optional_on_page_links_request_info: 'List[Optional[OnPageLinksRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2443,10 +2468,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_redirect_chains_request_info import OnPageRedirectChainsRequestInfo
+    from dataforseo_client.models.on_page_redirect_chains_response_info import OnPageRedirectChainsResponseInfo
     @validate_call
     def redirect_chains(
         self,
-        list_optional_on_page_redirect_chains_request_info: List[Optional[OnPageRedirectChainsRequestInfo]] = None,
+        list_optional_on_page_redirect_chains_request_info: 'List[Optional[OnPageRedirectChainsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2487,7 +2514,7 @@ class OnPageApi:
     @validate_call
     def redirect_chains_with_http_info(
         self,
-        list_optional_on_page_redirect_chains_request_info: Optional[List[List[Optional[OnPageRedirectChainsRequestInfo]]]] = None,
+        list_optional_on_page_redirect_chains_request_info: 'List[Optional[OnPageRedirectChainsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2500,7 +2527,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageRedirectChainsResponseInfo]:
+    ) -> 'ApiResponse[OnPageRedirectChainsResponseInfo]':
 
         _param = self._redirect_chains_serialize(
             list_optional_on_page_redirect_chains_request_info=list_optional_on_page_redirect_chains_request_info,
@@ -2527,7 +2554,7 @@ class OnPageApi:
     @validate_call
     def redirect_chains_without_preload_content(
         self,
-        list_optional_on_page_redirect_chains_request_info: Optional[List[List[Optional[OnPageRedirectChainsRequestInfo]]]] = None,
+        list_optional_on_page_redirect_chains_request_info: 'List[Optional[OnPageRedirectChainsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2633,10 +2660,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_non_indexable_request_info import OnPageNonIndexableRequestInfo
+    from dataforseo_client.models.on_page_non_indexable_response_info import OnPageNonIndexableResponseInfo
     @validate_call
     def non_indexable(
         self,
-        list_optional_on_page_non_indexable_request_info: List[Optional[OnPageNonIndexableRequestInfo]] = None,
+        list_optional_on_page_non_indexable_request_info: 'List[Optional[OnPageNonIndexableRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2677,7 +2706,7 @@ class OnPageApi:
     @validate_call
     def non_indexable_with_http_info(
         self,
-        list_optional_on_page_non_indexable_request_info: Optional[List[List[Optional[OnPageNonIndexableRequestInfo]]]] = None,
+        list_optional_on_page_non_indexable_request_info: 'List[Optional[OnPageNonIndexableRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2690,7 +2719,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageNonIndexableResponseInfo]:
+    ) -> 'ApiResponse[OnPageNonIndexableResponseInfo]':
 
         _param = self._non_indexable_serialize(
             list_optional_on_page_non_indexable_request_info=list_optional_on_page_non_indexable_request_info,
@@ -2717,7 +2746,7 @@ class OnPageApi:
     @validate_call
     def non_indexable_without_preload_content(
         self,
-        list_optional_on_page_non_indexable_request_info: Optional[List[List[Optional[OnPageNonIndexableRequestInfo]]]] = None,
+        list_optional_on_page_non_indexable_request_info: 'List[Optional[OnPageNonIndexableRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2823,10 +2852,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_waterfall_request_info import OnPageWaterfallRequestInfo
+    from dataforseo_client.models.on_page_waterfall_response_info import OnPageWaterfallResponseInfo
     @validate_call
     def waterfall(
         self,
-        list_optional_on_page_waterfall_request_info: List[Optional[OnPageWaterfallRequestInfo]] = None,
+        list_optional_on_page_waterfall_request_info: 'List[Optional[OnPageWaterfallRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2867,7 +2898,7 @@ class OnPageApi:
     @validate_call
     def waterfall_with_http_info(
         self,
-        list_optional_on_page_waterfall_request_info: Optional[List[List[Optional[OnPageWaterfallRequestInfo]]]] = None,
+        list_optional_on_page_waterfall_request_info: 'List[Optional[OnPageWaterfallRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2880,7 +2911,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageWaterfallResponseInfo]:
+    ) -> 'ApiResponse[OnPageWaterfallResponseInfo]':
 
         _param = self._waterfall_serialize(
             list_optional_on_page_waterfall_request_info=list_optional_on_page_waterfall_request_info,
@@ -2907,7 +2938,7 @@ class OnPageApi:
     @validate_call
     def waterfall_without_preload_content(
         self,
-        list_optional_on_page_waterfall_request_info: Optional[List[List[Optional[OnPageWaterfallRequestInfo]]]] = None,
+        list_optional_on_page_waterfall_request_info: 'List[Optional[OnPageWaterfallRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3013,10 +3044,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_keyword_density_request_info import OnPageKeywordDensityRequestInfo
+    from dataforseo_client.models.on_page_keyword_density_response_info import OnPageKeywordDensityResponseInfo
     @validate_call
     def keyword_density(
         self,
-        list_optional_on_page_keyword_density_request_info: List[Optional[OnPageKeywordDensityRequestInfo]] = None,
+        list_optional_on_page_keyword_density_request_info: 'List[Optional[OnPageKeywordDensityRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3057,7 +3090,7 @@ class OnPageApi:
     @validate_call
     def keyword_density_with_http_info(
         self,
-        list_optional_on_page_keyword_density_request_info: Optional[List[List[Optional[OnPageKeywordDensityRequestInfo]]]] = None,
+        list_optional_on_page_keyword_density_request_info: 'List[Optional[OnPageKeywordDensityRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3070,7 +3103,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageKeywordDensityResponseInfo]:
+    ) -> 'ApiResponse[OnPageKeywordDensityResponseInfo]':
 
         _param = self._keyword_density_serialize(
             list_optional_on_page_keyword_density_request_info=list_optional_on_page_keyword_density_request_info,
@@ -3097,7 +3130,7 @@ class OnPageApi:
     @validate_call
     def keyword_density_without_preload_content(
         self,
-        list_optional_on_page_keyword_density_request_info: Optional[List[List[Optional[OnPageKeywordDensityRequestInfo]]]] = None,
+        list_optional_on_page_keyword_density_request_info: 'List[Optional[OnPageKeywordDensityRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3203,10 +3236,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_microdata_request_info import OnPageMicrodataRequestInfo
+    from dataforseo_client.models.on_page_microdata_response_info import OnPageMicrodataResponseInfo
     @validate_call
     def microdata(
         self,
-        list_optional_on_page_microdata_request_info: List[Optional[OnPageMicrodataRequestInfo]] = None,
+        list_optional_on_page_microdata_request_info: 'List[Optional[OnPageMicrodataRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3247,7 +3282,7 @@ class OnPageApi:
     @validate_call
     def microdata_with_http_info(
         self,
-        list_optional_on_page_microdata_request_info: Optional[List[List[Optional[OnPageMicrodataRequestInfo]]]] = None,
+        list_optional_on_page_microdata_request_info: 'List[Optional[OnPageMicrodataRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3260,7 +3295,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageMicrodataResponseInfo]:
+    ) -> 'ApiResponse[OnPageMicrodataResponseInfo]':
 
         _param = self._microdata_serialize(
             list_optional_on_page_microdata_request_info=list_optional_on_page_microdata_request_info,
@@ -3287,7 +3322,7 @@ class OnPageApi:
     @validate_call
     def microdata_without_preload_content(
         self,
-        list_optional_on_page_microdata_request_info: Optional[List[List[Optional[OnPageMicrodataRequestInfo]]]] = None,
+        list_optional_on_page_microdata_request_info: 'List[Optional[OnPageMicrodataRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3393,10 +3428,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_raw_html_request_info import OnPageRawHtmlRequestInfo
+    from dataforseo_client.models.on_page_raw_html_response_info import OnPageRawHtmlResponseInfo
     @validate_call
     def raw_html(
         self,
-        list_optional_on_page_raw_html_request_info: List[Optional[OnPageRawHtmlRequestInfo]] = None,
+        list_optional_on_page_raw_html_request_info: 'List[Optional[OnPageRawHtmlRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3437,7 +3474,7 @@ class OnPageApi:
     @validate_call
     def raw_html_with_http_info(
         self,
-        list_optional_on_page_raw_html_request_info: Optional[List[List[Optional[OnPageRawHtmlRequestInfo]]]] = None,
+        list_optional_on_page_raw_html_request_info: 'List[Optional[OnPageRawHtmlRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3450,7 +3487,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageRawHtmlResponseInfo]:
+    ) -> 'ApiResponse[OnPageRawHtmlResponseInfo]':
 
         _param = self._raw_html_serialize(
             list_optional_on_page_raw_html_request_info=list_optional_on_page_raw_html_request_info,
@@ -3477,7 +3514,7 @@ class OnPageApi:
     @validate_call
     def raw_html_without_preload_content(
         self,
-        list_optional_on_page_raw_html_request_info: Optional[List[List[Optional[OnPageRawHtmlRequestInfo]]]] = None,
+        list_optional_on_page_raw_html_request_info: 'List[Optional[OnPageRawHtmlRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3583,10 +3620,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_page_screenshot_request_info import OnPagePageScreenshotRequestInfo
+    from dataforseo_client.models.on_page_page_screenshot_response_info import OnPagePageScreenshotResponseInfo
     @validate_call
     def page_screenshot(
         self,
-        list_optional_on_page_page_screenshot_request_info: List[Optional[OnPagePageScreenshotRequestInfo]] = None,
+        list_optional_on_page_page_screenshot_request_info: 'List[Optional[OnPagePageScreenshotRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3627,7 +3666,7 @@ class OnPageApi:
     @validate_call
     def page_screenshot_with_http_info(
         self,
-        list_optional_on_page_page_screenshot_request_info: Optional[List[List[Optional[OnPagePageScreenshotRequestInfo]]]] = None,
+        list_optional_on_page_page_screenshot_request_info: 'List[Optional[OnPagePageScreenshotRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3640,7 +3679,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPagePageScreenshotResponseInfo]:
+    ) -> 'ApiResponse[OnPagePageScreenshotResponseInfo]':
 
         _param = self._page_screenshot_serialize(
             list_optional_on_page_page_screenshot_request_info=list_optional_on_page_page_screenshot_request_info,
@@ -3667,7 +3706,7 @@ class OnPageApi:
     @validate_call
     def page_screenshot_without_preload_content(
         self,
-        list_optional_on_page_page_screenshot_request_info: Optional[List[List[Optional[OnPagePageScreenshotRequestInfo]]]] = None,
+        list_optional_on_page_page_screenshot_request_info: 'List[Optional[OnPagePageScreenshotRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3773,10 +3812,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_content_parsing_request_info import OnPageContentParsingRequestInfo
+    from dataforseo_client.models.on_page_content_parsing_response_info import OnPageContentParsingResponseInfo
     @validate_call
     def content_parsing(
         self,
-        list_optional_on_page_content_parsing_request_info: List[Optional[OnPageContentParsingRequestInfo]] = None,
+        list_optional_on_page_content_parsing_request_info: 'List[Optional[OnPageContentParsingRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3817,7 +3858,7 @@ class OnPageApi:
     @validate_call
     def content_parsing_with_http_info(
         self,
-        list_optional_on_page_content_parsing_request_info: Optional[List[List[Optional[OnPageContentParsingRequestInfo]]]] = None,
+        list_optional_on_page_content_parsing_request_info: 'List[Optional[OnPageContentParsingRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3830,7 +3871,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageContentParsingResponseInfo]:
+    ) -> 'ApiResponse[OnPageContentParsingResponseInfo]':
 
         _param = self._content_parsing_serialize(
             list_optional_on_page_content_parsing_request_info=list_optional_on_page_content_parsing_request_info,
@@ -3857,7 +3898,7 @@ class OnPageApi:
     @validate_call
     def content_parsing_without_preload_content(
         self,
-        list_optional_on_page_content_parsing_request_info: Optional[List[List[Optional[OnPageContentParsingRequestInfo]]]] = None,
+        list_optional_on_page_content_parsing_request_info: 'List[Optional[OnPageContentParsingRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3963,10 +4004,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_content_parsing_live_request_info import OnPageContentParsingLiveRequestInfo
+    from dataforseo_client.models.on_page_content_parsing_live_response_info import OnPageContentParsingLiveResponseInfo
     @validate_call
     def content_parsing_live(
         self,
-        list_optional_on_page_content_parsing_live_request_info: List[Optional[OnPageContentParsingLiveRequestInfo]] = None,
+        list_optional_on_page_content_parsing_live_request_info: 'List[Optional[OnPageContentParsingLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4007,7 +4050,7 @@ class OnPageApi:
     @validate_call
     def content_parsing_live_with_http_info(
         self,
-        list_optional_on_page_content_parsing_live_request_info: Optional[List[List[Optional[OnPageContentParsingLiveRequestInfo]]]] = None,
+        list_optional_on_page_content_parsing_live_request_info: 'List[Optional[OnPageContentParsingLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4020,7 +4063,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageContentParsingLiveResponseInfo]:
+    ) -> 'ApiResponse[OnPageContentParsingLiveResponseInfo]':
 
         _param = self._content_parsing_live_serialize(
             list_optional_on_page_content_parsing_live_request_info=list_optional_on_page_content_parsing_live_request_info,
@@ -4047,7 +4090,7 @@ class OnPageApi:
     @validate_call
     def content_parsing_live_without_preload_content(
         self,
-        list_optional_on_page_content_parsing_live_request_info: Optional[List[List[Optional[OnPageContentParsingLiveRequestInfo]]]] = None,
+        list_optional_on_page_content_parsing_live_request_info: 'List[Optional[OnPageContentParsingLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4153,10 +4196,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_instant_pages_request_info import OnPageInstantPagesRequestInfo
+    from dataforseo_client.models.on_page_instant_pages_response_info import OnPageInstantPagesResponseInfo
     @validate_call
     def instant_pages(
         self,
-        list_optional_on_page_instant_pages_request_info: List[Optional[OnPageInstantPagesRequestInfo]] = None,
+        list_optional_on_page_instant_pages_request_info: 'List[Optional[OnPageInstantPagesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4197,7 +4242,7 @@ class OnPageApi:
     @validate_call
     def instant_pages_with_http_info(
         self,
-        list_optional_on_page_instant_pages_request_info: Optional[List[List[Optional[OnPageInstantPagesRequestInfo]]]] = None,
+        list_optional_on_page_instant_pages_request_info: 'List[Optional[OnPageInstantPagesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4210,7 +4255,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageInstantPagesResponseInfo]:
+    ) -> 'ApiResponse[OnPageInstantPagesResponseInfo]':
 
         _param = self._instant_pages_serialize(
             list_optional_on_page_instant_pages_request_info=list_optional_on_page_instant_pages_request_info,
@@ -4237,7 +4282,7 @@ class OnPageApi:
     @validate_call
     def instant_pages_without_preload_content(
         self,
-        list_optional_on_page_instant_pages_request_info: Optional[List[List[Optional[OnPageInstantPagesRequestInfo]]]] = None,
+        list_optional_on_page_instant_pages_request_info: 'List[Optional[OnPageInstantPagesRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4343,6 +4388,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_lighthouse_languages_response_info import OnPageLighthouseLanguagesResponseInfo
     @validate_call
     def on_page_lighthouse_languages(
         self,
@@ -4395,7 +4441,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLighthouseLanguagesResponseInfo]:
+    ) -> 'ApiResponse[OnPageLighthouseLanguagesResponseInfo]':
 
         _param = self._on_page_lighthouse_languages_serialize(
             _request_auth=_request_auth,
@@ -4498,6 +4544,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_lighthouse_audits_response_info import OnPageLighthouseAuditsResponseInfo
     @validate_call
     def lighthouse_audits(
         self,
@@ -4550,7 +4597,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLighthouseAuditsResponseInfo]:
+    ) -> 'ApiResponse[OnPageLighthouseAuditsResponseInfo]':
 
         _param = self._lighthouse_audits_serialize(
             _request_auth=_request_auth,
@@ -4653,6 +4700,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_lighthouse_versions_response_info import OnPageLighthouseVersionsResponseInfo
     @validate_call
     def lighthouse_versions(
         self,
@@ -4705,7 +4753,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLighthouseVersionsResponseInfo]:
+    ) -> 'ApiResponse[OnPageLighthouseVersionsResponseInfo]':
 
         _param = self._lighthouse_versions_serialize(
             _request_auth=_request_auth,
@@ -4808,10 +4856,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_lighthouse_task_post_request_info import OnPageLighthouseTaskPostRequestInfo
+    from dataforseo_client.models.on_page_lighthouse_task_post_response_info import OnPageLighthouseTaskPostResponseInfo
     @validate_call
     def lighthouse_task_post(
         self,
-        list_optional_on_page_lighthouse_task_post_request_info: List[Optional[OnPageLighthouseTaskPostRequestInfo]] = None,
+        list_optional_on_page_lighthouse_task_post_request_info: 'List[Optional[OnPageLighthouseTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4852,7 +4902,7 @@ class OnPageApi:
     @validate_call
     def lighthouse_task_post_with_http_info(
         self,
-        list_optional_on_page_lighthouse_task_post_request_info: Optional[List[List[Optional[OnPageLighthouseTaskPostRequestInfo]]]] = None,
+        list_optional_on_page_lighthouse_task_post_request_info: 'List[Optional[OnPageLighthouseTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4865,7 +4915,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLighthouseTaskPostResponseInfo]:
+    ) -> 'ApiResponse[OnPageLighthouseTaskPostResponseInfo]':
 
         _param = self._lighthouse_task_post_serialize(
             list_optional_on_page_lighthouse_task_post_request_info=list_optional_on_page_lighthouse_task_post_request_info,
@@ -4892,7 +4942,7 @@ class OnPageApi:
     @validate_call
     def lighthouse_task_post_without_preload_content(
         self,
-        list_optional_on_page_lighthouse_task_post_request_info: Optional[List[List[Optional[OnPageLighthouseTaskPostRequestInfo]]]] = None,
+        list_optional_on_page_lighthouse_task_post_request_info: 'List[Optional[OnPageLighthouseTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4998,6 +5048,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_lighthouse_tasks_ready_response_info import OnPageLighthouseTasksReadyResponseInfo
     @validate_call
     def lighthouse_tasks_ready(
         self,
@@ -5050,7 +5101,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLighthouseTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[OnPageLighthouseTasksReadyResponseInfo]':
 
         _param = self._lighthouse_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -5153,6 +5204,7 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_lighthouse_task_get_json_response_info import OnPageLighthouseTaskGetJsonResponseInfo
     @validate_call
     def lighthouse_task_get_json(
         self,
@@ -5208,7 +5260,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLighthouseTaskGetJsonResponseInfo]:
+    ) -> 'ApiResponse[OnPageLighthouseTaskGetJsonResponseInfo]':
 
         _param = self._lighthouse_task_get_json_serialize(
             id=id,
@@ -5317,10 +5369,12 @@ class OnPageApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.on_page_lighthouse_live_json_request_info import OnPageLighthouseLiveJsonRequestInfo
+    from dataforseo_client.models.on_page_lighthouse_live_json_response_info import OnPageLighthouseLiveJsonResponseInfo
     @validate_call
     def lighthouse_live_json(
         self,
-        list_optional_on_page_lighthouse_live_json_request_info: List[Optional[OnPageLighthouseLiveJsonRequestInfo]] = None,
+        list_optional_on_page_lighthouse_live_json_request_info: 'List[Optional[OnPageLighthouseLiveJsonRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5361,7 +5415,7 @@ class OnPageApi:
     @validate_call
     def lighthouse_live_json_with_http_info(
         self,
-        list_optional_on_page_lighthouse_live_json_request_info: Optional[List[List[Optional[OnPageLighthouseLiveJsonRequestInfo]]]] = None,
+        list_optional_on_page_lighthouse_live_json_request_info: 'List[Optional[OnPageLighthouseLiveJsonRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5374,7 +5428,7 @@ class OnPageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OnPageLighthouseLiveJsonResponseInfo]:
+    ) -> 'ApiResponse[OnPageLighthouseLiveJsonResponseInfo]':
 
         _param = self._lighthouse_live_json_serialize(
             list_optional_on_page_lighthouse_live_json_request_info=list_optional_on_page_lighthouse_live_json_request_info,
@@ -5401,7 +5455,7 @@ class OnPageApi:
     @validate_call
     def lighthouse_live_json_without_preload_content(
         self,
-        list_optional_on_page_lighthouse_live_json_request_info: Optional[List[List[Optional[OnPageLighthouseLiveJsonRequestInfo]]]] = None,
+        list_optional_on_page_lighthouse_live_json_request_info: 'List[Optional[OnPageLighthouseLiveJsonRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

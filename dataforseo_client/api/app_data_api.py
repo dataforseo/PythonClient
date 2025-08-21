@@ -1,63 +1,64 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.app_data_id_list_request_info import AppDataIdListRequestInfo
-from dataforseo_client.models.app_data_id_list_response_info import AppDataIdListResponseInfo
-from dataforseo_client.models.app_data_errors_request_info import AppDataErrorsRequestInfo
-from dataforseo_client.models.app_data_errors_response_info import AppDataErrorsResponseInfo
-from dataforseo_client.models.app_data_google_categories_response_info import AppDataGoogleCategoriesResponseInfo
-from dataforseo_client.models.app_data_google_locations_response_info import AppDataGoogleLocationsResponseInfo
-from dataforseo_client.models.app_data_google_locations_country_response_info import AppDataGoogleLocationsCountryResponseInfo
-from dataforseo_client.models.app_data_google_languages_response_info import AppDataGoogleLanguagesResponseInfo
-from dataforseo_client.models.app_data_google_app_searches_task_post_request_info import AppDataGoogleAppSearchesTaskPostRequestInfo
-from dataforseo_client.models.app_data_google_app_searches_task_post_response_info import AppDataGoogleAppSearchesTaskPostResponseInfo
-from dataforseo_client.models.app_data_google_app_searches_tasks_ready_response_info import AppDataGoogleAppSearchesTasksReadyResponseInfo
-from dataforseo_client.models.app_data_tasks_ready_response_info import AppDataTasksReadyResponseInfo
-from dataforseo_client.models.app_data_google_app_searches_task_get_advanced_response_info import AppDataGoogleAppSearchesTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_google_app_searches_task_get_html_response_info import AppDataGoogleAppSearchesTaskGetHtmlResponseInfo
-from dataforseo_client.models.app_data_google_app_list_task_post_request_info import AppDataGoogleAppListTaskPostRequestInfo
-from dataforseo_client.models.app_data_google_app_list_task_post_response_info import AppDataGoogleAppListTaskPostResponseInfo
-from dataforseo_client.models.app_data_google_app_list_tasks_ready_response_info import AppDataGoogleAppListTasksReadyResponseInfo
-from dataforseo_client.models.app_data_google_app_list_task_get_advanced_response_info import AppDataGoogleAppListTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_google_app_list_task_get_html_response_info import AppDataGoogleAppListTaskGetHtmlResponseInfo
-from dataforseo_client.models.app_data_google_app_info_task_post_request_info import AppDataGoogleAppInfoTaskPostRequestInfo
-from dataforseo_client.models.app_data_google_app_info_task_post_response_info import AppDataGoogleAppInfoTaskPostResponseInfo
-from dataforseo_client.models.app_data_google_app_info_tasks_ready_response_info import AppDataGoogleAppInfoTasksReadyResponseInfo
-from dataforseo_client.models.app_data_google_app_info_task_get_advanced_response_info import AppDataGoogleAppInfoTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_google_app_info_task_get_html_response_info import AppDataGoogleAppInfoTaskGetHtmlResponseInfo
-from dataforseo_client.models.app_data_google_app_reviews_task_post_request_info import AppDataGoogleAppReviewsTaskPostRequestInfo
-from dataforseo_client.models.app_data_google_app_reviews_task_post_response_info import AppDataGoogleAppReviewsTaskPostResponseInfo
-from dataforseo_client.models.app_data_google_app_reviews_tasks_ready_response_info import AppDataGoogleAppReviewsTasksReadyResponseInfo
-from dataforseo_client.models.app_data_google_app_reviews_task_get_advanced_response_info import AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_google_app_reviews_task_get_html_response_info import AppDataGoogleAppReviewsTaskGetHtmlResponseInfo
-from dataforseo_client.models.app_data_google_app_listings_categories_response_info import AppDataGoogleAppListingsCategoriesResponseInfo
-from dataforseo_client.models.app_data_google_app_listings_search_live_request_info import AppDataGoogleAppListingsSearchLiveRequestInfo
-from dataforseo_client.models.app_data_google_app_listings_search_live_response_info import AppDataGoogleAppListingsSearchLiveResponseInfo
-from dataforseo_client.models.app_data_apple_categories_response_info import AppDataAppleCategoriesResponseInfo
-from dataforseo_client.models.app_data_apple_locations_response_info import AppDataAppleLocationsResponseInfo
-from dataforseo_client.models.app_data_apple_languages_response_info import AppDataAppleLanguagesResponseInfo
-from dataforseo_client.models.app_data_apple_app_searches_task_post_request_info import AppDataAppleAppSearchesTaskPostRequestInfo
-from dataforseo_client.models.app_data_apple_app_searches_task_post_response_info import AppDataAppleAppSearchesTaskPostResponseInfo
-from dataforseo_client.models.app_data_apple_app_searches_tasks_ready_response_info import AppDataAppleAppSearchesTasksReadyResponseInfo
-from dataforseo_client.models.app_data_apple_app_searches_task_get_advanced_response_info import AppDataAppleAppSearchesTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_apple_app_info_task_post_request_info import AppDataAppleAppInfoTaskPostRequestInfo
-from dataforseo_client.models.app_data_apple_app_info_task_post_response_info import AppDataAppleAppInfoTaskPostResponseInfo
-from dataforseo_client.models.app_data_apple_app_info_tasks_ready_response_info import AppDataAppleAppInfoTasksReadyResponseInfo
-from dataforseo_client.models.app_data_apple_app_info_task_get_advanced_response_info import AppDataAppleAppInfoTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_apple_app_list_task_post_request_info import AppDataAppleAppListTaskPostRequestInfo
-from dataforseo_client.models.app_data_apple_app_list_task_post_response_info import AppDataAppleAppListTaskPostResponseInfo
-from dataforseo_client.models.app_data_apple_app_list_tasks_ready_response_info import AppDataAppleAppListTasksReadyResponseInfo
-from dataforseo_client.models.app_data_apple_app_list_task_get_advanced_response_info import AppDataAppleAppListTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_apple_app_reviews_task_post_request_info import AppDataAppleAppReviewsTaskPostRequestInfo
-from dataforseo_client.models.app_data_apple_app_reviews_task_post_response_info import AppDataAppleAppReviewsTaskPostResponseInfo
-from dataforseo_client.models.app_data_apple_app_reviews_tasks_ready_response_info import AppDataAppleAppReviewsTasksReadyResponseInfo
-from dataforseo_client.models.app_data_apple_app_reviews_task_get_advanced_response_info import AppDataAppleAppReviewsTaskGetAdvancedResponseInfo
-from dataforseo_client.models.app_data_apple_app_listings_categories_response_info import AppDataAppleAppListingsCategoriesResponseInfo
-from dataforseo_client.models.app_data_apple_app_listings_search_live_request_info import AppDataAppleAppListingsSearchLiveRequestInfo
-from dataforseo_client.models.app_data_apple_app_listings_search_live_response_info import AppDataAppleAppListingsSearchLiveResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.app_data_id_list_request_info import AppDataIdListRequestInfo
+    from dataforseo_client.models.app_data_id_list_response_info import AppDataIdListResponseInfo
+    from dataforseo_client.models.app_data_errors_request_info import AppDataErrorsRequestInfo
+    from dataforseo_client.models.app_data_errors_response_info import AppDataErrorsResponseInfo
+    from dataforseo_client.models.app_data_google_categories_response_info import AppDataGoogleCategoriesResponseInfo
+    from dataforseo_client.models.app_data_google_locations_response_info import AppDataGoogleLocationsResponseInfo
+    from dataforseo_client.models.app_data_google_locations_country_response_info import AppDataGoogleLocationsCountryResponseInfo
+    from dataforseo_client.models.app_data_google_languages_response_info import AppDataGoogleLanguagesResponseInfo
+    from dataforseo_client.models.app_data_google_app_searches_task_post_request_info import AppDataGoogleAppSearchesTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_searches_task_post_response_info import AppDataGoogleAppSearchesTaskPostResponseInfo
+    from dataforseo_client.models.app_data_google_app_searches_tasks_ready_response_info import AppDataGoogleAppSearchesTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_tasks_ready_response_info import AppDataTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_google_app_searches_task_get_advanced_response_info import AppDataGoogleAppSearchesTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_google_app_searches_task_get_html_response_info import AppDataGoogleAppSearchesTaskGetHtmlResponseInfo
+    from dataforseo_client.models.app_data_google_app_list_task_post_request_info import AppDataGoogleAppListTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_list_task_post_response_info import AppDataGoogleAppListTaskPostResponseInfo
+    from dataforseo_client.models.app_data_google_app_list_tasks_ready_response_info import AppDataGoogleAppListTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_google_app_list_task_get_advanced_response_info import AppDataGoogleAppListTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_google_app_list_task_get_html_response_info import AppDataGoogleAppListTaskGetHtmlResponseInfo
+    from dataforseo_client.models.app_data_google_app_info_task_post_request_info import AppDataGoogleAppInfoTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_info_task_post_response_info import AppDataGoogleAppInfoTaskPostResponseInfo
+    from dataforseo_client.models.app_data_google_app_info_tasks_ready_response_info import AppDataGoogleAppInfoTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_google_app_info_task_get_advanced_response_info import AppDataGoogleAppInfoTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_google_app_info_task_get_html_response_info import AppDataGoogleAppInfoTaskGetHtmlResponseInfo
+    from dataforseo_client.models.app_data_google_app_reviews_task_post_request_info import AppDataGoogleAppReviewsTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_reviews_task_post_response_info import AppDataGoogleAppReviewsTaskPostResponseInfo
+    from dataforseo_client.models.app_data_google_app_reviews_tasks_ready_response_info import AppDataGoogleAppReviewsTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_google_app_reviews_task_get_advanced_response_info import AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_google_app_reviews_task_get_html_response_info import AppDataGoogleAppReviewsTaskGetHtmlResponseInfo
+    from dataforseo_client.models.app_data_google_app_listings_categories_response_info import AppDataGoogleAppListingsCategoriesResponseInfo
+    from dataforseo_client.models.app_data_google_app_listings_search_live_request_info import AppDataGoogleAppListingsSearchLiveRequestInfo
+    from dataforseo_client.models.app_data_google_app_listings_search_live_response_info import AppDataGoogleAppListingsSearchLiveResponseInfo
+    from dataforseo_client.models.app_data_apple_categories_response_info import AppDataAppleCategoriesResponseInfo
+    from dataforseo_client.models.app_data_apple_locations_response_info import AppDataAppleLocationsResponseInfo
+    from dataforseo_client.models.app_data_apple_languages_response_info import AppDataAppleLanguagesResponseInfo
+    from dataforseo_client.models.app_data_apple_app_searches_task_post_request_info import AppDataAppleAppSearchesTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_searches_task_post_response_info import AppDataAppleAppSearchesTaskPostResponseInfo
+    from dataforseo_client.models.app_data_apple_app_searches_tasks_ready_response_info import AppDataAppleAppSearchesTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_apple_app_searches_task_get_advanced_response_info import AppDataAppleAppSearchesTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_apple_app_info_task_post_request_info import AppDataAppleAppInfoTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_info_task_post_response_info import AppDataAppleAppInfoTaskPostResponseInfo
+    from dataforseo_client.models.app_data_apple_app_info_tasks_ready_response_info import AppDataAppleAppInfoTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_apple_app_info_task_get_advanced_response_info import AppDataAppleAppInfoTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_apple_app_list_task_post_request_info import AppDataAppleAppListTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_list_task_post_response_info import AppDataAppleAppListTaskPostResponseInfo
+    from dataforseo_client.models.app_data_apple_app_list_tasks_ready_response_info import AppDataAppleAppListTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_apple_app_list_task_get_advanced_response_info import AppDataAppleAppListTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_apple_app_reviews_task_post_request_info import AppDataAppleAppReviewsTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_reviews_task_post_response_info import AppDataAppleAppReviewsTaskPostResponseInfo
+    from dataforseo_client.models.app_data_apple_app_reviews_tasks_ready_response_info import AppDataAppleAppReviewsTasksReadyResponseInfo
+    from dataforseo_client.models.app_data_apple_app_reviews_task_get_advanced_response_info import AppDataAppleAppReviewsTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.app_data_apple_app_listings_categories_response_info import AppDataAppleAppListingsCategoriesResponseInfo
+    from dataforseo_client.models.app_data_apple_app_listings_search_live_request_info import AppDataAppleAppListingsSearchLiveRequestInfo
+    from dataforseo_client.models.app_data_apple_app_listings_search_live_response_info import AppDataAppleAppListingsSearchLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -70,11 +71,14 @@ class AppDataApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.app_data_id_list_request_info import AppDataIdListRequestInfo
+    from dataforseo_client.models.app_data_id_list_response_info import AppDataIdListResponseInfo
     @validate_call
     def app_data_id_list(
         self,
-        list_optional_app_data_id_list_request_info: List[Optional[AppDataIdListRequestInfo]] = None,
+        list_optional_app_data_id_list_request_info: 'List[Optional[AppDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -115,7 +119,7 @@ class AppDataApi:
     @validate_call
     def app_data_id_list_with_http_info(
         self,
-        list_optional_app_data_id_list_request_info: Optional[List[List[Optional[AppDataIdListRequestInfo]]]] = None,
+        list_optional_app_data_id_list_request_info: 'List[Optional[AppDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -128,7 +132,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataIdListResponseInfo]:
+    ) -> 'ApiResponse[AppDataIdListResponseInfo]':
 
         _param = self._app_data_id_list_serialize(
             list_optional_app_data_id_list_request_info=list_optional_app_data_id_list_request_info,
@@ -155,7 +159,7 @@ class AppDataApi:
     @validate_call
     def app_data_id_list_without_preload_content(
         self,
-        list_optional_app_data_id_list_request_info: Optional[List[List[Optional[AppDataIdListRequestInfo]]]] = None,
+        list_optional_app_data_id_list_request_info: 'List[Optional[AppDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -261,10 +265,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_errors_request_info import AppDataErrorsRequestInfo
+    from dataforseo_client.models.app_data_errors_response_info import AppDataErrorsResponseInfo
     @validate_call
     def app_data_errors(
         self,
-        list_optional_app_data_errors_request_info: List[Optional[AppDataErrorsRequestInfo]] = None,
+        list_optional_app_data_errors_request_info: 'List[Optional[AppDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -305,7 +311,7 @@ class AppDataApi:
     @validate_call
     def app_data_errors_with_http_info(
         self,
-        list_optional_app_data_errors_request_info: Optional[List[List[Optional[AppDataErrorsRequestInfo]]]] = None,
+        list_optional_app_data_errors_request_info: 'List[Optional[AppDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -318,7 +324,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataErrorsResponseInfo]:
+    ) -> 'ApiResponse[AppDataErrorsResponseInfo]':
 
         _param = self._app_data_errors_serialize(
             list_optional_app_data_errors_request_info=list_optional_app_data_errors_request_info,
@@ -345,7 +351,7 @@ class AppDataApi:
     @validate_call
     def app_data_errors_without_preload_content(
         self,
-        list_optional_app_data_errors_request_info: Optional[List[List[Optional[AppDataErrorsRequestInfo]]]] = None,
+        list_optional_app_data_errors_request_info: 'List[Optional[AppDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -451,6 +457,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_categories_response_info import AppDataGoogleCategoriesResponseInfo
     @validate_call
     def google_categories(
         self,
@@ -503,7 +510,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleCategoriesResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleCategoriesResponseInfo]':
 
         _param = self._google_categories_serialize(
             _request_auth=_request_auth,
@@ -606,6 +613,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_locations_response_info import AppDataGoogleLocationsResponseInfo
     @validate_call
     def app_data_google_locations(
         self,
@@ -658,7 +666,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleLocationsResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleLocationsResponseInfo]':
 
         _param = self._app_data_google_locations_serialize(
             _request_auth=_request_auth,
@@ -761,6 +769,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_locations_country_response_info import AppDataGoogleLocationsCountryResponseInfo
     @validate_call
     def app_data_google_locations_country(
         self,
@@ -816,7 +825,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleLocationsCountryResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleLocationsCountryResponseInfo]':
 
         _param = self._app_data_google_locations_country_serialize(
             country=country,
@@ -925,6 +934,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_languages_response_info import AppDataGoogleLanguagesResponseInfo
     @validate_call
     def app_data_google_languages(
         self,
@@ -977,7 +987,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleLanguagesResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleLanguagesResponseInfo]':
 
         _param = self._app_data_google_languages_serialize(
             _request_auth=_request_auth,
@@ -1080,10 +1090,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_searches_task_post_request_info import AppDataGoogleAppSearchesTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_searches_task_post_response_info import AppDataGoogleAppSearchesTaskPostResponseInfo
     @validate_call
     def google_app_searches_task_post(
         self,
-        list_optional_app_data_google_app_searches_task_post_request_info: List[Optional[AppDataGoogleAppSearchesTaskPostRequestInfo]] = None,
+        list_optional_app_data_google_app_searches_task_post_request_info: 'List[Optional[AppDataGoogleAppSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1124,7 +1136,7 @@ class AppDataApi:
     @validate_call
     def google_app_searches_task_post_with_http_info(
         self,
-        list_optional_app_data_google_app_searches_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppSearchesTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_searches_task_post_request_info: 'List[Optional[AppDataGoogleAppSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1137,7 +1149,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppSearchesTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppSearchesTaskPostResponseInfo]':
 
         _param = self._google_app_searches_task_post_serialize(
             list_optional_app_data_google_app_searches_task_post_request_info=list_optional_app_data_google_app_searches_task_post_request_info,
@@ -1164,7 +1176,7 @@ class AppDataApi:
     @validate_call
     def google_app_searches_task_post_without_preload_content(
         self,
-        list_optional_app_data_google_app_searches_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppSearchesTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_searches_task_post_request_info: 'List[Optional[AppDataGoogleAppSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1270,6 +1282,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_searches_tasks_ready_response_info import AppDataGoogleAppSearchesTasksReadyResponseInfo
     @validate_call
     def google_app_searches_tasks_ready(
         self,
@@ -1322,7 +1335,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppSearchesTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppSearchesTasksReadyResponseInfo]':
 
         _param = self._google_app_searches_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -1425,6 +1438,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_tasks_ready_response_info import AppDataTasksReadyResponseInfo
     @validate_call
     def app_data_tasks_ready(
         self,
@@ -1477,7 +1491,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataTasksReadyResponseInfo]':
 
         _param = self._app_data_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -1580,6 +1594,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_searches_task_get_advanced_response_info import AppDataGoogleAppSearchesTaskGetAdvancedResponseInfo
     @validate_call
     def google_app_searches_task_get_advanced(
         self,
@@ -1635,7 +1650,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppSearchesTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppSearchesTaskGetAdvancedResponseInfo]':
 
         _param = self._google_app_searches_task_get_advanced_serialize(
             id=id,
@@ -1744,6 +1759,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_searches_task_get_html_response_info import AppDataGoogleAppSearchesTaskGetHtmlResponseInfo
     @validate_call
     def google_app_searches_task_get_html(
         self,
@@ -1799,7 +1815,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppSearchesTaskGetHtmlResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppSearchesTaskGetHtmlResponseInfo]':
 
         _param = self._google_app_searches_task_get_html_serialize(
             id=id,
@@ -1908,10 +1924,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_list_task_post_request_info import AppDataGoogleAppListTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_list_task_post_response_info import AppDataGoogleAppListTaskPostResponseInfo
     @validate_call
     def google_app_list_task_post(
         self,
-        list_optional_app_data_google_app_list_task_post_request_info: List[Optional[AppDataGoogleAppListTaskPostRequestInfo]] = None,
+        list_optional_app_data_google_app_list_task_post_request_info: 'List[Optional[AppDataGoogleAppListTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1952,7 +1970,7 @@ class AppDataApi:
     @validate_call
     def google_app_list_task_post_with_http_info(
         self,
-        list_optional_app_data_google_app_list_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppListTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_list_task_post_request_info: 'List[Optional[AppDataGoogleAppListTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1965,7 +1983,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppListTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppListTaskPostResponseInfo]':
 
         _param = self._google_app_list_task_post_serialize(
             list_optional_app_data_google_app_list_task_post_request_info=list_optional_app_data_google_app_list_task_post_request_info,
@@ -1992,7 +2010,7 @@ class AppDataApi:
     @validate_call
     def google_app_list_task_post_without_preload_content(
         self,
-        list_optional_app_data_google_app_list_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppListTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_list_task_post_request_info: 'List[Optional[AppDataGoogleAppListTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2098,6 +2116,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_list_tasks_ready_response_info import AppDataGoogleAppListTasksReadyResponseInfo
     @validate_call
     def google_app_list_tasks_ready(
         self,
@@ -2150,7 +2169,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppListTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppListTasksReadyResponseInfo]':
 
         _param = self._google_app_list_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -2253,6 +2272,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_list_task_get_advanced_response_info import AppDataGoogleAppListTaskGetAdvancedResponseInfo
     @validate_call
     def google_app_list_task_get_advanced(
         self,
@@ -2308,7 +2328,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppListTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppListTaskGetAdvancedResponseInfo]':
 
         _param = self._google_app_list_task_get_advanced_serialize(
             id=id,
@@ -2417,6 +2437,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_list_task_get_html_response_info import AppDataGoogleAppListTaskGetHtmlResponseInfo
     @validate_call
     def google_app_list_task_get_html(
         self,
@@ -2472,7 +2493,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppListTaskGetHtmlResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppListTaskGetHtmlResponseInfo]':
 
         _param = self._google_app_list_task_get_html_serialize(
             id=id,
@@ -2581,10 +2602,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_info_task_post_request_info import AppDataGoogleAppInfoTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_info_task_post_response_info import AppDataGoogleAppInfoTaskPostResponseInfo
     @validate_call
     def google_app_info_task_post(
         self,
-        list_optional_app_data_google_app_info_task_post_request_info: List[Optional[AppDataGoogleAppInfoTaskPostRequestInfo]] = None,
+        list_optional_app_data_google_app_info_task_post_request_info: 'List[Optional[AppDataGoogleAppInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2625,7 +2648,7 @@ class AppDataApi:
     @validate_call
     def google_app_info_task_post_with_http_info(
         self,
-        list_optional_app_data_google_app_info_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppInfoTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_info_task_post_request_info: 'List[Optional[AppDataGoogleAppInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2638,7 +2661,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppInfoTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppInfoTaskPostResponseInfo]':
 
         _param = self._google_app_info_task_post_serialize(
             list_optional_app_data_google_app_info_task_post_request_info=list_optional_app_data_google_app_info_task_post_request_info,
@@ -2665,7 +2688,7 @@ class AppDataApi:
     @validate_call
     def google_app_info_task_post_without_preload_content(
         self,
-        list_optional_app_data_google_app_info_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppInfoTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_info_task_post_request_info: 'List[Optional[AppDataGoogleAppInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2771,6 +2794,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_info_tasks_ready_response_info import AppDataGoogleAppInfoTasksReadyResponseInfo
     @validate_call
     def google_app_info_tasks_ready(
         self,
@@ -2823,7 +2847,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppInfoTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppInfoTasksReadyResponseInfo]':
 
         _param = self._google_app_info_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -2926,6 +2950,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_info_task_get_advanced_response_info import AppDataGoogleAppInfoTaskGetAdvancedResponseInfo
     @validate_call
     def google_app_info_task_get_advanced(
         self,
@@ -2981,7 +3006,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppInfoTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppInfoTaskGetAdvancedResponseInfo]':
 
         _param = self._google_app_info_task_get_advanced_serialize(
             id=id,
@@ -3090,6 +3115,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_info_task_get_html_response_info import AppDataGoogleAppInfoTaskGetHtmlResponseInfo
     @validate_call
     def google_app_info_task_get_html(
         self,
@@ -3145,7 +3171,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppInfoTaskGetHtmlResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppInfoTaskGetHtmlResponseInfo]':
 
         _param = self._google_app_info_task_get_html_serialize(
             id=id,
@@ -3254,10 +3280,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_reviews_task_post_request_info import AppDataGoogleAppReviewsTaskPostRequestInfo
+    from dataforseo_client.models.app_data_google_app_reviews_task_post_response_info import AppDataGoogleAppReviewsTaskPostResponseInfo
     @validate_call
     def google_app_reviews_task_post(
         self,
-        list_optional_app_data_google_app_reviews_task_post_request_info: List[Optional[AppDataGoogleAppReviewsTaskPostRequestInfo]] = None,
+        list_optional_app_data_google_app_reviews_task_post_request_info: 'List[Optional[AppDataGoogleAppReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3298,7 +3326,7 @@ class AppDataApi:
     @validate_call
     def google_app_reviews_task_post_with_http_info(
         self,
-        list_optional_app_data_google_app_reviews_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_reviews_task_post_request_info: 'List[Optional[AppDataGoogleAppReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3311,7 +3339,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppReviewsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppReviewsTaskPostResponseInfo]':
 
         _param = self._google_app_reviews_task_post_serialize(
             list_optional_app_data_google_app_reviews_task_post_request_info=list_optional_app_data_google_app_reviews_task_post_request_info,
@@ -3338,7 +3366,7 @@ class AppDataApi:
     @validate_call
     def google_app_reviews_task_post_without_preload_content(
         self,
-        list_optional_app_data_google_app_reviews_task_post_request_info: Optional[List[List[Optional[AppDataGoogleAppReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_google_app_reviews_task_post_request_info: 'List[Optional[AppDataGoogleAppReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3444,6 +3472,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_reviews_tasks_ready_response_info import AppDataGoogleAppReviewsTasksReadyResponseInfo
     @validate_call
     def google_app_reviews_tasks_ready(
         self,
@@ -3496,7 +3525,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppReviewsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppReviewsTasksReadyResponseInfo]':
 
         _param = self._google_app_reviews_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -3599,6 +3628,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_reviews_task_get_advanced_response_info import AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo
     @validate_call
     def google_app_reviews_task_get_advanced(
         self,
@@ -3654,7 +3684,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppReviewsTaskGetAdvancedResponseInfo]':
 
         _param = self._google_app_reviews_task_get_advanced_serialize(
             id=id,
@@ -3763,6 +3793,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_reviews_task_get_html_response_info import AppDataGoogleAppReviewsTaskGetHtmlResponseInfo
     @validate_call
     def google_app_reviews_task_get_html(
         self,
@@ -3818,7 +3849,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppReviewsTaskGetHtmlResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppReviewsTaskGetHtmlResponseInfo]':
 
         _param = self._google_app_reviews_task_get_html_serialize(
             id=id,
@@ -3927,6 +3958,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_listings_categories_response_info import AppDataGoogleAppListingsCategoriesResponseInfo
     @validate_call
     def google_app_listings_categories(
         self,
@@ -3979,7 +4011,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppListingsCategoriesResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppListingsCategoriesResponseInfo]':
 
         _param = self._google_app_listings_categories_serialize(
             _request_auth=_request_auth,
@@ -4082,10 +4114,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_google_app_listings_search_live_request_info import AppDataGoogleAppListingsSearchLiveRequestInfo
+    from dataforseo_client.models.app_data_google_app_listings_search_live_response_info import AppDataGoogleAppListingsSearchLiveResponseInfo
     @validate_call
     def google_app_listings_search_live(
         self,
-        list_optional_app_data_google_app_listings_search_live_request_info: List[Optional[AppDataGoogleAppListingsSearchLiveRequestInfo]] = None,
+        list_optional_app_data_google_app_listings_search_live_request_info: 'List[Optional[AppDataGoogleAppListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4126,7 +4160,7 @@ class AppDataApi:
     @validate_call
     def google_app_listings_search_live_with_http_info(
         self,
-        list_optional_app_data_google_app_listings_search_live_request_info: Optional[List[List[Optional[AppDataGoogleAppListingsSearchLiveRequestInfo]]]] = None,
+        list_optional_app_data_google_app_listings_search_live_request_info: 'List[Optional[AppDataGoogleAppListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4139,7 +4173,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataGoogleAppListingsSearchLiveResponseInfo]:
+    ) -> 'ApiResponse[AppDataGoogleAppListingsSearchLiveResponseInfo]':
 
         _param = self._google_app_listings_search_live_serialize(
             list_optional_app_data_google_app_listings_search_live_request_info=list_optional_app_data_google_app_listings_search_live_request_info,
@@ -4166,7 +4200,7 @@ class AppDataApi:
     @validate_call
     def google_app_listings_search_live_without_preload_content(
         self,
-        list_optional_app_data_google_app_listings_search_live_request_info: Optional[List[List[Optional[AppDataGoogleAppListingsSearchLiveRequestInfo]]]] = None,
+        list_optional_app_data_google_app_listings_search_live_request_info: 'List[Optional[AppDataGoogleAppListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4272,6 +4306,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_categories_response_info import AppDataAppleCategoriesResponseInfo
     @validate_call
     def apple_categories(
         self,
@@ -4324,7 +4359,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleCategoriesResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleCategoriesResponseInfo]':
 
         _param = self._apple_categories_serialize(
             _request_auth=_request_auth,
@@ -4427,6 +4462,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_locations_response_info import AppDataAppleLocationsResponseInfo
     @validate_call
     def app_data_apple_locations(
         self,
@@ -4479,7 +4515,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleLocationsResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleLocationsResponseInfo]':
 
         _param = self._app_data_apple_locations_serialize(
             _request_auth=_request_auth,
@@ -4582,6 +4618,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_languages_response_info import AppDataAppleLanguagesResponseInfo
     @validate_call
     def app_data_apple_languages(
         self,
@@ -4634,7 +4671,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleLanguagesResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleLanguagesResponseInfo]':
 
         _param = self._app_data_apple_languages_serialize(
             _request_auth=_request_auth,
@@ -4737,10 +4774,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_searches_task_post_request_info import AppDataAppleAppSearchesTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_searches_task_post_response_info import AppDataAppleAppSearchesTaskPostResponseInfo
     @validate_call
     def apple_app_searches_task_post(
         self,
-        list_optional_app_data_apple_app_searches_task_post_request_info: List[Optional[AppDataAppleAppSearchesTaskPostRequestInfo]] = None,
+        list_optional_app_data_apple_app_searches_task_post_request_info: 'List[Optional[AppDataAppleAppSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4781,7 +4820,7 @@ class AppDataApi:
     @validate_call
     def apple_app_searches_task_post_with_http_info(
         self,
-        list_optional_app_data_apple_app_searches_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppSearchesTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_searches_task_post_request_info: 'List[Optional[AppDataAppleAppSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4794,7 +4833,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppSearchesTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppSearchesTaskPostResponseInfo]':
 
         _param = self._apple_app_searches_task_post_serialize(
             list_optional_app_data_apple_app_searches_task_post_request_info=list_optional_app_data_apple_app_searches_task_post_request_info,
@@ -4821,7 +4860,7 @@ class AppDataApi:
     @validate_call
     def apple_app_searches_task_post_without_preload_content(
         self,
-        list_optional_app_data_apple_app_searches_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppSearchesTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_searches_task_post_request_info: 'List[Optional[AppDataAppleAppSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4927,6 +4966,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_searches_tasks_ready_response_info import AppDataAppleAppSearchesTasksReadyResponseInfo
     @validate_call
     def apple_app_searches_tasks_ready(
         self,
@@ -4979,7 +5019,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppSearchesTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppSearchesTasksReadyResponseInfo]':
 
         _param = self._apple_app_searches_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -5082,6 +5122,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_searches_task_get_advanced_response_info import AppDataAppleAppSearchesTaskGetAdvancedResponseInfo
     @validate_call
     def apple_app_searches_task_get_advanced(
         self,
@@ -5137,7 +5178,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppSearchesTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppSearchesTaskGetAdvancedResponseInfo]':
 
         _param = self._apple_app_searches_task_get_advanced_serialize(
             id=id,
@@ -5246,10 +5287,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_info_task_post_request_info import AppDataAppleAppInfoTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_info_task_post_response_info import AppDataAppleAppInfoTaskPostResponseInfo
     @validate_call
     def apple_app_info_task_post(
         self,
-        list_optional_app_data_apple_app_info_task_post_request_info: List[Optional[AppDataAppleAppInfoTaskPostRequestInfo]] = None,
+        list_optional_app_data_apple_app_info_task_post_request_info: 'List[Optional[AppDataAppleAppInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5290,7 +5333,7 @@ class AppDataApi:
     @validate_call
     def apple_app_info_task_post_with_http_info(
         self,
-        list_optional_app_data_apple_app_info_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppInfoTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_info_task_post_request_info: 'List[Optional[AppDataAppleAppInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5303,7 +5346,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppInfoTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppInfoTaskPostResponseInfo]':
 
         _param = self._apple_app_info_task_post_serialize(
             list_optional_app_data_apple_app_info_task_post_request_info=list_optional_app_data_apple_app_info_task_post_request_info,
@@ -5330,7 +5373,7 @@ class AppDataApi:
     @validate_call
     def apple_app_info_task_post_without_preload_content(
         self,
-        list_optional_app_data_apple_app_info_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppInfoTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_info_task_post_request_info: 'List[Optional[AppDataAppleAppInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5436,6 +5479,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_info_tasks_ready_response_info import AppDataAppleAppInfoTasksReadyResponseInfo
     @validate_call
     def apple_app_info_tasks_ready(
         self,
@@ -5488,7 +5532,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppInfoTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppInfoTasksReadyResponseInfo]':
 
         _param = self._apple_app_info_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -5591,6 +5635,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_info_task_get_advanced_response_info import AppDataAppleAppInfoTaskGetAdvancedResponseInfo
     @validate_call
     def apple_app_info_task_get_advanced(
         self,
@@ -5646,7 +5691,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppInfoTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppInfoTaskGetAdvancedResponseInfo]':
 
         _param = self._apple_app_info_task_get_advanced_serialize(
             id=id,
@@ -5755,10 +5800,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_list_task_post_request_info import AppDataAppleAppListTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_list_task_post_response_info import AppDataAppleAppListTaskPostResponseInfo
     @validate_call
     def apple_app_list_task_post(
         self,
-        list_optional_app_data_apple_app_list_task_post_request_info: List[Optional[AppDataAppleAppListTaskPostRequestInfo]] = None,
+        list_optional_app_data_apple_app_list_task_post_request_info: 'List[Optional[AppDataAppleAppListTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5799,7 +5846,7 @@ class AppDataApi:
     @validate_call
     def apple_app_list_task_post_with_http_info(
         self,
-        list_optional_app_data_apple_app_list_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppListTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_list_task_post_request_info: 'List[Optional[AppDataAppleAppListTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5812,7 +5859,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppListTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppListTaskPostResponseInfo]':
 
         _param = self._apple_app_list_task_post_serialize(
             list_optional_app_data_apple_app_list_task_post_request_info=list_optional_app_data_apple_app_list_task_post_request_info,
@@ -5839,7 +5886,7 @@ class AppDataApi:
     @validate_call
     def apple_app_list_task_post_without_preload_content(
         self,
-        list_optional_app_data_apple_app_list_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppListTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_list_task_post_request_info: 'List[Optional[AppDataAppleAppListTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5945,6 +5992,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_list_tasks_ready_response_info import AppDataAppleAppListTasksReadyResponseInfo
     @validate_call
     def apple_app_list_tasks_ready(
         self,
@@ -5997,7 +6045,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppListTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppListTasksReadyResponseInfo]':
 
         _param = self._apple_app_list_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -6100,6 +6148,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_list_task_get_advanced_response_info import AppDataAppleAppListTaskGetAdvancedResponseInfo
     @validate_call
     def apple_app_list_task_get_advanced(
         self,
@@ -6155,7 +6204,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppListTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppListTaskGetAdvancedResponseInfo]':
 
         _param = self._apple_app_list_task_get_advanced_serialize(
             id=id,
@@ -6264,10 +6313,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_reviews_task_post_request_info import AppDataAppleAppReviewsTaskPostRequestInfo
+    from dataforseo_client.models.app_data_apple_app_reviews_task_post_response_info import AppDataAppleAppReviewsTaskPostResponseInfo
     @validate_call
     def apple_app_reviews_task_post(
         self,
-        list_optional_app_data_apple_app_reviews_task_post_request_info: List[Optional[AppDataAppleAppReviewsTaskPostRequestInfo]] = None,
+        list_optional_app_data_apple_app_reviews_task_post_request_info: 'List[Optional[AppDataAppleAppReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6308,7 +6359,7 @@ class AppDataApi:
     @validate_call
     def apple_app_reviews_task_post_with_http_info(
         self,
-        list_optional_app_data_apple_app_reviews_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_reviews_task_post_request_info: 'List[Optional[AppDataAppleAppReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6321,7 +6372,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppReviewsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppReviewsTaskPostResponseInfo]':
 
         _param = self._apple_app_reviews_task_post_serialize(
             list_optional_app_data_apple_app_reviews_task_post_request_info=list_optional_app_data_apple_app_reviews_task_post_request_info,
@@ -6348,7 +6399,7 @@ class AppDataApi:
     @validate_call
     def apple_app_reviews_task_post_without_preload_content(
         self,
-        list_optional_app_data_apple_app_reviews_task_post_request_info: Optional[List[List[Optional[AppDataAppleAppReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_reviews_task_post_request_info: 'List[Optional[AppDataAppleAppReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6454,6 +6505,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_reviews_tasks_ready_response_info import AppDataAppleAppReviewsTasksReadyResponseInfo
     @validate_call
     def apple_app_reviews_tasks_ready(
         self,
@@ -6506,7 +6558,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppReviewsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppReviewsTasksReadyResponseInfo]':
 
         _param = self._apple_app_reviews_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -6609,6 +6661,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_reviews_task_get_advanced_response_info import AppDataAppleAppReviewsTaskGetAdvancedResponseInfo
     @validate_call
     def apple_app_reviews_task_get_advanced(
         self,
@@ -6664,7 +6717,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppReviewsTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppReviewsTaskGetAdvancedResponseInfo]':
 
         _param = self._apple_app_reviews_task_get_advanced_serialize(
             id=id,
@@ -6773,6 +6826,7 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_listings_categories_response_info import AppDataAppleAppListingsCategoriesResponseInfo
     @validate_call
     def apple_app_listings_categories(
         self,
@@ -6825,7 +6879,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppListingsCategoriesResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppListingsCategoriesResponseInfo]':
 
         _param = self._apple_app_listings_categories_serialize(
             _request_auth=_request_auth,
@@ -6928,10 +6982,12 @@ class AppDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.app_data_apple_app_listings_search_live_request_info import AppDataAppleAppListingsSearchLiveRequestInfo
+    from dataforseo_client.models.app_data_apple_app_listings_search_live_response_info import AppDataAppleAppListingsSearchLiveResponseInfo
     @validate_call
     def apple_app_listings_search_live(
         self,
-        list_optional_app_data_apple_app_listings_search_live_request_info: List[Optional[AppDataAppleAppListingsSearchLiveRequestInfo]] = None,
+        list_optional_app_data_apple_app_listings_search_live_request_info: 'List[Optional[AppDataAppleAppListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6972,7 +7028,7 @@ class AppDataApi:
     @validate_call
     def apple_app_listings_search_live_with_http_info(
         self,
-        list_optional_app_data_apple_app_listings_search_live_request_info: Optional[List[List[Optional[AppDataAppleAppListingsSearchLiveRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_listings_search_live_request_info: 'List[Optional[AppDataAppleAppListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6985,7 +7041,7 @@ class AppDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AppDataAppleAppListingsSearchLiveResponseInfo]:
+    ) -> 'ApiResponse[AppDataAppleAppListingsSearchLiveResponseInfo]':
 
         _param = self._apple_app_listings_search_live_serialize(
             list_optional_app_data_apple_app_listings_search_live_request_info=list_optional_app_data_apple_app_listings_search_live_request_info,
@@ -7012,7 +7068,7 @@ class AppDataApi:
     @validate_call
     def apple_app_listings_search_live_without_preload_content(
         self,
-        list_optional_app_data_apple_app_listings_search_live_request_info: Optional[List[List[Optional[AppDataAppleAppListingsSearchLiveRequestInfo]]]] = None,
+        list_optional_app_data_apple_app_listings_search_live_request_info: 'List[Optional[AppDataAppleAppListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

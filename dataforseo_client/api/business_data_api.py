@@ -1,88 +1,89 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.business_data_id_list_request_info import BusinessDataIdListRequestInfo
-from dataforseo_client.models.business_data_id_list_response_info import BusinessDataIdListResponseInfo
-from dataforseo_client.models.business_data_errors_request_info import BusinessDataErrorsRequestInfo
-from dataforseo_client.models.business_data_errors_response_info import BusinessDataErrorsResponseInfo
-from dataforseo_client.models.business_data_business_listings_locations_response_info import BusinessDataBusinessListingsLocationsResponseInfo
-from dataforseo_client.models.business_data_business_listings_categories_response_info import BusinessDataBusinessListingsCategoriesResponseInfo
-from dataforseo_client.models.business_data_business_listings_available_filters_response_info import BusinessDataBusinessListingsAvailableFiltersResponseInfo
-from dataforseo_client.models.business_data_business_listings_search_live_request_info import BusinessDataBusinessListingsSearchLiveRequestInfo
-from dataforseo_client.models.business_data_business_listings_search_live_response_info import BusinessDataBusinessListingsSearchLiveResponseInfo
-from dataforseo_client.models.business_data_business_listings_categories_aggregation_live_request_info import BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo
-from dataforseo_client.models.business_data_business_listings_categories_aggregation_live_response_info import BusinessDataBusinessListingsCategoriesAggregationLiveResponseInfo
-from dataforseo_client.models.business_data_google_locations_response_info import BusinessDataGoogleLocationsResponseInfo
-from dataforseo_client.models.business_data_google_locations_country_response_info import BusinessDataGoogleLocationsCountryResponseInfo
-from dataforseo_client.models.business_data_google_languages_response_info import BusinessDataGoogleLanguagesResponseInfo
-from dataforseo_client.models.business_data_google_my_business_info_task_post_request_info import BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo
-from dataforseo_client.models.business_data_google_my_business_info_task_post_response_info import BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo
-from dataforseo_client.models.business_data_google_my_business_info_tasks_ready_response_info import BusinessDataGoogleMyBusinessInfoTasksReadyResponseInfo
-from dataforseo_client.models.business_data_tasks_ready_response_info import BusinessDataTasksReadyResponseInfo
-from dataforseo_client.models.business_data_google_my_business_info_task_get_response_info import BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo
-from dataforseo_client.models.business_data_google_my_business_info_live_request_info import BusinessDataGoogleMyBusinessInfoLiveRequestInfo
-from dataforseo_client.models.business_data_google_my_business_info_live_response_info import BusinessDataGoogleMyBusinessInfoLiveResponseInfo
-from dataforseo_client.models.business_data_google_my_business_updates_task_post_request_info import BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo
-from dataforseo_client.models.business_data_google_my_business_updates_task_post_response_info import BusinessDataGoogleMyBusinessUpdatesTaskPostResponseInfo
-from dataforseo_client.models.business_data_google_my_business_updates_tasks_ready_response_info import BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo
-from dataforseo_client.models.business_data_google_my_business_updates_task_get_response_info import BusinessDataGoogleMyBusinessUpdatesTaskGetResponseInfo
-from dataforseo_client.models.business_data_google_hotel_searches_task_post_request_info import BusinessDataGoogleHotelSearchesTaskPostRequestInfo
-from dataforseo_client.models.business_data_google_hotel_searches_task_post_response_info import BusinessDataGoogleHotelSearchesTaskPostResponseInfo
-from dataforseo_client.models.business_data_google_hotel_searches_tasks_ready_response_info import BusinessDataGoogleHotelSearchesTasksReadyResponseInfo
-from dataforseo_client.models.business_data_google_hotel_searches_task_get_response_info import BusinessDataGoogleHotelSearchesTaskGetResponseInfo
-from dataforseo_client.models.business_data_google_hotel_searches_live_request_info import BusinessDataGoogleHotelSearchesLiveRequestInfo
-from dataforseo_client.models.business_data_google_hotel_searches_live_response_info import BusinessDataGoogleHotelSearchesLiveResponseInfo
-from dataforseo_client.models.business_data_google_hotel_info_task_post_request_info import BusinessDataGoogleHotelInfoTaskPostRequestInfo
-from dataforseo_client.models.business_data_google_hotel_info_task_post_response_info import BusinessDataGoogleHotelInfoTaskPostResponseInfo
-from dataforseo_client.models.business_data_google_hotel_info_tasks_ready_response_info import BusinessDataGoogleHotelInfoTasksReadyResponseInfo
-from dataforseo_client.models.business_data_google_hotel_info_task_get_advanced_response_info import BusinessDataGoogleHotelInfoTaskGetAdvancedResponseInfo
-from dataforseo_client.models.business_data_google_hotel_info_task_get_html_response_info import BusinessDataGoogleHotelInfoTaskGetHtmlResponseInfo
-from dataforseo_client.models.business_data_google_hotel_info_live_advanced_request_info import BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo
-from dataforseo_client.models.business_data_google_hotel_info_live_advanced_response_info import BusinessDataGoogleHotelInfoLiveAdvancedResponseInfo
-from dataforseo_client.models.business_data_google_hotel_info_live_html_request_info import BusinessDataGoogleHotelInfoLiveHtmlRequestInfo
-from dataforseo_client.models.business_data_google_hotel_info_live_html_response_info import BusinessDataGoogleHotelInfoLiveHtmlResponseInfo
-from dataforseo_client.models.business_data_google_reviews_task_post_request_info import BusinessDataGoogleReviewsTaskPostRequestInfo
-from dataforseo_client.models.business_data_google_reviews_task_post_response_info import BusinessDataGoogleReviewsTaskPostResponseInfo
-from dataforseo_client.models.business_data_google_reviews_tasks_ready_response_info import BusinessDataGoogleReviewsTasksReadyResponseInfo
-from dataforseo_client.models.business_data_google_reviews_task_get_response_info import BusinessDataGoogleReviewsTaskGetResponseInfo
-from dataforseo_client.models.business_data_google_extended_reviews_task_post_request_info import BusinessDataGoogleExtendedReviewsTaskPostRequestInfo
-from dataforseo_client.models.business_data_google_extended_reviews_task_post_response_info import BusinessDataGoogleExtendedReviewsTaskPostResponseInfo
-from dataforseo_client.models.business_data_google_extended_reviews_tasks_ready_response_info import BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo
-from dataforseo_client.models.business_data_google_extended_reviews_task_get_response_info import BusinessDataGoogleExtendedReviewsTaskGetResponseInfo
-from dataforseo_client.models.business_data_google_questions_and_answers_task_post_request_info import BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo
-from dataforseo_client.models.business_data_google_questions_and_answers_task_post_response_info import BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo
-from dataforseo_client.models.business_data_google_questions_and_answers_tasks_ready_response_info import BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo
-from dataforseo_client.models.business_data_google_questions_and_answers_task_get_response_info import BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo
-from dataforseo_client.models.business_data_google_questions_and_answers_live_request_info import BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo
-from dataforseo_client.models.business_data_google_questions_and_answers_live_response_info import BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo
-from dataforseo_client.models.business_data_trustpilot_search_task_post_request_info import BusinessDataTrustpilotSearchTaskPostRequestInfo
-from dataforseo_client.models.business_data_trustpilot_search_task_post_response_info import BusinessDataTrustpilotSearchTaskPostResponseInfo
-from dataforseo_client.models.business_data_trustpilot_search_tasks_ready_response_info import BusinessDataTrustpilotSearchTasksReadyResponseInfo
-from dataforseo_client.models.business_data_trustpilot_search_task_get_response_info import BusinessDataTrustpilotSearchTaskGetResponseInfo
-from dataforseo_client.models.business_data_trustpilot_reviews_task_post_request_info import BusinessDataTrustpilotReviewsTaskPostRequestInfo
-from dataforseo_client.models.business_data_trustpilot_reviews_task_post_response_info import BusinessDataTrustpilotReviewsTaskPostResponseInfo
-from dataforseo_client.models.business_data_trustpilot_reviews_tasks_ready_response_info import BusinessDataTrustpilotReviewsTasksReadyResponseInfo
-from dataforseo_client.models.business_data_trustpilot_reviews_task_get_response_info import BusinessDataTrustpilotReviewsTaskGetResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_locations_response_info import BusinessDataTripadvisorLocationsResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_locations_country_response_info import BusinessDataTripadvisorLocationsCountryResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_languages_response_info import BusinessDataTripadvisorLanguagesResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_search_task_post_request_info import BusinessDataTripadvisorSearchTaskPostRequestInfo
-from dataforseo_client.models.business_data_tripadvisor_search_task_post_response_info import BusinessDataTripadvisorSearchTaskPostResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_search_tasks_ready_response_info import BusinessDataTripadvisorSearchTasksReadyResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_search_task_get_response_info import BusinessDataTripadvisorSearchTaskGetResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_reviews_task_post_request_info import BusinessDataTripadvisorReviewsTaskPostRequestInfo
-from dataforseo_client.models.business_data_tripadvisor_reviews_task_post_response_info import BusinessDataTripadvisorReviewsTaskPostResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_reviews_tasks_ready_response_info import BusinessDataTripadvisorReviewsTasksReadyResponseInfo
-from dataforseo_client.models.business_data_tripadvisor_reviews_task_get_response_info import BusinessDataTripadvisorReviewsTaskGetResponseInfo
-from dataforseo_client.models.business_data_social_media_pinterest_live_request_info import BusinessDataSocialMediaPinterestLiveRequestInfo
-from dataforseo_client.models.business_data_social_media_pinterest_live_response_info import BusinessDataSocialMediaPinterestLiveResponseInfo
-from dataforseo_client.models.business_data_social_media_facebook_live_request_info import BusinessDataSocialMediaFacebookLiveRequestInfo
-from dataforseo_client.models.business_data_social_media_facebook_live_response_info import BusinessDataSocialMediaFacebookLiveResponseInfo
-from dataforseo_client.models.business_data_social_media_reddit_live_request_info import BusinessDataSocialMediaRedditLiveRequestInfo
-from dataforseo_client.models.business_data_social_media_reddit_live_response_info import BusinessDataSocialMediaRedditLiveResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.business_data_id_list_request_info import BusinessDataIdListRequestInfo
+    from dataforseo_client.models.business_data_id_list_response_info import BusinessDataIdListResponseInfo
+    from dataforseo_client.models.business_data_errors_request_info import BusinessDataErrorsRequestInfo
+    from dataforseo_client.models.business_data_errors_response_info import BusinessDataErrorsResponseInfo
+    from dataforseo_client.models.business_data_business_listings_locations_response_info import BusinessDataBusinessListingsLocationsResponseInfo
+    from dataforseo_client.models.business_data_business_listings_categories_response_info import BusinessDataBusinessListingsCategoriesResponseInfo
+    from dataforseo_client.models.business_data_business_listings_available_filters_response_info import BusinessDataBusinessListingsAvailableFiltersResponseInfo
+    from dataforseo_client.models.business_data_business_listings_search_live_request_info import BusinessDataBusinessListingsSearchLiveRequestInfo
+    from dataforseo_client.models.business_data_business_listings_search_live_response_info import BusinessDataBusinessListingsSearchLiveResponseInfo
+    from dataforseo_client.models.business_data_business_listings_categories_aggregation_live_request_info import BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo
+    from dataforseo_client.models.business_data_business_listings_categories_aggregation_live_response_info import BusinessDataBusinessListingsCategoriesAggregationLiveResponseInfo
+    from dataforseo_client.models.business_data_google_locations_response_info import BusinessDataGoogleLocationsResponseInfo
+    from dataforseo_client.models.business_data_google_locations_country_response_info import BusinessDataGoogleLocationsCountryResponseInfo
+    from dataforseo_client.models.business_data_google_languages_response_info import BusinessDataGoogleLanguagesResponseInfo
+    from dataforseo_client.models.business_data_google_my_business_info_task_post_request_info import BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_my_business_info_task_post_response_info import BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo
+    from dataforseo_client.models.business_data_google_my_business_info_tasks_ready_response_info import BusinessDataGoogleMyBusinessInfoTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_tasks_ready_response_info import BusinessDataTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_google_my_business_info_task_get_response_info import BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo
+    from dataforseo_client.models.business_data_google_my_business_info_live_request_info import BusinessDataGoogleMyBusinessInfoLiveRequestInfo
+    from dataforseo_client.models.business_data_google_my_business_info_live_response_info import BusinessDataGoogleMyBusinessInfoLiveResponseInfo
+    from dataforseo_client.models.business_data_google_my_business_updates_task_post_request_info import BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_my_business_updates_task_post_response_info import BusinessDataGoogleMyBusinessUpdatesTaskPostResponseInfo
+    from dataforseo_client.models.business_data_google_my_business_updates_tasks_ready_response_info import BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_google_my_business_updates_task_get_response_info import BusinessDataGoogleMyBusinessUpdatesTaskGetResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_task_post_request_info import BusinessDataGoogleHotelSearchesTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_task_post_response_info import BusinessDataGoogleHotelSearchesTaskPostResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_tasks_ready_response_info import BusinessDataGoogleHotelSearchesTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_task_get_response_info import BusinessDataGoogleHotelSearchesTaskGetResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_live_request_info import BusinessDataGoogleHotelSearchesLiveRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_live_response_info import BusinessDataGoogleHotelSearchesLiveResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_info_task_post_request_info import BusinessDataGoogleHotelInfoTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_info_task_post_response_info import BusinessDataGoogleHotelInfoTaskPostResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_info_tasks_ready_response_info import BusinessDataGoogleHotelInfoTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_info_task_get_advanced_response_info import BusinessDataGoogleHotelInfoTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_info_task_get_html_response_info import BusinessDataGoogleHotelInfoTaskGetHtmlResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_info_live_advanced_request_info import BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_info_live_advanced_response_info import BusinessDataGoogleHotelInfoLiveAdvancedResponseInfo
+    from dataforseo_client.models.business_data_google_hotel_info_live_html_request_info import BusinessDataGoogleHotelInfoLiveHtmlRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_info_live_html_response_info import BusinessDataGoogleHotelInfoLiveHtmlResponseInfo
+    from dataforseo_client.models.business_data_google_reviews_task_post_request_info import BusinessDataGoogleReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_reviews_task_post_response_info import BusinessDataGoogleReviewsTaskPostResponseInfo
+    from dataforseo_client.models.business_data_google_reviews_tasks_ready_response_info import BusinessDataGoogleReviewsTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_google_reviews_task_get_response_info import BusinessDataGoogleReviewsTaskGetResponseInfo
+    from dataforseo_client.models.business_data_google_extended_reviews_task_post_request_info import BusinessDataGoogleExtendedReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_extended_reviews_task_post_response_info import BusinessDataGoogleExtendedReviewsTaskPostResponseInfo
+    from dataforseo_client.models.business_data_google_extended_reviews_tasks_ready_response_info import BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_google_extended_reviews_task_get_response_info import BusinessDataGoogleExtendedReviewsTaskGetResponseInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_task_post_request_info import BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_task_post_response_info import BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_tasks_ready_response_info import BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_task_get_response_info import BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_live_request_info import BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_live_response_info import BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo
+    from dataforseo_client.models.business_data_trustpilot_search_task_post_request_info import BusinessDataTrustpilotSearchTaskPostRequestInfo
+    from dataforseo_client.models.business_data_trustpilot_search_task_post_response_info import BusinessDataTrustpilotSearchTaskPostResponseInfo
+    from dataforseo_client.models.business_data_trustpilot_search_tasks_ready_response_info import BusinessDataTrustpilotSearchTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_trustpilot_search_task_get_response_info import BusinessDataTrustpilotSearchTaskGetResponseInfo
+    from dataforseo_client.models.business_data_trustpilot_reviews_task_post_request_info import BusinessDataTrustpilotReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_trustpilot_reviews_task_post_response_info import BusinessDataTrustpilotReviewsTaskPostResponseInfo
+    from dataforseo_client.models.business_data_trustpilot_reviews_tasks_ready_response_info import BusinessDataTrustpilotReviewsTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_trustpilot_reviews_task_get_response_info import BusinessDataTrustpilotReviewsTaskGetResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_locations_response_info import BusinessDataTripadvisorLocationsResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_locations_country_response_info import BusinessDataTripadvisorLocationsCountryResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_languages_response_info import BusinessDataTripadvisorLanguagesResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_search_task_post_request_info import BusinessDataTripadvisorSearchTaskPostRequestInfo
+    from dataforseo_client.models.business_data_tripadvisor_search_task_post_response_info import BusinessDataTripadvisorSearchTaskPostResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_search_tasks_ready_response_info import BusinessDataTripadvisorSearchTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_search_task_get_response_info import BusinessDataTripadvisorSearchTaskGetResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_reviews_task_post_request_info import BusinessDataTripadvisorReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_tripadvisor_reviews_task_post_response_info import BusinessDataTripadvisorReviewsTaskPostResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_reviews_tasks_ready_response_info import BusinessDataTripadvisorReviewsTasksReadyResponseInfo
+    from dataforseo_client.models.business_data_tripadvisor_reviews_task_get_response_info import BusinessDataTripadvisorReviewsTaskGetResponseInfo
+    from dataforseo_client.models.business_data_social_media_pinterest_live_request_info import BusinessDataSocialMediaPinterestLiveRequestInfo
+    from dataforseo_client.models.business_data_social_media_pinterest_live_response_info import BusinessDataSocialMediaPinterestLiveResponseInfo
+    from dataforseo_client.models.business_data_social_media_facebook_live_request_info import BusinessDataSocialMediaFacebookLiveRequestInfo
+    from dataforseo_client.models.business_data_social_media_facebook_live_response_info import BusinessDataSocialMediaFacebookLiveResponseInfo
+    from dataforseo_client.models.business_data_social_media_reddit_live_request_info import BusinessDataSocialMediaRedditLiveRequestInfo
+    from dataforseo_client.models.business_data_social_media_reddit_live_response_info import BusinessDataSocialMediaRedditLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -95,11 +96,14 @@ class BusinessDataApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.business_data_id_list_request_info import BusinessDataIdListRequestInfo
+    from dataforseo_client.models.business_data_id_list_response_info import BusinessDataIdListResponseInfo
     @validate_call
     def business_data_id_list(
         self,
-        list_optional_business_data_id_list_request_info: List[Optional[BusinessDataIdListRequestInfo]] = None,
+        list_optional_business_data_id_list_request_info: 'List[Optional[BusinessDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -140,7 +144,7 @@ class BusinessDataApi:
     @validate_call
     def business_data_id_list_with_http_info(
         self,
-        list_optional_business_data_id_list_request_info: Optional[List[List[Optional[BusinessDataIdListRequestInfo]]]] = None,
+        list_optional_business_data_id_list_request_info: 'List[Optional[BusinessDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -153,7 +157,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataIdListResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataIdListResponseInfo]':
 
         _param = self._business_data_id_list_serialize(
             list_optional_business_data_id_list_request_info=list_optional_business_data_id_list_request_info,
@@ -180,7 +184,7 @@ class BusinessDataApi:
     @validate_call
     def business_data_id_list_without_preload_content(
         self,
-        list_optional_business_data_id_list_request_info: Optional[List[List[Optional[BusinessDataIdListRequestInfo]]]] = None,
+        list_optional_business_data_id_list_request_info: 'List[Optional[BusinessDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -286,10 +290,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_errors_request_info import BusinessDataErrorsRequestInfo
+    from dataforseo_client.models.business_data_errors_response_info import BusinessDataErrorsResponseInfo
     @validate_call
     def business_data_errors(
         self,
-        list_optional_business_data_errors_request_info: List[Optional[BusinessDataErrorsRequestInfo]] = None,
+        list_optional_business_data_errors_request_info: 'List[Optional[BusinessDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -330,7 +336,7 @@ class BusinessDataApi:
     @validate_call
     def business_data_errors_with_http_info(
         self,
-        list_optional_business_data_errors_request_info: Optional[List[List[Optional[BusinessDataErrorsRequestInfo]]]] = None,
+        list_optional_business_data_errors_request_info: 'List[Optional[BusinessDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -343,7 +349,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataErrorsResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataErrorsResponseInfo]':
 
         _param = self._business_data_errors_serialize(
             list_optional_business_data_errors_request_info=list_optional_business_data_errors_request_info,
@@ -370,7 +376,7 @@ class BusinessDataApi:
     @validate_call
     def business_data_errors_without_preload_content(
         self,
-        list_optional_business_data_errors_request_info: Optional[List[List[Optional[BusinessDataErrorsRequestInfo]]]] = None,
+        list_optional_business_data_errors_request_info: 'List[Optional[BusinessDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -476,6 +482,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_business_listings_locations_response_info import BusinessDataBusinessListingsLocationsResponseInfo
     @validate_call
     def business_data_business_listings_locations(
         self,
@@ -528,7 +535,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataBusinessListingsLocationsResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataBusinessListingsLocationsResponseInfo]':
 
         _param = self._business_data_business_listings_locations_serialize(
             _request_auth=_request_auth,
@@ -631,6 +638,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_business_listings_categories_response_info import BusinessDataBusinessListingsCategoriesResponseInfo
     @validate_call
     def business_listings_categories(
         self,
@@ -683,7 +691,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataBusinessListingsCategoriesResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataBusinessListingsCategoriesResponseInfo]':
 
         _param = self._business_listings_categories_serialize(
             _request_auth=_request_auth,
@@ -786,6 +794,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_business_listings_available_filters_response_info import BusinessDataBusinessListingsAvailableFiltersResponseInfo
     @validate_call
     def business_listings_available_filters(
         self,
@@ -838,7 +847,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataBusinessListingsAvailableFiltersResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataBusinessListingsAvailableFiltersResponseInfo]':
 
         _param = self._business_listings_available_filters_serialize(
             _request_auth=_request_auth,
@@ -941,10 +950,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_business_listings_search_live_request_info import BusinessDataBusinessListingsSearchLiveRequestInfo
+    from dataforseo_client.models.business_data_business_listings_search_live_response_info import BusinessDataBusinessListingsSearchLiveResponseInfo
     @validate_call
     def business_listings_search_live(
         self,
-        list_optional_business_data_business_listings_search_live_request_info: List[Optional[BusinessDataBusinessListingsSearchLiveRequestInfo]] = None,
+        list_optional_business_data_business_listings_search_live_request_info: 'List[Optional[BusinessDataBusinessListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -985,7 +996,7 @@ class BusinessDataApi:
     @validate_call
     def business_listings_search_live_with_http_info(
         self,
-        list_optional_business_data_business_listings_search_live_request_info: Optional[List[List[Optional[BusinessDataBusinessListingsSearchLiveRequestInfo]]]] = None,
+        list_optional_business_data_business_listings_search_live_request_info: 'List[Optional[BusinessDataBusinessListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -998,7 +1009,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataBusinessListingsSearchLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataBusinessListingsSearchLiveResponseInfo]':
 
         _param = self._business_listings_search_live_serialize(
             list_optional_business_data_business_listings_search_live_request_info=list_optional_business_data_business_listings_search_live_request_info,
@@ -1025,7 +1036,7 @@ class BusinessDataApi:
     @validate_call
     def business_listings_search_live_without_preload_content(
         self,
-        list_optional_business_data_business_listings_search_live_request_info: Optional[List[List[Optional[BusinessDataBusinessListingsSearchLiveRequestInfo]]]] = None,
+        list_optional_business_data_business_listings_search_live_request_info: 'List[Optional[BusinessDataBusinessListingsSearchLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1131,10 +1142,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_business_listings_categories_aggregation_live_request_info import BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo
+    from dataforseo_client.models.business_data_business_listings_categories_aggregation_live_response_info import BusinessDataBusinessListingsCategoriesAggregationLiveResponseInfo
     @validate_call
     def business_listings_categories_aggregation_live(
         self,
-        list_optional_business_data_business_listings_categories_aggregation_live_request_info: List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]] = None,
+        list_optional_business_data_business_listings_categories_aggregation_live_request_info: 'List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1175,7 +1188,7 @@ class BusinessDataApi:
     @validate_call
     def business_listings_categories_aggregation_live_with_http_info(
         self,
-        list_optional_business_data_business_listings_categories_aggregation_live_request_info: Optional[List[List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]]]] = None,
+        list_optional_business_data_business_listings_categories_aggregation_live_request_info: 'List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1188,7 +1201,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataBusinessListingsCategoriesAggregationLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataBusinessListingsCategoriesAggregationLiveResponseInfo]':
 
         _param = self._business_listings_categories_aggregation_live_serialize(
             list_optional_business_data_business_listings_categories_aggregation_live_request_info=list_optional_business_data_business_listings_categories_aggregation_live_request_info,
@@ -1215,7 +1228,7 @@ class BusinessDataApi:
     @validate_call
     def business_listings_categories_aggregation_live_without_preload_content(
         self,
-        list_optional_business_data_business_listings_categories_aggregation_live_request_info: Optional[List[List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]]]] = None,
+        list_optional_business_data_business_listings_categories_aggregation_live_request_info: 'List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1321,6 +1334,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_locations_response_info import BusinessDataGoogleLocationsResponseInfo
     @validate_call
     def business_data_google_locations(
         self,
@@ -1373,7 +1387,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleLocationsResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleLocationsResponseInfo]':
 
         _param = self._business_data_google_locations_serialize(
             _request_auth=_request_auth,
@@ -1476,6 +1490,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_locations_country_response_info import BusinessDataGoogleLocationsCountryResponseInfo
     @validate_call
     def business_data_google_locations_country(
         self,
@@ -1531,7 +1546,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleLocationsCountryResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleLocationsCountryResponseInfo]':
 
         _param = self._business_data_google_locations_country_serialize(
             country=country,
@@ -1640,6 +1655,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_languages_response_info import BusinessDataGoogleLanguagesResponseInfo
     @validate_call
     def business_data_google_languages(
         self,
@@ -1692,7 +1708,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleLanguagesResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleLanguagesResponseInfo]':
 
         _param = self._business_data_google_languages_serialize(
             _request_auth=_request_auth,
@@ -1795,10 +1811,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_my_business_info_task_post_request_info import BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_my_business_info_task_post_response_info import BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo
     @validate_call
     def google_my_business_info_task_post(
         self,
-        list_optional_business_data_google_my_business_info_task_post_request_info: List[Optional[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo]] = None,
+        list_optional_business_data_google_my_business_info_task_post_request_info: 'List[Optional[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1839,7 +1857,7 @@ class BusinessDataApi:
     @validate_call
     def google_my_business_info_task_post_with_http_info(
         self,
-        list_optional_business_data_google_my_business_info_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_my_business_info_task_post_request_info: 'List[Optional[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1852,7 +1870,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleMyBusinessInfoTaskPostResponseInfo]':
 
         _param = self._google_my_business_info_task_post_serialize(
             list_optional_business_data_google_my_business_info_task_post_request_info=list_optional_business_data_google_my_business_info_task_post_request_info,
@@ -1879,7 +1897,7 @@ class BusinessDataApi:
     @validate_call
     def google_my_business_info_task_post_without_preload_content(
         self,
-        list_optional_business_data_google_my_business_info_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_my_business_info_task_post_request_info: 'List[Optional[BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1985,6 +2003,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_my_business_info_tasks_ready_response_info import BusinessDataGoogleMyBusinessInfoTasksReadyResponseInfo
     @validate_call
     def google_my_business_info_tasks_ready(
         self,
@@ -2037,7 +2056,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleMyBusinessInfoTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleMyBusinessInfoTasksReadyResponseInfo]':
 
         _param = self._google_my_business_info_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -2140,6 +2159,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tasks_ready_response_info import BusinessDataTasksReadyResponseInfo
     @validate_call
     def business_data_tasks_ready(
         self,
@@ -2192,7 +2212,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTasksReadyResponseInfo]':
 
         _param = self._business_data_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -2295,6 +2315,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_my_business_info_task_get_response_info import BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo
     @validate_call
     def google_my_business_info_task_get(
         self,
@@ -2350,7 +2371,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleMyBusinessInfoTaskGetResponseInfo]':
 
         _param = self._google_my_business_info_task_get_serialize(
             id=id,
@@ -2459,10 +2480,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_my_business_info_live_request_info import BusinessDataGoogleMyBusinessInfoLiveRequestInfo
+    from dataforseo_client.models.business_data_google_my_business_info_live_response_info import BusinessDataGoogleMyBusinessInfoLiveResponseInfo
     @validate_call
     def google_my_business_info_live(
         self,
-        list_optional_business_data_google_my_business_info_live_request_info: List[Optional[BusinessDataGoogleMyBusinessInfoLiveRequestInfo]] = None,
+        list_optional_business_data_google_my_business_info_live_request_info: 'List[Optional[BusinessDataGoogleMyBusinessInfoLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2503,7 +2526,7 @@ class BusinessDataApi:
     @validate_call
     def google_my_business_info_live_with_http_info(
         self,
-        list_optional_business_data_google_my_business_info_live_request_info: Optional[List[List[Optional[BusinessDataGoogleMyBusinessInfoLiveRequestInfo]]]] = None,
+        list_optional_business_data_google_my_business_info_live_request_info: 'List[Optional[BusinessDataGoogleMyBusinessInfoLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2516,7 +2539,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleMyBusinessInfoLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleMyBusinessInfoLiveResponseInfo]':
 
         _param = self._google_my_business_info_live_serialize(
             list_optional_business_data_google_my_business_info_live_request_info=list_optional_business_data_google_my_business_info_live_request_info,
@@ -2543,7 +2566,7 @@ class BusinessDataApi:
     @validate_call
     def google_my_business_info_live_without_preload_content(
         self,
-        list_optional_business_data_google_my_business_info_live_request_info: Optional[List[List[Optional[BusinessDataGoogleMyBusinessInfoLiveRequestInfo]]]] = None,
+        list_optional_business_data_google_my_business_info_live_request_info: 'List[Optional[BusinessDataGoogleMyBusinessInfoLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2649,10 +2672,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_my_business_updates_task_post_request_info import BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_my_business_updates_task_post_response_info import BusinessDataGoogleMyBusinessUpdatesTaskPostResponseInfo
     @validate_call
     def google_my_business_updates_task_post(
         self,
-        list_optional_business_data_google_my_business_updates_task_post_request_info: List[Optional[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]] = None,
+        list_optional_business_data_google_my_business_updates_task_post_request_info: 'List[Optional[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2693,7 +2718,7 @@ class BusinessDataApi:
     @validate_call
     def google_my_business_updates_task_post_with_http_info(
         self,
-        list_optional_business_data_google_my_business_updates_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_my_business_updates_task_post_request_info: 'List[Optional[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2706,7 +2731,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleMyBusinessUpdatesTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleMyBusinessUpdatesTaskPostResponseInfo]':
 
         _param = self._google_my_business_updates_task_post_serialize(
             list_optional_business_data_google_my_business_updates_task_post_request_info=list_optional_business_data_google_my_business_updates_task_post_request_info,
@@ -2733,7 +2758,7 @@ class BusinessDataApi:
     @validate_call
     def google_my_business_updates_task_post_without_preload_content(
         self,
-        list_optional_business_data_google_my_business_updates_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_my_business_updates_task_post_request_info: 'List[Optional[BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2839,6 +2864,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_my_business_updates_tasks_ready_response_info import BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo
     @validate_call
     def google_my_business_updates_tasks_ready(
         self,
@@ -2891,7 +2917,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleMyBusinessUpdatesTasksReadyResponseInfo]':
 
         _param = self._google_my_business_updates_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -2994,6 +3020,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_my_business_updates_task_get_response_info import BusinessDataGoogleMyBusinessUpdatesTaskGetResponseInfo
     @validate_call
     def google_my_business_updates_task_get(
         self,
@@ -3049,7 +3076,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleMyBusinessUpdatesTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleMyBusinessUpdatesTaskGetResponseInfo]':
 
         _param = self._google_my_business_updates_task_get_serialize(
             id=id,
@@ -3158,10 +3185,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_searches_task_post_request_info import BusinessDataGoogleHotelSearchesTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_task_post_response_info import BusinessDataGoogleHotelSearchesTaskPostResponseInfo
     @validate_call
     def google_hotel_searches_task_post(
         self,
-        list_optional_business_data_google_hotel_searches_task_post_request_info: List[Optional[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]] = None,
+        list_optional_business_data_google_hotel_searches_task_post_request_info: 'List[Optional[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3202,7 +3231,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_searches_task_post_with_http_info(
         self,
-        list_optional_business_data_google_hotel_searches_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_searches_task_post_request_info: 'List[Optional[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3215,7 +3244,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelSearchesTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelSearchesTaskPostResponseInfo]':
 
         _param = self._google_hotel_searches_task_post_serialize(
             list_optional_business_data_google_hotel_searches_task_post_request_info=list_optional_business_data_google_hotel_searches_task_post_request_info,
@@ -3242,7 +3271,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_searches_task_post_without_preload_content(
         self,
-        list_optional_business_data_google_hotel_searches_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_searches_task_post_request_info: 'List[Optional[BusinessDataGoogleHotelSearchesTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3348,6 +3377,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_searches_tasks_ready_response_info import BusinessDataGoogleHotelSearchesTasksReadyResponseInfo
     @validate_call
     def google_hotel_searches_tasks_ready(
         self,
@@ -3400,7 +3430,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelSearchesTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelSearchesTasksReadyResponseInfo]':
 
         _param = self._google_hotel_searches_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -3503,6 +3533,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_searches_task_get_response_info import BusinessDataGoogleHotelSearchesTaskGetResponseInfo
     @validate_call
     def google_hotel_searches_task_get(
         self,
@@ -3558,7 +3589,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelSearchesTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelSearchesTaskGetResponseInfo]':
 
         _param = self._google_hotel_searches_task_get_serialize(
             id=id,
@@ -3667,10 +3698,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_searches_live_request_info import BusinessDataGoogleHotelSearchesLiveRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_searches_live_response_info import BusinessDataGoogleHotelSearchesLiveResponseInfo
     @validate_call
     def google_hotel_searches_live(
         self,
-        list_optional_business_data_google_hotel_searches_live_request_info: List[Optional[BusinessDataGoogleHotelSearchesLiveRequestInfo]] = None,
+        list_optional_business_data_google_hotel_searches_live_request_info: 'List[Optional[BusinessDataGoogleHotelSearchesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3711,7 +3744,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_searches_live_with_http_info(
         self,
-        list_optional_business_data_google_hotel_searches_live_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelSearchesLiveRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_searches_live_request_info: 'List[Optional[BusinessDataGoogleHotelSearchesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3724,7 +3757,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelSearchesLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelSearchesLiveResponseInfo]':
 
         _param = self._google_hotel_searches_live_serialize(
             list_optional_business_data_google_hotel_searches_live_request_info=list_optional_business_data_google_hotel_searches_live_request_info,
@@ -3751,7 +3784,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_searches_live_without_preload_content(
         self,
-        list_optional_business_data_google_hotel_searches_live_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelSearchesLiveRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_searches_live_request_info: 'List[Optional[BusinessDataGoogleHotelSearchesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3857,10 +3890,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_info_task_post_request_info import BusinessDataGoogleHotelInfoTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_info_task_post_response_info import BusinessDataGoogleHotelInfoTaskPostResponseInfo
     @validate_call
     def google_hotel_info_task_post(
         self,
-        list_optional_business_data_google_hotel_info_task_post_request_info: List[Optional[BusinessDataGoogleHotelInfoTaskPostRequestInfo]] = None,
+        list_optional_business_data_google_hotel_info_task_post_request_info: 'List[Optional[BusinessDataGoogleHotelInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3901,7 +3936,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_info_task_post_with_http_info(
         self,
-        list_optional_business_data_google_hotel_info_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelInfoTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_info_task_post_request_info: 'List[Optional[BusinessDataGoogleHotelInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3914,7 +3949,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelInfoTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelInfoTaskPostResponseInfo]':
 
         _param = self._google_hotel_info_task_post_serialize(
             list_optional_business_data_google_hotel_info_task_post_request_info=list_optional_business_data_google_hotel_info_task_post_request_info,
@@ -3941,7 +3976,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_info_task_post_without_preload_content(
         self,
-        list_optional_business_data_google_hotel_info_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelInfoTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_info_task_post_request_info: 'List[Optional[BusinessDataGoogleHotelInfoTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4047,6 +4082,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_info_tasks_ready_response_info import BusinessDataGoogleHotelInfoTasksReadyResponseInfo
     @validate_call
     def google_hotel_info_tasks_ready(
         self,
@@ -4099,7 +4135,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelInfoTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelInfoTasksReadyResponseInfo]':
 
         _param = self._google_hotel_info_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -4202,6 +4238,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_info_task_get_advanced_response_info import BusinessDataGoogleHotelInfoTaskGetAdvancedResponseInfo
     @validate_call
     def google_hotel_info_task_get_advanced(
         self,
@@ -4257,7 +4294,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelInfoTaskGetAdvancedResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelInfoTaskGetAdvancedResponseInfo]':
 
         _param = self._google_hotel_info_task_get_advanced_serialize(
             id=id,
@@ -4366,6 +4403,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_info_task_get_html_response_info import BusinessDataGoogleHotelInfoTaskGetHtmlResponseInfo
     @validate_call
     def google_hotel_info_task_get_html(
         self,
@@ -4421,7 +4459,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelInfoTaskGetHtmlResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelInfoTaskGetHtmlResponseInfo]':
 
         _param = self._google_hotel_info_task_get_html_serialize(
             id=id,
@@ -4530,10 +4568,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_info_live_advanced_request_info import BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_info_live_advanced_response_info import BusinessDataGoogleHotelInfoLiveAdvancedResponseInfo
     @validate_call
     def google_hotel_info_live_advanced(
         self,
-        list_optional_business_data_google_hotel_info_live_advanced_request_info: List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]] = None,
+        list_optional_business_data_google_hotel_info_live_advanced_request_info: 'List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4574,7 +4614,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_info_live_advanced_with_http_info(
         self,
-        list_optional_business_data_google_hotel_info_live_advanced_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_info_live_advanced_request_info: 'List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4587,7 +4627,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelInfoLiveAdvancedResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelInfoLiveAdvancedResponseInfo]':
 
         _param = self._google_hotel_info_live_advanced_serialize(
             list_optional_business_data_google_hotel_info_live_advanced_request_info=list_optional_business_data_google_hotel_info_live_advanced_request_info,
@@ -4614,7 +4654,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_info_live_advanced_without_preload_content(
         self,
-        list_optional_business_data_google_hotel_info_live_advanced_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_info_live_advanced_request_info: 'List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4720,10 +4760,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_hotel_info_live_html_request_info import BusinessDataGoogleHotelInfoLiveHtmlRequestInfo
+    from dataforseo_client.models.business_data_google_hotel_info_live_html_response_info import BusinessDataGoogleHotelInfoLiveHtmlResponseInfo
     @validate_call
     def google_hotel_info_live_html(
         self,
-        list_optional_business_data_google_hotel_info_live_html_request_info: List[Optional[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]] = None,
+        list_optional_business_data_google_hotel_info_live_html_request_info: 'List[Optional[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4764,7 +4806,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_info_live_html_with_http_info(
         self,
-        list_optional_business_data_google_hotel_info_live_html_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_info_live_html_request_info: 'List[Optional[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4777,7 +4819,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleHotelInfoLiveHtmlResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleHotelInfoLiveHtmlResponseInfo]':
 
         _param = self._google_hotel_info_live_html_serialize(
             list_optional_business_data_google_hotel_info_live_html_request_info=list_optional_business_data_google_hotel_info_live_html_request_info,
@@ -4804,7 +4846,7 @@ class BusinessDataApi:
     @validate_call
     def google_hotel_info_live_html_without_preload_content(
         self,
-        list_optional_business_data_google_hotel_info_live_html_request_info: Optional[List[List[Optional[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]]]] = None,
+        list_optional_business_data_google_hotel_info_live_html_request_info: 'List[Optional[BusinessDataGoogleHotelInfoLiveHtmlRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4910,10 +4952,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_reviews_task_post_request_info import BusinessDataGoogleReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_reviews_task_post_response_info import BusinessDataGoogleReviewsTaskPostResponseInfo
     @validate_call
     def google_reviews_task_post(
         self,
-        list_optional_business_data_google_reviews_task_post_request_info: List[Optional[BusinessDataGoogleReviewsTaskPostRequestInfo]] = None,
+        list_optional_business_data_google_reviews_task_post_request_info: 'List[Optional[BusinessDataGoogleReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4954,7 +4998,7 @@ class BusinessDataApi:
     @validate_call
     def google_reviews_task_post_with_http_info(
         self,
-        list_optional_business_data_google_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_reviews_task_post_request_info: 'List[Optional[BusinessDataGoogleReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4967,7 +5011,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleReviewsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleReviewsTaskPostResponseInfo]':
 
         _param = self._google_reviews_task_post_serialize(
             list_optional_business_data_google_reviews_task_post_request_info=list_optional_business_data_google_reviews_task_post_request_info,
@@ -4994,7 +5038,7 @@ class BusinessDataApi:
     @validate_call
     def google_reviews_task_post_without_preload_content(
         self,
-        list_optional_business_data_google_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_reviews_task_post_request_info: 'List[Optional[BusinessDataGoogleReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5100,6 +5144,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_reviews_tasks_ready_response_info import BusinessDataGoogleReviewsTasksReadyResponseInfo
     @validate_call
     def google_reviews_tasks_ready(
         self,
@@ -5152,7 +5197,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleReviewsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleReviewsTasksReadyResponseInfo]':
 
         _param = self._google_reviews_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -5255,6 +5300,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_reviews_task_get_response_info import BusinessDataGoogleReviewsTaskGetResponseInfo
     @validate_call
     def google_reviews_task_get(
         self,
@@ -5310,7 +5356,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleReviewsTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleReviewsTaskGetResponseInfo]':
 
         _param = self._google_reviews_task_get_serialize(
             id=id,
@@ -5419,10 +5465,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_extended_reviews_task_post_request_info import BusinessDataGoogleExtendedReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_extended_reviews_task_post_response_info import BusinessDataGoogleExtendedReviewsTaskPostResponseInfo
     @validate_call
     def google_extended_reviews_task_post(
         self,
-        list_optional_business_data_google_extended_reviews_task_post_request_info: List[Optional[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo]] = None,
+        list_optional_business_data_google_extended_reviews_task_post_request_info: 'List[Optional[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5463,7 +5511,7 @@ class BusinessDataApi:
     @validate_call
     def google_extended_reviews_task_post_with_http_info(
         self,
-        list_optional_business_data_google_extended_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_extended_reviews_task_post_request_info: 'List[Optional[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5476,7 +5524,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleExtendedReviewsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleExtendedReviewsTaskPostResponseInfo]':
 
         _param = self._google_extended_reviews_task_post_serialize(
             list_optional_business_data_google_extended_reviews_task_post_request_info=list_optional_business_data_google_extended_reviews_task_post_request_info,
@@ -5503,7 +5551,7 @@ class BusinessDataApi:
     @validate_call
     def google_extended_reviews_task_post_without_preload_content(
         self,
-        list_optional_business_data_google_extended_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_extended_reviews_task_post_request_info: 'List[Optional[BusinessDataGoogleExtendedReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5609,6 +5657,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_extended_reviews_tasks_ready_response_info import BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo
     @validate_call
     def google_extended_reviews_tasks_ready(
         self,
@@ -5661,7 +5710,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleExtendedReviewsTasksReadyResponseInfo]':
 
         _param = self._google_extended_reviews_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -5764,6 +5813,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_extended_reviews_task_get_response_info import BusinessDataGoogleExtendedReviewsTaskGetResponseInfo
     @validate_call
     def google_extended_reviews_task_get(
         self,
@@ -5819,7 +5869,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleExtendedReviewsTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleExtendedReviewsTaskGetResponseInfo]':
 
         _param = self._google_extended_reviews_task_get_serialize(
             id=id,
@@ -5928,10 +5978,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_questions_and_answers_task_post_request_info import BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_task_post_response_info import BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo
     @validate_call
     def google_questions_and_answers_task_post(
         self,
-        list_optional_business_data_google_questions_and_answers_task_post_request_info: List[Optional[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo]] = None,
+        list_optional_business_data_google_questions_and_answers_task_post_request_info: 'List[Optional[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5972,7 +6024,7 @@ class BusinessDataApi:
     @validate_call
     def google_questions_and_answers_task_post_with_http_info(
         self,
-        list_optional_business_data_google_questions_and_answers_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_questions_and_answers_task_post_request_info: 'List[Optional[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5985,7 +6037,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleQuestionsAndAnswersTaskPostResponseInfo]':
 
         _param = self._google_questions_and_answers_task_post_serialize(
             list_optional_business_data_google_questions_and_answers_task_post_request_info=list_optional_business_data_google_questions_and_answers_task_post_request_info,
@@ -6012,7 +6064,7 @@ class BusinessDataApi:
     @validate_call
     def google_questions_and_answers_task_post_without_preload_content(
         self,
-        list_optional_business_data_google_questions_and_answers_task_post_request_info: Optional[List[List[Optional[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_google_questions_and_answers_task_post_request_info: 'List[Optional[BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6118,6 +6170,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_questions_and_answers_tasks_ready_response_info import BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo
     @validate_call
     def google_questions_and_answers_tasks_ready(
         self,
@@ -6170,7 +6223,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleQuestionsAndAnswersTasksReadyResponseInfo]':
 
         _param = self._google_questions_and_answers_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -6273,6 +6326,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_questions_and_answers_task_get_response_info import BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo
     @validate_call
     def google_questions_and_answers_task_get(
         self,
@@ -6328,7 +6382,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleQuestionsAndAnswersTaskGetResponseInfo]':
 
         _param = self._google_questions_and_answers_task_get_serialize(
             id=id,
@@ -6437,10 +6491,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_google_questions_and_answers_live_request_info import BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo
+    from dataforseo_client.models.business_data_google_questions_and_answers_live_response_info import BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo
     @validate_call
     def google_questions_and_answers_live(
         self,
-        list_optional_business_data_google_questions_and_answers_live_request_info: List[Optional[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo]] = None,
+        list_optional_business_data_google_questions_and_answers_live_request_info: 'List[Optional[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6481,7 +6537,7 @@ class BusinessDataApi:
     @validate_call
     def google_questions_and_answers_live_with_http_info(
         self,
-        list_optional_business_data_google_questions_and_answers_live_request_info: Optional[List[List[Optional[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo]]]] = None,
+        list_optional_business_data_google_questions_and_answers_live_request_info: 'List[Optional[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6494,7 +6550,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataGoogleQuestionsAndAnswersLiveResponseInfo]':
 
         _param = self._google_questions_and_answers_live_serialize(
             list_optional_business_data_google_questions_and_answers_live_request_info=list_optional_business_data_google_questions_and_answers_live_request_info,
@@ -6521,7 +6577,7 @@ class BusinessDataApi:
     @validate_call
     def google_questions_and_answers_live_without_preload_content(
         self,
-        list_optional_business_data_google_questions_and_answers_live_request_info: Optional[List[List[Optional[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo]]]] = None,
+        list_optional_business_data_google_questions_and_answers_live_request_info: 'List[Optional[BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6627,10 +6683,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_trustpilot_search_task_post_request_info import BusinessDataTrustpilotSearchTaskPostRequestInfo
+    from dataforseo_client.models.business_data_trustpilot_search_task_post_response_info import BusinessDataTrustpilotSearchTaskPostResponseInfo
     @validate_call
     def trustpilot_search_task_post(
         self,
-        list_optional_business_data_trustpilot_search_task_post_request_info: List[Optional[BusinessDataTrustpilotSearchTaskPostRequestInfo]] = None,
+        list_optional_business_data_trustpilot_search_task_post_request_info: 'List[Optional[BusinessDataTrustpilotSearchTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6671,7 +6729,7 @@ class BusinessDataApi:
     @validate_call
     def trustpilot_search_task_post_with_http_info(
         self,
-        list_optional_business_data_trustpilot_search_task_post_request_info: Optional[List[List[Optional[BusinessDataTrustpilotSearchTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_trustpilot_search_task_post_request_info: 'List[Optional[BusinessDataTrustpilotSearchTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6684,7 +6742,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTrustpilotSearchTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTrustpilotSearchTaskPostResponseInfo]':
 
         _param = self._trustpilot_search_task_post_serialize(
             list_optional_business_data_trustpilot_search_task_post_request_info=list_optional_business_data_trustpilot_search_task_post_request_info,
@@ -6711,7 +6769,7 @@ class BusinessDataApi:
     @validate_call
     def trustpilot_search_task_post_without_preload_content(
         self,
-        list_optional_business_data_trustpilot_search_task_post_request_info: Optional[List[List[Optional[BusinessDataTrustpilotSearchTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_trustpilot_search_task_post_request_info: 'List[Optional[BusinessDataTrustpilotSearchTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6817,6 +6875,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_trustpilot_search_tasks_ready_response_info import BusinessDataTrustpilotSearchTasksReadyResponseInfo
     @validate_call
     def trustpilot_search_tasks_ready(
         self,
@@ -6869,7 +6928,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTrustpilotSearchTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTrustpilotSearchTasksReadyResponseInfo]':
 
         _param = self._trustpilot_search_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -6972,6 +7031,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_trustpilot_search_task_get_response_info import BusinessDataTrustpilotSearchTaskGetResponseInfo
     @validate_call
     def trustpilot_search_task_get(
         self,
@@ -7027,7 +7087,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTrustpilotSearchTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTrustpilotSearchTaskGetResponseInfo]':
 
         _param = self._trustpilot_search_task_get_serialize(
             id=id,
@@ -7136,10 +7196,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_trustpilot_reviews_task_post_request_info import BusinessDataTrustpilotReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_trustpilot_reviews_task_post_response_info import BusinessDataTrustpilotReviewsTaskPostResponseInfo
     @validate_call
     def trustpilot_reviews_task_post(
         self,
-        list_optional_business_data_trustpilot_reviews_task_post_request_info: List[Optional[BusinessDataTrustpilotReviewsTaskPostRequestInfo]] = None,
+        list_optional_business_data_trustpilot_reviews_task_post_request_info: 'List[Optional[BusinessDataTrustpilotReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7180,7 +7242,7 @@ class BusinessDataApi:
     @validate_call
     def trustpilot_reviews_task_post_with_http_info(
         self,
-        list_optional_business_data_trustpilot_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataTrustpilotReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_trustpilot_reviews_task_post_request_info: 'List[Optional[BusinessDataTrustpilotReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7193,7 +7255,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTrustpilotReviewsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTrustpilotReviewsTaskPostResponseInfo]':
 
         _param = self._trustpilot_reviews_task_post_serialize(
             list_optional_business_data_trustpilot_reviews_task_post_request_info=list_optional_business_data_trustpilot_reviews_task_post_request_info,
@@ -7220,7 +7282,7 @@ class BusinessDataApi:
     @validate_call
     def trustpilot_reviews_task_post_without_preload_content(
         self,
-        list_optional_business_data_trustpilot_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataTrustpilotReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_trustpilot_reviews_task_post_request_info: 'List[Optional[BusinessDataTrustpilotReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7326,6 +7388,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_trustpilot_reviews_tasks_ready_response_info import BusinessDataTrustpilotReviewsTasksReadyResponseInfo
     @validate_call
     def trustpilot_reviews_tasks_ready(
         self,
@@ -7378,7 +7441,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTrustpilotReviewsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTrustpilotReviewsTasksReadyResponseInfo]':
 
         _param = self._trustpilot_reviews_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -7481,6 +7544,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_trustpilot_reviews_task_get_response_info import BusinessDataTrustpilotReviewsTaskGetResponseInfo
     @validate_call
     def trustpilot_reviews_task_get(
         self,
@@ -7536,7 +7600,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTrustpilotReviewsTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTrustpilotReviewsTaskGetResponseInfo]':
 
         _param = self._trustpilot_reviews_task_get_serialize(
             id=id,
@@ -7645,6 +7709,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_locations_response_info import BusinessDataTripadvisorLocationsResponseInfo
     @validate_call
     def business_data_tripadvisor_locations(
         self,
@@ -7697,7 +7762,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorLocationsResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorLocationsResponseInfo]':
 
         _param = self._business_data_tripadvisor_locations_serialize(
             _request_auth=_request_auth,
@@ -7800,6 +7865,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_locations_country_response_info import BusinessDataTripadvisorLocationsCountryResponseInfo
     @validate_call
     def business_data_tripadvisor_locations_country(
         self,
@@ -7855,7 +7921,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorLocationsCountryResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorLocationsCountryResponseInfo]':
 
         _param = self._business_data_tripadvisor_locations_country_serialize(
             country=country,
@@ -7964,6 +8030,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_languages_response_info import BusinessDataTripadvisorLanguagesResponseInfo
     @validate_call
     def business_data_tripadvisor_languages(
         self,
@@ -8016,7 +8083,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorLanguagesResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorLanguagesResponseInfo]':
 
         _param = self._business_data_tripadvisor_languages_serialize(
             _request_auth=_request_auth,
@@ -8119,10 +8186,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_search_task_post_request_info import BusinessDataTripadvisorSearchTaskPostRequestInfo
+    from dataforseo_client.models.business_data_tripadvisor_search_task_post_response_info import BusinessDataTripadvisorSearchTaskPostResponseInfo
     @validate_call
     def tripadvisor_search_task_post(
         self,
-        list_optional_business_data_tripadvisor_search_task_post_request_info: List[Optional[BusinessDataTripadvisorSearchTaskPostRequestInfo]] = None,
+        list_optional_business_data_tripadvisor_search_task_post_request_info: 'List[Optional[BusinessDataTripadvisorSearchTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8163,7 +8232,7 @@ class BusinessDataApi:
     @validate_call
     def tripadvisor_search_task_post_with_http_info(
         self,
-        list_optional_business_data_tripadvisor_search_task_post_request_info: Optional[List[List[Optional[BusinessDataTripadvisorSearchTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_tripadvisor_search_task_post_request_info: 'List[Optional[BusinessDataTripadvisorSearchTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8176,7 +8245,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorSearchTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorSearchTaskPostResponseInfo]':
 
         _param = self._tripadvisor_search_task_post_serialize(
             list_optional_business_data_tripadvisor_search_task_post_request_info=list_optional_business_data_tripadvisor_search_task_post_request_info,
@@ -8203,7 +8272,7 @@ class BusinessDataApi:
     @validate_call
     def tripadvisor_search_task_post_without_preload_content(
         self,
-        list_optional_business_data_tripadvisor_search_task_post_request_info: Optional[List[List[Optional[BusinessDataTripadvisorSearchTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_tripadvisor_search_task_post_request_info: 'List[Optional[BusinessDataTripadvisorSearchTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8309,6 +8378,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_search_tasks_ready_response_info import BusinessDataTripadvisorSearchTasksReadyResponseInfo
     @validate_call
     def tripadvisor_search_tasks_ready(
         self,
@@ -8361,7 +8431,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorSearchTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorSearchTasksReadyResponseInfo]':
 
         _param = self._tripadvisor_search_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -8464,6 +8534,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_search_task_get_response_info import BusinessDataTripadvisorSearchTaskGetResponseInfo
     @validate_call
     def tripadvisor_search_task_get(
         self,
@@ -8519,7 +8590,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorSearchTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorSearchTaskGetResponseInfo]':
 
         _param = self._tripadvisor_search_task_get_serialize(
             id=id,
@@ -8628,10 +8699,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_reviews_task_post_request_info import BusinessDataTripadvisorReviewsTaskPostRequestInfo
+    from dataforseo_client.models.business_data_tripadvisor_reviews_task_post_response_info import BusinessDataTripadvisorReviewsTaskPostResponseInfo
     @validate_call
     def tripadvisor_reviews_task_post(
         self,
-        list_optional_business_data_tripadvisor_reviews_task_post_request_info: List[Optional[BusinessDataTripadvisorReviewsTaskPostRequestInfo]] = None,
+        list_optional_business_data_tripadvisor_reviews_task_post_request_info: 'List[Optional[BusinessDataTripadvisorReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8672,7 +8745,7 @@ class BusinessDataApi:
     @validate_call
     def tripadvisor_reviews_task_post_with_http_info(
         self,
-        list_optional_business_data_tripadvisor_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataTripadvisorReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_tripadvisor_reviews_task_post_request_info: 'List[Optional[BusinessDataTripadvisorReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8685,7 +8758,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorReviewsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorReviewsTaskPostResponseInfo]':
 
         _param = self._tripadvisor_reviews_task_post_serialize(
             list_optional_business_data_tripadvisor_reviews_task_post_request_info=list_optional_business_data_tripadvisor_reviews_task_post_request_info,
@@ -8712,7 +8785,7 @@ class BusinessDataApi:
     @validate_call
     def tripadvisor_reviews_task_post_without_preload_content(
         self,
-        list_optional_business_data_tripadvisor_reviews_task_post_request_info: Optional[List[List[Optional[BusinessDataTripadvisorReviewsTaskPostRequestInfo]]]] = None,
+        list_optional_business_data_tripadvisor_reviews_task_post_request_info: 'List[Optional[BusinessDataTripadvisorReviewsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8818,6 +8891,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_reviews_tasks_ready_response_info import BusinessDataTripadvisorReviewsTasksReadyResponseInfo
     @validate_call
     def tripadvisor_reviews_tasks_ready(
         self,
@@ -8870,7 +8944,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorReviewsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorReviewsTasksReadyResponseInfo]':
 
         _param = self._tripadvisor_reviews_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -8973,6 +9047,7 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_tripadvisor_reviews_task_get_response_info import BusinessDataTripadvisorReviewsTaskGetResponseInfo
     @validate_call
     def tripadvisor_reviews_task_get(
         self,
@@ -9028,7 +9103,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataTripadvisorReviewsTaskGetResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataTripadvisorReviewsTaskGetResponseInfo]':
 
         _param = self._tripadvisor_reviews_task_get_serialize(
             id=id,
@@ -9137,10 +9212,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_social_media_pinterest_live_request_info import BusinessDataSocialMediaPinterestLiveRequestInfo
+    from dataforseo_client.models.business_data_social_media_pinterest_live_response_info import BusinessDataSocialMediaPinterestLiveResponseInfo
     @validate_call
     def social_media_pinterest_live(
         self,
-        list_optional_business_data_social_media_pinterest_live_request_info: List[Optional[BusinessDataSocialMediaPinterestLiveRequestInfo]] = None,
+        list_optional_business_data_social_media_pinterest_live_request_info: 'List[Optional[BusinessDataSocialMediaPinterestLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9181,7 +9258,7 @@ class BusinessDataApi:
     @validate_call
     def social_media_pinterest_live_with_http_info(
         self,
-        list_optional_business_data_social_media_pinterest_live_request_info: Optional[List[List[Optional[BusinessDataSocialMediaPinterestLiveRequestInfo]]]] = None,
+        list_optional_business_data_social_media_pinterest_live_request_info: 'List[Optional[BusinessDataSocialMediaPinterestLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9194,7 +9271,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataSocialMediaPinterestLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataSocialMediaPinterestLiveResponseInfo]':
 
         _param = self._social_media_pinterest_live_serialize(
             list_optional_business_data_social_media_pinterest_live_request_info=list_optional_business_data_social_media_pinterest_live_request_info,
@@ -9221,7 +9298,7 @@ class BusinessDataApi:
     @validate_call
     def social_media_pinterest_live_without_preload_content(
         self,
-        list_optional_business_data_social_media_pinterest_live_request_info: Optional[List[List[Optional[BusinessDataSocialMediaPinterestLiveRequestInfo]]]] = None,
+        list_optional_business_data_social_media_pinterest_live_request_info: 'List[Optional[BusinessDataSocialMediaPinterestLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9327,10 +9404,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_social_media_facebook_live_request_info import BusinessDataSocialMediaFacebookLiveRequestInfo
+    from dataforseo_client.models.business_data_social_media_facebook_live_response_info import BusinessDataSocialMediaFacebookLiveResponseInfo
     @validate_call
     def social_media_facebook_live(
         self,
-        list_optional_business_data_social_media_facebook_live_request_info: List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]] = None,
+        list_optional_business_data_social_media_facebook_live_request_info: 'List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9371,7 +9450,7 @@ class BusinessDataApi:
     @validate_call
     def social_media_facebook_live_with_http_info(
         self,
-        list_optional_business_data_social_media_facebook_live_request_info: Optional[List[List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]]]] = None,
+        list_optional_business_data_social_media_facebook_live_request_info: 'List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9384,7 +9463,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataSocialMediaFacebookLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataSocialMediaFacebookLiveResponseInfo]':
 
         _param = self._social_media_facebook_live_serialize(
             list_optional_business_data_social_media_facebook_live_request_info=list_optional_business_data_social_media_facebook_live_request_info,
@@ -9411,7 +9490,7 @@ class BusinessDataApi:
     @validate_call
     def social_media_facebook_live_without_preload_content(
         self,
-        list_optional_business_data_social_media_facebook_live_request_info: Optional[List[List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]]]] = None,
+        list_optional_business_data_social_media_facebook_live_request_info: 'List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9517,10 +9596,12 @@ class BusinessDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.business_data_social_media_reddit_live_request_info import BusinessDataSocialMediaRedditLiveRequestInfo
+    from dataforseo_client.models.business_data_social_media_reddit_live_response_info import BusinessDataSocialMediaRedditLiveResponseInfo
     @validate_call
     def social_media_reddit_live(
         self,
-        list_optional_business_data_social_media_reddit_live_request_info: List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]] = None,
+        list_optional_business_data_social_media_reddit_live_request_info: 'List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9561,7 +9642,7 @@ class BusinessDataApi:
     @validate_call
     def social_media_reddit_live_with_http_info(
         self,
-        list_optional_business_data_social_media_reddit_live_request_info: Optional[List[List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]]]] = None,
+        list_optional_business_data_social_media_reddit_live_request_info: 'List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9574,7 +9655,7 @@ class BusinessDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BusinessDataSocialMediaRedditLiveResponseInfo]:
+    ) -> 'ApiResponse[BusinessDataSocialMediaRedditLiveResponseInfo]':
 
         _param = self._social_media_reddit_live_serialize(
             list_optional_business_data_social_media_reddit_live_request_info=list_optional_business_data_social_media_reddit_live_request_info,
@@ -9601,7 +9682,7 @@ class BusinessDataApi:
     @validate_call
     def social_media_reddit_live_without_preload_content(
         self,
-        list_optional_business_data_social_media_reddit_live_request_info: Optional[List[List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]]]] = None,
+        list_optional_business_data_social_media_reddit_live_request_info: 'List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

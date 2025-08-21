@@ -1,110 +1,111 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.keywords_data_id_list_request_info import KeywordsDataIdListRequestInfo
-from dataforseo_client.models.keywords_data_id_list_response_info import KeywordsDataIdListResponseInfo
-from dataforseo_client.models.keywords_data_errors_request_info import KeywordsDataErrorsRequestInfo
-from dataforseo_client.models.keywords_data_errors_response_info import KeywordsDataErrorsResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_status_response_info import KeywordsDataGoogleAdsStatusResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_locations_response_info import KeywordsDataGoogleAdsLocationsResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_locations_country_response_info import KeywordsDataGoogleAdsLocationsCountryResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_languages_response_info import KeywordsDataGoogleAdsLanguagesResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_request_info import KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_response_info import KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_search_volume_tasks_ready_response_info import KeywordsDataGoogleAdsSearchVolumeTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_search_volume_task_get_response_info import KeywordsDataGoogleAdsSearchVolumeTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_search_volume_live_request_info import KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_search_volume_live_response_info import KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_post_request_info import KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_post_response_info import KeywordsDataGoogleAdsKeywordsForSiteTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_tasks_ready_response_info import KeywordsDataGoogleAdsKeywordsForSiteTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_get_response_info import KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_live_request_info import KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_live_response_info import KeywordsDataGoogleAdsKeywordsForSiteLiveResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_post_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_post_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_tasks_ready_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_get_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_tasks_ready_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_get_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_live_request_info import KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo
-from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_live_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsLiveResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_locations_response_info import KeywordsDataGoogleTrendsLocationsResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_locations_country_response_info import KeywordsDataGoogleTrendsLocationsCountryResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_languages_response_info import KeywordsDataGoogleTrendsLanguagesResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_categories_response_info import KeywordsDataGoogleTrendsCategoriesResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_explore_task_post_request_info import KeywordsDataGoogleTrendsExploreTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_google_trends_explore_task_post_response_info import KeywordsDataGoogleTrendsExploreTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_explore_tasks_ready_response_info import KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_explore_task_get_response_info import KeywordsDataGoogleTrendsExploreTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_google_trends_explore_live_request_info import KeywordsDataGoogleTrendsExploreLiveRequestInfo
-from dataforseo_client.models.keywords_data_google_trends_explore_live_response_info import KeywordsDataGoogleTrendsExploreLiveResponseInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_locations_response_info import KeywordsDataDataforseoTrendsLocationsResponseInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_locations_country_response_info import KeywordsDataDataforseoTrendsLocationsCountryResponseInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_explore_live_request_info import KeywordsDataDataforseoTrendsExploreLiveRequestInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_explore_live_response_info import KeywordsDataDataforseoTrendsExploreLiveResponseInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_subregion_interests_live_request_info import KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_subregion_interests_live_response_info import KeywordsDataDataforseoTrendsSubregionInterestsLiveResponseInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_demography_live_request_info import KeywordsDataDataforseoTrendsDemographyLiveRequestInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_demography_live_response_info import KeywordsDataDataforseoTrendsDemographyLiveResponseInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_merged_data_live_request_info import KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo
-from dataforseo_client.models.keywords_data_dataforseo_trends_merged_data_live_response_info import KeywordsDataDataforseoTrendsMergedDataLiveResponseInfo
-from dataforseo_client.models.keywords_data_bing_locations_response_info import KeywordsDataBingLocationsResponseInfo
-from dataforseo_client.models.keywords_data_bing_languages_response_info import KeywordsDataBingLanguagesResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_task_post_request_info import KeywordsDataBingSearchVolumeTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_task_post_response_info import KeywordsDataBingSearchVolumeTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_tasks_ready_response_info import KeywordsDataBingSearchVolumeTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_task_get_response_info import KeywordsDataBingSearchVolumeTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_live_request_info import KeywordsDataBingSearchVolumeLiveRequestInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_live_response_info import KeywordsDataBingSearchVolumeLiveResponseInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_job_functions_response_info import KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_industries_response_info import KeywordsDataBingAudienceEstimationIndustriesResponseInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_request_info import KeywordsDataBingAudienceEstimationTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_response_info import KeywordsDataBingAudienceEstimationTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_tasks_ready_response_info import KeywordsDataBingAudienceEstimationTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_task_get_response_info import KeywordsDataBingAudienceEstimationTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_live_request_info import KeywordsDataBingAudienceEstimationLiveRequestInfo
-from dataforseo_client.models.keywords_data_bing_audience_estimation_live_response_info import KeywordsDataBingAudienceEstimationLiveResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_post_request_info import KeywordsDataBingKeywordsForSiteTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_post_response_info import KeywordsDataBingKeywordsForSiteTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_site_tasks_ready_response_info import KeywordsDataBingKeywordsForSiteTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_get_response_info import KeywordsDataBingKeywordsForSiteTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_site_live_request_info import KeywordsDataBingKeywordsForSiteLiveRequestInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_site_live_response_info import KeywordsDataBingKeywordsForSiteLiveResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_post_request_info import KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_post_response_info import KeywordsDataBingKeywordsForKeywordsTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_tasks_ready_response_info import KeywordsDataBingKeywordsForKeywordsTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_get_response_info import KeywordsDataBingKeywordsForKeywordsTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_live_request_info import KeywordsDataBingKeywordsForKeywordsLiveRequestInfo
-from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_live_response_info import KeywordsDataBingKeywordsForKeywordsLiveResponseInfo
-from dataforseo_client.models.keywords_data_bing_keyword_performance_locations_and_languages_response_info import KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo
-from dataforseo_client.models.keywords_data_bing_keyword_performance_task_post_request_info import KeywordsDataBingKeywordPerformanceTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_bing_keyword_performance_task_post_response_info import KeywordsDataBingKeywordPerformanceTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_bing_keyword_performance_tasks_ready_response_info import KeywordsDataBingKeywordPerformanceTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_bing_keyword_performance_task_get_response_info import KeywordsDataBingKeywordPerformanceTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_bing_keyword_performance_live_request_info import KeywordsDataBingKeywordPerformanceLiveRequestInfo
-from dataforseo_client.models.keywords_data_bing_keyword_performance_live_response_info import KeywordsDataBingKeywordPerformanceLiveResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_history_locations_and_languages_response_info import KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_request_info import KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_response_info import KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_history_tasks_ready_response_info import KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_history_task_get_response_info import KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_history_live_request_info import KeywordsDataBingSearchVolumeHistoryLiveRequestInfo
-from dataforseo_client.models.keywords_data_bing_search_volume_history_live_response_info import KeywordsDataBingSearchVolumeHistoryLiveResponseInfo
-from dataforseo_client.models.keywords_data_clickstream_data_locations_and_languages_response_info import KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo
-from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_request_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo
-from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_response_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo
-from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_request_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo
-from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_response_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo
-from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_request_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo
-from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_response_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.keywords_data_id_list_request_info import KeywordsDataIdListRequestInfo
+    from dataforseo_client.models.keywords_data_id_list_response_info import KeywordsDataIdListResponseInfo
+    from dataforseo_client.models.keywords_data_errors_request_info import KeywordsDataErrorsRequestInfo
+    from dataforseo_client.models.keywords_data_errors_response_info import KeywordsDataErrorsResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_status_response_info import KeywordsDataGoogleAdsStatusResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_locations_response_info import KeywordsDataGoogleAdsLocationsResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_locations_country_response_info import KeywordsDataGoogleAdsLocationsCountryResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_languages_response_info import KeywordsDataGoogleAdsLanguagesResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_request_info import KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_response_info import KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_tasks_ready_response_info import KeywordsDataGoogleAdsSearchVolumeTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_task_get_response_info import KeywordsDataGoogleAdsSearchVolumeTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_live_request_info import KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_live_response_info import KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_post_request_info import KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_post_response_info import KeywordsDataGoogleAdsKeywordsForSiteTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_tasks_ready_response_info import KeywordsDataGoogleAdsKeywordsForSiteTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_get_response_info import KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_live_request_info import KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_live_response_info import KeywordsDataGoogleAdsKeywordsForSiteLiveResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_post_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_post_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_tasks_ready_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_get_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_tasks_ready_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_get_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_live_request_info import KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_live_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsLiveResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_locations_response_info import KeywordsDataGoogleTrendsLocationsResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_locations_country_response_info import KeywordsDataGoogleTrendsLocationsCountryResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_languages_response_info import KeywordsDataGoogleTrendsLanguagesResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_categories_response_info import KeywordsDataGoogleTrendsCategoriesResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_task_post_request_info import KeywordsDataGoogleTrendsExploreTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_task_post_response_info import KeywordsDataGoogleTrendsExploreTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_tasks_ready_response_info import KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_task_get_response_info import KeywordsDataGoogleTrendsExploreTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_live_request_info import KeywordsDataGoogleTrendsExploreLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_live_response_info import KeywordsDataGoogleTrendsExploreLiveResponseInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_locations_response_info import KeywordsDataDataforseoTrendsLocationsResponseInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_locations_country_response_info import KeywordsDataDataforseoTrendsLocationsCountryResponseInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_explore_live_request_info import KeywordsDataDataforseoTrendsExploreLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_explore_live_response_info import KeywordsDataDataforseoTrendsExploreLiveResponseInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_subregion_interests_live_request_info import KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_subregion_interests_live_response_info import KeywordsDataDataforseoTrendsSubregionInterestsLiveResponseInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_demography_live_request_info import KeywordsDataDataforseoTrendsDemographyLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_demography_live_response_info import KeywordsDataDataforseoTrendsDemographyLiveResponseInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_merged_data_live_request_info import KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_merged_data_live_response_info import KeywordsDataDataforseoTrendsMergedDataLiveResponseInfo
+    from dataforseo_client.models.keywords_data_bing_locations_response_info import KeywordsDataBingLocationsResponseInfo
+    from dataforseo_client.models.keywords_data_bing_languages_response_info import KeywordsDataBingLanguagesResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_task_post_request_info import KeywordsDataBingSearchVolumeTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_task_post_response_info import KeywordsDataBingSearchVolumeTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_tasks_ready_response_info import KeywordsDataBingSearchVolumeTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_task_get_response_info import KeywordsDataBingSearchVolumeTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_live_request_info import KeywordsDataBingSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_live_response_info import KeywordsDataBingSearchVolumeLiveResponseInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_job_functions_response_info import KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_industries_response_info import KeywordsDataBingAudienceEstimationIndustriesResponseInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_request_info import KeywordsDataBingAudienceEstimationTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_response_info import KeywordsDataBingAudienceEstimationTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_tasks_ready_response_info import KeywordsDataBingAudienceEstimationTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_task_get_response_info import KeywordsDataBingAudienceEstimationTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_live_request_info import KeywordsDataBingAudienceEstimationLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_live_response_info import KeywordsDataBingAudienceEstimationLiveResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_post_request_info import KeywordsDataBingKeywordsForSiteTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_post_response_info import KeywordsDataBingKeywordsForSiteTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_tasks_ready_response_info import KeywordsDataBingKeywordsForSiteTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_get_response_info import KeywordsDataBingKeywordsForSiteTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_live_request_info import KeywordsDataBingKeywordsForSiteLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_live_response_info import KeywordsDataBingKeywordsForSiteLiveResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_post_request_info import KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_post_response_info import KeywordsDataBingKeywordsForKeywordsTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_tasks_ready_response_info import KeywordsDataBingKeywordsForKeywordsTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_get_response_info import KeywordsDataBingKeywordsForKeywordsTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_live_request_info import KeywordsDataBingKeywordsForKeywordsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_live_response_info import KeywordsDataBingKeywordsForKeywordsLiveResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_locations_and_languages_response_info import KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_task_post_request_info import KeywordsDataBingKeywordPerformanceTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_task_post_response_info import KeywordsDataBingKeywordPerformanceTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_tasks_ready_response_info import KeywordsDataBingKeywordPerformanceTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_task_get_response_info import KeywordsDataBingKeywordPerformanceTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_live_request_info import KeywordsDataBingKeywordPerformanceLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_live_response_info import KeywordsDataBingKeywordPerformanceLiveResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_locations_and_languages_response_info import KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_request_info import KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_response_info import KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_tasks_ready_response_info import KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_task_get_response_info import KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_live_request_info import KeywordsDataBingSearchVolumeHistoryLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_live_response_info import KeywordsDataBingSearchVolumeHistoryLiveResponseInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_locations_and_languages_response_info import KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_request_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_response_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_request_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_response_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_request_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_response_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -117,11 +118,14 @@ class KeywordsDataApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.keywords_data_id_list_request_info import KeywordsDataIdListRequestInfo
+    from dataforseo_client.models.keywords_data_id_list_response_info import KeywordsDataIdListResponseInfo
     @validate_call
     def keywords_data_id_list(
         self,
-        list_optional_keywords_data_id_list_request_info: List[Optional[KeywordsDataIdListRequestInfo]] = None,
+        list_optional_keywords_data_id_list_request_info: 'List[Optional[KeywordsDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -162,7 +166,7 @@ class KeywordsDataApi:
     @validate_call
     def keywords_data_id_list_with_http_info(
         self,
-        list_optional_keywords_data_id_list_request_info: Optional[List[List[Optional[KeywordsDataIdListRequestInfo]]]] = None,
+        list_optional_keywords_data_id_list_request_info: 'List[Optional[KeywordsDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -175,7 +179,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataIdListResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataIdListResponseInfo]':
 
         _param = self._keywords_data_id_list_serialize(
             list_optional_keywords_data_id_list_request_info=list_optional_keywords_data_id_list_request_info,
@@ -202,7 +206,7 @@ class KeywordsDataApi:
     @validate_call
     def keywords_data_id_list_without_preload_content(
         self,
-        list_optional_keywords_data_id_list_request_info: Optional[List[List[Optional[KeywordsDataIdListRequestInfo]]]] = None,
+        list_optional_keywords_data_id_list_request_info: 'List[Optional[KeywordsDataIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -308,10 +312,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_errors_request_info import KeywordsDataErrorsRequestInfo
+    from dataforseo_client.models.keywords_data_errors_response_info import KeywordsDataErrorsResponseInfo
     @validate_call
     def keywords_data_errors(
         self,
-        list_optional_keywords_data_errors_request_info: List[Optional[KeywordsDataErrorsRequestInfo]] = None,
+        list_optional_keywords_data_errors_request_info: 'List[Optional[KeywordsDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -352,7 +358,7 @@ class KeywordsDataApi:
     @validate_call
     def keywords_data_errors_with_http_info(
         self,
-        list_optional_keywords_data_errors_request_info: Optional[List[List[Optional[KeywordsDataErrorsRequestInfo]]]] = None,
+        list_optional_keywords_data_errors_request_info: 'List[Optional[KeywordsDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -365,7 +371,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataErrorsResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataErrorsResponseInfo]':
 
         _param = self._keywords_data_errors_serialize(
             list_optional_keywords_data_errors_request_info=list_optional_keywords_data_errors_request_info,
@@ -392,7 +398,7 @@ class KeywordsDataApi:
     @validate_call
     def keywords_data_errors_without_preload_content(
         self,
-        list_optional_keywords_data_errors_request_info: Optional[List[List[Optional[KeywordsDataErrorsRequestInfo]]]] = None,
+        list_optional_keywords_data_errors_request_info: 'List[Optional[KeywordsDataErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -498,6 +504,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_status_response_info import KeywordsDataGoogleAdsStatusResponseInfo
     @validate_call
     def google_ads_status(
         self,
@@ -550,7 +557,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsStatusResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsStatusResponseInfo]':
 
         _param = self._google_ads_status_serialize(
             _request_auth=_request_auth,
@@ -653,6 +660,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_locations_response_info import KeywordsDataGoogleAdsLocationsResponseInfo
     @validate_call
     def keywords_data_google_ads_locations(
         self,
@@ -705,7 +713,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsLocationsResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsLocationsResponseInfo]':
 
         _param = self._keywords_data_google_ads_locations_serialize(
             _request_auth=_request_auth,
@@ -808,6 +816,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_locations_country_response_info import KeywordsDataGoogleAdsLocationsCountryResponseInfo
     @validate_call
     def keywords_data_google_ads_locations_country(
         self,
@@ -863,7 +872,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsLocationsCountryResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsLocationsCountryResponseInfo]':
 
         _param = self._keywords_data_google_ads_locations_country_serialize(
             country=country,
@@ -972,6 +981,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_languages_response_info import KeywordsDataGoogleAdsLanguagesResponseInfo
     @validate_call
     def keywords_data_google_ads_languages(
         self,
@@ -1024,7 +1034,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsLanguagesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsLanguagesResponseInfo]':
 
         _param = self._keywords_data_google_ads_languages_serialize(
             _request_auth=_request_auth,
@@ -1127,10 +1137,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_request_info import KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_task_post_response_info import KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo
     @validate_call
     def google_ads_search_volume_task_post(
         self,
-        list_optional_keywords_data_google_ads_search_volume_task_post_request_info: List[Optional[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_search_volume_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1171,7 +1183,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_task_post_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_search_volume_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_search_volume_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1184,7 +1196,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsSearchVolumeTaskPostResponseInfo]':
 
         _param = self._google_ads_search_volume_task_post_serialize(
             list_optional_keywords_data_google_ads_search_volume_task_post_request_info=list_optional_keywords_data_google_ads_search_volume_task_post_request_info,
@@ -1211,7 +1223,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_search_volume_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_search_volume_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1317,6 +1329,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_tasks_ready_response_info import KeywordsDataGoogleAdsSearchVolumeTasksReadyResponseInfo
     @validate_call
     def google_ads_search_volume_tasks_ready(
         self,
@@ -1369,7 +1382,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsSearchVolumeTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsSearchVolumeTasksReadyResponseInfo]':
 
         _param = self._google_ads_search_volume_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -1472,6 +1485,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_task_get_response_info import KeywordsDataGoogleAdsSearchVolumeTaskGetResponseInfo
     @validate_call
     def google_ads_search_volume_task_get(
         self,
@@ -1527,7 +1541,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsSearchVolumeTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsSearchVolumeTaskGetResponseInfo]':
 
         _param = self._google_ads_search_volume_task_get_serialize(
             id=id,
@@ -1636,10 +1650,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_live_request_info import KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_search_volume_live_response_info import KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo
     @validate_call
     def google_ads_search_volume_live(
         self,
-        list_optional_keywords_data_google_ads_search_volume_live_request_info: List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_search_volume_live_request_info: 'List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1680,7 +1696,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_live_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_search_volume_live_request_info: 'List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1693,7 +1709,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsSearchVolumeLiveResponseInfo]':
 
         _param = self._google_ads_search_volume_live_serialize(
             list_optional_keywords_data_google_ads_search_volume_live_request_info=list_optional_keywords_data_google_ads_search_volume_live_request_info,
@@ -1720,7 +1736,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_search_volume_live_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_search_volume_live_request_info: 'List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1826,10 +1842,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_post_request_info import KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_post_response_info import KeywordsDataGoogleAdsKeywordsForSiteTaskPostResponseInfo
     @validate_call
     def google_ads_keywords_for_site_task_post(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info: List[Optional[KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1870,7 +1888,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_site_task_post_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1883,7 +1901,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteTaskPostResponseInfo]':
 
         _param = self._google_ads_keywords_for_site_task_post_serialize(
             list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info=list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info,
@@ -1910,7 +1928,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_site_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_site_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2016,6 +2034,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_tasks_ready_response_info import KeywordsDataGoogleAdsKeywordsForSiteTasksReadyResponseInfo
     @validate_call
     def google_ads_keywords_for_site_tasks_ready(
         self,
@@ -2068,7 +2087,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteTasksReadyResponseInfo]':
 
         _param = self._google_ads_keywords_for_site_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -2171,6 +2190,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_task_get_response_info import KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo
     @validate_call
     def google_ads_keywords_for_site_task_get(
         self,
@@ -2226,7 +2246,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteTaskGetResponseInfo]':
 
         _param = self._google_ads_keywords_for_site_task_get_serialize(
             id=id,
@@ -2335,10 +2355,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_live_request_info import KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_site_live_response_info import KeywordsDataGoogleAdsKeywordsForSiteLiveResponseInfo
     @validate_call
     def google_ads_keywords_for_site_live(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_site_live_request_info: List[Optional[KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_site_live_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2379,7 +2401,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_site_live_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_site_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_site_live_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2392,7 +2414,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForSiteLiveResponseInfo]':
 
         _param = self._google_ads_keywords_for_site_live_serialize(
             list_optional_keywords_data_google_ads_keywords_for_site_live_request_info=list_optional_keywords_data_google_ads_keywords_for_site_live_request_info,
@@ -2419,7 +2441,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_site_live_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_site_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_site_live_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2525,10 +2547,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_post_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_post_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostResponseInfo
     @validate_call
     def google_ads_keywords_for_keywords_task_post(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info: List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2569,7 +2593,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_keywords_task_post_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2582,7 +2606,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostResponseInfo]':
 
         _param = self._google_ads_keywords_for_keywords_task_post_serialize(
             list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info=list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info,
@@ -2609,7 +2633,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_keywords_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_keywords_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2715,6 +2739,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_tasks_ready_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTasksReadyResponseInfo
     @validate_call
     def google_ads_keywords_for_keywords_tasks_ready(
         self,
@@ -2767,7 +2792,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsTasksReadyResponseInfo]':
 
         _param = self._google_ads_keywords_for_keywords_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -2870,6 +2895,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_task_get_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResponseInfo
     @validate_call
     def google_ads_keywords_for_keywords_task_get(
         self,
@@ -2925,7 +2951,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsTaskGetResponseInfo]':
 
         _param = self._google_ads_keywords_for_keywords_task_get_serialize(
             id=id,
@@ -3034,10 +3060,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_request_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_keywords_for_keywords_live_response_info import KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo
     @validate_call
     def google_ads_keywords_for_keywords_live(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info: List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3078,7 +3106,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_keywords_live_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3091,7 +3119,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsKeywordsForKeywordsLiveResponseInfo]':
 
         _param = self._google_ads_keywords_for_keywords_live_serialize(
             list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info=list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info,
@@ -3118,7 +3146,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_keywords_for_keywords_live_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_keywords_for_keywords_live_request_info: 'List[Optional[KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3224,10 +3252,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_post_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostResponseInfo
     @validate_call
     def google_ads_ad_traffic_by_keywords_task_post(
         self,
-        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info: List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3268,7 +3298,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_ad_traffic_by_keywords_task_post_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3281,7 +3311,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostResponseInfo]':
 
         _param = self._google_ads_ad_traffic_by_keywords_task_post_serialize(
             list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info=list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info,
@@ -3308,7 +3338,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_ad_traffic_by_keywords_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_task_post_request_info: 'List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3414,6 +3444,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_tasks_ready_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTasksReadyResponseInfo
     @validate_call
     def google_ads_ad_traffic_by_keywords_tasks_ready(
         self,
@@ -3466,7 +3497,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsTasksReadyResponseInfo]':
 
         _param = self._google_ads_ad_traffic_by_keywords_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -3569,6 +3600,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_task_get_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResponseInfo
     @validate_call
     def google_ads_ad_traffic_by_keywords_task_get(
         self,
@@ -3624,7 +3656,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResponseInfo]':
 
         _param = self._google_ads_ad_traffic_by_keywords_task_get_serialize(
             id=id,
@@ -3733,10 +3765,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_live_request_info import KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_ads_ad_traffic_by_keywords_live_response_info import KeywordsDataGoogleAdsAdTrafficByKeywordsLiveResponseInfo
     @validate_call
     def google_ads_ad_traffic_by_keywords_live(
         self,
-        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info: List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo]] = None,
+        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info: 'List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3777,7 +3811,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_ad_traffic_by_keywords_live_with_http_info(
         self,
-        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info: 'List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3790,7 +3824,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveResponseInfo]':
 
         _param = self._google_ads_ad_traffic_by_keywords_live_serialize(
             list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info=list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info,
@@ -3817,7 +3851,7 @@ class KeywordsDataApi:
     @validate_call
     def google_ads_ad_traffic_by_keywords_live_without_preload_content(
         self,
-        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_ads_ad_traffic_by_keywords_live_request_info: 'List[Optional[KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3923,6 +3957,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_locations_response_info import KeywordsDataGoogleTrendsLocationsResponseInfo
     @validate_call
     def keywords_data_google_trends_locations(
         self,
@@ -3975,7 +4010,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsLocationsResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsLocationsResponseInfo]':
 
         _param = self._keywords_data_google_trends_locations_serialize(
             _request_auth=_request_auth,
@@ -4078,6 +4113,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_locations_country_response_info import KeywordsDataGoogleTrendsLocationsCountryResponseInfo
     @validate_call
     def keywords_data_google_trends_locations_country(
         self,
@@ -4133,7 +4169,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsLocationsCountryResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsLocationsCountryResponseInfo]':
 
         _param = self._keywords_data_google_trends_locations_country_serialize(
             country=country,
@@ -4242,6 +4278,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_languages_response_info import KeywordsDataGoogleTrendsLanguagesResponseInfo
     @validate_call
     def keywords_data_google_trends_languages(
         self,
@@ -4294,7 +4331,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsLanguagesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsLanguagesResponseInfo]':
 
         _param = self._keywords_data_google_trends_languages_serialize(
             _request_auth=_request_auth,
@@ -4397,6 +4434,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_categories_response_info import KeywordsDataGoogleTrendsCategoriesResponseInfo
     @validate_call
     def google_trends_categories(
         self,
@@ -4449,7 +4487,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsCategoriesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsCategoriesResponseInfo]':
 
         _param = self._google_trends_categories_serialize(
             _request_auth=_request_auth,
@@ -4552,10 +4590,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_explore_task_post_request_info import KeywordsDataGoogleTrendsExploreTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_task_post_response_info import KeywordsDataGoogleTrendsExploreTaskPostResponseInfo
     @validate_call
     def google_trends_explore_task_post(
         self,
-        list_optional_keywords_data_google_trends_explore_task_post_request_info: List[Optional[KeywordsDataGoogleTrendsExploreTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_google_trends_explore_task_post_request_info: 'List[Optional[KeywordsDataGoogleTrendsExploreTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4596,7 +4636,7 @@ class KeywordsDataApi:
     @validate_call
     def google_trends_explore_task_post_with_http_info(
         self,
-        list_optional_keywords_data_google_trends_explore_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleTrendsExploreTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_trends_explore_task_post_request_info: 'List[Optional[KeywordsDataGoogleTrendsExploreTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4609,7 +4649,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsExploreTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsExploreTaskPostResponseInfo]':
 
         _param = self._google_trends_explore_task_post_serialize(
             list_optional_keywords_data_google_trends_explore_task_post_request_info=list_optional_keywords_data_google_trends_explore_task_post_request_info,
@@ -4636,7 +4676,7 @@ class KeywordsDataApi:
     @validate_call
     def google_trends_explore_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_google_trends_explore_task_post_request_info: Optional[List[List[Optional[KeywordsDataGoogleTrendsExploreTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_google_trends_explore_task_post_request_info: 'List[Optional[KeywordsDataGoogleTrendsExploreTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4742,6 +4782,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_explore_tasks_ready_response_info import KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo
     @validate_call
     def google_trends_explore_tasks_ready(
         self,
@@ -4794,7 +4835,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsExploreTasksReadyResponseInfo]':
 
         _param = self._google_trends_explore_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -4897,6 +4938,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_explore_task_get_response_info import KeywordsDataGoogleTrendsExploreTaskGetResponseInfo
     @validate_call
     def google_trends_explore_task_get(
         self,
@@ -4952,7 +4994,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsExploreTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsExploreTaskGetResponseInfo]':
 
         _param = self._google_trends_explore_task_get_serialize(
             id=id,
@@ -5061,10 +5103,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_google_trends_explore_live_request_info import KeywordsDataGoogleTrendsExploreLiveRequestInfo
+    from dataforseo_client.models.keywords_data_google_trends_explore_live_response_info import KeywordsDataGoogleTrendsExploreLiveResponseInfo
     @validate_call
     def google_trends_explore_live(
         self,
-        list_optional_keywords_data_google_trends_explore_live_request_info: List[Optional[KeywordsDataGoogleTrendsExploreLiveRequestInfo]] = None,
+        list_optional_keywords_data_google_trends_explore_live_request_info: 'List[Optional[KeywordsDataGoogleTrendsExploreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5105,7 +5149,7 @@ class KeywordsDataApi:
     @validate_call
     def google_trends_explore_live_with_http_info(
         self,
-        list_optional_keywords_data_google_trends_explore_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleTrendsExploreLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_trends_explore_live_request_info: 'List[Optional[KeywordsDataGoogleTrendsExploreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5118,7 +5162,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataGoogleTrendsExploreLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataGoogleTrendsExploreLiveResponseInfo]':
 
         _param = self._google_trends_explore_live_serialize(
             list_optional_keywords_data_google_trends_explore_live_request_info=list_optional_keywords_data_google_trends_explore_live_request_info,
@@ -5145,7 +5189,7 @@ class KeywordsDataApi:
     @validate_call
     def google_trends_explore_live_without_preload_content(
         self,
-        list_optional_keywords_data_google_trends_explore_live_request_info: Optional[List[List[Optional[KeywordsDataGoogleTrendsExploreLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_google_trends_explore_live_request_info: 'List[Optional[KeywordsDataGoogleTrendsExploreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5251,6 +5295,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_dataforseo_trends_locations_response_info import KeywordsDataDataforseoTrendsLocationsResponseInfo
     @validate_call
     def keywords_data_dataforseo_trends_locations(
         self,
@@ -5303,7 +5348,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataDataforseoTrendsLocationsResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataDataforseoTrendsLocationsResponseInfo]':
 
         _param = self._keywords_data_dataforseo_trends_locations_serialize(
             _request_auth=_request_auth,
@@ -5406,6 +5451,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_dataforseo_trends_locations_country_response_info import KeywordsDataDataforseoTrendsLocationsCountryResponseInfo
     @validate_call
     def keywords_data_dataforseo_trends_locations_country(
         self,
@@ -5461,7 +5507,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataDataforseoTrendsLocationsCountryResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataDataforseoTrendsLocationsCountryResponseInfo]':
 
         _param = self._keywords_data_dataforseo_trends_locations_country_serialize(
             country=country,
@@ -5570,10 +5616,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_dataforseo_trends_explore_live_request_info import KeywordsDataDataforseoTrendsExploreLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_explore_live_response_info import KeywordsDataDataforseoTrendsExploreLiveResponseInfo
     @validate_call
     def dataforseo_trends_explore_live(
         self,
-        list_optional_keywords_data_dataforseo_trends_explore_live_request_info: List[Optional[KeywordsDataDataforseoTrendsExploreLiveRequestInfo]] = None,
+        list_optional_keywords_data_dataforseo_trends_explore_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsExploreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5614,7 +5662,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_explore_live_with_http_info(
         self,
-        list_optional_keywords_data_dataforseo_trends_explore_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsExploreLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_explore_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsExploreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5627,7 +5675,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataDataforseoTrendsExploreLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataDataforseoTrendsExploreLiveResponseInfo]':
 
         _param = self._dataforseo_trends_explore_live_serialize(
             list_optional_keywords_data_dataforseo_trends_explore_live_request_info=list_optional_keywords_data_dataforseo_trends_explore_live_request_info,
@@ -5654,7 +5702,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_explore_live_without_preload_content(
         self,
-        list_optional_keywords_data_dataforseo_trends_explore_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsExploreLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_explore_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsExploreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5760,10 +5808,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_dataforseo_trends_subregion_interests_live_request_info import KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_subregion_interests_live_response_info import KeywordsDataDataforseoTrendsSubregionInterestsLiveResponseInfo
     @validate_call
     def dataforseo_trends_subregion_interests_live(
         self,
-        list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info: List[Optional[KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo]] = None,
+        list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5804,7 +5854,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_subregion_interests_live_with_http_info(
         self,
-        list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5817,7 +5867,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataDataforseoTrendsSubregionInterestsLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataDataforseoTrendsSubregionInterestsLiveResponseInfo]':
 
         _param = self._dataforseo_trends_subregion_interests_live_serialize(
             list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info=list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info,
@@ -5844,7 +5894,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_subregion_interests_live_without_preload_content(
         self,
-        list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_subregion_interests_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5950,10 +6000,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_dataforseo_trends_demography_live_request_info import KeywordsDataDataforseoTrendsDemographyLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_demography_live_response_info import KeywordsDataDataforseoTrendsDemographyLiveResponseInfo
     @validate_call
     def dataforseo_trends_demography_live(
         self,
-        list_optional_keywords_data_dataforseo_trends_demography_live_request_info: List[Optional[KeywordsDataDataforseoTrendsDemographyLiveRequestInfo]] = None,
+        list_optional_keywords_data_dataforseo_trends_demography_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsDemographyLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5994,7 +6046,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_demography_live_with_http_info(
         self,
-        list_optional_keywords_data_dataforseo_trends_demography_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsDemographyLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_demography_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsDemographyLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6007,7 +6059,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataDataforseoTrendsDemographyLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataDataforseoTrendsDemographyLiveResponseInfo]':
 
         _param = self._dataforseo_trends_demography_live_serialize(
             list_optional_keywords_data_dataforseo_trends_demography_live_request_info=list_optional_keywords_data_dataforseo_trends_demography_live_request_info,
@@ -6034,7 +6086,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_demography_live_without_preload_content(
         self,
-        list_optional_keywords_data_dataforseo_trends_demography_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsDemographyLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_demography_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsDemographyLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6140,10 +6192,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_dataforseo_trends_merged_data_live_request_info import KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo
+    from dataforseo_client.models.keywords_data_dataforseo_trends_merged_data_live_response_info import KeywordsDataDataforseoTrendsMergedDataLiveResponseInfo
     @validate_call
     def dataforseo_trends_merged_data_live(
         self,
-        list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info: List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo]] = None,
+        list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6184,7 +6238,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_merged_data_live_with_http_info(
         self,
-        list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6197,7 +6251,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataDataforseoTrendsMergedDataLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataDataforseoTrendsMergedDataLiveResponseInfo]':
 
         _param = self._dataforseo_trends_merged_data_live_serialize(
             list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info=list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info,
@@ -6224,7 +6278,7 @@ class KeywordsDataApi:
     @validate_call
     def dataforseo_trends_merged_data_live_without_preload_content(
         self,
-        list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info: Optional[List[List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_dataforseo_trends_merged_data_live_request_info: 'List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6330,6 +6384,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_locations_response_info import KeywordsDataBingLocationsResponseInfo
     @validate_call
     def keywords_data_bing_locations(
         self,
@@ -6382,7 +6437,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingLocationsResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingLocationsResponseInfo]':
 
         _param = self._keywords_data_bing_locations_serialize(
             _request_auth=_request_auth,
@@ -6485,6 +6540,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_languages_response_info import KeywordsDataBingLanguagesResponseInfo
     @validate_call
     def keywords_data_bing_languages(
         self,
@@ -6537,7 +6593,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingLanguagesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingLanguagesResponseInfo]':
 
         _param = self._keywords_data_bing_languages_serialize(
             _request_auth=_request_auth,
@@ -6640,10 +6696,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_task_post_request_info import KeywordsDataBingSearchVolumeTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_task_post_response_info import KeywordsDataBingSearchVolumeTaskPostResponseInfo
     @validate_call
     def bing_search_volume_task_post(
         self,
-        list_optional_keywords_data_bing_search_volume_task_post_request_info: List[Optional[KeywordsDataBingSearchVolumeTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_bing_search_volume_task_post_request_info: 'List[Optional[KeywordsDataBingSearchVolumeTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6684,7 +6742,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_task_post_with_http_info(
         self,
-        list_optional_keywords_data_bing_search_volume_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_task_post_request_info: 'List[Optional[KeywordsDataBingSearchVolumeTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6697,7 +6755,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeTaskPostResponseInfo]':
 
         _param = self._bing_search_volume_task_post_serialize(
             list_optional_keywords_data_bing_search_volume_task_post_request_info=list_optional_keywords_data_bing_search_volume_task_post_request_info,
@@ -6724,7 +6782,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_bing_search_volume_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_task_post_request_info: 'List[Optional[KeywordsDataBingSearchVolumeTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6830,6 +6888,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_tasks_ready_response_info import KeywordsDataBingSearchVolumeTasksReadyResponseInfo
     @validate_call
     def bing_search_volume_tasks_ready(
         self,
@@ -6882,7 +6941,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeTasksReadyResponseInfo]':
 
         _param = self._bing_search_volume_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -6985,6 +7044,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_task_get_response_info import KeywordsDataBingSearchVolumeTaskGetResponseInfo
     @validate_call
     def bing_search_volume_task_get(
         self,
@@ -7040,7 +7100,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeTaskGetResponseInfo]':
 
         _param = self._bing_search_volume_task_get_serialize(
             id=id,
@@ -7149,10 +7209,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_live_request_info import KeywordsDataBingSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_live_response_info import KeywordsDataBingSearchVolumeLiveResponseInfo
     @validate_call
     def bing_search_volume_live(
         self,
-        list_optional_keywords_data_bing_search_volume_live_request_info: List[Optional[KeywordsDataBingSearchVolumeLiveRequestInfo]] = None,
+        list_optional_keywords_data_bing_search_volume_live_request_info: 'List[Optional[KeywordsDataBingSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7193,7 +7255,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_live_with_http_info(
         self,
-        list_optional_keywords_data_bing_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_live_request_info: 'List[Optional[KeywordsDataBingSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7206,7 +7268,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeLiveResponseInfo]':
 
         _param = self._bing_search_volume_live_serialize(
             list_optional_keywords_data_bing_search_volume_live_request_info=list_optional_keywords_data_bing_search_volume_live_request_info,
@@ -7233,7 +7295,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_live_without_preload_content(
         self,
-        list_optional_keywords_data_bing_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_live_request_info: 'List[Optional[KeywordsDataBingSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7339,6 +7401,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_job_functions_response_info import KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo
     @validate_call
     def bing_audience_estimation_job_functions(
         self,
@@ -7391,7 +7454,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingAudienceEstimationJobFunctionsResponseInfo]':
 
         _param = self._bing_audience_estimation_job_functions_serialize(
             _request_auth=_request_auth,
@@ -7494,6 +7557,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_industries_response_info import KeywordsDataBingAudienceEstimationIndustriesResponseInfo
     @validate_call
     def bing_audience_estimation_industries(
         self,
@@ -7546,7 +7610,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingAudienceEstimationIndustriesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingAudienceEstimationIndustriesResponseInfo]':
 
         _param = self._bing_audience_estimation_industries_serialize(
             _request_auth=_request_auth,
@@ -7649,10 +7713,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_request_info import KeywordsDataBingAudienceEstimationTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_task_post_response_info import KeywordsDataBingAudienceEstimationTaskPostResponseInfo
     @validate_call
     def bing_audience_estimation_task_post(
         self,
-        list_optional_keywords_data_bing_audience_estimation_task_post_request_info: List[Optional[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_bing_audience_estimation_task_post_request_info: 'List[Optional[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7693,7 +7759,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_audience_estimation_task_post_with_http_info(
         self,
-        list_optional_keywords_data_bing_audience_estimation_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_audience_estimation_task_post_request_info: 'List[Optional[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7706,7 +7772,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingAudienceEstimationTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingAudienceEstimationTaskPostResponseInfo]':
 
         _param = self._bing_audience_estimation_task_post_serialize(
             list_optional_keywords_data_bing_audience_estimation_task_post_request_info=list_optional_keywords_data_bing_audience_estimation_task_post_request_info,
@@ -7733,7 +7799,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_audience_estimation_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_bing_audience_estimation_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_audience_estimation_task_post_request_info: 'List[Optional[KeywordsDataBingAudienceEstimationTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7839,6 +7905,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_tasks_ready_response_info import KeywordsDataBingAudienceEstimationTasksReadyResponseInfo
     @validate_call
     def bing_audience_estimation_tasks_ready(
         self,
@@ -7891,7 +7958,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingAudienceEstimationTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingAudienceEstimationTasksReadyResponseInfo]':
 
         _param = self._bing_audience_estimation_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -7994,6 +8061,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_task_get_response_info import KeywordsDataBingAudienceEstimationTaskGetResponseInfo
     @validate_call
     def bing_audience_estimation_task_get(
         self,
@@ -8049,7 +8117,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingAudienceEstimationTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingAudienceEstimationTaskGetResponseInfo]':
 
         _param = self._bing_audience_estimation_task_get_serialize(
             id=id,
@@ -8158,10 +8226,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_live_request_info import KeywordsDataBingAudienceEstimationLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_audience_estimation_live_response_info import KeywordsDataBingAudienceEstimationLiveResponseInfo
     @validate_call
     def bing_audience_estimation_live(
         self,
-        list_optional_keywords_data_bing_audience_estimation_live_request_info: List[Optional[KeywordsDataBingAudienceEstimationLiveRequestInfo]] = None,
+        list_optional_keywords_data_bing_audience_estimation_live_request_info: 'List[Optional[KeywordsDataBingAudienceEstimationLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8202,7 +8272,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_audience_estimation_live_with_http_info(
         self,
-        list_optional_keywords_data_bing_audience_estimation_live_request_info: Optional[List[List[Optional[KeywordsDataBingAudienceEstimationLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_audience_estimation_live_request_info: 'List[Optional[KeywordsDataBingAudienceEstimationLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8215,7 +8285,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingAudienceEstimationLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingAudienceEstimationLiveResponseInfo]':
 
         _param = self._bing_audience_estimation_live_serialize(
             list_optional_keywords_data_bing_audience_estimation_live_request_info=list_optional_keywords_data_bing_audience_estimation_live_request_info,
@@ -8242,7 +8312,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_audience_estimation_live_without_preload_content(
         self,
-        list_optional_keywords_data_bing_audience_estimation_live_request_info: Optional[List[List[Optional[KeywordsDataBingAudienceEstimationLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_audience_estimation_live_request_info: 'List[Optional[KeywordsDataBingAudienceEstimationLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8348,10 +8418,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_post_request_info import KeywordsDataBingKeywordsForSiteTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_post_response_info import KeywordsDataBingKeywordsForSiteTaskPostResponseInfo
     @validate_call
     def bing_keywords_for_site_task_post(
         self,
-        list_optional_keywords_data_bing_keywords_for_site_task_post_request_info: List[Optional[KeywordsDataBingKeywordsForSiteTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_bing_keywords_for_site_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordsForSiteTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8392,7 +8464,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_site_task_post_with_http_info(
         self,
-        list_optional_keywords_data_bing_keywords_for_site_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForSiteTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_site_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordsForSiteTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8405,7 +8477,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForSiteTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForSiteTaskPostResponseInfo]':
 
         _param = self._bing_keywords_for_site_task_post_serialize(
             list_optional_keywords_data_bing_keywords_for_site_task_post_request_info=list_optional_keywords_data_bing_keywords_for_site_task_post_request_info,
@@ -8432,7 +8504,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_site_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_bing_keywords_for_site_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForSiteTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_site_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordsForSiteTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8538,6 +8610,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_tasks_ready_response_info import KeywordsDataBingKeywordsForSiteTasksReadyResponseInfo
     @validate_call
     def bing_keywords_for_site_tasks_ready(
         self,
@@ -8590,7 +8663,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForSiteTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForSiteTasksReadyResponseInfo]':
 
         _param = self._bing_keywords_for_site_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -8693,6 +8766,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_task_get_response_info import KeywordsDataBingKeywordsForSiteTaskGetResponseInfo
     @validate_call
     def bing_keywords_for_site_task_get(
         self,
@@ -8748,7 +8822,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForSiteTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForSiteTaskGetResponseInfo]':
 
         _param = self._bing_keywords_for_site_task_get_serialize(
             id=id,
@@ -8857,10 +8931,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_live_request_info import KeywordsDataBingKeywordsForSiteLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_site_live_response_info import KeywordsDataBingKeywordsForSiteLiveResponseInfo
     @validate_call
     def bing_keywords_for_site_live(
         self,
-        list_optional_keywords_data_bing_keywords_for_site_live_request_info: List[Optional[KeywordsDataBingKeywordsForSiteLiveRequestInfo]] = None,
+        list_optional_keywords_data_bing_keywords_for_site_live_request_info: 'List[Optional[KeywordsDataBingKeywordsForSiteLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8901,7 +8977,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_site_live_with_http_info(
         self,
-        list_optional_keywords_data_bing_keywords_for_site_live_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForSiteLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_site_live_request_info: 'List[Optional[KeywordsDataBingKeywordsForSiteLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8914,7 +8990,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForSiteLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForSiteLiveResponseInfo]':
 
         _param = self._bing_keywords_for_site_live_serialize(
             list_optional_keywords_data_bing_keywords_for_site_live_request_info=list_optional_keywords_data_bing_keywords_for_site_live_request_info,
@@ -8941,7 +9017,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_site_live_without_preload_content(
         self,
-        list_optional_keywords_data_bing_keywords_for_site_live_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForSiteLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_site_live_request_info: 'List[Optional[KeywordsDataBingKeywordsForSiteLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9047,10 +9123,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_post_request_info import KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_post_response_info import KeywordsDataBingKeywordsForKeywordsTaskPostResponseInfo
     @validate_call
     def bing_keywords_for_keywords_task_post(
         self,
-        list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info: List[Optional[KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9091,7 +9169,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_keywords_task_post_with_http_info(
         self,
-        list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9104,7 +9182,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForKeywordsTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForKeywordsTaskPostResponseInfo]':
 
         _param = self._bing_keywords_for_keywords_task_post_serialize(
             list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info=list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info,
@@ -9131,7 +9209,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_keywords_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_keywords_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9237,6 +9315,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_tasks_ready_response_info import KeywordsDataBingKeywordsForKeywordsTasksReadyResponseInfo
     @validate_call
     def bing_keywords_for_keywords_tasks_ready(
         self,
@@ -9289,7 +9368,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForKeywordsTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForKeywordsTasksReadyResponseInfo]':
 
         _param = self._bing_keywords_for_keywords_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -9392,6 +9471,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_task_get_response_info import KeywordsDataBingKeywordsForKeywordsTaskGetResponseInfo
     @validate_call
     def bing_keywords_for_keywords_task_get(
         self,
@@ -9447,7 +9527,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForKeywordsTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForKeywordsTaskGetResponseInfo]':
 
         _param = self._bing_keywords_for_keywords_task_get_serialize(
             id=id,
@@ -9556,10 +9636,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_live_request_info import KeywordsDataBingKeywordsForKeywordsLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keywords_for_keywords_live_response_info import KeywordsDataBingKeywordsForKeywordsLiveResponseInfo
     @validate_call
     def bing_keywords_for_keywords_live(
         self,
-        list_optional_keywords_data_bing_keywords_for_keywords_live_request_info: List[Optional[KeywordsDataBingKeywordsForKeywordsLiveRequestInfo]] = None,
+        list_optional_keywords_data_bing_keywords_for_keywords_live_request_info: 'List[Optional[KeywordsDataBingKeywordsForKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9600,7 +9682,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_keywords_live_with_http_info(
         self,
-        list_optional_keywords_data_bing_keywords_for_keywords_live_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForKeywordsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_keywords_live_request_info: 'List[Optional[KeywordsDataBingKeywordsForKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9613,7 +9695,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordsForKeywordsLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordsForKeywordsLiveResponseInfo]':
 
         _param = self._bing_keywords_for_keywords_live_serialize(
             list_optional_keywords_data_bing_keywords_for_keywords_live_request_info=list_optional_keywords_data_bing_keywords_for_keywords_live_request_info,
@@ -9640,7 +9722,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keywords_for_keywords_live_without_preload_content(
         self,
-        list_optional_keywords_data_bing_keywords_for_keywords_live_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordsForKeywordsLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keywords_for_keywords_live_request_info: 'List[Optional[KeywordsDataBingKeywordsForKeywordsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9746,6 +9828,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_locations_and_languages_response_info import KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo
     @validate_call
     def keywords_data_bing_keyword_performance_locations_and_languages(
         self,
@@ -9798,7 +9881,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo]':
 
         _param = self._keywords_data_bing_keyword_performance_locations_and_languages_serialize(
             _request_auth=_request_auth,
@@ -9901,10 +9984,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_task_post_request_info import KeywordsDataBingKeywordPerformanceTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_task_post_response_info import KeywordsDataBingKeywordPerformanceTaskPostResponseInfo
     @validate_call
     def bing_keyword_performance_task_post(
         self,
-        list_optional_keywords_data_bing_keyword_performance_task_post_request_info: List[Optional[KeywordsDataBingKeywordPerformanceTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_bing_keyword_performance_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordPerformanceTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9945,7 +10030,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keyword_performance_task_post_with_http_info(
         self,
-        list_optional_keywords_data_bing_keyword_performance_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordPerformanceTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keyword_performance_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordPerformanceTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9958,7 +10043,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordPerformanceTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordPerformanceTaskPostResponseInfo]':
 
         _param = self._bing_keyword_performance_task_post_serialize(
             list_optional_keywords_data_bing_keyword_performance_task_post_request_info=list_optional_keywords_data_bing_keyword_performance_task_post_request_info,
@@ -9985,7 +10070,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keyword_performance_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_bing_keyword_performance_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordPerformanceTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keyword_performance_task_post_request_info: 'List[Optional[KeywordsDataBingKeywordPerformanceTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10091,6 +10176,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_tasks_ready_response_info import KeywordsDataBingKeywordPerformanceTasksReadyResponseInfo
     @validate_call
     def bing_keyword_performance_tasks_ready(
         self,
@@ -10143,7 +10229,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordPerformanceTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordPerformanceTasksReadyResponseInfo]':
 
         _param = self._bing_keyword_performance_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -10246,6 +10332,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_task_get_response_info import KeywordsDataBingKeywordPerformanceTaskGetResponseInfo
     @validate_call
     def bing_keyword_performance_task_get(
         self,
@@ -10301,7 +10388,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordPerformanceTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordPerformanceTaskGetResponseInfo]':
 
         _param = self._bing_keyword_performance_task_get_serialize(
             id=id,
@@ -10410,10 +10497,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_live_request_info import KeywordsDataBingKeywordPerformanceLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_keyword_performance_live_response_info import KeywordsDataBingKeywordPerformanceLiveResponseInfo
     @validate_call
     def bing_keyword_performance_live(
         self,
-        list_optional_keywords_data_bing_keyword_performance_live_request_info: List[Optional[KeywordsDataBingKeywordPerformanceLiveRequestInfo]] = None,
+        list_optional_keywords_data_bing_keyword_performance_live_request_info: 'List[Optional[KeywordsDataBingKeywordPerformanceLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10454,7 +10543,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keyword_performance_live_with_http_info(
         self,
-        list_optional_keywords_data_bing_keyword_performance_live_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordPerformanceLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keyword_performance_live_request_info: 'List[Optional[KeywordsDataBingKeywordPerformanceLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10467,7 +10556,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingKeywordPerformanceLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingKeywordPerformanceLiveResponseInfo]':
 
         _param = self._bing_keyword_performance_live_serialize(
             list_optional_keywords_data_bing_keyword_performance_live_request_info=list_optional_keywords_data_bing_keyword_performance_live_request_info,
@@ -10494,7 +10583,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_keyword_performance_live_without_preload_content(
         self,
-        list_optional_keywords_data_bing_keyword_performance_live_request_info: Optional[List[List[Optional[KeywordsDataBingKeywordPerformanceLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_keyword_performance_live_request_info: 'List[Optional[KeywordsDataBingKeywordPerformanceLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10600,6 +10689,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_locations_and_languages_response_info import KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo
     @validate_call
     def keywords_data_bing_search_volume_history_locations_and_languages(
         self,
@@ -10652,7 +10742,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo]':
 
         _param = self._keywords_data_bing_search_volume_history_locations_and_languages_serialize(
             _request_auth=_request_auth,
@@ -10755,10 +10845,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_request_info import KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_task_post_response_info import KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo
     @validate_call
     def bing_search_volume_history_task_post(
         self,
-        list_optional_keywords_data_bing_search_volume_history_task_post_request_info: List[Optional[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo]] = None,
+        list_optional_keywords_data_bing_search_volume_history_task_post_request_info: 'List[Optional[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10799,7 +10891,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_history_task_post_with_http_info(
         self,
-        list_optional_keywords_data_bing_search_volume_history_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_history_task_post_request_info: 'List[Optional[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10812,7 +10904,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeHistoryTaskPostResponseInfo]':
 
         _param = self._bing_search_volume_history_task_post_serialize(
             list_optional_keywords_data_bing_search_volume_history_task_post_request_info=list_optional_keywords_data_bing_search_volume_history_task_post_request_info,
@@ -10839,7 +10931,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_history_task_post_without_preload_content(
         self,
-        list_optional_keywords_data_bing_search_volume_history_task_post_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_history_task_post_request_info: 'List[Optional[KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10945,6 +11037,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_tasks_ready_response_info import KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo
     @validate_call
     def bing_search_volume_history_tasks_ready(
         self,
@@ -10997,7 +11090,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeHistoryTasksReadyResponseInfo]':
 
         _param = self._bing_search_volume_history_tasks_ready_serialize(
             _request_auth=_request_auth,
@@ -11100,6 +11193,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_task_get_response_info import KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo
     @validate_call
     def bing_search_volume_history_task_get(
         self,
@@ -11155,7 +11249,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeHistoryTaskGetResponseInfo]':
 
         _param = self._bing_search_volume_history_task_get_serialize(
             id=id,
@@ -11264,10 +11358,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_live_request_info import KeywordsDataBingSearchVolumeHistoryLiveRequestInfo
+    from dataforseo_client.models.keywords_data_bing_search_volume_history_live_response_info import KeywordsDataBingSearchVolumeHistoryLiveResponseInfo
     @validate_call
     def bing_search_volume_history_live(
         self,
-        list_optional_keywords_data_bing_search_volume_history_live_request_info: List[Optional[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo]] = None,
+        list_optional_keywords_data_bing_search_volume_history_live_request_info: 'List[Optional[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11308,7 +11404,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_history_live_with_http_info(
         self,
-        list_optional_keywords_data_bing_search_volume_history_live_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_history_live_request_info: 'List[Optional[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11321,7 +11417,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataBingSearchVolumeHistoryLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataBingSearchVolumeHistoryLiveResponseInfo]':
 
         _param = self._bing_search_volume_history_live_serialize(
             list_optional_keywords_data_bing_search_volume_history_live_request_info=list_optional_keywords_data_bing_search_volume_history_live_request_info,
@@ -11348,7 +11444,7 @@ class KeywordsDataApi:
     @validate_call
     def bing_search_volume_history_live_without_preload_content(
         self,
-        list_optional_keywords_data_bing_search_volume_history_live_request_info: Optional[List[List[Optional[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_bing_search_volume_history_live_request_info: 'List[Optional[KeywordsDataBingSearchVolumeHistoryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11454,6 +11550,7 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_clickstream_data_locations_and_languages_response_info import KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo
     @validate_call
     def keywords_data_clickstream_data_locations_and_languages(
         self,
@@ -11506,7 +11603,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo]':
 
         _param = self._keywords_data_clickstream_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
@@ -11609,10 +11706,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_request_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_dataforseo_search_volume_live_response_info import KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo
     @validate_call
     def clickstream_data_dataforseo_search_volume_live(
         self,
-        list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info: List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo]] = None,
+        list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11653,7 +11752,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_dataforseo_search_volume_live_with_http_info(
         self,
-        list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11666,7 +11765,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResponseInfo]':
 
         _param = self._clickstream_data_dataforseo_search_volume_live_serialize(
             list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info=list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info,
@@ -11693,7 +11792,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_dataforseo_search_volume_live_without_preload_content(
         self,
-        list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_clickstream_data_dataforseo_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11799,10 +11898,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_request_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_global_search_volume_live_response_info import KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo
     @validate_call
     def clickstream_data_global_search_volume_live(
         self,
-        list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info: List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]] = None,
+        list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11843,7 +11944,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_global_search_volume_live_with_http_info(
         self,
-        list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11856,7 +11957,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataClickstreamDataGlobalSearchVolumeLiveResponseInfo]':
 
         _param = self._clickstream_data_global_search_volume_live_serialize(
             list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info=list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info,
@@ -11883,7 +11984,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_global_search_volume_live_without_preload_content(
         self,
-        list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_clickstream_data_global_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11989,10 +12090,12 @@ class KeywordsDataApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_request_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.keywords_data_clickstream_data_bulk_search_volume_live_response_info import KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo
     @validate_call
     def clickstream_data_bulk_search_volume_live(
         self,
-        list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info: List[Optional[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]] = None,
+        list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12033,7 +12136,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_bulk_search_volume_live_with_http_info(
         self,
-        list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12046,7 +12149,7 @@ class KeywordsDataApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo]:
+    ) -> 'ApiResponse[KeywordsDataClickstreamDataBulkSearchVolumeLiveResponseInfo]':
 
         _param = self._clickstream_data_bulk_search_volume_live_serialize(
             list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info=list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info,
@@ -12073,7 +12176,7 @@ class KeywordsDataApi:
     @validate_call
     def clickstream_data_bulk_search_volume_live_without_preload_content(
         self,
-        list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info: Optional[List[List[Optional[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]]]] = None,
+        list_optional_keywords_data_clickstream_data_bulk_search_volume_live_request_info: 'List[Optional[KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

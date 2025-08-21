@@ -1,55 +1,56 @@
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
 
-from dataforseo_client.models.backlinks_id_list_request_info import BacklinksIdListRequestInfo
-from dataforseo_client.models.backlinks_id_list_response_info import BacklinksIdListResponseInfo
-from dataforseo_client.models.backlinks_errors_request_info import BacklinksErrorsRequestInfo
-from dataforseo_client.models.backlinks_errors_response_info import BacklinksErrorsResponseInfo
-from dataforseo_client.models.backlinks_available_filters_response_info import BacklinksAvailableFiltersResponseInfo
-from dataforseo_client.models.backlinks_index_response_info import BacklinksIndexResponseInfo
-from dataforseo_client.models.backlinks_summary_live_request_info import BacklinksSummaryLiveRequestInfo
-from dataforseo_client.models.backlinks_summary_live_response_info import BacklinksSummaryLiveResponseInfo
-from dataforseo_client.models.backlinks_history_live_request_info import BacklinksHistoryLiveRequestInfo
-from dataforseo_client.models.backlinks_history_live_response_info import BacklinksHistoryLiveResponseInfo
-from dataforseo_client.models.backlinks_backlinks_live_request_info import BacklinksBacklinksLiveRequestInfo
-from dataforseo_client.models.backlinks_backlinks_live_response_info import BacklinksBacklinksLiveResponseInfo
-from dataforseo_client.models.backlinks_anchors_live_request_info import BacklinksAnchorsLiveRequestInfo
-from dataforseo_client.models.backlinks_anchors_live_response_info import BacklinksAnchorsLiveResponseInfo
-from dataforseo_client.models.backlinks_domain_pages_live_request_info import BacklinksDomainPagesLiveRequestInfo
-from dataforseo_client.models.backlinks_domain_pages_live_response_info import BacklinksDomainPagesLiveResponseInfo
-from dataforseo_client.models.backlinks_domain_pages_summary_live_request_info import BacklinksDomainPagesSummaryLiveRequestInfo
-from dataforseo_client.models.backlinks_domain_pages_summary_live_response_info import BacklinksDomainPagesSummaryLiveResponseInfo
-from dataforseo_client.models.backlinks_referring_domains_live_request_info import BacklinksReferringDomainsLiveRequestInfo
-from dataforseo_client.models.backlinks_referring_domains_live_response_info import BacklinksReferringDomainsLiveResponseInfo
-from dataforseo_client.models.backlinks_referring_networks_live_request_info import BacklinksReferringNetworksLiveRequestInfo
-from dataforseo_client.models.backlinks_referring_networks_live_response_info import BacklinksReferringNetworksLiveResponseInfo
-from dataforseo_client.models.backlinks_competitors_live_request_info import BacklinksCompetitorsLiveRequestInfo
-from dataforseo_client.models.backlinks_competitors_live_response_info import BacklinksCompetitorsLiveResponseInfo
-from dataforseo_client.models.backlinks_domain_intersection_live_request_info import BacklinksDomainIntersectionLiveRequestInfo
-from dataforseo_client.models.backlinks_domain_intersection_live_response_info import BacklinksDomainIntersectionLiveResponseInfo
-from dataforseo_client.models.backlinks_page_intersection_live_request_info import BacklinksPageIntersectionLiveRequestInfo
-from dataforseo_client.models.backlinks_page_intersection_live_response_info import BacklinksPageIntersectionLiveResponseInfo
-from dataforseo_client.models.backlinks_timeseries_summary_live_request_info import BacklinksTimeseriesSummaryLiveRequestInfo
-from dataforseo_client.models.backlinks_timeseries_summary_live_response_info import BacklinksTimeseriesSummaryLiveResponseInfo
-from dataforseo_client.models.backlinks_timeseries_new_lost_summary_live_request_info import BacklinksTimeseriesNewLostSummaryLiveRequestInfo
-from dataforseo_client.models.backlinks_timeseries_new_lost_summary_live_response_info import BacklinksTimeseriesNewLostSummaryLiveResponseInfo
-from dataforseo_client.models.backlinks_bulk_ranks_live_request_info import BacklinksBulkRanksLiveRequestInfo
-from dataforseo_client.models.backlinks_bulk_ranks_live_response_info import BacklinksBulkRanksLiveResponseInfo
-from dataforseo_client.models.backlinks_bulk_backlinks_live_request_info import BacklinksBulkBacklinksLiveRequestInfo
-from dataforseo_client.models.backlinks_bulk_backlinks_live_response_info import BacklinksBulkBacklinksLiveResponseInfo
-from dataforseo_client.models.backlinks_bulk_spam_score_live_request_info import BacklinksBulkSpamScoreLiveRequestInfo
-from dataforseo_client.models.backlinks_bulk_spam_score_live_response_info import BacklinksBulkSpamScoreLiveResponseInfo
-from dataforseo_client.models.backlinks_bulk_referring_domains_live_request_info import BacklinksBulkReferringDomainsLiveRequestInfo
-from dataforseo_client.models.backlinks_bulk_referring_domains_live_response_info import BacklinksBulkReferringDomainsLiveResponseInfo
-from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_request_info import BacklinksBulkNewLostBacklinksLiveRequestInfo
-from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_response_info import BacklinksBulkNewLostBacklinksLiveResponseInfo
-from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_request_info import BacklinksBulkNewLostReferringDomainsLiveRequestInfo
-from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_response_info import BacklinksBulkNewLostReferringDomainsLiveResponseInfo
-from dataforseo_client.models.backlinks_bulk_pages_summary_live_request_info import BacklinksBulkPagesSummaryLiveRequestInfo
-from dataforseo_client.models.backlinks_bulk_pages_summary_live_response_info import BacklinksBulkPagesSummaryLiveResponseInfo
+if TYPE_CHECKING:
+    from dataforseo_client.models.backlinks_id_list_request_info import BacklinksIdListRequestInfo
+    from dataforseo_client.models.backlinks_id_list_response_info import BacklinksIdListResponseInfo
+    from dataforseo_client.models.backlinks_errors_request_info import BacklinksErrorsRequestInfo
+    from dataforseo_client.models.backlinks_errors_response_info import BacklinksErrorsResponseInfo
+    from dataforseo_client.models.backlinks_available_filters_response_info import BacklinksAvailableFiltersResponseInfo
+    from dataforseo_client.models.backlinks_index_response_info import BacklinksIndexResponseInfo
+    from dataforseo_client.models.backlinks_summary_live_request_info import BacklinksSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_summary_live_response_info import BacklinksSummaryLiveResponseInfo
+    from dataforseo_client.models.backlinks_history_live_request_info import BacklinksHistoryLiveRequestInfo
+    from dataforseo_client.models.backlinks_history_live_response_info import BacklinksHistoryLiveResponseInfo
+    from dataforseo_client.models.backlinks_backlinks_live_request_info import BacklinksBacklinksLiveRequestInfo
+    from dataforseo_client.models.backlinks_backlinks_live_response_info import BacklinksBacklinksLiveResponseInfo
+    from dataforseo_client.models.backlinks_anchors_live_request_info import BacklinksAnchorsLiveRequestInfo
+    from dataforseo_client.models.backlinks_anchors_live_response_info import BacklinksAnchorsLiveResponseInfo
+    from dataforseo_client.models.backlinks_domain_pages_live_request_info import BacklinksDomainPagesLiveRequestInfo
+    from dataforseo_client.models.backlinks_domain_pages_live_response_info import BacklinksDomainPagesLiveResponseInfo
+    from dataforseo_client.models.backlinks_domain_pages_summary_live_request_info import BacklinksDomainPagesSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_domain_pages_summary_live_response_info import BacklinksDomainPagesSummaryLiveResponseInfo
+    from dataforseo_client.models.backlinks_referring_domains_live_request_info import BacklinksReferringDomainsLiveRequestInfo
+    from dataforseo_client.models.backlinks_referring_domains_live_response_info import BacklinksReferringDomainsLiveResponseInfo
+    from dataforseo_client.models.backlinks_referring_networks_live_request_info import BacklinksReferringNetworksLiveRequestInfo
+    from dataforseo_client.models.backlinks_referring_networks_live_response_info import BacklinksReferringNetworksLiveResponseInfo
+    from dataforseo_client.models.backlinks_competitors_live_request_info import BacklinksCompetitorsLiveRequestInfo
+    from dataforseo_client.models.backlinks_competitors_live_response_info import BacklinksCompetitorsLiveResponseInfo
+    from dataforseo_client.models.backlinks_domain_intersection_live_request_info import BacklinksDomainIntersectionLiveRequestInfo
+    from dataforseo_client.models.backlinks_domain_intersection_live_response_info import BacklinksDomainIntersectionLiveResponseInfo
+    from dataforseo_client.models.backlinks_page_intersection_live_request_info import BacklinksPageIntersectionLiveRequestInfo
+    from dataforseo_client.models.backlinks_page_intersection_live_response_info import BacklinksPageIntersectionLiveResponseInfo
+    from dataforseo_client.models.backlinks_timeseries_summary_live_request_info import BacklinksTimeseriesSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_timeseries_summary_live_response_info import BacklinksTimeseriesSummaryLiveResponseInfo
+    from dataforseo_client.models.backlinks_timeseries_new_lost_summary_live_request_info import BacklinksTimeseriesNewLostSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_timeseries_new_lost_summary_live_response_info import BacklinksTimeseriesNewLostSummaryLiveResponseInfo
+    from dataforseo_client.models.backlinks_bulk_ranks_live_request_info import BacklinksBulkRanksLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_ranks_live_response_info import BacklinksBulkRanksLiveResponseInfo
+    from dataforseo_client.models.backlinks_bulk_backlinks_live_request_info import BacklinksBulkBacklinksLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_backlinks_live_response_info import BacklinksBulkBacklinksLiveResponseInfo
+    from dataforseo_client.models.backlinks_bulk_spam_score_live_request_info import BacklinksBulkSpamScoreLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_spam_score_live_response_info import BacklinksBulkSpamScoreLiveResponseInfo
+    from dataforseo_client.models.backlinks_bulk_referring_domains_live_request_info import BacklinksBulkReferringDomainsLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_referring_domains_live_response_info import BacklinksBulkReferringDomainsLiveResponseInfo
+    from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_request_info import BacklinksBulkNewLostBacklinksLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_response_info import BacklinksBulkNewLostBacklinksLiveResponseInfo
+    from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_request_info import BacklinksBulkNewLostReferringDomainsLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_response_info import BacklinksBulkNewLostReferringDomainsLiveResponseInfo
+    from dataforseo_client.models.backlinks_bulk_pages_summary_live_request_info import BacklinksBulkPagesSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_pages_summary_live_response_info import BacklinksBulkPagesSummaryLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -62,11 +63,14 @@ class BacklinksApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    
 
+    from dataforseo_client.models.backlinks_id_list_request_info import BacklinksIdListRequestInfo
+    from dataforseo_client.models.backlinks_id_list_response_info import BacklinksIdListResponseInfo
     @validate_call
     def backlinks_id_list(
         self,
-        list_optional_backlinks_id_list_request_info: List[Optional[BacklinksIdListRequestInfo]] = None,
+        list_optional_backlinks_id_list_request_info: 'List[Optional[BacklinksIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -107,7 +111,7 @@ class BacklinksApi:
     @validate_call
     def backlinks_id_list_with_http_info(
         self,
-        list_optional_backlinks_id_list_request_info: Optional[List[List[Optional[BacklinksIdListRequestInfo]]]] = None,
+        list_optional_backlinks_id_list_request_info: 'List[Optional[BacklinksIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -120,7 +124,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksIdListResponseInfo]:
+    ) -> 'ApiResponse[BacklinksIdListResponseInfo]':
 
         _param = self._backlinks_id_list_serialize(
             list_optional_backlinks_id_list_request_info=list_optional_backlinks_id_list_request_info,
@@ -147,7 +151,7 @@ class BacklinksApi:
     @validate_call
     def backlinks_id_list_without_preload_content(
         self,
-        list_optional_backlinks_id_list_request_info: Optional[List[List[Optional[BacklinksIdListRequestInfo]]]] = None,
+        list_optional_backlinks_id_list_request_info: 'List[Optional[BacklinksIdListRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -253,10 +257,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_errors_request_info import BacklinksErrorsRequestInfo
+    from dataforseo_client.models.backlinks_errors_response_info import BacklinksErrorsResponseInfo
     @validate_call
     def backlinks_errors(
         self,
-        list_optional_backlinks_errors_request_info: List[Optional[BacklinksErrorsRequestInfo]] = None,
+        list_optional_backlinks_errors_request_info: 'List[Optional[BacklinksErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -297,7 +303,7 @@ class BacklinksApi:
     @validate_call
     def backlinks_errors_with_http_info(
         self,
-        list_optional_backlinks_errors_request_info: Optional[List[List[Optional[BacklinksErrorsRequestInfo]]]] = None,
+        list_optional_backlinks_errors_request_info: 'List[Optional[BacklinksErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -310,7 +316,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksErrorsResponseInfo]:
+    ) -> 'ApiResponse[BacklinksErrorsResponseInfo]':
 
         _param = self._backlinks_errors_serialize(
             list_optional_backlinks_errors_request_info=list_optional_backlinks_errors_request_info,
@@ -337,7 +343,7 @@ class BacklinksApi:
     @validate_call
     def backlinks_errors_without_preload_content(
         self,
-        list_optional_backlinks_errors_request_info: Optional[List[List[Optional[BacklinksErrorsRequestInfo]]]] = None,
+        list_optional_backlinks_errors_request_info: 'List[Optional[BacklinksErrorsRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -443,6 +449,7 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_available_filters_response_info import BacklinksAvailableFiltersResponseInfo
     @validate_call
     def backlinks_available_filters(
         self,
@@ -495,7 +502,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksAvailableFiltersResponseInfo]:
+    ) -> 'ApiResponse[BacklinksAvailableFiltersResponseInfo]':
 
         _param = self._backlinks_available_filters_serialize(
             _request_auth=_request_auth,
@@ -598,6 +605,7 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_index_response_info import BacklinksIndexResponseInfo
     @validate_call
     def index(
         self,
@@ -650,7 +658,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksIndexResponseInfo]:
+    ) -> 'ApiResponse[BacklinksIndexResponseInfo]':
 
         _param = self._index_serialize(
             _request_auth=_request_auth,
@@ -753,10 +761,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_summary_live_request_info import BacklinksSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_summary_live_response_info import BacklinksSummaryLiveResponseInfo
     @validate_call
     def summary_live(
         self,
-        list_optional_backlinks_summary_live_request_info: List[Optional[BacklinksSummaryLiveRequestInfo]] = None,
+        list_optional_backlinks_summary_live_request_info: 'List[Optional[BacklinksSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -797,7 +807,7 @@ class BacklinksApi:
     @validate_call
     def summary_live_with_http_info(
         self,
-        list_optional_backlinks_summary_live_request_info: Optional[List[List[Optional[BacklinksSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_summary_live_request_info: 'List[Optional[BacklinksSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -810,7 +820,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksSummaryLiveResponseInfo]':
 
         _param = self._summary_live_serialize(
             list_optional_backlinks_summary_live_request_info=list_optional_backlinks_summary_live_request_info,
@@ -837,7 +847,7 @@ class BacklinksApi:
     @validate_call
     def summary_live_without_preload_content(
         self,
-        list_optional_backlinks_summary_live_request_info: Optional[List[List[Optional[BacklinksSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_summary_live_request_info: 'List[Optional[BacklinksSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -943,10 +953,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_history_live_request_info import BacklinksHistoryLiveRequestInfo
+    from dataforseo_client.models.backlinks_history_live_response_info import BacklinksHistoryLiveResponseInfo
     @validate_call
     def history_live(
         self,
-        list_optional_backlinks_history_live_request_info: List[Optional[BacklinksHistoryLiveRequestInfo]] = None,
+        list_optional_backlinks_history_live_request_info: 'List[Optional[BacklinksHistoryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -987,7 +999,7 @@ class BacklinksApi:
     @validate_call
     def history_live_with_http_info(
         self,
-        list_optional_backlinks_history_live_request_info: Optional[List[List[Optional[BacklinksHistoryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_history_live_request_info: 'List[Optional[BacklinksHistoryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1000,7 +1012,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksHistoryLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksHistoryLiveResponseInfo]':
 
         _param = self._history_live_serialize(
             list_optional_backlinks_history_live_request_info=list_optional_backlinks_history_live_request_info,
@@ -1027,7 +1039,7 @@ class BacklinksApi:
     @validate_call
     def history_live_without_preload_content(
         self,
-        list_optional_backlinks_history_live_request_info: Optional[List[List[Optional[BacklinksHistoryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_history_live_request_info: 'List[Optional[BacklinksHistoryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1133,10 +1145,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_backlinks_live_request_info import BacklinksBacklinksLiveRequestInfo
+    from dataforseo_client.models.backlinks_backlinks_live_response_info import BacklinksBacklinksLiveResponseInfo
     @validate_call
     def backlinks_live(
         self,
-        list_optional_backlinks_backlinks_live_request_info: List[Optional[BacklinksBacklinksLiveRequestInfo]] = None,
+        list_optional_backlinks_backlinks_live_request_info: 'List[Optional[BacklinksBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1177,7 +1191,7 @@ class BacklinksApi:
     @validate_call
     def backlinks_live_with_http_info(
         self,
-        list_optional_backlinks_backlinks_live_request_info: Optional[List[List[Optional[BacklinksBacklinksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_backlinks_live_request_info: 'List[Optional[BacklinksBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1190,7 +1204,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBacklinksLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBacklinksLiveResponseInfo]':
 
         _param = self._backlinks_live_serialize(
             list_optional_backlinks_backlinks_live_request_info=list_optional_backlinks_backlinks_live_request_info,
@@ -1217,7 +1231,7 @@ class BacklinksApi:
     @validate_call
     def backlinks_live_without_preload_content(
         self,
-        list_optional_backlinks_backlinks_live_request_info: Optional[List[List[Optional[BacklinksBacklinksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_backlinks_live_request_info: 'List[Optional[BacklinksBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1323,10 +1337,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_anchors_live_request_info import BacklinksAnchorsLiveRequestInfo
+    from dataforseo_client.models.backlinks_anchors_live_response_info import BacklinksAnchorsLiveResponseInfo
     @validate_call
     def anchors_live(
         self,
-        list_optional_backlinks_anchors_live_request_info: List[Optional[BacklinksAnchorsLiveRequestInfo]] = None,
+        list_optional_backlinks_anchors_live_request_info: 'List[Optional[BacklinksAnchorsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1367,7 +1383,7 @@ class BacklinksApi:
     @validate_call
     def anchors_live_with_http_info(
         self,
-        list_optional_backlinks_anchors_live_request_info: Optional[List[List[Optional[BacklinksAnchorsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_anchors_live_request_info: 'List[Optional[BacklinksAnchorsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1380,7 +1396,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksAnchorsLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksAnchorsLiveResponseInfo]':
 
         _param = self._anchors_live_serialize(
             list_optional_backlinks_anchors_live_request_info=list_optional_backlinks_anchors_live_request_info,
@@ -1407,7 +1423,7 @@ class BacklinksApi:
     @validate_call
     def anchors_live_without_preload_content(
         self,
-        list_optional_backlinks_anchors_live_request_info: Optional[List[List[Optional[BacklinksAnchorsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_anchors_live_request_info: 'List[Optional[BacklinksAnchorsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1513,10 +1529,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_domain_pages_live_request_info import BacklinksDomainPagesLiveRequestInfo
+    from dataforseo_client.models.backlinks_domain_pages_live_response_info import BacklinksDomainPagesLiveResponseInfo
     @validate_call
     def domain_pages_live(
         self,
-        list_optional_backlinks_domain_pages_live_request_info: List[Optional[BacklinksDomainPagesLiveRequestInfo]] = None,
+        list_optional_backlinks_domain_pages_live_request_info: 'List[Optional[BacklinksDomainPagesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1557,7 +1575,7 @@ class BacklinksApi:
     @validate_call
     def domain_pages_live_with_http_info(
         self,
-        list_optional_backlinks_domain_pages_live_request_info: Optional[List[List[Optional[BacklinksDomainPagesLiveRequestInfo]]]] = None,
+        list_optional_backlinks_domain_pages_live_request_info: 'List[Optional[BacklinksDomainPagesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1570,7 +1588,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksDomainPagesLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksDomainPagesLiveResponseInfo]':
 
         _param = self._domain_pages_live_serialize(
             list_optional_backlinks_domain_pages_live_request_info=list_optional_backlinks_domain_pages_live_request_info,
@@ -1597,7 +1615,7 @@ class BacklinksApi:
     @validate_call
     def domain_pages_live_without_preload_content(
         self,
-        list_optional_backlinks_domain_pages_live_request_info: Optional[List[List[Optional[BacklinksDomainPagesLiveRequestInfo]]]] = None,
+        list_optional_backlinks_domain_pages_live_request_info: 'List[Optional[BacklinksDomainPagesLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1703,10 +1721,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_domain_pages_summary_live_request_info import BacklinksDomainPagesSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_domain_pages_summary_live_response_info import BacklinksDomainPagesSummaryLiveResponseInfo
     @validate_call
     def domain_pages_summary_live(
         self,
-        list_optional_backlinks_domain_pages_summary_live_request_info: List[Optional[BacklinksDomainPagesSummaryLiveRequestInfo]] = None,
+        list_optional_backlinks_domain_pages_summary_live_request_info: 'List[Optional[BacklinksDomainPagesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1747,7 +1767,7 @@ class BacklinksApi:
     @validate_call
     def domain_pages_summary_live_with_http_info(
         self,
-        list_optional_backlinks_domain_pages_summary_live_request_info: Optional[List[List[Optional[BacklinksDomainPagesSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_domain_pages_summary_live_request_info: 'List[Optional[BacklinksDomainPagesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1760,7 +1780,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksDomainPagesSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksDomainPagesSummaryLiveResponseInfo]':
 
         _param = self._domain_pages_summary_live_serialize(
             list_optional_backlinks_domain_pages_summary_live_request_info=list_optional_backlinks_domain_pages_summary_live_request_info,
@@ -1787,7 +1807,7 @@ class BacklinksApi:
     @validate_call
     def domain_pages_summary_live_without_preload_content(
         self,
-        list_optional_backlinks_domain_pages_summary_live_request_info: Optional[List[List[Optional[BacklinksDomainPagesSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_domain_pages_summary_live_request_info: 'List[Optional[BacklinksDomainPagesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1893,10 +1913,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_referring_domains_live_request_info import BacklinksReferringDomainsLiveRequestInfo
+    from dataforseo_client.models.backlinks_referring_domains_live_response_info import BacklinksReferringDomainsLiveResponseInfo
     @validate_call
     def referring_domains_live(
         self,
-        list_optional_backlinks_referring_domains_live_request_info: List[Optional[BacklinksReferringDomainsLiveRequestInfo]] = None,
+        list_optional_backlinks_referring_domains_live_request_info: 'List[Optional[BacklinksReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1937,7 +1959,7 @@ class BacklinksApi:
     @validate_call
     def referring_domains_live_with_http_info(
         self,
-        list_optional_backlinks_referring_domains_live_request_info: Optional[List[List[Optional[BacklinksReferringDomainsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_referring_domains_live_request_info: 'List[Optional[BacklinksReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1950,7 +1972,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksReferringDomainsLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksReferringDomainsLiveResponseInfo]':
 
         _param = self._referring_domains_live_serialize(
             list_optional_backlinks_referring_domains_live_request_info=list_optional_backlinks_referring_domains_live_request_info,
@@ -1977,7 +1999,7 @@ class BacklinksApi:
     @validate_call
     def referring_domains_live_without_preload_content(
         self,
-        list_optional_backlinks_referring_domains_live_request_info: Optional[List[List[Optional[BacklinksReferringDomainsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_referring_domains_live_request_info: 'List[Optional[BacklinksReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2083,10 +2105,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_referring_networks_live_request_info import BacklinksReferringNetworksLiveRequestInfo
+    from dataforseo_client.models.backlinks_referring_networks_live_response_info import BacklinksReferringNetworksLiveResponseInfo
     @validate_call
     def referring_networks_live(
         self,
-        list_optional_backlinks_referring_networks_live_request_info: List[Optional[BacklinksReferringNetworksLiveRequestInfo]] = None,
+        list_optional_backlinks_referring_networks_live_request_info: 'List[Optional[BacklinksReferringNetworksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2127,7 +2151,7 @@ class BacklinksApi:
     @validate_call
     def referring_networks_live_with_http_info(
         self,
-        list_optional_backlinks_referring_networks_live_request_info: Optional[List[List[Optional[BacklinksReferringNetworksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_referring_networks_live_request_info: 'List[Optional[BacklinksReferringNetworksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2140,7 +2164,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksReferringNetworksLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksReferringNetworksLiveResponseInfo]':
 
         _param = self._referring_networks_live_serialize(
             list_optional_backlinks_referring_networks_live_request_info=list_optional_backlinks_referring_networks_live_request_info,
@@ -2167,7 +2191,7 @@ class BacklinksApi:
     @validate_call
     def referring_networks_live_without_preload_content(
         self,
-        list_optional_backlinks_referring_networks_live_request_info: Optional[List[List[Optional[BacklinksReferringNetworksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_referring_networks_live_request_info: 'List[Optional[BacklinksReferringNetworksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2273,10 +2297,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_competitors_live_request_info import BacklinksCompetitorsLiveRequestInfo
+    from dataforseo_client.models.backlinks_competitors_live_response_info import BacklinksCompetitorsLiveResponseInfo
     @validate_call
     def competitors_live(
         self,
-        list_optional_backlinks_competitors_live_request_info: List[Optional[BacklinksCompetitorsLiveRequestInfo]] = None,
+        list_optional_backlinks_competitors_live_request_info: 'List[Optional[BacklinksCompetitorsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2317,7 +2343,7 @@ class BacklinksApi:
     @validate_call
     def competitors_live_with_http_info(
         self,
-        list_optional_backlinks_competitors_live_request_info: Optional[List[List[Optional[BacklinksCompetitorsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_competitors_live_request_info: 'List[Optional[BacklinksCompetitorsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2330,7 +2356,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksCompetitorsLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksCompetitorsLiveResponseInfo]':
 
         _param = self._competitors_live_serialize(
             list_optional_backlinks_competitors_live_request_info=list_optional_backlinks_competitors_live_request_info,
@@ -2357,7 +2383,7 @@ class BacklinksApi:
     @validate_call
     def competitors_live_without_preload_content(
         self,
-        list_optional_backlinks_competitors_live_request_info: Optional[List[List[Optional[BacklinksCompetitorsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_competitors_live_request_info: 'List[Optional[BacklinksCompetitorsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2463,10 +2489,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_domain_intersection_live_request_info import BacklinksDomainIntersectionLiveRequestInfo
+    from dataforseo_client.models.backlinks_domain_intersection_live_response_info import BacklinksDomainIntersectionLiveResponseInfo
     @validate_call
     def domain_intersection_live(
         self,
-        list_optional_backlinks_domain_intersection_live_request_info: List[Optional[BacklinksDomainIntersectionLiveRequestInfo]] = None,
+        list_optional_backlinks_domain_intersection_live_request_info: 'List[Optional[BacklinksDomainIntersectionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2507,7 +2535,7 @@ class BacklinksApi:
     @validate_call
     def domain_intersection_live_with_http_info(
         self,
-        list_optional_backlinks_domain_intersection_live_request_info: Optional[List[List[Optional[BacklinksDomainIntersectionLiveRequestInfo]]]] = None,
+        list_optional_backlinks_domain_intersection_live_request_info: 'List[Optional[BacklinksDomainIntersectionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2520,7 +2548,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksDomainIntersectionLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksDomainIntersectionLiveResponseInfo]':
 
         _param = self._domain_intersection_live_serialize(
             list_optional_backlinks_domain_intersection_live_request_info=list_optional_backlinks_domain_intersection_live_request_info,
@@ -2547,7 +2575,7 @@ class BacklinksApi:
     @validate_call
     def domain_intersection_live_without_preload_content(
         self,
-        list_optional_backlinks_domain_intersection_live_request_info: Optional[List[List[Optional[BacklinksDomainIntersectionLiveRequestInfo]]]] = None,
+        list_optional_backlinks_domain_intersection_live_request_info: 'List[Optional[BacklinksDomainIntersectionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2653,10 +2681,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_page_intersection_live_request_info import BacklinksPageIntersectionLiveRequestInfo
+    from dataforseo_client.models.backlinks_page_intersection_live_response_info import BacklinksPageIntersectionLiveResponseInfo
     @validate_call
     def page_intersection_live(
         self,
-        list_optional_backlinks_page_intersection_live_request_info: List[Optional[BacklinksPageIntersectionLiveRequestInfo]] = None,
+        list_optional_backlinks_page_intersection_live_request_info: 'List[Optional[BacklinksPageIntersectionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2697,7 +2727,7 @@ class BacklinksApi:
     @validate_call
     def page_intersection_live_with_http_info(
         self,
-        list_optional_backlinks_page_intersection_live_request_info: Optional[List[List[Optional[BacklinksPageIntersectionLiveRequestInfo]]]] = None,
+        list_optional_backlinks_page_intersection_live_request_info: 'List[Optional[BacklinksPageIntersectionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2710,7 +2740,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksPageIntersectionLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksPageIntersectionLiveResponseInfo]':
 
         _param = self._page_intersection_live_serialize(
             list_optional_backlinks_page_intersection_live_request_info=list_optional_backlinks_page_intersection_live_request_info,
@@ -2737,7 +2767,7 @@ class BacklinksApi:
     @validate_call
     def page_intersection_live_without_preload_content(
         self,
-        list_optional_backlinks_page_intersection_live_request_info: Optional[List[List[Optional[BacklinksPageIntersectionLiveRequestInfo]]]] = None,
+        list_optional_backlinks_page_intersection_live_request_info: 'List[Optional[BacklinksPageIntersectionLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2843,10 +2873,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_timeseries_summary_live_request_info import BacklinksTimeseriesSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_timeseries_summary_live_response_info import BacklinksTimeseriesSummaryLiveResponseInfo
     @validate_call
     def timeseries_summary_live(
         self,
-        list_optional_backlinks_timeseries_summary_live_request_info: List[Optional[BacklinksTimeseriesSummaryLiveRequestInfo]] = None,
+        list_optional_backlinks_timeseries_summary_live_request_info: 'List[Optional[BacklinksTimeseriesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2887,7 +2919,7 @@ class BacklinksApi:
     @validate_call
     def timeseries_summary_live_with_http_info(
         self,
-        list_optional_backlinks_timeseries_summary_live_request_info: Optional[List[List[Optional[BacklinksTimeseriesSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_timeseries_summary_live_request_info: 'List[Optional[BacklinksTimeseriesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2900,7 +2932,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksTimeseriesSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksTimeseriesSummaryLiveResponseInfo]':
 
         _param = self._timeseries_summary_live_serialize(
             list_optional_backlinks_timeseries_summary_live_request_info=list_optional_backlinks_timeseries_summary_live_request_info,
@@ -2927,7 +2959,7 @@ class BacklinksApi:
     @validate_call
     def timeseries_summary_live_without_preload_content(
         self,
-        list_optional_backlinks_timeseries_summary_live_request_info: Optional[List[List[Optional[BacklinksTimeseriesSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_timeseries_summary_live_request_info: 'List[Optional[BacklinksTimeseriesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3033,10 +3065,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_timeseries_new_lost_summary_live_request_info import BacklinksTimeseriesNewLostSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_timeseries_new_lost_summary_live_response_info import BacklinksTimeseriesNewLostSummaryLiveResponseInfo
     @validate_call
     def timeseries_new_lost_summary_live(
         self,
-        list_optional_backlinks_timeseries_new_lost_summary_live_request_info: List[Optional[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]] = None,
+        list_optional_backlinks_timeseries_new_lost_summary_live_request_info: 'List[Optional[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3077,7 +3111,7 @@ class BacklinksApi:
     @validate_call
     def timeseries_new_lost_summary_live_with_http_info(
         self,
-        list_optional_backlinks_timeseries_new_lost_summary_live_request_info: Optional[List[List[Optional[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_timeseries_new_lost_summary_live_request_info: 'List[Optional[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3090,7 +3124,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksTimeseriesNewLostSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksTimeseriesNewLostSummaryLiveResponseInfo]':
 
         _param = self._timeseries_new_lost_summary_live_serialize(
             list_optional_backlinks_timeseries_new_lost_summary_live_request_info=list_optional_backlinks_timeseries_new_lost_summary_live_request_info,
@@ -3117,7 +3151,7 @@ class BacklinksApi:
     @validate_call
     def timeseries_new_lost_summary_live_without_preload_content(
         self,
-        list_optional_backlinks_timeseries_new_lost_summary_live_request_info: Optional[List[List[Optional[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_timeseries_new_lost_summary_live_request_info: 'List[Optional[BacklinksTimeseriesNewLostSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3223,10 +3257,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_bulk_ranks_live_request_info import BacklinksBulkRanksLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_ranks_live_response_info import BacklinksBulkRanksLiveResponseInfo
     @validate_call
     def bulk_ranks_live(
         self,
-        list_optional_backlinks_bulk_ranks_live_request_info: List[Optional[BacklinksBulkRanksLiveRequestInfo]] = None,
+        list_optional_backlinks_bulk_ranks_live_request_info: 'List[Optional[BacklinksBulkRanksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3267,7 +3303,7 @@ class BacklinksApi:
     @validate_call
     def bulk_ranks_live_with_http_info(
         self,
-        list_optional_backlinks_bulk_ranks_live_request_info: Optional[List[List[Optional[BacklinksBulkRanksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_ranks_live_request_info: 'List[Optional[BacklinksBulkRanksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3280,7 +3316,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBulkRanksLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBulkRanksLiveResponseInfo]':
 
         _param = self._bulk_ranks_live_serialize(
             list_optional_backlinks_bulk_ranks_live_request_info=list_optional_backlinks_bulk_ranks_live_request_info,
@@ -3307,7 +3343,7 @@ class BacklinksApi:
     @validate_call
     def bulk_ranks_live_without_preload_content(
         self,
-        list_optional_backlinks_bulk_ranks_live_request_info: Optional[List[List[Optional[BacklinksBulkRanksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_ranks_live_request_info: 'List[Optional[BacklinksBulkRanksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3413,10 +3449,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_bulk_backlinks_live_request_info import BacklinksBulkBacklinksLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_backlinks_live_response_info import BacklinksBulkBacklinksLiveResponseInfo
     @validate_call
     def bulk_backlinks_live(
         self,
-        list_optional_backlinks_bulk_backlinks_live_request_info: List[Optional[BacklinksBulkBacklinksLiveRequestInfo]] = None,
+        list_optional_backlinks_bulk_backlinks_live_request_info: 'List[Optional[BacklinksBulkBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3457,7 +3495,7 @@ class BacklinksApi:
     @validate_call
     def bulk_backlinks_live_with_http_info(
         self,
-        list_optional_backlinks_bulk_backlinks_live_request_info: Optional[List[List[Optional[BacklinksBulkBacklinksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_backlinks_live_request_info: 'List[Optional[BacklinksBulkBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3470,7 +3508,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBulkBacklinksLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBulkBacklinksLiveResponseInfo]':
 
         _param = self._bulk_backlinks_live_serialize(
             list_optional_backlinks_bulk_backlinks_live_request_info=list_optional_backlinks_bulk_backlinks_live_request_info,
@@ -3497,7 +3535,7 @@ class BacklinksApi:
     @validate_call
     def bulk_backlinks_live_without_preload_content(
         self,
-        list_optional_backlinks_bulk_backlinks_live_request_info: Optional[List[List[Optional[BacklinksBulkBacklinksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_backlinks_live_request_info: 'List[Optional[BacklinksBulkBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3603,10 +3641,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_bulk_spam_score_live_request_info import BacklinksBulkSpamScoreLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_spam_score_live_response_info import BacklinksBulkSpamScoreLiveResponseInfo
     @validate_call
     def bulk_spam_score_live(
         self,
-        list_optional_backlinks_bulk_spam_score_live_request_info: List[Optional[BacklinksBulkSpamScoreLiveRequestInfo]] = None,
+        list_optional_backlinks_bulk_spam_score_live_request_info: 'List[Optional[BacklinksBulkSpamScoreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3647,7 +3687,7 @@ class BacklinksApi:
     @validate_call
     def bulk_spam_score_live_with_http_info(
         self,
-        list_optional_backlinks_bulk_spam_score_live_request_info: Optional[List[List[Optional[BacklinksBulkSpamScoreLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_spam_score_live_request_info: 'List[Optional[BacklinksBulkSpamScoreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3660,7 +3700,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBulkSpamScoreLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBulkSpamScoreLiveResponseInfo]':
 
         _param = self._bulk_spam_score_live_serialize(
             list_optional_backlinks_bulk_spam_score_live_request_info=list_optional_backlinks_bulk_spam_score_live_request_info,
@@ -3687,7 +3727,7 @@ class BacklinksApi:
     @validate_call
     def bulk_spam_score_live_without_preload_content(
         self,
-        list_optional_backlinks_bulk_spam_score_live_request_info: Optional[List[List[Optional[BacklinksBulkSpamScoreLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_spam_score_live_request_info: 'List[Optional[BacklinksBulkSpamScoreLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3793,10 +3833,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_bulk_referring_domains_live_request_info import BacklinksBulkReferringDomainsLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_referring_domains_live_response_info import BacklinksBulkReferringDomainsLiveResponseInfo
     @validate_call
     def bulk_referring_domains_live(
         self,
-        list_optional_backlinks_bulk_referring_domains_live_request_info: List[Optional[BacklinksBulkReferringDomainsLiveRequestInfo]] = None,
+        list_optional_backlinks_bulk_referring_domains_live_request_info: 'List[Optional[BacklinksBulkReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3837,7 +3879,7 @@ class BacklinksApi:
     @validate_call
     def bulk_referring_domains_live_with_http_info(
         self,
-        list_optional_backlinks_bulk_referring_domains_live_request_info: Optional[List[List[Optional[BacklinksBulkReferringDomainsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_referring_domains_live_request_info: 'List[Optional[BacklinksBulkReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3850,7 +3892,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBulkReferringDomainsLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBulkReferringDomainsLiveResponseInfo]':
 
         _param = self._bulk_referring_domains_live_serialize(
             list_optional_backlinks_bulk_referring_domains_live_request_info=list_optional_backlinks_bulk_referring_domains_live_request_info,
@@ -3877,7 +3919,7 @@ class BacklinksApi:
     @validate_call
     def bulk_referring_domains_live_without_preload_content(
         self,
-        list_optional_backlinks_bulk_referring_domains_live_request_info: Optional[List[List[Optional[BacklinksBulkReferringDomainsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_referring_domains_live_request_info: 'List[Optional[BacklinksBulkReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3983,10 +4025,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_request_info import BacklinksBulkNewLostBacklinksLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_new_lost_backlinks_live_response_info import BacklinksBulkNewLostBacklinksLiveResponseInfo
     @validate_call
     def bulk_new_lost_backlinks_live(
         self,
-        list_optional_backlinks_bulk_new_lost_backlinks_live_request_info: List[Optional[BacklinksBulkNewLostBacklinksLiveRequestInfo]] = None,
+        list_optional_backlinks_bulk_new_lost_backlinks_live_request_info: 'List[Optional[BacklinksBulkNewLostBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4027,7 +4071,7 @@ class BacklinksApi:
     @validate_call
     def bulk_new_lost_backlinks_live_with_http_info(
         self,
-        list_optional_backlinks_bulk_new_lost_backlinks_live_request_info: Optional[List[List[Optional[BacklinksBulkNewLostBacklinksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_new_lost_backlinks_live_request_info: 'List[Optional[BacklinksBulkNewLostBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4040,7 +4084,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBulkNewLostBacklinksLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBulkNewLostBacklinksLiveResponseInfo]':
 
         _param = self._bulk_new_lost_backlinks_live_serialize(
             list_optional_backlinks_bulk_new_lost_backlinks_live_request_info=list_optional_backlinks_bulk_new_lost_backlinks_live_request_info,
@@ -4067,7 +4111,7 @@ class BacklinksApi:
     @validate_call
     def bulk_new_lost_backlinks_live_without_preload_content(
         self,
-        list_optional_backlinks_bulk_new_lost_backlinks_live_request_info: Optional[List[List[Optional[BacklinksBulkNewLostBacklinksLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_new_lost_backlinks_live_request_info: 'List[Optional[BacklinksBulkNewLostBacklinksLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4173,10 +4217,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_request_info import BacklinksBulkNewLostReferringDomainsLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_new_lost_referring_domains_live_response_info import BacklinksBulkNewLostReferringDomainsLiveResponseInfo
     @validate_call
     def bulk_new_lost_referring_domains_live(
         self,
-        list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info: List[Optional[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]] = None,
+        list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info: 'List[Optional[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4217,7 +4263,7 @@ class BacklinksApi:
     @validate_call
     def bulk_new_lost_referring_domains_live_with_http_info(
         self,
-        list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info: Optional[List[List[Optional[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info: 'List[Optional[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4230,7 +4276,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBulkNewLostReferringDomainsLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBulkNewLostReferringDomainsLiveResponseInfo]':
 
         _param = self._bulk_new_lost_referring_domains_live_serialize(
             list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info=list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info,
@@ -4257,7 +4303,7 @@ class BacklinksApi:
     @validate_call
     def bulk_new_lost_referring_domains_live_without_preload_content(
         self,
-        list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info: Optional[List[List[Optional[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_new_lost_referring_domains_live_request_info: 'List[Optional[BacklinksBulkNewLostReferringDomainsLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4363,10 +4409,12 @@ class BacklinksApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.backlinks_bulk_pages_summary_live_request_info import BacklinksBulkPagesSummaryLiveRequestInfo
+    from dataforseo_client.models.backlinks_bulk_pages_summary_live_response_info import BacklinksBulkPagesSummaryLiveResponseInfo
     @validate_call
     def bulk_pages_summary_live(
         self,
-        list_optional_backlinks_bulk_pages_summary_live_request_info: List[Optional[BacklinksBulkPagesSummaryLiveRequestInfo]] = None,
+        list_optional_backlinks_bulk_pages_summary_live_request_info: 'List[Optional[BacklinksBulkPagesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4407,7 +4455,7 @@ class BacklinksApi:
     @validate_call
     def bulk_pages_summary_live_with_http_info(
         self,
-        list_optional_backlinks_bulk_pages_summary_live_request_info: Optional[List[List[Optional[BacklinksBulkPagesSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_pages_summary_live_request_info: 'List[Optional[BacklinksBulkPagesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4420,7 +4468,7 @@ class BacklinksApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BacklinksBulkPagesSummaryLiveResponseInfo]:
+    ) -> 'ApiResponse[BacklinksBulkPagesSummaryLiveResponseInfo]':
 
         _param = self._bulk_pages_summary_live_serialize(
             list_optional_backlinks_bulk_pages_summary_live_request_info=list_optional_backlinks_bulk_pages_summary_live_request_info,
@@ -4447,7 +4495,7 @@ class BacklinksApi:
     @validate_call
     def bulk_pages_summary_live_without_preload_content(
         self,
-        list_optional_backlinks_bulk_pages_summary_live_request_info: Optional[List[List[Optional[BacklinksBulkPagesSummaryLiveRequestInfo]]]] = None,
+        list_optional_backlinks_bulk_pages_summary_live_request_info: 'List[Optional[BacklinksBulkPagesSummaryLiveRequestInfo]]' = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
