@@ -93,6 +93,4 @@ class BaseSerpApiPeopleAlsoAskAiOverviewElementItem(BaseModel):
         if object_type == 'SerpApiPeopleAlsoAskExpandedAiOverviewTableElementItem':
             return import_module("dataforseo_client.models.serp_api_people_also_ask_expanded_ai_overview_table_element_item").SerpApiPeopleAlsoAskExpandedAiOverviewTableElementItem.from_dict(obj)
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                         json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                         ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        return None

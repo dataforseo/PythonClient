@@ -119,6 +119,4 @@ class BaseMerchantAmazonSellersElementItem(BaseModel):
         if object_type == 'MerchantAmazonSellerItemSerpElementItem':
             return import_module("dataforseo_client.models.merchant_amazon_seller_item_serp_element_item").MerchantAmazonSellerItemSerpElementItem.from_dict(obj)
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                         json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                         ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        return None

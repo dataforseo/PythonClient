@@ -122,6 +122,4 @@ class BaseDataforseoLabsKnowledgeGraphElementItem(BaseModel):
         if object_type == 'DataforseoLabsKnowledgeGraphShoppingItemElementItem':
             return import_module("dataforseo_client.models.dataforseo_labs_knowledge_graph_shopping_item_element_item").DataforseoLabsKnowledgeGraphShoppingItemElementItem.from_dict(obj)
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                         json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                         ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        return None

@@ -265,6 +265,4 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         if object_type == 'DataLabsMathSolverSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_math_solver_serp_element_item").DataLabsMathSolverSerpElementItem.from_dict(obj)
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                         json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                         ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        return None

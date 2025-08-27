@@ -145,6 +145,4 @@ class BaseOnPageResourceItem(BaseModel):
         if object_type == 'OnPageStylesheetResourceItem':
             return import_module("dataforseo_client.models.on_page_stylesheet_resource_item").OnPageStylesheetResourceItem.from_dict(obj)
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                         json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                         ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        return None

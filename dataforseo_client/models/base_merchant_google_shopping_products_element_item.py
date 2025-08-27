@@ -102,6 +102,4 @@ class BaseMerchantGoogleShoppingProductsElementItem(BaseModel):
         if object_type == 'RelatedSearchesElementItem':
             return import_module("dataforseo_client.models.related_searches_element_item").RelatedSearchesElementItem.from_dict(obj)
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                         json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                         ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        return None

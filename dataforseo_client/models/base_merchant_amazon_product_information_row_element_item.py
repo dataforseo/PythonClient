@@ -80,6 +80,4 @@ class BaseMerchantAmazonProductInformationRowElementItem(BaseModel):
         if object_type == 'ProductInformationRowProductInformationTextRowElementItem':
             return import_module("dataforseo_client.models.product_information_row_product_information_text_row_element_item").ProductInformationRowProductInformationTextRowElementItem.from_dict(obj)
 
-        raise ValueError("BaseSerpElementItem failed to lookup discriminator value from " +
-                         json.dumps(obj) + ". Discriminator property name: " + cls.__discriminator_property_name +
-                         ", mapping: " + json.dumps(cls.__discriminator_value_class_map))
+        return None
