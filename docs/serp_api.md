@@ -212,8 +212,8 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.serp_id_list([SerpIdListRequestInfo(
-                datetime_from="2025-05-06 08:27:31 +00:00",
-                datetime_to="2025-07-06 08:27:31 +00:00",
+                datetime_from="2025-07-14 10:23:34 +00:00",
+                datetime_to="2025-09-14 10:23:34 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",

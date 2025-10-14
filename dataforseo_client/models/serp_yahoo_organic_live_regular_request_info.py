@@ -25,8 +25,9 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
     device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. can take the values:desktop, mobile. default value: desktop")
     os: Optional[StrictStr] = Field(default=None, description=r"device operating system. optional field. if you specify desktop in the device field, choose from the following values: windows, macos. default value: windows. if you specify mobile in the device field, choose from the following values: android, ios. default value: android")
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain. optional field. we choose the relevant search engine domain automatically according to the location and language you specify. however, you can set a custom search engine domain in this field. example:. au.search.yahoo.com, uk.search.yahoo.com, ca.search.yahoo.com, etc.")
-    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 700. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
+    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 6. max value: 700. Your account will be billed per each SERP;. Each Yahoo SERP can contain fewer than 10 results, so setting depth above the default value may result in additional charges ;. The cost can be calculated on the Pricing page.")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. default value: 1. max value: 100. Note: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
+    target: Optional[StrictStr] = Field(default=None, description=r"target domain, subdomain, or webpage to get results for. optional field. a domain or a subdomain should be specified without https:// and www.. note that the results of target-specific tasks will only include SERP elements that contain a url string;. you can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results;. examples:. example.com  – returns results for the website’s home page with URLs, such as https://example.com, or https://www.example.com/, or https://example.com/;. example.com* – returns results for the domain, including all its pages;. *example.com* – returns results for the entire domain, including all its pages and subdomains;. *example.com  – returns results for the home page regardless of the subdomain, such as https://en.example.com;. example.com/example-page  – returns results for the exact URL;. example.com/example-page*  – returns results for all domain’s URLs that start with the specified string")
     search_param: Optional[StrictStr] = Field(default=None, description=r"additional parameters of the search query. optional field. get the list of available parameters and additional details here")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
@@ -42,6 +43,7 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
         "se_domain", 
         "depth", 
         "max_crawl_pages", 
+        "target", 
         "search_param", 
         "tag", 
         ]
@@ -82,6 +84,7 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
         _dict['se_domain'] = self.se_domain
         _dict['depth'] = self.depth
         _dict['max_crawl_pages'] = self.max_crawl_pages
+        _dict['target'] = self.target
         _dict['search_param'] = self.search_param
         _dict['tag'] = self.tag
         return _dict
@@ -108,6 +111,7 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
             "se_domain": obj.get("se_domain"),
             "depth": obj.get("depth"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
+            "target": obj.get("target"),
             "search_param": obj.get("search_param"),
             "tag": obj.get("tag"),
         })

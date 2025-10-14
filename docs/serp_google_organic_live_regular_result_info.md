@@ -16,5 +16,6 @@
 **refinement_chips** | **RefinementChipsInfo** | search refinement chips |[optional]|
 **item_types** | **List[Optional[StrictStr]]** | types of search results found in SERP<br>contains types of all search results (items) found in the returned SERP<br>possible item types:<br>answer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, images, jobs, knowledge_graph, local_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, ai_overview<br>note that this array contains all types of search results found in the returned SERP;<br>however, this endpoint provides data for featured_snippet, organic and paid types only<br>to get all items (inlcuding SERP features and rich snippets) found in the returned SERP, please refer to the Google Organiс Advanced SERP endpoint |[optional]|
 **se_results_count** | **StrictInt** | total number of results in SERP |[optional]|
+**pages_count** | **StrictInt** | total search results pages retrieved<br>total number of retrieved SERPs in the result |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
 **items** | **List[Optional[BaseSerpApiElementItem]]** | items in SERP |[optional]|

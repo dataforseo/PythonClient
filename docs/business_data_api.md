@@ -85,8 +85,8 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_id_list([BusinessDataIdListRequestInfo(
-                datetime_from="2025-05-06 08:32:32 +00:00",
-                datetime_to="2025-07-06 08:32:32 +00:00",
+                datetime_from="2025-07-14 10:28:26 +00:00",
+                datetime_to="2025-09-14 10:28:26 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",

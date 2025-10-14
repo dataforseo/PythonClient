@@ -8,9 +8,8 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
-from dataforseo_client.models.table import Table
 from dataforseo_client.models.base_serp_api_bing_people_also_ask_expanded_element_item import BaseSerpApiBingPeopleAlsoAskExpandedElementItem
+from dataforseo_client.models.table import Table
 
 
 

@@ -16,7 +16,6 @@ class SerpGoogleAiModeLiveAdvancedRequestInfo(BaseModel):
     SerpGoogleAiModeLiveAdvancedRequestInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. required field. you can specify up to 700 characters in the keyword field. all %## will be decoded (plus character ‘+’ will be decoded to a space character). if you need to use the “%” character for your keyword, please specify it as “%25”;. if you need to use the “+” character for your keyword, please specify it as “%2B”. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
-    priority: Optional[StrictInt] = Field(default=None, description=r"task priority. optional field. can take the following values:. 1 – normal execution priority (set by default). 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the Pricing page.")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. required field if you don’t specify location_code or location_coordinate. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations. Note: check  Google Search Help for the list of countries where AI Mode is currently available")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. required field if you don’t specify location_name or location_coordinate. if you use this field, you don’t need to specify location_name or location_coordinate. you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations. Note: check  Google Search Help for the list of countries where AI Mode is currently available")
     location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a location. required field if you don’t specify location_name or location_code. if you use this field, you don’t need to specify location_name or location_code. location_coordinate parameter should be specified in the “latitude,longitude,zoom” format. if “zoom” is not specified, 9z will be applied as a default value. the maximum number of decimal digits for “latitude” and “longitude”: 7. the minimum value for “zoom”: 4z. the maximum value for “zoom”: 18z. example:. 52.6178549,-155.352142,18z")
@@ -31,7 +30,6 @@ class SerpGoogleAiModeLiveAdvancedRequestInfo(BaseModel):
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
         "keyword", 
-        "priority", 
         "location_name", 
         "location_code", 
         "location_coordinate", 
@@ -71,7 +69,6 @@ class SerpGoogleAiModeLiveAdvancedRequestInfo(BaseModel):
         _dict = {}
 
         _dict['keyword'] = self.keyword
-        _dict['priority'] = self.priority
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
         _dict['location_coordinate'] = self.location_coordinate
@@ -97,7 +94,6 @@ class SerpGoogleAiModeLiveAdvancedRequestInfo(BaseModel):
 
         _obj = cls.model_validate({
             "keyword": obj.get("keyword"),
-            "priority": obj.get("priority"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),
             "location_coordinate": obj.get("location_coordinate"),

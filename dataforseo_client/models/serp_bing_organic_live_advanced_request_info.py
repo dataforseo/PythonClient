@@ -17,7 +17,6 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
     """ # noqa: E501
     url: Optional[StrictStr] = Field(default=None, description=r"direct URL of the search query. optional field. you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method.. example:. https://www.bing.com/search?q=rank%20checker&count=50&first=1&setlang=en&cc=US&safesearch=Moderate&FORM=SEPAGE")
     keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. required field. you can specify up to 700 characters in the keyword field. all %## will be decoded (plus character ‘+’ will be decoded to a space character). if you need to use the “%” character for your keyword, please specify it as “%25”;. if you need to use the “+” character for your keyword, please specify it as “%2B”. if this field contains such parameters as ‘allinanchor:’, ‘allintext:’, ‘allintitle:’, ‘allinurl:’, ‘define:’, ‘filetype:’, ‘id:’, ‘inanchor:’, ‘info:’, ‘intext:’, ‘intitle:’, ‘inurl:’, ‘link:’, ‘related:’, ‘site:’ the charge per task will be multiplied by 5learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
-    priority: Optional[StrictInt] = Field(default=None, description=r"task priority. optional field. can take the following values:. 1 – normal execution priority (set by default). 2 – high execution priority. The price per task with high execution priority is multiplied by 1.5, and the task is executed within 1 minute")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. required field if you don’t specify location_code or location_coordinate. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/bing/locations. example:. London,England,United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. required field if you don’t specify location_name or location_coordinate. if you use this field, you don’t need to specify location_name or location_coordinate. you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/bing/locations. example:. 2840")
     location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a location. required field if you don’t specify location_name or location_code. if you use this field, you don’t need to specify location_name or location_code. location_coordinate parameter should be specified in the “latitude,longitude” format. the maximum number of decimal digits for “latitude” and “longitude”: 7. example:. 53.476225,-2.243572")
@@ -25,8 +24,9 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language code. required field if you don’t specify language_name. if you use this field, you don’t need to specify language_name. you can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/bing/languages. example:. en")
     device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. can take the values:desktop, mobile. default value: desktop")
     os: Optional[StrictStr] = Field(default=None, description=r"device operating system. optional field. if you specify desktop in the device field, choose from the following values: windows, macos. default value: windows. if you specify mobile in the device field, choose from the following values: android, ios. default value: android")
-    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 700. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
+    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 200. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. default value: 1. max value: 100. Note: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
+    target: Optional[StrictStr] = Field(default=None, description=r"target domain, subdomain, or webpage to get results for. optional field. a domain or a subdomain should be specified without https:// and www.. note that the results of target-specific tasks will only include SERP elements that contain a url string;. you can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results;. examples:. example.com  – returns results for the website’s home page with URLs, such as https://example.com, or https://www.example.com/, or https://example.com/;. example.com* – returns results for the domain, including all its pages;. *example.com* – returns results for the entire domain, including all its pages and subdomains;. *example.com  – returns results for the home page regardless of the subdomain, such as https://en.example.com;. example.com/example-page  – returns results for the exact URL;. example.com/example-page*  – returns results for all domain’s URLs that start with the specified string")
     calculate_rectangles: Optional[StrictBool] = Field(default=None, description=r"calculate pixel rankings for SERP elements in advanced results. optional field. pixel ranking refers to the distance between the result snippet and top left corner of the screen;. Visit Help Center to learn more>>. by default, the parameter is set to false. Note: you will be charged extra $0.002 for using this parameter")
     browser_screen_width: Optional[StrictInt] = Field(default=None, description=r"browser screen width. optional field. you can set a custom browser screen width to calculate pixel rankings for a particular device;. by default, the parameter is set to:. 1920 for desktop;. 360 for mobile on android;. 375 for mobile on iOS;. Note: to use this parameter, set calculate_rectangles to true")
     browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"browser screen height. optional field. you can set a custom browser screen height to calculate pixel rankings for a particular device;. by default, the parameter is set to:. 1080 for desktop;. 640 for mobile on android;. 812 for mobile on iOS;. Note: to use this parameter, set calculate_rectangles to true")
@@ -36,7 +36,6 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
     __properties: ClassVar[List[str]] = [
         "url", 
         "keyword", 
-        "priority", 
         "location_name", 
         "location_code", 
         "location_coordinate", 
@@ -46,6 +45,7 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
         "os", 
         "depth", 
         "max_crawl_pages", 
+        "target", 
         "calculate_rectangles", 
         "browser_screen_width", 
         "browser_screen_height", 
@@ -80,7 +80,6 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
 
         _dict['url'] = self.url
         _dict['keyword'] = self.keyword
-        _dict['priority'] = self.priority
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
         _dict['location_coordinate'] = self.location_coordinate
@@ -90,6 +89,7 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
         _dict['os'] = self.os
         _dict['depth'] = self.depth
         _dict['max_crawl_pages'] = self.max_crawl_pages
+        _dict['target'] = self.target
         _dict['calculate_rectangles'] = self.calculate_rectangles
         _dict['browser_screen_width'] = self.browser_screen_width
         _dict['browser_screen_height'] = self.browser_screen_height
@@ -110,7 +110,6 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
         _obj = cls.model_validate({
             "url": obj.get("url"),
             "keyword": obj.get("keyword"),
-            "priority": obj.get("priority"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),
             "location_coordinate": obj.get("location_coordinate"),
@@ -120,6 +119,7 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
             "os": obj.get("os"),
             "depth": obj.get("depth"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
+            "target": obj.get("target"),
             "calculate_rectangles": obj.get("calculate_rectangles"),
             "browser_screen_width": obj.get("browser_screen_width"),
             "browser_screen_height": obj.get("browser_screen_height"),

@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **user_prompt** | **StrictStr** | prompt for the AI model<br>required field<br>the question or task you want to send to the AI model;<br>you can specify up to 500 characters in the user_prompt field |[optional]|
-**model_name** | **StrictStr** | name of the AI model<br>required field<br>model_nameconsists of the actual model name and version name;<br>if the basic model name is specified, its latest version will be set by default;<br>you can receive the list of available LLM models by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_responses/models |[optional]|
+**model_name** | **StrictStr** | name of the AI model<br>required field<br>model_nameconsists of the actual model name and version name;<br>if the basic model name is specified, its latest version will be set by default;<br>you can receive the list of available LLM models by making a separate request to the following endpoint: https://api.dataforseo.com/v3/ai_optimization/perplexity/llm_responses/models |[optional]|
 **max_output_tokens** | **StrictInt** | maximum number of tokens in the AI response<br>optional field<br>minimum value: 1<br>maximum value: 2048<br>default value: 2048 |[optional]|
 **temperature** | **StrictFloat** | randomness of the AI response<br>optional field<br>higher values make output more diverse<br>lower values make output more focused<br>minimum value: 0<br>maximum value: 1.9<br>default value: 0.77 |[optional]|
 **top_p** | **StrictFloat** | diversity of the AI response<br>optional field<br>controls diversity of the response by limiting token selection<br>minimum value: 0<br>maximum value: 1<br>default value: 0.9 |[optional]|
