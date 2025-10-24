@@ -16,7 +16,7 @@ class JobsElement(BaseModel):
     JobsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     location: Optional[StrictStr] = Field(default=None, description=r"location for which the job vacancy is posted")
     author: Optional[StrictStr] = Field(default=None, description=r"author")
@@ -24,7 +24,7 @@ class JobsElement(BaseModel):
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     contract_type: Optional[StrictStr] = Field(default=None, description=r"contract type")
     salary: Optional[StrictStr] = Field(default=None, description=r"salary")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

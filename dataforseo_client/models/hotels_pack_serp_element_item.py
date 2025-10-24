@@ -25,10 +25,10 @@ class HotelsPackSerpElementItem(BaseSerpApiElementItem):
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
-    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
     date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of stay. in the format “year-month-date”. example:. 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of stay. in the format “year-month-date”. example:. 2019-11-17")
-    items: Optional[List[Optional[HotelsPackElement]]] = Field(default=None, description=r"contains arrays of specific images")
+    items: Optional[List[Optional[HotelsPackElement]]] = Field(default=None, description=r"contains arrays of elements available in the list")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

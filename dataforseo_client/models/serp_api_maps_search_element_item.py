@@ -12,7 +12,7 @@ from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.work_hours import WorkHours
 from dataforseo_client.models.local_justification_info import LocalJustificationInfo
 from dataforseo_client.models.base_serp_api_google_maps_element_item import BaseSerpApiGoogleMapsElementItem
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -26,7 +26,7 @@ class SerpApiMapsSearchElementItem(BaseSerpApiGoogleMapsElementItem):
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the distribution of ratings of the business entity. the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     original_title: Optional[StrictStr] = Field(default=None, description=r"original title of the element. original title not translated by Google")
     contact_url: Optional[StrictStr] = Field(default=None, description=r"URL of the preferred contact page")
@@ -166,7 +166,7 @@ class SerpApiMapsSearchElementItem(BaseSerpApiGoogleMapsElementItem):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution"),
             "original_title": obj.get("original_title"),
             "contact_url": obj.get("contact_url"),

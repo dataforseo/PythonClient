@@ -99,8 +99,8 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
-                datetime_from="2025-07-14 10:26:16 +00:00",
-                datetime_to="2025-09-14 10:26:16 +00:00",
+                datetime_from="2025-07-24 12:03:06 +00:00",
+                datetime_to="2025-09-24 12:03:06 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -608,7 +608,7 @@ try:
                     ],
                 location_code=2840,
                 search_partners=True,
-                date_from="2025-07-14",
+                date_from="2025-07-24",
         )]
         )
 except ApiException as e:
@@ -1569,8 +1569,8 @@ try:
                     ],
                 type="youtube",
                 category_code=3,
-                date_from="2025-07-14",
-                date_to="2025-09-14",
+                date_from="2025-07-24",
+                date_to="2025-09-24",
         )]
         )
 except ApiException as e:
@@ -1741,8 +1741,8 @@ try:
                 location_name="United States",
                 type="youtube",
                 category_code=3,
-                date_from="2025-07-14",
-                date_to="2025-09-14",
+                date_from="2025-07-24",
+                date_to="2025-09-24",
         )]
         )
 except ApiException as e:
@@ -1973,8 +1973,8 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-07-14",
-                date_to="2025-09-14",
+                date_from="2025-07-24",
+                date_to="2025-09-24",
         )]
         )
 except ApiException as e:
@@ -2037,8 +2037,8 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-07-14",
-                date_to="2025-09-14",
+                date_from="2025-07-24",
+                date_to="2025-09-24",
         )]
         )
 except ApiException as e:
@@ -2101,8 +2101,8 @@ try:
                     ],
                 location_name="United States",
                 type="web",
-                date_from="2025-07-14",
-                date_to="2025-09-14",
+                date_from="2025-07-24",
+                date_to="2025-09-24",
         )]
         )
 except ApiException as e:

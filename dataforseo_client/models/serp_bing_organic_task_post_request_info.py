@@ -32,6 +32,9 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
     browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"browser screen height. optional field. you can set a custom browser screen height to calculate pixel rankings for a particular device;. by default, the parameter is set to:. 1080 for desktop;. 640 for mobile on android;. 812 for mobile on iOS;. Note: to use this parameter, set calculate_rectangles to true")
     browser_screen_resolution_ratio: Optional[StrictInt] = Field(default=None, description=r"browser screen resolution ratio. optional field. you can set a custom browser screen resolution ratio to calculate pixel rankings for a particular device;. by default, the parameter is set to:. 1 for desktop;. 3 for mobile on android;. 3 for mobile on iOS;. Note: to use this parameter, set calculate_rectangles to true")
     search_param: Optional[StrictStr] = Field(default=None, description=r"additional parameters of the search query. optional field. get the list of available parameters and additional details here")
+    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. Your account will be billed per each SERP crawled through the specified targets;")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"return URL for sending task results. optional field. once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified. you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.. example:. http://your-server.com/postbackscript?id=$id. http://your-server.com/postbackscript?id=$id&tag=$tag. Note: special characters in postback_url will be urlencoded;. i.a., the # character will be encoded into %23. learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"postback_url datatype. required field if you specify postback_url. corresponds to the datatype that will be sent to your server. possible values:. regular, advanced, html")
@@ -54,6 +57,9 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
         "browser_screen_height", 
         "browser_screen_resolution_ratio", 
         "search_param", 
+        "stop_crawl_on_match", 
+        "match_value", 
+        "match_type", 
         "tag", 
         "postback_url", 
         "postback_data", 
@@ -101,6 +107,9 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
         _dict['browser_screen_height'] = self.browser_screen_height
         _dict['browser_screen_resolution_ratio'] = self.browser_screen_resolution_ratio
         _dict['search_param'] = self.search_param
+        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        _dict['match_value'] = self.match_value
+        _dict['match_type'] = self.match_type
         _dict['tag'] = self.tag
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
@@ -134,6 +143,9 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
             "browser_screen_height": obj.get("browser_screen_height"),
             "browser_screen_resolution_ratio": obj.get("browser_screen_resolution_ratio"),
             "search_param": obj.get("search_param"),
+            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "match_value": obj.get("match_value"),
+            "match_type": obj.get("match_type"),
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),

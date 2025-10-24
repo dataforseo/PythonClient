@@ -16,9 +16,9 @@ class AdLinkElement(BaseModel):
     AdLinkElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the element in SERP")
     description: Optional[StrictStr] = Field(default=None, description=r"link description")
-    url: Optional[StrictStr] = Field(default=None, description=r"reference page URL")
+    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
     ad_aclk: Optional[StrictStr] = Field(default=None, description=r"the identifier of the ad")
     __properties: ClassVar[List[str]] = [

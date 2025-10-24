@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.trustpilot_review_search import TrustpilotReviewSearch
 
 
@@ -25,7 +25,7 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the ‘reviews’ element on Trustpilot. the name of the business entity for which the reviews are collected")
     location: Optional[StrictStr] = Field(default=None, description=r"location of the business entity as specified on Trustpilot. address of the business entity for which the reviews are collected")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
-    rating: Optional[RatingElement] = Field(default=None, description=r"rating of the corresponding business entity. popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding business entity. popularity rate based on reviews and displayed in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of items in the results array. you can get more results by using the depth parameter when setting a task")
     items: Optional[List[Optional[TrustpilotReviewSearch]]] = Field(default=None, description=r"found reviews. you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = [
@@ -102,7 +102,7 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
             "title": obj.get("title"),
             "location": obj.get("location"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "items_count": obj.get("items_count"),
             "items": [TrustpilotReviewSearch.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })

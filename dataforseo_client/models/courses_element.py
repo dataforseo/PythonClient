@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -17,14 +17,14 @@ class CoursesElement(BaseModel):
     CoursesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
     source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     date: Optional[StrictStr] = Field(default=None, description=r"the date when the page source of the element was published")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -90,7 +90,7 @@ class CoursesElement(BaseModel):
             "description": obj.get("description"),
             "date": obj.get("date"),
             "image_url": obj.get("image_url"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

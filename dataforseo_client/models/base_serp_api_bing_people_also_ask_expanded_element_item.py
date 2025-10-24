@@ -25,7 +25,7 @@ class BaseSerpApiBingPeopleAlsoAskExpandedElementItem(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     featured_title: Optional[StrictStr] = Field(default=None, description=r"title")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain name of the reference")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element")

@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 
@@ -22,9 +22,9 @@ class RelatedResult(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     page: Optional[StrictInt] = Field(default=None, description=r"search results page number. indicates the number of the SERP page on which the element is located")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the link")
-    url: Optional[StrictStr] = Field(default=None, description=r"reference page URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
+    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
     cache_url: Optional[StrictStr] = Field(default=None, description=r"cached version of the page")
     related_search_url: Optional[StrictStr] = Field(default=None, description=r"URL to a similar search. URL to a new search for the same keyword(s) on related sites")
     breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb in SERP")
@@ -36,8 +36,8 @@ class RelatedResult(BaseModel):
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended after the result description in SERP")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the component. if there are none, equals null")
     amp_version: Optional[StrictBool] = Field(default=None, description=r"Accelerated Mobile Pages. indicates whether an item has the Accelerated Mobile Page (AMP) version")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price of booking a place for the specified dates of stay")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating. the popularity rate based on reviews and displayed in SERP")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     about_this_result: Optional[AboutThisResultElement] = Field(default=None, description=r"contains information from the ‘About this result’ panel. ‘About this result’ panel provides additional context about why Google returned this result for the given query;. this feature appears after clicking on the three dots next to most results")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the video was published or indexed. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
@@ -146,7 +146,7 @@ class RelatedResult(BaseModel):
             "extended_snippet": obj.get("extended_snippet"),
             "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "amp_version": obj.get("amp_version"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "highlighted": obj.get("highlighted"),
             "about_this_result": AboutThisResultElement.from_dict(obj["about_this_result"]) if obj.get("about_this_result") is not None else None,

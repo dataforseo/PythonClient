@@ -18,12 +18,12 @@ class SerpApiProductConsiderationsExpandedElementItem(BaseSerpApiProductConsider
     SerpApiProductConsiderationsExpandedElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
     featured_title: Optional[StrictStr] = Field(default=None, description=r"the title of the featured snippets source page")
     breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb of the Ad element in SERP")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the title")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"additional information for the video")
+    domain: Optional[StrictStr] = Field(default=None, description=r"source domain")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     related_searches: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"search queries related to the elment")
     about_this_result: Optional[AboutThisResultElement] = Field(default=None, description=r"contains information from the ‘About this result’ panel. ‘About this result’ panel provides additional context about why Google returned this result for the given query;. this feature appears after clicking on the three dots next to most results")

@@ -10,7 +10,7 @@
 **rank_absolute** | **StrictInt** | absolute rank among all the listed reviews<br>absolute position among all reviews on the list |[optional]|
 **position** | **StrictStr** | the alignment of the review in SERP<br>can take the following values: right |[optional]|
 **url** | **StrictStr** | the URL of the review |[optional]|
-**rating** | **RatingElement** | the rating score submitted by the reviewer |[optional]|
+**rating** | **RatingInfo** | the rating score submitted by the reviewer |[optional]|
 **verified** | **StrictBool** | indicates whether the review has the “Verified” mark |[optional]|
 **language** | **StrictStr** | the language of the review |[optional]|
 **timestamp** | **StrictStr** | date and time when a review was published<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|

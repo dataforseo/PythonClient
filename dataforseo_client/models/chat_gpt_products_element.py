@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -19,7 +19,7 @@ class ChatGptProductsElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     product_id: Optional[StrictStr] = Field(default=None, description=r"product id")
     title: Optional[StrictStr] = Field(default=None, description=r"source title")
-    rating: Optional[RatingElement] = Field(default=None, description=r"rating of the corresponding local businesses. popularity rate based on reviews as displayed in the results")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local businesses. popularity rate based on reviews as displayed in the results")
     price: Optional[StrictFloat] = Field(default=None, description=r"product price")
     currency: Optional[StrictStr] = Field(default=None, description=r"currency of the listed price. ISO code of the currency applied to the price")
     tag: Optional[StrictStr] = Field(default=None, description=r"tag text")
@@ -88,7 +88,7 @@ class ChatGptProductsElement(BaseModel):
             "type": obj.get("type"),
             "product_id": obj.get("product_id"),
             "title": obj.get("title"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "price": obj.get("price"),
             "currency": obj.get("currency"),
             "tag": obj.get("tag"),

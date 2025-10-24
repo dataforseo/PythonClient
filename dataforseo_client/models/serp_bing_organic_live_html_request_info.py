@@ -27,6 +27,9 @@ class SerpBingOrganicLiveHtmlRequestInfo(BaseModel):
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 200. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. default value: 1. max value: 100. Note: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
     search_param: Optional[StrictStr] = Field(default=None, description=r"additional parameters of the search query. optional field. get the list of available parameters and additional details here")
+    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. Your account will be billed per each SERP crawled through the specified targets;")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
         "url", 
@@ -41,6 +44,9 @@ class SerpBingOrganicLiveHtmlRequestInfo(BaseModel):
         "depth", 
         "max_crawl_pages", 
         "search_param", 
+        "stop_crawl_on_match", 
+        "match_value", 
+        "match_type", 
         "tag", 
         ]
 
@@ -80,6 +86,9 @@ class SerpBingOrganicLiveHtmlRequestInfo(BaseModel):
         _dict['depth'] = self.depth
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['search_param'] = self.search_param
+        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        _dict['match_value'] = self.match_value
+        _dict['match_type'] = self.match_type
         _dict['tag'] = self.tag
         return _dict
 
@@ -105,6 +114,9 @@ class SerpBingOrganicLiveHtmlRequestInfo(BaseModel):
             "depth": obj.get("depth"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "search_param": obj.get("search_param"),
+            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "match_value": obj.get("match_value"),
+            "match_type": obj.get("match_type"),
             "tag": obj.get("tag"),
         })
 

@@ -27,6 +27,9 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 200. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. default value: 1. max value: 100. Note: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
     target: Optional[StrictStr] = Field(default=None, description=r"target domain, subdomain, or webpage to get results for. optional field. a domain or a subdomain should be specified without https:// and www.. note that the results of target-specific tasks will only include SERP elements that contain a url string;. you can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results;. examples:. example.com  – returns results for the website’s home page with URLs, such as https://example.com, or https://www.example.com/, or https://example.com/;. example.com* – returns results for the domain, including all its pages;. *example.com* – returns results for the entire domain, including all its pages and subdomains;. *example.com  – returns results for the home page regardless of the subdomain, such as https://en.example.com;. example.com/example-page  – returns results for the exact URL;. example.com/example-page*  – returns results for all domain’s URLs that start with the specified string")
+    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. Your account will be billed per each SERP crawled through the specified targets;")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     calculate_rectangles: Optional[StrictBool] = Field(default=None, description=r"calculate pixel rankings for SERP elements in advanced results. optional field. pixel ranking refers to the distance between the result snippet and top left corner of the screen;. Visit Help Center to learn more>>. by default, the parameter is set to false. Note: you will be charged extra $0.002 for using this parameter")
     browser_screen_width: Optional[StrictInt] = Field(default=None, description=r"browser screen width. optional field. you can set a custom browser screen width to calculate pixel rankings for a particular device;. by default, the parameter is set to:. 1920 for desktop;. 360 for mobile on android;. 375 for mobile on iOS;. Note: to use this parameter, set calculate_rectangles to true")
     browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"browser screen height. optional field. you can set a custom browser screen height to calculate pixel rankings for a particular device;. by default, the parameter is set to:. 1080 for desktop;. 640 for mobile on android;. 812 for mobile on iOS;. Note: to use this parameter, set calculate_rectangles to true")
@@ -46,6 +49,9 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
         "depth", 
         "max_crawl_pages", 
         "target", 
+        "stop_crawl_on_match", 
+        "match_value", 
+        "match_type", 
         "calculate_rectangles", 
         "browser_screen_width", 
         "browser_screen_height", 
@@ -90,6 +96,9 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
         _dict['depth'] = self.depth
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['target'] = self.target
+        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        _dict['match_value'] = self.match_value
+        _dict['match_type'] = self.match_type
         _dict['calculate_rectangles'] = self.calculate_rectangles
         _dict['browser_screen_width'] = self.browser_screen_width
         _dict['browser_screen_height'] = self.browser_screen_height
@@ -120,6 +129,9 @@ class SerpBingOrganicLiveAdvancedRequestInfo(BaseModel):
             "depth": obj.get("depth"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "target": obj.get("target"),
+            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "match_value": obj.get("match_value"),
+            "match_type": obj.get("match_type"),
             "calculate_rectangles": obj.get("calculate_rectangles"),
             "browser_screen_width": obj.get("browser_screen_width"),
             "browser_screen_height": obj.get("browser_screen_height"),

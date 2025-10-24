@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.google_extended_reviews_search import GoogleExtendedReviewsSearch
 
 
@@ -26,7 +26,7 @@ class BusinessDataGoogleExtendedReviewsTaskGetResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the ‘reviews’ element in SERP. the name of the local establishment for which the reviews are collected")
     sub_title: Optional[StrictStr] = Field(default=None, description=r"subtitle of the ‘reviews’ element in SERP. additional information (e.g., address) on the ‘reviews’ element for which the reviews are collected")
-    rating: Optional[RatingElement] = Field(default=None, description=r"rating of the corresponding local establishment. popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local establishment. popularity rate based on reviews and displayed in SERP")
     feature_id: Optional[StrictStr] = Field(default=None, description=r"the unique identifier of the ‘reviews’ element in SERP. learn more about the identifier in this help center article")
     place_id: Optional[StrictStr] = Field(default=None, description=r"unique identifier of a business location assigned by Google. learn more about the identifier in this help center article")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment. learn more about the identifier in this help center article")
@@ -118,7 +118,7 @@ class BusinessDataGoogleExtendedReviewsTaskGetResultInfo(BaseModel):
             "datetime": obj.get("datetime"),
             "title": obj.get("title"),
             "sub_title": obj.get("sub_title"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "feature_id": obj.get("feature_id"),
             "place_id": obj.get("place_id"),
             "cid": obj.get("cid"),

@@ -17,7 +17,7 @@ class MultiCarouselElement(BaseModel):
     MultiCarouselElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     multi_carousel_snippets: Optional[List[Optional[SerpApiCarouselElement]]] = Field(default=None, description=r"multi_carousel_snippet results")
     __properties: ClassVar[List[str]] = [
         "type", 

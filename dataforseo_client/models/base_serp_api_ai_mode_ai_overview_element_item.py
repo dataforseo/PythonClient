@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_expanded_element_item import SerpApiAiModeAiOverviewExpandedElementItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_video_element_item import SerpApiAiModeAiOverviewVideoElementItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_table_element_item import SerpApiAiModeAiOverviewTableElementItem;
+    from dataforseo_client.models.serp_api_ai_mode_ai_overview_shopping_item import SerpApiAiModeAiOverviewShoppingItem;
 
 
 
@@ -35,6 +36,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
         'ai_overview_expanded_element': 'SerpApiAiModeAiOverviewExpandedElementItem',
         'ai_overview_video_element': 'SerpApiAiModeAiOverviewVideoElementItem',
         'ai_overview_table_element': 'SerpApiAiModeAiOverviewTableElementItem',
+        'ai_overview_shopping': 'SerpApiAiModeAiOverviewShoppingItem',
     }
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -79,7 +81,8 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
         SerpApiAiModeAiOverviewElementItem, 
         SerpApiAiModeAiOverviewExpandedElementItem, 
         SerpApiAiModeAiOverviewVideoElementItem, 
-        SerpApiAiModeAiOverviewTableElementItem
+        SerpApiAiModeAiOverviewTableElementItem, 
+        SerpApiAiModeAiOverviewShoppingItem
     ]]:
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -92,5 +95,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
             return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_video_element_item").SerpApiAiModeAiOverviewVideoElementItem.from_dict(obj)
         if object_type == 'SerpApiAiModeAiOverviewTableElementItem':
             return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_table_element_item").SerpApiAiModeAiOverviewTableElementItem.from_dict(obj)
+        if object_type == 'SerpApiAiModeAiOverviewShoppingItem':
+            return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_shopping_item").SerpApiAiModeAiOverviewShoppingItem.from_dict(obj)
 
         return None

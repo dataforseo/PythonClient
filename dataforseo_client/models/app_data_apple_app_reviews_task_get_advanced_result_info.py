@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.app_store_reviews_search import AppStoreReviewsSearch
 
 
@@ -25,7 +25,7 @@ class AppDataAppleAppReviewsTaskGetAdvancedResultInfo(BaseModel):
     check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
     datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the app. title of the application for which the reviews are collected")
-    rating: Optional[RatingElement] = Field(default=None, description=r"rating of the app. rating of the application for which the reviews are collected")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the app. rating of the application for which the reviews are collected")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews. in this case, the value will be null as App Store does not indicate the total number of app reviews")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews items in the results array. you can get more results by using the depth parameter when setting a task")
     items: Optional[List[Optional[AppStoreReviewsSearch]]] = Field(default=None, description=r"found reviews")
@@ -105,7 +105,7 @@ class AppDataAppleAppReviewsTaskGetAdvancedResultInfo(BaseModel):
             "check_url": obj.get("check_url"),
             "datetime": obj.get("datetime"),
             "title": obj.get("title"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "reviews_count": obj.get("reviews_count"),
             "items_count": obj.get("items_count"),
             "items": [AppStoreReviewsSearch.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,

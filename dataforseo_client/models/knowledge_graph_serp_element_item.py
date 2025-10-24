@@ -33,7 +33,7 @@ class KnowledgeGraphSerpElementItem(BaseSerpApiElementItem):
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     logo_url: Optional[StrictStr] = Field(default=None, description=r"URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment;. can be used with Google Reviews API to get a full list of reviews")
-    items: Optional[List[Optional[BaseSerpApiKnowledgeGraphElementItem]]] = Field(default=None, description=r"contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[Optional[BaseSerpApiKnowledgeGraphElementItem]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

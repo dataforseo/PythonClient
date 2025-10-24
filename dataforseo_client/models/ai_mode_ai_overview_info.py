@@ -25,7 +25,7 @@ class AiModeAiOverviewInfo(BaseModel):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. the text of the ai_overview formatted in the markdown markup language")
-    items: Optional[List[Optional[BaseSerpApiAiModeAiOverviewElementItem]]] = Field(default=None, description=r"items of the element")
+    items: Optional[List[Optional[BaseSerpApiAiModeAiOverviewElementItem]]] = Field(default=None, description=r"elements of search results found in SERP")
     references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     __properties: ClassVar[List[str]] = [

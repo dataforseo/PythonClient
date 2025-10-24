@@ -25,8 +25,8 @@ class BingTopStoriesSerpElementItem(BaseBingSerpApiElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the item")
-    items: Optional[List[Optional[TopStoriesElement]]] = Field(default=None, description=r"contains results featured in the ‘hotels_pack’ element of SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
+    items: Optional[List[Optional[TopStoriesElement]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

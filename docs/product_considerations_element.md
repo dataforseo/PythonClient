@@ -6,6 +6,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**title** | **StrictStr** | title of a given link element |[optional]|
+**title** | **StrictStr** | title of the row |[optional]|
 **consideration_category** | **StrictStr** | category of the consideration element<br>the category is indicated just above the title fo the consideration element |[optional]|
 **expanded_element** | **List[Optional[BaseSerpApiProductConsiderationExpandedElementItem]]** | expanded element |[optional]|

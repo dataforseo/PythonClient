@@ -8,8 +8,8 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.base_merchant_google_shopping_sellers_element_item import BaseMerchantGoogleShoppingSellersElementItem
 from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.base_merchant_google_shopping_sellers_element_item import BaseMerchantGoogleShoppingSellersElementItem
 
 
 
@@ -32,10 +32,10 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
     total_price: Optional[StrictFloat] = Field(default=None, description=r"product price including tax and shipping")
     currency: Optional[StrictStr] = Field(default=None, description=r"currency in the ISO format. example:. USD")
     seller_name: Optional[StrictStr] = Field(default=None, description=r"name of the seller. the name of the company that placed a corresponding product on Google Shopping")
-    rating: Optional[RatingElement] = Field(default=None, description=r"shop rating. the shop popularity rate based on product reviews")
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameter. using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
     price_multiplier: Optional[StrictInt] = Field(default=None, description=r"monthly price multiplier. indicates the number of months covered by the monthly payment for the product")
     displayed_payment_breakdown: Optional[StrictStr] = Field(default=None, description=r"installment details as displayed in the results. shows how the product price can be broken down into monthly payments, if applicable")
+    rating: Optional[RatingElement] = Field(default=None, description=r"shop rating. the shop popularity rate based on product reviews")
     product_condition: Optional[StrictStr] = Field(default=None, description=r"indicated condition of the product. possible values: Used, Refurbished, New, null")
     product_annotation: Optional[StrictStr] = Field(default=None, description=r"data from annotations and badges with special offers. if there is no annotation for this product, the value will be null. examples: LOW PRICE, SPECIAL OFFER, SALE, PRICE DROP")
     __properties: ClassVar[List[str]] = [
@@ -54,10 +54,10 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
         "total_price", 
         "currency", 
         "seller_name", 
-        "rating", 
         "shop_ad_aclk", 
         "price_multiplier", 
         "displayed_payment_breakdown", 
+        "rating", 
         "product_condition", 
         "product_annotation", 
         ]
@@ -101,10 +101,10 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
         _dict['total_price'] = self.total_price
         _dict['currency'] = self.currency
         _dict['seller_name'] = self.seller_name
-        _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['shop_ad_aclk'] = self.shop_ad_aclk
         _dict['price_multiplier'] = self.price_multiplier
         _dict['displayed_payment_breakdown'] = self.displayed_payment_breakdown
+        _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['product_condition'] = self.product_condition
         _dict['product_annotation'] = self.product_annotation
         return _dict
@@ -134,10 +134,10 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
             "total_price": obj.get("total_price"),
             "currency": obj.get("currency"),
             "seller_name": obj.get("seller_name"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "shop_ad_aclk": obj.get("shop_ad_aclk"),
             "price_multiplier": obj.get("price_multiplier"),
             "displayed_payment_breakdown": obj.get("displayed_payment_breakdown"),
+            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "product_condition": obj.get("product_condition"),
             "product_annotation": obj.get("product_annotation"),
         })

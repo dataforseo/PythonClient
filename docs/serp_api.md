@@ -21,6 +21,13 @@ All URIs are relative to *https://api.dataforseo.com*
 [**googleOrganicLiveRegular**](SerpApi.md#googleOrganicLiveRegular) | **POST**  /v3/serp/google/organic/live/regular  |
 [**googleOrganicLiveAdvanced**](SerpApi.md#googleOrganicLiveAdvanced) | **POST**  /v3/serp/google/organic/live/advanced  |
 [**googleOrganicLiveHtml**](SerpApi.md#googleOrganicLiveHtml) | **POST**  /v3/serp/google/organic/live/html  |
+[**googleLiteTaskPost**](SerpApi.md#googleLiteTaskPost) | **POST**  /v3/serp/google/lite/task_post  |
+[**googleLiteTasksReady**](SerpApi.md#googleLiteTasksReady) | **GET**  /v3/serp/google/lite/tasks_ready  |
+[**googleLiteTasksFixed**](SerpApi.md#googleLiteTasksFixed) | **GET**  /v3/serp/google/lite/tasks_fixed  |
+[**googleLiteTaskGetAdvanced**](SerpApi.md#googleLiteTaskGetAdvanced) | **GET**  /v3/serp/google/lite/task_get/advanced/{id}  |
+[**googleLiteTaskGetHtml**](SerpApi.md#googleLiteTaskGetHtml) | **GET**  /v3/serp/google/lite/task_get/html/{id}  |
+[**googleLiteLiveAdvanced**](SerpApi.md#googleLiteLiveAdvanced) | **POST**  /v3/serp/google/lite/live/advanced  |
+[**googleLiteLiveHtml**](SerpApi.md#googleLiteLiveHtml) | **POST**  /v3/serp/google/lite/live/html  |
 [**serpGoogleAiModeLanguages**](SerpApi.md#serpGoogleAiModeLanguages) | **GET**  /v3/serp/google/ai_mode/languages  |
 [**googleAiModeTaskPost**](SerpApi.md#googleAiModeTaskPost) | **POST**  /v3/serp/google/ai_mode/task_post  |
 [**googleAiModeTasksReady**](SerpApi.md#googleAiModeTasksReady) | **GET**  /v3/serp/google/ai_mode/tasks_ready  |
@@ -212,8 +219,8 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.serp_id_list([SerpIdListRequestInfo(
-                datetime_from="2025-07-14 10:23:34 +00:00",
-                datetime_to="2025-09-14 10:23:34 +00:00",
+                datetime_from="2025-07-24 11:58:51 +00:00",
+                datetime_to="2025-09-24 11:58:51 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -1129,6 +1136,397 @@ except ApiException as e:
 ### Return type
 
 [**SerpGoogleOrganicLiveHtmlResponseInfo**](SerpGoogleOrganicLiveHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleLiteTaskPost"></a>
+# **googleLiteTaskPost**
+> SerpGoogleLiteTaskPostResponseInfo googleLiteTaskPost()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_google_lite_task_post_request_info import List[Optional[SerpGoogleLiteTaskPostRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_lite_task_post([SerpGoogleLiteTaskPostRequestInfo(
+                keyword="albert einstein",
+                location_code=2840,
+                language_code="en",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpGoogleLiteTaskPostRequestInfo]]&gt;**](List[Optional[SerpGoogleLiteTaskPostRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpGoogleLiteTaskPostResponseInfo**](SerpGoogleLiteTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleLiteTasksReady"></a>
+# **googleLiteTasksReady**
+> SerpGoogleLiteTasksReadyResponseInfo googleLiteTasksReady()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_lite_tasks_ready()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleLiteTasksReadyResponseInfo**](SerpGoogleLiteTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleLiteTasksFixed"></a>
+# **googleLiteTasksFixed**
+> SerpGoogleLiteTasksFixedResponseInfo googleLiteTasksFixed()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_lite_tasks_fixed()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleLiteTasksFixedResponseInfo**](SerpGoogleLiteTasksFixedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleLiteTaskGetAdvanced"></a>
+# **googleLiteTaskGetAdvanced**
+> SerpGoogleLiteTaskGetAdvancedResponseInfo googleLiteTaskGetAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        id = "00000000-0000-0000-0000-000000000000"
+        response = serp_api.google_lite_task_get_advanced(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleLiteTaskGetAdvancedResponseInfo**](SerpGoogleLiteTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleLiteTaskGetHtml"></a>
+# **googleLiteTaskGetHtml**
+> SerpGoogleLiteTaskGetHtmlResponseInfo googleLiteTaskGetHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        id = "00000000-0000-0000-0000-000000000000"
+        response = serp_api.google_lite_task_get_html(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpGoogleLiteTaskGetHtmlResponseInfo**](SerpGoogleLiteTaskGetHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleLiteLiveAdvanced"></a>
+# **googleLiteLiveAdvanced**
+> SerpGoogleLiteLiveAdvancedResponseInfo googleLiteLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_google_lite_live_advanced_request_info import List[Optional[SerpGoogleLiteLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_lite_live_advanced([SerpGoogleLiteLiveAdvancedRequestInfo(
+                keyword="albert einstein",
+                location_code=2840,
+                language_code="en",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpGoogleLiteLiveAdvancedRequestInfo]]&gt;**](List[Optional[SerpGoogleLiteLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpGoogleLiteLiveAdvancedResponseInfo**](SerpGoogleLiteLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleLiteLiveHtml"></a>
+# **googleLiteLiveHtml**
+> SerpGoogleLiteLiveHtmlResponseInfo googleLiteLiveHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_google_lite_live_html_request_info import List[Optional[SerpGoogleLiteLiveHtmlRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.google_lite_live_html([SerpGoogleLiteLiveHtmlRequestInfo(
+                keyword="albert einstein",
+                location_code=2840,
+                language_code="en",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpGoogleLiteLiveHtmlRequestInfo]]&gt;**](List[Optional[SerpGoogleLiteLiveHtmlRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpGoogleLiteLiveHtmlResponseInfo**](SerpGoogleLiteLiveHtmlResponseInfo.md)
 
 ### Authorization
 

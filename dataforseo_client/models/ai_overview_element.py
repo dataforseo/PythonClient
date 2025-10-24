@@ -18,7 +18,7 @@ class AiOverviewElement(BaseModel):
     AiOverviewElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the carousel item")
     text: Optional[StrictStr] = Field(default=None, description=r"content within the item")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element")
     references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")

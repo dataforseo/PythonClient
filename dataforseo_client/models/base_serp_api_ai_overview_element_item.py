@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.serp_api_ai_overview_expanded_element_item import SerpApiAiOverviewExpandedElementItem;
     from dataforseo_client.models.serp_api_ai_overview_video_element_item import SerpApiAiOverviewVideoElementItem;
     from dataforseo_client.models.serp_api_ai_overview_table_element_item import SerpApiAiOverviewTableElementItem;
+    from dataforseo_client.models.serp_api_ai_overview_shopping_item import SerpApiAiOverviewShoppingItem;
 
 
 
@@ -35,6 +36,7 @@ class BaseSerpApiAiOverviewElementItem(BaseModel):
         'ai_overview_expanded_element': 'SerpApiAiOverviewExpandedElementItem',
         'ai_overview_video_element': 'SerpApiAiOverviewVideoElementItem',
         'ai_overview_table_element': 'SerpApiAiOverviewTableElementItem',
+        'ai_overview_shopping': 'SerpApiAiOverviewShoppingItem',
     }
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -79,7 +81,8 @@ class BaseSerpApiAiOverviewElementItem(BaseModel):
         SerpApiAiOverviewElementItem, 
         SerpApiAiOverviewExpandedElementItem, 
         SerpApiAiOverviewVideoElementItem, 
-        SerpApiAiOverviewTableElementItem
+        SerpApiAiOverviewTableElementItem, 
+        SerpApiAiOverviewShoppingItem
     ]]:
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -92,5 +95,7 @@ class BaseSerpApiAiOverviewElementItem(BaseModel):
             return import_module("dataforseo_client.models.serp_api_ai_overview_video_element_item").SerpApiAiOverviewVideoElementItem.from_dict(obj)
         if object_type == 'SerpApiAiOverviewTableElementItem':
             return import_module("dataforseo_client.models.serp_api_ai_overview_table_element_item").SerpApiAiOverviewTableElementItem.from_dict(obj)
+        if object_type == 'SerpApiAiOverviewShoppingItem':
+            return import_module("dataforseo_client.models.serp_api_ai_overview_shopping_item").SerpApiAiOverviewShoppingItem.from_dict(obj)
 
         return None

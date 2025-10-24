@@ -30,7 +30,7 @@ class SerpGoogleAiModeTaskGetAdvancedResultInfo(BaseModel):
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results in SERP. contains types of search results (items) found in SERP.. possible item types:. ai_overview")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[AiModeAiOverviewInfo]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[AiModeAiOverviewInfo]]] = Field(default=None, description=r"items present in the element")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 

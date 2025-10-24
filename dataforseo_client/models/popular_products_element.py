@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -18,12 +18,12 @@ class PopularProductsElement(BaseModel):
     PopularProductsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     seller: Optional[StrictStr] = Field(default=None, description=r"seller of the product")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -83,7 +83,7 @@ class PopularProductsElement(BaseModel):
             "seller": obj.get("seller"),
             "image_url": obj.get("image_url"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

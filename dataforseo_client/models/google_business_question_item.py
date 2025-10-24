@@ -28,7 +28,7 @@ class GoogleBusinessQuestionItem(BaseModel):
     original_question_text: Optional[StrictStr] = Field(default=None, description=r"original text of the question")
     time_ago: Optional[StrictStr] = Field(default=None, description=r"estimated time when the question was posted")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"exact time when the question was posted")
-    items: Optional[GoogleBusinessAnswerElement] = Field(default=None, description=r"array of items. items within google_business_question_item")
+    items: Optional[List[Optional[GoogleBusinessAnswerElement]]] = Field(default=None, description=r"array of items. items within google_business_question_item")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -81,7 +81,12 @@ class GoogleBusinessQuestionItem(BaseModel):
         _dict['original_question_text'] = self.original_question_text
         _dict['time_ago'] = self.time_ago
         _dict['timestamp'] = self.timestamp
-        _dict['items'] = self.items.to_dict() if self.items else None
+        items_items = []
+        if self.items:
+            for _item in self.items:
+                if _item:
+                    items_items.append(_item.to_dict())
+            _dict['items'] = items_items
         return _dict
 
 
@@ -106,7 +111,7 @@ class GoogleBusinessQuestionItem(BaseModel):
             "original_question_text": obj.get("original_question_text"),
             "time_ago": obj.get("time_ago"),
             "timestamp": obj.get("timestamp"),
-            "items": GoogleBusinessAnswerElement.from_dict(obj["items"]) if obj.get("items") is not None else None,
+            "items": [GoogleBusinessAnswerElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

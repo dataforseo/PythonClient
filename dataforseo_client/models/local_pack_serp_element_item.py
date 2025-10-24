@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
 from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
@@ -25,13 +25,13 @@ class LocalPackSerpElementItem(BaseSerpApiElementItem):
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
-    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
     description: Optional[StrictStr] = Field(default=None, description=r"link description")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain name of the reference")
     phone: Optional[StrictStr] = Field(default=None, description=r"phone number")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating. the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -115,7 +115,7 @@ class LocalPackSerpElementItem(BaseSerpApiElementItem):
             "phone": obj.get("phone"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "cid": obj.get("cid"),
         })
 

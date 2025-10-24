@@ -15,5 +15,5 @@
 **search_volume** | **StrictInt** | monthly average search volume rate |[optional]|
 **low_top_of_page_bid** | **StrictFloat** | minimum bid for the ad to be displayed at the top of the first page<br>indicates the value greater than about 20% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers);<br>the value may differ depending on the location specified in a POST request |[optional]|
 **high_top_of_page_bid** | **StrictFloat** | maximum bid for the ad to be displayed at the top of the first page<br>indicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers);<br>the value may differ depending on the location specified in a POST request |[optional]|
-**cpc** | **StrictFloat** | cost per click<br>indicates the amount paid for each click on the ad displayed for a given keyword |[optional]|
+**cpc** | **StrictInt** | cost per click<br>indicates the amount paid for each click on the ad displayed for a given keyword |[optional]|
 **monthly_searches** | **List[Optional[MonthlySearchesInfo]]** | monthly searches<br>represents the (approximate) number of searches on this keyword idea (as available for the past twelve months by default), targeted to the specified geographic locations;<br>if there is no data then the value is null |[optional]|

@@ -17,7 +17,7 @@ class FoundOnWebElement(BaseModel):
     FoundOnWebElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     subtitle: Optional[StrictStr] = Field(default=None, description=r"subtitle of the element")
     image: Optional[AiModeImagesElementInfo] = Field(default=None, description=r"image of the element")
     __properties: ClassVar[List[str]] = [

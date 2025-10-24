@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -18,14 +18,14 @@ class HotelsPackElement(BaseModel):
     HotelsPackElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     hotel_identifier: Optional[StrictStr] = Field(default=None, description=r"unique hotel identifier. unique hotel identifier assigned by Google;. example: 'CgoIjaeSlI6CnNpVEAE'")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "price", 
@@ -91,7 +91,7 @@ class HotelsPackElement(BaseModel):
             "domain": obj.get("domain"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

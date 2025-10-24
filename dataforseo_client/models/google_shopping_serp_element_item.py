@@ -44,6 +44,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
     shop_rating: Optional[RatingElement] = Field(default=None, description=r"shop rating. the popularity rate of the seller based on user reviews")
     product_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URLs to the images of the product. the first URL in the array is the featured image of the product")
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameter. using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
+    gid: Optional[StrictStr] = Field(default=None, description=r"global product identifier on Google Shopping. note that there is no full list of possible values as the gid is a dynamic value assigned by Google. if there are no values, you will get null. example:. 4702526954592161872. learn more about gid parameter in this help center guide")
     delivery_info: Optional[DeliveryInfo] = Field(default=None, description=r"delivery information. delivery information including free and fast delivery date ranges")
     stores_count_info: Optional[StoresCountInfo] = Field(default=None, description=r"stores count information. contains information about the number of stores that offer the same product")
     __properties: ClassVar[List[str]] = [
@@ -72,6 +73,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
         "shop_rating", 
         "product_images", 
         "shop_ad_aclk", 
+        "gid", 
         "delivery_info", 
         "stores_count_info", 
         ]
@@ -125,6 +127,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
         _dict['shop_rating'] = self.shop_rating.to_dict() if self.shop_rating else None
         _dict['product_images'] = self.product_images
         _dict['shop_ad_aclk'] = self.shop_ad_aclk
+        _dict['gid'] = self.gid
         _dict['delivery_info'] = self.delivery_info.to_dict() if self.delivery_info else None
         _dict['stores_count_info'] = self.stores_count_info.to_dict() if self.stores_count_info else None
         return _dict
@@ -164,6 +167,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
             "shop_rating": RatingElement.from_dict(obj["shop_rating"]) if obj.get("shop_rating") is not None else None,
             "product_images": obj.get("product_images"),
             "shop_ad_aclk": obj.get("shop_ad_aclk"),
+            "gid": obj.get("gid"),
             "delivery_info": DeliveryInfo.from_dict(obj["delivery_info"]) if obj.get("delivery_info") is not None else None,
             "stores_count_info": StoresCountInfo.from_dict(obj["stores_count_info"]) if obj.get("stores_count_info") is not None else None,
         })

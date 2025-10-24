@@ -9,6 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.shopping_specification import ShoppingSpecification
 from dataforseo_client.models.product_seller import ProductSeller
 from dataforseo_client.models.product_variation import ProductVariation
 
@@ -30,6 +31,9 @@ class ProductInfoElement(BaseModel):
     features: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"product features. contains snippets with the description of product features")
     rating: Optional[RatingElement] = Field(default=None, description=r"product rating . the popularity rate based on reviews")
     seller_reviews_count: Optional[StrictInt] = Field(default=None, description=r"number of seller reviews. number of reviews on the product seller’s account")
+    data_docid: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the SERP data element. note that there is no full list of possible values as the data_docid is a dynamic value assigned by Google. example:. 17363035694596624076")
+    gid: Optional[StrictStr] = Field(default=None, description=r"global product identifier on Google Shopping. note that there is no full list of possible values as the gid is a dynamic value assigned by Google. if there are no values, you will get null. example:. 4702526954592161872. learn more about gid in this help center guide")
+    specifications: Optional[List[Optional[ShoppingSpecification]]] = Field(default=None, description=r"product specifications. contains all product attributes and related data listed on the product specification page")
     sellers: Optional[List[Optional[ProductSeller]]] = Field(default=None, description=r"sellers of the product. number of reviews on the product seller’s account")
     variations: Optional[List[Optional[ProductVariation]]] = Field(default=None, description=r"variations of the product. contains brief information about different product variations")
     __properties: ClassVar[List[str]] = [
@@ -45,6 +49,9 @@ class ProductInfoElement(BaseModel):
         "features", 
         "rating", 
         "seller_reviews_count", 
+        "data_docid", 
+        "gid", 
+        "specifications", 
         "sellers", 
         "variations", 
         ]
@@ -85,6 +92,14 @@ class ProductInfoElement(BaseModel):
         _dict['features'] = self.features
         _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['seller_reviews_count'] = self.seller_reviews_count
+        _dict['data_docid'] = self.data_docid
+        _dict['gid'] = self.gid
+        specifications_items = []
+        if self.specifications:
+            for _item in self.specifications:
+                if _item:
+                    specifications_items.append(_item.to_dict())
+            _dict['specifications'] = specifications_items
         sellers_items = []
         if self.sellers:
             for _item in self.sellers:
@@ -121,6 +136,9 @@ class ProductInfoElement(BaseModel):
             "features": obj.get("features"),
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "seller_reviews_count": obj.get("seller_reviews_count"),
+            "data_docid": obj.get("data_docid"),
+            "gid": obj.get("gid"),
+            "specifications": [ShoppingSpecification.from_dict(_item) for _item in obj["specifications"]] if obj.get("specifications") is not None else None,
             "sellers": [ProductSeller.from_dict(_item) for _item in obj["sellers"]] if obj.get("sellers") is not None else None,
             "variations": [ProductVariation.from_dict(_item) for _item in obj["variations"]] if obj.get("variations") is not None else None,
         })

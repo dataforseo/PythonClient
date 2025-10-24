@@ -28,7 +28,7 @@ class AiOverviewSerpElementItem(BaseSerpApiElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
     asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is loaded asynchronically. if true, the ai_overview element is loaded asynchronically;. if false, the ai_overview element is loaded from cache;")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. the text of the ai_overview formatted in the markdown markup language")
-    items: Optional[List[Optional[BaseSerpApiAiOverviewElementItem]]] = Field(default=None, description=r"contains arrays of specific images")
+    items: Optional[List[Optional[BaseSerpApiAiOverviewElementItem]]] = Field(default=None, description=r"contains arrays of elements available in the list")
     references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -16,8 +16,8 @@ class RefineProductsElement(BaseModel):
     RefineProductsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
     keyword: Optional[StrictStr] = Field(default=None, description=r"keyword for the related refined search")
     refine_type: Optional[StrictStr] = Field(default=None, description=r"type of search refinement")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")

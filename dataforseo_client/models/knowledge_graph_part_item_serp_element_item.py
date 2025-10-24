@@ -25,7 +25,7 @@ class KnowledgeGraphPartItemSerpElementItem(BaseSerpApiElementItem):
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
-    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
     data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. action:listen_artist")
     text: Optional[StrictStr] = Field(default=None, description=r"reference text. text snippet from the page that was used to generate the ai_overview_element")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"website links featured in the element")

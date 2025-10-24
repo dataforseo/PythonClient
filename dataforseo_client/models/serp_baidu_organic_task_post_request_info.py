@@ -27,6 +27,9 @@ class SerpBaiduOrganicTaskPostRequestInfo(BaseModel):
     device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. can take the values: desktop, mobile, tablet. default value: desktop")
     os: Optional[StrictStr] = Field(default=None, description=r"device operating system. optional field. if you specify desktop in the device field, choose from the following values: windows, macos. default value: windows. if you specify mobile in the device field, choose from the following values: android, ios. default value: android. if you specify tablet in the device field, choose from the following values: android, ios. default value: android")
     get_website_url: Optional[StrictBool] = Field(default=None, description=r"include direct URL for each ranked result. optional field. if set to true, the returned results will contain direct URLs of the ranked websites. by default, the URLs in Baidu results are encoded by the search engine,. for example:. http://www.baidu.com/link?url=KQt6LSwU5OHnPtB8210R8flBP40grY6lTPxH_0UO7S2kgiZMTmw3ztV0hCo5c1kLdefault value: false. Note: if set to true, the charge per task will be multiplied by 10 as our system runs a separate request for each ranked website to return its direct URL")
+    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. Your account will be billed per each SERP crawled through the specified targets;")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"return URL for sending task results. optional field. once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified. you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.. example:. http://your-server.com/postbackscript?id=$id. http://your-server.com/postbackscript?id=$id&tag=$tag. Note: special characters in postback_url will be urlencoded;. i.a., the # character will be encoded into %23. learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"postback_url datatype. required field if you specify postback_url. corresponds to the datatype that will be sent to your server. possible values:. regular, html")
@@ -44,6 +47,9 @@ class SerpBaiduOrganicTaskPostRequestInfo(BaseModel):
         "device", 
         "os", 
         "get_website_url", 
+        "stop_crawl_on_match", 
+        "match_value", 
+        "match_type", 
         "tag", 
         "postback_url", 
         "postback_data", 
@@ -86,6 +92,9 @@ class SerpBaiduOrganicTaskPostRequestInfo(BaseModel):
         _dict['device'] = self.device
         _dict['os'] = self.os
         _dict['get_website_url'] = self.get_website_url
+        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        _dict['match_value'] = self.match_value
+        _dict['match_type'] = self.match_type
         _dict['tag'] = self.tag
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
@@ -114,6 +123,9 @@ class SerpBaiduOrganicTaskPostRequestInfo(BaseModel):
             "device": obj.get("device"),
             "os": obj.get("os"),
             "get_website_url": obj.get("get_website_url"),
+            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "match_value": obj.get("match_value"),
+            "match_type": obj.get("match_type"),
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),

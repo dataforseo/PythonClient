@@ -25,5 +25,6 @@
 **shop_rating** | **RatingElement** | shop rating<br>the popularity rate of the seller based on user reviews |[optional]|
 **product_images** | **List[Optional[StrictStr]]** | URLs to the images of the product<br>the first URL in the array is the featured image of the product |[optional]|
 **shop_ad_aclk** | **StrictStr** | unique ad click referral parameter<br>using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL |[optional]|
+**gid** | **StrictStr** | global product identifier on Google Shopping<br>note that there is no full list of possible values as the gid is a dynamic value assigned by Google<br>if there are no values, you will get null<br>example:<br>4702526954592161872<br>learn more about gid parameter in this help center guide |[optional]|
 **delivery_info** | **DeliveryInfo** | delivery information<br>delivery information including free and fast delivery date ranges |[optional]|
 **stores_count_info** | **StoresCountInfo** | stores count information<br>contains information about the number of stores that offer the same product |[optional]|

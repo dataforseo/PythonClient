@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -19,7 +19,7 @@ class OtherSitesReviewsInfo(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"review title. contains a name of the third-party site where review initially appeared")
     url: Optional[StrictStr] = Field(default=None, description=r"review url. URL to the a third-party site where review initially appeared")
     review_text: Optional[StrictStr] = Field(default=None, description=r"review text. text of the review")
-    rating: Optional[RatingElement] = Field(default=None, description=r"rating in the review. information about the rating enclosed in the review on a third-party site")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating in the review. information about the rating enclosed in the review on a third-party site")
     __properties: ClassVar[List[str]] = [
         "title", 
         "url", 
@@ -70,7 +70,7 @@ class OtherSitesReviewsInfo(BaseModel):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "review_text": obj.get("review_text"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

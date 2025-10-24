@@ -15,8 +15,9 @@ class MerchantGoogleProductInfoTaskPostRequestInfo(BaseModel):
     """
     MerchantGoogleProductInfoTaskPostRequestInfo
     """ # noqa: E501
-    product_id: Optional[StrictStr] = Field(default=None, description=r"unique product identifier on Google Shopping. required field if data_docid is not specified. you can get this value for a certain product by making a separate request to the Google Shopping Products endpoint. example:. 4485466949985702538. learn more about the parameter in this help center guide")
-    data_docid: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the SERP data element. required field if product_id is not specified. you can get this value for a certain element by making a separate request to the Google Shopping Products endpoint. example:. 13071766526042404278")
+    product_id: Optional[StrictStr] = Field(default=None, description=r"unique product identifier on Google Shopping. required field if data_docid or gid is not specified. you can get this value for a certain product by making a separate request to the Google Shopping Products endpoint. example:. 4485466949985702538. learn more about the parameter in this help center guide")
+    data_docid: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the SERP data element. required field if product_id or gid is not specified. you can get this value for a certain element by making a separate request to the Google Shopping Products endpoint. example:. 13071766526042404278")
+    gid: Optional[StrictStr] = Field(default=None, description=r"global product identifier on Google Shopping. required field if product_id or data_docid is not specified. you can get this value for a certain product by making a separate request to the Google Shopping Products endpoint. example:. 4702526954592161872. learn more about the parameter in this help center guide")
     priority: Optional[StrictInt] = Field(default=None, description=r"task priority. optional field. can take the following values:. 1 – normal execution priority (set by default). 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the Pricing page.")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location. required field if you don’t specify location_code or location_coordinate. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available Google Shopping locations with their location_name by making a separate request to the https://api.dataforseo.com/v3/merchant/google/locations. example:. London,England,United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code. required field if you don’t specify location_name or location_coordinate. if you use this field, you don’t need to specify location_name or location_coordinate. you can receive the list of available Google Shopping locations with their location_code by making a separate request to the https://api.dataforseo.com/v3/merchant/google/locations. example:. 2840")
@@ -31,6 +32,7 @@ class MerchantGoogleProductInfoTaskPostRequestInfo(BaseModel):
     __properties: ClassVar[List[str]] = [
         "product_id", 
         "data_docid", 
+        "gid", 
         "priority", 
         "location_name", 
         "location_code", 
@@ -70,6 +72,7 @@ class MerchantGoogleProductInfoTaskPostRequestInfo(BaseModel):
 
         _dict['product_id'] = self.product_id
         _dict['data_docid'] = self.data_docid
+        _dict['gid'] = self.gid
         _dict['priority'] = self.priority
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
@@ -95,6 +98,7 @@ class MerchantGoogleProductInfoTaskPostRequestInfo(BaseModel):
         _obj = cls.model_validate({
             "product_id": obj.get("product_id"),
             "data_docid": obj.get("data_docid"),
+            "gid": obj.get("gid"),
             "priority": obj.get("priority"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),

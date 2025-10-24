@@ -29,6 +29,9 @@ class SerpSeznamOrganicTaskPostRequestInfo(BaseModel):
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain. optional field. we choose the relevant search engine domain automatically. however, you can set a custom search engine domain in this field. example:. search.seznam.cz")
     search_param: Optional[StrictStr] = Field(default=None, description=r"additional parameters of the search query. optional field")
     calculate_rectangles: Optional[StrictBool] = Field(default=None, description=r"calculate pixel rankings for SERP elements in advanced results. optional field. pixel ranking refers to the distance between the result snippet and top left corner of the screen;. Visit Help Center to learn more>>. by default, the parameter is set to false. Note: if set to true, the charge per task will be multiplied by 2")
+    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. Your account will be billed per each SERP crawled through the specified targets;")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"return URL for sending task results. optional field. once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified. you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.. example:. http://your-server.com/postbackscript?id=$id. http://your-server.com/postbackscript?id=$id&tag=$tag. Note: special characters in postback_url will be urlencoded;. i.a., the # character will be encoded into %23. learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"postback_url datatype. required field if you specify postback_url. corresponds to the function you used for setting a task. possible values:. regular, advanced, html")
@@ -48,6 +51,9 @@ class SerpSeznamOrganicTaskPostRequestInfo(BaseModel):
         "se_domain", 
         "search_param", 
         "calculate_rectangles", 
+        "stop_crawl_on_match", 
+        "match_value", 
+        "match_type", 
         "tag", 
         "postback_url", 
         "postback_data", 
@@ -92,6 +98,9 @@ class SerpSeznamOrganicTaskPostRequestInfo(BaseModel):
         _dict['se_domain'] = self.se_domain
         _dict['search_param'] = self.search_param
         _dict['calculate_rectangles'] = self.calculate_rectangles
+        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        _dict['match_value'] = self.match_value
+        _dict['match_type'] = self.match_type
         _dict['tag'] = self.tag
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
@@ -122,6 +131,9 @@ class SerpSeznamOrganicTaskPostRequestInfo(BaseModel):
             "se_domain": obj.get("se_domain"),
             "search_param": obj.get("search_param"),
             "calculate_rectangles": obj.get("calculate_rectangles"),
+            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "match_value": obj.get("match_value"),
+            "match_type": obj.get("match_type"),
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),

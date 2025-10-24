@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.link_element import LinkElement
 from dataforseo_client.models.about_this_result_element import AboutThisResultElement
 from dataforseo_client.models.rank_changes import RankChanges
@@ -30,8 +30,8 @@ class DataLabsOrganicSerpElementItem(BaseDataforseoLabsApiElementItem):
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP of the Ad element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
-    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb in SERP")
+    url: Optional[StrictStr] = Field(default=None, description=r"result’s URL")
+    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb of the Ad element in SERP")
     website_name: Optional[StrictStr] = Field(default=None, description=r"")
     is_image: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains a video")
@@ -41,7 +41,7 @@ class DataLabsOrganicSerpElementItem(BaseDataforseoLabsApiElementItem):
     pre_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended before the result description in SERP")
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended after the result description in SERP")
     amp_version: Optional[StrictBool] = Field(default=None, description=r"Accelerated Mobile Pages. indicates whether an item has the Accelerated Mobile Page (AMP) version")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
     about_this_result: Optional[AboutThisResultElement] = Field(default=None, description=r"contains information from the ‘About this result’ panel. ‘About this result’ panel provides additional context about why Google returned this result for the given query;. this feature appears after clicking on the three dots next to most results")
@@ -178,7 +178,7 @@ class DataLabsOrganicSerpElementItem(BaseDataforseoLabsApiElementItem):
             "pre_snippet": obj.get("pre_snippet"),
             "extended_snippet": obj.get("extended_snippet"),
             "amp_version": obj.get("amp_version"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "highlighted": obj.get("highlighted"),
             "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
             "about_this_result": AboutThisResultElement.from_dict(obj["about_this_result"]) if obj.get("about_this_result") is not None else None,

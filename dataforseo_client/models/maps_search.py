@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.business_work_hours_info import BusinessWorkHoursInfo
 
@@ -24,7 +24,7 @@ class MapsSearch(BaseModel):
     domain: Optional[StrictStr] = Field(default=None, description=r"domain of the business entity")
     title: Optional[StrictStr] = Field(default=None, description=r"directory title. can take the following values: At this place, Directory")
     url: Optional[StrictStr] = Field(default=None, description=r"URL to view the menu")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the distribution of ratings of the business entity. the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     snippet: Optional[StrictStr] = Field(default=None, description=r"additional information about the business entity")
     address: Optional[StrictStr] = Field(default=None, description=r"address of the business entity")
@@ -147,7 +147,7 @@ class MapsSearch(BaseModel):
             "domain": obj.get("domain"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution"),
             "snippet": obj.get("snippet"),
             "address": obj.get("address"),

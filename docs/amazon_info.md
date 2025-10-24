@@ -22,6 +22,6 @@
 **special_offers** | **List[Optional[StrictStr]]** | special offer details<br>contains special offer details, including coupon and Subscribe & Save discounts |[optional]|
 **is_best_seller** | **StrictBool** | “Best Seller” label<br>if the value is true, the product is marked with the “Best Seller” label |[optional]|
 **is_amazon_choice** | **StrictBool** | “Amazon’s choice” label<br>if the value is true, the product is marked with the “Amazon’s choice” label |[optional]|
-**rating** | **RatingElement** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
+**rating** | **RatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
 **delivery_info** | **AmazonDeliveryInfo** | delivery information<br>delivery information including free and fast delivery date ranges |[optional]|
 **bought_past_month** | **StrictInt** |  |[optional]|

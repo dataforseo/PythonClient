@@ -17,11 +17,7 @@ All URIs are relative to *https://api.dataforseo.com*
 [**googleSellersTaskPost**](MerchantApi.md#googleSellersTaskPost) | **POST**  /v3/merchant/google/sellers/task_post  |
 [**googleSellersTasksReady**](MerchantApi.md#googleSellersTasksReady) | **GET**  /v3/merchant/google/sellers/tasks_ready  |
 [**googleSellersTaskGetAdvanced**](MerchantApi.md#googleSellersTaskGetAdvanced) | **GET**  /v3/merchant/google/sellers/task_get/advanced/{id}  |
-[**googleSellersTaskGetHtml**](MerchantApi.md#googleSellersTaskGetHtml) | **GET**  /v3/merchant/google/sellers/task_get/html/{id}  |
-[**googleProductSpecTaskPost**](MerchantApi.md#googleProductSpecTaskPost) | **POST**  /v3/merchant/google/product_spec/task_post  |
-[**googleProductSpecTasksReady**](MerchantApi.md#googleProductSpecTasksReady) | **GET**  /v3/merchant/google/product_spec/tasks_ready  |
 [**googleProductSpecTaskGetAdvanced**](MerchantApi.md#googleProductSpecTaskGetAdvanced) | **GET**  /v3/merchant/google/product_spec/task_get/advanced/{id}  |
-[**googleProductSpecTaskGetHtml**](MerchantApi.md#googleProductSpecTaskGetHtml) | **GET**  /v3/merchant/google/product_spec/task_get/html/{id}  |
 [**googleProductInfoTaskPost**](MerchantApi.md#googleProductInfoTaskPost) | **POST**  /v3/merchant/google/product_info/task_post  |
 [**googleProductInfoTasksReady**](MerchantApi.md#googleProductInfoTasksReady) | **GET**  /v3/merchant/google/product_info/tasks_ready  |
 [**googleProductInfoTaskGetAdvanced**](MerchantApi.md#googleProductInfoTaskGetAdvanced) | **GET**  /v3/merchant/google/product_info/task_get/advanced/{id}  |
@@ -70,8 +66,8 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.merchant_id_list([MerchantIdListRequestInfo(
-                datetime_from="2025-07-14 10:28:04 +00:00",
-                datetime_to="2025-09-14 10:28:04 +00:00",
+                datetime_from="2025-07-24 12:05:35 +00:00",
+                datetime_to="2025-09-24 12:05:35 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -766,172 +762,6 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="googleSellersTaskGetHtml"></a>
-# **googleSellersTaskGetHtml**
-> MerchantGoogleSellersTaskGetHtmlResponseInfo googleSellersTaskGetHtml()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.merchant_api import MerchantApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        merchant_api = MerchantApi(api_client)
-
-        id = "00000000-0000-0000-0000-000000000000"
-        response = merchant_api.google_sellers_task_get_html(id)
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**MerchantGoogleSellersTaskGetHtmlResponseInfo**](MerchantGoogleSellersTaskGetHtmlResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleProductSpecTaskPost"></a>
-# **googleProductSpecTaskPost**
-> MerchantGoogleProductSpecTaskPostResponseInfo googleProductSpecTaskPost()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.merchant_api import MerchantApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_merchant_google_product_spec_task_post_request_info import List[Optional[MerchantGoogleProductSpecTaskPostRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        merchant_api = MerchantApi(api_client)
-
-        response = merchant_api.google_product_spec_task_post([MerchantGoogleProductSpecTaskPostRequestInfo(
-                product_id="1113158713975221117",
-                location_code=2840,
-                language_code="en",
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[MerchantGoogleProductSpecTaskPostRequestInfo]]&gt;**](List[Optional[MerchantGoogleProductSpecTaskPostRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**MerchantGoogleProductSpecTaskPostResponseInfo**](MerchantGoogleProductSpecTaskPostResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleProductSpecTasksReady"></a>
-# **googleProductSpecTasksReady**
-> MerchantGoogleProductSpecTasksReadyResponseInfo googleProductSpecTasksReady()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.merchant_api import MerchantApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        merchant_api = MerchantApi(api_client)
-
-        response = merchant_api.google_product_spec_tasks_ready()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**MerchantGoogleProductSpecTasksReadyResponseInfo**](MerchantGoogleProductSpecTasksReadyResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
 <a id="googleProductSpecTaskGetAdvanced"></a>
 # **googleProductSpecTaskGetAdvanced**
 > MerchantGoogleProductSpecTaskGetAdvancedResponseInfo googleProductSpecTaskGetAdvanced()
@@ -971,60 +801,6 @@ except ApiException as e:
 ### Return type
 
 [**MerchantGoogleProductSpecTaskGetAdvancedResponseInfo**](MerchantGoogleProductSpecTaskGetAdvancedResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="googleProductSpecTaskGetHtml"></a>
-# **googleProductSpecTaskGetHtml**
-> MerchantGoogleProductSpecTaskGetHtmlResponseInfo googleProductSpecTaskGetHtml()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.merchant_api import MerchantApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        merchant_api = MerchantApi(api_client)
-
-        id = "00000000-0000-0000-0000-000000000000"
-        response = merchant_api.google_product_spec_task_get_html(id)
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**MerchantGoogleProductSpecTaskGetHtmlResponseInfo**](MerchantGoogleProductSpecTaskGetHtmlResponseInfo.md)
 
 ### Authorization
 

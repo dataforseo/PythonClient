@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.rank_changes import RankChanges
 from dataforseo_client.models.backlinks_info import BacklinksInfo
 from dataforseo_client.models.rank_info import RankInfo
@@ -32,14 +32,14 @@ class DataLabsLocalPackSerpElementItem(BaseDataforseoLabsApiElementItem):
     phone: Optional[StrictStr] = Field(default=None, description=r"phone number")
     url: Optional[StrictStr] = Field(default=None, description=r"relevant URL in SERP")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     main_domain: Optional[StrictStr] = Field(default=None, description=r"primary domain name in SERP")
     relative_url: Optional[StrictStr] = Field(default=None, description=r"URL in SERP that does not specify the HTTPs protocol and domain name")
-    etv: Optional[StrictFloat] = Field(default=None, description=r"estimated traffic volume. estimated organic monthly traffic to the domain. calculated as the product of CTR (click-through-rate) and search volume values of the returned keyword. learn more about how the metric is calculated in this help center article")
-    estimated_paid_traffic_cost: Optional[StrictFloat] = Field(default=None, description=r"estimated cost of converting organic search traffic into paid. represents the estimated monthly cost of running ads (USD) for the returned keyword. the metric is calculated as the product of organic etv and paid cpc values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search. learn more about how the metric is calculated in this help center article")
+    etv: Optional[StrictFloat] = Field(default=None, description=r"estimated traffic volume. estimated paid monthly traffic to the target. calculated as the product of CTR (click-through-rate) and search volume values of all keywords in the category that the target ranks for. learn more about how the metric is calculated in this help center article")
+    estimated_paid_traffic_cost: Optional[StrictFloat] = Field(default=None, description=r"estimated cost of monthly search traffic. represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the target ranks for. learn more about how the metric is calculated in this help center article")
     clickstream_etv: Optional[StrictFloat] = Field(default=None, description=r"estimated traffic volume based on clickstream data. calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for. to retrieve results for this field, the parameter include_clickstream_data must be set to true. learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = Field(default=None, description=r"changes in rankings. contains information about the ranking changes of the SERP element since the previous_updated_time")
-    backlinks_info: Optional[BacklinksInfo] = Field(default=None, description=r"backlinks information for the ranked website")
+    backlinks_info: Optional[BacklinksInfo] = Field(default=None, description=r"backlinks information for the target website")
     rank_info: Optional[RankInfo] = Field(default=None, description=r"page and domain rank information")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -134,7 +134,7 @@ class DataLabsLocalPackSerpElementItem(BaseDataforseoLabsApiElementItem):
             "phone": obj.get("phone"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "main_domain": obj.get("main_domain"),
             "relative_url": obj.get("relative_url"),
             "etv": obj.get("etv"),

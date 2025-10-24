@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**items** | **List[Optional[RecipesElement]]** | contains results featured in the ‘hotels_pack’ element of SERP |[optional]|
+**items** | **List[Optional[RecipesElement]]** | additional items present in the element<br>if there are none, equals null |[optional]|

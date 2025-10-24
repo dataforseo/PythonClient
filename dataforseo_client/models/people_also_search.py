@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -19,7 +19,7 @@ class PeopleAlsoSearch(BaseModel):
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment. learn more about the identifier in this help center article")
     feature_id: Optional[StrictStr] = Field(default=None, description=r"the unique identifier of the element in SERP. learn more about the identifier in this help center article")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element in SERP. the name of the business entity for which the results are collected")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "cid", 
         "feature_id", 
@@ -70,7 +70,7 @@ class PeopleAlsoSearch(BaseModel):
             "cid": obj.get("cid"),
             "feature_id": obj.get("feature_id"),
             "title": obj.get("title"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

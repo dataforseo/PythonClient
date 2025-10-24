@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
 from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
@@ -26,9 +26,9 @@ class ThirdPartyReviewsSerpElementItem(BaseSerpApiElementItem):
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews")
-    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating. the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 
@@ -100,7 +100,7 @@ class ThirdPartyReviewsSerpElementItem(BaseSerpApiElementItem):
             "reviews_count": obj.get("reviews_count"),
             "title": obj.get("title"),
             "url": obj.get("url"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

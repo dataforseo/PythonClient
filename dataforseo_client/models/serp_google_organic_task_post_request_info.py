@@ -19,6 +19,9 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"direct URL of the search query. optional field. you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method.. example:. https://www.google.co.uk/search?q=%20rank%20tracker%20api&hl=en&gl=GB&uule=w+CAIQIFISCXXeIa8LoNhHEZkq1d1aOpZS")
     priority: Optional[StrictInt] = Field(default=None, description=r"task priority. optional field. can take the following values:. 1 – normal execution priority (set by default);. 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the Pricing page.")
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 700. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
+    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. Your account will be billed per each SERP crawled through the specified targets;")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. max value: 100. Note: you will be charged for each page crawled (10 organic results per page);. learn more about pricing on our Pricing page;. Note#2: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. required field if you don’t specify location_code or location_coordinate. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations. example:. London,England,United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. required field if you don’t specify location_name or location_coordinate. if you use this field, you don’t need to specify location_name or location_coordinate. you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations. example:. 2840")
@@ -47,6 +50,9 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         "url", 
         "priority", 
         "depth", 
+        "stop_crawl_on_match", 
+        "match_value", 
+        "match_type", 
         "max_crawl_pages", 
         "location_name", 
         "location_code", 
@@ -100,6 +106,9 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         _dict['url'] = self.url
         _dict['priority'] = self.priority
         _dict['depth'] = self.depth
+        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        _dict['match_value'] = self.match_value
+        _dict['match_type'] = self.match_type
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
@@ -139,6 +148,9 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
             "url": obj.get("url"),
             "priority": obj.get("priority"),
             "depth": obj.get("depth"),
+            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "match_value": obj.get("match_value"),
+            "match_type": obj.get("match_type"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),

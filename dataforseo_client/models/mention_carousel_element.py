@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.link_element import LinkElement
 
 
@@ -19,9 +19,9 @@ class MentionCarouselElement(BaseModel):
     MentionCarouselElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     mentioned_in: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"additional elements in the mention_carousel item")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -80,7 +80,7 @@ class MentionCarouselElement(BaseModel):
             "type": obj.get("type"),
             "title": obj.get("title"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "mentioned_in": [LinkElement.from_dict(_item) for _item in obj["mentioned_in"]] if obj.get("mentioned_in") is not None else None,
         })
 

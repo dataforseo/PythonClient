@@ -28,6 +28,7 @@ class DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(BaseModel):
     offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of returned domains. optional field. default value: 0. if you specify the 10 value, the first ten keywords in the results array will be omitted and the data will be provided for the successive keywords")
     max_rank_group: Optional[StrictInt] = Field(default=None, description=r"maximum rank up to which competitors will be considered. optional field. default value: 100. if you specify 10 here, we will extract competitors from the top 10 Google search results only")
     exclude_top_domains: Optional[StrictBool] = Field(default=None, description=r"indicates whether to exclude world’s largest websites. optional field. default value: false. set to true if you want to get highly-relevant competitors excluding the websites listed below:. wikipedia.org. pinterest.com. amazon.com. google.com. facebook.com. wordpress.com. medium.com. quora.com. reddit.com. youtube.com. ebay.com. uol.com.br. instagram.com. olx.com. twitter.com. linkedin.com. slideshare.net")
+    exclude_domains: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"exclude domains from the results. optional field. use this parameter to exclude specific domains from the results. Note: you can specify up to 1000 domains in this array. example:. 'exclude_domains': [. 'reddit.com',. 'youtube.com'. ]")
     intersecting_domains: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"additional domains for improving results accuracy. optional field. to improve the accuracy of the result, you can specify domains that are known to intersect with the target in SERPs;. if you use this array, metrics in the result will be based on SERPs where both target website and intersecting_domains appear;. Note: you can specify up to 20 domains in this array")
     ignore_synonyms: Optional[StrictBool] = Field(default=None, description=r"ignore highly similar keywords. optional field. if set to true, only core keywords will be returned, all highly similar keywords will be excluded;. default value: false")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
@@ -45,6 +46,7 @@ class DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(BaseModel):
         "offset", 
         "max_rank_group", 
         "exclude_top_domains", 
+        "exclude_domains", 
         "intersecting_domains", 
         "ignore_synonyms", 
         "tag", 
@@ -87,6 +89,7 @@ class DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(BaseModel):
         _dict['offset'] = self.offset
         _dict['max_rank_group'] = self.max_rank_group
         _dict['exclude_top_domains'] = self.exclude_top_domains
+        _dict['exclude_domains'] = self.exclude_domains
         _dict['intersecting_domains'] = self.intersecting_domains
         _dict['ignore_synonyms'] = self.ignore_synonyms
         _dict['tag'] = self.tag
@@ -115,6 +118,7 @@ class DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(BaseModel):
             "offset": obj.get("offset"),
             "max_rank_group": obj.get("max_rank_group"),
             "exclude_top_domains": obj.get("exclude_top_domains"),
+            "exclude_domains": obj.get("exclude_domains"),
             "intersecting_domains": obj.get("intersecting_domains"),
             "ignore_synonyms": obj.get("ignore_synonyms"),
             "tag": obj.get("tag"),

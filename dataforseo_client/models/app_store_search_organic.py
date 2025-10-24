@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.price_info import PriceInfo
 
 
@@ -26,7 +26,7 @@ class AppStoreSearchOrganic(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"URL to the app page on App Store")
     icon: Optional[StrictStr] = Field(default=None, description=r"URL to the app icon")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews of the app")
-    rating: Optional[RatingElement] = Field(default=None, description=r"average rating of the app")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"average rating of the app")
     is_free: Optional[StrictBool] = Field(default=None, description=r"indicates whether the app is free")
     price: Optional[PriceInfo] = Field(default=None, description=r"price of the app")
     __properties: ClassVar[List[str]] = [
@@ -101,7 +101,7 @@ class AppStoreSearchOrganic(BaseModel):
             "url": obj.get("url"),
             "icon": obj.get("icon"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "is_free": obj.get("is_free"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
         })

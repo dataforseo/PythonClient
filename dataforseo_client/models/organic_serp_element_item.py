@@ -49,7 +49,7 @@ class OrganicSerpElementItem(BaseSerpApiElementItem):
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element. if there are none, equals null")
     amp_version: Optional[StrictBool] = Field(default=None, description=r"Accelerated Mobile Pages. indicates whether an item has the Accelerated Mobile Page (AMP) version")
     rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
-    price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price of booking a place for the specified dates of stay")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
     faq: Optional[FaqBox] = Field(default=None, description=r"frequently asked questions. questions and answers extension shown below some of Google’s search results. if there are none, equals null")

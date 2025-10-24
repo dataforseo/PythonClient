@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 from importlib import import_module
 from typing import TYPE_CHECKING
@@ -28,7 +28,7 @@ class BaseSerpApiGoogleMapsElementItem(BaseModel):
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the distribution of ratings of the business entity. the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -17,7 +17,7 @@ class PeopleAlsoAskElement(BaseModel):
     PeopleAlsoAskElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     seed_question: Optional[StrictStr] = Field(default=None, description=r"question that triggered additional expanded elements")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     expanded_element: Optional[List[Optional[BaseSerpApiPeopleAlsoAskExpandedElementItem]]] = Field(default=None, description=r"expanded element")

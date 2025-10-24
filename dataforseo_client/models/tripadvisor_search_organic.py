@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -25,7 +25,7 @@ class TripadvisorSearchOrganic(BaseModel):
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
     category: Optional[StrictStr] = Field(default=None, description=r"place category")
     price_rate: Optional[StrictStr] = Field(default=None, description=r"average price rate")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the rating score of the establishment submitted by the reviewers")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score of the establishment submitted by the reviewers")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -94,7 +94,7 @@ class TripadvisorSearchOrganic(BaseModel):
             "reviews_count": obj.get("reviews_count"),
             "category": obj.get("category"),
             "price_rate": obj.get("price_rate"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

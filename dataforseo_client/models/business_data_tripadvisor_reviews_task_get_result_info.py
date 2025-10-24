@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.tripadvisor_review_search import TripadvisorReviewSearch
 
 
@@ -25,7 +25,7 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the ‘reviews’ element in SERP. the name of the local establishment for which the reviews are collected")
     location: Optional[StrictStr] = Field(default=None, description=r"location of the local establishment. address of the local establishment for which the reviews are collected")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
-    rating: Optional[RatingElement] = Field(default=None, description=r"rating of the corresponding local establishment. popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local establishment. popularity rate based on reviews and displayed in SERP")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"rating distribution by votes. the distribution of votes across the rating in the range from 1 to 5")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews items in the results array. you can get more results by using the depth parameter when setting a task")
     items: Optional[List[Optional[TripadvisorReviewSearch]]] = Field(default=None, description=r"found reviews. you can get more results by using the depth parameter when setting a task")
@@ -108,7 +108,7 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
             "title": obj.get("title"),
             "location": obj.get("location"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "rating_distribution": obj.get("rating_distribution"),
             "items_count": obj.get("items_count"),
             "items": [TripadvisorReviewSearch.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,

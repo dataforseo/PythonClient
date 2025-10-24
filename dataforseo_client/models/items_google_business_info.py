@@ -10,7 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.address_info import AddressInfo
 from dataforseo_client.models.business_data_attributes_info import BusinessDataAttributesInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.people_also_search import PeopleAlsoSearch
 from dataforseo_client.models.business_work_hours_info import BusinessWorkHoursInfo
 
@@ -50,7 +50,7 @@ class ItemsGoogleBusinessInfo(BaseModel):
     is_claimed: Optional[StrictBool] = Field(default=None, description=r"shows whether the entity is verified by its owner on Google Maps")
     attributes: Optional[BusinessDataAttributesInfo] = Field(default=None, description=r"service details in a form of user-reviewed checks;. service details of a business entity displayed in a form of checks and based on user feedback and business category")
     place_topics: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"keywords mentioned in customer reviews. contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword. example: . 'place_topics': {. 'egg roll': 48,. 'birthday': 33. }")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     hotel_rating: Optional[StrictStr] = Field(default=None, description=r"hotel class rating. class ratings range between 1-5 stars, learn more. if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description=r"property price level. can take values: inexpensive, moderate, expensive, very_expensive. if there is no price level information, the value will be null")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the distribution of ratings of the business entity. the object displays the number of 1-star to 5-star ratings, as reviewed by users")
@@ -214,7 +214,7 @@ class ItemsGoogleBusinessInfo(BaseModel):
             "is_claimed": obj.get("is_claimed"),
             "attributes": BusinessDataAttributesInfo.from_dict(obj["attributes"]) if obj.get("attributes") is not None else None,
             "place_topics": obj.get("place_topics"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "hotel_rating": obj.get("hotel_rating"),
             "price_level": obj.get("price_level"),
             "rating_distribution": obj.get("rating_distribution"),

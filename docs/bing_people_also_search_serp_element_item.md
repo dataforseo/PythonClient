@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the item |[optional]|
-**items** | **List[Optional[StrictStr]]** | contains results featured in the ‘hotels_pack’ element of SERP |[optional]|
+**title** | **StrictStr** | title of the result in SERP |[optional]|
+**items** | **List[Optional[StrictStr]]** | additional items present in the element<br>if there are none, equals null |[optional]|

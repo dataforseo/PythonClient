@@ -8,7 +8,7 @@
 **type** | **StrictStr** | type of element |[optional]|
 **product_id** | **StrictStr** | product id |[optional]|
 **title** | **StrictStr** | source title |[optional]|
-**rating** | **RatingElement** | rating of the corresponding local businesses<br>popularity rate based on reviews as displayed in the results |[optional]|
+**rating** | **RatingInfo** | rating of the corresponding local businesses<br>popularity rate based on reviews as displayed in the results |[optional]|
 **price** | **StrictFloat** | product price |[optional]|
 **currency** | **StrictStr** | currency of the listed price<br>ISO code of the currency applied to the price |[optional]|
 **tag** | **StrictStr** | tag text |[optional]|

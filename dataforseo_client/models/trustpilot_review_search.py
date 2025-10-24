@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.business_data_user_profile_info import BusinessDataUserProfileInfo
 from dataforseo_client.models.review_response_item_info import ReviewResponseItemInfo
 
@@ -23,7 +23,7 @@ class TrustpilotReviewSearch(BaseModel):
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank among all the listed reviews. absolute position among all reviews on the list")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the review in SERP. can take the following values: right")
     url: Optional[StrictStr] = Field(default=None, description=r"the URL of the review")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the rating score submitted by the reviewer")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score submitted by the reviewer")
     verified: Optional[StrictBool] = Field(default=None, description=r"indicates whether the review has the “Verified” mark")
     language: Optional[StrictStr] = Field(default=None, description=r"the language of the review")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when a review was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
@@ -109,7 +109,7 @@ class TrustpilotReviewSearch(BaseModel):
             "rank_absolute": obj.get("rank_absolute"),
             "position": obj.get("position"),
             "url": obj.get("url"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "verified": obj.get("verified"),
             "language": obj.get("language"),
             "timestamp": obj.get("timestamp"),

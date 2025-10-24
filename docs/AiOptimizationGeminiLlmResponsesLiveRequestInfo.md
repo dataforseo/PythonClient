@@ -1,0 +1,15 @@
+# AiOptimizationGeminiLlmResponsesLiveRequestInfo
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+**user_prompt** | **string** | prompt for the AI model<br>required field<br>the question or task you want to send to the AI model;<br>you can specify up to 500 characters in the user_prompt field |[optional]|
+**model_name** | **string** | name of the AI model<br>required field<br>model_nameconsists of the actual model name and version name;<br>if the basic model name is specified, its latest version will be set by default;<br>for example, if gemini-1.5-pro is specified, the gemini-1.5-pro-002 will be set as model_name automatically;<br>you can receive the list of available LLM models by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_responses/models |[optional]|
+**max_output_tokens** | **number** | maximum number of tokens in the AI response<br>optional field<br>minimum value: 1<br>maximum value: 2048<br>default value: 2048<br>Note: when web_search is set to true, the output token count may exceed the specified max_output_tokens limit |[optional]|
+**temperature** | **number** | randomness of the AI response<br>optional field<br>higher values make output more diverse<br>lower values make output more focused<br>minimum value: 0<br>maximum value: 2<br>default value: 1.3 |[optional]|
+**top_p** | **number** | diversity of the AI response<br>optional field<br>controls diversity of the response by limiting token selection<br>minimum value: 0<br>maximum value: 1<br>default value: 0.9 |[optional]|
+**web_search** | **boolean** | enable web search for current information<br>optional field<br>when enabled, the AI model can access and cite current web information;<br>Note: refer to the Models endpoint for a list of models that support web_search;<br>default value: false;<br>The cost of the parameter can be calculated on the Pricing page |[optional]|
+**system_message** | **string** | instructions for the AI behavior<br>optional field<br>defines the AI’s role, tone, or specific behavior<br>you can specify up to 500 characters in the system_message field |[optional]|
+**message_chain** | **LlmMessageChainItem[]** | conversation history<br>optional field<br>array of message objects representing previous conversation turns;<br>each object must contain:<br>role string with either user or ai role;<br>message string with message content (max 500 characters);<br>you can specify maximum of 10 message objects in the array;<br>Note: for Perplexity models, messages must strictly alternate between user and AI roles (user → ai);<br>example:<br>'message_chain': [{'role':'user','message':'Hello, what’s up?'},{'role':'ai','message':'Hello! I’m doing well, thank you. How can I assist you today?'}] |[optional]|
+**tag** | **string** | user-defined task identifier<br>optional field<br>the character limit is 255<br>you can use this parameter to identify the task and match it with the result<br>you will find the specified tag value in the data object of the response |[optional]|

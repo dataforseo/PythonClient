@@ -13,4 +13,4 @@
 **reviews_count** | **StrictInt** | total number of reviews submitted for the local businesses |[optional]|
 **url** | **StrictStr** | source URL |[optional]|
 **domain** | **StrictStr** | source domain |[optional]|
-**rating** | **RatingElement** | rating of the corresponding local businesses<br>popularity rate based on reviews as displayed in the results |[optional]|
+**rating** | **RatingInfo** | rating of the corresponding local businesses<br>popularity rate based on reviews as displayed in the results |[optional]|

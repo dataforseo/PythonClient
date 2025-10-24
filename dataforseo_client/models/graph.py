@@ -16,7 +16,7 @@ class Graph(BaseModel):
     """
     Graph
     """ # noqa: E501
-    items: Optional[List[Optional[GraphElement]]] = Field(default=None, description=r"items present in the element")
+    items: Optional[List[Optional[GraphElement]]] = Field(default=None, description=r"link of the element")
     previous_items: Optional[List[Optional[GraphElement]]] = Field(default=None, description=r"previous close data. contains stock price data based on the preceding time period")
     __properties: ClassVar[List[str]] = [
         "items", 

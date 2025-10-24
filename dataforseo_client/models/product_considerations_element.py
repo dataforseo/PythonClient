@@ -17,7 +17,7 @@ class ProductConsiderationsElement(BaseModel):
     ProductConsiderationsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     consideration_category: Optional[StrictStr] = Field(default=None, description=r"category of the consideration element. the category is indicated just above the title fo the consideration element")
     expanded_element: Optional[List[Optional[BaseSerpApiProductConsiderationExpandedElementItem]]] = Field(default=None, description=r"expanded element")
     __properties: ClassVar[List[str]] = [

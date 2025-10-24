@@ -8,8 +8,8 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_merchant_google_shopping_sellers_element_item import BaseMerchantGoogleShoppingSellersElementItem
-from dataforseo_client.models.rating_element import RatingElement
 
 
 
@@ -32,8 +32,8 @@ class GoogleShoppingSellersBuyOnGoogleElementItem(BaseMerchantGoogleShoppingSell
     total_price: Optional[StrictFloat] = Field(default=None, description=r"product price including tax and shipping")
     currency: Optional[StrictStr] = Field(default=None, description=r"currency in the ISO format. example:. USD")
     seller_name: Optional[StrictStr] = Field(default=None, description=r"name of the seller. the name of the company that placed a corresponding product on Google Shopping")
-    rating: Optional[RatingElement] = Field(default=None, description=r"shop rating. the shop popularity rate based on product reviews")
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameter. using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"shop rating. the shop popularity rate based on product reviews")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -50,8 +50,8 @@ class GoogleShoppingSellersBuyOnGoogleElementItem(BaseMerchantGoogleShoppingSell
         "total_price", 
         "currency", 
         "seller_name", 
-        "rating", 
         "shop_ad_aclk", 
+        "rating", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -93,8 +93,8 @@ class GoogleShoppingSellersBuyOnGoogleElementItem(BaseMerchantGoogleShoppingSell
         _dict['total_price'] = self.total_price
         _dict['currency'] = self.currency
         _dict['seller_name'] = self.seller_name
-        _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['shop_ad_aclk'] = self.shop_ad_aclk
+        _dict['rating'] = self.rating.to_dict() if self.rating else None
         return _dict
 
 
@@ -122,8 +122,8 @@ class GoogleShoppingSellersBuyOnGoogleElementItem(BaseMerchantGoogleShoppingSell
             "total_price": obj.get("total_price"),
             "currency": obj.get("currency"),
             "seller_name": obj.get("seller_name"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "shop_ad_aclk": obj.get("shop_ad_aclk"),
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

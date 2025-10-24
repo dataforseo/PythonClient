@@ -6,5 +6,5 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**title** | **StrictStr** | title of a given link element |[optional]|
+**title** | **StrictStr** | title of the row |[optional]|
 **expanded_element** | **List[Optional[MathSolverExpandedElement]]** | expanded element |[optional]|

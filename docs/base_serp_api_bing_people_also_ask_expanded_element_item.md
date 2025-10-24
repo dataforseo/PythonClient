@@ -8,7 +8,7 @@
 **type** | **StrictStr** | type of element |[optional]|
 **featured_title** | **StrictStr** | title |[optional]|
 **url** | **StrictStr** | URL |[optional]|
-**domain** | **StrictStr** | domain name of the reference |[optional]|
+**domain** | **StrictStr** | domain in SERP |[optional]|
 **title** | **StrictStr** | title of the result in SERP |[optional]|
 **description** | **StrictStr** | description of the results element in SERP |[optional]|
 **images** | **List[Optional[AiModeImagesElementInfo]]** | images of the element |[optional]|

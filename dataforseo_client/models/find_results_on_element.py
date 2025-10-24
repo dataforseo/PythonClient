@@ -16,9 +16,9 @@ class FindResultsOnElement(BaseModel):
     FindResultsOnElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
     source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
     __properties: ClassVar[List[str]] = [
         "type", 

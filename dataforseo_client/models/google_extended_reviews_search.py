@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.review_highlights import ReviewHighlights
 from dataforseo_client.models.source import Source
@@ -28,7 +28,7 @@ class GoogleExtendedReviewsSearch(BaseModel):
     original_review_text: Optional[StrictStr] = Field(default=None, description=r"original content of the review. the original content of the review, no auto-translate applied")
     time_ago: Optional[StrictStr] = Field(default=None, description=r"the time of publication. indicates the time (in the ‘time ago’ format) when the review was listed")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when a review was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the rating score submitted by the reviewer")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score submitted by the reviewer")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"total number of reviews submitted by the reviewer")
     photos_count: Optional[StrictInt] = Field(default=None, description=r"total number of photos submitted by the reviewer")
     local_guide: Optional[StrictBool] = Field(default=None, description=r"indicates whether the reviewer has a ‘local guide’ status")
@@ -152,7 +152,7 @@ class GoogleExtendedReviewsSearch(BaseModel):
             "original_review_text": obj.get("original_review_text"),
             "time_ago": obj.get("time_ago"),
             "timestamp": obj.get("timestamp"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "reviews_count": obj.get("reviews_count"),
             "photos_count": obj.get("photos_count"),
             "local_guide": obj.get("local_guide"),

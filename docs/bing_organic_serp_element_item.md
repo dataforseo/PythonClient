@@ -22,7 +22,7 @@
 **extended_snippet** | **StrictStr** | includes additional information appended after the result description in SERP |[optional]|
 **images** | **List[Optional[AiModeImagesElementInfo]]** | images of the element |[optional]|
 **amp_version** | **StrictBool** | Accelerated Mobile Pages<br>indicates whether an item has the Accelerated Mobile Page (AMP) version |[optional]|
-**rating** | **RatingElement** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
+**rating** | **RatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
 **price** | **PriceInfo** | pricing details<br>contains the pricing details of the product or service featured in the result |[optional]|
 **highlighted** | **List[Optional[StrictStr]]** | words highlighted in bold within the results description |[optional]|
 **links** | **List[Optional[LinkElement]]** | sitelinks<br>the links shown below some search results<br>if there are none, equals null |[optional]|

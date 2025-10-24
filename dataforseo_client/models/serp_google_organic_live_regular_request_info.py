@@ -27,6 +27,9 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain. optional field. we choose the relevant search engine domain automatically according to the location and language you specify. however, you can set a custom search engine domain in this field. example:. google.co.uk, google.com.au, google.de, etc.")
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 200. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
     target: Optional[StrictStr] = Field(default=None, description=r"target domain, subdomain, or webpage to get results for. optional field. a domain or a subdomain should be specified without https:// and www.. note that the results of target-specific tasks will only include SERP elements that contain a url string;. you can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results;. examples:. example.com  – returns results for the website’s home page with URLs, such as https://example.com, or https://www.example.com/, or https://example.com/;. example.com* – returns results for the domain, including all its pages;. *example.com* – returns results for the entire domain, including all its pages and subdomains;. *example.com  – returns results for the home page regardless of the subdomain, such as https://en.example.com;. example.com/example-page  – returns results for the exact URL;. example.com/example-page*  – returns results for all domain’s URLs that start with the specified string")
+    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. Your account will be billed per each SERP crawled through the specified targets;")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     group_organic_results: Optional[StrictBool] = Field(default=None, description=r"display related results. optional field. if set to true, the related_result element in the response will be provided as a snippet of its parent organic result;. if set to false, the related_result element will be provided as a separate organic result;. default value: true")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. max value: 100. Note: you will be charged for each page crawled (10 organic results per page);. learn more about pricing on our Pricing page;. Note#2: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
     search_param: Optional[StrictStr] = Field(default=None, description=r"additional parameters of the search query. optional field. get the list of available parameters and additional details here")
@@ -44,6 +47,9 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
         "se_domain", 
         "depth", 
         "target", 
+        "stop_crawl_on_match", 
+        "match_value", 
+        "match_type", 
         "group_organic_results", 
         "max_crawl_pages", 
         "search_param", 
@@ -86,6 +92,9 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
         _dict['se_domain'] = self.se_domain
         _dict['depth'] = self.depth
         _dict['target'] = self.target
+        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        _dict['match_value'] = self.match_value
+        _dict['match_type'] = self.match_type
         _dict['group_organic_results'] = self.group_organic_results
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['search_param'] = self.search_param
@@ -114,6 +123,9 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
             "se_domain": obj.get("se_domain"),
             "depth": obj.get("depth"),
             "target": obj.get("target"),
+            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "match_value": obj.get("match_value"),
+            "match_type": obj.get("match_type"),
             "group_organic_results": obj.get("group_organic_results"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "search_param": obj.get("search_param"),

@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_bing_serp_api_element_item import BaseBingSerpApiElementItem
 from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
@@ -25,13 +25,13 @@ class BingLocalPackSerpElementItem(BaseBingSerpApiElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the item")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where the video is hosted")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain of the organic result")
     phone: Optional[StrictStr] = Field(default=None, description=r"phone number")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating. the popularity rate based on reviews and displayed in SERP")
     cid: Optional[StrictStr] = Field(default=None, description=r"bing-defined client id. unique id of a local establishment")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -115,7 +115,7 @@ class BingLocalPackSerpElementItem(BaseBingSerpApiElementItem):
             "phone": obj.get("phone"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "cid": obj.get("cid"),
         })
 

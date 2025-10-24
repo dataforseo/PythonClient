@@ -24,8 +24,8 @@ class BingMapSerpElementItem(BaseBingSerpApiElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the item")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
+    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

@@ -16,9 +16,9 @@ class EventsElement(BaseModel):
     EventsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the title")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

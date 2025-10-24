@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**search** | **Dict[str, Optional[StrictStr]]** |  |[optional]|
-**categories_aggregation** | **Dict[str, Optional[StrictStr]]** |  |[optional]|
+**search** | **Info** |  |[optional]|
+**categories_aggregation** | **Info** |  |[optional]|

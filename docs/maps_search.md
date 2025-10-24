@@ -11,7 +11,7 @@
 **domain** | **StrictStr** | domain of the business entity |[optional]|
 **title** | **StrictStr** | directory title<br>can take the following values: At this place, Directory |[optional]|
 **url** | **StrictStr** | URL to view the menu |[optional]|
-**rating** | **RatingElement** | the element’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
+**rating** | **RatingInfo** | the element’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
 **rating_distribution** | **Dict[str, Optional[StrictInt]]** | the distribution of ratings of the business entity<br>the object displays the number of 1-star to 5-star ratings, as reviewed by users |[optional]|
 **snippet** | **StrictStr** | additional information about the business entity |[optional]|
 **address** | **StrictStr** | address of the business entity |[optional]|

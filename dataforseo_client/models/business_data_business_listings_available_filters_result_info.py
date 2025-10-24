@@ -8,6 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.info import Info
 
 
 
@@ -15,8 +16,8 @@ class BusinessDataBusinessListingsAvailableFiltersResultInfo(BaseModel):
     """
     BusinessDataBusinessListingsAvailableFiltersResultInfo
     """ # noqa: E501
-    search: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
-    categories_aggregation: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
+    search: Optional[Info] = Field(default=None, description=r"")
+    categories_aggregation: Optional[Info] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "search", 
         "categories_aggregation", 
@@ -46,8 +47,8 @@ class BusinessDataBusinessListingsAvailableFiltersResultInfo(BaseModel):
 
         _dict = {}
 
-        _dict['search'] = self.search
-        _dict['categories_aggregation'] = self.categories_aggregation
+        _dict['search'] = self.search.to_dict() if self.search else None
+        _dict['categories_aggregation'] = self.categories_aggregation.to_dict() if self.categories_aggregation else None
         return _dict
 
 
@@ -60,8 +61,8 @@ class BusinessDataBusinessListingsAvailableFiltersResultInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "search": obj.get("search"),
-            "categories_aggregation": obj.get("categories_aggregation"),
+            "search": Info.from_dict(obj["search"]) if obj.get("search") is not None else None,
+            "categories_aggregation": Info.from_dict(obj["categories_aggregation"]) if obj.get("categories_aggregation") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

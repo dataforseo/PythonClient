@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.amazon_delivery_info import AmazonDeliveryInfo
 
 
@@ -34,7 +34,7 @@ class AmazonInfo(BaseModel):
     special_offers: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"special offer details. contains special offer details, including coupon and Subscribe & Save discounts")
     is_best_seller: Optional[StrictBool] = Field(default=None, description=r"“Best Seller” label. if the value is true, the product is marked with the “Best Seller” label")
     is_amazon_choice: Optional[StrictBool] = Field(default=None, description=r"“Amazon’s choice” label. if the value is true, the product is marked with the “Amazon’s choice” label")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     delivery_info: Optional[AmazonDeliveryInfo] = Field(default=None, description=r"delivery information. delivery information including free and fast delivery date ranges")
     bought_past_month: Optional[StrictInt] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
@@ -133,7 +133,7 @@ class AmazonInfo(BaseModel):
             "special_offers": obj.get("special_offers"),
             "is_best_seller": obj.get("is_best_seller"),
             "is_amazon_choice": obj.get("is_amazon_choice"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "delivery_info": AmazonDeliveryInfo.from_dict(obj["delivery_info"]) if obj.get("delivery_info") is not None else None,
             "bought_past_month": obj.get("bought_past_month"),
         })

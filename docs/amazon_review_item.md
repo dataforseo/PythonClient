@@ -20,4 +20,4 @@
 **url** | **StrictStr** | URL to the reviewer’s profile |[optional]|
 **review_text** | **StrictStr** | content of the review |[optional]|
 **publication_date** | **StrictStr** | date and time when the review was published<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
-**rating** | **RatingElement** | the rating score submitted by the reviewer |[optional]|
+**rating** | **RatingInfo** | the rating score submitted by the reviewer |[optional]|

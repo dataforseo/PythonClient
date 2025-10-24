@@ -20,7 +20,7 @@ class RatingElement(BaseModel):
     rating_type: Optional[StrictStr] = Field(default=None, description=r"the type of rating. here you can find the following elements: Max5, Percents, CustomMax")
     value: Optional[StrictFloat] = Field(default=None, description=r"value of the rating")
     votes_count: Optional[StrictInt] = Field(default=None, description=r"the amount of feedback")
-    rating_max: Optional[StrictFloat] = Field(default=None, description=r"the maximum value for a rating_type")
+    rating_max: Optional[StrictInt] = Field(default=None, description=r"the maximum value for a rating_type")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

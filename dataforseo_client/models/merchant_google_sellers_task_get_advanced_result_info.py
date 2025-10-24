@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_merchant_google_shopping_sellers_element_item import BaseMerchantGoogleShoppingSellersElementItem
 
 
@@ -27,7 +27,7 @@ class MerchantGoogleSellersTaskGetAdvancedResultInfo(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the product")
     url: Optional[StrictStr] = Field(default=None, description=r"URL to the product page")
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL to the product image")
-    rating: Optional[RatingElement] = Field(default=None, description=r"product rating. the product popularity rate based on product reviews")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"product rating. the product popularity rate based on product reviews")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results found in Google Shopping SERP. contains types of all search results (items) found in the returned SERP. possible item types:. shops_list, buy_on_google")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     items: Optional[List[Optional[BaseMerchantGoogleShoppingSellersElementItem]]] = Field(default=None, description=r"items in SERP")
@@ -113,7 +113,7 @@ class MerchantGoogleSellersTaskGetAdvancedResultInfo(BaseModel):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "image_url": obj.get("image_url"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "item_types": obj.get("item_types"),
             "items_count": obj.get("items_count"),
             "items": [BaseMerchantGoogleShoppingSellersElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,

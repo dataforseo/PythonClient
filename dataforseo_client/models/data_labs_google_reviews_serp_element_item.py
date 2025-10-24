@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_dataforseo_labs_api_element_item import BaseDataforseoLabsApiElementItem
 
 
@@ -24,7 +24,7 @@ class DataLabsGoogleReviewsSerpElementItem(BaseDataforseoLabsApiElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     place_id: Optional[StrictStr] = Field(default=None, description=r"the identifier of a place")
     feature: Optional[StrictStr] = Field(default=None, description=r"the additional feature of the review")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")
@@ -96,7 +96,7 @@ class DataLabsGoogleReviewsSerpElementItem(BaseDataforseoLabsApiElementItem):
             "position": obj.get("position"),
             "xpath": obj.get("xpath"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "place_id": obj.get("place_id"),
             "feature": obj.get("feature"),
             "cid": obj.get("cid"),

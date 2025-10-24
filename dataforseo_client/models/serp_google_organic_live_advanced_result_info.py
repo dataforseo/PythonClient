@@ -31,7 +31,7 @@ class SerpGoogleOrganicLiveAdvancedResultInfo(BaseModel):
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in SERP")
     pages_count: Optional[StrictInt] = Field(default=None, description=r"total search results pages retrieved. total number of retrieved SERPs in the result")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BaseSerpApiElementItem]]] = Field(default=None, description=r"contains arrays of elements available in the list")
+    items: Optional[List[Optional[BaseSerpApiElementItem]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 

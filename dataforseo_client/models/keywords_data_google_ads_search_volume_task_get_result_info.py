@@ -26,7 +26,7 @@ class KeywordsDataGoogleAdsSearchVolumeTaskGetResultInfo(BaseModel):
     search_volume: Optional[StrictInt] = Field(default=None, description=r"monthly average search volume rate")
     low_top_of_page_bid: Optional[StrictFloat] = Field(default=None, description=r"minimum bid for the ad to be displayed at the top of the first page. indicates the value greater than about 20% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers);. the value may differ depending on the location specified in a POST request")
     high_top_of_page_bid: Optional[StrictFloat] = Field(default=None, description=r"maximum bid for the ad to be displayed at the top of the first page. indicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers);. the value may differ depending on the location specified in a POST request")
-    cpc: Optional[StrictFloat] = Field(default=None, description=r"cost per click. indicates the amount paid for each click on the ad displayed for a given keyword")
+    cpc: Optional[StrictInt] = Field(default=None, description=r"cost per click. indicates the amount paid for each click on the ad displayed for a given keyword")
     monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly searches. represents the (approximate) number of searches on this keyword idea (as available for the past twelve months by default), targeted to the specified geographic locations;. if there is no data then the value is null")
     __properties: ClassVar[List[str]] = [
         "keyword", 

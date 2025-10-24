@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -17,11 +17,11 @@ class LocalServicesElement(BaseModel):
     LocalServicesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     profile_image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image featured in the element")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -81,7 +81,7 @@ class LocalServicesElement(BaseModel):
             "url": obj.get("url"),
             "domain": obj.get("domain"),
             "description": obj.get("description"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "profile_image_url": obj.get("profile_image_url"),
         })
 

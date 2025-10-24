@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.link_element import LinkElement
 from dataforseo_client.models.faq_box import FaqBox
@@ -48,7 +48,7 @@ class BingOrganicSerpElementItem(BaseBingSerpApiElementItem):
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended after the result description in SERP")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element")
     amp_version: Optional[StrictBool] = Field(default=None, description=r"Accelerated Mobile Pages. indicates whether an item has the Accelerated Mobile Page (AMP) version")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some search results. if there are none, equals null")
@@ -201,7 +201,7 @@ class BingOrganicSerpElementItem(BaseBingSerpApiElementItem):
             "extended_snippet": obj.get("extended_snippet"),
             "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "amp_version": obj.get("amp_version"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "highlighted": obj.get("highlighted"),
             "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,

@@ -11,7 +11,7 @@ from typing_extensions import Self
 from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.video_element import VideoElement
 from dataforseo_client.models.user_profile_info import UserProfileInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -34,7 +34,7 @@ class AmazonReviewItem(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"URL to the reviewer’s profile")
     review_text: Optional[StrictStr] = Field(default=None, description=r"content of the review")
     publication_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the review was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. 2019-11-15 12:57:46 +00:00")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the rating score submitted by the reviewer")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score submitted by the reviewer")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -131,7 +131,7 @@ class AmazonReviewItem(BaseModel):
             "url": obj.get("url"),
             "review_text": obj.get("review_text"),
             "publication_date": obj.get("publication_date"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

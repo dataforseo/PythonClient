@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -18,14 +18,14 @@ class ShoppingElement(BaseModel):
     ShoppingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
     source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account provider. commerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")
-    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"relevant marketplace URL. URL of the page on the marketplace website where the product is hosted")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account provider. ecommerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")
+    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"URL to the merchant account provider. ecommerce site that hosts products or websites of individual sellers under the same merchant account")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -91,7 +91,7 @@ class ShoppingElement(BaseModel):
             "marketplace": obj.get("marketplace"),
             "marketplace_url": obj.get("marketplace_url"),
             "url": obj.get("url"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

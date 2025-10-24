@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 
 
 
@@ -17,13 +17,13 @@ class RecipesElement(BaseModel):
     RecipesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
     source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     time: Optional[StrictStr] = Field(default=None, description=r"the total time it takes to prepare the cook the dish")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -86,7 +86,7 @@ class RecipesElement(BaseModel):
             "source": obj.get("source"),
             "description": obj.get("description"),
             "time": obj.get("time"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

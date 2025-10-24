@@ -11,7 +11,7 @@ from typing_extensions import Self
 from dataforseo_client.models.ai_mode_images_element_info import AiModeImagesElementInfo
 from dataforseo_client.models.ad_link_element import AdLinkElement
 from dataforseo_client.models.price_info import PriceInfo
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
 from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
@@ -41,8 +41,8 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"additional information about the result")
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"extended description. if there is none, equals null")
     links: Optional[List[Optional[AdLinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
-    price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price of booking a place for the specified dates of stay")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 
@@ -157,7 +157,7 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
             "description_rows": obj.get("description_rows"),
             "links": [AdLinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

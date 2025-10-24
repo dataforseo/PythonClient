@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_element import RatingElement
+from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
 from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
@@ -26,7 +26,7 @@ class GoogleReviewsSerpElementItem(BaseSerpApiElementItem):
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews")
-    rating: Optional[RatingElement] = Field(default=None, description=r"the element’s rating. the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     place_id: Optional[StrictStr] = Field(default=None, description=r"the identifier of a place")
     feature: Optional[StrictStr] = Field(default=None, description=r"the additional feature of the review")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")
@@ -101,7 +101,7 @@ class GoogleReviewsSerpElementItem(BaseSerpApiElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "place_id": obj.get("place_id"),
             "feature": obj.get("feature"),
             "cid": obj.get("cid"),
