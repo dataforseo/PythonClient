@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AppDataAppleAppListingsSearchLiveResultInfo]]** | array of results |[optional]|
+**result** | **Any** | array of results |[optional]|

@@ -10,3 +10,4 @@
 **rating** | **RatingElement** | shop rating<br>the shop popularity rate based on product reviews |[optional]|
 **product_condition** | **StrictStr** | indicated condition of the product<br>possible values: Used, Refurbished, New, null |[optional]|
 **product_annotation** | **StrictStr** | data from annotations and badges with special offers<br>if there is no annotation for this product, the value will be null<br>examples: LOW PRICE, SPECIAL OFFER, SALE, PRICE DROP |[optional]|
+**product_availability** | **StrictStr** | product availability information<br>product availability information<br>can take the following values: in_stock, limited_stock, out_of_stock, backordered, pre_order_available, on_display_to_order |[optional]|

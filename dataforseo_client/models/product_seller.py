@@ -25,6 +25,7 @@ class ProductSeller(BaseModel):
     seller_review_count: Optional[StrictInt] = Field(default=None, description=r"number of seller reviews. number of reviews on the product seller’s account")
     price: Optional[PriceInfo] = Field(default=None, description=r"product price. product price details on the seller’s website")
     delivery_info: Optional[DeliveryInfo] = Field(default=None, description=r"delivery information. product delivery information")
+    product_availability: Optional[StrictStr] = Field(default=None, description=r"product availability information. can take the following values: in_stock, limited_stock, out_of_stock, backordered, pre_order_available, on_display_to_order")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -33,6 +34,7 @@ class ProductSeller(BaseModel):
         "seller_review_count", 
         "price", 
         "delivery_info", 
+        "product_availability", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -66,6 +68,7 @@ class ProductSeller(BaseModel):
         _dict['seller_review_count'] = self.seller_review_count
         _dict['price'] = self.price.to_dict() if self.price else None
         _dict['delivery_info'] = self.delivery_info.to_dict() if self.delivery_info else None
+        _dict['product_availability'] = self.product_availability
         return _dict
 
 
@@ -85,6 +88,7 @@ class ProductSeller(BaseModel):
             "seller_review_count": obj.get("seller_review_count"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "delivery_info": DeliveryInfo.from_dict(obj["delivery_info"]) if obj.get("delivery_info") is not None else None,
+            "product_availability": obj.get("product_availability"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -14,7 +14,7 @@
 **datetime** | **StrictStr** | date and time when the result was received<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **spell** | **SpellInfo** | autocorrection of the search engine<br>if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection |[optional]|
 **refinement_chips** | **RefinementChipsInfo** | search refinement chips<br>equals null |[optional]|
-**item_types** | **List[Optional[StrictStr]]** | types of search results in SERP<br>contains types of search results (items) found in SERP.<br>possible item types:<br>featured_snippet, images, local_pack, hotels_pack, organic, paid, people_also_ask, related_searches, shopping, recipes, top_stories, video |[optional]|
+**item_types** | **List[Optional[StrictStr]]** | types of search results in SERP<br>contains types of search results (items) found in SERP.<br>possible item types:<br>featured_snippet, images, local_pack, hotels_pack, organic, paid, people_also_ask, related_searches, shopping, recipes, top_stories, video, ai_overview |[optional]|
 **se_results_count** | **StrictInt** | total number of results in SERP |[optional]|
 **pages_count** | **StrictInt** | total pages retrieved<br>total number of retrieved SERPs in the result |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|

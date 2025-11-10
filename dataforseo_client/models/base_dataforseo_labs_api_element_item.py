@@ -13,8 +13,8 @@ from importlib import import_module
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
-    from dataforseo_client.models.data_labs_paid_serp_element_item import DataLabsPaidSerpElementItem;
     from dataforseo_client.models.data_labs_featured_snippet_serp_element_item import DataLabsFeaturedSnippetSerpElementItem;
+    from dataforseo_client.models.data_labs_paid_serp_element_item import DataLabsPaidSerpElementItem;
     from dataforseo_client.models.data_labs_organic_serp_element_item import DataLabsOrganicSerpElementItem;
     from dataforseo_client.models.data_labs_answer_box_serp_element_item import DataLabsAnswerBoxSerpElementItem;
     from dataforseo_client.models.data_labs_carousel_serp_element_item import DataLabsCarouselSerpElementItem;
@@ -72,8 +72,8 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
     __discriminator_property_name: ClassVar[str] = 'type'
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
         'local_pack': 'DataLabsLocalPackSerpElementItem',
-        'paid': 'DataLabsPaidSerpElementItem',
         'featured_snippet': 'DataLabsFeaturedSnippetSerpElementItem',
+        'paid': 'DataLabsPaidSerpElementItem',
         'organic': 'DataLabsOrganicSerpElementItem',
         'answer_box': 'DataLabsAnswerBoxSerpElementItem',
         'carousel': 'DataLabsCarouselSerpElementItem',
@@ -153,8 +153,8 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
     @classmethod
     def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[
         DataLabsLocalPackSerpElementItem, 
-        DataLabsPaidSerpElementItem, 
         DataLabsFeaturedSnippetSerpElementItem, 
+        DataLabsPaidSerpElementItem, 
         DataLabsOrganicSerpElementItem, 
         DataLabsAnswerBoxSerpElementItem, 
         DataLabsCarouselSerpElementItem, 
@@ -194,10 +194,10 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         
         if object_type == 'DataLabsLocalPackSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsPaidSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_paid_serp_element_item").DataLabsPaidSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsFeaturedSnippetSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_featured_snippet_serp_element_item").DataLabsFeaturedSnippetSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsPaidSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_paid_serp_element_item").DataLabsPaidSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsOrganicSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_organic_serp_element_item").DataLabsOrganicSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsAnswerBoxSerpElementItem':

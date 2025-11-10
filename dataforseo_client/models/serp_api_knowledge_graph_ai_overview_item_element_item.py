@@ -24,7 +24,7 @@ class SerpApiKnowledgeGraphAiOverviewItemElementItem(BaseSerpApiKnowledgeGraphEl
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is loaded asynchronically. if true, the ai_overview element is loaded asynchronically;. if false, the ai_overview element is loaded from cache;")
+    asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is loaded asynchronously. if true, the ai_overview element is loaded asynchronously;. if false, the ai_overview element is loaded from cache;")
     items: Optional[List[Optional[BaseSerpApiAiOverviewElementItem]]] = Field(default=None, description=r"contains results featured in the ‘hotels_pack’ element of SERP")
     references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
     __properties: ClassVar[List[str]] = [

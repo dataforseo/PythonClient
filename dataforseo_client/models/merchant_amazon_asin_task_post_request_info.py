@@ -23,8 +23,6 @@ class MerchantAmazonAsinTaskPostRequestInfo(BaseModel):
     language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine language. required field if you don’t specify language_code. if you use this field, you don’t need to specify language_code. you can receive the list of available languages with their language_name parameters by making a separate request to the. https://api.dataforseo.com/v3/merchant/amazon/languages. example:. English (United Kingdom)")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language code. required field if you don’t specify language_name. if you use this field, you don’t need to specify language_name. you can receive the list of available languages with their language_code parameters by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/languages. example:. en_GB")
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain. optional field. we choose the relevant search engine domain automatically according to the location and language you specify. however, you can set a custom search engine domain in this field. example:. amazon.com, amazon.co.uk, amazon.fr, etc.")
-    load_more_local_reviews: Optional[StrictBool] = Field(default=None, description=r"load more local reviews. optional field. if set to true, additional local reviews will be loaded in the top_local_reviews array of the Task GET response;. Note: you will be charged double the price for using this parameter")
-    local_reviews_sort: Optional[StrictStr] = Field(default=None, description=r"sort local reviews. optional field. reviews in the top_local_reviews array of the Task GET response can be sorted by most helpful or most recent first;. possible values: helpful, recent. default value: helpful")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"return URL for sending task results. optional field. once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified. you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.. example:. http://your-server.com/postbackscript?id=$id. http://your-server.com/postbackscript?id=$id&tag=$tag. Note: special characters in postback_url will be urlencoded;. i.a., the # character will be encoded into %23. learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"postback_url datatype. required field if you specify postback_url. corresponds to the datatype that will be sent to your server. possible values:. advanced, html")
@@ -38,8 +36,6 @@ class MerchantAmazonAsinTaskPostRequestInfo(BaseModel):
         "language_name", 
         "language_code", 
         "se_domain", 
-        "load_more_local_reviews", 
-        "local_reviews_sort", 
         "tag", 
         "postback_url", 
         "postback_data", 
@@ -78,8 +74,6 @@ class MerchantAmazonAsinTaskPostRequestInfo(BaseModel):
         _dict['language_name'] = self.language_name
         _dict['language_code'] = self.language_code
         _dict['se_domain'] = self.se_domain
-        _dict['load_more_local_reviews'] = self.load_more_local_reviews
-        _dict['local_reviews_sort'] = self.local_reviews_sort
         _dict['tag'] = self.tag
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
@@ -104,8 +98,6 @@ class MerchantAmazonAsinTaskPostRequestInfo(BaseModel):
             "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
             "se_domain": obj.get("se_domain"),
-            "load_more_local_reviews": obj.get("load_more_local_reviews"),
-            "local_reviews_sort": obj.get("local_reviews_sort"),
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),

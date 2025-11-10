@@ -8,8 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.dataforseo_labs_available_filters_google_info import DataforseoLabsAvailableFiltersGoogleInfo
-from dataforseo_client.models.dataforseo_labs_available_filters_amazon_info import DataforseoLabsAvailableFiltersAmazonInfo
 
 
 
@@ -17,13 +15,13 @@ class RankedKeywordsInfo(BaseModel):
     """
     RankedKeywordsInfo
     """ # noqa: E501
-    google: Optional[DataforseoLabsAvailableFiltersGoogleInfo] = Field(default=None, description=r"")
-    bing: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
-    amazon: Optional[DataforseoLabsAvailableFiltersAmazonInfo] = Field(default=None, description=r"")
+    page_from_keywords_count_top_3: Optional[StrictInt] = Field(default=None, description=r"number of keywords for which the page is ranked in top 3 search results")
+    page_from_keywords_count_top_10: Optional[StrictInt] = Field(default=None, description=r"number of keywords for which the page is ranked in top 10 search results")
+    page_from_keywords_count_top_100: Optional[StrictInt] = Field(default=None, description=r"number of keywords for which the page is ranked in top 100 search results")
     __properties: ClassVar[List[str]] = [
-        "google", 
-        "bing", 
-        "amazon", 
+        "page_from_keywords_count_top_3", 
+        "page_from_keywords_count_top_10", 
+        "page_from_keywords_count_top_100", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -50,9 +48,9 @@ class RankedKeywordsInfo(BaseModel):
 
         _dict = {}
 
-        _dict['google'] = self.google.to_dict() if self.google else None
-        _dict['bing'] = self.bing
-        _dict['amazon'] = self.amazon.to_dict() if self.amazon else None
+        _dict['page_from_keywords_count_top_3'] = self.page_from_keywords_count_top_3
+        _dict['page_from_keywords_count_top_10'] = self.page_from_keywords_count_top_10
+        _dict['page_from_keywords_count_top_100'] = self.page_from_keywords_count_top_100
         return _dict
 
 
@@ -65,9 +63,9 @@ class RankedKeywordsInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "google": DataforseoLabsAvailableFiltersGoogleInfo.from_dict(obj["google"]) if obj.get("google") is not None else None,
-            "bing": obj.get("bing"),
-            "amazon": DataforseoLabsAvailableFiltersAmazonInfo.from_dict(obj["amazon"]) if obj.get("amazon") is not None else None,
+            "page_from_keywords_count_top_3": obj.get("page_from_keywords_count_top_3"),
+            "page_from_keywords_count_top_10": obj.get("page_from_keywords_count_top_10"),
+            "page_from_keywords_count_top_100": obj.get("page_from_keywords_count_top_100"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

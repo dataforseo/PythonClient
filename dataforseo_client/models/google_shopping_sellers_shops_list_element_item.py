@@ -38,6 +38,7 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
     rating: Optional[RatingElement] = Field(default=None, description=r"shop rating. the shop popularity rate based on product reviews")
     product_condition: Optional[StrictStr] = Field(default=None, description=r"indicated condition of the product. possible values: Used, Refurbished, New, null")
     product_annotation: Optional[StrictStr] = Field(default=None, description=r"data from annotations and badges with special offers. if there is no annotation for this product, the value will be null. examples: LOW PRICE, SPECIAL OFFER, SALE, PRICE DROP")
+    product_availability: Optional[StrictStr] = Field(default=None, description=r"product availability information. product availability information. can take the following values: in_stock, limited_stock, out_of_stock, backordered, pre_order_available, on_display_to_order")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -60,6 +61,7 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
         "rating", 
         "product_condition", 
         "product_annotation", 
+        "product_availability", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -107,6 +109,7 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
         _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['product_condition'] = self.product_condition
         _dict['product_annotation'] = self.product_annotation
+        _dict['product_availability'] = self.product_availability
         return _dict
 
 
@@ -140,6 +143,7 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "product_condition": obj.get("product_condition"),
             "product_annotation": obj.get("product_annotation"),
+            "product_availability": obj.get("product_availability"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

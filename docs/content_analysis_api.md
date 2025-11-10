@@ -40,8 +40,8 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.content_analysis_id_list([ContentAnalysisIdListRequestInfo(
-                datetime_from="2025-07-24 12:05:26 +00:00",
-                datetime_to="2025-09-24 12:05:26 +00:00",
+                datetime_from="2025-08-10 11:04:39 +00:00",
+                datetime_to="2025-10-10 11:04:39 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -566,7 +566,7 @@ try:
         response = content_analysis_api.phrase_trends_live([ContentAnalysisPhraseTrendsLiveRequestInfo(
                 keyword="logitech",
                 search_mode="as_is",
-                date_from="2025-07-24",
+                date_from="2025-08-10",
                 date_group="month",
         )]
         )
@@ -626,7 +626,7 @@ try:
         response = content_analysis_api.category_trends_live([ContentAnalysisCategoryTrendsLiveRequestInfo(
                 category_code="10994",
                 search_mode="as_is",
-                date_from="2025-07-24",
+                date_from="2025-08-10",
                 date_group="month",
         )]
         )

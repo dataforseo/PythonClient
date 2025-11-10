@@ -20,7 +20,7 @@ class SerpScreenshotRequestInfo(BaseModel):
     browser_screen_width: Optional[StrictInt] = Field(default=None, description=r"width of the browser resolution. optional field. can be specified in the following range: 240-9999")
     browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"height of the browser resolution. optional field. can be specified in the following range: 240-9999")
     browser_screen_scale_factor: Optional[StrictFloat] = Field(default=None, description=r"browser scale factor. optional field. can be specified in the following range: 0.5-3")
-    page: Optional[StrictInt] = Field(default=None, description=r"number of SERP pages. optional field. if depth in the corresponding Task POST request exceeds 100 results (or 1 SERP page), specify the number of SERP pages to screenshot;. default value: 1")
+    page: Optional[StrictInt] = Field(default=None, description=r"number of SERP pages. optional field. if depth in the corresponding Task POST request exceeds 10 results (or 1 SERP page), specify the number of SERP pages to screenshot;. default value: 1")
     __properties: ClassVar[List[str]] = [
         "task_id", 
         "browser_preset", 

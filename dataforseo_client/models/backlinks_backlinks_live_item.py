@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.backlink_ranked_keywords_info import BacklinkRankedKeywordsInfo
+from dataforseo_client.models.ranked_keywords_info import RankedKeywordsInfo
 from dataforseo_client.models.backlinks_redirect_info import BacklinksRedirectInfo
 
 
@@ -61,7 +61,7 @@ class BacklinksBacklinksLiveItem(BaseModel):
     url_to_status_code: Optional[StrictInt] = Field(default=None, description=r"status code of the referenced page. if the value is null, our crawler hasn’t yet visited the webpage the link is pointing to. example:. 200")
     url_to_spam_score: Optional[StrictInt] = Field(default=None, description=r"spam score of the referenced page. if the value is null, our crawler hasn’t yet visited the webpage the link is pointing to;. learn more about how the metric is calculated on this help center page")
     url_to_redirect_target: Optional[StrictStr] = Field(default=None, description=r"target url of the redirect. target page the redirect is pointing to")
-    ranked_keywords_info: Optional[BacklinkRankedKeywordsInfo] = Field(default=None, description=r"number of keywords for which the page is ranked in top search results")
+    ranked_keywords_info: Optional[RankedKeywordsInfo] = Field(default=None, description=r"number of keywords for which the page is ranked in top search results")
     is_indirect_link: Optional[StrictBool] = Field(default=None, description=r"indicates whether the backlink is an indirect link. if true, the backlink is an indirect link pointing to a page that either redirects to url_to, or points to a canonical page")
     indirect_link_path: Optional[List[Optional[BacklinksRedirectInfo]]] = Field(default=None, description=r"indirect link path. indicates a URL or a sequence of URLs that lead to url_to")
     __properties: ClassVar[List[str]] = [
@@ -246,7 +246,7 @@ class BacklinksBacklinksLiveItem(BaseModel):
             "url_to_status_code": obj.get("url_to_status_code"),
             "url_to_spam_score": obj.get("url_to_spam_score"),
             "url_to_redirect_target": obj.get("url_to_redirect_target"),
-            "ranked_keywords_info": BacklinkRankedKeywordsInfo.from_dict(obj["ranked_keywords_info"]) if obj.get("ranked_keywords_info") is not None else None,
+            "ranked_keywords_info": RankedKeywordsInfo.from_dict(obj["ranked_keywords_info"]) if obj.get("ranked_keywords_info") is not None else None,
             "is_indirect_link": obj.get("is_indirect_link"),
             "indirect_link_path": [BacklinksRedirectInfo.from_dict(_item) for _item in obj["indirect_link_path"]] if obj.get("indirect_link_path") is not None else None,
         })

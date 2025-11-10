@@ -8,8 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ranked_keywords_info import RankedKeywordsInfo
-from dataforseo_client.models.product_keyword_intersections_amazon_dataforseo_labs_available_filters_amazon_info import ProductKeywordIntersectionsAmazonDataforseoLabsAvailableFiltersAmazonInfo
 
 
 
@@ -19,7 +17,7 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
     """ # noqa: E501
     related_keywords: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     keyword_suggestions: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
-    ranked_keywords: Optional[RankedKeywordsInfo] = Field(default=None, description=r"")
+    ranked_keywords: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     keyword_ideas: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     serp_competitors: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     relevant_pages: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
@@ -29,12 +27,11 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
     keywords_for_categories: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     domain_intersection: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     page_intersection: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
-    domain_whois_overview: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     top_searches: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     domain_metrics_by_categories: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     keywords_for_site: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     product_competitors: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
-    product_keyword_intersections: Optional[Dict[str, Optional[ProductKeywordIntersectionsAmazonDataforseoLabsAvailableFiltersAmazonInfo]]] = Field(default=None, description=r"")
+    product_keyword_intersections: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     app_intersection: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     app_competitors: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
     keywords_for_app: Optional[Dict[str, Optional[Dict[str, Optional[StrictStr]]]]] = Field(default=None, description=r"")
@@ -52,7 +49,6 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
         "keywords_for_categories", 
         "domain_intersection", 
         "page_intersection", 
-        "domain_whois_overview", 
         "top_searches", 
         "domain_metrics_by_categories", 
         "keywords_for_site", 
@@ -90,7 +86,7 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
 
         _dict['related_keywords'] = self.related_keywords
         _dict['keyword_suggestions'] = self.keyword_suggestions
-        _dict['ranked_keywords'] = self.ranked_keywords.to_dict() if self.ranked_keywords else None
+        _dict['ranked_keywords'] = self.ranked_keywords
         _dict['keyword_ideas'] = self.keyword_ideas
         _dict['serp_competitors'] = self.serp_competitors
         _dict['relevant_pages'] = self.relevant_pages
@@ -100,7 +96,6 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
         _dict['keywords_for_categories'] = self.keywords_for_categories
         _dict['domain_intersection'] = self.domain_intersection
         _dict['page_intersection'] = self.page_intersection
-        _dict['domain_whois_overview'] = self.domain_whois_overview
         _dict['top_searches'] = self.top_searches
         _dict['domain_metrics_by_categories'] = self.domain_metrics_by_categories
         _dict['keywords_for_site'] = self.keywords_for_site
@@ -124,7 +119,7 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
         _obj = cls.model_validate({
             "related_keywords": obj.get("related_keywords"),
             "keyword_suggestions": obj.get("keyword_suggestions"),
-            "ranked_keywords": RankedKeywordsInfo.from_dict(obj["ranked_keywords"]) if obj.get("ranked_keywords") is not None else None,
+            "ranked_keywords": obj.get("ranked_keywords"),
             "keyword_ideas": obj.get("keyword_ideas"),
             "serp_competitors": obj.get("serp_competitors"),
             "relevant_pages": obj.get("relevant_pages"),
@@ -134,7 +129,6 @@ class DataforseoLabsAvailableFiltersResultInfo(BaseModel):
             "keywords_for_categories": obj.get("keywords_for_categories"),
             "domain_intersection": obj.get("domain_intersection"),
             "page_intersection": obj.get("page_intersection"),
-            "domain_whois_overview": obj.get("domain_whois_overview"),
             "top_searches": obj.get("top_searches"),
             "domain_metrics_by_categories": obj.get("domain_metrics_by_categories"),
             "keywords_for_site": obj.get("keywords_for_site"),

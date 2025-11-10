@@ -8,7 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.trustpilot_review_search import TrustpilotReviewSearch
 
 
@@ -24,8 +23,8 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the ‘reviews’ element on Trustpilot. the name of the business entity for which the reviews are collected")
     location: Optional[StrictStr] = Field(default=None, description=r"location of the business entity as specified on Trustpilot. address of the business entity for which the reviews are collected")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding business entity. popularity rate based on reviews and displayed in SERP")
+    reviews_count: Optional[StrictStr] = Field(default=None, description=r"the total number of reviews")
+    rating: Optional[Any] = Field(default=None, description=r"rating of the corresponding business entity. popularity rate based on reviews and displayed in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of items in the results array. you can get more results by using the depth parameter when setting a task")
     items: Optional[List[Optional[TrustpilotReviewSearch]]] = Field(default=None, description=r"found reviews. you can get more results by using the depth parameter when setting a task")
     __properties: ClassVar[List[str]] = [
@@ -74,7 +73,7 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
         _dict['title'] = self.title
         _dict['location'] = self.location
         _dict['reviews_count'] = self.reviews_count
-        _dict['rating'] = self.rating.to_dict() if self.rating else None
+        _dict['rating'] = self.rating
         _dict['items_count'] = self.items_count
         items_items = []
         if self.items:
@@ -102,7 +101,7 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
             "title": obj.get("title"),
             "location": obj.get("location"),
             "reviews_count": obj.get("reviews_count"),
-            "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "rating": obj.get("rating"),
             "items_count": obj.get("items_count"),
             "items": [TrustpilotReviewSearch.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })

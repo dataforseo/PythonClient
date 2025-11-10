@@ -11,4 +11,4 @@
 **language_code** | **StrictStr** | language code in a POST array |[optional]|
 **total_count** | **StrictInt** | total amount of results in our database relevant to your request |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[DataforseoLabsGoogleAppIntersectionLiveItem]]** | contains data related to the ranking keywords for the app specified in the app_id field |[optional]|
+**items** | **List[Optional[DataforseoLabsleAppIntersectionLiveItem]]** | contains data related to the ranking keywords for the app specified in the app_id field |[optional]|

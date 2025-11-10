@@ -30,6 +30,8 @@ class OnPageAlternateLinkItem(BaseOnPageLinkItem):
     is_broken: Optional[StrictBool] = Field(default=None, description=r"link is broken. indicates whether a link is directing to a broken page or resource")
     is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description=r"indicates that the link may have a conflict with another link. if true, at least one link pointing to link_to has a rel='nofollow' attribute and at least one is dofollow")
     page_to_status_code: Optional[StrictInt] = Field(default=None, description=r"status code of the referenced page. status code of the page to which the link is pointing")
+    is_valid_hreflang: Optional[StrictBool] = Field(default=None, description=r"hreflang validity status. indicates whether the hreflang attribute is correctly implemented")
+    hreflang: Optional[StrictStr] = Field(default=None, description=r"hreflang attribute value. language and optional country code specified in the hreflang attribute. example: 'en-US', 'fr'")
     __properties: ClassVar[List[str]] = [
         "type", 
         "domain_from", 
@@ -45,6 +47,8 @@ class OnPageAlternateLinkItem(BaseOnPageLinkItem):
         "is_broken", 
         "is_link_relation_conflict", 
         "page_to_status_code", 
+        "is_valid_hreflang", 
+        "hreflang", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -85,6 +89,8 @@ class OnPageAlternateLinkItem(BaseOnPageLinkItem):
         _dict['is_broken'] = self.is_broken
         _dict['is_link_relation_conflict'] = self.is_link_relation_conflict
         _dict['page_to_status_code'] = self.page_to_status_code
+        _dict['is_valid_hreflang'] = self.is_valid_hreflang
+        _dict['hreflang'] = self.hreflang
         return _dict
 
 
@@ -111,6 +117,8 @@ class OnPageAlternateLinkItem(BaseOnPageLinkItem):
             "is_broken": obj.get("is_broken"),
             "is_link_relation_conflict": obj.get("is_link_relation_conflict"),
             "page_to_status_code": obj.get("page_to_status_code"),
+            "is_valid_hreflang": obj.get("is_valid_hreflang"),
+            "hreflang": obj.get("hreflang"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

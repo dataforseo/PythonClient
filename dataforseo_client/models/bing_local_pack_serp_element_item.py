@@ -33,6 +33,7 @@ class BingLocalPackSerpElementItem(BaseBingSerpApiElementItem):
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
     rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating. the popularity rate based on reviews and displayed in SERP")
     cid: Optional[StrictStr] = Field(default=None, description=r"bing-defined client id. unique id of a local establishment")
+    is_claimed: Optional[StrictBool] = Field(default=None, description=r"business listing is claimed. if true, the business listing is claimed by the owner or representative")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -49,6 +50,7 @@ class BingLocalPackSerpElementItem(BaseBingSerpApiElementItem):
         "is_paid", 
         "rating", 
         "cid", 
+        "is_claimed", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -90,6 +92,7 @@ class BingLocalPackSerpElementItem(BaseBingSerpApiElementItem):
         _dict['is_paid'] = self.is_paid
         _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['cid'] = self.cid
+        _dict['is_claimed'] = self.is_claimed
         return _dict
 
 
@@ -117,6 +120,7 @@ class BingLocalPackSerpElementItem(BaseBingSerpApiElementItem):
             "is_paid": obj.get("is_paid"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "cid": obj.get("cid"),
+            "is_claimed": obj.get("is_claimed"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

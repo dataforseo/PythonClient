@@ -7,8 +7,8 @@
 |------------ | ------------- | ------------- | -------------|
 **domain** | **StrictStr** | domain in SERP of the Ad element |[optional]|
 **title** | **StrictStr** | title of the result in SERP |[optional]|
-**url** | **StrictStr** | result’s URL |[optional]|
-**breadcrumb** | **StrictStr** | breadcrumb of the Ad element in SERP |[optional]|
+**url** | **StrictStr** | sitelink URL |[optional]|
+**breadcrumb** | **StrictStr** | breadcrumb in SERP |[optional]|
 **website_name** | **StrictStr** |  |[optional]|
 **is_image** | **StrictBool** | indicates whether the element contains an image |[optional]|
 **is_video** | **StrictBool** | indicates whether the element contains a video |[optional]|

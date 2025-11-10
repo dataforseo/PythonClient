@@ -18,7 +18,7 @@ class ProductVariation(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     product_id: Optional[StrictStr] = Field(default=None, description=r"product ID in a POST array. learn more about the parameter in this help center guide")
     title: Optional[StrictStr] = Field(default=None, description=r"name of the product seller")
-    url: Optional[StrictStr] = Field(default=None, description=r"seller url. url of the webpage on the seller’s website where the product is sold")
+    url: Optional[StrictStr] = Field(default=None, description=r"product url on google shopping")
     __properties: ClassVar[List[str]] = [
         "type", 
         "product_id", 
