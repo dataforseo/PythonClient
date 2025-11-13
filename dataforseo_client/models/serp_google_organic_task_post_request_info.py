@@ -8,6 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -19,7 +20,7 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"direct URL of the search query. optional field. you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method.. example:. https://www.google.co.uk/search?q=%20rank%20tracker%20api&hl=en&gl=GB&uule=w+CAIQIFISCXXeIa8LoNhHEZkq1d1aOpZS")
     priority: Optional[StrictInt] = Field(default=None, description=r"task priority. optional field. can take the following values:. 1 – normal execution priority (set by default);. 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the Pricing page.")
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 700. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
-    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center. Your account will be billed per each SERP crawled through the specified targets")
+    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
     match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
     match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. max value: 100. Note: you will be charged for each page crawled (10 organic results per page);. learn more about pricing on our Pricing page;. Note#2: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
@@ -106,7 +107,12 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         _dict['url'] = self.url
         _dict['priority'] = self.priority
         _dict['depth'] = self.depth
-        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        stop_crawl_on_match_items = []
+        if self.stop_crawl_on_match:
+            for _item in self.stop_crawl_on_match:
+                if _item:
+                    stop_crawl_on_match_items.append(_item.to_dict())
+            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         _dict['match_value'] = self.match_value
         _dict['match_type'] = self.match_type
         _dict['max_crawl_pages'] = self.max_crawl_pages
@@ -148,7 +154,7 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
             "url": obj.get("url"),
             "priority": obj.get("priority"),
             "depth": obj.get("depth"),
-            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
             "match_value": obj.get("match_value"),
             "match_type": obj.get("match_type"),
             "max_crawl_pages": obj.get("max_crawl_pages"),

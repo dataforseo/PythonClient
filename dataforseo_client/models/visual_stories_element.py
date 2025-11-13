@@ -11,19 +11,19 @@ from typing_extensions import Self
 
 
 
-class Rectangle(BaseModel):
+class VisualStoriesElement(BaseModel):
     """
-    Rectangle
+    VisualStoriesElement
     """ # noqa: E501
-    x: Optional[StrictFloat] = Field(default=None, description=r"x-axis coordinate. x-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin")
-    y: Optional[StrictFloat] = Field(default=None, description=r"y-axis coordinate. y-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin")
-    width: Optional[StrictFloat] = Field(default=None, description=r"width of the element in pixels")
-    height: Optional[StrictFloat] = Field(default=None, description=r"height of the element in pixels")
+    type: Optional[StrictStr] = Field(default=None, description=r"type of element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
+    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     __properties: ClassVar[List[str]] = [
-        "x", 
-        "y", 
-        "width", 
-        "height", 
+        "type", 
+        "title", 
+        "url", 
+        "domain", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -50,10 +50,10 @@ class Rectangle(BaseModel):
 
         _dict = {}
 
-        _dict['x'] = self.x
-        _dict['y'] = self.y
-        _dict['width'] = self.width
-        _dict['height'] = self.height
+        _dict['type'] = self.type
+        _dict['title'] = self.title
+        _dict['url'] = self.url
+        _dict['domain'] = self.domain
         return _dict
 
 
@@ -66,10 +66,10 @@ class Rectangle(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "x": obj.get("x"),
-            "y": obj.get("y"),
-            "width": obj.get("width"),
-            "height": obj.get("height"),
+            "type": obj.get("type"),
+            "title": obj.get("title"),
+            "url": obj.get("url"),
+            "domain": obj.get("domain"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

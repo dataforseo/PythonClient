@@ -11,19 +11,19 @@ from typing_extensions import Self
 
 
 
-class Rectangle(BaseModel):
+class ImageElement(BaseModel):
     """
-    Rectangle
+    ImageElement
     """ # noqa: E501
-    x: Optional[StrictFloat] = Field(default=None, description=r"x-axis coordinate. x-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin")
-    y: Optional[StrictFloat] = Field(default=None, description=r"y-axis coordinate. y-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin")
-    width: Optional[StrictFloat] = Field(default=None, description=r"width of the element in pixels")
-    height: Optional[StrictFloat] = Field(default=None, description=r"height of the element in pixels")
+    type: Optional[StrictStr] = Field(default=None, description=r"type of element")
+    alt: Optional[StrictStr] = Field(default=None, description=r"alt tag of the image")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL link")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     __properties: ClassVar[List[str]] = [
-        "x", 
-        "y", 
-        "width", 
-        "height", 
+        "type", 
+        "alt", 
+        "url", 
+        "image_url", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -50,10 +50,10 @@ class Rectangle(BaseModel):
 
         _dict = {}
 
-        _dict['x'] = self.x
-        _dict['y'] = self.y
-        _dict['width'] = self.width
-        _dict['height'] = self.height
+        _dict['type'] = self.type
+        _dict['alt'] = self.alt
+        _dict['url'] = self.url
+        _dict['image_url'] = self.image_url
         return _dict
 
 
@@ -66,10 +66,10 @@ class Rectangle(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "x": obj.get("x"),
-            "y": obj.get("y"),
-            "width": obj.get("width"),
-            "height": obj.get("height"),
+            "type": obj.get("type"),
+            "alt": obj.get("alt"),
+            "url": obj.get("url"),
+            "image_url": obj.get("image_url"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

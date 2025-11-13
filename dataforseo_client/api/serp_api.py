@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.serp_google_locations_country_response_info import SerpGoogleLocationsCountryResponseInfo
     from dataforseo_client.models.serp_google_languages_response_info import SerpGoogleLanguagesResponseInfo
     from dataforseo_client.models.serp_google_organic_task_post_request_info import SerpGoogleOrganicTaskPostRequestInfo
+    from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
     from dataforseo_client.models.serp_google_organic_task_post_response_info import SerpGoogleOrganicTaskPostResponseInfo
     from dataforseo_client.models.serp_google_organic_tasks_ready_response_info import SerpGoogleOrganicTasksReadyResponseInfo
     from dataforseo_client.models.serp_tasks_ready_response_info import SerpTasksReadyResponseInfo

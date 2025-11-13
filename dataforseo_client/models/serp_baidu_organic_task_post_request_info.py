@@ -8,6 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -27,7 +28,7 @@ class SerpBaiduOrganicTaskPostRequestInfo(BaseModel):
     device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. can take the values: desktop, mobile, tablet. default value: desktop")
     os: Optional[StrictStr] = Field(default=None, description=r"device operating system. optional field. if you specify desktop in the device field, choose from the following values: windows, macos. default value: windows. if you specify mobile in the device field, choose from the following values: android, ios. default value: android. if you specify tablet in the device field, choose from the following values: android, ios. default value: android")
     get_website_url: Optional[StrictBool] = Field(default=None, description=r"include direct URL for each ranked result. optional field. if set to true, the returned results will contain direct URLs of the ranked websites. by default, the URLs in Baidu results are encoded by the search engine,. for example:. http://www.baidu.com/link?url=KQt6LSwU5OHnPtB8210R8flBP40grY6lTPxH_0UO7S2kgiZMTmw3ztV0hCo5c1kLdefault value: false. Note: if set to true, the charge per task will be multiplied by 10 as our system runs a separate request for each ranked website to return its direct URL")
-    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center. Your account will be billed per each SERP crawled through the specified targets")
+    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
     match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
     match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
@@ -92,7 +93,12 @@ class SerpBaiduOrganicTaskPostRequestInfo(BaseModel):
         _dict['device'] = self.device
         _dict['os'] = self.os
         _dict['get_website_url'] = self.get_website_url
-        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        stop_crawl_on_match_items = []
+        if self.stop_crawl_on_match:
+            for _item in self.stop_crawl_on_match:
+                if _item:
+                    stop_crawl_on_match_items.append(_item.to_dict())
+            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         _dict['match_value'] = self.match_value
         _dict['match_type'] = self.match_type
         _dict['tag'] = self.tag
@@ -123,7 +129,7 @@ class SerpBaiduOrganicTaskPostRequestInfo(BaseModel):
             "device": obj.get("device"),
             "os": obj.get("os"),
             "get_website_url": obj.get("get_website_url"),
-            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
             "match_value": obj.get("match_value"),
             "match_type": obj.get("match_type"),
             "tag": obj.get("tag"),

@@ -11,19 +11,17 @@ from typing_extensions import Self
 
 
 
-class Rectangle(BaseModel):
+class SerpOrganicLiveHtmlItem(BaseModel):
     """
-    Rectangle
+    SerpOrganicLiveHtmlItem
     """ # noqa: E501
-    x: Optional[StrictFloat] = Field(default=None, description=r"x-axis coordinate. x-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin")
-    y: Optional[StrictFloat] = Field(default=None, description=r"y-axis coordinate. y-axis coordinate of the top-left corner of the result’s snippet, where top-left corner of the screen is the origin")
-    width: Optional[StrictFloat] = Field(default=None, description=r"width of the element in pixels")
-    height: Optional[StrictFloat] = Field(default=None, description=r"height of the element in pixels")
+    page: Optional[StrictInt] = Field(default=None, description=r"serial number of the returned HTML page")
+    date: Optional[StrictStr] = Field(default=None, description=r"date and time when the HTML page was scanned. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. 2019-11-15 12:57:46 +00:00")
+    html: Optional[StrictStr] = Field(default=None, description=r"HTML page")
     __properties: ClassVar[List[str]] = [
-        "x", 
-        "y", 
-        "width", 
-        "height", 
+        "page", 
+        "date", 
+        "html", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -50,10 +48,9 @@ class Rectangle(BaseModel):
 
         _dict = {}
 
-        _dict['x'] = self.x
-        _dict['y'] = self.y
-        _dict['width'] = self.width
-        _dict['height'] = self.height
+        _dict['page'] = self.page
+        _dict['date'] = self.date
+        _dict['html'] = self.html
         return _dict
 
 
@@ -66,10 +63,9 @@ class Rectangle(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "x": obj.get("x"),
-            "y": obj.get("y"),
-            "width": obj.get("width"),
-            "height": obj.get("height"),
+            "page": obj.get("page"),
+            "date": obj.get("date"),
+            "html": obj.get("html"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

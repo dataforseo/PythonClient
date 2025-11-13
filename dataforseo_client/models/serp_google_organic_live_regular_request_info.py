@@ -8,6 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -27,7 +28,7 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain. optional field. we choose the relevant search engine domain automatically according to the location and language you specify. however, you can set a custom search engine domain in this field. example:. google.co.uk, google.com.au, google.de, etc.")
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 200. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
     target: Optional[StrictStr] = Field(default=None, description=r"target domain, subdomain, or webpage to get results for. optional field. a domain or a subdomain should be specified without https:// and www.. note that the results of target-specific tasks will only include SERP elements that contain a url string;. you can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results;. examples:. example.com  – returns results for the website’s home page with URLs, such as https://example.com, or https://www.example.com/, or https://example.com/;. example.com* – returns results for the domain, including all its pages;. *example.com* – returns results for the entire domain, including all its pages and subdomains;. *example.com  – returns results for the home page regardless of the subdomain, such as https://en.example.com;. example.com/example-page  – returns results for the exact URL;. example.com/example-page*  – returns results for all domain’s URLs that start with the specified string")
-    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center. Your account will be billed per each SERP crawled through the specified targets")
+    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
     match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
     match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     group_organic_results: Optional[StrictBool] = Field(default=None, description=r"display related results. optional field. if set to true, the related_result element in the response will be provided as a snippet of its parent organic result;. if set to false, the related_result element will be provided as a separate organic result;. default value: true")
@@ -92,7 +93,12 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
         _dict['se_domain'] = self.se_domain
         _dict['depth'] = self.depth
         _dict['target'] = self.target
-        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        stop_crawl_on_match_items = []
+        if self.stop_crawl_on_match:
+            for _item in self.stop_crawl_on_match:
+                if _item:
+                    stop_crawl_on_match_items.append(_item.to_dict())
+            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         _dict['match_value'] = self.match_value
         _dict['match_type'] = self.match_type
         _dict['group_organic_results'] = self.group_organic_results
@@ -123,7 +129,7 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
             "se_domain": obj.get("se_domain"),
             "depth": obj.get("depth"),
             "target": obj.get("target"),
-            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
             "match_value": obj.get("match_value"),
             "match_type": obj.get("match_type"),
             "group_organic_results": obj.get("group_organic_results"),

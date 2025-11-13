@@ -8,6 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -30,7 +31,7 @@ class SerpGoogleOrganicLiveHtmlRequestInfo(BaseModel):
     search_param: Optional[StrictStr] = Field(default=None, description=r"additional parameters of the search query. optional field. get the list of available parameters and additional details here")
     load_async_ai_overview: Optional[StrictBool] = Field(default=None, description=r"load asynchronous ai overview. optional field. set to true to obtain ai_overview items is SERPs even if they are loaded asynchronously;. if set to false, you will only obtain ai_overview items from cache;. default value: false. Note your account will be billed $0.002 extra for each request;. if the element is absent or contains 'asynchronous_ai_overview': false, all extra charges will be returned to your account balance")
     expand_ai_overview: Optional[StrictBool] = Field(default=None, description=r"expand ai overview. optional field. set to true to expand the ai_overview item;. default value: false")
-    stop_crawl_on_match: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center. Your account will be billed per each SERP crawled through the specified targets")
+    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
     match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
     match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
@@ -95,7 +96,12 @@ class SerpGoogleOrganicLiveHtmlRequestInfo(BaseModel):
         _dict['search_param'] = self.search_param
         _dict['load_async_ai_overview'] = self.load_async_ai_overview
         _dict['expand_ai_overview'] = self.expand_ai_overview
-        _dict['stop_crawl_on_match'] = self.stop_crawl_on_match
+        stop_crawl_on_match_items = []
+        if self.stop_crawl_on_match:
+            for _item in self.stop_crawl_on_match:
+                if _item:
+                    stop_crawl_on_match_items.append(_item.to_dict())
+            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         _dict['match_value'] = self.match_value
         _dict['match_type'] = self.match_type
         _dict['tag'] = self.tag
@@ -126,7 +132,7 @@ class SerpGoogleOrganicLiveHtmlRequestInfo(BaseModel):
             "search_param": obj.get("search_param"),
             "load_async_ai_overview": obj.get("load_async_ai_overview"),
             "expand_ai_overview": obj.get("expand_ai_overview"),
-            "stop_crawl_on_match": obj.get("stop_crawl_on_match"),
+            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
             "match_value": obj.get("match_value"),
             "match_type": obj.get("match_type"),
             "tag": obj.get("tag"),
