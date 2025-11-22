@@ -21,8 +21,11 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
     priority: Optional[StrictInt] = Field(default=None, description=r"task priority. optional field. can take the following values:. 1 – normal execution priority (set by default);. 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the Pricing page.")
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 10. max value: 700. Your account will be billed per each SERP containing up to 10 results;. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. The cost can be calculated on the Pricing page.")
     stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
-    match_value: Optional[StrictStr] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
-    match_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of targets to stop crawling. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
+    match_value: Optional[StrictStr] = Field(default=None, description=r"target domain or wildcard value. required field if stop_crawl_on_match is specified;. specify a target domain or wildcard value;. Note: domain name must be specified without a request protocol;. example: dataforseo.com")
+    match_type: Optional[StrictStr] = Field(default=None, description=r"target match type. required field if stop_crawl_on_match is specified;. type of match for the match_value. possible values: domain, with_subdomains, wildcard")
+    target_search_mode: Optional[StrictStr] = Field(default=None, description=r"target matching mode. optional field. to enable this parameter, stop_crawl_on_match must also be enabled. defines how the crawl should stop when multiple targets are specified in stop_crawl_on_match. possible values: all, any. all – the crawl stops only when all specified targets are found. any – the crawl stops when any single target is found. default value: any. learn more about this parameter on our Help Center")
+    find_targets_in: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"SERP element types to check for targets. optional field. to enable this parameter, stop_crawl_on_match must also be enabled. specifies which SERP element types should be checked for target matches. if not specified, all first-level elements with url and domain fields are checked for targets. possible values: organic, paid, local_pack, featured_snippet, events, google_flights, images, jobs, knowledge_graph, local_service, map, scholarly_articles, third_party_reviews, twitter. Note: cannot contain the same element types as ignore_targets_in. example:. 'find_targets_in': ['organic', 'featured_snippet']. learn more about this parameter on our Help Center")
+    ignore_targets_in: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"SERP element types to exclude from target search. optional field. to enable this parameter, stop_crawl_on_match must also be enabled. specifies which SERP element types should be excluded when searching for target matches. possible values: organic, paid, local_pack, featured_snippet, events, google_flights, images, jobs, knowledge_graph, local_service, map, scholarly_articles, third_party_reviews, twitter. Note: cannot contain the same element types as find_targets_in. example:. 'ignore_targets_in': ['paid', 'images']. learn more about this parameter on our Help Center")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limit. optional field. number of search results pages to crawl. max value: 100. Note: you will be charged for each page crawled (10 organic results per page);. learn more about pricing on our Pricing page;. Note#2: the max_crawl_pages and depth parameters complement each other;. learn more at our help center")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. required field if you don’t specify location_code or location_coordinate. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations. example:. London,England,United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. required field if you don’t specify location_name or location_coordinate. if you use this field, you don’t need to specify location_name or location_coordinate. you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/locations. example:. 2840")
@@ -54,6 +57,9 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         "stop_crawl_on_match", 
         "match_value", 
         "match_type", 
+        "target_search_mode", 
+        "find_targets_in", 
+        "ignore_targets_in", 
         "max_crawl_pages", 
         "location_name", 
         "location_code", 
@@ -115,6 +121,9 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
             _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         _dict['match_value'] = self.match_value
         _dict['match_type'] = self.match_type
+        _dict['target_search_mode'] = self.target_search_mode
+        _dict['find_targets_in'] = self.find_targets_in
+        _dict['ignore_targets_in'] = self.ignore_targets_in
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
@@ -157,6 +166,9 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
             "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
             "match_value": obj.get("match_value"),
             "match_type": obj.get("match_type"),
+            "target_search_mode": obj.get("target_search_mode"),
+            "find_targets_in": obj.get("find_targets_in"),
+            "ignore_targets_in": obj.get("ignore_targets_in"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),

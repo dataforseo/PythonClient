@@ -9,7 +9,6 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.table import Table
-from dataforseo_client.models.ai_mode_ai_overview_reference_info import AiModeAiOverviewReferenceInfo
 from dataforseo_client.models.base_serp_api_ai_overview_element_item import BaseSerpApiAiOverviewElementItem
 
 
@@ -22,13 +21,11 @@ class SerpApiAiOverviewTableElementItem(BaseSerpApiAiOverviewElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format")
     table: Optional[Table] = Field(default=None, description=r"table element")
-    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
         "markdown", 
         "table", 
-        "references", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -59,12 +56,6 @@ class SerpApiAiOverviewTableElementItem(BaseSerpApiAiOverviewElementItem):
         _dict['position'] = self.position
         _dict['markdown'] = self.markdown
         _dict['table'] = self.table.to_dict() if self.table else None
-        references_items = []
-        if self.references:
-            for _item in self.references:
-                if _item:
-                    references_items.append(_item.to_dict())
-            _dict['references'] = references_items
         return _dict
 
 
@@ -81,7 +72,6 @@ class SerpApiAiOverviewTableElementItem(BaseSerpApiAiOverviewElementItem):
             "position": obj.get("position"),
             "markdown": obj.get("markdown"),
             "table": Table.from_dict(obj["table"]) if obj.get("table") is not None else None,
-            "references": [AiModeAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -88,8 +88,8 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_id_list([DataforseoLabsIdListRequestInfo(
-                datetime_from="2025-08-10 10:59:26 +00:00",
-                datetime_to="2025-10-10 10:59:26 +00:00",
+                datetime_from="2025-08-22 08:06:56 +00:00",
+                datetime_to="2025-10-22 08:06:56 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -1095,8 +1095,8 @@ try:
                     "13418",
                     "11494",
                     ],
-                first_date="2025-08-10",
-                second_date="2025-10-10",
+                first_date="2025-08-22",
+                second_date="2025-10-22",
                 location_code=2840,
                 language_code="en",
                 limit=3,
@@ -1704,8 +1704,8 @@ try:
 
         response = dataforseo_labs_api.google_historical_serps_live([DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo(
                 keyword="albert einstein",
-                date_from="2025-08-10",
-                date_to="2025-10-10",
+                date_from="2025-08-22",
+                date_to="2025-10-22",
                 location_code=2840,
                 language_code="en",
         )]
@@ -1767,8 +1767,8 @@ try:
                 target="dataforseo.com",
                 location_code=2840,
                 language_code="en",
-                date_from="2025-08-10",
-                date_to="2025-10-10",
+                date_from="2025-08-22",
+                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -1961,8 +1961,8 @@ try:
                     ],
                 location_code=2840,
                 language_code="en",
-                date_from="2025-08-10",
-                date_to="2025-10-10",
+                date_from="2025-08-22",
+                date_to="2025-10-22",
                 item_types=[
                     "organic",
                     "paid",

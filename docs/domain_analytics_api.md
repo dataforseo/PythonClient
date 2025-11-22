@@ -43,8 +43,8 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.domain_analytics_id_list([DomainAnalyticsIdListRequestInfo(
-                datetime_from="2025-08-10 11:01:41 +00:00",
-                datetime_to="2025-10-10 11:01:41 +00:00",
+                datetime_from="2025-08-22 08:08:30 +00:00",
+                datetime_to="2025-10-22 08:08:30 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -499,8 +499,8 @@ try:
 
         response = domain_analytics_api.technologies_technology_stats_live([DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo(
                 technology="jQuery",
-                date_from="2025-08-10",
-                date_to="2025-10-10",
+                date_from="2025-08-22",
+                date_to="2025-10-22",
         )]
         )
 except ApiException as e:

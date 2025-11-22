@@ -53,8 +53,8 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_id_list([BacklinksIdListRequestInfo(
-                datetime_from="2025-08-10 11:02:20 +00:00",
-                datetime_to="2025-10-10 11:02:20 +00:00",
+                datetime_from="2025-08-22 08:09:01 +00:00",
+                datetime_to="2025-10-22 08:09:01 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",
@@ -340,8 +340,8 @@ try:
 
         response = backlinks_api.history_live([BacklinksHistoryLiveRequestInfo(
                 target="cnn.com",
-                date_from="2025-08-10",
-                date_to="2025-10-10",
+                date_from="2025-08-22",
+                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -935,8 +935,8 @@ try:
 
         response = backlinks_api.timeseries_summary_live([BacklinksTimeseriesSummaryLiveRequestInfo(
                 target="dataforseo.com",
-                date_from="2025-08-10",
-                date_to="2025-10-10",
+                date_from="2025-08-22",
+                date_to="2025-10-22",
                 group_range="month",
         )]
         )
@@ -995,8 +995,8 @@ try:
 
         response = backlinks_api.timeseries_new_lost_summary_live([BacklinksTimeseriesNewLostSummaryLiveRequestInfo(
                 target="dataforseo.com",
-                date_from="2025-08-10",
-                date_to="2025-10-10",
+                date_from="2025-08-22",
+                date_to="2025-10-22",
                 group_range="month",
         )]
         )
@@ -1338,7 +1338,7 @@ try:
                     "https://stackoverflow.com/",
                     "www.trustpilot.com",
                     ],
-                date_from="2025-08-10",
+                date_from="2025-08-22",
         )]
         )
 except ApiException as e:
@@ -1407,7 +1407,7 @@ try:
                     "https://stackoverflow.com/",
                     "www.trustpilot.com",
                     ],
-                date_from="2025-08-10",
+                date_from="2025-08-22",
         )]
         )
 except ApiException as e:

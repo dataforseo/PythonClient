@@ -65,8 +65,8 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.merchant_id_list([MerchantIdListRequestInfo(
-                datetime_from="2025-08-10 11:04:49 +00:00",
-                datetime_to="2025-10-10 11:04:49 +00:00",
+                datetime_from="2025-08-22 08:11:04 +00:00",
+                datetime_to="2025-10-22 08:11:04 +00:00",
                 limit=100,
                 offset=0,
                 sort="desc",

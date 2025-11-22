@@ -19,8 +19,8 @@
 **price** | **PriceInfo** | price of the app |[optional]|
 **is_free** | **StrictBool** | indicates whether the app is free |[optional]|
 **main_category** | **StrictStr** | main category/genre of the app |[optional]|
-**categories** | **List[Optional[StrictStr]]** | all relevant categories/genres of the app |[optional]|
-**languages** | **List[Optional[StrictStr]]** | languages supported in the app |[optional]|
+**categories** | **List[Optional[StrictStr]]** | all relevant categories/genres of the app<br>Note: this field returns only one relevant category in the array |[optional]|
+**languages** | **List[Optional[StrictStr]]** | languages supported in the app<br>Note: this field returns only one supported language in the array |[optional]|
 **advisories** | **List[Optional[StrictStr]]** | age rating and age-based content advisories |[optional]|
 **developer** | **StrictStr** | name of the app developer |[optional]|
 **developer_id** | **StrictStr** | ID of the app developer |[optional]|
@@ -28,7 +28,7 @@
 **version** | **StrictStr** | current version of the app |[optional]|
 **minimum_os_version** | **StrictStr** | minimum OS version required to install the app |[optional]|
 **size** | **StrictStr** | size of the app |[optional]|
-**released_date** | **StrictStr** | date and time when the app was released<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
+**released_date** | **StrictStr** | date and time when the app was released<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;<br>example:<br>2019-11-15 12:57:46 +00:00<br>Note: this field is deprecated and always returns null |[optional]|
 **last_update_date** | **StrictStr** | date and time when the app was last updated<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **update_notes** | **StrictStr** | update notes<br>contains the latest update notes from the developer |[optional]|
 **images** | **List[Optional[StrictStr]]** | app images<br>contains URLs to the images used on the app page on App Store |[optional]|

@@ -36,7 +36,7 @@ class GoogleShoppingSellersShopsListElementItem(BaseMerchantGoogleShoppingSeller
     price_multiplier: Optional[StrictInt] = Field(default=None, description=r"monthly price multiplier. indicates the number of months covered by the monthly payment for the product")
     displayed_payment_breakdown: Optional[StrictStr] = Field(default=None, description=r"installment details as displayed in the results. shows how the product price can be broken down into monthly payments, if applicable")
     rating: Optional[RatingElement] = Field(default=None, description=r"shop rating. the shop popularity rate based on product reviews")
-    product_condition: Optional[StrictStr] = Field(default=None, description=r"indicated condition of the product. possible values: Used, Refurbished, New, null")
+    product_condition: Optional[StrictStr] = Field(default=None, description=r"indicated condition of the product. possible values: Used, Refurbished, New, Pre-owned, null")
     product_annotation: Optional[StrictStr] = Field(default=None, description=r"data from annotations and badges with special offers. if there is no annotation for this product, the value will be null. examples: LOW PRICE, SPECIAL OFFER, SALE, PRICE DROP")
     product_availability: Optional[StrictStr] = Field(default=None, description=r"product availability information. product availability information. can take the following values: in_stock, limited_stock, out_of_stock, backordered, pre_order_available, on_display_to_order")
     __properties: ClassVar[List[str]] = [
