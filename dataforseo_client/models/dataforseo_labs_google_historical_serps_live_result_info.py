@@ -16,13 +16,13 @@ class DataforseoLabsGoogleHistoricalSerpsLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleHistoricalSerpsLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type in a POST array")
     keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. the keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"the total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveItem]]] = Field(default=None, description=r"contains arrays of specific images")
+    items: Optional[List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveItem]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword", 

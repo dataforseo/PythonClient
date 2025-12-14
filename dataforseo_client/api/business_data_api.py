@@ -484,7 +484,7 @@ class BusinessDataApi:
 
     from dataforseo_client.models.business_data_business_listings_locations_response_info import BusinessDataBusinessListingsLocationsResponseInfo
     @validate_call
-    def business_data_business_listings_locations(
+    def business_listings_locations(
         self,
         _request_timeout: Union[
             None,
@@ -500,7 +500,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BusinessDataBusinessListingsLocationsResponseInfo:
 
-        _param = self._business_data_business_listings_locations_serialize(
+        _param = self._business_listings_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -521,7 +521,7 @@ class BusinessDataApi:
         ).data
 
     @validate_call
-    def business_data_business_listings_locations_with_http_info(
+    def business_listings_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -537,7 +537,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[BusinessDataBusinessListingsLocationsResponseInfo]':
 
-        _param = self._business_data_business_listings_locations_serialize(
+        _param = self._business_listings_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -558,7 +558,7 @@ class BusinessDataApi:
         )
 
     @validate_call
-    def business_data_business_listings_locations_without_preload_content(
+    def business_listings_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -574,7 +574,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._business_data_business_listings_locations_serialize(
+        _param = self._business_listings_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -591,7 +591,7 @@ class BusinessDataApi:
         return response_data.response
 
 
-    def _business_data_business_listings_locations_serialize(
+    def _business_listings_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -7711,7 +7711,7 @@ class BusinessDataApi:
 
     from dataforseo_client.models.business_data_tripadvisor_locations_response_info import BusinessDataTripadvisorLocationsResponseInfo
     @validate_call
-    def business_data_tripadvisor_locations(
+    def tripadvisor_locations(
         self,
         _request_timeout: Union[
             None,
@@ -7727,7 +7727,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BusinessDataTripadvisorLocationsResponseInfo:
 
-        _param = self._business_data_tripadvisor_locations_serialize(
+        _param = self._tripadvisor_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7748,7 +7748,7 @@ class BusinessDataApi:
         ).data
 
     @validate_call
-    def business_data_tripadvisor_locations_with_http_info(
+    def tripadvisor_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -7764,7 +7764,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[BusinessDataTripadvisorLocationsResponseInfo]':
 
-        _param = self._business_data_tripadvisor_locations_serialize(
+        _param = self._tripadvisor_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7785,7 +7785,7 @@ class BusinessDataApi:
         )
 
     @validate_call
-    def business_data_tripadvisor_locations_without_preload_content(
+    def tripadvisor_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -7801,7 +7801,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._business_data_tripadvisor_locations_serialize(
+        _param = self._tripadvisor_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7818,7 +7818,7 @@ class BusinessDataApi:
         return response_data.response
 
 
-    def _business_data_tripadvisor_locations_serialize(
+    def _tripadvisor_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -7867,7 +7867,7 @@ class BusinessDataApi:
 
     from dataforseo_client.models.business_data_tripadvisor_locations_country_response_info import BusinessDataTripadvisorLocationsCountryResponseInfo
     @validate_call
-    def business_data_tripadvisor_locations_country(
+    def tripadvisor_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -7884,7 +7884,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BusinessDataTripadvisorLocationsCountryResponseInfo:
 
-        _param = self._business_data_tripadvisor_locations_country_serialize(
+        _param = self._tripadvisor_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7906,7 +7906,7 @@ class BusinessDataApi:
         ).data
 
     @validate_call
-    def business_data_tripadvisor_locations_country_with_http_info(
+    def tripadvisor_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -7923,7 +7923,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[BusinessDataTripadvisorLocationsCountryResponseInfo]':
 
-        _param = self._business_data_tripadvisor_locations_country_serialize(
+        _param = self._tripadvisor_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7945,7 +7945,7 @@ class BusinessDataApi:
         )
 
     @validate_call
-    def business_data_tripadvisor_locations_country_without_preload_content(
+    def tripadvisor_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -7962,7 +7962,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._business_data_tripadvisor_locations_country_serialize(
+        _param = self._tripadvisor_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7980,7 +7980,7 @@ class BusinessDataApi:
         return response_data.response
 
 
-    def _business_data_tripadvisor_locations_country_serialize(
+    def _tripadvisor_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -8032,7 +8032,7 @@ class BusinessDataApi:
 
     from dataforseo_client.models.business_data_tripadvisor_languages_response_info import BusinessDataTripadvisorLanguagesResponseInfo
     @validate_call
-    def business_data_tripadvisor_languages(
+    def tripadvisor_languages(
         self,
         _request_timeout: Union[
             None,
@@ -8048,7 +8048,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BusinessDataTripadvisorLanguagesResponseInfo:
 
-        _param = self._business_data_tripadvisor_languages_serialize(
+        _param = self._tripadvisor_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8069,7 +8069,7 @@ class BusinessDataApi:
         ).data
 
     @validate_call
-    def business_data_tripadvisor_languages_with_http_info(
+    def tripadvisor_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -8085,7 +8085,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[BusinessDataTripadvisorLanguagesResponseInfo]':
 
-        _param = self._business_data_tripadvisor_languages_serialize(
+        _param = self._tripadvisor_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8106,7 +8106,7 @@ class BusinessDataApi:
         )
 
     @validate_call
-    def business_data_tripadvisor_languages_without_preload_content(
+    def tripadvisor_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -8122,7 +8122,7 @@ class BusinessDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._business_data_tripadvisor_languages_serialize(
+        _param = self._tripadvisor_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8139,7 +8139,7 @@ class BusinessDataApi:
         return response_data.response
 
 
-    def _business_data_tripadvisor_languages_serialize(
+    def _tripadvisor_languages_serialize(
         self,
         _request_auth,
         _content_type,

@@ -271,7 +271,7 @@ class SerpApi:
     from dataforseo_client.models.serp_id_list_request_info import SerpIdListRequestInfo
     from dataforseo_client.models.serp_id_list_response_info import SerpIdListResponseInfo
     @validate_call
-    def serp_id_list(
+    def id_list(
         self,
         list_optional_serp_id_list_request_info: 'List[Optional[SerpIdListRequestInfo]]' = None,
         _request_timeout: Union[
@@ -288,7 +288,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpIdListResponseInfo:
 
-        _param = self._serp_id_list_serialize(
+        _param = self._id_list_serialize(
             list_optional_serp_id_list_request_info=list_optional_serp_id_list_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -312,7 +312,7 @@ class SerpApi:
 
     
     @validate_call
-    def serp_id_list_with_http_info(
+    def id_list_with_http_info(
         self,
         list_optional_serp_id_list_request_info: 'List[Optional[SerpIdListRequestInfo]]' = None,
         _request_timeout: Union[
@@ -329,7 +329,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpIdListResponseInfo]':
 
-        _param = self._serp_id_list_serialize(
+        _param = self._id_list_serialize(
             list_optional_serp_id_list_request_info=list_optional_serp_id_list_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -352,7 +352,7 @@ class SerpApi:
 
 
     @validate_call
-    def serp_id_list_without_preload_content(
+    def id_list_without_preload_content(
         self,
         list_optional_serp_id_list_request_info: 'List[Optional[SerpIdListRequestInfo]]' = None,
         _request_timeout: Union[
@@ -369,7 +369,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_id_list_serialize(
+        _param = self._id_list_serialize(
             list_optional_serp_id_list_request_info=list_optional_serp_id_list_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -387,7 +387,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_id_list_serialize(
+    def _id_list_serialize(
         self,
         list_optional_serp_id_list_request_info,
         _request_auth,
@@ -463,7 +463,7 @@ class SerpApi:
     from dataforseo_client.models.serp_errors_request_info import SerpErrorsRequestInfo
     from dataforseo_client.models.serp_errors_response_info import SerpErrorsResponseInfo
     @validate_call
-    def serp_errors(
+    def errors(
         self,
         list_optional_serp_errors_request_info: 'List[Optional[SerpErrorsRequestInfo]]' = None,
         _request_timeout: Union[
@@ -480,7 +480,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpErrorsResponseInfo:
 
-        _param = self._serp_errors_serialize(
+        _param = self._errors_serialize(
             list_optional_serp_errors_request_info=list_optional_serp_errors_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -504,7 +504,7 @@ class SerpApi:
 
     
     @validate_call
-    def serp_errors_with_http_info(
+    def errors_with_http_info(
         self,
         list_optional_serp_errors_request_info: 'List[Optional[SerpErrorsRequestInfo]]' = None,
         _request_timeout: Union[
@@ -521,7 +521,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpErrorsResponseInfo]':
 
-        _param = self._serp_errors_serialize(
+        _param = self._errors_serialize(
             list_optional_serp_errors_request_info=list_optional_serp_errors_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -544,7 +544,7 @@ class SerpApi:
 
 
     @validate_call
-    def serp_errors_without_preload_content(
+    def errors_without_preload_content(
         self,
         list_optional_serp_errors_request_info: 'List[Optional[SerpErrorsRequestInfo]]' = None,
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_errors_serialize(
+        _param = self._errors_serialize(
             list_optional_serp_errors_request_info=list_optional_serp_errors_request_info,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -579,7 +579,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_errors_serialize(
+    def _errors_serialize(
         self,
         list_optional_serp_errors_request_info,
         _request_auth,
@@ -1038,7 +1038,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_google_locations_response_info import SerpGoogleLocationsResponseInfo
     @validate_call
-    def serp_google_locations(
+    def google_locations(
         self,
         _request_timeout: Union[
             None,
@@ -1054,7 +1054,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpGoogleLocationsResponseInfo:
 
-        _param = self._serp_google_locations_serialize(
+        _param = self._google_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1075,7 +1075,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_google_locations_with_http_info(
+    def google_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1091,7 +1091,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpGoogleLocationsResponseInfo]':
 
-        _param = self._serp_google_locations_serialize(
+        _param = self._google_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1112,7 +1112,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_google_locations_without_preload_content(
+    def google_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1128,7 +1128,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_google_locations_serialize(
+        _param = self._google_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1145,7 +1145,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_google_locations_serialize(
+    def _google_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1194,7 +1194,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_google_locations_country_response_info import SerpGoogleLocationsCountryResponseInfo
     @validate_call
-    def serp_google_locations_country(
+    def google_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -1211,7 +1211,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpGoogleLocationsCountryResponseInfo:
 
-        _param = self._serp_google_locations_country_serialize(
+        _param = self._google_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1233,7 +1233,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_google_locations_country_with_http_info(
+    def google_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -1250,7 +1250,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpGoogleLocationsCountryResponseInfo]':
 
-        _param = self._serp_google_locations_country_serialize(
+        _param = self._google_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1272,7 +1272,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_google_locations_country_without_preload_content(
+    def google_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -1289,7 +1289,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_google_locations_country_serialize(
+        _param = self._google_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1307,7 +1307,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_google_locations_country_serialize(
+    def _google_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -1359,7 +1359,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_google_languages_response_info import SerpGoogleLanguagesResponseInfo
     @validate_call
-    def serp_google_languages(
+    def google_languages(
         self,
         _request_timeout: Union[
             None,
@@ -1375,7 +1375,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpGoogleLanguagesResponseInfo:
 
-        _param = self._serp_google_languages_serialize(
+        _param = self._google_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1396,7 +1396,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_google_languages_with_http_info(
+    def google_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1412,7 +1412,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpGoogleLanguagesResponseInfo]':
 
-        _param = self._serp_google_languages_serialize(
+        _param = self._google_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1433,7 +1433,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_google_languages_without_preload_content(
+    def google_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1449,7 +1449,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_google_languages_serialize(
+        _param = self._google_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1466,7 +1466,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_google_languages_serialize(
+    def _google_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -3246,7 +3246,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_google_ai_mode_languages_response_info import SerpGoogleAiModeLanguagesResponseInfo
     @validate_call
-    def serp_google_ai_mode_languages(
+    def google_ai_mode_languages(
         self,
         _request_timeout: Union[
             None,
@@ -3262,7 +3262,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpGoogleAiModeLanguagesResponseInfo:
 
-        _param = self._serp_google_ai_mode_languages_serialize(
+        _param = self._google_ai_mode_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3283,7 +3283,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_google_ai_mode_languages_with_http_info(
+    def google_ai_mode_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -3299,7 +3299,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpGoogleAiModeLanguagesResponseInfo]':
 
-        _param = self._serp_google_ai_mode_languages_serialize(
+        _param = self._google_ai_mode_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3320,7 +3320,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_google_ai_mode_languages_without_preload_content(
+    def google_ai_mode_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -3336,7 +3336,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_google_ai_mode_languages_serialize(
+        _param = self._google_ai_mode_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3353,7 +3353,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_google_ai_mode_languages_serialize(
+    def _google_ai_mode_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -14082,7 +14082,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_google_ads_advertisers_locations_response_info import SerpGoogleAdsAdvertisersLocationsResponseInfo
     @validate_call
-    def serp_google_ads_advertisers_locations(
+    def google_ads_advertisers_locations(
         self,
         _request_timeout: Union[
             None,
@@ -14098,7 +14098,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpGoogleAdsAdvertisersLocationsResponseInfo:
 
-        _param = self._serp_google_ads_advertisers_locations_serialize(
+        _param = self._google_ads_advertisers_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14119,7 +14119,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_google_ads_advertisers_locations_with_http_info(
+    def google_ads_advertisers_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -14135,7 +14135,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpGoogleAdsAdvertisersLocationsResponseInfo]':
 
-        _param = self._serp_google_ads_advertisers_locations_serialize(
+        _param = self._google_ads_advertisers_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14156,7 +14156,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_google_ads_advertisers_locations_without_preload_content(
+    def google_ads_advertisers_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -14172,7 +14172,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_google_ads_advertisers_locations_serialize(
+        _param = self._google_ads_advertisers_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14189,7 +14189,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_google_ads_advertisers_locations_serialize(
+    def _google_ads_advertisers_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -14751,7 +14751,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_google_ads_search_locations_response_info import SerpGoogleAdsSearchLocationsResponseInfo
     @validate_call
-    def serp_google_ads_search_locations(
+    def google_ads_search_locations(
         self,
         _request_timeout: Union[
             None,
@@ -14767,7 +14767,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpGoogleAdsSearchLocationsResponseInfo:
 
-        _param = self._serp_google_ads_search_locations_serialize(
+        _param = self._google_ads_search_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14788,7 +14788,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_google_ads_search_locations_with_http_info(
+    def google_ads_search_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -14804,7 +14804,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpGoogleAdsSearchLocationsResponseInfo]':
 
-        _param = self._serp_google_ads_search_locations_serialize(
+        _param = self._google_ads_search_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14825,7 +14825,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_google_ads_search_locations_without_preload_content(
+    def google_ads_search_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -14841,7 +14841,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_google_ads_search_locations_serialize(
+        _param = self._google_ads_search_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14858,7 +14858,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_google_ads_search_locations_serialize(
+    def _google_ads_search_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -15420,7 +15420,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_bing_locations_response_info import SerpBingLocationsResponseInfo
     @validate_call
-    def serp_bing_locations(
+    def bing_locations(
         self,
         _request_timeout: Union[
             None,
@@ -15436,7 +15436,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpBingLocationsResponseInfo:
 
-        _param = self._serp_bing_locations_serialize(
+        _param = self._bing_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15457,7 +15457,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_bing_locations_with_http_info(
+    def bing_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -15473,7 +15473,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpBingLocationsResponseInfo]':
 
-        _param = self._serp_bing_locations_serialize(
+        _param = self._bing_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15494,7 +15494,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_bing_locations_without_preload_content(
+    def bing_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -15510,7 +15510,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_bing_locations_serialize(
+        _param = self._bing_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15527,7 +15527,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_bing_locations_serialize(
+    def _bing_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -15576,7 +15576,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_bing_locations_country_response_info import SerpBingLocationsCountryResponseInfo
     @validate_call
-    def serp_bing_locations_country(
+    def bing_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -15593,7 +15593,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpBingLocationsCountryResponseInfo:
 
-        _param = self._serp_bing_locations_country_serialize(
+        _param = self._bing_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -15615,7 +15615,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_bing_locations_country_with_http_info(
+    def bing_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -15632,7 +15632,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpBingLocationsCountryResponseInfo]':
 
-        _param = self._serp_bing_locations_country_serialize(
+        _param = self._bing_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -15654,7 +15654,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_bing_locations_country_without_preload_content(
+    def bing_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -15671,7 +15671,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_bing_locations_country_serialize(
+        _param = self._bing_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -15689,7 +15689,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_bing_locations_country_serialize(
+    def _bing_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -15741,7 +15741,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_bing_languages_response_info import SerpBingLanguagesResponseInfo
     @validate_call
-    def serp_bing_languages(
+    def bing_languages(
         self,
         _request_timeout: Union[
             None,
@@ -15757,7 +15757,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpBingLanguagesResponseInfo:
 
-        _param = self._serp_bing_languages_serialize(
+        _param = self._bing_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15778,7 +15778,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_bing_languages_with_http_info(
+    def bing_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -15794,7 +15794,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpBingLanguagesResponseInfo]':
 
-        _param = self._serp_bing_languages_serialize(
+        _param = self._bing_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15815,7 +15815,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_bing_languages_without_preload_content(
+    def bing_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -15831,7 +15831,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_bing_languages_serialize(
+        _param = self._bing_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15848,7 +15848,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_bing_languages_serialize(
+    def _bing_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -18690,7 +18690,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_youtube_locations_response_info import SerpYoutubeLocationsResponseInfo
     @validate_call
-    def serp_youtube_locations(
+    def youtube_locations(
         self,
         _request_timeout: Union[
             None,
@@ -18706,7 +18706,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpYoutubeLocationsResponseInfo:
 
-        _param = self._serp_youtube_locations_serialize(
+        _param = self._youtube_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18727,7 +18727,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_youtube_locations_with_http_info(
+    def youtube_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -18743,7 +18743,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpYoutubeLocationsResponseInfo]':
 
-        _param = self._serp_youtube_locations_serialize(
+        _param = self._youtube_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18764,7 +18764,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_youtube_locations_without_preload_content(
+    def youtube_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -18780,7 +18780,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_youtube_locations_serialize(
+        _param = self._youtube_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18797,7 +18797,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_youtube_locations_serialize(
+    def _youtube_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -18846,7 +18846,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_youtube_locations_country_response_info import SerpYoutubeLocationsCountryResponseInfo
     @validate_call
-    def serp_youtube_locations_country(
+    def youtube_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -18863,7 +18863,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpYoutubeLocationsCountryResponseInfo:
 
-        _param = self._serp_youtube_locations_country_serialize(
+        _param = self._youtube_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18885,7 +18885,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_youtube_locations_country_with_http_info(
+    def youtube_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -18902,7 +18902,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpYoutubeLocationsCountryResponseInfo]':
 
-        _param = self._serp_youtube_locations_country_serialize(
+        _param = self._youtube_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18924,7 +18924,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_youtube_locations_country_without_preload_content(
+    def youtube_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -18941,7 +18941,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_youtube_locations_country_serialize(
+        _param = self._youtube_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18959,7 +18959,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_youtube_locations_country_serialize(
+    def _youtube_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -19011,7 +19011,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_youtube_languages_response_info import SerpYoutubeLanguagesResponseInfo
     @validate_call
-    def serp_youtube_languages(
+    def youtube_languages(
         self,
         _request_timeout: Union[
             None,
@@ -19027,7 +19027,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpYoutubeLanguagesResponseInfo:
 
-        _param = self._serp_youtube_languages_serialize(
+        _param = self._youtube_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19048,7 +19048,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_youtube_languages_with_http_info(
+    def youtube_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -19064,7 +19064,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpYoutubeLanguagesResponseInfo]':
 
-        _param = self._serp_youtube_languages_serialize(
+        _param = self._youtube_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19085,7 +19085,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_youtube_languages_without_preload_content(
+    def youtube_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -19101,7 +19101,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_youtube_languages_serialize(
+        _param = self._youtube_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -19118,7 +19118,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_youtube_languages_serialize(
+    def _youtube_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -21750,7 +21750,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_yahoo_locations_response_info import SerpYahooLocationsResponseInfo
     @validate_call
-    def serp_yahoo_locations(
+    def yahoo_locations(
         self,
         _request_timeout: Union[
             None,
@@ -21766,7 +21766,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpYahooLocationsResponseInfo:
 
-        _param = self._serp_yahoo_locations_serialize(
+        _param = self._yahoo_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21787,7 +21787,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_yahoo_locations_with_http_info(
+    def yahoo_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -21803,7 +21803,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpYahooLocationsResponseInfo]':
 
-        _param = self._serp_yahoo_locations_serialize(
+        _param = self._yahoo_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21824,7 +21824,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_yahoo_locations_without_preload_content(
+    def yahoo_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -21840,7 +21840,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_yahoo_locations_serialize(
+        _param = self._yahoo_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -21857,7 +21857,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_yahoo_locations_serialize(
+    def _yahoo_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -21906,7 +21906,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_yahoo_locations_country_response_info import SerpYahooLocationsCountryResponseInfo
     @validate_call
-    def serp_yahoo_locations_country(
+    def yahoo_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -21923,7 +21923,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpYahooLocationsCountryResponseInfo:
 
-        _param = self._serp_yahoo_locations_country_serialize(
+        _param = self._yahoo_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -21945,7 +21945,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_yahoo_locations_country_with_http_info(
+    def yahoo_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -21962,7 +21962,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpYahooLocationsCountryResponseInfo]':
 
-        _param = self._serp_yahoo_locations_country_serialize(
+        _param = self._yahoo_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -21984,7 +21984,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_yahoo_locations_country_without_preload_content(
+    def yahoo_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -22001,7 +22001,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_yahoo_locations_country_serialize(
+        _param = self._yahoo_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -22019,7 +22019,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_yahoo_locations_country_serialize(
+    def _yahoo_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -22071,7 +22071,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_yahoo_languages_response_info import SerpYahooLanguagesResponseInfo
     @validate_call
-    def serp_yahoo_languages(
+    def yahoo_languages(
         self,
         _request_timeout: Union[
             None,
@@ -22087,7 +22087,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpYahooLanguagesResponseInfo:
 
-        _param = self._serp_yahoo_languages_serialize(
+        _param = self._yahoo_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22108,7 +22108,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_yahoo_languages_with_http_info(
+    def yahoo_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -22124,7 +22124,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpYahooLanguagesResponseInfo]':
 
-        _param = self._serp_yahoo_languages_serialize(
+        _param = self._yahoo_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22145,7 +22145,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_yahoo_languages_without_preload_content(
+    def yahoo_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -22161,7 +22161,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_yahoo_languages_serialize(
+        _param = self._yahoo_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -22178,7 +22178,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_yahoo_languages_serialize(
+    def _yahoo_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -23802,7 +23802,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_baidu_locations_response_info import SerpBaiduLocationsResponseInfo
     @validate_call
-    def serp_baidu_locations(
+    def baidu_locations(
         self,
         _request_timeout: Union[
             None,
@@ -23818,7 +23818,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpBaiduLocationsResponseInfo:
 
-        _param = self._serp_baidu_locations_serialize(
+        _param = self._baidu_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23839,7 +23839,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_baidu_locations_with_http_info(
+    def baidu_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -23855,7 +23855,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpBaiduLocationsResponseInfo]':
 
-        _param = self._serp_baidu_locations_serialize(
+        _param = self._baidu_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23876,7 +23876,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_baidu_locations_without_preload_content(
+    def baidu_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -23892,7 +23892,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_baidu_locations_serialize(
+        _param = self._baidu_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -23909,7 +23909,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_baidu_locations_serialize(
+    def _baidu_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -23958,7 +23958,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_baidu_locations_country_response_info import SerpBaiduLocationsCountryResponseInfo
     @validate_call
-    def serp_baidu_locations_country(
+    def baidu_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -23975,7 +23975,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpBaiduLocationsCountryResponseInfo:
 
-        _param = self._serp_baidu_locations_country_serialize(
+        _param = self._baidu_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -23997,7 +23997,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_baidu_locations_country_with_http_info(
+    def baidu_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -24014,7 +24014,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpBaiduLocationsCountryResponseInfo]':
 
-        _param = self._serp_baidu_locations_country_serialize(
+        _param = self._baidu_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -24036,7 +24036,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_baidu_locations_country_without_preload_content(
+    def baidu_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -24053,7 +24053,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_baidu_locations_country_serialize(
+        _param = self._baidu_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -24071,7 +24071,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_baidu_locations_country_serialize(
+    def _baidu_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -24123,7 +24123,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_baidu_languages_response_info import SerpBaiduLanguagesResponseInfo
     @validate_call
-    def serp_baidu_languages(
+    def baidu_languages(
         self,
         _request_timeout: Union[
             None,
@@ -24139,7 +24139,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpBaiduLanguagesResponseInfo:
 
-        _param = self._serp_baidu_languages_serialize(
+        _param = self._baidu_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24160,7 +24160,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_baidu_languages_with_http_info(
+    def baidu_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -24176,7 +24176,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpBaiduLanguagesResponseInfo]':
 
-        _param = self._serp_baidu_languages_serialize(
+        _param = self._baidu_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24197,7 +24197,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_baidu_languages_without_preload_content(
+    def baidu_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -24213,7 +24213,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_baidu_languages_serialize(
+        _param = self._baidu_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -24230,7 +24230,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_baidu_languages_serialize(
+    def _baidu_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -26277,7 +26277,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_seznam_locations_response_info import SerpSeznamLocationsResponseInfo
     @validate_call
-    def serp_seznam_locations(
+    def seznam_locations(
         self,
         _request_timeout: Union[
             None,
@@ -26293,7 +26293,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpSeznamLocationsResponseInfo:
 
-        _param = self._serp_seznam_locations_serialize(
+        _param = self._seznam_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26314,7 +26314,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_seznam_locations_with_http_info(
+    def seznam_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -26330,7 +26330,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpSeznamLocationsResponseInfo]':
 
-        _param = self._serp_seznam_locations_serialize(
+        _param = self._seznam_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26351,7 +26351,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_seznam_locations_without_preload_content(
+    def seznam_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -26367,7 +26367,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_seznam_locations_serialize(
+        _param = self._seznam_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26384,7 +26384,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_seznam_locations_serialize(
+    def _seznam_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -26433,7 +26433,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_seznam_locations_country_response_info import SerpSeznamLocationsCountryResponseInfo
     @validate_call
-    def serp_seznam_locations_country(
+    def seznam_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -26450,7 +26450,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpSeznamLocationsCountryResponseInfo:
 
-        _param = self._serp_seznam_locations_country_serialize(
+        _param = self._seznam_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -26472,7 +26472,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_seznam_locations_country_with_http_info(
+    def seznam_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -26489,7 +26489,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpSeznamLocationsCountryResponseInfo]':
 
-        _param = self._serp_seznam_locations_country_serialize(
+        _param = self._seznam_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -26511,7 +26511,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_seznam_locations_country_without_preload_content(
+    def seznam_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -26528,7 +26528,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_seznam_locations_country_serialize(
+        _param = self._seznam_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -26546,7 +26546,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_seznam_locations_country_serialize(
+    def _seznam_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -26598,7 +26598,7 @@ class SerpApi:
 
     from dataforseo_client.models.serp_seznam_languages_response_info import SerpSeznamLanguagesResponseInfo
     @validate_call
-    def serp_seznam_languages(
+    def seznam_languages(
         self,
         _request_timeout: Union[
             None,
@@ -26614,7 +26614,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SerpSeznamLanguagesResponseInfo:
 
-        _param = self._serp_seznam_languages_serialize(
+        _param = self._seznam_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26635,7 +26635,7 @@ class SerpApi:
         ).data
 
     @validate_call
-    def serp_seznam_languages_with_http_info(
+    def seznam_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -26651,7 +26651,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[SerpSeznamLanguagesResponseInfo]':
 
-        _param = self._serp_seznam_languages_serialize(
+        _param = self._seznam_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26672,7 +26672,7 @@ class SerpApi:
         )
 
     @validate_call
-    def serp_seznam_languages_without_preload_content(
+    def seznam_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -26688,7 +26688,7 @@ class SerpApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._serp_seznam_languages_serialize(
+        _param = self._seznam_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -26705,7 +26705,7 @@ class SerpApi:
         return response_data.response
 
 
-    def _serp_seznam_languages_serialize(
+    def _seznam_languages_serialize(
         self,
         _request_auth,
         _content_type,

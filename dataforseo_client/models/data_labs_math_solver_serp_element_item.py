@@ -26,7 +26,7 @@ class DataLabsMathSolverSerpElementItem(BaseDataforseoLabsApiElementItem):
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     result: Optional[StrictStr] = Field(default=None, description=r"solution to the equation. solution to the mathematical equation specified in the keyword field when setting a task")
-    items: Optional[List[Optional[MathSolverElement]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[MathSolverElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 

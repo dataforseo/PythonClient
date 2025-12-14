@@ -182,7 +182,7 @@ class AppendixApi:
 
     from dataforseo_client.models.appendix_errors_response_info import AppendixErrorsResponseInfo
     @validate_call
-    def appendix_errors(
+    def errors(
         self,
         _request_timeout: Union[
             None,
@@ -198,7 +198,7 @@ class AppendixApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppendixErrorsResponseInfo:
 
-        _param = self._appendix_errors_serialize(
+        _param = self._errors_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -219,7 +219,7 @@ class AppendixApi:
         ).data
 
     @validate_call
-    def appendix_errors_with_http_info(
+    def errors_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -235,7 +235,7 @@ class AppendixApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AppendixErrorsResponseInfo]':
 
-        _param = self._appendix_errors_serialize(
+        _param = self._errors_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -256,7 +256,7 @@ class AppendixApi:
         )
 
     @validate_call
-    def appendix_errors_without_preload_content(
+    def errors_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -272,7 +272,7 @@ class AppendixApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._appendix_errors_serialize(
+        _param = self._errors_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -289,7 +289,7 @@ class AppendixApi:
         return response_data.response
 
 
-    def _appendix_errors_serialize(
+    def _errors_serialize(
         self,
         _request_auth,
         _content_type,

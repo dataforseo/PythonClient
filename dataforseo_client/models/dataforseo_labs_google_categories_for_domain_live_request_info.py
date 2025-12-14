@@ -22,6 +22,7 @@ class DataforseoLabsGoogleCategoriesForDomainLiveRequestInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code. required field if you don’t specify language_name. Note: it is required to specify either language_name or language_code. you can receive the list of available languages with their language_code by making a separate request to the. https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages. example:. en")
     include_subcategories: Optional[StrictBool] = Field(default=None, description=r"indicates if the subcategories will be included in the search. optional field. if set to false, the subcategories will be ignored. default value: false. learn more about the parameter in this help center article")
     include_clickstream_data: Optional[StrictBool] = Field(default=None, description=r"include or exclude data from clickstream-based metrics in the result. optional field. if the parameter is set to true, you will receive clickstream_etv, clickstream_gender_distribution, and clickstream_age_distribution fields with clickstream data in the response. default value: false. with this parameter enabled, you will be charged double the price for the request. learn more about how clickstream-based metrics are calculated in this help center article")
+    historical_serp_mode: Optional[StrictStr] = Field(default=None, description=r"data collection mode. optional field. you can use this field to filter the results;. possible types of filtering:. live — return metrics for SERPs in which the specified target currently has ranking results;. lost — return metrics for SERPs in which the specified target had previously had ranking results, but didn’t have them during the last check;. all — return metrics for both types of SERPs.. default value: live")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"display results by item type. optional field. indicates the type of search results included in the response. Note: if the item_types array contains item types that are different from the organic object, the results will be ordered by the first item type in the array; you will not be able to sort and filter results by the types of search results not included in the response;. possible values:. ['organic', 'paid', 'featured_snippet', 'local_pack']. default value:. ['organic', 'paid']")
     filters: Optional[List[Optional[Any]]] = Field(default=None, description=r"array of results filtering parameters. optional field. you can add several filters at once (8 filters maximum). you should set a logical operator and, or between the conditions. the following operators are supported:. regex, not_regex, <, <=, >, >=, =, <>, in, not_in. example:. ['metrics.organic.pos_1,'>',0]. [[['metrics.organic.count','>=',100],'and',['metrics.organic.pos_1','>',0]],. 'or',. ['metrics.organic.etv','in',[10,100]]]. for more information about filters, please refer to Dataforseo Labs – Filters or this help center guide")
     order_by: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"results sorting rules. optional field. you can use the same values as in the filters array to sort the results. possible sorting types:. asc – results will be sorted in the ascending order. desc – results will be sorted in the descending order. you should use a comma to specify a sorting type. example:. ['metrics.paid.etv,asc']. Note: you can set no more than three sorting rules in a single request. you should use a comma to separate several sorting rules. example:. ['metrics.organic.etv,desc','metrics.paid.count,asc']. default rule:. ['metrics.organic.count,desc']. Note: if the item_types array contains item types that are different from the organic object, the results will be ordered by the first item type in the array")
@@ -36,6 +37,7 @@ class DataforseoLabsGoogleCategoriesForDomainLiveRequestInfo(BaseModel):
         "language_code", 
         "include_subcategories", 
         "include_clickstream_data", 
+        "historical_serp_mode", 
         "item_types", 
         "filters", 
         "order_by", 
@@ -75,6 +77,7 @@ class DataforseoLabsGoogleCategoriesForDomainLiveRequestInfo(BaseModel):
         _dict['language_code'] = self.language_code
         _dict['include_subcategories'] = self.include_subcategories
         _dict['include_clickstream_data'] = self.include_clickstream_data
+        _dict['historical_serp_mode'] = self.historical_serp_mode
         _dict['item_types'] = self.item_types
         _dict['filters'] = self.filters
         _dict['order_by'] = self.order_by
@@ -100,6 +103,7 @@ class DataforseoLabsGoogleCategoriesForDomainLiveRequestInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "include_subcategories": obj.get("include_subcategories"),
             "include_clickstream_data": obj.get("include_clickstream_data"),
+            "historical_serp_mode": obj.get("historical_serp_mode"),
             "item_types": obj.get("item_types"),
             "filters": obj.get("filters"),
             "order_by": obj.get("order_by"),

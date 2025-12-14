@@ -20,11 +20,15 @@ class AiOptimizationLLmMentionsDomainElement(BaseAiOptimizationLLmMentionsTarget
     search_filter: Optional[StrictStr] = Field(default=None, description=r"target domain search filter. optional field. possible values:. include, exclude. default value: include")
     domain: Optional[StrictStr] = Field(default=None, description=r"target domain. required field if you don’t specify keyword. a domain should be specified without https:// and www.")
     include_subdomains: Optional[StrictBool] = Field(default=None, description=r"indicates if the subdomains of the target domain will be included in the search. optional field. if set to true, the subdomains will be included in the search. default value: false")
+    search_scope: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"target domain search scope. optional field. possible values:. any, sources, search_results. default value: any")
+    search_filter: Optional[StrictStr] = Field(default=None, description=r"target domain search filter. optional field. possible values:. include, exclude. default value: include")
     __properties: ClassVar[List[str]] = [
         "search_scope", 
         "search_filter", 
         "domain", 
         "include_subdomains", 
+        "search_scope", 
+        "search_filter", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -55,6 +59,8 @@ class AiOptimizationLLmMentionsDomainElement(BaseAiOptimizationLLmMentionsTarget
         _dict['search_filter'] = self.search_filter
         _dict['domain'] = self.domain
         _dict['include_subdomains'] = self.include_subdomains
+        _dict['search_scope'] = self.search_scope
+        _dict['search_filter'] = self.search_filter
         return _dict
 
 
@@ -71,6 +77,8 @@ class AiOptimizationLLmMentionsDomainElement(BaseAiOptimizationLLmMentionsTarget
             "search_filter": obj.get("search_filter"),
             "domain": obj.get("domain"),
             "include_subdomains": obj.get("include_subdomains"),
+            "search_scope": obj.get("search_scope"),
+            "search_filter": obj.get("search_filter"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

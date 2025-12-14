@@ -22,7 +22,7 @@ class SpecialOfferInfo(BaseModel):
     percentage_discount: Optional[StrictFloat] = Field(default=None, description=r"percentage of the discount")
     coupon_code: Optional[StrictStr] = Field(default=None, description=r"code of coupon discount")
     coupon_info: Optional[StrictStr] = Field(default=None, description=r"information on coupon discount")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the product page on the seller’s website")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL to the product page on the seller’s website. Note: this field is deprecated and will return null")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     __properties: ClassVar[List[str]] = [
         "title", 

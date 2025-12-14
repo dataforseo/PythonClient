@@ -325,7 +325,7 @@ class DataforseoLabsApi:
 
     from dataforseo_client.models.dataforseo_labs_status_response_info import DataforseoLabsStatusResponseInfo
     @validate_call
-    def dataforseo_labs_status(
+    def status(
         self,
         _request_timeout: Union[
             None,
@@ -341,7 +341,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DataforseoLabsStatusResponseInfo:
 
-        _param = self._dataforseo_labs_status_serialize(
+        _param = self._status_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -362,7 +362,7 @@ class DataforseoLabsApi:
         ).data
 
     @validate_call
-    def dataforseo_labs_status_with_http_info(
+    def status_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -378,7 +378,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[DataforseoLabsStatusResponseInfo]':
 
-        _param = self._dataforseo_labs_status_serialize(
+        _param = self._status_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -399,7 +399,7 @@ class DataforseoLabsApi:
         )
 
     @validate_call
-    def dataforseo_labs_status_without_preload_content(
+    def status_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -415,7 +415,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._dataforseo_labs_status_serialize(
+        _param = self._status_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -432,7 +432,7 @@ class DataforseoLabsApi:
         return response_data.response
 
 
-    def _dataforseo_labs_status_serialize(
+    def _status_serialize(
         self,
         _request_auth,
         _content_type,
@@ -829,7 +829,7 @@ class DataforseoLabsApi:
 
     from dataforseo_client.models.dataforseo_labs_locations_and_languages_response_info import DataforseoLabsLocationsAndLanguagesResponseInfo
     @validate_call
-    def dataforseo_labs_locations_and_languages(
+    def locations_and_languages(
         self,
         _request_timeout: Union[
             None,
@@ -845,7 +845,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DataforseoLabsLocationsAndLanguagesResponseInfo:
 
-        _param = self._dataforseo_labs_locations_and_languages_serialize(
+        _param = self._locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -866,7 +866,7 @@ class DataforseoLabsApi:
         ).data
 
     @validate_call
-    def dataforseo_labs_locations_and_languages_with_http_info(
+    def locations_and_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -882,7 +882,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[DataforseoLabsLocationsAndLanguagesResponseInfo]':
 
-        _param = self._dataforseo_labs_locations_and_languages_serialize(
+        _param = self._locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -903,7 +903,7 @@ class DataforseoLabsApi:
         )
 
     @validate_call
-    def dataforseo_labs_locations_and_languages_without_preload_content(
+    def locations_and_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -919,7 +919,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._dataforseo_labs_locations_and_languages_serialize(
+        _param = self._locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -936,7 +936,7 @@ class DataforseoLabsApi:
         return response_data.response
 
 
-    def _dataforseo_labs_locations_and_languages_serialize(
+    def _locations_and_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -2449,7 +2449,7 @@ class DataforseoLabsApi:
 
     from dataforseo_client.models.dataforseo_labs_google_categories_for_keywords_languages_response_info import DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo
     @validate_call
-    def dataforseo_labs_google_categories_for_keywords_languages(
+    def google_categories_for_keywords_languages(
         self,
         _request_timeout: Union[
             None,
@@ -2465,7 +2465,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo:
 
-        _param = self._dataforseo_labs_google_categories_for_keywords_languages_serialize(
+        _param = self._google_categories_for_keywords_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2486,7 +2486,7 @@ class DataforseoLabsApi:
         ).data
 
     @validate_call
-    def dataforseo_labs_google_categories_for_keywords_languages_with_http_info(
+    def google_categories_for_keywords_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2502,7 +2502,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[DataforseoLabsGoogleCategoriesForKeywordsLanguagesResponseInfo]':
 
-        _param = self._dataforseo_labs_google_categories_for_keywords_languages_serialize(
+        _param = self._google_categories_for_keywords_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2523,7 +2523,7 @@ class DataforseoLabsApi:
         )
 
     @validate_call
-    def dataforseo_labs_google_categories_for_keywords_languages_without_preload_content(
+    def google_categories_for_keywords_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2539,7 +2539,7 @@ class DataforseoLabsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._dataforseo_labs_google_categories_for_keywords_languages_serialize(
+        _param = self._google_categories_for_keywords_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2556,7 +2556,7 @@ class DataforseoLabsApi:
         return response_data.response
 
 
-    def _dataforseo_labs_google_categories_for_keywords_languages_serialize(
+    def _google_categories_for_keywords_languages_serialize(
         self,
         _request_auth,
         _content_type,

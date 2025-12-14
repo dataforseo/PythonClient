@@ -26,7 +26,7 @@ class DataLabsLocalServicesSerpElementItem(BaseDataforseoLabsApiElementItem):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    items: Optional[List[Optional[LocalServicesElement]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[LocalServicesElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

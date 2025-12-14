@@ -15,6 +15,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.google_shopping_serp_element_item import GoogleShoppingSerpElementItem;
     from dataforseo_client.models.google_shopping_paid_element_item import GoogleShoppingPaidElementItem;
     from dataforseo_client.models.google_shopping_sponsored_carousel_element_item import GoogleShoppingSponsoredCarouselElementItem;
+    from dataforseo_client.models.google_shopping_carousel_element_item import GoogleShoppingCarouselElementItem;
     from dataforseo_client.models.related_searches_element_item import RelatedSearchesElementItem;
 
 
@@ -40,6 +41,7 @@ class BaseMerchantGoogleShoppingProductsElementItem(BaseModel):
         'google_shopping_serp': 'GoogleShoppingSerpElementItem',
         'google_shopping_paid': 'GoogleShoppingPaidElementItem',
         'google_shopping_sponsored_carousel': 'GoogleShoppingSponsoredCarouselElementItem',
+        'google_shopping_carousel': 'GoogleShoppingCarouselElementItem',
         'related_searches': 'RelatedSearchesElementItem',
     }
 
@@ -88,6 +90,7 @@ class BaseMerchantGoogleShoppingProductsElementItem(BaseModel):
         GoogleShoppingSerpElementItem, 
         GoogleShoppingPaidElementItem, 
         GoogleShoppingSponsoredCarouselElementItem, 
+        GoogleShoppingCarouselElementItem, 
         RelatedSearchesElementItem
     ]]:
         # look up the object type based on discriminator mapping
@@ -99,6 +102,8 @@ class BaseMerchantGoogleShoppingProductsElementItem(BaseModel):
             return import_module("dataforseo_client.models.google_shopping_paid_element_item").GoogleShoppingPaidElementItem.from_dict(obj)
         if object_type == 'GoogleShoppingSponsoredCarouselElementItem':
             return import_module("dataforseo_client.models.google_shopping_sponsored_carousel_element_item").GoogleShoppingSponsoredCarouselElementItem.from_dict(obj)
+        if object_type == 'GoogleShoppingCarouselElementItem':
+            return import_module("dataforseo_client.models.google_shopping_carousel_element_item").GoogleShoppingCarouselElementItem.from_dict(obj)
         if object_type == 'RelatedSearchesElementItem':
             return import_module("dataforseo_client.models.related_searches_element_item").RelatedSearchesElementItem.from_dict(obj)
 

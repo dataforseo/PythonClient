@@ -4390,7 +4390,7 @@ class OnPageApi:
 
     from dataforseo_client.models.on_page_lighthouse_languages_response_info import OnPageLighthouseLanguagesResponseInfo
     @validate_call
-    def on_page_lighthouse_languages(
+    def lighthouse_languages(
         self,
         _request_timeout: Union[
             None,
@@ -4406,7 +4406,7 @@ class OnPageApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> OnPageLighthouseLanguagesResponseInfo:
 
-        _param = self._on_page_lighthouse_languages_serialize(
+        _param = self._lighthouse_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4427,7 +4427,7 @@ class OnPageApi:
         ).data
 
     @validate_call
-    def on_page_lighthouse_languages_with_http_info(
+    def lighthouse_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -4443,7 +4443,7 @@ class OnPageApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[OnPageLighthouseLanguagesResponseInfo]':
 
-        _param = self._on_page_lighthouse_languages_serialize(
+        _param = self._lighthouse_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4464,7 +4464,7 @@ class OnPageApi:
         )
 
     @validate_call
-    def on_page_lighthouse_languages_without_preload_content(
+    def lighthouse_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -4480,7 +4480,7 @@ class OnPageApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._on_page_lighthouse_languages_serialize(
+        _param = self._lighthouse_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4497,7 +4497,7 @@ class OnPageApi:
         return response_data.response
 
 
-    def _on_page_lighthouse_languages_serialize(
+    def _lighthouse_languages_serialize(
         self,
         _request_auth,
         _content_type,

@@ -23,7 +23,7 @@ class DataLabsPodcastsSerpElementItem(BaseDataforseoLabsApiElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    items: Optional[List[Optional[PodcastsElement]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[PodcastsElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

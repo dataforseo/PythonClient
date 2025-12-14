@@ -6,8 +6,8 @@ All URIs are relative to *https://api.dataforseo.com*
 |------------- | ------------- | -------------|
 [**contentAnalysisIdList**](ContentAnalysisApi.md#contentAnalysisIdList) | **POST**  /v3/content_analysis/id_list  |
 [**contentAnalysisAvailableFilters**](ContentAnalysisApi.md#contentAnalysisAvailableFilters) | **GET**  /v3/content_analysis/available_filters  |
-[**contentAnalysisLocations**](ContentAnalysisApi.md#contentAnalysisLocations) | **GET**  /v3/content_analysis/locations  |
-[**contentAnalysisLanguages**](ContentAnalysisApi.md#contentAnalysisLanguages) | **GET**  /v3/content_analysis/languages  |
+[**locations**](ContentAnalysisApi.md#locations) | **GET**  /v3/content_analysis/locations  |
+[**languages**](ContentAnalysisApi.md#languages) | **GET**  /v3/content_analysis/languages  |
 [**contentAnalysisCategories**](ContentAnalysisApi.md#contentAnalysisCategories) | **GET**  /v3/content_analysis/categories  |
 [**searchLive**](ContentAnalysisApi.md#searchLive) | **POST**  /v3/content_analysis/search/live  |
 [**contentAnalysisSummaryLive**](ContentAnalysisApi.md#contentAnalysisSummaryLive) | **POST**  /v3/content_analysis/summary/live  |
@@ -40,11 +40,6 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.content_analysis_id_list([ContentAnalysisIdListRequestInfo(
-                datetime_from="2025-08-22 08:10:56 +00:00",
-                datetime_to="2025-10-22 08:10:56 +00:00",
-                limit=100,
-                offset=0,
-                sort="desc",
         )]
         )
 except ApiException as e:
@@ -130,9 +125,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="contentAnalysisLocations"></a>
-# **contentAnalysisLocations**
-> ContentAnalysisLocationsResponseInfo contentAnalysisLocations()
+<a id="locations"></a>
+# **locations**
+> ContentAnalysisLocationsResponseInfo locations()
 
 
 ### Example
@@ -152,7 +147,7 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.content_analysis_locations()
+        response = content_analysis_api.locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -183,9 +178,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="contentAnalysisLanguages"></a>
-# **contentAnalysisLanguages**
-> ContentAnalysisLanguagesResponseInfo contentAnalysisLanguages()
+<a id="languages"></a>
+# **languages**
+> ContentAnalysisLanguagesResponseInfo languages()
 
 
 ### Example
@@ -205,7 +200,7 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.content_analysis_languages()
+        response = content_analysis_api.languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -313,18 +308,6 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.search_live([ContentAnalysisSearchLiveRequestInfo(
-                keyword="logitech",
-                keyword_fields={
-                    },
-                page_type=[
-                    "ecommerce",
-                    "news",
-                    "blogs",
-                    "message-boards",
-                    "organization",
-                    ],
-                search_mode="as_is",
-                limit=10,
         )]
         )
 except ApiException as e:
@@ -381,16 +364,6 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.content_analysis_summary_live([ContentAnalysisSummaryLiveRequestInfo(
-                keyword="logitech",
-                page_type=[
-                    "ecommerce",
-                    "news",
-                    "blogs",
-                    "message-boards",
-                    "organization",
-                    ],
-                internal_list_limit=8,
-                positive_connotation_threshold=0.5,
         )]
         )
 except ApiException as e:
@@ -447,8 +420,6 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.sentiment_analysis_live([ContentAnalysisSentimentAnalysisLiveRequestInfo(
-                keyword="logitech",
-                internal_list_limit=1,
         )]
         )
 except ApiException as e:
@@ -505,9 +476,6 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.rating_distribution_live([ContentAnalysisRatingDistributionLiveRequestInfo(
-                keyword="logitech",
-                internal_list_limit=10,
-                search_mode="as_is",
         )]
         )
 except ApiException as e:
@@ -564,10 +532,6 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.phrase_trends_live([ContentAnalysisPhraseTrendsLiveRequestInfo(
-                keyword="logitech",
-                search_mode="as_is",
-                date_from="2025-08-22",
-                date_group="month",
         )]
         )
 except ApiException as e:
@@ -624,10 +588,6 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.category_trends_live([ContentAnalysisCategoryTrendsLiveRequestInfo(
-                category_code="10994",
-                search_mode="as_is",
-                date_from="2025-08-22",
-                date_group="month",
         )]
         )
 except ApiException as e:

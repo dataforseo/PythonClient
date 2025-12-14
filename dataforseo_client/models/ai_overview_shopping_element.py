@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.rating_info import RatingInfo
-from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.price import Price
 
 
 
@@ -23,7 +23,7 @@ class AiOverviewShoppingElement(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"reference page URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in link")
     rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
-    price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result")
+    price: Optional[Price] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result")
     seller: Optional[StrictStr] = Field(default=None, description=r"seller of the product")
     snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
     marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account provider. commerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")
@@ -98,7 +98,7 @@ class AiOverviewShoppingElement(BaseModel):
             "url": obj.get("url"),
             "domain": obj.get("domain"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
-            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": Price.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "seller": obj.get("seller"),
             "snippet": obj.get("snippet"),
             "marketplace": obj.get("marketplace"),

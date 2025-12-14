@@ -10,6 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.chatgpt_search_result import ChatgptSearchResult
 from dataforseo_client.models.chat_gpt_source import ChatGptSource
+from dataforseo_client.models.chat_gpt_brand_entity import ChatGptBrandEntity
 from dataforseo_client.models.base_chat_gpt_llm_scraper_element_item import BaseChatGptLlmScraperElementItem
 
 
@@ -28,6 +29,7 @@ class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo(BaseModel):
     search_results: Optional[List[Optional[ChatgptSearchResult]]] = Field(default=None, description=r"array of search results. all web search outputs the model retrieved when looking up information, including duplicates and unused entries")
     sources: Optional[List[Optional[ChatGptSource]]] = Field(default=None, description=r"array of sources. the sources the model actually cited or relied on in its final answer")
     fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queries. contains related search queries derived from the main query to provide a more comprehensive response")
+    brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entities. contains information on brands mentioned in the response")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results. contains types of search results (items) found.. possible item types:. chat_gpt_text, chat_gpt_table, chat_gpt_navigation_list, chat_gpt_images, chat_gpt_local_businesses, chat_gpt_products")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
@@ -43,6 +45,7 @@ class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo(BaseModel):
         "search_results", 
         "sources", 
         "fan_out_queries", 
+        "brand_entities", 
         "se_results_count", 
         "item_types", 
         "items_count", 
@@ -93,6 +96,12 @@ class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo(BaseModel):
                     sources_items.append(_item.to_dict())
             _dict['sources'] = sources_items
         _dict['fan_out_queries'] = self.fan_out_queries
+        brand_entities_items = []
+        if self.brand_entities:
+            for _item in self.brand_entities:
+                if _item:
+                    brand_entities_items.append(_item.to_dict())
+            _dict['brand_entities'] = brand_entities_items
         _dict['se_results_count'] = self.se_results_count
         _dict['item_types'] = self.item_types
         _dict['items_count'] = self.items_count
@@ -124,6 +133,7 @@ class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo(BaseModel):
             "search_results": [ChatgptSearchResult.from_dict(_item) for _item in obj["search_results"]] if obj.get("search_results") is not None else None,
             "sources": [ChatGptSource.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
             "fan_out_queries": obj.get("fan_out_queries"),
+            "brand_entities": [ChatGptBrandEntity.from_dict(_item) for _item in obj["brand_entities"]] if obj.get("brand_entities") is not None else None,
             "se_results_count": obj.get("se_results_count"),
             "item_types": obj.get("item_types"),
             "items_count": obj.get("items_count"),

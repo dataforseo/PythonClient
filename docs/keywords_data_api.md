@@ -7,9 +7,9 @@ All URIs are relative to *https://api.dataforseo.com*
 [**keywordsDataIdList**](KeywordsDataApi.md#keywordsDataIdList) | **POST**  /v3/keywords_data/id_list  |
 [**keywordsDataErrors**](KeywordsDataApi.md#keywordsDataErrors) | **POST**  /v3/keywords_data/errors  |
 [**googleAdsStatus**](KeywordsDataApi.md#googleAdsStatus) | **GET**  /v3/keywords_data/google_ads/status  |
-[**keywordsDataGoogleAdsLocations**](KeywordsDataApi.md#keywordsDataGoogleAdsLocations) | **GET**  /v3/keywords_data/google_ads/locations  |
-[**keywordsDataGoogleAdsLocationsCountry**](KeywordsDataApi.md#keywordsDataGoogleAdsLocationsCountry) | **GET**  /v3/keywords_data/google_ads/locations/{country}  |
-[**keywordsDataGoogleAdsLanguages**](KeywordsDataApi.md#keywordsDataGoogleAdsLanguages) | **GET**  /v3/keywords_data/google_ads/languages  |
+[**googleAdsLocations**](KeywordsDataApi.md#googleAdsLocations) | **GET**  /v3/keywords_data/google_ads/locations  |
+[**googleAdsLocationsCountry**](KeywordsDataApi.md#googleAdsLocationsCountry) | **GET**  /v3/keywords_data/google_ads/locations/{country}  |
+[**googleAdsLanguages**](KeywordsDataApi.md#googleAdsLanguages) | **GET**  /v3/keywords_data/google_ads/languages  |
 [**googleAdsSearchVolumeTaskPost**](KeywordsDataApi.md#googleAdsSearchVolumeTaskPost) | **POST**  /v3/keywords_data/google_ads/search_volume/task_post  |
 [**googleAdsSearchVolumeTasksReady**](KeywordsDataApi.md#googleAdsSearchVolumeTasksReady) | **GET**  /v3/keywords_data/google_ads/search_volume/tasks_ready  |
 [**googleAdsSearchVolumeTaskGet**](KeywordsDataApi.md#googleAdsSearchVolumeTaskGet) | **GET**  /v3/keywords_data/google_ads/search_volume/task_get/{id}  |
@@ -26,16 +26,16 @@ All URIs are relative to *https://api.dataforseo.com*
 [**googleAdsAdTrafficByKeywordsTasksReady**](KeywordsDataApi.md#googleAdsAdTrafficByKeywordsTasksReady) | **GET**  /v3/keywords_data/google_ads/ad_traffic_by_keywords/tasks_ready  |
 [**googleAdsAdTrafficByKeywordsTaskGet**](KeywordsDataApi.md#googleAdsAdTrafficByKeywordsTaskGet) | **GET**  /v3/keywords_data/google_ads/ad_traffic_by_keywords/task_get/{id}  |
 [**googleAdsAdTrafficByKeywordsLive**](KeywordsDataApi.md#googleAdsAdTrafficByKeywordsLive) | **POST**  /v3/keywords_data/google_ads/ad_traffic_by_keywords/live  |
-[**keywordsDataGoogleTrendsLocations**](KeywordsDataApi.md#keywordsDataGoogleTrendsLocations) | **GET**  /v3/keywords_data/google_trends/locations  |
-[**keywordsDataGoogleTrendsLocationsCountry**](KeywordsDataApi.md#keywordsDataGoogleTrendsLocationsCountry) | **GET**  /v3/keywords_data/google_trends/locations/{country}  |
-[**keywordsDataGoogleTrendsLanguages**](KeywordsDataApi.md#keywordsDataGoogleTrendsLanguages) | **GET**  /v3/keywords_data/google_trends/languages  |
+[**googleTrendsLocations**](KeywordsDataApi.md#googleTrendsLocations) | **GET**  /v3/keywords_data/google_trends/locations  |
+[**googleTrendsLocationsCountry**](KeywordsDataApi.md#googleTrendsLocationsCountry) | **GET**  /v3/keywords_data/google_trends/locations/{country}  |
+[**googleTrendsLanguages**](KeywordsDataApi.md#googleTrendsLanguages) | **GET**  /v3/keywords_data/google_trends/languages  |
 [**googleTrendsCategories**](KeywordsDataApi.md#googleTrendsCategories) | **GET**  /v3/keywords_data/google_trends/categories  |
 [**googleTrendsExploreTaskPost**](KeywordsDataApi.md#googleTrendsExploreTaskPost) | **POST**  /v3/keywords_data/google_trends/explore/task_post  |
 [**googleTrendsExploreTasksReady**](KeywordsDataApi.md#googleTrendsExploreTasksReady) | **GET**  /v3/keywords_data/google_trends/explore/tasks_ready  |
 [**googleTrendsExploreTaskGet**](KeywordsDataApi.md#googleTrendsExploreTaskGet) | **GET**  /v3/keywords_data/google_trends/explore/task_get/{id}  |
 [**googleTrendsExploreLive**](KeywordsDataApi.md#googleTrendsExploreLive) | **POST**  /v3/keywords_data/google_trends/explore/live  |
-[**keywordsDataDataforseoTrendsLocations**](KeywordsDataApi.md#keywordsDataDataforseoTrendsLocations) | **GET**  /v3/keywords_data/dataforseo_trends/locations  |
-[**keywordsDataDataforseoTrendsLocationsCountry**](KeywordsDataApi.md#keywordsDataDataforseoTrendsLocationsCountry) | **GET**  /v3/keywords_data/dataforseo_trends/locations/{country}  |
+[**dataforseoTrendsLocations**](KeywordsDataApi.md#dataforseoTrendsLocations) | **GET**  /v3/keywords_data/dataforseo_trends/locations  |
+[**dataforseoTrendsLocationsCountry**](KeywordsDataApi.md#dataforseoTrendsLocationsCountry) | **GET**  /v3/keywords_data/dataforseo_trends/locations/{country}  |
 [**dataforseoTrendsExploreLive**](KeywordsDataApi.md#dataforseoTrendsExploreLive) | **POST**  /v3/keywords_data/dataforseo_trends/explore/live  |
 [**dataforseoTrendsSubregionInterestsLive**](KeywordsDataApi.md#dataforseoTrendsSubregionInterestsLive) | **POST**  /v3/keywords_data/dataforseo_trends/subregion_interests/live  |
 [**dataforseoTrendsDemographyLive**](KeywordsDataApi.md#dataforseoTrendsDemographyLive) | **POST**  /v3/keywords_data/dataforseo_trends/demography/live  |
@@ -60,17 +60,17 @@ All URIs are relative to *https://api.dataforseo.com*
 [**bingKeywordsForKeywordsTasksReady**](KeywordsDataApi.md#bingKeywordsForKeywordsTasksReady) | **GET**  /v3/keywords_data/bing/keywords_for_keywords/tasks_ready  |
 [**bingKeywordsForKeywordsTaskGet**](KeywordsDataApi.md#bingKeywordsForKeywordsTaskGet) | **GET**  /v3/keywords_data/bing/keywords_for_keywords/task_get/{id}  |
 [**bingKeywordsForKeywordsLive**](KeywordsDataApi.md#bingKeywordsForKeywordsLive) | **POST**  /v3/keywords_data/bing/keywords_for_keywords/live  |
-[**keywordsDataBingKeywordPerformanceLocationsAndLanguages**](KeywordsDataApi.md#keywordsDataBingKeywordPerformanceLocationsAndLanguages) | **GET**  /v3/keywords_data/bing/keyword_performance/locations_and_languages  |
+[**bingKeywordPerformanceLocationsAndLanguages**](KeywordsDataApi.md#bingKeywordPerformanceLocationsAndLanguages) | **GET**  /v3/keywords_data/bing/keyword_performance/locations_and_languages  |
 [**bingKeywordPerformanceTaskPost**](KeywordsDataApi.md#bingKeywordPerformanceTaskPost) | **POST**  /v3/keywords_data/bing/keyword_performance/task_post  |
 [**bingKeywordPerformanceTasksReady**](KeywordsDataApi.md#bingKeywordPerformanceTasksReady) | **GET**  /v3/keywords_data/bing/keyword_performance/tasks_ready  |
 [**bingKeywordPerformanceTaskGet**](KeywordsDataApi.md#bingKeywordPerformanceTaskGet) | **GET**  /v3/keywords_data/bing/keyword_performance/task_get/{id}  |
 [**bingKeywordPerformanceLive**](KeywordsDataApi.md#bingKeywordPerformanceLive) | **POST**  /v3/keywords_data/bing/keyword_performance/live  |
-[**keywordsDataBingSearchVolumeHistoryLocationsAndLanguages**](KeywordsDataApi.md#keywordsDataBingSearchVolumeHistoryLocationsAndLanguages) | **GET**  /v3/keywords_data/bing/search_volume_history/locations_and_languages  |
+[**bingSearchVolumeHistoryLocationsAndLanguages**](KeywordsDataApi.md#bingSearchVolumeHistoryLocationsAndLanguages) | **GET**  /v3/keywords_data/bing/search_volume_history/locations_and_languages  |
 [**bingSearchVolumeHistoryTaskPost**](KeywordsDataApi.md#bingSearchVolumeHistoryTaskPost) | **POST**  /v3/keywords_data/bing/search_volume_history/task_post  |
 [**bingSearchVolumeHistoryTasksReady**](KeywordsDataApi.md#bingSearchVolumeHistoryTasksReady) | **GET**  /v3/keywords_data/bing/search_volume_history/tasks_ready  |
 [**bingSearchVolumeHistoryTaskGet**](KeywordsDataApi.md#bingSearchVolumeHistoryTaskGet) | **GET**  /v3/keywords_data/bing/search_volume_history/task_get/{id}  |
 [**bingSearchVolumeHistoryLive**](KeywordsDataApi.md#bingSearchVolumeHistoryLive) | **POST**  /v3/keywords_data/bing/search_volume_history/live  |
-[**keywordsDataClickstreamDataLocationsAndLanguages**](KeywordsDataApi.md#keywordsDataClickstreamDataLocationsAndLanguages) | **GET**  /v3/keywords_data/clickstream_data/locations_and_languages  |
+[**clickstreamDataLocationsAndLanguages**](KeywordsDataApi.md#clickstreamDataLocationsAndLanguages) | **GET**  /v3/keywords_data/clickstream_data/locations_and_languages  |
 [**clickstreamDataDataforseoSearchVolumeLive**](KeywordsDataApi.md#clickstreamDataDataforseoSearchVolumeLive) | **POST**  /v3/keywords_data/clickstream_data/dataforseo_search_volume/live  |
 [**clickstreamDataGlobalSearchVolumeLive**](KeywordsDataApi.md#clickstreamDataGlobalSearchVolumeLive) | **POST**  /v3/keywords_data/clickstream_data/global_search_volume/live  |
 [**clickstreamDataBulkSearchVolumeLive**](KeywordsDataApi.md#clickstreamDataBulkSearchVolumeLive) | **POST**  /v3/keywords_data/clickstream_data/bulk_search_volume/live  |
@@ -99,11 +99,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
-                datetime_from="2025-08-22 08:08:36 +00:00",
-                datetime_to="2025-10-22 08:08:36 +00:00",
-                limit=100,
-                offset=0,
-                sort="desc",
         )]
         )
 except ApiException as e:
@@ -160,9 +155,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_errors([KeywordsDataErrorsRequestInfo(
-                limit=10,
-                offset=0,
-                filtered_function="pingback_url",
         )]
         )
 except ApiException as e:
@@ -248,9 +240,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataGoogleAdsLocations"></a>
-# **keywordsDataGoogleAdsLocations**
-> KeywordsDataGoogleAdsLocationsResponseInfo keywordsDataGoogleAdsLocations()
+<a id="googleAdsLocations"></a>
+# **googleAdsLocations**
+> KeywordsDataGoogleAdsLocationsResponseInfo googleAdsLocations()
 
 
 ### Example
@@ -270,7 +262,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_google_ads_locations()
+        response = keywords_data_api.google_ads_locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -301,9 +293,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataGoogleAdsLocationsCountry"></a>
-# **keywordsDataGoogleAdsLocationsCountry**
-> KeywordsDataGoogleAdsLocationsCountryResponseInfo keywordsDataGoogleAdsLocationsCountry()
+<a id="googleAdsLocationsCountry"></a>
+# **googleAdsLocationsCountry**
+> KeywordsDataGoogleAdsLocationsCountryResponseInfo googleAdsLocationsCountry()
 
 
 ### Example
@@ -323,8 +315,8 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        country = "us"
-        response = keywords_data_api.keywords_data_google_ads_locations_country(country)
+        country = 
+        response = keywords_data_api.google_ads_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -355,9 +347,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataGoogleAdsLanguages"></a>
-# **keywordsDataGoogleAdsLanguages**
-> KeywordsDataGoogleAdsLanguagesResponseInfo keywordsDataGoogleAdsLanguages()
+<a id="googleAdsLanguages"></a>
+# **googleAdsLanguages**
+> KeywordsDataGoogleAdsLanguagesResponseInfo googleAdsLanguages()
 
 
 ### Example
@@ -377,7 +369,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_google_ads_languages()
+        response = keywords_data_api.google_ads_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -432,12 +424,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_search_volume_task_post([KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo(
-                keywords=[
-                    "buy laptop",
-                    "cheap laptops for sale",
-                    "purchase laptop",
-                    ],
-                location_name="United States",
         )]
         )
 except ApiException as e:
@@ -545,7 +531,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.google_ads_search_volume_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -601,14 +587,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_search_volume_live([KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo(
-                keywords=[
-                    "buy laptop",
-                    "cheap laptops for sale",
-                    "purchase laptop",
-                    ],
-                location_code=2840,
-                search_partners=True,
-                date_from="2025-08-22",
         )]
         )
 except ApiException as e:
@@ -665,8 +643,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_site_task_post([KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo(
-                target="dataforseo.com",
-                location_code=2840,
         )]
         )
 except ApiException as e:
@@ -774,7 +750,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.google_ads_keywords_for_site_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -830,8 +806,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_site_live([KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo(
-                target="dataforseo.com",
-                location_code=2840,
         )]
         )
 except ApiException as e:
@@ -888,11 +862,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_keywords_task_post([KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo(
-                keywords=[
-                    "phone",
-                    "cellphone",
-                    ],
-                location_code=2840,
         )]
         )
 except ApiException as e:
@@ -1000,7 +969,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.google_ads_keywords_for_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1056,11 +1025,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_keywords_live([KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo(
-                keywords=[
-                    "phone",
-                    "cellphone",
-                    ],
-                location_code=2840,
         )]
         )
 except ApiException as e:
@@ -1117,13 +1081,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_task_post([KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo(
-                keywords=[
-                    "seo marketing",
-                    ],
-                bid=999,
-                match="exact",
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -1231,7 +1188,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1287,13 +1244,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_live([KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(
-                keywords=[
-                    "seo marketing",
-                    ],
-                bid=999,
-                match="exact",
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -1326,9 +1276,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataGoogleTrendsLocations"></a>
-# **keywordsDataGoogleTrendsLocations**
-> KeywordsDataGoogleTrendsLocationsResponseInfo keywordsDataGoogleTrendsLocations()
+<a id="googleTrendsLocations"></a>
+# **googleTrendsLocations**
+> KeywordsDataGoogleTrendsLocationsResponseInfo googleTrendsLocations()
 
 
 ### Example
@@ -1348,7 +1298,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_google_trends_locations()
+        response = keywords_data_api.google_trends_locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1379,9 +1329,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataGoogleTrendsLocationsCountry"></a>
-# **keywordsDataGoogleTrendsLocationsCountry**
-> KeywordsDataGoogleTrendsLocationsCountryResponseInfo keywordsDataGoogleTrendsLocationsCountry()
+<a id="googleTrendsLocationsCountry"></a>
+# **googleTrendsLocationsCountry**
+> KeywordsDataGoogleTrendsLocationsCountryResponseInfo googleTrendsLocationsCountry()
 
 
 ### Example
@@ -1401,8 +1351,8 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        country = "us"
-        response = keywords_data_api.keywords_data_google_trends_locations_country(country)
+        country = 
+        response = keywords_data_api.google_trends_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1433,9 +1383,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataGoogleTrendsLanguages"></a>
-# **keywordsDataGoogleTrendsLanguages**
-> KeywordsDataGoogleTrendsLanguagesResponseInfo keywordsDataGoogleTrendsLanguages()
+<a id="googleTrendsLanguages"></a>
+# **googleTrendsLanguages**
+> KeywordsDataGoogleTrendsLanguagesResponseInfo googleTrendsLanguages()
 
 
 ### Example
@@ -1455,7 +1405,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_google_trends_languages()
+        response = keywords_data_api.google_trends_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1563,14 +1513,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_trends_explore_task_post([KeywordsDataGoogleTrendsExploreTaskPostRequestInfo(
-                keywords=[
-                    "seo api",
-                    "rank api",
-                    ],
-                type="youtube",
-                category_code=3,
-                date_from="2025-08-22",
-                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -1678,7 +1620,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.google_trends_explore_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1734,15 +1676,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_trends_explore_live([KeywordsDataGoogleTrendsExploreLiveRequestInfo(
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
-                location_name="United States",
-                type="youtube",
-                category_code=3,
-                date_from="2025-08-22",
-                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -1775,9 +1708,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataDataforseoTrendsLocations"></a>
-# **keywordsDataDataforseoTrendsLocations**
-> KeywordsDataDataforseoTrendsLocationsResponseInfo keywordsDataDataforseoTrendsLocations()
+<a id="dataforseoTrendsLocations"></a>
+# **dataforseoTrendsLocations**
+> KeywordsDataDataforseoTrendsLocationsResponseInfo dataforseoTrendsLocations()
 
 
 ### Example
@@ -1797,7 +1730,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_dataforseo_trends_locations()
+        response = keywords_data_api.dataforseo_trends_locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1828,9 +1761,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataDataforseoTrendsLocationsCountry"></a>
-# **keywordsDataDataforseoTrendsLocationsCountry**
-> KeywordsDataDataforseoTrendsLocationsCountryResponseInfo keywordsDataDataforseoTrendsLocationsCountry()
+<a id="dataforseoTrendsLocationsCountry"></a>
+# **dataforseoTrendsLocationsCountry**
+> KeywordsDataDataforseoTrendsLocationsCountryResponseInfo dataforseoTrendsLocationsCountry()
 
 
 ### Example
@@ -1850,8 +1783,8 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        country = "us"
-        response = keywords_data_api.keywords_data_dataforseo_trends_locations_country(country)
+        country = 
+        response = keywords_data_api.dataforseo_trends_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1906,11 +1839,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_explore_live([KeywordsDataDataforseoTrendsExploreLiveRequestInfo(
-                keywords=[
-                    "iphone 14",
-                    "samsung s23",
-                    ],
-                location_code=2840,
         )]
         )
 except ApiException as e:
@@ -1967,14 +1895,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_subregion_interests_live([KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo(
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
-                location_name="United States",
-                type="web",
-                date_from="2025-08-22",
-                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -2031,14 +1951,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_demography_live([KeywordsDataDataforseoTrendsDemographyLiveRequestInfo(
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
-                location_name="United States",
-                type="web",
-                date_from="2025-08-22",
-                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -2095,14 +2007,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_merged_data_live([KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo(
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
-                location_name="United States",
-                type="web",
-                date_from="2025-08-22",
-                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -2265,13 +2169,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_task_post([KeywordsDataBingSearchVolumeTaskPostRequestInfo(
-                keywords=[
-                    "average page rpm adsense",
-                    "adsense blank ads how long",
-                    "leads and prospects",
-                    ],
-                location_name="United States",
-                language_name="English",
         )]
         )
 except ApiException as e:
@@ -2379,7 +2276,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.bing_search_volume_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2435,13 +2332,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_live([KeywordsDataBingSearchVolumeLiveRequestInfo(
-                keywords=[
-                    "tom and jerry",
-                    "silicon valley",
-                    "spider man",
-                    ],
-                location_name="United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -2604,24 +2494,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_audience_estimation_task_post([KeywordsDataBingAudienceEstimationTaskPostRequestInfo(
-                location_coordinate="29.6821525,-82.4098881,100",
-                age=[
-                    "twenty_five_to_thirty_four",
-                    "eighteen_to_twenty_four",
-                    "unknown",
-                    ],
-                bid=1,
-                daily_budget=24,
-                gender=[
-                    "male",
-                    ],
-                industry=[
-                    "806303407",
-                    "806301758",
-                    ],
-                job_function=[
-                    "806298607",
-                    ],
         )]
         )
 except ApiException as e:
@@ -2729,7 +2601,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.bing_audience_estimation_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2785,24 +2657,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_audience_estimation_live([KeywordsDataBingAudienceEstimationLiveRequestInfo(
-                location_coordinate="29.6821525,-82.4098881,100",
-                age=[
-                    "twenty_five_to_thirty_four",
-                    "eighteen_to_twenty_four",
-                    "unknown",
-                    ],
-                bid=1,
-                daily_budget=24,
-                gender=[
-                    "male",
-                    ],
-                industry=[
-                    "806303407",
-                    "806301758",
-                    ],
-                job_function=[
-                    "806298607",
-                    ],
         )]
         )
 except ApiException as e:
@@ -2859,9 +2713,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_site_task_post([KeywordsDataBingKeywordsForSiteTaskPostRequestInfo(
-                target="dataforseo.com",
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -2969,7 +2820,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.bing_keywords_for_site_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3025,9 +2876,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_site_live([KeywordsDataBingKeywordsForSiteLiveRequestInfo(
-                target="dataforseo.com",
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -3084,13 +2932,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_keywords_task_post([KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo(
-                keywords=[
-                    "average page rpm adsense",
-                    "adsense blank ads how long",
-                    "leads and prospects",
-                    ],
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -3198,7 +3039,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.bing_keywords_for_keywords_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3254,13 +3095,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_keywords_live([KeywordsDataBingKeywordsForKeywordsLiveRequestInfo(
-                keywords=[
-                    "average page rpm adsense",
-                    "adsense blank ads how long",
-                    "leads and prospects",
-                    ],
-                location_name="United States",
-                language_name="English",
         )]
         )
 except ApiException as e:
@@ -3293,9 +3127,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataBingKeywordPerformanceLocationsAndLanguages"></a>
-# **keywordsDataBingKeywordPerformanceLocationsAndLanguages**
-> KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo keywordsDataBingKeywordPerformanceLocationsAndLanguages()
+<a id="bingKeywordPerformanceLocationsAndLanguages"></a>
+# **bingKeywordPerformanceLocationsAndLanguages**
+> KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo bingKeywordPerformanceLocationsAndLanguages()
 
 
 ### Example
@@ -3315,7 +3149,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_bing_keyword_performance_locations_and_languages()
+        response = keywords_data_api.bing_keyword_performance_locations_and_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3370,13 +3204,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keyword_performance_task_post([KeywordsDataBingKeywordPerformanceTaskPostRequestInfo(
-                keywords=[
-                    "dataforseo",
-                    "seo",
-                    "ranking",
-                    ],
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -3484,7 +3311,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.bing_keyword_performance_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3540,13 +3367,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keyword_performance_live([KeywordsDataBingKeywordPerformanceLiveRequestInfo(
-                keywords=[
-                    "dataforseo",
-                    "seo",
-                    "ranking",
-                    ],
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -3579,9 +3399,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataBingSearchVolumeHistoryLocationsAndLanguages"></a>
-# **keywordsDataBingSearchVolumeHistoryLocationsAndLanguages**
-> KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo keywordsDataBingSearchVolumeHistoryLocationsAndLanguages()
+<a id="bingSearchVolumeHistoryLocationsAndLanguages"></a>
+# **bingSearchVolumeHistoryLocationsAndLanguages**
+> KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo bingSearchVolumeHistoryLocationsAndLanguages()
 
 
 ### Example
@@ -3601,7 +3421,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_bing_search_volume_history_locations_and_languages()
+        response = keywords_data_api.bing_search_volume_history_locations_and_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3656,11 +3476,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_history_task_post([KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo(
-                keywords=[
-                    "10 minute timer",
-                    ],
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -3768,7 +3583,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = keywords_data_api.bing_search_volume_history_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3824,11 +3639,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_history_live([KeywordsDataBingSearchVolumeHistoryLiveRequestInfo(
-                keywords=[
-                    "10 minute timer",
-                    ],
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -3861,9 +3671,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="keywordsDataClickstreamDataLocationsAndLanguages"></a>
-# **keywordsDataClickstreamDataLocationsAndLanguages**
-> KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo keywordsDataClickstreamDataLocationsAndLanguages()
+<a id="clickstreamDataLocationsAndLanguages"></a>
+# **clickstreamDataLocationsAndLanguages**
+> KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo clickstreamDataLocationsAndLanguages()
 
 
 ### Example
@@ -3883,7 +3693,7 @@ try:
         # Create an instance of the API class
         keywords_data_api = KeywordsDataApi(api_client)
 
-        response = keywords_data_api.keywords_data_clickstream_data_locations_and_languages()
+        response = keywords_data_api.clickstream_data_locations_and_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -3938,14 +3748,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.clickstream_data_dataforseo_search_volume_live([KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo(
-                keywords=[
-                    "you tube",
-                    "youtube",
-                    "youtub",
-                    ],
-                location_code=2840,
-                language_code="en",
-                tag="test-tag",
         )]
         )
 except ApiException as e:
@@ -4002,12 +3804,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.clickstream_data_global_search_volume_live([KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo(
-                keywords=[
-                    "you tube",
-                    "youtube",
-                    "youtub",
-                    ],
-                tag="test-tag",
         )]
         )
 except ApiException as e:
@@ -4064,13 +3860,6 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.clickstream_data_bulk_search_volume_live([KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo(
-                keywords=[
-                    "you tube",
-                    "youtube",
-                    "youtub",
-                    ],
-                location_code=2840,
-                tag="test-tag",
         )]
         )
 except ApiException as e:

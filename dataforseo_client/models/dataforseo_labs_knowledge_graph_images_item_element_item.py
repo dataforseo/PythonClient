@@ -24,7 +24,7 @@ class DataforseoLabsKnowledgeGraphImagesItemElementItem(BaseDataforseoLabsKnowle
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     link: Optional[LinkElement] = Field(default=None, description=r"link of the element")
-    items: Optional[List[Optional[KnowledgeGraphImagesElement]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
+    items: Optional[List[Optional[KnowledgeGraphImagesElement]]] = Field(default=None, description=r"elements of search results found in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

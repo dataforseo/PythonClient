@@ -387,7 +387,7 @@ class ContentAnalysisApi:
 
     from dataforseo_client.models.content_analysis_locations_response_info import ContentAnalysisLocationsResponseInfo
     @validate_call
-    def content_analysis_locations(
+    def locations(
         self,
         _request_timeout: Union[
             None,
@@ -403,7 +403,7 @@ class ContentAnalysisApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ContentAnalysisLocationsResponseInfo:
 
-        _param = self._content_analysis_locations_serialize(
+        _param = self._locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -424,7 +424,7 @@ class ContentAnalysisApi:
         ).data
 
     @validate_call
-    def content_analysis_locations_with_http_info(
+    def locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -440,7 +440,7 @@ class ContentAnalysisApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[ContentAnalysisLocationsResponseInfo]':
 
-        _param = self._content_analysis_locations_serialize(
+        _param = self._locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -461,7 +461,7 @@ class ContentAnalysisApi:
         )
 
     @validate_call
-    def content_analysis_locations_without_preload_content(
+    def locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -477,7 +477,7 @@ class ContentAnalysisApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._content_analysis_locations_serialize(
+        _param = self._locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -494,7 +494,7 @@ class ContentAnalysisApi:
         return response_data.response
 
 
-    def _content_analysis_locations_serialize(
+    def _locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -543,7 +543,7 @@ class ContentAnalysisApi:
 
     from dataforseo_client.models.content_analysis_languages_response_info import ContentAnalysisLanguagesResponseInfo
     @validate_call
-    def content_analysis_languages(
+    def languages(
         self,
         _request_timeout: Union[
             None,
@@ -559,7 +559,7 @@ class ContentAnalysisApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ContentAnalysisLanguagesResponseInfo:
 
-        _param = self._content_analysis_languages_serialize(
+        _param = self._languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -580,7 +580,7 @@ class ContentAnalysisApi:
         ).data
 
     @validate_call
-    def content_analysis_languages_with_http_info(
+    def languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -596,7 +596,7 @@ class ContentAnalysisApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[ContentAnalysisLanguagesResponseInfo]':
 
-        _param = self._content_analysis_languages_serialize(
+        _param = self._languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -617,7 +617,7 @@ class ContentAnalysisApi:
         )
 
     @validate_call
-    def content_analysis_languages_without_preload_content(
+    def languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -633,7 +633,7 @@ class ContentAnalysisApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._content_analysis_languages_serialize(
+        _param = self._languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -650,7 +650,7 @@ class ContentAnalysisApi:
         return response_data.response
 
 
-    def _content_analysis_languages_serialize(
+    def _languages_serialize(
         self,
         _request_auth,
         _content_type,

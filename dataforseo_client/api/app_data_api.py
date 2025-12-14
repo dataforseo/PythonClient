@@ -4464,7 +4464,7 @@ class AppDataApi:
 
     from dataforseo_client.models.app_data_apple_locations_response_info import AppDataAppleLocationsResponseInfo
     @validate_call
-    def app_data_apple_locations(
+    def apple_locations(
         self,
         _request_timeout: Union[
             None,
@@ -4480,7 +4480,7 @@ class AppDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDataAppleLocationsResponseInfo:
 
-        _param = self._app_data_apple_locations_serialize(
+        _param = self._apple_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4501,7 +4501,7 @@ class AppDataApi:
         ).data
 
     @validate_call
-    def app_data_apple_locations_with_http_info(
+    def apple_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -4517,7 +4517,7 @@ class AppDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AppDataAppleLocationsResponseInfo]':
 
-        _param = self._app_data_apple_locations_serialize(
+        _param = self._apple_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4538,7 +4538,7 @@ class AppDataApi:
         )
 
     @validate_call
-    def app_data_apple_locations_without_preload_content(
+    def apple_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -4554,7 +4554,7 @@ class AppDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._app_data_apple_locations_serialize(
+        _param = self._apple_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4571,7 +4571,7 @@ class AppDataApi:
         return response_data.response
 
 
-    def _app_data_apple_locations_serialize(
+    def _apple_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -4620,7 +4620,7 @@ class AppDataApi:
 
     from dataforseo_client.models.app_data_apple_languages_response_info import AppDataAppleLanguagesResponseInfo
     @validate_call
-    def app_data_apple_languages(
+    def apple_languages(
         self,
         _request_timeout: Union[
             None,
@@ -4636,7 +4636,7 @@ class AppDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDataAppleLanguagesResponseInfo:
 
-        _param = self._app_data_apple_languages_serialize(
+        _param = self._apple_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4657,7 +4657,7 @@ class AppDataApi:
         ).data
 
     @validate_call
-    def app_data_apple_languages_with_http_info(
+    def apple_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -4673,7 +4673,7 @@ class AppDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AppDataAppleLanguagesResponseInfo]':
 
-        _param = self._app_data_apple_languages_serialize(
+        _param = self._apple_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4694,7 +4694,7 @@ class AppDataApi:
         )
 
     @validate_call
-    def app_data_apple_languages_without_preload_content(
+    def apple_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -4710,7 +4710,7 @@ class AppDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._app_data_apple_languages_serialize(
+        _param = self._apple_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4727,7 +4727,7 @@ class AppDataApi:
         return response_data.response
 
 
-    def _app_data_apple_languages_serialize(
+    def _apple_languages_serialize(
         self,
         _request_auth,
         _content_type,

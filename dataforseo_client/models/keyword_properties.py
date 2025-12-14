@@ -21,6 +21,7 @@ class KeywordProperties(BaseModel):
     keyword_difficulty: Optional[StrictInt] = Field(default=None, description=r"difficulty of ranking in the first top-10 organic results for a keyword. indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100;. calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP;. learn more about the metric in this help center guide")
     detected_language: Optional[StrictStr] = Field(default=None, description=r"detected language of the keyword. indicates the language of the keyword as identified by our system")
     is_another_language: Optional[StrictBool] = Field(default=None, description=r"detected language of the keyword is different from the set language. if true, the language set in the request does not match the language determined by our system for a given keyword")
+    words_count: Optional[StrictInt] = Field(default=None, description=r"number of words in the keyword. indicates how many words the keyword consists of")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "core_keyword", 
@@ -28,6 +29,7 @@ class KeywordProperties(BaseModel):
         "keyword_difficulty", 
         "detected_language", 
         "is_another_language", 
+        "words_count", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -60,6 +62,7 @@ class KeywordProperties(BaseModel):
         _dict['keyword_difficulty'] = self.keyword_difficulty
         _dict['detected_language'] = self.detected_language
         _dict['is_another_language'] = self.is_another_language
+        _dict['words_count'] = self.words_count
         return _dict
 
 
@@ -78,6 +81,7 @@ class KeywordProperties(BaseModel):
             "keyword_difficulty": obj.get("keyword_difficulty"),
             "detected_language": obj.get("detected_language"),
             "is_another_language": obj.get("is_another_language"),
+            "words_count": obj.get("words_count"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

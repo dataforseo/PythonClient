@@ -6,7 +6,7 @@ All URIs are relative to *https://api.dataforseo.com*
 |------------- | ------------- | -------------|
 [**businessDataIdList**](BusinessDataApi.md#businessDataIdList) | **POST**  /v3/business_data/id_list  |
 [**businessDataErrors**](BusinessDataApi.md#businessDataErrors) | **POST**  /v3/business_data/errors  |
-[**businessDataBusinessListingsLocations**](BusinessDataApi.md#businessDataBusinessListingsLocations) | **GET**  /v3/business_data/business_listings/locations  |
+[**businessListingsLocations**](BusinessDataApi.md#businessListingsLocations) | **GET**  /v3/business_data/business_listings/locations  |
 [**businessListingsCategories**](BusinessDataApi.md#businessListingsCategories) | **GET**  /v3/business_data/business_listings/categories  |
 [**businessListingsAvailableFilters**](BusinessDataApi.md#businessListingsAvailableFilters) | **GET**  /v3/business_data/business_listings/available_filters  |
 [**businessListingsSearchLive**](BusinessDataApi.md#businessListingsSearchLive) | **POST**  /v3/business_data/business_listings/search/live  |
@@ -48,9 +48,9 @@ All URIs are relative to *https://api.dataforseo.com*
 [**trustpilotReviewsTaskPost**](BusinessDataApi.md#trustpilotReviewsTaskPost) | **POST**  /v3/business_data/trustpilot/reviews/task_post  |
 [**trustpilotReviewsTasksReady**](BusinessDataApi.md#trustpilotReviewsTasksReady) | **GET**  /v3/business_data/trustpilot/reviews/tasks_ready  |
 [**trustpilotReviewsTaskGet**](BusinessDataApi.md#trustpilotReviewsTaskGet) | **GET**  /v3/business_data/trustpilot/reviews/task_get/{id}  |
-[**businessDataTripadvisorLocations**](BusinessDataApi.md#businessDataTripadvisorLocations) | **GET**  /v3/business_data/tripadvisor/locations  |
-[**businessDataTripadvisorLocationsCountry**](BusinessDataApi.md#businessDataTripadvisorLocationsCountry) | **GET**  /v3/business_data/tripadvisor/locations/{country}  |
-[**businessDataTripadvisorLanguages**](BusinessDataApi.md#businessDataTripadvisorLanguages) | **GET**  /v3/business_data/tripadvisor/languages  |
+[**tripadvisorLocations**](BusinessDataApi.md#tripadvisorLocations) | **GET**  /v3/business_data/tripadvisor/locations  |
+[**tripadvisorLocationsCountry**](BusinessDataApi.md#tripadvisorLocationsCountry) | **GET**  /v3/business_data/tripadvisor/locations/{country}  |
+[**tripadvisorLanguages**](BusinessDataApi.md#tripadvisorLanguages) | **GET**  /v3/business_data/tripadvisor/languages  |
 [**tripadvisorSearchTaskPost**](BusinessDataApi.md#tripadvisorSearchTaskPost) | **POST**  /v3/business_data/tripadvisor/search/task_post  |
 [**tripadvisorSearchTasksReady**](BusinessDataApi.md#tripadvisorSearchTasksReady) | **GET**  /v3/business_data/tripadvisor/search/tasks_ready  |
 [**tripadvisorSearchTaskGet**](BusinessDataApi.md#tripadvisorSearchTaskGet) | **GET**  /v3/business_data/tripadvisor/search/task_get/{id}  |
@@ -85,11 +85,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_id_list([BusinessDataIdListRequestInfo(
-                datetime_from="2025-08-22 08:11:28 +00:00",
-                datetime_to="2025-10-22 08:11:28 +00:00",
-                limit=100,
-                offset=0,
-                sort="desc",
         )]
         )
 except ApiException as e:
@@ -146,9 +141,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_errors([BusinessDataErrorsRequestInfo(
-                limit=10,
-                offset=0,
-                filtered_function="pingback_url",
         )]
         )
 except ApiException as e:
@@ -181,9 +173,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="businessDataBusinessListingsLocations"></a>
-# **businessDataBusinessListingsLocations**
-> BusinessDataBusinessListingsLocationsResponseInfo businessDataBusinessListingsLocations()
+<a id="businessListingsLocations"></a>
+# **businessListingsLocations**
+> BusinessDataBusinessListingsLocationsResponseInfo businessListingsLocations()
 
 
 ### Example
@@ -203,7 +195,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        response = business_data_api.business_data_business_listings_locations()
+        response = business_data_api.business_listings_locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -364,14 +356,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_listings_search_live([BusinessDataBusinessListingsSearchLiveRequestInfo(
-                categories=[
-                    "pizza_restaurant",
-                    ],
-                description="pizza",
-                title="pizza",
-                is_claimed=True,
-                location_coordinate="53.476225,-2.243572,10",
-                limit=3,
         )]
         )
 except ApiException as e:
@@ -428,14 +412,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_listings_categories_aggregation_live([BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo(
-                categories=[
-                    "pizza_restaurant",
-                    ],
-                description="pizza",
-                title="pizza",
-                is_claimed=True,
-                location_coordinate="53.476225,-2.243572,10",
-                limit=3,
         )]
         )
 except ApiException as e:
@@ -543,7 +519,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        country = "us"
+        country = 
         response = business_data_api.business_data_google_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -652,9 +628,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_my_business_info_task_post([BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo(
-                keyword="RustyBrick, Inc.",
-                location_name="New York,New York,United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -815,7 +788,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_my_business_info_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -871,9 +844,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_my_business_info_live([BusinessDataGoogleMyBusinessInfoLiveRequestInfo(
-                keyword="RustyBrick, Inc.",
-                location_name="New York,New York,United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -930,9 +900,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_my_business_updates_task_post([BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo(
-                keyword="RustyBrick, Inc.",
-                location_name="New York,New York,United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -1040,7 +1007,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_my_business_updates_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1096,19 +1063,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_searches_task_post([BusinessDataGoogleHotelSearchesTaskPostRequestInfo(
-                keyword="cheap hotel",
-                priority=2,
-                location_name="New York,New York,United States",
-                language_code="en",
-                check_in="2023-06-01",
-                check_out="2023-06-30",
-                currency="USD",
-                adults=2,
-                children=[
-                    "14",
-                    ],
-                sort_by="highest_rating",
-                tag="example",
         )]
         )
 except ApiException as e:
@@ -1216,7 +1170,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_hotel_searches_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1272,18 +1226,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_searches_live([BusinessDataGoogleHotelSearchesLiveRequestInfo(
-                keyword="cheap hotel",
-                location_name="New York,New York,United States",
-                language_code="en",
-                check_in="2023-06-01",
-                check_out="2023-06-30",
-                currency="USD",
-                adults=2,
-                children=[
-                    "14",
-                    ],
-                sort_by="highest_rating",
-                tag="example",
         )]
         )
 except ApiException as e:
@@ -1340,12 +1282,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_info_task_post([BusinessDataGoogleHotelInfoTaskPostRequestInfo(
-                hotel_identifier="ChYIq6SB--i6p6cpGgovbS8wN2s5ODZfEAE",
-                location_name="New York,New York,United States",
-                language_code="en",
-                tag="some_string_123",
-                postback_url="https://your-server.com/postbackscript.php",
-                postback_data="advanced",
         )]
         )
 except ApiException as e:
@@ -1453,7 +1389,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_hotel_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1507,7 +1443,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_hotel_info_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1563,9 +1499,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_info_live_advanced([BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo(
-                hotel_identifier="CgoI-KWyzenM_MV3EAE",
-                location_name="New York,New York,United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -1622,9 +1555,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_info_live_html([BusinessDataGoogleHotelInfoLiveHtmlRequestInfo(
-                hotel_identifier="ChYIq6SB--i6p6cpGgovbS8wN2s5ODZfEAE",
-                location_name="New York,New York,United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -1681,11 +1611,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_reviews_task_post([BusinessDataGoogleReviewsTaskPostRequestInfo(
-                keyword="hedonism wines",
-                location_name="London,England,United Kingdom",
-                language_name="English",
-                depth=50,
-                sort_by="highest_rating",
         )]
         )
 except ApiException as e:
@@ -1793,7 +1718,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_reviews_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1849,9 +1774,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_extended_reviews_task_post([BusinessDataGoogleExtendedReviewsTaskPostRequestInfo(
-                cid="17626775537598922320",
-                location_name="London,England,United Kingdom",
-                language_name="english",
         )]
         )
 except ApiException as e:
@@ -1959,7 +1881,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_extended_reviews_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2015,9 +1937,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_questions_and_answers_task_post([BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo(
-                keyword="The Last Bookstore",
-                location_name="Los Angeles,California,United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -2125,7 +2044,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.google_questions_and_answers_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2181,9 +2100,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_questions_and_answers_live([BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo(
-                keyword="The Last Bookstore",
-                location_name="Los Angeles,California,United States",
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -2240,8 +2156,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.trustpilot_search_task_post([BusinessDataTrustpilotSearchTaskPostRequestInfo(
-                keyword="pizza restaurant",
-                depth=20,
         )]
         )
 except ApiException as e:
@@ -2349,7 +2263,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.trustpilot_search_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2405,8 +2319,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.trustpilot_reviews_task_post([BusinessDataTrustpilotReviewsTaskPostRequestInfo(
-                domain="www.thepearlsource.com",
-                depth=40,
         )]
         )
 except ApiException as e:
@@ -2514,7 +2426,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.trustpilot_reviews_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2546,9 +2458,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="businessDataTripadvisorLocations"></a>
-# **businessDataTripadvisorLocations**
-> BusinessDataTripadvisorLocationsResponseInfo businessDataTripadvisorLocations()
+<a id="tripadvisorLocations"></a>
+# **tripadvisorLocations**
+> BusinessDataTripadvisorLocationsResponseInfo tripadvisorLocations()
 
 
 ### Example
@@ -2568,7 +2480,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        response = business_data_api.business_data_tripadvisor_locations()
+        response = business_data_api.tripadvisor_locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2599,9 +2511,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="businessDataTripadvisorLocationsCountry"></a>
-# **businessDataTripadvisorLocationsCountry**
-> BusinessDataTripadvisorLocationsCountryResponseInfo businessDataTripadvisorLocationsCountry()
+<a id="tripadvisorLocationsCountry"></a>
+# **tripadvisorLocationsCountry**
+> BusinessDataTripadvisorLocationsCountryResponseInfo tripadvisorLocationsCountry()
 
 
 ### Example
@@ -2621,8 +2533,8 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        country = "us"
-        response = business_data_api.business_data_tripadvisor_locations_country(country)
+        country = 
+        response = business_data_api.tripadvisor_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2653,9 +2565,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="businessDataTripadvisorLanguages"></a>
-# **businessDataTripadvisorLanguages**
-> BusinessDataTripadvisorLanguagesResponseInfo businessDataTripadvisorLanguages()
+<a id="tripadvisorLanguages"></a>
+# **tripadvisorLanguages**
+> BusinessDataTripadvisorLanguagesResponseInfo tripadvisorLanguages()
 
 
 ### Example
@@ -2675,7 +2587,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        response = business_data_api.business_data_tripadvisor_languages()
+        response = business_data_api.tripadvisor_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -2730,9 +2642,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.tripadvisor_search_task_post([BusinessDataTripadvisorSearchTaskPostRequestInfo(
-                keyword="pizza",
-                location_code=1003854,
-                depth=30,
         )]
         )
 except ApiException as e:
@@ -2840,7 +2749,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.tripadvisor_search_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2896,10 +2805,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.tripadvisor_reviews_task_post([BusinessDataTripadvisorReviewsTaskPostRequestInfo(
-                url_path="Hotel_Review-g60763-d23462501-Reviews-Margaritaville_Times_Square-New_York_City_New_York.html",
-                location_code=1003854,
-                tag="some_string_123",
-                pingback_url="https://your-server.com/pingback.php?id=$id&tag=$tag",
         )]
         )
 except ApiException as e:
@@ -3007,7 +2912,7 @@ try:
         # Create an instance of the API class
         business_data_api = BusinessDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = business_data_api.tripadvisor_reviews_task_get(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3063,12 +2968,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.social_media_pinterest_live([BusinessDataSocialMediaPinterestLiveRequestInfo(
-                targets=[
-                    "https://www.simplyrecipes.com/recipes/grilled_salmon_with_cucumber_mango_salsa/",
-                    "https://tasty.co/recipe/classic-lasagna",
-                    "https://www.allrecipes.com/recipe/255263/sicilian-roasted-chicken/",
-                    ],
-                tag="some_string_123",
         )]
         )
 except ApiException as e:
@@ -3125,12 +3024,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.social_media_facebook_live([BusinessDataSocialMediaFacebookLiveRequestInfo(
-                targets=[
-                    "https://prnt.sc/",
-                    "https://developers.facebook.com/docs/plugins/like-button/",
-                    "https://www.shbarcelona.com/blog/en/salsa-dance-clubs-in-barcelona/",
-                    ],
-                tag="some_string_123",
         )]
         )
 except ApiException as e:
@@ -3187,15 +3080,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.social_media_reddit_live([BusinessDataSocialMediaRedditLiveRequestInfo(
-                targets=[
-                    "https://vk.com/",
-                    "https://ahrefs.com/",
-                    "https://google.com/",
-                    "https://twitter.com/",
-                    "https://reddit.com/",
-                    "https://facebook.com/",
-                    ],
-                tag="some_string_123",
         )]
         )
 except ApiException as e:

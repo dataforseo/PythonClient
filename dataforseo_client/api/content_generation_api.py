@@ -1190,7 +1190,7 @@ class ContentGenerationApi:
 
     from dataforseo_client.models.content_generation_check_grammar_languages_response_info import ContentGenerationCheckGrammarLanguagesResponseInfo
     @validate_call
-    def content_generation_check_grammar_languages(
+    def check_grammar_languages(
         self,
         _request_timeout: Union[
             None,
@@ -1206,7 +1206,7 @@ class ContentGenerationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ContentGenerationCheckGrammarLanguagesResponseInfo:
 
-        _param = self._content_generation_check_grammar_languages_serialize(
+        _param = self._check_grammar_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1227,7 +1227,7 @@ class ContentGenerationApi:
         ).data
 
     @validate_call
-    def content_generation_check_grammar_languages_with_http_info(
+    def check_grammar_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1243,7 +1243,7 @@ class ContentGenerationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[ContentGenerationCheckGrammarLanguagesResponseInfo]':
 
-        _param = self._content_generation_check_grammar_languages_serialize(
+        _param = self._check_grammar_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1264,7 +1264,7 @@ class ContentGenerationApi:
         )
 
     @validate_call
-    def content_generation_check_grammar_languages_without_preload_content(
+    def check_grammar_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1280,7 +1280,7 @@ class ContentGenerationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._content_generation_check_grammar_languages_serialize(
+        _param = self._check_grammar_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1297,7 +1297,7 @@ class ContentGenerationApi:
         return response_data.response
 
 
-    def _content_generation_check_grammar_languages_serialize(
+    def _check_grammar_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1694,7 +1694,7 @@ class ContentGenerationApi:
 
     from dataforseo_client.models.content_generation_text_summary_languages_response_info import ContentGenerationTextSummaryLanguagesResponseInfo
     @validate_call
-    def content_generation_text_summary_languages(
+    def text_summary_languages(
         self,
         _request_timeout: Union[
             None,
@@ -1710,7 +1710,7 @@ class ContentGenerationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ContentGenerationTextSummaryLanguagesResponseInfo:
 
-        _param = self._content_generation_text_summary_languages_serialize(
+        _param = self._text_summary_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1731,7 +1731,7 @@ class ContentGenerationApi:
         ).data
 
     @validate_call
-    def content_generation_text_summary_languages_with_http_info(
+    def text_summary_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1747,7 +1747,7 @@ class ContentGenerationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[ContentGenerationTextSummaryLanguagesResponseInfo]':
 
-        _param = self._content_generation_text_summary_languages_serialize(
+        _param = self._text_summary_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1768,7 +1768,7 @@ class ContentGenerationApi:
         )
 
     @validate_call
-    def content_generation_text_summary_languages_without_preload_content(
+    def text_summary_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1784,7 +1784,7 @@ class ContentGenerationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._content_generation_text_summary_languages_serialize(
+        _param = self._text_summary_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1801,7 +1801,7 @@ class ContentGenerationApi:
         return response_data.response
 
 
-    def _content_generation_text_summary_languages_serialize(
+    def _text_summary_languages_serialize(
         self,
         _request_auth,
         _content_type,

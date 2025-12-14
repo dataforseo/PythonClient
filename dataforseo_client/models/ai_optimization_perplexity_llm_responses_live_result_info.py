@@ -23,6 +23,7 @@ class AiOptimizationPerplexityLlmResponsesLiveResultInfo(BaseModel):
     money_spent: Optional[StrictFloat] = Field(default=None, description=r"cost of AI tokens, USD. the price charged by the third-party AI model provider for according to its Pricing")
     datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     items: Optional[List[Optional[AiOptimizationItem]]] = Field(default=None, description=r"array of response items. contains structured AI response data")
+    fan_out_queries: Optional[Any] = Field(default=None, description=r"array of fan-out queries. contains related search queries derived from the main query to provide a more comprehensive response")
     __properties: ClassVar[List[str]] = [
         "model_name", 
         "input_tokens", 
@@ -31,6 +32,7 @@ class AiOptimizationPerplexityLlmResponsesLiveResultInfo(BaseModel):
         "money_spent", 
         "datetime", 
         "items", 
+        "fan_out_queries", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -69,6 +71,7 @@ class AiOptimizationPerplexityLlmResponsesLiveResultInfo(BaseModel):
                 if _item:
                     items_items.append(_item.to_dict())
             _dict['items'] = items_items
+        _dict['fan_out_queries'] = self.fan_out_queries
         return _dict
 
 
@@ -88,6 +91,7 @@ class AiOptimizationPerplexityLlmResponsesLiveResultInfo(BaseModel):
             "money_spent": obj.get("money_spent"),
             "datetime": obj.get("datetime"),
             "items": [AiOptimizationItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "fan_out_queries": obj.get("fan_out_queries"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

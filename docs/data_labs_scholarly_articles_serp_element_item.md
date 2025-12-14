@@ -7,4 +7,4 @@
 |------------ | ------------- | ------------- | -------------|
 **title** | **StrictStr** | title of the result in SERP |[optional]|
 **url** | **StrictStr** | sitelink URL |[optional]|
-**items** | **List[Optional[ScholarlyArticlesElement]]** | elements of search results found in SERP |[optional]|
+**items** | **List[Optional[ScholarlyArticlesElement]]** | historical SERPs and related data found in the database |[optional]|

@@ -24,7 +24,7 @@ class DataLabsMentionCarouselSerpElementItem(BaseDataforseoLabsApiElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    items: Optional[List[Optional[MentionCarouselElement]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[MentionCarouselElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

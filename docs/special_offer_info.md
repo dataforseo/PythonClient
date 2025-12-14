@@ -12,5 +12,5 @@
 **percentage_discount** | **StrictFloat** | percentage of the discount |[optional]|
 **coupon_code** | **StrictStr** | code of coupon discount |[optional]|
 **coupon_info** | **StrictStr** | information on coupon discount |[optional]|
-**url** | **StrictStr** | URL to the product page on the seller’s website |[optional]|
+**url** | **StrictStr** | URL to the product page on the seller’s website<br>Note: this field is deprecated and will return null |[optional]|
 **domain** | **StrictStr** | domain in SERP |[optional]|

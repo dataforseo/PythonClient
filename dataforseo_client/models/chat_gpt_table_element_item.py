@@ -9,6 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.table import Table
+from dataforseo_client.models.chat_gpt_brand_entity import ChatGptBrandEntity
 from dataforseo_client.models.base_chat_gpt_llm_scraper_element_item import BaseChatGptLlmScraperElementItem
 
 
@@ -23,6 +24,7 @@ class ChatGptTableElementItem(BaseChatGptLlmScraperElementItem):
     text: Optional[StrictStr] = Field(default=None, description=r"text of the element")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
     table: Optional[Table] = Field(default=None, description=r"table present in the element. the header and content of the table present in the element")
+    brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entities. contains information on brands mentioned in the text")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -30,6 +32,7 @@ class ChatGptTableElementItem(BaseChatGptLlmScraperElementItem):
         "text", 
         "markdown", 
         "table", 
+        "brand_entities", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -62,6 +65,12 @@ class ChatGptTableElementItem(BaseChatGptLlmScraperElementItem):
         _dict['text'] = self.text
         _dict['markdown'] = self.markdown
         _dict['table'] = self.table.to_dict() if self.table else None
+        brand_entities_items = []
+        if self.brand_entities:
+            for _item in self.brand_entities:
+                if _item:
+                    brand_entities_items.append(_item.to_dict())
+            _dict['brand_entities'] = brand_entities_items
         return _dict
 
 
@@ -80,6 +89,7 @@ class ChatGptTableElementItem(BaseChatGptLlmScraperElementItem):
             "text": obj.get("text"),
             "markdown": obj.get("markdown"),
             "table": Table.from_dict(obj["table"]) if obj.get("table") is not None else None,
+            "brand_entities": [ChatGptBrandEntity.from_dict(_item) for _item in obj["brand_entities"]] if obj.get("brand_entities") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -17,8 +17,8 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
     """
     DataforseoLabsGoogleHistoricalSerpsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword obtained as a result of search engine autocorrection. the results will be provided for the corrected keyword")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type in a POST array")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. the keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
@@ -29,7 +29,7 @@ class DataforseoLabsGoogleHistoricalSerpsLiveItem(BaseModel):
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results in SERP. contains types of search results (items) found in SERP.. possible item types:. answer_box, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, google_posts, images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, mention_carousel, recipes, top_sights, scholarly_articles, popular_products, podcasts, questions_and_answers, find_results_on, stocks_box, visual_stories, commercial_units,  local_services, google_hotels, math_solver")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in SERP")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BaseDataforseoLabsApiElementItem]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
+    items: Optional[List[Optional[BaseDataforseoLabsApiElementItem]]] = Field(default=None, description=r"contains results featured in the ‘hotels_pack’ element of SERP")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword", 

@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **title** | **StrictStr** | title of the result in SERP |[optional]|
-**items** | **List[Optional[ShoppingElement]]** | elements of search results found in SERP |[optional]|
+**items** | **List[Optional[ShoppingElement]]** | historical SERPs and related data found in the database |[optional]|

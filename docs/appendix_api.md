@@ -5,7 +5,7 @@ All URIs are relative to *https://api.dataforseo.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 [**userData**](AppendixApi.md#userData) | **GET**  /v3/appendix/user_data  |
-[**appendixErrors**](AppendixApi.md#appendixErrors) | **GET**  /v3/appendix/errors  |
+[**errors**](AppendixApi.md#errors) | **GET**  /v3/appendix/errors  |
 [**webhookResend**](AppendixApi.md#webhookResend) | **POST**  /v3/appendix/webhook_resend  |
 [**appendixStatus**](AppendixApi.md#appendixStatus) | **GET**  /v3/appendix/status  |
 
@@ -62,9 +62,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="appendixErrors"></a>
-# **appendixErrors**
-> AppendixErrorsResponseInfo appendixErrors()
+<a id="errors"></a>
+# **errors**
+> AppendixErrorsResponseInfo errors()
 
 
 ### Example
@@ -84,7 +84,7 @@ try:
         # Create an instance of the API class
         appendix_api = AppendixApi(api_client)
 
-        response = appendix_api.appendix_errors()
+        response = appendix_api.errors()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -139,7 +139,6 @@ try:
         appendix_api = AppendixApi(api_client)
 
         response = appendix_api.webhook_resend([AppendixWebhookResendRequestInfo(
-                id="08161139-0001-0066-1000-06491d097ed5",
         )]
         )
 except ApiException as e:

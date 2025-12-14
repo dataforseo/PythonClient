@@ -584,7 +584,7 @@ class DomainAnalyticsApi:
 
     from dataforseo_client.models.domain_analytics_technologies_locations_response_info import DomainAnalyticsTechnologiesLocationsResponseInfo
     @validate_call
-    def domain_analytics_technologies_locations(
+    def technologies_locations(
         self,
         _request_timeout: Union[
             None,
@@ -600,7 +600,7 @@ class DomainAnalyticsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DomainAnalyticsTechnologiesLocationsResponseInfo:
 
-        _param = self._domain_analytics_technologies_locations_serialize(
+        _param = self._technologies_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -621,7 +621,7 @@ class DomainAnalyticsApi:
         ).data
 
     @validate_call
-    def domain_analytics_technologies_locations_with_http_info(
+    def technologies_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -637,7 +637,7 @@ class DomainAnalyticsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[DomainAnalyticsTechnologiesLocationsResponseInfo]':
 
-        _param = self._domain_analytics_technologies_locations_serialize(
+        _param = self._technologies_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -658,7 +658,7 @@ class DomainAnalyticsApi:
         )
 
     @validate_call
-    def domain_analytics_technologies_locations_without_preload_content(
+    def technologies_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -674,7 +674,7 @@ class DomainAnalyticsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._domain_analytics_technologies_locations_serialize(
+        _param = self._technologies_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -691,7 +691,7 @@ class DomainAnalyticsApi:
         return response_data.response
 
 
-    def _domain_analytics_technologies_locations_serialize(
+    def _technologies_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -740,7 +740,7 @@ class DomainAnalyticsApi:
 
     from dataforseo_client.models.domain_analytics_technologies_languages_response_info import DomainAnalyticsTechnologiesLanguagesResponseInfo
     @validate_call
-    def domain_analytics_technologies_languages(
+    def technologies_languages(
         self,
         _request_timeout: Union[
             None,
@@ -756,7 +756,7 @@ class DomainAnalyticsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DomainAnalyticsTechnologiesLanguagesResponseInfo:
 
-        _param = self._domain_analytics_technologies_languages_serialize(
+        _param = self._technologies_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -777,7 +777,7 @@ class DomainAnalyticsApi:
         ).data
 
     @validate_call
-    def domain_analytics_technologies_languages_with_http_info(
+    def technologies_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -793,7 +793,7 @@ class DomainAnalyticsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[DomainAnalyticsTechnologiesLanguagesResponseInfo]':
 
-        _param = self._domain_analytics_technologies_languages_serialize(
+        _param = self._technologies_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -814,7 +814,7 @@ class DomainAnalyticsApi:
         )
 
     @validate_call
-    def domain_analytics_technologies_languages_without_preload_content(
+    def technologies_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -830,7 +830,7 @@ class DomainAnalyticsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._domain_analytics_technologies_languages_serialize(
+        _param = self._technologies_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -847,7 +847,7 @@ class DomainAnalyticsApi:
         return response_data.response
 
 
-    def _domain_analytics_technologies_languages_serialize(
+    def _technologies_languages_serialize(
         self,
         _request_auth,
         _content_type,

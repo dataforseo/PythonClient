@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.total import Total
+from dataforseo_client.models.ai_optimization_result_total_info import AiOptimizationResultTotalInfo
 from dataforseo_client.models.ai_optimization_llm_mentionss_live_item import AiOptimizationLlmMentionssLiveItem
 
 
@@ -17,7 +17,7 @@ class AiOptimizationLlmMentionsTopPagesLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsTopPagesLiveResultInfo
     """ # noqa: E501
-    total: Optional[Total] = Field(default=None, description=r"aggregated mentions metrics summary. contains overall aggregated LLM mention metrics across all found top pages, grouped by various dimensions")
+    total: Optional[AiOptimizationResultTotalInfo] = Field(default=None, description=r"aggregated mentions metrics summary. contains overall aggregated LLM mention metrics across all found top pages, grouped by various dimensions")
     items: Optional[List[Optional[AiOptimizationLlmMentionssLiveItem]]] = Field(default=None, description=r"individual pages results. array containing detailed mention metrics for each of the found top pages")
     __properties: ClassVar[List[str]] = [
         "total", 
@@ -67,7 +67,7 @@ class AiOptimizationLlmMentionsTopPagesLiveResultInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "total": Total.from_dict(obj["total"]) if obj.get("total") is not None else None,
+            "total": AiOptimizationResultTotalInfo.from_dict(obj["total"]) if obj.get("total") is not None else None,
             "items": [AiOptimizationLlmMentionssLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 

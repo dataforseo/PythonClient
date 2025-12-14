@@ -72,7 +72,7 @@ class AiOptimizationApi:
 
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_scraper_locations_response_info import AiOptimizationChatGptLlmScraperLocationsResponseInfo
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_locations(
+    def chat_gpt_llm_scraper_locations(
         self,
         _request_timeout: Union[
             None,
@@ -88,7 +88,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AiOptimizationChatGptLlmScraperLocationsResponseInfo:
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_locations_serialize(
+        _param = self._chat_gpt_llm_scraper_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -109,7 +109,7 @@ class AiOptimizationApi:
         ).data
 
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_locations_with_http_info(
+    def chat_gpt_llm_scraper_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -125,7 +125,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AiOptimizationChatGptLlmScraperLocationsResponseInfo]':
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_locations_serialize(
+        _param = self._chat_gpt_llm_scraper_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -146,7 +146,7 @@ class AiOptimizationApi:
         )
 
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_locations_without_preload_content(
+    def chat_gpt_llm_scraper_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -162,7 +162,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_locations_serialize(
+        _param = self._chat_gpt_llm_scraper_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -179,7 +179,7 @@ class AiOptimizationApi:
         return response_data.response
 
 
-    def _ai_optimization_chat_gpt_llm_scraper_locations_serialize(
+    def _chat_gpt_llm_scraper_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -228,7 +228,7 @@ class AiOptimizationApi:
 
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_scraper_locations_country_response_info import AiOptimizationChatGptLlmScraperLocationsCountryResponseInfo
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_locations_country(
+    def chat_gpt_llm_scraper_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -245,7 +245,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AiOptimizationChatGptLlmScraperLocationsCountryResponseInfo:
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_locations_country_serialize(
+        _param = self._chat_gpt_llm_scraper_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -267,7 +267,7 @@ class AiOptimizationApi:
         ).data
 
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_locations_country_with_http_info(
+    def chat_gpt_llm_scraper_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -284,7 +284,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AiOptimizationChatGptLlmScraperLocationsCountryResponseInfo]':
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_locations_country_serialize(
+        _param = self._chat_gpt_llm_scraper_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -306,7 +306,7 @@ class AiOptimizationApi:
         )
 
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_locations_country_without_preload_content(
+    def chat_gpt_llm_scraper_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -323,7 +323,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_locations_country_serialize(
+        _param = self._chat_gpt_llm_scraper_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -341,7 +341,7 @@ class AiOptimizationApi:
         return response_data.response
 
 
-    def _ai_optimization_chat_gpt_llm_scraper_locations_country_serialize(
+    def _chat_gpt_llm_scraper_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -393,7 +393,7 @@ class AiOptimizationApi:
 
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_scraper_languages_response_info import AiOptimizationChatGptLlmScraperLanguagesResponseInfo
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_languages(
+    def chat_gpt_llm_scraper_languages(
         self,
         _request_timeout: Union[
             None,
@@ -409,7 +409,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AiOptimizationChatGptLlmScraperLanguagesResponseInfo:
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_languages_serialize(
+        _param = self._chat_gpt_llm_scraper_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -430,7 +430,7 @@ class AiOptimizationApi:
         ).data
 
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_languages_with_http_info(
+    def chat_gpt_llm_scraper_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -446,7 +446,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AiOptimizationChatGptLlmScraperLanguagesResponseInfo]':
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_languages_serialize(
+        _param = self._chat_gpt_llm_scraper_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -467,7 +467,7 @@ class AiOptimizationApi:
         )
 
     @validate_call
-    def ai_optimization_chat_gpt_llm_scraper_languages_without_preload_content(
+    def chat_gpt_llm_scraper_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -483,7 +483,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._ai_optimization_chat_gpt_llm_scraper_languages_serialize(
+        _param = self._chat_gpt_llm_scraper_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -500,7 +500,7 @@ class AiOptimizationApi:
         return response_data.response
 
 
-    def _ai_optimization_chat_gpt_llm_scraper_languages_serialize(
+    def _chat_gpt_llm_scraper_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1227,7 +1227,7 @@ class AiOptimizationApi:
 
     from dataforseo_client.models.ai_optimization_llm_mentions_locations_and_languages_response_info import AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo
     @validate_call
-    def ai_optimization_llm_mentions_locations_and_languages(
+    def llm_mentions_locations_and_languages(
         self,
         _request_timeout: Union[
             None,
@@ -1243,7 +1243,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo:
 
-        _param = self._ai_optimization_llm_mentions_locations_and_languages_serialize(
+        _param = self._llm_mentions_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1264,7 +1264,7 @@ class AiOptimizationApi:
         ).data
 
     @validate_call
-    def ai_optimization_llm_mentions_locations_and_languages_with_http_info(
+    def llm_mentions_locations_and_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1280,7 +1280,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo]':
 
-        _param = self._ai_optimization_llm_mentions_locations_and_languages_serialize(
+        _param = self._llm_mentions_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1301,7 +1301,7 @@ class AiOptimizationApi:
         )
 
     @validate_call
-    def ai_optimization_llm_mentions_locations_and_languages_without_preload_content(
+    def llm_mentions_locations_and_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1317,7 +1317,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._ai_optimization_llm_mentions_locations_and_languages_serialize(
+        _param = self._llm_mentions_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1334,7 +1334,7 @@ class AiOptimizationApi:
         return response_data.response
 
 
-    def _ai_optimization_llm_mentions_locations_and_languages_serialize(
+    def _llm_mentions_locations_and_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -5586,7 +5586,7 @@ class AiOptimizationApi:
 
     from dataforseo_client.models.ai_optimization_ai_keyword_data_locations_and_languages_response_info import AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo
     @validate_call
-    def ai_optimization_ai_keyword_data_locations_and_languages(
+    def ai_keyword_data_locations_and_languages(
         self,
         _request_timeout: Union[
             None,
@@ -5602,7 +5602,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo:
 
-        _param = self._ai_optimization_ai_keyword_data_locations_and_languages_serialize(
+        _param = self._ai_keyword_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5623,7 +5623,7 @@ class AiOptimizationApi:
         ).data
 
     @validate_call
-    def ai_optimization_ai_keyword_data_locations_and_languages_with_http_info(
+    def ai_keyword_data_locations_and_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -5639,7 +5639,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo]':
 
-        _param = self._ai_optimization_ai_keyword_data_locations_and_languages_serialize(
+        _param = self._ai_keyword_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5660,7 +5660,7 @@ class AiOptimizationApi:
         )
 
     @validate_call
-    def ai_optimization_ai_keyword_data_locations_and_languages_without_preload_content(
+    def ai_keyword_data_locations_and_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -5676,7 +5676,7 @@ class AiOptimizationApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._ai_optimization_ai_keyword_data_locations_and_languages_serialize(
+        _param = self._ai_keyword_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5693,7 +5693,7 @@ class AiOptimizationApi:
         return response_data.response
 
 
-    def _ai_optimization_ai_keyword_data_locations_and_languages_serialize(
+    def _ai_keyword_data_locations_and_languages_serialize(
         self,
         _request_auth,
         _content_type,

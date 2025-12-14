@@ -3,32 +3,11 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**current** | **int** |  | [optional] 
-**regular** | **int** |  | [optional] 
-**max_value** | **int** |  | [optional] 
-**currency** | **str** |  | [optional] 
-**is_price_range** | **bool** |  | [optional] 
-**displayed_price** | **str** |  | [optional] 
-
-## Example
-
-```python
-from dataforseo_client.models.price import Price
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of Price from a JSON string
-price_instance = Price.from_json(json)
-# print the JSON string representation of the object
-print Price.to_json()
-
-# convert the object into a dict
-price_dict = price_instance.to_dict()
-# create an instance of Price from a dict
-price_form_dict = price.from_dict(price_dict)
-```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+**current** | **StrictFloat** | current price<br>indicates the current price of the product or service featured in the result |[optional]|
+**regular** | **StrictFloat** | regular price<br>indicates the regular price of the product or service with no discounts applied |[optional]|
+**max_value** | **StrictFloat** | the maximum price<br>the maximum price of the product or service as indicated in the result |[optional]|
+**currency** | **StrictStr** | currency of the listed price<br>ISO code of the currency applied to the price |[optional]|
+**is_price_range** | **StrictBool** | price is provided as a range<br>indicates whether a price is provided in a range |[optional]|
+**displayed_price** | **StrictStr** | price string in the result<br>raw price string as provided in the result |[optional]|

@@ -31,7 +31,7 @@ class DataLabsKnowledgeGraphSerpElementItem(BaseDataforseoLabsApiElementItem):
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
     logo_url: Optional[StrictStr] = Field(default=None, description=r"URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")
-    items: Optional[List[Optional[BaseDataforseoLabsKnowledgeGraphElementItem]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[BaseDataforseoLabsKnowledgeGraphElementItem]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

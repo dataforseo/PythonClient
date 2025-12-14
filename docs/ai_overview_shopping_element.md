@@ -11,7 +11,7 @@
 **url** | **StrictStr** | reference page URL |[optional]|
 **domain** | **StrictStr** | domain in link |[optional]|
 **rating** | **RatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP |[optional]|
-**price** | **PriceInfo** | pricing details<br>contains the pricing details of the product or service featured in the result |[optional]|
+**price** | **Price** | pricing details<br>contains the pricing details of the product or service featured in the result |[optional]|
 **seller** | **StrictStr** | seller of the product |[optional]|
 **snippet** | **StrictStr** | text alongside the link title |[optional]|
 **marketplace** | **StrictStr** | merchant account provider<br>commerce site that hosts products or websites of individual sellers under the same merchant account<br>example:<br>by Google |[optional]|

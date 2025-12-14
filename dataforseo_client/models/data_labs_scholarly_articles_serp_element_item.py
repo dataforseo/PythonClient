@@ -25,7 +25,7 @@ class DataLabsScholarlyArticlesSerpElementItem(BaseDataforseoLabsApiElementItem)
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
-    items: Optional[List[Optional[ScholarlyArticlesElement]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[ScholarlyArticlesElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

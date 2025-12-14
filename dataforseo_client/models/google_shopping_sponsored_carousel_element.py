@@ -20,7 +20,7 @@ class GoogleShoppingSponsoredCarouselElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     xpath: Optional[StrictStr] = Field(default=None, description=r"XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"product title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     tags: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"tags assigned to the product")
     seller: Optional[StrictStr] = Field(default=None, description=r"name of the seller. the name of the company that placed a corresponding product on Google Shopping")
     price: Optional[StrictFloat] = Field(default=None, description=r"product price. example:. 384.99")

@@ -22,6 +22,8 @@ class AiOptimizationLlmMentionssLiveItem(BaseModel):
     platform: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"platform-based grouping. array of group elements containing page mention metrics segmented by AI platform")
     sources_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"source domains relevant to the specific page. array of objects containing data on domains that are cited as sources in LLM responses")
     search_results_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"search results domains relevant to the specific page. array of objects containing data on domains that appear in search results related to LLM queries")
+    brand_entities_title: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity titles that appear in search results related to LLM queries")
+    brand_entities_category: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity categories that appear in search results related to LLM queries")
     __properties: ClassVar[List[str]] = [
         "key", 
         "location", 
@@ -29,6 +31,8 @@ class AiOptimizationLlmMentionssLiveItem(BaseModel):
         "platform", 
         "sources_domain", 
         "search_results_domain", 
+        "brand_entities_title", 
+        "brand_entities_category", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -86,6 +90,18 @@ class AiOptimizationLlmMentionssLiveItem(BaseModel):
                 if _item:
                     search_results_domain_items.append(_item.to_dict())
             _dict['search_results_domain'] = search_results_domain_items
+        brand_entities_title_items = []
+        if self.brand_entities_title:
+            for _item in self.brand_entities_title:
+                if _item:
+                    brand_entities_title_items.append(_item.to_dict())
+            _dict['brand_entities_title'] = brand_entities_title_items
+        brand_entities_category_items = []
+        if self.brand_entities_category:
+            for _item in self.brand_entities_category:
+                if _item:
+                    brand_entities_category_items.append(_item.to_dict())
+            _dict['brand_entities_category'] = brand_entities_category_items
         return _dict
 
 
@@ -104,6 +120,8 @@ class AiOptimizationLlmMentionssLiveItem(BaseModel):
             "platform": [GroupElement.from_dict(_item) for _item in obj["platform"]] if obj.get("platform") is not None else None,
             "sources_domain": [GroupElement.from_dict(_item) for _item in obj["sources_domain"]] if obj.get("sources_domain") is not None else None,
             "search_results_domain": [GroupElement.from_dict(_item) for _item in obj["search_results_domain"]] if obj.get("search_results_domain") is not None else None,
+            "brand_entities_title": [GroupElement.from_dict(_item) for _item in obj["brand_entities_title"]] if obj.get("brand_entities_title") is not None else None,
+            "brand_entities_category": [GroupElement.from_dict(_item) for _item in obj["brand_entities_category"]] if obj.get("brand_entities_category") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

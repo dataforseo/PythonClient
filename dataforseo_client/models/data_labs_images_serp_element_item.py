@@ -26,7 +26,7 @@ class DataLabsImagesSerpElementItem(BaseDataforseoLabsApiElementItem):
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
-    items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -21,10 +21,10 @@ class GoogleShoppingPaidElementItem(BaseMerchantGoogleShoppingProductsElementIte
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements found in Google Shopping SERP")
     position: Optional[StrictStr] = Field(default=None, description=r"alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"XPath of the element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain of the URL. domain of the URL where a special offer is posted. Note: this field is deprecated and will return null")
     title: Optional[StrictStr] = Field(default=None, description=r"product title")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the product in Google Shopping SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the product page on the seller’s website")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL pointing at special offer page. URL where a special offer is posted. Note: this field is deprecated and will return null")
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameter. using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
     __properties: ClassVar[List[str]] = [
         "type", 

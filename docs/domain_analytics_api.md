@@ -7,8 +7,8 @@ All URIs are relative to *https://api.dataforseo.com*
 [**domainAnalyticsIdList**](DomainAnalyticsApi.md#domainAnalyticsIdList) | **POST**  /v3/domain_analytics/id_list  |
 [**domainAnalyticsErrors**](DomainAnalyticsApi.md#domainAnalyticsErrors) | **POST**  /v3/domain_analytics/errors  |
 [**technologiesAvailableFilters**](DomainAnalyticsApi.md#technologiesAvailableFilters) | **GET**  /v3/domain_analytics/technologies/available_filters  |
-[**domainAnalyticsTechnologiesLocations**](DomainAnalyticsApi.md#domainAnalyticsTechnologiesLocations) | **GET**  /v3/domain_analytics/technologies/locations  |
-[**domainAnalyticsTechnologiesLanguages**](DomainAnalyticsApi.md#domainAnalyticsTechnologiesLanguages) | **GET**  /v3/domain_analytics/technologies/languages  |
+[**technologiesLocations**](DomainAnalyticsApi.md#technologiesLocations) | **GET**  /v3/domain_analytics/technologies/locations  |
+[**technologiesLanguages**](DomainAnalyticsApi.md#technologiesLanguages) | **GET**  /v3/domain_analytics/technologies/languages  |
 [**technologiesTechnologies**](DomainAnalyticsApi.md#technologiesTechnologies) | **GET**  /v3/domain_analytics/technologies/technologies  |
 [**technologiesAggregationTechnologiesLive**](DomainAnalyticsApi.md#technologiesAggregationTechnologiesLive) | **POST**  /v3/domain_analytics/technologies/aggregation_technologies/live  |
 [**technologiesTechnologiesSummaryLive**](DomainAnalyticsApi.md#technologiesTechnologiesSummaryLive) | **POST**  /v3/domain_analytics/technologies/technologies_summary/live  |
@@ -43,11 +43,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.domain_analytics_id_list([DomainAnalyticsIdListRequestInfo(
-                datetime_from="2025-08-22 08:08:30 +00:00",
-                datetime_to="2025-10-22 08:08:30 +00:00",
-                limit=100,
-                offset=0,
-                sort="desc",
         )]
         )
 except ApiException as e:
@@ -104,9 +99,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.domain_analytics_errors([DomainAnalyticsErrorsRequestInfo(
-                limit=10,
-                offset=0,
-                filtered_function="pingback_url",
         )]
         )
 except ApiException as e:
@@ -192,9 +184,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="domainAnalyticsTechnologiesLocations"></a>
-# **domainAnalyticsTechnologiesLocations**
-> DomainAnalyticsTechnologiesLocationsResponseInfo domainAnalyticsTechnologiesLocations()
+<a id="technologiesLocations"></a>
+# **technologiesLocations**
+> DomainAnalyticsTechnologiesLocationsResponseInfo technologiesLocations()
 
 
 ### Example
@@ -214,7 +206,7 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.domain_analytics_technologies_locations()
+        response = domain_analytics_api.technologies_locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -245,9 +237,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="domainAnalyticsTechnologiesLanguages"></a>
-# **domainAnalyticsTechnologiesLanguages**
-> DomainAnalyticsTechnologiesLanguagesResponseInfo domainAnalyticsTechnologiesLanguages()
+<a id="technologiesLanguages"></a>
+# **technologiesLanguages**
+> DomainAnalyticsTechnologiesLanguagesResponseInfo technologiesLanguages()
 
 
 ### Example
@@ -267,7 +259,7 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.domain_analytics_technologies_languages()
+        response = domain_analytics_api.technologies_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -375,10 +367,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_aggregation_technologies_live([DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo(
-                technology="Nginx",
-                keyword="WordPress",
-                mode="entry",
-                limit=10,
         )]
         )
 except ApiException as e:
@@ -435,13 +423,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_technologies_summary_live([DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo(
-                technologies=[
-                    "Ngi",
-                    ],
-                keywords=[
-                    "WordPress",
-                    ],
-                mode="entry",
         )]
         )
 except ApiException as e:
@@ -498,9 +479,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_technology_stats_live([DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo(
-                technology="jQuery",
-                date_from="2025-08-22",
-                date_to="2025-10-22",
         )]
         )
 except ApiException as e:
@@ -557,10 +535,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_domains_by_technology_live([DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo(
-                technologies=[
-                    "Nginx",
-                    ],
-                limit=10,
         )]
         )
 except ApiException as e:
@@ -617,11 +591,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_domains_by_html_terms_live([DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo(
-                search_terms=[
-                    "data-attrid",
-                    ],
-                limit=10,
-                offset=0,
         )]
         )
 except ApiException as e:
@@ -678,7 +647,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.technologies_domain_technologies_live([DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo(
-                target="dataforseo.com",
         )]
         )
 except ApiException as e:
@@ -788,7 +756,6 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.whois_overview_live([DomainAnalyticsWhoisOverviewLiveRequestInfo(
-                limit=2,
         )]
         )
 except ApiException as e:

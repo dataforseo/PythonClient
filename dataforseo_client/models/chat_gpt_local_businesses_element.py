@@ -17,13 +17,13 @@ class ChatGptLocalBusinessesElement(BaseModel):
     ChatGptLocalBusinessesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"source title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the local businesses")
     address: Optional[StrictStr] = Field(default=None, description=r"address of the local businesses")
     phone: Optional[StrictStr] = Field(default=None, description=r"phone of the local businesses")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"total number of reviews submitted for the local businesses")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"source domain")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain")
     rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local businesses. popularity rate based on reviews as displayed in the results")
     __properties: ClassVar[List[str]] = [
         "type", 

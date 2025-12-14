@@ -12,3 +12,4 @@
 **money_spent** | **StrictFloat** | cost of AI tokens, USD<br>the price charged by the third-party AI model provider for according to its Pricing |[optional]|
 **datetime** | **StrictStr** | date and time when the result was received<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **items** | **List[Optional[AiOptimizationItem]]** | array of response items<br>contains structured AI response data |[optional]|
+**fan_out_queries** | **List[Optional[StrictStr]]** | array of fan-out queries<br>contains related search queries derived from the main query to provide a more comprehensive response |[optional]|

@@ -2952,7 +2952,7 @@ class MerchantApi:
 
     from dataforseo_client.models.merchant_amazon_locations_response_info import MerchantAmazonLocationsResponseInfo
     @validate_call
-    def merchant_amazon_locations(
+    def amazon_locations(
         self,
         _request_timeout: Union[
             None,
@@ -2968,7 +2968,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> MerchantAmazonLocationsResponseInfo:
 
-        _param = self._merchant_amazon_locations_serialize(
+        _param = self._amazon_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2989,7 +2989,7 @@ class MerchantApi:
         ).data
 
     @validate_call
-    def merchant_amazon_locations_with_http_info(
+    def amazon_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -3005,7 +3005,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[MerchantAmazonLocationsResponseInfo]':
 
-        _param = self._merchant_amazon_locations_serialize(
+        _param = self._amazon_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3026,7 +3026,7 @@ class MerchantApi:
         )
 
     @validate_call
-    def merchant_amazon_locations_without_preload_content(
+    def amazon_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -3042,7 +3042,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._merchant_amazon_locations_serialize(
+        _param = self._amazon_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3059,7 +3059,7 @@ class MerchantApi:
         return response_data.response
 
 
-    def _merchant_amazon_locations_serialize(
+    def _amazon_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -3108,7 +3108,7 @@ class MerchantApi:
 
     from dataforseo_client.models.merchant_amazon_locations_country_response_info import MerchantAmazonLocationsCountryResponseInfo
     @validate_call
-    def merchant_amazon_locations_country(
+    def amazon_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -3125,7 +3125,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> MerchantAmazonLocationsCountryResponseInfo:
 
-        _param = self._merchant_amazon_locations_country_serialize(
+        _param = self._amazon_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3147,7 +3147,7 @@ class MerchantApi:
         ).data
 
     @validate_call
-    def merchant_amazon_locations_country_with_http_info(
+    def amazon_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -3164,7 +3164,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[MerchantAmazonLocationsCountryResponseInfo]':
 
-        _param = self._merchant_amazon_locations_country_serialize(
+        _param = self._amazon_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3186,7 +3186,7 @@ class MerchantApi:
         )
 
     @validate_call
-    def merchant_amazon_locations_country_without_preload_content(
+    def amazon_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -3203,7 +3203,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._merchant_amazon_locations_country_serialize(
+        _param = self._amazon_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3221,7 +3221,7 @@ class MerchantApi:
         return response_data.response
 
 
-    def _merchant_amazon_locations_country_serialize(
+    def _amazon_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -3273,7 +3273,7 @@ class MerchantApi:
 
     from dataforseo_client.models.merchant_amazon_languages_response_info import MerchantAmazonLanguagesResponseInfo
     @validate_call
-    def merchant_amazon_languages(
+    def amazon_languages(
         self,
         _request_timeout: Union[
             None,
@@ -3289,7 +3289,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> MerchantAmazonLanguagesResponseInfo:
 
-        _param = self._merchant_amazon_languages_serialize(
+        _param = self._amazon_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3310,7 +3310,7 @@ class MerchantApi:
         ).data
 
     @validate_call
-    def merchant_amazon_languages_with_http_info(
+    def amazon_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -3326,7 +3326,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[MerchantAmazonLanguagesResponseInfo]':
 
-        _param = self._merchant_amazon_languages_serialize(
+        _param = self._amazon_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3347,7 +3347,7 @@ class MerchantApi:
         )
 
     @validate_call
-    def merchant_amazon_languages_without_preload_content(
+    def amazon_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -3363,7 +3363,7 @@ class MerchantApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._merchant_amazon_languages_serialize(
+        _param = self._amazon_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3380,7 +3380,7 @@ class MerchantApi:
         return response_data.response
 
 
-    def _merchant_amazon_languages_serialize(
+    def _amazon_languages_serialize(
         self,
         _request_auth,
         _content_type,

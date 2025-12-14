@@ -16,7 +16,7 @@ class ChatGptImagesElement(BaseModel):
     ChatGptImagesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
     alt: Optional[StrictStr] = Field(default=None, description=r"alt tag of the image")
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")

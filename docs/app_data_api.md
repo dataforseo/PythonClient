@@ -30,8 +30,8 @@ All URIs are relative to *https://api.dataforseo.com*
 [**googleAppListingsCategories**](AppDataApi.md#googleAppListingsCategories) | **GET**  /v3/app_data/google/app_listings/categories  |
 [**googleAppListingsSearchLive**](AppDataApi.md#googleAppListingsSearchLive) | **POST**  /v3/app_data/google/app_listings/search/live  |
 [**appleCategories**](AppDataApi.md#appleCategories) | **GET**  /v3/app_data/apple/categories  |
-[**appDataAppleLocations**](AppDataApi.md#appDataAppleLocations) | **GET**  /v3/app_data/apple/locations  |
-[**appDataAppleLanguages**](AppDataApi.md#appDataAppleLanguages) | **GET**  /v3/app_data/apple/languages  |
+[**appleLocations**](AppDataApi.md#appleLocations) | **GET**  /v3/app_data/apple/locations  |
+[**appleLanguages**](AppDataApi.md#appleLanguages) | **GET**  /v3/app_data/apple/languages  |
 [**appleAppSearchesTaskPost**](AppDataApi.md#appleAppSearchesTaskPost) | **POST**  /v3/app_data/apple/app_searches/task_post  |
 [**appleAppSearchesTasksReady**](AppDataApi.md#appleAppSearchesTasksReady) | **GET**  /v3/app_data/apple/app_searches/tasks_ready  |
 [**appleAppSearchesTaskGetAdvanced**](AppDataApi.md#appleAppSearchesTaskGetAdvanced) | **GET**  /v3/app_data/apple/app_searches/task_get/advanced/{id}  |
@@ -71,11 +71,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.app_data_id_list([AppDataIdListRequestInfo(
-                datetime_from="2025-08-22 08:11:16 +00:00",
-                datetime_to="2025-10-22 08:11:16 +00:00",
-                limit=100,
-                offset=0,
-                sort="desc",
         )]
         )
 except ApiException as e:
@@ -132,9 +127,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.app_data_errors([AppDataErrorsRequestInfo(
-                limit=10,
-                offset=0,
-                filtered_function="pingback_url",
         )]
         )
 except ApiException as e:
@@ -295,7 +287,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        country = "us"
+        country = 
         response = app_data_api.app_data_google_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -404,10 +396,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.google_app_searches_task_post([AppDataGoogleAppSearchesTaskPostRequestInfo(
-                keyword="vpn",
-                location_code=2840,
-                language_code="en",
-                depth=30,
         )]
         )
 except ApiException as e:
@@ -568,7 +556,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_searches_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -622,7 +610,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_searches_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -678,10 +666,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.google_app_list_task_post([AppDataGoogleAppListTaskPostRequestInfo(
-                app_collection="topselling_free",
-                location_code=2840,
-                language_code="en",
-                depth=100,
         )]
         )
 except ApiException as e:
@@ -789,7 +773,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_list_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -843,7 +827,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_list_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -899,9 +883,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.google_app_info_task_post([AppDataGoogleAppInfoTaskPostRequestInfo(
-                app_id="org.telegram.messenger",
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -1009,7 +990,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1063,7 +1044,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_info_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1119,10 +1100,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.google_app_reviews_task_post([AppDataGoogleAppReviewsTaskPostRequestInfo(
-                app_id="org.telegram.messenger",
-                location_code=2840,
-                language_code="en",
-                depth=150,
         )]
         )
 except ApiException as e:
@@ -1230,7 +1207,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_reviews_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1284,7 +1261,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.google_app_reviews_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1393,12 +1370,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.google_app_listings_search_live([AppDataGoogleAppListingsSearchLiveRequestInfo(
-                categories=[
-                    "Tools",
-                    ],
-                description="vpn",
-                title="vpn",
-                limit=10,
         )]
         )
 except ApiException as e:
@@ -1484,9 +1455,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="appDataAppleLocations"></a>
-# **appDataAppleLocations**
-> AppDataAppleLocationsResponseInfo appDataAppleLocations()
+<a id="appleLocations"></a>
+# **appleLocations**
+> AppDataAppleLocationsResponseInfo appleLocations()
 
 
 ### Example
@@ -1506,7 +1477,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        response = app_data_api.app_data_apple_locations()
+        response = app_data_api.apple_locations()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1537,9 +1508,9 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="appDataAppleLanguages"></a>
-# **appDataAppleLanguages**
-> AppDataAppleLanguagesResponseInfo appDataAppleLanguages()
+<a id="appleLanguages"></a>
+# **appleLanguages**
+> AppDataAppleLanguagesResponseInfo appleLanguages()
 
 
 ### Example
@@ -1559,7 +1530,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        response = app_data_api.app_data_apple_languages()
+        response = app_data_api.apple_languages()
 except ApiException as e:
     print("Exception: %s\n" % e)
 ```
@@ -1614,10 +1585,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.apple_app_searches_task_post([AppDataAppleAppSearchesTaskPostRequestInfo(
-                keyword="vpn",
-                location_code=2840,
-                language_code="en",
-                depth=200,
         )]
         )
 except ApiException as e:
@@ -1725,7 +1692,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.apple_app_searches_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1781,9 +1748,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.apple_app_info_task_post([AppDataAppleAppInfoTaskPostRequestInfo(
-                app_id="835599320",
-                location_code=2840,
-                language_code="en",
         )]
         )
 except ApiException as e:
@@ -1891,7 +1855,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.apple_app_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1947,11 +1911,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.apple_app_list_task_post([AppDataAppleAppListTaskPostRequestInfo(
-                app_collection="top_free_ios",
-                location_code=2840,
-                language_code="en",
-                depth=200,
-                app_category="games",
         )]
         )
 except ApiException as e:
@@ -2059,7 +2018,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.apple_app_list_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2115,10 +2074,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.apple_app_reviews_task_post([AppDataAppleAppReviewsTaskPostRequestInfo(
-                app_id="835599320",
-                location_code=2840,
-                language_code="en",
-                depth=200,
         )]
         )
 except ApiException as e:
@@ -2226,7 +2181,7 @@ try:
         # Create an instance of the API class
         app_data_api = AppDataApi(api_client)
 
-        id = "00000000-0000-0000-0000-000000000000"
+        id = 
         response = app_data_api.apple_app_reviews_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2335,12 +2290,6 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.apple_app_listings_search_live([AppDataAppleAppListingsSearchLiveRequestInfo(
-                categories=[
-                    "Tools",
-                    ],
-                description="vpn",
-                title="vpn",
-                limit=10,
         )]
         )
 except ApiException as e:

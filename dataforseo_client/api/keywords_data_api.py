@@ -662,7 +662,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_google_ads_locations_response_info import KeywordsDataGoogleAdsLocationsResponseInfo
     @validate_call
-    def keywords_data_google_ads_locations(
+    def google_ads_locations(
         self,
         _request_timeout: Union[
             None,
@@ -678,7 +678,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataGoogleAdsLocationsResponseInfo:
 
-        _param = self._keywords_data_google_ads_locations_serialize(
+        _param = self._google_ads_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -699,7 +699,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_google_ads_locations_with_http_info(
+    def google_ads_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -715,7 +715,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataGoogleAdsLocationsResponseInfo]':
 
-        _param = self._keywords_data_google_ads_locations_serialize(
+        _param = self._google_ads_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -736,7 +736,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_google_ads_locations_without_preload_content(
+    def google_ads_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -752,7 +752,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_google_ads_locations_serialize(
+        _param = self._google_ads_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -769,7 +769,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_google_ads_locations_serialize(
+    def _google_ads_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -818,7 +818,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_google_ads_locations_country_response_info import KeywordsDataGoogleAdsLocationsCountryResponseInfo
     @validate_call
-    def keywords_data_google_ads_locations_country(
+    def google_ads_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -835,7 +835,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataGoogleAdsLocationsCountryResponseInfo:
 
-        _param = self._keywords_data_google_ads_locations_country_serialize(
+        _param = self._google_ads_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -857,7 +857,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_google_ads_locations_country_with_http_info(
+    def google_ads_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -874,7 +874,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataGoogleAdsLocationsCountryResponseInfo]':
 
-        _param = self._keywords_data_google_ads_locations_country_serialize(
+        _param = self._google_ads_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -896,7 +896,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_google_ads_locations_country_without_preload_content(
+    def google_ads_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -913,7 +913,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_google_ads_locations_country_serialize(
+        _param = self._google_ads_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -931,7 +931,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_google_ads_locations_country_serialize(
+    def _google_ads_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -983,7 +983,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_google_ads_languages_response_info import KeywordsDataGoogleAdsLanguagesResponseInfo
     @validate_call
-    def keywords_data_google_ads_languages(
+    def google_ads_languages(
         self,
         _request_timeout: Union[
             None,
@@ -999,7 +999,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataGoogleAdsLanguagesResponseInfo:
 
-        _param = self._keywords_data_google_ads_languages_serialize(
+        _param = self._google_ads_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1020,7 +1020,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_google_ads_languages_with_http_info(
+    def google_ads_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1036,7 +1036,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataGoogleAdsLanguagesResponseInfo]':
 
-        _param = self._keywords_data_google_ads_languages_serialize(
+        _param = self._google_ads_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1057,7 +1057,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_google_ads_languages_without_preload_content(
+    def google_ads_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1073,7 +1073,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_google_ads_languages_serialize(
+        _param = self._google_ads_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1090,7 +1090,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_google_ads_languages_serialize(
+    def _google_ads_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -3959,7 +3959,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_google_trends_locations_response_info import KeywordsDataGoogleTrendsLocationsResponseInfo
     @validate_call
-    def keywords_data_google_trends_locations(
+    def google_trends_locations(
         self,
         _request_timeout: Union[
             None,
@@ -3975,7 +3975,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataGoogleTrendsLocationsResponseInfo:
 
-        _param = self._keywords_data_google_trends_locations_serialize(
+        _param = self._google_trends_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3996,7 +3996,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_google_trends_locations_with_http_info(
+    def google_trends_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -4012,7 +4012,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataGoogleTrendsLocationsResponseInfo]':
 
-        _param = self._keywords_data_google_trends_locations_serialize(
+        _param = self._google_trends_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4033,7 +4033,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_google_trends_locations_without_preload_content(
+    def google_trends_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -4049,7 +4049,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_google_trends_locations_serialize(
+        _param = self._google_trends_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4066,7 +4066,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_google_trends_locations_serialize(
+    def _google_trends_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -4115,7 +4115,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_google_trends_locations_country_response_info import KeywordsDataGoogleTrendsLocationsCountryResponseInfo
     @validate_call
-    def keywords_data_google_trends_locations_country(
+    def google_trends_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -4132,7 +4132,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataGoogleTrendsLocationsCountryResponseInfo:
 
-        _param = self._keywords_data_google_trends_locations_country_serialize(
+        _param = self._google_trends_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4154,7 +4154,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_google_trends_locations_country_with_http_info(
+    def google_trends_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -4171,7 +4171,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataGoogleTrendsLocationsCountryResponseInfo]':
 
-        _param = self._keywords_data_google_trends_locations_country_serialize(
+        _param = self._google_trends_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4193,7 +4193,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_google_trends_locations_country_without_preload_content(
+    def google_trends_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -4210,7 +4210,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_google_trends_locations_country_serialize(
+        _param = self._google_trends_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4228,7 +4228,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_google_trends_locations_country_serialize(
+    def _google_trends_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -4280,7 +4280,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_google_trends_languages_response_info import KeywordsDataGoogleTrendsLanguagesResponseInfo
     @validate_call
-    def keywords_data_google_trends_languages(
+    def google_trends_languages(
         self,
         _request_timeout: Union[
             None,
@@ -4296,7 +4296,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataGoogleTrendsLanguagesResponseInfo:
 
-        _param = self._keywords_data_google_trends_languages_serialize(
+        _param = self._google_trends_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4317,7 +4317,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_google_trends_languages_with_http_info(
+    def google_trends_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -4333,7 +4333,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataGoogleTrendsLanguagesResponseInfo]':
 
-        _param = self._keywords_data_google_trends_languages_serialize(
+        _param = self._google_trends_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4354,7 +4354,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_google_trends_languages_without_preload_content(
+    def google_trends_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -4370,7 +4370,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_google_trends_languages_serialize(
+        _param = self._google_trends_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4387,7 +4387,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_google_trends_languages_serialize(
+    def _google_trends_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -5297,7 +5297,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_dataforseo_trends_locations_response_info import KeywordsDataDataforseoTrendsLocationsResponseInfo
     @validate_call
-    def keywords_data_dataforseo_trends_locations(
+    def dataforseo_trends_locations(
         self,
         _request_timeout: Union[
             None,
@@ -5313,7 +5313,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataDataforseoTrendsLocationsResponseInfo:
 
-        _param = self._keywords_data_dataforseo_trends_locations_serialize(
+        _param = self._dataforseo_trends_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5334,7 +5334,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_dataforseo_trends_locations_with_http_info(
+    def dataforseo_trends_locations_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -5350,7 +5350,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataDataforseoTrendsLocationsResponseInfo]':
 
-        _param = self._keywords_data_dataforseo_trends_locations_serialize(
+        _param = self._dataforseo_trends_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5371,7 +5371,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_dataforseo_trends_locations_without_preload_content(
+    def dataforseo_trends_locations_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -5387,7 +5387,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_dataforseo_trends_locations_serialize(
+        _param = self._dataforseo_trends_locations_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5404,7 +5404,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_dataforseo_trends_locations_serialize(
+    def _dataforseo_trends_locations_serialize(
         self,
         _request_auth,
         _content_type,
@@ -5453,7 +5453,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_dataforseo_trends_locations_country_response_info import KeywordsDataDataforseoTrendsLocationsCountryResponseInfo
     @validate_call
-    def keywords_data_dataforseo_trends_locations_country(
+    def dataforseo_trends_locations_country(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -5470,7 +5470,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataDataforseoTrendsLocationsCountryResponseInfo:
 
-        _param = self._keywords_data_dataforseo_trends_locations_country_serialize(
+        _param = self._dataforseo_trends_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -5492,7 +5492,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_dataforseo_trends_locations_country_with_http_info(
+    def dataforseo_trends_locations_country_with_http_info(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -5509,7 +5509,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataDataforseoTrendsLocationsCountryResponseInfo]':
 
-        _param = self._keywords_data_dataforseo_trends_locations_country_serialize(
+        _param = self._dataforseo_trends_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -5531,7 +5531,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_dataforseo_trends_locations_country_without_preload_content(
+    def dataforseo_trends_locations_country_without_preload_content(
         self,
         country: Annotated[StrictStr, Field(description="")],
         _request_timeout: Union[
@@ -5548,7 +5548,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_dataforseo_trends_locations_country_serialize(
+        _param = self._dataforseo_trends_locations_country_serialize(
             country=country,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -5566,7 +5566,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_dataforseo_trends_locations_country_serialize(
+    def _dataforseo_trends_locations_country_serialize(
         self,
         country,
         _request_auth,
@@ -9830,7 +9830,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_bing_keyword_performance_locations_and_languages_response_info import KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo
     @validate_call
-    def keywords_data_bing_keyword_performance_locations_and_languages(
+    def bing_keyword_performance_locations_and_languages(
         self,
         _request_timeout: Union[
             None,
@@ -9846,7 +9846,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo:
 
-        _param = self._keywords_data_bing_keyword_performance_locations_and_languages_serialize(
+        _param = self._bing_keyword_performance_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9867,7 +9867,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_bing_keyword_performance_locations_and_languages_with_http_info(
+    def bing_keyword_performance_locations_and_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -9883,7 +9883,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResponseInfo]':
 
-        _param = self._keywords_data_bing_keyword_performance_locations_and_languages_serialize(
+        _param = self._bing_keyword_performance_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9904,7 +9904,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_bing_keyword_performance_locations_and_languages_without_preload_content(
+    def bing_keyword_performance_locations_and_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -9920,7 +9920,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_bing_keyword_performance_locations_and_languages_serialize(
+        _param = self._bing_keyword_performance_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9937,7 +9937,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_bing_keyword_performance_locations_and_languages_serialize(
+    def _bing_keyword_performance_locations_and_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -10691,7 +10691,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_bing_search_volume_history_locations_and_languages_response_info import KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo
     @validate_call
-    def keywords_data_bing_search_volume_history_locations_and_languages(
+    def bing_search_volume_history_locations_and_languages(
         self,
         _request_timeout: Union[
             None,
@@ -10707,7 +10707,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo:
 
-        _param = self._keywords_data_bing_search_volume_history_locations_and_languages_serialize(
+        _param = self._bing_search_volume_history_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10728,7 +10728,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_bing_search_volume_history_locations_and_languages_with_http_info(
+    def bing_search_volume_history_locations_and_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -10744,7 +10744,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataBingSearchVolumeHistoryLocationsAndLanguagesResponseInfo]':
 
-        _param = self._keywords_data_bing_search_volume_history_locations_and_languages_serialize(
+        _param = self._bing_search_volume_history_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10765,7 +10765,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_bing_search_volume_history_locations_and_languages_without_preload_content(
+    def bing_search_volume_history_locations_and_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -10781,7 +10781,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_bing_search_volume_history_locations_and_languages_serialize(
+        _param = self._bing_search_volume_history_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10798,7 +10798,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_bing_search_volume_history_locations_and_languages_serialize(
+    def _bing_search_volume_history_locations_and_languages_serialize(
         self,
         _request_auth,
         _content_type,
@@ -11552,7 +11552,7 @@ class KeywordsDataApi:
 
     from dataforseo_client.models.keywords_data_clickstream_data_locations_and_languages_response_info import KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo
     @validate_call
-    def keywords_data_clickstream_data_locations_and_languages(
+    def clickstream_data_locations_and_languages(
         self,
         _request_timeout: Union[
             None,
@@ -11568,7 +11568,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo:
 
-        _param = self._keywords_data_clickstream_data_locations_and_languages_serialize(
+        _param = self._clickstream_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11589,7 +11589,7 @@ class KeywordsDataApi:
         ).data
 
     @validate_call
-    def keywords_data_clickstream_data_locations_and_languages_with_http_info(
+    def clickstream_data_locations_and_languages_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -11605,7 +11605,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'ApiResponse[KeywordsDataClickstreamDataLocationsAndLanguagesResponseInfo]':
 
-        _param = self._keywords_data_clickstream_data_locations_and_languages_serialize(
+        _param = self._clickstream_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11626,7 +11626,7 @@ class KeywordsDataApi:
         )
 
     @validate_call
-    def keywords_data_clickstream_data_locations_and_languages_without_preload_content(
+    def clickstream_data_locations_and_languages_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -11642,7 +11642,7 @@ class KeywordsDataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
 
-        _param = self._keywords_data_clickstream_data_locations_and_languages_serialize(
+        _param = self._clickstream_data_locations_and_languages_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11659,7 +11659,7 @@ class KeywordsDataApi:
         return response_data.response
 
 
-    def _keywords_data_clickstream_data_locations_and_languages_serialize(
+    def _clickstream_data_locations_and_languages_serialize(
         self,
         _request_auth,
         _content_type,

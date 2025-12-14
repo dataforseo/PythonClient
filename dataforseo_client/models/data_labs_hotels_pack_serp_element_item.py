@@ -26,7 +26,7 @@ class DataLabsHotelsPackSerpElementItem(BaseDataforseoLabsApiElementItem):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of stay. in the format “year-month-date”. example:. 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of stay. in the format “year-month-date”. example:. 2019-11-17")
-    items: Optional[List[Optional[HotelsPackElement]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[HotelsPackElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

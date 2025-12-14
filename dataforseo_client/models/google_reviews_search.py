@@ -25,6 +25,7 @@ class GoogleReviewsSearch(BaseModel):
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the review")
     review_text: Optional[StrictStr] = Field(default=None, description=r"the content of the review")
     original_review_text: Optional[StrictStr] = Field(default=None, description=r"original content of the review. the original content of the review, no auto-translate applied")
+    original_language: Optional[StrictStr] = Field(default=None, description=r"original language of the review text")
     time_ago: Optional[StrictStr] = Field(default=None, description=r"the time of publication. indicates the time (in the ‘time ago’ format) when the review was listed")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when a review was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score submitted by the reviewer")
@@ -50,6 +51,7 @@ class GoogleReviewsSearch(BaseModel):
         "xpath", 
         "review_text", 
         "original_review_text", 
+        "original_language", 
         "time_ago", 
         "timestamp", 
         "rating", 
@@ -100,6 +102,7 @@ class GoogleReviewsSearch(BaseModel):
         _dict['xpath'] = self.xpath
         _dict['review_text'] = self.review_text
         _dict['original_review_text'] = self.original_review_text
+        _dict['original_language'] = self.original_language
         _dict['time_ago'] = self.time_ago
         _dict['timestamp'] = self.timestamp
         _dict['rating'] = self.rating.to_dict() if self.rating else None
@@ -146,6 +149,7 @@ class GoogleReviewsSearch(BaseModel):
             "xpath": obj.get("xpath"),
             "review_text": obj.get("review_text"),
             "original_review_text": obj.get("original_review_text"),
+            "original_language": obj.get("original_language"),
             "time_ago": obj.get("time_ago"),
             "timestamp": obj.get("timestamp"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
