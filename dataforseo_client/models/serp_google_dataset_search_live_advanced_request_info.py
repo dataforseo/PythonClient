@@ -16,30 +16,30 @@ class SerpGoogleDatasetSearchLiveAdvancedRequestInfo(BaseModel):
     SerpGoogleDatasetSearchLiveAdvancedRequestInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. required field. you can specify up to 700 characters in the keyword field. all %## will be decoded (plus character ‘+’ will be decoded to a space character). if you need to use the “%” character for your keyword, please specify it as “%25”;. if you need to use the “+” character for your keyword, please specify it as “%2B”;. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
-    language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine language. optional field. if you use this field, you don’t need to specify language_code. possible value:. English")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language code. optional field if you don’t specify language_name. if you use this field, you don’t need to specify language_name. possible value:. en")
-    device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. possible value: desktop")
-    os: Optional[StrictStr] = Field(default=None, description=r"device operating system. optional field. choose from the following values: windows, macos. default value: windows")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language code. optional field if you don't specify language_name. if you use this field, you don't need to specify language_name. possible value:. en")
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in SERP. default value: 20. max value: 700. Your account will be billed per each SERP containing up to 20 results;. Setting depth above 20 may result in additional charges if the search engine returns more than 20 results;. If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically.")
+    device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. possible value: desktop")
+    language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine language. optional field. if you use this field, you don't need to specify language_code. possible value:. English")
+    os: Optional[StrictStr] = Field(default=None, description=r"device operating system. optional field. choose from the following values: windows, macos. default value: windows")
+    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     last_updated: Optional[StrictStr] = Field(default=None, description=r"last time the dataset was updated. optional field. possible values: 1m, 1y, 3y")
     file_formats: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"file formats of the dataset. optional field. possible values: other, archive, text, image, document, tabular")
     usage_rights: Optional[StrictStr] = Field(default=None, description=r"usage rights of the dataset. optional field. possible values: commercial, noncommercial")
     is_free: Optional[StrictBool] = Field(default=None, description=r"indicates whether displayed datasets are free. optional field. possible values: true, false")
     topics: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"dataset topics. optional field. possible values: humanities, social_sciences, life_sciences, agriculture, natural_sciences, geo, computer, architecture_and_urban_planning, engineering")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
         "keyword", 
-        "language_name", 
         "language_code", 
-        "device", 
-        "os", 
         "depth", 
+        "device", 
+        "language_name", 
+        "os", 
+        "tag", 
         "last_updated", 
         "file_formats", 
         "usage_rights", 
         "is_free", 
         "topics", 
-        "tag", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -67,17 +67,17 @@ class SerpGoogleDatasetSearchLiveAdvancedRequestInfo(BaseModel):
         _dict = {}
 
         _dict['keyword'] = self.keyword
-        _dict['language_name'] = self.language_name
         _dict['language_code'] = self.language_code
-        _dict['device'] = self.device
-        _dict['os'] = self.os
         _dict['depth'] = self.depth
+        _dict['device'] = self.device
+        _dict['language_name'] = self.language_name
+        _dict['os'] = self.os
+        _dict['tag'] = self.tag
         _dict['last_updated'] = self.last_updated
         _dict['file_formats'] = self.file_formats
         _dict['usage_rights'] = self.usage_rights
         _dict['is_free'] = self.is_free
         _dict['topics'] = self.topics
-        _dict['tag'] = self.tag
         return _dict
 
 
@@ -91,17 +91,17 @@ class SerpGoogleDatasetSearchLiveAdvancedRequestInfo(BaseModel):
 
         _obj = cls.model_validate({
             "keyword": obj.get("keyword"),
-            "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
-            "device": obj.get("device"),
-            "os": obj.get("os"),
             "depth": obj.get("depth"),
+            "device": obj.get("device"),
+            "language_name": obj.get("language_name"),
+            "os": obj.get("os"),
+            "tag": obj.get("tag"),
             "last_updated": obj.get("last_updated"),
             "file_formats": obj.get("file_formats"),
             "usage_rights": obj.get("usage_rights"),
             "is_free": obj.get("is_free"),
             "topics": obj.get("topics"),
-            "tag": obj.get("tag"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

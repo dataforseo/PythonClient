@@ -22,7 +22,7 @@ class KeywordsDataBingAudienceEstimationLiveResultInfo(BaseModel):
     est_spend: Optional[AudienceEstimationInfo] = Field(default=None, description=r"monthly estimated spending range")
     est_cost_per_event: Optional[AudienceEstimationInfo] = Field(default=None, description=r"indicates the estimated cost per event with range result")
     est_ctr: Optional[AudienceEstimationInfo] = Field(default=None, description=r"estimated click-through rate range")
-    suggested_bid: Optional[StrictInt] = Field(default=None, description=r"suggested bid value under the current targeting")
+    suggested_bid: Optional[StrictFloat] = Field(default=None, description=r"suggested bid value under the current targeting")
     suggested_budget: Optional[StrictFloat] = Field(default=None, description=r"suggested daily budget value under the current targeting and bid")
     events_lost_to_bid: Optional[StrictInt] = Field(default=None, description=r"indicates event lost count due to insufficient input bid")
     events_lost_to_budget: Optional[StrictInt] = Field(default=None, description=r"indicates the event lost count due to insufficient input budget")

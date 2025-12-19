@@ -20,5 +20,5 @@
 **estimated_paid_traffic_cost** | **StrictFloat** | estimated cost of monthly search traffic<br>represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the target ranks for<br>learn more about how the metric is calculated in this help center article |[optional]|
 **clickstream_etv** | **StrictFloat** | estimated traffic volume based on clickstream data<br>calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for<br>to retrieve results for this field, the parameter include_clickstream_data must be set to true<br>learn more about how the metric is calculated in this help center article |[optional]|
 **rank_changes** | **RankChanges** | changes in rankings<br>contains information about the ranking changes of the SERP element since the previous_updated_time |[optional]|
-**backlinks_info** | **BacklinksInfo** | backlinks information for the target website |[optional]|
+**backlinks_info** | **BacklinksInfo** | backlinks information for the relevant page URL |[optional]|
 **rank_info** | **RankInfo** | page and domain rank information |[optional]|

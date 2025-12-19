@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**category_code** | **StrictStr** | target category code<br>required field<br>to obtain a full list of available categories, refer to the Categories endpoint |[optional]|
+**category_code** | **StrictInt** | target category code<br>required field<br>to obtain a full list of available categories, refer to the Categories endpoint |[optional]|
 **page_type** | **List[Optional[StrictStr]]** | target page types<br>optional field<br>use this parameter to filter the dataset by page types<br>possible values:<br>'ecommerce', 'news', 'blogs', 'message-boards', 'organization' |[optional]|
 **search_mode** | **StrictStr** | results grouping type<br>optional field<br>possible grouping types:<br>as_is – returns data on all citations for the target category_code<br>one_per_domain – returns data on one citation of the category_code per domain<br>default value: as_is |[optional]|
 **internal_list_limit** | **StrictInt** | maximum number of elements within internal arrays<br>optional field<br>you can use this field to limit the number of elements within the following arrays:<br>top_domains<br>text_categories<br>page_categories<br>countries<br>languages<br>default value: 1<br>maximum value: 20 |[optional]|

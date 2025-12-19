@@ -11,6 +11,8 @@ All URIs are relative to *https://api.dataforseo.com*
 [**chatGptLlmScraperTasksReady**](AiOptimizationApi.md#chatGptLlmScraperTasksReady) | **GET**  /v3/ai_optimization/chat_gpt/llm_scraper/tasks_ready  |
 [**chatGptLlmScraperTaskGetAdvanced**](AiOptimizationApi.md#chatGptLlmScraperTaskGetAdvanced) | **GET**  /v3/ai_optimization/chat_gpt/llm_scraper/task_get/advanced/{id}  |
 [**chatGptLlmScraperTaskGetHtml**](AiOptimizationApi.md#chatGptLlmScraperTaskGetHtml) | **GET**  /v3/ai_optimization/chat_gpt/llm_scraper/task_get/html/{id}  |
+[**chatGptLlmScraperLiveAdvanced**](AiOptimizationApi.md#chatGptLlmScraperLiveAdvanced) | **POST**  /v3/ai_optimization/chat_gpt/llm_scraper/live/advanced  |
+[**chatGptLlmScraperLiveHtml**](AiOptimizationApi.md#chatGptLlmScraperLiveHtml) | **POST**  /v3/ai_optimization/chat_gpt/llm_scraper/live/html  |
 [**llmMentionsLocationsAndLanguages**](AiOptimizationApi.md#llmMentionsLocationsAndLanguages) | **GET**  /v3/ai_optimization/llm_mentions/locations_and_languages  |
 [**llmMentionsAvailableFilters**](AiOptimizationApi.md#llmMentionsAvailableFilters) | **GET**  /v3/ai_optimization/llm_mentions/available_filters  |
 [**llmMentionsSearchLive**](AiOptimizationApi.md#llmMentionsSearchLive) | **POST**  /v3/ai_optimization/llm_mentions/search/live  |
@@ -222,8 +224,15 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.chat_gpt_llm_scraper_task_post([AiOptimizationChatGptLlmScraperTaskPostRequestInfo(
-        )]
+        response = ai_optimization_api.chat_gpt_llm_scraper_task_post([
+            [
+                AiOptimizationChatGptLlmScraperTaskPostRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="what is chatgpt",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -416,6 +425,132 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
+<a id="chatGptLlmScraperLiveAdvanced"></a>
+# **chatGptLlmScraperLiveAdvanced**
+> AiOptimizationChatGptLlmScraperLiveAdvancedResponseInfo chatGptLlmScraperLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_chat_gpt_llm_scraper_live_advanced_request_info import List[Optional[AiOptimizationChatGptLlmScraperLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.chat_gpt_llm_scraper_live_advanced([
+            [
+                AiOptimizationChatGptLlmScraperLiveAdvancedRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="albert einstein",
+                ),
+            ]
+        ]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationChatGptLlmScraperLiveAdvancedRequestInfo]]&gt;**](List[Optional[AiOptimizationChatGptLlmScraperLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationChatGptLlmScraperLiveAdvancedResponseInfo**](AiOptimizationChatGptLlmScraperLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="chatGptLlmScraperLiveHtml"></a>
+# **chatGptLlmScraperLiveHtml**
+> AiOptimizationChatGptLlmScraperLiveHtmlResponseInfo chatGptLlmScraperLiveHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_chat_gpt_llm_scraper_live_html_request_info import List[Optional[AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.chat_gpt_llm_scraper_live_html([
+            [
+                AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="albert einstein",
+                ),
+            ]
+        ]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo]]&gt;**](List[Optional[AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationChatGptLlmScraperLiveHtmlResponseInfo**](AiOptimizationChatGptLlmScraperLiveHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
 <a id="llmMentionsLocationsAndLanguages"></a>
 # **llmMentionsLocationsAndLanguages**
 > AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo llmMentionsLocationsAndLanguages()
@@ -545,8 +680,39 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.llm_mentions_search_live([AiOptimizationLlmMentionsSearchLiveRequestInfo(
-        )]
+        response = ai_optimization_api.llm_mentions_search_live([
+            [
+                AiOptimizationLlmMentionsSearchLiveRequestInfo(
+                    language_name="English",
+                    location_code=2840,
+                    target=[
+                    AiOptimizationLLmMentionsDomainElement(
+                        domain="dataforseo.com",
+                        search_filter="exclude",
+                    ),
+                    AiOptimizationLLmMentionsKeywordElement(
+                        keyword="bmw",
+                        search_scope=[
+                        "answer",
+                    ],
+                    ),
+                ],
+                    platform="google",
+                    filters=[
+                    [
+                        "ai_search_volume",
+                        ">",
+                        1000,
+                    ],
+                ],
+                    order_by=[
+                    "ai_search_volume,desc",
+                ],
+                    offset=0,
+                    limit=3,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -601,8 +767,40 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.llm_mentions_top_pages_live([AiOptimizationLlmMentionsTopPagesLiveRequestInfo(
-        )]
+        response = ai_optimization_api.llm_mentions_top_pages_live([
+            [
+                AiOptimizationLlmMentionsTopPagesLiveRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    platform="google",
+                    target=[
+                    AiOptimizationLLmMentionsKeywordElement(
+                        keyword="bmw",
+                        search_scope=[
+                        "answer",
+                    ],
+                    ),
+                    AiOptimizationLLmMentionsKeywordElement(
+                        keyword="auto",
+                        search_scope=[
+                        "question",
+                    ],
+                        match_type="partial_match",
+                    ),
+                ],
+                    links_scope="sources",
+                    initial_dataset_filters=[
+                    [
+                        "ai_search_volume",
+                        ">",
+                        10,
+                    ],
+                ],
+                    items_list_limit=3,
+                    internal_list_limit=2,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -657,8 +855,40 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.llm_mentions_top_domains_live([AiOptimizationLlmMentionsTopDomainsLiveRequestInfo(
-        )]
+        response = ai_optimization_api.llm_mentions_top_domains_live([
+            [
+                AiOptimizationLlmMentionsTopDomainsLiveRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    platform="chat_gpt",
+                    target=[
+                    AiOptimizationLLmMentionsKeywordElement(
+                        keyword="bmw",
+                        search_scope=[
+                        "answer",
+                    ],
+                    ),
+                    AiOptimizationLLmMentionsKeywordElement(
+                        keyword="auto",
+                        search_scope=[
+                        "question",
+                    ],
+                        match_type="partial_match",
+                    ),
+                ],
+                    links_scope="sources",
+                    initial_dataset_filters=[
+                    [
+                        "ai_search_volume",
+                        ">",
+                        10,
+                    ],
+                ],
+                    items_list_limit=3,
+                    internal_list_limit=2,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -713,8 +943,35 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.llm_mentions_aggregated_metrics_live([AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo(
-        )]
+        response = ai_optimization_api.llm_mentions_aggregated_metrics_live([
+            [
+                AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo(
+                    language_code="es",
+                    location_code=2840,
+                    platform="google",
+                    target=[
+                    AiOptimizationLLmMentionsDomainElement(
+                        domain="en.wikipedia.org",
+                        search_filter="exclude",
+                    ),
+                    AiOptimizationLLmMentionsKeywordElement(
+                        keyword="bmw",
+                        search_scope=[
+                        "answer",
+                    ],
+                    ),
+                ],
+                    initial_dataset_filters=[
+                    [
+                        "ai_search_volume",
+                        ">",
+                        10,
+                    ],
+                ],
+                    internal_list_limit=10,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -769,8 +1026,58 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.llm_mentions_cross_aggregated_metrics_live([AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo(
-        )]
+        response = ai_optimization_api.llm_mentions_cross_aggregated_metrics_live([
+            [
+                AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    platform="google",
+                    targets=[
+                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
+                        aggregation_key="chat_gpt",
+                        target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="chat gpt",
+                        ),
+                    ],
+                    ),
+                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
+                        aggregation_key="claude",
+                        target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="claude",
+                        ),
+                    ],
+                    ),
+                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
+                        aggregation_key="gemini",
+                        target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="gemini",
+                        ),
+                    ],
+                    ),
+                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
+                        aggregation_key="perplexity",
+                        target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="perplexity",
+                            search_filter="include",
+                        ),
+                    ],
+                    ),
+                ],
+                    initial_dataset_filters=[
+                    [
+                        "ai_search_volume",
+                        ">",
+                        10,
+                    ],
+                ],
+                    internal_list_limit=5,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -878,8 +1185,31 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.chat_gpt_llm_responses_live([AiOptimizationChatGptLlmResponsesLiveRequestInfo(
-        )]
+        response = ai_optimization_api.chat_gpt_llm_responses_live([
+            [
+                AiOptimizationChatGptLlmResponsesLiveRequestInfo(
+                    system_message="communicate as if we are in a business meeting",
+                    message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                ],
+                    max_output_tokens=200,
+                    temperature=0.3,
+                    top_p=0.5,
+                    model_name="gpt-4.1-mini",
+                    web_search=True,
+                    web_search_country_iso_code="FR",
+                    web_search_city="Paris",
+                    user_prompt="provide information on how relevant the amusement park business is in France now",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -934,8 +1264,25 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.chat_gpt_llm_responses_task_post([AiOptimizationChatGptLlmResponsesTaskPostRequestInfo(
-        )]
+        response = ai_optimization_api.chat_gpt_llm_responses_task_post([
+            [
+                AiOptimizationChatGptLlmResponsesTaskPostRequestInfo(
+                    system_message="communicate as if we are in a business meeting",
+                    message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                ],
+                    model_name="gpt-4.1-mini",
+                    user_prompt="provide information on how relevant the amusement park business is in France now",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1150,8 +1497,30 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.claude_llm_responses_live([AiOptimizationClaudeLlmResponsesLiveRequestInfo(
-        )]
+        response = ai_optimization_api.claude_llm_responses_live([
+            [
+                AiOptimizationClaudeLlmResponsesLiveRequestInfo(
+                    system_message="communicate as if we are in a business meeting",
+                    message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                ],
+                    max_output_tokens=200,
+                    model_name="claude-opus-4-0",
+                    temperature=0.3,
+                    top_p=0.5,
+                    web_search=True,
+                    web_search_country_iso_code="FR",
+                    user_prompt="provide information on how relevant the amusement park business is in France now",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1206,8 +1575,30 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.claude_llm_responses_task_post([AiOptimizationClaudeLlmResponsesTaskPostRequestInfo(
-        )]
+        response = ai_optimization_api.claude_llm_responses_task_post([
+            [
+                AiOptimizationClaudeLlmResponsesTaskPostRequestInfo(
+                    system_message="communicate as if we are in a business meeting",
+                    message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                ],
+                    max_output_tokens=1024,
+                    temperature=0.3,
+                    top_p=0.5,
+                    web_search_country_iso_code="FR",
+                    model_name="claude-sonnet-4-0",
+                    web_search=True,
+                    user_prompt="provide information on how relevant the amusement park business is in France now",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1422,8 +1813,25 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.gemini_llm_responses_task_post([AiOptimizationGeminiLlmResponsesTaskPostRequestInfo(
-        )]
+        response = ai_optimization_api.gemini_llm_responses_task_post([
+            [
+                AiOptimizationGeminiLlmResponsesTaskPostRequestInfo(
+                    system_message="communicate as if we are in a business meeting",
+                    message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                ],
+                    model_name="gemini-2.5-flash",
+                    user_prompt="provide information on how relevant the amusement park business is in France now",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1585,8 +1993,29 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.gemini_llm_responses_live([AiOptimizationGeminiLlmResponsesLiveRequestInfo(
-        )]
+        response = ai_optimization_api.gemini_llm_responses_live([
+            [
+                AiOptimizationGeminiLlmResponsesLiveRequestInfo(
+                    system_message="communicate as if we are in a business meeting",
+                    message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                ],
+                    max_output_tokens=200,
+                    temperature=0.3,
+                    top_p=0.5,
+                    model_name="gemini-2.5-flash",
+                    web_search=True,
+                    user_prompt="provide information on how relevant the amusement park business is in France now",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1694,8 +2123,29 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.perplexity_llm_responses_live([AiOptimizationPerplexityLlmResponsesLiveRequestInfo(
-        )]
+        response = ai_optimization_api.perplexity_llm_responses_live([
+            [
+                AiOptimizationPerplexityLlmResponsesLiveRequestInfo(
+                    system_message="communicate as if we are in a business meeting",
+                    message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                ],
+                    max_output_tokens=200,
+                    temperature=0.3,
+                    top_p=0.5,
+                    web_search_country_iso_code="FR",
+                    model_name="sonar-reasoning",
+                    user_prompt="provide information on how relevant the amusement park business is in France now",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1856,8 +2306,18 @@ try:
         # Create an instance of the API class
         ai_optimization_api = AiOptimizationApi(api_client)
 
-        response = ai_optimization_api.ai_keyword_data_keywords_search_volume_live([AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo(
-        )]
+        response = ai_optimization_api.ai_keyword_data_keywords_search_volume_live([
+            [
+                AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo(
+                    language_name="English",
+                    location_code=2840,
+                    keywords=[
+                    "iphone",
+                    "seo",
+                ],
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)

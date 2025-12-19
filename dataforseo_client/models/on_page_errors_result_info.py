@@ -23,7 +23,7 @@ class OnPageErrorsResultInfo(BaseModel):
     http_url: Optional[StrictStr] = Field(default=None, description=r"URL that caused an error. URL you used for making an API call or pingback/postback URL")
     http_method: Optional[StrictStr] = Field(default=None, description=r"HTTP method")
     http_code: Optional[StrictInt] = Field(default=None, description=r"HTTP status code")
-    http_time: Optional[StrictFloat] = Field(default=None, description=r"time taken by HTTP request. for tasks set with a pingback/postback, this field will show the time it took your server to respond")
+    http_time: Optional[StrictInt] = Field(default=None, description=r"time taken by HTTP request. for tasks set with a pingback/postback, this field will show the time it took your server to respond")
     http_response: Optional[StrictStr] = Field(default=None, description=r"HTTP response. server response")
     __properties: ClassVar[List[str]] = [
         "id", 

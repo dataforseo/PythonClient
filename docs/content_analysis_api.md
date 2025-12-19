@@ -39,8 +39,18 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.content_analysis_id_list([ContentAnalysisIdListRequestInfo(
-        )]
+        response = content_analysis_api.content_analysis_id_list([
+            [
+                ContentAnalysisIdListRequestInfo(
+                    datetime_from=,
+                    datetime_to=,
+                    limit=100,
+                    offset=0,
+                    sort="desc",
+                    include_metadata=True,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -307,8 +317,33 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.search_live([ContentAnalysisSearchLiveRequestInfo(
-        )]
+        response = content_analysis_api.search_live([
+            [
+                ContentAnalysisSearchLiveRequestInfo(
+                    keyword_fields={
+                    "snippet": "logitech",
+                },
+                    keyword="logitech",
+                    page_type=[
+                    "ecommerce",
+                    "news",
+                    "blogs",
+                    "message-boards",
+                    "organization",
+                ],
+                    search_mode="as_is",
+                    filters=[
+                    "main_domain",
+                    "=",
+                    "reviewfinder.ca",
+                ],
+                    order_by=[
+                    "content_info.sentiment_connotations.anger,desc",
+                ],
+                    limit=10,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -363,8 +398,22 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.content_analysis_summary_live([ContentAnalysisSummaryLiveRequestInfo(
-        )]
+        response = content_analysis_api.content_analysis_summary_live([
+            [
+                ContentAnalysisSummaryLiveRequestInfo(
+                    keyword="logitech",
+                    page_type=[
+                    "ecommerce",
+                    "news",
+                    "blogs",
+                    "message-boards",
+                    "organization",
+                ],
+                    internal_list_limit=8,
+                    positive_connotation_threshold=0.5,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -419,8 +468,14 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.sentiment_analysis_live([ContentAnalysisSentimentAnalysisLiveRequestInfo(
-        )]
+        response = content_analysis_api.sentiment_analysis_live([
+            [
+                ContentAnalysisSentimentAnalysisLiveRequestInfo(
+                    keyword="logitech",
+                    internal_list_limit=1,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -475,8 +530,15 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.rating_distribution_live([ContentAnalysisRatingDistributionLiveRequestInfo(
-        )]
+        response = content_analysis_api.rating_distribution_live([
+            [
+                ContentAnalysisRatingDistributionLiveRequestInfo(
+                    keyword="logitech",
+                    search_mode="as_is",
+                    internal_list_limit=10,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -531,8 +593,16 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.phrase_trends_live([ContentAnalysisPhraseTrendsLiveRequestInfo(
-        )]
+        response = content_analysis_api.phrase_trends_live([
+            [
+                ContentAnalysisPhraseTrendsLiveRequestInfo(
+                    keyword="logitech",
+                    search_mode="as_is",
+                    date_from=,
+                    date_group="month",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -587,8 +657,16 @@ try:
         # Create an instance of the API class
         content_analysis_api = ContentAnalysisApi(api_client)
 
-        response = content_analysis_api.category_trends_live([ContentAnalysisCategoryTrendsLiveRequestInfo(
-        )]
+        response = content_analysis_api.category_trends_live([
+            [
+                ContentAnalysisCategoryTrendsLiveRequestInfo(
+                    category_code=10994,
+                    search_mode="as_is",
+                    date_from=,
+                    date_group="month",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)

@@ -8,7 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.local_services_element import LocalServicesElement
 from dataforseo_client.models.base_dataforseo_labs_api_element_item import BaseDataforseoLabsApiElementItem
 
 
@@ -26,7 +25,7 @@ class DataLabsLocalServicesSerpElementItem(BaseDataforseoLabsApiElementItem):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    items: Optional[List[Optional[LocalServicesElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
+    items: Optional[Any] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 
@@ -73,12 +72,7 @@ class DataLabsLocalServicesSerpElementItem(BaseDataforseoLabsApiElementItem):
         _dict['title'] = self.title
         _dict['url'] = self.url
         _dict['domain'] = self.domain
-        items_items = []
-        if self.items:
-            for _item in self.items:
-                if _item:
-                    items_items.append(_item.to_dict())
-            _dict['items'] = items_items
+        _dict['items'] = self.items
         return _dict
 
 
@@ -100,7 +94,7 @@ class DataLabsLocalServicesSerpElementItem(BaseDataforseoLabsApiElementItem):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "domain": obj.get("domain"),
-            "items": [LocalServicesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": obj.get("items"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

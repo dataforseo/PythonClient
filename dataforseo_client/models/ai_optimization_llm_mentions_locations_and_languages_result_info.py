@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.available_languages import AvailableLanguages
+from dataforseo_client.models.result_available_languages import ResultAvailableLanguages
 
 
 
@@ -18,7 +18,7 @@ class AiOptimizationLlmMentionsLocationsAndLanguagesResultInfo(BaseModel):
     """ # noqa: E501
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
-    available_languages: Optional[List[Optional[AvailableLanguages]]] = Field(default=None, description=r"supported languages. contains the languages which are supported for a specific location")
+    available_languages: Optional[List[Optional[ResultAvailableLanguages]]] = Field(default=None, description=r"supported languages. contains the languages which are supported for a specific location")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 
@@ -71,7 +71,7 @@ class AiOptimizationLlmMentionsLocationsAndLanguagesResultInfo(BaseModel):
         _obj = cls.model_validate({
             "location_code": obj.get("location_code"),
             "location_name": obj.get("location_name"),
-            "available_languages": [AvailableLanguages.from_dict(_item) for _item in obj["available_languages"]] if obj.get("available_languages") is not None else None,
+            "available_languages": [ResultAvailableLanguages.from_dict(_item) for _item in obj["available_languages"]] if obj.get("available_languages") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

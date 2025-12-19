@@ -15,7 +15,7 @@ class ContentAnalysisCategoryTrendsLiveRequestInfo(BaseModel):
     """
     ContentAnalysisCategoryTrendsLiveRequestInfo
     """ # noqa: E501
-    category_code: Optional[StrictStr] = Field(default=None, description=r"target category code. required field. to obtain a full list of available categories, refer to the Categories endpoint")
+    category_code: Optional[StrictInt] = Field(default=None, description=r"target category code. required field. to obtain a full list of available categories, refer to the Categories endpoint")
     page_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"target page types. optional field. use this parameter to filter the dataset by page types. possible values:. 'ecommerce', 'news', 'blogs', 'message-boards', 'organization'")
     search_mode: Optional[StrictStr] = Field(default=None, description=r"results grouping type. optional field. possible grouping types:. as_is – returns data on all citations for the target category_code. one_per_domain – returns data on one citation of the category_code per domain. default value: as_is")
     internal_list_limit: Optional[StrictInt] = Field(default=None, description=r"maximum number of elements within internal arrays. optional field. you can use this field to limit the number of elements within the following arrays:. top_domains. text_categories. page_categories. countries. languages. default value: 1. maximum value: 20")

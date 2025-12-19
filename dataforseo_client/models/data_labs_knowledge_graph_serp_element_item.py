@@ -28,7 +28,7 @@ class DataLabsKnowledgeGraphSerpElementItem(BaseDataforseoLabsApiElementItem):
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     card_id: Optional[StrictStr] = Field(default=None, description=r"card id")
     url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of a specific image")
     logo_url: Optional[StrictStr] = Field(default=None, description=r"URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")
     items: Optional[List[Optional[BaseDataforseoLabsKnowledgeGraphElementItem]]] = Field(default=None, description=r"historical SERPs and related data found in the database")

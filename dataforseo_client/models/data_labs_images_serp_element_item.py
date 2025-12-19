@@ -27,7 +27,7 @@ class DataLabsImagesSerpElementItem(BaseDataforseoLabsApiElementItem):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
     items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
-    related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null")
+    related_image_searches: Optional[RelatedImageSearchesElement] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 
@@ -79,12 +79,7 @@ class DataLabsImagesSerpElementItem(BaseDataforseoLabsApiElementItem):
                 if _item:
                     items_items.append(_item.to_dict())
             _dict['items'] = items_items
-        related_image_searches_items = []
-        if self.related_image_searches:
-            for _item in self.related_image_searches:
-                if _item:
-                    related_image_searches_items.append(_item.to_dict())
-            _dict['related_image_searches'] = related_image_searches_items
+        _dict['related_image_searches'] = self.related_image_searches.to_dict() if self.related_image_searches else None
         return _dict
 
 
@@ -106,7 +101,7 @@ class DataLabsImagesSerpElementItem(BaseDataforseoLabsApiElementItem):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "items": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
-            "related_image_searches": [RelatedImageSearchesElement.from_dict(_item) for _item in obj["related_image_searches"]] if obj.get("related_image_searches") is not None else None,
+            "related_image_searches": RelatedImageSearchesElement.from_dict(obj["related_image_searches"]) if obj.get("related_image_searches") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

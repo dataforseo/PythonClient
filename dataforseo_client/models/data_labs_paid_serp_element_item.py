@@ -41,7 +41,7 @@ class DataLabsPaidSerpElementItem(BaseDataforseoLabsApiElementItem):
     estimated_paid_traffic_cost: Optional[StrictFloat] = Field(default=None, description=r"estimated cost of monthly search traffic. represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values of all keywords in the category that the target ranks for. learn more about how the metric is calculated in this help center article")
     clickstream_etv: Optional[StrictFloat] = Field(default=None, description=r"estimated traffic volume based on clickstream data. calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for. to retrieve results for this field, the parameter include_clickstream_data must be set to true. learn more about how the metric is calculated in this help center article")
     rank_changes: Optional[RankChanges] = Field(default=None, description=r"changes in rankings. contains information about the ranking changes of the SERP element since the previous_updated_time")
-    backlinks_info: Optional[BacklinksInfo] = Field(default=None, description=r"backlinks information for the target website")
+    backlinks_info: Optional[BacklinksInfo] = Field(default=None, description=r"backlinks information for the relevant page URL")
     rank_info: Optional[RankInfo] = Field(default=None, description=r"page and domain rank information")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -22,7 +22,7 @@ class DataforseoLabsKnowledgeGraphShoppingItemElementItem(BaseDataforseoLabsKnow
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. kc:/shopping/gpc:organic-offers")
     items: Optional[List[Optional[KnowledgeGraphShoppingElement]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
     __properties: ClassVar[List[str]] = [

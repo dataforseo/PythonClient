@@ -64,8 +64,18 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.merchant_id_list([MerchantIdListRequestInfo(
-        )]
+        response = merchant_api.merchant_id_list([
+            [
+                MerchantIdListRequestInfo(
+                    datetime_from=,
+                    datetime_to=,
+                    limit=100,
+                    offset=0,
+                    sort="desc",
+                    include_metadata=True,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -120,8 +130,15 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.merchant_errors([MerchantErrorsRequestInfo(
-        )]
+        response = merchant_api.merchant_errors([
+            [
+                MerchantErrorsRequestInfo(
+                    limit=10,
+                    offset=0,
+                    filtered_function="pingback_url",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -336,8 +353,16 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.google_products_task_post([MerchantGoogleProductsTaskPostRequestInfo(
-        )]
+        response = merchant_api.google_products_task_post([
+            [
+                MerchantGoogleProductsTaskPostRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="iphone",
+                    price_min=5,
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -606,8 +631,15 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.google_sellers_task_post([MerchantGoogleSellersTaskPostRequestInfo(
-        )]
+        response = merchant_api.google_sellers_task_post([
+            [
+                MerchantGoogleSellersTaskPostRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    product_id="1113158713975221117",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -769,8 +801,15 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.google_product_info_task_post([MerchantGoogleProductInfoTaskPostRequestInfo(
-        )]
+        response = merchant_api.google_product_info_task_post([
+            [
+                MerchantGoogleProductInfoTaskPostRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    product_id="1113158713975221117",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1146,8 +1185,15 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.amazon_products_task_post([MerchantAmazonProductsTaskPostRequestInfo(
-        )]
+        response = merchant_api.amazon_products_task_post([
+            [
+                MerchantAmazonProductsTaskPostRequestInfo(
+                    language_code="en_US",
+                    location_code=2840,
+                    keyword="shoes",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1363,8 +1409,15 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.amazon_asin_task_post([MerchantAmazonAsinTaskPostRequestInfo(
-        )]
+        response = merchant_api.amazon_asin_task_post([
+            [
+                MerchantAmazonAsinTaskPostRequestInfo(
+                    language_code="en_US",
+                    location_code=2840,
+                    asin="B0756FCPPN",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1580,8 +1633,15 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.amazon_sellers_task_post([MerchantAmazonSellersTaskPostRequestInfo(
-        )]
+        response = merchant_api.amazon_sellers_task_post([
+            [
+                MerchantAmazonSellersTaskPostRequestInfo(
+                    language_code="en_US",
+                    location_code=2840,
+                    asin="B085RFFC9Q",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1797,8 +1857,15 @@ try:
         # Create an instance of the API class
         merchant_api = MerchantApi(api_client)
 
-        response = merchant_api.amazon_reviews_task_post([MerchantAmazonReviewsTaskPostRequestInfo(
-        )]
+        response = merchant_api.amazon_reviews_task_post([
+            [
+                MerchantAmazonReviewsTaskPostRequestInfo(
+                    language_code="en_US",
+                    location_code=2840,
+                    asin="B0773ZY26F",
+                ),
+            ]
+        ]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
