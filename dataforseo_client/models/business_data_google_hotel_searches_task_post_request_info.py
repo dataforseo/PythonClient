@@ -20,6 +20,7 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. required field if you don’t specify location_code or location_coordinate. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available locations with location_name by making a separate request to https://api.dataforseo.com/v3/business_data/google/locations. example:. London,England,United Kingdom. Note: in order to obtain accurate search results, the location_name you specify will be automatically appended to the keyword")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. required field if you don’t specify location_name or location_coordinate. if you use this field, you don’t need to specify location_name or location_coordinate. you can receive the list of available locations with location_code by making a separate request to the https://api.dataforseo.com/v3/business_data/google/locations. example:. 2840")
     location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a location. required field if you don’t specify location_name or location_code. if you use this field, you don’t need to specify location_name or location_code. location_coordinate parameter should be specified in the “latitude,longitude” format. the maximum number of decimal digits for “latitude” and “longitude”: 7. Note: if the coordinates are used to set a location, the search will occur in the nearest settlement;. example:. 53.476225,-2.243572")
+    search_this_area: Optional[StrictBool] = Field(default=None, description=r"show hotels from the displayed area. optional field. can take the values: true, false. default value: true. if set to false the search_this_area mode will be turned off. Note: if the search_this_area mode is turned off, the location_name won’t be appended to the keyword during search. learn more about this parameter on our Help Center")
     language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine language. required field if you don’t specify language_code. if you use this field, you don’t need to specify language_code. you can receive the list of available languages with language_name by making a separate request to https://api.dataforseo.com/v3/business_data/google/languages. example:. English")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language code. required field if you don’t specify language_name. if you use this field, you don’t need to specify language_name. you can receive the list of available languages with their language_code by making a separate request to https://api.dataforseo.com/v3/business_data/google/languages. example:. en")
     depth: Optional[StrictInt] = Field(default=None, description=r"parsing depth. optional field. number of results in Google Hotels. default value: 20 organic results. max value: 140. Note: your account will be billed per each 20 organic results regardless of paid listings in the response;. thus, setting a depth above 20 may result in additional charges if Google Hotels return more than 20 results;. if the specified depth is higher than the number of results in the response, the difference will be refunded automatically to your account balance")
@@ -45,6 +46,7 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
         "location_name", 
         "location_code", 
         "location_coordinate", 
+        "search_this_area", 
         "language_name", 
         "language_code", 
         "depth", 
@@ -95,6 +97,7 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
         _dict['location_coordinate'] = self.location_coordinate
+        _dict['search_this_area'] = self.search_this_area
         _dict['language_name'] = self.language_name
         _dict['language_code'] = self.language_code
         _dict['depth'] = self.depth
@@ -131,6 +134,7 @@ class BusinessDataGoogleHotelSearchesTaskPostRequestInfo(BaseModel):
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),
             "location_coordinate": obj.get("location_coordinate"),
+            "search_this_area": obj.get("search_this_area"),
             "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
             "depth": obj.get("depth"),
