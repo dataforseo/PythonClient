@@ -23,7 +23,7 @@ class KnowledgeGraphExpandedElement(BaseModel):
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
-    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element. if there are none, equals null")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     table: Optional[Table] = Field(default=None, description=r"table present in the element. the header and content of the table present in the element")
     __properties: ClassVar[List[str]] = [

@@ -45,7 +45,7 @@ class GoogleFinanceMetricsBundleInfo(BaseModel):
     cash_from_operations_delta: Optional[StrictFloat] = Field(default=None, description=r"change in cash from operations")
     cash_from_investing: Optional[StrictFloat] = Field(default=None, description=r"cash from investing")
     cash_from_investing_delta: Optional[StrictFloat] = Field(default=None, description=r"change in cash from investing")
-    cash_from_financing: Optional[StrictFloat] = Field(default=None, description=r"cash from financing/em>")
+    cash_from_financing: Optional[StrictFloat] = Field(default=None, description=r"cash from financing")
     cash_from_financing_delta: Optional[StrictFloat] = Field(default=None, description=r"change in cash from financing")
     net_change_in_cash: Optional[StrictFloat] = Field(default=None, description=r"net change in cash")
     net_change_in_cash_delta: Optional[StrictFloat] = Field(default=None, description=r"change in net change in cash")

@@ -17,7 +17,7 @@ class SerpGoogleDatasetInfoLiveAdvancedRequestInfo(BaseModel):
     """ # noqa: E501
     dataset_id: Optional[StrictStr] = Field(default=None, description=r"ID of the dataset. required field. you can find dataset ID in the dataset URL or dataset item of Google Dataset Search result. example:. L2cvMTFqbl85ZHN6MQ==")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language code. optional field. if you use this field, you don't need to specify language_name. possible value:. en")
-    device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. possible value: desktop")
+    device: Optional[StrictStr] = Field(default=None, description=r"device type. optional field. return results for a specific device type. possible value: desktop")
     language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine language. optional field. if you use this field, you don't need to specify language_code. possible value:. English")
     os: Optional[StrictStr] = Field(default=None, description=r"device operating system. optional field. possible values: windows, macos. default value: windows")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")

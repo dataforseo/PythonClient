@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.link_element import LinkElement
-from dataforseo_client.models.licenses_element import LicensesElement
+from dataforseo_client.models.amazon_label_element import AmazonLabelElement
 from dataforseo_client.models.formats_element import FormatsElement
 from dataforseo_client.models.authors_element import AuthorsElement
 from dataforseo_client.models.period_covered import PeriodCovered
@@ -34,10 +34,10 @@ class Dataset(BaseModel):
     unique_identifier: Optional[StrictStr] = Field(default=None, description=r"digital identifier of an object. unique digital identifier of the dataset. example: https://doi.org/10.5061/dryad.hmgqnk9m3")
     related_article: Optional[StrictStr] = Field(default=None, description=r"link to related article. link to the published article that is related to the dataset")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google Dataset’s search results. if there are none, equals null")
-    dataset_providers: Optional[List[Optional[LicensesElement]]] = Field(default=None, description=r"the list of institutions that provided the dataset")
+    dataset_providers: Optional[List[Optional[AmazonLabelElement]]] = Field(default=None, description=r"the list of institutions that provided the dataset")
     formats: Optional[List[Optional[FormatsElement]]] = Field(default=None, description=r"the list of file formats of the dataset")
     authors: Optional[List[Optional[AuthorsElement]]] = Field(default=None, description=r"the list of authors of the dataset")
-    licenses: Optional[List[Optional[LicensesElement]]] = Field(default=None, description=r"the list of licenses issued to the dataset")
+    licenses: Optional[List[Optional[AmazonLabelElement]]] = Field(default=None, description=r"the list of licenses issued to the dataset")
     updated_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was last updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2022-11-27 02:00:00 +00:00")
     area_covered: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"the list of areas covered in the dataset. for example: Africa, Global")
     period_covered: Optional[PeriodCovered] = Field(default=None, description=r"period covered in the dataset")
@@ -161,10 +161,10 @@ class Dataset(BaseModel):
             "unique_identifier": obj.get("unique_identifier"),
             "related_article": obj.get("related_article"),
             "links": [LinkElement.from_dict(_item) for _item in obj["links"]] if obj.get("links") is not None else None,
-            "dataset_providers": [LicensesElement.from_dict(_item) for _item in obj["dataset_providers"]] if obj.get("dataset_providers") is not None else None,
+            "dataset_providers": [AmazonLabelElement.from_dict(_item) for _item in obj["dataset_providers"]] if obj.get("dataset_providers") is not None else None,
             "formats": [FormatsElement.from_dict(_item) for _item in obj["formats"]] if obj.get("formats") is not None else None,
             "authors": [AuthorsElement.from_dict(_item) for _item in obj["authors"]] if obj.get("authors") is not None else None,
-            "licenses": [LicensesElement.from_dict(_item) for _item in obj["licenses"]] if obj.get("licenses") is not None else None,
+            "licenses": [AmazonLabelElement.from_dict(_item) for _item in obj["licenses"]] if obj.get("licenses") is not None else None,
             "updated_date": obj.get("updated_date"),
             "area_covered": obj.get("area_covered"),
             "period_covered": PeriodCovered.from_dict(obj["period_covered"]) if obj.get("period_covered") is not None else None,

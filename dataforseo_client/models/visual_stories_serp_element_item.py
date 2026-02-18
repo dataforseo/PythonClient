@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.licenses_element import LicensesElement
+from dataforseo_client.models.amazon_label_element import AmazonLabelElement
 from dataforseo_client.models.base_serp_api_element_item import BaseSerpApiElementItem
 from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 
@@ -25,7 +25,7 @@ class VisualStoriesSerpElementItem(BaseSerpApiElementItem):
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
-    items: Optional[List[Optional[LicensesElement]]] = Field(default=None, description=r"contains arrays of elements available in the list")
+    items: Optional[List[Optional[AmazonLabelElement]]] = Field(default=None, description=r"contains arrays of elements available in the list")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 
@@ -93,7 +93,7 @@ class VisualStoriesSerpElementItem(BaseSerpApiElementItem):
             "rectangle": AiModeRectangleInfo.from_dict(obj["rectangle"]) if obj.get("rectangle") is not None else None,
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
-            "items": [LicensesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [AmazonLabelElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

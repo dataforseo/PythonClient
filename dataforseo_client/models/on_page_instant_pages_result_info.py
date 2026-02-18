@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.on_page_stylesheet_resource_item import OnPageStylesheetResourceItem
+from dataforseo_client.models.base_on_page_resource_item import BaseOnPageResourceItem
 
 
 
@@ -20,7 +20,7 @@ class OnPageInstantPagesResultInfo(BaseModel):
     crawl_status: Optional[Any] = Field(default=None, description=r"details of the crawling session. in this case the value will be null")
     crawl_gateway_address: Optional[StrictStr] = Field(default=None, description=r"crawler ip address. displays the IP address used by the crawler to initiate the current crawling session. you can find the full list of IPs used by our crawler in the Overview section")
     items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[List[Optional[OnPageStylesheetResourceItem]]] = Field(default=None, description=r"items array")
+    items: Optional[List[Optional[BaseOnPageResourceItem]]] = Field(default=None, description=r"items array")
     __properties: ClassVar[List[str]] = [
         "crawl_progress", 
         "crawl_status", 
@@ -79,7 +79,7 @@ class OnPageInstantPagesResultInfo(BaseModel):
             "crawl_status": obj.get("crawl_status"),
             "crawl_gateway_address": obj.get("crawl_gateway_address"),
             "items_count": obj.get("items_count"),
-            "items": [OnPageStylesheetResourceItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [BaseOnPageResourceItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

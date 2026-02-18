@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**target** | **StrictStr** | domain<br>required field<br>the domain name of the target website<br>the domain should be specified without https:// and www. |[optional]|
+**target** | **StrictStr** | domain<br>required field<br>the domain name of the target website<br>the domain should be specified without https:// and www.<br>you can specify page URL, but the results will be specific to the domain in the specified URL |[optional]|
 **location_name** | **StrictStr** | full name of the location<br>required field if you don’t specify location_code<br>Note: it is required to specify either location_name or location_code<br>you can receive the list of available locations with their location_name by making a separate request to the<br>https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages<br>example:<br>United Kingdom |[optional]|
 **location_code** | **StrictInt** | location code<br>required field if you don’t specify location_name<br>Note: it is required to specify either location_name or location_code<br>you can receive the list of available locations with their location_code by making a separate request to the<br>https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages<br>example:<br>2840 |[optional]|
 **language_name** | **StrictStr** | full name of the language<br>required field if you don’t specify language_code<br>Note: it is required to specify either language_name or language_code<br>you can receive the list of available languages with their language_name by making a separate request to the<br>https://api.dataforseo.com/v3/dataforseo_labs/locations_and_languages<br>example:<br>English |[optional]|

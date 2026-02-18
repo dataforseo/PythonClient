@@ -104,13 +104,6 @@ All URIs are relative to *https://api.dataforseo.com*
 [**bingOrganicLiveRegular**](SerpApi.md#bingOrganicLiveRegular) | **POST**  /v3/serp/bing/organic/live/regular  |
 [**bingOrganicLiveAdvanced**](SerpApi.md#bingOrganicLiveAdvanced) | **POST**  /v3/serp/bing/organic/live/advanced  |
 [**bingOrganicLiveHtml**](SerpApi.md#bingOrganicLiveHtml) | **POST**  /v3/serp/bing/organic/live/html  |
-[**bingLocalPackTaskPost**](SerpApi.md#bingLocalPackTaskPost) | **POST**  /v3/serp/bing/local_pack/task_post  |
-[**bingLocalPackTasksReady**](SerpApi.md#bingLocalPackTasksReady) | **GET**  /v3/serp/bing/local_pack/tasks_ready  |
-[**bingLocalPackTasksFixed**](SerpApi.md#bingLocalPackTasksFixed) | **GET**  /v3/serp/bing/local_pack/tasks_fixed  |
-[**bingLocalPackTaskGetRegular**](SerpApi.md#bingLocalPackTaskGetRegular) | **GET**  /v3/serp/bing/local_pack/task_get/regular/{id}  |
-[**bingLocalPackTaskGetHtml**](SerpApi.md#bingLocalPackTaskGetHtml) | **GET**  /v3/serp/bing/local_pack/task_get/html/{id}  |
-[**bingLocalPackLiveRegular**](SerpApi.md#bingLocalPackLiveRegular) | **POST**  /v3/serp/bing/local_pack/live/regular  |
-[**bingLocalPackLiveHtml**](SerpApi.md#bingLocalPackLiveHtml) | **POST**  /v3/serp/bing/local_pack/live/html  |
 [**youtubeLocations**](SerpApi.md#youtubeLocations) | **GET**  /v3/serp/youtube/locations  |
 [**youtubeLocationsCountry**](SerpApi.md#youtubeLocationsCountry) | **GET**  /v3/serp/youtube/locations/{country}  |
 [**youtubeLanguages**](SerpApi.md#youtubeLanguages) | **GET**  /v3/serp/youtube/languages  |
@@ -119,6 +112,11 @@ All URIs are relative to *https://api.dataforseo.com*
 [**youtubeVideoInfoTasksFixed**](SerpApi.md#youtubeVideoInfoTasksFixed) | **GET**  /v3/serp/youtube/video_info/tasks_fixed  |
 [**youtubeVideoInfoTaskGetAdvanced**](SerpApi.md#youtubeVideoInfoTaskGetAdvanced) | **GET**  /v3/serp/youtube/video_info/task_get/advanced/{id}  |
 [**youtubeVideoInfoLiveAdvanced**](SerpApi.md#youtubeVideoInfoLiveAdvanced) | **POST**  /v3/serp/youtube/video_info/live/advanced  |
+[**youtubeOrganicTaskPost**](SerpApi.md#youtubeOrganicTaskPost) | **POST**  /v3/serp/youtube/organic/task_post  |
+[**youtubeOrganicTasksReady**](SerpApi.md#youtubeOrganicTasksReady) | **GET**  /v3/serp/youtube/organic/tasks_ready  |
+[**youtubeOrganicTasksFixed**](SerpApi.md#youtubeOrganicTasksFixed) | **GET**  /v3/serp/youtube/organic/tasks_fixed  |
+[**youtubeOrganicTaskGetAdvanced**](SerpApi.md#youtubeOrganicTaskGetAdvanced) | **GET**  /v3/serp/youtube/organic/task_get/advanced/{id}  |
+[**youtubeOrganicLiveAdvanced**](SerpApi.md#youtubeOrganicLiveAdvanced) | **POST**  /v3/serp/youtube/organic/live/advanced  |
 [**youtubeVideoSubtitlesTaskPost**](SerpApi.md#youtubeVideoSubtitlesTaskPost) | **POST**  /v3/serp/youtube/video_subtitles/task_post  |
 [**youtubeVideoSubtitlesTasksReady**](SerpApi.md#youtubeVideoSubtitlesTasksReady) | **GET**  /v3/serp/youtube/video_subtitles/tasks_ready  |
 [**youtubeVideoSubtitlesTasksFixed**](SerpApi.md#youtubeVideoSubtitlesTasksFixed) | **GET**  /v3/serp/youtube/video_subtitles/tasks_fixed  |
@@ -5940,409 +5938,6 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
-<a id="bingLocalPackTaskPost"></a>
-# **bingLocalPackTaskPost**
-> SerpBingLocalPackTaskPostResponseInfo bingLocalPackTaskPost()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_serp_bing_local_pack_task_post_request_info import List[Optional[SerpBingLocalPackTaskPostRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.bing_local_pack_task_post([
-            [
-                SerpBingLocalPackTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[SerpBingLocalPackTaskPostRequestInfo]]&gt;**](List[Optional[SerpBingLocalPackTaskPostRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**SerpBingLocalPackTaskPostResponseInfo**](SerpBingLocalPackTaskPostResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="bingLocalPackTasksReady"></a>
-# **bingLocalPackTasksReady**
-> SerpBingLocalPackTasksReadyResponseInfo bingLocalPackTasksReady()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.bing_local_pack_tasks_ready()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpBingLocalPackTasksReadyResponseInfo**](SerpBingLocalPackTasksReadyResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="bingLocalPackTasksFixed"></a>
-# **bingLocalPackTasksFixed**
-> SerpBingLocalPackTasksFixedResponseInfo bingLocalPackTasksFixed()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.bing_local_pack_tasks_fixed()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpBingLocalPackTasksFixedResponseInfo**](SerpBingLocalPackTasksFixedResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="bingLocalPackTaskGetRegular"></a>
-# **bingLocalPackTaskGetRegular**
-> SerpBingLocalPackTaskGetRegularResponseInfo bingLocalPackTaskGetRegular()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        id = 
-        response = serp_api.bing_local_pack_task_get_regular(id)
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpBingLocalPackTaskGetRegularResponseInfo**](SerpBingLocalPackTaskGetRegularResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="bingLocalPackTaskGetHtml"></a>
-# **bingLocalPackTaskGetHtml**
-> SerpBingLocalPackTaskGetHtmlResponseInfo bingLocalPackTaskGetHtml()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        id = 
-        response = serp_api.bing_local_pack_task_get_html(id)
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpBingLocalPackTaskGetHtmlResponseInfo**](SerpBingLocalPackTaskGetHtmlResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="bingLocalPackLiveRegular"></a>
-# **bingLocalPackLiveRegular**
-> SerpBingLocalPackLiveRegularResponseInfo bingLocalPackLiveRegular()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_serp_bing_local_pack_live_regular_request_info import List[Optional[SerpBingLocalPackLiveRegularRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.bing_local_pack_live_regular([
-            [
-                SerpBingLocalPackLiveRegularRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[SerpBingLocalPackLiveRegularRequestInfo]]&gt;**](List[Optional[SerpBingLocalPackLiveRegularRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**SerpBingLocalPackLiveRegularResponseInfo**](SerpBingLocalPackLiveRegularResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="bingLocalPackLiveHtml"></a>
-# **bingLocalPackLiveHtml**
-> SerpBingLocalPackLiveHtmlResponseInfo bingLocalPackLiveHtml()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_serp_bing_local_pack_live_html_request_info import List[Optional[SerpBingLocalPackLiveHtmlRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.bing_local_pack_live_html([
-            [
-                SerpBingLocalPackLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[SerpBingLocalPackLiveHtmlRequestInfo]]&gt;**](List[Optional[SerpBingLocalPackLiveHtmlRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**SerpBingLocalPackLiveHtmlResponseInfo**](SerpBingLocalPackLiveHtmlResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
 <a id="youtubeLocations"></a>
 # **youtubeLocations**
 > SerpYoutubeLocationsResponseInfo youtubeLocations()
@@ -6774,6 +6369,292 @@ except ApiException as e:
 ### Return type
 
 [**SerpYoutubeVideoInfoLiveAdvancedResponseInfo**](SerpYoutubeVideoInfoLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="youtubeOrganicTaskPost"></a>
+# **youtubeOrganicTaskPost**
+> SerpYoutubeOrganicTaskPostResponseInfo youtubeOrganicTaskPost()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_youtube_organic_task_post_request_info import List[Optional[SerpYoutubeOrganicTaskPostRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.youtube_organic_task_post([
+            [
+                SerpYoutubeOrganicTaskPostRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="audi",
+                ),
+            ]
+        ]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpYoutubeOrganicTaskPostRequestInfo]]&gt;**](List[Optional[SerpYoutubeOrganicTaskPostRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpYoutubeOrganicTaskPostResponseInfo**](SerpYoutubeOrganicTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="youtubeOrganicTasksReady"></a>
+# **youtubeOrganicTasksReady**
+> SerpYoutubeOrganicTasksReadyResponseInfo youtubeOrganicTasksReady()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.youtube_organic_tasks_ready()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpYoutubeOrganicTasksReadyResponseInfo**](SerpYoutubeOrganicTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="youtubeOrganicTasksFixed"></a>
+# **youtubeOrganicTasksFixed**
+> SerpYoutubeOrganicTasksFixedResponseInfo youtubeOrganicTasksFixed()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.youtube_organic_tasks_fixed()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpYoutubeOrganicTasksFixedResponseInfo**](SerpYoutubeOrganicTasksFixedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="youtubeOrganicTaskGetAdvanced"></a>
+# **youtubeOrganicTaskGetAdvanced**
+> SerpYoutubeOrganicTaskGetAdvancedResponseInfo youtubeOrganicTaskGetAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        id = 
+        response = serp_api.youtube_organic_task_get_advanced(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**SerpYoutubeOrganicTaskGetAdvancedResponseInfo**](SerpYoutubeOrganicTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="youtubeOrganicLiveAdvanced"></a>
+# **youtubeOrganicLiveAdvanced**
+> SerpYoutubeOrganicLiveAdvancedResponseInfo youtubeOrganicLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.serp_api import SerpApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_serp_youtube_organic_live_advanced_request_info import List[Optional[SerpYoutubeOrganicLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        serp_api = SerpApi(api_client)
+
+        response = serp_api.youtube_organic_live_advanced([
+            [
+                SerpYoutubeOrganicLiveAdvancedRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="audi",
+                ),
+            ]
+        ]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[SerpYoutubeOrganicLiveAdvancedRequestInfo]]&gt;**](List[Optional[SerpYoutubeOrganicLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**SerpYoutubeOrganicLiveAdvancedResponseInfo**](SerpYoutubeOrganicLiveAdvancedResponseInfo.md)
 
 ### Authorization
 

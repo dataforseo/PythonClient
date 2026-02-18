@@ -11,4 +11,4 @@
 **language_code** | **StrictStr** | language code in a POST array |[optional]|
 **total_count** | **StrictInt** | total amount of results in our database relevant to your request |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[DataforseoLabsSubdomainsLiveItem]]** | contains subdomains and related data |[optional]|
+**items** | **List[Optional[DataforseoLabsGoogleSubdomainsLiveItem]]** | contains subdomains and related data |[optional]|

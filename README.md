@@ -7,7 +7,7 @@ This is a Python client providing you, as a developer, with a tool for obtaining
 
 DataForSEO API uses REST technology for interchanging data between your application and our service. The data exchange is made through the widely used HTTP protocol, which allows using our API with almost any programming language.
 
-Client contains 13 sections (aka APIs):
+Client contains 12 sections (aka APIs):
 
 - AI Optimization API ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/AiOptimizationApi.md) | [api docs](https://docs.dataforseo.com/v3/ai_optimization/overview/))
 - SERP ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/SerpApi.md) | [api docs](https://docs.dataforseo.com/v3/serp/overview/?bash))
@@ -17,7 +17,6 @@ Client contains 13 sections (aka APIs):
 - Backlinks ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/BacklinksApi.md) | [api docs](https://docs.dataforseo.com/v3/backlinks/overview/?bash))
 - OnPage ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/OnPageApi.md) | [api docs](https://docs.dataforseo.com/v3/on_page/overview/?bash))
 - Content Analysis ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/ContentAnalysisApi.md) | [api docs](https://docs.dataforseo.com/v3/content_analysis/overview/?bash))
-- Content Generation ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/ContentGenerationApi.md) | [api docs](https://docs.dataforseo.com/v3/content_generation/overview/?bash))
 - Merchant ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/MerchantApi.md) | [api docs](https://docs.dataforseo.com/v3/merchant/overview/?bash))
 - AppData ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/AppDataApi.md) | [api docs](https://docs.dataforseo.com/v3/app_data/overview/?bash))
 - Business Data ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/BusinessDataApi.md) | [api docs](https://docs.dataforseo.com/v3/business_data/overview/?bash))

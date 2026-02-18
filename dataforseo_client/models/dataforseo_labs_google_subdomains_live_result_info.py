@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.dataforseo_labs_subdomains_live_item import DataforseoLabsSubdomainsLiveItem
+from dataforseo_client.models.dataforseo_labs_google_subdomains_live_item import DataforseoLabsGoogleSubdomainsLiveItem
 
 
 
@@ -22,7 +22,7 @@ class DataforseoLabsGoogleSubdomainsLiveResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsSubdomainsLiveItem]]] = Field(default=None, description=r"contains subdomains and related data")
+    items: Optional[List[Optional[DataforseoLabsGoogleSubdomainsLiveItem]]] = Field(default=None, description=r"contains subdomains and related data")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "target", 
@@ -87,7 +87,7 @@ class DataforseoLabsGoogleSubdomainsLiveResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),
             "items_count": obj.get("items_count"),
-            "items": [DataforseoLabsSubdomainsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [DataforseoLabsGoogleSubdomainsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

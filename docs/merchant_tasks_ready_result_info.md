@@ -10,5 +10,5 @@
 **se_type** | **StrictStr** | type of search engine |[optional]|
 **date_posted** | **StrictStr** | date when the task was posted (in the UTC format) |[optional]|
 **tag** | **StrictStr** | user-defined task identifier |[optional]|
-**endpoint_advanced** | **StrictStr** | URL for collecting the results of the Amazon Reviews Advanced task |[optional]|
-**endpoint_html** | **StrictStr** | URL for collecting the results of the Amazon Reviews HTML task |[optional]|
+**endpoint_advanced** | **StrictStr** | URL for collecting the results of Amazon Sellers Advanced task |[optional]|
+**endpoint_html** | **StrictStr** | URL for collecting the results of Amazon Sellers HTML task |[optional]|

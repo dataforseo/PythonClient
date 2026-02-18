@@ -16,10 +16,10 @@ class SerpScreenshotRequestInfo(BaseModel):
     SerpScreenshotRequestInfo
     """ # noqa: E501
     task_id: Optional[StrictStr] = Field(default=None, description=r"task identifier. required field. unique identifier of the associated task in the UUID format. you will be able to use it within 7 days to request the results of the task at any time")
-    browser_preset: Optional[StrictStr] = Field(default=None, description=r"browser resolution preset. optional field. browser preset associated with a certain device type. can take the following values: desktop, tablet, mobile. note: by default, browser preset corresponds to the device type specified in the POST request")
-    browser_screen_width: Optional[StrictInt] = Field(default=None, description=r"width of the browser resolution. optional field. can be specified in the following range: 240-9999")
-    browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"height of the browser resolution. optional field. can be specified in the following range: 240-9999")
-    browser_screen_scale_factor: Optional[StrictFloat] = Field(default=None, description=r"browser scale factor. optional field. can be specified in the following range: 0.5-3. default value: 1")
+    browser_preset: Optional[StrictStr] = Field(default=None, description=r"browser resolution preset. optional field. browser preset associated with a certain device type. can take the following values: desktop, tablet, mobile. Note: by default, browser preset corresponds to the device type specified in the POST request")
+    browser_screen_width: Optional[StrictInt] = Field(default=None, description=r"width of the browser resolution. optional field. can be specified in the following range: 240-9999. default value for desktop: 1920. default value for mobile: 390. default value for table: 1024")
+    browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"height of the browser resolution. optional field. can be specified in the following range: 240-9999. default value for desktop: 1080. default value for mobile: 844. default value for table: 1366")
+    browser_screen_scale_factor: Optional[StrictFloat] = Field(default=None, description=r"browser scale factor. optional field. can be specified in the following range: 0.5-3. default value for desktop: 1. default value for mobile: 3. default value for table: 2")
     page: Optional[StrictInt] = Field(default=None, description=r"number of SERP pages. optional field. if depth in the corresponding Task POST request exceeds 10 results (or 1 SERP page), specify the number of SERP pages to screenshot;. default value: 1")
     __properties: ClassVar[List[str]] = [
         "task_id", 

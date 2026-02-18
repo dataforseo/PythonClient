@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.licenses_element import LicensesElement
+from dataforseo_client.models.amazon_label_element import AmazonLabelElement
 
 
 
@@ -20,7 +20,7 @@ class RefinementChipsElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    options: Optional[List[Optional[LicensesElement]]] = Field(default=None, description=r"further search refinement options")
+    options: Optional[List[Optional[AmazonLabelElement]]] = Field(default=None, description=r"further search refinement options")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -79,7 +79,7 @@ class RefinementChipsElement(BaseModel):
             "title": obj.get("title"),
             "url": obj.get("url"),
             "domain": obj.get("domain"),
-            "options": [LicensesElement.from_dict(_item) for _item in obj["options"]] if obj.get("options") is not None else None,
+            "options": [AmazonLabelElement.from_dict(_item) for _item in obj["options"]] if obj.get("options") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

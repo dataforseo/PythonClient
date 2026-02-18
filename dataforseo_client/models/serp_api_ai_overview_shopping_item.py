@@ -21,7 +21,7 @@ class SerpApiAiOverviewShoppingItem(BaseSerpApiAiOverviewElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format")
-    items: Optional[List[Optional[AiModeAiOverviewShoppingElementInfo]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
+    items: Optional[List[Optional[AiModeAiOverviewShoppingElementInfo]]] = Field(default=None, description=r"popular keywords relevant to the initial search query. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

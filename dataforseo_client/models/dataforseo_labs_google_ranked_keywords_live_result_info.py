@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.dataforseo_labs_ranked_keywords_live_item import DataforseoLabsRankedKeywordsLiveItem
+from dataforseo_client.models.dataforseo_labs_google_ranked_keywords_live_item import DataforseoLabsGoogleRankedKeywordsLiveItem
 from dataforseo_client.models.dataforseo_labs_metrics_info import DataforseoLabsMetricsInfo
 
 
@@ -25,7 +25,7 @@ class DataforseoLabsGoogleRankedKeywordsLiveResultInfo(BaseModel):
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to the specified domain or webpage . ranking data is provided by the rank_group parameters that show the result’s rank considering only equivalent SERP elements")
     metrics_absolute: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to the specified domain or webpage. ranking data is provided by the rank_absolute parameters that indicate the result’s position among all SERP elements")
-    items: Optional[List[Optional[DataforseoLabsRankedKeywordsLiveItem]]] = Field(default=None, description=r"contains ranked keywords and related data")
+    items: Optional[List[Optional[DataforseoLabsGoogleRankedKeywordsLiveItem]]] = Field(default=None, description=r"contains ranked keywords and related data")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "target", 
@@ -96,7 +96,7 @@ class DataforseoLabsGoogleRankedKeywordsLiveResultInfo(BaseModel):
             "items_count": obj.get("items_count"),
             "metrics": obj.get("metrics"),
             "metrics_absolute": obj.get("metrics_absolute"),
-            "items": [DataforseoLabsRankedKeywordsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [DataforseoLabsGoogleRankedKeywordsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

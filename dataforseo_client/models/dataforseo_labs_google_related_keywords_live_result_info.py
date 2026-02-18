@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.keyword_data_info import KeywordDataInfo
-from dataforseo_client.models.dataforseo_labs_related_keywords_live_item import DataforseoLabsRelatedKeywordsLiveItem
+from dataforseo_client.models.dataforseo_labs_google_related_keywords_live_item import DataforseoLabsGoogleRelatedKeywordsLiveItem
 
 
 
@@ -24,7 +24,7 @@ class DataforseoLabsGoogleRelatedKeywordsLiveResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsRelatedKeywordsLiveItem]]] = Field(default=None, description=r"contains keywords and related data")
+    items: Optional[List[Optional[DataforseoLabsGoogleRelatedKeywordsLiveItem]]] = Field(default=None, description=r"contains keywords and related data")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "seed_keyword", 
@@ -92,7 +92,7 @@ class DataforseoLabsGoogleRelatedKeywordsLiveResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),
             "items_count": obj.get("items_count"),
-            "items": [DataforseoLabsRelatedKeywordsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [DataforseoLabsGoogleRelatedKeywordsLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

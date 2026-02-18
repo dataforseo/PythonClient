@@ -42,7 +42,7 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"extended description. if there is none, equals null")
     links: Optional[List[Optional[AdLinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
     price: Optional[PriceInfo] = Field(default=None, description=r"price of booking a place for the specified dates of stay")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

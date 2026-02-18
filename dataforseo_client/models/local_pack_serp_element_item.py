@@ -31,7 +31,7 @@ class LocalPackSerpElementItem(BaseSerpApiElementItem):
     phone: Optional[StrictStr] = Field(default=None, description=r"phone number")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -36,7 +36,7 @@ class RelatedResult(BaseModel):
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended after the result description in SERP")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the component. if there are none, equals null")
     amp_version: Optional[StrictBool] = Field(default=None, description=r"Accelerated Mobile Pages. indicates whether an item has the Accelerated Mobile Page (AMP) version")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating. the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating. the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     about_this_result: Optional[AboutThisResultElement] = Field(default=None, description=r"contains information from the ‘About this result’ panel. ‘About this result’ panel provides additional context about why Google returned this result for the given query;. this feature appears after clicking on the three dots next to most results")

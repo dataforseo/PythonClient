@@ -28,7 +28,7 @@ class ThirdPartyReviewsSerpElementItem(BaseSerpApiElementItem):
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews")
     title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

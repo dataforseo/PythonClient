@@ -10,6 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.rating_element import RatingElement
 from dataforseo_client.models.amazon_delivery_info import AmazonDeliveryInfo
+from dataforseo_client.models.amazon_label_element import AmazonLabelElement
 from dataforseo_client.models.base_merchant_amazon_element_item import BaseMerchantAmazonElementItem
 
 
@@ -36,6 +37,7 @@ class MerchantAmazonSerpSerpElementItem(BaseMerchantAmazonElementItem):
     is_amazon_choice: Optional[StrictBool] = Field(default=None, description=r"“Amazon’s choice” label. if the value is true, the product is marked with the “Amazon’s choice” label")
     is_best_seller: Optional[StrictBool] = Field(default=None, description=r"“Best Seller” label. if the value is true, the product is marked with the “Best Seller” label")
     delivery_info: Optional[AmazonDeliveryInfo] = Field(default=None, description=r"delivery information. delivery information including free and fast delivery date ranges")
+    labels: Optional[List[Optional[AmazonLabelElement]]] = Field(default=None, description=r"product labels. array containing an object with main Amazon labels’ information. if the product contains no labels, the value will be null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -55,6 +57,7 @@ class MerchantAmazonSerpSerpElementItem(BaseMerchantAmazonElementItem):
         "is_amazon_choice", 
         "is_best_seller", 
         "delivery_info", 
+        "labels", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -99,6 +102,12 @@ class MerchantAmazonSerpSerpElementItem(BaseMerchantAmazonElementItem):
         _dict['is_amazon_choice'] = self.is_amazon_choice
         _dict['is_best_seller'] = self.is_best_seller
         _dict['delivery_info'] = self.delivery_info.to_dict() if self.delivery_info else None
+        labels_items = []
+        if self.labels:
+            for _item in self.labels:
+                if _item:
+                    labels_items.append(_item.to_dict())
+            _dict['labels'] = labels_items
         return _dict
 
 
@@ -129,6 +138,7 @@ class MerchantAmazonSerpSerpElementItem(BaseMerchantAmazonElementItem):
             "is_amazon_choice": obj.get("is_amazon_choice"),
             "is_best_seller": obj.get("is_best_seller"),
             "delivery_info": AmazonDeliveryInfo.from_dict(obj["delivery_info"]) if obj.get("delivery_info") is not None else None,
+            "labels": [AmazonLabelElement.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

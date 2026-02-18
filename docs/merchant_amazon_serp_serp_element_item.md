@@ -19,3 +19,4 @@
 **is_amazon_choice** | **StrictBool** | “Amazon’s choice” label<br>if the value is true, the product is marked with the “Amazon’s choice” label |[optional]|
 **is_best_seller** | **StrictBool** | “Best Seller” label<br>if the value is true, the product is marked with the “Best Seller” label |[optional]|
 **delivery_info** | **AmazonDeliveryInfo** | delivery information<br>delivery information including free and fast delivery date ranges |[optional]|
+**labels** | **List[Optional[AmazonLabelElement]]** | product labels<br>array containing an object with main Amazon labels’ information<br>if the product contains no labels, the value will be null |[optional]|

@@ -40,6 +40,7 @@ class AmazonProductInfo(BaseModel):
     is_amazon_choice: Optional[StrictBool] = Field(default=None, description=r"“Amazon’s choice” label. if the value is true, the product is marked with the “Amazon’s choice” label")
     rating: Optional[RatingElement] = Field(default=None, description=r"product rating info")
     is_newer_model_available: Optional[StrictBool] = Field(default=None, description=r"indicates whether the newer model of the product is available")
+    is_prime_video: Optional[StrictBool] = Field(default=None, description=r"indicates whether a product has an Amazon Prime Video label. if true, specified product is a part of Amazon Prime Video service")
     applicable_vouchers: Optional[List[Optional[AmazonApplicableVouchersItem]]] = Field(default=None, description=r"array of objects containing information about applicable vouchers")
     newer_model: Optional[AmazonProductNewerModelInfo] = Field(default=None, description=r"information about the newer model of the product")
     categories: Optional[List[Optional[ProductCategoryInfo]]] = Field(default=None, description=r"contains related product categories")
@@ -70,6 +71,7 @@ class AmazonProductInfo(BaseModel):
         "is_amazon_choice", 
         "rating", 
         "is_newer_model_available", 
+        "is_prime_video", 
         "applicable_vouchers", 
         "newer_model", 
         "categories", 
@@ -125,6 +127,7 @@ class AmazonProductInfo(BaseModel):
         _dict['is_amazon_choice'] = self.is_amazon_choice
         _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['is_newer_model_available'] = self.is_newer_model_available
+        _dict['is_prime_video'] = self.is_prime_video
         applicable_vouchers_items = []
         if self.applicable_vouchers:
             for _item in self.applicable_vouchers:
@@ -191,6 +194,7 @@ class AmazonProductInfo(BaseModel):
             "is_amazon_choice": obj.get("is_amazon_choice"),
             "rating": RatingElement.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
             "is_newer_model_available": obj.get("is_newer_model_available"),
+            "is_prime_video": obj.get("is_prime_video"),
             "applicable_vouchers": [AmazonApplicableVouchersItem.from_dict(_item) for _item in obj["applicable_vouchers"]] if obj.get("applicable_vouchers") is not None else None,
             "newer_model": AmazonProductNewerModelInfo.from_dict(obj["newer_model"]) if obj.get("newer_model") is not None else None,
             "categories": [ProductCategoryInfo.from_dict(_item) for _item in obj["categories"]] if obj.get("categories") is not None else None,

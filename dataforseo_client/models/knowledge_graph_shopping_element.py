@@ -20,7 +20,7 @@ class KnowledgeGraphShoppingElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
-    price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result")
+    price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result;. if there is none, equals null")
     source: Optional[StrictStr] = Field(default=None, description=r"source of additional information about the result")
     snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
     marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account provider. ecommerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")

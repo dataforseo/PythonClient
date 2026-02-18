@@ -26,7 +26,7 @@ class GoogleReviewsSerpElementItem(BaseSerpApiElementItem):
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     place_id: Optional[StrictStr] = Field(default=None, description=r"the identifier of a place")
     feature: Optional[StrictStr] = Field(default=None, description=r"the additional feature of the review")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")

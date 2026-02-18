@@ -29,7 +29,7 @@ class SerpApiKnowledgeGraphHotelsBookingItemElementItem(BaseSerpApiKnowledgeGrap
     date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of stay. in the format “year-month-date”. example:. 2019-11-15")
     date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of stay. in the format “year-month-date”. example:. 2019-11-17")
     data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. kc:/local:hotel booking")
-    items: Optional[List[Optional[KnowledgeGraphHotelsBookingElement]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
+    items: Optional[List[Optional[KnowledgeGraphHotelsBookingElement]]] = Field(default=None, description=r"keywords relevant to the initial search query. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

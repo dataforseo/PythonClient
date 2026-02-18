@@ -20,8 +20,8 @@ class MerchantTasksReadyResultInfo(BaseModel):
     se_type: Optional[StrictStr] = Field(default=None, description=r"type of search engine")
     date_posted: Optional[StrictStr] = Field(default=None, description=r"date when the task was posted (in the UTC format)")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier")
-    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Amazon Reviews Advanced task")
-    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Amazon Reviews HTML task")
+    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of Amazon Sellers Advanced task")
+    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of Amazon Sellers HTML task")
     __properties: ClassVar[List[str]] = [
         "id", 
         "se", 

@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.dataforseo_labs_bulk_keyword_difficulty_live_item import DataforseoLabsBulkKeywordDifficultyLiveItem
+from dataforseo_client.models.dataforseo_labs_google_bulk_keyword_difficulty_live_item import DataforseoLabsGoogleBulkKeywordDifficultyLiveItem
 
 
 
@@ -21,7 +21,7 @@ class DataforseoLabsGoogleBulkKeywordDifficultyLiveResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
     total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsBulkKeywordDifficultyLiveItem]]] = Field(default=None, description=r"contains keywords and related keyword difficulty scores")
+    items: Optional[List[Optional[DataforseoLabsGoogleBulkKeywordDifficultyLiveItem]]] = Field(default=None, description=r"contains keywords and related keyword difficulty scores")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "location_code", 
@@ -83,7 +83,7 @@ class DataforseoLabsGoogleBulkKeywordDifficultyLiveResultInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "total_count": obj.get("total_count"),
             "items_count": obj.get("items_count"),
-            "items": [DataforseoLabsBulkKeywordDifficultyLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [DataforseoLabsGoogleBulkKeywordDifficultyLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

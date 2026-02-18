@@ -19,7 +19,7 @@ class ChatGptProductsElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     product_id: Optional[StrictStr] = Field(default=None, description=r"product id")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local businesses. popularity rate based on reviews as displayed in the results")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local business. popularity rate based on reviews as displayed in the results")
     price: Optional[StrictFloat] = Field(default=None, description=r"product price")
     currency: Optional[StrictStr] = Field(default=None, description=r"currency of the listed price. ISO code of the currency applied to the price")
     tag: Optional[StrictStr] = Field(default=None, description=r"tag text")

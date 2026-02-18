@@ -35,7 +35,7 @@
 **cash_from_operations_delta** | **StrictFloat** | change in cash from operations |[optional]|
 **cash_from_investing** | **StrictFloat** | cash from investing |[optional]|
 **cash_from_investing_delta** | **StrictFloat** | change in cash from investing |[optional]|
-**cash_from_financing** | **StrictFloat** | cash from financing/em> |[optional]|
+**cash_from_financing** | **StrictFloat** | cash from financing |[optional]|
 **cash_from_financing_delta** | **StrictFloat** | change in cash from financing |[optional]|
 **net_change_in_cash** | **StrictFloat** | net change in cash |[optional]|
 **net_change_in_cash_delta** | **StrictFloat** | change in net change in cash |[optional]|

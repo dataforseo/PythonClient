@@ -28,7 +28,7 @@ class SerpYoutubeVideoSubtitlesLiveAdvancedResultInfo(BaseModel):
     unsupported_language: Optional[StrictBool] = Field(default=None, description=r"indicates whether the language is unsupported by the system")
     translate_language: Optional[StrictStr] = Field(default=None, description=r"language code of translated text")
     origin_language: Optional[StrictStr] = Field(default=None, description=r"language code of original text")
-    category: Optional[StrictStr] = Field(default=None, description=r"the category the video belongs to")
+    category: Optional[StrictStr] = Field(default=None, description=r"the category the video belongs to. Note: this field is deprecated and always returns null")
     subtitles_count: Optional[StrictInt] = Field(default=None, description=r"number of subtitles in the video")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the video")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")

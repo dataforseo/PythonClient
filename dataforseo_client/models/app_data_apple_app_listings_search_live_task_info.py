@@ -8,6 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.app_data_apple_app_listings_search_live_result_info import AppDataAppleAppListingsSearchLiveResultInfo
 from dataforseo_client.models.base_response_task_info import BaseResponseTaskInfo
 
 
@@ -24,7 +25,7 @@ class AppDataAppleAppListingsSearchLiveTaskInfo(BaseModel):
     result_count: Optional[StrictInt] = Field(default=None, description=r"number of elements in the result array")
     path: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URL path")
     data: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"contains the same parameters that you specified in the POST request")
-    result: Optional[Any] = Field(default=None, description=r"array of results")
+    result: Optional[List[Optional[AppDataAppleAppListingsSearchLiveResultInfo]]] = Field(default=None, description=r"array of results")
     __properties: ClassVar[List[str]] = [
         "id", 
         "status_code", 
@@ -69,7 +70,12 @@ class AppDataAppleAppListingsSearchLiveTaskInfo(BaseModel):
         _dict['result_count'] = self.result_count
         _dict['path'] = self.path
         _dict['data'] = self.data
-        _dict['result'] = self.result
+        result_items = []
+        if self.result:
+            for _item in self.result:
+                if _item:
+                    result_items.append(_item.to_dict())
+            _dict['result'] = result_items
         return _dict
 
 
@@ -90,7 +96,7 @@ class AppDataAppleAppListingsSearchLiveTaskInfo(BaseModel):
             "result_count": obj.get("result_count"),
             "path": obj.get("path"),
             "data": obj.get("data"),
-            "result": obj.get("result"),
+            "result": [AppDataAppleAppListingsSearchLiveResultInfo.from_dict(_item) for _item in obj["result"]] if obj.get("result") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -24,6 +24,7 @@ class AppendixUserDataResultInfo(BaseModel):
     money: Optional[AppendixMoneyData] = Field(default=None, description=r"section of your spending, USD")
     price: Optional[AppendixPriceData] = Field(default=None, description=r"pricing")
     backlinks_subscription_expiry_date: Optional[StrictStr] = Field(default=None, description=r"expiry date of the backlinks api subscription. date and time when the current subscription to Backlinks API expires;. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-06-15 12:57:46 +00:00. Note: if there is no active subscription to Backlinks API, the value equals null")
+    llm_mentions_subscription_expiry_date: Optional[StrictStr] = Field(default=None, description=r"expiry date of the llm mentions api subscription. date and time when the current subscription to LLM Mentions API expires;. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2026-02-28 14:01:38 +00:00. Note: if there is no active subscription to LLM Mentions API, the value equals null")
     __properties: ClassVar[List[str]] = [
         "login", 
         "timezone", 
@@ -31,6 +32,7 @@ class AppendixUserDataResultInfo(BaseModel):
         "money", 
         "price", 
         "backlinks_subscription_expiry_date", 
+        "llm_mentions_subscription_expiry_date", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -63,6 +65,7 @@ class AppendixUserDataResultInfo(BaseModel):
         _dict['money'] = self.money.to_dict() if self.money else None
         _dict['price'] = self.price.to_dict() if self.price else None
         _dict['backlinks_subscription_expiry_date'] = self.backlinks_subscription_expiry_date
+        _dict['llm_mentions_subscription_expiry_date'] = self.llm_mentions_subscription_expiry_date
         return _dict
 
 
@@ -81,6 +84,7 @@ class AppendixUserDataResultInfo(BaseModel):
             "money": AppendixMoneyData.from_dict(obj["money"]) if obj.get("money") is not None else None,
             "price": AppendixPriceData.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "backlinks_subscription_expiry_date": obj.get("backlinks_subscription_expiry_date"),
+            "llm_mentions_subscription_expiry_date": obj.get("llm_mentions_subscription_expiry_date"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

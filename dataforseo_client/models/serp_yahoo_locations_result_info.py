@@ -19,7 +19,7 @@ class SerpYahooLocationsResultInfo(BaseModel):
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
     location_code_parent: Optional[StrictInt] = Field(default=None, description=r"the code of the superordinate location. example:. 'location_code': 9041134,. 'location_name': 'Vienna International Airport,Lower Austria,Austria',. 'location_code_parent': 20044. where location_code_parent corresponds to:. 'location_code': 20044,. 'location_name': 'Lower Austria,Austria'")
     country_iso_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the location")
-    location_type: Optional[StrictStr] = Field(default=None, description=r"location type")
+    location_type: Optional[StrictStr] = Field(default=None, description=r"location type. indicates the geographic classification of the location. example:. 'location_type': 'Country', or 'location_type': 'State'")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 
