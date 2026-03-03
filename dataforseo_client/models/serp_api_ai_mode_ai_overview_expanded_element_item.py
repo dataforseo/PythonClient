@@ -19,11 +19,11 @@ class SerpApiAiModeAiOverviewExpandedElementItem(BaseSerpApiAiModeAiOverviewElem
     SerpApiAiModeAiOverviewExpandedElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
+    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERPcan take the following values:left, right")
     title: Optional[StrictStr] = Field(default=None, description=r"link anchor text")
-    text: Optional[StrictStr] = Field(default=None, description=r"reference text. text snippet from the page that was used to generate the ai_overview_element")
+    text: Optional[StrictStr] = Field(default=None, description=r"reference texttext snippet from the page that was used to generate the ai_overview_element")
     components: Optional[List[Optional[AiModeAiOverviewExpandedComponentInfo]]] = Field(default=None, description=r"array of components of the element")
-    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the itemincludes references to webpages that may have been used to generate the ai_overview")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

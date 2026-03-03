@@ -15,10 +15,9 @@ class AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo(BaseModel):
     """
     AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. required field. you can specify up to 2000 characters in the keyword field. all %## will be decoded (plus character ‘+’ will be decoded to a space character). if you need to use the “%” character for your keyword, please specify it as “%25”;. if you need to use the “+” character for your keyword, please specify it as “%2B”")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. required field if you don’t specify location_code or location_coordinate. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/chat_gpt/locations. example:. London,England,United Kingdom")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. required field if you don’t specify location_name or location_coordinate. if you use this field, you don’t need to specify location_name or location_coordinate. you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/locations. example:. 2840")
-    location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a location. required field if you don’t specify location_name or location_code. if you use this field, you don’t need to specify location_name or location_code. location_coordinate parameter should be specified in the “latitude,longitude” format. Note: location will be automatically set to the country that contains the specified coordinates. example:. 52.6178549,-155.352142")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. required field. you can specify up to 2000 characters in the keyword field. all %## will be decoded (plus character ‘+’ will be decoded to a space character). if you need to use the “%” character for your keyword, please specify it as “%25”;. if you need to use the “+” character for your keyword, please specify it as “%2B”. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. required field if you don’t specify location_code. if you use this field, you don’t need to specify location_code. you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/chat_gpt/locations. example:. London,England,United Kingdom")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. required field if you don’t specify location_name. if you use this field, you don’t need to specify location_name. you can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/locations. example:. 2840")
     language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine language. required field if you don’t specify language_code. if you use this field, you don’t need to specify language_code. you can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages. example:. English")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language code. required field if you don’t specify language_name. if you use this field, you don’t need to specify language_name. you can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_scraper/languages. example:en")
     force_web_search: Optional[StrictBool] = Field(default=None, description=r"force AI agent to use web search. optional field. when enabled, the AI model is forced to access and cite current web information;. default value: false;. Note: even if the parameter is set to true, there is no guarantee web sources will be cited in the response")
@@ -28,7 +27,6 @@ class AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo(BaseModel):
         "keyword", 
         "location_name", 
         "location_code", 
-        "location_coordinate", 
         "language_name", 
         "language_code", 
         "force_web_search", 
@@ -63,7 +61,6 @@ class AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo(BaseModel):
         _dict['keyword'] = self.keyword
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
-        _dict['location_coordinate'] = self.location_coordinate
         _dict['language_name'] = self.language_name
         _dict['language_code'] = self.language_code
         _dict['force_web_search'] = self.force_web_search
@@ -84,7 +81,6 @@ class AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo(BaseModel):
             "keyword": obj.get("keyword"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),
-            "location_coordinate": obj.get("location_coordinate"),
             "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
             "force_web_search": obj.get("force_web_search"),

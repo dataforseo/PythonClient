@@ -20,13 +20,13 @@ class SerpApiAiModeAiOverviewElementItem(BaseSerpApiAiModeAiOverviewElementItem)
     SerpApiAiModeAiOverviewElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
+    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERPcan take the following values:left, right")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     text: Optional[StrictStr] = Field(default=None, description=r"text or description of the element in SERP")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format")
-    links: Optional[List[Optional[AiModeLinkElementInfo]]] = Field(default=None, description=r"website links featured in the element")
-    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element. if there are none, equals null")
-    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
+    links: Optional[List[Optional[AiModeLinkElementInfo]]] = Field(default=None, description=r"website links featured in the elementif there are none, equals null")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the elementif there are none, equals null")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the elementincludes references to webpages that were used to generate the ai_overview_element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

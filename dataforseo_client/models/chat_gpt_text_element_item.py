@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.chat_gpt_source import ChatGptSource
+from dataforseo_client.models.source_info import SourceInfo
 from dataforseo_client.models.chat_gpt_brand_entity import ChatGptBrandEntity
 from dataforseo_client.models.base_chat_gpt_llm_scraper_element_item import BaseChatGptLlmScraperElementItem
 
@@ -22,7 +22,7 @@ class ChatGptTextElementItem(BaseChatGptLlmScraperElementItem):
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
-    sources: Optional[List[Optional[ChatGptSource]]] = Field(default=None, description=r"array of sources")
+    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sources")
     brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entities. contains information on brands mentioned in the text")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -89,7 +89,7 @@ class ChatGptTextElementItem(BaseChatGptLlmScraperElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "markdown": obj.get("markdown"),
-            "sources": [ChatGptSource.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": [SourceInfo.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
             "brand_entities": [ChatGptBrandEntity.from_dict(_item) for _item in obj["brand_entities"]] if obj.get("brand_entities") is not None else None,
         })
 

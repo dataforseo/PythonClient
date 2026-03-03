@@ -53,6 +53,17 @@ if TYPE_CHECKING:
     from dataforseo_client.models.ai_optimization_gemini_llm_responses_task_get_response_info import AiOptimizationGeminiLlmResponsesTaskGetResponseInfo
     from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_request_info import AiOptimizationGeminiLlmResponsesLiveRequestInfo
     from dataforseo_client.models.ai_optimization_gemini_llm_responses_live_response_info import AiOptimizationGeminiLlmResponsesLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_locations_response_info import AiOptimizationGeminiLlmScraperLocationsResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_languages_response_info import AiOptimizationGeminiLlmScraperLanguagesResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_post_request_info import AiOptimizationGeminiLlmScraperTaskPostRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_post_response_info import AiOptimizationGeminiLlmScraperTaskPostResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_tasks_ready_response_info import AiOptimizationGeminiLlmScraperTasksReadyResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_get_advanced_response_info import AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_get_html_response_info import AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_advanced_request_info import AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_advanced_response_info import AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_html_request_info import AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_html_response_info import AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo
     from dataforseo_client.models.ai_optimization_perplexity_llm_responses_models_response_info import AiOptimizationPerplexityLlmResponsesModelsResponseInfo
     from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_request_info import AiOptimizationPerplexityLlmResponsesLiveRequestInfo
     from dataforseo_client.models.ai_optimization_perplexity_llm_responses_live_response_info import AiOptimizationPerplexityLlmResponsesLiveResponseInfo
@@ -5456,6 +5467,1380 @@ class AiOptimizationApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/ai_optimization/gemini/llm_responses/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_locations_response_info import AiOptimizationGeminiLlmScraperLocationsResponseInfo
+    @validate_call
+    def gemini_llm_scraper_locations(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperLocationsResponseInfo:
+
+        _param = self._gemini_llm_scraper_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def gemini_llm_scraper_locations_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperLocationsResponseInfo]':
+
+        _param = self._gemini_llm_scraper_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def gemini_llm_scraper_locations_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_locations_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLocationsResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_locations_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/locations',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_languages_response_info import AiOptimizationGeminiLlmScraperLanguagesResponseInfo
+    @validate_call
+    def gemini_llm_scraper_languages(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperLanguagesResponseInfo:
+
+        _param = self._gemini_llm_scraper_languages_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLanguagesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def gemini_llm_scraper_languages_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperLanguagesResponseInfo]':
+
+        _param = self._gemini_llm_scraper_languages_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLanguagesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def gemini_llm_scraper_languages_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_languages_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLanguagesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_languages_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/languages',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_post_request_info import AiOptimizationGeminiLlmScraperTaskPostRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_post_response_info import AiOptimizationGeminiLlmScraperTaskPostResponseInfo
+    @validate_call
+    def gemini_llm_scraper_task_post(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperTaskPostRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperTaskPostResponseInfo:
+
+        _param = self._gemini_llm_scraper_task_post_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info=list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def gemini_llm_scraper_task_post_with_http_info(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperTaskPostRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperTaskPostResponseInfo]':
+
+        _param = self._gemini_llm_scraper_task_post_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info=list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def gemini_llm_scraper_task_post_without_preload_content(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperTaskPostRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_task_post_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info=list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskPostResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_task_post_serialize(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationGeminiLlmScraperTaskPostRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info is not None:
+            _body_params = list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/task_post',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_tasks_ready_response_info import AiOptimizationGeminiLlmScraperTasksReadyResponseInfo
+    @validate_call
+    def gemini_llm_scraper_tasks_ready(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperTasksReadyResponseInfo:
+
+        _param = self._gemini_llm_scraper_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def gemini_llm_scraper_tasks_ready_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperTasksReadyResponseInfo]':
+
+        _param = self._gemini_llm_scraper_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def gemini_llm_scraper_tasks_ready_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_tasks_ready_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTasksReadyResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_tasks_ready_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/tasks_ready',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_get_advanced_response_info import AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo
+    @validate_call
+    def gemini_llm_scraper_task_get_advanced(
+        self,
+        id: Annotated[StrictStr, Field(description="")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo:
+
+        _param = self._gemini_llm_scraper_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def gemini_llm_scraper_task_get_advanced_with_http_info(
+        self,
+        id: Annotated[StrictStr, Field(description="")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo]':
+
+        _param = self._gemini_llm_scraper_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def gemini_llm_scraper_task_get_advanced_without_preload_content(
+        self,
+        id: Annotated[StrictStr, Field(description="")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_task_get_advanced_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_task_get_advanced_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        if id is not None:
+            _path_params['id'] = id
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/task_get/advanced/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_task_get_html_response_info import AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo
+    @validate_call
+    def gemini_llm_scraper_task_get_html(
+        self,
+        id: Annotated[StrictStr, Field(description="")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo:
+
+        _param = self._gemini_llm_scraper_task_get_html_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def gemini_llm_scraper_task_get_html_with_http_info(
+        self,
+        id: Annotated[StrictStr, Field(description="")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo]':
+
+        _param = self._gemini_llm_scraper_task_get_html_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def gemini_llm_scraper_task_get_html_without_preload_content(
+        self,
+        id: Annotated[StrictStr, Field(description="")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_task_get_html_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_task_get_html_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        if id is not None:
+            _path_params['id'] = id
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/task_get/html/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_advanced_request_info import AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_advanced_response_info import AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo
+    @validate_call
+    def gemini_llm_scraper_live_advanced(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo:
+
+        _param = self._gemini_llm_scraper_live_advanced_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info=list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def gemini_llm_scraper_live_advanced_with_http_info(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo]':
+
+        _param = self._gemini_llm_scraper_live_advanced_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info=list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def gemini_llm_scraper_live_advanced_without_preload_content(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_live_advanced_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info=list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_live_advanced_serialize(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info is not None:
+            _body_params = list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/live/advanced',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_html_request_info import AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo
+    from dataforseo_client.models.ai_optimization_gemini_llm_scraper_live_html_response_info import AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo
+    @validate_call
+    def gemini_llm_scraper_live_html(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo:
+
+        _param = self._gemini_llm_scraper_live_html_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info=list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def gemini_llm_scraper_live_html_with_http_info(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo]':
+
+        _param = self._gemini_llm_scraper_live_html_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info=list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def gemini_llm_scraper_live_html_without_preload_content(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info: 'List[Optional[AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._gemini_llm_scraper_live_html_serialize(
+            list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info=list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _gemini_llm_scraper_live_html_serialize(
+        self,
+        list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info is not None:
+            _body_params = list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/gemini/llm_scraper/live/html',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

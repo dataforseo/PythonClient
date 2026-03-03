@@ -25,7 +25,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
     BaseSerpApiAiModeAiOverviewElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
+    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERPcan take the following values:left, right")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

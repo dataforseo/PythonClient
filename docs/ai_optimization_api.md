@@ -35,6 +35,14 @@ All URIs are relative to *https://api.dataforseo.com*
 [**geminiLlmResponsesTasksReady**](AiOptimizationApi.md#geminiLlmResponsesTasksReady) | **GET**  /v3/ai_optimization/gemini/llm_responses/tasks_ready  |
 [**geminiLlmResponsesTaskGet**](AiOptimizationApi.md#geminiLlmResponsesTaskGet) | **GET**  /v3/ai_optimization/gemini/llm_responses/task_get/{id}  |
 [**geminiLlmResponsesLive**](AiOptimizationApi.md#geminiLlmResponsesLive) | **POST**  /v3/ai_optimization/gemini/llm_responses/live  |
+[**geminiLlmScraperLocations**](AiOptimizationApi.md#geminiLlmScraperLocations) | **GET**  /v3/ai_optimization/gemini/llm_scraper/locations  |
+[**geminiLlmScraperLanguages**](AiOptimizationApi.md#geminiLlmScraperLanguages) | **GET**  /v3/ai_optimization/gemini/llm_scraper/languages  |
+[**geminiLlmScraperTaskPost**](AiOptimizationApi.md#geminiLlmScraperTaskPost) | **POST**  /v3/ai_optimization/gemini/llm_scraper/task_post  |
+[**geminiLlmScraperTasksReady**](AiOptimizationApi.md#geminiLlmScraperTasksReady) | **GET**  /v3/ai_optimization/gemini/llm_scraper/tasks_ready  |
+[**geminiLlmScraperTaskGetAdvanced**](AiOptimizationApi.md#geminiLlmScraperTaskGetAdvanced) | **GET**  /v3/ai_optimization/gemini/llm_scraper/task_get/advanced/{id}  |
+[**geminiLlmScraperTaskGetHtml**](AiOptimizationApi.md#geminiLlmScraperTaskGetHtml) | **GET**  /v3/ai_optimization/gemini/llm_scraper/task_get/html/{id}  |
+[**geminiLlmScraperLiveAdvanced**](AiOptimizationApi.md#geminiLlmScraperLiveAdvanced) | **POST**  /v3/ai_optimization/gemini/llm_scraper/live/advanced  |
+[**geminiLlmScraperLiveHtml**](AiOptimizationApi.md#geminiLlmScraperLiveHtml) | **POST**  /v3/ai_optimization/gemini/llm_scraper/live/html  |
 [**perplexityLlmResponsesModels**](AiOptimizationApi.md#perplexityLlmResponsesModels) | **GET**  /v3/ai_optimization/perplexity/llm_responses/models  |
 [**perplexityLlmResponsesLive**](AiOptimizationApi.md#perplexityLlmResponsesLive) | **POST**  /v3/ai_optimization/perplexity/llm_responses/live  |
 [**aiKeywordDataAvailableFilters**](AiOptimizationApi.md#aiKeywordDataAvailableFilters) | **GET**  /v3/ai_optimization/ai_keyword_data/available_filters  |
@@ -2030,6 +2038,462 @@ except ApiException as e:
 ### Return type
 
 [**AiOptimizationGeminiLlmResponsesLiveResponseInfo**](AiOptimizationGeminiLlmResponsesLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperLocations"></a>
+# **geminiLlmScraperLocations**
+> AiOptimizationGeminiLlmScraperLocationsResponseInfo geminiLlmScraperLocations()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.gemini_llm_scraper_locations()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperLocationsResponseInfo**](AiOptimizationGeminiLlmScraperLocationsResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperLanguages"></a>
+# **geminiLlmScraperLanguages**
+> AiOptimizationGeminiLlmScraperLanguagesResponseInfo geminiLlmScraperLanguages()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.gemini_llm_scraper_languages()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperLanguagesResponseInfo**](AiOptimizationGeminiLlmScraperLanguagesResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperTaskPost"></a>
+# **geminiLlmScraperTaskPost**
+> AiOptimizationGeminiLlmScraperTaskPostResponseInfo geminiLlmScraperTaskPost()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_gemini_llm_scraper_task_post_request_info import List[Optional[AiOptimizationGeminiLlmScraperTaskPostRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.gemini_llm_scraper_task_post([
+            [
+                AiOptimizationGeminiLlmScraperTaskPostRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="albert einstein",
+                ),
+            ]
+        ]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationGeminiLlmScraperTaskPostRequestInfo]]&gt;**](List[Optional[AiOptimizationGeminiLlmScraperTaskPostRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperTaskPostResponseInfo**](AiOptimizationGeminiLlmScraperTaskPostResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperTasksReady"></a>
+# **geminiLlmScraperTasksReady**
+> AiOptimizationGeminiLlmScraperTasksReadyResponseInfo geminiLlmScraperTasksReady()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.gemini_llm_scraper_tasks_ready()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperTasksReadyResponseInfo**](AiOptimizationGeminiLlmScraperTasksReadyResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperTaskGetAdvanced"></a>
+# **geminiLlmScraperTaskGetAdvanced**
+> AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo geminiLlmScraperTaskGetAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        id = 
+        response = ai_optimization_api.gemini_llm_scraper_task_get_advanced(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo**](AiOptimizationGeminiLlmScraperTaskGetAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperTaskGetHtml"></a>
+# **geminiLlmScraperTaskGetHtml**
+> AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo geminiLlmScraperTaskGetHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        id = 
+        response = ai_optimization_api.gemini_llm_scraper_task_get_html(id)
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo**](AiOptimizationGeminiLlmScraperTaskGetHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperLiveAdvanced"></a>
+# **geminiLlmScraperLiveAdvanced**
+> AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo geminiLlmScraperLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_gemini_llm_scraper_live_advanced_request_info import List[Optional[AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.gemini_llm_scraper_live_advanced([
+            [
+                AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="albert einstein",
+                ),
+            ]
+        ]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo]]&gt;**](List[Optional[AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo**](AiOptimizationGeminiLlmScraperLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="geminiLlmScraperLiveHtml"></a>
+# **geminiLlmScraperLiveHtml**
+> AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo geminiLlmScraperLiveHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_gemini_llm_scraper_live_html_request_info import List[Optional[AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.gemini_llm_scraper_live_html([
+            [
+                AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo(
+                    language_code="en",
+                    location_code=2840,
+                    keyword="albert einstein",
+                ),
+            ]
+        ]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo]]&gt;**](List[Optional[AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo**](AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo.md)
 
 ### Authorization
 

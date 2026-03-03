@@ -17,15 +17,15 @@ class SerpApiAiModeAiOverviewVideoElementItem(BaseSerpApiAiModeAiOverviewElement
     SerpApiAiModeAiOverviewVideoElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
+    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERPcan take the following values:left, right")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element in SERP")
     snippet: Optional[StrictStr] = Field(default=None, description=r"additional information for the video")
     url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain name of the reference")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the imagethe URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
-    date: Optional[StrictStr] = Field(default=None, description=r"date when the video was published or indexed. example:. Apr 26, 2024")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the video was published or indexed. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
+    date: Optional[StrictStr] = Field(default=None, description=r"date when the video was published or indexedexample: Apr 26, 2024")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the video was published or indexedin the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'example:2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

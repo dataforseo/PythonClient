@@ -18,9 +18,9 @@ class SerpApiAiModeAiOverviewShoppingItem(BaseSerpApiAiModeAiOverviewElementItem
     SerpApiAiModeAiOverviewShoppingItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
+    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERPcan take the following values:left, right")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the link")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. the text of the ai_overview formatted in the markdown markup language")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatthe text of the ai_overview formatted in the markdown markup language")
     items: Optional[List[Optional[AiModeAiOverviewShoppingElementInfo]]] = Field(default=None, description=r"items of the element")
     __properties: ClassVar[List[str]] = [
         "type", 

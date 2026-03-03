@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **title** | **StrictStr** | name of the brand |[optional]|
-**sources** | **List[Optional[ChatGptSource]]** | array of sources |[optional]|
+**sources** | **List[Optional[SourceInfo]]** | array of sources |[optional]|

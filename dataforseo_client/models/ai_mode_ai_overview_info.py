@@ -19,15 +19,15 @@ class AiModeAiOverviewInfo(BaseModel):
     AiModeAiOverviewInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    page: Optional[StrictInt] = Field(default=None, description=r"")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERPabsolute position among all the elements in SERP")
+    page: Optional[StrictInt] = Field(default=None, description=r"SERP pageSERP page on which the element ranks")
+    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERPcan take the following values:left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. the text of the ai_overview formatted in the markdown markup language")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatthe text of the ai_overview formatted in the markdown markup language")
     items: Optional[List[Optional[BaseSerpApiAiModeAiOverviewElementItem]]] = Field(default=None, description=r"elements of search results found in SERP")
-    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
-    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the itemincludes references to webpages that may have been used to generate the ai_overview")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameterscontains cartesian coordinates and pixel dimensions of the result's snippet in SERPequals null if calculate_rectangles in the POST request is not set to true")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

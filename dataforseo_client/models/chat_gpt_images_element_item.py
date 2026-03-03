@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.chat_gpt_images_element import ChatGptImagesElement
+from dataforseo_client.models.gemini_images_element import GeminiImagesElement
 from dataforseo_client.models.base_chat_gpt_llm_scraper_element_item import BaseChatGptLlmScraperElementItem
 
 
@@ -21,7 +21,7 @@ class ChatGptImagesElementItem(BaseChatGptLlmScraperElementItem):
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
-    items: Optional[List[Optional[ChatGptImagesElement]]] = Field(default=None, description=r"elements of ChatGPT results")
+    items: Optional[List[Optional[GeminiImagesElement]]] = Field(default=None, description=r"elements of ChatGPT results")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -80,7 +80,7 @@ class ChatGptImagesElementItem(BaseChatGptLlmScraperElementItem):
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
             "markdown": obj.get("markdown"),
-            "items": [ChatGptImagesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [GeminiImagesElement.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

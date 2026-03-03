@@ -22,9 +22,9 @@ class AiModeAiOverviewExpandedComponentInfo(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
     text: Optional[StrictStr] = Field(default=None, description=r"additional text of the element in SERP")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format")
-    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the component. if there are none, equals null")
-    links: Optional[List[Optional[AiModeLinkElementInfo]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
-    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the componentif there are none, equals null")
+    links: Optional[List[Optional[AiModeLinkElementInfo]]] = Field(default=None, description=r"sitelinksthe links shown below some of Google's search resultsif there are none, equals null")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the elementincludes references to webpages that were used to generate the ai_overview_element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

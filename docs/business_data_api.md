@@ -58,7 +58,6 @@ All URIs are relative to *https://api.dataforseo.com*
 [**tripadvisorReviewsTasksReady**](BusinessDataApi.md#tripadvisorReviewsTasksReady) | **GET**  /v3/business_data/tripadvisor/reviews/tasks_ready  |
 [**tripadvisorReviewsTaskGet**](BusinessDataApi.md#tripadvisorReviewsTaskGet) | **GET**  /v3/business_data/tripadvisor/reviews/task_get/{id}  |
 [**socialMediaPinterestLive**](BusinessDataApi.md#socialMediaPinterestLive) | **POST**  /v3/business_data/social_media/pinterest/live  |
-[**socialMediaFacebookLive**](BusinessDataApi.md#socialMediaFacebookLive) | **POST**  /v3/business_data/social_media/facebook/live  |
 [**socialMediaRedditLive**](BusinessDataApi.md#socialMediaRedditLive) | **POST**  /v3/business_data/social_media/reddit/live  |
 
 <a id="businessDataIdList"></a>
@@ -3188,72 +3187,6 @@ except ApiException as e:
 ### Return type
 
 [**BusinessDataSocialMediaPinterestLiveResponseInfo**](BusinessDataSocialMediaPinterestLiveResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="socialMediaFacebookLive"></a>
-# **socialMediaFacebookLive**
-> BusinessDataSocialMediaFacebookLiveResponseInfo socialMediaFacebookLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.business_data_api import BusinessDataApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_business_data_social_media_facebook_live_request_info import List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        business_data_api = BusinessDataApi(api_client)
-
-        response = business_data_api.social_media_facebook_live([
-            [
-                BusinessDataSocialMediaFacebookLiveRequestInfo(
-                    targets=[
-                    "https://prnt.sc/",
-                    "https://developers.facebook.com/docs/plugins/like-button/",
-                    "https://www.shbarcelona.com/blog/en/salsa-dance-clubs-in-barcelona/",
-                ],
-                    tag="some_string_123",
-                ),
-            ]
-        ]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]]&gt;**](List[Optional[BusinessDataSocialMediaFacebookLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**BusinessDataSocialMediaFacebookLiveResponseInfo**](BusinessDataSocialMediaFacebookLiveResponseInfo.md)
 
 ### Authorization
 

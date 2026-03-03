@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.chatgpt_search_result import ChatgptSearchResult
-from dataforseo_client.models.chat_gpt_source import ChatGptSource
+from dataforseo_client.models.source_info import SourceInfo
 from dataforseo_client.models.chat_gpt_brand_entity import ChatGptBrandEntity
 from dataforseo_client.models.base_chat_gpt_llm_scraper_element_item import BaseChatGptLlmScraperElementItem
 
@@ -27,7 +27,7 @@ class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
     search_results: Optional[List[Optional[ChatgptSearchResult]]] = Field(default=None, description=r"array of search results. all web search outputs the model retrieved when looking up information, including duplicates and unused entries")
-    sources: Optional[List[Optional[ChatGptSource]]] = Field(default=None, description=r"array of sources. the sources the model actually cited or relied on in its final answer")
+    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sources. the sources the model actually cited or relied on in its final answer")
     fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queries. contains related search queries derived from the main query to provide a more comprehensive response")
     brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entities. contains information on brands mentioned in the response")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results")
@@ -131,7 +131,7 @@ class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo(BaseModel):
             "datetime": obj.get("datetime"),
             "markdown": obj.get("markdown"),
             "search_results": [ChatgptSearchResult.from_dict(_item) for _item in obj["search_results"]] if obj.get("search_results") is not None else None,
-            "sources": [ChatGptSource.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
+            "sources": [SourceInfo.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
             "fan_out_queries": obj.get("fan_out_queries"),
             "brand_entities": [ChatGptBrandEntity.from_dict(_item) for _item in obj["brand_entities"]] if obj.get("brand_entities") is not None else None,
             "se_results_count": obj.get("se_results_count"),

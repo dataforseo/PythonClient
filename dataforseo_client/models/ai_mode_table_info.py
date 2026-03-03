@@ -16,7 +16,7 @@ class AiModeTableInfo(BaseModel):
     AiModeTableInfo
     """ # noqa: E501
     table_header: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"content in the header of the table")
-    table_content: Optional[List[Optional[List[Optional[StrictStr]]]]] = Field(default=None, description=r"array of contents of the table present in the element. each array represents the table row")
+    table_content: Optional[List[Optional[List[Optional[StrictStr]]]]] = Field(default=None, description=r"array of contents of the table present in the elementeach array represents the table row")
     __properties: ClassVar[List[str]] = [
         "table_header", 
         "table_content", 
