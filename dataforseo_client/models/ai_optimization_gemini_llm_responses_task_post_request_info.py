@@ -18,12 +18,13 @@ class AiOptimizationGeminiLlmResponsesTaskPostRequestInfo(BaseModel):
     """ # noqa: E501
     user_prompt: Optional[StrictStr] = Field(default=None, description=r"prompt for the AI model. required field. the question or task you want to send to the AI model;. you can specify up to 500 characters in the user_prompt field")
     model_name: Optional[StrictStr] = Field(default=None, description=r"name of the AI model. required field. model_nameconsists of the actual model name and version name;. if the basic model name is specified, its latest version will be set by default;. for example, if gemini-1.5-pro is specified, the gemini-1.5-pro-002 will be set as model_name automatically;. you can receive the list of available LLM models by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_responses/models")
-    max_output_tokens: Optional[StrictInt] = Field(default=None, description=r"maximum number of tokens in the AI response. optional field. minimum value: 1;. maximum value: 4096;. default value: 2048;. Note: if web_search is set to true or the reasoning model is specified in the request, the output token count may exceed the specified max_output_tokens limit")
+    max_output_tokens: Optional[StrictInt] = Field(default=None, description=r"maximum number of tokens in the AI response. optional field. minimum value: 1;. maximum value: 4096;. default value: 2048;. Note: if web_search is set to true or the reasoning model is specified in the request, the output token count may exceed the specified max_output_tokens limit. Note #2: if use_reasoning is set to true, the minimum value for max_output_tokens is 1024")
     temperature: Optional[StrictFloat] = Field(default=None, description=r"randomness of the AI response. optional field. higher values make output more diverse. lower values make output more focused. minimum value: 0. maximum value: 2. default value: 1.3")
     top_p: Optional[StrictFloat] = Field(default=None, description=r"diversity of the AI response. optional field. controls diversity of the response by limiting token selection. minimum value: 0. maximum value: 1. default value: 0.9")
     web_search: Optional[StrictBool] = Field(default=None, description=r"enable web search for current information. optional field. when enabled, the AI model can access and cite current web information;. Note: refer to the Models endpoint for a list of models that support web_search;. default value: false;. The cost of the parameter can be calculated on the Pricing page")
     system_message: Optional[StrictStr] = Field(default=None, description=r"instructions for the AI behavior. optional field. defines the AI’s role, tone, or specific behavior. you can specify up to 500 characters in the system_message field")
     message_chain: Optional[List[Optional[LlmMessageChainItem]]] = Field(default=None, description=r"conversation history. optional field. array of message objects representing previous conversation turns;. each object must contain:. role string with either user or ai role;. message string with message content (max 500 characters);. you can specify maximum of 10 message objects in the array;. Note: for Perplexity models, messages must strictly alternate between user and AI roles (user → ai);. example:. 'message_chain': [{'role':'user','message':'Hello, what’s up?'},{'role':'ai','message':'Hello! I’m doing well, thank you. How can I assist you today?'}]")
+    use_reasoning: Optional[StrictBool] = Field(default=None, description=r"enable reasoning for the AI model. optional field. when enabled, the model will perform reasoning before generating a response. refer to the Models endpoint for a list of models that support reasoning. default value: false. Note: if set to true, the minimum value for max_output_tokens is 1024. Note #2: for Gemini Pro models, the use_reasoning will automatically be set to true")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"URL for sending task results. optional field. once the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specified. you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.. example:. http://your-server.com/postbackscript?id=$id. http://your-server.com/postbackscript?id=$id&tag=$tag. Note: special character in postback_url will be urlencoded;. i.a., the # character will be encoded into %23. learn more on our Help Center")
     pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed task. optional field. when a task is completed we will notify you by GET request sent to the URL you have specified. you can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request. example:. http://your-server.com/pingscript?id=$id. http://your-server.com/pingscript?id=$id&tag=$tag. Note: special character in pingback_url will be urlencoded;. i.a., the # character will be encoded into %23. learn more on our Help Center")
@@ -36,6 +37,7 @@ class AiOptimizationGeminiLlmResponsesTaskPostRequestInfo(BaseModel):
         "web_search", 
         "system_message", 
         "message_chain", 
+        "use_reasoning", 
         "tag", 
         "postback_url", 
         "pingback_url", 
@@ -78,6 +80,7 @@ class AiOptimizationGeminiLlmResponsesTaskPostRequestInfo(BaseModel):
                 if _item:
                     message_chain_items.append(_item.to_dict())
             _dict['message_chain'] = message_chain_items
+        _dict['use_reasoning'] = self.use_reasoning
         _dict['tag'] = self.tag
         _dict['postback_url'] = self.postback_url
         _dict['pingback_url'] = self.pingback_url
@@ -101,6 +104,7 @@ class AiOptimizationGeminiLlmResponsesTaskPostRequestInfo(BaseModel):
             "web_search": obj.get("web_search"),
             "system_message": obj.get("system_message"),
             "message_chain": [LlmMessageChainItem.from_dict(_item) for _item in obj["message_chain"]] if obj.get("message_chain") is not None else None,
+            "use_reasoning": obj.get("use_reasoning"),
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "pingback_url": obj.get("pingback_url"),

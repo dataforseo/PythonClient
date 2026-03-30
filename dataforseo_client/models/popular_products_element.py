@@ -20,6 +20,7 @@ class PopularProductsElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
+    more_sellers: Optional[StrictBool] = Field(default=None, description=r"indicates whether the product is sold by multiple sellers")
     seller: Optional[StrictStr] = Field(default=None, description=r"seller of the product")
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
     price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
@@ -28,6 +29,7 @@ class PopularProductsElement(BaseModel):
         "type", 
         "title", 
         "description", 
+        "more_sellers", 
         "seller", 
         "image_url", 
         "price", 
@@ -61,6 +63,7 @@ class PopularProductsElement(BaseModel):
         _dict['type'] = self.type
         _dict['title'] = self.title
         _dict['description'] = self.description
+        _dict['more_sellers'] = self.more_sellers
         _dict['seller'] = self.seller
         _dict['image_url'] = self.image_url
         _dict['price'] = self.price.to_dict() if self.price else None
@@ -80,6 +83,7 @@ class PopularProductsElement(BaseModel):
             "type": obj.get("type"),
             "title": obj.get("title"),
             "description": obj.get("description"),
+            "more_sellers": obj.get("more_sellers"),
             "seller": obj.get("seller"),
             "image_url": obj.get("image_url"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,

@@ -9,6 +9,7 @@
 **description** | **StrictStr** | description of the results element in SERP |[optional]|
 **domain** | **StrictStr** | domain of the organic result |[optional]|
 **phone** | **StrictStr** | phone number |[optional]|
+**booking_url** | **StrictStr** |  |[optional]|
 **url** | **StrictStr** | relevant URL |[optional]|
 **is_paid** | **StrictBool** | indicates whether the element is an ad |[optional]|
 **rating** | **RatingInfo** | the item’s rating<br>the popularity rate based on reviews and displayed in SERP |[optional]|

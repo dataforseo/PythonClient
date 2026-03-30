@@ -16,13 +16,13 @@ class AiOptimizationResultTotalInfo(BaseModel):
     """
     AiOptimizationResultTotalInfo
     """ # noqa: E501
-    location: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"location-based grouping. array of objects containing mention metrics segmented by geographical location")
-    language: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"language-based grouping. array of objects containing mention metrics segmented by content language")
-    platform: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"platform-based grouping. array of group elements containing mention metrics segmented by AI platform")
-    sources_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"found source domains relevant to the target. array of objects containing data on top domains that are cited as sources in LLM responses")
-    search_results_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"found search results domains relevant to the target. array of objects containing data on top domains that appear in search results related to LLM queries")
-    brand_entities_title: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity titles that appear in search results related to LLM queries")
-    brand_entities_category: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity categories that appear in search results related to LLM queries")
+    location: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"location-based groupingarray of objects containing mention metrics segmented by geographical location")
+    language: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"language-based groupingarray of objects containing mention metrics segmented by content language")
+    platform: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"platform-based groupingarray of group elements containing mention metrics segmented by AI platform")
+    sources_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"found source domains relevant to the targetarray of objects containing data on top domains that are cited as sources in LLM responses")
+    search_results_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"found search results domains relevant to the targetarray of objects containing data on top domains that appear in search results related to LLM queries")
+    brand_entities_title: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the targetarray of objects containing data on brand entity titles that appear in search results related to LLM queries")
+    brand_entities_category: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the targetarray of objects containing data on brand entity categories that appear in search results related to LLM queries")
     __properties: ClassVar[List[str]] = [
         "location", 
         "language", 

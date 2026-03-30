@@ -12,3 +12,4 @@
 **pages_by_resource** | **Dict[str, Optional[StrictStr]]** |  |[optional]|
 **redirect_chains** | **Dict[str, Optional[StrictStr]]** |  |[optional]|
 **keyword_density** | **Dict[str, Optional[StrictStr]]** |  |[optional]|
+**invalid_resources** | **Dict[str, Optional[StrictStr]]** |  |[optional]|

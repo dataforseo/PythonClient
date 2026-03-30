@@ -18,12 +18,12 @@ class Sources(BaseModel):
     snippet: Optional[StrictStr] = Field(default=None, description=r"source description")
     source_name: Optional[StrictStr] = Field(default=None, description=r"source name")
     thumbnail: Optional[StrictStr] = Field(default=None, description=r"source thumbnail")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatcontent of the result formatted in the markdown markup language")
     position: Optional[StrictInt] = Field(default=None, description=r"position in the results")
     title: Optional[StrictStr] = Field(default=None, description=r"source title")
     domain: Optional[StrictStr] = Field(default=None, description=r"source domain")
     url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    publication_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. 2019-11-15 12:57:46 +00:00")
+    publication_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was publishedin the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”example:2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = [
         "snippet", 
         "source_name", 

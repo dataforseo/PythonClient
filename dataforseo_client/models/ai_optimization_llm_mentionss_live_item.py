@@ -16,14 +16,14 @@ class AiOptimizationLlmMentionssLiveItem(BaseModel):
     """
     AiOptimizationLlmMentionssLiveItem
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description=r"URL of a found page. the URL of a page found in LLM mentions for the specified target")
-    location: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"location-based grouping. array of objects containing page mention metrics segmented by geographical location")
-    language: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"language-based grouping. array of objects containing page mention metrics segmented by content language")
-    platform: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"platform-based grouping. array of group elements containing page mention metrics segmented by AI platform")
-    sources_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"source domains relevant to the specific page. array of objects containing data on domains that are cited as sources in LLM responses")
-    search_results_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"search results domains relevant to the specific page. array of objects containing data on domains that appear in search results related to LLM queries")
-    brand_entities_title: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity titles that appear in search results related to LLM queries")
-    brand_entities_category: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity categories that appear in search results related to LLM queries")
+    key: Optional[StrictStr] = Field(default=None, description=r"URL of a found pagethe URL of a page found in LLM mentions for the specified target")
+    location: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"location-based groupingarray of objects containing page mention metrics segmented by geographical location")
+    language: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"language-based groupingarray of objects containing page mention metrics segmented by content language")
+    platform: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"platform-based groupingarray of group elements containing page mention metrics segmented by AI platform")
+    sources_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"source domains relevant to the specific pagearray of objects containing data on domains that are cited as sources in LLM responses")
+    search_results_domain: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"search results domains relevant to the specific pagearray of objects containing data on domains that appear in search results related to LLM queries")
+    brand_entities_title: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the targetarray of objects containing data on brand entity titles that appear in search results related to LLM queries")
+    brand_entities_category: Optional[List[Optional[GroupElement]]] = Field(default=None, description=r"data on brand entities relevant to the targetarray of objects containing data on brand entity categories that appear in search results related to LLM queries")
     __properties: ClassVar[List[str]] = [
         "key", 
         "location", 

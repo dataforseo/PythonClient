@@ -17,7 +17,7 @@ class AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResultInfo
     """ # noqa: E501
-    total: Optional[AiOptimizationResultTotalInfo] = Field(default=None, description=r"aggregated mentions metrics summary. contains overall aggregated LLM mention metrics across all found domains, grouped by various dimensions")
+    total: Optional[AiOptimizationResultTotalInfo] = Field(default=None, description=r"aggregated mentions metrics summarycontains overall aggregated LLM mention metrics across all found domains, grouped by various dimensions")
     items: Optional[List[Optional[AiOptimizationLlmMentionssLiveItem]]] = Field(default=None, description=r"contains relevant mentions data")
     __properties: ClassVar[List[str]] = [
         "total", 

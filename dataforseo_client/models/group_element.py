@@ -16,9 +16,9 @@ class GroupElement(BaseModel):
     GroupElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    key: Optional[StrictStr] = Field(default=None, description=r"grouping identifier. the specific identifier for the grouping dimension")
-    mentions: Optional[StrictInt] = Field(default=None, description=r"total LLM mentions count. the number of times the target keyword or domain were mentioned in relation to this specific grouping key")
-    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keyword. learn more about this metric here")
+    key: Optional[StrictStr] = Field(default=None, description=r"grouping identifierthe specific identifier for the grouping dimension")
+    mentions: Optional[StrictInt] = Field(default=None, description=r"total LLM mentions countthe number of times the target keyword or domain were mentioned in relation to this specific grouping key")
+    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keywordlearn more about this metric here")
     impressions: Optional[StrictInt] = Field(default=None, description=r"current AI impressions rate of a keyword")
     __properties: ClassVar[List[str]] = [
         "type", 

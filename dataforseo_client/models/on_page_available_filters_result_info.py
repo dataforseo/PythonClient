@@ -22,6 +22,7 @@ class OnPageAvailableFiltersResultInfo(BaseModel):
     pages_by_resource: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     redirect_chains: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     keyword_density: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
+    invalid_resources: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "resources", 
         "pages", 
@@ -30,6 +31,7 @@ class OnPageAvailableFiltersResultInfo(BaseModel):
         "pages_by_resource", 
         "redirect_chains", 
         "keyword_density", 
+        "invalid_resources", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -63,6 +65,7 @@ class OnPageAvailableFiltersResultInfo(BaseModel):
         _dict['pages_by_resource'] = self.pages_by_resource
         _dict['redirect_chains'] = self.redirect_chains
         _dict['keyword_density'] = self.keyword_density
+        _dict['invalid_resources'] = self.invalid_resources
         return _dict
 
 
@@ -82,6 +85,7 @@ class OnPageAvailableFiltersResultInfo(BaseModel):
             "pages_by_resource": obj.get("pages_by_resource"),
             "redirect_chains": obj.get("redirect_chains"),
             "keyword_density": obj.get("keyword_density"),
+            "invalid_resources": obj.get("invalid_resources"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

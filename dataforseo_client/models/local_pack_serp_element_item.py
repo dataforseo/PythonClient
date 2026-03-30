@@ -29,6 +29,7 @@ class LocalPackSerpElementItem(BaseSerpApiElementItem):
     description: Optional[StrictStr] = Field(default=None, description=r"link description")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain name of the reference")
     phone: Optional[StrictStr] = Field(default=None, description=r"phone number")
+    booking_url: Optional[StrictStr] = Field(default=None, description=r"URL of the booking page")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
     rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
@@ -45,6 +46,7 @@ class LocalPackSerpElementItem(BaseSerpApiElementItem):
         "description", 
         "domain", 
         "phone", 
+        "booking_url", 
         "url", 
         "is_paid", 
         "rating", 
@@ -86,6 +88,7 @@ class LocalPackSerpElementItem(BaseSerpApiElementItem):
         _dict['description'] = self.description
         _dict['domain'] = self.domain
         _dict['phone'] = self.phone
+        _dict['booking_url'] = self.booking_url
         _dict['url'] = self.url
         _dict['is_paid'] = self.is_paid
         _dict['rating'] = self.rating.to_dict() if self.rating else None
@@ -113,6 +116,7 @@ class LocalPackSerpElementItem(BaseSerpApiElementItem):
             "description": obj.get("description"),
             "domain": obj.get("domain"),
             "phone": obj.get("phone"),
+            "booking_url": obj.get("booking_url"),
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,

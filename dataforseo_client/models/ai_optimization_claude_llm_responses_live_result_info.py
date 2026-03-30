@@ -8,7 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.ai_optimization_item import AiOptimizationItem
+from dataforseo_client.models.base_ai_optimization_llm_response_element_item import BaseAiOptimizationLlmResponseElementItem
 
 
 
@@ -19,15 +19,17 @@ class AiOptimizationClaudeLlmResponsesLiveResultInfo(BaseModel):
     model_name: Optional[StrictStr] = Field(default=None, description=r"name of the AI model used")
     input_tokens: Optional[StrictInt] = Field(default=None, description=r"number of tokens in the input. total count of tokens processed")
     output_tokens: Optional[StrictInt] = Field(default=None, description=r"number of tokens in the output. total count of tokens generated in the AI response")
+    reasoning_tokens: Optional[StrictInt] = Field(default=None, description=r"number of reasoning tokens. total count of tokens used to generate reasoning content")
     web_search: Optional[StrictBool] = Field(default=None, description=r"indicates if web search was used")
     money_spent: Optional[StrictFloat] = Field(default=None, description=r"cost of AI tokens, USD. the price charged by the third-party AI model provider for according to its Pricing")
     datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    items: Optional[List[Optional[AiOptimizationItem]]] = Field(default=None, description=r"array of response items. contains structured AI response data")
+    items: Optional[List[Optional[BaseAiOptimizationLlmResponseElementItem]]] = Field(default=None, description=r"array of response items. contains structured AI response data")
     fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queries. contains related search queries derived from the main query to provide a more comprehensive response")
     __properties: ClassVar[List[str]] = [
         "model_name", 
         "input_tokens", 
         "output_tokens", 
+        "reasoning_tokens", 
         "web_search", 
         "money_spent", 
         "datetime", 
@@ -62,6 +64,7 @@ class AiOptimizationClaudeLlmResponsesLiveResultInfo(BaseModel):
         _dict['model_name'] = self.model_name
         _dict['input_tokens'] = self.input_tokens
         _dict['output_tokens'] = self.output_tokens
+        _dict['reasoning_tokens'] = self.reasoning_tokens
         _dict['web_search'] = self.web_search
         _dict['money_spent'] = self.money_spent
         _dict['datetime'] = self.datetime
@@ -87,10 +90,11 @@ class AiOptimizationClaudeLlmResponsesLiveResultInfo(BaseModel):
             "model_name": obj.get("model_name"),
             "input_tokens": obj.get("input_tokens"),
             "output_tokens": obj.get("output_tokens"),
+            "reasoning_tokens": obj.get("reasoning_tokens"),
             "web_search": obj.get("web_search"),
             "money_spent": obj.get("money_spent"),
             "datetime": obj.get("datetime"),
-            "items": [AiOptimizationItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
+            "items": [BaseAiOptimizationLlmResponseElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "fan_out_queries": obj.get("fan_out_queries"),
         })
 
