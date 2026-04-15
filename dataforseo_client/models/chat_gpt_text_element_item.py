@@ -19,11 +19,11 @@ class ChatGptTextElementItem(BaseChatGptLlmScraperElementItem):
     ChatGptTextElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERPabsolute position among all the elements")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatcontent of the result formatted in the markdown markup language")
     sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sources")
-    brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entities. contains information on brands mentioned in the text")
+    brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entitiescontains information on brands mentioned in the text")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

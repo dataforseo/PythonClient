@@ -16,19 +16,19 @@ class ChatGptGoogleShoppingProduct(BaseModel):
     ChatGptGoogleShoppingProduct
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    ei: Optional[StrictStr] = Field(default=None, description=r"event identifier. internal event identifier used by Google")
-    product_id: Optional[StrictStr] = Field(default=None, description=r"product identifier. can be used as a data_docid in Google Shopping API endpoints")
-    catalog_id: Optional[StrictStr] = Field(default=None, description=r"Google Shopping catalog identifier of the product. can be used as a product_id in Google Shopping API endpoints")
-    gpcid: Optional[StrictStr] = Field(default=None, description=r"Google product cluster identifier. can be used as a gid in Google Shopping API endpoints")
-    headline_offer_docid: Optional[StrictStr] = Field(default=None, description=r"document identifier of the main offer in the headline. can be used as a data_docid in Google Shopping API endpoints")
+    ei: Optional[StrictStr] = Field(default=None, description=r"event identifierinternal event identifier used by Google")
+    product_id: Optional[StrictStr] = Field(default=None, description=r"product identifiercan be used as a data_docid in Google Shopping API endpoints")
+    catalog_id: Optional[StrictStr] = Field(default=None, description=r"Google Shopping catalog identifier of the productcan be used as a product_id in Google Shopping API endpoints")
+    gpcid: Optional[StrictStr] = Field(default=None, description=r"Google product cluster identifiercan be used as a gid in Google Shopping API endpoints")
+    headline_offer_docid: Optional[StrictStr] = Field(default=None, description=r"document identifier of the main offer in the headlinecan be used as a data_docid in Google Shopping API endpoints")
     image_docid: Optional[StrictStr] = Field(default=None, description=r"identifier for the displayed product’s image")
-    rds: Optional[StrictStr] = Field(default=None, description=r"resource descriptor string . internal Google resource descriptor string that identifies the product within Google’s Shopping index")
-    query: Optional[StrictStr] = Field(default=None, description=r"search query. search query used by ChatGPT to retrieve the product from Google Shopping")
-    mid: Optional[StrictStr] = Field(default=None, description=r"merchant identifier. identifier of the seller or merchant account in Google Shopping")
-    pvt: Optional[StrictStr] = Field(default=None, description=r"product view type. internal Google parameter that specifies the product view type used when rendering the product item")
-    uule: Optional[StrictStr] = Field(default=None, description=r"encoded location parameter. indicates the location for a search")
-    gl: Optional[StrictStr] = Field(default=None, description=r"country code. indicates the location for which search results are displayed")
-    hl: Optional[StrictStr] = Field(default=None, description=r"host language code. indicates the language in which search results are displayed")
+    rds: Optional[StrictStr] = Field(default=None, description=r"resource descriptor string internal Google resource descriptor string that identifies the product within Google's Shopping index")
+    query: Optional[StrictStr] = Field(default=None, description=r"search querysearch query used by ChatGPT to retrieve the product from Google Shopping")
+    mid: Optional[StrictStr] = Field(default=None, description=r"merchant identifieridentifier of the seller or merchant account in Google Shopping")
+    pvt: Optional[StrictStr] = Field(default=None, description=r"product view typeinternal Google parameter that specifies the product view type used when rendering the product item")
+    uule: Optional[StrictStr] = Field(default=None, description=r"encoded location parameterindicates the location for a search")
+    gl: Optional[StrictStr] = Field(default=None, description=r"country codeindicates the location for which search results are displayed")
+    hl: Optional[StrictStr] = Field(default=None, description=r"host language codeindicates the language in which search results are displayed")
     __properties: ClassVar[List[str]] = [
         "type", 
         "ei", 

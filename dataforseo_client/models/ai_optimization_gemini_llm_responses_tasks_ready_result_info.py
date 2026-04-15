@@ -15,7 +15,7 @@ class AiOptimizationGeminiLlmResponsesTasksReadyResultInfo(BaseModel):
     """
     AiOptimizationGeminiLlmResponsesTasksReadyResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"task identifier of the completed task. unique task identifier in our system in the UUID format")
+    id: Optional[StrictStr] = Field(default=None, description=r"task identifier of the completed taskunique task identifier in our system in the UUID format")
     se: Optional[StrictStr] = Field(default=None, description=r"LLM model specified when setting the task")
     se_type: Optional[StrictStr] = Field(default=None, description=r"")
     date_posted: Optional[StrictStr] = Field(default=None, description=r"date when the task was posted (in the UTC format)")

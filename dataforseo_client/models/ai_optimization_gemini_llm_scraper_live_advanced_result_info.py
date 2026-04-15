@@ -17,15 +17,15 @@ class AiOptimizationGeminiLlmScraperLiveAdvancedResultInfo(BaseModel):
     """
     AiOptimizationGeminiLlmScraperLiveAdvancedResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. the keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST arraythe keyword is returned with decoded %## (plus symbol '+' will be decoded to a space character)")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     model: Optional[StrictStr] = Field(default=None, description=r"indicates the model version")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
-    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sources. the sources the model actually cited or relied on in its final answer")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was receivedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatcontent of the result formatted in the markdown markup language")
+    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sourcesthe sources the model actually cited or relied on in its final answer")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results. contains types of search results (items) found in SERP.. possible item types:. gemini_text, gemini_table, gemini_images")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search resultscontains types of search results (items) found in SERP.possible item types:gemini_text, gemini_table, gemini_images")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     items: Optional[List[Optional[BaseGeminiLlmScraperElementItem]]] = Field(default=None, description=r"items present in the element")
     __properties: ClassVar[List[str]] = [

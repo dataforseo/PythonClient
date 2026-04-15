@@ -18,10 +18,14 @@ class DomainAnalyticsWhoisOverviewLiveResultInfo(BaseModel):
     """ # noqa: E501
     total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
+    offset: Optional[StrictInt] = Field(default=None, description=r"results offset value specified in POST request")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"")
     items: Optional[List[Optional[DomainAnalyticsWhoisOverviewLiveItem]]] = Field(default=None, description=r"contains ranking and traffic data")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "items_count", 
+        "offset", 
+        "offset_token", 
         "items", 
         ]
 
@@ -51,6 +55,8 @@ class DomainAnalyticsWhoisOverviewLiveResultInfo(BaseModel):
 
         _dict['total_count'] = self.total_count
         _dict['items_count'] = self.items_count
+        _dict['offset'] = self.offset
+        _dict['offset_token'] = self.offset_token
         items_items = []
         if self.items:
             for _item in self.items:
@@ -71,6 +77,8 @@ class DomainAnalyticsWhoisOverviewLiveResultInfo(BaseModel):
         _obj = cls.model_validate({
             "total_count": obj.get("total_count"),
             "items_count": obj.get("items_count"),
+            "offset": obj.get("offset"),
+            "offset_token": obj.get("offset_token"),
             "items": [DomainAnalyticsWhoisOverviewLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 

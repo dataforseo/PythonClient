@@ -15,14 +15,16 @@ class DomainAnalyticsWhoisOverviewLiveRequestInfo(BaseModel):
     """
     DomainAnalyticsWhoisOverviewLiveRequestInfo
     """ # noqa: E501
-    limit: Optional[StrictInt] = Field(default=None, description=r"the maximum number of returned domains. optional field. default value: 100. maximum value: 1000")
-    offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of returned items. optional field. default value: 0. if you specify the 10 value, the first ten items in the results array will be omitted and the data will be provided for the successive items")
-    filters: Optional[List[Optional[Any]]] = Field(default=None, description=r"array of results filtering parameters. optional field. you can add several filters at once (8 filters maximum). you should set a logical operator and, or between the conditions. the following operators are supported:. regex, <, <=, >, >=, =, <>, in, not_in, like, not_like. you can use the % operator with like and not_like to match any string of zero or more characters. examples:. ['expiration_datetime', '<', '2021-02-15 01:00:00 +00:00']. [['expiration_datetime', '<', '2021-02-15 01:00:00 +00:00'],.  'and', . ['domain', 'like', '%seo%']]. . for more information about filters, please refer to Filters Page or this help center guide")
-    order_by: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"results sorting rules. optional field. you can use the same values as in the filters array to sort the results. possible sorting types:. asc - results will be sorted in the ascending order. desc - results will be sorted in the descending order. the comma is used as a separator. example:. ['metrics.organic.pos_1,desc']. default rule:. ['metrics.organic.count,desc']. note that you can set no more than three sorting rules in a single request. you should use a comma to separate several sorting rules. example:. ['expiration_datetime,asc','metrics.organic.etv,desc','metrics.organic.pos_1,desc']")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
+    limit: Optional[StrictInt] = Field(default=None, description=r"the maximum number of returned domainsoptional fielddefault value: 100maximum value: 1000")
+    offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of returned itemsoptional fielddefault value: 0if you specify the 10 value, the first ten items in the results array will be omitted and the data will be provided for the successive items;Note: we recommend using this parameter only when retrieving up to 10,000 results for retrieving over 10,000 results, use the offset_token instead")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"token for subsequent requestsoptional fieldprovided in the identical filed of the response to each request;use this parameter to avoid timeouts while trying to obtain over 100,000 results in a single request;by specifying the unique offset_token value from the response array, you will get the subsequent results of the initial task;offset_token values are unique for each subsequent taskNote: if the offset_token is specified in the request, all other parameters should be identical to the previous requestlearn more about this parameter on our Help Center")
+    filters: Optional[List[Optional[Any]]] = Field(default=None, description=r"array of results filtering parametersoptional fieldyou can add several filters at once (8 filters maximum)you should set a logical operator and, or between the conditionsthe following operators are supported:regex, <, <=, >, >=, =, <>, in, not_in, like, not_likeyou can use the % operator with like and not_like to match any string of zero or more characters")
+    order_by: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"results sorting rulesoptional fieldyou can use the same values as in the filters array to sort the resultspossible sorting types:asc - results will be sorted in the ascending orderdesc - results will be sorted in the descending orderthe comma is used as a separatorexample:['metrics.organic.pos_1,desc']default rule:['metrics.organic.count,desc']note that you can set no more than three sorting rules in a single requestyou should use a comma to separate several sorting rulesexample:['expiration_datetime,asc','metrics.organic.etv,desc','metrics.organic.pos_1,desc']")
+    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
         "limit", 
         "offset", 
+        "offset_token", 
         "filters", 
         "order_by", 
         "tag", 
@@ -54,6 +56,7 @@ class DomainAnalyticsWhoisOverviewLiveRequestInfo(BaseModel):
 
         _dict['limit'] = self.limit
         _dict['offset'] = self.offset
+        _dict['offset_token'] = self.offset_token
         _dict['filters'] = self.filters
         _dict['order_by'] = self.order_by
         _dict['tag'] = self.tag
@@ -71,6 +74,7 @@ class DomainAnalyticsWhoisOverviewLiveRequestInfo(BaseModel):
         _obj = cls.model_validate({
             "limit": obj.get("limit"),
             "offset": obj.get("offset"),
+            "offset_token": obj.get("offset_token"),
             "filters": obj.get("filters"),
             "order_by": obj.get("order_by"),
             "tag": obj.get("tag"),

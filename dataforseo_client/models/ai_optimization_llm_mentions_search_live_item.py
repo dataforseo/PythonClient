@@ -20,6 +20,7 @@ class AiOptimizationLlmMentionsSearchLiveItem(BaseModel):
     AiOptimizationLlmMentionsSearchLiveItem
     """ # noqa: E501
     platform: Optional[StrictStr] = Field(default=None, description=r"platform received in a POST array")
+    model_name: Optional[StrictStr] = Field(default=None, description=r"name of the AI model from which the data was retrievedNote: for the google platform type, the value is always google_ai_overview")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     question: Optional[StrictStr] = Field(default=None, description=r"relevant question")
@@ -34,6 +35,7 @@ class AiOptimizationLlmMentionsSearchLiveItem(BaseModel):
     fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queriescontains related search queries derived from the main query to provide a more comprehensive response")
     __properties: ClassVar[List[str]] = [
         "platform", 
+        "model_name", 
         "location_code", 
         "language_code", 
         "question", 
@@ -73,6 +75,7 @@ class AiOptimizationLlmMentionsSearchLiveItem(BaseModel):
         _dict = {}
 
         _dict['platform'] = self.platform
+        _dict['model_name'] = self.model_name
         _dict['location_code'] = self.location_code
         _dict['language_code'] = self.language_code
         _dict['question'] = self.question
@@ -118,6 +121,7 @@ class AiOptimizationLlmMentionsSearchLiveItem(BaseModel):
 
         _obj = cls.model_validate({
             "platform": obj.get("platform"),
+            "model_name": obj.get("model_name"),
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "question": obj.get("question"),

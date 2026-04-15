@@ -19,6 +19,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     product_id: Optional[StrictStr] = Field(default=None, description=r"")
+    data_docid: Optional[StrictStr] = Field(default=None, description=r"")
+    gid: Optional[StrictStr] = Field(default=None, description=r"")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     url: Optional[StrictStr] = Field(default=None, description=r"reference page URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in link")
@@ -32,6 +34,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
     __properties: ClassVar[List[str]] = [
         "type", 
         "product_id", 
+        "data_docid", 
+        "gid", 
         "title", 
         "url", 
         "domain", 
@@ -70,6 +74,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
 
         _dict['type'] = self.type
         _dict['product_id'] = self.product_id
+        _dict['data_docid'] = self.data_docid
+        _dict['gid'] = self.gid
         _dict['title'] = self.title
         _dict['url'] = self.url
         _dict['domain'] = self.domain
@@ -94,6 +100,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
         _obj = cls.model_validate({
             "type": obj.get("type"),
             "product_id": obj.get("product_id"),
+            "data_docid": obj.get("data_docid"),
+            "gid": obj.get("gid"),
             "title": obj.get("title"),
             "url": obj.get("url"),
             "domain": obj.get("domain"),

@@ -21,10 +21,12 @@ class SerpApiPeopleAlsoAskAiOverviewExpandedElementItem(BaseSerpApiPeopleAlsoAsk
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     items: Optional[List[Optional[BaseSerpApiAiOverviewElementItem]]] = Field(default=None, description=r"contains arrays of elements available in the list")
     references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
+    asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is loaded asynchronously. if true, the people_also_ask_ai_overview_expanded_element element is loaded asynchronously;. if false, the people_also_ask_ai_overview_expanded_element element is loaded from cache")
     __properties: ClassVar[List[str]] = [
         "type", 
         "items", 
         "references", 
+        "asynchronous_ai_overview", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -64,6 +66,7 @@ class SerpApiPeopleAlsoAskAiOverviewExpandedElementItem(BaseSerpApiPeopleAlsoAsk
                 if _item:
                     references_items.append(_item.to_dict())
             _dict['references'] = references_items
+        _dict['asynchronous_ai_overview'] = self.asynchronous_ai_overview
         return _dict
 
 
@@ -79,6 +82,7 @@ class SerpApiPeopleAlsoAskAiOverviewExpandedElementItem(BaseSerpApiPeopleAlsoAsk
             "type": obj.get("type"),
             "items": [BaseSerpApiAiOverviewElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "references": [AiModeAiOverviewReferenceInfo.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "asynchronous_ai_overview": obj.get("asynchronous_ai_overview"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

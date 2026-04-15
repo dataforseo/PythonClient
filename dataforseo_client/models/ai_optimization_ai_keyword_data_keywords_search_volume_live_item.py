@@ -17,8 +17,8 @@ class AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveItem(BaseModel):
     AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveItem
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description=r"specified keyword")
-    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keyword. learn more about this metric here")
-    ai_monthly_searches: Optional[List[Optional[AiMonthlySearches]]] = Field(default=None, description=r"monthly AI search volume rates. array of objects with AI search volume rates in a certain month of a year")
+    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keywordlearn more about this metric here")
+    ai_monthly_searches: Optional[List[Optional[AiMonthlySearches]]] = Field(default=None, description=r"monthly AI search volume ratesarray of objects with AI search volume rates in a certain month of a year")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "ai_search_volume", 

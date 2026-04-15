@@ -18,7 +18,7 @@ class AiOptimizationLlmMentionsLocationsAndLanguagesResultInfo(BaseModel):
     """ # noqa: E501
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
-    available_languages: Optional[List[Optional[ResultAvailableLanguages]]] = Field(default=None, description=r"supported languages. contains the languages which are supported for a specific location")
+    available_languages: Optional[List[Optional[ResultAvailableLanguages]]] = Field(default=None, description=r"supported languagescontains the languages which are supported for a specific location")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 

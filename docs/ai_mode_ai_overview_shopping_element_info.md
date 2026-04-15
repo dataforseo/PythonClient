@@ -7,6 +7,8 @@
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
 **product_id** | **StrictStr** |  |[optional]|
+**data_docid** | **StrictStr** |  |[optional]|
+**gid** | **StrictStr** |  |[optional]|
 **title** | **StrictStr** | title of the element |[optional]|
 **url** | **StrictStr** | reference page URL |[optional]|
 **domain** | **StrictStr** | domain in link |[optional]|

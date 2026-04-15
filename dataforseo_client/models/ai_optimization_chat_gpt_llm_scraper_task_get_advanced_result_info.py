@@ -19,19 +19,19 @@ class AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo(BaseModel):
     """
     AiOptimizationChatGptLlmScraperTaskGetAdvancedResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. the keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST arraythe keyword is returned with decoded %## (plus symbol '+' will be decoded to a space character)")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     model: Optional[StrictStr] = Field(default=None, description=r"indicates the model version")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided exact results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format. content of the result formatted in the markdown markup language")
-    search_results: Optional[List[Optional[ChatgptSearchResult]]] = Field(default=None, description=r"array of search results. all web search outputs the model retrieved when looking up information, including duplicates and unused entries")
-    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sources. the sources the model actually cited or relied on in its final answer")
-    fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queries. contains related search queries derived from the main query to provide a more comprehensive response")
-    brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entities. contains information on brands mentioned in the response")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine resultsyou can use it to make sure that we provided exact results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was receivedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatcontent of the result formatted in the markdown markup language")
+    search_results: Optional[List[Optional[ChatgptSearchResult]]] = Field(default=None, description=r"array of search resultsall web search outputs the model retrieved when looking up information, including duplicates and unused entries")
+    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sourcesthe sources the model actually cited or relied on in its final answer")
+    fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queriescontains related search queries derived from the main query to provide a more comprehensive response")
+    brand_entities: Optional[List[Optional[ChatGptBrandEntity]]] = Field(default=None, description=r"array of brand entitiescontains information on brands mentioned in the response")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results. contains types of search results (items) found.. possible item types:. chat_gpt_text, chat_gpt_table, chat_gpt_navigation_list, chat_gpt_images, chat_gpt_local_businesses, chat_gpt_products")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search resultscontains types of search results (items) found.possible item types:chat_gpt_text, chat_gpt_table, chat_gpt_navigation_list, chat_gpt_images, chat_gpt_local_businesses, chat_gpt_products")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     items: Optional[List[Optional[BaseChatGptLlmScraperElementItem]]] = Field(default=None, description=r"items present in the element")
     __properties: ClassVar[List[str]] = [

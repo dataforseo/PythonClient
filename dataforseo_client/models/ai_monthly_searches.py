@@ -17,7 +17,7 @@ class AiMonthlySearches(BaseModel):
     """ # noqa: E501
     year: Optional[StrictInt] = Field(default=None, description=r"year")
     month: Optional[StrictInt] = Field(default=None, description=r"month")
-    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"AI search volume rate in a certain month of a year. learn more about this metric here")
+    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"AI search volume rate in a certain month of a yearlearn more about this metric here")
     __properties: ClassVar[List[str]] = [
         "year", 
         "month", 

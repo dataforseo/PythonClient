@@ -24,7 +24,7 @@ class ChatGptLocalBusinessesElement(BaseModel):
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"total number of reviews submitted for the local business")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local business. popularity rate based on reviews as displayed in the results")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local businesspopularity rate based on reviews as displayed in the results")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
