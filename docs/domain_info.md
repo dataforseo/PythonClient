@@ -15,6 +15,7 @@
 **ssl_info** | **SslInfo** | ssl certificate info<br>information about the Secure Sockets Layer protocol detected on a website |[optional]|
 **checks** | **Dict[str, Optional[StrictBool]]** | website checks<br>other on-page check-ups related to the website |[optional]|
 **total_pages** | **StrictInt** | total crawled pages<br>the total number of crawled pages |[optional]|
+**total_uncrawlable_resources** | **StrictInt** | total uncrawlable resources<br>the total number of resources that could not be crawled;<br>the resource is considered uncrawlable when the actual content type of the resource doesn’t match the content type expected by the crawler |[optional]|
 **page_not_found_status_code** | **StrictInt** | status code returned by a non-existent page<br>in most cases, it is recommended a server returns a 404 response code |[optional]|
 **canonicalization_status_code** | **StrictInt** | status code returned by a canonicalized page<br>the checkup of the server behavior when our crawler tries to access the website via IP;<br>in most cases, it is recommended that canonicalized pages respond with a 301 or 302 status code |[optional]|
 **directory_browsing_status_code** | **StrictInt** | status code returned by a directory<br>the status code returned by a directory page on a target website<br>in most cases, it is recommended that directories respond with a 403 or 401 status code |[optional]|

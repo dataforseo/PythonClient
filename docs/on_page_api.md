@@ -22,6 +22,7 @@ All URIs are relative to *https://api.dataforseo.com*
 [**waterfall**](OnPageApi.md#waterfall) | **POST**  /v3/on_page/waterfall  |
 [**keywordDensity**](OnPageApi.md#keywordDensity) | **POST**  /v3/on_page/keyword_density  |
 [**microdata**](OnPageApi.md#microdata) | **POST**  /v3/on_page/microdata  |
+[**uncrawlableResources**](OnPageApi.md#uncrawlableResources) | **POST**  /v3/on_page/uncrawlable_resources  |
 [**rawHtml**](OnPageApi.md#rawHtml) | **POST**  /v3/on_page/raw_html  |
 [**pageScreenshot**](OnPageApi.md#pageScreenshot) | **POST**  /v3/on_page/page_screenshot  |
 [**contentParsing**](OnPageApi.md#contentParsing) | **POST**  /v3/on_page/content_parsing  |
@@ -58,18 +59,12 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.on_page_id_list([
-            [
-                OnPageIdListRequestInfo(
-                    datetime_from=,
-                    datetime_to=,
-                    limit=100,
-                    offset=0,
-                    sort="desc",
-                    include_metadata=True,
-                ),
-            ]
-        ]
+        response = on_page_api.on_page_id_list([OnPageIdListRequestInfo(
+                limit=100,
+                offset=0,
+                sort="desc",
+                include_metadata=True,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -124,15 +119,11 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.on_page_errors([
-            [
-                OnPageErrorsRequestInfo(
-                    limit=10,
-                    offset=0,
-                    filtered_function="pingback_url",
-                ),
-            ]
-        ]
+        response = on_page_api.on_page_errors([OnPageErrorsRequestInfo(
+                limit=10,
+                offset=0,
+                filtered_function="pingback_url",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -187,16 +178,9 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.force_stop([
-            [
-                OnPageForceStopRequestInfo(
-                    id="08121600-1535-0216-0000-37b4c7a34453",
-                ),
-                OnPageForceStopRequestInfo(
-                    id="08121600-1535-0216-0000-d6a5000b6897",
-                ),
-            ]
-        ]
+        response = on_page_api.force_stop([OnPageForceStopRequestInfo(
+                id="08121600-1535-0216-0000-37b4c7a34453",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -304,19 +288,15 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.task_post([
-            [
-                OnPageTaskPostRequestInfo(
-                    target="dataforseo.com",
-                    max_crawl_pages=10,
-                    load_resources=True,
-                    enable_javascript=True,
-                    custom_js="meta = {}; meta.url = document.URL; meta;",
-                    tag="some_string_123",
-                    pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
-                ),
-            ]
-        ]
+        response = on_page_api.task_post([OnPageTaskPostRequestInfo(
+                target="dataforseo.com",
+                max_crawl_pages=10,
+                load_resources=True,
+                enable_javascript=True,
+                custom_js="meta = {}; meta.url = document.URL; meta;",
+                tag="some_string_123",
+                pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -423,7 +403,7 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = on_page_api.summary(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -478,30 +458,18 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.pages([
-            [
-                OnPagePagesRequestInfo(
-                    id="07281559-0695-0216-0000-c269be8b7592",
-                    filters=[
-                    [
-                        "resource_type",
-                        "=",
-                        "html",
-                    ],
+        response = on_page_api.pages([OnPagePagesRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                filters=[
+                    ,
                     "and",
-                    [
-                        "meta.scripts_count",
-                        ">",
-                        40,
+                    ,
                     ],
-                ],
-                    order_by=[
+                order_by=[
                     "meta.content.plain_text_word_count,desc",
-                ],
-                    limit=10,
-                ),
-            ]
-        ]
+                    ],
+                limit=10,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -556,14 +524,10 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.pages_by_resource([
-            [
-                OnPagePagesByResourceRequestInfo(
-                    id="02241700-1535-0216-0000-034137259bc1",
-                    url="https://www.etsy.com/about/jobs.workco2018.js?",
-                ),
-            ]
-        ]
+        response = on_page_api.pages_by_resource([OnPagePagesByResourceRequestInfo(
+                id="02241700-1535-0216-0000-034137259bc1",
+                url="https://www.etsy.com/about/jobs.workco2018.js?",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -618,30 +582,18 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.resources([
-            [
-                OnPageResourcesRequestInfo(
-                    id="07281559-0695-0216-0000-c269be8b7592",
-                    filters=[
-                    [
-                        "resource_type",
-                        "=",
-                        "image",
-                    ],
+        response = on_page_api.resources([OnPageResourcesRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                filters=[
+                    ,
                     "and",
-                    [
-                        "size",
-                        ">",
-                        100000,
+                    ,
                     ],
-                ],
-                    order_by=[
+                order_by=[
                     "size,desc",
-                ],
-                    limit=10,
-                ),
-            ]
-        ]
+                    ],
+                limit=10,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -696,15 +648,11 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.duplicate_tags([
-            [
-                OnPageDuplicateTagsRequestInfo(
-                    id="07281559-0695-0216-0000-c269be8b7592",
-                    type="duplicate_description",
-                    limit=10,
-                ),
-            ]
-        ]
+        response = on_page_api.duplicate_tags([OnPageDuplicateTagsRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                type="duplicate_description",
+                limit=10,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -759,14 +707,10 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.duplicate_content([
-            [
-                OnPageDuplicateContentRequestInfo(
-                    id="07281559-0695-0216-0000-c269be8b7592",
-                    url="https://www.etsy.com/",
-                ),
-            ]
-        ]
+        response = on_page_api.duplicate_content([OnPageDuplicateContentRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                url="https://www.etsy.com/",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -821,28 +765,16 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.links([
-            [
-                OnPageLinksRequestInfo(
-                    id="07281559-0695-0216-0000-c269be8b7592",
-                    page_from="/apis/google-trends-api",
-                    filters=[
-                    [
-                        "dofollow",
-                        "=",
-                        True,
-                    ],
+        response = on_page_api.links([OnPageLinksRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                page_from="/apis/google-trends-api",
+                filters=[
+                    ,
                     "and",
-                    [
-                        "direction",
-                        "=",
-                        "external",
+                    ,
                     ],
-                ],
-                    limit=10,
-                ),
-            ]
-        ]
+                limit=10,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -897,14 +829,10 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.redirect_chains([
-            [
-                OnPageRedirectChainsRequestInfo(
-                    id="03051327-4536-0216-1000-3b458a2cfcca",
-                    url="https://test_rdr.dataforseo.com/a/",
-                ),
-            ]
-        ]
+        response = on_page_api.redirect_chains([OnPageRedirectChainsRequestInfo(
+                id="03051327-4536-0216-1000-3b458a2cfcca",
+                url="https://test_rdr.dataforseo.com/a/",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -959,27 +887,15 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.non_indexable([
-            [
-                OnPageNonIndexableRequestInfo(
-                    id="07281559-0695-0216-0000-c269be8b7592",
-                    filters=[
-                    [
-                        "reason",
-                        "=",
-                        "robots_txt",
-                    ],
+        response = on_page_api.non_indexable([OnPageNonIndexableRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                filters=[
+                    ,
                     "and",
-                    [
-                        "url",
-                        "like",
-                        "%go%",
+                    ,
                     ],
-                ],
-                    limit=10,
-                ),
-            ]
-        ]
+                limit=10,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1034,14 +950,10 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.waterfall([
-            [
-                OnPageWaterfallRequestInfo(
-                    id="08101204-0696-0216-0000-644a7b21a48a",
-                    url="https://dataforseo.com/tag/broken-links",
-                ),
-            ]
-        ]
+        response = on_page_api.waterfall([OnPageWaterfallRequestInfo(
+                id="08101204-0696-0216-0000-644a7b21a48a",
+                url="https://dataforseo.com/tag/broken-links",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1096,20 +1008,16 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.keyword_density([
-            [
-                OnPageKeywordDensityRequestInfo(
-                    id="09101923-1535-0216-0000-2389a8854b70",
-                    url="https://dataforseo.com/",
-                    keyword_length=2,
-                    filters=[
+        response = on_page_api.keyword_density([OnPageKeywordDensityRequestInfo(
+                id="09101923-1535-0216-0000-2389a8854b70",
+                url="https://dataforseo.com/",
+                keyword_length=2,
+                filters=[
                     "frequency",
                     ">",
                     5,
-                ],
-                ),
-            ]
-        ]
+                    ],
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1164,14 +1072,10 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.microdata([
-            [
-                OnPageMicrodataRequestInfo(
-                    id="02241700-1535-0216-0000-034137259bc1",
-                    url="https://dataforseo.com/apis",
-                ),
-            ]
-        ]
+        response = on_page_api.microdata([OnPageMicrodataRequestInfo(
+                id="02241700-1535-0216-0000-034137259bc1",
+                url="https://dataforseo.com/apis",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1188,6 +1092,69 @@ except ApiException as e:
 ### Return type
 
 [**OnPageMicrodataResponseInfo**](OnPageMicrodataResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="uncrawlableResources"></a>
+# **uncrawlableResources**
+> OnPageUncrawlableResourcesResponseInfo uncrawlableResources()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.on_page_api import OnPageApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_on_page_uncrawlable_resources_request_info import List[Optional[OnPageUncrawlableResourcesRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        on_page_api = OnPageApi(api_client)
+
+        response = on_page_api.uncrawlable_resources([OnPageUncrawlableResourcesRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                filters=[
+                    ,
+                    "and",
+                    ,
+                    ],
+                limit=10,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[OnPageUncrawlableResourcesRequestInfo]]&gt;**](List[Optional[OnPageUncrawlableResourcesRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**OnPageUncrawlableResourcesResponseInfo**](OnPageUncrawlableResourcesResponseInfo.md)
 
 ### Authorization
 
@@ -1226,14 +1193,10 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.raw_html([
-            [
-                OnPageRawHtmlRequestInfo(
-                    id="07281559-0695-0216-0000-c269be8b7592",
-                    url="https://dataforseo.com/apis",
-                ),
-            ]
-        ]
+        response = on_page_api.raw_html([OnPageRawHtmlRequestInfo(
+                id="07281559-0695-0216-0000-c269be8b7592",
+                url="https://dataforseo.com/apis",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1288,13 +1251,9 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.page_screenshot([
-            [
-                OnPagePageScreenshotRequestInfo(
-                    url="https://dataforseo.com/apis",
-                ),
-            ]
-        ]
+        response = on_page_api.page_screenshot([OnPagePageScreenshotRequestInfo(
+                url="https://dataforseo.com/apis",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1349,14 +1308,10 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.content_parsing([
-            [
-                OnPageContentParsingRequestInfo(
-                    url="https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api",
-                    id="11161551-1535-0216-0000-500b3f307f92",
-                ),
-            ]
-        ]
+        response = on_page_api.content_parsing([OnPageContentParsingRequestInfo(
+                url="https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api",
+                id="11161551-1535-0216-0000-500b3f307f92",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1411,13 +1366,9 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.content_parsing_live([
-            [
-                OnPageContentParsingLiveRequestInfo(
-                    url="https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api",
-                ),
-            ]
-        ]
+        response = on_page_api.content_parsing_live([OnPageContentParsingLiveRequestInfo(
+                url="https://dataforseo.com/blog/a-versatile-alternative-to-google-trends-exploring-the-power-of-dataforseo-trends-api",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1472,15 +1423,11 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.instant_pages([
-            [
-                OnPageInstantPagesRequestInfo(
-                    url="https://dataforseo.com/blog",
-                    enable_javascript=True,
-                    custom_js="meta = {}; meta.url = document.URL; meta;",
-                ),
-            ]
-        ]
+        response = on_page_api.instant_pages([OnPageInstantPagesRequestInfo(
+                url="https://dataforseo.com/blog",
+                enable_javascript=True,
+                custom_js="meta = {}; meta.url = document.URL; meta;",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1694,16 +1641,12 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.lighthouse_task_post([
-            [
-                OnPageLighthouseTaskPostRequestInfo(
-                    url="https://dataforseo.com",
-                    for_mobile=True,
-                    tag="some_string_123",
-                    pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
-                ),
-            ]
-        ]
+        response = on_page_api.lighthouse_task_post([OnPageLighthouseTaskPostRequestInfo(
+                url="https://dataforseo.com",
+                for_mobile=True,
+                tag="some_string_123",
+                pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1810,7 +1753,7 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = on_page_api.lighthouse_task_get_json(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1865,15 +1808,11 @@ try:
         # Create an instance of the API class
         on_page_api = OnPageApi(api_client)
 
-        response = on_page_api.lighthouse_live_json([
-            [
-                OnPageLighthouseLiveJsonRequestInfo(
-                    url="https://dataforseo.com",
-                    for_mobile=True,
-                    tag="some_string_123",
-                ),
-            ]
-        ]
+        response = on_page_api.lighthouse_live_json([OnPageLighthouseLiveJsonRequestInfo(
+                url="https://dataforseo.com",
+                for_mobile=True,
+                tag="some_string_123",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)

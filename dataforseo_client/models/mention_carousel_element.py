@@ -19,9 +19,9 @@ class MentionCarouselElement(BaseModel):
     MentionCarouselElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     mentioned_in: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"additional elements in the mention_carousel item")
     __properties: ClassVar[List[str]] = [
         "type", 

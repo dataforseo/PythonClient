@@ -18,14 +18,14 @@ class ShoppingElement(BaseModel):
     ShoppingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
     source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account provider. ecommerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")
-    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"URL to the merchant account provider. ecommerce site that hosts products or websites of individual sellers under the same merchant account")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account provider. commerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")
+    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"relevant marketplace URL. URL of the page on the marketplace website where the product is hosted")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

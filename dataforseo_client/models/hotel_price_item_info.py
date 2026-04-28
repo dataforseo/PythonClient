@@ -23,6 +23,7 @@ class HotelPriceItemInfo(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"third-party page url. URL to the third-party website page with pricing information")
     domain: Optional[StrictStr] = Field(default=None, description=r"third-party domain. domain of the third-party website page with pricing information")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates a paid hotel listing. if true, related hotel_search_item is a paid ad. if false, related hotel_search_item is an organic hotel listing")
+    official_site: Optional[StrictBool] = Field(default=None, description=r"")
     free_cancellation_until: Optional[StrictStr] = Field(default=None, description=r"date until which free cancellation is available. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. equals null if free cancellation is not available for the selected dates")
     offers: Optional[List[Optional[HotelInfoPriceOffer]]] = Field(default=None, description=r"featured price offers")
     __properties: ClassVar[List[str]] = [
@@ -33,6 +34,7 @@ class HotelPriceItemInfo(BaseModel):
         "url", 
         "domain", 
         "is_paid", 
+        "official_site", 
         "free_cancellation_until", 
         "offers", 
         ]
@@ -68,6 +70,7 @@ class HotelPriceItemInfo(BaseModel):
         _dict['url'] = self.url
         _dict['domain'] = self.domain
         _dict['is_paid'] = self.is_paid
+        _dict['official_site'] = self.official_site
         _dict['free_cancellation_until'] = self.free_cancellation_until
         offers_items = []
         if self.offers:
@@ -94,6 +97,7 @@ class HotelPriceItemInfo(BaseModel):
             "url": obj.get("url"),
             "domain": obj.get("domain"),
             "is_paid": obj.get("is_paid"),
+            "official_site": obj.get("official_site"),
             "free_cancellation_until": obj.get("free_cancellation_until"),
             "offers": [HotelInfoPriceOffer.from_dict(_item) for _item in obj["offers"]] if obj.get("offers") is not None else None,
         })

@@ -41,8 +41,8 @@ class BingPaidSerpElementItem(BaseBingSerpApiElementItem):
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"additional information about the result")
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"extended description. if there is none, equals null")
     links: Optional[List[Optional[AdLinkElement]]] = Field(default=None, description=r"links featured in the organic result")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price of the shopping element")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating. the popularity rate based on reviews and displayed in SERP")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price of booking a place for the specified dates of stay")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

@@ -22,6 +22,13 @@ class OnPageLighthouseTaskPostRequestInfo(BaseModel):
     version: Optional[StrictStr] = Field(default=None, description=r"lighthouse versionoptional fieldyou can obtain the results specific to a certain Lighthouse version by specifying its numberthe list of available versions is available through the Lighthouse Versions endpoint")
     language_name: Optional[StrictStr] = Field(default=None, description=r"lighthouse language nameoptional fieldyou can receive the list of available languages of the search engine with their language_name by making a separate request to https://api.dataforseo.com/v3/on_page/lighthouse/languagesdefault value:English")
     language_code: Optional[StrictStr] = Field(default=None, description=r"lighthouse language codeoptional fieldyou can receive the list of available languages of the search engine with their language_code by making a separate request to https://api.dataforseo.com/v3/on_page/lighthouse/languagesdefault value:en")
+    custom_user_agent: Optional[StrictStr] = Field(default=None, description=r"custom user agentoptional fieldspecify the custom user agent used by the browser when running the Lighthouse audit;can be specified with up to 254 characters;")
+    browser_screen_width: Optional[StrictInt] = Field(default=None, description=r"browser screen widthoptional fieldset the screen width of the browser used for the Lighthouse audit to emulate a specific device;can be specified within the following range: 240–9999;")
+    browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"browser screen heightoptional fieldset the screen height of the browser used for the Lighthouse audit to emulate a specific device;can be specified within the following range: 240–9999;")
+    browser_screen_scale_factor: Optional[StrictFloat] = Field(default=None, description=r"browser screen scale factoroptional fieldset the device pixel ratio of the browser used for the Lighthouse audit;can be specified within the following range: 0.5–3;")
+    browser_network_throttling_method: Optional[StrictStr] = Field(default=None, description=r"browser network throttling methodoptional fielddefines the method used to apply throttling during the Lighthouse audit;possible vaules:simulate - calculates estimated performance metrics without applying explicit throttling;devtools -  applies the throttling settings specified in browser_network_throttling and browser_cpu_throttling_multiplier;provided - uses the network conditions of the crawling environment;")
+    browser_cpu_throttling_multiplier: Optional[StrictFloat] = Field(default=None, description=r"browser CPU throttling multiplierrequired if browser_network_throttling_method is set to devtools;set the CPU throttling multiplier to simulate device performance conditions during the Lighthouse audit;can be specified within the following range: 1–4;Note: this parameter is applied only when browser_network_throttling_method is set to devtools;")
+    browser_network_throttling: Optional[StrictStr] = Field(default=None, description=r"browser network throttlingrequired if browser_network_throttling_method is set to devtools;set the network throttling profile to simulate connection speed conditions during the Lighthouse audit;possible values: no_throttling, fast_4g, slow_4g, regular_3g, pc;Note: this parameter is applied only when browser_network_throttling_method is set to devtools;")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
     pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed taskoptional fieldwhen a task is completed we will notify you by GET request sent to the URL you have specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/pingscript?id=$idhttp://your-server.com/pingscript?id=$id&tag=$tagNote: special characters in pingback_url will be urlencoded;i.a., the # character will be encoded into %23learn more on our Help Center")
     __properties: ClassVar[List[str]] = [
@@ -32,6 +39,13 @@ class OnPageLighthouseTaskPostRequestInfo(BaseModel):
         "version", 
         "language_name", 
         "language_code", 
+        "custom_user_agent", 
+        "browser_screen_width", 
+        "browser_screen_height", 
+        "browser_screen_scale_factor", 
+        "browser_network_throttling_method", 
+        "browser_cpu_throttling_multiplier", 
+        "browser_network_throttling", 
         "tag", 
         "pingback_url", 
         ]
@@ -67,6 +81,13 @@ class OnPageLighthouseTaskPostRequestInfo(BaseModel):
         _dict['version'] = self.version
         _dict['language_name'] = self.language_name
         _dict['language_code'] = self.language_code
+        _dict['custom_user_agent'] = self.custom_user_agent
+        _dict['browser_screen_width'] = self.browser_screen_width
+        _dict['browser_screen_height'] = self.browser_screen_height
+        _dict['browser_screen_scale_factor'] = self.browser_screen_scale_factor
+        _dict['browser_network_throttling_method'] = self.browser_network_throttling_method
+        _dict['browser_cpu_throttling_multiplier'] = self.browser_cpu_throttling_multiplier
+        _dict['browser_network_throttling'] = self.browser_network_throttling
         _dict['tag'] = self.tag
         _dict['pingback_url'] = self.pingback_url
         return _dict
@@ -88,6 +109,13 @@ class OnPageLighthouseTaskPostRequestInfo(BaseModel):
             "version": obj.get("version"),
             "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
+            "custom_user_agent": obj.get("custom_user_agent"),
+            "browser_screen_width": obj.get("browser_screen_width"),
+            "browser_screen_height": obj.get("browser_screen_height"),
+            "browser_screen_scale_factor": obj.get("browser_screen_scale_factor"),
+            "browser_network_throttling_method": obj.get("browser_network_throttling_method"),
+            "browser_cpu_throttling_multiplier": obj.get("browser_cpu_throttling_multiplier"),
+            "browser_network_throttling": obj.get("browser_network_throttling"),
             "tag": obj.get("tag"),
             "pingback_url": obj.get("pingback_url"),
         })

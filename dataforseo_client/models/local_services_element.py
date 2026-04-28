@@ -17,11 +17,11 @@ class LocalServicesElement(BaseModel):
     LocalServicesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     profile_image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image featured in the element")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -17,10 +17,10 @@ class TopSightsElement(BaseModel):
     TopSightsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

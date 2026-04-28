@@ -17,14 +17,14 @@ class CoursesElement(BaseModel):
     CoursesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
     source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     date: Optional[StrictStr] = Field(default=None, description=r"the date when the page source of the element was published")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

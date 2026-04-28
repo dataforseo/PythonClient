@@ -17,7 +17,6 @@ if TYPE_CHECKING:
     from dataforseo_client.models.serp_api_bing_ai_overview_videos_element_item import SerpApiBingAiOverviewVideosElementItem;
     from dataforseo_client.models.serp_api_bing_ai_overview_images_element_item import SerpApiBingAiOverviewImagesElementItem;
     from dataforseo_client.models.serp_api_bing_ai_overview_organic_element_item import SerpApiBingAiOverviewOrganicElementItem;
-    from dataforseo_client.models.serp_api_bing_ai_overview_shopping_item import SerpApiBingAiOverviewShoppingItem;
 
 
 
@@ -36,7 +35,6 @@ class BaseSerpApiBingAiOverviewElementItem(BaseModel):
         'ai_overview_videos_element': 'SerpApiBingAiOverviewVideosElementItem',
         'ai_overview_images_element': 'SerpApiBingAiOverviewImagesElementItem',
         'ai_overview_organic_element': 'SerpApiBingAiOverviewOrganicElementItem',
-        'ai_overview_shopping': 'SerpApiBingAiOverviewShoppingItem',
     }
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -81,8 +79,7 @@ class BaseSerpApiBingAiOverviewElementItem(BaseModel):
         SerpApiBingAiOverviewVideoElementItem, 
         SerpApiBingAiOverviewVideosElementItem, 
         SerpApiBingAiOverviewImagesElementItem, 
-        SerpApiBingAiOverviewOrganicElementItem, 
-        SerpApiBingAiOverviewShoppingItem
+        SerpApiBingAiOverviewOrganicElementItem
     ]]:
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -97,7 +94,5 @@ class BaseSerpApiBingAiOverviewElementItem(BaseModel):
             return import_module("dataforseo_client.models.serp_api_bing_ai_overview_images_element_item").SerpApiBingAiOverviewImagesElementItem.from_dict(obj)
         if object_type == 'SerpApiBingAiOverviewOrganicElementItem':
             return import_module("dataforseo_client.models.serp_api_bing_ai_overview_organic_element_item").SerpApiBingAiOverviewOrganicElementItem.from_dict(obj)
-        if object_type == 'SerpApiBingAiOverviewShoppingItem':
-            return import_module("dataforseo_client.models.serp_api_bing_ai_overview_shopping_item").SerpApiBingAiOverviewShoppingItem.from_dict(obj)
 
         return None

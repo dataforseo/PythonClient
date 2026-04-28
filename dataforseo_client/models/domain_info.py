@@ -26,6 +26,7 @@ class DomainInfo(BaseModel):
     ssl_info: Optional[SslInfo] = Field(default=None, description=r"ssl certificate info. information about the Secure Sockets Layer protocol detected on a website")
     checks: Optional[Dict[str, Optional[StrictBool]]] = Field(default=None, description=r"website checks. other on-page check-ups related to the website")
     total_pages: Optional[StrictInt] = Field(default=None, description=r"total crawled pages. the total number of crawled pages")
+    total_uncrawlable_resources: Optional[StrictInt] = Field(default=None, description=r"total uncrawlable resources. the total number of resources that could not be crawled;. the resource is considered uncrawlable when the actual content type of the resource doesn’t match the content type expected by the crawler")
     page_not_found_status_code: Optional[StrictInt] = Field(default=None, description=r"status code returned by a non-existent page. in most cases, it is recommended a server returns a 404 response code")
     canonicalization_status_code: Optional[StrictInt] = Field(default=None, description=r"status code returned by a canonicalized page. the checkup of the server behavior when our crawler tries to access the website via IP;. in most cases, it is recommended that canonicalized pages respond with a 301 or 302 status code")
     directory_browsing_status_code: Optional[StrictInt] = Field(default=None, description=r"status code returned by a directory. the status code returned by a directory page on a target website. in most cases, it is recommended that directories respond with a 403 or 401 status code")
@@ -42,6 +43,7 @@ class DomainInfo(BaseModel):
         "ssl_info", 
         "checks", 
         "total_pages", 
+        "total_uncrawlable_resources", 
         "page_not_found_status_code", 
         "canonicalization_status_code", 
         "directory_browsing_status_code", 
@@ -83,6 +85,7 @@ class DomainInfo(BaseModel):
         _dict['ssl_info'] = self.ssl_info.to_dict() if self.ssl_info else None
         _dict['checks'] = self.checks
         _dict['total_pages'] = self.total_pages
+        _dict['total_uncrawlable_resources'] = self.total_uncrawlable_resources
         _dict['page_not_found_status_code'] = self.page_not_found_status_code
         _dict['canonicalization_status_code'] = self.canonicalization_status_code
         _dict['directory_browsing_status_code'] = self.directory_browsing_status_code
@@ -110,6 +113,7 @@ class DomainInfo(BaseModel):
             "ssl_info": SslInfo.from_dict(obj["ssl_info"]) if obj.get("ssl_info") is not None else None,
             "checks": obj.get("checks"),
             "total_pages": obj.get("total_pages"),
+            "total_uncrawlable_resources": obj.get("total_uncrawlable_resources"),
             "page_not_found_status_code": obj.get("page_not_found_status_code"),
             "canonicalization_status_code": obj.get("canonicalization_status_code"),
             "directory_browsing_status_code": obj.get("directory_browsing_status_code"),

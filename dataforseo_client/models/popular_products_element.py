@@ -18,13 +18,13 @@ class PopularProductsElement(BaseModel):
     PopularProductsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     more_sellers: Optional[StrictBool] = Field(default=None, description=r"indicates whether the product is sold by multiple sellers")
     seller: Optional[StrictStr] = Field(default=None, description=r"seller of the product")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app element")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

@@ -9,18 +9,18 @@ DataForSEO API uses REST technology for interchanging data between your applicat
 
 Client contains 12 sections (aka APIs):
 
-- AI Optimization API ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/AiOptimizationApi.md) | [api docs](https://docs.dataforseo.com/v3/ai_optimization/overview/))
-- SERP ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/SerpApi.md) | [api docs](https://docs.dataforseo.com/v3/serp/overview/?bash))
-- Keywords Data ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/KeywordsDataApi.md) | [api docs](https://docs.dataforseo.com/v3/keywords_data/overview/?bash))
-- Domain Analytics ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/DomainAnalyticsApi.md) | [api docs](https://docs.dataforseo.com/v3/domain_analytics/overview/?bash))
-- DataForSEO Labs ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/DataforseoLabsApi.md) | [api docs](https://docs.dataforseo.com/v3/dataforseo_labs/overview/?bash))
-- Backlinks ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/BacklinksApi.md) | [api docs](https://docs.dataforseo.com/v3/backlinks/overview/?bash))
-- OnPage ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/OnPageApi.md) | [api docs](https://docs.dataforseo.com/v3/on_page/overview/?bash))
-- Content Analysis ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/ContentAnalysisApi.md) | [api docs](https://docs.dataforseo.com/v3/content_analysis/overview/?bash))
-- Merchant ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/MerchantApi.md) | [api docs](https://docs.dataforseo.com/v3/merchant/overview/?bash))
-- AppData ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/AppDataApi.md) | [api docs](https://docs.dataforseo.com/v3/app_data/overview/?bash))
-- Business Data ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/BusinessDataApi.md) | [api docs](https://docs.dataforseo.com/v3/business_data/overview/?bash))
-- Appendix ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/AppendixApi.md) | [api docs](https://docs.dataforseo.com/v3/appendix/user_data/?bash))
+- AI Optimization API ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/ai_optimization_api.md) | [api docs](https://docs.dataforseo.com/v3/ai_optimization/overview/))
+- SERP ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/serp_api.md) | [api docs](https://docs.dataforseo.com/v3/serp/overview/?bash))
+- Keywords Data ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/keywords_data_api.md) | [api docs](https://docs.dataforseo.com/v3/keywords_data/overview/?bash))
+- Domain Analytics ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/domain_analytics_api.md) | [api docs](https://docs.dataforseo.com/v3/domain_analytics/overview/?bash))
+- DataForSEO Labs ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/dataforseo_labs_api.md) | [api docs](https://docs.dataforseo.com/v3/dataforseo_labs/overview/?bash))
+- Backlinks ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/backlinks_api.md) | [api docs](https://docs.dataforseo.com/v3/backlinks/overview/?bash))
+- OnPage ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/on_page_api.md) | [api docs](https://docs.dataforseo.com/v3/on_page/overview/?bash))
+- Content Analysis ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/content_analysis_api.md) | [api docs](https://docs.dataforseo.com/v3/content_analysis/overview/?bash))
+- Merchant ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/merchant_api.md) | [api docs](https://docs.dataforseo.com/v3/merchant/overview/?bash))
+- AppData ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/app_data_api.md) | [api docs](https://docs.dataforseo.com/v3/app_data/overview/?bash))
+- Business Data ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/business_data_api.md) | [api docs](https://docs.dataforseo.com/v3/business_data/overview/?bash))
+- Appendix ([source docs](https://github.com/dataforseo/PythonClient/blob/master/docs/appendix_api.md) | [api docs](https://docs.dataforseo.com/v3/appendix/user_data/?bash))
 
 API Contains 2 types of requests:
 

@@ -26,9 +26,9 @@ class ThirdPartyReviewsSerpElementItem(BaseSerpApiElementItem):
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
+    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating. the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

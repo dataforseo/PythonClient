@@ -16,10 +16,10 @@ class RelatedImageSearchesElement(BaseModel):
     RelatedImageSearchesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of a given shopping element")
     alt: Optional[StrictStr] = Field(default=None, description=r"alt tag of the image")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the third-party review source")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL to the image thumbnail of the video")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

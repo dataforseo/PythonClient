@@ -42,18 +42,12 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.domain_analytics_id_list([
-            [
-                DomainAnalyticsIdListRequestInfo(
-                    datetime_from=,
-                    datetime_to=,
-                    limit=100,
-                    offset=0,
-                    sort="desc",
-                    include_metadata=True,
-                ),
-            ]
-        ]
+        response = domain_analytics_api.domain_analytics_id_list([DomainAnalyticsIdListRequestInfo(
+                limit=100,
+                offset=0,
+                sort="desc",
+                include_metadata=True,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -108,15 +102,11 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.domain_analytics_errors([
-            [
-                DomainAnalyticsErrorsRequestInfo(
-                    limit=10,
-                    offset=0,
-                    filtered_function="pingback_url",
-                ),
-            ]
-        ]
+        response = domain_analytics_api.domain_analytics_errors([DomainAnalyticsErrorsRequestInfo(
+                limit=10,
+                offset=0,
+                filtered_function="pingback_url",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -383,32 +373,20 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.technologies_aggregation_technologies_live([
-            [
-                DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo(
-                    mode="entry",
-                    technology="Nginx",
-                    keyword="WordPress",
-                    filters=[
-                    [
-                        "country_iso_code",
-                        "=",
-                        "US",
-                    ],
+        response = domain_analytics_api.technologies_aggregation_technologies_live([DomainAnalyticsTechnologiesAggregationTechnologiesLiveRequestInfo(
+                mode="entry",
+                technology="Nginx",
+                keyword="WordPress",
+                filters=[
+                    ,
                     "and",
-                    [
-                        "domain_rank",
-                        ">",
-                        800,
+                    ,
                     ],
-                ],
-                    order_by=[
+                order_by=[
                     "groups_count,desc",
-                ],
-                    limit=10,
-                ),
-            ]
-        ]
+                    ],
+                limit=10,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -463,32 +441,20 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.technologies_technologies_summary_live([
-            [
-                DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo(
-                    mode="entry",
-                    technologies=[
+        response = domain_analytics_api.technologies_technologies_summary_live([DomainAnalyticsTechnologiesTechnologiesSummaryLiveRequestInfo(
+                mode="entry",
+                technologies=[
                     "Ngi",
-                ],
-                    keywords=[
+                    ],
+                keywords=[
                     "WordPress",
-                ],
-                    filters=[
-                    [
-                        "country_iso_code",
-                        "=",
-                        "US",
                     ],
+                filters=[
+                    ,
                     "and",
-                    [
-                        "domain_rank",
-                        ">",
-                        800,
+                    ,
                     ],
-                ],
-                ),
-            ]
-        ]
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -543,15 +509,9 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.technologies_technology_stats_live([
-            [
-                DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo(
-                    technology="jQuery",
-                    date_from=,
-                    date_to=,
-                ),
-            ]
-        ]
+        response = domain_analytics_api.technologies_technology_stats_live([DomainAnalyticsTechnologiesTechnologyStatsLiveRequestInfo(
+                technology="jQuery",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -606,32 +566,20 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.technologies_domains_by_technology_live([
-            [
-                DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo(
-                    technologies=[
+        response = domain_analytics_api.technologies_domains_by_technology_live([DomainAnalyticsTechnologiesDomainsByTechnologyLiveRequestInfo(
+                technologies=[
                     "Nginx",
-                ],
-                    filters=[
-                    [
-                        "country_iso_code",
-                        "=",
-                        "US",
                     ],
+                filters=[
+                    ,
                     "and",
-                    [
-                        "domain_rank",
-                        ">",
-                        800,
+                    ,
                     ],
-                ],
-                    order_by=[
+                order_by=[
                     "last_visited,desc",
-                ],
-                    limit=10,
-                ),
-            ]
-        ]
+                    ],
+                limit=10,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -686,20 +634,16 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.technologies_domains_by_html_terms_live([
-            [
-                DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo(
-                    search_terms=[
+        response = domain_analytics_api.technologies_domains_by_html_terms_live([DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveRequestInfo(
+                search_terms=[
                     "data-attrid",
-                ],
-                    order_by=[
+                    ],
+                order_by=[
                     "last_visited,desc",
-                ],
-                    limit=10,
-                    offset=0,
-                ),
-            ]
-        ]
+                    ],
+                limit=10,
+                offset=0,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -754,13 +698,9 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.technologies_domain_technologies_live([
-            [
-                DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo(
-                    target="dataforseo.com",
-                ),
-            ]
-        ]
+        response = domain_analytics_api.technologies_domain_technologies_live([DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo(
+                target="dataforseo.com",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -868,23 +808,12 @@ try:
         # Create an instance of the API class
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
-        response = domain_analytics_api.whois_overview_live([
-            [
-                DomainAnalyticsWhoisOverviewLiveRequestInfo(
-                    limit=2,
-                    filters=[
-                    [
-                        "epp_status_codes",
-                        "in",
-                        [
-                            "client_transfer_prohibited",
-                            "client_update_prohibited",
-                        ],
+        response = domain_analytics_api.whois_overview_live([DomainAnalyticsWhoisOverviewLiveRequestInfo(
+                limit=2,
+                filters=[
+                    ,
                     ],
-                ],
-                ),
-            ]
-        ]
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)

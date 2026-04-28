@@ -209,18 +209,12 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.id_list([
-            [
-                SerpIdListRequestInfo(
-                    datetime_from=,
-                    datetime_to=,
-                    limit=100,
-                    offset=0,
-                    sort="desc",
-                    include_metadata=True,
-                ),
-            ]
-        ]
+        response = serp_api.id_list([SerpIdListRequestInfo(
+                limit=100,
+                offset=0,
+                sort="desc",
+                include_metadata=True,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -275,15 +269,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.errors([
-            [
-                SerpErrorsRequestInfo(
-                    limit=10,
-                    offset=0,
-                    filtered_function="pingback_url",
-                ),
-            ]
-        ]
+        response = serp_api.errors([SerpErrorsRequestInfo(
+                limit=10,
+                offset=0,
+                filtered_function="pingback_url",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -338,14 +328,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.screenshot([
-            [
-                SerpScreenshotRequestInfo(
-                    task_id="06211235-0696-0139-1000-36727fbd3c90",
-                    browser_screen_scale_factor=0.5,
-                ),
-            ]
-        ]
+        response = serp_api.screenshot([SerpScreenshotRequestInfo(
+                task_id="06211235-0696-0139-1000-36727fbd3c90",
+                browser_screen_scale_factor=0.5,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -400,16 +386,12 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.ai_summary([
-            [
-                SerpAiSummaryRequestInfo(
-                    task_id="07031739-1535-0139-0000-9d1e639a5b7d",
-                    prompt="explain what DataForSEO is",
-                    include_links=True,
-                    fetch_content=True,
-                ),
-            ]
-        ]
+        response = serp_api.ai_summary([SerpAiSummaryRequestInfo(
+                task_id="07031739-1535-0139-0000-9d1e639a5b7d",
+                prompt="explain what DataForSEO is",
+                include_links=True,
+                fetch_content=True,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -516,7 +498,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        country = 
+        country = "us"
         response = serp_api.google_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -624,28 +606,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_organic_task_post([
-            [
-                SerpGoogleOrganicTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-                SerpGoogleOrganicTaskPostRequestInfo(
-                    language_name="English",
-                    location_name="United States",
-                    keyword="albert einstein",
-                    priority=2,
-                    tag="some_string_123",
-                    pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
-                ),
-                SerpGoogleOrganicTaskPostRequestInfo(
-                    url="https://www.google.co.uk/search?q=albert%20einstein&hl=en&gl=GB&uule=w+CAIQIFISCXXeIa8LoNhHEZkq1d1aOpZS",
-                    postback_data="html",
-                    postback_url="https://your-server.com/postbackscript",
-                ),
-            ]
-        ]
+        response = serp_api.google_organic_task_post([SerpGoogleOrganicTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -858,7 +823,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_organic_task_get_regular(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -912,7 +877,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_organic_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -966,7 +931,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1021,15 +986,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_organic_live_regular([
-            [
-                SerpGoogleOrganicLiveRegularRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_organic_live_regular([SerpGoogleOrganicLiveRegularRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1084,16 +1045,12 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_organic_live_advanced([
-            [
-                SerpGoogleOrganicLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                    calculate_rectangles=True,
-                ),
-            ]
-        ]
+        response = serp_api.google_organic_live_advanced([SerpGoogleOrganicLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+                calculate_rectangles=True,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1148,15 +1105,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_organic_live_html([
-            [
-                SerpGoogleOrganicLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_organic_live_html([SerpGoogleOrganicLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1264,15 +1217,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_ai_mode_task_post([
-            [
-                SerpGoogleAiModeTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="what is google ai mode",
-                ),
-            ]
-        ]
+        response = serp_api.google_ai_mode_task_post([SerpGoogleAiModeTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="what is google ai mode",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1432,7 +1381,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_ai_mode_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1486,7 +1435,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_ai_mode_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1541,15 +1490,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_ai_mode_live_advanced([
-            [
-                SerpGoogleAiModeLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="what is google ai mode",
-                ),
-            ]
-        ]
+        response = serp_api.google_ai_mode_live_advanced([SerpGoogleAiModeLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="what is google ai mode",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1604,15 +1549,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_ai_mode_live_html([
-            [
-                SerpGoogleAiModeLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_ai_mode_live_html([SerpGoogleAiModeLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1667,15 +1608,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_maps_task_post([
-            [
-                SerpGoogleMapsTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_maps_task_post([SerpGoogleMapsTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1835,7 +1772,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_maps_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1890,15 +1827,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_maps_live_advanced([
-            [
-                SerpGoogleMapsLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_maps_live_advanced([SerpGoogleMapsLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -1953,17 +1886,13 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_local_finder_task_post([
-            [
-                SerpGoogleLocalFinderTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="local nail services",
-                    min_rating=4.5,
-                    time_filter="monday",
-                ),
-            ]
-        ]
+        response = serp_api.google_local_finder_task_post([SerpGoogleLocalFinderTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="local nail services",
+                min_rating=4.5,
+                time_filter="monday",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2123,7 +2052,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_local_finder_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2177,7 +2106,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_local_finder_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2232,17 +2161,13 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_local_finder_live_advanced([
-            [
-                SerpGoogleLocalFinderLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="local nail services",
-                    min_rating=4.5,
-                    time_filter="monday",
-                ),
-            ]
-        ]
+        response = serp_api.google_local_finder_live_advanced([SerpGoogleLocalFinderLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="local nail services",
+                min_rating=4.5,
+                time_filter="monday",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2297,15 +2222,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_local_finder_live_html([
-            [
-                SerpGoogleLocalFinderLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_local_finder_live_html([SerpGoogleLocalFinderLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2360,15 +2281,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_news_task_post([
-            [
-                SerpGoogleNewsTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_news_task_post([SerpGoogleNewsTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2528,7 +2445,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_news_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2582,7 +2499,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_news_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2637,15 +2554,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_news_live_advanced([
-            [
-                SerpGoogleNewsLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="android",
-                ),
-            ]
-        ]
+        response = serp_api.google_news_live_advanced([SerpGoogleNewsLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="android",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2700,15 +2613,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_news_live_html([
-            [
-                SerpGoogleNewsLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_news_live_html([SerpGoogleNewsLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2763,15 +2672,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_events_task_post([
-            [
-                SerpGoogleEventsTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_events_task_post([SerpGoogleEventsTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2931,7 +2836,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_events_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -2986,15 +2891,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_events_live_advanced([
-            [
-                SerpGoogleEventsLiveAdvancedRequestInfo(
-                    keyword="concerts",
-                    location_name="Los Angeles,California,United States",
-                    date_range="today",
-                ),
-            ]
-        ]
+        response = serp_api.google_events_live_advanced([SerpGoogleEventsLiveAdvancedRequestInfo(
+                keyword="concerts",
+                location_name="Los Angeles,California,United States",
+                date_range="today",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3049,15 +2950,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_images_task_post([
-            [
-                SerpGoogleImagesTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_images_task_post([SerpGoogleImagesTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3217,7 +3114,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_images_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3271,7 +3168,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_images_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3326,15 +3223,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_images_live_advanced([
-            [
-                SerpGoogleImagesLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_images_live_advanced([SerpGoogleImagesLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3389,15 +3282,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_images_live_html([
-            [
-                SerpGoogleImagesLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.google_images_live_html([SerpGoogleImagesLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3452,15 +3341,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_search_by_image_task_post([
-            [
-                SerpGoogleSearchByImageTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    image_url="https://dataforseo.com/wp-content/uploads/2016/11/data_for_seo_light_429.png",
-                ),
-            ]
-        ]
+        response = serp_api.google_search_by_image_task_post([SerpGoogleSearchByImageTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                image_url="https://dataforseo.com/wp-content/uploads/2016/11/data_for_seo_light_429.png",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3620,7 +3505,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_search_by_image_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3675,22 +3560,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_jobs_task_post([
-            [
-                SerpGoogleJobsTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword=".net developer",
-                ),
-                SerpGoogleJobsTaskPostRequestInfo(
-                    language_name="English",
-                    location_name="United States",
-                    keyword=".net developer",
-                    tag="some_string_123",
-                    pingback_url="https://your-server.com/pingscript?id=$id&tag=$tag",
-                ),
-            ]
-        ]
+        response = serp_api.google_jobs_task_post([SerpGoogleJobsTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword=".net developer",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3850,7 +3724,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_jobs_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3904,7 +3778,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_jobs_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -3959,16 +3833,12 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_autocomplete_task_post([
-            [
-                SerpGoogleAutocompleteTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                    cursor_pointer=6,
-                ),
-            ]
-        ]
+        response = serp_api.google_autocomplete_task_post([SerpGoogleAutocompleteTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+                cursor_pointer=6,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4128,7 +3998,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_autocomplete_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4183,16 +4053,12 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_autocomplete_live_advanced([
-            [
-                SerpGoogleAutocompleteLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                    client="gws-wiz-serp",
-                ),
-            ]
-        ]
+        response = serp_api.google_autocomplete_live_advanced([SerpGoogleAutocompleteLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+                client="gws-wiz-serp",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4247,24 +4113,20 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_dataset_search_task_post([
-            [
-                SerpGoogleDatasetSearchTaskPostRequestInfo(
-                    keyword="water quality",
-                    last_updated="1m",
-                    file_formats=[
+        response = serp_api.google_dataset_search_task_post([SerpGoogleDatasetSearchTaskPostRequestInfo(
+                keyword="water quality",
+                last_updated="1m",
+                file_formats=[
                     "archive",
                     "image",
-                ],
-                    usage_rights="noncommercial",
-                    is_free=True,
-                    topics=[
+                    ],
+                usage_rights="noncommercial",
+                is_free=True,
+                topics=[
                     "natural_sciences",
                     "geo",
-                ],
-                ),
-            ]
-        ]
+                    ],
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4424,7 +4286,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_dataset_search_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4479,24 +4341,20 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_dataset_search_live_advanced([
-            [
-                SerpGoogleDatasetSearchLiveAdvancedRequestInfo(
-                    keyword="water quality",
-                    last_updated="1m",
-                    file_formats=[
+        response = serp_api.google_dataset_search_live_advanced([SerpGoogleDatasetSearchLiveAdvancedRequestInfo(
+                keyword="water quality",
+                last_updated="1m",
+                file_formats=[
                     "archive",
                     "image",
-                ],
-                    usage_rights="noncommercial",
-                    is_free=True,
-                    topics=[
+                    ],
+                usage_rights="noncommercial",
+                is_free=True,
+                topics=[
                     "natural_sciences",
                     "geo",
-                ],
-                ),
-            ]
-        ]
+                    ],
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4551,13 +4409,9 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_dataset_info_task_post([
-            [
-                SerpGoogleDatasetInfoTaskPostRequestInfo(
-                    dataset_id="L2cvMTFqbl85ZHN6MQ==",
-                ),
-            ]
-        ]
+        response = serp_api.google_dataset_info_task_post([SerpGoogleDatasetInfoTaskPostRequestInfo(
+                dataset_id="L2cvMTFqbl85ZHN6MQ==",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4717,7 +4571,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_dataset_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4772,13 +4626,9 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_dataset_info_live_advanced([
-            [
-                SerpGoogleDatasetInfoLiveAdvancedRequestInfo(
-                    dataset_id="L2cvMTFqbl85ZHN6MQ==",
-                ),
-            ]
-        ]
+        response = serp_api.google_dataset_info_live_advanced([SerpGoogleDatasetInfoLiveAdvancedRequestInfo(
+                dataset_id="L2cvMTFqbl85ZHN6MQ==",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -4886,14 +4736,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_ads_advertisers_task_post([
-            [
-                SerpGoogleAdsAdvertisersTaskPostRequestInfo(
-                    location_code=2840,
-                    keyword="apple",
-                ),
-            ]
-        ]
+        response = serp_api.google_ads_advertisers_task_post([SerpGoogleAdsAdvertisersTaskPostRequestInfo(
+                location_code=2840,
+                keyword="apple",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5000,7 +4846,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_ads_advertisers_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5108,18 +4954,14 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_ads_search_task_post([
-            [
-                SerpGoogleAdsSearchTaskPostRequestInfo(
-                    location_code=2840,
-                    platform="google_search",
-                    advertiser_ids=[
+        response = serp_api.google_ads_search_task_post([SerpGoogleAdsSearchTaskPostRequestInfo(
+                location_code=2840,
+                platform="google_search",
+                advertiser_ids=[
                     "AR13752565271262920705",
                     "AR02439908557932462081",
-                ],
-                ),
-            ]
-        ]
+                    ],
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5226,7 +5068,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_ads_search_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5333,7 +5175,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        country = 
+        country = "us"
         response = serp_api.bing_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5441,15 +5283,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.bing_organic_task_post([
-            [
-                SerpBingOrganicTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.bing_organic_task_post([SerpBingOrganicTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5609,7 +5447,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.bing_organic_task_get_regular(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5663,7 +5501,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.bing_organic_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5717,7 +5555,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.bing_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5772,15 +5610,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.bing_organic_live_regular([
-            [
-                SerpBingOrganicLiveRegularRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.bing_organic_live_regular([SerpBingOrganicLiveRegularRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5835,15 +5669,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.bing_organic_live_advanced([
-            [
-                SerpBingOrganicLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="flight ticket new york san francisco",
-                ),
-            ]
-        ]
+        response = serp_api.bing_organic_live_advanced([SerpBingOrganicLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="flight ticket new york san francisco",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -5898,15 +5728,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.bing_organic_live_html([
-            [
-                SerpBingOrganicLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.bing_organic_live_html([SerpBingOrganicLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6013,7 +5839,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        country = 
+        country = "us"
         response = serp_api.youtube_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6121,15 +5947,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_video_info_task_post([
-            [
-                SerpYoutubeVideoInfoTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    video_id="vQXvyV0zIP4",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_video_info_task_post([SerpYoutubeVideoInfoTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="vQXvyV0zIP4",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6289,7 +6111,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.youtube_video_info_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6344,15 +6166,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_video_info_live_advanced([
-            [
-                SerpYoutubeVideoInfoLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    video_id="vQXvyV0zIP4",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_video_info_live_advanced([SerpYoutubeVideoInfoLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="vQXvyV0zIP4",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6407,15 +6225,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_organic_task_post([
-            [
-                SerpYoutubeOrganicTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="audi",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_organic_task_post([SerpYoutubeOrganicTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="audi",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6575,7 +6389,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.youtube_organic_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6630,15 +6444,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_organic_live_advanced([
-            [
-                SerpYoutubeOrganicLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="audi",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_organic_live_advanced([SerpYoutubeOrganicLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="audi",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6693,15 +6503,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_video_subtitles_task_post([
-            [
-                SerpYoutubeVideoSubtitlesTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    video_id="Y8Wu4rSNJms",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_video_subtitles_task_post([SerpYoutubeVideoSubtitlesTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="Y8Wu4rSNJms",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6861,7 +6667,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.youtube_video_subtitles_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6916,15 +6722,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_video_subtitles_live_advanced([
-            [
-                SerpYoutubeVideoSubtitlesLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    video_id="Y8Wu4rSNJms",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_video_subtitles_live_advanced([SerpYoutubeVideoSubtitlesLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="Y8Wu4rSNJms",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -6979,15 +6781,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_video_comments_task_post([
-            [
-                SerpYoutubeVideoCommentsTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    video_id="vQXvyV0zIP4",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_video_comments_task_post([SerpYoutubeVideoCommentsTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="vQXvyV0zIP4",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7147,7 +6945,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.youtube_video_comments_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7202,15 +7000,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.youtube_video_comments_live_advanced([
-            [
-                SerpYoutubeVideoCommentsLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    video_id="vQXvyV0zIP4",
-                ),
-            ]
-        ]
+        response = serp_api.youtube_video_comments_live_advanced([SerpYoutubeVideoCommentsLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="vQXvyV0zIP4",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7317,7 +7111,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        country = 
+        country = "us"
         response = serp_api.yahoo_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7425,15 +7219,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.yahoo_organic_task_post([
-            [
-                SerpYahooOrganicTaskPostRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.yahoo_organic_task_post([SerpYahooOrganicTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7593,7 +7383,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.yahoo_organic_task_get_regular(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7647,7 +7437,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.yahoo_organic_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7701,7 +7491,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.yahoo_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7756,15 +7546,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.yahoo_organic_live_regular([
-            [
-                SerpYahooOrganicLiveRegularRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.yahoo_organic_live_regular([SerpYahooOrganicLiveRegularRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7819,15 +7605,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.yahoo_organic_live_advanced([
-            [
-                SerpYahooOrganicLiveAdvancedRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.yahoo_organic_live_advanced([SerpYahooOrganicLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7882,15 +7664,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.yahoo_organic_live_html([
-            [
-                SerpYahooOrganicLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.yahoo_organic_live_html([SerpYahooOrganicLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -7997,7 +7775,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        country = 
+        country = "us"
         response = serp_api.baidu_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8105,16 +7883,12 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.baidu_organic_task_post([
-            [
-                SerpBaiduOrganicTaskPostRequestInfo(
-                    location_code=2156,
-                    keyword="best iphone ever",
-                    tag="some_string_123",
-                    priority=2,
-                ),
-            ]
-        ]
+        response = serp_api.baidu_organic_task_post([SerpBaiduOrganicTaskPostRequestInfo(
+                location_code=2156,
+                keyword="best iphone ever",
+                tag="some_string_123",
+                priority=2,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8274,7 +8048,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.baidu_organic_task_get_regular(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8328,7 +8102,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.baidu_organic_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8382,7 +8156,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.baidu_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8437,17 +8211,13 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.naver_organic_task_post([
-            [
-                SerpNaverOrganicTaskPostRequestInfo(
-                    keyword="albert einstein",
-                    device="desktop",
-                    tag="some_string_123",
-                    postback_url="https://your-server.com/postbackscript.php",
-                    postback_data="regular",
-                ),
-            ]
-        ]
+        response = serp_api.naver_organic_task_post([SerpNaverOrganicTaskPostRequestInfo(
+                keyword="albert einstein",
+                device="desktop",
+                tag="some_string_123",
+                postback_url="https://your-server.com/postbackscript.php",
+                postback_data="regular",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8607,7 +8377,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.naver_organic_task_get_regular(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8661,7 +8431,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.naver_organic_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8715,7 +8485,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.naver_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8822,7 +8592,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        country = 
+        country = "us"
         response = serp_api.seznam_locations_country(country)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -8930,15 +8700,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.seznam_organic_task_post([
-            [
-                SerpSeznamOrganicTaskPostRequestInfo(
-                    language_code="cs",
-                    location_code=2203,
-                    keyword="albert einstein",
-                ),
-            ]
-        ]
+        response = serp_api.seznam_organic_task_post([SerpSeznamOrganicTaskPostRequestInfo(
+                language_code="cs",
+                location_code=2203,
+                keyword="albert einstein",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9098,7 +8864,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.seznam_organic_task_get_regular(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9152,7 +8918,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.seznam_organic_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9206,7 +8972,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.seznam_organic_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9261,14 +9027,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_explore_task_post([
-            [
-                SerpGoogleFinanceExploreTaskPostRequestInfo(
-                    location_code=2840,
-                    language_name="English",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_explore_task_post([SerpGoogleFinanceExploreTaskPostRequestInfo(
+                location_code=2840,
+                language_name="English",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9375,7 +9137,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_explore_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9429,7 +9191,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_explore_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9484,14 +9246,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_explore_live_advanced([
-            [
-                SerpGoogleFinanceExploreLiveAdvancedRequestInfo(
-                    location_code=2840,
-                    language_name="English",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_explore_live_advanced([SerpGoogleFinanceExploreLiveAdvancedRequestInfo(
+                location_code=2840,
+                language_name="English",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9546,14 +9304,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_explore_live_html([
-            [
-                SerpGoogleFinanceExploreLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_explore_live_html([SerpGoogleFinanceExploreLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9608,14 +9362,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_markets_task_post([
-            [
-                SerpGoogleFinanceMarketsTaskPostRequestInfo(
-                    location_code=2840,
-                    language_name="English",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_markets_task_post([SerpGoogleFinanceMarketsTaskPostRequestInfo(
+                location_code=2840,
+                language_name="English",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9722,7 +9472,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_markets_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9776,7 +9526,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_markets_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9831,14 +9581,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_markets_live_advanced([
-            [
-                SerpGoogleFinanceMarketsLiveAdvancedRequestInfo(
-                    location_code=2840,
-                    language_name="English",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_markets_live_advanced([SerpGoogleFinanceMarketsLiveAdvancedRequestInfo(
+                location_code=2840,
+                language_name="English",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9893,14 +9639,10 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_markets_live_html([
-            [
-                SerpGoogleFinanceMarketsLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_markets_live_html([SerpGoogleFinanceMarketsLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -9955,15 +9697,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_quote_task_post([
-            [
-                SerpGoogleFinanceQuoteTaskPostRequestInfo(
-                    keyword=".DJI:INDEXDJX",
-                    location_code=2840,
-                    language_name="English",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_quote_task_post([SerpGoogleFinanceQuoteTaskPostRequestInfo(
+                keyword=".DJI:INDEXDJX",
+                location_code=2840,
+                language_name="English",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -10070,7 +9808,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_quote_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -10124,7 +9862,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_quote_task_get_html(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -10179,15 +9917,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_quote_live_advanced([
-            [
-                SerpGoogleFinanceQuoteLiveAdvancedRequestInfo(
-                    keyword="CLW00:NYMEX",
-                    location_code=2840,
-                    language_name="English",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_quote_live_advanced([SerpGoogleFinanceQuoteLiveAdvancedRequestInfo(
+                keyword="CLW00:NYMEX",
+                location_code=2840,
+                language_name="English",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -10242,15 +9976,11 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_quote_live_html([
-            [
-                SerpGoogleFinanceQuoteLiveHtmlRequestInfo(
-                    language_code="en",
-                    location_code=2840,
-                    keyword="NASDAQ-100",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_quote_live_html([SerpGoogleFinanceQuoteLiveHtmlRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="NASDAQ-100",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -10305,17 +10035,13 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_ticker_search_task_post([
-            [
-                SerpGoogleFinanceTickerSearchTaskPostRequestInfo(
-                    language_name="English",
-                    location_code=2840,
-                    category="all",
-                    keyword="DJ",
-                    priority=2,
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_ticker_search_task_post([SerpGoogleFinanceTickerSearchTaskPostRequestInfo(
+                language_name="English",
+                location_code=2840,
+                category="all",
+                keyword="DJ",
+                priority=2,
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -10422,7 +10148,7 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        id = 
+        id = "00000000-0000-0000-0000-000000000000"
         response = serp_api.google_finance_ticker_search_task_get_advanced(id)
 except ApiException as e:
     print("Exception: %s\n" % e)
@@ -10477,16 +10203,12 @@ try:
         # Create an instance of the API class
         serp_api = SerpApi(api_client)
 
-        response = serp_api.google_finance_ticker_search_live_advanced([
-            [
-                SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo(
-                    language_name="English",
-                    location_code=2840,
-                    category="all",
-                    keyword="DJ",
-                ),
-            ]
-        ]
+        response = serp_api.google_finance_ticker_search_live_advanced([SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo(
+                language_name="English",
+                location_code=2840,
+                category="all",
+                keyword="DJ",
+        )]
         )
 except ApiException as e:
     print("Exception: %s\n" % e)
