@@ -13,6 +13,7 @@ from dataforseo_client.models.business_data_attributes_info import BusinessDataA
 from dataforseo_client.models.rating_info import RatingInfo
 from dataforseo_client.models.people_also_search import PeopleAlsoSearch
 from dataforseo_client.models.business_work_hours_info import BusinessWorkHoursInfo
+from dataforseo_client.models.services import Services
 
 
 
@@ -60,6 +61,7 @@ class ItemsGoogleBusinessInfo(BaseModel):
     local_business_links: Optional[Any] = Field(default=None, description=r"available interactions with the business. list of options to interact with the business directly from search results")
     is_directory_item: Optional[StrictBool] = Field(default=None, description=r"business establishment is a part of the directory. indicates whether the business establishment is a part of the directory;. if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre);. note: if the business establishment is a parent item in the directory, the value will be null")
     directory: Optional[Any] = Field(default=None, description=r"items of the directory. includes information about businesses that are located within the target business establishment and have the same address")
+    services: Optional[List[Optional[Services]]] = Field(default=None, description=r"list of services offered by the business")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -101,6 +103,7 @@ class ItemsGoogleBusinessInfo(BaseModel):
         "local_business_links", 
         "is_directory_item", 
         "directory", 
+        "services", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -172,6 +175,12 @@ class ItemsGoogleBusinessInfo(BaseModel):
         _dict['local_business_links'] = self.local_business_links
         _dict['is_directory_item'] = self.is_directory_item
         _dict['directory'] = self.directory
+        services_items = []
+        if self.services:
+            for _item in self.services:
+                if _item:
+                    services_items.append(_item.to_dict())
+            _dict['services'] = services_items
         return _dict
 
 
@@ -224,6 +233,7 @@ class ItemsGoogleBusinessInfo(BaseModel):
             "local_business_links": obj.get("local_business_links"),
             "is_directory_item": obj.get("is_directory_item"),
             "directory": obj.get("directory"),
+            "services": [Services.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

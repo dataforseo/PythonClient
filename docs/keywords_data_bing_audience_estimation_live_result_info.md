@@ -11,7 +11,7 @@
 **est_spend** | **AudienceEstimationInfo** | monthly estimated spending range |[optional]|
 **est_cost_per_event** | **AudienceEstimationInfo** | indicates the estimated cost per event with range result |[optional]|
 **est_ctr** | **AudienceEstimationInfo** | estimated click-through rate range |[optional]|
-**suggested_bid** | **StrictFloat** | suggested bid value under the current targeting |[optional]|
+**suggested_bid** | **StrictInt** | suggested bid value under the current targeting |[optional]|
 **suggested_budget** | **StrictFloat** | suggested daily budget value under the current targeting and bid |[optional]|
 **events_lost_to_bid** | **StrictInt** | indicates event lost count due to insufficient input bid |[optional]|
 **events_lost_to_budget** | **StrictInt** | indicates the event lost count due to insufficient input budget |[optional]|

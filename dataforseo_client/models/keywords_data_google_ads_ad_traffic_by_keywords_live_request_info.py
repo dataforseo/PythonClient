@@ -18,7 +18,6 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(BaseModel):
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords. required field. The maximum number of keywords you can specify: 1000. The maximum number of characters for each keyword: 80. The maximum number of words for each keyword phrase: 10. the keywords you specify will be converted to a lowercase format. Note: Google Ads may return no data for certain groups of keywords. visit our Help Center to learn more. Also note that Google Ads doesn’t allow using certain symbols and characters (e.g., UTF symbols, emojis), so you can’t use them when setting a task;. to learn more about which symbols and characters can be used, please refer to this article. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     bid: Optional[StrictInt] = Field(default=None, description=r"the maximum custom bid. required field. the collected data will be based on this value. it stands for the price you are willing to pay for an ad; the higher value you specify here, the higher values you will get in the returned metrics. learn more in this help center article")
     match: Optional[StrictStr] = Field(default=None, description=r"keywords match-type. required field. can take the following values: exact, broad, phrase")
-    search_partners: Optional[StrictBool] = Field(default=None, description=r"include Google search partners. optional field. if you specify true, the results will be delivered for owned, operated, and syndicated networks across Google and partner sites that host Google search;. default value: false – results are returned for Google search sites")
     location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine location. optional field. if you do not indicate the location, you will receive worldwide results, i.e., for all available locations;. if you use this field, you don’t need to specify location_code or location_coordinate. you can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_ads/locations. example:. London,England,United Kingdom")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location code. optional field. if you do not indicate the location, you will receive worldwide results, i.e., for all available locations;. if you use this field, you don’t need to specify location_name or location_coordinate;. you can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/keywords_data/google_ads/locations. example:. 2840")
     location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a location. optional field. if you do not indicate the location, you will receive worldwide results, i.e., for all available locations;. if you use this field, you don’t need to specify location_name or location_code;. location_coordinate parameter should be specified in the “latitude,longitude” format;. the data will be provided for the country the specified coordinates belong to;. example:. 52.6178549,-155.352142")
@@ -33,7 +32,6 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(BaseModel):
         "keywords", 
         "bid", 
         "match", 
-        "search_partners", 
         "location_name", 
         "location_code", 
         "location_coordinate", 
@@ -73,7 +71,6 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(BaseModel):
         _dict['keywords'] = self.keywords
         _dict['bid'] = self.bid
         _dict['match'] = self.match
-        _dict['search_partners'] = self.search_partners
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
         _dict['location_coordinate'] = self.location_coordinate
@@ -99,7 +96,6 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(BaseModel):
             "keywords": obj.get("keywords"),
             "bid": obj.get("bid"),
             "match": obj.get("match"),
-            "search_partners": obj.get("search_partners"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),
             "location_coordinate": obj.get("location_coordinate"),

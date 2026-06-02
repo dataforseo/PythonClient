@@ -34,17 +34,29 @@ if TYPE_CHECKING:
     from dataforseo_client.models.merchant_amazon_products_task_post_response_info import MerchantAmazonProductsTaskPostResponseInfo
     from dataforseo_client.models.merchant_amazon_products_tasks_ready_response_info import MerchantAmazonProductsTasksReadyResponseInfo
     from dataforseo_client.models.merchant_amazon_products_task_get_advanced_response_info import MerchantAmazonProductsTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.merchant_amazon_products_live_advanced_request_info import MerchantAmazonProductsLiveAdvancedRequestInfo
+    from dataforseo_client.models.merchant_amazon_products_live_advanced_response_info import MerchantAmazonProductsLiveAdvancedResponseInfo
     from dataforseo_client.models.merchant_amazon_products_task_get_html_response_info import MerchantAmazonProductsTaskGetHtmlResponseInfo
+    from dataforseo_client.models.merchant_amazon_products_live_html_request_info import MerchantAmazonProductsLiveHtmlRequestInfo
+    from dataforseo_client.models.merchant_amazon_products_live_html_response_info import MerchantAmazonProductsLiveHtmlResponseInfo
     from dataforseo_client.models.merchant_amazon_asin_task_post_request_info import MerchantAmazonAsinTaskPostRequestInfo
     from dataforseo_client.models.merchant_amazon_asin_task_post_response_info import MerchantAmazonAsinTaskPostResponseInfo
     from dataforseo_client.models.merchant_amazon_asin_tasks_ready_response_info import MerchantAmazonAsinTasksReadyResponseInfo
     from dataforseo_client.models.merchant_amazon_asin_task_get_advanced_response_info import MerchantAmazonAsinTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.merchant_amazon_asin_live_advanced_request_info import MerchantAmazonAsinLiveAdvancedRequestInfo
+    from dataforseo_client.models.merchant_amazon_asin_live_advanced_response_info import MerchantAmazonAsinLiveAdvancedResponseInfo
     from dataforseo_client.models.merchant_amazon_asin_task_get_html_response_info import MerchantAmazonAsinTaskGetHtmlResponseInfo
+    from dataforseo_client.models.merchant_amazon_asin_live_html_request_info import MerchantAmazonAsinLiveHtmlRequestInfo
+    from dataforseo_client.models.merchant_amazon_asin_live_html_response_info import MerchantAmazonAsinLiveHtmlResponseInfo
     from dataforseo_client.models.merchant_amazon_sellers_task_post_request_info import MerchantAmazonSellersTaskPostRequestInfo
     from dataforseo_client.models.merchant_amazon_sellers_task_post_response_info import MerchantAmazonSellersTaskPostResponseInfo
     from dataforseo_client.models.merchant_amazon_sellers_tasks_ready_response_info import MerchantAmazonSellersTasksReadyResponseInfo
     from dataforseo_client.models.merchant_amazon_sellers_task_get_advanced_response_info import MerchantAmazonSellersTaskGetAdvancedResponseInfo
+    from dataforseo_client.models.merchant_amazon_sellers_live_advanced_request_info import MerchantAmazonSellersLiveAdvancedRequestInfo
+    from dataforseo_client.models.merchant_amazon_sellers_live_advanced_response_info import MerchantAmazonSellersLiveAdvancedResponseInfo
     from dataforseo_client.models.merchant_amazon_sellers_task_get_html_response_info import MerchantAmazonSellersTaskGetHtmlResponseInfo
+    from dataforseo_client.models.merchant_amazon_sellers_live_html_request_info import MerchantAmazonSellersLiveHtmlRequestInfo
+    from dataforseo_client.models.merchant_amazon_sellers_live_html_response_info import MerchantAmazonSellersLiveHtmlResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -3935,6 +3947,198 @@ class MerchantApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.merchant_amazon_products_live_advanced_request_info import MerchantAmazonProductsLiveAdvancedRequestInfo
+    from dataforseo_client.models.merchant_amazon_products_live_advanced_response_info import MerchantAmazonProductsLiveAdvancedResponseInfo
+    @validate_call
+    def amazon_products_live_advanced(
+        self,
+        list_optional_merchant_amazon_products_live_advanced_request_info: 'List[Optional[MerchantAmazonProductsLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> MerchantAmazonProductsLiveAdvancedResponseInfo:
+
+        _param = self._amazon_products_live_advanced_serialize(
+            list_optional_merchant_amazon_products_live_advanced_request_info=list_optional_merchant_amazon_products_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonProductsLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def amazon_products_live_advanced_with_http_info(
+        self,
+        list_optional_merchant_amazon_products_live_advanced_request_info: 'List[Optional[MerchantAmazonProductsLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[MerchantAmazonProductsLiveAdvancedResponseInfo]':
+
+        _param = self._amazon_products_live_advanced_serialize(
+            list_optional_merchant_amazon_products_live_advanced_request_info=list_optional_merchant_amazon_products_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonProductsLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def amazon_products_live_advanced_without_preload_content(
+        self,
+        list_optional_merchant_amazon_products_live_advanced_request_info: 'List[Optional[MerchantAmazonProductsLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._amazon_products_live_advanced_serialize(
+            list_optional_merchant_amazon_products_live_advanced_request_info=list_optional_merchant_amazon_products_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonProductsLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _amazon_products_live_advanced_serialize(
+        self,
+        list_optional_merchant_amazon_products_live_advanced_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[MerchantAmazonProductsLiveAdvancedRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_merchant_amazon_products_live_advanced_request_info is not None:
+            _body_params = list_optional_merchant_amazon_products_live_advanced_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/merchant/amazon/products/live/advanced',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
     from dataforseo_client.models.merchant_amazon_products_task_get_html_response_info import MerchantAmazonProductsTaskGetHtmlResponseInfo
     @validate_call
     def amazon_products_task_get_html(
@@ -4088,6 +4292,198 @@ class MerchantApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/v3/merchant/amazon/products/task_get/html/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.merchant_amazon_products_live_html_request_info import MerchantAmazonProductsLiveHtmlRequestInfo
+    from dataforseo_client.models.merchant_amazon_products_live_html_response_info import MerchantAmazonProductsLiveHtmlResponseInfo
+    @validate_call
+    def amazon_products_live_html(
+        self,
+        list_optional_merchant_amazon_products_live_html_request_info: 'List[Optional[MerchantAmazonProductsLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> MerchantAmazonProductsLiveHtmlResponseInfo:
+
+        _param = self._amazon_products_live_html_serialize(
+            list_optional_merchant_amazon_products_live_html_request_info=list_optional_merchant_amazon_products_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonProductsLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def amazon_products_live_html_with_http_info(
+        self,
+        list_optional_merchant_amazon_products_live_html_request_info: 'List[Optional[MerchantAmazonProductsLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[MerchantAmazonProductsLiveHtmlResponseInfo]':
+
+        _param = self._amazon_products_live_html_serialize(
+            list_optional_merchant_amazon_products_live_html_request_info=list_optional_merchant_amazon_products_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonProductsLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def amazon_products_live_html_without_preload_content(
+        self,
+        list_optional_merchant_amazon_products_live_html_request_info: 'List[Optional[MerchantAmazonProductsLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._amazon_products_live_html_serialize(
+            list_optional_merchant_amazon_products_live_html_request_info=list_optional_merchant_amazon_products_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonProductsLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _amazon_products_live_html_serialize(
+        self,
+        list_optional_merchant_amazon_products_live_html_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[MerchantAmazonProductsLiveHtmlRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_merchant_amazon_products_live_html_request_info is not None:
+            _body_params = list_optional_merchant_amazon_products_live_html_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/merchant/amazon/products/live/html',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -4613,6 +5009,198 @@ class MerchantApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.merchant_amazon_asin_live_advanced_request_info import MerchantAmazonAsinLiveAdvancedRequestInfo
+    from dataforseo_client.models.merchant_amazon_asin_live_advanced_response_info import MerchantAmazonAsinLiveAdvancedResponseInfo
+    @validate_call
+    def amazon_asin_live_advanced(
+        self,
+        list_optional_merchant_amazon_asin_live_advanced_request_info: 'List[Optional[MerchantAmazonAsinLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> MerchantAmazonAsinLiveAdvancedResponseInfo:
+
+        _param = self._amazon_asin_live_advanced_serialize(
+            list_optional_merchant_amazon_asin_live_advanced_request_info=list_optional_merchant_amazon_asin_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonAsinLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def amazon_asin_live_advanced_with_http_info(
+        self,
+        list_optional_merchant_amazon_asin_live_advanced_request_info: 'List[Optional[MerchantAmazonAsinLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[MerchantAmazonAsinLiveAdvancedResponseInfo]':
+
+        _param = self._amazon_asin_live_advanced_serialize(
+            list_optional_merchant_amazon_asin_live_advanced_request_info=list_optional_merchant_amazon_asin_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonAsinLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def amazon_asin_live_advanced_without_preload_content(
+        self,
+        list_optional_merchant_amazon_asin_live_advanced_request_info: 'List[Optional[MerchantAmazonAsinLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._amazon_asin_live_advanced_serialize(
+            list_optional_merchant_amazon_asin_live_advanced_request_info=list_optional_merchant_amazon_asin_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonAsinLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _amazon_asin_live_advanced_serialize(
+        self,
+        list_optional_merchant_amazon_asin_live_advanced_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[MerchantAmazonAsinLiveAdvancedRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_merchant_amazon_asin_live_advanced_request_info is not None:
+            _body_params = list_optional_merchant_amazon_asin_live_advanced_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/merchant/amazon/asin/live/advanced',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
     from dataforseo_client.models.merchant_amazon_asin_task_get_html_response_info import MerchantAmazonAsinTaskGetHtmlResponseInfo
     @validate_call
     def amazon_asin_task_get_html(
@@ -4766,6 +5354,198 @@ class MerchantApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/v3/merchant/amazon/asin/task_get/html/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.merchant_amazon_asin_live_html_request_info import MerchantAmazonAsinLiveHtmlRequestInfo
+    from dataforseo_client.models.merchant_amazon_asin_live_html_response_info import MerchantAmazonAsinLiveHtmlResponseInfo
+    @validate_call
+    def amazon_asin_live_html(
+        self,
+        list_optional_merchant_amazon_asin_live_html_request_info: 'List[Optional[MerchantAmazonAsinLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> MerchantAmazonAsinLiveHtmlResponseInfo:
+
+        _param = self._amazon_asin_live_html_serialize(
+            list_optional_merchant_amazon_asin_live_html_request_info=list_optional_merchant_amazon_asin_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonAsinLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def amazon_asin_live_html_with_http_info(
+        self,
+        list_optional_merchant_amazon_asin_live_html_request_info: 'List[Optional[MerchantAmazonAsinLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[MerchantAmazonAsinLiveHtmlResponseInfo]':
+
+        _param = self._amazon_asin_live_html_serialize(
+            list_optional_merchant_amazon_asin_live_html_request_info=list_optional_merchant_amazon_asin_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonAsinLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def amazon_asin_live_html_without_preload_content(
+        self,
+        list_optional_merchant_amazon_asin_live_html_request_info: 'List[Optional[MerchantAmazonAsinLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._amazon_asin_live_html_serialize(
+            list_optional_merchant_amazon_asin_live_html_request_info=list_optional_merchant_amazon_asin_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonAsinLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _amazon_asin_live_html_serialize(
+        self,
+        list_optional_merchant_amazon_asin_live_html_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[MerchantAmazonAsinLiveHtmlRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_merchant_amazon_asin_live_html_request_info is not None:
+            _body_params = list_optional_merchant_amazon_asin_live_html_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/merchant/amazon/asin/live/html',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -5291,6 +6071,198 @@ class MerchantApi:
             _request_auth=_request_auth
         )
 
+    from dataforseo_client.models.merchant_amazon_sellers_live_advanced_request_info import MerchantAmazonSellersLiveAdvancedRequestInfo
+    from dataforseo_client.models.merchant_amazon_sellers_live_advanced_response_info import MerchantAmazonSellersLiveAdvancedResponseInfo
+    @validate_call
+    def amazon_sellers_live_advanced(
+        self,
+        list_optional_merchant_amazon_sellers_live_advanced_request_info: 'List[Optional[MerchantAmazonSellersLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> MerchantAmazonSellersLiveAdvancedResponseInfo:
+
+        _param = self._amazon_sellers_live_advanced_serialize(
+            list_optional_merchant_amazon_sellers_live_advanced_request_info=list_optional_merchant_amazon_sellers_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonSellersLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def amazon_sellers_live_advanced_with_http_info(
+        self,
+        list_optional_merchant_amazon_sellers_live_advanced_request_info: 'List[Optional[MerchantAmazonSellersLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[MerchantAmazonSellersLiveAdvancedResponseInfo]':
+
+        _param = self._amazon_sellers_live_advanced_serialize(
+            list_optional_merchant_amazon_sellers_live_advanced_request_info=list_optional_merchant_amazon_sellers_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonSellersLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def amazon_sellers_live_advanced_without_preload_content(
+        self,
+        list_optional_merchant_amazon_sellers_live_advanced_request_info: 'List[Optional[MerchantAmazonSellersLiveAdvancedRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._amazon_sellers_live_advanced_serialize(
+            list_optional_merchant_amazon_sellers_live_advanced_request_info=list_optional_merchant_amazon_sellers_live_advanced_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonSellersLiveAdvancedResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _amazon_sellers_live_advanced_serialize(
+        self,
+        list_optional_merchant_amazon_sellers_live_advanced_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[MerchantAmazonSellersLiveAdvancedRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_merchant_amazon_sellers_live_advanced_request_info is not None:
+            _body_params = list_optional_merchant_amazon_sellers_live_advanced_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/merchant/amazon/sellers/live/advanced',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
     from dataforseo_client.models.merchant_amazon_sellers_task_get_html_response_info import MerchantAmazonSellersTaskGetHtmlResponseInfo
     @validate_call
     def amazon_sellers_task_get_html(
@@ -5444,6 +6416,198 @@ class MerchantApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/v3/merchant/amazon/sellers/task_get/html/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.merchant_amazon_sellers_live_html_request_info import MerchantAmazonSellersLiveHtmlRequestInfo
+    from dataforseo_client.models.merchant_amazon_sellers_live_html_response_info import MerchantAmazonSellersLiveHtmlResponseInfo
+    @validate_call
+    def amazon_sellers_live_html(
+        self,
+        list_optional_merchant_amazon_sellers_live_html_request_info: 'List[Optional[MerchantAmazonSellersLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> MerchantAmazonSellersLiveHtmlResponseInfo:
+
+        _param = self._amazon_sellers_live_html_serialize(
+            list_optional_merchant_amazon_sellers_live_html_request_info=list_optional_merchant_amazon_sellers_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonSellersLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def amazon_sellers_live_html_with_http_info(
+        self,
+        list_optional_merchant_amazon_sellers_live_html_request_info: 'List[Optional[MerchantAmazonSellersLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[MerchantAmazonSellersLiveHtmlResponseInfo]':
+
+        _param = self._amazon_sellers_live_html_serialize(
+            list_optional_merchant_amazon_sellers_live_html_request_info=list_optional_merchant_amazon_sellers_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonSellersLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def amazon_sellers_live_html_without_preload_content(
+        self,
+        list_optional_merchant_amazon_sellers_live_html_request_info: 'List[Optional[MerchantAmazonSellersLiveHtmlRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._amazon_sellers_live_html_serialize(
+            list_optional_merchant_amazon_sellers_live_html_request_info=list_optional_merchant_amazon_sellers_live_html_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "MerchantAmazonSellersLiveHtmlResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _amazon_sellers_live_html_serialize(
+        self,
+        list_optional_merchant_amazon_sellers_live_html_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[MerchantAmazonSellersLiveHtmlRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_merchant_amazon_sellers_live_html_request_info is not None:
+            _body_params = list_optional_merchant_amazon_sellers_live_html_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/merchant/amazon/sellers/live/html',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

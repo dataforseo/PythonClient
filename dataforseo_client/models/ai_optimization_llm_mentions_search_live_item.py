@@ -25,7 +25,7 @@ class AiOptimizationLlmMentionsSearchLiveItem(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     question: Optional[StrictStr] = Field(default=None, description=r"relevant question")
     answer: Optional[StrictStr] = Field(default=None, description=r"relevant answer in markdown formatcontent of the result formatted in the markdown markup language")
-    sources: Optional[List[Optional[Sources]]] = Field(default=None, description=r"array of sourcesthe sources the model cited or relied on in its final answer")
+    sources: Optional[List[Optional[Sources]]] = Field(default=None, description=r"array of sourcesthe sources the model cited or relied on in its final answerlearn more about the sources and how to retrieve LLM citation data at our Help Center")
     search_results: Optional[List[Optional[SearchResults]]] = Field(default=None, description=r"array of search resultsall web search outputs the model retrieved when looking up information, including duplicates and unused entries")
     ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keywordlearn more about this metric here")
     monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly AI search volume ratesarray of objects with AI search volume rates in a certain month of a year")

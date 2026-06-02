@@ -19,7 +19,7 @@ class GroupElement(BaseModel):
     key: Optional[StrictStr] = Field(default=None, description=r"grouping identifierthe specific identifier for the grouping dimension")
     mentions: Optional[StrictInt] = Field(default=None, description=r"total LLM mentions countthe number of times the target keyword or domain were mentioned in relation to this specific grouping key")
     ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keywordlearn more about this metric here")
-    impressions: Optional[StrictInt] = Field(default=None, description=r"current AI impressions rate of a keyword")
+    impressions: Optional[StrictInt] = Field(default=None, description=r"AI impressions rate of a keyworddeprecated field, the value will be null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "key", 

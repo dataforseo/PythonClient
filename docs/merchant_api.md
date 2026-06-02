@@ -27,15 +27,21 @@ All URIs are relative to *https://api.dataforseo.com*
 [**amazonProductsTaskPost**](MerchantApi.md#amazonProductsTaskPost) | **POST**  /v3/merchant/amazon/products/task_post  |
 [**amazonProductsTasksReady**](MerchantApi.md#amazonProductsTasksReady) | **GET**  /v3/merchant/amazon/products/tasks_ready  |
 [**amazonProductsTaskGetAdvanced**](MerchantApi.md#amazonProductsTaskGetAdvanced) | **GET**  /v3/merchant/amazon/products/task_get/advanced/{id}  |
+[**amazonProductsLiveAdvanced**](MerchantApi.md#amazonProductsLiveAdvanced) | **POST**  /v3/merchant/amazon/products/live/advanced  |
 [**amazonProductsTaskGetHtml**](MerchantApi.md#amazonProductsTaskGetHtml) | **GET**  /v3/merchant/amazon/products/task_get/html/{id}  |
+[**amazonProductsLiveHtml**](MerchantApi.md#amazonProductsLiveHtml) | **POST**  /v3/merchant/amazon/products/live/html  |
 [**amazonAsinTaskPost**](MerchantApi.md#amazonAsinTaskPost) | **POST**  /v3/merchant/amazon/asin/task_post  |
 [**amazonAsinTasksReady**](MerchantApi.md#amazonAsinTasksReady) | **GET**  /v3/merchant/amazon/asin/tasks_ready  |
 [**amazonAsinTaskGetAdvanced**](MerchantApi.md#amazonAsinTaskGetAdvanced) | **GET**  /v3/merchant/amazon/asin/task_get/advanced/{id}  |
+[**amazonAsinLiveAdvanced**](MerchantApi.md#amazonAsinLiveAdvanced) | **POST**  /v3/merchant/amazon/asin/live/advanced  |
 [**amazonAsinTaskGetHtml**](MerchantApi.md#amazonAsinTaskGetHtml) | **GET**  /v3/merchant/amazon/asin/task_get/html/{id}  |
+[**amazonAsinLiveHtml**](MerchantApi.md#amazonAsinLiveHtml) | **POST**  /v3/merchant/amazon/asin/live/html  |
 [**amazonSellersTaskPost**](MerchantApi.md#amazonSellersTaskPost) | **POST**  /v3/merchant/amazon/sellers/task_post  |
 [**amazonSellersTasksReady**](MerchantApi.md#amazonSellersTasksReady) | **GET**  /v3/merchant/amazon/sellers/tasks_ready  |
 [**amazonSellersTaskGetAdvanced**](MerchantApi.md#amazonSellersTaskGetAdvanced) | **GET**  /v3/merchant/amazon/sellers/task_get/advanced/{id}  |
+[**amazonSellersLiveAdvanced**](MerchantApi.md#amazonSellersLiveAdvanced) | **POST**  /v3/merchant/amazon/sellers/live/advanced  |
 [**amazonSellersTaskGetHtml**](MerchantApi.md#amazonSellersTaskGetHtml) | **GET**  /v3/merchant/amazon/sellers/task_get/html/{id}  |
+[**amazonSellersLiveHtml**](MerchantApi.md#amazonSellersLiveHtml) | **POST**  /v3/merchant/amazon/sellers/live/html  |
 
 <a id="merchantIdList"></a>
 # **merchantIdList**
@@ -1302,6 +1308,65 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
+<a id="amazonProductsLiveAdvanced"></a>
+# **amazonProductsLiveAdvanced**
+> MerchantAmazonProductsLiveAdvancedResponseInfo amazonProductsLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.merchant_api import MerchantApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_merchant_amazon_products_live_advanced_request_info import List[Optional[MerchantAmazonProductsLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        merchant_api = MerchantApi(api_client)
+
+        response = merchant_api.amazon_products_live_advanced([MerchantAmazonProductsLiveAdvancedRequestInfo(
+                language_code="en_US",
+                location_code=2840,
+                keyword="shoes",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[MerchantAmazonProductsLiveAdvancedRequestInfo]]&gt;**](List[Optional[MerchantAmazonProductsLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**MerchantAmazonProductsLiveAdvancedResponseInfo**](MerchantAmazonProductsLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
 <a id="amazonProductsTaskGetHtml"></a>
 # **amazonProductsTaskGetHtml**
 > MerchantAmazonProductsTaskGetHtmlResponseInfo amazonProductsTaskGetHtml()
@@ -1341,6 +1406,65 @@ except ApiException as e:
 ### Return type
 
 [**MerchantAmazonProductsTaskGetHtmlResponseInfo**](MerchantAmazonProductsTaskGetHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="amazonProductsLiveHtml"></a>
+# **amazonProductsLiveHtml**
+> MerchantAmazonProductsLiveHtmlResponseInfo amazonProductsLiveHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.merchant_api import MerchantApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_merchant_amazon_products_live_html_request_info import List[Optional[MerchantAmazonProductsLiveHtmlRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        merchant_api = MerchantApi(api_client)
+
+        response = merchant_api.amazon_products_live_html([MerchantAmazonProductsLiveHtmlRequestInfo(
+                language_code="en_US",
+                location_code=2840,
+                keyword="shoes",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[MerchantAmazonProductsLiveHtmlRequestInfo]]&gt;**](List[Optional[MerchantAmazonProductsLiveHtmlRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**MerchantAmazonProductsLiveHtmlResponseInfo**](MerchantAmazonProductsLiveHtmlResponseInfo.md)
 
 ### Authorization
 
@@ -1522,6 +1646,65 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
+<a id="amazonAsinLiveAdvanced"></a>
+# **amazonAsinLiveAdvanced**
+> MerchantAmazonAsinLiveAdvancedResponseInfo amazonAsinLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.merchant_api import MerchantApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_merchant_amazon_asin_live_advanced_request_info import List[Optional[MerchantAmazonAsinLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        merchant_api = MerchantApi(api_client)
+
+        response = merchant_api.amazon_asin_live_advanced([MerchantAmazonAsinLiveAdvancedRequestInfo(
+                language_code="en_US",
+                location_code=2840,
+                asin="B0756FCPPN",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[MerchantAmazonAsinLiveAdvancedRequestInfo]]&gt;**](List[Optional[MerchantAmazonAsinLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**MerchantAmazonAsinLiveAdvancedResponseInfo**](MerchantAmazonAsinLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
 <a id="amazonAsinTaskGetHtml"></a>
 # **amazonAsinTaskGetHtml**
 > MerchantAmazonAsinTaskGetHtmlResponseInfo amazonAsinTaskGetHtml()
@@ -1561,6 +1744,65 @@ except ApiException as e:
 ### Return type
 
 [**MerchantAmazonAsinTaskGetHtmlResponseInfo**](MerchantAmazonAsinTaskGetHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="amazonAsinLiveHtml"></a>
+# **amazonAsinLiveHtml**
+> MerchantAmazonAsinLiveHtmlResponseInfo amazonAsinLiveHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.merchant_api import MerchantApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_merchant_amazon_asin_live_html_request_info import List[Optional[MerchantAmazonAsinLiveHtmlRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        merchant_api = MerchantApi(api_client)
+
+        response = merchant_api.amazon_asin_live_html([MerchantAmazonAsinLiveHtmlRequestInfo(
+                language_code="en_US",
+                location_code=2840,
+                asin="B0756FCPPN",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[MerchantAmazonAsinLiveHtmlRequestInfo]]&gt;**](List[Optional[MerchantAmazonAsinLiveHtmlRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**MerchantAmazonAsinLiveHtmlResponseInfo**](MerchantAmazonAsinLiveHtmlResponseInfo.md)
 
 ### Authorization
 
@@ -1742,6 +1984,65 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
+<a id="amazonSellersLiveAdvanced"></a>
+# **amazonSellersLiveAdvanced**
+> MerchantAmazonSellersLiveAdvancedResponseInfo amazonSellersLiveAdvanced()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.merchant_api import MerchantApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_merchant_amazon_sellers_live_advanced_request_info import List[Optional[MerchantAmazonSellersLiveAdvancedRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        merchant_api = MerchantApi(api_client)
+
+        response = merchant_api.amazon_sellers_live_advanced([MerchantAmazonSellersLiveAdvancedRequestInfo(
+                language_code="en_US",
+                location_code=2840,
+                asin="B07D528W98",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[MerchantAmazonSellersLiveAdvancedRequestInfo]]&gt;**](List[Optional[MerchantAmazonSellersLiveAdvancedRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**MerchantAmazonSellersLiveAdvancedResponseInfo**](MerchantAmazonSellersLiveAdvancedResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
 <a id="amazonSellersTaskGetHtml"></a>
 # **amazonSellersTaskGetHtml**
 > MerchantAmazonSellersTaskGetHtmlResponseInfo amazonSellersTaskGetHtml()
@@ -1781,6 +2082,65 @@ except ApiException as e:
 ### Return type
 
 [**MerchantAmazonSellersTaskGetHtmlResponseInfo**](MerchantAmazonSellersTaskGetHtmlResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="amazonSellersLiveHtml"></a>
+# **amazonSellersLiveHtml**
+> MerchantAmazonSellersLiveHtmlResponseInfo amazonSellersLiveHtml()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.merchant_api import MerchantApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_merchant_amazon_sellers_live_html_request_info import List[Optional[MerchantAmazonSellersLiveHtmlRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        merchant_api = MerchantApi(api_client)
+
+        response = merchant_api.amazon_sellers_live_html([MerchantAmazonSellersLiveHtmlRequestInfo(
+                language_code="en_US",
+                location_code=2840,
+                asin="B085RFFC9Q",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[MerchantAmazonSellersLiveHtmlRequestInfo]]&gt;**](List[Optional[MerchantAmazonSellersLiveHtmlRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**MerchantAmazonSellersLiveHtmlResponseInfo**](MerchantAmazonSellersLiveHtmlResponseInfo.md)
 
 ### Authorization
 

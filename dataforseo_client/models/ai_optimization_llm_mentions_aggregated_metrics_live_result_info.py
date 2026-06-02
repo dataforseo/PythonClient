@@ -9,6 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.ai_optimization_result_total_info import AiOptimizationResultTotalInfo
+from dataforseo_client.models.ai_optimization_llm_mentionss_live_item import AiOptimizationLlmMentionssLiveItem
 
 
 
@@ -17,7 +18,7 @@ class AiOptimizationLlmMentionsAggregatedMetricsLiveResultInfo(BaseModel):
     AiOptimizationLlmMentionsAggregatedMetricsLiveResultInfo
     """ # noqa: E501
     total: Optional[AiOptimizationResultTotalInfo] = Field(default=None, description=r"aggregated mentions metrics summarycontains overall aggregated LLM mention metrics across all found domains, grouped by various dimensions")
-    items: Optional[Any] = Field(default=None, description=r"individual pages resultsarray containing detailed mention metrics for each of the found top pagesin this case, equals null")
+    items: Optional[List[Optional[AiOptimizationLlmMentionssLiveItem]]] = Field(default=None, description=r"individual pages resultsarray containing detailed mention metrics for each of the found top pagesin this case, equals null")
     __properties: ClassVar[List[str]] = [
         "total", 
         "items", 
@@ -48,7 +49,12 @@ class AiOptimizationLlmMentionsAggregatedMetricsLiveResultInfo(BaseModel):
         _dict = {}
 
         _dict['total'] = self.total.to_dict() if self.total else None
-        _dict['items'] = self.items
+        items_items = []
+        if self.items:
+            for _item in self.items:
+                if _item:
+                    items_items.append(_item.to_dict())
+            _dict['items'] = items_items
         return _dict
 
 
@@ -62,7 +68,7 @@ class AiOptimizationLlmMentionsAggregatedMetricsLiveResultInfo(BaseModel):
 
         _obj = cls.model_validate({
             "total": AiOptimizationResultTotalInfo.from_dict(obj["total"]) if obj.get("total") is not None else None,
-            "items": obj.get("items"),
+            "items": [AiOptimizationLlmMentionssLiveItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

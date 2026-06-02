@@ -16,8 +16,9 @@ class AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo(BaseModel):
     AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 2000 characters in the keyword fieldall %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationrequired field if you don't specify location_codeif you use this field, you don't need to specify location_codeyou can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/locationsexample:United States")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location coderequired field if you don't specify location_nameif you use this field, you don't need to specify location_nameyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/locationsexample:2840")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationrequired field if you don't specify location_code or location_coordinateif you use this field, you don't need to specify location_code or location_coordinateyou can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/locationsexample:United States")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location coderequired field if you don't specify location_name or location_coordinateif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/locationsexample:2840")
+    location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a locationrequired field if you don't specify location_name or location_codeif you use this field, you don't need to specify location_name or location_codelocation_coordinate parameter should be specified in the 'latitude,longitude,radius' formatthe maximum number of decimal digits for 'latitude' and 'longitude': 7the minimum value for 'radius': 199 (mm)the maximum value for 'radius': 199999 (mm)example:53.476225,-2.243572,200")
     language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine languagerequired field if you don't specify language_code;if you use this field, you don't need to specify language_code;you can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languagesexample: English")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language coderequired field if you don't specify language_name;if you use this field, you don't need to specify language_name;you can receive the list of available languages of the search engine with their language_code_by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/gemini/llm_scraper/languagesexample: enn")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
@@ -25,6 +26,7 @@ class AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo(BaseModel):
         "keyword", 
         "location_name", 
         "location_code", 
+        "location_coordinate", 
         "language_name", 
         "language_code", 
         "tag", 
@@ -57,6 +59,7 @@ class AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo(BaseModel):
         _dict['keyword'] = self.keyword
         _dict['location_name'] = self.location_name
         _dict['location_code'] = self.location_code
+        _dict['location_coordinate'] = self.location_coordinate
         _dict['language_name'] = self.language_name
         _dict['language_code'] = self.language_code
         _dict['tag'] = self.tag
@@ -75,6 +78,7 @@ class AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo(BaseModel):
             "keyword": obj.get("keyword"),
             "location_name": obj.get("location_name"),
             "location_code": obj.get("location_code"),
+            "location_coordinate": obj.get("location_coordinate"),
             "language_name": obj.get("language_name"),
             "language_code": obj.get("language_code"),
             "tag": obj.get("tag"),

@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.chat_gpt_images_element_item import ChatGptImagesElementItem;
     from dataforseo_client.models.chat_gpt_products_element_item import ChatGptProductsElementItem;
     from dataforseo_client.models.chat_gpt_local_businesses_element_item import ChatGptLocalBusinessesElementItem;
+    from dataforseo_client.models.chat_gpt_ad_element_item import ChatGptAdElementItem;
 
 
 
@@ -41,6 +42,7 @@ class BaseChatGptLlmScraperElementItem(BaseModel):
         'chat_gpt_images': 'ChatGptImagesElementItem',
         'chat_gpt_products': 'ChatGptProductsElementItem',
         'chat_gpt_local_businesses': 'ChatGptLocalBusinessesElementItem',
+        'chat_gpt_ad': 'ChatGptAdElementItem',
     }
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -88,7 +90,8 @@ class BaseChatGptLlmScraperElementItem(BaseModel):
         ChatGptNavigationListElementItem, 
         ChatGptImagesElementItem, 
         ChatGptProductsElementItem, 
-        ChatGptLocalBusinessesElementItem
+        ChatGptLocalBusinessesElementItem, 
+        ChatGptAdElementItem
     ]]:
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -105,5 +108,7 @@ class BaseChatGptLlmScraperElementItem(BaseModel):
             return import_module("dataforseo_client.models.chat_gpt_products_element_item").ChatGptProductsElementItem.from_dict(obj)
         if object_type == 'ChatGptLocalBusinessesElementItem':
             return import_module("dataforseo_client.models.chat_gpt_local_businesses_element_item").ChatGptLocalBusinessesElementItem.from_dict(obj)
+        if object_type == 'ChatGptAdElementItem':
+            return import_module("dataforseo_client.models.chat_gpt_ad_element_item").ChatGptAdElementItem.from_dict(obj)
 
         return None

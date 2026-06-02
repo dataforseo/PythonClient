@@ -21,7 +21,7 @@ class HotelReviewInfo(BaseModel):
     votes_count: Optional[StrictInt] = Field(default=None, description=r"number of customer votes. the number of customer votes included in the calculation of the hotel rating")
     mentions: Optional[List[Optional[ReviewMentionInfo]]] = Field(default=None, description=r"hotel mentions. information about hotel reviews by criteria")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"rating distribution by votes. the distribution of votes across the rating in the range from 1 to 5")
-    other_sites_reviews: Optional[List[Optional[OtherSitesReviewsInfo]]] = Field(default=None, description=r"reviews on third-party sites. reviews from third-paty sites")
+    other_sites_reviews: Optional[List[Optional[OtherSitesReviewsInfo]]] = Field(default=None, description=r"reviews on third-party sites. reviews from third-party sites")
     __properties: ClassVar[List[str]] = [
         "value", 
         "votes_count", 

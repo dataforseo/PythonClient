@@ -16,9 +16,17 @@ class DeliveryInfo(BaseModel):
     """
     DeliveryInfo
     """ # noqa: E501
-    delivery_message: Optional[StrictStr] = Field(default=None, description=r"delivery information. message accompanying the delivery information as posted by the seller")
-    delivery_price: Optional[PriceInfo] = Field(default=None, description=r"price for the delivery. price of the delivery based on the location you specified in the POST request;. if free delivery is available, the value is null")
+    delivery_date_from: Optional[StrictStr] = Field(default=None, description=r"earliest delivery datethe earliest date when the product can be shipped")
+    delivery_date_to: Optional[StrictStr] = Field(default=None, description=r"latest delivery datethe latest date when the product can be delivered")
+    fastest_delivery_date_from: Optional[StrictStr] = Field(default=None, description=r"earliest free delivery datethe earliest date when the product can be delivered with a fast delivery option")
+    fastest_delivery_date_to: Optional[StrictStr] = Field(default=None, description=r"latest free delivery datethe latest date when the product can be delivered with a fast delivery option")
+    delivery_message: Optional[StrictStr] = Field(default=None, description=r"delivery informationmessage accompanying the delivery information as posted by the seller")
+    delivery_price: Optional[PriceInfo] = Field(default=None, description=r"price for the deliveryprice of the delivery based on the location you specified in the POST request;if free delivery is available, the value is null")
     __properties: ClassVar[List[str]] = [
+        "delivery_date_from", 
+        "delivery_date_to", 
+        "fastest_delivery_date_from", 
+        "fastest_delivery_date_to", 
         "delivery_message", 
         "delivery_price", 
         ]
@@ -47,6 +55,10 @@ class DeliveryInfo(BaseModel):
 
         _dict = {}
 
+        _dict['delivery_date_from'] = self.delivery_date_from
+        _dict['delivery_date_to'] = self.delivery_date_to
+        _dict['fastest_delivery_date_from'] = self.fastest_delivery_date_from
+        _dict['fastest_delivery_date_to'] = self.fastest_delivery_date_to
         _dict['delivery_message'] = self.delivery_message
         _dict['delivery_price'] = self.delivery_price.to_dict() if self.delivery_price else None
         return _dict
@@ -61,6 +73,10 @@ class DeliveryInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "delivery_date_from": obj.get("delivery_date_from"),
+            "delivery_date_to": obj.get("delivery_date_to"),
+            "fastest_delivery_date_from": obj.get("fastest_delivery_date_from"),
+            "fastest_delivery_date_to": obj.get("fastest_delivery_date_to"),
             "delivery_message": obj.get("delivery_message"),
             "delivery_price": PriceInfo.from_dict(obj["delivery_price"]) if obj.get("delivery_price") is not None else None,
         })

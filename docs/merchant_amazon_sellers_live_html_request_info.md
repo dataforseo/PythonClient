@@ -1,0 +1,15 @@
+# MerchantAmazonSellersLiveHtmlRequestInfo
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+**asin** | **StrictStr** | unique product identifier on Amazonrequired fieldyou can get this value making a separate request to the Amazon Products endpointnote that there is no full list of possible values as the asin values is a dynamic value assigned by Amazonexample:B085RFFC9Qlearn more about the identifier in this help center guide |[optional]|
+**location_name** | **StrictStr** | full name of the locationrequired field if you don't specify location_code or location_coordinateif you use this field, you don't need to specify location_code or location_coordinateyou can receive the list of available Amazon locations with their location_name by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/locationsexample:London,England,United Kingdom |[optional]|
+**location_code** | **StrictInt** | location coderequired field if you don't specify location_name or location_coordinateif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available Amazon locations with their location_code by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/locationsexample:2840 |[optional]|
+**location_coordinate** | **StrictStr** | GPS coordinates of a locationrequired field if you don't specify location_name or location_codeif you use this field, you don't need to specify location_name or location_codelocation_coordinate parameter should be specified in the 'latitude,longitude,radius' formatthe maximum number of decimal digits for 'latitude' and 'longitude': 7the minimum value for 'radius': 199.9example:53.476225,-2.243572,200 |[optional]|
+**language_name** | **StrictStr** | full name of the languagerequired field if you don't specify language_codeif you use this field, you don't need to specify language_codeyou can receive the list of available Amazon languages with their language_name by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/languagesexample:English (United States) |[optional]|
+**language_code** | **StrictStr** | language coderequired field if you don't specify language_nameif you use this field, you don't need to specify language_nameyou can receive the list of available Amazon languages with their language_code by making a separate request to the https://api.dataforseo.com/v3/merchant/amazon/languagesexample:en_US |[optional]|
+**se_domain** | **StrictStr** | search engine domainoptional fieldwe choose the relevant search engine domain automatically according to the location and language you specifyhowever, you can set a custom search engine domain in this fieldexample:amazon.co.uk, amazon.com.au, amazon.de, etc. |[optional]|
+**tag** | **StrictStr** | user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response |[optional]|

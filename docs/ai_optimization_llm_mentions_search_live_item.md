@@ -11,7 +11,7 @@
 **language_code** | **StrictStr** | language code in a POST array |[optional]|
 **question** | **StrictStr** | relevant question |[optional]|
 **answer** | **StrictStr** | relevant answer in markdown formatcontent of the result formatted in the markdown markup language |[optional]|
-**sources** | **List[Optional[Sources]]** | array of sourcesthe sources the model cited or relied on in its final answer |[optional]|
+**sources** | **List[Optional[Sources]]** | array of sourcesthe sources the model cited or relied on in its final answerlearn more about the sources and how to retrieve LLM citation data at our Help Center |[optional]|
 **search_results** | **List[Optional[SearchResults]]** | array of search resultsall web search outputs the model retrieved when looking up information, including duplicates and unused entries |[optional]|
 **ai_search_volume** | **StrictInt** | current AI search volume rate of a keywordlearn more about this metric here |[optional]|
 **monthly_searches** | **List[Optional[MonthlySearchesInfo]]** | monthly AI search volume ratesarray of objects with AI search volume rates in a certain month of a year |[optional]|
