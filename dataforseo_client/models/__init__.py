@@ -8,25 +8,22 @@ def camel_to_snake(name):
 def __getattr__(name):
     file_name = camel_to_snake(name)
 
-    modules_to_try = [
-        'dataforseo_client',
-        'dataforseo_client.api',
-        'dataforseo_client.models',
+    submodules_to_try = [
+        f'dataforseo_client.{file_name}',
+        f'dataforseo_client.api.{file_name}',
+        f'dataforseo_client.models.{file_name}',
     ]
 
-    for module in modules_to_try:
+    for module_path in submodules_to_try:
         try:
-            imported_module = importlib.import_module(f'{module}.{file_name}')
-            model = getattr(imported_module, name)
-            globals()[name] = model
-            return model
-        except:
-            try:
-                imported_module = importlib.import_module(f'{module}')
-                model = getattr(imported_module, name)
-                globals()[name] = model
-                return model
-            except:
-                continue
+            imported_module = importlib.import_module(module_path)
+            if name == module_path.rsplit('.', 1)[-1]:
+                obj = imported_module
+            else:
+                obj = getattr(imported_module, name)
+            globals()[name] = obj
+            return obj
+        except (ImportError, ModuleNotFoundError, AttributeError):
+            continue
 
-    raise ImportError(f"Cannot find {name} in any of the specified modules")
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
