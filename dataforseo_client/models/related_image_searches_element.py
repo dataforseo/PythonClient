@@ -14,9 +14,12 @@ from typing_extensions import Self
 class RelatedImageSearchesElement(BaseModel):
     """
     RelatedImageSearchesElement
+
+    .. deprecated::
+    
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given shopping element")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     alt: Optional[StrictStr] = Field(default=None, description=r"alt tag of the image")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")

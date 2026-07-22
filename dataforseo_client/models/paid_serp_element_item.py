@@ -22,12 +22,12 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
     PaidSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    page: Optional[StrictInt] = Field(default=None, description=r"search results page number. indicates the number of the SERP page on which the element is located")
+    page: Optional[StrictInt] = Field(default=None, description=r"search results page numberindicates the number of the SERP page on which the element is located")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements found in SERPnote values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results;. to get all items (including SERP features and rich snippets) with their positions, please refer to the Google Organiс Advanced SERP endpoint")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERPabsolute position among all the elements found in SERPnote values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results;to get all items (including SERP features and rich snippets) with their positions, please refer to the Google Organiс Advanced SERP endpoint")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the results element in SERP")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
@@ -40,7 +40,7 @@ class PaidSerpElementItem(BaseSerpApiElementItem):
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"additional information about the result")
     description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"extended description. if there is none, equals null")
-    links: Optional[List[Optional[AdLinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
+    links: Optional[List[Optional[AdLinkElement]]] = Field(default=None, description=r"link of the element")
     price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result;. if there is none, equals null")
     rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP. if there is none, equals null")
     __properties: ClassVar[List[str]] = [

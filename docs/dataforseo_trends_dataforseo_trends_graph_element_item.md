@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**data** | **List[Optional[DataforseoTrendsGraphDataTrendsGraphDataInfo]]** | DataForSEO Trends data for the specified parameters |[optional]|
-**averages** | **List[Optional[StrictInt]]** | keyword popularity values averaged over the whole time range |[optional]|
+**data** | **List[Optional[DataforseoTrendsGraphDataTrendsGraphDataInfo]]** | contains the same parameters that you specified in the POST request |[optional]|
+**averages** | **List[Optional[StrictInt]]** |  |[optional]|

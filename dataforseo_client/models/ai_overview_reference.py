@@ -18,9 +18,9 @@ class AiOverviewReference(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"image source URL")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain name of the reference")
+    url: Optional[StrictStr] = Field(default=None, description=r"link URL")
+    title: Optional[StrictStr] = Field(default=None, description=r"link anchor text")
     text: Optional[StrictStr] = Field(default=None, description=r"text of the component")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -18,8 +18,8 @@ class BusinessDataBusinessListingsSearchLiveResultInfo(BaseModel):
     """ # noqa: E501
     total_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in our database relevant to your request")
     count: Optional[StrictInt] = Field(default=None, description=r"item types. the number of items in the items array")
-    offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of returned businesses")
-    offset_token: Optional[StrictStr] = Field(default=None, description=r"token for subsequent requests. by specifying the unique offset_token when setting a new task, you will get the subsequent results of the initial task;. offset_token values are unique for each subsequent task")
+    offset: Optional[StrictInt] = Field(default=None, description=r"")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"")
     items: Optional[List[Optional[BusinessDataBusinessListingsSearchLiveItem]]] = Field(default=None, description=r"encountered item types. types of search engine results encountered in the items array;. possible item types: business_listing")
     __properties: ClassVar[List[str]] = [
         "total_count", 

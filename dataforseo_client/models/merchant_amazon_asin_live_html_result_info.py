@@ -16,16 +16,16 @@ class MerchantAmazonAsinLiveHtmlResultInfo(BaseModel):
     """
     MerchantAmazonAsinLiveHtmlResultInfo
     """ # noqa: E501
-    product_id: Optional[StrictStr] = Field(default=None, description=r"ASIN received in a POST array")
+    asin: Optional[StrictStr] = Field(default=None, description=r"ASIN received in a POST array")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was receivedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     items: Optional[List[Optional[HtmlItemInfo]]] = Field(default=None, description=r"HTML pages and related data")
     __properties: ClassVar[List[str]] = [
-        "product_id", 
+        "asin", 
         "type", 
         "se_domain", 
         "location_code", 
@@ -59,7 +59,7 @@ class MerchantAmazonAsinLiveHtmlResultInfo(BaseModel):
 
         _dict = {}
 
-        _dict['product_id'] = self.product_id
+        _dict['asin'] = self.asin
         _dict['type'] = self.type
         _dict['se_domain'] = self.se_domain
         _dict['location_code'] = self.location_code
@@ -84,7 +84,7 @@ class MerchantAmazonAsinLiveHtmlResultInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "product_id": obj.get("product_id"),
+            "asin": obj.get("asin"),
             "type": obj.get("type"),
             "se_domain": obj.get("se_domain"),
             "location_code": obj.get("location_code"),

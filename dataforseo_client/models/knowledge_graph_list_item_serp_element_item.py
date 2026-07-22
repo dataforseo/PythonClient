@@ -20,16 +20,16 @@ class KnowledgeGraphListItemSerpElementItem(BaseSerpApiElementItem):
     KnowledgeGraphListItemSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    page: Optional[StrictInt] = Field(default=None, description=r"search results page number. indicates the number of the SERP page on which the element is located")
+    page: Optional[StrictInt] = Field(default=None, description=r"search results page numberindicates the number of the SERP page on which the element is located")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values;. positions of elements with different type values are omitted from rank_group;. always equals 0 for desktop")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP. always equals 0 for desktop")
-    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the row")
     data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. action:listen_artist")
     link: Optional[LinkElement] = Field(default=None, description=r"link of the element")
-    items: Optional[List[Optional[KnowledgeGraphListElement]]] = Field(default=None, description=r"contains arrays of specific images")
+    items: Optional[List[Optional[KnowledgeGraphListElement]]] = Field(default=None, description=r"contains arrays of elements available in the list")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

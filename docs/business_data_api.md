@@ -58,7 +58,6 @@ All URIs are relative to *https://api.dataforseo.com*
 [**tripadvisorReviewsTasksReady**](BusinessDataApi.md#tripadvisorReviewsTasksReady) | **GET**  /v3/business_data/tripadvisor/reviews/tasks_ready  |
 [**tripadvisorReviewsTaskGet**](BusinessDataApi.md#tripadvisorReviewsTaskGet) | **GET**  /v3/business_data/tripadvisor/reviews/task_get/{id}  |
 [**socialMediaPinterestLive**](BusinessDataApi.md#socialMediaPinterestLive) | **POST**  /v3/business_data/social_media/pinterest/live  |
-[**socialMediaRedditLive**](BusinessDataApi.md#socialMediaRedditLive) | **POST**  /v3/business_data/social_media/reddit/live  |
 
 <a id="businessDataIdList"></a>
 # **businessDataIdList**
@@ -362,20 +361,6 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_listings_search_live([BusinessDataBusinessListingsSearchLiveRequestInfo(
-                categories=[
-                    "pizza_restaurant",
-                    ],
-                description="pizza",
-                title="pizza",
-                is_claimed=True,
-                location_coordinate="53.476225,-2.243572,10",
-                order_by=[
-                    "rating.value,desc",
-                    ],
-                filters=[
-                    ,
-                    ],
-                limit=3,
         )]
         )
 except ApiException as e:
@@ -3089,71 +3074,6 @@ except ApiException as e:
 ### Return type
 
 [**BusinessDataSocialMediaPinterestLiveResponseInfo**](BusinessDataSocialMediaPinterestLiveResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="socialMediaRedditLive"></a>
-# **socialMediaRedditLive**
-> BusinessDataSocialMediaRedditLiveResponseInfo socialMediaRedditLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.business_data_api import BusinessDataApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_business_data_social_media_reddit_live_request_info import List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        business_data_api = BusinessDataApi(api_client)
-
-        response = business_data_api.social_media_reddit_live([BusinessDataSocialMediaRedditLiveRequestInfo(
-                targets=[
-                    "https://vk.com/",
-                    "https://ahrefs.com/",
-                    "https://google.com/",
-                    "https://twitter.com/",
-                    "https://reddit.com/",
-                    "https://facebook.com/",
-                    ],
-                tag="some_string_123",
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]]&gt;**](List[Optional[BusinessDataSocialMediaRedditLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**BusinessDataSocialMediaRedditLiveResponseInfo**](BusinessDataSocialMediaRedditLiveResponseInfo.md)
 
 ### Authorization
 

@@ -9,7 +9,7 @@
 **rank_group** | **StrictInt** | position within a group of elements with identical type values<br>positions of elements with different type values are omitted from rank_group |[optional]|
 **rank_absolute** | **StrictInt** | absolute rank in SERP<br>absolute position among all the elements in SERP |[optional]|
 **position** | **StrictStr** | the alignment of the element in SERP<br>can take the following values:<br>left, right |[optional]|
-**app_id** | **StrictStr** | id of the app |[optional]|
+**app_id** | **StrictStr** | id of the app in a POST array |[optional]|
 **title** | **StrictStr** | title of the app |[optional]|
 **url** | **StrictStr** | URL to the app page on App Store |[optional]|
 **icon** | **StrictStr** | URL to the app icon |[optional]|

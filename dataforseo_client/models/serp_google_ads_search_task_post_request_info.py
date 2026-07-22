@@ -15,21 +15,14 @@ class SerpGoogleAdsSearchTaskPostRequestInfo(BaseModel):
     """
     SerpGoogleAdsSearchTaskPostRequestInfo
     """ # noqa: E501
-    advertiser_ids: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"advertiser identifiersrequired field if target is not specifiedyou can specify the maximum of 25 values in this array;advertiser_ids values for this parameter can be found in the Google Ads Advertisers endpoint;")
+    advertiser_ids: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"advertiser identifiersrequired field if target is not specified. you can specify the maximum of 25 values in this array;advertiser_ids values for this parameter can be found in the Google Ads Advertisers endpoint;")
     target: Optional[StrictStr] = Field(default=None, description=r"domain namerequired field if advertiser_ids is not specifieddomain name associated with an advertiser account")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location codeoptional fieldif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/ads_search/locationsexample:2840Note: if you don't specify location_name, location_code, or location_coordinate, the ads will be searched across all the available locations")
-    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depthoptional fieldnumber of results in SERPdefault value: 40max value: 700Your account will be billed per each SERP containing up to 40 results;Setting depth above 40 may result in additional charges if the search engine returns more than 40 results;The cost can be calculated on the Pricing page.")
-    priority: Optional[StrictInt] = Field(default=None, description=r"task priorityoptional fieldcan take the following values:1 – normal execution priority (set by default)2 – high execution priorityYou will be additionally charged for the tasks with high execution priority.The cost can be calculated on the Pricing page.")
-    pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed taskoptional fieldwhen a task is completed we will notify you by GET request sent to the URL you have specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/pingscript?id=$idhttp://your-server.com/pingscript?id=$id&tag=$tagNote: special characters in pingback_url will be urlencoded;i.a., the # character will be encoded into %23learn more on our Help Center")
-    postback_url: Optional[StrictStr] = Field(default=None, description=r"URL for sending task resultsoptional fieldonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/postbackscript?id=$idhttp://your-server.com/postbackscript?id=$id&tag=$tagNote: special characters in postback_url will be urlencoded;i.a., the # character will be encoded into %23learn more on our Help Center")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location codeoptional fieldif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/ads_search/locationsexample:2840. Note: if you don't specify location_name, location_code, or location_coordinate, the ads will be searched across all the available locations")
+    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depthoptional fieldnumber of results in SERPdefault value: 40max value: 700. Your account will be billed per each SERP containing up to 40 results;Setting depth above 40 may result in additional charges if the search engine returns more than 40 results;The cost can be calculated on the Pricing page.")
+    priority: Optional[StrictInt] = Field(default=None, description=r"task priorityoptional fieldcan take the following values:1 – normal execution priority (set by default)2 – high execution priority. You will be additionally charged for the tasks with high execution priority.The cost can be calculated on the Pricing page.")
+    pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed taskoptional fieldwhen a task is completed we will notify you by GET request sent to the URL you have specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/pingscript?id=$idhttp://your-server.com/pingscript?id=$id&tag=$tagNote: special characters in pingback_url will be urlencoded;i.a., the # character will be encoded into %23. learn more on our Help Center")
+    postback_url: Optional[StrictStr] = Field(default=None, description=r"URL for sending task resultsoptional fieldonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/postbackscript?id=$idhttp://your-server.com/postbackscript?id=$id&tag=$tagNote: special characters in postback_url will be urlencoded;i.a., the # character will be encoded into %23. learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"postback_url datatyperequired field if you specify postback_urlcorresponds to the function you used for setting a taskpossible values:advanced")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationoptional fieldif you use this field, you don't need to specify location_code or location_coordinateyou can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/ads_search/locationsexample:London,England,United KingdomNote: if you don't specify location_name, location_code, or location_coordinate, the ads will be searched across all the available locations")
-    location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a locationoptional fieldif you use this field, you don't need to specify location_name or location_codeexample:52.6178549,-155.352142Note: if you don't specify location_name, location_code, or location_coordinate, the ads will be searched across all the available locations")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
-    platform: Optional[StrictStr] = Field(default=None, description=r"advertising platformoptional fieldpossible values: all, google_play, google_maps, google_search, google_shopping, youtubedefault value: all")
-    format: Optional[StrictStr] = Field(default=None, description=r"ad formatoptional fieldpossible values: all, text, image, video")
-    date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of the time rangeoptional fieldrequired field if date_to is specified; date format: 'yyyy-mm-dd'minimum value: 2018-05-31maximum value: today's dateexample:'2020-01-01'")
-    date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of the time rangeoptional fieldrequired field if date_from is specified; date format: 'yyyy-mm-dd'minimum value: 2018-05-31maximum value: today's dateexample:'2020-01-01'")
     __properties: ClassVar[List[str]] = [
         "advertiser_ids", 
         "target", 
@@ -39,13 +32,6 @@ class SerpGoogleAdsSearchTaskPostRequestInfo(BaseModel):
         "pingback_url", 
         "postback_url", 
         "postback_data", 
-        "location_name", 
-        "location_coordinate", 
-        "tag", 
-        "platform", 
-        "format", 
-        "date_from", 
-        "date_to", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -80,13 +66,6 @@ class SerpGoogleAdsSearchTaskPostRequestInfo(BaseModel):
         _dict['pingback_url'] = self.pingback_url
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
-        _dict['location_name'] = self.location_name
-        _dict['location_coordinate'] = self.location_coordinate
-        _dict['tag'] = self.tag
-        _dict['platform'] = self.platform
-        _dict['format'] = self.format
-        _dict['date_from'] = self.date_from
-        _dict['date_to'] = self.date_to
         return _dict
 
 
@@ -107,13 +86,6 @@ class SerpGoogleAdsSearchTaskPostRequestInfo(BaseModel):
             "pingback_url": obj.get("pingback_url"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),
-            "location_name": obj.get("location_name"),
-            "location_coordinate": obj.get("location_coordinate"),
-            "tag": obj.get("tag"),
-            "platform": obj.get("platform"),
-            "format": obj.get("format"),
-            "date_from": obj.get("date_from"),
-            "date_to": obj.get("date_to"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

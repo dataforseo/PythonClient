@@ -16,7 +16,7 @@ class BusinessDataContactInfo(BaseModel):
     BusinessDataContactInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    value: Optional[StrictStr] = Field(default=None, description=r"contact displayed in SERP . example:. '+119797979736'")
+    value: Optional[StrictStr] = Field(default=None, description=r"the value of the rating")
     source: Optional[StrictStr] = Field(default=None, description=r"data source")
     __properties: ClassVar[List[str]] = [
         "type", 

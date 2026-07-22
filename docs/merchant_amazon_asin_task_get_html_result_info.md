@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**product_id** | **StrictStr** | ASIN received in a POST array |[optional]|
+**asin** | **StrictStr** | ASIN received in a POST array |[optional]|
 **type** | **StrictStr** | type of element |[optional]|
 **se_domain** | **StrictStr** | search engine domain in a POST array |[optional]|
 **location_code** | **StrictInt** | location code in a POST array |[optional]|

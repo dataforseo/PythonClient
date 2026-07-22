@@ -18,16 +18,10 @@ class SerpGoogleDatasetInfoLiveAdvancedRequestInfo(BaseModel):
     dataset_id: Optional[StrictStr] = Field(default=None, description=r"ID of the datasetrequired fieldyou can find dataset ID in the dataset URL or dataset item of Google Dataset Search resultexample:L2cvMTFqbl85ZHN6MQ==")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language codeoptional fieldif you use this field, you don't need to specify language_namepossible value:en")
     device: Optional[StrictStr] = Field(default=None, description=r"device typeoptional fieldreturn results for a specific device typepossible value: desktop")
-    language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine languageoptional fieldif you use this field, you don't need to specify language_codepossible value:English")
-    os: Optional[StrictStr] = Field(default=None, description=r"device operating systemoptional fieldpossible values: windows, macosdefault value: windows")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
         "dataset_id", 
         "language_code", 
         "device", 
-        "language_name", 
-        "os", 
-        "tag", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -57,9 +51,6 @@ class SerpGoogleDatasetInfoLiveAdvancedRequestInfo(BaseModel):
         _dict['dataset_id'] = self.dataset_id
         _dict['language_code'] = self.language_code
         _dict['device'] = self.device
-        _dict['language_name'] = self.language_name
-        _dict['os'] = self.os
-        _dict['tag'] = self.tag
         return _dict
 
 
@@ -75,9 +66,6 @@ class SerpGoogleDatasetInfoLiveAdvancedRequestInfo(BaseModel):
             "dataset_id": obj.get("dataset_id"),
             "language_code": obj.get("language_code"),
             "device": obj.get("device"),
-            "language_name": obj.get("language_name"),
-            "os": obj.get("os"),
-            "tag": obj.get("tag"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

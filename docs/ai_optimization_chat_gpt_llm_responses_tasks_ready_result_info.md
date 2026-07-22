@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**id** | **StrictStr** | task identifier of the completed taskunique task identifier in our system in the UUID format |[optional]|
+**id** | **StrictStr** | task identifier of the completed task<br>unique task identifier in our system in the UUID format |[optional]|
 **se** | **StrictStr** | LLM model specified when setting the task |[optional]|
 **se_type** | **StrictStr** |  |[optional]|
 **date_posted** | **StrictStr** | date when the task was posted (in the UTC format) |[optional]|

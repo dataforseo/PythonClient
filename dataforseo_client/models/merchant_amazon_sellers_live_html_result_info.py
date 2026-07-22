@@ -21,7 +21,7 @@ class MerchantAmazonSellersLiveHtmlResultInfo(BaseModel):
     se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was receivedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     items: Optional[List[Optional[HtmlItemInfo]]] = Field(default=None, description=r"elements of search results found on Amazon")
     __properties: ClassVar[List[str]] = [

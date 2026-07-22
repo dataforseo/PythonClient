@@ -16,7 +16,7 @@ class BacklinksRedirectInfo(BaseModel):
     BacklinksRedirectInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    status_code: Optional[StrictInt] = Field(default=None, description=r"HTTP status code of the URL")
+    status_code: Optional[StrictInt] = Field(default=None, description=r"general status code. you can find the full list of the response codes here. Note: we strongly recommend designing a necessary system for handling related exceptional or error conditions")
     url: Optional[StrictStr] = Field(default=None, description=r"indirect link URL")
     __properties: ClassVar[List[str]] = [
         "type", 

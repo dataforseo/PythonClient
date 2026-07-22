@@ -13,13 +13,6 @@ All URIs are relative to *https://api.dataforseo.com*
 [**chatGptLlmScraperTaskGetHtml**](AiOptimizationApi.md#chatGptLlmScraperTaskGetHtml) | **GET**  /v3/ai_optimization/chat_gpt/llm_scraper/task_get/html/{id}  |
 [**chatGptLlmScraperLiveAdvanced**](AiOptimizationApi.md#chatGptLlmScraperLiveAdvanced) | **POST**  /v3/ai_optimization/chat_gpt/llm_scraper/live/advanced  |
 [**chatGptLlmScraperLiveHtml**](AiOptimizationApi.md#chatGptLlmScraperLiveHtml) | **POST**  /v3/ai_optimization/chat_gpt/llm_scraper/live/html  |
-[**llmMentionsLocationsAndLanguages**](AiOptimizationApi.md#llmMentionsLocationsAndLanguages) | **GET**  /v3/ai_optimization/llm_mentions/locations_and_languages  |
-[**llmMentionsAvailableFilters**](AiOptimizationApi.md#llmMentionsAvailableFilters) | **GET**  /v3/ai_optimization/llm_mentions/available_filters  |
-[**llmMentionsSearchLive**](AiOptimizationApi.md#llmMentionsSearchLive) | **POST**  /v3/ai_optimization/llm_mentions/search/live  |
-[**llmMentionsTopPagesLive**](AiOptimizationApi.md#llmMentionsTopPagesLive) | **POST**  /v3/ai_optimization/llm_mentions/top_pages/live  |
-[**llmMentionsTopDomainsLive**](AiOptimizationApi.md#llmMentionsTopDomainsLive) | **POST**  /v3/ai_optimization/llm_mentions/top_domains/live  |
-[**llmMentionsAggregatedMetricsLive**](AiOptimizationApi.md#llmMentionsAggregatedMetricsLive) | **POST**  /v3/ai_optimization/llm_mentions/aggregated_metrics/live  |
-[**llmMentionsCrossAggregatedMetricsLive**](AiOptimizationApi.md#llmMentionsCrossAggregatedMetricsLive) | **POST**  /v3/ai_optimization/llm_mentions/cross_aggregated_metrics/live  |
 [**chatGptLlmResponsesModels**](AiOptimizationApi.md#chatGptLlmResponsesModels) | **GET**  /v3/ai_optimization/chat_gpt/llm_responses/models  |
 [**chatGptLlmResponsesLive**](AiOptimizationApi.md#chatGptLlmResponsesLive) | **POST**  /v3/ai_optimization/chat_gpt/llm_responses/live  |
 [**chatGptLlmResponsesTaskPost**](AiOptimizationApi.md#chatGptLlmResponsesTaskPost) | **POST**  /v3/ai_optimization/chat_gpt/llm_responses/task_post  |
@@ -48,6 +41,23 @@ All URIs are relative to *https://api.dataforseo.com*
 [**aiKeywordDataAvailableFilters**](AiOptimizationApi.md#aiKeywordDataAvailableFilters) | **GET**  /v3/ai_optimization/ai_keyword_data/available_filters  |
 [**aiKeywordDataLocationsAndLanguages**](AiOptimizationApi.md#aiKeywordDataLocationsAndLanguages) | **GET**  /v3/ai_optimization/ai_keyword_data/locations_and_languages  |
 [**aiKeywordDataKeywordsSearchVolumeLive**](AiOptimizationApi.md#aiKeywordDataKeywordsSearchVolumeLive) | **POST**  /v3/ai_optimization/ai_keyword_data/keywords_search_volume/live  |
+[**llmMentionsAvailableFilters**](AiOptimizationApi.md#llmMentionsAvailableFilters) | **GET**  /v3/ai_optimization/llm_mentions/available_filters  |
+[**llmMentionsLocationsAndLanguages**](AiOptimizationApi.md#llmMentionsLocationsAndLanguages) | **GET**  /v3/ai_optimization/llm_mentions/locations_and_languages  |
+[**llmMentionsSearchMentionsLive**](AiOptimizationApi.md#llmMentionsSearchMentionsLive) | **POST**  /v3/ai_optimization/llm_mentions/search_mentions/live  |
+[**llmMentionsTargetMetricsLive**](AiOptimizationApi.md#llmMentionsTargetMetricsLive) | **POST**  /v3/ai_optimization/llm_mentions/target_metrics/live  |
+[**llmMentionsMultiTargetMetricsLive**](AiOptimizationApi.md#llmMentionsMultiTargetMetricsLive) | **POST**  /v3/ai_optimization/llm_mentions/multi_target_metrics/live  |
+[**llmMentionsTopMentionedDomainsLive**](AiOptimizationApi.md#llmMentionsTopMentionedDomainsLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_domains/live  |
+[**llmMentionsTopMentionedPagesLive**](AiOptimizationApi.md#llmMentionsTopMentionedPagesLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_pages/live  |
+[**llmMentionsTopMentionedBrandsLive**](AiOptimizationApi.md#llmMentionsTopMentionedBrandsLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_brands/live  |
+[**llmMentionsTopMentionedBrandCategoriesLive**](AiOptimizationApi.md#llmMentionsTopMentionedBrandCategoriesLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_brand_categories/live  |
+[**llmMentionsTargetMetricsLiteLive**](AiOptimizationApi.md#llmMentionsTargetMetricsLiteLive) | **POST**  /v3/ai_optimization/llm_mentions/target_metrics_lite/live  |
+[**llmMentionsTopMentionedDomainsLiteLive**](AiOptimizationApi.md#llmMentionsTopMentionedDomainsLiteLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_domains_lite/live  |
+[**llmMentionsTopMentionedPagesLiteLive**](AiOptimizationApi.md#llmMentionsTopMentionedPagesLiteLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_pages_lite/live  |
+[**llmMentionsTopMentionedBrandsLiteLive**](AiOptimizationApi.md#llmMentionsTopMentionedBrandsLiteLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_brands_lite/live  |
+[**llmMentionsTopMentionedBrandCategoriesLiteLive**](AiOptimizationApi.md#llmMentionsTopMentionedBrandCategoriesLiteLive) | **POST**  /v3/ai_optimization/llm_mentions/top_mentioned_brand_categories_lite/live  |
+[**llmMentionsHistoricalLive**](AiOptimizationApi.md#llmMentionsHistoricalLive) | **POST**  /v3/ai_optimization/llm_mentions/historical/live  |
+[**llmMentionsTimeseriesDeltaLive**](AiOptimizationApi.md#llmMentionsTimeseriesDeltaLive) | **POST**  /v3/ai_optimization/llm_mentions/timeseries_delta/live  |
+[**llmMentionsTimeseriesNewLostLive**](AiOptimizationApi.md#llmMentionsTimeseriesNewLostLive) | **POST**  /v3/ai_optimization/llm_mentions/timeseries_new_lost/live  |
 
 <a id="chatGptLlmScraperLocations"></a>
 # **chatGptLlmScraperLocations**
@@ -532,495 +542,6 @@ except ApiException as e:
 ### Return type
 
 [**AiOptimizationChatGptLlmScraperLiveHtmlResponseInfo**](AiOptimizationChatGptLlmScraperLiveHtmlResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="llmMentionsLocationsAndLanguages"></a>
-# **llmMentionsLocationsAndLanguages**
-> AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo llmMentionsLocationsAndLanguages()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.llm_mentions_locations_and_languages()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo**](AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="llmMentionsAvailableFilters"></a>
-# **llmMentionsAvailableFilters**
-> AiOptimizationLlmMentionsAvailableFiltersResponseInfo llmMentionsAvailableFilters()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.llm_mentions_available_filters()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**AiOptimizationLlmMentionsAvailableFiltersResponseInfo**](AiOptimizationLlmMentionsAvailableFiltersResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="llmMentionsSearchLive"></a>
-# **llmMentionsSearchLive**
-> AiOptimizationLlmMentionsSearchLiveResponseInfo llmMentionsSearchLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_search_live_request_info import List[Optional[AiOptimizationLlmMentionsSearchLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.llm_mentions_search_live([AiOptimizationLlmMentionsSearchLiveRequestInfo(
-                language_name="English",
-                location_code=2840,
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="dataforseo.com",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    ],
-                platform="google",
-                filters=[
-                    ,
-                    ],
-                order_by=[
-                    "ai_search_volume,desc",
-                    ],
-                offset=0,
-                limit=3,
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsSearchLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsSearchLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**AiOptimizationLlmMentionsSearchLiveResponseInfo**](AiOptimizationLlmMentionsSearchLiveResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="llmMentionsTopPagesLive"></a>
-# **llmMentionsTopPagesLive**
-> AiOptimizationLlmMentionsTopPagesLiveResponseInfo llmMentionsTopPagesLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_pages_live_request_info import List[Optional[AiOptimizationLlmMentionsTopPagesLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.llm_mentions_top_pages_live([AiOptimizationLlmMentionsTopPagesLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="google",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
-                    ],
-                links_scope="sources",
-                initial_dataset_filters=[
-                    ,
-                    ],
-                items_list_limit=3,
-                internal_list_limit=2,
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopPagesLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopPagesLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**AiOptimizationLlmMentionsTopPagesLiveResponseInfo**](AiOptimizationLlmMentionsTopPagesLiveResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="llmMentionsTopDomainsLive"></a>
-# **llmMentionsTopDomainsLive**
-> AiOptimizationLlmMentionsTopDomainsLiveResponseInfo llmMentionsTopDomainsLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_domains_live_request_info import List[Optional[AiOptimizationLlmMentionsTopDomainsLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.llm_mentions_top_domains_live([AiOptimizationLlmMentionsTopDomainsLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
-                    ],
-                links_scope="sources",
-                initial_dataset_filters=[
-                    ,
-                    ],
-                items_list_limit=3,
-                internal_list_limit=2,
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopDomainsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopDomainsLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**AiOptimizationLlmMentionsTopDomainsLiveResponseInfo**](AiOptimizationLlmMentionsTopDomainsLiveResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="llmMentionsAggregatedMetricsLive"></a>
-# **llmMentionsAggregatedMetricsLive**
-> AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo llmMentionsAggregatedMetricsLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info import List[Optional[AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.llm_mentions_aggregated_metrics_live([AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo(
-                language_code="es",
-                location_code=2840,
-                platform="google",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="en.wikipedia.org",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    ],
-                initial_dataset_filters=[
-                    ,
-                    ],
-                internal_list_limit=10,
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo**](AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="llmMentionsCrossAggregatedMetricsLive"></a>
-# **llmMentionsCrossAggregatedMetricsLive**
-> AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo llmMentionsCrossAggregatedMetricsLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info import List[Optional[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.llm_mentions_cross_aggregated_metrics_live([AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="google",
-                targets=[
-                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
-                        aggregation_key="chat_gpt",
-                        target=,
-                    ),
-                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
-                        aggregation_key="claude",
-                        target=,
-                    ),
-                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
-                        aggregation_key="gemini",
-                        target=,
-                    ),
-                    AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo(
-                        aggregation_key="perplexity",
-                        target=,
-                    ),
-                    ],
-                initial_dataset_filters=[
-                    ,
-                    ],
-                internal_list_limit=5,
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo**](AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo.md)
 
 ### Authorization
 
@@ -2671,6 +2192,1229 @@ except ApiException as e:
 ### Return type
 
 [**AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo**](AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsAvailableFilters"></a>
+# **llmMentionsAvailableFilters**
+> AiOptimizationLlmMentionsAvailableFiltersResponseInfo llmMentionsAvailableFilters()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_available_filters()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsAvailableFiltersResponseInfo**](AiOptimizationLlmMentionsAvailableFiltersResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsLocationsAndLanguages"></a>
+# **llmMentionsLocationsAndLanguages**
+> AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo llmMentionsLocationsAndLanguages()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_locations_and_languages()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo**](AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsSearchMentionsLive"></a>
+# **llmMentionsSearchMentionsLive**
+> AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo llmMentionsSearchMentionsLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info import List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_search_mentions_live([AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo(
+                language_name="English",
+                location_code=2840,
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        domain="dataforseo.com",
+                        search_filter="exclude",
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    ],
+                platform="google",
+                filters=[
+                    ,
+                    ],
+                order_by=[
+                    "ai_search_volume,desc",
+                    ],
+                offset=0,
+                limit=3,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo**](AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTargetMetricsLive"></a>
+# **llmMentionsTargetMetricsLive**
+> AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo llmMentionsTargetMetricsLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info import List[Optional[AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_target_metrics_live([AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        domain="en.wikipedia.org",
+                        search_filter="exclude",
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    ],
+                initial_dataset_filters=[
+                    ,
+                    ],
+                internal_list_limit=10,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo**](AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsMultiTargetMetricsLive"></a>
+# **llmMentionsMultiTargetMetricsLive**
+> AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo llmMentionsMultiTargetMetricsLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info import List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_multi_target_metrics_live([AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="google",
+                targets=[
+                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                        key="chat_gpt",
+                        target=,
+                    ),
+                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                        key="claude",
+                        target=,
+                    ),
+                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                        key="gemini",
+                        target=,
+                    ),
+                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                        key="perplexity",
+                        target=,
+                    ),
+                    ],
+                initial_dataset_filters=[
+                    ,
+                    ],
+                internal_list_limit=5,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo**](AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedDomainsLive"></a>
+# **llmMentionsTopMentionedDomainsLive**
+> AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo llmMentionsTopMentionedDomainsLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_domains_live([AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                links_scope="sources",
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedPagesLive"></a>
+# **llmMentionsTopMentionedPagesLive**
+> AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo llmMentionsTopMentionedPagesLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_pages_live([AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                links_scope="sources",
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedBrandsLive"></a>
+# **llmMentionsTopMentionedBrandsLive**
+> AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo llmMentionsTopMentionedBrandsLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_brands_live([AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedBrandCategoriesLive"></a>
+# **llmMentionsTopMentionedBrandCategoriesLive**
+> AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo llmMentionsTopMentionedBrandCategoriesLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_brand_categories_live([AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTargetMetricsLiteLive"></a>
+# **llmMentionsTargetMetricsLiteLive**
+> AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo llmMentionsTargetMetricsLiteLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info import List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_target_metrics_lite_live([AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo(
+                language_code="es",
+                location_code=2840,
+                platform="google",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        domain="en.wikipedia.org",
+                        search_filter="exclude",
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    ],
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=6,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo**](AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedDomainsLiteLive"></a>
+# **llmMentionsTopMentionedDomainsLiteLive**
+> AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo llmMentionsTopMentionedDomainsLiteLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_domains_lite_live([AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                links_scope="sources",
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedPagesLiteLive"></a>
+# **llmMentionsTopMentionedPagesLiteLive**
+> AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo llmMentionsTopMentionedPagesLiteLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_pages_lite_live([AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                links_scope="sources",
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedBrandsLiteLive"></a>
+# **llmMentionsTopMentionedBrandsLiteLive**
+> AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo llmMentionsTopMentionedBrandsLiteLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_brands_lite_live([AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTopMentionedBrandCategoriesLiteLive"></a>
+# **llmMentionsTopMentionedBrandCategoriesLiteLive**
+> AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo llmMentionsTopMentionedBrandCategoriesLiteLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info import List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_top_mentioned_brand_categories_lite_live([AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo(
+                language_code="en",
+                location_code=2840,
+                platform="chat_gpt",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="auto",
+                        search_scope=,
+                        match_type="partial_match",
+                    ),
+                    ],
+                initial_dataset_filters=[
+                    ,
+                    ],
+                limit=3,
+                internal_list_limit=2,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo**](AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsHistoricalLive"></a>
+# **llmMentionsHistoricalLive**
+> AiOptimizationLlmMentionsHistoricalLiveResponseInfo llmMentionsHistoricalLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_historical_live_request_info import List[Optional[AiOptimizationLlmMentionsHistoricalLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_historical_live([AiOptimizationLlmMentionsHistoricalLiveRequestInfo(
+                language_code="es",
+                location_code=2840,
+                platform="google",
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        domain="en.wikipedia.org",
+                        search_filter="exclude",
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    ],
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsHistoricalLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsHistoricalLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsHistoricalLiveResponseInfo**](AiOptimizationLlmMentionsHistoricalLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTimeseriesDeltaLive"></a>
+# **llmMentionsTimeseriesDeltaLive**
+> AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo llmMentionsTimeseriesDeltaLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info import List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_timeseries_delta_live([AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo(
+                language_name="English",
+                location_code=2840,
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        domain="dataforseo.com",
+                        search_filter="exclude",
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="bmw",
+                        search_scope=,
+                    ),
+                    ],
+                platform="google",
+                group_range="month",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo**](AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="llmMentionsTimeseriesNewLostLive"></a>
+# **llmMentionsTimeseriesNewLostLive**
+> AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo llmMentionsTimeseriesNewLostLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info import List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.llm_mentions_timeseries_new_lost_live([AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo(
+                language_name="English",
+                location_code=2840,
+                target=[
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        domain="dataforseo.com",
+                        search_filter="exclude",
+                    ),
+                    BaseAiOptimizationLLmMentionsTargetElement(
+                        keyword="serp",
+                        search_scope=,
+                    ),
+                    ],
+                platform="google",
+                group_range="month",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo**](AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo.md)
 
 ### Authorization
 

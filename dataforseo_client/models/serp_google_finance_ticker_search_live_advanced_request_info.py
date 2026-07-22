@@ -15,21 +15,13 @@ class SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo(BaseModel):
     """
     SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"company or financial instrument namerequired fieldin this field, you can enter the name of a company or financial instrument to search for relevant tickers;you can specify up to 700 characters in the keyword field;all %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”;learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"company or financial instrument namerequired fieldin this field, you can enter the name of a company or financial instrument to search for relevant tickers;you can specify up to 700 characters in the keyword field;all %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”;. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location coderequired field if you don't specify location_nameif you use this field, you don't need to specify location_nameyou can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/serp/google/locationsexample:2840")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language coderequired field if you don't specify language_nameif you use this field, you don't need to specify language_nameyou can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/languagesexample:en")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationrequired field if you don't specify location_codeif you use this field, you don't need to specify location_codeyou can receive the list of available locations of the search engine with their location_name by making a separate request to  https://api.dataforseo.com/v3/serp/google/locationsexample:London,England,United Kingdom")
-    language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine languagerequired field if you don't specify language_code if you use this field, you don't need to specify language_codeyou can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/languagesexample:English")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
-    category: Optional[StrictStr] = Field(default=None, description=r"category of financial instruments to search foroptional fieldpossible values: all, stock, index, mutual_fund, currency, futuresdefault value: all")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 
         "language_code", 
-        "location_name", 
-        "language_name", 
-        "tag", 
-        "category", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -59,10 +51,6 @@ class SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo(BaseModel):
         _dict['keyword'] = self.keyword
         _dict['location_code'] = self.location_code
         _dict['language_code'] = self.language_code
-        _dict['location_name'] = self.location_name
-        _dict['language_name'] = self.language_name
-        _dict['tag'] = self.tag
-        _dict['category'] = self.category
         return _dict
 
 
@@ -78,10 +66,6 @@ class SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo(BaseModel):
             "keyword": obj.get("keyword"),
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
-            "location_name": obj.get("location_name"),
-            "language_name": obj.get("language_name"),
-            "tag": obj.get("tag"),
-            "category": obj.get("category"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

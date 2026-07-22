@@ -32,7 +32,6 @@ if TYPE_CHECKING:
     from dataforseo_client.models.answer_box_serp_element_item import AnswerBoxSerpElementItem;
     from dataforseo_client.models.shopping_serp_element_item import ShoppingSerpElementItem;
     from dataforseo_client.models.google_flights_serp_element_item import GoogleFlightsSerpElementItem;
-    from dataforseo_client.models.mention_carousel_serp_element_item import MentionCarouselSerpElementItem;
     from dataforseo_client.models.events_serp_element_item import EventsSerpElementItem;
     from dataforseo_client.models.related_searches_serp_element_item import RelatedSearchesSerpElementItem;
     from dataforseo_client.models.multi_carousel_serp_element_item import MultiCarouselSerpElementItem;
@@ -40,27 +39,21 @@ if TYPE_CHECKING:
     from dataforseo_client.models.top_sights_serp_element_item import TopSightsSerpElementItem;
     from dataforseo_client.models.scholarly_articles_serp_element_item import ScholarlyArticlesSerpElementItem;
     from dataforseo_client.models.popular_products_serp_element_item import PopularProductsSerpElementItem;
-    from dataforseo_client.models.podcasts_serp_element_item import PodcastsSerpElementItem;
     from dataforseo_client.models.stocks_box_serp_element_item import StocksBoxSerpElementItem;
     from dataforseo_client.models.find_results_on_serp_element_item import FindResultsOnSerpElementItem;
     from dataforseo_client.models.questions_and_answers_serp_element_item import QuestionsAndAnswersSerpElementItem;
     from dataforseo_client.models.hotels_pack_serp_element_item import HotelsPackSerpElementItem;
-    from dataforseo_client.models.visual_stories_serp_element_item import VisualStoriesSerpElementItem;
     from dataforseo_client.models.commercial_units_serp_element_item import CommercialUnitsSerpElementItem;
     from dataforseo_client.models.local_services_serp_element_item import LocalServicesSerpElementItem;
     from dataforseo_client.models.google_hotels_serp_element_item import GoogleHotelsSerpElementItem;
     from dataforseo_client.models.math_solver_serp_element_item import MathSolverSerpElementItem;
     from dataforseo_client.models.currency_box_serp_element_item import CurrencyBoxSerpElementItem;
-    from dataforseo_client.models.google_posts_serp_element_item import GooglePostsSerpElementItem;
     from dataforseo_client.models.product_considerations_serp_element_item import ProductConsiderationsSerpElementItem;
-    from dataforseo_client.models.found_on_web_serp_element_item import FoundOnWebSerpElementItem;
     from dataforseo_client.models.short_videos_serp_element_item import ShortVideosSerpElementItem;
     from dataforseo_client.models.refine_products_serp_element_item import RefineProductsSerpElementItem;
-    from dataforseo_client.models.explore_brands_serp_element_item import ExploreBrandsSerpElementItem;
     from dataforseo_client.models.perspectives_serp_element_item import PerspectivesSerpElementItem;
     from dataforseo_client.models.discussions_and_forums_serp_element_item import DiscussionsAndForumsSerpElementItem;
     from dataforseo_client.models.compare_sites_serp_element_item import CompareSitesSerpElementItem;
-    from dataforseo_client.models.courses_serp_element_item import CoursesSerpElementItem;
     from dataforseo_client.models.knowledge_graph_carousel_item_serp_element_item import KnowledgeGraphCarouselItemSerpElementItem;
     from dataforseo_client.models.knowledge_graph_description_item_serp_element_item import KnowledgeGraphDescriptionItemSerpElementItem;
     from dataforseo_client.models.knowledge_graph_images_item_serp_element_item import KnowledgeGraphImagesItemSerpElementItem;
@@ -74,6 +67,13 @@ if TYPE_CHECKING:
     from dataforseo_client.models.ai_overview_serp_element_item import AiOverviewSerpElementItem;
     from dataforseo_client.models.third_party_reviews_serp_element_item import ThirdPartyReviewsSerpElementItem;
     from dataforseo_client.models.dictionary_serp_element_item import DictionarySerpElementItem;
+    from dataforseo_client.models.google_posts_serp_element_item import GooglePostsSerpElementItem;
+    from dataforseo_client.models.mention_carousel_serp_element_item import MentionCarouselSerpElementItem;
+    from dataforseo_client.models.podcasts_serp_element_item import PodcastsSerpElementItem;
+    from dataforseo_client.models.visual_stories_serp_element_item import VisualStoriesSerpElementItem;
+    from dataforseo_client.models.found_on_web_serp_element_item import FoundOnWebSerpElementItem;
+    from dataforseo_client.models.explore_brands_serp_element_item import ExploreBrandsSerpElementItem;
+    from dataforseo_client.models.courses_serp_element_item import CoursesSerpElementItem;
 
 
 
@@ -82,7 +82,7 @@ class BaseSerpApiElementItem(BaseModel):
     BaseSerpApiElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    page: Optional[StrictInt] = Field(default=None, description=r"search results page number. indicates the number of the SERP page on which the element is located")
+    page: Optional[StrictInt] = Field(default=None, description=r"search results page numberindicates the number of the SERP page on which the element is located")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
@@ -114,7 +114,6 @@ class BaseSerpApiElementItem(BaseModel):
         'answer_box': 'AnswerBoxSerpElementItem',
         'shopping': 'ShoppingSerpElementItem',
         'google_flights': 'GoogleFlightsSerpElementItem',
-        'mention_carousel': 'MentionCarouselSerpElementItem',
         'events': 'EventsSerpElementItem',
         'related_searches': 'RelatedSearchesSerpElementItem',
         'multi_carousel': 'MultiCarouselSerpElementItem',
@@ -122,27 +121,21 @@ class BaseSerpApiElementItem(BaseModel):
         'top_sights': 'TopSightsSerpElementItem',
         'scholarly_articles': 'ScholarlyArticlesSerpElementItem',
         'popular_products': 'PopularProductsSerpElementItem',
-        'podcasts': 'PodcastsSerpElementItem',
         'stocks_box': 'StocksBoxSerpElementItem',
         'find_results_on': 'FindResultsOnSerpElementItem',
         'questions_and_answers': 'QuestionsAndAnswersSerpElementItem',
         'hotels_pack': 'HotelsPackSerpElementItem',
-        'visual_stories': 'VisualStoriesSerpElementItem',
         'commercial_units': 'CommercialUnitsSerpElementItem',
         'local_services': 'LocalServicesSerpElementItem',
         'google_hotels': 'GoogleHotelsSerpElementItem',
         'math_solver': 'MathSolverSerpElementItem',
         'currency_box': 'CurrencyBoxSerpElementItem',
-        'google_posts': 'GooglePostsSerpElementItem',
         'product_considerations': 'ProductConsiderationsSerpElementItem',
-        'found_on_web': 'FoundOnWebSerpElementItem',
         'short_videos': 'ShortVideosSerpElementItem',
         'refine_products': 'RefineProductsSerpElementItem',
-        'explore_brands': 'ExploreBrandsSerpElementItem',
         'perspectives': 'PerspectivesSerpElementItem',
         'discussions_and_forums': 'DiscussionsAndForumsSerpElementItem',
         'compare_sites': 'CompareSitesSerpElementItem',
-        'courses': 'CoursesSerpElementItem',
         'knowledge_graph_carousel_item': 'KnowledgeGraphCarouselItemSerpElementItem',
         'knowledge_graph_description_item': 'KnowledgeGraphDescriptionItemSerpElementItem',
         'knowledge_graph_images_item': 'KnowledgeGraphImagesItemSerpElementItem',
@@ -156,6 +149,13 @@ class BaseSerpApiElementItem(BaseModel):
         'ai_overview': 'AiOverviewSerpElementItem',
         'third_party_reviews': 'ThirdPartyReviewsSerpElementItem',
         'dictionary': 'DictionarySerpElementItem',
+        'google_posts': 'GooglePostsSerpElementItem',
+        'mention_carousel': 'MentionCarouselSerpElementItem',
+        'podcasts': 'PodcastsSerpElementItem',
+        'visual_stories': 'VisualStoriesSerpElementItem',
+        'found_on_web': 'FoundOnWebSerpElementItem',
+        'explore_brands': 'ExploreBrandsSerpElementItem',
+        'courses': 'CoursesSerpElementItem',
     }
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -219,7 +219,6 @@ class BaseSerpApiElementItem(BaseModel):
         AnswerBoxSerpElementItem, 
         ShoppingSerpElementItem, 
         GoogleFlightsSerpElementItem, 
-        MentionCarouselSerpElementItem, 
         EventsSerpElementItem, 
         RelatedSearchesSerpElementItem, 
         MultiCarouselSerpElementItem, 
@@ -227,27 +226,21 @@ class BaseSerpApiElementItem(BaseModel):
         TopSightsSerpElementItem, 
         ScholarlyArticlesSerpElementItem, 
         PopularProductsSerpElementItem, 
-        PodcastsSerpElementItem, 
         StocksBoxSerpElementItem, 
         FindResultsOnSerpElementItem, 
         QuestionsAndAnswersSerpElementItem, 
         HotelsPackSerpElementItem, 
-        VisualStoriesSerpElementItem, 
         CommercialUnitsSerpElementItem, 
         LocalServicesSerpElementItem, 
         GoogleHotelsSerpElementItem, 
         MathSolverSerpElementItem, 
         CurrencyBoxSerpElementItem, 
-        GooglePostsSerpElementItem, 
         ProductConsiderationsSerpElementItem, 
-        FoundOnWebSerpElementItem, 
         ShortVideosSerpElementItem, 
         RefineProductsSerpElementItem, 
-        ExploreBrandsSerpElementItem, 
         PerspectivesSerpElementItem, 
         DiscussionsAndForumsSerpElementItem, 
         CompareSitesSerpElementItem, 
-        CoursesSerpElementItem, 
         KnowledgeGraphCarouselItemSerpElementItem, 
         KnowledgeGraphDescriptionItemSerpElementItem, 
         KnowledgeGraphImagesItemSerpElementItem, 
@@ -260,7 +253,14 @@ class BaseSerpApiElementItem(BaseModel):
         KnowledgeGraphAiOverviewItemSerpElementItem, 
         AiOverviewSerpElementItem, 
         ThirdPartyReviewsSerpElementItem, 
-        DictionarySerpElementItem
+        DictionarySerpElementItem, 
+        GooglePostsSerpElementItem, 
+        MentionCarouselSerpElementItem, 
+        PodcastsSerpElementItem, 
+        VisualStoriesSerpElementItem, 
+        FoundOnWebSerpElementItem, 
+        ExploreBrandsSerpElementItem, 
+        CoursesSerpElementItem
     ]]:
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -303,8 +303,6 @@ class BaseSerpApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.shopping_serp_element_item").ShoppingSerpElementItem.from_dict(obj)
         if object_type == 'GoogleFlightsSerpElementItem':
             return import_module("dataforseo_client.models.google_flights_serp_element_item").GoogleFlightsSerpElementItem.from_dict(obj)
-        if object_type == 'MentionCarouselSerpElementItem':
-            return import_module("dataforseo_client.models.mention_carousel_serp_element_item").MentionCarouselSerpElementItem.from_dict(obj)
         if object_type == 'EventsSerpElementItem':
             return import_module("dataforseo_client.models.events_serp_element_item").EventsSerpElementItem.from_dict(obj)
         if object_type == 'RelatedSearchesSerpElementItem':
@@ -319,8 +317,6 @@ class BaseSerpApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.scholarly_articles_serp_element_item").ScholarlyArticlesSerpElementItem.from_dict(obj)
         if object_type == 'PopularProductsSerpElementItem':
             return import_module("dataforseo_client.models.popular_products_serp_element_item").PopularProductsSerpElementItem.from_dict(obj)
-        if object_type == 'PodcastsSerpElementItem':
-            return import_module("dataforseo_client.models.podcasts_serp_element_item").PodcastsSerpElementItem.from_dict(obj)
         if object_type == 'StocksBoxSerpElementItem':
             return import_module("dataforseo_client.models.stocks_box_serp_element_item").StocksBoxSerpElementItem.from_dict(obj)
         if object_type == 'FindResultsOnSerpElementItem':
@@ -329,8 +325,6 @@ class BaseSerpApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.questions_and_answers_serp_element_item").QuestionsAndAnswersSerpElementItem.from_dict(obj)
         if object_type == 'HotelsPackSerpElementItem':
             return import_module("dataforseo_client.models.hotels_pack_serp_element_item").HotelsPackSerpElementItem.from_dict(obj)
-        if object_type == 'VisualStoriesSerpElementItem':
-            return import_module("dataforseo_client.models.visual_stories_serp_element_item").VisualStoriesSerpElementItem.from_dict(obj)
         if object_type == 'CommercialUnitsSerpElementItem':
             return import_module("dataforseo_client.models.commercial_units_serp_element_item").CommercialUnitsSerpElementItem.from_dict(obj)
         if object_type == 'LocalServicesSerpElementItem':
@@ -341,26 +335,18 @@ class BaseSerpApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.math_solver_serp_element_item").MathSolverSerpElementItem.from_dict(obj)
         if object_type == 'CurrencyBoxSerpElementItem':
             return import_module("dataforseo_client.models.currency_box_serp_element_item").CurrencyBoxSerpElementItem.from_dict(obj)
-        if object_type == 'GooglePostsSerpElementItem':
-            return import_module("dataforseo_client.models.google_posts_serp_element_item").GooglePostsSerpElementItem.from_dict(obj)
         if object_type == 'ProductConsiderationsSerpElementItem':
             return import_module("dataforseo_client.models.product_considerations_serp_element_item").ProductConsiderationsSerpElementItem.from_dict(obj)
-        if object_type == 'FoundOnWebSerpElementItem':
-            return import_module("dataforseo_client.models.found_on_web_serp_element_item").FoundOnWebSerpElementItem.from_dict(obj)
         if object_type == 'ShortVideosSerpElementItem':
             return import_module("dataforseo_client.models.short_videos_serp_element_item").ShortVideosSerpElementItem.from_dict(obj)
         if object_type == 'RefineProductsSerpElementItem':
             return import_module("dataforseo_client.models.refine_products_serp_element_item").RefineProductsSerpElementItem.from_dict(obj)
-        if object_type == 'ExploreBrandsSerpElementItem':
-            return import_module("dataforseo_client.models.explore_brands_serp_element_item").ExploreBrandsSerpElementItem.from_dict(obj)
         if object_type == 'PerspectivesSerpElementItem':
             return import_module("dataforseo_client.models.perspectives_serp_element_item").PerspectivesSerpElementItem.from_dict(obj)
         if object_type == 'DiscussionsAndForumsSerpElementItem':
             return import_module("dataforseo_client.models.discussions_and_forums_serp_element_item").DiscussionsAndForumsSerpElementItem.from_dict(obj)
         if object_type == 'CompareSitesSerpElementItem':
             return import_module("dataforseo_client.models.compare_sites_serp_element_item").CompareSitesSerpElementItem.from_dict(obj)
-        if object_type == 'CoursesSerpElementItem':
-            return import_module("dataforseo_client.models.courses_serp_element_item").CoursesSerpElementItem.from_dict(obj)
         if object_type == 'KnowledgeGraphCarouselItemSerpElementItem':
             return import_module("dataforseo_client.models.knowledge_graph_carousel_item_serp_element_item").KnowledgeGraphCarouselItemSerpElementItem.from_dict(obj)
         if object_type == 'KnowledgeGraphDescriptionItemSerpElementItem':
@@ -387,5 +373,19 @@ class BaseSerpApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.third_party_reviews_serp_element_item").ThirdPartyReviewsSerpElementItem.from_dict(obj)
         if object_type == 'DictionarySerpElementItem':
             return import_module("dataforseo_client.models.dictionary_serp_element_item").DictionarySerpElementItem.from_dict(obj)
+        if object_type == 'GooglePostsSerpElementItem':
+            return import_module("dataforseo_client.models.google_posts_serp_element_item").GooglePostsSerpElementItem.from_dict(obj)
+        if object_type == 'MentionCarouselSerpElementItem':
+            return import_module("dataforseo_client.models.mention_carousel_serp_element_item").MentionCarouselSerpElementItem.from_dict(obj)
+        if object_type == 'PodcastsSerpElementItem':
+            return import_module("dataforseo_client.models.podcasts_serp_element_item").PodcastsSerpElementItem.from_dict(obj)
+        if object_type == 'VisualStoriesSerpElementItem':
+            return import_module("dataforseo_client.models.visual_stories_serp_element_item").VisualStoriesSerpElementItem.from_dict(obj)
+        if object_type == 'FoundOnWebSerpElementItem':
+            return import_module("dataforseo_client.models.found_on_web_serp_element_item").FoundOnWebSerpElementItem.from_dict(obj)
+        if object_type == 'ExploreBrandsSerpElementItem':
+            return import_module("dataforseo_client.models.explore_brands_serp_element_item").ExploreBrandsSerpElementItem.from_dict(obj)
+        if object_type == 'CoursesSerpElementItem':
+            return import_module("dataforseo_client.models.courses_serp_element_item").CoursesSerpElementItem.from_dict(obj)
 
         return None

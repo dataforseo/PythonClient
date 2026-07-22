@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpGoogleFinanceMarketsLiveHtmlTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpGoogleFinanceMarketsLiveHtmlTaskInfo]]** |  |[optional]|

@@ -26,7 +26,7 @@ class AmazonInfo(BaseModel):
     domain: Optional[StrictStr] = Field(default=None, description=r"Amazon domain")
     title: Optional[StrictStr] = Field(default=None, description=r"product title")
     url: Optional[StrictStr] = Field(default=None, description=r"URL of the product page")
-    asin: Optional[StrictStr] = Field(default=None, description=r"ASIN of the product. learn more about ASIN in this help center guide")
+    asin: Optional[StrictStr] = Field(default=None, description=r"ASIN in a POST array")
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the product image featured in the results")
     price_from: Optional[StrictFloat] = Field(default=None, description=r"the regular price of a product. example:. 49.98")
     price_to: Optional[StrictFloat] = Field(default=None, description=r"the upper limit of the product price range. example:. 384.99")

@@ -16,6 +16,7 @@ from dataforseo_client.models.business_work_hours_info import BusinessWorkHoursI
 from dataforseo_client.models.popular_times import PopularTimes
 from dataforseo_client.models.base_local_business_link import BaseLocalBusinessLink
 from dataforseo_client.models.business_data_contact_info import BusinessDataContactInfo
+from dataforseo_client.models.business_data_service_info import BusinessDataServiceInfo
 
 
 
@@ -47,7 +48,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     is_claimed: Optional[StrictBool] = Field(default=None, description=r"shows whether the entity is verified by its owner on Google Maps")
     attributes: Optional[BusinessDataAttributesInfo] = Field(default=None, description=r"service details in a form of user-reviewed checks;. service details of a business entity displayed in a form of checks and based on user feedback and business category")
     place_topics: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"keywords mentioned in customer reviews. contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword. example: . 'place_topics': {. 'egg roll': 48,. 'birthday': 33. }")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element's rating . the popularity rate based on reviews and displayed in SERP")
     hotel_rating: Optional[StrictInt] = Field(default=None, description=r"hotel class rating. class ratings range between 1-5 stars, learn more. if there is no hotel class rating information, the value will be null")
     price_level: Optional[StrictStr] = Field(default=None, description=r"property price level. can take values: inexpensive, moderate, expensive, very_expensive. if there is no price level information, the value will be null")
     rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the distribution of ratings of the business entity. the object displays the number of 1-star to 5-star ratings, as reviewed by users")
@@ -59,6 +60,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
     check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
     last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when the data was last updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2023-01-26 09:03:15 +00:00")
     first_seen: Optional[StrictStr] = Field(default=None, description=r"date and time when our crawler found the business listing element for the first time. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2023-03-11 10:04:11 +00:00")
+    services: Optional[List[Optional[BusinessDataServiceInfo]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
@@ -96,6 +98,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
         "check_url", 
         "last_updated_time", 
         "first_seen", 
+        "services", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -173,6 +176,12 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
         _dict['check_url'] = self.check_url
         _dict['last_updated_time'] = self.last_updated_time
         _dict['first_seen'] = self.first_seen
+        services_items = []
+        if self.services:
+            for _item in self.services:
+                if _item:
+                    services_items.append(_item.to_dict())
+            _dict['services'] = services_items
         return _dict
 
 
@@ -221,6 +230,7 @@ class BusinessDataBusinessListingsSearchLiveItem(BaseModel):
             "check_url": obj.get("check_url"),
             "last_updated_time": obj.get("last_updated_time"),
             "first_seen": obj.get("first_seen"),
+            "services": [BusinessDataServiceInfo.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

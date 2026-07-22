@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **link** | **LinkElement** | link of the element |[optional]|
-**items** | **List[Optional[KnowledgeGraphImagesElement]]** | elements of search results found in SERP |[optional]|
+**items** | **List[Optional[KnowledgeGraphImagesElement]]** | historical SERPs and related data found in the database |[optional]|

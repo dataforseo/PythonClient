@@ -18,4 +18,4 @@
 **se_results_count** | **StrictInt** | total number of results in SERP |[optional]|
 **pages_count** | **StrictInt** | total pages retrieved<br>total number of retrieved SERPs in the result |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[BaseSerpApiElementItem]]** | additional items present in the element<br>if there are none, equals null |[optional]|
+**items** | **List[Optional[BaseSerpApiElementItem]]** | elements of search results found in SERP |[optional]|

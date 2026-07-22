@@ -17,10 +17,10 @@ class OnPageUncrawlableResourcesResultInfo(BaseModel):
     """
     OnPageUncrawlableResourcesResultInfo
     """ # noqa: E501
-    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"status of the crawling sessionpossible values: in_progress, finished")
+    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"status of the crawling session. possible values: in_progress, finished")
     crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description=r"details of the crawling session")
     current_offset: Optional[StrictInt] = Field(default=None, description=r"")
-    total_items_count: Optional[StrictInt] = Field(default=None, description=r"total number of uncrawlable resources found total number of uncrawlable resources found during the crawl of the target domain")
+    total_items_count: Optional[StrictInt] = Field(default=None, description=r"total number of uncrawlable resources found.  total number of uncrawlable resources found during the crawl of the target domain")
     items_count: Optional[StrictInt] = Field(default=None, description=r"number of uncrawlable resources in the items array")
     items: Optional[List[Optional[OnPageUncrawlableResourcesItem]]] = Field(default=None, description=r"array of uncrawlable resources")
     __properties: ClassVar[List[str]] = [

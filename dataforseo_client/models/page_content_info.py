@@ -21,7 +21,7 @@ class PageContentInfo(BaseModel):
     """
     PageContentInfo
     """ # noqa: E501
-    header: Optional[PageSectionContentInfo] = Field(default=None, description=r"content of the header of the table")
+    header: Optional[PageSectionContentInfo] = Field(default=None, description=r"parsed content of the header")
     footer: Optional[PageSectionContentInfo] = Field(default=None, description=r"content of the footer of the table")
     main_topic: Optional[List[Optional[TopicInfo]]] = Field(default=None, description=r"main topic on the page. you can find more information about topic priority calculation in this help center article")
     secondary_topic: Optional[List[Optional[TopicInfo]]] = Field(default=None, description=r"secondary topic on the page. you can find more information about topic priority calculation in this help center article")

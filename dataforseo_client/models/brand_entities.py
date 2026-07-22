@@ -15,11 +15,11 @@ class BrandEntities(BaseModel):
     """
     BrandEntities
     """ # noqa: E501
-    position: Optional[StrictInt] = Field(default=None, description=r"position in the results")
-    title: Optional[StrictStr] = Field(default=None, description=r"name of the brand")
+    rank: Optional[StrictInt] = Field(default=None, description=r"rank in the results")
+    title: Optional[StrictStr] = Field(default=None, description=r"source title")
     category: Optional[StrictStr] = Field(default=None, description=r"category of the brand")
     __properties: ClassVar[List[str]] = [
-        "position", 
+        "rank", 
         "title", 
         "category", 
         ]
@@ -48,7 +48,7 @@ class BrandEntities(BaseModel):
 
         _dict = {}
 
-        _dict['position'] = self.position
+        _dict['rank'] = self.rank
         _dict['title'] = self.title
         _dict['category'] = self.category
         return _dict
@@ -63,7 +63,7 @@ class BrandEntities(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "position": obj.get("position"),
+            "rank": obj.get("rank"),
             "title": obj.get("title"),
             "category": obj.get("category"),
         })

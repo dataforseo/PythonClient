@@ -17,15 +17,15 @@ class GoogleShoppingPaidElementItem(BaseMerchantGoogleShoppingProductsElementIte
     GoogleShoppingPaidElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements found in Google Shopping SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"alignment of the element in SERP. can take the following values:. left, right")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERPabsolute position among all the elements found in Google Shopping SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"alignment of the element in SERPcan take the following values:left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"XPath of the element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain of the URL. domain of the URL where a special offer is posted. Note: this field is deprecated and will return null")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain of the URLdomain of the URL where a special offer is postedNote: this field is deprecated and will return null")
     title: Optional[StrictStr] = Field(default=None, description=r"product title")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the product in Google Shopping SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL pointing at special offer page. URL where a special offer is posted. Note: this field is deprecated and will return null")
-    shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameter. using this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
+    url: Optional[StrictStr] = Field(default=None, description=r"URL pointing at special offer pageURL where a special offer is postedNote: this field is deprecated and will return null")
+    shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameterusing this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

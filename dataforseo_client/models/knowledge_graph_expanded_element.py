@@ -20,7 +20,7 @@ class KnowledgeGraphExpandedElement(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     featured_title: Optional[StrictStr] = Field(default=None, description=r"title of a given element")
     url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element. if there are none, equals null")

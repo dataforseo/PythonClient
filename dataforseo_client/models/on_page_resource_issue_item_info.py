@@ -18,7 +18,7 @@ class OnPageResourceIssueItemInfo(BaseModel):
     line: Optional[StrictInt] = Field(default=None, description=r"line where the error was found")
     column: Optional[StrictInt] = Field(default=None, description=r"column where the error was found")
     message: Optional[StrictStr] = Field(default=None, description=r"text message of the error. the full list of possible HTML errors can be found here")
-    status_code: Optional[StrictInt] = Field(default=None, description=r"status code of the error. possible values:. 0 — Unidentified Error;. 501 — Html Parse Error;. 1501 — JS Parse Error;. 2501 — CSS Parse Error;. 3501 — Image Parse Error;. 3502 — Image Scale Is Zero;. 3503 — Image Size Is Zero;. 3504 — Image Format Invalid")
+    status_code: Optional[StrictInt] = Field(default=None, description=r"general status code. you can find the full list of the response codes here. Note: we strongly recommend designing a necessary system for handling related exceptional or error conditions")
     __properties: ClassVar[List[str]] = [
         "line", 
         "column", 

@@ -24,6 +24,7 @@ class AppStoreInfoOrganic(BaseModel):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values: left")
     app_id: Optional[StrictStr] = Field(default=None, description=r"ID of the app")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the app")
+    subtitle: Optional[StrictStr] = Field(default=None, description=r"subtitle of the app")
     url: Optional[StrictStr] = Field(default=None, description=r"URL to the app page on App Store")
     icon: Optional[StrictStr] = Field(default=None, description=r"URL to the app icon")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the app")
@@ -54,6 +55,7 @@ class AppStoreInfoOrganic(BaseModel):
         "position", 
         "app_id", 
         "title", 
+        "subtitle", 
         "url", 
         "icon", 
         "description", 
@@ -109,6 +111,7 @@ class AppStoreInfoOrganic(BaseModel):
         _dict['position'] = self.position
         _dict['app_id'] = self.app_id
         _dict['title'] = self.title
+        _dict['subtitle'] = self.subtitle
         _dict['url'] = self.url
         _dict['icon'] = self.icon
         _dict['description'] = self.description
@@ -160,6 +163,7 @@ class AppStoreInfoOrganic(BaseModel):
             "position": obj.get("position"),
             "app_id": obj.get("app_id"),
             "title": obj.get("title"),
+            "subtitle": obj.get("subtitle"),
             "url": obj.get("url"),
             "icon": obj.get("icon"),
             "description": obj.get("description"),

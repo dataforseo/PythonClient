@@ -17,12 +17,12 @@ class DataforseoLabsKnowledgeGraphExpandedItemElementItem(BaseDataforseoLabsKnow
     DataforseoLabsKnowledgeGraphExpandedItemElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. kc:/local:place qa")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
+    data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. action:listen_artist")
     expanded_element: Optional[Any] = Field(default=None, description=r"link of the element")
     __properties: ClassVar[List[str]] = [
         "type", 

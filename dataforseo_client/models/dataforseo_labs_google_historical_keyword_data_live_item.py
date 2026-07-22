@@ -18,7 +18,7 @@ class DataforseoLabsGoogleHistoricalKeywordDataLiveItem(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
     keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     history: Optional[List[Optional[History]]] = Field(default=None, description=r"array of objects with historical data for the keyword")
     __properties: ClassVar[List[str]] = [

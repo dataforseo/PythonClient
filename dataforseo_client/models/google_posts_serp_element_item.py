@@ -16,9 +16,12 @@ from dataforseo_client.models.ai_mode_rectangle_info import AiModeRectangleInfo
 class GooglePostsSerpElementItem(BaseSerpApiElementItem):
     """
     GooglePostsSerpElementItem
+
+    .. deprecated::
+    
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    page: Optional[StrictInt] = Field(default=None, description=r"search results page number. indicates the number of the SERP page on which the element is located")
+    page: Optional[StrictInt] = Field(default=None, description=r"search results page numberindicates the number of the SERP page on which the element is located")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")

@@ -14,6 +14,9 @@ from typing_extensions import Self
 class AboutThisResultElement(BaseModel):
     """
     AboutThisResultElement
+
+    .. deprecated::
+    
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     url: Optional[StrictStr] = Field(default=None, description=r"result’s URL")

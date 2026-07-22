@@ -10,8 +10,8 @@ from typing_extensions import Self
 
 from dataforseo_client.models.rating_element import RatingElement
 from dataforseo_client.models.amazon_applicable_vouchers_item import AmazonApplicableVouchersItem
-from dataforseo_client.models.amazon_product_newer_model_info import AmazonProductNewerModelInfo
-from dataforseo_client.models.product_category_info import ProductCategoryInfo
+from dataforseo_client.models.newer_model import NewerModel
+from dataforseo_client.models.categories import Categories
 from dataforseo_client.models.base_merchant_amazon_product_information_element_item import BaseMerchantAmazonProductInformationElementItem
 from dataforseo_client.models.amazon_review_item import AmazonReviewItem
 
@@ -42,8 +42,8 @@ class AmazonProductInfo(BaseModel):
     is_newer_model_available: Optional[StrictBool] = Field(default=None, description=r"indicates whether the newer model of the product is available")
     is_prime_video: Optional[StrictBool] = Field(default=None, description=r"indicates whether a product has an Amazon Prime Video label. if true, specified product is a part of Amazon Prime Video service")
     applicable_vouchers: Optional[List[Optional[AmazonApplicableVouchersItem]]] = Field(default=None, description=r"array of objects containing information about applicable vouchers")
-    newer_model: Optional[AmazonProductNewerModelInfo] = Field(default=None, description=r"information about the newer model of the product")
-    categories: Optional[List[Optional[ProductCategoryInfo]]] = Field(default=None, description=r"contains related product categories")
+    newer_model: Optional[NewerModel] = Field(default=None, description=r"information about the newer model of the product")
+    categories: Optional[List[Optional[Categories]]] = Field(default=None, description=r"contains related product categories")
     product_information: Optional[List[Optional[BaseMerchantAmazonProductInformationElementItem]]] = Field(default=None, description=r"contains related product information")
     product_images_list: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"contains URLs for all images of the product displayed on the left side of the main image")
     product_videos_list: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"contains URLs for all videos of the product displayed on the right side of the main video")
@@ -196,8 +196,8 @@ class AmazonProductInfo(BaseModel):
             "is_newer_model_available": obj.get("is_newer_model_available"),
             "is_prime_video": obj.get("is_prime_video"),
             "applicable_vouchers": [AmazonApplicableVouchersItem.from_dict(_item) for _item in obj["applicable_vouchers"]] if obj.get("applicable_vouchers") is not None else None,
-            "newer_model": AmazonProductNewerModelInfo.from_dict(obj["newer_model"]) if obj.get("newer_model") is not None else None,
-            "categories": [ProductCategoryInfo.from_dict(_item) for _item in obj["categories"]] if obj.get("categories") is not None else None,
+            "newer_model": NewerModel.from_dict(obj["newer_model"]) if obj.get("newer_model") is not None else None,
+            "categories": [Categories.from_dict(_item) for _item in obj["categories"]] if obj.get("categories") is not None else None,
             "product_information": [BaseMerchantAmazonProductInformationElementItem.from_dict(_item) for _item in obj["product_information"]] if obj.get("product_information") is not None else None,
             "product_images_list": obj.get("product_images_list"),
             "product_videos_list": obj.get("product_videos_list"),

@@ -24,7 +24,7 @@ class BaseKeywordDataDataforseoTrendsItem(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     position: Optional[StrictInt] = Field(default=None, description=r"the alignment of the element. can take the following values: 1, 2, 3, 4, etc.")
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"relevant keywords. the data included in the dataforseo_trends_graph element is based on the keywords listed in this array")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords in a POST array")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

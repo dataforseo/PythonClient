@@ -15,7 +15,7 @@ class OnPageErrorsResultInfo(BaseModel):
     """
     OnPageErrorsResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"id of the task")
+    id: Optional[StrictStr] = Field(default=None, description=r"task identifier. unique task identifier in our system in the UUID format")
     datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when an error occurred. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     function: Optional[StrictStr] = Field(default=None, description=r"corresponding API function")
     error_code: Optional[StrictInt] = Field(default=None, description=r"error code")

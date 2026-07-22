@@ -29,7 +29,7 @@ class BingImagesSerpElementItem(BaseBingSerpApiElementItem):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the item")
     url: Optional[StrictStr] = Field(default=None, description=r"URL")
     items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"contains results featured in the ‘hotels_pack’ element of SERP")
-    related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null")
+    related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null", deprecated=True)
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

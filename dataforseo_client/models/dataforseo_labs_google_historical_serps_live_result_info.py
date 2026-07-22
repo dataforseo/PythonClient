@@ -22,7 +22,7 @@ class DataforseoLabsGoogleHistoricalSerpsLiveResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     total_count: Optional[StrictInt] = Field(default=None, description=r"the total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveItem]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
+    items: Optional[List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveItem]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword", 

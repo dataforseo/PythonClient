@@ -16,12 +16,12 @@ class DeliveryInfo(BaseModel):
     """
     DeliveryInfo
     """ # noqa: E501
-    delivery_date_from: Optional[StrictStr] = Field(default=None, description=r"earliest delivery datethe earliest date when the product can be shipped")
-    delivery_date_to: Optional[StrictStr] = Field(default=None, description=r"latest delivery datethe latest date when the product can be delivered")
-    fastest_delivery_date_from: Optional[StrictStr] = Field(default=None, description=r"earliest free delivery datethe earliest date when the product can be delivered with a fast delivery option")
-    fastest_delivery_date_to: Optional[StrictStr] = Field(default=None, description=r"latest free delivery datethe latest date when the product can be delivered with a fast delivery option")
-    delivery_message: Optional[StrictStr] = Field(default=None, description=r"delivery informationmessage accompanying the delivery information as posted by the seller")
-    delivery_price: Optional[PriceInfo] = Field(default=None, description=r"price for the deliveryprice of the delivery based on the location you specified in the POST request;if free delivery is available, the value is null")
+    delivery_date_from: Optional[StrictStr] = Field(default=None, description=r"earliest delivery date. the earliest date when the product can be shipped, in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example: 2019-11-15 12:57:46 +00:00")
+    delivery_date_to: Optional[StrictStr] = Field(default=None, description=r"latest delivery date. the latest date when the product can be delivered, in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example: 2019-11-15 12:57:46 +00:00")
+    fastest_delivery_date_from: Optional[StrictStr] = Field(default=None, description=r"earliest free delivery date. the earliest date when the product can be delivered with a fast delivery option, in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example: 2019-11-15 12:57:46 +00:00")
+    fastest_delivery_date_to: Optional[StrictStr] = Field(default=None, description=r"latest free delivery date. the latest date when the product can be delivered with a fast delivery option, in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example: 2019-11-15 12:57:46 +00:00")
+    delivery_message: Optional[StrictStr] = Field(default=None, description=r"delivery information. message accompanying the delivery information as posted by the seller")
+    delivery_price: Optional[PriceInfo] = Field(default=None, description=r"price for the delivery. price of the delivery based on the location you specified in the POST request;. if free delivery is available, the value is null")
     __properties: ClassVar[List[str]] = [
         "delivery_date_from", 
         "delivery_date_to", 

@@ -29,7 +29,7 @@ class SerpApiGoogleSearchByImagesImagesElementItem(BaseSerpApiGoogleSearchByImag
     url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"elements of search results found in SERP")
-    related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null")
+    related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null", deprecated=True)
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

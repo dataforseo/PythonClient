@@ -16,8 +16,8 @@ class GoogleFlightsElement(BaseModel):
     GoogleFlightsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    description: Optional[StrictStr] = Field(default=None, description=r"link description")
+    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
     __properties: ClassVar[List[str]] = [
         "type", 
         "description", 

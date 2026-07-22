@@ -18,10 +18,10 @@ class RecipesElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
-    source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
-    description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
+    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
+    source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
+    description: Optional[StrictStr] = Field(default=None, description=r"link description")
     time: Optional[StrictStr] = Field(default=None, description=r"the total time it takes to prepare the cook the dish")
     rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
     __properties: ClassVar[List[str]] = [

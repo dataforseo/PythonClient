@@ -17,7 +17,7 @@ class DataforseoLabsAmazonProductCompetitorsLiveItem(BaseModel):
     DataforseoLabsAmazonProductCompetitorsLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    asin: Optional[StrictStr] = Field(default=None, description=r"ASIN of the product. unique product identifier on Amazon;. for more information, refer to this help center guide")
+    asin: Optional[StrictStr] = Field(default=None, description=r"ASIN in a POST array")
     avg_position: Optional[StrictFloat] = Field(default=None, description=r"average position of the product in Amazon SERP. Note: average position is calculated for intersected keywords only;. the value for a given product may differ when combined with different target products")
     sum_position: Optional[StrictInt] = Field(default=None, description=r"sum of all product positions in Amazon SERP. Note: average position is calculated for intersected keywords only;. the value for a given product may differ when combined with different target products")
     intersections: Optional[StrictInt] = Field(default=None, description=r"number of intersecting keywords")

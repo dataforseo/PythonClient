@@ -24,7 +24,7 @@ class SerpApiAiOverviewElementItem(BaseSerpApiAiOverviewElementItem):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
     text: Optional[StrictStr] = Field(default=None, description=r"additional text of the element in SERP")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format")
-    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
+    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"website links featured in the element")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element. if there is none, equals null")
     references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
     __properties: ClassVar[List[str]] = [

@@ -17,7 +17,7 @@ class DataforseoLabsleAppCompetitorsLiveItem(BaseModel):
     DataforseoLabsleAppCompetitorsLiveItem
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the competitor app")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the app in a POST array")
     avg_position: Optional[StrictFloat] = Field(default=None, description=r"average position of the app in Google Play SERP. Note: average position is calculated for intersected keywords only;. the value for a given application may differ when combined with different target applications")
     sum_position: Optional[StrictInt] = Field(default=None, description=r"sum of all app positions in Google Play SERP. Note: sum position is calculated for intersected keywords only;. the value for a given application may differ when combined with different target applications")
     intersections: Optional[StrictInt] = Field(default=None, description=r"number of intersecting keywords")

@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**rank_group** | **StrictInt** | group rank in SERP<br>position within a group of elements with identical type values<br>positions of elements with different type values are omitted from rank_group |[optional]|
-**rank_absolute** | **StrictInt** | absolute rank in SERP<br>absolute position among all the elements found in SERPnote values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results;<br>to get all items (including SERP features and rich snippets) with their positions, please refer to the Google Organiс Advanced SERP endpoint |[optional]|
+**rank_group** | **StrictInt** | group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group |[optional]|
+**rank_absolute** | **StrictInt** | absolute rank in SERPabsolute position among all the elements found in SERPnote values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results;to get all items (including SERP features and rich snippets) with their positions, please refer to the Google Organiс Advanced SERP endpoint |[optional]|
 **domain** | **StrictStr** | domain of the ad element in SERP |[optional]|
 **title** | **StrictStr** | title of the ad element in SERP |[optional]|
 **description** | **StrictStr** | description of the ad element in SERP |[optional]|

@@ -15,5 +15,5 @@
 **impressions** | **StrictInt** | projected number of ad impressions<br>number of impressions an ad is projected to get within the specified time period<br>Note: parameter deprecated, the value is always null |[optional]|
 **ctr** | **StrictFloat** | projected click through rate (CTR) of the advertisement<br>number of clicks an ad is projected to receive divided by the number of ad impressions; the CTR is projected for the specified time period<br>Note: parameter deprecated, the value is always null |[optional]|
 **average_cpc** | **StrictFloat** | the average cost-per-click value<br>represents the cost-per-click (USD) estimated for a keyword based on the specified time period and historical data;<br>if there is no data, then the value is null |[optional]|
-**cost** | **StrictFloat** | charge for an ad<br>amount that will be charged for running an ad within the specified time period<br>if there is no data, then the value is null |[optional]|
+**cost** | **StrictFloat** | total tasks cost, USD |[optional]|
 **clicks** | **StrictFloat** | number of clicks on an ad<br>number of clicks an ad is projected to get within the specified time period<br>if there is no data, then the value is null |[optional]|

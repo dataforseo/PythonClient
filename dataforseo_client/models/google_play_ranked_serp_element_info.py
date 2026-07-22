@@ -20,7 +20,7 @@ class GooglePlayRankedSerpElementInfo(BaseModel):
     serp_item: Optional[GooglePlaySearchOrganic] = Field(default=None, description=r"contains data on the SERP element. the list of supported SERP elements can be found below")
     check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"number of search results for the returned keyword")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when SERP data was updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when keyword data was updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. 2019-11-15 12:57:46 +00:00")
     previous_updated_time: Optional[StrictStr] = Field(default=None, description=r"previous to the most recent date and time when SERP data was updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-10-15 12:57:46 +00:00;. in this case, will equal null")
     __properties: ClassVar[List[str]] = [
         "se_type", 

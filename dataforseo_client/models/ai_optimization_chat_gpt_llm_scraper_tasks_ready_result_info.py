@@ -15,14 +15,14 @@ class AiOptimizationChatGptLlmScraperTasksReadyResultInfo(BaseModel):
     """
     AiOptimizationChatGptLlmScraperTasksReadyResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"task identifier of the completed taskunique task identifier in our system in the UUID format")
+    id: Optional[StrictStr] = Field(default=None, description=r"task identifier of the completed task. unique task identifier in our system in the UUID format")
     se: Optional[StrictStr] = Field(default=None, description=r"search engine specified when setting the task")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"type of search engineexample: llm_scraper")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"type of search engine. example: {{low_se_type_under}}")
     date_posted: Optional[StrictStr] = Field(default=None, description=r"date when the task was posted (in the UTC format)")
     tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier")
-    endpoint_regular: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Regular taskif the Regular function is not supported in the specified endpoint, the value will be null")
-    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Advanced taskif the Advanced function is not supported in the specified endpoint, the value will be null")
-    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the HTML taskif the HTML function is not supported in the specified endpoint, the value will be null")
+    endpoint_regular: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Regular task. if the Regular function is not supported in the specified endpoint, the value will be null")
+    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Advanced task. if the Advanced function is not supported in the specified endpoint, the value will be null")
+    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the HTML task. if the HTML function is not supported in the specified endpoint, the value will be null")
     __properties: ClassVar[List[str]] = [
         "id", 
         "se", 

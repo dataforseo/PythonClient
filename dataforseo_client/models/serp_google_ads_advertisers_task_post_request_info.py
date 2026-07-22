@@ -15,15 +15,12 @@ class SerpGoogleAdsAdvertisersTaskPostRequestInfo(BaseModel):
     """
     SerpGoogleAdsAdvertisersTaskPostRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
-    priority: Optional[StrictInt] = Field(default=None, description=r"task priorityoptional fieldcan take the following values:1 – normal execution priority (set by default)2 – high execution priorityYou will be additionally charged for the tasks with high execution priority.The cost can be calculated on the Pricing page.")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location codeoptional fieldif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/ads_advertisers/locationsexample:2840Note: if you don't specify location_name, location_code, or location_coordinate, advertisers will be searched across all the available locations")
-    pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed taskoptional fieldwhen a task is completed we will notify you by GET request sent to the URL you have specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/pingscript?id=$idhttp://your-server.com/pingscript?id=$id&tag=$tagNote: special characters in pingback_url will be urlencoded;i.a., the # character will be encoded into %23learn more on our Help Center")
-    postback_url: Optional[StrictStr] = Field(default=None, description=r"URL for sending task resultsoptional fieldonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/postbackscript?id=$idhttp://your-server.com/postbackscript?id=$id&tag=$tagNote: special characters in postback_url will be urlencoded;i.a., the # character will be encoded into %23learn more on our Help Center")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    priority: Optional[StrictInt] = Field(default=None, description=r"task priorityoptional fieldcan take the following values:1 – normal execution priority (set by default)2 – high execution priority. You will be additionally charged for the tasks with high execution priority.The cost can be calculated on the Pricing page.")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location codeoptional fieldif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/ads_advertisers/locationsexample:2840. Note: if you don't specify location_name, location_code, or location_coordinate, advertisers will be searched across all the available locations")
+    pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed taskoptional fieldwhen a task is completed we will notify you by GET request sent to the URL you have specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/pingscript?id=$idhttp://your-server.com/pingscript?id=$id&tag=$tagNote: special characters in pingback_url will be urlencoded;i.a., the # character will be encoded into %23. learn more on our Help Center")
+    postback_url: Optional[StrictStr] = Field(default=None, description=r"URL for sending task resultsoptional fieldonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/postbackscript?id=$idhttp://your-server.com/postbackscript?id=$id&tag=$tagNote: special characters in postback_url will be urlencoded;i.a., the # character will be encoded into %23. learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"postback_url datatyperequired field if you specify postback_urlcorresponds to the function you used for setting a taskpossible values:advanced")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationoptional fieldif you use this field, you don't need to specify location_code or location_coordinateyou can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/ads_advertisers/locationsexample:London,England,United KingdomNote: if you don't specify location_name, location_code, or location_coordinate, advertisers will be searched across all the available locations")
-    location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a locationoptional fieldif you use this field, you don't need to specify location_name or location_codeexample:52.6178549,-155.352142Note: if you don't specify location_name, location_code, or location_coordinate, advertisers will be searched across all the available locations")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "priority", 
@@ -31,9 +28,6 @@ class SerpGoogleAdsAdvertisersTaskPostRequestInfo(BaseModel):
         "pingback_url", 
         "postback_url", 
         "postback_data", 
-        "location_name", 
-        "location_coordinate", 
-        "tag", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -66,9 +60,6 @@ class SerpGoogleAdsAdvertisersTaskPostRequestInfo(BaseModel):
         _dict['pingback_url'] = self.pingback_url
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
-        _dict['location_name'] = self.location_name
-        _dict['location_coordinate'] = self.location_coordinate
-        _dict['tag'] = self.tag
         return _dict
 
 
@@ -87,9 +78,6 @@ class SerpGoogleAdsAdvertisersTaskPostRequestInfo(BaseModel):
             "pingback_url": obj.get("pingback_url"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),
-            "location_name": obj.get("location_name"),
-            "location_coordinate": obj.get("location_coordinate"),
-            "tag": obj.get("tag"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

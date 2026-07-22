@@ -18,7 +18,7 @@ class BusinessListingAggregationInfo(BaseModel):
     top_categories: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the most mentioned related categories. top categories displayed with the number of businesses in each category")
     top_countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the most mentioned counties. country codes with the biggest number of businesses in the category")
     websites_count: Optional[StrictInt] = Field(default=None, description=r"number of unique websites")
-    count: Optional[StrictInt] = Field(default=None, description=r"number of unique entities")
+    count: Optional[StrictInt] = Field(default=None, description=r"item types. the number of items in the items array")
     top_attributes: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the most mentioned service details. service details of a business entity displayed in a form of checks and the number of entities mentioning each attribute")
     top_place_topics: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"top keywords mentioned in customer reviews. contains most popular keywords related to products/services mentioned in customer reviews of a business entity and the number of reviews mentioning each keyword")
     __properties: ClassVar[List[str]] = [

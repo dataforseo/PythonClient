@@ -19,11 +19,11 @@ class AiOverviewExpandedComponent(BaseModel):
     AiOverviewExpandedComponent
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
+    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
     text: Optional[StrictStr] = Field(default=None, description=r"reference text. text snippet from the page that was used to generate the ai_overview_element")
     markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown format")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element. if there is none, equals null")
-    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"website links featured in the element")
+    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
     references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"references relevant to the element. includes references to webpages that were used to generate the ai_overview_element")
     __properties: ClassVar[List[str]] = [
         "type", 

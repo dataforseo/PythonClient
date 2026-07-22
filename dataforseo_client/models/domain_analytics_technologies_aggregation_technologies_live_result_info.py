@@ -19,7 +19,7 @@ class DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo(BaseModel
     total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of returned domains")
-    items: Optional[List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem]]] = Field(default=None, description=r"items array")
+    items: Optional[List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "items_count", 

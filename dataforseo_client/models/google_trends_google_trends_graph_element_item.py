@@ -22,7 +22,7 @@ class GoogleTrendsGoogleTrendsGraphElementItem(BaseKeywordDataGoogleTrendsItem):
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element in Google Trends")
     keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"relevant keywords. the data included in the google_trends_graph element is based on the keywords listed in this array")
     data: Optional[List[Optional[TrendsGraphDataInfo]]] = Field(default=None, description=r"Google Trends data for the specified parameters")
-    averages: Optional[List[Optional[StrictFloat]]] = Field(default=None, description=r"keyword popularity values averaged over the whole time range")
+    averages: Optional[List[Optional[StrictFloat]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

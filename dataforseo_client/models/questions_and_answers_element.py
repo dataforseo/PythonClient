@@ -16,11 +16,11 @@ class QuestionsAndAnswersElement(BaseModel):
     QuestionsAndAnswersElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
+    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
     question_text: Optional[StrictStr] = Field(default=None, description=r"question included in the item")
     answer_text: Optional[StrictStr] = Field(default=None, description=r"answer included in the item")
-    source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
+    source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
     votes: Optional[StrictInt] = Field(default=None, description=r"answer upvotes from the source")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -31,7 +31,7 @@ class SerpBingOrganicLiveRegularResultInfo(BaseModel):
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in SERP")
     pages_count: Optional[StrictInt] = Field(default=None, description=r"total pages retrieved. total number of retrieved SERPs in the result")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BaseBingSerpApiElementItem]]] = Field(default=None, description=r"items inside the element. array of 8 search queries related to the keyword")
+    items: Optional[List[Optional[BaseBingSerpApiElementItem]]] = Field(default=None, description=r"items in SERP")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 

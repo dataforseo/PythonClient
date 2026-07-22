@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **title** | **StrictStr** | title of the result in SERP |[optional]|
-**url** | **StrictStr** | sitelink URL |[optional]|
+**url** | **StrictStr** | relevant URL in SERP |[optional]|

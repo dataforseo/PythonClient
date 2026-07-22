@@ -16,7 +16,7 @@ class KnowledgeGraphListElement(BaseModel):
     KnowledgeGraphListElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"link anchor text")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     subtitle: Optional[StrictStr] = Field(default=None, description=r"subtitle of the item")
     url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")

@@ -22,7 +22,7 @@ class OnPageScriptResourceItem(BaseOnPageResourceItem):
     OnPageScriptResourceItem
     """ # noqa: E501
     resource_type: Optional[StrictStr] = Field(default=None, description=r"type of the returned resource = ‘html’")
-    status_code: Optional[StrictInt] = Field(default=None, description=r"status code of the page")
+    status_code: Optional[StrictInt] = Field(default=None, description=r"general status code. you can find the full list of the response codes here. Note: we strongly recommend designing a necessary system for handling related exceptional or error conditions")
     location: Optional[StrictStr] = Field(default=None, description=r"location header. indicates the URL to redirect a page to")
     url: Optional[StrictStr] = Field(default=None, description=r"page URL")
     resource_errors: Optional[OnPageResourceIssueInfo] = Field(default=None, description=r"resource errors and warnings")

@@ -11,4 +11,4 @@
 **language_code** | **StrictStr** | language code in a POST array |[optional]|
 **total_count** | **StrictInt** | the total amount of results in our database relevant to your request |[optional]|
 **items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveItem]]** | additional items present in the element<br>if there are none, equals null |[optional]|
+**items** | **List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveItem]]** | historical SERPs and related data found in the database |[optional]|

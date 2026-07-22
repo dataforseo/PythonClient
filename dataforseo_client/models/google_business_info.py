@@ -16,7 +16,7 @@ from dataforseo_client.models.business_work_hours_info import BusinessWorkHoursI
 from dataforseo_client.models.popular_times import PopularTimes
 from dataforseo_client.models.base_local_business_link import BaseLocalBusinessLink
 from dataforseo_client.models.business_directory_info import BusinessDirectoryInfo
-from dataforseo_client.models.services import Services
+from dataforseo_client.models.business_data_service_info import BusinessDataServiceInfo
 
 
 
@@ -65,7 +65,7 @@ class GoogleBusinessInfo(BaseModel):
     local_business_links: Optional[List[Optional[BaseLocalBusinessLink]]] = Field(default=None, description=r"available interactions with the business. list of options to interact with the business directly from search results")
     is_directory_item: Optional[StrictBool] = Field(default=None, description=r"business establishment is a part of the directory. indicates whether the business establishment is a part of the directory;. if true, the item is a part of the larger directory of businesses with the same address (e.g., a mall or a business centre);. note: if the business establishment is a parent item in the directory, the value will be null")
     directory: Optional[BusinessDirectoryInfo] = Field(default=None, description=r"items of the directory. includes information about businesses that are located within the target business establishment and have the same address")
-    services: Optional[List[Optional[Services]]] = Field(default=None, description=r"list of services offered by the business")
+    services: Optional[List[Optional[BusinessDataServiceInfo]]] = Field(default=None, description=r"list of services offered by the business")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 
@@ -245,7 +245,7 @@ class GoogleBusinessInfo(BaseModel):
             "local_business_links": [BaseLocalBusinessLink.from_dict(_item) for _item in obj["local_business_links"]] if obj.get("local_business_links") is not None else None,
             "is_directory_item": obj.get("is_directory_item"),
             "directory": BusinessDirectoryInfo.from_dict(obj["directory"]) if obj.get("directory") is not None else None,
-            "services": [Services.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None,
+            "services": [BusinessDataServiceInfo.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

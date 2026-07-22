@@ -19,7 +19,7 @@ class PeopleAlsoSearch(BaseModel):
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment. learn more about the identifier in this help center article")
     feature_id: Optional[StrictStr] = Field(default=None, description=r"the unique identifier of the element in SERP. learn more about the identifier in this help center article")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the element in SERP. the name of the business entity for which the results are collected")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"the element's rating . the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "cid", 
         "feature_id", 

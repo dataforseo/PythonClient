@@ -19,7 +19,7 @@ class KnowledgeGraphSerpElementItem(BaseSerpApiElementItem):
     KnowledgeGraphSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    page: Optional[StrictInt] = Field(default=None, description=r"search results page number. indicates the number of the SERP page on which the element is located")
+    page: Optional[StrictInt] = Field(default=None, description=r"search results page numberindicates the number of the SERP page on which the element is located")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
@@ -33,7 +33,7 @@ class KnowledgeGraphSerpElementItem(BaseSerpApiElementItem):
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     logo_url: Optional[StrictStr] = Field(default=None, description=r"URL of the logo from knowledge graph")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment;. can be used with Google Reviews API to get a full list of reviews")
-    items: Optional[List[Optional[BaseSerpApiKnowledgeGraphElementItem]]] = Field(default=None, description=r"contains results featured in the ‘hotels_pack’ element of SERP")
+    items: Optional[List[Optional[BaseSerpApiKnowledgeGraphElementItem]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

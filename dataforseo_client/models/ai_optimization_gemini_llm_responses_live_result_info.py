@@ -17,14 +17,14 @@ class AiOptimizationGeminiLlmResponsesLiveResultInfo(BaseModel):
     AiOptimizationGeminiLlmResponsesLiveResultInfo
     """ # noqa: E501
     model_name: Optional[StrictStr] = Field(default=None, description=r"name of the AI model used")
-    input_tokens: Optional[StrictInt] = Field(default=None, description=r"number of tokens in the inputtotal count of tokens processed")
-    output_tokens: Optional[StrictInt] = Field(default=None, description=r"number of tokens in the outputtotal count of tokens generated in the AI response")
-    reasoning_tokens: Optional[StrictInt] = Field(default=None, description=r"number of reasoning tokenstotal count of tokens used to generate reasoning content")
+    input_tokens: Optional[StrictInt] = Field(default=None, description=r"number of tokens in the input. total count of tokens processed")
+    output_tokens: Optional[StrictInt] = Field(default=None, description=r"number of tokens in the output. total count of tokens generated in the AI response")
+    reasoning_tokens: Optional[StrictInt] = Field(default=None, description=r"number of reasoning tokens. total count of tokens used to generate reasoning content")
     web_search: Optional[StrictBool] = Field(default=None, description=r"indicates if web search was used")
-    money_spent: Optional[StrictFloat] = Field(default=None, description=r"cost of AI tokens, USDthe price charged by the third-party AI model provider for according to its Pricing")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was receivedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
-    items: Optional[List[Optional[BaseAiOptimizationLlmResponseElementItem]]] = Field(default=None, description=r"array of response itemscontains structured AI response data")
-    fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queriescontains related search queries derived from the main query to provide a more comprehensive response")
+    money_spent: Optional[StrictFloat] = Field(default=None, description=r"cost of AI tokens, USD. the price charged by the third-party AI model provider for according to its Pricing")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
+    items: Optional[List[Optional[BaseAiOptimizationLlmResponseElementItem]]] = Field(default=None, description=r"array of response items. contains structured AI response data")
+    fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queries. contains related search queries derived from the main query to provide a more comprehensive response")
     __properties: ClassVar[List[str]] = [
         "model_name", 
         "input_tokens", 

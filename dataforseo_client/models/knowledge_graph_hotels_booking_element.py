@@ -17,10 +17,10 @@ class KnowledgeGraphHotelsBookingElement(BaseModel):
     KnowledgeGraphHotelsBookingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    source: Optional[StrictStr] = Field(default=None, description=r"source of additional information about the result")
+    source: Optional[StrictStr] = Field(default=None, description=r"name of the source of the video")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
+    url: Optional[StrictStr] = Field(default=None, description=r"image source URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
     price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
     __properties: ClassVar[List[str]] = [

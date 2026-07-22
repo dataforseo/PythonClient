@@ -15,27 +15,14 @@ class SerpGoogleNewsTaskPostRequestInfo(BaseModel):
     """
     SerpGoogleNewsTaskPostRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”;if this field contains such parameters as ‘allinanchor:’, ‘allintext:’, ‘allintitle:’, ‘allinurl:’, ‘define:’, ‘filetype:’, ‘id:’, ‘inanchor:’, ‘info:’, ‘intext:’, ‘intitle:’, ‘inurl:’, ‘link:’, ‘related:’, ‘site:’, the charge per task will be multiplied by 5Note: queries containing the ‘cache:’ parameter are not supported and will return a validation errorlearn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location coderequired field if you don't specify location_name or location_coordinateif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/locationsexample:2840")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language coderequired field if you don't specify language_nameif you use this field, you don't need to specify language_nameyou can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/languagesexample:en")
-    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depthoptional fieldnumber of results in SERPdefault value: 10max value: 700Your account will be billed per each SERP containing up to 10 results;Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically;The cost can be calculated on the Pricing page.")
-    priority: Optional[StrictInt] = Field(default=None, description=r"task priorityoptional fieldcan take the following values:1 – normal execution priority (set by default)2 – high execution priorityYou will be additionally charged for the tasks with high execution priority.The cost can be calculated on the Pricing page.")
-    pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed taskoptional fieldwhen a task is completed we will notify you by GET request sent to the URL you have specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/pingscript?id=$idhttp://your-server.com/pingscript?id=$id&tag=$tagNote: special characters in pingback_url will be urlencoded;i.a., the # character will be encoded into %23learn more on our Help Center")
-    postback_url: Optional[StrictStr] = Field(default=None, description=r"URL for sending task resultsoptional fieldonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/postbackscript?id=$idhttp://your-server.com/postbackscript?id=$id&tag=$tagNote: special characters in postback_url will be urlencoded;i.a., the # character will be encoded into %23learn more on our Help Center")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”;if this field contains such parameters as ‘allinanchor:’, ‘allintext:’, ‘allintitle:’, ‘allinurl:’, ‘define:’, ‘filetype:’, ‘id:’, ‘inanchor:’, ‘info:’, ‘intext:’, ‘intitle:’, ‘inurl:’, ‘link:’, ‘related:’, ‘site:’, the charge per task will be multiplied by 5Note: queries containing the ‘cache:’ parameter are not supported and will return a validation error. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location coderequired field if you don't specify location_name or location_coordinateif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/{{low_se_name}}/locationsexample:2840")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language coderequired field if you don't specify language_nameif you use this field, you don't need to specify language_nameyou can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/{{low_se_name}}/languagesexample:en")
+    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depthoptional fieldnumber of results in SERPdefault value: 10max value: 700. Your account will be billed per each SERP containing up to 10 results;Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically;The cost can be calculated on the Pricing page.")
+    priority: Optional[StrictInt] = Field(default=None, description=r"task priorityoptional fieldcan take the following values:1 – normal execution priority (set by default)2 – high execution priority. You will be additionally charged for the tasks with high execution priority.The cost can be calculated on the Pricing page.")
+    pingback_url: Optional[StrictStr] = Field(default=None, description=r"notification URL of a completed taskoptional fieldwhen a task is completed we will notify you by GET request sent to the URL you have specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/pingscript?id=$idhttp://your-server.com/pingscript?id=$id&tag=$tagNote: special characters in pingback_url will be urlencoded;i.a., the # character will be encoded into %23. learn more on our Help Center")
+    postback_url: Optional[StrictStr] = Field(default=None, description=r"URL for sending task resultsoptional fieldonce the task is completed, we will send a POST request with its results compressed in the gzip format to the postback_url you specifiedyou can use the ‘$id’ string as a $id variable and ‘$tag’ as urlencoded $tag variable. We will set the necessary values before sending the request.example:http://your-server.com/postbackscript?id=$idhttp://your-server.com/postbackscript?id=$id&tag=$tagNote: special characters in postback_url will be urlencoded;i.a., the # character will be encoded into %23. learn more on our Help Center")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"postback_url datatyperequired field if you specify postback_urlcorresponds to the datatype that will be sent to your serverpossible values:advanced, html")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationrequired field if you don't specify location_code or location_coordinateif you use this field, you don't need to specify location_code or location_coordinateyou can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/locationsexample:London,England,United Kingdom")
-    language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine languagerequired field if you don't specify language_codeif you use this field, you don't need to specify language_codeyou can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/languagesexample:English")
-    os: Optional[StrictStr] = Field(default=None, description=r"device operating systemoptional fieldnote that this API provides results for desktop onlychoose from the following values: windows, macosdefault value: windows")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
-    max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limitoptional fieldnumber of search results pages to crawlmax value: 100Note: the max_crawl_pages and depth parameters complement each other;learn more at our help center")
-    search_param: Optional[StrictStr] = Field(default=None, description=r"additional parameters of the search queryoptional fieldget the list of available parameters and additional details here")
-    calculate_rectangles: Optional[StrictBool] = Field(default=None, description=r"calculate pixel rankings for SERP elements in advanced resultsoptional fieldpixel ranking refers to the distance between the result snippet and top left corner of the screen;Visit Help Center to learn more>>by default, the parameter is set to falseNote: if set to true, the charge per task will be multiplied by 2")
-    browser_screen_width: Optional[StrictInt] = Field(default=None, description=r"browser screen widthoptional fieldyou can set a custom browser screen width to calculate pixel rankings for a particular device;by default, the parameter is set to 1920;Note: to use this parameter, set calculate_rectangles to true")
-    browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"browser screen heightoptional fieldyou can set a custom browser screen height to calculate pixel rankings for a particular device;by default, the parameter is set to 1080;Note: to use this parameter, set calculate_rectangles to true")
-    browser_screen_resolution_ratio: Optional[StrictInt] = Field(default=None, description=r"browser screen resolution ratiooptional fieldyou can set a custom browser screen resolution ratio to calculate pixel rankings for a particular device;by default, the parameter is set to 1;Note: to use this parameter, set calculate_rectangles to true")
-    url: Optional[StrictStr] = Field(default=None, description=r"direct URL of the search queryoptional fieldyou can specify a direct URL and we will sort it out to the necessary fields;Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method;example:https://www.google.co.uk/search?q=%20rank%20tracker%20api&hl=en&gl=GB&uule=w+CAIQIFISCXXeIa8LoNhHEZkq1d1aOpZS")
-    location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a locationrequired field if you don't specify location_name or location_codeif you use this field, you don't need to specify location_name or location_codelocation_coordinate parameter should be specified in the 'latitude,longitude,radius' formatthe maximum number of decimal digits for 'latitude' and 'longitude': 7the minimum value for 'radius': 199.9 (mm)the maximum value for 'radius': 199999 (mm)example:53.476225,-2.243572,200")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domainoptional fieldwe choose the relevant search engine domain automatically according to the location and language you specifyhowever, you can set a custom search engine domain in this fieldexample:google.co.uk, google.com.au, google.de, etc.")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 
@@ -45,19 +32,6 @@ class SerpGoogleNewsTaskPostRequestInfo(BaseModel):
         "pingback_url", 
         "postback_url", 
         "postback_data", 
-        "location_name", 
-        "language_name", 
-        "os", 
-        "tag", 
-        "max_crawl_pages", 
-        "search_param", 
-        "calculate_rectangles", 
-        "browser_screen_width", 
-        "browser_screen_height", 
-        "browser_screen_resolution_ratio", 
-        "url", 
-        "location_coordinate", 
-        "se_domain", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -92,19 +66,6 @@ class SerpGoogleNewsTaskPostRequestInfo(BaseModel):
         _dict['pingback_url'] = self.pingback_url
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
-        _dict['location_name'] = self.location_name
-        _dict['language_name'] = self.language_name
-        _dict['os'] = self.os
-        _dict['tag'] = self.tag
-        _dict['max_crawl_pages'] = self.max_crawl_pages
-        _dict['search_param'] = self.search_param
-        _dict['calculate_rectangles'] = self.calculate_rectangles
-        _dict['browser_screen_width'] = self.browser_screen_width
-        _dict['browser_screen_height'] = self.browser_screen_height
-        _dict['browser_screen_resolution_ratio'] = self.browser_screen_resolution_ratio
-        _dict['url'] = self.url
-        _dict['location_coordinate'] = self.location_coordinate
-        _dict['se_domain'] = self.se_domain
         return _dict
 
 
@@ -125,19 +86,6 @@ class SerpGoogleNewsTaskPostRequestInfo(BaseModel):
             "pingback_url": obj.get("pingback_url"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),
-            "location_name": obj.get("location_name"),
-            "language_name": obj.get("language_name"),
-            "os": obj.get("os"),
-            "tag": obj.get("tag"),
-            "max_crawl_pages": obj.get("max_crawl_pages"),
-            "search_param": obj.get("search_param"),
-            "calculate_rectangles": obj.get("calculate_rectangles"),
-            "browser_screen_width": obj.get("browser_screen_width"),
-            "browser_screen_height": obj.get("browser_screen_height"),
-            "browser_screen_resolution_ratio": obj.get("browser_screen_resolution_ratio"),
-            "url": obj.get("url"),
-            "location_coordinate": obj.get("location_coordinate"),
-            "se_domain": obj.get("se_domain"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

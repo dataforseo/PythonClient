@@ -15,23 +15,15 @@ class SerpGoogleAutocompleteLiveAdvancedRequestInfo(BaseModel):
     """
     SerpGoogleAutocompleteLiveAdvancedRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”;learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character ‘+’ will be decoded to a space character)if you need to use the “%” character for your keyword, please specify it as “%25”;if you need to use the “+” character for your keyword, please specify it as “%2B”;. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location coderequired field if you don't specify location_name;you can receive the list of available locations of the search engines with their location_code by making a separate request to https://api.dataforseo.com/v3/serp/google/locationsexample:2840")
     language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language coderequired field if you don't specify language_nameif you use this field, you don't need to specify language_name;you can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/languagesexample:en")
     cursor_pointer: Optional[StrictInt] = Field(default=None, description=r"search bar cursor pointeroptional fieldthe horizontal numerical position of the cursor pointer within the keyword in the search bar;by modifying the position of the cursor pointer, you will obtain different autocomplete suggestions for the same seed keyword;minimal value: 0default value: the number of the last character of the specified keywordexample:|which query are s - 'cursor_pointer': 0which query is s| - 'cursor_pointer': 16which que|ry is s - 'cursor_pointer': 9")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationrequired field if you don't specify location_codeif you use this field, you don't need to specify location_code;you can receive the list of available locations of the search engine with their location_name by making a separate request to https://api.dataforseo.com/v3/serp/google/autocomplete/locationsexample:London,England,United Kingdom")
-    language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine languagerequired field if you don't specify language_codeif you use this field, you don't need to specify language_code;you can receive the list of available languages of the search engine with their language_name by making a separate request to https://api.dataforseo.com/v3/serp/google/languagesexample:English")
-    client: Optional[StrictStr] = Field(default=None, description=r"search client for autocompleteoptional fieldautocomplete results may differ depending on the search client;possible values:chrome — used when google search is opened in google chrome;chrome-omni — used in the address bar in chrome;gws-wiz — used in google search home page;gws-wiz-serp — used in google search engine results page;safari — used when google search is opened in safari browser;firefox — used when google search is opened in firefox browser;psy-ab — may be used when google search is opened in google chrome browser;toolbar — returns XML;youtube — returns JSONP;gws-wiz-local — used in google local;img — used in google's image search;products-cc — used in google shopping search")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 
         "language_code", 
         "cursor_pointer", 
-        "location_name", 
-        "language_name", 
-        "client", 
-        "tag", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -62,10 +54,6 @@ class SerpGoogleAutocompleteLiveAdvancedRequestInfo(BaseModel):
         _dict['location_code'] = self.location_code
         _dict['language_code'] = self.language_code
         _dict['cursor_pointer'] = self.cursor_pointer
-        _dict['location_name'] = self.location_name
-        _dict['language_name'] = self.language_name
-        _dict['client'] = self.client
-        _dict['tag'] = self.tag
         return _dict
 
 
@@ -82,10 +70,6 @@ class SerpGoogleAutocompleteLiveAdvancedRequestInfo(BaseModel):
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "cursor_pointer": obj.get("cursor_pointer"),
-            "location_name": obj.get("location_name"),
-            "language_name": obj.get("language_name"),
-            "client": obj.get("client"),
-            "tag": obj.get("tag"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

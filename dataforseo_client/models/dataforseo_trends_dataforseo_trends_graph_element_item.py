@@ -19,9 +19,9 @@ class DataforseoTrendsDataforseoTrendsGraphElementItem(BaseKeywordDataDataforseo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     position: Optional[StrictInt] = Field(default=None, description=r"the alignment of the element. can take the following values: 1, 2, 3, 4, etc.")
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"relevant keywords. the data included in the dataforseo_trends_graph element is based on the keywords listed in this array")
-    data: Optional[List[Optional[DataforseoTrendsGraphDataTrendsGraphDataInfo]]] = Field(default=None, description=r"DataForSEO Trends data for the specified parameters")
-    averages: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"keyword popularity values averaged over the whole time range")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords in a POST array")
+    data: Optional[List[Optional[DataforseoTrendsGraphDataTrendsGraphDataInfo]]] = Field(default=None, description=r"contains the same parameters that you specified in the POST request")
+    averages: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

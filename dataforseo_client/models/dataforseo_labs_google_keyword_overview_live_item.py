@@ -24,7 +24,7 @@ class DataforseoLabsGoogleKeywordOverviewLiveItem(BaseModel):
     """ # noqa: E501
     se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
     keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     search_partners: Optional[StrictBool] = Field(default=None, description=r"indicates data for Google and partner sites. if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search;. if false, the results are returned for Google search sites only")
     keyword_info: Optional[KeywordInfo] = Field(default=None, description=r"keyword data for the returned keyword")

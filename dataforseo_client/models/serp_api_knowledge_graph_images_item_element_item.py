@@ -27,7 +27,7 @@ class SerpApiKnowledgeGraphImagesItemElementItem(BaseSerpApiKnowledgeGraphElemen
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
     link: Optional[LinkElement] = Field(default=None, description=r"link of the element")
-    items: Optional[List[Optional[KnowledgeGraphImagesElement]]] = Field(default=None, description=r"items featured in the faq_box")
+    items: Optional[List[Optional[KnowledgeGraphImagesElement]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page", 

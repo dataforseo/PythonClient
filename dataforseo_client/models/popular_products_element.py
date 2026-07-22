@@ -19,7 +19,7 @@ class PopularProductsElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
+    description: Optional[StrictStr] = Field(default=None, description=r"link description")
     more_sellers: Optional[StrictBool] = Field(default=None, description=r"indicates whether the product is sold by multiple sellers")
     seller: Optional[StrictStr] = Field(default=None, description=r"seller of the product")
     image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")

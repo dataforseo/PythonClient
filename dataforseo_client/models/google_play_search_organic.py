@@ -21,7 +21,7 @@ class GooglePlaySearchOrganic(BaseModel):
     rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the app")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the app in a POST array")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the app")
     url: Optional[StrictStr] = Field(default=None, description=r"URL to the app page on Google Play")
     icon: Optional[StrictStr] = Field(default=None, description=r"URL to the app icon")

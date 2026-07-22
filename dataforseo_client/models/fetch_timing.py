@@ -15,7 +15,7 @@ class FetchTiming(BaseModel):
     """
     FetchTiming
     """ # noqa: E501
-    duration_time: Optional[StrictInt] = Field(default=None, description=r"indicates how many seconds it took to download a page")
+    duration_time: Optional[StrictInt] = Field(default=None, description=r"total time it takes until a browser receives a complete response from a server (in milliseconds)")
     fetch_start: Optional[StrictInt] = Field(default=None, description=r"time to start downloading the HTML resource. the amount of time the browser needs to start downloading a page")
     fetch_end: Optional[StrictInt] = Field(default=None, description=r"time to complete downloading the HTML resource. the amount of time the browser needs to complete downloading a page")
     __properties: ClassVar[List[str]] = [

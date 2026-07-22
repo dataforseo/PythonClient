@@ -26,7 +26,7 @@ class BacklinksDomainPagesLiveItem(BaseModel):
     first_visited: Optional[StrictStr] = Field(default=None, description=r"date and time of the first page visit. date and time when our crawler visited this page for the first time. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2017-01-24 13:20:59 +00:00")
     prev_visited: Optional[StrictStr] = Field(default=None, description=r"previous to the most recent date when our crawler visited the page. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2017-01-24 13:20:59 +00:00")
     fetch_time: Optional[StrictStr] = Field(default=None, description=r"most recent date and time when our crawler visited the page. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2017-01-24 13:20:59 +00:00")
-    status_code: Optional[StrictInt] = Field(default=None, description=r"HTTP status code of the page")
+    status_code: Optional[StrictInt] = Field(default=None, description=r"general status code. you can find the full list of the response codes here. Note: we strongly recommend designing a necessary system for handling related exceptional or error conditions")
     location: Optional[StrictStr] = Field(default=None, description=r"location header. indicates the URL to redirect a page to if exists")
     size: Optional[StrictInt] = Field(default=None, description=r"indicates the page size, in bytes")
     encoded_size: Optional[StrictInt] = Field(default=None, description=r"page size after encoding. indicates the size of the encoded page, in bytes")

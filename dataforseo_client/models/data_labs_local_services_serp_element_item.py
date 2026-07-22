@@ -23,7 +23,7 @@ class DataLabsLocalServicesSerpElementItem(BaseDataforseoLabsApiElementItem):
     position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
+    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL in SERP")
     domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     items: Optional[Any] = Field(default=None, description=r"historical SERPs and related data found in the database")
     __properties: ClassVar[List[str]] = [

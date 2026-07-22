@@ -11,4 +11,4 @@
 **check_url** | **StrictStr** | direct URL to search engine results<br>you can use it to make sure that we provided accurate results |[optional]|
 **datetime** | **StrictStr** | date and time when the result was received<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **items_count** | **StrictInt** | item types<br>the number of items in the items array |[optional]|
-**items** | **List[Optional[BusinessDataGoogleHotelSearchesItem]]** | array of items<br>note: this field always equals null; use it to facilitate integration and ensure interoperability with the Hotel Info endpoint |[optional]|
+**items** | **List[Optional[BusinessDataGoogleHotelSearchesItem]]** | encountered item types<br>types of search engine results encountered in the items array;<br>possible item types: hotel_search_item |[optional]|

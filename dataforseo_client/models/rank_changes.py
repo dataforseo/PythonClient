@@ -16,9 +16,9 @@ class RankChanges(BaseModel):
     RankChanges
     """ # noqa: E501
     previous_rank_absolute: Optional[StrictInt] = Field(default=None, description=r"previous absolute rank in SERP. indicates previous rank of the element in Google SERP;. if this element is new, the value will be null")
-    is_new: Optional[StrictBool] = Field(default=None, description=r"element was previously present in SERP. if the value is true, previously collected SERP didn’t contain this element")
-    is_up: Optional[StrictBool] = Field(default=None, description=r"rank of this element went up. if the value is true, position of the element in SERP is higher compared to the previous check")
-    is_down: Optional[StrictBool] = Field(default=None, description=r"rank of this element went down. if the value is true, position of the element in SERP is lower compared to the previous check")
+    is_new: Optional[StrictBool] = Field(default=None, description=r"number of new ranked elements. indicates how many new ranked elements were found for this domain or webpage")
+    is_up: Optional[StrictBool] = Field(default=None, description=r"rank went up. indicates how many ranked elements of this target went up in Google Search")
+    is_down: Optional[StrictBool] = Field(default=None, description=r"rank went down. indicates how many ranked elements of this target went down in Google Search")
     __properties: ClassVar[List[str]] = [
         "previous_rank_absolute", 
         "is_new", 

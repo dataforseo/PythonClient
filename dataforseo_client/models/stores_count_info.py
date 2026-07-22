@@ -17,7 +17,7 @@ class StoresCountInfo(BaseModel):
     """ # noqa: E501
     count: Optional[StrictInt] = Field(default=None, description=r"number of stores that offer the product")
     displayed_text: Optional[StrictStr] = Field(default=None, description=r"text displayed on the Google Shopping page")
-    count_from_text: Optional[StrictBool] = Field(default=None, description=r"whether the number of stores is taken from text. indicates whether the number of stores is taken from displayed_text;. if the API finds the exact number of stores in the HTML code of the Google Shopping page, this parameter is false;. if the API cannot find the number of stores in the HTML code of the page, it takes the number from the displayed_text;. in this case, the parameter is true")
+    count_from_text: Optional[StrictBool] = Field(default=None, description=r"whether the number of stores is taken from textindicates whether the number of stores is taken from displayed_text;if the API finds the exact number of stores in the HTML code of the Google Shopping page, this parameter is false;if the API cannot find the number of stores in the HTML code of the page, it takes the number from the displayed_text;in this case, the parameter is true")
     __properties: ClassVar[List[str]] = [
         "count", 
         "displayed_text", 

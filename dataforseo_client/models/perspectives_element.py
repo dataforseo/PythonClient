@@ -17,11 +17,11 @@ class PerspectivesElement(BaseModel):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
+    description: Optional[StrictStr] = Field(default=None, description=r"link description")
+    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
     date: Optional[StrictStr] = Field(default=None, description=r"the date when the page source of the element was published")
-    source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the top_stories_element")
+    source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = [
         "type", 

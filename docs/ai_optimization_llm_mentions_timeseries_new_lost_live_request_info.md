@@ -1,0 +1,17 @@
+# AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+**target** | **List[Optional[BaseAiOptimizationLLmMentionsTargetElement]]** | array of objects containing target entities<br>required field<br>you can specify up to 10 entities (objects) in the target field<br>one target entity can contain either one domain or one keyword and related parameters<br>examples:<br><br>target array with a domain entity |[optional]|
+**date_from** | **StrictStr** | start date of the time range<br>required field<br>minimal value: 2025-08-01<br>date format: 'yyyy-mm-dd' |[optional]|
+**date_to** | **StrictStr** | end date of the time range<br>required field<br>Note:the value specified in date_from cannot exceed the value in date_to<br>date format: 'yyyy-mm-dd' |[optional]|
+**group_range** | **StrictStr** | timeseries range<br>required field<br>possible values:<br>day, week, month, year |[optional]|
+**location_name** | **StrictStr** | full name of search location<br>optional field<br>if you use this field, you don't need to specify location_code<br>if you don't specify this field, the location_code with 2840 value will be used by default;<br>you can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/llm_mentions/locations_and_languages<br>Note: chat_gpt data is available for United States only |[optional]|
+**location_code** | **StrictInt** | search location code<br>optional field<br>if you use this field, you don't need to specify location_name<br>you can receive the list of available locations of the search engine with their location_code by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/llm_mentions/locations_and_languages<br>default value: 2840<br>Note: chat_gpt data is available for 2840 only |[optional]|
+**language_name** | **StrictStr** | full name of search language<br>optional field<br>if you use this field, you don't need to specify language_code;<br>if you don't specify this field, the language_code with en value will be used by default;<br>you can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/llm_mentions/locations_and_languages<br>Note: chat_gpt data is available for English only |[optional]|
+**language_code** | **StrictStr** | search language code<br>optional field<br>if you use this field, you don't need to specify language_name;<br>you can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/ai_optimization/llm_mentions/locations_and_languages<br>default value: en<br>Note: chat_gpt data is available for en only |[optional]|
+**platform** | **StrictStr** | target platform<br>optional field<br>possible values:<br>chat_gpt, google<br>default value: google<br>Note: if the platform is not specified, the data is returned for both platforms<br>Note #2:chat_gpt data is available for the United States and English only |[optional]|
+**tag** | **StrictStr** | user-defined task identifier<br>optional field<br>the character limit is 255<br>you can use this parameter to identify the task and match it with the result<br>you will find the specified tag value in the data object of the response |[optional]|

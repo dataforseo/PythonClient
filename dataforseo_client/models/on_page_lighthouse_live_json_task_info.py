@@ -24,7 +24,7 @@ class OnPageLighthouseLiveJsonTaskInfo(BaseModel):
     result_count: Optional[StrictInt] = Field(default=None, description=r"number of elements in the result array")
     path: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URL path")
     data: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"contains the same parameters that you specified in the POST request")
-    result: Optional[List[Optional[Dict[str, Optional[Any]]]]] = Field(default=None, description=r"results of Lighthouse audit. this array will include data according to the parameters you specified when setting a task;. all fields and their descriptions are available in the official documentation by this link.")
+    result: Optional[List[Optional[Dict[str, Optional[Any]]]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "id", 
         "status_code", 

@@ -14,4 +14,4 @@
 **is_paid** | **StrictBool** | indicates a paid hotel listing<br>if true, related hotel_search_item is a paid ad<br>if false, related hotel_search_item is an organic hotel listing |[optional]|
 **official_site** | **StrictBool** |  |[optional]|
 **free_cancellation_until** | **StrictStr** | date until which free cancellation is available<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>equals null if free cancellation is not available for the selected dates |[optional]|
-**offers** | **List[Optional[HotelInfoPriceOffer]]** | featured price offers |[optional]|
+**offers** | **List[Optional[HotelInfoPriceOffer]]** |  |[optional]|

@@ -17,20 +17,6 @@ if TYPE_CHECKING:
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_scraper_live_advanced_response_info import AiOptimizationChatGptLlmScraperLiveAdvancedResponseInfo
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_scraper_live_html_request_info import AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_scraper_live_html_response_info import AiOptimizationChatGptLlmScraperLiveHtmlResponseInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_locations_and_languages_response_info import AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_available_filters_response_info import AiOptimizationLlmMentionsAvailableFiltersResponseInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_search_live_request_info import AiOptimizationLlmMentionsSearchLiveRequestInfo
-    from dataforseo_client.models.base_ai_optimization_l_lm_mentions_target_element import BaseAiOptimizationLLmMentionsTargetElement
-    from dataforseo_client.models.ai_optimization_llm_mentions_search_live_response_info import AiOptimizationLlmMentionsSearchLiveResponseInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_pages_live_request_info import AiOptimizationLlmMentionsTopPagesLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_pages_live_response_info import AiOptimizationLlmMentionsTopPagesLiveResponseInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_domains_live_request_info import AiOptimizationLlmMentionsTopDomainsLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_domains_live_response_info import AiOptimizationLlmMentionsTopDomainsLiveResponseInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_aggregated_metrics_live_request_info import AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_aggregated_metrics_live_response_info import AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info import AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_l_lm_mentions_cross_aggregate_metrics_target_info import AiOptimizationLLmMentionsCrossAggregateMetricsTargetInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_cross_aggregated_metrics_live_response_info import AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_models_response_info import AiOptimizationChatGptLlmResponsesModelsResponseInfo
     from dataforseo_client.models.ai_optimization_chat_gpt_llm_responses_live_request_info import AiOptimizationChatGptLlmResponsesLiveRequestInfo
     from dataforseo_client.models.llm_message_chain_item import LlmMessageChainItem
@@ -71,6 +57,40 @@ if TYPE_CHECKING:
     from dataforseo_client.models.ai_optimization_ai_keyword_data_locations_and_languages_response_info import AiOptimizationAiKeywordDataLocationsAndLanguagesResponseInfo
     from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_request_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo
     from dataforseo_client.models.ai_optimization_ai_keyword_data_keywords_search_volume_live_response_info import AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_available_filters_response_info import AiOptimizationLlmMentionsAvailableFiltersResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_locations_and_languages_response_info import AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_search_mentions_live_request_info import AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo
+    from dataforseo_client.models.base_ai_optimization_l_lm_mentions_target_element import BaseAiOptimizationLLmMentionsTargetElement
+    from dataforseo_client.models.ai_optimization_llm_mentions_search_mentions_live_response_info import AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_live_request_info import AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_live_response_info import AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_multi_target_metrics_live_request_info import AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_l_lm_mentions_multi_target_metrics_request_info import AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_multi_target_metrics_live_response_info import AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_live_request_info import AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_live_response_info import AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_live_request_info import AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_live_response_info import AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_lite_live_request_info import AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_lite_live_response_info import AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_historical_live_request_info import AiOptimizationLlmMentionsHistoricalLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_historical_live_response_info import AiOptimizationLlmMentionsHistoricalLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_delta_live_request_info import AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_delta_live_response_info import AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_new_lost_live_request_info import AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_new_lost_live_response_info import AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo
 
 from dataforseo_client.api_client import ApiClient, RequestSerialized
 from dataforseo_client.api_response import ApiResponse
@@ -1612,1278 +1632,6 @@ class AiOptimizationApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/ai_optimization/chat_gpt/llm_scraper/live/html',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-    from dataforseo_client.models.ai_optimization_llm_mentions_locations_and_languages_response_info import AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo
-    @validate_call
-    def llm_mentions_locations_and_languages(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo:
-
-        _param = self._llm_mentions_locations_and_languages_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-    @validate_call
-    def llm_mentions_locations_and_languages_with_http_info(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> 'ApiResponse[AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo]':
-
-        _param = self._llm_mentions_locations_and_languages_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-    @validate_call
-    def llm_mentions_locations_and_languages_without_preload_content(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-
-        _param = self._llm_mentions_locations_and_languages_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _llm_mentions_locations_and_languages_serialize(
-        self,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/v3/ai_optimization/llm_mentions/locations_and_languages',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-    from dataforseo_client.models.ai_optimization_llm_mentions_available_filters_response_info import AiOptimizationLlmMentionsAvailableFiltersResponseInfo
-    @validate_call
-    def llm_mentions_available_filters(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AiOptimizationLlmMentionsAvailableFiltersResponseInfo:
-
-        _param = self._llm_mentions_available_filters_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsAvailableFiltersResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-    @validate_call
-    def llm_mentions_available_filters_with_http_info(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> 'ApiResponse[AiOptimizationLlmMentionsAvailableFiltersResponseInfo]':
-
-        _param = self._llm_mentions_available_filters_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsAvailableFiltersResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-    @validate_call
-    def llm_mentions_available_filters_without_preload_content(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-
-        _param = self._llm_mentions_available_filters_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsAvailableFiltersResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _llm_mentions_available_filters_serialize(
-        self,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/v3/ai_optimization/llm_mentions/available_filters',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-    from dataforseo_client.models.ai_optimization_llm_mentions_search_live_request_info import AiOptimizationLlmMentionsSearchLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_search_live_response_info import AiOptimizationLlmMentionsSearchLiveResponseInfo
-    @validate_call
-    def llm_mentions_search_live(
-        self,
-        list_optional_ai_optimization_llm_mentions_search_live_request_info: 'List[Optional[AiOptimizationLlmMentionsSearchLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AiOptimizationLlmMentionsSearchLiveResponseInfo:
-
-        _param = self._llm_mentions_search_live_serialize(
-            list_optional_ai_optimization_llm_mentions_search_live_request_info=list_optional_ai_optimization_llm_mentions_search_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsSearchLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    
-    @validate_call
-    def llm_mentions_search_live_with_http_info(
-        self,
-        list_optional_ai_optimization_llm_mentions_search_live_request_info: 'List[Optional[AiOptimizationLlmMentionsSearchLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> 'ApiResponse[AiOptimizationLlmMentionsSearchLiveResponseInfo]':
-
-        _param = self._llm_mentions_search_live_serialize(
-            list_optional_ai_optimization_llm_mentions_search_live_request_info=list_optional_ai_optimization_llm_mentions_search_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsSearchLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def llm_mentions_search_live_without_preload_content(
-        self,
-        list_optional_ai_optimization_llm_mentions_search_live_request_info: 'List[Optional[AiOptimizationLlmMentionsSearchLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-
-        _param = self._llm_mentions_search_live_serialize(
-            list_optional_ai_optimization_llm_mentions_search_live_request_info=list_optional_ai_optimization_llm_mentions_search_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsSearchLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _llm_mentions_search_live_serialize(
-        self,
-        list_optional_ai_optimization_llm_mentions_search_live_request_info,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'List[Optional[AiOptimizationLlmMentionsSearchLiveRequestInfo]]': '',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if list_optional_ai_optimization_llm_mentions_search_live_request_info is not None:
-            _body_params = list_optional_ai_optimization_llm_mentions_search_live_request_info
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/v3/ai_optimization/llm_mentions/search/live',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_pages_live_request_info import AiOptimizationLlmMentionsTopPagesLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_pages_live_response_info import AiOptimizationLlmMentionsTopPagesLiveResponseInfo
-    @validate_call
-    def llm_mentions_top_pages_live(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_pages_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopPagesLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AiOptimizationLlmMentionsTopPagesLiveResponseInfo:
-
-        _param = self._llm_mentions_top_pages_live_serialize(
-            list_optional_ai_optimization_llm_mentions_top_pages_live_request_info=list_optional_ai_optimization_llm_mentions_top_pages_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsTopPagesLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    
-    @validate_call
-    def llm_mentions_top_pages_live_with_http_info(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_pages_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopPagesLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopPagesLiveResponseInfo]':
-
-        _param = self._llm_mentions_top_pages_live_serialize(
-            list_optional_ai_optimization_llm_mentions_top_pages_live_request_info=list_optional_ai_optimization_llm_mentions_top_pages_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsTopPagesLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def llm_mentions_top_pages_live_without_preload_content(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_pages_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopPagesLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-
-        _param = self._llm_mentions_top_pages_live_serialize(
-            list_optional_ai_optimization_llm_mentions_top_pages_live_request_info=list_optional_ai_optimization_llm_mentions_top_pages_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsTopPagesLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _llm_mentions_top_pages_live_serialize(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_pages_live_request_info,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'List[Optional[AiOptimizationLlmMentionsTopPagesLiveRequestInfo]]': '',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if list_optional_ai_optimization_llm_mentions_top_pages_live_request_info is not None:
-            _body_params = list_optional_ai_optimization_llm_mentions_top_pages_live_request_info
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/v3/ai_optimization/llm_mentions/top_pages/live',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_domains_live_request_info import AiOptimizationLlmMentionsTopDomainsLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_top_domains_live_response_info import AiOptimizationLlmMentionsTopDomainsLiveResponseInfo
-    @validate_call
-    def llm_mentions_top_domains_live(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_domains_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopDomainsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AiOptimizationLlmMentionsTopDomainsLiveResponseInfo:
-
-        _param = self._llm_mentions_top_domains_live_serialize(
-            list_optional_ai_optimization_llm_mentions_top_domains_live_request_info=list_optional_ai_optimization_llm_mentions_top_domains_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsTopDomainsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    
-    @validate_call
-    def llm_mentions_top_domains_live_with_http_info(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_domains_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopDomainsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopDomainsLiveResponseInfo]':
-
-        _param = self._llm_mentions_top_domains_live_serialize(
-            list_optional_ai_optimization_llm_mentions_top_domains_live_request_info=list_optional_ai_optimization_llm_mentions_top_domains_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsTopDomainsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def llm_mentions_top_domains_live_without_preload_content(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_domains_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopDomainsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-
-        _param = self._llm_mentions_top_domains_live_serialize(
-            list_optional_ai_optimization_llm_mentions_top_domains_live_request_info=list_optional_ai_optimization_llm_mentions_top_domains_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsTopDomainsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _llm_mentions_top_domains_live_serialize(
-        self,
-        list_optional_ai_optimization_llm_mentions_top_domains_live_request_info,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'List[Optional[AiOptimizationLlmMentionsTopDomainsLiveRequestInfo]]': '',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if list_optional_ai_optimization_llm_mentions_top_domains_live_request_info is not None:
-            _body_params = list_optional_ai_optimization_llm_mentions_top_domains_live_request_info
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/v3/ai_optimization/llm_mentions/top_domains/live',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-    from dataforseo_client.models.ai_optimization_llm_mentions_aggregated_metrics_live_request_info import AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_aggregated_metrics_live_response_info import AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo
-    @validate_call
-    def llm_mentions_aggregated_metrics_live(
-        self,
-        list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo:
-
-        _param = self._llm_mentions_aggregated_metrics_live_serialize(
-            list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    
-    @validate_call
-    def llm_mentions_aggregated_metrics_live_with_http_info(
-        self,
-        list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> 'ApiResponse[AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo]':
-
-        _param = self._llm_mentions_aggregated_metrics_live_serialize(
-            list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def llm_mentions_aggregated_metrics_live_without_preload_content(
-        self,
-        list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-
-        _param = self._llm_mentions_aggregated_metrics_live_serialize(
-            list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsAggregatedMetricsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _llm_mentions_aggregated_metrics_live_serialize(
-        self,
-        list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'List[Optional[AiOptimizationLlmMentionsAggregatedMetricsLiveRequestInfo]]': '',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info is not None:
-            _body_params = list_optional_ai_optimization_llm_mentions_aggregated_metrics_live_request_info
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/v3/ai_optimization/llm_mentions/aggregated_metrics/live',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-    from dataforseo_client.models.ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info import AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo
-    from dataforseo_client.models.ai_optimization_llm_mentions_cross_aggregated_metrics_live_response_info import AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo
-    @validate_call
-    def llm_mentions_cross_aggregated_metrics_live(
-        self,
-        list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo:
-
-        _param = self._llm_mentions_cross_aggregated_metrics_live_serialize(
-            list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    
-    @validate_call
-    def llm_mentions_cross_aggregated_metrics_live_with_http_info(
-        self,
-        list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> 'ApiResponse[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo]':
-
-        _param = self._llm_mentions_cross_aggregated_metrics_live_serialize(
-            list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def llm_mentions_cross_aggregated_metrics_live_without_preload_content(
-        self,
-        list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo]]' = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-
-        _param = self._llm_mentions_cross_aggregated_metrics_live_serialize(
-            list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AiOptimizationLlmMentionsCrossAggregatedMetricsLiveResponseInfo",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _llm_mentions_cross_aggregated_metrics_live_serialize(
-        self,
-        list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'List[Optional[AiOptimizationLlmMentionsCrossAggregatedMetricsLiveRequestInfo]]': '',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info is not None:
-            _body_params = list_optional_ai_optimization_llm_mentions_cross_aggregated_metrics_live_request_info
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'basicAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/v3/ai_optimization/llm_mentions/cross_aggregated_metrics/live',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -7693,6 +6441,3198 @@ class AiOptimizationApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/ai_optimization/ai_keyword_data/keywords_search_volume/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_available_filters_response_info import AiOptimizationLlmMentionsAvailableFiltersResponseInfo
+    @validate_call
+    def llm_mentions_available_filters(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsAvailableFiltersResponseInfo:
+
+        _param = self._llm_mentions_available_filters_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsAvailableFiltersResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def llm_mentions_available_filters_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsAvailableFiltersResponseInfo]':
+
+        _param = self._llm_mentions_available_filters_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsAvailableFiltersResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def llm_mentions_available_filters_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_available_filters_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsAvailableFiltersResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_available_filters_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/ai_optimization/llm_mentions/available_filters',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_locations_and_languages_response_info import AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo
+    @validate_call
+    def llm_mentions_locations_and_languages(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo:
+
+        _param = self._llm_mentions_locations_and_languages_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    def llm_mentions_locations_and_languages_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo]':
+
+        _param = self._llm_mentions_locations_and_languages_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    def llm_mentions_locations_and_languages_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_locations_and_languages_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsLocationsAndLanguagesResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_locations_and_languages_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/ai_optimization/llm_mentions/locations_and_languages',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_search_mentions_live_request_info import AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_search_mentions_live_response_info import AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo
+    @validate_call
+    def llm_mentions_search_mentions_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info: 'List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo:
+
+        _param = self._llm_mentions_search_mentions_live_serialize(
+            list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info=list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_search_mentions_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info: 'List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo]':
+
+        _param = self._llm_mentions_search_mentions_live_serialize(
+            list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info=list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_search_mentions_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info: 'List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_search_mentions_live_serialize(
+            list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info=list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsSearchMentionsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_search_mentions_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_search_mentions_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/search_mentions/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_live_request_info import AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_live_response_info import AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo
+    @validate_call
+    def llm_mentions_target_metrics_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo:
+
+        _param = self._llm_mentions_target_metrics_live_serialize(
+            list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_target_metrics_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo]':
+
+        _param = self._llm_mentions_target_metrics_live_serialize(
+            list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_target_metrics_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_target_metrics_live_serialize(
+            list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTargetMetricsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_target_metrics_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_target_metrics_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/target_metrics/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_multi_target_metrics_live_request_info import AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_multi_target_metrics_live_response_info import AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo
+    @validate_call
+    def llm_mentions_multi_target_metrics_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo:
+
+        _param = self._llm_mentions_multi_target_metrics_live_serialize(
+            list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_multi_target_metrics_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo]':
+
+        _param = self._llm_mentions_multi_target_metrics_live_serialize(
+            list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_multi_target_metrics_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info: 'List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_multi_target_metrics_live_serialize(
+            list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info=list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsMultiTargetMetricsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_multi_target_metrics_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_multi_target_metrics_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/multi_target_metrics/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_live_request_info import AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_live_response_info import AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_domains_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_domains_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_domains_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_domains_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_domains_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_domains_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedDomainsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_domains_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_domains_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_domains/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_live_request_info import AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_live_response_info import AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_pages_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_pages_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_pages_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_pages_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_pages_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_pages_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedPagesLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_pages_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_pages_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_pages/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_brands_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_brands_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_brands_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_brands_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_brands_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_brands_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandsLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_brands_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_brands_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_brands/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_brand_categories_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_brand_categories_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_brand_categories_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_brand_categories_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_brand_categories_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_brand_categories_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_brand_categories_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_brand_categories/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_lite_live_request_info import AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_target_metrics_lite_live_response_info import AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo
+    @validate_call
+    def llm_mentions_target_metrics_lite_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo:
+
+        _param = self._llm_mentions_target_metrics_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info=list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_target_metrics_lite_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo]':
+
+        _param = self._llm_mentions_target_metrics_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info=list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_target_metrics_lite_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_target_metrics_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info=list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTargetMetricsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_target_metrics_lite_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_target_metrics_lite_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/target_metrics_lite/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_domains_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_domains_lite_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_domains_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_domains_lite_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_domains_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_domains_lite_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_domains_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_domains_lite_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_domains_lite_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_domains_lite/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_pages_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_pages_lite_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_pages_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_pages_lite_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_pages_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_pages_lite_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_pages_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedPagesLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_pages_lite_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_pages_lite_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_pages_lite/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brands_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_brands_lite_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_brands_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_brands_lite_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_brands_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_brands_lite_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_brands_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_brands_lite_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_brands_lite_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_brands_lite/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_response_info import AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo
+    @validate_call
+    def llm_mentions_top_mentioned_brand_categories_lite_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo:
+
+        _param = self._llm_mentions_top_mentioned_brand_categories_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_top_mentioned_brand_categories_lite_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo]':
+
+        _param = self._llm_mentions_top_mentioned_brand_categories_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_top_mentioned_brand_categories_lite_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_top_mentioned_brand_categories_lite_live_serialize(
+            list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info=list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_top_mentioned_brand_categories_lite_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_top_mentioned_brand_categories_lite_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/top_mentioned_brand_categories_lite/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_historical_live_request_info import AiOptimizationLlmMentionsHistoricalLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_historical_live_response_info import AiOptimizationLlmMentionsHistoricalLiveResponseInfo
+    @validate_call
+    def llm_mentions_historical_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_historical_live_request_info: 'List[Optional[AiOptimizationLlmMentionsHistoricalLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsHistoricalLiveResponseInfo:
+
+        _param = self._llm_mentions_historical_live_serialize(
+            list_optional_ai_optimization_llm_mentions_historical_live_request_info=list_optional_ai_optimization_llm_mentions_historical_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsHistoricalLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_historical_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_historical_live_request_info: 'List[Optional[AiOptimizationLlmMentionsHistoricalLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsHistoricalLiveResponseInfo]':
+
+        _param = self._llm_mentions_historical_live_serialize(
+            list_optional_ai_optimization_llm_mentions_historical_live_request_info=list_optional_ai_optimization_llm_mentions_historical_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsHistoricalLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_historical_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_historical_live_request_info: 'List[Optional[AiOptimizationLlmMentionsHistoricalLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_historical_live_serialize(
+            list_optional_ai_optimization_llm_mentions_historical_live_request_info=list_optional_ai_optimization_llm_mentions_historical_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsHistoricalLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_historical_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_historical_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsHistoricalLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_historical_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_historical_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/historical/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_delta_live_request_info import AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_delta_live_response_info import AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo
+    @validate_call
+    def llm_mentions_timeseries_delta_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo:
+
+        _param = self._llm_mentions_timeseries_delta_live_serialize(
+            list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info=list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_timeseries_delta_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo]':
+
+        _param = self._llm_mentions_timeseries_delta_live_serialize(
+            list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info=list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_timeseries_delta_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_timeseries_delta_live_serialize(
+            list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info=list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTimeseriesDeltaLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_timeseries_delta_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_timeseries_delta_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/timeseries_delta/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_new_lost_live_request_info import AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo
+    from dataforseo_client.models.ai_optimization_llm_mentions_timeseries_new_lost_live_response_info import AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo
+    @validate_call
+    def llm_mentions_timeseries_new_lost_live(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo:
+
+        _param = self._llm_mentions_timeseries_new_lost_live_serialize(
+            list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info=list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def llm_mentions_timeseries_new_lost_live_with_http_info(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo]':
+
+        _param = self._llm_mentions_timeseries_new_lost_live_serialize(
+            list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info=list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def llm_mentions_timeseries_new_lost_live_without_preload_content(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info: 'List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._llm_mentions_timeseries_new_lost_live_serialize(
+            list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info=list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AiOptimizationLlmMentionsTimeseriesNewLostLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _llm_mentions_timeseries_new_lost_live_serialize(
+        self,
+        list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info is not None:
+            _body_params = list_optional_ai_optimization_llm_mentions_timeseries_new_lost_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/ai_optimization/llm_mentions/timeseries_new_lost/live',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

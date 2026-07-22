@@ -25,7 +25,7 @@ class HotelPriceItemInfo(BaseModel):
     is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates a paid hotel listing. if true, related hotel_search_item is a paid ad. if false, related hotel_search_item is an organic hotel listing")
     official_site: Optional[StrictBool] = Field(default=None, description=r"")
     free_cancellation_until: Optional[StrictStr] = Field(default=None, description=r"date until which free cancellation is available. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. equals null if free cancellation is not available for the selected dates")
-    offers: Optional[List[Optional[HotelInfoPriceOffer]]] = Field(default=None, description=r"featured price offers")
+    offers: Optional[List[Optional[HotelInfoPriceOffer]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

@@ -16,9 +16,9 @@ class KnowledgeGraphLinkElementInfo(BaseModel):
     KnowledgeGraphLinkElementInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the link")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"website domain")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
+    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
     snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
     xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
     __properties: ClassVar[List[str]] = [

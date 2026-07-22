@@ -17,15 +17,15 @@ class SearchResults(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = Field(default=None, description=r"result description")
     breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb")
-    position: Optional[StrictInt] = Field(default=None, description=r"position in the results")
-    title: Optional[StrictStr] = Field(default=None, description=r"result title")
-    domain: Optional[StrictStr] = Field(default=None, description=r"result domain")
-    url: Optional[StrictStr] = Field(default=None, description=r"result URL")
-    publication_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was publishedin the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”example:2019-11-15 12:57:46 +00:00")
+    rank: Optional[StrictInt] = Field(default=None, description=r"rank in the results")
+    title: Optional[StrictStr] = Field(default=None, description=r"source title")
+    domain: Optional[StrictStr] = Field(default=None, description=r"source domain")
+    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
+    publication_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. 2019-11-15 12:57:46 +00:00")
     __properties: ClassVar[List[str]] = [
         "description", 
         "breadcrumb", 
-        "position", 
+        "rank", 
         "title", 
         "domain", 
         "url", 
@@ -58,7 +58,7 @@ class SearchResults(BaseModel):
 
         _dict['description'] = self.description
         _dict['breadcrumb'] = self.breadcrumb
-        _dict['position'] = self.position
+        _dict['rank'] = self.rank
         _dict['title'] = self.title
         _dict['domain'] = self.domain
         _dict['url'] = self.url
@@ -77,7 +77,7 @@ class SearchResults(BaseModel):
         _obj = cls.model_validate({
             "description": obj.get("description"),
             "breadcrumb": obj.get("breadcrumb"),
-            "position": obj.get("position"),
+            "rank": obj.get("rank"),
             "title": obj.get("title"),
             "domain": obj.get("domain"),
             "url": obj.get("url"),

@@ -15,10 +15,10 @@ class ResultAvailableLanguages(BaseModel):
     """
     ResultAvailableLanguages
     """ # noqa: E501
-    available_platforms: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"supported LLM platformscontains the sources of data supported for a specific location and language combinationonly google and chat_gpt are currently available")
+    available_platforms: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"supported LLM platforms. contains the sources of data supported for a specific location and language combination. only google and chat_gpt are currently available")
     language_name: Optional[StrictStr] = Field(default=None, description=r"language name")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code according to ISO 639-1")
-    responses_count: Optional[StrictInt] = Field(default=None, description=r"number of LLM responsesthe number of LLM responses available in the database for the certain location and language parameters")
+    responses_count: Optional[StrictInt] = Field(default=None, description=r"number of LLM responses. the number of LLM responses available in the database for the certain location and language parameters")
     __properties: ClassVar[List[str]] = [
         "available_platforms", 
         "language_name", 

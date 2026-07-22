@@ -15,31 +15,15 @@ class SerpGoogleEventsLiveAdvancedRequestInfo(BaseModel):
     """
     SerpGoogleEventsLiveAdvancedRequestInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character '+' will be decoded to a space character)if you need to use the '%' character for your keyword, please specify it as '%25';if you need to use the “+” character for your keyword, please specify it as “%2B”learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"keywordrequired fieldyou can specify up to 700 characters in the keyword fieldall %## will be decoded (plus character '+' will be decoded to a space character)if you need to use the '%' character for your keyword, please specify it as '%25';if you need to use the “+” character for your keyword, please specify it as “%2B”. learn more about rules and limitations of keyword and keywords fields in DataForSEO APIs in this Help Center article")
     location_code: Optional[StrictInt] = Field(default=None, description=r"search engine location coderequired field if you don't specify location_name or location_coordinateif you use this field, you don't need to specify location_name or location_coordinateyou can receive the list of available locations of the search engines with their location_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/events/locationsexample:2840")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language codeoptional fieldif you use this field, you don't need to specify language_nameby default, language settings correspond to one of the local official languages of the specified locationyou can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/google/languagesexample:en")
-    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depthoptional fieldnumber of results in SERPdefault value: 10max value: 700Your account will be billed per each SERP containing up to 10 results;Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically;The cost can be calculated on the Pricing page.")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine locationrequired field if you don't specify location_code or location_coordinateif you use this field, you don't need to specify location_code or location_coordinateyou can receive the list of available locations of the search engine with their location_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/events/locationsexample:London,England,United Kingdom")
-    language_name: Optional[StrictStr] = Field(default=None, description=r"full name of search engine languageoptional fieldif you use this field, you don't need to specify language_codeby default, language settings correspond to one of the local official languages of the specified locationyou can receive the list of available languages of the search engine with their language_name by making a separate request to the https://api.dataforseo.com/v3/serp/google/languagesexample:English")
-    os: Optional[StrictStr] = Field(default=None, description=r"device operating systemoptional fieldnote that this API provides results for desktop onlychoose from the following values: windows, macosdefault value: windows")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifieroptional fieldthe character limit is 255you can use this parameter to identify the task and match it with the resultyou will find the specified tag value in the data object of the response")
-    max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"page crawl limitoptional fieldnumber of search results pages to crawlmax value: 100Note: the max_crawl_pages and depth parameters complement each other;learn more at our help center")
-    location_coordinate: Optional[StrictStr] = Field(default=None, description=r"GPS coordinates of a locationrequired field if you don't specify location_name or location_codeif you use this field, you don't need to specify location_name or location_codelocation_coordinate parameter should be specified in the 'latitude,longitude,radius' formatdata will be provided for the country the specified coordinates belong tothe maximum number of decimal digits for 'latitude' and 'longitude': 7the minimum value for 'radius': 199.9 (mm)the maximum value for 'radius': 199999 (mm)example:53.476225,-2.243572,200")
-    date_range: Optional[StrictStr] = Field(default=None, description=r"date range to get events foroptional fieldif you do not use this field, we will return all eventspossible values: today, tomorrow, week, weekend, next_week, month, next_month")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domainoptional fieldwe choose the relevant search engine domain automatically according to the location you specifyhowever, you can set a custom search engine domain in this fieldexample:google.co.uk, google.com.au, google.de, etc.")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language codeoptional fieldif you use this field, you don't need to specify language_nameby default, language settings correspond to one of the local official languages of the specified locationyou can receive the list of available languages of the search engine with their language_code by making a separate request to the https://api.dataforseo.com/v3/serp/{{low_se_name}}/languagesexample:en")
+    depth: Optional[StrictInt] = Field(default=None, description=r"parsing depthoptional fieldnumber of results in SERPdefault value: 10max value: 200. Your account will be billed per each SERP containing up to 10 results;Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically;The cost can be calculated on the Pricing page.")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 
         "language_code", 
         "depth", 
-        "location_name", 
-        "language_name", 
-        "os", 
-        "tag", 
-        "max_crawl_pages", 
-        "location_coordinate", 
-        "date_range", 
-        "se_domain", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -70,14 +54,6 @@ class SerpGoogleEventsLiveAdvancedRequestInfo(BaseModel):
         _dict['location_code'] = self.location_code
         _dict['language_code'] = self.language_code
         _dict['depth'] = self.depth
-        _dict['location_name'] = self.location_name
-        _dict['language_name'] = self.language_name
-        _dict['os'] = self.os
-        _dict['tag'] = self.tag
-        _dict['max_crawl_pages'] = self.max_crawl_pages
-        _dict['location_coordinate'] = self.location_coordinate
-        _dict['date_range'] = self.date_range
-        _dict['se_domain'] = self.se_domain
         return _dict
 
 
@@ -94,14 +70,6 @@ class SerpGoogleEventsLiveAdvancedRequestInfo(BaseModel):
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "depth": obj.get("depth"),
-            "location_name": obj.get("location_name"),
-            "language_name": obj.get("language_name"),
-            "os": obj.get("os"),
-            "tag": obj.get("tag"),
-            "max_crawl_pages": obj.get("max_crawl_pages"),
-            "location_coordinate": obj.get("location_coordinate"),
-            "date_range": obj.get("date_range"),
-            "se_domain": obj.get("se_domain"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

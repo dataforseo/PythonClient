@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**id** | **StrictStr** | id of the task |[optional]|
+**id** | **StrictStr** | task identifier<br>unique task identifier in our system in the UUID format |[optional]|
 **datetime** | **StrictStr** | date and time when an error occurred<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
 **function** | **StrictStr** | corresponding API function |[optional]|
 **error_code** | **StrictInt** | error code |[optional]|

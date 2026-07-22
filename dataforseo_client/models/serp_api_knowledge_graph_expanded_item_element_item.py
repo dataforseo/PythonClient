@@ -25,7 +25,7 @@ class SerpApiKnowledgeGraphExpandedItemElementItem(BaseSerpApiKnowledgeGraphElem
     rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
     rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the link")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
     data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. kc:/local:place qa")
     expanded_element: Optional[List[Optional[KnowledgeGraphExpandedElement]]] = Field(default=None, description=r"link of the element")
     __properties: ClassVar[List[str]] = [

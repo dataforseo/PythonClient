@@ -16,6 +16,9 @@ from dataforseo_client.models.base_dataforseo_labs_api_element_item import BaseD
 class DataLabsPodcastsSerpElementItem(BaseDataforseoLabsApiElementItem):
     """
     DataLabsPodcastsSerpElementItem
+
+    .. deprecated::
+    
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")

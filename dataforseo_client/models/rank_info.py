@@ -16,7 +16,7 @@ class RankInfo(BaseModel):
     RankInfo
     """ # noqa: E501
     page_rank: Optional[StrictInt] = Field(default=None, description=r"page rank. page_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm;. learn more about the metric and how it is calculated in this help center article")
-    main_domain_rank: Optional[StrictInt] = Field(default=None, description=r"main domain rank. main_domain_rank is calculated based on the method for node ranking in a linked database – a principle used in the original Google PageRank algorithm. learn more about the metric and how it is calculated in this help center article")
+    main_domain_rank: Optional[StrictInt] = Field(default=None, description=r"average main domain rank. learn more about the metric and its calculation formula in this help center article")
     __properties: ClassVar[List[str]] = [
         "page_rank", 
         "main_domain_rank", 
