@@ -16,11 +16,11 @@ class DomainAnalyticsWhoisOverviewLiveResultInfo(BaseModel):
     """
     DomainAnalyticsWhoisOverviewLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    offset: Optional[StrictInt] = Field(default=None, description=r"results offset value specified in POST request")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    offset: Optional[StrictInt] = Field(default=None, description=r"*results offset value specified in POST request*")
     offset_token: Optional[StrictStr] = Field(default=None, description=r"")
-    items: Optional[List[Optional[DomainAnalyticsWhoisOverviewLiveItem]]] = Field(default=None, description=r"contains ranking and traffic data")
+    items: Optional[List[Optional[DomainAnalyticsWhoisOverviewLiveItem]]] = Field(default=None, description=r"*contains ranking and traffic data*")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "items_count", 

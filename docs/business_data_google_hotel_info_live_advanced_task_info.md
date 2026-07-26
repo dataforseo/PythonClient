@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[BusinessDataGoogleHotelInfoLiveAdvancedResultInfo]]** | <em>array of results</em> |[optional]|

@@ -16,10 +16,10 @@ class ChatGptBrandEntity(BaseModel):
     ChatGptBrandEntity
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"name of the brand")
-    category: Optional[StrictStr] = Field(default=None, description=r"category of the brand")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"brand name in markdown formatcontains brand name formatted in the markdown markup language")
-    urls: Optional[Any] = Field(default=None, description=r"array of URLs and domains relevant to the brand")
+    title: Optional[StrictStr] = Field(default=None, description=r"*name of the brand*")
+    category: Optional[StrictStr] = Field(default=None, description=r"*category of the brand*")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"*brand name in markdown format*. contains brand name formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
+    urls: Optional[Any] = Field(default=None, description=r"*array of URLs and domains relevant to the brand*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

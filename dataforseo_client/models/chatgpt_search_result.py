@@ -16,11 +16,11 @@ class ChatgptSearchResult(BaseModel):
     ChatgptSearchResult
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    url: Optional[StrictStr] = Field(default=None, description=r"result URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"result domain")
-    title: Optional[StrictStr] = Field(default=None, description=r"result title")
-    description: Optional[StrictStr] = Field(default=None, description=r"result description")
-    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb")
+    url: Optional[StrictStr] = Field(default=None, description=r"*result URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*result domain*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*result title*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*result description*")
+    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"*breadcrumb*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "url", 

@@ -13,9 +13,9 @@ from importlib import import_module
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from dataforseo_client.models.data_labs_paid_serp_element_item import DataLabsPaidSerpElementItem;
-    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
-    from dataforseo_client.models.data_labs_organic_serp_element_item import DataLabsOrganicSerpElementItem;
     from dataforseo_client.models.data_labs_featured_snippet_serp_element_item import DataLabsFeaturedSnippetSerpElementItem;
+    from dataforseo_client.models.data_labs_organic_serp_element_item import DataLabsOrganicSerpElementItem;
+    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
     from dataforseo_client.models.data_labs_answer_box_serp_element_item import DataLabsAnswerBoxSerpElementItem;
     from dataforseo_client.models.data_labs_carousel_serp_element_item import DataLabsCarouselSerpElementItem;
     from dataforseo_client.models.data_labs_multi_carousel_serp_element_item import DataLabsMultiCarouselSerpElementItem;
@@ -35,12 +35,10 @@ if TYPE_CHECKING:
     from dataforseo_client.models.data_labs_twitter_serp_element_item import DataLabsTwitterSerpElementItem;
     from dataforseo_client.models.data_labs_video_serp_element_item import DataLabsVideoSerpElementItem;
     from dataforseo_client.models.data_labs_events_serp_element_item import DataLabsEventsSerpElementItem;
-    from dataforseo_client.models.data_labs_mention_carousel_serp_element_item import DataLabsMentionCarouselSerpElementItem;
     from dataforseo_client.models.data_labs_recipes_serp_element_item import DataLabsRecipesSerpElementItem;
     from dataforseo_client.models.data_labs_top_sights_serp_element_item import DataLabsTopSightsSerpElementItem;
     from dataforseo_client.models.data_labs_scholarly_articles_serp_element_item import DataLabsScholarlyArticlesSerpElementItem;
     from dataforseo_client.models.data_labs_popular_products_serp_element_item import DataLabsPopularProductsSerpElementItem;
-    from dataforseo_client.models.data_labs_podcasts_serp_element_item import DataLabsPodcastsSerpElementItem;
     from dataforseo_client.models.data_labs_questions_and_answers_serp_element_item import DataLabsQuestionsAndAnswersSerpElementItem;
     from dataforseo_client.models.data_labs_find_results_on_serp_element_item import DataLabsFindResultsOnSerpElementItem;
     from dataforseo_client.models.data_labs_stocks_box_serp_element_item import DataLabsStocksBoxSerpElementItem;
@@ -48,6 +46,8 @@ if TYPE_CHECKING:
     from dataforseo_client.models.data_labs_local_services_serp_element_item import DataLabsLocalServicesSerpElementItem;
     from dataforseo_client.models.data_labs_google_hotels_serp_element_item import DataLabsGoogleHotelsSerpElementItem;
     from dataforseo_client.models.data_labs_math_solver_serp_element_item import DataLabsMathSolverSerpElementItem;
+    from dataforseo_client.models.data_labs_mention_carousel_serp_element_item import DataLabsMentionCarouselSerpElementItem;
+    from dataforseo_client.models.data_labs_podcasts_serp_element_item import DataLabsPodcastsSerpElementItem;
     from dataforseo_client.models.data_labs_visual_stories_serp_element_item import DataLabsVisualStoriesSerpElementItem;
     from dataforseo_client.models.data_labs_found_on_web_serp_element_item import DataLabsFoundOnWebSerpElementItem;
     from dataforseo_client.models.data_labs_explore_brands_serp_element_item import DataLabsExploreBrandsSerpElementItem;
@@ -76,9 +76,9 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
     __discriminator_property_name: ClassVar[str] = 'type'
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
         'paid': 'DataLabsPaidSerpElementItem',
-        'local_pack': 'DataLabsLocalPackSerpElementItem',
-        'organic': 'DataLabsOrganicSerpElementItem',
         'featured_snippet': 'DataLabsFeaturedSnippetSerpElementItem',
+        'organic': 'DataLabsOrganicSerpElementItem',
+        'local_pack': 'DataLabsLocalPackSerpElementItem',
         'answer_box': 'DataLabsAnswerBoxSerpElementItem',
         'carousel': 'DataLabsCarouselSerpElementItem',
         'multi_carousel': 'DataLabsMultiCarouselSerpElementItem',
@@ -98,12 +98,10 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         'twitter': 'DataLabsTwitterSerpElementItem',
         'video': 'DataLabsVideoSerpElementItem',
         'events': 'DataLabsEventsSerpElementItem',
-        'mention_carousel': 'DataLabsMentionCarouselSerpElementItem',
         'recipes': 'DataLabsRecipesSerpElementItem',
         'top_sights': 'DataLabsTopSightsSerpElementItem',
         'scholarly_articles': 'DataLabsScholarlyArticlesSerpElementItem',
         'popular_products': 'DataLabsPopularProductsSerpElementItem',
-        'podcasts': 'DataLabsPodcastsSerpElementItem',
         'questions_and_answers': 'DataLabsQuestionsAndAnswersSerpElementItem',
         'find_results_on': 'DataLabsFindResultsOnSerpElementItem',
         'stocks_box': 'DataLabsStocksBoxSerpElementItem',
@@ -111,6 +109,8 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         'local_services': 'DataLabsLocalServicesSerpElementItem',
         'google_hotels': 'DataLabsGoogleHotelsSerpElementItem',
         'math_solver': 'DataLabsMathSolverSerpElementItem',
+        'mention_carousel': 'DataLabsMentionCarouselSerpElementItem',
+        'podcasts': 'DataLabsPodcastsSerpElementItem',
         'visual_stories': 'DataLabsVisualStoriesSerpElementItem',
         'found_on_web': 'DataLabsFoundOnWebSerpElementItem',
         'explore_brands': 'DataLabsExploreBrandsSerpElementItem',
@@ -161,9 +161,9 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
     @classmethod
     def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[
         DataLabsPaidSerpElementItem, 
-        DataLabsLocalPackSerpElementItem, 
-        DataLabsOrganicSerpElementItem, 
         DataLabsFeaturedSnippetSerpElementItem, 
+        DataLabsOrganicSerpElementItem, 
+        DataLabsLocalPackSerpElementItem, 
         DataLabsAnswerBoxSerpElementItem, 
         DataLabsCarouselSerpElementItem, 
         DataLabsMultiCarouselSerpElementItem, 
@@ -183,12 +183,10 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         DataLabsTwitterSerpElementItem, 
         DataLabsVideoSerpElementItem, 
         DataLabsEventsSerpElementItem, 
-        DataLabsMentionCarouselSerpElementItem, 
         DataLabsRecipesSerpElementItem, 
         DataLabsTopSightsSerpElementItem, 
         DataLabsScholarlyArticlesSerpElementItem, 
         DataLabsPopularProductsSerpElementItem, 
-        DataLabsPodcastsSerpElementItem, 
         DataLabsQuestionsAndAnswersSerpElementItem, 
         DataLabsFindResultsOnSerpElementItem, 
         DataLabsStocksBoxSerpElementItem, 
@@ -196,6 +194,8 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         DataLabsLocalServicesSerpElementItem, 
         DataLabsGoogleHotelsSerpElementItem, 
         DataLabsMathSolverSerpElementItem, 
+        DataLabsMentionCarouselSerpElementItem, 
+        DataLabsPodcastsSerpElementItem, 
         DataLabsVisualStoriesSerpElementItem, 
         DataLabsFoundOnWebSerpElementItem, 
         DataLabsExploreBrandsSerpElementItem, 
@@ -206,12 +206,12 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         
         if object_type == 'DataLabsPaidSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_paid_serp_element_item").DataLabsPaidSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsLocalPackSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsOrganicSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_organic_serp_element_item").DataLabsOrganicSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsFeaturedSnippetSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_featured_snippet_serp_element_item").DataLabsFeaturedSnippetSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsOrganicSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_organic_serp_element_item").DataLabsOrganicSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsLocalPackSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsAnswerBoxSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_answer_box_serp_element_item").DataLabsAnswerBoxSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsCarouselSerpElementItem':
@@ -250,8 +250,6 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.data_labs_video_serp_element_item").DataLabsVideoSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsEventsSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_events_serp_element_item").DataLabsEventsSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsMentionCarouselSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_mention_carousel_serp_element_item").DataLabsMentionCarouselSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsRecipesSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_recipes_serp_element_item").DataLabsRecipesSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsTopSightsSerpElementItem':
@@ -260,8 +258,6 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.data_labs_scholarly_articles_serp_element_item").DataLabsScholarlyArticlesSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsPopularProductsSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_popular_products_serp_element_item").DataLabsPopularProductsSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsPodcastsSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_podcasts_serp_element_item").DataLabsPodcastsSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsQuestionsAndAnswersSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_questions_and_answers_serp_element_item").DataLabsQuestionsAndAnswersSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsFindResultsOnSerpElementItem':
@@ -276,6 +272,10 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.data_labs_google_hotels_serp_element_item").DataLabsGoogleHotelsSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsMathSolverSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_math_solver_serp_element_item").DataLabsMathSolverSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsMentionCarouselSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_mention_carousel_serp_element_item").DataLabsMentionCarouselSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsPodcastsSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_podcasts_serp_element_item").DataLabsPodcastsSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsVisualStoriesSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_visual_stories_serp_element_item").DataLabsVisualStoriesSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsFoundOnWebSerpElementItem':

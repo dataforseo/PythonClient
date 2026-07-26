@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[BacklinksIndexResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[BacklinksIndexResultInfo]]** | <em>array of results</em> |[optional]|

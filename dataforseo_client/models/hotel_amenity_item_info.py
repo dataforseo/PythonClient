@@ -15,11 +15,11 @@ class HotelAmenityItemInfo(BaseModel):
     """
     HotelAmenityItemInfo
     """ # noqa: E501
-    amenity: Optional[StrictStr] = Field(default=None, description=r"standardised amenity name")
-    amenity_label: Optional[StrictStr] = Field(default=None, description=r"displayed amenity name")
-    hint: Optional[StrictStr] = Field(default=None, description=r"standardised details about the amenity")
-    hint_label: Optional[StrictStr] = Field(default=None, description=r"displayed details about the amenity")
-    is_available: Optional[StrictBool] = Field(default=None, description=r"indicates whether the amenity is available in the hotel")
+    amenity: Optional[StrictStr] = Field(default=None, description=r"*standardised amenity name*")
+    amenity_label: Optional[StrictStr] = Field(default=None, description=r"*displayed amenity name*")
+    hint: Optional[StrictStr] = Field(default=None, description=r"*standardised details about the amenity*")
+    hint_label: Optional[StrictStr] = Field(default=None, description=r"*displayed details about the amenity*")
+    is_available: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the `amenity` is available in the hotel*")
     __properties: ClassVar[List[str]] = [
         "amenity", 
         "amenity_label", 

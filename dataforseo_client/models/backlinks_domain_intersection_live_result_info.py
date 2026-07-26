@@ -16,10 +16,10 @@ class BacklinksDomainIntersectionLiveResultInfo(BaseModel):
     """
     BacklinksDomainIntersectionLiveResultInfo
     """ # noqa: E501
-    targets: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"target domains, subdomains or webpages in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BacklinksDomainIntersectionLiveItem]]] = Field(default=None, description=r"contains domain that link to all targets from the POST array")
+    targets: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"*target domains, subdomains or webpages in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[BacklinksDomainIntersectionLiveItem]]] = Field(default=None, description=r"*contains domain that link to all `targets` from the POST array*")
     __properties: ClassVar[List[str]] = [
         "targets", 
         "total_count", 

@@ -15,15 +15,15 @@ class SpecialOfferInfo(BaseModel):
     """
     SpecialOfferInfo
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description=r"product title")
-    sub_title: Optional[StrictStr] = Field(default=None, description=r"subtitle of the special offer")
-    fixed_discount: Optional[StrictFloat] = Field(default=None, description=r"amount of the fixed discount")
-    fixed_discount_currency: Optional[StrictStr] = Field(default=None, description=r"currency of the fixed discount")
-    percentage_discount: Optional[StrictFloat] = Field(default=None, description=r"percentage of the discount")
-    coupon_code: Optional[StrictStr] = Field(default=None, description=r"code of coupon discount")
-    coupon_info: Optional[StrictStr] = Field(default=None, description=r"information on coupon discount")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the product page on the seller's websiteNote: this field is deprecated and will return null")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"*product title*")
+    sub_title: Optional[StrictStr] = Field(default=None, description=r"*subtitle of the special offer*")
+    fixed_discount: Optional[StrictFloat] = Field(default=None, description=r"*amount of the fixed discount*")
+    fixed_discount_currency: Optional[StrictStr] = Field(default=None, description=r"*currency of the fixed discount*")
+    percentage_discount: Optional[StrictFloat] = Field(default=None, description=r"*percentage of the discount*")
+    coupon_code: Optional[StrictStr] = Field(default=None, description=r"*code of coupon discount*")
+    coupon_info: Optional[StrictStr] = Field(default=None, description=r"*information on coupon discount*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to the product page on the seller's website*. **Note:** this field is deprecated and will return `null`")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
     __properties: ClassVar[List[str]] = [
         "title", 
         "sub_title", 

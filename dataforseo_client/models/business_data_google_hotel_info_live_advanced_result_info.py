@@ -19,21 +19,21 @@ class BusinessDataGoogleHotelInfoLiveAdvancedResultInfo(BaseModel):
     """
     BusinessDataGoogleHotelInfoLiveAdvancedResultInfo
     """ # noqa: E501
-    hotel_identifier: Optional[StrictStr] = Field(default=None, description=r"identifier received in a POST array. this field will contain the hotel_identifier parameter specified when setting a task;. example:. CgoI-KWyzenM_MV3EAE")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    title: Optional[StrictStr] = Field(default=None, description=r"hotel title. the title of the hotel entity for which the results are collected")
-    stars: Optional[StrictInt] = Field(default=None, description=r"hotel class rating. class rating that ranges between 1-5 stars and displayed after review ratings in hotel summary")
-    stars_description: Optional[StrictStr] = Field(default=None, description=r"hotel class rating. class rating that ranges between 1-5 stars and displayed after review ratings in the hotel summary")
-    address: Optional[StrictStr] = Field(default=None, description=r"hotel address. physical address of the hotel")
-    phone: Optional[StrictStr] = Field(default=None, description=r"hotel phone number. contact phone number of the hotel")
-    about: Optional[HotelAboutInfo] = Field(default=None, description=r"information about the hotel")
-    location: Optional[HotelLocationInfo] = Field(default=None, description=r"information about the hotel location. information about the location where the hotel is located")
-    reviews: Optional[HotelReviewInfo] = Field(default=None, description=r"hotel reviews by criteria. information about reviews of the hotel entity")
-    overview_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"images displayed in the hotel overview. array containing URLs to images displayed in the hotel overview")
-    prices: Optional[HotelPriceInfo] = Field(default=None, description=r"pricing details of the hotel entity. contains information about the hotel’s prices")
+    hotel_identifier: Optional[StrictStr] = Field(default=None, description=r"*identifier received in a POST array*. this field will contain the `hotel_identifier` parameter specified when setting a task;. example:. `CgoI-KWyzenM_MV3EAE`")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*hotel title*. the title of the hotel entity for which the results are collected")
+    stars: Optional[StrictInt] = Field(default=None, description=r"*hotel class rating*. class rating that ranges between 1-5 stars and displayed after review ratings in hotel summary")
+    stars_description: Optional[StrictStr] = Field(default=None, description=r"*hotel class rating*. class rating that ranges between 1-5 stars and displayed after review ratings in the hotel summary")
+    address: Optional[StrictStr] = Field(default=None, description=r"*hotel address*. physical address of the hotel")
+    phone: Optional[StrictStr] = Field(default=None, description=r"*hotel phone number*. contact phone number of the hotel")
+    about: Optional[HotelAboutInfo] = Field(default=None, description=r"*information about the hotel*")
+    location: Optional[HotelLocationInfo] = Field(default=None, description=r"*information about the hotel location*. information about the location where the hotel is located")
+    reviews: Optional[HotelReviewInfo] = Field(default=None, description=r"*hotel reviews by criteria*. information about reviews of the hotel entity")
+    overview_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*images displayed in the hotel overview*. array containing URLs to images displayed in the hotel overview")
+    prices: Optional[HotelPriceInfo] = Field(default=None, description=r"*pricing details of the hotel entity*. contains information about the hotel's prices")
     __properties: ClassVar[List[str]] = [
         "hotel_identifier", 
         "location_code", 

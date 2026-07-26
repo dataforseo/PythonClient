@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**location_code** | **StrictInt** | location code |[optional]|
-**location_name** | **StrictStr** | full name of the location |[optional]|
-**location_code_parent** | **StrictInt** | the code of the superordinate locationexample:'location_code': 9041134,'location_name': 'Vienna International Airport,Lower Austria,Austria','location_code_parent': 20044where location_code_parent corresponds to:'location_code': 20044,'location_name': 'Lower Austria,Austria' |[optional]|
-**country_iso_code** | **StrictStr** | ISO country code of the location |[optional]|
-**location_type** | **StrictStr** | location type |[optional]|
+**location_code** | **StrictInt** | <em>location code</em> |[optional]|
+**location_name** | **StrictStr** | <em>full name of the location</em> |[optional]|
+**location_code_parent** | **StrictInt** | <em>the code of the superordinate location</em><br>example:<br><code>'location_code': 9041134,<br>'location_name': 'Vienna International Airport,Lower Austria,Austria',<br>'location_code_parent': 20044</code><p>where <code>location_code_parent</code> corresponds to:<p><code>'location_code': 20044,<br>'location_name': 'Lower Austria,Austria'</code> |[optional]|
+**country_iso_code** | **StrictStr** | <em>ISO country code of the location</em> |[optional]|
+**location_type** | **StrictStr** | <em>location type</em> |[optional]|

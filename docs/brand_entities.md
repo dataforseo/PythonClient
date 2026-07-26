@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**rank** | **StrictInt** | rank in the results |[optional]|
-**title** | **StrictStr** | source title |[optional]|
-**category** | **StrictStr** | category of the brand |[optional]|
+**rank** | **StrictInt** | <em>rank in the results</em> |[optional]|
+**title** | **StrictStr** | <em>source title</em> |[optional]|
+**category** | **StrictStr** | <em>category of the brand</em> |[optional]|

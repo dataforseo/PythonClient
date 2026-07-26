@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AiOptimizationLlmMentionsHistoricalLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AiOptimizationLlmMentionsHistoricalLiveResultInfo]]** | <em>array of results</em> |[optional]|

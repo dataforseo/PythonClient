@@ -24,7 +24,7 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResultInfo(BaseModel):
     match: Optional[StrictStr] = Field(default=None, description=r"keywords match-type. can take the following values: exact, broad, phrase")
     impressions: Optional[StrictInt] = Field(default=None, description=r"projected number of ad impressions. number of impressions an ad is projected to get within the specified time period. Note: parameter deprecated, the value is always null")
     ctr: Optional[StrictFloat] = Field(default=None, description=r"projected clickthrough rate (CTR) of the advertisement. number of clicks an ad is projected to receive divided by the number of ad impressions;. Note: parameter deprecated, the value is always null")
-    average_cpc: Optional[StrictFloat] = Field(default=None, description=r"the average cost-per-click value. represents the cost-per-click (USD) estimated for a keyword based on the specified time period and historical data;. if there is no data, then the value is null")
+    average_cpc: Optional[StrictInt] = Field(default=None, description=r"the average cost-per-click value. represents the cost-per-click (USD) estimated for a keyword based on the specified time period and historical data;. if there is no data, then the value is null")
     cost: Optional[StrictFloat] = Field(default=None, description=r"charge for an ad. amount that will be charged for running an ad within the specified time period. if there is no data, then the value is null")
     clicks: Optional[StrictFloat] = Field(default=None, description=r"number of clicks on an ad. number of clicks an ad is projected to get within the specified time period. if there is no data, then the value is null")
     __properties: ClassVar[List[str]] = [

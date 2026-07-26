@@ -18,11 +18,11 @@ class GeminiTableElementItem(BaseGeminiLlmScraperElementItem):
     GeminiTableElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERPabsolute position among all the elements in SERP")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatcontent of the result formatted in the markdown markup language")
-    original_text: Optional[StrictStr] = Field(default=None, description=r"unformatted text content of the element")
-    table: Optional[Table] = Field(default=None, description=r"table present in the elementthe header and content of the table present in the element")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"*content of the element in markdown format*. content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
+    original_text: Optional[StrictStr] = Field(default=None, description=r"*unformatted text content of the element*")
+    table: Optional[Table] = Field(default=None, description=r"*table present in the element*. the header and content of the table present in the element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

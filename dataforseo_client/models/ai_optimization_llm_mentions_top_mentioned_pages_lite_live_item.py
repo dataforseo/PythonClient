@@ -16,11 +16,11 @@ class AiOptimizationLlmMentionsTopMentionedPagesLiteLiveItem(BaseModel):
     """
     AiOptimizationLlmMentionsTopMentionedPagesLiteLiveItem
     """ # noqa: E501
-    page: Optional[StrictStr] = Field(default=None, description=r"page URL . page identifier of aggregated metrics")
-    location: Optional[StrictInt] = Field(default=None, description=r"location identifier. location of aggregated metrics")
-    language: Optional[StrictStr] = Field(default=None, description=r"language identifier. language of aggregated metrics")
-    platform: Optional[StrictStr] = Field(default=None, description=r"LLM platform identifiers. LLM platform of aggregated metrics")
-    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"LLM metrics. metrics aggregated by specific parameters and respective identifiers")
+    page: Optional[StrictStr] = Field(default=None, description=r"*page URL*. page identifier of aggregated metrics")
+    location: Optional[StrictInt] = Field(default=None, description=r"*location identifier*. location of aggregated metrics")
+    language: Optional[StrictStr] = Field(default=None, description=r"*language identifier*. language of aggregated metrics")
+    platform: Optional[StrictStr] = Field(default=None, description=r"*LLM platform identifiers*. LLM platform of aggregated metrics")
+    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"*LLM metrics*. metrics aggregated by specific parameters and respective identifiers")
     __properties: ClassVar[List[str]] = [
         "page", 
         "location", 

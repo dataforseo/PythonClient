@@ -16,8 +16,8 @@ class AiOptimizationLlmMentionsTimeseriesNewLostLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsTimeseriesNewLostLiveResultInfo
     """ # noqa: E501
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveItem]]] = Field(default=None, description=r"contains relevant LLM mentions timeseries data")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[AiOptimizationLlmMentionsTimeseriesNewLostLiveItem]]] = Field(default=None, description=r"*contains relevant LLM mentions timeseries data*")
     __properties: ClassVar[List[str]] = [
         "items_count", 
         "items", 

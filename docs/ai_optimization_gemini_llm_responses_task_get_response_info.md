@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AiOptimizationGeminiLlmResponsesTaskGetTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AiOptimizationGeminiLlmResponsesTaskGetTaskInfo]]** | <em>array of tasks</em> |[optional]|

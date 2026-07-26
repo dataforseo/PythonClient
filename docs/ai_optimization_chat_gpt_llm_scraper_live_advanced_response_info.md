@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AiOptimizationChatGptLlmScraperLiveAdvancedTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AiOptimizationChatGptLlmScraperLiveAdvancedTaskInfo]]** | <em>array of tasks</em> |[optional]|

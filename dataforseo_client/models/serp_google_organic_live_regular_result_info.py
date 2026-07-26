@@ -18,20 +18,20 @@ class SerpGoogleOrganicLiveRegularResultInfo(BaseModel):
     """
     SerpGoogleOrganicLiveRegularResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. keyword is returned with decoded %## (plus character '+' will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword received in a POST array*. **keyword is returned with decoded %## (plus character '+' will be decoded to a space character)**")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided exact results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    spell: Optional[SpellInfo] = Field(default=None, description=r"autocorrection of the search engine. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
-    refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"search refinement chips")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results found in SERP. contains types of all search results (items) found in the returned SERP. possible item types:. answer_box, app, carousel, multi_carousel, featured_snippet, google_flights, google_reviews, third_party_reviews,  images, jobs, knowledge_graph, local_pack, hotels_pack, map, organic, paid, people_also_ask, related_searches, people_also_search, shopping, top_stories, twitter, video, events, recipes, top_sights, scholarly_articles, popular_products, questions_and_answers, find_results_on, stocks_box, commercial_units, local_services, google_hotels, math_solver, currency_box, product_considerations, short_videos, refine_products, perspectives, discussions_and_forums, compare_sites, ai_overviewnote that this array contains all types of search results found in the returned SERP;. however, this endpoint provides data for featured_snippet, organic and paid types only. to get all items (inlcuding SERP features and rich snippets) found in the returned SERP, please refer to the Google Organiс Advanced SERP endpoint")
-    se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in SERP")
-    pages_count: Optional[StrictInt] = Field(default=None, description=r"total search results pages retrieved. total number of retrieved SERPs in the result")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BaseSerpApiElementItem]]] = Field(default=None, description=r"items of the element")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*you can use it to make sure that we provided exact results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    spell: Optional[SpellInfo] = Field(default=None, description=r"*autocorrection of the search engine*. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
+    refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"*search refinement chips*")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results found in SERP*. contains types of all search results (`items`) found in the returned SERP. possible item types:. `answer_box`, `app`, `carousel`, `multi_carousel`, `featured_snippet`, `google_flights`, `google_reviews`, `third_party_reviews`,  `images`, `jobs`, `knowledge_graph`, `local_pack`, `hotels_pack`, `map`, `organic`, `paid`, `people_also_ask`, `related_searches`, `people_also_search`, `shopping`, `top_stories`, `twitter`, `video`, `events`, `recipes`, `top_sights`, `scholarly_articles`, `popular_products`, `questions_and_answers`, `find_results_on`, `stocks_box`, `commercial_units`, `local_services`, `google_hotels`, `math_solver`, `currency_box`, `product_considerations`, `short_videos`, `refine_products`, `perspectives`, `discussions_and_forums`, `compare_sites`, `ai_overview`. **note** that this array contains all types of search results found in the returned SERP;. however, this endpoint provides data for `featured_snippet`, `organic` and `paid` types only. to get all items (inlcuding SERP features and rich snippets) found in the returned SERP, please refer to the [Google Organiс Advanced SERP](https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/?php) endpoint")
+    se_results_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in SERP*")
+    pages_count: Optional[StrictInt] = Field(default=None, description=r"*total search results pages retrieved*. total number of retrieved SERPs in the result")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[BaseSerpApiElementItem]]] = Field(default=None, description=r"*items of the element*")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 

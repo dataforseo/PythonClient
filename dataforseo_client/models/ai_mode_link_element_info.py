@@ -16,10 +16,10 @@ class AiModeLinkElementInfo(BaseModel):
     AiModeLinkElementInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    description: Optional[StrictStr] = Field(default=None, description=r"link description")
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*link description*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

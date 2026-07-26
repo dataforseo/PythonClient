@@ -15,8 +15,8 @@ class UncrawlableResourcesMeta(BaseModel):
     """
     UncrawlableResourcesMeta
     """ # noqa: E501
-    content_type: Optional[StrictStr] = Field(default=None, description=r"actual content type of the resource")
-    expected_content_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"expected content types for the resource. list of content types that were expected by the crawler based on how the resource is referenced on the page")
+    content_type: Optional[StrictStr] = Field(default=None, description=r"*actual content type of the resource*")
+    expected_content_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*expected content types for the resource*. list of content types that were expected by the crawler based on how the resource is referenced on the page")
     __properties: ClassVar[List[str]] = [
         "content_type", 
         "expected_content_types", 

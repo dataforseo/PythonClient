@@ -18,11 +18,11 @@ class GeminiTextElementItem(BaseGeminiLlmScraperElementItem):
     GeminiTextElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERPabsolute position among all the elements in SERP")
-    markdown: Optional[StrictStr] = Field(default=None, description=r"content of the element in markdown formatcontent of the result formatted in the markdown markup language")
-    original_text: Optional[StrictStr] = Field(default=None, description=r"unformatted text content of the element")
-    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"array of sources")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"*content of the element in markdown format*. content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
+    original_text: Optional[StrictStr] = Field(default=None, description=r"*unformatted text content of the element*")
+    sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"*array of sources*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

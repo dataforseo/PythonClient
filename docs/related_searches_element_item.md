@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**items** | **List[Optional[StrictStr]]** | additional items present in the elementif there are none, equals null |[optional]|
+**items** | **List[Optional[StrictStr]]** | <em>additional items present in the element</em><br>if there are none, equals <code>null</code> |[optional]|

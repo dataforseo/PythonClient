@@ -1049,6 +1049,7 @@ try:
                 language_code="en",
                 location_code=2840,
                 keyword="albert einstein",
+                calculate_rectangles=True,
         )]
         )
 except ApiException as e:
@@ -1889,6 +1890,8 @@ try:
                 language_code="en",
                 location_code=2840,
                 keyword="local nail services",
+                min_rating=4.5,
+                time_filter="monday",
         )]
         )
 except ApiException as e:
@@ -2162,6 +2165,8 @@ try:
                 language_code="en",
                 location_code=2840,
                 keyword="local nail services",
+                min_rating=4.5,
+                time_filter="monday",
         )]
         )
 except ApiException as e:
@@ -2888,6 +2893,8 @@ try:
 
         response = serp_api.google_events_live_advanced([SerpGoogleEventsLiveAdvancedRequestInfo(
                 keyword="concerts",
+                location_name="Los Angeles,California,United States",
+                date_range="today",
         )]
         )
 except ApiException as e:
@@ -4050,6 +4057,7 @@ try:
                 language_code="en",
                 location_code=2840,
                 keyword="albert einstein",
+                client="gws-wiz-serp",
         )]
         )
 except ApiException as e:
@@ -4107,6 +4115,17 @@ try:
 
         response = serp_api.google_dataset_search_task_post([SerpGoogleDatasetSearchTaskPostRequestInfo(
                 keyword="water quality",
+                last_updated="1m",
+                file_formats=[
+                    "archive",
+                    "image",
+                    ],
+                usage_rights="noncommercial",
+                is_free=True,
+                topics=[
+                    "natural_sciences",
+                    "geo",
+                    ],
         )]
         )
 except ApiException as e:
@@ -4324,6 +4343,17 @@ try:
 
         response = serp_api.google_dataset_search_live_advanced([SerpGoogleDatasetSearchLiveAdvancedRequestInfo(
                 keyword="water quality",
+                last_updated="1m",
+                file_formats=[
+                    "archive",
+                    "image",
+                    ],
+                usage_rights="noncommercial",
+                is_free=True,
+                topics=[
+                    "natural_sciences",
+                    "geo",
+                    ],
         )]
         )
 except ApiException as e:
@@ -4926,6 +4956,7 @@ try:
 
         response = serp_api.google_ads_search_task_post([SerpGoogleAdsSearchTaskPostRequestInfo(
                 location_code=2840,
+                platform="google_search",
                 advertiser_ids=[
                     "AR13752565271262920705",
                     "AR02439908557932462081",
@@ -8998,6 +9029,7 @@ try:
 
         response = serp_api.google_finance_explore_task_post([SerpGoogleFinanceExploreTaskPostRequestInfo(
                 location_code=2840,
+                language_name="English",
         )]
         )
 except ApiException as e:
@@ -9216,6 +9248,7 @@ try:
 
         response = serp_api.google_finance_explore_live_advanced([SerpGoogleFinanceExploreLiveAdvancedRequestInfo(
                 location_code=2840,
+                language_name="English",
         )]
         )
 except ApiException as e:
@@ -9331,6 +9364,7 @@ try:
 
         response = serp_api.google_finance_markets_task_post([SerpGoogleFinanceMarketsTaskPostRequestInfo(
                 location_code=2840,
+                language_name="English",
         )]
         )
 except ApiException as e:
@@ -9549,6 +9583,7 @@ try:
 
         response = serp_api.google_finance_markets_live_advanced([SerpGoogleFinanceMarketsLiveAdvancedRequestInfo(
                 location_code=2840,
+                language_name="English",
         )]
         )
 except ApiException as e:
@@ -9665,6 +9700,7 @@ try:
         response = serp_api.google_finance_quote_task_post([SerpGoogleFinanceQuoteTaskPostRequestInfo(
                 keyword=".DJI:INDEXDJX",
                 location_code=2840,
+                language_name="English",
         )]
         )
 except ApiException as e:
@@ -9884,6 +9920,7 @@ try:
         response = serp_api.google_finance_quote_live_advanced([SerpGoogleFinanceQuoteLiveAdvancedRequestInfo(
                 keyword="CLW00:NYMEX",
                 location_code=2840,
+                language_name="English",
         )]
         )
 except ApiException as e:
@@ -9999,7 +10036,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.google_finance_ticker_search_task_post([SerpGoogleFinanceTickerSearchTaskPostRequestInfo(
+                language_name="English",
                 location_code=2840,
+                category="all",
                 keyword="DJ",
                 priority=2,
         )]
@@ -10165,7 +10204,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.google_finance_ticker_search_live_advanced([SerpGoogleFinanceTickerSearchLiveAdvancedRequestInfo(
+                language_name="English",
                 location_code=2840,
+                category="all",
                 keyword="DJ",
         )]
         )

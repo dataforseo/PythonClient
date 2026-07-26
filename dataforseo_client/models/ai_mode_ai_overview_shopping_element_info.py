@@ -18,19 +18,19 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
     AiModeAiOverviewShoppingElementInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    product_id: Optional[StrictStr] = Field(default=None, description=r"unique product identifier on Google Shoppinglearn more about the parameter in this help center guide")
-    data_docid: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the SERP data element")
-    gid: Optional[StrictStr] = Field(default=None, description=r"global product identifier on Google Shoppinglearn more about the parameter in this help center guide")
-    title: Optional[StrictStr] = Field(default=None, description=r"reference page title")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL in link")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in link")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"product rating the popularity rate based on reviews if there is none, the value will be null")
-    price: Optional[PriceInfo] = Field(default=None, description=r"product priceproduct price details on the seller's website; if there is none, the value will be null")
-    seller: Optional[StrictStr] = Field(default=None, description=r"product sellername of the product's seller as displayed in search results")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"additional information about the result")
-    marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account providere-commerce site that hosts products or websites of individual sellers under the same merchant accountexample:by Google")
-    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"URL to the merchant account providere-commerce site that hosts products or websites of individual sellers under the same merchant account")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the imagethe URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    product_id: Optional[StrictStr] = Field(default=None, description=r"*unique product identifier on Google Shopping*. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/product-id-google-shopping)")
+    data_docid: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the SERP data element*")
+    gid: Optional[StrictStr] = Field(default=None, description=r"*global product identifier on Google Shopping*. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/whats-a-gid-in-google-shopping-api)")
+    title: Optional[StrictStr] = Field(default=None, description=r"*reference page title*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL in link*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in link*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*product rating*. the popularity rate based on reviews.  if there is none, the value will be `null`")
+    price: Optional[PriceInfo] = Field(default=None, description=r"*product price*. product price details on the seller's website;.  if there is none, the value will be `null`")
+    seller: Optional[StrictStr] = Field(default=None, description=r"*product seller*. name of the product's seller as displayed in search results")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*additional information about the result*")
+    marketplace: Optional[StrictStr] = Field(default=None, description=r"*merchant account provider*. e-commerce site that hosts products or websites of individual sellers under the same merchant account. example:. `by Google`")
+    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"*URL to the merchant account provider*. e-commerce site that hosts products or websites of individual sellers under the same merchant account")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     __properties: ClassVar[List[str]] = [
         "type", 
         "product_id", 

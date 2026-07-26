@@ -15,9 +15,9 @@ class AiOptimizationLlmMentionsTimeseriesDeltaLiveItem(BaseModel):
     """
     AiOptimizationLlmMentionsTimeseriesDeltaLiveItem
     """ # noqa: E501
-    date: Optional[StrictStr] = Field(default=None, description=r"date timestamp.  date format: 'yyyy-mm-dd'")
-    delta_mentions: Optional[StrictInt] = Field(default=None, description=r"LLM mentions count delta. the difference in mentions between the current timestamp and the previous one")
-    delta_ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"LLM mentions count delta. the difference in ai_search_volume values between the current timestamp and the previous one. learn more about this metric here")
+    date: Optional[StrictStr] = Field(default=None, description=r"*date timestamp*.  date format: `'yyyy-mm-dd'`")
+    delta_mentions: Optional[StrictInt] = Field(default=None, description=r"*LLM mentions count delta*. the difference in `mentions` between the current timestamp and the previous one")
+    delta_ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"*LLM mentions count delta*. the difference in `ai_search_volume` values between the current timestamp and the previous one. learn more about this metric [here](https://dataforseo.com/help-center/how-ai-search-volume-metrics-work-in-the-llm-mentions-timeseries-endpoints)")
     __properties: ClassVar[List[str]] = [
         "date", 
         "delta_mentions", 

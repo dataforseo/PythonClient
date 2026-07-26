@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AiOptimizationPerplexityLlmResponsesModelsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AiOptimizationPerplexityLlmResponsesModelsTaskInfo]]** | <em>array of tasks</em> |[optional]|

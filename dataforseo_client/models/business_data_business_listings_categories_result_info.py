@@ -15,8 +15,8 @@ class BusinessDataBusinessListingsCategoriesResultInfo(BaseModel):
     """
     BusinessDataBusinessListingsCategoriesResultInfo
     """ # noqa: E501
-    category_name: Optional[StrictStr] = Field(default=None, description=r"full name of the category")
-    business_count: Optional[StrictInt] = Field(default=None, description=r"number of businesses in the category")
+    category_name: Optional[StrictStr] = Field(default=None, description=r"*full name of the category*")
+    business_count: Optional[StrictInt] = Field(default=None, description=r"*number of businesses in the category*")
     __properties: ClassVar[List[str]] = [
         "category_name", 
         "business_count", 

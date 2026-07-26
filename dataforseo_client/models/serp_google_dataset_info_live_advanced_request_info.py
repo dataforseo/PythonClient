@@ -15,13 +15,19 @@ class SerpGoogleDatasetInfoLiveAdvancedRequestInfo(BaseModel):
     """
     SerpGoogleDatasetInfoLiveAdvancedRequestInfo
     """ # noqa: E501
-    dataset_id: Optional[StrictStr] = Field(default=None, description=r"ID of the datasetrequired fieldyou can find dataset ID in the dataset URL or dataset item of Google Dataset Search resultexample:L2cvMTFqbl85ZHN6MQ==")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"search engine language codeoptional fieldif you use this field, you don't need to specify language_namepossible value:en")
-    device: Optional[StrictStr] = Field(default=None, description=r"device typeoptional fieldreturn results for a specific device typepossible value: desktop")
+    dataset_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the dataset*. **required field**. you can find dataset ID in the dataset URL or `dataset` item of [Google Dataset Search](https://docs.dataforseo.com/v3/serp/google/dataset_search/live/advanced) result. example:. `L2cvMTFqbl85ZHN6MQ==`")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*search engine language code*. optional field. if you use this field, you don't need to specify `language_name`. possible value:. `en`")
+    device: Optional[StrictStr] = Field(default=None, description=r"*device type*. optional field. return results for a specific device type. possible value: `desktop`")
+    language_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine language*. optional field. if you use this field, you don't need to specify `language_code`. possible value:. `English`")
+    os: Optional[StrictStr] = Field(default=None, description=r"*device operating system*. optional field. possible values: `windows`, `macos`. default value: `windows`")
+    tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
     __properties: ClassVar[List[str]] = [
         "dataset_id", 
         "language_code", 
         "device", 
+        "language_name", 
+        "os", 
+        "tag", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -51,6 +57,9 @@ class SerpGoogleDatasetInfoLiveAdvancedRequestInfo(BaseModel):
         _dict['dataset_id'] = self.dataset_id
         _dict['language_code'] = self.language_code
         _dict['device'] = self.device
+        _dict['language_name'] = self.language_name
+        _dict['os'] = self.os
+        _dict['tag'] = self.tag
         return _dict
 
 
@@ -66,6 +75,9 @@ class SerpGoogleDatasetInfoLiveAdvancedRequestInfo(BaseModel):
             "dataset_id": obj.get("dataset_id"),
             "language_code": obj.get("language_code"),
             "device": obj.get("device"),
+            "language_name": obj.get("language_name"),
+            "os": obj.get("os"),
+            "tag": obj.get("tag"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

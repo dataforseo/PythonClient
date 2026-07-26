@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AiOptimizationGeminiLlmResponsesLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AiOptimizationGeminiLlmResponsesLiveResultInfo]]** | <em>array of results</em> |[optional]|

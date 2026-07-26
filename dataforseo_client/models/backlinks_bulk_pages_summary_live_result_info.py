@@ -16,9 +16,9 @@ class BacklinksBulkPagesSummaryLiveResultInfo(BaseModel):
     """
     BacklinksBulkPagesSummaryLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[List[Optional[BacklinksBulkPagesSummaryLiveItem]]] = Field(default=None, description=r"items array")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of relevant items in the database*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    items: Optional[List[Optional[BacklinksBulkPagesSummaryLiveItem]]] = Field(default=None, description=r"*items array*")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "items_count", 

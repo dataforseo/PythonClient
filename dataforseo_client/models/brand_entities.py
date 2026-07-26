@@ -15,9 +15,9 @@ class BrandEntities(BaseModel):
     """
     BrandEntities
     """ # noqa: E501
-    rank: Optional[StrictInt] = Field(default=None, description=r"rank in the results")
-    title: Optional[StrictStr] = Field(default=None, description=r"source title")
-    category: Optional[StrictStr] = Field(default=None, description=r"category of the brand")
+    rank: Optional[StrictInt] = Field(default=None, description=r"*rank in the results*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*source title*")
+    category: Optional[StrictStr] = Field(default=None, description=r"*category of the brand*")
     __properties: ClassVar[List[str]] = [
         "rank", 
         "title", 

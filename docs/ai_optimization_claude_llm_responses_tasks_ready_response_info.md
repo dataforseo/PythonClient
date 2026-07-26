@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AiOptimizationClaudeLlmResponsesTasksReadyTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AiOptimizationClaudeLlmResponsesTasksReadyTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -16,10 +16,10 @@ class PeopleAlsoSearch(BaseModel):
     """
     PeopleAlsoSearch
     """ # noqa: E501
-    cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment. learn more about the identifier in this help center article")
-    feature_id: Optional[StrictStr] = Field(default=None, description=r"the unique identifier of the element in SERP. learn more about the identifier in this help center article")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element in SERP. the name of the business entity for which the results are collected")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element's rating . the popularity rate based on reviews and displayed in SERP")
+    cid: Optional[StrictStr] = Field(default=None, description=r"*google-defined client id*. unique id of a local establishment. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    feature_id: Optional[StrictStr] = Field(default=None, description=r"*the unique identifier of the element in SERP*. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element in SERP*. the name of the business entity for which the results are collected")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the element's rating*. the popularity rate based on reviews and displayed in SERP")
     __properties: ClassVar[List[str]] = [
         "cid", 
         "feature_id", 

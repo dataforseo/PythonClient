@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_video_element_item import SerpApiAiModeAiOverviewVideoElementItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_table_element_item import SerpApiAiModeAiOverviewTableElementItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_shopping_item import SerpApiAiModeAiOverviewShoppingItem;
+    from dataforseo_client.models.serp_api_ai_mode_ai_overview_paid_item import SerpApiAiModeAiOverviewPaidItem;
 
 
 
@@ -25,7 +26,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
     BaseSerpApiAiModeAiOverviewElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERPcan take the following values:left, right")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*. can take the following values:. `left`, `right`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
@@ -37,6 +38,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
         'ai_overview_video_element': 'SerpApiAiModeAiOverviewVideoElementItem',
         'ai_overview_table_element': 'SerpApiAiModeAiOverviewTableElementItem',
         'ai_overview_shopping': 'SerpApiAiModeAiOverviewShoppingItem',
+        'ai_overview_paid': 'SerpApiAiModeAiOverviewPaidItem',
     }
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -82,7 +84,8 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
         SerpApiAiModeAiOverviewExpandedElementItem, 
         SerpApiAiModeAiOverviewVideoElementItem, 
         SerpApiAiModeAiOverviewTableElementItem, 
-        SerpApiAiModeAiOverviewShoppingItem
+        SerpApiAiModeAiOverviewShoppingItem, 
+        SerpApiAiModeAiOverviewPaidItem
     ]]:
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -97,5 +100,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
             return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_table_element_item").SerpApiAiModeAiOverviewTableElementItem.from_dict(obj)
         if object_type == 'SerpApiAiModeAiOverviewShoppingItem':
             return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_shopping_item").SerpApiAiModeAiOverviewShoppingItem.from_dict(obj)
+        if object_type == 'SerpApiAiModeAiOverviewPaidItem':
+            return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_paid_item").SerpApiAiModeAiOverviewPaidItem.from_dict(obj)
 
         return None

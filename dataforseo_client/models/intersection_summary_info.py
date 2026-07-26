@@ -15,7 +15,7 @@ class IntersectionSummaryInfo(BaseModel):
     """
     IntersectionSummaryInfo
     """ # noqa: E501
-    intersections_count: Optional[StrictInt] = Field(default=None, description=r"total number of intersections")
+    intersections_count: Optional[StrictInt] = Field(default=None, description=r"*total number of intersections*")
     __properties: ClassVar[List[str]] = [
         "intersections_count", 
         ]

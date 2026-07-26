@@ -15,9 +15,9 @@ class BusinessDataBusinessListingsLocationsResultInfo(BaseModel):
     """
     BusinessDataBusinessListingsLocationsResultInfo
     """ # noqa: E501
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the location")
-    business_count: Optional[StrictInt] = Field(default=None, description=r"number of businesses in this location in our database")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of the location*")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*ISO country code of the location*")
+    business_count: Optional[StrictInt] = Field(default=None, description=r"*number of businesses in this location in our database*")
     __properties: ClassVar[List[str]] = [
         "location_name", 
         "country_iso_code", 

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[OnPageLighthouseTaskPostTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[OnPageLighthouseTaskPostTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -17,11 +17,11 @@ class AiOptimizationLlmMentionsMultiTargetMetricsLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsMultiTargetMetricsLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of results")
-    offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of the returned mentions data. offset specified in the request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    aggregated_metrics: Optional[LlmMentionsAggregatedMetricsInfo] = Field(default=None, description=r"aggregated mentions metrics summary. contains overall aggregated LLM mention metrics across all LLM mentions that match at least one target specified in the request")
-    items: Optional[List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveItem]]] = Field(default=None, description=r"contains relevant mentions data")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results*")
+    offset: Optional[StrictInt] = Field(default=None, description=r"*offset in the results array of the returned mentions data*. `offset` specified in the request")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    aggregated_metrics: Optional[LlmMentionsAggregatedMetricsInfo] = Field(default=None, description=r"*aggregated mentions metrics summary*. contains overall aggregated LLM mention metrics across all LLM mentions that match at least one target specified in the request")
+    items: Optional[List[Optional[AiOptimizationLlmMentionsMultiTargetMetricsLiveItem]]] = Field(default=None, description=r"*contains relevant mentions data*")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "offset", 

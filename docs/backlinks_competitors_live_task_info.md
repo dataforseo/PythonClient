@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[BacklinksCompetitorsLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[BacklinksCompetitorsLiveResultInfo]]** | <em>array of results</em> |[optional]|

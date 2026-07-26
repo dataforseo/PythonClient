@@ -15,9 +15,9 @@ class IndexHistory(BaseModel):
     """
     IndexHistory
     """ # noqa: E501
-    date: Optional[StrictStr] = Field(default=None, description=r"date for which index volume data is provided. in the UTC format: “yyyy-mm-dd”. example:. 2021-10-01")
-    total_backlinks: Optional[StrictInt] = Field(default=None, description=r"total number of backlinks our database contained on the given date")
-    total_pages: Optional[StrictInt] = Field(default=None, description=r"total number of pages our database contained on the given date")
+    date: Optional[StrictStr] = Field(default=None, description=r"*date for which index volume data is provided*. in the UTC format: 'yyyy-mm-dd'. example:. `2021-10-01`")
+    total_backlinks: Optional[StrictInt] = Field(default=None, description=r"*total number of backlinks our database contained on the given `date`*")
+    total_pages: Optional[StrictInt] = Field(default=None, description=r"*total number of pages our database contained on the given `date`*")
     __properties: ClassVar[List[str]] = [
         "date", 
         "total_backlinks", 

@@ -18,15 +18,15 @@ class HotelAboutInfo(BaseModel):
     """
     HotelAboutInfo
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description=r"description of the hotel. the description of the hotel entity for which the results are collected")
-    sub_descriptions: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"additional description of the hotel. details about the hotel provided in addition to the description")
-    check_in_time: Optional[TimeInfo] = Field(default=None, description=r"hotel check-in time. check-in time indicated in the hotel listing")
-    check_out_time: Optional[TimeInfo] = Field(default=None, description=r"hotel check-out time. check-out time indicated in the hotel listing")
-    full_address: Optional[StrictStr] = Field(default=None, description=r"full address of the hotel. address of the hotel indicated in the standardised format")
-    domain: Optional[StrictStr] = Field(default=None, description=r"hotel domain. domain of the hotel’s website")
-    url: Optional[StrictStr] = Field(default=None, description=r"hotel url. URL to the hotel’s website indicated in the listing")
-    amenities: Optional[List[Optional[HotelAmenityInfo]]] = Field(default=None, description=r"hotel amenities. information about hotel amenities")
-    popular_amenities: Optional[List[Optional[HotelAmenityItemInfo]]] = Field(default=None, description=r"hotel amenities. information about hotel amenities labelled as “popular”")
+    description: Optional[StrictStr] = Field(default=None, description=r"*description of the hotel*. the description of the hotel entity for which the results are collected")
+    sub_descriptions: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*additional description of the hotel*. details about the hotel provided in addition to the description")
+    check_in_time: Optional[TimeInfo] = Field(default=None, description=r"*hotel check-in time*. check-in time indicated in the hotel listing")
+    check_out_time: Optional[TimeInfo] = Field(default=None, description=r"*hotel check-out time*. check-out time indicated in the hotel listing")
+    full_address: Optional[StrictStr] = Field(default=None, description=r"*full address of the hotel*. address of the hotel indicated in the standardised format")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*hotel domain*. domain of the hotel's website")
+    url: Optional[StrictStr] = Field(default=None, description=r"*hotel url*. URL to the hotel's website indicated in the listing")
+    amenities: Optional[List[Optional[HotelAmenityInfo]]] = Field(default=None, description=r"*hotel amenities*. information about hotel amenities")
+    popular_amenities: Optional[List[Optional[HotelAmenityItemInfo]]] = Field(default=None, description=r"*hotel amenities*. information about hotel amenities labelled as 'popular'")
     __properties: ClassVar[List[str]] = [
         "description", 
         "sub_descriptions", 

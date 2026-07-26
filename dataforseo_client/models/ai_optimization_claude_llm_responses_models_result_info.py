@@ -15,9 +15,9 @@ class AiOptimizationClaudeLlmResponsesModelsResultInfo(BaseModel):
     """
     AiOptimizationClaudeLlmResponsesModelsResultInfo
     """ # noqa: E501
-    model_name: Optional[StrictStr] = Field(default=None, description=r"name of the AI model")
-    web_search_supported: Optional[StrictBool] = Field(default=None, description=r"web search support for the AI model. if true, the web_search parameter can be set with the AI model")
-    task_post_supported: Optional[StrictBool] = Field(default=None, description=r"indicates if Standard (POST-GET) data retrieval is supported. if true, you can use the Standard (POST-GET) data retrieval method with the AI model")
+    model_name: Optional[StrictStr] = Field(default=None, description=r"*name of the AI model*")
+    web_search_supported: Optional[StrictBool] = Field(default=None, description=r"*web search support for the AI model*. if `true`, the `web_search` parameter can be set with the AI model")
+    task_post_supported: Optional[StrictBool] = Field(default=None, description=r"*indicates if Standard (POST-GET) data retrieval is supported*. if `true`, you can use the [Standard (POST-GET)](https://dataforseo.com/help-center/live-vs-standard-method) data retrieval method with the AI model")
     __properties: ClassVar[List[str]] = [
         "model_name", 
         "web_search_supported", 

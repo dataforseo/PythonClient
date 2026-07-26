@@ -15,9 +15,9 @@ class AggregatedMetricsItemInfo(BaseModel):
     """
     AggregatedMetricsItemInfo
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description=r"grouping identifier. the specific identifier for the grouping dimension")
-    mentions: Optional[StrictInt] = Field(default=None, description=r"total LLM mentions count. the number of times the target keyword or domain were mentioned in relation to this specific grouping key")
-    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"aggregated AI search volume for mentions within this grouping. learn more about this metric here")
+    key: Optional[StrictStr] = Field(default=None, description=r"*grouping identifier*. the specific identifier for the grouping dimension")
+    mentions: Optional[StrictInt] = Field(default=None, description=r"*total LLM mentions count*. the number of times the target keyword or domain were mentioned in relation to this specific grouping key")
+    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"*aggregated AI search volume for mentions within this grouping*. learn more about this metric [here](https://dataforseo.com/help-center/how-the-ai-search-volume-metric-works-in-llm-mentions)")
     __properties: ClassVar[List[str]] = [
         "key", 
         "mentions", 

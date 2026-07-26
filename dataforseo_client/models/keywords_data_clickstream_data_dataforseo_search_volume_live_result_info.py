@@ -17,7 +17,7 @@ class KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo(BaseModel)
     KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo
     """ # noqa: E501
     location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. . Note:if the keyword in the POST array appears to be misspelled, data will be returned for the correctly spelled keyword;. we use the functionality of Google Ads API to check and validate the spelling of keywords, learn more by this link")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. Note:if the keyword in the POST array appears to be misspelled, data will be returned for the correctly spelled keyword;. we use the functionality of Google Ads API to check and validate the spelling of keywords, learn more by this link")
     use_clickstream: Optional[StrictBool] = Field(default=None, description=r"indicates if the use_clickstream parameter is active. possible values: true, false")
     items_count: Optional[StrictInt] = Field(default=None, description=r"ithe number of results returned in the items array")
     items: Optional[List[Optional[KeywordsDataClickstreamDataSearchVolumeLiveItem]]] = Field(default=None, description=r"array of keywords. contains keywords and their search volume rates")

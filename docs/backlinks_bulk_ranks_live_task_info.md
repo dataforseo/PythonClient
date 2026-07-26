@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[BacklinksBulkRanksLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[BacklinksBulkRanksLiveResultInfo]]** | <em>array of results</em> |[optional]|

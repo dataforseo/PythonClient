@@ -16,11 +16,11 @@ class BusinessDataBusinessListingsCategoriesAggregationLiveResultInfo(BaseModel)
     """
     BusinessDataBusinessListingsCategoriesAggregationLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in our database relevant to your request")
-    count: Optional[StrictInt] = Field(default=None, description=r"item types. the number of items in the items array")
-    offset: Optional[StrictStr] = Field(default=None, description=r"offset in the results array of returned categories")
-    offset_token: Optional[StrictStr] = Field(default=None, description=r"token for subsequent requests. by specifying the unique offset_token when setting a new task, you will get the subsequent results of the initial task;. offset_token values are unique for each subsequent task")
-    items: Optional[List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveItem]]] = Field(default=None, description=r"encountered item types. types of search engine results encountered in the items array;. possible item types: business_category")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in our database relevant to your request*")
+    count: Optional[StrictInt] = Field(default=None, description=r"*item types*. the number of items in the `items` array")
+    offset: Optional[StrictStr] = Field(default=None, description=r"*offset in the results array of returned categories*")
+    offset_token: Optional[Any] = Field(default=None, description=r"*token for subsequent requests*. by specifying the unique `offset_token` when setting a new task, you will get the subsequent results of the initial task;. `offset_token` values are unique for each subsequent task")
+    items: Optional[List[Optional[BusinessDataBusinessListingsCategoriesAggregationLiveItem]]] = Field(default=None, description=r"*encountered item types*. types of search engine results encountered in the `items` array;. possible item types: `business_category`")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "count", 

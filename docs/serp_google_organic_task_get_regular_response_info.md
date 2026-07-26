@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpGoogleOrganicTaskGetRegularTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpGoogleOrganicTaskGetRegularTaskInfo]]** | <em>array of tasks</em> |[optional]|

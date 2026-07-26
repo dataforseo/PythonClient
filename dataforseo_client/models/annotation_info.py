@@ -15,8 +15,8 @@ class AnnotationInfo(BaseModel):
     """
     AnnotationInfo
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description=r"the domain name or title of the quoted source")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the quoted source")
+    title: Optional[StrictStr] = Field(default=None, description=r"*the domain name or title of the quoted source*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the quoted source*")
     __properties: ClassVar[List[str]] = [
         "title", 
         "url", 

@@ -16,9 +16,9 @@ class HotelAmenityInfo(BaseModel):
     """
     HotelAmenityInfo
     """ # noqa: E501
-    category: Optional[StrictStr] = Field(default=None, description=r"standardised category of the ammenity")
-    category_label: Optional[StrictStr] = Field(default=None, description=r"label of the category")
-    items: Optional[List[Optional[HotelAmenityItemInfo]]] = Field(default=None, description=r"specific amenities and details")
+    category: Optional[StrictStr] = Field(default=None, description=r"*standardised category of the ammenity*")
+    category_label: Optional[StrictStr] = Field(default=None, description=r"*label of the category*")
+    items: Optional[List[Optional[HotelAmenityItemInfo]]] = Field(default=None, description=r"*specific amenities and details*")
     __properties: ClassVar[List[str]] = [
         "category", 
         "category_label", 

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[MerchantAmazonSellersLiveHtmlResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[MerchantAmazonSellersLiveHtmlResultInfo]]** | <em>array of results</em> |[optional]|

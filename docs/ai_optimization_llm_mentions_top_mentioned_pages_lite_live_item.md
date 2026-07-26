@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**page** | **StrictStr** | page URL <br>page identifier of aggregated metrics |[optional]|
-**location** | **StrictInt** | location identifier<br>location of aggregated metrics |[optional]|
-**language** | **StrictStr** | language identifier<br>language of aggregated metrics |[optional]|
-**platform** | **StrictStr** | LLM platform identifiers<br>LLM platform of aggregated metrics |[optional]|
-**metrics** | **AggregatedMetricsInfoTotalInfo** | LLM metrics<br>metrics aggregated by specific parameters and respective identifiers |[optional]|
+**page** | **StrictStr** | <em>page URL </em><br>page identifier of aggregated metrics |[optional]|
+**location** | **StrictInt** | <em>location identifier</em><br>location of aggregated metrics |[optional]|
+**language** | **StrictStr** | <em>language identifier</em><br>language of aggregated metrics |[optional]|
+**platform** | **StrictStr** | <em>LLM platform identifiers</em><br>LLM platform of aggregated metrics |[optional]|
+**metrics** | **AggregatedMetricsInfoTotalInfo** | <em>LLM metrics</em><br>metrics aggregated by specific parameters and respective identifiers |[optional]|

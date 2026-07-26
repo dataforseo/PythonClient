@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**items** | **List[Optional[GeminiImagesElement]]** | elements of Gemini results |[optional]|
+**items** | **List[Optional[GeminiImagesElement]]** | <em>elements of Gemini results</em> |[optional]|

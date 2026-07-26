@@ -16,11 +16,11 @@ class AiOptimizationLlmMentionsSearchMentionsLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsSearchMentionsLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results relevant the request")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results relevant the request*")
     offset: Optional[StrictInt] = Field(default=None, description=r"")
-    search_after_token: Optional[StrictStr] = Field(default=None, description=r"token for subsequent requests. by specifying the unique search_after_token when setting a new task, you will get the subsequent results of the initial task;. search_after_token values are unique for each subsequent task")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveItem]]] = Field(default=None, description=r"contains relevant mentions data")
+    search_after_token: Optional[StrictStr] = Field(default=None, description=r"*token for subsequent requests*. by specifying the unique `search_after_token` when setting a new task, you will get the subsequent results of the initial task;. `search_after_token` values are unique for each subsequent task")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[AiOptimizationLlmMentionsSearchMentionsLiveItem]]] = Field(default=None, description=r"*contains relevant mentions data*")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "offset", 

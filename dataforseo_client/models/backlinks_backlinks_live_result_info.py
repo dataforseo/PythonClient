@@ -16,13 +16,13 @@ class BacklinksBacklinksLiveResultInfo(BaseModel):
     """
     BacklinksBacklinksLiveResultInfo
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"target domain in a POST array")
-    mode: Optional[StrictStr] = Field(default=None, description=r"mode specified in a POST array")
-    custom_mode: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"custom mode specified in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results relevant the request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BacklinksBacklinksLiveItem]]] = Field(default=None, description=r"contains relevant backlinks and referring domains data")
-    search_after_token: Optional[StrictStr] = Field(default=None, description=r"token for subsequent requests. by specifying the unique search_after_token when setting a new task, you will get the subsequent results of the initial task;. search_after_token values are unique for each subsequent task")
+    target: Optional[StrictStr] = Field(default=None, description=r"*target domain in a POST array*")
+    mode: Optional[StrictStr] = Field(default=None, description=r"*mode specified in a POST array*")
+    custom_mode: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"*custom mode specified in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results relevant the request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[BacklinksBacklinksLiveItem]]] = Field(default=None, description=r"*contains relevant backlinks and referring domains data*")
+    search_after_token: Optional[StrictStr] = Field(default=None, description=r"*token for subsequent requests*. by specifying the unique `search_after_token` when setting a new task, you will get the subsequent results of the initial task;. `search_after_token` values are unique for each subsequent task")
     __properties: ClassVar[List[str]] = [
         "target", 
         "mode", 

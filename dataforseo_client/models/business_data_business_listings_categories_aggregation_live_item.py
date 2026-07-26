@@ -17,8 +17,8 @@ class BusinessDataBusinessListingsCategoriesAggregationLiveItem(BaseModel):
     BusinessDataBusinessListingsCategoriesAggregationLiveItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"business categories. Google My Business general category that best describes the cluster of related categories")
-    aggregation: Optional[BusinessListingAggregationInfo] = Field(default=None, description=r"aggregation of the category")
+    categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*business categories*. Google My Business general category that best describes the cluster of related categories")
+    aggregation: Optional[BusinessListingAggregationInfo] = Field(default=None, description=r"*aggregation of the category*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "categories", 

@@ -15,16 +15,16 @@ class BusinessDataErrorsResultInfo(BaseModel):
     """
     BusinessDataErrorsResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"task identifier. unique task identifier in our system in the UUID format")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when an error occurred. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    function: Optional[StrictStr] = Field(default=None, description=r"corresponding API function")
-    error_code: Optional[StrictInt] = Field(default=None, description=r"error code")
-    error_message: Optional[StrictStr] = Field(default=None, description=r"error message or error URL. error message (see full list) or URL that caused an error")
-    http_url: Optional[StrictStr] = Field(default=None, description=r"URL that caused an error. URL you used for making an API call or pingback/postback URL")
-    http_method: Optional[StrictStr] = Field(default=None, description=r"HTTP method")
-    http_code: Optional[StrictInt] = Field(default=None, description=r"HTTP status code")
-    http_time: Optional[StrictFloat] = Field(default=None, description=r"time taken by HTTP request. for tasks set with a pingback/postback, this field will show the time it took your server to respond")
-    http_response: Optional[StrictStr] = Field(default=None, description=r"HTTP response. server response")
+    id: Optional[StrictStr] = Field(default=None, description=r"*task identifier*. **unique task identifier in our system in the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format**")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when an error occurred*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2019-11-15 12:57:46 +00:00`")
+    function: Optional[StrictStr] = Field(default=None, description=r"*corresponding API function*")
+    error_code: Optional[StrictInt] = Field(default=None, description=r"*error code*")
+    error_message: Optional[StrictStr] = Field(default=None, description=r"*error message or error URL*. error message [(see full list)](https://docs.dataforseo.com/v3/appendix/errors/) or URL that caused an error")
+    http_url: Optional[StrictStr] = Field(default=None, description=r"*URL that caused an error*. URL you used for making an API call or pingback/postback URL")
+    http_method: Optional[StrictStr] = Field(default=None, description=r"*HTTP method*")
+    http_code: Optional[StrictInt] = Field(default=None, description=r"*HTTP status code*")
+    http_time: Optional[StrictFloat] = Field(default=None, description=r"*time taken by HTTP request*. for tasks set with a pingback/postback, this field will show the time it took your server to respond")
+    http_response: Optional[StrictStr] = Field(default=None, description=r"*HTTP response*. server response")
     __properties: ClassVar[List[str]] = [
         "id", 
         "datetime", 

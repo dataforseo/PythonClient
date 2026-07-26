@@ -6,5 +6,5 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**text** | **StrictStr** | text of the reasoning chain section<br>text of the reasoning chain  section summarizing the model's thought process |[optional]|
-**annotations** | **List[Optional[AnnotationInfo]]** | array of references used to generate the response<br>equals null if the web_search parameter is not set to true<br>Note: annotations may return empty even when web_search is true, as the AI will attempt to retrieve web information but may not find relevant results |[optional]|
+**text** | **StrictStr** | <em>text of the reasoning chain section</em><br>text of the reasoning chain  section summarizing the model's thought process |[optional]|
+**annotations** | **List[Optional[AnnotationInfo]]** | <em>array of references used to generate the response</em><br>equals <code>null</code> if the <code>web_search</code> parameter is not set to <code>true</code><br><strong>Note:</strong> <code>annotations</code> may return empty even when <code>web_search</code> is <code>true</code>, as the AI will attempt to retrieve web information but may not find relevant results |[optional]|

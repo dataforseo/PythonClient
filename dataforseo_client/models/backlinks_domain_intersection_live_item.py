@@ -17,8 +17,8 @@ class BacklinksDomainIntersectionLiveItem(BaseModel):
     """
     BacklinksDomainIntersectionLiveItem
     """ # noqa: E501
-    domain_intersection: Optional[Dict[str, Optional[BacklinksDomainIntersection]]] = Field(default=None, description=r"contains data on domains that link to the corresponding targets specified in the POST array. data is provided in separate objects corresponding to domains, subdomains or pages specified in the targets object")
-    summary: Optional[IntersectionSummaryInfo] = Field(default=None, description=r"contains the domain intersections summary")
+    domain_intersection: Optional[Dict[str, Optional[BacklinksDomainIntersection]]] = Field(default=None, description=r"*contains data on domains that link to the corresponding targets specified in the POST array*. data is provided in separate objects corresponding to domains, subdomains or pages specified in the `targets` object")
+    summary: Optional[IntersectionSummaryInfo] = Field(default=None, description=r"*contains the domain intersections summary*")
     __properties: ClassVar[List[str]] = [
         "domain_intersection", 
         "summary", 

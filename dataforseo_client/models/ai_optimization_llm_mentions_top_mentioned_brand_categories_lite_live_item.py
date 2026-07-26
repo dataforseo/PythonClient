@@ -16,11 +16,11 @@ class AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveItem(BaseModel
     """
     AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveItem
     """ # noqa: E501
-    brand_category: Optional[StrictStr] = Field(default=None, description=r"brand category. brand category identifier of aggregated metrics")
-    location: Optional[StrictInt] = Field(default=None, description=r"location identifier. location of aggregated metrics")
-    language: Optional[StrictStr] = Field(default=None, description=r"language identifier. language of aggregated metrics")
-    platform: Optional[StrictStr] = Field(default=None, description=r"LLM platform identifiers. LLM platform of aggregated metrics")
-    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"LLM metrics. metrics aggregated by specific parameters and respective identifiers")
+    brand_category: Optional[StrictStr] = Field(default=None, description=r"*brand category*. brand category identifier of aggregated metrics")
+    location: Optional[StrictInt] = Field(default=None, description=r"*location identifier*. location of aggregated metrics")
+    language: Optional[StrictStr] = Field(default=None, description=r"*language identifier*. language of aggregated metrics")
+    platform: Optional[StrictStr] = Field(default=None, description=r"*LLM platform identifiers*. LLM platform of aggregated metrics")
+    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"*LLM metrics*. metrics aggregated by specific parameters and respective identifiers")
     __properties: ClassVar[List[str]] = [
         "brand_category", 
         "location", 

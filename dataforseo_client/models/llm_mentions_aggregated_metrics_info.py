@@ -17,14 +17,14 @@ class LlmMentionsAggregatedMetricsInfo(BaseModel):
     """
     LlmMentionsAggregatedMetricsInfo
     """ # noqa: E501
-    location: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"location-based grouping. array of objects containing mention metrics segmented by geographical location")
-    language: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"language-based grouping. array of objects containing mention metrics segmented by content language")
-    platform: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"platform-based grouping. array of group elements containing mention metrics segmented by AI platform")
-    sources_domain: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"found top source domains relevant to the target. array of objects containing data on top domains that are cited as sources in LLM responses. learn more about the sources and how to retrieve LLM citation data at our Help Center")
-    search_results_domain: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"found top search results domains relevant to the target. array of objects containing data on top domains that appear in search results related to LLM queries")
-    brand_entities_title: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity titles that appear in search results related to LLM queries")
-    brand_entities_category: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"data on brand entities relevant to the target. array of objects containing data on brand entity categories that appear in search results related to LLM queries")
-    total: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"aggregated mentions metrics summary. contains overall aggregated LLM mention metrics across all found domains")
+    location: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"*location-based grouping*. array of objects containing mention metrics segmented by geographical location")
+    language: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"*language-based grouping*. array of objects containing mention metrics segmented by content language")
+    platform: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"*platform-based grouping*. array of group elements containing mention metrics segmented by AI platform")
+    sources_domain: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"*found top source domains relevant to the target*. array of objects containing data on top domains that are cited as sources in LLM responses. learn more about the sources and how to retrieve LLM citation data at our [Help Center](https://dataforseo.com/help-center/how-to-get-llm-citation-data-with-llm-mentions-api)")
+    search_results_domain: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"*found top search results domains relevant to the target*. array of objects containing data on top domains that appear in search results related to LLM queries")
+    brand_entities_title: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"*data on brand entities relevant to the target*. array of objects containing data on brand entity titles that appear in search results related to LLM queries")
+    brand_entities_category: Optional[List[Optional[AggregatedMetricsItemInfo]]] = Field(default=None, description=r"*data on brand entities relevant to the target*. array of objects containing data on brand entity categories that appear in search results related to LLM queries")
+    total: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"*aggregated mentions metrics summary*. contains overall aggregated LLM mention metrics across all found domains")
     __properties: ClassVar[List[str]] = [
         "location", 
         "language", 

@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the special offer |[optional]|
-**items** | **List[Optional[GoogleShoppingSponsoredCarouselElement]]** | items in SERP |[optional]|
+**title** | **StrictStr** | <em>title of the special offer</em> |[optional]|
+**items** | **List[Optional[GoogleShoppingSponsoredCarouselElement]]** | <em>items in SERP</em> |[optional]|

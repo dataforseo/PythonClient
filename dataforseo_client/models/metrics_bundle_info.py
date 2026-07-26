@@ -16,8 +16,8 @@ class MetricsBundleInfo(BaseModel):
     """
     MetricsBundleInfo
     """ # noqa: E501
-    organic: Optional[MetricsInfo] = Field(default=None, description=r"ranking and traffic data from organic search")
-    paid: Optional[MetricsInfo] = Field(default=None, description=r"ranking and traffic data from paid search")
+    organic: Optional[MetricsInfo] = Field(default=None, description=r"*ranking and traffic data from organic search*")
+    paid: Optional[MetricsInfo] = Field(default=None, description=r"*ranking and traffic data from paid search*")
     __properties: ClassVar[List[str]] = [
         "organic", 
         "paid", 

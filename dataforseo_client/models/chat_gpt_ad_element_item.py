@@ -18,14 +18,14 @@ class ChatGptAdElementItem(BaseChatGptLlmScraperElementItem):
     ChatGptAdElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERPabsolute position among all the elements")
-    title: Optional[StrictStr] = Field(default=None, description=r"name of the brand")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"source description")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image displayed in the ad")
-    advertiser: Optional[ChatGptAdAdvertiser] = Field(default=None, description=r"information about the advertiser associated with the ad")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements")
+    title: Optional[StrictStr] = Field(default=None, description=r"*name of the brand*")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*source description*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image displayed in the ad*")
+    advertiser: Optional[ChatGptAdAdvertiser] = Field(default=None, description=r"*information about the advertiser associated with the ad*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

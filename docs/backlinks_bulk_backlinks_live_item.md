@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**target** | **StrictStr** | domain, subdomain or webpage from a POST array |[optional]|
-**backlinks** | **StrictInt** | number of backlinks pointing to the target |[optional]|
+**target** | **StrictStr** | <em>domain, subdomain or webpage from a POST array</em> |[optional]|
+**backlinks** | **StrictInt** | <em>number of backlinks pointing to the <code>target</code></em> |[optional]|

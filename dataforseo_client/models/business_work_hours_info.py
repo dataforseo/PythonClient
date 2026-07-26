@@ -16,7 +16,7 @@ class BusinessWorkHoursInfo(BaseModel):
     """
     BusinessWorkHoursInfo
     """ # noqa: E501
-    work_hours: Optional[WorkHours] = Field(default=None, description=r"open hours. information about work hours of the local establishment")
+    work_hours: Optional[WorkHours] = Field(default=None, description=r"*open hours*. information about work hours of the local establishment")
     __properties: ClassVar[List[str]] = [
         "work_hours", 
         ]

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**intersections_count** | **StrictInt** | total number of intersections |[optional]|
+**intersections_count** | **StrictInt** | <em>total number of intersections</em> |[optional]|

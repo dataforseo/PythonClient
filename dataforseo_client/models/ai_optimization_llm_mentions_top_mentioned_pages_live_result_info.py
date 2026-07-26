@@ -17,11 +17,11 @@ class AiOptimizationLlmMentionsTopMentionedPagesLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsTopMentionedPagesLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results relevant the request")
-    offset: Optional[StrictInt] = Field(default=None, description=r"the number of mentions objects that are omitted in the items array")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    aggregated_metrics: Optional[LlmMentionsAggregatedMetricsInfo] = Field(default=None, description=r"aggregated mentions metrics. contains aggregated LLM mention metrics across all found pages, grouped by various dimensions")
-    items: Optional[List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveItem]]] = Field(default=None, description=r"individual page results. array containing detailed mention metrics for each of the found top mentioned pages")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results relevant the request*")
+    offset: Optional[StrictInt] = Field(default=None, description=r"*the number of mentions objects that are omitted in the `items` array*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    aggregated_metrics: Optional[LlmMentionsAggregatedMetricsInfo] = Field(default=None, description=r"*aggregated mentions metrics*. contains aggregated LLM mention metrics across all found pages, grouped by various dimensions")
+    items: Optional[List[Optional[AiOptimizationLlmMentionsTopMentionedPagesLiveItem]]] = Field(default=None, description=r"*individual page results*. array containing detailed mention metrics for each of the found top mentioned pages")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "offset", 

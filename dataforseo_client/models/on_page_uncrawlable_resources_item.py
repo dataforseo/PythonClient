@@ -16,11 +16,11 @@ class OnPageUncrawlableResourcesItem(BaseModel):
     """
     OnPageUncrawlableResourcesItem
     """ # noqa: E501
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the uncrawlable resource")
-    reason: Optional[StrictStr] = Field(default=None, description=r"reason the resource is uncrawlable. can take the following values: content_type_inconsistency")
-    status_code: Optional[StrictInt] = Field(default=None, description=r"general status code. you can find the full list of the response codes here. Note: we strongly recommend designing a necessary system for handling related exceptional or error conditions")
-    fetch_time: Optional[StrictStr] = Field(default=None, description=r"date and time when the resource was fetched. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2026-03-09 18:20:32 +00:00")
-    meta: Optional[UncrawlableResourcesMeta] = Field(default=None, description=r"metadata of the uncrawlable resource")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the uncrawlable resource*")
+    reason: Optional[StrictStr] = Field(default=None, description=r"*reason the resource is uncrawlable*. can take the following values: `content_type_inconsistency`")
+    status_code: Optional[StrictInt] = Field(default=None, description=r"*general status code*. you can find the full list of the response codes [here](/v3/appendix/errors). **Note:** we strongly recommend designing a necessary system for handling related exceptional or error conditions")
+    fetch_time: Optional[StrictStr] = Field(default=None, description=r"*date and time when the resource was fetched*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2026-03-09 18:20:32 +00:00`")
+    meta: Optional[UncrawlableResourcesMeta] = Field(default=None, description=r"*metadata of the uncrawlable resource*")
     __properties: ClassVar[List[str]] = [
         "url", 
         "reason", 

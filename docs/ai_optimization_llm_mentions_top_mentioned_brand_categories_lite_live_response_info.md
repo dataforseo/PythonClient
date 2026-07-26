@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveTaskInfo]]** | <em>array of tasks</em> |[optional]|

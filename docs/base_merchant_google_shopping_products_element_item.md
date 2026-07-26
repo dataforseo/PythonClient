@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**rank_group** | **StrictInt** | position within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group |[optional]|
-**rank_absolute** | **StrictInt** | absolute rank in SERPabsolute position among all the elements found in Google Shopping SERP |[optional]|
-**position** | **StrictStr** | alignment of the element in SERPcan take the following values:left, right |[optional]|
-**xpath** | **StrictStr** | XPath of the element |[optional]|
+**rank_group** | **StrictInt** | <em>position within a group of elements with identical <code>type</code> values</em><br>positions of elements with different <code>type</code> values are omitted from <code>rank_group</code> |[optional]|
+**rank_absolute** | **StrictInt** | <em>absolute rank in SERP</em><br>absolute position among all the elements found in Google Shopping SERP |[optional]|
+**position** | **StrictStr** | <em>alignment of the element in SERP</em><br>can take the following values:<br><code>left</code>, <code>right</code> |[optional]|
+**xpath** | **StrictStr** | <em><a href='https://en.wikipedia.org/wiki/XPath'>XPath</a> of the element</em> |[optional]|

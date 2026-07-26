@@ -16,11 +16,11 @@ class AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveItem(BaseModel):
     """
     AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveItem
     """ # noqa: E501
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain name. domain of aggregated metrics")
-    location: Optional[StrictInt] = Field(default=None, description=r"location identifier. location of aggregated metrics")
-    language: Optional[StrictStr] = Field(default=None, description=r"language identifier. language of aggregated metrics")
-    platform: Optional[StrictStr] = Field(default=None, description=r"LLM platform identifiers. LLM platform of aggregated metrics")
-    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"LLM metrics. metrics aggregated by specific parameters and respective identifiers")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain name*. domain of aggregated metrics")
+    location: Optional[StrictInt] = Field(default=None, description=r"*location identifier*. location of aggregated metrics")
+    language: Optional[StrictStr] = Field(default=None, description=r"*language identifier*. language of aggregated metrics")
+    platform: Optional[StrictStr] = Field(default=None, description=r"*LLM platform identifiers*. LLM platform of aggregated metrics")
+    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"*LLM metrics*. metrics aggregated by specific parameters and respective identifiers")
     __properties: ClassVar[List[str]] = [
         "domain", 
         "location", 

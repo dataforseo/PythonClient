@@ -19,17 +19,17 @@ class GoogleShoppingSponsoredCarouselElement(BaseModel):
     GoogleShoppingSponsoredCarouselElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    tags: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"tags assigned to the product")
-    seller: Optional[StrictStr] = Field(default=None, description=r"name of the sellerthe name of the company that placed a corresponding product on Google Shopping")
-    price: Optional[StrictFloat] = Field(default=None, description=r"product priceexample:384.99")
-    currency: Optional[StrictStr] = Field(default=None, description=r"currency in the ISO formatexample:USD")
-    product_rating: Optional[RatingElement] = Field(default=None, description=r"product ratingthe product popularity rate based on product reviews")
-    product_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URLs to the images of the productthe first URL in the array is the featured image of the product")
-    shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameterusing this parameter you can get a URL of the advertisement in Google Shopping Sellers Ad URL")
-    delivery_info: Optional[DeliveryInfo] = Field(default=None, description=r"delivery informationdelivery information including free and fast delivery date ranges")
-    special_offer_info: Optional[SpecialOfferInfo] = Field(default=None, description=r"special offer from the sellerinformation on the special offer from the seller, including discount and coupon info")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*[XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    tags: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*tags assigned to the product*")
+    seller: Optional[StrictStr] = Field(default=None, description=r"*name of the seller*. the name of the company that placed a corresponding product on Google Shopping")
+    price: Optional[StrictFloat] = Field(default=None, description=r"*product price*. example:. `384.99`")
+    currency: Optional[StrictStr] = Field(default=None, description=r"*currency in the [ISO](https://en.wikipedia.org/wiki/ISO_4217) format*. example:. `USD`")
+    product_rating: Optional[RatingElement] = Field(default=None, description=r"*product rating*. the product popularity rate based on product reviews")
+    product_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*URLs to the images of the product*. the first URL in the array is the featured image of the product")
+    shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"*unique ad click referral parameter*. using this parameter you can get a URL of the advertisement in [Google Shopping Sellers Ad URL](/v3/merchant/google/sellers/ad_url/)")
+    delivery_info: Optional[DeliveryInfo] = Field(default=None, description=r"*delivery information*. delivery information including free and fast delivery date ranges")
+    special_offer_info: Optional[SpecialOfferInfo] = Field(default=None, description=r"*special offer from the seller*. information on the special offer from the seller, including discount and coupon info")
     __properties: ClassVar[List[str]] = [
         "type", 
         "xpath", 

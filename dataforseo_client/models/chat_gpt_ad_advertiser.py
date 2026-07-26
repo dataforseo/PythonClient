@@ -15,9 +15,9 @@ class ChatGptAdAdvertiser(BaseModel):
     """
     ChatGptAdAdvertiser
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description=r"name of the advertiser")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    favicon_url: Optional[StrictStr] = Field(default=None, description=r"URL of the advertiser's favicon image")
+    name: Optional[StrictStr] = Field(default=None, description=r"*name of the advertiser*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    favicon_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the advertiser's favicon image*")
     __properties: ClassVar[List[str]] = [
         "name", 
         "url", 

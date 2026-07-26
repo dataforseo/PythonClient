@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**items** | **List[Optional[ChatGptProductsElement]]** | elements of ChatGPT results |[optional]|
+**items** | **List[Optional[ChatGptProductsElement]]** | <em>elements of ChatGPT results</em> |[optional]|

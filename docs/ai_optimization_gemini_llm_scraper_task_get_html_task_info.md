@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AiOptimizationGeminiLlmScraperTaskGetHtmlResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AiOptimizationGeminiLlmScraperTaskGetHtmlResultInfo]]** | <em>array of results</em> |[optional]|

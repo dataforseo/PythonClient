@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[BusinessDataBusinessListingsLocationsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[BusinessDataBusinessListingsLocationsTaskInfo]]** | <em>array of tasks</em> |[optional]|

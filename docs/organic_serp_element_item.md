@@ -5,13 +5,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**rank_group** | **StrictInt** | group rank in SERPposition within a group of elements with identical type valuespositions of elements with different type values are omitted from rank_group |[optional]|
-**rank_absolute** | **StrictInt** | absolute rank in SERPabsolute position among all the elements found in SERPnote values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results;to get all items (including SERP features and rich snippets) with their positions, please refer to the Google Organiс Advanced SERP endpoint |[optional]|
-**domain** | **StrictStr** | domain in SERP |[optional]|
-**title** | **StrictStr** | title of the results element in SERP |[optional]|
-**description** | **StrictStr** | description of the results element in SERP |[optional]|
-**url** | **StrictStr** | relevant URL in SERP |[optional]|
-**breadcrumb** | **StrictStr** | breadcrumb in SERP |[optional]|
+**rank_group** | **StrictInt** | <em>group rank in SERP</em><br>position within a group of elements with identical <code>type</code> values<br>positions of elements with different <code>type</code> values are omitted from <code>rank_group</code> |[optional]|
+**rank_absolute** | **StrictInt** | <em> absolute rank in SERP</em><br>absolute position among all the elements found in SERP<strong>note</strong> values are returned in the ascending order, with values corresponding to advanced SERP features omitted from the results;<br>to get all items (including SERP features and rich snippets) with their positions, please refer to the <a href='https://docs.dataforseo.com/v3/serp/google/organic/live/advanced/?php'>Google Organiс Advanced SERP</a> endpoint |[optional]|
+**domain** | **StrictStr** | <em>domain in SERP</em> |[optional]|
+**title** | **StrictStr** | <em>title of the results element in SERP</em> |[optional]|
+**description** | **StrictStr** | <em>description of the results element in SERP</em> |[optional]|
+**url** | **StrictStr** | <em> relevant URL in SERP</em> |[optional]|
+**breadcrumb** | **StrictStr** | <em>breadcrumb in SERP</em> |[optional]|
 **cache_url** | **StrictStr** | cached version of the page |[optional]|
 **related_search_url** | **StrictStr** | URL to a similar search<br>URL to a new search for the same keyword(s) on related sites |[optional]|
 **website_name** | **StrictStr** | name of the website in SERP |[optional]|

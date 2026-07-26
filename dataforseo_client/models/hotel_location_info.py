@@ -16,14 +16,14 @@ class HotelLocationInfo(BaseModel):
     """
     HotelLocationInfo
     """ # noqa: E501
-    neighborhood: Optional[StrictStr] = Field(default=None, description=r"name of the neighborhood where the hotel is located")
-    neighborhood_description: Optional[StrictStr] = Field(default=None, description=r"description of the neighborhood where the hotel is located")
-    maps_url: Optional[StrictStr] = Field(default=None, description=r"url to the location of the hotel in google maps")
-    overall_score: Optional[StrictFloat] = Field(default=None, description=r"overall score of the hotel location. indicates the overall score of the hotel’s location in the range from 1 to 5;. calculated based on data from the hotel’s proximity to nearby things to do and restaurants, transportation, and airports;. note that the criteria are not weighted equally in the overall score")
-    score_by_categories: Optional[Dict[str, Optional[StrictFloat]]] = Field(default=None, description=r"category scores of the hotel location. the scores of the hotel’s location tied to the categories that indicate the proximity to nearby things to do, restaurants, transportation, and airports;")
-    latitude: Optional[StrictFloat] = Field(default=None, description=r"hotel latitude. latitude coordinates of the hotel’s location. example:. 39.4806397")
-    longitude: Optional[StrictFloat] = Field(default=None, description=r"hotel longitude. latitude coordinates of the hotel’s location. example:. -106.0512973")
-    location_chain: Optional[List[Optional[LocationChain]]] = Field(default=None, description=r"elements of the location chain. additional parameters of each element of the location chain")
+    neighborhood: Optional[StrictStr] = Field(default=None, description=r"*name of the neighborhood where the hotel is located*")
+    neighborhood_description: Optional[StrictStr] = Field(default=None, description=r"*description of the neighborhood where the hotel is located*")
+    maps_url: Optional[StrictStr] = Field(default=None, description=r"*url to the location of the hotel in google maps*")
+    overall_score: Optional[StrictFloat] = Field(default=None, description=r"*overall score of the hotel location*. indicates the overall score of the hotel's location in the range from 1 to 5;. calculated based on data from the hotel's proximity to nearby things to do and restaurants, transportation, and airports;. note that the criteria are not weighted equally in the overall score")
+    score_by_categories: Optional[Dict[str, Optional[StrictFloat]]] = Field(default=None, description=r"*category scores of the hotel location*. the scores of the hotel's location tied to the categories that indicate the proximity to nearby things to do, restaurants, transportation, and airports;")
+    latitude: Optional[StrictFloat] = Field(default=None, description=r"*hotel latitude*. latitude coordinates of the hotel's location. example:. `39.4806397`")
+    longitude: Optional[StrictFloat] = Field(default=None, description=r"*hotel longitude*. latitude coordinates of the hotel's location. example:. `-106.0512973`")
+    location_chain: Optional[List[Optional[LocationChain]]] = Field(default=None, description=r"*elements of the location chain*. additional parameters of each element of the location chain")
     __properties: ClassVar[List[str]] = [
         "neighborhood", 
         "neighborhood_description", 

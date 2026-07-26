@@ -16,7 +16,7 @@ class PopularTimes(BaseModel):
     """
     PopularTimes
     """ # noqa: E501
-    popular_times_by_days: Optional[Dict[str, Optional[List[Optional[PopularWorkTimeInfo]]]]] = Field(default=None, description=r"popular hours. information about busy hours of the local establishment on each day of the week")
+    popular_times_by_days: Optional[Dict[str, Optional[List[Optional[PopularWorkTimeInfo]]]]] = Field(default=None, description=r"*popular hours*. information about busy hours of the local establishment on each day of the week")
     __properties: ClassVar[List[str]] = [
         "popular_times_by_days", 
         ]

@@ -16,9 +16,9 @@ class AiOptimizationLlmMentionsHistoricalLiveItem(BaseModel):
     """
     AiOptimizationLlmMentionsHistoricalLiveItem
     """ # noqa: E501
-    year: Optional[StrictInt] = Field(default=None, description=r"year")
-    month: Optional[StrictInt] = Field(default=None, description=r"month")
-    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"aggregated mentions metrics for the given month of a year")
+    year: Optional[StrictInt] = Field(default=None, description=r"*year*")
+    month: Optional[StrictInt] = Field(default=None, description=r"*month*")
+    metrics: Optional[AggregatedMetricsInfoTotalInfo] = Field(default=None, description=r"*aggregated mentions metrics for the given month of a year*")
     __properties: ClassVar[List[str]] = [
         "year", 
         "month", 

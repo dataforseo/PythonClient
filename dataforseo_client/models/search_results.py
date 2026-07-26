@@ -15,13 +15,13 @@ class SearchResults(BaseModel):
     """
     SearchResults
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description=r"result description")
-    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb")
-    rank: Optional[StrictInt] = Field(default=None, description=r"rank in the results")
-    title: Optional[StrictStr] = Field(default=None, description=r"source title")
-    domain: Optional[StrictStr] = Field(default=None, description=r"source domain")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    publication_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. 2019-11-15 12:57:46 +00:00")
+    description: Optional[StrictStr] = Field(default=None, description=r"*result description*")
+    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"*breadcrumb*")
+    rank: Optional[StrictInt] = Field(default=None, description=r"*rank in the results*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*source title*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*source domain*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    publication_date: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "description", 
         "breadcrumb", 

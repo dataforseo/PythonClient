@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**category** | **StrictStr** | standardised category of the ammenity |[optional]|
-**category_label** | **StrictStr** | label of the category |[optional]|
-**items** | **List[Optional[HotelAmenityItemInfo]]** | specific amenities and details |[optional]|
+**category** | **StrictStr** | <em>standardised category of the ammenity</em> |[optional]|
+**category_label** | **StrictStr** | <em>label of the category</em> |[optional]|
+**items** | **List[Optional[HotelAmenityItemInfo]]** | <em>specific amenities and details</em> |[optional]|

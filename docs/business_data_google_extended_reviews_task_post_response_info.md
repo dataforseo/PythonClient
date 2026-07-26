@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[BusinessDataGoogleExtendedReviewsTaskPostTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[BusinessDataGoogleExtendedReviewsTaskPostTaskInfo]]** | <em>array of tasks</em> |[optional]|

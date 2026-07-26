@@ -16,11 +16,11 @@ class AiOptimizationLlmMentionsTargetMetricsLiteLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsTargetMetricsLiteLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results relevant the request")
-    offset: Optional[StrictInt] = Field(default=None, description=r"the number of mentions objects that are omitted in the items array")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    aggregated_metrics: Optional[Any] = Field(default=None, description=r"aggregated mentions metrics. in this case, always returns null")
-    items: Optional[List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveItem]]] = Field(default=None, description=r"array of aggregated mentions metrics. contains objects with aggregated mention metrics for the specified target")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results relevant the request*")
+    offset: Optional[StrictInt] = Field(default=None, description=r"*the number of mentions objects that are omitted in the `items` array*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    aggregated_metrics: Optional[Any] = Field(default=None, description=r"*aggregated mentions metrics*. in this case, always returns `null`")
+    items: Optional[List[Optional[AiOptimizationLlmMentionsTargetMetricsLiteLiveItem]]] = Field(default=None, description=r"*array of aggregated mentions metrics*. contains objects with aggregated mention metrics for the specified target")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "offset", 

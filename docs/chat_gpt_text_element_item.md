@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**markdown** | **StrictStr** | content of the element in markdown formatcontent of the result formatted in the markdown markup language |[optional]|
-**sources** | **List[Optional[SourceInfo]]** | array of sources |[optional]|
-**brand_entities** | **List[Optional[ChatGptBrandEntity]]** | array of brand entitiescontains information on brands mentioned in the text |[optional]|
+**markdown** | **StrictStr** | <em>content of the element in markdown format</em><br>content of the result formatted in the <a href='https://en.wikipedia.org/wiki/Markdown' target='_blank'>markdown markup language</a> |[optional]|
+**sources** | **List[Optional[SourceInfo]]** | <em>array of sources</em> |[optional]|
+**brand_entities** | **List[Optional[ChatGptBrandEntity]]** | <em>array of brand entities</em><br>contains information on brands mentioned in the text |[optional]|

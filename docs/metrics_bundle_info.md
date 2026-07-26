@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**organic** | **MetricsInfo** | ranking and traffic data from organic search |[optional]|
-**paid** | **MetricsInfo** | ranking and traffic data from paid search |[optional]|
+**organic** | **MetricsInfo** | <em>ranking and traffic data from organic search</em> |[optional]|
+**paid** | **MetricsInfo** | <em>ranking and traffic data from paid search</em> |[optional]|

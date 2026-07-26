@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[BacklinksIndexTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[BacklinksIndexTaskInfo]]** | <em>array of tasks</em> |[optional]|

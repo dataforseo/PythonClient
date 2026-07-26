@@ -15,9 +15,9 @@ class BacklinksBulkNewLostBacklinksLiveItem(BaseModel):
     """
     BacklinksBulkNewLostBacklinksLiveItem
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"domain, subdomain or webpage from a POST array")
-    new_backlinks: Optional[StrictInt] = Field(default=None, description=r"number of new backlinks. number of new backlinks pointing to the target")
-    lost_backlinks: Optional[StrictInt] = Field(default=None, description=r"number of lost backlinks. number of lost backlinks of the target")
+    target: Optional[StrictStr] = Field(default=None, description=r"*domain, subdomain or webpage from a POST array*")
+    new_backlinks: Optional[StrictInt] = Field(default=None, description=r"*number of new backlinks*. number of new backlinks pointing to the `target`")
+    lost_backlinks: Optional[StrictInt] = Field(default=None, description=r"*number of lost backlinks*. number of lost backlinks of the `target`")
     __properties: ClassVar[List[str]] = [
         "target", 
         "new_backlinks", 

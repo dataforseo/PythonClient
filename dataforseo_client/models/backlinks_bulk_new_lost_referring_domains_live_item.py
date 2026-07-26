@@ -15,11 +15,11 @@ class BacklinksBulkNewLostReferringDomainsLiveItem(BaseModel):
     """
     BacklinksBulkNewLostReferringDomainsLiveItem
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"domain, subdomain or webpage from a POST array")
-    new_referring_domains: Optional[StrictInt] = Field(default=None, description=r"number of new referring domains. number of new referring domains pointing to the target")
-    lost_referring_domains: Optional[StrictInt] = Field(default=None, description=r"number of lost referring domains. number of lost referring domains of the target")
-    new_referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"number of new referring main domains pointing to the target")
-    lost_referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"number of lost referring main domains pointing to the target")
+    target: Optional[StrictStr] = Field(default=None, description=r"*domain, subdomain or webpage from a POST array*")
+    new_referring_domains: Optional[StrictInt] = Field(default=None, description=r"*number of new referring domains*. number of new referring domains pointing to the `target`")
+    lost_referring_domains: Optional[StrictInt] = Field(default=None, description=r"*number of lost referring domains*. number of lost referring domains of the `target`")
+    new_referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"*number of new referring main domains pointing to the `target`*")
+    lost_referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"*number of lost referring main domains pointing to the `target`*")
     __properties: ClassVar[List[str]] = [
         "target", 
         "new_referring_domains", 

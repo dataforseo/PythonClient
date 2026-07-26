@@ -19,21 +19,21 @@ class AiOptimizationLlmMentionsSearchMentionsLiveItem(BaseModel):
     """
     AiOptimizationLlmMentionsSearchMentionsLiveItem
     """ # noqa: E501
-    platform: Optional[StrictStr] = Field(default=None, description=r"platform received in a POST array")
-    model_name: Optional[StrictStr] = Field(default=None, description=r"name of the AI model from which the data was retrieved. Note: for the google platform type, the value is always google_ai_overview")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    question: Optional[StrictStr] = Field(default=None, description=r"relevant question")
-    answer: Optional[StrictStr] = Field(default=None, description=r"relevant answer in markdown format. content of the result formatted in the markdown markup language")
-    sources: Optional[List[Optional[Sources]]] = Field(default=None, description=r"array of sources. the sources the model cited or relied on in its final answer. learn more about the sources and how to retrieve LLM citation data at our Help Center")
-    search_results: Optional[List[Optional[SearchResults]]] = Field(default=None, description=r"array of search results. all web search outputs the model retrieved when looking up information, including duplicates and unused entries")
-    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keyword. learn more about this metric here")
-    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly AI search volume rates. array of objects with AI search volume rates in a certain month of a year")
-    first_response_at: Optional[StrictStr] = Field(default=None, description=r"date and time when the response data was first recorded. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-10-21 06:25:30 +00:00")
-    last_response_at: Optional[StrictStr] = Field(default=None, description=r"date and time when the response data was last updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-10-21 06:25:30 +00:00")
-    brand_entities: Optional[List[Optional[BrandEntities]]] = Field(default=None, description=r"array of brand entities. contains information on brands mentioned in the response")
-    fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of fan-out queries. contains related search queries derived from the main query to provide a more comprehensive response")
-    is_web_search_based: Optional[StrictBool] = Field(default=None, description=r"indicates whether the response was generated using web search results. if true, the model retrieved live web search results to produce the response. if false, the response was generated from the model's internal knowledge")
+    platform: Optional[StrictStr] = Field(default=None, description=r"*platform received in a POST array*")
+    model_name: Optional[StrictStr] = Field(default=None, description=r"*name of the AI model from which the data was retrieved*. **Note:** for the `google` platform type, the value is always `google_ai_overview`")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    question: Optional[StrictStr] = Field(default=None, description=r"*relevant question*")
+    answer: Optional[StrictStr] = Field(default=None, description=r"*relevant answer in markdown format*. content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
+    sources: Optional[List[Optional[Sources]]] = Field(default=None, description=r"*array of sources*. the sources the model cited or relied on in its final answer. learn more about the sources and how to retrieve LLM citation data at our [Help Center](https://dataforseo.com/help-center/how-to-get-llm-citation-data-with-llm-mentions-api)")
+    search_results: Optional[List[Optional[SearchResults]]] = Field(default=None, description=r"*array of search results*. all web search outputs the model retrieved when looking up information, including duplicates and unused entries")
+    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"*current AI search volume rate of a keyword*. learn more about this metric [here](https://dataforseo.com/help-center/how-the-ai-search-volume-metric-works-in-llm-mentions)")
+    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"*monthly AI search volume rates*. array of objects with AI search volume rates in a certain month of a year")
+    first_response_at: Optional[StrictStr] = Field(default=None, description=r"*date and time when the response data was first recorded*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2025-10-21 06:25:30 +00:00`")
+    last_response_at: Optional[StrictStr] = Field(default=None, description=r"*date and time when the response data was last updated*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2025-10-21 06:25:30 +00:00`")
+    brand_entities: Optional[List[Optional[BrandEntities]]] = Field(default=None, description=r"*array of brand entities*. contains information on brands mentioned in the response")
+    fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*array of fan-out queries*. contains related search queries derived from the main query to provide a more comprehensive response")
+    is_web_search_based: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the response was generated using web search results*. if `true`, the model retrieved live web search results to produce the response. if `false`, the response was generated from the model's internal knowledge")
     __properties: ClassVar[List[str]] = [
         "platform", 
         "model_name", 

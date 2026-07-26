@@ -16,8 +16,8 @@ class BacklinksBulkRanksLiveResultInfo(BaseModel):
     """
     BacklinksBulkRanksLiveResultInfo
     """ # noqa: E501
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BacklinksBulkRanksLiveItem]]] = Field(default=None, description=r"contains relevant backlinks and referring domains data")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[BacklinksBulkRanksLiveItem]]] = Field(default=None, description=r"*contains relevant backlinks and referring domains data*")
     __properties: ClassVar[List[str]] = [
         "items_count", 
         "items", 

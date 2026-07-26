@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[OnPageUncrawlableResourcesTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[OnPageUncrawlableResourcesTaskInfo]]** | <em>array of tasks</em> |[optional]|

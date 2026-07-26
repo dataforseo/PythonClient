@@ -15,10 +15,10 @@ class LocationChain(BaseModel):
     """
     LocationChain
     """ # noqa: E501
-    card_id: Optional[StrictStr] = Field(default=None, description=r"card identifier")
-    feature_id: Optional[StrictStr] = Field(default=None, description=r"feature identifier. learn more about the identifier in this help center article")
-    cid: Optional[StrictStr] = Field(default=None, description=r"client id. learn more about the identifier in this help center article")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element in the location chain")
+    card_id: Optional[StrictStr] = Field(default=None, description=r"*card identifier*")
+    feature_id: Optional[StrictStr] = Field(default=None, description=r"*feature identifier*. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    cid: Optional[StrictStr] = Field(default=None, description=r"*client id*. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element in the location chain*")
     __properties: ClassVar[List[str]] = [
         "card_id", 
         "feature_id", 

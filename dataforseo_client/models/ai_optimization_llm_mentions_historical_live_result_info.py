@@ -16,8 +16,8 @@ class AiOptimizationLlmMentionsHistoricalLiveResultInfo(BaseModel):
     """
     AiOptimizationLlmMentionsHistoricalLiveResultInfo
     """ # noqa: E501
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of resuts returned in the items array")
-    items: Optional[List[Optional[AiOptimizationLlmMentionsHistoricalLiveItem]]] = Field(default=None, description=r"array of historical mention metrics. contains objects with historical mention metrics for the specified target. each object contains aggregated mentions metrics for one calendar month")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of resuts returned in the `items` array*")
+    items: Optional[List[Optional[AiOptimizationLlmMentionsHistoricalLiveItem]]] = Field(default=None, description=r"*array of historical mention metrics*. contains objects with historical mention metrics for the specified target. each object contains aggregated mentions metrics for one calendar month")
     __properties: ClassVar[List[str]] = [
         "items_count", 
         "items", 

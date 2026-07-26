@@ -6,5 +6,5 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**value** | **StrictStr** | the value of the rating |[optional]|
-**source** | **StrictStr** | data source |[optional]|
+**value** | **StrictStr** | <em>the value of the rating</em> |[optional]|
+**source** | **StrictStr** | <em>data source</em> |[optional]|

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AiOptimizationLlmMentionsTimeseriesDeltaLiveResultInfo]]** | <em>array of results</em> |[optional]|

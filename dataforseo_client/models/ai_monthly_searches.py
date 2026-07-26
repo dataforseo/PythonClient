@@ -15,9 +15,9 @@ class AiMonthlySearches(BaseModel):
     """
     AiMonthlySearches
     """ # noqa: E501
-    year: Optional[StrictInt] = Field(default=None, description=r"year")
-    month: Optional[StrictInt] = Field(default=None, description=r"month")
-    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"current AI search volume rate of a keyword. learn more about this metric here")
+    year: Optional[StrictInt] = Field(default=None, description=r"*year*")
+    month: Optional[StrictInt] = Field(default=None, description=r"*month*")
+    ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"*current AI search volume rate of a keyword*. learn more about this metric [here](https://dataforseo.com/help-center/what-is-ai-search-volume-in-dataforseo)")
     __properties: ClassVar[List[str]] = [
         "year", 
         "month", 

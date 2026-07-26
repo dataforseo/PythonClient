@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**target** | **StrictStr** | target in the post array |[optional]|
-**total_count** | **StrictInt** | total number of relevant items in the database |[optional]|
-**items_count** | **StrictInt** | number of items in the results array |[optional]|
-**items** | **List[Optional[BacklinksAnchorsLiveItem]]** | items array |[optional]|
+**target** | **StrictStr** | <em>target in the post array</em> |[optional]|
+**total_count** | **StrictInt** | <em>total number of relevant items in the database</em> |[optional]|
+**items_count** | **StrictInt** | <em>number of items in the results array</em> |[optional]|
+**items** | **List[Optional[BacklinksAnchorsLiveItem]]** | <em>items array</em> |[optional]|

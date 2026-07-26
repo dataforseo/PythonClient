@@ -16,10 +16,10 @@ class AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResultInfo(BaseModel):
     """
     AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of results returned in the items array")
-    items: Optional[List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveItem]]] = Field(default=None, description=r"contains specified keywords with their AI search volume rates")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of results returned in the `items` array*")
+    items: Optional[List[Optional[AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveItem]]] = Field(default=None, description=r"*contains specified keywords with their AI search volume rates*")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "language_code", 

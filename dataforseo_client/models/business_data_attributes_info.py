@@ -15,8 +15,8 @@ class BusinessDataAttributesInfo(BaseModel):
     """
     BusinessDataAttributesInfo
     """ # noqa: E501
-    available_attributes: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description=r"available attributes. indicates attributes a business entity can offer")
-    unavailable_attributes: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description=r"unavailable attributes. indicates attributes a business entity cannot offer")
+    available_attributes: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description=r"*available attributes*. indicates attributes a business entity can offer")
+    unavailable_attributes: Optional[Dict[str, Optional[List[Optional[StrictStr]]]]] = Field(default=None, description=r"*unavailable attributes*. indicates attributes a business entity cannot offer")
     __properties: ClassVar[List[str]] = [
         "available_attributes", 
         "unavailable_attributes", 

@@ -361,6 +361,20 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_listings_search_live([BusinessDataBusinessListingsSearchLiveRequestInfo(
+                categories=[
+                    "pizza_restaurant",
+                    ],
+                description="pizza",
+                title="pizza",
+                is_claimed=True,
+                location_coordinate="53.476225,-2.243572,10",
+                order_by=[
+                    "rating.value,desc",
+                    ],
+                filters=[
+                    ,
+                    ],
+                limit=3,
         )]
         )
 except ApiException as e:

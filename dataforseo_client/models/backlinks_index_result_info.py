@@ -16,9 +16,9 @@ class BacklinksIndexResultInfo(BaseModel):
     """
     BacklinksIndexResultInfo
     """ # noqa: E501
-    total_backlinks: Optional[StrictInt] = Field(default=None, description=r"total number of backlinks our database contains for the moment of checking")
-    total_pages: Optional[StrictInt] = Field(default=None, description=r"total number of pages our database contains for the moment of checking")
-    index_history: Optional[List[Optional[IndexHistory]]] = Field(default=None, description=r"index volume data for the past 12 months")
+    total_backlinks: Optional[StrictInt] = Field(default=None, description=r"*total number of backlinks our database contains for the moment of checking*")
+    total_pages: Optional[StrictInt] = Field(default=None, description=r"*total number of pages our database contains for the moment of checking*")
+    index_history: Optional[List[Optional[IndexHistory]]] = Field(default=None, description=r"*index volume data for the past 12 months*")
     __properties: ClassVar[List[str]] = [
         "total_backlinks", 
         "total_pages", 

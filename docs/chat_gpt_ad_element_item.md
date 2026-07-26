@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | name of the brand |[optional]|
-**snippet** | **StrictStr** | source description |[optional]|
-**url** | **StrictStr** | URL |[optional]|
-**domain** | **StrictStr** | domain |[optional]|
-**image_url** | **StrictStr** | URL of the image displayed in the ad |[optional]|
-**advertiser** | **ChatGptAdAdvertiser** | information about the advertiser associated with the ad |[optional]|
+**title** | **StrictStr** | <em>name of the brand</em> |[optional]|
+**snippet** | **StrictStr** | <em>source description</em> |[optional]|
+**url** | **StrictStr** | <em>URL</em> |[optional]|
+**domain** | **StrictStr** | <em>domain</em> |[optional]|
+**image_url** | **StrictStr** | <em>URL of the image displayed in the ad</em> |[optional]|
+**advertiser** | **ChatGptAdAdvertiser** | <em>information about the advertiser associated with the ad</em> |[optional]|

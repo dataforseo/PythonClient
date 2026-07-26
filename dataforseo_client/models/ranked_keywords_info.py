@@ -15,9 +15,9 @@ class RankedKeywordsInfo(BaseModel):
     """
     RankedKeywordsInfo
     """ # noqa: E501
-    page_from_keywords_count_top_3: Optional[StrictInt] = Field(default=None, description=r"number of keywords for which the page is ranked in top 3 search results")
-    page_from_keywords_count_top_10: Optional[StrictInt] = Field(default=None, description=r"number of keywords for which the page is ranked in top 10 search results")
-    page_from_keywords_count_top_100: Optional[StrictInt] = Field(default=None, description=r"number of keywords for which the page is ranked in top 100 search results")
+    page_from_keywords_count_top_3: Optional[StrictInt] = Field(default=None, description=r"")
+    page_from_keywords_count_top_10: Optional[StrictInt] = Field(default=None, description=r"")
+    page_from_keywords_count_top_100: Optional[StrictInt] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "page_from_keywords_count_top_3", 
         "page_from_keywords_count_top_10", 

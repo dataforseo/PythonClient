@@ -16,10 +16,10 @@ class OtherSitesReviewsInfo(BaseModel):
     """
     OtherSitesReviewsInfo
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description=r"review title. contains a name of the third-party site where review initially appeared")
-    url: Optional[StrictStr] = Field(default=None, description=r"review url. URL to the a third-party site where review initially appeared")
-    review_text: Optional[StrictStr] = Field(default=None, description=r"review text. text of the review")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"rating in the review. information about the rating enclosed in the review on a third-party site")
+    title: Optional[StrictStr] = Field(default=None, description=r"*review title*. contains a name of the third-party site where review initially appeared")
+    url: Optional[StrictStr] = Field(default=None, description=r"*review url*. URL to the a third-party site where review initially appeared")
+    review_text: Optional[StrictStr] = Field(default=None, description=r"*review text*. text of the review")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*rating in the review*. information about the rating enclosed in the review on a third-party site")
     __properties: ClassVar[List[str]] = [
         "title", 
         "url", 

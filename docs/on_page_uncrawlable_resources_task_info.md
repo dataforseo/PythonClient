@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[OnPageUncrawlableResourcesResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[OnPageUncrawlableResourcesResultInfo]]** | <em>array of results</em> |[optional]|

@@ -16,9 +16,9 @@ class BusinessDataServiceInfo(BaseModel):
     """
     BusinessDataServiceInfo
     """ # noqa: E501
-    category: Optional[StrictStr] = Field(default=None, description=r"business category. Google My Business general category that best describes the services provided by the business entity")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element in SERP. the name of the business entity for which the results are collected")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"additional information on the business entity")
+    category: Optional[StrictStr] = Field(default=None, description=r"*business category*. Google My Business general category that best describes the services provided by the business entity")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element in SERP*. the name of the business entity for which the results are collected")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*additional information on the business entity*")
     price: Optional[PriceInfo] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "category", 

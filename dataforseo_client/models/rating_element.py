@@ -16,10 +16,10 @@ class RatingElement(BaseModel):
     RatingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in Google Shopping SERPpossible values:left, right")
-    rating_type: Optional[StrictStr] = Field(default=None, description=r"the type of ratinghere you can find the following elements: Max5, Percents, CustomMax")
-    value: Optional[StrictFloat] = Field(default=None, description=r"value of the rating")
-    votes_count: Optional[StrictInt] = Field(default=None, description=r"the amount of feedback")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in Google Shopping SERP*. possible values:. `left`, `right`")
+    rating_type: Optional[StrictStr] = Field(default=None, description=r"*the type of rating*. here you can find the following elements: `Max5`, `Percents`, `CustomMax`")
+    value: Optional[StrictFloat] = Field(default=None, description=r"*value of the rating*")
+    votes_count: Optional[StrictInt] = Field(default=None, description=r"*the amount of feedback*")
     rating_max: Optional[StrictInt] = Field(default=None, description=r"the maximum value for a rating_type")
     __properties: ClassVar[List[str]] = [
         "type", 

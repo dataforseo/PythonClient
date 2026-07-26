@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[BusinessDataGoogleHotelInfoLiveHtmlTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[BusinessDataGoogleHotelInfoLiveHtmlTaskInfo]]** | <em>array of tasks</em> |[optional]|

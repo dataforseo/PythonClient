@@ -16,11 +16,11 @@ class BacklinksHistoryLiveResultInfo(BaseModel):
     """
     BacklinksHistoryLiveResultInfo
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"target from the POST array")
-    date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of the time range. in the UTC format: “yyyy-mm-dd”. example:. 2019-01-01")
-    date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of the time range. in the UTC format: 'yyyy-mm-dd'. example:. '2019-01-15'")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BacklinksHistoryLiveItem]]] = Field(default=None, description=r"contains historical backlink data for the specified domain. the data is provided month-by-month;. the metrics are aggregated according to the backlinks the specified domain had on the first day of each given month")
+    target: Optional[StrictStr] = Field(default=None, description=r"*`target` from the POST array*")
+    date_from: Optional[StrictStr] = Field(default=None, description=r"*starting date of the time range*. in the UTC format: “yyyy-mm-dd”. example:. `2019-01-01`")
+    date_to: Optional[StrictStr] = Field(default=None, description=r"*ending date of the time range*. in the UTC format: `'yyyy-mm-dd'`. example:. `'2019-01-15'`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[BacklinksHistoryLiveItem]]] = Field(default=None, description=r"*contains historical backlink data for the specified domain*. the data is provided month-by-month;. the metrics are aggregated according to the backlinks the specified domain had on the first day of each given month")
     __properties: ClassVar[List[str]] = [
         "target", 
         "date_from", 

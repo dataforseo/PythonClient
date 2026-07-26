@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | name of the brand |[optional]|
-**sources** | **List[Optional[SourceInfo]]** | array of sources |[optional]|
+**title** | **StrictStr** | <em>name of the brand</em> |[optional]|
+**sources** | **List[Optional[SourceInfo]]** | <em>array of sources</em> |[optional]|

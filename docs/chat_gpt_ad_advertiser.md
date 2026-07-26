@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**name** | **StrictStr** | name of the advertiser |[optional]|
-**url** | **StrictStr** | source URL |[optional]|
-**favicon_url** | **StrictStr** | URL of the advertiser's favicon image |[optional]|
+**name** | **StrictStr** | <em>name of the advertiser</em> |[optional]|
+**url** | **StrictStr** | <em>source URL</em> |[optional]|
+**favicon_url** | **StrictStr** | <em>URL of the advertiser's favicon image</em> |[optional]|

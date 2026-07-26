@@ -15,9 +15,9 @@ class Source(BaseModel):
     """
     Source
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description=r"name of the source where the review was posted")
-    image: Optional[StrictStr] = Field(default=None, description=r"featured image of the source")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain of the source where the review was posted")
+    title: Optional[StrictStr] = Field(default=None, description=r"*name of the source where the review was posted*")
+    image: Optional[StrictStr] = Field(default=None, description=r"*featured image of the source*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain of the source where the review was posted*")
     __properties: ClassVar[List[str]] = [
         "title", 
         "image", 
