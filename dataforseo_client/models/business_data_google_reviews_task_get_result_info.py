@@ -17,22 +17,22 @@ class BusinessDataGoogleReviewsTaskGetResultInfo(BaseModel):
     """
     BusinessDataGoogleReviewsTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword received in a POST array*. **keyword is returned with decoded %## (plus character '+' will be decoded to a space character)**")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the ‘reviews’ element in SERP. the name of the local establishment for which the reviews are collected")
-    sub_title: Optional[StrictStr] = Field(default=None, description=r"subtitle of the ‘reviews’ element in SERP. additional information (e.g., address) on the ‘reviews’ element for which the reviews are collected")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local establishment. popularity rate based on reviews and displayed in SERP")
-    feature_id: Optional[StrictStr] = Field(default=None, description=r"the unique identifier of the ‘reviews’ element in SERP. learn more about the identifier in this help center article")
-    place_id: Optional[StrictStr] = Field(default=None, description=r"unique identifier of a business location assigned by Google. learn more about the identifier in this help center article")
-    cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment. learn more about the identifier in this help center article")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews items in the results array. you can get more results by using the depth parameter when setting a task")
-    items: Optional[List[Optional[GoogleReviewsSearch]]] = Field(default=None, description=r"found reviews. you can get more results by using the depth parameter when setting a task")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the 'reviews' element in SERP*. the name of the local establishment for which the reviews are collected")
+    sub_title: Optional[StrictStr] = Field(default=None, description=r"*subtitle of the 'reviews' element in SERP*. additional information (e.g., address) on the 'reviews' element for which the reviews are collected")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*rating of the corresponding local establishment*. popularity rate based on reviews and displayed in SERP")
+    feature_id: Optional[StrictStr] = Field(default=None, description=r"*the unique identifier of the 'reviews' element in SERP*. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    place_id: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of a business location assigned by Google*. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    cid: Optional[StrictStr] = Field(default=None, description=r"*google-defined client id*. unique id of a local establishment. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of reviews*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of reviews items in the results array*. you can get more results by using the `depth` parameter when setting a task")
+    items: Optional[List[Optional[GoogleReviewsSearch]]] = Field(default=None, description=r"*found reviews*. you can get more results by using the `depth` parameter when setting a task")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 

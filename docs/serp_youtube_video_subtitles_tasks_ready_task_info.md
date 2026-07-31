@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpYoutubeVideoSubtitlesTasksReadyResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpYoutubeVideoSubtitlesTasksReadyResultInfo]]** | <em>array of results</em> |[optional]|

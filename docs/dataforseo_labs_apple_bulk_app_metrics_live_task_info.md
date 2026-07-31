@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[DataforseoLabsAppleBulkAppMetricsLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[DataforseoLabsAppleBulkAppMetricsLiveResultInfo]]** | <em>array of results</em> |[optional]|

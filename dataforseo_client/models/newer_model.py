@@ -15,8 +15,8 @@ class NewerModel(BaseModel):
     """
     NewerModel
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description=r"product title")
-    newer_model_asin: Optional[StrictStr] = Field(default=None, description=r"ASIN of the newer product model")
+    title: Optional[StrictStr] = Field(default=None, description=r"*product title*")
+    newer_model_asin: Optional[StrictStr] = Field(default=None, description=r"*ASIN of the newer product model*")
     __properties: ClassVar[List[str]] = [
         "title", 
         "newer_model_asin", 

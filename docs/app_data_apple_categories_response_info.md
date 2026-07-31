@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AppDataAppleCategoriesTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AppDataAppleCategoriesTaskInfo]]** | <em>array of tasks</em> |[optional]|

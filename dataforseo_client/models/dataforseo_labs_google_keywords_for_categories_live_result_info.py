@@ -23,7 +23,7 @@ class DataforseoLabsGoogleKeywordsForCategoriesLiveResultInfo(BaseModel):
     total_count: Optional[StrictInt] = Field(default=None, description=r"the total amount of results in our database relevant to your request")
     items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
     offset: Optional[StrictInt] = Field(default=None, description=r"current offset value")
-    offset_token: Optional[StrictStr] = Field(default=None, description=r"offset token for subsequent requests. you can use the string provided in this field to get the subsequent results of the initial task;. note: offset_token values are unique for each subsequent task")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"offset token for subsequent requestsyou can use the string provided in this field to get the subsequent results of the initial task;note: offset_token values are unique for each subsequent task")
     items: Optional[List[Optional[KeywordDataInfo]]] = Field(default=None, description=r"contains keyword ideas and related data")
     __properties: ClassVar[List[str]] = [
         "se_type", 

@@ -16,9 +16,9 @@ class DataforseoLabsStatusResultInfo(BaseModel):
     """
     DataforseoLabsStatusResultInfo
     """ # noqa: E501
-    google: Optional[DataforseoLabsStatusInfo] = Field(default=None, description=r"update information for the Google endpoints")
-    bing: Optional[DataforseoLabsStatusInfo] = Field(default=None, description=r"update information for the Bing endpoints")
-    amazon: Optional[DataforseoLabsStatusInfo] = Field(default=None, description=r"update information for the Amazon endpoints")
+    google: Optional[DataforseoLabsStatusInfo] = Field(default=None, description=r"*update information for the Google endpoints*")
+    bing: Optional[DataforseoLabsStatusInfo] = Field(default=None, description=r"*update information for the Bing endpoints*")
+    amazon: Optional[DataforseoLabsStatusInfo] = Field(default=None, description=r"*update information for the Amazon endpoints*")
     __properties: ClassVar[List[str]] = [
         "google", 
         "bing", 

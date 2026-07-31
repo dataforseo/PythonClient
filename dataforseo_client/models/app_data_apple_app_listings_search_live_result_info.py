@@ -16,11 +16,11 @@ class AppDataAppleAppListingsSearchLiveResultInfo(BaseModel):
     """
     AppDataAppleAppListingsSearchLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"the total number of relevant results in the database")
-    count: Optional[StrictInt] = Field(default=None, description=r"the number of items in the results array")
-    offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of returned apps")
-    offset_token: Optional[StrictStr] = Field(default=None, description=r"token for subsequent requests. you can use this parameter in the POST request to avoid timeouts while trying to obtain over 100,000 results in a single request")
-    items: Optional[List[Optional[AppDataAppleAppListingsSearchLiveItem]]] = Field(default=None, description=r"array of apps and related data")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of relevant results in the database*")
+    count: Optional[StrictInt] = Field(default=None, description=r"*the number of items in the results array*")
+    offset: Optional[StrictInt] = Field(default=None, description=r"*offset in the results array of returned apps*")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"*token for subsequent requests*. you can use this parameter in the POST request to avoid timeouts while trying to obtain over 100,000 results in a single request")
+    items: Optional[List[Optional[AppDataAppleAppListingsSearchLiveItem]]] = Field(default=None, description=r"*array of apps and related data*")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "count", 

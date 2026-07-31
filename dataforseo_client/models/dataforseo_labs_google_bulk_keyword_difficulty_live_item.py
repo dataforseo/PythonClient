@@ -15,9 +15,9 @@ class DataforseoLabsGoogleBulkKeywordDifficultyLiveItem(BaseModel):
     """
     DataforseoLabsGoogleBulkKeywordDifficultyLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array")
-    keyword_difficulty: Optional[StrictInt] = Field(default=None, description=r"difficulty of ranking in the first top-10 organic results for a keyword. indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100;. calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP;. learn more about the metric in this help center guide")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*")
+    keyword_difficulty: Optional[StrictInt] = Field(default=None, description=r"*difficulty of ranking in the first top-10 organic results for a keyword*. indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100;. calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP;. learn more about the metric in [this help center guide](https://dataforseo.com/help-center/what-is-keyword-difficulty-and-how-is-it-calculated)")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword", 

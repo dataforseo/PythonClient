@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AppendixStatusTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AppendixStatusTaskInfo]]** | <em>array of tasks</em> |[optional]|

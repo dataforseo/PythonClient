@@ -15,8 +15,8 @@ class Categories(BaseModel):
     """
     Categories
     """ # noqa: E501
-    category: Optional[StrictStr] = Field(default=None, description=r"product category name")
-    url: Optional[StrictStr] = Field(default=None, description=r"product category URL. indicates the browse path on Amazon with the unique browse node ID (product category ID on Amazon)")
+    category: Optional[StrictStr] = Field(default=None, description=r"*product category name*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*product category URL*. indicates the [browse path on Amazon](https://sellercentral.amazon.com/gp/help/external/G1661?language=en_US) with the unique browse node ID (product category ID on Amazon)")
     __properties: ClassVar[List[str]] = [
         "category", 
         "url", 

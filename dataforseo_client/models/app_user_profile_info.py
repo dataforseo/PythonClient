@@ -15,8 +15,8 @@ class AppUserProfileInfo(BaseModel):
     """
     AppUserProfileInfo
     """ # noqa: E501
-    profile_name: Optional[StrictStr] = Field(default=None, description=r"profile name of the reviewer")
-    profile_image_url: Optional[StrictStr] = Field(default=None, description=r"URL to the reviewer’s profile image")
+    profile_name: Optional[StrictStr] = Field(default=None, description=r"*profile name of the reviewer*")
+    profile_image_url: Optional[StrictStr] = Field(default=None, description=r"*URL to the reviewer's profile image*")
     __properties: ClassVar[List[str]] = [
         "profile_name", 
         "profile_image_url", 

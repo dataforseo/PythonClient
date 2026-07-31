@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AppDataAppleAppSearchesTaskGetAdvancedResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AppDataAppleAppSearchesTaskGetAdvancedResultInfo]]** | <em>array of results</em> |[optional]|

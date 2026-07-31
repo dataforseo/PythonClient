@@ -15,7 +15,7 @@ class AppDataAppleCategoriesResultInfo(BaseModel):
     """
     AppDataAppleCategoriesResultInfo
     """ # noqa: E501
-    categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"contains full list of supported app categories")
+    categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*contains full list of supported app categories*")
     __properties: ClassVar[List[str]] = [
         "categories", 
         ]

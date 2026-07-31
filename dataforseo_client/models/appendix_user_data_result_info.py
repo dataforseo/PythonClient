@@ -18,13 +18,13 @@ class AppendixUserDataResultInfo(BaseModel):
     """
     AppendixUserDataResultInfo
     """ # noqa: E501
-    login: Optional[StrictStr] = Field(default=None, description=r"your login")
-    timezone: Optional[StrictStr] = Field(default=None, description=r"your time zone. can be set in your profile settings")
-    rates: Optional[AppendixRatesData] = Field(default=None, description=r"your API rates")
-    money: Optional[AppendixMoneyData] = Field(default=None, description=r"section of your spending, USD")
-    price: Optional[AppendixPriceData] = Field(default=None, description=r"pricing")
-    backlinks_subscription_expiry_date: Optional[StrictStr] = Field(default=None, description=r"expiry date of the backlinks api subscription. date and time when the current subscription to Backlinks API expires;. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-06-15 12:57:46 +00:00. Note: if there is no active subscription to Backlinks API, the value equals null")
-    llm_mentions_subscription_expiry_date: Optional[StrictStr] = Field(default=None, description=r"expiry date of the llm mentions api subscription. date and time when the current subscription to LLM Mentions API expires;. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2026-02-28 14:01:38 +00:00. Note: if there is no active subscription to LLM Mentions API, the value equals null")
+    login: Optional[StrictStr] = Field(default=None, description=r"*your login*")
+    timezone: Optional[StrictStr] = Field(default=None, description=r"*your time zone*. **can be set in your profile settings**")
+    rates: Optional[AppendixRatesData] = Field(default=None, description=r"*your API rates*")
+    money: Optional[AppendixMoneyData] = Field(default=None, description=r"*section of your spending, USD*")
+    price: Optional[AppendixPriceData] = Field(default=None, description=r"*pricing*")
+    backlinks_subscription_expiry_date: Optional[StrictStr] = Field(default=None, description=r"*expiry date of the backlinks api subscription*. date and time when the current subscription to Backlinks API expires;. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2025-06-15 12:57:46 +00:00`. **Note:** if there is no active subscription to Backlinks API, the value equals `null`")
+    llm_mentions_subscription_expiry_date: Optional[StrictStr] = Field(default=None, description=r"*expiry date of the llm mentions api subscription*. date and time when the current subscription to LLM Mentions API expires;. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2026-02-28 14:01:38 +00:00`. **Note:** if there is no active subscription to LLM Mentions API, the value equals `null`")
     __properties: ClassVar[List[str]] = [
         "login", 
         "timezone", 

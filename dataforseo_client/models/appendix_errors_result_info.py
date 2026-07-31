@@ -15,8 +15,8 @@ class AppendixErrorsResultInfo(BaseModel):
     """
     AppendixErrorsResultInfo
     """ # noqa: E501
-    code: Optional[StrictInt] = Field(default=None, description=r"code")
-    message: Optional[StrictStr] = Field(default=None, description=r"message")
+    code: Optional[StrictInt] = Field(default=None, description=r"*code*")
+    message: Optional[StrictStr] = Field(default=None, description=r"*message*")
     __properties: ClassVar[List[str]] = [
         "code", 
         "message", 

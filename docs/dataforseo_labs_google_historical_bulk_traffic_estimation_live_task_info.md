@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveResultInfo]]** | <em>array of results</em> |[optional]|

@@ -44,6 +44,7 @@ class BingOrganicSerpElementItem(BaseBingSerpApiElementItem):
     is_featured_snippet: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is a featured_snippet")
     is_malicious: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is marked as malicious")
     is_web_story: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is marked as a web story")
+    checks: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"")
     pre_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended before the result description in SERP")
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended after the result description in SERP")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element")
@@ -78,6 +79,7 @@ class BingOrganicSerpElementItem(BaseBingSerpApiElementItem):
         "is_featured_snippet", 
         "is_malicious", 
         "is_web_story", 
+        "checks", 
         "pre_snippet", 
         "extended_snippet", 
         "images", 
@@ -137,6 +139,7 @@ class BingOrganicSerpElementItem(BaseBingSerpApiElementItem):
         _dict['is_featured_snippet'] = self.is_featured_snippet
         _dict['is_malicious'] = self.is_malicious
         _dict['is_web_story'] = self.is_web_story
+        _dict['checks'] = self.checks
         _dict['pre_snippet'] = self.pre_snippet
         _dict['extended_snippet'] = self.extended_snippet
         images_items = []
@@ -197,6 +200,7 @@ class BingOrganicSerpElementItem(BaseBingSerpApiElementItem):
             "is_featured_snippet": obj.get("is_featured_snippet"),
             "is_malicious": obj.get("is_malicious"),
             "is_web_story": obj.get("is_web_story"),
+            "checks": obj.get("checks"),
             "pre_snippet": obj.get("pre_snippet"),
             "extended_snippet": obj.get("extended_snippet"),
             "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,

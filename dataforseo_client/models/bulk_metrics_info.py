@@ -15,8 +15,8 @@ class BulkMetricsInfo(BaseModel):
     """
     BulkMetricsInfo
     """ # noqa: E501
-    etv: Optional[StrictFloat] = Field(default=None, description=r"estimated traffic volume. estimated organic monthly traffic to the domain. calculated as the product of CTR (click-through-rate) and search volume values of all keywords the domain ranks for. learn more about how the metric is calculated in this help center article")
-    count: Optional[StrictInt] = Field(default=None, description=r"total count of organic SERPs that contain the domain")
+    etv: Optional[StrictFloat] = Field(default=None, description=r"*estimated traffic volume*. estimated organic monthly traffic to the domain. calculated as the product of CTR (click-through-rate) and search volume values of all keywords the domain ranks for. learn more about how the metric is calculated in [this help center article](https://dataforseo.com/help-center/how-is-etv-calculated)")
+    count: Optional[StrictInt] = Field(default=None, description=r"*total count of organic SERPs that contain the domain*")
     __properties: ClassVar[List[str]] = [
         "etv", 
         "count", 

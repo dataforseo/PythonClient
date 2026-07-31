@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpGoogleDatasetSearchTasksFixedTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpGoogleDatasetSearchTasksFixedTaskInfo]]** | <em>array of tasks</em> |[optional]|

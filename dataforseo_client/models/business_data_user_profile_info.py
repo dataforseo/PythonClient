@@ -15,11 +15,11 @@ class BusinessDataUserProfileInfo(BaseModel):
     """
     BusinessDataUserProfileInfo
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description=r"the name of the reviewer")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the reviewer’s profile")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL to the reviewer’s profile picture")
-    location: Optional[StrictStr] = Field(default=None, description=r"country of the reviewer")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"total number of reviews submitted by the reviewer")
+    name: Optional[StrictStr] = Field(default=None, description=r"")
+    url: Optional[StrictStr] = Field(default=None, description=r"")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"")
+    location: Optional[StrictStr] = Field(default=None, description=r"")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"*total number of reviews submitted by the reviewer*")
     __properties: ClassVar[List[str]] = [
         "name", 
         "url", 

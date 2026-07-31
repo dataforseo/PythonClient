@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**app_id** | **StrictStr** | ID of the returned app |[optional]|
-**se_domain** | **StrictStr** | search engine domain in a POST array |[optional]|
-**location_code** | **StrictInt** | location code in a POST array |[optional]|
-**language_code** | **StrictStr** | language code in a POST array |[optional]|
-**check_url** | **StrictStr** | direct URL to search engine results<br>you can use it to make sure that we provided accurate results |[optional]|
-**time_update** | **StrictStr** | date and time when SERP data was last updated<br>in the ISO 8601 format: “YYYY-MM-DDThh:mm:ss.sssssssZ”<br>example:<br>2023-05-23 10:16:19 +00:00 |[optional]|
-**item** | **AppStoreInfoOrganic** | detailed information about the app |[optional]|
+**app_id** | **StrictStr** | <em>ID of the returned app</em> |[optional]|
+**se_domain** | **StrictStr** | <em>search engine domain in a POST array</em> |[optional]|
+**location_code** | **StrictInt** | <em>location code in a POST array</em> |[optional]|
+**language_code** | **StrictStr** | <em>language code in a POST array</em> |[optional]|
+**check_url** | **StrictStr** | <em>direct URL to search engine results</em><br>you can use it to make sure that we provided accurate results |[optional]|
+**time_update** | **StrictStr** | <em>date and time when SERP data was last updated</em><br>in the <a href='https://en.wikipedia.org/wiki/ISO_8601'>ISO 8601</a> format: “YYYY-MM-DDThh:mm:ss.sssssssZ”<br>example:<br><code class='long-string'>2023-05-23 10:16:19 +00:00</code> |[optional]|
+**item** | **AppStoreInfoOrganic** | <em>detailed information about the app</em> |[optional]|

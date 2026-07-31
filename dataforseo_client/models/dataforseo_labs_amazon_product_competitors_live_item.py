@@ -16,13 +16,13 @@ class DataforseoLabsAmazonProductCompetitorsLiveItem(BaseModel):
     """
     DataforseoLabsAmazonProductCompetitorsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    asin: Optional[StrictStr] = Field(default=None, description=r"ASIN in a POST array")
-    avg_position: Optional[StrictFloat] = Field(default=None, description=r"average position of the product in Amazon SERP. Note: average position is calculated for intersected keywords only;. the value for a given product may differ when combined with different target products")
-    sum_position: Optional[StrictInt] = Field(default=None, description=r"sum of all product positions in Amazon SERP. Note: average position is calculated for intersected keywords only;. the value for a given product may differ when combined with different target products")
-    intersections: Optional[StrictInt] = Field(default=None, description=r"number of intersecting keywords")
-    competitor_metrics: Optional[AmazonMetricsBundleInfo] = Field(default=None, description=r"metrics for intersecting keywords. ranking data relevant to the keywords that the provided asin shares with the target asin;. Note: in this object ranking data is provided for the returned competitor’s asin")
-    full_metrics: Optional[AmazonMetricsBundleInfo] = Field(default=None, description=r"metrics for all keywords of the product. full overview of ranking data relevant to all keywords that the provided asin is ranking for")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    asin: Optional[StrictStr] = Field(default=None, description=r"*ASIN in a POST array*")
+    avg_position: Optional[StrictFloat] = Field(default=None, description=r"*average position of the product in Amazon SERP*. **Note:** average position is calculated for intersected keywords only;. the value for a given product may differ when combined with different target products")
+    sum_position: Optional[StrictInt] = Field(default=None, description=r"*sum of all product positions in Amazon SERP*. **Note:** average position is calculated for intersected keywords only;. the value for a given product may differ when combined with different target products")
+    intersections: Optional[StrictInt] = Field(default=None, description=r"*number of intersecting keywords*")
+    competitor_metrics: Optional[AmazonMetricsBundleInfo] = Field(default=None, description=r"*metrics for intersecting keywords*. ranking data relevant to the keywords that the provided `asin` shares with the target `asin`;. **Note:** in this object ranking data is provided for the returned competitor's `asin`")
+    full_metrics: Optional[AmazonMetricsBundleInfo] = Field(default=None, description=r"*metrics for all keywords of the product*. full overview of ranking data relevant to all keywords that the provided `asin` is ranking for")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "asin", 

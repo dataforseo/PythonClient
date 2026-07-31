@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleAdsSearchLocationsResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpGoogleAdsSearchLocationsResultInfo]]** | <em>array of results</em> |[optional]|

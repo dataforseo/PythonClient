@@ -16,13 +16,13 @@ class DataforseoLabsGoogleCompetitorsDomainLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleCompetitorsDomainLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    target: Optional[StrictStr] = Field(default=None, description=r"target domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleCompetitorsDomainLiveItem]]] = Field(default=None, description=r"contains data related to the target and competitor domains")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    target: Optional[StrictStr] = Field(default=None, description=r"*target domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsGoogleCompetitorsDomainLiveItem]]] = Field(default=None, description=r"*contains data related to the `target` and competitor domains*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "target", 

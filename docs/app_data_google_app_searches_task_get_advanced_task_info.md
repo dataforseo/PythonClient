@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AppDataGoogleAppSearchesTaskGetAdvancedResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AppDataGoogleAppSearchesTaskGetAdvancedResultInfo]]** | <em>array of results</em> |[optional]|

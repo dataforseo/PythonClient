@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[ContentAnalysisLocationsResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[ContentAnalysisLocationsResultInfo]]** | <em>array of results</em> |[optional]|

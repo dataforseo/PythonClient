@@ -16,13 +16,13 @@ class DataforseoLabsleAppCompetitorsLiveItem(BaseModel):
     """
     DataforseoLabsleAppCompetitorsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the app in a POST array")
-    avg_position: Optional[StrictFloat] = Field(default=None, description=r"average position of the app in Google Play SERP. Note: average position is calculated for intersected keywords only;. the value for a given application may differ when combined with different target applications")
-    sum_position: Optional[StrictInt] = Field(default=None, description=r"sum of all app positions in Google Play SERP. Note: sum position is calculated for intersected keywords only;. the value for a given application may differ when combined with different target applications")
-    intersections: Optional[StrictInt] = Field(default=None, description=r"number of intersecting keywords")
-    competitor_metrics: Optional[Dict[str, Optional[AppMetricsInfo]]] = Field(default=None, description=r"metrics for intersecting keywords. ranking data relevant to the keywords that the provided competitor application shares with the app in a POST request;. note: in this array ranking data is provided for the returned competitor’s app_id")
-    full_metrics: Optional[Dict[str, Optional[AppMetricsInfo]]] = Field(default=None, description=r"metrics for all keywords of the application. full overview of ranking data relevant to all keywords that the provided app_id is ranking for")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*id of the app in a POST array*")
+    avg_position: Optional[StrictFloat] = Field(default=None, description=r"*average position of the app in Google Play SERP*. **Note:** average position is calculated for intersected keywords only;. the value for a given application may differ when combined with different target applications")
+    sum_position: Optional[StrictInt] = Field(default=None, description=r"*sum of all app positions in Google Play SERP*. **Note:** sum position is calculated for intersected keywords only;. the value for a given application may differ when combined with different target applications")
+    intersections: Optional[StrictInt] = Field(default=None, description=r"*number of intersecting keywords*")
+    competitor_metrics: Optional[Dict[str, Optional[AppMetricsInfo]]] = Field(default=None, description=r"*metrics for intersecting keywords*. ranking data relevant to the keywords that the provided competitor application shares with the app in a POST request;. **note:** in this array ranking data is provided for the returned competitor's `app_id`")
+    full_metrics: Optional[Dict[str, Optional[AppMetricsInfo]]] = Field(default=None, description=r"*metrics for all keywords of the application*. full overview of ranking data relevant to all keywords that the provided `app_id` is ranking for")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "app_id", 

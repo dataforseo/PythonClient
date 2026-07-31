@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpErrorsResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpErrorsResultInfo]]** | <em>array of results</em> |[optional]|

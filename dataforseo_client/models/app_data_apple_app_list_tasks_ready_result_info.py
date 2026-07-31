@@ -15,13 +15,13 @@ class AppDataAppleAppListTasksReadyResultInfo(BaseModel):
     """
     AppDataAppleAppListTasksReadyResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"task identifier of the completed task. unique task identifier in our system in the UUID format")
-    se: Optional[StrictStr] = Field(default=None, description=r"search engine specified when setting the task")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    date_posted: Optional[StrictStr] = Field(default=None, description=r"date when the task was posted (in the UTC format)")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier")
-    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Apple App List task")
-    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Apple App List HTML task. if HTML tasks are not supported in the specified endpoint, the value will be null")
+    id: Optional[StrictStr] = Field(default=None, description=r"*task identifier of the completed task*. **unique task identifier in our system in the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format**")
+    se: Optional[StrictStr] = Field(default=None, description=r"*search engine specified when setting the task*")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    date_posted: Optional[StrictStr] = Field(default=None, description=r"*date when the task was posted (in the UTC format)*")
+    tag: Optional[StrictStr] = Field(default=None, description=r"")
+    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"*URL for collecting the results of the {{up_se_name}} {{normal_se_type}} task*")
+    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"*URL for collecting the results of the {{up_se_name}} {{normal_se_type}} HTML task*. if HTML tasks are not supported in the specified endpoint, the value will be `null`")
     __properties: ClassVar[List[str]] = [
         "id", 
         "se", 

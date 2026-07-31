@@ -16,13 +16,13 @@ class DataforseoLabsAmazonProductKeywordIntersectionsLiveResultInfo(BaseModel):
     """
     DataforseoLabsAmazonProductKeywordIntersectionsLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    asins: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"ASINs in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsAmazonProductKeywordIntersectionsLiveItem]]] = Field(default=None, description=r"contains detected Amazon product competitors and related data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    asins: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"*ASINs in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is_`null`")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsAmazonProductKeywordIntersectionsLiveItem]]] = Field(default=None, description=r"*contains detected Amazon product competitors and related data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "asins", 

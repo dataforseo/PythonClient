@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**latitude** | **StrictFloat** | latitude coordinate of the hotel in google maps<br>example:<br>'latitude': 51.584091 |[optional]|
-**longitude** | **StrictFloat** | longitude coordinate of the hotel in google maps<br>example:<br>'longitude': -0.31365919999999997 |[optional]|
+**latitude** | **StrictFloat** | <i>latitude coordinate of the hotel in google maps</i><br>example:<br><code>'latitude': 51.584091</code> |[optional]|
+**longitude** | **StrictFloat** | <i>longitude coordinate of the hotel in google maps</i><br>example:<br><code>'longitude': -0.31365919999999997</code> |[optional]|

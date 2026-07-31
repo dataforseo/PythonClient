@@ -15,11 +15,11 @@ class BacklinksBulkReferringDomainsLiveItem(BaseModel):
     """
     BacklinksBulkReferringDomainsLiveItem
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"domain, subdomain or webpage from a POST array")
-    referring_domains: Optional[StrictInt] = Field(default=None, description=r"number of referring domains pointing to the target. note that we calculate main domains (root domains, like example.com) and their subdomains (e.g. blog.example.com) separately for this metric")
-    referring_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"number of domains pointing at least one nofollow link to the target")
-    referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"number of referring main domains pointing to the target. the number of primary (root) domains referring to your target")
-    referring_main_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"number of main domains pointing at least one nofollow link to the target")
+    target: Optional[StrictStr] = Field(default=None, description=r"*domain, subdomain or webpage from a POST array*")
+    referring_domains: Optional[StrictInt] = Field(default=None, description=r"*number of referring domains pointing to the `target`*. note that we calculate main domains (root domains, like `example.com`) and their subdomains (e.g. `blog.example.com`) separately for this metric")
+    referring_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"*number of domains pointing at least one nofollow link to the `target`*")
+    referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"*number of referring main domains pointing to the `target`*. the number of primary (root) domains referring to your target")
+    referring_main_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"*number of main domains pointing at least one nofollow link to the `target`*")
     __properties: ClassVar[List[str]] = [
         "target", 
         "referring_domains", 

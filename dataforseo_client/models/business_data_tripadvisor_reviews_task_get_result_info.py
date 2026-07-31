@@ -17,18 +17,18 @@ class BusinessDataTripadvisorReviewsTaskGetResultInfo(BaseModel):
     """
     BusinessDataTripadvisorReviewsTaskGetResultInfo
     """ # noqa: E501
-    url_path: Optional[StrictStr] = Field(default=None, description=r"URL path received in a POST array")
+    url_path: Optional[StrictStr] = Field(default=None, description=r"*URL path received in a POST array*")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the ‘reviews’ element in SERP. the name of the local establishment for which the reviews are collected")
-    location: Optional[StrictStr] = Field(default=None, description=r"location of the local establishment. address of the local establishment for which the reviews are collected")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"rating of the corresponding local establishment. popularity rate based on reviews and displayed in SERP")
-    rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"rating distribution by votes. the distribution of votes across the rating in the range from 1 to 5")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews items in the results array. you can get more results by using the depth parameter when setting a task")
-    items: Optional[List[Optional[TripadvisorReviewSearch]]] = Field(default=None, description=r"found reviews. you can get more results by using the depth parameter when setting a task")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the 'reviews' element in SERP*. the name of the local establishment for which the reviews are collected")
+    location: Optional[StrictStr] = Field(default=None, description=r"*location of the local establishment*. address of the local establishment for which the reviews are collected")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of reviews*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*rating of the corresponding local establishment*. popularity rate based on reviews and displayed in SERP")
+    rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*rating distribution by votes*. the distribution of votes across the rating in the range from 1 to 5")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of reviews items in the results array*. you can get more results by using the `depth` parameter when setting a task")
+    items: Optional[List[Optional[TripadvisorReviewSearch]]] = Field(default=None, description=r"*found reviews*. you can get more results by using the `depth` parameter when setting a task")
     language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
     __properties: ClassVar[List[str]] = [
         "url_path", 

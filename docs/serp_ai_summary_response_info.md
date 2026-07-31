@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpAiSummaryTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpAiSummaryTaskInfo]]** | <em>array of tasks</em> |[optional]|

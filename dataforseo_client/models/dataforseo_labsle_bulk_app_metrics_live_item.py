@@ -16,9 +16,9 @@ class DataforseoLabsleBulkAppMetricsLiveItem(BaseModel):
     """
     DataforseoLabsleBulkAppMetricsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the app in a POST array")
-    metrics: Optional[Dict[str, Optional[AppMetricsInfo]]] = Field(default=None, description=r"metrics for the ranking keywords of the app. ranking data relevant to the keywords that the provided application ranks for on Google Play")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*id of the app in a POST array*")
+    metrics: Optional[Dict[str, Optional[AppMetricsInfo]]] = Field(default=None, description=r"*metrics for the ranking keywords of the app*. ranking data relevant to the keywords that the provided application ranks for on Google Play")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "app_id", 

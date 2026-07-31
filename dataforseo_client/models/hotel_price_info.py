@@ -17,14 +17,14 @@ class HotelPriceInfo(BaseModel):
     """
     HotelPriceInfo
     """ # noqa: E501
-    price: Optional[StrictFloat] = Field(default=None, description=r"price per night")
-    price_without_discount: Optional[StrictFloat] = Field(default=None, description=r"full price per night without a discount applied")
-    currency: Optional[StrictStr] = Field(default=None, description=r"price currency. USD is applied by default, unless specified in the POST array")
-    discount_text: Optional[StrictStr] = Field(default=None, description=r"text about a discount applied")
-    check_in: Optional[StrictStr] = Field(default=None, description=r"check-in date and time. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    check_out: Optional[StrictStr] = Field(default=None, description=r"check-out date and time. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    visitors: Optional[StrictInt] = Field(default=None, description=r"number of hotel visitors for this price")
-    items: Optional[List[Optional[HotelPriceItemInfo]]] = Field(default=None, description=r"encountered item types. types of search engine results encountered in the items array;. possible item types: hotel_search_item")
+    price: Optional[StrictFloat] = Field(default=None, description=r"*price per night*")
+    price_without_discount: Optional[StrictFloat] = Field(default=None, description=r"*full price per night without a discount applied*")
+    currency: Optional[StrictStr] = Field(default=None, description=r"*price currency*. `USD` is applied by default, unless specified in the POST array")
+    discount_text: Optional[StrictStr] = Field(default=None, description=r"*text about a discount applied*")
+    check_in: Optional[StrictStr] = Field(default=None, description=r"*check-in date and time*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    check_out: Optional[StrictStr] = Field(default=None, description=r"*check-out date and time*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    visitors: Optional[StrictInt] = Field(default=None, description=r"*number of hotel visitors for this price*")
+    items: Optional[List[Optional[HotelPriceItemInfo]]] = Field(default=None, description=r"*encountered item types*. types of search engine results encountered in the `items` array;. possible item types: `hotel_search_item`")
     prices_by_dates: Optional[List[Optional[PricesByDates]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "price", 

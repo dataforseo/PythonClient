@@ -16,18 +16,18 @@ class BacklinksTimeseriesSummaryLiveItem(BaseModel):
     BacklinksTimeseriesSummaryLiveItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    date: Optional[StrictStr] = Field(default=None, description=r"date and time when the data for the target was stored. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    rank: Optional[StrictInt] = Field(default=None, description=r"target rank for the given date. learn more about the metric and how it is calculated in this help center article")
-    backlinks: Optional[StrictInt] = Field(default=None, description=r"number of backlinks for the given date")
-    backlinks_nofollow: Optional[StrictInt] = Field(default=None, description=r"number of nofollow backlinks for the given date")
-    referring_pages: Optional[StrictInt] = Field(default=None, description=r"number of pages pointing to target for the given date")
-    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description=r"number of referring pages pointing at least one nofollow link to the target for the given date")
-    referring_domains: Optional[StrictInt] = Field(default=None, description=r"number of referring domains for the given date. referring domains include subdomains that are counted as separate domains for this metric")
-    referring_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"number of domains pointing at least one nofollow link to the target for the given date")
-    referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"number of referring main domains for the given date")
-    referring_main_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"number of main domains pointing at least one nofollow link to the target for the given date")
-    referring_ips: Optional[StrictInt] = Field(default=None, description=r"number of referring IP addresses for the given date. number of IP addresses pointing to this page")
-    referring_subnets: Optional[StrictInt] = Field(default=None, description=r"number of referring subnetworks for the given date")
+    date: Optional[StrictStr] = Field(default=None, description=r"*date and time when the data for the target was stored*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2019-11-15 12:57:46 +00:00`")
+    rank: Optional[StrictInt] = Field(default=None, description=r"*`target` rank for the given `date`*. learn more about the metric and how it is calculated in [this help center article](https://dataforseo.com/help-center/what_is_rank_in_backlinks_api)")
+    backlinks: Optional[StrictInt] = Field(default=None, description=r"*number of backlinks for the given `date`*")
+    backlinks_nofollow: Optional[StrictInt] = Field(default=None, description=r"*number of nofollow backlinks for the given `date`*")
+    referring_pages: Optional[StrictInt] = Field(default=None, description=r"*number of pages pointing to `target` for the given `date`*")
+    referring_pages_nofollow: Optional[StrictInt] = Field(default=None, description=r"*number of referring pages pointing at least one nofollow link to the `target` for the given `date`*")
+    referring_domains: Optional[StrictInt] = Field(default=None, description=r"*number of referring domains for the given `date`*. referring domains include subdomains that are counted as separate domains for this metric")
+    referring_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"*number of domains pointing at least one nofollow link to the `target` for the given `date`*")
+    referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"*number of referring main domains for the given `date`*")
+    referring_main_domains_nofollow: Optional[StrictInt] = Field(default=None, description=r"*number of main domains pointing at least one nofollow link to the `target` for the given `date`*")
+    referring_ips: Optional[StrictInt] = Field(default=None, description=r"*number of referring IP addresses for the given `date`*. number of IP addresses pointing to this page")
+    referring_subnets: Optional[StrictInt] = Field(default=None, description=r"*number of referring subnetworks for the given `date`*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "date", 

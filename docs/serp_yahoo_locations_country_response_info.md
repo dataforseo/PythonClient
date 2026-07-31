@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpYahooLocationsCountryTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpYahooLocationsCountryTaskInfo]]** | <em>array of tasks</em> |[optional]|

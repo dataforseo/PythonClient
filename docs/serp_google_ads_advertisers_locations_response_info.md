@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpGoogleAdsAdvertisersLocationsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpGoogleAdsAdvertisersLocationsTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -15,8 +15,8 @@ class AppDataAppleLanguagesResultInfo(BaseModel):
     """
     AppDataAppleLanguagesResultInfo
     """ # noqa: E501
-    language_name: Optional[StrictStr] = Field(default=None, description=r"language name")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code according to ISO 639-1")
+    language_name: Optional[StrictStr] = Field(default=None, description=r"*language name*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code according to [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)*")
     __properties: ClassVar[List[str]] = [
         "language_name", 
         "language_code", 

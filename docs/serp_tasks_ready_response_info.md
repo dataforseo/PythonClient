@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpTasksReadyTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpTasksReadyTaskInfo]]** | <em>array of tasks</em> |[optional]|

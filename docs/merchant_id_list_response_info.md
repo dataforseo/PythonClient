@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[MerchantIdListTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[MerchantIdListTaskInfo]]** | <em>array of tasks</em> |[optional]|

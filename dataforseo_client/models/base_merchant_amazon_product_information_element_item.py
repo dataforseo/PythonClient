@@ -23,7 +23,7 @@ class BaseMerchantAmazonProductInformationElementItem(BaseModel):
     BaseMerchantAmazonProductInformationElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    section_name: Optional[StrictStr] = Field(default=None, description=r"name of the section related to product information specified in the contents")
+    section_name: Optional[StrictStr] = Field(default=None, description=r"*name of the section related to product information specified in the `contents`*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "section_name", 

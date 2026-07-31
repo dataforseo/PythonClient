@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[DataforseoLabsGoogleDomainMetricsByCategoriesLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[DataforseoLabsGoogleDomainMetricsByCategoriesLiveResultInfo]]** | <em>array of results</em> |[optional]|

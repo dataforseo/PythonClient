@@ -15,12 +15,12 @@ class AppMetricsInfo(BaseModel):
     """
     AppMetricsInfo
     """ # noqa: E501
-    pos_1: Optional[StrictInt] = Field(default=None, description=r"number of organic SERPs where the product ranks #1")
-    pos_2_3: Optional[StrictInt] = Field(default=None, description=r"number of organic SERPs where the product ranks #2-3")
-    pos_4_10: Optional[StrictInt] = Field(default=None, description=r"number of organic SERPs where the product ranks #4-10")
-    pos_11_100: Optional[StrictInt] = Field(default=None, description=r"number of organic SERPs where the product ranks #11-100")
-    count: Optional[StrictInt] = Field(default=None, description=r"total count of Amazon organic SERPs that contain the product")
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"total search volume of the product’s ranking keywords in organic SERP")
+    pos_1: Optional[StrictInt] = Field(default=None, description=r"*number of organic SERPs where the product ranks #1*")
+    pos_2_3: Optional[StrictInt] = Field(default=None, description=r"*number of organic SERPs where the product ranks #2-3*")
+    pos_4_10: Optional[StrictInt] = Field(default=None, description=r"*number of organic SERPs where the product ranks #4-10*")
+    pos_11_100: Optional[StrictInt] = Field(default=None, description=r"*number of organic SERPs where the product ranks #11-100*")
+    count: Optional[StrictInt] = Field(default=None, description=r"*total count of Amazon organic SERPs that contain the product*")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"*total search volume of the product's ranking keywords in organic SERP*")
     __properties: ClassVar[List[str]] = [
         "pos_1", 
         "pos_2_3", 

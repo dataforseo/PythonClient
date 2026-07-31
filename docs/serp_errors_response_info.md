@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpErrorsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpErrorsTaskInfo]]** | <em>array of tasks</em> |[optional]|

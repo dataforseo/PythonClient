@@ -15,8 +15,9 @@
 **related_search_url** | **StrictStr** | URL to a similar search<br>URL to a new search for the same keyword(s) on related sites |[optional]|
 **breadcrumb** | **StrictStr** | breadcrumb in SERP |[optional]|
 **website_name** | **StrictStr** | name of the website in the ad element |[optional]|
-**is_image** | **StrictBool** | indicates whether the element contains an image |[optional]|
-**is_video** | **StrictBool** | indicates whether the element contains a video |[optional]|
+**is_image** | **StrictBool** | indicates whether the element contains an image<br>Note: this check no longer appears in SERP |[optional]|
+**is_video** | **StrictBool** | indicates whether the element contains a video<br>Note: this check no longer appears in SERP |[optional]|
+**checks** | **List[Optional[StrictStr]]** | array of properties detected for the SERP element<br>lists the properties that are true for this element<br>each value in the array represents a detected property<br>example:<br>if is_image is present in the array, the element contains an image<br>possible values in the array:<br>is_image, is_video, is_featured_snippet, amp_version, is_malicious, is_web_story, is_highly_cited<br>equals null if none of the properties are detected for the element<br>learn more about the checks array in this Help Center article |[optional]|
 **description** | **StrictStr** | description of the results element in SERP |[optional]|
 **pre_snippet** | **StrictStr** | includes additional information appended before the result description in SERP |[optional]|
 **extended_snippet** | **StrictStr** | includes additional information appended after the result description in SERP |[optional]|

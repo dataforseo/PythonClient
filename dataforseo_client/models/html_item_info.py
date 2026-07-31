@@ -15,9 +15,9 @@ class HtmlItemInfo(BaseModel):
     """
     HtmlItemInfo
     """ # noqa: E501
-    page: Optional[StrictInt] = Field(default=None, description=r"serial number of the returned HTML page")
-    date: Optional[StrictStr] = Field(default=None, description=r"date and time when the HTML page was scanned. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    html: Optional[StrictStr] = Field(default=None, description=r"HTML page")
+    page: Optional[StrictInt] = Field(default=None, description=r"*serial number of the returned HTML page*")
+    date: Optional[StrictStr] = Field(default=None, description=r"*date and time when the HTML page was scanned*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    html: Optional[StrictStr] = Field(default=None, description=r"*HTML* *page*")
     __properties: ClassVar[List[str]] = [
         "page", 
         "date", 

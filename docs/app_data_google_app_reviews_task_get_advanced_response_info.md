@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AppDataGoogleAppReviewsTaskGetAdvancedTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AppDataGoogleAppReviewsTaskGetAdvancedTaskInfo]]** | <em>array of tasks</em> |[optional]|

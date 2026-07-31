@@ -16,14 +16,14 @@ class AppDataGoogleAppInfoTaskGetHtmlResultInfo(BaseModel):
     """
     AppDataGoogleAppInfoTaskGetHtmlResultInfo
     """ # noqa: E501
-    app_id: Optional[StrictStr] = Field(default=None, description=r"application ID received in a POST request")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*application ID received in a POST request*")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[HtmlItemInfo]]] = Field(default=None, description=r"HTML pages and related data")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[HtmlItemInfo]]] = Field(default=None, description=r"*HTML pages and related data*")
     __properties: ClassVar[List[str]] = [
         "app_id", 
         "type", 

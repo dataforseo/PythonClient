@@ -6,5 +6,5 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**format** | **StrictStr** | type of file format of the dataset<br>for example: zip, html, csv |[optional]|
-**size** | **StrictInt** | file size in bytes |[optional]|
+**format** | **StrictStr** | <em>type of file format of the dataset</em><br>for example: <code>zip</code>, <code>html</code>, <code>csv</code> |[optional]|
+**size** | **StrictInt** | <em>file size in bytes</em> |[optional]|

@@ -18,16 +18,16 @@ class AppStoreReviewsSearch(BaseModel):
     AppStoreReviewsSearch
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank among all the listed reviews. absolute position among all reviews on the list")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the review in SERP. can take the following values: left")
-    version: Optional[StrictStr] = Field(default=None, description=r"version of the app. version of the app for which the review is submitted")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score submitted by the reviewer")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the review was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. 2019-11-15 12:57:46 +00:00")
-    id: Optional[StrictStr] = Field(default=None, description=r"id of the review")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the review")
-    review_text: Optional[StrictStr] = Field(default=None, description=r"content of the review")
-    user_profile: Optional[AppUserProfileInfo] = Field(default=None, description=r"user profile of the reviewer")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank among all the listed reviews*. absolute position among all reviews on the list")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the review in SERP*. can take the following values: `left`")
+    version: Optional[StrictStr] = Field(default=None, description=r"*version of the app*. version of the app for which the review is submitted")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the rating score submitted by the reviewer*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the review was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. `2019-11-15 12:57:46 +00:00`")
+    id: Optional[StrictStr] = Field(default=None, description=r"*id of the review*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the review*")
+    review_text: Optional[StrictStr] = Field(default=None, description=r"*content of the review*")
+    user_profile: Optional[AppUserProfileInfo] = Field(default=None, description=r"*user profile of the reviewer*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

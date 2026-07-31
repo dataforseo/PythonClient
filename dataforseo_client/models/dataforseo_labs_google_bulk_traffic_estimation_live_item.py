@@ -16,9 +16,9 @@ class DataforseoLabsGoogleBulkTrafficEstimationLiveItem(BaseModel):
     """
     DataforseoLabsGoogleBulkTrafficEstimationLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    target: Optional[StrictStr] = Field(default=None, description=r"target domain in a POST array")
-    metrics: Optional[BulkMetricsBundleInfo] = Field(default=None, description=r"traffic data relevant to the specified domain")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    target: Optional[StrictStr] = Field(default=None, description=r"*target domain in a POST array*")
+    metrics: Optional[BulkMetricsBundleInfo] = Field(default=None, description=r"*traffic data relevant to the specified domain*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "target", 

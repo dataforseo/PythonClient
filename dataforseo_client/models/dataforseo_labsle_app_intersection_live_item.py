@@ -17,9 +17,9 @@ class DataforseoLabsleAppIntersectionLiveItem(BaseModel):
     """
     DataforseoLabsleAppIntersectionLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"keyword data for the returned keyword")
-    intersection_result: Optional[Dict[str, Optional[GooglePlaySearchOrganic]]] = Field(default=None, description=r"contains SERP data for the returned keyword. data will be provided in separate arrays for each app ID you specified in the app_ids object when setting a task;. depending on the number of specified app IDs, it can contain from 1 to 20 arrays named respectively")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"*keyword data for the returned keyword*")
+    intersection_result: Optional[Dict[str, Optional[GooglePlaySearchOrganic]]] = Field(default=None, description=r"*contains SERP data for the returned `keyword`*. data will be provided in separate arrays for each app ID you specified in the `app_ids` object when setting a task;. depending on the number of specified app IDs, it can contain from 1 to 20 arrays named respectively")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword_data", 

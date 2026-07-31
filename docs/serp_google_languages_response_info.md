@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpGoogleLanguagesTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpGoogleLanguagesTaskInfo]]** | <em>array of tasks</em> |[optional]|

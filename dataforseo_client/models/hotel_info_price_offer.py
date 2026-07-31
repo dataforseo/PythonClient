@@ -16,9 +16,9 @@ class HotelInfoPriceOffer(BaseModel):
     HotelInfoPriceOffer
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the hotel")
-    price: Optional[StrictFloat] = Field(default=None, description=r"price per night")
-    currency: Optional[StrictStr] = Field(default=None, description=r"price currency. USD is applied by default, unless specified in the POST array")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the hotel*")
+    price: Optional[StrictFloat] = Field(default=None, description=r"*price per night*")
+    currency: Optional[StrictStr] = Field(default=None, description=r"*price currency*. `USD` is applied by default, unless specified in the POST array")
     url: Optional[StrictStr] = Field(default=None, description=r"url of the price offer. URL to the page of the website where price offer appears")
     max_visitors: Optional[StrictInt] = Field(default=None, description=r"the maximal number of visitors. the maximum number of visitors for which the price offer is valid")
     offer_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"price offer images. URLs of the images featured in the price offer")

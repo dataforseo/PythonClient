@@ -28,7 +28,7 @@ class AppendixDayLimitsRatesData(BaseModel):
     AppendixDayLimitsRatesData
     """ # noqa: E501
     serp: Optional[AppendixSerpDaysRatesDataInfo] = Field(default=None, description=r"")
-    total: Optional[StrictFloat] = Field(default=None, description=r"total amount of money deposited to your account")
+    total: Optional[StrictFloat] = Field(default=None, description=r"*total amount of money deposited to your account*")
     total_serp: Optional[StrictFloat] = Field(default=None, description=r"")
     keywords_data: Optional[AppendixKeywordsDataDaysRatesDataInfo] = Field(default=None, description=r"")
     total_keywords_data: Optional[StrictFloat] = Field(default=None, description=r"")

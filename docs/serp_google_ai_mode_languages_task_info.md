@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleAiModeLanguagesResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpGoogleAiModeLanguagesResultInfo]]** | <em>array of results</em> |[optional]|

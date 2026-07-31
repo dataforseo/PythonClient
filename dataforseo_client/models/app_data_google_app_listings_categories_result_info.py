@@ -15,8 +15,8 @@ class AppDataGoogleAppListingsCategoriesResultInfo(BaseModel):
     """
     AppDataGoogleAppListingsCategoriesResultInfo
     """ # noqa: E501
-    category: Optional[StrictStr] = Field(default=None, description=r"name of the supported app category")
-    count: Optional[StrictInt] = Field(default=None, description=r"number of app listings that make up the supported app category")
+    category: Optional[StrictStr] = Field(default=None, description=r"*name of the supported app category*")
+    count: Optional[StrictInt] = Field(default=None, description=r"*number of app listings that make up the supported app category*")
     __properties: ClassVar[List[str]] = [
         "category", 
         "count", 

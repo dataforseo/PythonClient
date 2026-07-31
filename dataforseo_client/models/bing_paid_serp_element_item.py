@@ -36,6 +36,7 @@ class BingPaidSerpElementItem(BaseBingSerpApiElementItem):
     website_name: Optional[StrictStr] = Field(default=None, description=r"website name in SERP")
     is_image: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains an image")
     is_video: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains a video")
+    checks: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"")
     images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"additional information about the result")
@@ -59,6 +60,7 @@ class BingPaidSerpElementItem(BaseBingSerpApiElementItem):
         "website_name", 
         "is_image", 
         "is_video", 
+        "checks", 
         "images", 
         "highlighted", 
         "extra", 
@@ -107,6 +109,7 @@ class BingPaidSerpElementItem(BaseBingSerpApiElementItem):
         _dict['website_name'] = self.website_name
         _dict['is_image'] = self.is_image
         _dict['is_video'] = self.is_video
+        _dict['checks'] = self.checks
         images_items = []
         if self.images:
             for _item in self.images:
@@ -151,6 +154,7 @@ class BingPaidSerpElementItem(BaseBingSerpApiElementItem):
             "website_name": obj.get("website_name"),
             "is_image": obj.get("is_image"),
             "is_video": obj.get("is_video"),
+            "checks": obj.get("checks"),
             "images": [AiModeImagesElementInfo.from_dict(_item) for _item in obj["images"]] if obj.get("images") is not None else None,
             "highlighted": obj.get("highlighted"),
             "extra": obj.get("extra"),

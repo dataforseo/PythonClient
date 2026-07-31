@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AppDataGoogleLanguagesTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AppDataGoogleLanguagesTaskInfo]]** | <em>array of tasks</em> |[optional]|

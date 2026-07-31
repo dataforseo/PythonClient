@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**text** | **StrictStr** | text specified under the given title within the section_name |[optional]|
+**text** | **StrictStr** | <em>text specified under the given <code>title</code> within the <code>section_name</code></em> |[optional]|

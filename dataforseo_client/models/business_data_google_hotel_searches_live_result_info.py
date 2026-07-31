@@ -16,13 +16,13 @@ class BusinessDataGoogleHotelSearchesLiveResultInfo(BaseModel):
     """
     BusinessDataGoogleHotelSearchesLiveResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"item types. the number of items in the items array")
-    items: Optional[List[Optional[BusinessDataGoogleHotelSearchesItem]]] = Field(default=None, description=r"encountered item types. types of search engine results encountered in the items array;. possible item types: hotel_search_item")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword received in a POST array*. **keyword is returned with decoded %## (plus character '+' will be decoded to a space character)**")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*item types*. the number of items in the `items` array")
+    items: Optional[List[Optional[BusinessDataGoogleHotelSearchesItem]]] = Field(default=None, description=r"*encountered item types*. types of search engine results encountered in the `items` array;. possible item types: `hotel_search_item`")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 

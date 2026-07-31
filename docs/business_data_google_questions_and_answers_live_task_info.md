@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **Any** | array of results |[optional]|
+**result** | **Any** | <em>array of results</em> |[optional]|

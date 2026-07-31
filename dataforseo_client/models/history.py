@@ -16,9 +16,9 @@ class History(BaseModel):
     """
     History
     """ # noqa: E501
-    year: Optional[StrictInt] = Field(default=None, description=r"year")
-    month: Optional[StrictInt] = Field(default=None, description=r"month")
-    keyword_info: Optional[KeywordInfo] = Field(default=None, description=r"historical data for the keyword")
+    year: Optional[StrictInt] = Field(default=None, description=r"*year*")
+    month: Optional[StrictInt] = Field(default=None, description=r"*month*")
+    keyword_info: Optional[KeywordInfo] = Field(default=None, description=r"*historical data for the keyword*")
     __properties: ClassVar[List[str]] = [
         "year", 
         "month", 

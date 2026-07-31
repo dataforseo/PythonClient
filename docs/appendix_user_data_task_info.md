@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AppendixUserDataResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AppendixUserDataResultInfo]]** | <em>array of results</em> |[optional]|

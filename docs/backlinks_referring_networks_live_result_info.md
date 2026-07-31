@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**target** | **StrictStr** | target in a POST array |[optional]|
-**total_count** | **StrictInt** | total number of relevant items in the database |[optional]|
-**items_count** | **StrictInt** | number of items in the items array |[optional]|
-**items** | **List[Optional[BacklinksReferringNetworksLiveItem]]** | items array |[optional]|
+**target** | **StrictStr** | <em><code>target</code> in a POST array</em> |[optional]|
+**total_count** | **StrictInt** | <em>total number of relevant items in the database</em> |[optional]|
+**items_count** | **StrictInt** | <em>number of items in the <code>items</code> array</em> |[optional]|
+**items** | **List[Optional[BacklinksReferringNetworksLiveItem]]** | <em>items array</em> |[optional]|

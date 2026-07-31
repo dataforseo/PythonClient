@@ -16,8 +16,8 @@ class DuplicatePageInfo(BaseModel):
     """
     DuplicatePageInfo
     """ # noqa: E501
-    similarity: Optional[StrictInt] = Field(default=None, description=r"content similarity score. by default, the content is considered duplicate if the value is greater than or equals 6. can take values from 0 to 10")
-    page: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description=r"information about the page with duplicate content")
+    similarity: Optional[StrictInt] = Field(default=None, description=r"")
+    page: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description=r"*information about the page with duplicate content*")
     __properties: ClassVar[List[str]] = [
         "similarity", 
         "page", 

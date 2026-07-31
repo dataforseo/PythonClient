@@ -16,16 +16,16 @@ class DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem(BaseModel):
     """
     DataforseoLabsGoogleDomainMetricsByCategoriesLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    top_categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"categories for which domains are collected")
-    organic_etv: Optional[StrictFloat] = Field(default=None, description=r"current organic ETV of the domain")
-    organic_count: Optional[StrictInt] = Field(default=None, description=r"current total count of organic SERPs that contain the domain")
-    organic_is_lost: Optional[StrictInt] = Field(default=None, description=r"current number of lost ranked elements. indicates how many ranked elements of the domain were previously presented in SERPs, but weren’t found during the last check")
-    organic_is_new: Optional[StrictInt] = Field(default=None, description=r"current number of new ranked elements. indicates how many new ranked elements were found for the domain")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain found for the specified category")
-    main_domain: Optional[StrictStr] = Field(default=None, description=r"primary domain")
-    metrics_history: Optional[Dict[str, Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]]]] = Field(default=None, description=r"historical ranking and traffic data of the domain")
-    metrics_difference: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"metrics difference between first_date and second_date. calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    top_categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"*categories for which domains are collected*")
+    organic_etv: Optional[StrictFloat] = Field(default=None, description=r"*current organic ETV of the domain*")
+    organic_count: Optional[StrictInt] = Field(default=None, description=r"*current total count of organic SERPs that contain the domain*")
+    organic_is_lost: Optional[StrictInt] = Field(default=None, description=r"*current number of lost ranked elements*. indicates how many ranked elements of the domain were previously presented in SERPs, but weren’t found during the last check")
+    organic_is_new: Optional[StrictInt] = Field(default=None, description=r"*current number of new ranked elements*. indicates how many new ranked elements were found for the domain")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain found for the specified category*")
+    main_domain: Optional[StrictStr] = Field(default=None, description=r"*primary domain*")
+    metrics_history: Optional[Dict[str, Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]]]] = Field(default=None, description=r"*historical ranking and traffic data of the domain*")
+    metrics_difference: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*metrics difference between `first_date` and `second_date`*. calculated by subtracting domain metrics as of the greater date from domain metrics as of the smaller date")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "top_categories", 

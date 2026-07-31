@@ -15,11 +15,11 @@ class LocationInfo(BaseModel):
     """
     LocationInfo
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description=r"name of the event’s venue")
-    address: Optional[StrictStr] = Field(default=None, description=r"address of the event’s venue")
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. can be used with Google Reviews API to get a full list of reviews")
-    feature_id: Optional[StrictStr] = Field(default=None, description=r"the unique identifier of the element in SERP")
+    name: Optional[StrictStr] = Field(default=None, description=r"*name of the event's venue*")
+    address: Optional[StrictStr] = Field(default=None, description=r"*address of the event's venue*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    cid: Optional[StrictStr] = Field(default=None, description=r"*google-defined client id*. can be used with [Google Reviews API](/v3/business_data/google/reviews/task_post/?php) to get a full list of reviews")
+    feature_id: Optional[StrictStr] = Field(default=None, description=r"*the unique identifier of the element in SERP*")
     __properties: ClassVar[List[str]] = [
         "name", 
         "address", 

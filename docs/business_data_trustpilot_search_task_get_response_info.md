@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[BusinessDataTrustpilotSearchTaskGetTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[BusinessDataTrustpilotSearchTaskGetTaskInfo]]** | <em>array of tasks</em> |[optional]|

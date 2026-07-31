@@ -17,8 +17,8 @@ class ProductInformationRows(BaseModel):
     ProductInformationRows
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title under which related product information appears on the Amazon product page")
-    rows: Optional[List[Optional[BaseMerchantAmazonProductInformationRowElementItem]]] = Field(default=None, description=r"rows containing related product information")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title under which related product information appears on the Amazon product page*")
+    rows: Optional[List[Optional[BaseMerchantAmazonProductInformationRowElementItem]]] = Field(default=None, description=r"*rows containing related product information*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

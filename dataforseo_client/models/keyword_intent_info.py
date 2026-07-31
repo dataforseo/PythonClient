@@ -15,8 +15,8 @@ class KeywordIntentInfo(BaseModel):
     """
     KeywordIntentInfo
     """ # noqa: E501
-    label: Optional[StrictStr] = Field(default=None, description=r"search intent name. possible values: informational, navigational, commercial, transactional")
-    probability: Optional[StrictFloat] = Field(default=None, description=r"search intent probability. 1 indicates the highest probability")
+    label: Optional[StrictStr] = Field(default=None, description=r"*search intent name*. possible values: `informational`, `navigational`, `commercial`, `transactional`")
+    probability: Optional[StrictFloat] = Field(default=None, description=r"*search intent probability*. `1` indicates the highest probability")
     __properties: ClassVar[List[str]] = [
         "label", 
         "probability", 

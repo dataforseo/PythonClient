@@ -18,19 +18,19 @@ class GooglePlaySearchOrganic(BaseModel):
     GooglePlaySearchOrganic
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the app in a POST array")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the app")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the app page on Google Play")
-    icon: Optional[StrictStr] = Field(default=None, description=r"URL to the app icon")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews of the app")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"average rating of the app")
-    is_free: Optional[StrictBool] = Field(default=None, description=r"indicates whether the app is free")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price of the app")
-    developer: Optional[StrictStr] = Field(default=None, description=r"name of the app developer")
-    developer_url: Optional[StrictStr] = Field(default=None, description=r"URL to the developer page on Google Play")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*. can take the following values:. `left`, `right`")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*id of the app in a POST array*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the app*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to the app page on Google Play*")
+    icon: Optional[StrictStr] = Field(default=None, description=r"*URL to the app icon*")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of reviews of the app*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*average rating of the app*")
+    is_free: Optional[StrictBool] = Field(default=None, description=r"")
+    price: Optional[PriceInfo] = Field(default=None, description=r"")
+    developer: Optional[StrictStr] = Field(default=None, description=r"*name of the app developer*")
+    developer_url: Optional[StrictStr] = Field(default=None, description=r"*URL to the developer page on Google Play*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

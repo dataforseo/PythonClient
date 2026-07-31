@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[DataforseoLabsStatusTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[DataforseoLabsStatusTaskInfo]]** | <em>array of tasks</em> |[optional]|

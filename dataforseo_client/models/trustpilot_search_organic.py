@@ -17,13 +17,13 @@ class TrustpilotSearchOrganic(BaseModel):
     TrustpilotSearchOrganic
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank among all the listed reviews. absolute position among all reviews on the list")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the establishment")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain of the establishment")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the establishment")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score of the establishment submitted by reviewers")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank among all the listed reviews*. absolute position among all reviews on the list")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the establishment*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain of the establishment*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to the establishment*")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of reviews*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the rating score of the establishment submitted by reviewers*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

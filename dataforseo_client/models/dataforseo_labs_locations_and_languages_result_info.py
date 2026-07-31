@@ -16,12 +16,12 @@ class DataforseoLabsLocationsAndLanguagesResultInfo(BaseModel):
     """
     DataforseoLabsLocationsAndLanguagesResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
-    location_code_parent: Optional[StrictInt] = Field(default=None, description=r"the code of the superordinate location. the value will be null as Country is the only supported location_type for this API")
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the location")
-    location_type: Optional[StrictStr] = Field(default=None, description=r"location type. possible values:. Country")
-    available_languages: Optional[List[Optional[AvailableLanguages]]] = Field(default=None, description=r"supported languages. contains the languages which are supported for a specific location")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code*")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of the location*")
+    location_code_parent: Optional[StrictInt] = Field(default=None, description=r"*the code of the superordinate location*. the value will be `null` as `Country` is the only supported `location_type` for this API")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*ISO country code of the location*")
+    location_type: Optional[StrictStr] = Field(default=None, description=r"*location type*. possible values:. `Country`")
+    available_languages: Optional[List[Optional[AvailableLanguages]]] = Field(default=None, description=r"*supported languages*. contains the languages which are supported for a specific location")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 

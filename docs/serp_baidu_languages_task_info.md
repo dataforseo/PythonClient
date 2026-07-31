@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpBaiduLanguagesResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpBaiduLanguagesResultInfo]]** | <em>array of results</em> |[optional]|

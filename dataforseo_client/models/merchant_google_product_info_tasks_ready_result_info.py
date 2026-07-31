@@ -15,13 +15,13 @@ class MerchantGoogleProductInfoTasksReadyResultInfo(BaseModel):
     """
     MerchantGoogleProductInfoTasksReadyResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"task identifier of the completed task. unique task identifier in our system in the UUID format")
-    se: Optional[StrictStr] = Field(default=None, description=r"search engine specified when setting the task")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"type of search engine. can take the following values: shopping_specifications")
-    date_posted: Optional[StrictStr] = Field(default=None, description=r"date when the task was posted (in the UTC format)")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier")
-    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Google Shopping Product Specifications Advanced task")
-    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the Google Shopping Product Specifications HTML task. note: HTML is not available for this endpoint, the value will be null")
+    id: Optional[StrictStr] = Field(default=None, description=r"*task identifier of the completed task*. **unique task identifier in our system in the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format**")
+    se: Optional[StrictStr] = Field(default=None, description=r"*search engine specified when setting the task*")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*type of search engine*. can take the following values: `shopping_specifications`")
+    date_posted: Optional[StrictStr] = Field(default=None, description=r"*date when the task was posted (in the UTC format)*")
+    tag: Optional[StrictStr] = Field(default=None, description=r"")
+    endpoint_advanced: Optional[StrictStr] = Field(default=None, description=r"*URL for collecting the results of the Google Shopping Product Specifications Advanced task*")
+    endpoint_html: Optional[StrictStr] = Field(default=None, description=r"*URL for collecting the results of the Google Shopping Product Specifications HTML task*. **note:** HTML is not available for this endpoint, the value will be `null`")
     __properties: ClassVar[List[str]] = [
         "id", 
         "se", 

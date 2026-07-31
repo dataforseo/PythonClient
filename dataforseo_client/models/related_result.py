@@ -29,8 +29,9 @@ class RelatedResult(BaseModel):
     related_search_url: Optional[StrictStr] = Field(default=None, description=r"URL to a similar search. URL to a new search for the same keyword(s) on related sites")
     breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb in SERP")
     website_name: Optional[StrictStr] = Field(default=None, description=r"name of the website in the ad element")
-    is_image: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains an image")
-    is_video: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains a video")
+    is_image: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains an image. Note: this check no longer appears in SERP")
+    is_video: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element contains a video. Note: this check no longer appears in SERP")
+    checks: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of properties detected for the SERP element. lists the properties that are true for this element. each value in the array represents a detected property. example:. if is_image is present in the array, the element contains an image. possible values in the array:. is_image, is_video, is_featured_snippet, amp_version, is_malicious, is_web_story, is_highly_cited. equals null if none of the properties are detected for the element. learn more about the checks array in this Help Center article")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     pre_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended before the result description in SERP")
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended after the result description in SERP")
@@ -54,6 +55,7 @@ class RelatedResult(BaseModel):
         "website_name", 
         "is_image", 
         "is_video", 
+        "checks", 
         "description", 
         "pre_snippet", 
         "extended_snippet", 
@@ -102,6 +104,7 @@ class RelatedResult(BaseModel):
         _dict['website_name'] = self.website_name
         _dict['is_image'] = self.is_image
         _dict['is_video'] = self.is_video
+        _dict['checks'] = self.checks
         _dict['description'] = self.description
         _dict['pre_snippet'] = self.pre_snippet
         _dict['extended_snippet'] = self.extended_snippet
@@ -141,6 +144,7 @@ class RelatedResult(BaseModel):
             "website_name": obj.get("website_name"),
             "is_image": obj.get("is_image"),
             "is_video": obj.get("is_video"),
+            "checks": obj.get("checks"),
             "description": obj.get("description"),
             "pre_snippet": obj.get("pre_snippet"),
             "extended_snippet": obj.get("extended_snippet"),

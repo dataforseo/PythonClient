@@ -16,9 +16,9 @@ class ShoppingSpecification(BaseModel):
     ShoppingSpecification
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    block_name: Optional[StrictStr] = Field(default=None, description=r"name of the block of product attributes. indicates the name of the product specification section in which the related element is listed")
-    specification_name: Optional[StrictStr] = Field(default=None, description=r"product attribute. attribute name of the product data specification")
-    specification_value: Optional[StrictStr] = Field(default=None, description=r"content of the specification")
+    block_name: Optional[StrictStr] = Field(default=None, description=r"*name of the block of product attributes*. indicates the name of the product specification section in which the related element is listed")
+    specification_name: Optional[StrictStr] = Field(default=None, description=r"*product attribute*. attribute name of the [product data specification](https://support.google.com/merchants/answer/7052112?hl=en)")
+    specification_value: Optional[StrictStr] = Field(default=None, description=r"*content of the specification*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "block_name", 

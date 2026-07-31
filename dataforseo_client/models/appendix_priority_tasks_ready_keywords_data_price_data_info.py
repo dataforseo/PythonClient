@@ -15,8 +15,8 @@ class AppendixPriorityTasksReadyKeywordsDataPriceDataInfo(BaseModel):
     """
     AppendixPriorityTasksReadyKeywordsDataPriceDataInfo
     """ # noqa: E501
-    cost_type: Optional[StrictStr] = Field(default=None, description=r"charge type. can take the following values:. per_result – charge for every row in the result array. per_request – charge for a GET or POST request")
-    cost: Optional[StrictFloat] = Field(default=None, description=r"cost, USD")
+    cost_type: Optional[StrictStr] = Field(default=None, description=r"*charge type*. can take the following values:. `per_result`_- charge for every row in the `result` array. `per_request`_- charge for a GET or POST requestn")
+    cost: Optional[StrictFloat] = Field(default=None, description=r"*cost, USD*")
     __properties: ClassVar[List[str]] = [
         "cost_type", 
         "cost", 

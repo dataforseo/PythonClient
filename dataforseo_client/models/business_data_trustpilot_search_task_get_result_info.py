@@ -16,12 +16,12 @@ class BusinessDataTrustpilotSearchTaskGetResultInfo(BaseModel):
     """
     BusinessDataTrustpilotSearchTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of items in the results array. you can get more results by using the depth parameter when setting a task")
-    items: Optional[List[Optional[TrustpilotSearchOrganic]]] = Field(default=None, description=r"found reviews. you can get more results by using the depth parameter when setting a task")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of items in the results array*. you can get more results by using the `depth` parameter when setting a task")
+    items: Optional[List[Optional[TrustpilotSearchOrganic]]] = Field(default=None, description=r"*found reviews*. you can get more results by using the `depth` parameter when setting a task")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "se_domain", 

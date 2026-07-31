@@ -13,7 +13,7 @@
 **url** | **StrictStr** | <em>URL in link</em> |[optional]|
 **domain** | **StrictStr** | <em>domain in link</em> |[optional]|
 **rating** | **RatingInfo** | <em>product rating </em><br>the popularity rate based on reviews<br> if there is none, the value will be <code>null</code> |[optional]|
-**price** | **PriceInfo** | <em>product price</em><br>product price details on the seller's website;<br> if there is none, the value will be <code>null</code> |[optional]|
+**price** | **AiModePriceInfo** | <em>product price</em><br>product price details on the seller's website;<br> if there is none, the value will be <code>null</code> |[optional]|
 **seller** | **StrictStr** | <em>product seller</em><br>name of the product's seller as displayed in search results |[optional]|
 **snippet** | **StrictStr** | <em>additional information about the result</em> |[optional]|
 **marketplace** | **StrictStr** | <em>merchant account provider</em><br>e-commerce site that hosts products or websites of individual sellers under the same merchant account<br>example:<br><code>by Google</code> |[optional]|

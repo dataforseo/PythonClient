@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**targets** | **Dict[str, Optional[StrictStr]]** | targets from a POST array |[optional]|
-**total_count** | **StrictInt** | total amount of results relevant the request |[optional]|
-**items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[BacklinksPageIntersectionLiveItem]]** | contains relevant backlinks and referring domains data |[optional]|
+**targets** | **Dict[str, Optional[StrictStr]]** | <em><code>targets</code> from a POST array</em> |[optional]|
+**total_count** | **StrictInt** | <em>total amount of results relevant the request</em> |[optional]|
+**items_count** | **StrictInt** | <em>the number of results returned in the <code>items</code> array</em> |[optional]|
+**items** | **List[Optional[BacklinksPageIntersectionLiveItem]]** | <em>contains relevant backlinks and referring domains data</em> |[optional]|

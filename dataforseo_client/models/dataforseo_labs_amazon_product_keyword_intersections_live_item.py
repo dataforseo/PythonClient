@@ -17,9 +17,9 @@ class DataforseoLabsAmazonProductKeywordIntersectionsLiveItem(BaseModel):
     """
     DataforseoLabsAmazonProductKeywordIntersectionsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword_data: Optional[AmazonKeywordData] = Field(default=None, description=r"keyword data for the returned keyword")
-    intersection_result: Optional[Dict[str, Optional[AmazonInfo]]] = Field(default=None, description=r"data on the intersection")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword_data: Optional[AmazonKeywordData] = Field(default=None, description=r"*keyword data for the returned keyword*")
+    intersection_result: Optional[Dict[str, Optional[AmazonInfo]]] = Field(default=None, description=r"*data on the intersection*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword_data", 

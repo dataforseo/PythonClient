@@ -16,17 +16,17 @@ class BusinessDataTrustpilotReviewsTaskGetResultInfo(BaseModel):
     """
     BusinessDataTrustpilotReviewsTaskGetResultInfo
     """ # noqa: E501
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain of the business entity")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain of the business entity*")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the ‘reviews’ element on Trustpilot. the name of the business entity for which the reviews are collected")
-    location: Optional[StrictStr] = Field(default=None, description=r"location of the business entity as specified on Trustpilot. address of the business entity for which the reviews are collected")
-    reviews_count: Optional[StrictStr] = Field(default=None, description=r"the total number of reviews")
-    rating: Optional[Any] = Field(default=None, description=r"rating of the corresponding business entity. popularity rate based on reviews and displayed in SERP")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of items in the results array. you can get more results by using the depth parameter when setting a task")
-    items: Optional[List[Optional[TrustpilotReviewSearch]]] = Field(default=None, description=r"found reviews. you can get more results by using the depth parameter when setting a task")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the 'reviews' element on Trustpilot*. the name of the business entity for which the reviews are collected")
+    location: Optional[StrictStr] = Field(default=None, description=r"*location of the business entity as specified on Trustpilot*. address of the business entity for which the reviews are collected")
+    reviews_count: Optional[StrictStr] = Field(default=None, description=r"*the total number of reviews*")
+    rating: Optional[Any] = Field(default=None, description=r"*rating of the corresponding business entity*. popularity rate based on reviews and displayed in SERP")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of items in the results array*. you can get more results by using the `depth` parameter when setting a task")
+    items: Optional[List[Optional[TrustpilotReviewSearch]]] = Field(default=None, description=r"*found reviews*. you can get more results by using the `depth` parameter when setting a task")
     __properties: ClassVar[List[str]] = [
         "domain", 
         "type", 

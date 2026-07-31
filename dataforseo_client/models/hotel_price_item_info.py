@@ -17,12 +17,12 @@ class HotelPriceItemInfo(BaseModel):
     HotelPriceItemInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the hotel")
-    price: Optional[StrictFloat] = Field(default=None, description=r"price per night")
-    currency: Optional[StrictStr] = Field(default=None, description=r"price currency. USD is applied by default, unless specified in the POST array")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the hotel*")
+    price: Optional[StrictFloat] = Field(default=None, description=r"*price per night*")
+    currency: Optional[StrictStr] = Field(default=None, description=r"*price currency*. `USD` is applied by default, unless specified in the POST array")
     url: Optional[StrictStr] = Field(default=None, description=r"third-party page url. URL to the third-party website page with pricing information")
     domain: Optional[StrictStr] = Field(default=None, description=r"third-party domain. domain of the third-party website page with pricing information")
-    is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates a paid hotel listing. if true, related hotel_search_item is a paid ad. if false, related hotel_search_item is an organic hotel listing")
+    is_paid: Optional[StrictBool] = Field(default=None, description=r"*indicates a paid hotel listing*. if `true`, related `hotel_search_item` is a paid ad. if `false`, related `hotel_search_item` is an organic hotel listing")
     official_site: Optional[StrictBool] = Field(default=None, description=r"")
     free_cancellation_until: Optional[StrictStr] = Field(default=None, description=r"date until which free cancellation is available. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. equals null if free cancellation is not available for the selected dates")
     offers: Optional[List[Optional[HotelInfoPriceOffer]]] = Field(default=None, description=r"")

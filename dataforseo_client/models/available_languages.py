@@ -15,9 +15,9 @@ class AvailableLanguages(BaseModel):
     """
     AvailableLanguages
     """ # noqa: E501
-    available_sources: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"supported sources. contains the sources of data supported for a specific location and language combination. only google and bing are currently available")
-    language_name: Optional[StrictStr] = Field(default=None, description=r"language name")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code according to ISO 639-1")
+    available_sources: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*supported sources*. contains the sources of data supported for a specific location and language combination. only `google` and `bing` are currently available")
+    language_name: Optional[StrictStr] = Field(default=None, description=r"*language name*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code according to [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)*")
     keywords: Optional[StrictInt] = Field(default=None, description=r"the number of keywords available for the given location and language")
     serps: Optional[StrictInt] = Field(default=None, description=r"the number of SERP pages available for the given location and language")
     __properties: ClassVar[List[str]] = [

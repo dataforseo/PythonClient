@@ -16,12 +16,12 @@ class BacklinksTimeseriesSummaryLiveResultInfo(BaseModel):
     """
     BacklinksTimeseriesSummaryLiveResultInfo
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"target from a POST array")
-    date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of the time range. in the UTC format: “yyyy-mm-dd”. example:. 2019-01-01")
-    date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of the time range. in the UTC format: 'yyyy-mm-dd'. example:. '2019-01-15'")
+    target: Optional[StrictStr] = Field(default=None, description=r"*`target` from a POST array*")
+    date_from: Optional[StrictStr] = Field(default=None, description=r"*starting date of the time range*. in the UTC format: “yyyy-mm-dd”. example:. `2019-01-01`")
+    date_to: Optional[StrictStr] = Field(default=None, description=r"*ending date of the time range*. in the UTC format: `'yyyy-mm-dd'`. example:. `'2019-01-15'`")
     group_range: Optional[StrictStr] = Field(default=None, description=r"group_range from a POST array")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BacklinksTimeseriesSummaryLiveItem]]] = Field(default=None, description=r"contains relevant summary data")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[BacklinksTimeseriesSummaryLiveItem]]] = Field(default=None, description=r"*contains relevant summary data*")
     __properties: ClassVar[List[str]] = [
         "target", 
         "date_from", 

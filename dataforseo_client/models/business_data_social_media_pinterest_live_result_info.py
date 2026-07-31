@@ -16,8 +16,8 @@ class BusinessDataSocialMediaPinterestLiveResultInfo(BaseModel):
     BusinessDataSocialMediaPinterestLiveResultInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    page_url: Optional[StrictStr] = Field(default=None, description=r"URL of the page the data is provided for. corresponding URL you specified in the targets array when setting a task")
-    pins_count: Optional[StrictInt] = Field(default=None, description=r"number of pins for the related page_url. pins on Pinterest correspond to content saves;. this field shows the number of content saves made from the related page_url using the Pinterest Save Button")
+    page_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the page the data is provided for*. corresponding URL you specified in the `targets` array when setting a task")
+    pins_count: Optional[StrictInt] = Field(default=None, description=r"*number of pins for the related `page_url`*. [pins on Pinterest](https://help.pinterest.com/en/business/article/build-a-pin) correspond to content saves;. this field shows the number of content saves made from the related `page_url` using the [Pinterest Save Button](https://developers.pinterest.com/docs/widgets/save/?)")
     __properties: ClassVar[List[str]] = [
         "type", 
         "page_url", 

@@ -5,13 +5,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**id** | **StrictStr** | task identifier<br>unique task identifier in our system in the UUID format |[optional]|
-**datetime** | **StrictStr** | date and time when an error occurred<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
-**function** | **StrictStr** | corresponding API function |[optional]|
-**error_code** | **StrictInt** | error code |[optional]|
-**error_message** | **StrictStr** | error message or error URL<br>error message (see full list) or URL that caused an error |[optional]|
-**http_url** | **StrictStr** | URL that caused an error<br>URL you used for making an API call |[optional]|
-**http_method** | **StrictStr** | HTTP method |[optional]|
-**http_code** | **StrictInt** | HTTP status code |[optional]|
-**http_time** | **StrictFloat** | time taken by HTTP request |[optional]|
-**http_response** | **StrictStr** | HTTP response<br>server response |[optional]|
+**id** | **StrictStr** | <em>task identifier</em><br><strong>unique task identifier in our system in the <a href='https://en.wikipedia.org/wiki/Universally_unique_identifier'>UUID</a> format</strong> |[optional]|
+**datetime** | **StrictStr** | <em>date and time when an error occurred</em><br>in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'<br>example:<br><code>2019-11-15 12:57:46 +00:00</code> |[optional]|
+**function** | **StrictStr** | <em>corresponding API function</em> |[optional]|
+**error_code** | **StrictInt** | <em>error code</em> |[optional]|
+**error_message** | **StrictStr** | <em>error message or error URL</em><br>error message <a href='https://docs.dataforseo.com/v3/appendix/errors/' rel='noopener noreferrer' target='_blank'>(see full list)</a> or URL that caused an error |[optional]|
+**http_url** | **StrictStr** | <em>URL that caused an error</em><br>URL you used for making an API call |[optional]|
+**http_method** | **StrictStr** | <em>HTTP method</em> |[optional]|
+**http_code** | **StrictInt** | <em>HTTP status code</em> |[optional]|
+**http_time** | **StrictFloat** | <em>time taken by HTTP request</em> |[optional]|
+**http_response** | **StrictStr** | <em>HTTP response</em><br>server response |[optional]|

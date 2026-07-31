@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[MerchantGoogleLanguagesTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[MerchantGoogleLanguagesTaskInfo]]** | <em>array of tasks</em> |[optional]|

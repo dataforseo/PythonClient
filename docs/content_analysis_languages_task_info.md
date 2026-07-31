@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[ContentAnalysisLanguagesResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[ContentAnalysisLanguagesResultInfo]]** | <em>array of results</em> |[optional]|

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AppDataAppleCategoriesResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AppDataAppleCategoriesResultInfo]]** | <em>array of results</em> |[optional]|

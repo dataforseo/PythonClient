@@ -16,14 +16,14 @@ class DataforseoLabsGoogleCompetitorsDomainLiveItem(BaseModel):
     """
     DataforseoLabsGoogleCompetitorsDomainLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain name")
-    avg_position: Optional[StrictFloat] = Field(default=None, description=r"average position of the domain in SERP. Note: average position is calculated for intersected keywords only;. the value for a given domain may differ when combined with different target websites")
-    sum_position: Optional[StrictInt] = Field(default=None, description=r"sum of all domain positions in SERP. Note: average position is calculated for intersected keywords only;. the value for a given domain may differ when combined with different target websites")
-    intersections: Optional[StrictInt] = Field(default=None, description=r"number of intersecting keywords")
-    full_domain_metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"metrics for all keywords of the domain. full overview of ranking and traffic data relevant to all keywords that the provided domain is ranking for")
-    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"metrics for intersecting keywords. ranking and traffic data relevant to the keywords that the provided domain shares with the target domain. note: in this array ranking and traffic data is provided for the target considering the keywords target shares in search with the competitor’s domain")
-    competitor_metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"metrics for intersecting keywords. ranking and traffic data relevant to the keywords that the provided domain shares with the target domain. note: in this array ranking and traffic data is provided for the returned competitor’s domain")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain name*")
+    avg_position: Optional[StrictFloat] = Field(default=None, description=r"*average position of the domain in SERP*. **Note:** average position is calculated for intersected keywords only;. the value for a given domain may differ when combined with different target websites")
+    sum_position: Optional[StrictInt] = Field(default=None, description=r"*sum of all domain positions in SERP*. **Note:** average position is calculated for intersected keywords only;. the value for a given domain may differ when combined with different target websites")
+    intersections: Optional[StrictInt] = Field(default=None, description=r"*number of intersecting keywords*")
+    full_domain_metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*metrics for all keywords of the domain*. full overview of ranking and traffic data relevant to all keywords that the provided `domain` is ranking for")
+    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*metrics for intersecting keywords*. ranking and traffic data relevant to the keywords that the provided `domain` shares with the `target` domain. **note:** in this array ranking and traffic data is provided for the `target` considering the keywords `target` shares in search with the competitor's `domain`")
+    competitor_metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*metrics for intersecting keywords*. ranking and traffic data relevant to the keywords that the provided `domain` shares with the `target` domain. **note:** in this array ranking and traffic data is provided for the returned competitor's `domain`")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "domain", 

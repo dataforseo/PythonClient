@@ -16,8 +16,8 @@ class FormatsElement(BaseModel):
     FormatsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    format: Optional[StrictStr] = Field(default=None, description=r"type of file format of the dataset. for example: zip, html, csv")
-    size: Optional[StrictInt] = Field(default=None, description=r"file size in bytes")
+    format: Optional[StrictStr] = Field(default=None, description=r"*type of file format of the dataset*. for example: `zip`, `html`, `csv`")
+    size: Optional[StrictInt] = Field(default=None, description=r"*file size in bytes*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "format", 

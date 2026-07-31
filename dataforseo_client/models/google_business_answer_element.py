@@ -16,14 +16,14 @@ class GoogleBusinessAnswerElement(BaseModel):
     GoogleBusinessAnswerElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    answer_id: Optional[StrictStr] = Field(default=None, description=r"ID of the answer")
-    profile_image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the user’s profile image")
-    profile_url: Optional[StrictStr] = Field(default=None, description=r"URL of the user’s profile")
-    profile_name: Optional[StrictStr] = Field(default=None, description=r"displayed name of the user")
-    answer_text: Optional[StrictStr] = Field(default=None, description=r"current text of the answer")
-    original_answer_text: Optional[StrictStr] = Field(default=None, description=r"original text of the answer")
-    time_ago: Optional[StrictStr] = Field(default=None, description=r"estimated time when the answer was posted")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"exact time when the answer was posted")
+    answer_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the answer*")
+    profile_image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the user's profile image*")
+    profile_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the user's profile*")
+    profile_name: Optional[StrictStr] = Field(default=None, description=r"*displayed name of the user*")
+    answer_text: Optional[StrictStr] = Field(default=None, description=r"*current text of the answer*")
+    original_answer_text: Optional[StrictStr] = Field(default=None, description=r"*original text of the answer*")
+    time_ago: Optional[StrictStr] = Field(default=None, description=r"*estimated time when the answer was posted*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*exact time when the answer was posted*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "answer_id", 

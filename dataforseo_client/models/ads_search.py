@@ -17,18 +17,18 @@ class AdsSearch(BaseModel):
     AdsSearch
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    advertiser_id: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the advertiser account")
-    creative_id: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the advertisement")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    verified: Optional[StrictBool] = Field(default=None, description=r"verified advertiser account. equals true if advertiser account is verified by Google Ads")
-    format: Optional[StrictStr] = Field(default=None, description=r"format of the advertisement. possible values: text, image, video")
-    preview_image: Optional[PreviewImage] = Field(default=None, description=r"preview image of the advertisement")
-    preview_url: Optional[StrictStr] = Field(default=None, description=r"url pointing to the ad preview")
-    first_shown: Optional[StrictStr] = Field(default=None, description=r"date and time when the ad was shown for the first time. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
-    last_shown: Optional[StrictStr] = Field(default=None, description=r"date and time when the ad was shown the last time. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    advertiser_id: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the advertiser account*")
+    creative_id: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the advertisement*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    verified: Optional[StrictBool] = Field(default=None, description=r"*verified advertiser account*. equals `true` if advertiser account is verified by Google Ads")
+    format: Optional[StrictStr] = Field(default=None, description=r"*format of the advertisement*. possible values: `text`, `image`, `video`")
+    preview_image: Optional[PreviewImage] = Field(default=None, description=r"*preview image of the advertisement*")
+    preview_url: Optional[StrictStr] = Field(default=None, description=r"*url pointing to the ad preview*")
+    first_shown: Optional[StrictStr] = Field(default=None, description=r"*date and time when the ad was shown for the first time*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
+    last_shown: Optional[StrictStr] = Field(default=None, description=r"*date and time when the ad was shown the last time*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleDatasetSearchLiveAdvancedResultInfo]]** |  |[optional]|
+**result** | **List[Optional[SerpGoogleDatasetSearchLiveAdvancedResultInfo]]** | <em>array of results</em> |[optional]|

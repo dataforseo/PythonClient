@@ -15,8 +15,8 @@ class GpsCoordinatesLocationInfo(BaseModel):
     """
     GpsCoordinatesLocationInfo
     """ # noqa: E501
-    latitude: Optional[StrictFloat] = Field(default=None, description=r"latitude coordinate of the hotel in google maps. example:. 'latitude': 51.584091")
-    longitude: Optional[StrictFloat] = Field(default=None, description=r"longitude coordinate of the hotel in google maps. example:. 'longitude': -0.31365919999999997")
+    latitude: Optional[StrictFloat] = Field(default=None, description=r"*latitude coordinate of the hotel in google maps*. example:. `'latitude': 51.584091`")
+    longitude: Optional[StrictFloat] = Field(default=None, description=r"*longitude coordinate of the hotel in google maps*. example:. `'longitude': -0.31365919999999997`")
     __properties: ClassVar[List[str]] = [
         "latitude", 
         "longitude", 

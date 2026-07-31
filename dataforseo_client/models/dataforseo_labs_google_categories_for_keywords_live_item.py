@@ -15,8 +15,8 @@ class DataforseoLabsGoogleCategoriesForKeywordsLiveItem(BaseModel):
     """
     DataforseoLabsGoogleCategoriesForKeywordsLiveItem
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array")
-    categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"product and service categories. you can download the full list of possible categories")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*")
+    categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"*product and service categories*. you can download [the full list of possible categories](https://cdn.dataforseo.com/v3/categories/categories_dataforseo_labs_2023_10_25.csv)")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "categories", 

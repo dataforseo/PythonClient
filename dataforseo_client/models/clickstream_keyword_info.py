@@ -16,11 +16,11 @@ class ClickstreamKeywordInfo(BaseModel):
     """
     ClickstreamKeywordInfo
     """ # noqa: E501
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"average monthly search volume rate. represents the (approximate) number of searches for the given keyword idea on google.com")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when keyword data was updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    gender_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of estimated clickstream-based metrics by gender. learn more about how the metric is calculated in this help center article")
-    age_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of clickstream-based metrics by age. learn more about how the metric is calculated in this help center article")
-    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly searches. represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"average monthly search volume raterepresents the (approximate) number of searches for the given keyword idea on google.com")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when keyword data was updatedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
+    gender_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of estimated clickstream-based metrics by genderlearn more about how the metric is calculated in this help center article")
+    age_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of clickstream-based metrics by agelearn more about how the metric is calculated in this help center article")
+    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly searchesrepresents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations")
     __properties: ClassVar[List[str]] = [
         "search_volume", 
         "last_updated_time", 

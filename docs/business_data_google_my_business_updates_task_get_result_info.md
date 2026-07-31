@@ -5,15 +5,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**keyword** | **StrictStr** | keyword received in a POST array<br>keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)<br>this field will contain the cid parameter if you specified it in the keyword field when setting a task;<br>example:<br>cid:2946633002421908862<br>learn more about the parameter in this help center article |[optional]|
-**se_domain** | **StrictStr** | search engine domain as specified in a POST array |[optional]|
-**location_code** | **StrictInt** | location code in a POST array |[optional]|
-**language_code** | **StrictStr** | language code in a POST array |[optional]|
-**check_url** | **StrictStr** | direct URL to search engine results<br>you can use it to make sure that we provided accurate results |[optional]|
-**datetime** | **StrictStr** | date and time when the result was received<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
-**business_updates_id** | **StrictStr** | identifier of the business updates element in SERP |[optional]|
-**cid** | **StrictStr** | google-defined client id<br>unique id of a local establishment<br>learn more about the cid identifier in this help center article |[optional]|
-**feature_id** | **StrictStr** | the unique identifier of the element in SERP<br>learn more about the identifier in this help center article |[optional]|
-**item_types** | **List[Optional[StrictStr]]** | item types<br>types of search engine results encountered in the items array;<br>possible item types: google_business_post |[optional]|
-**items_count** | **StrictInt** | item types<br>the number of items in the items array |[optional]|
-**items** | **List[Optional[GoogleBusinessPost]]** | encountered item types<br>types of search engine results encountered in the items array;<br>possible item types: google_business_post |[optional]|
+**keyword** | **StrictStr** | <em>keyword received in a POST array</em><br><strong>keyword is returned with decoded %## (plus character '+' will be decoded to a space character)</strong><br>this field will contain the <code>cid</code> parameter if you specified it in the <code>keyword</code> field when setting a task;<br>example:<br><code>cid:2946633002421908862</code><br>learn more about the parameter in <a href='https://dataforseo.com/help-center/what-is-cid-place-id-feature-id' rel='noopener noreferrer' target='_blank'>this help center article</a> |[optional]|
+**se_domain** | **StrictStr** | <em>search engine domain as specified in a POST array</em> |[optional]|
+**location_code** | **StrictInt** | <em>location code in a POST array</em> |[optional]|
+**language_code** | **StrictStr** | <em>language code in a POST array</em> |[optional]|
+**check_url** | **StrictStr** | <em>direct URL to search engine results</em><br>you can use it to make sure that we provided accurate results |[optional]|
+**datetime** | **StrictStr** | <em>date and time when the result was received</em><br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”<br>example:<br><code class='long-string'>2019-11-15 12:57:46 +00:00</code> |[optional]|
+**business_updates_id** | **StrictStr** | <em>identifier of the business updates element in SERP</em> |[optional]|
+**cid** | **StrictStr** | <em>google-defined client id</em><br>unique id of a local establishment<br>learn more about the <code>cid</code> identifier in <a href='https://dataforseo.com/help-center/what-is-cid-place-id-feature-id' rel='noopener noreferrer' target='_blank'>this help center article</a> |[optional]|
+**feature_id** | **StrictStr** | <em>the unique identifier of the element in SERP</em><br>learn more about the identifier in <a href='https://dataforseo.com/help-center/what-is-cid-place-id-feature-id' rel='noopener noreferrer' target='_blank'>this help center article</a> |[optional]|
+**item_types** | **List[Optional[StrictStr]]** | <em>item types</em><br>types of search engine results encountered in the <code>items</code> array;<br>possible item types: <code>google_business_post</code> |[optional]|
+**items_count** | **StrictInt** | <em>item types</em><br>the number of items in the <code>items</code> array |[optional]|
+**items** | **List[Optional[GoogleBusinessPost]]** | <em>encountered item types</em><br>types of search engine results encountered in the <code>items</code> array;<br>possible item types: <code>google_business_post</code> |[optional]|

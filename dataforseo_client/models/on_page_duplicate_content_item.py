@@ -16,9 +16,9 @@ class OnPageDuplicateContentItem(BaseModel):
     """
     OnPageDuplicateContentItem
     """ # noqa: E501
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the specified page")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total count of duplicate pages")
-    pages: Optional[List[Optional[DuplicatePageInfo]]] = Field(default=None, description=r"pages with duplicate content")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the specified page*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total count of duplicate pages*")
+    pages: Optional[List[Optional[DuplicatePageInfo]]] = Field(default=None, description=r"*pages with duplicate content*")
     __properties: ClassVar[List[str]] = [
         "url", 
         "total_count", 

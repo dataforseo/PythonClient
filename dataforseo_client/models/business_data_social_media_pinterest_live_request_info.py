@@ -15,8 +15,8 @@ class BusinessDataSocialMediaPinterestLiveRequestInfo(BaseModel):
     """
     BusinessDataSocialMediaPinterestLiveRequestInfo
     """ # noqa: E501
-    targets: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"target URLs. required field. target page should be specified with its absolute URL (including http:// or https://). example:. https://dataforseo.com/. Note: you can specify 10 targets maximum. You will be charged per earch URL you specify in this array")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier. optional field. the character limit is 255. you can use this parameter to identify the task and match it with the result. you will find the specified tag value in the data object of the response")
+    targets: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*target URLs*. **required field**. target page should be specified with its absolute URL (including http:// or https://). example:. `https://dataforseo.com/`. **Note:** you can specify 10 targets maximum. You will be charged per earch URL you specify in this array")
+    tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
     __properties: ClassVar[List[str]] = [
         "targets", 
         "tag", 

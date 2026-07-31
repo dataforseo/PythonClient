@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[BacklinksBulkSpamScoreLiveTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[BacklinksBulkSpamScoreLiveTaskInfo]]** | <em>array of tasks</em> |[optional]|

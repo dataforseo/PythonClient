@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpBaiduLocationsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpBaiduLocationsTaskInfo]]** | <em>array of tasks</em> |[optional]|

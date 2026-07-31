@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[AppDataTasksReadyTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[AppDataTasksReadyTaskInfo]]** | <em>array of tasks</em> |[optional]|

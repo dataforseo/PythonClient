@@ -15,7 +15,7 @@ class ImageUrlInfo(BaseModel):
     """
     ImageUrlInfo
     """ # noqa: E501
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the image used in the review")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image used in the review*")
     __properties: ClassVar[List[str]] = [
         "url", 
         ]

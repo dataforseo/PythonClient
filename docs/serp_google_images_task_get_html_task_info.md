@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleImagesTaskGetHtmlResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpGoogleImagesTaskGetHtmlResultInfo]]** | <em>array of results</em> |[optional]|

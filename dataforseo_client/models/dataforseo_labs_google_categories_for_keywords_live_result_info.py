@@ -16,9 +16,9 @@ class DataforseoLabsGoogleCategoriesForKeywordsLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleCategoriesForKeywordsLiveResultInfo
     """ # noqa: E501
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleCategoriesForKeywordsLiveItem]]] = Field(default=None, description=r"contains keywords and related keyword difficulty scores")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsGoogleCategoriesForKeywordsLiveItem]]] = Field(default=None, description=r"*contains keywords and related keyword difficulty scores*")
     __properties: ClassVar[List[str]] = [
         "language_code", 
         "items_count", 

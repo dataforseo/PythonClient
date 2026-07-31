@@ -16,8 +16,8 @@ class BusinessDirectoryInfo(BaseModel):
     """
     BusinessDirectoryInfo
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element. domain of the online menu system")
-    items: Optional[List[Optional[MapsSearch]]] = Field(default=None, description=r"encountered item types. types of search engine results encountered in the items array;. possible item types: google_business_info")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*. domain of the online menu system")
+    items: Optional[List[Optional[MapsSearch]]] = Field(default=None, description=r"*encountered item types*. types of search engine results encountered in the `items` array;. possible item types: `google_business_info`")
     __properties: ClassVar[List[str]] = [
         "title", 
         "items", 

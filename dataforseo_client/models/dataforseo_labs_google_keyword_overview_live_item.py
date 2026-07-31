@@ -22,19 +22,19 @@ class DataforseoLabsGoogleKeywordOverviewLiveItem(BaseModel):
     """
     DataforseoLabsGoogleKeywordOverviewLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    search_partners: Optional[StrictBool] = Field(default=None, description=r"indicates data for Google and partner sites. if true, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search;. if false, the results are returned for Google search sites only")
-    keyword_info: Optional[KeywordInfo] = Field(default=None, description=r"keyword data for the returned keyword")
-    keyword_info_normalized_with_bing: Optional[KeywordInfoNormalizedWithInfo] = Field(default=None, description=r"contains keyword search volume normalized with Bing search volume")
-    keyword_info_normalized_with_clickstream: Optional[KeywordInfoNormalizedWithInfo] = Field(default=None, description=r"contains keyword search volume normalized with clickstream data")
-    clickstream_keyword_info: Optional[ClickstreamKeywordInfo] = Field(default=None, description=r"clickstream data for the returned keyword. to retrieve results for this field, the parameter include_clickstream_data must be set to true")
-    keyword_properties: Optional[KeywordProperties] = Field(default=None, description=r"additional information about the keyword")
-    serp_info: Optional[SerpInfo] = Field(default=None, description=r"SERP data. the value will be null if you didn’t set the field include_serp_info to true in the POST array or if there is no SERP data for this keyword in our database")
-    avg_backlinks_info: Optional[AvgBacklinksInfo] = Field(default=None, description=r"backlink data for the returned keyword. this object provides the average number of backlinks, referring pages and domains, as well as the average rank values among the top-10 websites ranking organically for the keyword")
-    search_intent_info: Optional[SearchIntentInfo] = Field(default=None, description=r"search intent info for the returned keyword. learn about search intent in this help center article")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword*. **keyword is returned with decoded %## (plus character '+' will be decoded to a space character)**")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    search_partners: Optional[StrictBool] = Field(default=None, description=r"*indicates data for Google and partner sites*. if `true`, the results are returned for owned, operated, and syndicated networks across Google and partner sites that host Google search;. if `false`, the results are returned for Google search sites only")
+    keyword_info: Optional[KeywordInfo] = Field(default=None, description=r"*keyword data for the returned keyword*")
+    keyword_info_normalized_with_bing: Optional[KeywordInfoNormalizedWithInfo] = Field(default=None, description=r"*contains keyword search volume normalized with Bing search volume*")
+    keyword_info_normalized_with_clickstream: Optional[KeywordInfoNormalizedWithInfo] = Field(default=None, description=r"*contains keyword search volume normalized with clickstream data*")
+    clickstream_keyword_info: Optional[ClickstreamKeywordInfo] = Field(default=None, description=r"*clickstream data for the returned keyword*. to retrieve results for this field, the parameter `include_clickstream_data` must be set to `true`")
+    keyword_properties: Optional[KeywordProperties] = Field(default=None, description=r"*additional information about the keyword*")
+    serp_info: Optional[SerpInfo] = Field(default=None, description=r"*SERP data*. the value will be `null` if you didn't set the field `include_serp_info` to `true` in the POST array or if there is no SERP data for this keyword in our database")
+    avg_backlinks_info: Optional[AvgBacklinksInfo] = Field(default=None, description=r"*backlink data for the returned keyword*. this object provides the average number of backlinks, referring pages and domains, as well as the average rank values among the top-10 websites ranking organically for the keyword")
+    search_intent_info: Optional[SearchIntentInfo] = Field(default=None, description=r"*search intent info for the returned keyword*. learn about search intent in this [help center article](https://dataforseo.com/help-center/search-intent-and-its-types)")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword", 

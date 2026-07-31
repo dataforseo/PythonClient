@@ -6,14 +6,14 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**rank_group** | **StrictInt** | group rank in SERP<br>position within a group of elements with identical type values<br>positions of elements with different type values are omitted from rank_group |[optional]|
-**rank_absolute** | **StrictInt** | absolute rank in SERP<br>absolute position among all the elements in SERP |[optional]|
-**position** | **StrictStr** | the alignment of the element in SERP<br>can take the following values:<br>left, right |[optional]|
-**xpath** | **StrictStr** | the XPath of the element |[optional]|
-**title** | **StrictStr** | title of the element |[optional]|
-**description** | **StrictStr** | description of the results element in SERP |[optional]|
-**url** | **StrictStr** | search URL with refinement parameters |[optional]|
-**image_url** | **StrictStr** | URL of the image featured in the element |[optional]|
-**event_dates** | **EventDates** | dates when the event takes place<br>if there are none, equals null |[optional]|
-**location_info** | **LocationInfo** | information about the event’s venue |[optional]|
-**information_and_tickets** | **List[Optional[AiModeLinkElementInfo]]** | additional information and ticket purchase options |[optional]|
+**rank_group** | **StrictInt** | <em>group rank in SERP</em><br>position within a group of elements with identical <code>type</code> values</em><br>positions of elements with different <code>type</code> values are omitted from <code>rank_group</code> |[optional]|
+**rank_absolute** | **StrictInt** | <em>absolute rank in SERP</em><br>absolute position among all the elements in SERP |[optional]|
+**position** | **StrictStr** | <em>the alignment of the element in SERP</em><br>can take the following values:<br><code>left</code>, <code>right</code> |[optional]|
+**xpath** | **StrictStr** | <em>the <a href='https://en.wikipedia.org/wiki/XPath' rel='noopener noreferrer' target='_blank'>XPath</a> of the element</em> |[optional]|
+**title** | **StrictStr** | <em>title of the element</em> |[optional]|
+**description** | **StrictStr** | <em>description of the results element in SERP</em> |[optional]|
+**url** | **StrictStr** | <em>search URL with refinement parameters</em> |[optional]|
+**image_url** | **StrictStr** | <em>URL of the image featured in the element</em> |[optional]|
+**event_dates** | **EventDates** | <em>dates when the event takes place</em><br>if there are none, equals <code>null</code> |[optional]|
+**location_info** | **LocationInfo** | <em>information about the event's venue</em> |[optional]|
+**information_and_tickets** | **List[Optional[AiModeLinkElementInfo]]** | <em>additional information and ticket purchase options</em> |[optional]|

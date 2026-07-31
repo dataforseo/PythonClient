@@ -16,11 +16,11 @@ class AmazonApplicableVouchersItem(BaseModel):
     AmazonApplicableVouchersItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    text: Optional[StrictStr] = Field(default=None, description=r"text of the voucher")
-    fixed_discount: Optional[StrictFloat] = Field(default=None, description=r"value of the fixed discount")
-    fixed_discount_currency: Optional[StrictStr] = Field(default=None, description=r"currency code of the fixed discount")
-    percentage_discount: Optional[StrictFloat] = Field(default=None, description=r"value of the percentage discount. if the discount is fixed, the value will be null")
-    important_details: Optional[StrictStr] = Field(default=None, description=r"important details about the terms of discount vouchers")
+    text: Optional[StrictStr] = Field(default=None, description=r"*text of the voucher*")
+    fixed_discount: Optional[StrictFloat] = Field(default=None, description=r"*value of the fixed discount*")
+    fixed_discount_currency: Optional[StrictStr] = Field(default=None, description=r"*currency code of the fixed discount*")
+    percentage_discount: Optional[StrictFloat] = Field(default=None, description=r"*value of the percentage discount*. if the discount is fixed, the value will be `null`")
+    important_details: Optional[StrictStr] = Field(default=None, description=r"*important details about the terms of discount vouchers*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "text", 

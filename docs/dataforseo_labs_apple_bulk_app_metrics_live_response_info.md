@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[DataforseoLabsAppleBulkAppMetricsLiveTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[DataforseoLabsAppleBulkAppMetricsLiveTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -15,9 +15,9 @@ class MerchantGoogleSellersAdUrlResultInfo(BaseModel):
     """
     MerchantGoogleSellersAdUrlResultInfo
     """ # noqa: E501
-    ad_aclk: Optional[StrictStr] = Field(default=None, description=r"unique ad click referral parameter")
-    ad_url: Optional[StrictStr] = Field(default=None, description=r"full URL of the advertisement")
-    ad_url_redirects: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URLs where the link from Google Shopping redirects before reaching a final URL. includes up to 10 URLs of the ad’s redirect path to the seller’s ad_url")
+    ad_aclk: Optional[StrictStr] = Field(default=None, description=r"*unique ad click referral parameter*")
+    ad_url: Optional[StrictStr] = Field(default=None, description=r"*full URL of the advertisement*")
+    ad_url_redirects: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*URLs where the link from Google Shopping redirects before reaching a final URL*. includes up to 10 URLs of the ad's redirect path to the seller's `ad_url`")
     __properties: ClassVar[List[str]] = [
         "ad_aclk", 
         "ad_url", 

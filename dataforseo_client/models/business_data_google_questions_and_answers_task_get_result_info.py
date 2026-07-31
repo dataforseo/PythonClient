@@ -16,18 +16,18 @@ class BusinessDataGoogleQuestionsAndAnswersTaskGetResultInfo(BaseModel):
     """
     BusinessDataGoogleQuestionsAndAnswersTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character). this field will contain the cid parameter if you specified it in the keyword field when setting a task;. example:. cid:2946633002421908862. learn more about the parameter in this help center article")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain as specified in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id. unique id of a local establishment;. learn more about the identifier in this help center article")
-    feature_id: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the SERP feature")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"item types. types of search engine results encountered in the items array;. possible item types: google_business_question_item")
-    items_without_answers: Optional[List[Optional[GoogleBusinessQuestionItem]]] = Field(default=None, description=r"array of google business question items without answers")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of items in the items array")
-    items: Optional[List[Optional[GoogleBusinessQuestionItem]]] = Field(default=None, description=r"array of items within google_business_question_item. contains answers to the google business questions;. the maximum number of answers returned for each question: 5. possible item types google_business_answer_element")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword received in a POST array*. **keyword is returned with decoded %## (plus character '+' will be decoded to a space character)**. this field will contain the `cid` parameter if you specified it in the `keyword` field when setting a task;. example:. `cid:2946633002421908862`. learn more about the parameter in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain as specified in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    cid: Optional[StrictStr] = Field(default=None, description=r"*google-defined client id*. unique id of a local establishment;. learn more about the identifier in [this help center article](https://dataforseo.com/help-center/what-is-cid-place-id-feature-id)")
+    feature_id: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the SERP feature*")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*item types*. types of search engine results encountered in the `items` array;. possible item types: `google_business_question_item`")
+    items_without_answers: Optional[List[Optional[GoogleBusinessQuestionItem]]] = Field(default=None, description=r"*array of google business question items without answers*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of items in the `items` array*")
+    items: Optional[List[Optional[GoogleBusinessQuestionItem]]] = Field(default=None, description=r"*array of items within `google_business_question_item`*. contains answers to the google business questions;. the maximum number of answers returned for each question: `5` . possible item types `google_business_answer_element`")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "se_domain", 

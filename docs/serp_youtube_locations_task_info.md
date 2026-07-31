@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpYoutubeLocationsResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpYoutubeLocationsResultInfo]]** | <em>array of results</em> |[optional]|

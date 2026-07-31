@@ -16,15 +16,15 @@ class AppDataGoogleAppListTaskGetAdvancedResultInfo(BaseModel):
     """
     AppDataGoogleAppListTaskGetAdvancedResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"app collection received in a POST array")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    se_results_count: Optional[StrictInt] = Field(default=None, description=r"the total number of results")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of app items in the results array. you can get more results by using the depth parameter when setting a task")
-    items: Optional[List[Optional[GooglePlaySearchOrganic]]] = Field(default=None, description=r"found apps")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*app collection received in a POST array*")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    se_results_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of results*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of app items in the results array*. you can get more results by using the `depth` parameter when setting a task")
+    items: Optional[List[Optional[GooglePlaySearchOrganic]]] = Field(default=None, description=r"*found apps*")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "se_domain", 

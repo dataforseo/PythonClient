@@ -16,10 +16,10 @@ class DataforseoLabsGoogleHistoricalRankOverviewLiveItem(BaseModel):
     """
     DataforseoLabsGoogleHistoricalRankOverviewLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    year: Optional[StrictInt] = Field(default=None, description=r"year for which the data is provided")
-    month: Optional[StrictInt] = Field(default=None, description=r"month for which the data is provided")
-    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to the specified domain")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    year: Optional[StrictInt] = Field(default=None, description=r"*year for which the data is provided*")
+    month: Optional[StrictInt] = Field(default=None, description=r"*month for which the data is provided*")
+    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*ranking data relevant to the specified domain*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "year", 

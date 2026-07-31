@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**id** | **StrictStr** | task identifier of the completed task<br>unique task identifier in our system in the UUID format |[optional]|
-**target** | **StrictStr** | target website specified when setting a task |[optional]|
-**date_posted** | **StrictStr** | date when the task was posted (in the UTC format) |[optional]|
-**tag** | **StrictStr** | user-defined task identifier |[optional]|
+**id** | **StrictStr** | <em>task identifier of the completed task</em><br><strong>unique task identifier in our system in the <a href='https://en.wikipedia.org/wiki/Universally_unique_identifier'>UUID</a> format</strong> |[optional]|
+**target** | **StrictStr** | <em>target website specified when setting a task</em> |[optional]|
+**date_posted** | **StrictStr** | <em>date when the task was posted (in the UTC format)</em> |[optional]|
+**tag** | **StrictStr** | <em>user-defined task identifier</em> |[optional]|

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the element |[optional]|
-**location** | **StrictStr** | advertiser location |[optional]|
-**approx_ads_count** | **StrictInt** | ads count<br>the approximate number of ads that are run by the advertiser across all available Google Ads platforms |[optional]|
-**advertisers** | **List[Optional[Advertiser]]** | associated advertiser accounts<br>contains objects with data on associated advertiser accounts |[optional]|
+**title** | **StrictStr** | <em>title of the element</em> |[optional]|
+**location** | **StrictStr** | <em>advertiser location</em> |[optional]|
+**approx_ads_count** | **StrictInt** | <em>ads count</em><br>the approximate number of ads that are run by the advertiser across all available Google Ads platforms |[optional]|
+**advertisers** | **List[Optional[Advertiser]]** | <em>associated advertiser accounts</em><br>contains objects with data on associated advertiser accounts |[optional]|

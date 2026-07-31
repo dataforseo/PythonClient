@@ -16,14 +16,14 @@ class Autocomplete(BaseModel):
     Autocomplete
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    relevance: Optional[StrictInt] = Field(default=None, description=r"relevance of suggested keyword. represents the relevant of the autocomplete suggestion to the target keyword. can take values from 500 to 2000. the higher the value, the more relevant is the suggestion. Note: only available for the following client:. chrome/chrome-omni")
-    suggestion: Optional[StrictStr] = Field(default=None, description=r"google autocomplete keyword suggestion")
-    suggestion_type: Optional[StrictStr] = Field(default=None, description=r"google autocomplete suggestion type. Note: only available for the following client:. chrome/chrome-omni")
-    search_query_url: Optional[StrictStr] = Field(default=None, description=r"url to search results. url to search results relevant to the google autocomplete suggestion")
-    thumbnail_url: Optional[StrictStr] = Field(default=None, description=r"url of the thumbnail image. url of the thumbnail image of the google autocomplete suggestion. Note: only available for the following client:. gws-wiz. gws-wiz-serp")
-    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords highlighted in autocomplete. contains a list of google autocomplete suggestions that are highlighted in the search bar;. Note: array is only available for the following client:. gws-wiz. psy-ab. gws-wiz-local")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    relevance: Optional[StrictInt] = Field(default=None, description=r"*relevance of suggested keyword*. represents the relevant of the autocomplete suggestion to the target keyword. can take values from `500` to `2000`. the higher the value, the more relevant is the suggestion. **Note:** only available for the following `client`:. `chrome/chrome-omni`")
+    suggestion: Optional[StrictStr] = Field(default=None, description=r"*google autocomplete keyword suggestion*")
+    suggestion_type: Optional[StrictStr] = Field(default=None, description=r"*google autocomplete suggestion type*. **Note:** only available for the following `client`:. `chrome/chrome-omni`")
+    search_query_url: Optional[StrictStr] = Field(default=None, description=r"*url to search results*. url to search results relevant to the google autocomplete suggestion")
+    thumbnail_url: Optional[StrictStr] = Field(default=None, description=r"*url of the thumbnail image*. url of the thumbnail image of the google autocomplete suggestion. **Note:** only available for the following `client`:. `gws-wiz`. `gws-wiz-serp`")
+    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*keywords highlighted in autocomplete*. contains a list of google autocomplete suggestions that are highlighted in the search bar;. **Note:** array is only available for the following `client`:. `gws-wiz`. `psy-ab`. `gws-wiz-local`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

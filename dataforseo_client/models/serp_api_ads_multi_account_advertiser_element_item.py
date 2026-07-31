@@ -18,12 +18,12 @@ class SerpApiAdsMultiAccountAdvertiserElementItem(BaseSerpApiAdsAdvertiserElemen
     SerpApiAdsMultiAccountAdvertiserElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    location: Optional[StrictStr] = Field(default=None, description=r"advertiser location")
-    approx_ads_count: Optional[StrictInt] = Field(default=None, description=r"ads count. the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
-    advertisers: Optional[List[Optional[Advertiser]]] = Field(default=None, description=r"associated advertiser accounts. contains objects with data on associated advertiser accounts")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    location: Optional[StrictStr] = Field(default=None, description=r"*advertiser location*")
+    approx_ads_count: Optional[StrictInt] = Field(default=None, description=r"*ads count*. the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
+    advertisers: Optional[List[Optional[Advertiser]]] = Field(default=None, description=r"*associated advertiser accounts*. contains objects with data on associated advertiser accounts")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

@@ -16,15 +16,15 @@ class AppDataAppleAppInfoTaskGetAdvancedResultInfo(BaseModel):
     """
     AppDataAppleAppInfoTaskGetAdvancedResultInfo
     """ # noqa: E501
-    app_id: Optional[StrictStr] = Field(default=None, description=r"application id received in a POST request")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    se_results_count: Optional[StrictInt] = Field(default=None, description=r"the total number of results")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of items in the results array")
-    items: Optional[List[Optional[AppStoreInfoOrganic]]] = Field(default=None, description=r"found app info")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*application id received in a POST request*")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    se_results_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of results*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of items in the results array*")
+    items: Optional[List[Optional[AppStoreInfoOrganic]]] = Field(default=None, description=r"*found app info*")
     __properties: ClassVar[List[str]] = [
         "app_id", 
         "se_domain", 

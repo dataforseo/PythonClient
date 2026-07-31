@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[DataforseoLabsAmazonProductCompetitorsLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[DataforseoLabsAmazonProductCompetitorsLiveResultInfo]]** | <em>array of results</em> |[optional]|

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpYahooLocationsResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpYahooLocationsResultInfo]]** | <em>array of results</em> |[optional]|

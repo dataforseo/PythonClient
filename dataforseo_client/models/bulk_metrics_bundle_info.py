@@ -16,10 +16,10 @@ class BulkMetricsBundleInfo(BaseModel):
     """
     BulkMetricsBundleInfo
     """ # noqa: E501
-    organic: Optional[BulkMetricsInfo] = Field(default=None, description=r"traffic data from organic search")
-    paid: Optional[BulkMetricsInfo] = Field(default=None, description=r"traffic data from paid search")
-    local_pack: Optional[BulkMetricsInfo] = Field(default=None, description=r"traffic data from the local pack results in SERP")
-    featured_snippet: Optional[BulkMetricsInfo] = Field(default=None, description=r"traffic data from the featured snippet results in Google SERP")
+    organic: Optional[BulkMetricsInfo] = Field(default=None, description=r"*traffic data from organic search*")
+    paid: Optional[BulkMetricsInfo] = Field(default=None, description=r"*traffic data from paid search*")
+    local_pack: Optional[BulkMetricsInfo] = Field(default=None, description=r"*traffic data from the local pack results in SERP*")
+    featured_snippet: Optional[BulkMetricsInfo] = Field(default=None, description=r"*traffic data from the featured snippet results in Google SERP*")
     __properties: ClassVar[List[str]] = [
         "organic", 
         "paid", 

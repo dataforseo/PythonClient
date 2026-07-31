@@ -7,7 +7,7 @@
 |------------ | ------------- | ------------- | -------------|
 **se_type** | **StrictStr** | search engine type |[optional]|
 **seed_keyword** | **StrictStr** | keyword in a POST array |[optional]|
-**seed_keyword_data** | **KeywordDataInfo** | keyword data for the seed keyword<br>fields in the array are identical to that of keyword_data |[optional]|
+**seed_keyword_data** | **KeywordDataInfo** | keyword data for the seed keywordfields in the array are identical to that of keyword_data |[optional]|
 **location_code** | **StrictInt** | location code in a POST array |[optional]|
 **language_code** | **StrictStr** | language code in a POST array |[optional]|
 **total_count** | **StrictInt** | total amount of results in our database relevant to your request |[optional]|

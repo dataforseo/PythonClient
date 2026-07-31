@@ -15,7 +15,6 @@ if TYPE_CHECKING:
     from dataforseo_client.models.data_labs_paid_serp_element_item import DataLabsPaidSerpElementItem;
     from dataforseo_client.models.data_labs_featured_snippet_serp_element_item import DataLabsFeaturedSnippetSerpElementItem;
     from dataforseo_client.models.data_labs_organic_serp_element_item import DataLabsOrganicSerpElementItem;
-    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
     from dataforseo_client.models.data_labs_answer_box_serp_element_item import DataLabsAnswerBoxSerpElementItem;
     from dataforseo_client.models.data_labs_carousel_serp_element_item import DataLabsCarouselSerpElementItem;
     from dataforseo_client.models.data_labs_multi_carousel_serp_element_item import DataLabsMultiCarouselSerpElementItem;
@@ -25,6 +24,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.data_labs_images_serp_element_item import DataLabsImagesSerpElementItem;
     from dataforseo_client.models.data_labs_jobs_serp_element_item import DataLabsJobsSerpElementItem;
     from dataforseo_client.models.data_labs_knowledge_graph_serp_element_item import DataLabsKnowledgeGraphSerpElementItem;
+    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
     from dataforseo_client.models.data_labs_hotels_pack_serp_element_item import DataLabsHotelsPackSerpElementItem;
     from dataforseo_client.models.data_labs_map_serp_element_item import DataLabsMapSerpElementItem;
     from dataforseo_client.models.data_labs_people_also_ask_serp_element_item import DataLabsPeopleAlsoAskSerpElementItem;
@@ -78,7 +78,6 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         'paid': 'DataLabsPaidSerpElementItem',
         'featured_snippet': 'DataLabsFeaturedSnippetSerpElementItem',
         'organic': 'DataLabsOrganicSerpElementItem',
-        'local_pack': 'DataLabsLocalPackSerpElementItem',
         'answer_box': 'DataLabsAnswerBoxSerpElementItem',
         'carousel': 'DataLabsCarouselSerpElementItem',
         'multi_carousel': 'DataLabsMultiCarouselSerpElementItem',
@@ -88,6 +87,7 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         'images': 'DataLabsImagesSerpElementItem',
         'jobs': 'DataLabsJobsSerpElementItem',
         'knowledge_graph': 'DataLabsKnowledgeGraphSerpElementItem',
+        'local_pack': 'DataLabsLocalPackSerpElementItem',
         'hotels_pack': 'DataLabsHotelsPackSerpElementItem',
         'map': 'DataLabsMapSerpElementItem',
         'people_also_ask': 'DataLabsPeopleAlsoAskSerpElementItem',
@@ -163,7 +163,6 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         DataLabsPaidSerpElementItem, 
         DataLabsFeaturedSnippetSerpElementItem, 
         DataLabsOrganicSerpElementItem, 
-        DataLabsLocalPackSerpElementItem, 
         DataLabsAnswerBoxSerpElementItem, 
         DataLabsCarouselSerpElementItem, 
         DataLabsMultiCarouselSerpElementItem, 
@@ -173,6 +172,7 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         DataLabsImagesSerpElementItem, 
         DataLabsJobsSerpElementItem, 
         DataLabsKnowledgeGraphSerpElementItem, 
+        DataLabsLocalPackSerpElementItem, 
         DataLabsHotelsPackSerpElementItem, 
         DataLabsMapSerpElementItem, 
         DataLabsPeopleAlsoAskSerpElementItem, 
@@ -210,8 +210,6 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.data_labs_featured_snippet_serp_element_item").DataLabsFeaturedSnippetSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsOrganicSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_organic_serp_element_item").DataLabsOrganicSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsLocalPackSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsAnswerBoxSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_answer_box_serp_element_item").DataLabsAnswerBoxSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsCarouselSerpElementItem':
@@ -230,6 +228,8 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.data_labs_jobs_serp_element_item").DataLabsJobsSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsKnowledgeGraphSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_knowledge_graph_serp_element_item").DataLabsKnowledgeGraphSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsLocalPackSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsHotelsPackSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_hotels_pack_serp_element_item").DataLabsHotelsPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsMapSerpElementItem':

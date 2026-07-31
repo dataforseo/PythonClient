@@ -17,7 +17,7 @@ class ProductInformationRowProductInformationTextRowElementItem(BaseMerchantAmaz
     ProductInformationRowProductInformationTextRowElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    text: Optional[StrictStr] = Field(default=None, description=r"text of the voucher")
+    text: Optional[StrictStr] = Field(default=None, description=r"*text of the voucher*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "text", 

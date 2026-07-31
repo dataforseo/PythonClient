@@ -15,9 +15,9 @@ class PreviewImage(BaseModel):
     """
     PreviewImage
     """ # noqa: E501
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    height: Optional[StrictInt] = Field(default=None, description=r"height of the preview image")
-    width: Optional[StrictInt] = Field(default=None, description=r"width of the preview image")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    height: Optional[StrictInt] = Field(default=None, description=r"*height of the preview image*")
+    width: Optional[StrictInt] = Field(default=None, description=r"*width of the preview image*")
     __properties: ClassVar[List[str]] = [
         "url", 
         "height", 

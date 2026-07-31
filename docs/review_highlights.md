@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**feature** | **StrictStr** | reviewed feature |[optional]|
-**assessment** | **StrictStr** | feature assessment |[optional]|
+**feature** | **StrictStr** | <em>reviewed feature</em> |[optional]|
+**assessment** | **StrictStr** | <em>feature assessment</em> |[optional]|

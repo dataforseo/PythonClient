@@ -17,13 +17,13 @@ class SerpApiAdsAdvertiserElementItem(BaseSerpApiAdsAdvertiserElementItem):
     SerpApiAdsAdvertiserElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    advertiser_id: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the advertiser account. can be used to obtain data on advertising campaigns from the Google Ads Search endpoint")
-    location: Optional[StrictStr] = Field(default=None, description=r"advertiser location")
-    verified: Optional[StrictBool] = Field(default=None, description=r"verified advertiser account. equals true if advertiser account is verified by Google Ads")
-    approx_ads_count: Optional[StrictInt] = Field(default=None, description=r"ads count. the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    advertiser_id: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the advertiser account*. can be used to obtain data on advertising campaigns from the [Google Ads Search endpoint](/v3/serp/google/ads_search/task_post/)")
+    location: Optional[StrictStr] = Field(default=None, description=r"*advertiser location*")
+    verified: Optional[StrictBool] = Field(default=None, description=r"*verified advertiser account*. equals `true` if advertiser account is verified by Google Ads")
+    approx_ads_count: Optional[StrictInt] = Field(default=None, description=r"*ads count*. the approximate number of ads that are run by the advertiser across all available Google Ads platforms")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

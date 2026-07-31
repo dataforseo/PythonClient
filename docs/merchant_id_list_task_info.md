@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[MerchantIdListResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[MerchantIdListResultInfo]]** | <em>array of results</em> |[optional]|

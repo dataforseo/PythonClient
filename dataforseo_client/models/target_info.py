@@ -15,13 +15,13 @@ class TargetInfo(BaseModel):
     """
     TargetInfo
     """ # noqa: E501
-    server: Optional[StrictStr] = Field(default=None, description=r"server")
-    cms: Optional[StrictStr] = Field(default=None, description=r"content management system")
-    platform_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"platform type")
-    ip_address: Optional[StrictStr] = Field(default=None, description=r"IP address of the target")
-    country: Optional[StrictStr] = Field(default=None, description=r"country code that the target domain is determined to belong to")
-    is_ip: Optional[StrictBool] = Field(default=None, description=r"indicates if the target is IP. if true, the domain, subdomain or webpage functions as an IP address and does not have a domain name")
-    target_spam_score: Optional[StrictInt] = Field(default=None, description=r"spam score of the target. if the target is a domain/subdomain, this fields indicates the average spam score of all pages of that domain/subdomain;. learn more about how the metric is calculated on this help center page")
+    server: Optional[StrictStr] = Field(default=None, description=r"*server*")
+    cms: Optional[StrictStr] = Field(default=None, description=r"*content management system*")
+    platform_type: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*platform type*")
+    ip_address: Optional[StrictStr] = Field(default=None, description=r"*IP address of the `target`*")
+    country: Optional[StrictStr] = Field(default=None, description=r"*country code that the `target` domain is determined to belong to*")
+    is_ip: Optional[StrictBool] = Field(default=None, description=r"*indicates if the `target` is IP*. if `true`, the domain, subdomain or webpage functions as an IP address and does not have a domain name")
+    target_spam_score: Optional[StrictInt] = Field(default=None, description=r"*spam score of the `target`*. if the `target` is a domain/subdomain, this fields indicates the average spam score of all pages of that domain/subdomain;. learn more about how the metric is calculated on [this help center page](https://dataforseo.com/help-center/what-is-spam-score-and-how-is-it-calculated)")
     __properties: ClassVar[List[str]] = [
         "server", 
         "cms", 

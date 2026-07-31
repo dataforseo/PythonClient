@@ -16,8 +16,8 @@ class DatasetDescription(BaseModel):
     """
     DatasetDescription
     """ # noqa: E501
-    text: Optional[StrictStr] = Field(default=None, description=r"text of the description")
-    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"links featured in the ‘dataset_description’")
+    text: Optional[StrictStr] = Field(default=None, description=r"*text of the description*")
+    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"*links featured in the 'dataset_description'*")
     __properties: ClassVar[List[str]] = [
         "text", 
         "links", 

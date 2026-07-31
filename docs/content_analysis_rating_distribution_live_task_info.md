@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[ContentAnalysisRatingDistributionLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[ContentAnalysisRatingDistributionLiveResultInfo]]** | <em>array of results</em> |[optional]|

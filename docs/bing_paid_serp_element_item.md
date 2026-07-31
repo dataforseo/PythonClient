@@ -13,6 +13,7 @@
 **website_name** | **StrictStr** | website name in SERP |[optional]|
 **is_image** | **StrictBool** | indicates whether the element contains an image |[optional]|
 **is_video** | **StrictBool** | indicates whether the element contains a video |[optional]|
+**checks** | **List[Optional[StrictStr]]** |  |[optional]|
 **images** | **List[Optional[AiModeImagesElementInfo]]** | images of the element |[optional]|
 **highlighted** | **List[Optional[StrictStr]]** | words highlighted in bold within the results description |[optional]|
 **extra** | **Dict[str, Optional[StrictStr]]** | additional information about the result |[optional]|

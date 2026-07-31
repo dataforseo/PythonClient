@@ -18,17 +18,17 @@ class ContentAnalysisPhraseTrendsLiveResultInfo(BaseModel):
     ContentAnalysisPhraseTrendsLiveResultInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    date: Optional[StrictStr] = Field(default=None, description=r"date for which the data is provided")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in our database relevant to your request")
-    rank: Optional[StrictInt] = Field(default=None, description=r"rank of all URLs citing the keyword. normalized sum of ranks of all URLs citing the target keyword for the given date")
-    top_domains: Optional[List[Optional[TopDomainInfo]]] = Field(default=None, description=r"top domains citing the target keyword. contains objects with top domains citing the target keyword and citation count per each domain")
-    sentiment_connotations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"sentiment connotations. contains sentiments (emotional reactions) related to the target keyword citation and the number of citations per each sentiment. possible connotations: 'anger', 'happiness', 'love', 'sadness', 'share', 'fun'")
-    connotation_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"connotation types. contains types of sentiments (sentiment polarity) related to the keyword citation and citation count per each sentiment type. possible connotation types: 'positive', 'negative', 'neutral'")
-    text_categories: Optional[List[Optional[ContentAnalysisCategoriesInfo]]] = Field(default=None, description=r"text categories. contains objects with text categories and citation count in each text category. to obtain a full list of available categories, refer to the Categories endpoint")
-    page_categories: Optional[List[Optional[ContentAnalysisCategoriesInfo]]] = Field(default=None, description=r"page categories. contains objects with page categories and citation count in each page category. to obtain a full list of available categories, refer to the Categories endpoint")
-    page_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"page types. contains page types and citation count per each page type")
-    countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"countries. contains countries and citation count in each country. to obtain a full list of available countries, refer to the Locations endpoint")
-    languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"languages. contains languages and citation count in each language. to obtain a full list of available languages, refer to the Languages endpoint")
+    date: Optional[StrictStr] = Field(default=None, description=r"*date for which the data is provided*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in our database relevant to your request*")
+    rank: Optional[StrictInt] = Field(default=None, description=r"*rank of all URLs citing the `keyword`*. normalized sum of ranks of all URLs citing the target `keyword` for the given date")
+    top_domains: Optional[List[Optional[TopDomainInfo]]] = Field(default=None, description=r"*top domains citing the target keyword*. contains objects with top domains citing the target keyword and citation count per each domain")
+    sentiment_connotations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*sentiment connotations*. contains sentiments (emotional reactions) related to the target keyword citation and the number of citations per each sentiment. possible connotations: `'anger'`, `'happiness'`, `'love'`, `'sadness'`, `'share'`, `'fun'`")
+    connotation_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*connotation types*. contains types of sentiments (sentiment polarity) related to the keyword citation and citation count per each sentiment type. possible connotation types: `'positive'`, `'negative'`, `'neutral'`")
+    text_categories: Optional[List[Optional[ContentAnalysisCategoriesInfo]]] = Field(default=None, description=r"*text categories*. contains objects with text categories and citation count in each text category. to obtain a full list of available categories, refer to the [Categories](/v3/content_analysis/categories/) endpoint")
+    page_categories: Optional[List[Optional[ContentAnalysisCategoriesInfo]]] = Field(default=None, description=r"*page categories*. contains objects with page categories and citation count in each page category. to obtain a full list of available categories, refer to the [Categories](/v3/content_analysis/categories/) endpoint")
+    page_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*page types*. contains page types and citation count per each page type")
+    countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*countries*. contains countries and citation count in each country. to obtain a full list of available countries, refer to the [Locations](/v3/content_analysis/locations/) endpoint")
+    languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*languages*. contains languages and citation count in each language. to obtain a full list of available languages, refer to the [Languages](/v3/content_analysis/languages/) endpoint")
     __properties: ClassVar[List[str]] = [
         "type", 
         "date", 

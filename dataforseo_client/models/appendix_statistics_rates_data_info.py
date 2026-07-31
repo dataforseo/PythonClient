@@ -28,7 +28,7 @@ class AppendixStatisticsRatesDataInfo(BaseModel):
     AppendixStatisticsRatesDataInfo
     """ # noqa: E501
     serp: Optional[AppendixSerpDaysRatesDataInfo] = Field(default=None, description=r"")
-    total: Optional[StrictFloat] = Field(default=None, description=r"total amount of money deposited to your account")
+    total: Optional[StrictFloat] = Field(default=None, description=r"*total amount of money deposited to your account*")
     total_serp: Optional[StrictFloat] = Field(default=None, description=r"")
     keywords_data: Optional[AppendixKeywordsDataDaysRatesDataInfo] = Field(default=None, description=r"")
     total_keywords_data: Optional[StrictFloat] = Field(default=None, description=r"")
@@ -52,7 +52,7 @@ class AppendixStatisticsRatesDataInfo(BaseModel):
     total_content_analysis: Optional[StrictFloat] = Field(default=None, description=r"")
     content_generation: Optional[AppendixContentGenerationLimitsRatesDataInfo] = Field(default=None, description=r"")
     total_content_generation: Optional[StrictFloat] = Field(default=None, description=r"")
-    value: Optional[StrictStr] = Field(default=None, description=r"time period for grouping. day in the yyyy-MM-dd format. minute in the yyyy-MM-dd HH:mm format")
+    value: Optional[StrictStr] = Field(default=None, description=r"*time period for grouping*. `day`_in the yyyy-MM-dd format. `minute`_in the yyyy-MM-dd HH:mm formatn")
     __properties: ClassVar[List[str]] = [
         "serp", 
         "total", 

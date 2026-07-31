@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[MerchantGoogleProductsTaskPostTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[MerchantGoogleProductsTaskPostTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -17,9 +17,9 @@ class ContentAnalysisRatingDistributionLiveResultInfo(BaseModel):
     ContentAnalysisRatingDistributionLiveResultInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    min: Optional[StrictFloat] = Field(default=None, description=r"min rating on a distribution scale")
-    max: Optional[StrictFloat] = Field(default=None, description=r"max rating on a distribution scale")
-    metrics: Optional[ContentAnalysisSummaryInfo] = Field(default=None, description=r"contains rating distribution metrics")
+    min: Optional[StrictFloat] = Field(default=None, description=r"*min rating on a distribution scale*")
+    max: Optional[StrictFloat] = Field(default=None, description=r"*max rating on a distribution scale*")
+    metrics: Optional[ContentAnalysisSummaryInfo] = Field(default=None, description=r"*contains rating distribution metrics*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "min", 

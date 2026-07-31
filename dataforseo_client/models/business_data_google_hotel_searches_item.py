@@ -19,14 +19,14 @@ class BusinessDataGoogleHotelSearchesItem(BaseModel):
     BusinessDataGoogleHotelSearchesItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    hotel_identifier: Optional[StrictStr] = Field(default=None, description=r"unique identifier of a hotel entity in Google search. example:. CgoI-KWyzenM_MV3EAE")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the hotel")
-    stars: Optional[StrictInt] = Field(default=None, description=r"hotel class rating. class rating that ranges between 1-5 stars")
-    is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates a paid hotel listing. if true, related hotel_search_item is a paid ad. if false, related hotel_search_item is an organic hotel listing")
-    location: Optional[GpsCoordinatesLocationInfo] = Field(default=None, description=r"GPS coordinates of the hotel’s location")
-    reviews: Optional[HotelReviewInfo] = Field(default=None, description=r"hotel reviews and rating information")
-    overview_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"featured images for a hotel")
-    prices: Optional[HotelPriceInfo] = Field(default=None, description=r"hotel price")
+    hotel_identifier: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of a hotel entity in Google search*. example:. `CgoI-KWyzenM_MV3EAE`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the hotel*")
+    stars: Optional[StrictInt] = Field(default=None, description=r"*hotel class rating*. class rating that ranges between 1-5 stars")
+    is_paid: Optional[StrictBool] = Field(default=None, description=r"*indicates a paid hotel listing*. if `true`, related `hotel_search_item` is a paid ad. if `false`, related `hotel_search_item` is an organic hotel listing")
+    location: Optional[GpsCoordinatesLocationInfo] = Field(default=None, description=r"*GPS coordinates of the hotel's location*")
+    reviews: Optional[HotelReviewInfo] = Field(default=None, description=r"*hotel reviews and rating information*")
+    overview_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*featured images for a hotel*")
+    prices: Optional[HotelPriceInfo] = Field(default=None, description=r"*hotel price*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "hotel_identifier", 

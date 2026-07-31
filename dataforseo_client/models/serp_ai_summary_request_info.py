@@ -15,11 +15,11 @@ class SerpAiSummaryRequestInfo(BaseModel):
     """
     SerpAiSummaryRequestInfo
     """ # noqa: E501
-    task_id: Optional[StrictStr] = Field(default=None, description=r"task identifier. required field. unique identifier of the associated task in the UUID format. you will be able to use it within 30 days to request the results of the task at any time")
-    prompt: Optional[StrictStr] = Field(default=None, description=r"AI prompt. optional field. additional task for AI summariser;. any form of text, question or information that communicates to AI what response you’re looking for;. max number of symbols or characters you can specify: 2000;. note: your prompt has to be relevant to the keyword specified in the POST request to SERP API")
-    support_extra: Optional[StrictBool] = Field(default=None, description=r"support extra SERP features. optional field. if set to true, the AI model will consider the following extra SERP features, in addition to organic results: answer_box, knowledge_graph, featured_snippet;. default value: true")
-    fetch_content: Optional[StrictBool] = Field(default=None, description=r"fetch content from pages in SERPs. optional field. if set to true, the API will fetch the content from pages featured in SERP results, and the AI model will consider this content when generating the summary in the result;. default value: false")
-    include_links: Optional[StrictBool] = Field(default=None, description=r"include source links in the summary. optional field. if set to true, the summary field in the API response will contain links to sources of the generated summary;. default value: false")
+    task_id: Optional[StrictStr] = Field(default=None, description=r"*task identifier*. **required field**. unique identifier of the associated task in the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format. you will be able to use it within **30 days** to request the results of the task at any time")
+    prompt: Optional[StrictStr] = Field(default=None, description=r"*AI prompt*. optional field. additional task for AI summariser;. any form of text, question or information that communicates to AI what response you're looking for;. max number of symbols or characters you can specify: `2000`;. **note:** your prompt has to be relevant to the keyword specified in the POST request to SERP API")
+    support_extra: Optional[StrictBool] = Field(default=None, description=r"*support extra SERP features*. optional field. if set to `true`, the AI model will consider the following extra SERP features, in addition to `organic` results: `answer_box`, `knowledge_graph`, `featured_snippet`;. default value: `true`")
+    fetch_content: Optional[StrictBool] = Field(default=None, description=r"*fetch content from pages in SERPs*. optional field. if set to `true`, the API will fetch the content from pages featured in SERP results, and the AI model will consider this content when generating the summary in the result;. default value: `false`")
+    include_links: Optional[StrictBool] = Field(default=None, description=r"*include source links in the summary*. optional field. if set to `true`, the `summary` field in the API response will contain links to sources of the generated summary;. default value: `false`")
     __properties: ClassVar[List[str]] = [
         "task_id", 
         "prompt", 

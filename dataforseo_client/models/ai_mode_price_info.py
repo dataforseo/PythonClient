@@ -15,12 +15,12 @@ class AiModePriceInfo(BaseModel):
     """
     AiModePriceInfo
     """ # noqa: E501
-    current: Optional[StrictInt] = Field(default=None, description=r"current priceindicates the current price of the shopping element")
-    regular: Optional[StrictFloat] = Field(default=None, description=r"regular priceindicates the regular price of the shopping element")
-    max_value: Optional[StrictFloat] = Field(default=None, description=r"the maximum priceindicates the maximum price of the shopping element")
-    currency: Optional[StrictStr] = Field(default=None, description=r"currency of the listed priceISO code of the currency applied to the price")
-    is_price_range: Optional[StrictBool] = Field(default=None, description=r"price is provided as a rangeindicates whether a price is provided in a range")
-    displayed_price: Optional[StrictStr] = Field(default=None, description=r"price string in the resultraw price string as provided in the result")
+    current: Optional[StrictInt] = Field(default=None, description=r"*current price*. indicates the current price of the shopping element")
+    regular: Optional[StrictFloat] = Field(default=None, description=r"*regular price*. indicates the regular price of the shopping element")
+    max_value: Optional[StrictFloat] = Field(default=None, description=r"*the maximum price*. indicates the maximum price of the shopping element")
+    currency: Optional[StrictStr] = Field(default=None, description=r"*currency of the listed price*. ISO code of the currency applied to the price")
+    is_price_range: Optional[StrictBool] = Field(default=None, description=r"*price is provided as a range*. indicates whether a price is provided in a range")
+    displayed_price: Optional[StrictStr] = Field(default=None, description=r"*price string in the result*. raw price string as provided in the result")
     __properties: ClassVar[List[str]] = [
         "current", 
         "regular", 

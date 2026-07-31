@@ -16,10 +16,10 @@ class DataforseoLabsGoogleDomainRankOverviewLiveItem(BaseModel):
     """
     DataforseoLabsGoogleDomainRankOverviewLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to the specified domain")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*ranking data relevant to the specified domain*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "location_code", 

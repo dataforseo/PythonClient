@@ -16,8 +16,8 @@ class BacklinksBulkSpamScoreLiveItem(BaseModel):
     BacklinksBulkSpamScoreLiveItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    target: Optional[StrictStr] = Field(default=None, description=r"domain, subdomain or webpage from a POST array")
-    spam_score: Optional[StrictInt] = Field(default=None, description=r"average spam score the target. learn more about how the metric is calculated")
+    target: Optional[StrictStr] = Field(default=None, description=r"*domain, subdomain or webpage from a POST array*")
+    spam_score: Optional[StrictInt] = Field(default=None, description=r"*average spam score the target*. [learn more](https://dataforseo.com/help-center/what-is-spam-score-and-how-is-it-calculated) about how the metric is calculated")
     __properties: ClassVar[List[str]] = [
         "type", 
         "target", 

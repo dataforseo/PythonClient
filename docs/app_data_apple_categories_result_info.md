@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**categories** | **List[Optional[StrictStr]]** | contains full list of supported app categories |[optional]|
+**categories** | **List[Optional[StrictStr]]** | <em>contains full list of supported app categories</em> |[optional]|

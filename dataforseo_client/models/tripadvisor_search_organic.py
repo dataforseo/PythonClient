@@ -17,15 +17,15 @@ class TripadvisorSearchOrganic(BaseModel):
     TripadvisorSearchOrganic
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank among all the listed results. absolute position among all reviews on the list")
-    title: Optional[StrictStr] = Field(default=None, description=r"name of the business entity")
-    url_path: Optional[StrictStr] = Field(default=None, description=r"URL path of the business entity. URL path to the Tripadvisor page of the business entity. you can use this identifier to collect reviews for the business entity using Tripadvisor Reviews")
-    is_sponsored: Optional[StrictBool] = Field(default=None, description=r"indicates a sponsored placement. if true, related tripadvisor_search_organic item is a paid advertising on Tripadvisor")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"the total number of reviews")
-    category: Optional[StrictStr] = Field(default=None, description=r"place category")
-    price_rate: Optional[StrictStr] = Field(default=None, description=r"average price rate")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score of the establishment submitted by the reviewers")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank among all the listed results*. absolute position among all reviews on the list")
+    title: Optional[StrictStr] = Field(default=None, description=r"*name of the business entity*")
+    url_path: Optional[StrictStr] = Field(default=None, description=r"*URL path of the business entity*. URL path to the Tripadvisor page of the business entity. you can use this identifier to collect reviews for the business entity using [Tripadvisor Reviews](/v3/business_data/tripadvisor/reviews/task_post/)")
+    is_sponsored: Optional[StrictBool] = Field(default=None, description=r"*indicates a sponsored placement*. if `true`, related `tripadvisor_search_organic` item is a paid advertising on Tripadvisor")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"*the total number of reviews*")
+    category: Optional[StrictStr] = Field(default=None, description=r"*place category*")
+    price_rate: Optional[StrictStr] = Field(default=None, description=r"*average price rate*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the rating score of the establishment submitted by the reviewers*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

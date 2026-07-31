@@ -16,9 +16,9 @@ class DataforseoLabsGoogleRelevantPagesLiveItem(BaseModel):
     """
     DataforseoLabsGoogleRelevantPagesLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    page_address: Optional[StrictStr] = Field(default=None, description=r"absolute URL of the relevant page")
-    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"rankings and traffic metrics for the relevant page")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    page_address: Optional[StrictStr] = Field(default=None, description=r"*absolute URL of the relevant page*")
+    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*rankings and traffic metrics for the relevant page*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "page_address", 

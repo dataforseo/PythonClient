@@ -17,18 +17,18 @@ class GoogleBusinessQuestionItem(BaseModel):
     GoogleBusinessQuestionItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank among all the elements")
-    question_id: Optional[StrictStr] = Field(default=None, description=r"ID of the question")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the question")
-    profile_image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the user’s profile image")
-    profile_url: Optional[StrictStr] = Field(default=None, description=r"URL of the user’s profile")
-    profile_name: Optional[StrictStr] = Field(default=None, description=r"displayed name of the user")
-    question_text: Optional[StrictStr] = Field(default=None, description=r"current text of the question")
-    original_question_text: Optional[StrictStr] = Field(default=None, description=r"original text of the question")
-    time_ago: Optional[StrictStr] = Field(default=None, description=r"estimated time when the question was posted")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"exact time when the question was posted")
-    items: Optional[List[Optional[GoogleBusinessAnswerElement]]] = Field(default=None, description=r"array of items. items within google_business_question_item")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank among all the elements*")
+    question_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the question*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the question*")
+    profile_image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the user's profile image*")
+    profile_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the user's profile*")
+    profile_name: Optional[StrictStr] = Field(default=None, description=r"*displayed name of the user*")
+    question_text: Optional[StrictStr] = Field(default=None, description=r"*current text of the question*")
+    original_question_text: Optional[StrictStr] = Field(default=None, description=r"*original text of the question*")
+    time_ago: Optional[StrictStr] = Field(default=None, description=r"*estimated time when the question was posted*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*exact time when the question was posted*")
+    items: Optional[List[Optional[GoogleBusinessAnswerElement]]] = Field(default=None, description=r"*array of items*. items within `google_business_question_item`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

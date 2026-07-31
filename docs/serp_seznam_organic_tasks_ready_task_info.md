@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpSeznamOrganicTasksReadyResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpSeznamOrganicTasksReadyResultInfo]]** | <em>array of results</em> |[optional]|

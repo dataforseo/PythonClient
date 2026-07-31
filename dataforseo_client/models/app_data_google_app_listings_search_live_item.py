@@ -16,13 +16,13 @@ class AppDataGoogleAppListingsSearchLiveItem(BaseModel):
     """
     AppDataGoogleAppListingsSearchLiveItem
     """ # noqa: E501
-    app_id: Optional[StrictStr] = Field(default=None, description=r"ID of the returned app")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    time_update: Optional[StrictStr] = Field(default=None, description=r"date and time when SERP data was last updated. in the ISO 8601 format: “YYYY-MM-DDThh:mm:ss.sssssssZ”. example:. 2023-05-23 10:16:19 +00:00")
-    item: Optional[GooglePlayInfoOrganic] = Field(default=None, description=r"detailed information about the app")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the returned app*")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    time_update: Optional[StrictStr] = Field(default=None, description=r"*date and time when SERP data was last updated*. in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: “YYYY-MM-DDThh:mm:ss.sssssssZ”. example:. `2023-05-23 10:16:19 +00:00`")
+    item: Optional[GooglePlayInfoOrganic] = Field(default=None, description=r"*detailed information about the app*")
     __properties: ClassVar[List[str]] = [
         "app_id", 
         "se_domain", 

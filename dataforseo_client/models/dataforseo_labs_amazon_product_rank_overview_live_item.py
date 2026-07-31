@@ -16,9 +16,9 @@ class DataforseoLabsAmazonProductRankOverviewLiveItem(BaseModel):
     """
     DataforseoLabsAmazonProductRankOverviewLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    asin: Optional[StrictStr] = Field(default=None, description=r"ASIN of the product. unique product identifier on Amazon;. for more information, refer to this help center guide")
-    metrics: Optional[AmazonMetricsBundleInfo] = Field(default=None, description=r"average keyword position of the product")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    asin: Optional[StrictStr] = Field(default=None, description=r"*ASIN of the product*. unique product identifier on Amazon;. for more information, refer to [this help center guide](https://dataforseo.com/help-center/asin-in-amazon-api)")
+    metrics: Optional[AmazonMetricsBundleInfo] = Field(default=None, description=r"*average keyword position of the product*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "asin", 

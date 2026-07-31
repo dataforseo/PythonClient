@@ -17,10 +17,10 @@ class AppendixMoneyData(BaseModel):
     """
     AppendixMoneyData
     """ # noqa: E501
-    total: Optional[StrictFloat] = Field(default=None, description=r"total amount of money deposited to your account")
-    balance: Optional[StrictFloat] = Field(default=None, description=r"amount of money left in your account")
-    limits: Optional[AppendixLimitsMoneyData] = Field(default=None, description=r"cost limits")
-    statistics: Optional[AppendixStatisticsDataInfo] = Field(default=None, description=r"statistics of your spending")
+    total: Optional[StrictFloat] = Field(default=None, description=r"*total amount of money deposited to your account*")
+    balance: Optional[StrictFloat] = Field(default=None, description=r"*amount of money left in your account*")
+    limits: Optional[AppendixLimitsMoneyData] = Field(default=None, description=r"*cost limits*")
+    statistics: Optional[AppendixStatisticsDataInfo] = Field(default=None, description=r"*statistics of your spending*")
     __properties: ClassVar[List[str]] = [
         "total", 
         "balance", 

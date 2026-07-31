@@ -16,9 +16,9 @@ class DataforseoLabsGoogleCategoriesForDomainLiveItem(BaseModel):
     """
     DataforseoLabsGoogleCategoriesForDomainLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"product and service categories. you can download the full list of possible categories")
-    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to the specified domain or subdomain")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"*product and service categories*. you can download [the full list of possible categories](https://cdn.dataforseo.com/v3/categories/categories_dataforseo_labs_2023_10_25.csv)")
+    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*ranking data relevant to the specified domain or subdomain*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "categories", 

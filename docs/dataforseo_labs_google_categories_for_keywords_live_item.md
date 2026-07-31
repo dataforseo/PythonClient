@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**keyword** | **StrictStr** | keyword in a POST array |[optional]|
-**categories** | **List[Optional[StrictInt]]** | product and service categories<br>you can download the full list of possible categories |[optional]|
+**keyword** | **StrictStr** | <em>keyword in a POST array</em> |[optional]|
+**categories** | **List[Optional[StrictInt]]** | <em>product and service categories</em><br>you can download <a href='https://cdn.dataforseo.com/v3/categories/categories_dataforseo_labs_2023_10_25.csv' rel='noopener noreferrer' target='_blank'>the full list of possible categories</a> |[optional]|

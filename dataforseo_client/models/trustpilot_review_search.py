@@ -19,19 +19,19 @@ class TrustpilotReviewSearch(BaseModel):
     TrustpilotReviewSearch
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank among all the listed reviews. absolute position among all reviews on the list")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the review in SERP. can take the following values: right")
-    url: Optional[StrictStr] = Field(default=None, description=r"the URL of the review")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the rating score submitted by the reviewer")
-    verified: Optional[StrictBool] = Field(default=None, description=r"indicates whether the review has the “Verified” mark")
-    language: Optional[StrictStr] = Field(default=None, description=r"the language of the review")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when a review was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    title: Optional[StrictStr] = Field(default=None, description=r"the title of the review")
-    review_text: Optional[StrictStr] = Field(default=None, description=r"the content of the review")
-    review_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"images submitted by the reviewer. displays URLs to the images provided by the author of the review;. please note that Trustpilot doesn’t allow adding images to reviews, so the review_images parameter will always equal null")
-    user_profile: Optional[BusinessDataUserProfileInfo] = Field(default=None, description=r"user profile of the reviewer")
-    responses: Optional[List[Optional[ReviewResponseItemInfo]]] = Field(default=None, description=r"owner’s response to the submitted review")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank among all the listed reviews*. absolute position among all reviews on the list")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the review in SERP*. can take the following values: `right`")
+    url: Optional[StrictStr] = Field(default=None, description=r"*the URL of the review*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the rating score submitted by the reviewer*")
+    verified: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the review has the 'Verified' mark*")
+    language: Optional[StrictStr] = Field(default=None, description=r"*the language of the review*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when a review was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*the title of the review*")
+    review_text: Optional[StrictStr] = Field(default=None, description=r"*the content of the review*")
+    review_images: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*images submitted by the reviewer*. displays URLs to the images provided by the author of the review;. **please note** that Trustpilot doesn't allow adding images to reviews, so the `review_images` parameter will always equal `null`")
+    user_profile: Optional[BusinessDataUserProfileInfo] = Field(default=None, description=r"*user profile of the reviewer*")
+    responses: Optional[List[Optional[ReviewResponseItemInfo]]] = Field(default=None, description=r"*owner's response to the submitted review*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

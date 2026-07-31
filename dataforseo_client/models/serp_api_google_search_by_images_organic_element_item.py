@@ -43,6 +43,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
     is_featured_snippet: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is a featured_snippet")
     is_malicious: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is marked as malicious")
     is_web_story: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is marked as Google web story")
+    checks: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"")
     description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
     pre_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended before the result description in SERP")
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"includes additional information appended after the result description in SERP")
@@ -77,6 +78,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
         "is_featured_snippet", 
         "is_malicious", 
         "is_web_story", 
+        "checks", 
         "description", 
         "pre_snippet", 
         "extended_snippet", 
@@ -136,6 +138,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
         _dict['is_featured_snippet'] = self.is_featured_snippet
         _dict['is_malicious'] = self.is_malicious
         _dict['is_web_story'] = self.is_web_story
+        _dict['checks'] = self.checks
         _dict['description'] = self.description
         _dict['pre_snippet'] = self.pre_snippet
         _dict['extended_snippet'] = self.extended_snippet
@@ -196,6 +199,7 @@ class SerpApiGoogleSearchByImagesOrganicElementItem(BaseSerpApiGoogleSearchByIma
             "is_featured_snippet": obj.get("is_featured_snippet"),
             "is_malicious": obj.get("is_malicious"),
             "is_web_story": obj.get("is_web_story"),
+            "checks": obj.get("checks"),
             "description": obj.get("description"),
             "pre_snippet": obj.get("pre_snippet"),
             "extended_snippet": obj.get("extended_snippet"),

@@ -16,10 +16,10 @@ class Advertiser(BaseModel):
     Advertiser
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    advertiser_id: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the advertiser account. can be used to obtain data on advertising campaigns from the Google Ads Search endpoint")
-    location: Optional[StrictStr] = Field(default=None, description=r"location of the advertiser account. country code associated with the advertiser account")
-    verified: Optional[StrictBool] = Field(default=None, description=r"verified advertiser account. equals true if advertiser account is verified by Google Ads")
-    approx_ads_count: Optional[StrictInt] = Field(default=None, description=r"ads count. the approximate number of ads that are run by the advertiser account across all available Google Ads platforms")
+    advertiser_id: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the advertiser account*. can be used to obtain data on advertising campaigns from the [Google Ads Search endpoint](/v3/serp/google/ads_search/task_post/)")
+    location: Optional[StrictStr] = Field(default=None, description=r"*location of the advertiser account*. country code associated with the advertiser account")
+    verified: Optional[StrictBool] = Field(default=None, description=r"*verified advertiser account*. equals `true` if advertiser account is verified by Google Ads")
+    approx_ads_count: Optional[StrictInt] = Field(default=None, description=r"*ads count*. the approximate number of ads that are run by the advertiser account across all available Google Ads platforms")
     __properties: ClassVar[List[str]] = [
         "type", 
         "advertiser_id", 

@@ -16,12 +16,12 @@ class DataforseoLabsAmazonBulkSearchVolumeLiveResultInfo(BaseModel):
     """
     DataforseoLabsAmazonBulkSearchVolumeLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsAmazonBulkSearchVolumeLiveItem]]] = Field(default=None, description=r"contains keyword search volume data data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is `null`")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is `null`")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsAmazonBulkSearchVolumeLiveItem]]] = Field(default=None, description=r"*contains keyword search volume data data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "location_code", 

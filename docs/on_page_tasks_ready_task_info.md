@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[OnPageTasksReadyResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[OnPageTasksReadyResultInfo]]** | <em>array of results</em> |[optional]|

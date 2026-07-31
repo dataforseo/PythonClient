@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.rating_info import RatingInfo
-from dataforseo_client.models.price_info import PriceInfo
+from dataforseo_client.models.ai_mode_price_info import AiModePriceInfo
 
 
 
@@ -25,7 +25,7 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"*URL in link*")
     domain: Optional[StrictStr] = Field(default=None, description=r"*domain in link*")
     rating: Optional[RatingInfo] = Field(default=None, description=r"*product rating*. the popularity rate based on reviews.  if there is none, the value will be `null`")
-    price: Optional[PriceInfo] = Field(default=None, description=r"*product price*. product price details on the seller's website;.  if there is none, the value will be `null`")
+    price: Optional[AiModePriceInfo] = Field(default=None, description=r"*product price*. product price details on the seller's website;.  if there is none, the value will be `null`")
     seller: Optional[StrictStr] = Field(default=None, description=r"*product seller*. name of the product's seller as displayed in search results")
     snippet: Optional[StrictStr] = Field(default=None, description=r"*additional information about the result*")
     marketplace: Optional[StrictStr] = Field(default=None, description=r"*merchant account provider*. e-commerce site that hosts products or websites of individual sellers under the same merchant account. example:. `by Google`")
@@ -106,7 +106,7 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
             "url": obj.get("url"),
             "domain": obj.get("domain"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
-            "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
+            "price": AiModePriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "seller": obj.get("seller"),
             "snippet": obj.get("snippet"),
             "marketplace": obj.get("marketplace"),

@@ -15,9 +15,9 @@ class PeriodCovered(BaseModel):
     """
     PeriodCovered
     """ # noqa: E501
-    start_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the period starts. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2020-03-02 02:00:00 +00:00")
-    end_date: Optional[StrictStr] = Field(default=None, description=r"date and time when the period ends. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2022-12-09 02:00:00 +00:00")
-    displayed_date: Optional[StrictStr] = Field(default=None, description=r"period displayed in SERP. example:. Mar 2, 2020 - Dec 9, 2022")
+    start_date: Optional[StrictStr] = Field(default=None, description=r"*date and time when the period starts*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2020-03-02 02:00:00 +00:00`")
+    end_date: Optional[StrictStr] = Field(default=None, description=r"*date and time when the period ends*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2022-12-09 02:00:00 +00:00`")
+    displayed_date: Optional[StrictStr] = Field(default=None, description=r"*period displayed in SERP*. example:. `Mar 2, 2020 - Dec 9, 2022`")
     __properties: ClassVar[List[str]] = [
         "start_date", 
         "end_date", 

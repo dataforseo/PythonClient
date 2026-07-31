@@ -17,9 +17,15 @@ class AnnotationInfo(BaseModel):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description=r"*the domain name or title of the quoted source*")
     url: Optional[StrictStr] = Field(default=None, description=r"*URL of the quoted source*")
+    start_index: Optional[StrictInt] = Field(default=None, description=r"*start of the annotation indexing*")
+    end_index: Optional[StrictInt] = Field(default=None, description=r"*end of the annotation indexing*")
+    text: Optional[StrictStr] = Field(default=None, description=r"*text of the reasoning chain section*. text of the reasoning chain  section summarizing the model's thought process")
     __properties: ClassVar[List[str]] = [
         "title", 
         "url", 
+        "start_index", 
+        "end_index", 
+        "text", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -48,6 +54,9 @@ class AnnotationInfo(BaseModel):
 
         _dict['title'] = self.title
         _dict['url'] = self.url
+        _dict['start_index'] = self.start_index
+        _dict['end_index'] = self.end_index
+        _dict['text'] = self.text
         return _dict
 
 
@@ -62,6 +71,9 @@ class AnnotationInfo(BaseModel):
         _obj = cls.model_validate({
             "title": obj.get("title"),
             "url": obj.get("url"),
+            "start_index": obj.get("start_index"),
+            "end_index": obj.get("end_index"),
+            "text": obj.get("text"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

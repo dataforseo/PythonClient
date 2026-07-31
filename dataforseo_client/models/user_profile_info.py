@@ -15,11 +15,11 @@ class UserProfileInfo(BaseModel):
     """
     UserProfileInfo
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description=r"the name of the reviewer")
-    avatar: Optional[StrictStr] = Field(default=None, description=r"URL to the profile picture of the reviewer")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant url")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"total number of reviews submitted by the reviewer")
-    locations: Optional[StrictStr] = Field(default=None, description=r"country of the reviewer")
+    name: Optional[StrictStr] = Field(default=None, description=r"")
+    avatar: Optional[StrictStr] = Field(default=None, description=r"")
+    url: Optional[StrictStr] = Field(default=None, description=r"*relevant url*")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"")
+    locations: Optional[StrictStr] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "name", 
         "avatar", 

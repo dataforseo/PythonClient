@@ -15,13 +15,13 @@ class ContentAnalysisIdListResultInfo(BaseModel):
     """
     ContentAnalysisIdListResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"task identifier. unique task identifier in our system in the UUID format")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the task. URL you used for making an API call")
-    datetime_posted: Optional[StrictStr] = Field(default=None, description=r"date and time when the task was made. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2023-01-15 12:57:46 +00:00")
-    datetime_done: Optional[StrictStr] = Field(default=None, description=r"date and time when the task was completed. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2023-01-15 12:57:46 +00:00")
-    status: Optional[StrictStr] = Field(default=None, description=r"informational message of the task. you can find the full list of general informational messages here")
-    cost: Optional[StrictFloat] = Field(default=None, description=r"total tasks cost, USD")
-    metadata: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"contains parameters you specified in the POST request")
+    id: Optional[StrictStr] = Field(default=None, description=r"*task identifier*. **unique task identifier in our system in the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format**")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the task*. URL you used for making an API call")
+    datetime_posted: Optional[StrictStr] = Field(default=None, description=r"*date and time when the task was made*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2023-01-15 12:57:46 +00:00`")
+    datetime_done: Optional[StrictStr] = Field(default=None, description=r"*date and time when the task was completed*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2023-01-15 12:57:46 +00:00`")
+    status: Optional[StrictStr] = Field(default=None, description=r"*informational message of the task*. you can find the full list of general informational messages [here](/v3/appendix-errors/)")
+    cost: Optional[StrictFloat] = Field(default=None, description=r"*total tasks cost, USD*")
+    metadata: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"*contains parameters you specified in the POST request*")
     __properties: ClassVar[List[str]] = [
         "id", 
         "url", 

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleMapsTasksReadyResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpGoogleMapsTasksReadyResultInfo]]** | <em>array of results</em> |[optional]|

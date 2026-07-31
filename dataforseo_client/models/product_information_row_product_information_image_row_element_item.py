@@ -17,8 +17,8 @@ class ProductInformationRowProductInformationImageRowElementItem(BaseMerchantAma
     ProductInformationRowProductInformationImageRowElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    alt: Optional[StrictStr] = Field(default=None, description=r"alternative text of the related product image")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the image")
+    alt: Optional[StrictStr] = Field(default=None, description=r"*alternative text of the related product image*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "alt", 

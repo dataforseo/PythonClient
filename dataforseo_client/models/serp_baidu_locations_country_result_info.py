@@ -15,11 +15,11 @@ class SerpBaiduLocationsCountryResultInfo(BaseModel):
     """
     SerpBaiduLocationsCountryResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
-    location_code_parent: Optional[StrictInt] = Field(default=None, description=r"the code of the superordinate location. only City location_type is supported for all countries except China (where Country is also supported);. don’t match locations by location_code_parent because the results for Region and Country-level results for most countries are not supported by Baidu SERP API")
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the location")
-    location_type: Optional[StrictStr] = Field(default=None, description=r"location type. only City is supported for all countries except China (where Country is also supported)")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code*")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of the location*")
+    location_code_parent: Optional[StrictInt] = Field(default=None, description=r"*the code of the superordinate location*. only `City` `location_type` is supported for all countries except China (where `Country` is also supported);. don't match locations by `location_code_parent` because the results for `Region` and `Country`-level results for most countries are not supported by Baidu SERP API")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*ISO country code of the location*")
+    location_type: Optional[StrictStr] = Field(default=None, description=r"*location type*. only `City` is supported for all countries except China (where `Country` is also supported)")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 

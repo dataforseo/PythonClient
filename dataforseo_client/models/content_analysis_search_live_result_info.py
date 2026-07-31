@@ -16,10 +16,10 @@ class ContentAnalysisSearchLiveResultInfo(BaseModel):
     """
     ContentAnalysisSearchLiveResultInfo
     """ # noqa: E501
-    offset_token: Optional[StrictStr] = Field(default=None, description=r"offset token for subsequent requests. you can use the string provided in this field to get the subsequent results of the initial task;. note: offset_token values are unique for each subsequent task")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[ContentAnalysisSearchLiveItem]]] = Field(default=None, description=r"contains citations and related data")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"*offset token for subsequent requests*. you can use the string provided in this field to get the subsequent results of the initial task;. **note:** `offset_token` values are unique for each subsequent task")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[ContentAnalysisSearchLiveItem]]] = Field(default=None, description=r"*contains citations and related data*")
     __properties: ClassVar[List[str]] = [
         "offset_token", 
         "total_count", 

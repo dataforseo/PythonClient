@@ -16,8 +16,8 @@ class AmazonMetricsBundleInfo(BaseModel):
     """
     AmazonMetricsBundleInfo
     """ # noqa: E501
-    amazon_serp: Optional[AppMetricsInfo] = Field(default=None, description=r"ranking data from Amazon organic SERP")
-    amazon_paid: Optional[AppMetricsInfo] = Field(default=None, description=r"ranking data from Amazon paid SERP")
+    amazon_serp: Optional[AppMetricsInfo] = Field(default=None, description=r"*ranking data from Amazon organic SERP*")
+    amazon_paid: Optional[AppMetricsInfo] = Field(default=None, description=r"*ranking data from Amazon paid SERP*")
     __properties: ClassVar[List[str]] = [
         "amazon_serp", 
         "amazon_paid", 

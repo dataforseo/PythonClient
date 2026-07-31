@@ -16,13 +16,13 @@ class ProductVariation(BaseModel):
     ProductVariation
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    product_id: Optional[StrictStr] = Field(default=None, description=r"product ID in a POST array. learn more about the parameter in this help center guide")
-    gid: Optional[StrictStr] = Field(default=None, description=r"GID ID in a POST array. learn more about the parameter in this help center guide")
-    data_docid: Optional[StrictStr] = Field(default=None, description=r"unique identifier of the SERP data element in the POST array")
-    pvf: Optional[StrictStr] = Field(default=None, description=r"product variation filter. used in the product variation URL as the identifier of the specific product variation")
-    title: Optional[StrictStr] = Field(default=None, description=r"name of the product seller")
-    url: Optional[StrictStr] = Field(default=None, description=r"product variation URL on Google Shopping")
-    variation_category: Optional[StrictStr] = Field(default=None, description=r"category of the product variation. example: 'Storage Capacity'")
+    product_id: Optional[StrictStr] = Field(default=None, description=r"*product ID in a POST array*. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/product-id-google-shopping)")
+    gid: Optional[StrictStr] = Field(default=None, description=r"*GID ID in a POST array*. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/whats-a-gid-in-google-shopping-api)")
+    data_docid: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the SERP data element in the POST array*")
+    pvf: Optional[StrictStr] = Field(default=None, description=r"*product variation filter*. used in the product variation URL as the identifier of the specific product variation")
+    title: Optional[StrictStr] = Field(default=None, description=r"*name of the product seller*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*product variation URL on Google Shopping*")
+    variation_category: Optional[StrictStr] = Field(default=None, description=r"*category of the product variation*. example: `'Storage Capacity'`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "product_id", 

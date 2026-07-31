@@ -19,17 +19,17 @@ class EventItem(BaseModel):
     EventItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image featured in the element")
-    event_dates: Optional[EventDates] = Field(default=None, description=r"dates when the event takes place. if there are none, equals null")
-    location_info: Optional[LocationInfo] = Field(default=None, description=r"information about the event’s venue")
-    information_and_tickets: Optional[List[Optional[AiModeLinkElementInfo]]] = Field(default=None, description=r"additional information and ticket purchase options")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*. can take the following values:. `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*description of the results element in SERP*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image featured in the element*")
+    event_dates: Optional[EventDates] = Field(default=None, description=r"*dates when the event takes place*. if there are none, equals `null`")
+    location_info: Optional[LocationInfo] = Field(default=None, description=r"*information about the event's venue*")
+    information_and_tickets: Optional[List[Optional[AiModeLinkElementInfo]]] = Field(default=None, description=r"*additional information and ticket purchase options*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

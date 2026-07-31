@@ -17,8 +17,8 @@ class AppendixRatesData(BaseModel):
     """
     AppendixRatesData
     """ # noqa: E501
-    limits: Optional[AppendixLimitsRatesData] = Field(default=None, description=r"rate limits for API calls per a certain period of time")
-    statistics: Optional[AppendixStatisticsDataInfo] = Field(default=None, description=r"statisctics for API calls")
+    limits: Optional[AppendixLimitsRatesData] = Field(default=None, description=r"*rate limits for API calls per a certain period of time*")
+    statistics: Optional[AppendixStatisticsDataInfo] = Field(default=None, description=r"*statisctics for API calls*")
     __properties: ClassVar[List[str]] = [
         "limits", 
         "statistics", 

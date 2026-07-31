@@ -18,11 +18,11 @@ class MerchantRelatedSearchesSerpElementItem(BaseMerchantAmazonElementItem):
     MerchantRelatedSearchesSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements found in Amazon SERP")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in Amazon SERP. possible values:. left, right")
-    items: Optional[List[Optional[RelatedSearchesElement]]] = Field(default=None, description=r"Amazon product items")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements found in Amazon SERP")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in Amazon SERP*. possible values:. `left`, `right`")
+    items: Optional[List[Optional[RelatedSearchesElement]]] = Field(default=None, description=r"*Amazon product items*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

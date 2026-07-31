@@ -16,10 +16,10 @@ class DataforseoLabsAmazonRelatedKeywordsLiveItem(BaseModel):
     """
     DataforseoLabsAmazonRelatedKeywordsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword_data: Optional[AmazonKeywordData] = Field(default=None, description=r"keyword data for the returned keyword")
-    depth: Optional[StrictInt] = Field(default=None, description=r"keyword search depth")
-    related_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"list of related keywords. represents the list of search queries which are related to the keyword returned in the array above")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword_data: Optional[AmazonKeywordData] = Field(default=None, description=r"*keyword data for the returned keyword*")
+    depth: Optional[StrictInt] = Field(default=None, description=r"*keyword search depth*")
+    related_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*list of related keywords*. represents the list of search queries which are related to the keyword returned in the array above")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword_data", 

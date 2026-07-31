@@ -15,9 +15,9 @@ class AppsInfo(BaseModel):
     """
     AppsInfo
     """ # noqa: E501
-    app_id: Optional[StrictStr] = Field(default=None, description=r"ID of the app")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the app")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the app page on Google Play")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the app*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the app*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to the app page on Google Play*")
     __properties: ClassVar[List[str]] = [
         "app_id", 
         "title", 

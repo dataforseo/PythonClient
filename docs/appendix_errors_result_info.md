@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**code** | **StrictInt** | code |[optional]|
-**message** | **StrictStr** | message |[optional]|
+**code** | **StrictInt** | <em>code</em> |[optional]|
+**message** | **StrictStr** | <em>message</em> |[optional]|

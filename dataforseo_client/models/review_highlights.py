@@ -15,8 +15,8 @@ class ReviewHighlights(BaseModel):
     """
     ReviewHighlights
     """ # noqa: E501
-    feature: Optional[StrictStr] = Field(default=None, description=r"reviewed feature")
-    assessment: Optional[StrictStr] = Field(default=None, description=r"feature assessment")
+    feature: Optional[StrictStr] = Field(default=None, description=r"*reviewed feature*")
+    assessment: Optional[StrictStr] = Field(default=None, description=r"*feature assessment*")
     __properties: ClassVar[List[str]] = [
         "feature", 
         "assessment", 

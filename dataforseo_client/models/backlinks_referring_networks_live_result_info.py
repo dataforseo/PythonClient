@@ -16,10 +16,10 @@ class BacklinksReferringNetworksLiveResultInfo(BaseModel):
     """
     BacklinksReferringNetworksLiveResultInfo
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"target in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the items array")
-    items: Optional[List[Optional[BacklinksReferringNetworksLiveItem]]] = Field(default=None, description=r"items array")
+    target: Optional[StrictStr] = Field(default=None, description=r"*`target` in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of relevant items in the database*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the `items` array*")
+    items: Optional[List[Optional[BacklinksReferringNetworksLiveItem]]] = Field(default=None, description=r"*items array*")
     __properties: ClassVar[List[str]] = [
         "target", 
         "total_count", 

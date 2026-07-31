@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[BusinessDataTripadvisorSearchTaskGetTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[BusinessDataTripadvisorSearchTaskGetTaskInfo]]** | <em>array of tasks</em> |[optional]|

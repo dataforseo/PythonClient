@@ -16,9 +16,9 @@ class DataforseoLabsGoogleSubdomainsLiveItem(BaseModel):
     """
     DataforseoLabsGoogleSubdomainsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    subdomain: Optional[StrictStr] = Field(default=None, description=r"returned subdomain")
-    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to subdomain")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    subdomain: Optional[StrictStr] = Field(default=None, description=r"*returned subdomain*")
+    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*ranking data relevant to subdomain*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "subdomain", 

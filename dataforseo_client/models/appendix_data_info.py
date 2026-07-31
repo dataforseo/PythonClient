@@ -29,7 +29,7 @@ class AppendixDataInfo(BaseModel):
     AppendixDataInfo
     """ # noqa: E501
     serp: Optional[AppendixSerpDataInfo] = Field(default=None, description=r"")
-    total: Optional[StrictFloat] = Field(default=None, description=r"total amount of money deposited to your account")
+    total: Optional[StrictFloat] = Field(default=None, description=r"*total amount of money deposited to your account*")
     total_serp: Optional[StrictFloat] = Field(default=None, description=r"")
     keywords_data: Optional[AppendixKeywordsDataDataInfo] = Field(default=None, description=r"")
     total_keywords_data: Optional[StrictFloat] = Field(default=None, description=r"")

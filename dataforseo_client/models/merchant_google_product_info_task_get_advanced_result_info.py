@@ -16,16 +16,16 @@ class MerchantGoogleProductInfoTaskGetAdvancedResultInfo(BaseModel):
     """
     MerchantGoogleProductInfoTaskGetAdvancedResultInfo
     """ # noqa: E501
-    product_id: Optional[StrictStr] = Field(default=None, description=r"product ID in a POST array. learn more about the parameter in this help center guide")
+    product_id: Optional[StrictStr] = Field(default=None, description=r"*product ID in a POST array*. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/product-id-google-shopping)")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. 2019-11-15 12:57:46 +00:00")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of items found on the product specification page. possible item types:. product_info_element")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[ProductInfoElement]]] = Field(default=None, description=r"items on the product page. contains all product attributes and related data listed on the product page")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. `2019-11-15 12:57:46 +00:00`")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of items found on the product specification page*. possible item types:. `product_info_element`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[ProductInfoElement]]] = Field(default=None, description=r"*items on the product page*. contains all product attributes and related data listed on the product page")
     __properties: ClassVar[List[str]] = [
         "product_id", 
         "type", 

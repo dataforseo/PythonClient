@@ -17,8 +17,8 @@ class BacklinksPageIntersectionLiveItem(BaseModel):
     """
     BacklinksPageIntersectionLiveItem
     """ # noqa: E501
-    page_intersection: Optional[Dict[str, Optional[List[Optional[BacklinksPageIntersection]]]]] = Field(default=None, description=r"contains data on pages that link to the corresponding targets specified in the POST array. data is provided in separate objects corresponding to pages specified in the targets object")
-    summary: Optional[IntersectionSummaryInfo] = Field(default=None, description=r"contains the page intersections summary")
+    page_intersection: Optional[Dict[str, Optional[List[Optional[BacklinksPageIntersection]]]]] = Field(default=None, description=r"*contains data on pages that link to the corresponding targets specified in the POST array*. data is provided in separate objects corresponding to pages specified in the `targets` object")
+    summary: Optional[IntersectionSummaryInfo] = Field(default=None, description=r"*contains the page intersections summary*")
     __properties: ClassVar[List[str]] = [
         "page_intersection", 
         "summary", 

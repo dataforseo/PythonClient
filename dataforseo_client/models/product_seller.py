@@ -19,13 +19,13 @@ class ProductSeller(BaseModel):
     ProductSeller
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"product title")
-    url: Optional[StrictStr] = Field(default=None, description=r"seller url. url of the page where the product is sold")
-    seller_rating: Optional[RatingElement] = Field(default=None, description=r"rating of the seller")
+    title: Optional[StrictStr] = Field(default=None, description=r"*product title*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*seller url*. url of the page where the product is sold")
+    seller_rating: Optional[RatingElement] = Field(default=None, description=r"*rating of the seller*")
     seller_review_count: Optional[StrictInt] = Field(default=None, description=r"number of seller reviews. number of reviews on the product seller’s account")
-    price: Optional[PriceInfo] = Field(default=None, description=r"product price. product price details on the seller’s website")
-    delivery_info: Optional[DeliveryInfo] = Field(default=None, description=r"delivery information. product delivery information")
-    product_availability: Optional[StrictStr] = Field(default=None, description=r"product availability information. can take the following values: in_stock, limited_stock, out_of_stock, backordered, pre_order_available, on_display_to_order")
+    price: Optional[PriceInfo] = Field(default=None, description=r"*product price*. product price details on the seller's website")
+    delivery_info: Optional[DeliveryInfo] = Field(default=None, description=r"*delivery information*. product delivery information")
+    product_availability: Optional[StrictStr] = Field(default=None, description=r"*product availability information*. can take the following values: `in_stock`, `limited_stock`, `out_of_stock`, `backordered`, `pre_order_available`, `on_display_to_order`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

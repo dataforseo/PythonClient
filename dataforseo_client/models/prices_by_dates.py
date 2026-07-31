@@ -15,8 +15,8 @@ class PricesByDates(BaseModel):
     """
     PricesByDates
     """ # noqa: E501
-    price: Optional[StrictFloat] = Field(default=None, description=r"price per night")
-    currency: Optional[StrictStr] = Field(default=None, description=r"price currency. USD is applied by default, unless specified in the POST array")
+    price: Optional[StrictFloat] = Field(default=None, description=r"*price per night*")
+    currency: Optional[StrictStr] = Field(default=None, description=r"*price currency*. `USD` is applied by default, unless specified in the POST array")
     check_in_date: Optional[StrictStr] = Field(default=None, description=r"")
     check_out_date: Optional[StrictStr] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [

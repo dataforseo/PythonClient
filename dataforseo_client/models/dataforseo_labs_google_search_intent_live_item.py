@@ -16,9 +16,9 @@ class DataforseoLabsGoogleSearchIntentLiveItem(BaseModel):
     """
     DataforseoLabsGoogleSearchIntentLiveItem
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"target keyword in a POST array")
-    keyword_intent: Optional[KeywordIntentInfo] = Field(default=None, description=r"search intent data relevant for the specified keyword")
-    secondary_keyword_intents: Optional[List[Optional[KeywordIntentInfo]]] = Field(default=None, description=r"contains objects with other possible search intents for the specified keyword")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*target keyword in a POST array*")
+    keyword_intent: Optional[KeywordIntentInfo] = Field(default=None, description=r"*search intent data relevant for the specified keyword*")
+    secondary_keyword_intents: Optional[List[Optional[KeywordIntentInfo]]] = Field(default=None, description=r"*contains objects with other possible search intents for the specified keyword*")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "keyword_intent", 

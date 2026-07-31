@@ -15,10 +15,10 @@ class ResponseDataInfo(BaseModel):
     """
     ResponseDataInfo
     """ # noqa: E501
-    author: Optional[StrictStr] = Field(default=None, description=r"author of the response")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the response. in this case, will equal null")
-    text: Optional[StrictStr] = Field(default=None, description=r"content of the response")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the response was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. 2019-11-15 12:57:46 +00:00")
+    author: Optional[StrictStr] = Field(default=None, description=r"*author of the response*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the response*. in this case, will equal `null`")
+    text: Optional[StrictStr] = Field(default=None, description=r"*content of the response*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the response was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "author", 
         "title", 

@@ -16,9 +16,9 @@ class DataforseoLabsGoogleSearchIntentLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleSearchIntentLiveResultInfo
     """ # noqa: E501
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleSearchIntentLiveItem]]] = Field(default=None, description=r"array of items with relevant traffic estimation data")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsGoogleSearchIntentLiveItem]]] = Field(default=None, description=r"*array of items with relevant traffic estimation data*")
     __properties: ClassVar[List[str]] = [
         "language_code", 
         "items_count", 

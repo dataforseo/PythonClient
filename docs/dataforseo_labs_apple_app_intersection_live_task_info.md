@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[DataforseoLabsAppleAppIntersectionLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[DataforseoLabsAppleAppIntersectionLiveResultInfo]]** | <em>array of results</em> |[optional]|

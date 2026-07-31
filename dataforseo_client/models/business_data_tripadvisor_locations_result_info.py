@@ -15,11 +15,11 @@ class BusinessDataTripadvisorLocationsResultInfo(BaseModel):
     """
     BusinessDataTripadvisorLocationsResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
-    location_name_parent: Optional[StrictStr] = Field(default=None, description=r"the name of the superordinate location. example:. 'location_code': 9041134,. 'location_name': 'Vienna International Airport,Lower Austria,Austria',. 'location_name_parent': 'Lower Austria,Austria'")
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the location")
-    location_type: Optional[StrictStr] = Field(default=None, description=r"location type")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code*")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of the location*")
+    location_name_parent: Optional[StrictStr] = Field(default=None, description=r"*the name of the superordinate location*. example:. `'location_code': 9041134,'location_name': 'Vienna International Airport,Lower Austria,Austria','location_name_parent': 'Lower Austria,Austria'`")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*ISO country code of the location*")
+    location_type: Optional[StrictStr] = Field(default=None, description=r"*location type*")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 

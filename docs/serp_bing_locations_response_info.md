@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpBingLocationsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpBingLocationsTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -16,9 +16,9 @@ class AppendixStatusResultInfo(BaseModel):
     """
     AppendixStatusResultInfo
     """ # noqa: E501
-    api: Optional[StrictStr] = Field(default=None, description=r"name of the API. the list of APIs:. serp. keywords_data. appendix. dataforseo_labs. domain_analytics. merchant. on_page. business_data. backlinks. app_data. content_analysis. content_generation")
-    status: Optional[StrictStr] = Field(default=None, description=r"current status. you can find all information about the statuses of our endpoints for the last 60 days here. the list of possible current statuses:. major_outage. partial_outage. long_response_time. long_execution_time. webhook_delay. send_delay")
-    endpoints: Optional[List[Optional[AppendixStatusEndpointsInfo]]] = Field(default=None, description=r"array of objects that contain status information for API endpoints")
+    api: Optional[StrictStr] = Field(default=None, description=r"*name of the API*. the list of APIs:. `serp`. `keywords_data`. `appendix`. `dataforseo_labs`. `domain_analytics`. `merchant`. `on_page`. `business_data`. `backlinks`. `app_data`. `content_analysis`. `content_generation`")
+    status: Optional[StrictStr] = Field(default=None, description=r"*current status*. you can find all information about the statuses of our endpoints for the last 60 days [here](https://status.dataforseo.com/). the list of possible current statuses:. `major_outage`. `partial_outage`. `long_response_time`. `long_execution_time`. `webhook_delay`. `send_delay`")
+    endpoints: Optional[List[Optional[AppendixStatusEndpointsInfo]]] = Field(default=None, description=r"*array of objects that contain status information for API endpoints*")
     __properties: ClassVar[List[str]] = [
         "api", 
         "status", 

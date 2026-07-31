@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleImagesTasksFixedResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpGoogleImagesTasksFixedResultInfo]]** | <em>array of results</em> |[optional]|

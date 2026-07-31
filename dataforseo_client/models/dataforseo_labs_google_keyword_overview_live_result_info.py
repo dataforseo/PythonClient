@@ -16,11 +16,11 @@ class DataforseoLabsGoogleKeywordOverviewLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleKeywordOverviewLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleKeywordOverviewLiveItem]]] = Field(default=None, description=r"contains keywords and related data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsGoogleKeywordOverviewLiveItem]]] = Field(default=None, description=r"*contains keywords and related data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "location_code", 

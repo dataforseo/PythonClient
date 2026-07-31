@@ -17,8 +17,8 @@ class ProductInformationProductInformationTextItem(BaseMerchantAmazonProductInfo
     ProductInformationProductInformationTextItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    section_name: Optional[StrictStr] = Field(default=None, description=r"name of the section related to product information specified in the contents")
-    text: Optional[StrictStr] = Field(default=None, description=r"text specified under the given title within the section_name")
+    section_name: Optional[StrictStr] = Field(default=None, description=r"*name of the section related to product information specified in the `contents`*")
+    text: Optional[StrictStr] = Field(default=None, description=r"*text specified under the given `title` within the `section_name`*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "section_name", 

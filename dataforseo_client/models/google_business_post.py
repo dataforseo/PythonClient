@@ -17,18 +17,18 @@ class GoogleBusinessPost(BaseModel):
     GoogleBusinessPost
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank among all the listed updates. absolute position among all present elements")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values: right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    author: Optional[StrictStr] = Field(default=None, description=r"author of the post")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"additional content of a post")
-    post_text: Optional[StrictStr] = Field(default=None, description=r"main content of a post")
-    url: Optional[StrictStr] = Field(default=None, description=r"url of a post")
-    images_url: Optional[StrictStr] = Field(default=None, description=r"url of an image included in the post")
-    post_date: Optional[StrictStr] = Field(default=None, description=r"date when a post was published. in the following format:. 'mm/dd/yyyy hh:mm:ss'")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"time when a post was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"links included in the post")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank among all the listed updates*. absolute position among all present elements")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*. can take the following values: `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    author: Optional[StrictStr] = Field(default=None, description=r"*author of the post*")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*additional content of a post*")
+    post_text: Optional[StrictStr] = Field(default=None, description=r"*main content of a post*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*url of a post*")
+    images_url: Optional[StrictStr] = Field(default=None, description=r"*url of an image included in the post*")
+    post_date: Optional[StrictStr] = Field(default=None, description=r"*date when a post was published*. in the following format:. `'mm/dd/yyyy hh:mm:ss'`")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*time when a post was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
+    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"*links included in the post*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

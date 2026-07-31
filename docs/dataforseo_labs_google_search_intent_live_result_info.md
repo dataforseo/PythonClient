@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**language_code** | **StrictStr** | language code in a POST array<br>if there is no data, then the value is null |[optional]|
-**items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[DataforseoLabsGoogleSearchIntentLiveItem]]** | array of items with relevant traffic estimation data |[optional]|
+**language_code** | **StrictStr** | <em>language code in a POST array</em><br>if there is no data, then the value is_<code>null</code>n |[optional]|
+**items_count** | **StrictInt** | <em>the number of results returned in the <code>items</code> array</em> |[optional]|
+**items** | **List[Optional[DataforseoLabsGoogleSearchIntentLiveItem]]** | <em>array of items with relevant traffic estimation data</em> |[optional]|

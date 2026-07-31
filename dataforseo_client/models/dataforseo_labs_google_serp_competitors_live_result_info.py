@@ -16,13 +16,13 @@ class DataforseoLabsGoogleSerpCompetitorsLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleSerpCompetitorsLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    seed_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords specified in the request. keyword is returned with decoded %## (plus character ‘+’ will be decoded to a space character)")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"the total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleSerpCompetitorsLiveItem]]] = Field(default=None, description=r"contains detected SERP competitors and related data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    seed_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*keywords specified in the request*. **keyword is returned with decoded %## (plus character '+' will be decoded to a space character)**")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is_`null`n")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*the total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsGoogleSerpCompetitorsLiveItem]]] = Field(default=None, description=r"*contains detected SERP competitors and related data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "seed_keywords", 

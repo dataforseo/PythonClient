@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[AppDataGoogleLocationsCountryResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[AppDataGoogleLocationsCountryResultInfo]]** | <em>array of results</em> |[optional]|

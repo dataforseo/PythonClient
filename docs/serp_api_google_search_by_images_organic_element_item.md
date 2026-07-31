@@ -15,6 +15,7 @@
 **is_featured_snippet** | **StrictBool** | indicates whether the element is a featured_snippet |[optional]|
 **is_malicious** | **StrictBool** | indicates whether the element is marked as malicious |[optional]|
 **is_web_story** | **StrictBool** | indicates whether the element is marked as Google web story |[optional]|
+**checks** | **List[Optional[StrictStr]]** |  |[optional]|
 **description** | **StrictStr** | description of the results element in SERP |[optional]|
 **pre_snippet** | **StrictStr** | includes additional information appended before the result description in SERP |[optional]|
 **extended_snippet** | **StrictStr** | includes additional information appended after the result description in SERP |[optional]|
