@@ -16,9 +16,9 @@ class KeywordsDataClickstreamDataBulkSearchVolumeLiveResultInfo(BaseModel):
     """
     KeywordsDataClickstreamDataBulkSearchVolumeLiveResultInfo
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[KeywordsDataClickstreamDataSearchVolumeLiveItem]]] = Field(default=None, description=r"contains keywords and related data")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[KeywordsDataClickstreamDataSearchVolumeLiveItem]]] = Field(default=None, description=r"*contains keywords and related data*")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "items_count", 

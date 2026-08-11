@@ -19,8 +19,8 @@ class SerpApiProductConsiderationsAiOverviewExpandedElementItem(BaseSerpApiProdu
     SerpApiProductConsiderationsAiOverviewExpandedElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    items: Optional[List[Optional[AiOverviewElement]]] = Field(default=None, description=r"items present in the element")
-    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
+    items: Optional[List[Optional[AiOverviewElement]]] = Field(default=None, description=r"*items present in the element*")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"*additional references relevant to the item*. includes references to webpages that may have been used to generate the `ai_overview`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "items", 

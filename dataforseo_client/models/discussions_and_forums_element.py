@@ -16,13 +16,13 @@ class DiscussionsAndForumsElement(BaseModel):
     DiscussionsAndForumsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
-    description: Optional[StrictStr] = Field(default=None, description=r"link description")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    posts_count: Optional[StrictInt] = Field(default=None, description=r"number of posts from the discussion on the related source")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain where a link points*")
+    source: Optional[StrictStr] = Field(default=None, description=r"*reference source name or title*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*link description*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    posts_count: Optional[StrictInt] = Field(default=None, description=r"*number of posts from the discussion on the related source*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

@@ -17,9 +17,9 @@ class DataforseoLabsGooglePageIntersectionLiveItem(BaseModel):
     """
     DataforseoLabsGooglePageIntersectionLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"keyword data for the returned keyword")
-    intersection_result: Optional[Dict[str, Optional[BaseDataforseoLabsApiElementItem]]] = Field(default=None, description=r"contains data on the SERP elements found for the returned keyword. data will be provided in separate arrays for each URL you specified in the pages object when setting a task;. depending on the number of specified URLs, it can contain from 1 to 20 arrays named respectively")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"*keyword data for the returned keyword*")
+    intersection_result: Optional[Dict[str, Optional[BaseDataforseoLabsApiElementItem]]] = Field(default=None, description=r"*contains data on the SERP elements found for the returned `keyword`*. data will be provided in separate arrays for each URL you specified in the `pages` object when setting a task;. depending on the number of specified URLs, it can contain from 1 to 20 arrays named respectively")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword_data", 

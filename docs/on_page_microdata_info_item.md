@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**inspection_info** | **MicrodataInspectionInfo** | information related to microdata validation |[optional]|
+**inspection_info** | **MicrodataInspectionInfo** | <em>information related to microdata validation</em> |[optional]|

@@ -16,10 +16,10 @@ class SearchVolumeHistorySearchInfo(BaseModel):
     """
     SearchVolumeHistorySearchInfo
     """ # noqa: E501
-    desktop: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"device type = desktop. contains historical search volume data for searches made from desktop devices")
-    non_smartphones: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"device type = non-smartphones. contains historical search volume data for searches made from feature phones (non-smartphone mobile devices)")
-    mobile: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"device type = mobile. contains historical search volume data for searches made from mobile devices")
-    tablet: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"device type = tablet. contains historical search volume data for searches made from tablets")
+    desktop: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"*device type = **desktop***. contains historical search volume data for searches made from desktop devices")
+    non_smartphones: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"*device type = **non-smartphones***. contains historical search volume data for searches made from feature phones (non-smartphone mobile devices)")
+    mobile: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"*device type = **mobile***. contains historical search volume data for searches made from mobile devices")
+    tablet: Optional[List[Optional[SearchVolumeHistoryItemInfo]]] = Field(default=None, description=r"*device type = **tablet***. contains historical search volume data for searches made from tablets")
     __properties: ClassVar[List[str]] = [
         "desktop", 
         "non_smartphones", 

@@ -15,10 +15,10 @@ class AvailableLocations(BaseModel):
     """
     AvailableLocations
     """ # noqa: E501
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code")
-    location_name: Optional[StrictStr] = Field(default=None, description=r"location name")
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the location")
-    location_type: Optional[StrictStr] = Field(default=None, description=r"location type. possible values:. Country, Region")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code*")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"*location name*")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*ISO country code of the location*")
+    location_type: Optional[StrictStr] = Field(default=None, description=r"*location type*. possible values:. `Country`, `Region`")
     __properties: ClassVar[List[str]] = [
         "location_code", 
         "location_name", 

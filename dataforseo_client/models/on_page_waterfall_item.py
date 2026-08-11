@@ -16,18 +16,18 @@ class OnPageWaterfallItem(BaseModel):
     """
     OnPageWaterfallItem
     """ # noqa: E501
-    page_url: Optional[StrictStr] = Field(default=None, description=r"URL of the page")
-    time_to_interactive: Optional[StrictInt] = Field(default=None, description=r"Time To Interactive (TTI) metric. the time it takes until the user can interact with a page (in milliseconds)")
-    dom_complete: Optional[StrictInt] = Field(default=None, description=r"time to load resources. the time it takes until the page and all of its subresources are downloaded (in milliseconds)")
-    connection_time: Optional[StrictInt] = Field(default=None, description=r"time to connect to a server. the time it takes until the connection with a server is established (in milliseconds)")
-    time_to_secure_connection: Optional[StrictInt] = Field(default=None, description=r"time to establish a secure connection. the time it takes until the secure connection with a server is established (in milliseconds)")
-    request_sent_time: Optional[StrictInt] = Field(default=None, description=r"time to send a request to a server. the time it takes until the request to a server is sent (in milliseconds)")
-    waiting_time: Optional[StrictInt] = Field(default=None, description=r"time to first byte (TTFB) in milliseconds")
-    download_time: Optional[StrictInt] = Field(default=None, description=r"time it takes for a browser to receive a response (in milliseconds)")
-    duration_time: Optional[StrictInt] = Field(default=None, description=r"total time it takes until a browser receives a complete response from a server (in milliseconds)")
-    fetch_start: Optional[StrictInt] = Field(default=None, description=r"time to start downloading the HTML resource. the amount of time the browser needs to start downloading a page")
-    fetch_end: Optional[StrictInt] = Field(default=None, description=r"time to complete downloading the HTML resource. the amount of time the browser needs to complete downloading a page")
-    resources: Optional[List[Optional[WaterfallResourceInfo]]] = Field(default=None, description=r"resource-specific timing. contains separate arrays with timing for each resource found on the page")
+    page_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the page*")
+    time_to_interactive: Optional[StrictInt] = Field(default=None, description=r"*[Time To Interactive (TTI)](https://web.dev/interactive/) metric*. the time it takes until the user can interact with a page (in milliseconds)")
+    dom_complete: Optional[StrictInt] = Field(default=None, description=r"*time to load resources*. the time it takes until the page and all of its subresources are downloaded (in milliseconds)")
+    connection_time: Optional[StrictInt] = Field(default=None, description=r"*time to connect to a server*. the time it takes until the connection with a server is established (in milliseconds)")
+    time_to_secure_connection: Optional[StrictInt] = Field(default=None, description=r"*time to establish a secure connection*. the time it takes until the secure connection with a server is established (in milliseconds)")
+    request_sent_time: Optional[StrictInt] = Field(default=None, description=r"*time to send a request to a server*. the time it takes until the request to a server is sent (in milliseconds)")
+    waiting_time: Optional[StrictInt] = Field(default=None, description=r"*time to first byte [(TTFB)](https://en.wikipedia.org/wiki/Time_to_first_byte) in milliseconds*")
+    download_time: Optional[StrictInt] = Field(default=None, description=r"*time it takes for a browser to receive a response (in milliseconds)*")
+    duration_time: Optional[StrictInt] = Field(default=None, description=r"*total time it takes until a browser receives a complete response from a server (in milliseconds)*")
+    fetch_start: Optional[StrictInt] = Field(default=None, description=r"*time to start downloading the HTML resource*. the amount of time the browser needs to start downloading a page")
+    fetch_end: Optional[StrictInt] = Field(default=None, description=r"*time to complete downloading the HTML resource*. the amount of time the browser needs to complete downloading a page")
+    resources: Optional[List[Optional[WaterfallResourceInfo]]] = Field(default=None, description=r"*resource-specific timing*. contains separate arrays with timing for each resource found on the page")
     __properties: ClassVar[List[str]] = [
         "page_url", 
         "time_to_interactive", 

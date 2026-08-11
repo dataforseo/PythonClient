@@ -18,14 +18,14 @@ class KnowledgeGraphExpandedElement(BaseModel):
     KnowledgeGraphExpandedElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    featured_title: Optional[StrictStr] = Field(default=None, description=r"title of a given element")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
-    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element. if there are none, equals null")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    table: Optional[Table] = Field(default=None, description=r"table present in the element. the header and content of the table present in the element")
+    featured_title: Optional[StrictStr] = Field(default=None, description=r"*title of a given element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*relevant URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain where a link points*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*text alongside the link title*")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"*images of the element*. if there are none, equals `null`")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2019-11-15 12:57:46 +00:00`")
+    table: Optional[Table] = Field(default=None, description=r"*table present in the element*. the header and content of the table present in the element")
     __properties: ClassVar[List[str]] = [
         "type", 
         "featured_title", 

@@ -17,11 +17,11 @@ class OnPagePagesByResourceResultInfo(BaseModel):
     """
     OnPagePagesByResourceResultInfo
     """ # noqa: E501
-    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"status of the crawling session. possible values: in_progress, finished")
-    crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description=r"details of the crawling session")
-    total_items_count: Optional[StrictInt] = Field(default=None, description=r"total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description=r"items array")
+    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"*status of the crawling session*. possible values: `in_progress`, `finished`")
+    crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description=r"*details of the crawling session*")
+    total_items_count: Optional[StrictInt] = Field(default=None, description=r"*total number of relevant items in the database*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    items: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description=r"*items array*")
     __properties: ClassVar[List[str]] = [
         "crawl_progress", 
         "crawl_status", 

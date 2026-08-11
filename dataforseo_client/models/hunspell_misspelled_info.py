@@ -15,7 +15,7 @@ class HunspellMisspelledInfo(BaseModel):
     """
     HunspellMisspelledInfo
     """ # noqa: E501
-    word: Optional[StrictStr] = Field(default=None, description=r"misspelled word")
+    word: Optional[StrictStr] = Field(default=None, description=r"*misspelled word*")
     __properties: ClassVar[List[str]] = [
         "word", 
         ]

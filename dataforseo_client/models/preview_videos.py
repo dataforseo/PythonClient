@@ -15,11 +15,11 @@ class PreviewVideos(BaseModel):
     """
     PreviewVideos
     """ # noqa: E501
-    video_id: Optional[StrictStr] = Field(default=None, description=r"ID of the video")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the video")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the video")
-    duration_time: Optional[StrictStr] = Field(default=None, description=r"duration of the video")
-    duration_time_seconds: Optional[StrictInt] = Field(default=None, description=r"duration of the video in seconds")
+    video_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the video*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the video*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the video*")
+    duration_time: Optional[StrictStr] = Field(default=None, description=r"*duration of the video*")
+    duration_time_seconds: Optional[StrictInt] = Field(default=None, description=r"*duration of the video in seconds*")
     __properties: ClassVar[List[str]] = [
         "video_id", 
         "title", 

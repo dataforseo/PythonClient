@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**markdown** | **StrictStr** | content of the element in markdown format |[optional]|
-**table** | **Table** | table element |[optional]|
+**markdown** | **StrictStr** | <em>content of the element in markdown format</em> |[optional]|
+**table** | **Table** | <em>table element</em> |[optional]|

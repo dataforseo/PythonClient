@@ -16,14 +16,14 @@ class DataforseoLabsGooglePageIntersectionLiveResultInfo(BaseModel):
     """
     DataforseoLabsGooglePageIntersectionLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    pages: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"URLs you specified a POST array")
-    exclude_pages: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URLs you specified in a POST array that will be excluded from the results")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGooglePageIntersectionLiveItem]]] = Field(default=None, description=r"contains keywords, relevant SERP elements and related data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    pages: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"*URLs you specified a POST array*")
+    exclude_pages: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*URLs you specified in a POST array that will be excluded from the results*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsGooglePageIntersectionLiveItem]]] = Field(default=None, description=r"*contains keywords, relevant SERP elements and related data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "pages", 

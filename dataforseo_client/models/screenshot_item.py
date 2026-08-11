@@ -15,7 +15,7 @@ class ScreenshotItem(BaseModel):
     """
     ScreenshotItem
     """ # noqa: E501
-    image: Optional[StrictStr] = Field(default=None, description=r"screenshot of the requested page. URL of the page screenshot on the DataForSEO storage. note: the page screenshot saved on the DataForSEO storage only remains accessible for one day after making the request")
+    image: Optional[StrictStr] = Field(default=None, description=r"*screenshot of the requested page*. URL of the page screenshot on the DataForSEO storage. **note: the page screenshot saved on the DataForSEO storage only remains accessible for one day after making the request**")
     __properties: ClassVar[List[str]] = [
         "image", 
         ]

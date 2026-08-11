@@ -16,8 +16,8 @@ class HunspellInfo(BaseModel):
     """
     HunspellInfo
     """ # noqa: E501
-    hunspell_language_code: Optional[StrictStr] = Field(default=None, description=r"spellcheck language code")
-    misspelled: Optional[List[Optional[HunspellMisspelledInfo]]] = Field(default=None, description=r"array of misspelled words")
+    hunspell_language_code: Optional[StrictStr] = Field(default=None, description=r"*spellcheck language code*")
+    misspelled: Optional[List[Optional[HunspellMisspelledInfo]]] = Field(default=None, description=r"*array of misspelled words*")
     __properties: ClassVar[List[str]] = [
         "hunspell_language_code", 
         "misspelled", 

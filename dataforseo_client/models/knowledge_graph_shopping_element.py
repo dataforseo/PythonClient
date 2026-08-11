@@ -17,14 +17,14 @@ class KnowledgeGraphShoppingElement(BaseModel):
     KnowledgeGraphShoppingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    price: Optional[PriceInfo] = Field(default=None, description=r"pricing details. contains the pricing details of the product or service featured in the result;. if there is none, equals null")
-    source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
-    marketplace: Optional[StrictStr] = Field(default=None, description=r"merchant account provider. ecommerce site that hosts products or websites of individual sellers under the same merchant account. example:. by Google")
-    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"URL to the merchant account provider. ecommerce site that hosts products or websites of individual sellers under the same merchant account")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain where a link points*")
+    price: Optional[PriceInfo] = Field(default=None, description=r"*pricing details*. contains the pricing details of the product or service featured in the result;. if there is none, equals `null`")
+    source: Optional[StrictStr] = Field(default=None, description=r"*reference source name or title*")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*text alongside the link title*")
+    marketplace: Optional[StrictStr] = Field(default=None, description=r"*merchant account provider*. ecommerce site that hosts products or websites of individual sellers under the same merchant account. example:. `by Google`")
+    marketplace_url: Optional[StrictStr] = Field(default=None, description=r"*URL to the merchant account provider*. ecommerce site that hosts products or websites of individual sellers under the same merchant account")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[KeywordsDataGoogleTrendsLanguagesTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[KeywordsDataGoogleTrendsLanguagesTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -16,14 +16,14 @@ class KeywordsDataGoogleTrendsExploreLiveResultInfo(BaseModel):
     """
     KeywordsDataGoogleTrendsExploreLiveResultInfo
     """ # noqa: E501
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords in a POST array")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*keywords in a POST array*")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to the Google Trends results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BaseKeywordDataGoogleTrendsItem]]] = Field(default=None, description=r"items on the Google Trends page")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is_`null`n")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to the Google Trends results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[BaseKeywordDataGoogleTrendsItem]]] = Field(default=None, description=r"*items on the Google Trends page*")
     __properties: ClassVar[List[str]] = [
         "keywords", 
         "type", 

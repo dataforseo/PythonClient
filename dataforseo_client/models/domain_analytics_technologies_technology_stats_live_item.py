@@ -16,11 +16,11 @@ class DomainAnalyticsTechnologiesTechnologyStatsLiveItem(BaseModel):
     DomainAnalyticsTechnologiesTechnologyStatsLiveItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    date: Optional[StrictStr] = Field(default=None, description=r"date for which the data is provided")
-    domains_count: Optional[StrictInt] = Field(default=None, description=r"number of domains that use the specified technology")
-    countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of websites by country. contains country codes and number of websites per country")
-    languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of websites by language. contains language codes and number of websites per language")
-    domains_rank: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of websites by backlink rank. contains domain rank ranges and number of websites per range. learn more about rank and how it is calculated in this help center article")
+    date: Optional[StrictStr] = Field(default=None, description=r"*date for which the data is provided*")
+    domains_count: Optional[StrictInt] = Field(default=None, description=r"*number of domains that use the specified technology*")
+    countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*distribution of websites by country*. contains country codes and number of websites per country")
+    languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*distribution of websites by language*. contains language codes and number of websites per language")
+    domains_rank: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*distribution of websites by backlink rank*. contains domain rank ranges and number of websites per range. learn more about rank and how it is calculated in [this help center article](https://dataforseo.com/help-center/what_is_rank_in_backlinks_api)")
     __properties: ClassVar[List[str]] = [
         "type", 
         "date", 

@@ -15,12 +15,12 @@ class SslInfo(BaseModel):
     """
     SslInfo
     """ # noqa: E501
-    valid_certificate: Optional[StrictBool] = Field(default=None, description=r"ssl certificate validity. indicates whether the ssl certificate detected on a website is not expired, suspended, revoked or invalid")
-    certificate_issuer: Optional[StrictStr] = Field(default=None, description=r"ssl certificate authority. the entity that issued the detected ssl certificate")
-    certificate_subject: Optional[StrictStr] = Field(default=None, description=r"ssl certificate subject. the entity associated with the public key")
-    certificate_version: Optional[StrictInt] = Field(default=None, description=r"ssl certificate version. indicates the version of X.509 used by an ssl certificate")
-    certificate_hash: Optional[StrictStr] = Field(default=None, description=r"ssl certificate hash. the version of the ssl certificate’s hash function")
-    certificate_expiration_date: Optional[StrictStr] = Field(default=None, description=r"ssl certificate expiration date. the date and time when the ssl certificate expires. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
+    valid_certificate: Optional[StrictBool] = Field(default=None, description=r"*ssl certificate validity*. indicates whether the ssl certificate detected on a website is not expired, suspended, revoked or invalid")
+    certificate_issuer: Optional[StrictStr] = Field(default=None, description=r"*ssl certificate authority*. the entity that issued the detected ssl certificate")
+    certificate_subject: Optional[StrictStr] = Field(default=None, description=r"*ssl certificate subject*. the entity associated with the public key")
+    certificate_version: Optional[StrictInt] = Field(default=None, description=r"*ssl certificate version*. indicates the version of [X.509](https://en.wikipedia.org/wiki/X.509) used by an ssl certificate")
+    certificate_hash: Optional[StrictStr] = Field(default=None, description=r"*ssl certificate hash*. the version of the ssl certificate's hash function")
+    certificate_expiration_date: Optional[StrictStr] = Field(default=None, description=r"*ssl certificate expiration date*. the date and time when the ssl certificate expires. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "valid_certificate", 
         "certificate_issuer", 

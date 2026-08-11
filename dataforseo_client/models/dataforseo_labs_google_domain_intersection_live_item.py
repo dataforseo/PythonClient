@@ -17,10 +17,10 @@ class DataforseoLabsGoogleDomainIntersectionLiveItem(BaseModel):
     """
     DataforseoLabsGoogleDomainIntersectionLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"keyword data for the returned keyword")
-    first_domain_serp_element: Optional[BaseDataforseoLabsApiElementItem] = Field(default=None, description=r"contains data on the first domain’s SERP element found for the returned keyword. the list of supported SERP elements can be found below")
-    second_domain_serp_element: Optional[BaseDataforseoLabsApiElementItem] = Field(default=None, description=r"contains data on the second domain’s SERP element found for the returned keyword. the list of supported SERP elements can be found below")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"*keyword data for the returned keyword*")
+    first_domain_serp_element: Optional[BaseDataforseoLabsApiElementItem] = Field(default=None, description=r"*contains data on the first domain's SERP element found for the returned `keyword`*.             the list of supported SERP elements can be found below")
+    second_domain_serp_element: Optional[BaseDataforseoLabsApiElementItem] = Field(default=None, description=r"*contains data on the second domain's SERP element found for the returned `keyword`*.             the list of supported SERP elements can be found below")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword_data", 

@@ -19,10 +19,10 @@ class DataforseoTrendsSubregionInterestsElementItem(BaseKeywordDataDataforseoTre
     DataforseoTrendsSubregionInterestsElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictInt] = Field(default=None, description=r"the alignment of the element. can take the following values: 1, 2, 3, 4, etc.")
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords in a POST array")
-    interests: Optional[List[Optional[DataforseoTrendsinterestsInfo]]] = Field(default=None, description=r"subregional keyword popuarity data for each specified term")
-    interests_comparison: Optional[InterestsComparison] = Field(default=None, description=r"comparison of data on subregional keyword popularity for the specified parameters. if you specified a single keyword, the value will be null")
+    position: Optional[StrictInt] = Field(default=None, description=r"*the alignment of the element*. can take the following values: `1`, `2`, `3`, `4`, etc.")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*keywords in a POST array*")
+    interests: Optional[List[Optional[DataforseoTrendsinterestsInfo]]] = Field(default=None, description=r"*subregional keyword popuarity data for each specified term*")
+    interests_comparison: Optional[InterestsComparison] = Field(default=None, description=r"*comparison of data on subregional keyword popularity for the specified parameters*. if you specified a single keyword, the value will be `null`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

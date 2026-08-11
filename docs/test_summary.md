@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**fatal** | **StrictInt** | number of fatal microdata errors |[optional]|
-**error** | **StrictInt** | number of serious microdata errors |[optional]|
-**warning** | **StrictInt** | number of microdata warnings |[optional]|
-**info** | **StrictInt** | number of microdata information flags |[optional]|
+**fatal** | **StrictInt** | <em>number of fatal microdata errors</em> |[optional]|
+**error** | **StrictInt** | <em>number of serious microdata errors</em> |[optional]|
+**warning** | **StrictInt** | <em>number of microdata warnings</em> |[optional]|
+**info** | **StrictInt** | <em>number of microdata information flags</em> |[optional]|

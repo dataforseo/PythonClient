@@ -18,9 +18,9 @@ class SerpApiBingAiOverviewImagesElementItem(BaseSerpApiBingAiOverviewElementIte
     SerpApiBingAiOverviewImagesElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL link")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the link element")
-    items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"items featured in the faq_box")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL link*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the link element*")
+    items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"*items featured in the faq_box*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "url", 

@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**se_type** | **StrictStr** | search engine type |[optional]|
-**serp_item** | **AmazonInfo** | contains data on the SERP element<br>the list of supported SERP elements can be found below |[optional]|
-**check_url** | **StrictStr** | direct URL to Amazon results<br>you can use it to make sure that we provided accurate results |[optional]|
-**serp_item_types** | **List[Optional[StrictStr]]** | direct URL to Amazon results<br>contains types of all search results (items) found in the returned SERP;<br>possible item types:<br>amazon_serp, amazon_paid, editorial_recommendations, top_rated_from_our_brands, related_searches |[optional]|
-**se_results_count** | **StrictInt** | total number of results in Amazon SERP |[optional]|
-**last_updated_time** | **StrictStr** | date and time when keyword data was updated<br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;<br>example:<br>2019-11-15 12:57:46 +00:00 |[optional]|
-**previous_updated_time** | **StrictStr** | previous to the most recent update of SERP data<br>in the ISO 8601 format: “YYYY-MM-DDThh:mm:ss.sssssssZ”<br>example:<br>2020-09-12T00:07:43.0733218Z |[optional]|
+**se_type** | **StrictStr** | <em>search engine type</em> |[optional]|
+**serp_item** | **AmazonInfo** | <em>contains data on the SERP element</em><br>the list of supported SERP elements can be found below |[optional]|
+**check_url** | **StrictStr** | <em>direct URL to Amazon results</em><br>you can use it to make sure that we provided accurate results |[optional]|
+**serp_item_types** | **List[Optional[StrictStr]]** | <em>direct URL to Amazon results</em><br>contains types of all search results (<code>items</code>) found in the returned SERP;<br>possible item types:<br><code>amazon_serp</code>, <code>amazon_paid</code>, <code>editorial_recommendations</code>, <code>top_rated_from_our_brands</code>, <code>related_searches</code> |[optional]|
+**se_results_count** | **StrictInt** | <em>total number of results in Amazon SERP</em> |[optional]|
+**last_updated_time** | **StrictStr** | <em>date and time when keyword data was updated</em><br>in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;<br>example:<br><code class='long-string'>2019-11-15 12:57:46 +00:00</code> |[optional]|
+**previous_updated_time** | **StrictStr** | <em>previous to the most recent update of SERP data</em><br>in the <a href='https://en.wikipedia.org/wiki/ISO_8601'>ISO 860</a>1 format: “YYYY-MM-DDThh:mm:ss.sssssssZ”<br>example:<br><code class='long-string'>2020-09-12T00:07:43.0733218Z</code> |[optional]|

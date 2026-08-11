@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**html** | **StrictStr** | HTML page |[optional]|
+**html** | **StrictStr** | <i>HTML_</i><i>page</i>n |[optional]|

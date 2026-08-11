@@ -15,9 +15,9 @@ class OnPageResourceLocationInfo(BaseModel):
     """
     OnPageResourceLocationInfo
     """ # noqa: E501
-    line: Optional[StrictInt] = Field(default=None, description=r"line number. the number of the line on which the resource is located")
-    offset_left: Optional[StrictInt] = Field(default=None, description=r"position in line. the number of line characters before the resource;. sometimes referred to as column. Note: counts from 1, i.e. if the resource doesn’t have any characters to the left, the value will be 1")
-    offset_top: Optional[StrictInt] = Field(default=None, description=r"position in the document. the total number of characters between the resource and the top of HTML")
+    line: Optional[StrictInt] = Field(default=None, description=r"*line number*. the number of the line on which the resource is located")
+    offset_left: Optional[StrictInt] = Field(default=None, description=r"*position in line*. the number of line characters before the resource;. sometimes referred to as *column*. **Note:** counts from 1, i.e. if the resource doesn't have any characters to the left, the value will be 1")
+    offset_top: Optional[StrictInt] = Field(default=None, description=r"*position in the document*. the total number of characters between the resource and the top of HTML")
     __properties: ClassVar[List[str]] = [
         "line", 
         "offset_left", 

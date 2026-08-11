@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[OnPageErrorsResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[OnPageErrorsResultInfo]]** | <em>array of results</em> |[optional]|

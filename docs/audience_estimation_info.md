@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**high** | **StrictFloat** | indicates the upper bound of the range result |[optional]|
-**low** | **StrictFloat** | indicates the lower bound of the range result |[optional]|
+**high** | **StrictFloat** | <em>indicates the upper bound of the range result</em> |[optional]|
+**low** | **StrictFloat** | <em>indicates the lower bound of the range result</em> |[optional]|

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpSeznamLanguagesTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpSeznamLanguagesTaskInfo]]** | <em>array of tasks</em> |[optional]|

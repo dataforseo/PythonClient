@@ -15,8 +15,8 @@ class KeywordsDataBingAudienceEstimationIndustriesResultInfo(BaseModel):
     """
     KeywordsDataBingAudienceEstimationIndustriesResultInfo
     """ # noqa: E501
-    industry_id: Optional[StrictInt] = Field(default=None, description=r"ID of the industry")
-    industry_name: Optional[StrictStr] = Field(default=None, description=r"name of the industry")
+    industry_id: Optional[StrictInt] = Field(default=None, description=r"*ID of the industry*")
+    industry_name: Optional[StrictStr] = Field(default=None, description=r"*name of the industry*")
     __properties: ClassVar[List[str]] = [
         "industry_id", 
         "industry_name", 

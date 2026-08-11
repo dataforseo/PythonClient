@@ -6,5 +6,5 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**description** | **StrictStr** | link description |[optional]|
-**url** | **StrictStr** | source URL |[optional]|
+**description** | **StrictStr** | <em>link description</em> |[optional]|
+**url** | **StrictStr** | <em>source URL</em> |[optional]|

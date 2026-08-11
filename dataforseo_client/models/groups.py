@@ -16,9 +16,9 @@ class Groups(BaseModel):
     """
     Groups
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"id of the technology group. example:. marketing, sales")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the technology group")
-    categories: Optional[List[Optional[TechnologyCategoryInfo]]] = Field(default=None, description=r"technology categories in this group")
+    id: Optional[StrictStr] = Field(default=None, description=r"*id of the technology group*. example:. `marketing`, `sales`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the technology group*")
+    categories: Optional[List[Optional[TechnologyCategoryInfo]]] = Field(default=None, description=r"*technology categories in this group*")
     __properties: ClassVar[List[str]] = [
         "id", 
         "title", 

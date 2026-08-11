@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[KeywordsDataClickstreamDataDataforseoSearchVolumeLiveResultInfo]]** | <em>array of results</em> |[optional]|

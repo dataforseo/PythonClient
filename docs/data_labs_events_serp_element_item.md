@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the result in SERP |[optional]|
-**url** | **StrictStr** | relevant URL in SERP |[optional]|
-**items** | **List[Optional[EventsElement]]** | historical SERPs and related data found in the database |[optional]|
+**title** | **StrictStr** | <em>title of the result in SERP</em> |[optional]|
+**url** | **StrictStr** | <em> relevant URL in SERP</em> |[optional]|
+**items** | **List[Optional[EventsElement]]** | <em>historical SERPs and related data found in the database</em> |[optional]|

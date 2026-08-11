@@ -16,8 +16,8 @@ class DataforseoTrendsinterestsInfo(BaseModel):
     """
     DataforseoTrendsinterestsInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"relevant keyword. the data included in the values element is based on this keyword")
-    values: Optional[List[Optional[DataforseoTrendsinterestsValuesInfo]]] = Field(default=None, description=r"contains data on relative keyword popularity by country or region")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*relevant keyword*. the data included in the `values` element is based on this keyword")
+    values: Optional[List[Optional[DataforseoTrendsinterestsValuesInfo]]] = Field(default=None, description=r"*contains data on relative keyword popularity by country or region*")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "values", 

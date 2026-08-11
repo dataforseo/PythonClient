@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[KeywordsDataGoogleAdsSearchVolumeLiveResultInfo]]** | <em>array of results</em> |[optional]|

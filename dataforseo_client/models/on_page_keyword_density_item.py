@@ -15,9 +15,9 @@ class OnPageKeywordDensityItem(BaseModel):
     """
     OnPageKeywordDensityItem
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"returned keyword")
-    frequency: Optional[StrictInt] = Field(default=None, description=r"keyword frequency. number of times the keyword appears on the website (or webpage if you specified a url)")
-    density: Optional[StrictFloat] = Field(default=None, description=r"keyword density. calculated as a ratio of frequency to the total count of keywords with the set keyword_length on the web page or website")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*returned keyword*")
+    frequency: Optional[StrictInt] = Field(default=None, description=r"*keyword frequency*. number of times the keyword appears on the website (or webpage if you specified a `url`)")
+    density: Optional[StrictFloat] = Field(default=None, description=r"*keyword density*. calculated as a ratio of `frequency` to the total count of keywords with the set `keyword_length` on the web page or website")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "frequency", 

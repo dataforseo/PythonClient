@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**rank_group** | **StrictInt** | group rank in SERP<br>position within a group of elements with identical type values<br>positions of elements with different type values are omitted from rank_group |[optional]|
-**rank_absolute** | **StrictInt** | absolute rank in SERP<br>absolute position among all the elements in SERP |[optional]|
-**title** | **StrictStr** | title of the item |[optional]|
-**data_attrid** | **StrictStr** | google defined data attribute ID<br>example:<br>ss:/webfacts:net_worth |[optional]|
-**link** | **LinkElement** | link of the element |[optional]|
-**items** | **List[Optional[KnowledgeGraphListElement]]** | additional items present in the element<br>if there are none, equals null |[optional]|
+**rank_group** | **StrictInt** | <em>group rank in SERP</em><br>position within a group of elements with identical <code>type</code> values<br>positions of elements with different <code>type</code> values are omitted from <code>rank_group</code> |[optional]|
+**rank_absolute** | **StrictInt** | <em>absolute rank in SERP</em><br>absolute position among all the elements in SERP |[optional]|
+**title** | **StrictStr** | <em>title of the item</em> |[optional]|
+**data_attrid** | **StrictStr** | <em>google defined data attribute ID</em><br>example:<br><code>ss:/webfacts:net_worth</code> |[optional]|
+**link** | **LinkElement** | <em>link of the element</em> |[optional]|
+**items** | **List[Optional[KnowledgeGraphListElement]]** | <em>additional items present in the element</em><br>if there are none, equals <code>null</code> |[optional]|

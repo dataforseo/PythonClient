@@ -17,18 +17,18 @@ class SerpApiYoutubeChannelElementItem(BaseSerpApiYoutubeOrganicElementItem):
     SerpApiYoutubeChannelElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP for the target domain. absolute position among all the elements in SERP")
-    block_rank: Optional[StrictInt] = Field(default=None, description=r"block rank in SERP. position among all the blocks in SERP")
-    block_name: Optional[StrictStr] = Field(default=None, description=r"name of the block in SERP. example:. 'People also watched'")
-    channel_id: Optional[StrictStr] = Field(default=None, description=r"ID of the channel")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL of the channel")
-    name: Optional[StrictStr] = Field(default=None, description=r"name of the channel")
-    logo: Optional[StrictStr] = Field(default=None, description=r"the URL of the page where the logo image is hosted")
-    video_count: Optional[StrictInt] = Field(default=None, description=r"the number of videos counted on the channel")
-    is_verified: Optional[StrictBool] = Field(default=None, description=r"indicates whether the channel has a “verified” label")
-    description: Optional[StrictStr] = Field(default=None, description=r"description of the channel")
-    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"highlighted keywords in the description")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP for the target domain*. absolute position among all the elements in SERP")
+    block_rank: Optional[StrictInt] = Field(default=None, description=r"*block rank in SERP*. position among all the blocks in SERP")
+    block_name: Optional[StrictStr] = Field(default=None, description=r"*name of the block in SERP*. example:. `'People also watched'`")
+    channel_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the channel*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL of the channel*")
+    name: Optional[StrictStr] = Field(default=None, description=r"*name of the channel*")
+    logo: Optional[StrictStr] = Field(default=None, description=r"*the URL of the page where the logo image is hosted*")
+    video_count: Optional[StrictInt] = Field(default=None, description=r"*the number of videos counted on the channel*")
+    is_verified: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the channel has a 'verified' label*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*description of the channel*")
+    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*highlighted keywords in the description*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

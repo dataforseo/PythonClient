@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleOrganicLiveHtmlResultInfo]]** |  |[optional]|
+**result** | **List[Optional[SerpGoogleOrganicLiveHtmlResultInfo]]** | <em>array of results</em> |[optional]|

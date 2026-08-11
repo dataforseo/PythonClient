@@ -5,8 +5,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**technology** | **StrictStr** | target technology |[optional]|
-**date_from** | **StrictStr** | starting date of the time range |[optional]|
-**date_to** | **StrictStr** | ending date of the time range |[optional]|
-**items_count** | **StrictInt** | number of items in the results array |[optional]|
-**items** | **List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveItem]]** | items array |[optional]|
+**technology** | **StrictStr** | <em>target technology</em> |[optional]|
+**date_from** | **StrictStr** | <em>starting date of the time range</em> |[optional]|
+**date_to** | **StrictStr** | <em>ending date of the time range</em> |[optional]|
+**items_count** | **StrictInt** |  |[optional]|
+**items** | **List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveItem]]** |  |[optional]|

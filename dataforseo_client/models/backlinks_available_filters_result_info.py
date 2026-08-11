@@ -16,12 +16,12 @@ class BacklinksAvailableFiltersResultInfo(BaseModel):
     BacklinksAvailableFiltersResultInfo
     """ # noqa: E501
     content_duplicates: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
-    backlinks: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
+    backlinks: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"filters available for the backlinks endpoint:")
     domain_pages: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     anchors: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     referring_domains: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     domain_intersection: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
-    page_intersection: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
+    page_intersection: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"filters available for the page intersection endpoint:")
     referring_networks: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     domain_pages_summary: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
     competitors: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")

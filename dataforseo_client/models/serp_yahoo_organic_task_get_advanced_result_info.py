@@ -18,20 +18,20 @@ class SerpYahooOrganicTaskGetAdvancedResultInfo(BaseModel):
     """
     SerpYahooOrganicTaskGetAdvancedResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword received in a POST array. the keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword received in a POST array***the keyword is returned with decoded %## (plus symbol '+' will be decoded to a space character)**")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    spell: Optional[SpellInfo] = Field(default=None, description=r"autocorrection of the search engine. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
-    refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"search refinement chips. equals null")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results in SERP. contains types of search results (items) found in SERP.. possible item types:. featured_snippet, images, local_pack, hotels_pack, organic, paid, people_also_ask, related_searches, shopping, recipes, top_stories, video, ai_overview")
-    se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in SERP")
-    pages_count: Optional[StrictInt] = Field(default=None, description=r"total pages retrieved. total number of retrieved SERPs in the result")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[BaseSerpApiElementItem]]] = Field(default=None, description=r"additional items present in the element. if there are none, equals null")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    spell: Optional[SpellInfo] = Field(default=None, description=r"*autocorrection of the search engine*. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
+    refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"*search refinement chips*. equals `null`")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results in SERP*. contains types of search results (`items`) found in SERP.. possible item types:. [featured_snippet](#featured_snippet), [images](#images), [local_pack](#local_pack), [hotels_pack](#hotels_pack), [organic](#organic), [paid](#paid), [people_also_ask](#people_also_ask), [related_searches](#related_searches), [shopping](#shopping), [recipes](#recipes), [top_stories](#top_stories), [video](#video), [ai_overview](#ai_overview)")
+    se_results_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in SERP*")
+    pages_count: Optional[StrictInt] = Field(default=None, description=r"*total pages retrieved*. total number of retrieved SERPs in the result")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[BaseSerpApiElementItem]]] = Field(default=None, description=r"*additional items present in the element*. if there are none, equals `null`")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 

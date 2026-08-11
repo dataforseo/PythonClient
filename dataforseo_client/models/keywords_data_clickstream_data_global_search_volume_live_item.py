@@ -16,9 +16,9 @@ class KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem(BaseModel):
     """
     KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword. keyword is returned with decoded %## (plus symbol ‘+’ will be decoded to a space character)")
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"clickstream-based average monthly search volume rate. represents the (approximate) number of searches for the given keyword idea based on clickstream. you can learn more about clickstream search volume in this Help Center article")
-    country_distribution: Optional[List[Optional[CountryDistribution]]] = Field(default=None, description=r"distribution of clickstream by countries. represents clickstream-based search volume in available countries, as well as its respective percentage of global search volume")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword*. **keyword is returned with decoded %## (plus symbol '+' will be decoded to a space character)**")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"*clickstream-based average monthly search volume rate*. represents the (approximate) number of searches for the given keyword idea based on clickstream. you can learn more about clickstream search volume in [this Help Center article](https://dataforseo.com/help-center/what-is-clickstream-search-volume-and-how-to-get-it-with-dataforseo)")
+    country_distribution: Optional[List[Optional[CountryDistribution]]] = Field(default=None, description=r"*distribution of clickstream by countries*. represents clickstream-based search volume in available countries, as well as its respective percentage of global search volume")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "search_volume", 

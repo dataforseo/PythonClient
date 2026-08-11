@@ -17,10 +17,10 @@ class PeopleAlsoAskElement(BaseModel):
     PeopleAlsoAskElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    seed_question: Optional[StrictStr] = Field(default=None, description=r"question that triggered additional expanded elements")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    expanded_element: Optional[List[Optional[BaseSerpApiPeopleAlsoAskExpandedElementItem]]] = Field(default=None, description=r"expanded element")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    seed_question: Optional[StrictStr] = Field(default=None, description=r"*question that triggered additional expanded elements*")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    expanded_element: Optional[List[Optional[BaseSerpApiPeopleAlsoAskExpandedElementItem]]] = Field(default=None, description=r"*expanded element*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

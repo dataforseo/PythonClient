@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **StrictStr** |  |[optional]|
+**result** | **Any** | <em>array of results</em><br>in this case, the value will be <code>null</code> |[optional]|

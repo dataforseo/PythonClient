@@ -16,11 +16,11 @@ class OnPageInstantPagesResultInfo(BaseModel):
     """
     OnPageInstantPagesResultInfo
     """ # noqa: E501
-    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"status of the crawling session. possible values: in_progress, finished")
-    crawl_status: Optional[Any] = Field(default=None, description=r"details of the crawling session. in this case the value will be null")
-    crawl_gateway_address: Optional[StrictStr] = Field(default=None, description=r"crawler ip address. displays the IP address used by the crawler to initiate the current crawling session. you can find the full list of IPs used by our crawler in the Overview section")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[List[Optional[BaseOnPageResourceItem]]] = Field(default=None, description=r"items array")
+    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"*status of the crawling session*. possible values: `in_progress`, `finished`")
+    crawl_status: Optional[Any] = Field(default=None, description=r"*details of the crawling session*. in this case the value will be `null`")
+    crawl_gateway_address: Optional[StrictStr] = Field(default=None, description=r"*crawler ip address*. displays the IP address used by the crawler to initiate the current crawling session. you can find the full list of IPs used by our crawler in the [Overview section](/v3/on_page/overview)")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    items: Optional[List[Optional[BaseOnPageResourceItem]]] = Field(default=None, description=r"*items array*")
     __properties: ClassVar[List[str]] = [
         "crawl_progress", 
         "crawl_status", 

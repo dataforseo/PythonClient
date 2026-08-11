@@ -15,8 +15,8 @@ class CacheControl(BaseModel):
     """
     CacheControl
     """ # noqa: E501
-    cachable: Optional[StrictBool] = Field(default=None, description=r"indicates whether the page is cacheable")
-    ttl: Optional[StrictInt] = Field(default=None, description=r"time to live. the amount of time the browser caches a resource")
+    cachable: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the page is cacheable*")
+    ttl: Optional[StrictInt] = Field(default=None, description=r"*time to live*. the amount of time the browser caches a resource")
     __properties: ClassVar[List[str]] = [
         "cachable", 
         "ttl", 

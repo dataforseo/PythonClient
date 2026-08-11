@@ -17,13 +17,13 @@ class WaterfallResourceInfo(BaseModel):
     WaterfallResourceInfo
     """ # noqa: E501
     resource_type: Optional[StrictStr] = Field(default=None, description=r"")
-    url: Optional[StrictStr] = Field(default=None, description=r"resource URL")
-    initiator: Optional[StrictStr] = Field(default=None, description=r"resource initiator")
-    duration_time: Optional[StrictInt] = Field(default=None, description=r"total time it takes until a browser receives a complete response from a server (in milliseconds)")
-    fetch_start: Optional[StrictInt] = Field(default=None, description=r"time to start downloading the HTML resource. the amount of time the browser needs to start downloading a page")
-    fetch_end: Optional[StrictInt] = Field(default=None, description=r"time to complete downloading the HTML resource. the amount of time the browser needs to complete downloading a page")
-    location: Optional[OnPageResourceLocationInfo] = Field(default=None, description=r"location of the resource in the document. parameters defining the location of the specific resource within the document’s HTML")
-    is_render_blocking: Optional[StrictBool] = Field(default=None, description=r"indicates whether the resource blocks rendering")
+    url: Optional[StrictStr] = Field(default=None, description=r"*resource URL*")
+    initiator: Optional[StrictStr] = Field(default=None, description=r"*resource initiator*")
+    duration_time: Optional[StrictInt] = Field(default=None, description=r"*total time it takes until a browser receives a complete response from a server (in milliseconds)*")
+    fetch_start: Optional[StrictInt] = Field(default=None, description=r"*time to start downloading the HTML resource*. the amount of time the browser needs to start downloading a page")
+    fetch_end: Optional[StrictInt] = Field(default=None, description=r"*time to complete downloading the HTML resource*. the amount of time the browser needs to complete downloading a page")
+    location: Optional[OnPageResourceLocationInfo] = Field(default=None, description=r"*location of the resource in the document*. parameters defining the location of the specific resource within the document's HTML")
+    is_render_blocking: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the resource blocks rendering*")
     __properties: ClassVar[List[str]] = [
         "resource_type", 
         "url", 

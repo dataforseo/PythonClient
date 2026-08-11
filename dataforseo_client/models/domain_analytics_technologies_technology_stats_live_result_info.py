@@ -16,11 +16,11 @@ class DomainAnalyticsTechnologiesTechnologyStatsLiveResultInfo(BaseModel):
     """
     DomainAnalyticsTechnologiesTechnologyStatsLiveResultInfo
     """ # noqa: E501
-    technology: Optional[StrictStr] = Field(default=None, description=r"target technology")
-    date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of the time range")
-    date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of the time range")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveItem]]] = Field(default=None, description=r"items array")
+    technology: Optional[StrictStr] = Field(default=None, description=r"*target technology*")
+    date_from: Optional[StrictStr] = Field(default=None, description=r"*starting date of the time range*")
+    date_to: Optional[StrictStr] = Field(default=None, description=r"*ending date of the time range*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"")
+    items: Optional[List[Optional[DomainAnalyticsTechnologiesTechnologyStatsLiveItem]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "technology", 
         "date_from", 

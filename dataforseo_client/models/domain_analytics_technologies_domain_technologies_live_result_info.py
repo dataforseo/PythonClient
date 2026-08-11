@@ -17,19 +17,19 @@ class DomainAnalyticsTechnologiesDomainTechnologiesLiveResultInfo(BaseModel):
     DomainAnalyticsTechnologiesDomainTechnologiesLiveResultInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    domain: Optional[StrictStr] = Field(default=None, description=r"specified domain name")
-    title: Optional[StrictStr] = Field(default=None, description=r"domain meta title")
-    description: Optional[StrictStr] = Field(default=None, description=r"domain meta description")
-    meta_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"domain meta keywords")
-    domain_rank: Optional[StrictInt] = Field(default=None, description=r"backlink rank of the target domain. learn more about the metric and how it is calculated in this help center article")
-    last_visited: Optional[StrictStr] = Field(default=None, description=r"most recent date when our crawler visited the domain. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2022-10-10 12:57:46 +00:00")
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"domain ISO code. ISO code of the country that the target domain is determined to belong to")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"domain language. code of the language that the target domain is determined to be associated with")
-    content_language_code: Optional[StrictStr] = Field(default=None, description=r"content language. code of the language that content on the target domain is written in")
-    phone_numbers: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"phone numbers of the target. contact phone numbers indicated on the target website")
-    emails: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"emails of the target. emails indicated on the target website")
-    social_graph_urls: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"social media links and handles. social media URLs detected in the social graphs of the target website")
-    technologies: Optional[TechnologiesInfo] = Field(default=None, description=r"technologies used by target domain. contains objects with the names of technologies used on the website. see the full list of available technologies structured by groups and categories")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*specified domain name*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*domain meta title*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*domain meta description*")
+    meta_keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*domain meta keywords*")
+    domain_rank: Optional[StrictInt] = Field(default=None, description=r"*backlink rank of the target domain*. learn more about the metric and how it is calculated in [this help center article](https://dataforseo.com/help-center/what_is_rank_in_backlinks_api)")
+    last_visited: Optional[StrictStr] = Field(default=None, description=r"*most recent date when our crawler visited the domain*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2022-10-10 12:57:46 +00:00`")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*domain ISO code*. ISO code of the country that the target domain is determined to belong to")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*domain language*. code of the language that the target domain is determined to be associated with")
+    content_language_code: Optional[StrictStr] = Field(default=None, description=r"*content language*. code of the language that content on the target domain is written in")
+    phone_numbers: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*phone numbers of the target*. contact phone numbers indicated on the target website")
+    emails: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*emails of the target*. emails indicated on the target website")
+    social_graph_urls: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*social media links and handles*. social media URLs detected in the social graphs of the target website")
+    technologies: Optional[TechnologiesInfo] = Field(default=None, description=r"*technologies used by target domain*. contains objects with the names of technologies used on the website. [see the full list of available technologies structured by groups and categories](/v3/domain_analytics/technologies/technologies/)")
     __properties: ClassVar[List[str]] = [
         "type", 
         "domain", 

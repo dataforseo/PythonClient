@@ -16,7 +16,7 @@ class DomainAnalyticsTechnologiesTechnologiesResultInfo(BaseModel):
     """
     DomainAnalyticsTechnologiesTechnologiesResultInfo
     """ # noqa: E501
-    groups: Optional[List[Optional[Groups]]] = Field(default=None, description=r"array of technology groups")
+    groups: Optional[List[Optional[Groups]]] = Field(default=None, description=r"*array of technology groups*")
     __properties: ClassVar[List[str]] = [
         "groups", 
         ]

@@ -16,9 +16,9 @@ class KeywordKpi(BaseModel):
     """
     KeywordKpi
     """ # noqa: E501
-    desktop: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description=r"keyword data aggregated for desktop devices. if there is no data, then the value is null")
-    mobile: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description=r"keyword data aggregated for mobile devices. if there is no data, then the value is null")
-    tablet: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description=r"keyword data aggregated for tablet devices. if there is no data, then the value is null")
+    desktop: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description=r"*keyword data aggregated for desktop devices*. if there is no data, then the value is_`null`n")
+    mobile: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description=r"*keyword data aggregated for mobile devices*. if there is no data, then the value is_`null`n")
+    tablet: Optional[List[Optional[KeywordKpiItemInfo]]] = Field(default=None, description=r"*keyword data aggregated for tablet devices*. if there is no data, then the value is_`null`n")
     __properties: ClassVar[List[str]] = [
         "desktop", 
         "mobile", 

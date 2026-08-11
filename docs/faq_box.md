@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**items** | **List[Optional[FaqBoxElement]]** | contains arrays of specific images |[optional]|
+**items** | **List[Optional[FaqBoxElement]]** | <em>contains arrays of specific images</em> |[optional]|

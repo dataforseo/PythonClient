@@ -18,15 +18,15 @@ class DataLabsHotelsPackSerpElementItem(BaseDataforseoLabsApiElementItem):
     DataLabsHotelsPackSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    date_from: Optional[StrictStr] = Field(default=None, description=r"starting date of stay. in the format “year-month-date”. example:. 2019-11-15")
-    date_to: Optional[StrictStr] = Field(default=None, description=r"ending date of stay. in the format “year-month-date”. example:. 2019-11-17")
-    items: Optional[List[Optional[HotelsPackElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*.             positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
+    date_from: Optional[StrictStr] = Field(default=None, description=r"*starting date of stay*.             in the format “year-month-date”.             example:.             2019-11-15")
+    date_to: Optional[StrictStr] = Field(default=None, description=r"*ending date of stay*.             in the format “year-month-date”.             example:.             2019-11-17")
+    items: Optional[List[Optional[HotelsPackElement]]] = Field(default=None, description=r"*historical SERPs and related data found in the database*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

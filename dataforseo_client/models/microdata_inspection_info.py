@@ -16,8 +16,8 @@ class MicrodataInspectionInfo(BaseModel):
     """
     MicrodataInspectionInfo
     """ # noqa: E501
-    types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"parent microdata types. for a full list of available types, please visit schema.org")
-    fields: Optional[List[Optional[MicrodataFieldsInfo]]] = Field(default=None, description=r"microdata fields. an array of objects containing data fields related to the certain microdata type")
+    types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*parent microdata types*. for a full list of available types, please visit [schema.org](https://schema.org/docs/full.html)")
+    fields: Optional[List[Optional[MicrodataFieldsInfo]]] = Field(default=None, description=r"*microdata fields*. an array of objects containing data fields related to the certain microdata type")
     __properties: ClassVar[List[str]] = [
         "types", 
         "fields", 

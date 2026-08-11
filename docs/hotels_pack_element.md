@@ -6,11 +6,11 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**price** | **PriceInfo** | price indicated in the element |[optional]|
-**title** | **StrictStr** | title of a given link element |[optional]|
-**description** | **StrictStr** | link description |[optional]|
-**hotel_identifier** | **StrictStr** | unique hotel identifier<br>unique hotel identifier assigned by Google;<br>example: 'CgoIjaeSlI6CnNpVEAE' |[optional]|
-**domain** | **StrictStr** | domain where a link points |[optional]|
-**url** | **StrictStr** | source URL |[optional]|
-**is_paid** | **StrictBool** | indicates whether the element is an ad |[optional]|
-**rating** | **RatingInfo** | the item’s rating <br>the popularity rate based on reviews and displayed in SERP;<br>if there is none, equals null |[optional]|
+**price** | **PriceInfo** | <em>price indicated in the element</em> |[optional]|
+**title** | **StrictStr** | <em>title of a given link element</em> |[optional]|
+**description** | **StrictStr** | <em>link description</em> |[optional]|
+**hotel_identifier** | **StrictStr** | <em>unique hotel identifier</em><br>unique hotel identifier assigned by Google;<br>example: <code>'CgoIjaeSlI6CnNpVEAE'</code> |[optional]|
+**domain** | **StrictStr** | <em>domain where a link points</em> |[optional]|
+**url** | **StrictStr** | <em>source URL</em> |[optional]|
+**is_paid** | **StrictBool** | <em>indicates whether the element is an ad</em> |[optional]|
+**rating** | **RatingInfo** | <em>the item's rating </em><br>the popularity rate based on reviews and displayed in SERP;<br>if there is none, equals <code>null</code> |[optional]|

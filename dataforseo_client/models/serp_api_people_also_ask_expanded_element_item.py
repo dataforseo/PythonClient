@@ -19,14 +19,14 @@ class SerpApiPeopleAlsoAskExpandedElementItem(BaseSerpApiPeopleAlsoAskExpandedEl
     SerpApiPeopleAlsoAskExpandedElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    featured_title: Optional[StrictStr] = Field(default=None, description=r"the title of the featured snippets source page")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"source domain")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the carousel item")
-    description: Optional[StrictStr] = Field(default=None, description=r"description")
-    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"images of the element")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    table: Optional[Table] = Field(default=None, description=r"results table. if there are none, equals null")
+    featured_title: Optional[StrictStr] = Field(default=None, description=r"*the title of the featured snippets source page*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*relevant URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*source domain*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the carousel item*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*description*")
+    images: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"*images of the element*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    table: Optional[Table] = Field(default=None, description=r"*results table*. if there are none, equals `null`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "featured_title", 

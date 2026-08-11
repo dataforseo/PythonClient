@@ -12,19 +12,19 @@ from typing_extensions import Self
 from importlib import import_module
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from dataforseo_client.models.data_labs_paid_serp_element_item import DataLabsPaidSerpElementItem;
-    from dataforseo_client.models.data_labs_featured_snippet_serp_element_item import DataLabsFeaturedSnippetSerpElementItem;
     from dataforseo_client.models.data_labs_organic_serp_element_item import DataLabsOrganicSerpElementItem;
+    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
+    from dataforseo_client.models.data_labs_paid_serp_element_item import DataLabsPaidSerpElementItem;
     from dataforseo_client.models.data_labs_answer_box_serp_element_item import DataLabsAnswerBoxSerpElementItem;
     from dataforseo_client.models.data_labs_carousel_serp_element_item import DataLabsCarouselSerpElementItem;
     from dataforseo_client.models.data_labs_multi_carousel_serp_element_item import DataLabsMultiCarouselSerpElementItem;
+    from dataforseo_client.models.data_labs_featured_snippet_serp_element_item import DataLabsFeaturedSnippetSerpElementItem;
     from dataforseo_client.models.data_labs_google_flights_serp_element_item import DataLabsGoogleFlightsSerpElementItem;
     from dataforseo_client.models.data_labs_google_reviews_serp_element_item import DataLabsGoogleReviewsSerpElementItem;
     from dataforseo_client.models.data_labs_google_posts_serp_element_item import DataLabsGooglePostsSerpElementItem;
     from dataforseo_client.models.data_labs_images_serp_element_item import DataLabsImagesSerpElementItem;
     from dataforseo_client.models.data_labs_jobs_serp_element_item import DataLabsJobsSerpElementItem;
     from dataforseo_client.models.data_labs_knowledge_graph_serp_element_item import DataLabsKnowledgeGraphSerpElementItem;
-    from dataforseo_client.models.data_labs_local_pack_serp_element_item import DataLabsLocalPackSerpElementItem;
     from dataforseo_client.models.data_labs_hotels_pack_serp_element_item import DataLabsHotelsPackSerpElementItem;
     from dataforseo_client.models.data_labs_map_serp_element_item import DataLabsMapSerpElementItem;
     from dataforseo_client.models.data_labs_people_also_ask_serp_element_item import DataLabsPeopleAlsoAskSerpElementItem;
@@ -60,11 +60,11 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
     BaseDataforseoLabsApiElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*.             positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 
@@ -75,19 +75,19 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         ]
     __discriminator_property_name: ClassVar[str] = 'type'
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'paid': 'DataLabsPaidSerpElementItem',
-        'featured_snippet': 'DataLabsFeaturedSnippetSerpElementItem',
         'organic': 'DataLabsOrganicSerpElementItem',
+        'local_pack': 'DataLabsLocalPackSerpElementItem',
+        'paid': 'DataLabsPaidSerpElementItem',
         'answer_box': 'DataLabsAnswerBoxSerpElementItem',
         'carousel': 'DataLabsCarouselSerpElementItem',
         'multi_carousel': 'DataLabsMultiCarouselSerpElementItem',
+        'featured_snippet': 'DataLabsFeaturedSnippetSerpElementItem',
         'google_flights': 'DataLabsGoogleFlightsSerpElementItem',
         'google_reviews': 'DataLabsGoogleReviewsSerpElementItem',
         'google_posts': 'DataLabsGooglePostsSerpElementItem',
         'images': 'DataLabsImagesSerpElementItem',
         'jobs': 'DataLabsJobsSerpElementItem',
         'knowledge_graph': 'DataLabsKnowledgeGraphSerpElementItem',
-        'local_pack': 'DataLabsLocalPackSerpElementItem',
         'hotels_pack': 'DataLabsHotelsPackSerpElementItem',
         'map': 'DataLabsMapSerpElementItem',
         'people_also_ask': 'DataLabsPeopleAlsoAskSerpElementItem',
@@ -160,19 +160,19 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
     
     @classmethod
     def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[
-        DataLabsPaidSerpElementItem, 
-        DataLabsFeaturedSnippetSerpElementItem, 
         DataLabsOrganicSerpElementItem, 
+        DataLabsLocalPackSerpElementItem, 
+        DataLabsPaidSerpElementItem, 
         DataLabsAnswerBoxSerpElementItem, 
         DataLabsCarouselSerpElementItem, 
         DataLabsMultiCarouselSerpElementItem, 
+        DataLabsFeaturedSnippetSerpElementItem, 
         DataLabsGoogleFlightsSerpElementItem, 
         DataLabsGoogleReviewsSerpElementItem, 
         DataLabsGooglePostsSerpElementItem, 
         DataLabsImagesSerpElementItem, 
         DataLabsJobsSerpElementItem, 
         DataLabsKnowledgeGraphSerpElementItem, 
-        DataLabsLocalPackSerpElementItem, 
         DataLabsHotelsPackSerpElementItem, 
         DataLabsMapSerpElementItem, 
         DataLabsPeopleAlsoAskSerpElementItem, 
@@ -204,18 +204,20 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
         
-        if object_type == 'DataLabsPaidSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_paid_serp_element_item").DataLabsPaidSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsFeaturedSnippetSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_featured_snippet_serp_element_item").DataLabsFeaturedSnippetSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsOrganicSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_organic_serp_element_item").DataLabsOrganicSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsLocalPackSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsPaidSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_paid_serp_element_item").DataLabsPaidSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsAnswerBoxSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_answer_box_serp_element_item").DataLabsAnswerBoxSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsCarouselSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_carousel_serp_element_item").DataLabsCarouselSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsMultiCarouselSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_multi_carousel_serp_element_item").DataLabsMultiCarouselSerpElementItem.from_dict(obj)
+        if object_type == 'DataLabsFeaturedSnippetSerpElementItem':
+            return import_module("dataforseo_client.models.data_labs_featured_snippet_serp_element_item").DataLabsFeaturedSnippetSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsGoogleFlightsSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_google_flights_serp_element_item").DataLabsGoogleFlightsSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsGoogleReviewsSerpElementItem':
@@ -228,8 +230,6 @@ class BaseDataforseoLabsApiElementItem(BaseModel):
             return import_module("dataforseo_client.models.data_labs_jobs_serp_element_item").DataLabsJobsSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsKnowledgeGraphSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_knowledge_graph_serp_element_item").DataLabsKnowledgeGraphSerpElementItem.from_dict(obj)
-        if object_type == 'DataLabsLocalPackSerpElementItem':
-            return import_module("dataforseo_client.models.data_labs_local_pack_serp_element_item").DataLabsLocalPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsHotelsPackSerpElementItem':
             return import_module("dataforseo_client.models.data_labs_hotels_pack_serp_element_item").DataLabsHotelsPackSerpElementItem.from_dict(obj)
         if object_type == 'DataLabsMapSerpElementItem':

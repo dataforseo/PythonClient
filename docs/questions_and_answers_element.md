@@ -6,9 +6,9 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**url** | **StrictStr** | source URL |[optional]|
-**question_text** | **StrictStr** | question included in the item |[optional]|
-**answer_text** | **StrictStr** | answer included in the item |[optional]|
-**source** | **StrictStr** | reference source name or title |[optional]|
-**domain** | **StrictStr** | domain where a link points |[optional]|
-**votes** | **StrictInt** | answer upvotes from the source |[optional]|
+**url** | **StrictStr** | <em>source URL</em> |[optional]|
+**question_text** | **StrictStr** | <em>question included in the item</em> |[optional]|
+**answer_text** | **StrictStr** | <em>answer included in the item</em> |[optional]|
+**source** | **StrictStr** | <em>reference source name or title</em> |[optional]|
+**domain** | **StrictStr** | <em>domain where a link points</em> |[optional]|
+**votes** | **StrictInt** | <em>answer upvotes from the source</em> |[optional]|

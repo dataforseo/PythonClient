@@ -16,8 +16,8 @@ class Demography(BaseModel):
     """
     Demography
     """ # noqa: E501
-    age: Optional[List[Optional[DataforseoTrendsDataInfo]]] = Field(default=None, description=r"distribution of keyword popularity by age")
-    gender: Optional[List[Optional[DataforseoTrendsDataInfo]]] = Field(default=None, description=r"distribution of keyword popularity by gender")
+    age: Optional[List[Optional[DataforseoTrendsDataInfo]]] = Field(default=None, description=r"*distribution of keyword popularity by age*")
+    gender: Optional[List[Optional[DataforseoTrendsDataInfo]]] = Field(default=None, description=r"*distribution of keyword popularity by gender*")
     __properties: ClassVar[List[str]] = [
         "age", 
         "gender", 

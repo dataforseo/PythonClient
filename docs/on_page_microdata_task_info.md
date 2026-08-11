@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[OnPageMicrodataResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[OnPageMicrodataResultInfo]]** | <em>array of results</em> |[optional]|

@@ -15,7 +15,7 @@ class OnPageRawHtmlItem(BaseModel):
     """
     OnPageRawHtmlItem
     """ # noqa: E501
-    html: Optional[StrictStr] = Field(default=None, description=r"HTML page")
+    html: Optional[StrictStr] = Field(default=None, description=r"*HTML_**page*n")
     __properties: ClassVar[List[str]] = [
         "html", 
         ]

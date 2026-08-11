@@ -20,11 +20,11 @@ class DataLabsGooglePostsSerpElementItem(BaseDataforseoLabsApiElementItem):
     
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*.             positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
     posts_id: Optional[StrictStr] = Field(default=None, description=r"the identifier of the google_posts feature")
     feature: Optional[StrictStr] = Field(default=None, description=r"the additional feature of the review")
     cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")

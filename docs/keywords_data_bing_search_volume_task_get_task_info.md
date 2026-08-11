@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[KeywordsDataBingSearchVolumeTaskGetResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[KeywordsDataBingSearchVolumeTaskGetResultInfo]]** | <em>array of results</em> |[optional]|

@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**id** | **StrictStr** | ID of the task<br>required field<br>you can get this ID in the response of the Task POST endpoint<br>example:<br>“07131248-1535-0216-1000-17384017ad04” |[optional]|
+**id** | **StrictStr** | <em>ID of the task</em><br><strong>required field</strong><br>you can get this ID in the response of the <a href='https://docs.dataforseo.com/v3/on_page/task_post/'>Task POST</a> endpoint<br>example:<br>'07131248-1535-0216-1000-17384017ad04' |[optional]|
 **type** | **StrictStr** | type of element |[optional]|
-**accumulator** | **StrictStr** | tag value<br>optional field<br>specify a title or description here if you want to receive a list of duplicate pages that contains this tag |[optional]|
-**limit** | **StrictInt** | the maximum number of returned pages<br>optional field<br>default value: 100<br>maximum value: 1000 |[optional]|
-**offset** | **StrictInt** | offset in the results array of returned pages<br>optional field<br>default value: 0<br>maximum value: 2000000<br>if you specify the 10 value, the first ten pages in the results array will be omitted and the data will be provided for the successive pages |[optional]|
-**tag** | **StrictStr** | user-defined task identifier<br>optional field<br>the character limit is 255<br>you can use this parameter to identify the task and match it with the result<br>you will find the specified tag value in the data object of the response |[optional]|
+**accumulator** | **StrictStr** | <em>tag value</em><br>optional field<br>specify a title or description here if you want to receive a list of duplicate pages that contains this tag |[optional]|
+**limit** | **StrictInt** | <em>the maximum number of returned pages</em><br>optional field<br>default value: <code>100</code><br>maximum value: <code>1000</code> |[optional]|
+**offset** | **StrictInt** | <em>offset in the results array of returned pages</em><br>optional field<br>default value: <code>0</code><br>maximum value: <code>2000000</code><br>if you specify the <code>10</code> value, the first ten pages in the results array will be omitted and the data will be provided for the successive pages |[optional]|
+**tag** | **StrictStr** | <em>user-defined task identifier</em><br>optional field<br><em>the character limit is 255</em><br>you can use this parameter to identify the task and match it with the result<br>you will find the specified <code>tag</code> value in the <code>data</code> object of the response |[optional]|

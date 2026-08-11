@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the result in SERP |[optional]|
-**data_attrid** | **StrictStr** | google defined data attribute ID<br>example:<br>action:listen_artist |[optional]|
-**expanded_element** | **Any** | link of the element |[optional]|
+**title** | **StrictStr** | <em>title of the result in SERP</em> |[optional]|
+**data_attrid** | **StrictStr** | <em>google defined data attribute ID</em><br>            example:<br>            <code>action:listen_artist</code> |[optional]|
+**expanded_element** | **Any** | <em>link of the element</em> |[optional]|

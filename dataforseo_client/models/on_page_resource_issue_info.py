@@ -16,8 +16,8 @@ class OnPageResourceIssueInfo(BaseModel):
     """
     OnPageResourceIssueInfo
     """ # noqa: E501
-    errors: Optional[List[Optional[OnPageResourceIssueItemInfo]]] = Field(default=None, description=r"resource errors")
-    warnings: Optional[List[Optional[OnPageResourceIssueItemInfo]]] = Field(default=None, description=r"resource warnings")
+    errors: Optional[List[Optional[OnPageResourceIssueItemInfo]]] = Field(default=None, description=r"*resource errors*")
+    warnings: Optional[List[Optional[OnPageResourceIssueItemInfo]]] = Field(default=None, description=r"*resource warnings*")
     __properties: ClassVar[List[str]] = [
         "errors", 
         "warnings", 

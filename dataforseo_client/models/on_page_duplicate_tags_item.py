@@ -16,9 +16,9 @@ class OnPageDuplicateTagsItem(BaseModel):
     """
     OnPageDuplicateTagsItem
     """ # noqa: E501
-    accumulator: Optional[StrictStr] = Field(default=None, description=r"contains the value of duplicated tag")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total count of duplicate pages")
-    pages: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description=r"pages with duplicate tags")
+    accumulator: Optional[StrictStr] = Field(default=None, description=r"*contains the value of duplicated tag*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total count of duplicate pages*")
+    pages: Optional[List[Optional[OnPageHtmlResourceItem]]] = Field(default=None, description=r"*pages with duplicate tags*")
     __properties: ClassVar[List[str]] = [
         "accumulator", 
         "total_count", 

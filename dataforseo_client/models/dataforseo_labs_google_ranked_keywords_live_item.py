@@ -17,9 +17,9 @@ class DataforseoLabsGoogleRankedKeywordsLiveItem(BaseModel):
     """
     DataforseoLabsGoogleRankedKeywordsLiveItem
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"keyword data for the returned keyword")
-    ranked_serp_element: Optional[RankedSerpElement] = Field(default=None, description=r"contains data on the domain’s SERP element found for the returned keyword")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"*keyword data for the returned keyword*")
+    ranked_serp_element: Optional[RankedSerpElement] = Field(default=None, description=r"*contains data on the domain's SERP element found for the returned `keyword`*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "keyword_data", 

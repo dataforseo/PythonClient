@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**fetch_timing** | **FetchTiming** | time range within which a result was fetched |[optional]|
-**is_resource** | **StrictBool** | indicates whether a page is a single resource |[optional]|
+**fetch_timing** | **FetchTiming** | <em>time range within which a result was fetched</em> |[optional]|
+**is_resource** | **StrictBool** | <em>indicates whether a page is a single resource</em> |[optional]|

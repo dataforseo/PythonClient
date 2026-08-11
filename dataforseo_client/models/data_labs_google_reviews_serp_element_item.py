@@ -18,16 +18,16 @@ class DataLabsGoogleReviewsSerpElementItem(BaseDataforseoLabsApiElementItem):
     DataLabsGoogleReviewsSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    reviews_count: Optional[StrictInt] = Field(default=None, description=r"the number of reviews")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP")
-    place_id: Optional[StrictStr] = Field(default=None, description=r"the identifier of a place")
-    feature: Optional[StrictStr] = Field(default=None, description=r"the additional feature of the review")
-    cid: Optional[StrictStr] = Field(default=None, description=r"google-defined client id")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*.             positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    reviews_count: Optional[StrictInt] = Field(default=None, description=r"*the number of reviews*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the item's rating*.             the popularity rate based on reviews and displayed in SERP")
+    place_id: Optional[StrictStr] = Field(default=None, description=r"*the identifier of a place*")
+    feature: Optional[StrictStr] = Field(default=None, description=r"*the additional feature of the review*")
+    cid: Optional[StrictStr] = Field(default=None, description=r"*google-defined client id*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

@@ -16,8 +16,8 @@ class InterestsComparison(BaseModel):
     """
     InterestsComparison
     """ # noqa: E501
-    items: Optional[List[Optional[AbsoluteItems]]] = Field(default=None, description=r"contains keyword popularity and related data")
-    absolute_items: Optional[List[Optional[AbsoluteItems]]] = Field(default=None, description=r"keyword popularity rates across all locations. values in this array represent percentages relative to the maximum value across all locations")
+    items: Optional[List[Optional[AbsoluteItems]]] = Field(default=None, description=r"*contains keyword popularity and related data*")
+    absolute_items: Optional[List[Optional[AbsoluteItems]]] = Field(default=None, description=r"*keyword popularity rates across all locations*. values in this array represent percentages relative to the maximum value across all locations")
     __properties: ClassVar[List[str]] = [
         "items", 
         "absolute_items", 

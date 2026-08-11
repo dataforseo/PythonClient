@@ -6,8 +6,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**title** | **StrictStr** | title of the result in SERP |[optional]|
-**url** | **StrictStr** | relevant URL in SERP |[optional]|
-**domain** | **StrictStr** | domain in SERP |[optional]|
-**snippet** | **StrictStr** | text alongside the link title |[optional]|
-**xpath** | **StrictStr** | the XPath of the element |[optional]|
+**title** | **StrictStr** | <em>title of the result in SERP</em> |[optional]|
+**url** | **StrictStr** | <em> relevant URL in SERP</em> |[optional]|
+**domain** | **StrictStr** | <em>domain in SERP</em> |[optional]|
+**snippet** | **StrictStr** | <em>text alongside the link title</em> |[optional]|
+**xpath** | **StrictStr** | <em>the <a href='https://en.wikipedia.org/wiki/XPath'>XPath</a> of the element</em> |[optional]|

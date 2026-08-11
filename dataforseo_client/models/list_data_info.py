@@ -15,8 +15,8 @@ class ListDataInfo(BaseModel):
     """
     ListDataInfo
     """ # noqa: E501
-    top: Optional[List[Optional[Any]]] = Field(default=None, description=r"the most popular related topics. represents the list of the most popular related topics")
-    rising: Optional[List[Optional[Any]]] = Field(default=None, description=r"emerging related topics. represents the list of related topics with the biggest increase in search frequency since the last time period")
+    top: Optional[List[Optional[Any]]] = Field(default=None, description=r"*the most popular related topics*. represents the list of the most popular related topics")
+    rising: Optional[List[Optional[Any]]] = Field(default=None, description=r"*emerging related topics*. represents the list of related topics with the biggest increase in search frequency since the last time period")
     __properties: ClassVar[List[str]] = [
         "top", 
         "rising", 

@@ -15,8 +15,8 @@ class AvailibleVersions(BaseModel):
     """
     AvailibleVersions
     """ # noqa: E501
-    version: Optional[StrictStr] = Field(default=None, description=r"lighthouse version")
-    default: Optional[StrictBool] = Field(default=None, description=r"the version is used by default. if false, the version is not used by default and should be specified in the corresponding field of the POST request if necessary")
+    version: Optional[StrictStr] = Field(default=None, description=r"*lighthouse version*")
+    default: Optional[StrictBool] = Field(default=None, description=r"*the version is used by default*. if `false`, the version is not used by default and should be specified in the corresponding field of the POST request if necessary")
     __properties: ClassVar[List[str]] = [
         "version", 
         "default", 

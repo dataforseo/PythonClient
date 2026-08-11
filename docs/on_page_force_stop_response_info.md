@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[OnPageForceStopTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[OnPageForceStopTaskInfo]]** | <em>array of tasks</em> |[optional]|

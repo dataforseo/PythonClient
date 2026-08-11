@@ -15,17 +15,17 @@ class HtmlContentInfo(BaseModel):
     """
     HtmlContentInfo
     """ # noqa: E501
-    plain_text_size: Optional[StrictInt] = Field(default=None, description=r"total size of the text on the page measured in bytes")
+    plain_text_size: Optional[StrictInt] = Field(default=None, description=r"*total size of the text on the page measured in bytes*")
     plain_text_rate: Optional[StrictFloat] = Field(default=None, description=r"plaintext rate value. plain_text_size to size ratio")
-    plain_text_word_count: Optional[StrictInt] = Field(default=None, description=r"number of words on the page")
-    automated_readability_index: Optional[StrictFloat] = Field(default=None, description=r"Automated Readability Index")
-    coleman_liau_readability_index: Optional[StrictFloat] = Field(default=None, description=r"Coleman–Liau Index")
-    dale_chall_readability_index: Optional[StrictFloat] = Field(default=None, description=r"Dale–Chall Readability Index")
-    flesch_kincaid_readability_index: Optional[StrictFloat] = Field(default=None, description=r"Flesch–Kincaid Readability Index")
-    smog_readability_index: Optional[StrictFloat] = Field(default=None, description=r"SMOG Readability Index")
-    description_to_content_consistency: Optional[StrictFloat] = Field(default=None, description=r"consistency of the meta description tag with the page content. measured from 0 to 1")
-    title_to_content_consistency: Optional[StrictFloat] = Field(default=None, description=r"consistency of the meta title tag with the page content. measured from 0 to 1")
-    meta_keywords_to_content_consistency: Optional[StrictFloat] = Field(default=None, description=r"consistency of meta keywordstag with the page content. measured from 0 to 1")
+    plain_text_word_count: Optional[StrictInt] = Field(default=None, description=r"*number of words on the page*")
+    automated_readability_index: Optional[StrictFloat] = Field(default=None, description=r"*[Automated Readability Index](https://en.wikipedia.org/wiki/Automated_readability_index)*")
+    coleman_liau_readability_index: Optional[StrictFloat] = Field(default=None, description=r"*[Coleman–Liau Index](https://en.wikipedia.org/wiki/Coleman%E2%80%93Liau_index)*")
+    dale_chall_readability_index: Optional[StrictFloat] = Field(default=None, description=r"*[Dale–Chall Readability Index](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)*")
+    flesch_kincaid_readability_index: Optional[StrictFloat] = Field(default=None, description=r"*[Flesch–Kincaid Readability Index](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests)*")
+    smog_readability_index: Optional[StrictFloat] = Field(default=None, description=r"*[SMOG Readability Index](https://en.wikipedia.org/wiki/SMOG)*")
+    description_to_content_consistency: Optional[StrictFloat] = Field(default=None, description=r"*consistency of the meta `description` tag with the page content*. measured from 0 to 1")
+    title_to_content_consistency: Optional[StrictFloat] = Field(default=None, description=r"*consistency of the meta `title` tag with the page content*. measured from 0 to 1")
+    meta_keywords_to_content_consistency: Optional[StrictFloat] = Field(default=None, description=r"*consistency of meta `keywords`tag with the page content*. measured from 0 to 1")
     __properties: ClassVar[List[str]] = [
         "plain_text_size", 
         "plain_text_rate", 

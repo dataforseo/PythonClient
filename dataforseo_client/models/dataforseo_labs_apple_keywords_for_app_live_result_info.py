@@ -16,13 +16,13 @@ class DataforseoLabsAppleKeywordsForAppLiveResultInfo(BaseModel):
     """
     DataforseoLabsAppleKeywordsForAppLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    app_id: Optional[StrictStr] = Field(default=None, description=r"id of the app in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsAppleKeywordsForAppLiveItem]]] = Field(default=None, description=r"contains data related to the ranking keywords for the app specified in the app_id field")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    app_id: Optional[StrictStr] = Field(default=None, description=r"*id of the app in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsAppleKeywordsForAppLiveItem]]] = Field(default=None, description=r"*contains data related to the ranking keywords for the app specified in the `app_id` field*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "app_id", 

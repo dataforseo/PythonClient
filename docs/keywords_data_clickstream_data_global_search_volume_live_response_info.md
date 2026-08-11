@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveTaskInfo]]** | <em>array of tasks</em> |[optional]|

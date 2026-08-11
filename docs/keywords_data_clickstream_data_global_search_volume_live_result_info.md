@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem]]** | contains keywords and related data |[optional]|
+**items_count** | **StrictInt** | <em>the number of results returned in the <code>items</code> array</em> |[optional]|
+**items** | **List[Optional[KeywordsDataClickstreamDataGlobalSearchVolumeLiveItem]]** | <em>contains keywords and related data</em> |[optional]|

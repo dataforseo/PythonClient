@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **Any** | array of results<br>in this case, the value will be null |[optional]|
+**result** | **Any** | <em>array of results</em><br>in this case, the value will be <code>null</code> |[optional]|

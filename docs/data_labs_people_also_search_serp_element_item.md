@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the result in SERP |[optional]|
-**items** | **List[Optional[StrictStr]]** | historical SERPs and related data found in the database |[optional]|
+**title** | **StrictStr** | <em>title of the result in SERP</em> |[optional]|
+**items** | **List[Optional[StrictStr]]** | <em>historical SERPs and related data found in the database</em> |[optional]|

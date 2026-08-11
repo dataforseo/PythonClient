@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[DomainAnalyticsErrorsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[DomainAnalyticsErrorsTaskInfo]]** | <em>array of tasks</em> |[optional]|

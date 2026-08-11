@@ -15,10 +15,10 @@ class DomainAnalyticsTechnologiesTechnologiesSummaryLiveResultInfo(BaseModel):
     """
     DomainAnalyticsTechnologiesTechnologiesSummaryLiveResultInfo
     """ # noqa: E501
-    countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of websites by country. contains country codes and number of websites per country")
-    languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of websites by language. contains language codes and number of websites per language")
-    content_languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of websites by content language. contains content language codes and number of websites per language")
-    keywords: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"distribution of websites by keywords. contains keywords found in the websites’ titles, descriptions or meta keywords, and number of websites using each keyword")
+    countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*distribution of websites by country*. contains country codes and number of websites per country")
+    languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*distribution of websites by language*. contains language codes and number of websites per language")
+    content_languages: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*distribution of websites by content language*. contains content language codes and number of websites per language")
+    keywords: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*distribution of websites by keywords*. contains keywords found in the websites' titles, descriptions or meta keywords, and number of websites using each keyword")
     __properties: ClassVar[List[str]] = [
         "countries", 
         "languages", 

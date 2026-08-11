@@ -17,19 +17,19 @@ class OnPageCanonicalLinkItem(BaseOnPageLinkItem):
     OnPageCanonicalLinkItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    domain_from: Optional[StrictStr] = Field(default=None, description=r"referring domain. the link was found on this domain")
-    domain_to: Optional[StrictStr] = Field(default=None, description=r"referenced domain. the link is pointing to this domain")
-    page_from: Optional[StrictStr] = Field(default=None, description=r"referring page. relative URL of the page on which the link was found")
-    page_to: Optional[StrictStr] = Field(default=None, description=r"referenced page. relative URL of the page to which the link is pointing")
-    link_from: Optional[StrictStr] = Field(default=None, description=r"referring page. absolute URL of the page on which the link was found")
-    link_to: Optional[StrictStr] = Field(default=None, description=r"referenced page. absolute URL of the page to which the link is pointing")
-    dofollow: Optional[StrictBool] = Field(default=None, description=r"indicates whether the link is dofollow. if the value is true, the link doesn’t have a rel='nofollow' attribute")
-    page_from_scheme: Optional[StrictStr] = Field(default=None, description=r"url scheme of the referring page")
-    page_to_scheme: Optional[StrictStr] = Field(default=None, description=r"url scheme of the referenced page")
-    direction: Optional[StrictStr] = Field(default=None, description=r"direction of the link. possible values: internal, external")
-    is_broken: Optional[StrictBool] = Field(default=None, description=r"link is broken. indicates whether a link is directing to a broken page or resource")
-    is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description=r"indicates that the link may have a conflict with another link. if true, at least one link pointing to link_to has a rel='nofollow' attribute and at least one is dofollow")
-    page_to_status_code: Optional[StrictInt] = Field(default=None, description=r"status code of the referenced page. status code of the page to which the link is pointing")
+    domain_from: Optional[StrictStr] = Field(default=None, description=r"*referring domain*. the link was found on this domain")
+    domain_to: Optional[StrictStr] = Field(default=None, description=r"*referenced domain*. the link is pointing to this domain")
+    page_from: Optional[StrictStr] = Field(default=None, description=r"*referring page*. relative URL of the page on which the link was found")
+    page_to: Optional[StrictStr] = Field(default=None, description=r"*referenced page*. relative URL of the page to which the link is pointing")
+    link_from: Optional[StrictStr] = Field(default=None, description=r"*referring page*. absolute URL of the page on which the link was found")
+    link_to: Optional[StrictStr] = Field(default=None, description=r"*referenced page*. absolute URL of the page to which the link is pointing")
+    dofollow: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the link is dofollow*. if the value is `true`, the link doesn't have a `rel='nofollow'` attribute")
+    page_from_scheme: Optional[StrictStr] = Field(default=None, description=r"*[url scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) of the referring page*")
+    page_to_scheme: Optional[StrictStr] = Field(default=None, description=r"*[url scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) of the referenced page*")
+    direction: Optional[StrictStr] = Field(default=None, description=r"*direction of the link*. possible values: `internal`, `external`")
+    is_broken: Optional[StrictBool] = Field(default=None, description=r"*link is broken*. indicates whether a link is directing to a broken page or resource")
+    is_link_relation_conflict: Optional[StrictBool] = Field(default=None, description=r"*indicates that the link may have a conflict with another link*. if `true`, at least one link pointing to `link_to` has a `rel='nofollow'` attribute **and** at least one is dofollow")
+    page_to_status_code: Optional[StrictInt] = Field(default=None, description=r"*status code of the referenced page*. status code of the page to which the link is pointing")
     __properties: ClassVar[List[str]] = [
         "type", 
         "domain_from", 

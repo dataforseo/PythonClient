@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[KeywordsDataDataforseoTrendsMergedDataLiveTaskInfo]]** | <em>array of tasks</em> |[optional]|

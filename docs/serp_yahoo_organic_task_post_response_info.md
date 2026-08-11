@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpYahooOrganicTaskPostTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpYahooOrganicTaskPostTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -16,9 +16,9 @@ class KeywordsDataClickstreamDataSearchVolumeLiveItem(BaseModel):
     """
     KeywordsDataClickstreamDataSearchVolumeLiveItem
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword provided in the POST array")
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"current search volume rate of a keyword")
-    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly search volume rates. array of objects with search volume rates in a certain month of a year")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword provided in the POST array*")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"*current search volume rate of a keyword*")
+    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"*monthly search volume rates*. array of objects with search volume rates in a certain month of a year")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "search_volume", 

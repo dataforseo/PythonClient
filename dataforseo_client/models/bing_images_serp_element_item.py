@@ -20,16 +20,16 @@ class BingImagesSerpElementItem(BaseBingSerpApiElementItem):
     BingImagesSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    page: Optional[StrictInt] = Field(default=None, description=r"search results page number. indicates the number of the SERP page on which the element is located")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the item")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL")
-    items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"contains results featured in the ‘hotels_pack’ element of SERP")
-    related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"contains keywords and images related to the specified search term. if there are none, equals null", deprecated=True)
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    page: Optional[StrictInt] = Field(default=None, description=r"*search results page number*. indicates the number of the SERP page on which the element is located")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"*rectangle parameters*.             contains cartesian coordinates and pixel dimensions of the result's snippet in SERP.             equals `null` if `calculate_rectangles` in the POST request is not set to `true`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the item*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL*")
+    items: Optional[List[Optional[AiModeImagesElementInfo]]] = Field(default=None, description=r"*contains results featured in the 'hotels_pack' element of SERP*")
+    related_image_searches: Optional[List[Optional[RelatedImageSearchesElement]]] = Field(default=None, description=r"*contains keywords and images related to the specified search term*.             if there are none, equals `null`", deprecated=True)
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

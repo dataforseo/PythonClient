@@ -18,14 +18,14 @@ class HotelsPackElement(BaseModel):
     HotelsPackElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description=r"link description")
-    hotel_identifier: Optional[StrictStr] = Field(default=None, description=r"unique hotel identifier. unique hotel identifier assigned by Google;. example: 'CgoIjaeSlI6CnNpVEAE'")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    is_paid: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is an ad")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
+    price: Optional[PriceInfo] = Field(default=None, description=r"*price indicated in the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*link description*")
+    hotel_identifier: Optional[StrictStr] = Field(default=None, description=r"*unique hotel identifier*. unique hotel identifier assigned by Google;. example: `'CgoIjaeSlI6CnNpVEAE'`")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain where a link points*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    is_paid: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the element is an ad*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the item's rating*. the popularity rate based on reviews and displayed in SERP;. if there is none, equals `null`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "price", 

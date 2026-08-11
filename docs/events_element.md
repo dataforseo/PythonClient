@@ -6,6 +6,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**title** | **StrictStr** | title of a given link element |[optional]|
-**snippet** | **StrictStr** | text alongside the link title |[optional]|
-**url** | **StrictStr** | source URL |[optional]|
+**title** | **StrictStr** | <em>title of a given link element</em> |[optional]|
+**snippet** | **StrictStr** | <em>text alongside the link title</em> |[optional]|
+**url** | **StrictStr** | <em>source URL</em> |[optional]|

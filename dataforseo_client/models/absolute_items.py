@@ -15,9 +15,9 @@ class AbsoluteItems(BaseModel):
     """
     AbsoluteItems
     """ # noqa: E501
-    geo_id: Optional[StrictStr] = Field(default=None, description=r"location identifier. you can use this field for matching obtained results with location parameters specified in the request. see the full list of available locations with their geo_id here or by making a separate request to https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations. example:. US-NY")
-    geo_name: Optional[StrictStr] = Field(default=None, description=r"location name. you can use this field for matching obtained results with location parameters specified in the request. see the full list of available locations with their geo_name here or by making a separate request to https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations. example:. Andorra")
-    values: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"contains data on relative keyword popularity by country or region")
+    geo_id: Optional[StrictStr] = Field(default=None, description=r"*location identifier*. you can use this field for matching obtained results with location parameters specified in the request. see the full list of available locations with their `geo_id` [here](/v3/keywords_data/dataforseo_trends/locations/) or by making a separate request to `https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations`. example:. `US-NY`")
+    geo_name: Optional[StrictStr] = Field(default=None, description=r"*location name*. you can use this field for matching obtained results with location parameters specified in the request. see the full list of available locations with their `geo_name` [here](/v3/keywords_data/dataforseo_trends/locations/) or by making a separate request to `https://api.dataforseo.com/v3/keywords_data/dataforseo_trends/locations`. example:. `Andorra`")
+    values: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*contains data on relative keyword popularity by country or region*")
     __properties: ClassVar[List[str]] = [
         "geo_id", 
         "geo_name", 

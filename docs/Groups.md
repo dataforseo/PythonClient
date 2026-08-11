@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**id** | **StrictStr** | id of the technology group<br>example:<br>marketing, sales |[optional]|
-**title** | **StrictStr** | title of the technology group |[optional]|
-**categories** | **List[Optional[TechnologyCategoryInfo]]** | technology categories in this group |[optional]|
+**id** | **StrictStr** | <em>id of the technology group</em><br>example:<br><code>marketing</code>, <code>sales</code> |[optional]|
+**title** | **StrictStr** | <em>title of the technology group</em> |[optional]|
+**categories** | **List[Optional[TechnologyCategoryInfo]]** | <em>technology categories in this group</em> |[optional]|

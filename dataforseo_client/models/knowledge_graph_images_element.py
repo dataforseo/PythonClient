@@ -16,11 +16,11 @@ class KnowledgeGraphImagesElement(BaseModel):
     KnowledgeGraphImagesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL of the Ad element in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    alt: Optional[StrictStr] = Field(default=None, description=r"alt tag of the image")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
+    url: Optional[StrictStr] = Field(default=None, description=r"*relevant URL of the Ad element in SERP*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
+    alt: Optional[StrictStr] = Field(default=None, description=r"*alt tag of the image*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "url", 

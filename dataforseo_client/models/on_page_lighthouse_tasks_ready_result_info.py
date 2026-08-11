@@ -15,9 +15,9 @@ class OnPageLighthouseTasksReadyResultInfo(BaseModel):
     """
     OnPageLighthouseTasksReadyResultInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"task identifier of the completed task. unique task identifier in our system in the UUID format")
-    tag: Optional[StrictStr] = Field(default=None, description=r"user-defined task identifier")
-    endpoint_json: Optional[StrictStr] = Field(default=None, description=r"URL for collecting the results of the OnPage Lighthouse JSON task")
+    id: Optional[StrictStr] = Field(default=None, description=r"*task identifier of the completed task*. **unique task identifier in our system in the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format**")
+    tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*")
+    endpoint_json: Optional[StrictStr] = Field(default=None, description=r"*URL for collecting the results of the OnPage Lighthouse JSON task*")
     __properties: ClassVar[List[str]] = [
         "id", 
         "tag", 

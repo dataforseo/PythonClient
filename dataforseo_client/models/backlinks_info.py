@@ -15,12 +15,12 @@ class BacklinksInfo(BaseModel):
     """
     BacklinksInfo
     """ # noqa: E501
-    referring_domains: Optional[StrictInt] = Field(default=None, description=r"average number of referring domains")
-    referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"average number of referring main domains")
-    referring_pages: Optional[StrictInt] = Field(default=None, description=r"average number of referring pages")
-    dofollow: Optional[StrictInt] = Field(default=None, description=r"average number of dofollow links")
-    backlinks: Optional[StrictInt] = Field(default=None, description=r"average number of backlinks")
-    time_update: Optional[StrictStr] = Field(default=None, description=r"date and time when backlink data was updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. 2019-11-15 12:57:46 +00:00")
+    referring_domains: Optional[StrictInt] = Field(default=None, description=r"*average number of referring domains*")
+    referring_main_domains: Optional[StrictInt] = Field(default=None, description=r"*average number of referring main domains*")
+    referring_pages: Optional[StrictInt] = Field(default=None, description=r"*average number of referring pages*")
+    dofollow: Optional[StrictInt] = Field(default=None, description=r"*average number of dofollow links*")
+    backlinks: Optional[StrictInt] = Field(default=None, description=r"*average number of backlinks*")
+    time_update: Optional[StrictStr] = Field(default=None, description=r"*date and time when backlink data was updated*.             in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;.             example:.             `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "referring_domains", 
         "referring_main_domains", 

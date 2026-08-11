@@ -6,17 +6,17 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**rank_group** | **StrictInt** | position within a group of elements with identical type values<br>positions of elements with different type values are omitted from rank_group |[optional]|
-**rank_absolute** | **StrictInt** | absolute rank in SERP<br>absolute position among all the elements found in Amazon Sellers SERP |[optional]|
-**position** | **StrictStr** | alignment of the element in SERP<br>possible values:<br>left, right |[optional]|
-**xpath** | **StrictStr** | XPath of the element |[optional]|
-**seller_name** | **StrictStr** | business name of the seller |[optional]|
-**seller_url** | **StrictStr** | url forwarding to the seller’s page on Amazon |[optional]|
-**ships_from** | **StrictStr** | sender company name |[optional]|
-**price** | **PriceInfo** | product pricing details<br>if there are no details, the value will be null |[optional]|
-**percentage_discount** | **StrictFloat** | value of the percentage discount |[optional]|
-**applicable_vouchers** | **List[Optional[AmazonApplicableVouchersItem]]** | array of objects containing information about applicable vouchers |[optional]|
-**rating** | **RatingElement** | seller rating details<br>seller popularity rate based on customer reviews |[optional]|
-**condition** | **StrictStr** | product condition<br>condition of the product offered by the seller |[optional]|
-**condition_description** | **StrictStr** | product condition details<br>expanded details on the condition of the product offered by the seller |[optional]|
-**delivery_info** | **AmazonDeliveryInfo** | delivery information<br>delivery information including free and fast delivery date ranges |[optional]|
+**rank_group** | **StrictInt** | <em>position within a group of elements with identical <code>type</code> values</em><br>positions of elements with different <code>type</code> values are omitted from <code>rank_group</code> |[optional]|
+**rank_absolute** | **StrictInt** | <em> absolute rank in SERP</em><br>absolute position among all the elements found in Amazon Sellers SERP |[optional]|
+**position** | **StrictStr** | <em>alignment of the element in SERP</em><br>possible values:<br><code>left</code>, <code>right</code> |[optional]|
+**xpath** | **StrictStr** | <em><a href='https://en.wikipedia.org/wiki/XPath'>XPath</a> of the element</em> |[optional]|
+**seller_name** | **StrictStr** | <em>business name of the seller</em> |[optional]|
+**seller_url** | **StrictStr** | <em>url forwarding to the seller's page on Amazon</em> |[optional]|
+**ships_from** | **StrictStr** | <em>sender company name</em> |[optional]|
+**price** | **PriceInfo** | <em>product pricing details</em><br>if there are no details, the value will be <code>null</code> |[optional]|
+**percentage_discount** | **StrictFloat** | <em>value of the percentage discount</em> |[optional]|
+**applicable_vouchers** | **List[Optional[AmazonApplicableVouchersItem]]** | <em>array of objects containing information about applicable vouchers</em> |[optional]|
+**rating** | **RatingElement** | <em>seller rating details</em><br>seller popularity rate based on customer reviews |[optional]|
+**condition** | **StrictStr** | <em>product condition</em><br>condition of the product offered by the seller |[optional]|
+**condition_description** | **StrictStr** | <em>product condition details</em><br>expanded details on the condition of the product offered by the seller |[optional]|
+**delivery_info** | **AmazonDeliveryInfo** | <em>delivery information</em><br>delivery information including free and fast delivery date ranges |[optional]|

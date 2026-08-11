@@ -18,14 +18,14 @@ class SerpApiBingAiOverviewOrganicElementItem(BaseSerpApiBingAiOverviewElementIt
     SerpApiBingAiOverviewOrganicElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the link")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"text snippet from the organic result")
-    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb in SERP")
-    website_name: Optional[StrictStr] = Field(default=None, description=r"website name in SERP")
-    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"links featured in the faq_box_element")
-    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the link*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*relevant URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*text snippet from the organic result*")
+    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"*breadcrumb in SERP*")
+    website_name: Optional[StrictStr] = Field(default=None, description=r"*website name in SERP*")
+    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"*links featured in the faq_box_element*")
+    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*words highlighted in bold within the results `description`*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

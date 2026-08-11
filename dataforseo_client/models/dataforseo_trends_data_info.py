@@ -16,8 +16,8 @@ class DataforseoTrendsDataInfo(BaseModel):
     """
     DataforseoTrendsDataInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"relevant keyword for which demographic data is provided")
-    values: Optional[List[Optional[DemographyItemValueInfo]]] = Field(default=None, description=r"contains age range and corresponding keyword popularity values")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*relevant keyword for which demographic data is provided*")
+    values: Optional[List[Optional[DemographyItemValueInfo]]] = Field(default=None, description=r"*contains age range and corresponding keyword popularity values*")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "values", 

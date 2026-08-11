@@ -15,8 +15,8 @@ class KeywordsDataBingAudienceEstimationJobFunctionsResultInfo(BaseModel):
     """
     KeywordsDataBingAudienceEstimationJobFunctionsResultInfo
     """ # noqa: E501
-    job_function_id: Optional[StrictInt] = Field(default=None, description=r"ID of the job function")
-    job_function_name: Optional[StrictStr] = Field(default=None, description=r"name of the job function")
+    job_function_id: Optional[StrictInt] = Field(default=None, description=r"*ID of the job function*")
+    job_function_name: Optional[StrictStr] = Field(default=None, description=r"*name of the job function*")
     __properties: ClassVar[List[str]] = [
         "job_function_id", 
         "job_function_name", 

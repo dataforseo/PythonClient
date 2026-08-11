@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[OnPagePageScreenshotResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[OnPagePageScreenshotResultInfo]]** | <em>array of results</em> |[optional]|

@@ -25,7 +25,7 @@ class DataforseoLabsGoogleHistoricalSerpsLiveTaskInfo(BaseModel):
     result_count: Optional[StrictInt] = Field(default=None, description=r"number of elements in the result array")
     path: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URL path")
     data: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"contains the same parameters that you specified in the POST request")
-    result: Optional[List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveResultInfo]]] = Field(default=None, description=r"array of results. the array includes objects with SERPs for each month within the specified time frame")
+    result: Optional[List[Optional[DataforseoLabsGoogleHistoricalSerpsLiveResultInfo]]] = Field(default=None, description=r"*array of results*.             the array includes objects with SERPs for each month within the specified time frame")
     __properties: ClassVar[List[str]] = [
         "id", 
         "status_code", 

@@ -16,19 +16,19 @@ class KeywordsDataBingAudienceEstimationTaskGetResultInfo(BaseModel):
     """
     KeywordsDataBingAudienceEstimationTaskGetResultInfo
     """ # noqa: E501
-    est_impressions: Optional[AudienceEstimationInfo] = Field(default=None, description=r"monthly estimated impressions range")
-    est_audience_size: Optional[AudienceEstimationInfo] = Field(default=None, description=r"monthly estimated reach user count range")
-    est_clicks: Optional[AudienceEstimationInfo] = Field(default=None, description=r"monthly estimated click count range")
-    est_spend: Optional[AudienceEstimationInfo] = Field(default=None, description=r"monthly estimated spending range")
-    est_cost_per_event: Optional[AudienceEstimationInfo] = Field(default=None, description=r"indicates the estimated cost per event with range result")
-    est_ctr: Optional[AudienceEstimationInfo] = Field(default=None, description=r"estimated click-through rate range")
-    suggested_bid: Optional[StrictFloat] = Field(default=None, description=r"suggested bid value under the current targeting")
-    suggested_budget: Optional[StrictFloat] = Field(default=None, description=r"suggested daily budget value under the current targeting and bid")
-    events_lost_to_bid: Optional[StrictInt] = Field(default=None, description=r"indicates event lost count due to insufficient input bid")
-    events_lost_to_budget: Optional[StrictInt] = Field(default=None, description=r"indicates the event lost count due to insufficient input budget")
-    est_reach_audience_size: Optional[StrictInt] = Field(default=None, description=r"monthly estimated user count")
-    est_reach_impressions: Optional[StrictInt] = Field(default=None, description=r"monthly estimated impressions")
-    currency: Optional[StrictStr] = Field(default=None, description=r"currency name. example: USDollar")
+    est_impressions: Optional[AudienceEstimationInfo] = Field(default=None, description=r"*monthly estimated impressions range*")
+    est_audience_size: Optional[AudienceEstimationInfo] = Field(default=None, description=r"*monthly estimated reach user count range*")
+    est_clicks: Optional[AudienceEstimationInfo] = Field(default=None, description=r"*monthly estimated click count range*")
+    est_spend: Optional[AudienceEstimationInfo] = Field(default=None, description=r"*monthly estimated spending range*")
+    est_cost_per_event: Optional[AudienceEstimationInfo] = Field(default=None, description=r"*indicates the estimated cost per event with range result*")
+    est_ctr: Optional[AudienceEstimationInfo] = Field(default=None, description=r"*estimated click-through rate range*")
+    suggested_bid: Optional[StrictFloat] = Field(default=None, description=r"*suggested bid value under the current targeting*")
+    suggested_budget: Optional[StrictFloat] = Field(default=None, description=r"*suggested daily budget value under the current targeting and bid*")
+    events_lost_to_bid: Optional[StrictInt] = Field(default=None, description=r"*indicates event lost count due to insufficient input bid*")
+    events_lost_to_budget: Optional[StrictInt] = Field(default=None, description=r"*indicates the event lost count due to insufficient input budget*")
+    est_reach_audience_size: Optional[StrictInt] = Field(default=None, description=r"*monthly estimated user count*")
+    est_reach_impressions: Optional[StrictInt] = Field(default=None, description=r"*monthly estimated impressions*")
+    currency: Optional[StrictStr] = Field(default=None, description=r"*currency name*. example: `USDollar`")
     __properties: ClassVar[List[str]] = [
         "est_impressions", 
         "est_audience_size", 

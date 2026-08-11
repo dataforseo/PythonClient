@@ -15,9 +15,9 @@ class CountryDistribution(BaseModel):
     """
     CountryDistribution
     """ # noqa: E501
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"country ISO code")
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"clickstream-based average monthly search volume rate. represents the (approximate) number of searches for the given keyword idea based on clickstream. you can learn more about clickstream search volume in this Help Center article")
-    percentage: Optional[StrictFloat] = Field(default=None, description=r"percentage of global search volume")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*country ISO code*")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"*clickstream-based average monthly search volume rate*. represents the (approximate) number of searches for the given keyword idea based on clickstream. you can learn more about clickstream search volume in [this Help Center article](https://dataforseo.com/help-center/what-is-clickstream-search-volume-and-how-to-get-it-with-dataforseo)")
+    percentage: Optional[StrictFloat] = Field(default=None, description=r"*percentage of global search volume*")
     __properties: ClassVar[List[str]] = [
         "country_iso_code", 
         "search_volume", 

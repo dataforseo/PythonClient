@@ -16,12 +16,12 @@ class KeywordsDataBingKeywordPerformanceTaskGetResultInfo(BaseModel):
     """
     KeywordsDataBingKeywordPerformanceTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    year: Optional[StrictInt] = Field(default=None, description=r"indicates the year for which the data is provided for. example:. 2020")
-    month: Optional[StrictInt] = Field(default=None, description=r"indicates the month for which the data is provided for. example:. 10")
-    keyword_kpi: Optional[KeywordKpi] = Field(default=None, description=r"object containing keyword metrics. if there is no data, then the value is null")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is_`null`n")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
+    year: Optional[StrictInt] = Field(default=None, description=r"*indicates the year for which the data is provided for*. example:. `2020`. _ _ _ _ _ _ `month`n")
+    month: Optional[StrictInt] = Field(default=None, description=r"")
+    keyword_kpi: Optional[KeywordKpi] = Field(default=None, description=r"*object containing keyword metrics*. if there is no data, then the value is_`null`n")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 

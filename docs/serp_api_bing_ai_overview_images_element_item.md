@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**url** | **StrictStr** | URL link |[optional]|
-**title** | **StrictStr** | title of the link element |[optional]|
-**items** | **List[Optional[AiModeImagesElementInfo]]** | items featured in the faq_box |[optional]|
+**url** | **StrictStr** | <em>URL link</em> |[optional]|
+**title** | **StrictStr** | <em>title of the link element</em> |[optional]|
+**items** | **List[Optional[AiModeImagesElementInfo]]** | <em>items featured in the faq_box</em> |[optional]|

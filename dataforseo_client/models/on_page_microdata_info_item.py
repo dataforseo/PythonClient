@@ -17,7 +17,7 @@ class OnPageMicrodataInfoItem(BaseModel):
     OnPageMicrodataInfoItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    inspection_info: Optional[MicrodataInspectionInfo] = Field(default=None, description=r"information related to microdata validation")
+    inspection_info: Optional[MicrodataInspectionInfo] = Field(default=None, description=r"*information related to microdata validation*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "inspection_info", 

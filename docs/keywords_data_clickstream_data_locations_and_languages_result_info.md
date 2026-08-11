@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**location_code** | **StrictInt** | location code |[optional]|
-**location_name** | **StrictStr** | full name of the location |[optional]|
-**location_code_parent** | **StrictStr** | the code of the superordinate location<br>the value will be null as Country is the only supported location_type for this API |[optional]|
-**country_iso_code** | **StrictStr** | ISO country code of the location |[optional]|
-**location_type** | **StrictStr** | location type<br>possible values:<br>Country |[optional]|
-**available_languages** | **List[Optional[AvailableLanguages]]** | supported languages<br>contains the languages which are supported for a specific location |[optional]|
+**location_code** | **StrictInt** | <em>location code</em> |[optional]|
+**location_name** | **StrictStr** | <em>full name of the location</em> |[optional]|
+**location_code_parent** | **StrictStr** | <em>the code of the superordinate location</em><br>the value will be <code>null</code> as <code>Country</code> is the only supported <code>location_type</code> for this API |[optional]|
+**country_iso_code** | **StrictStr** | <em>ISO country code of the location</em> |[optional]|
+**location_type** | **StrictStr** | <em>location type</em><br>possible values:<br><code>Country</code> |[optional]|
+**available_languages** | **List[Optional[AvailableLanguages]]** | <em>supported languages</em><br>contains the languages which are supported for a specific location |[optional]|

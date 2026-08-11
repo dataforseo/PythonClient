@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpSeznamOrganicTaskGetRegularTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpSeznamOrganicTaskGetRegularTaskInfo]]** | <em>array of tasks</em> |[optional]|

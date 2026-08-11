@@ -16,10 +16,10 @@ class ScholarlyArticlesElement(BaseModel):
     ScholarlyArticlesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    author: Optional[StrictStr] = Field(default=None, description=r"author")
-    description: Optional[StrictStr] = Field(default=None, description=r"link description")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    author: Optional[StrictStr] = Field(default=None, description=r"*author*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*link description*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

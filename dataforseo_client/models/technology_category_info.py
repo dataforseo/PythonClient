@@ -15,10 +15,10 @@ class TechnologyCategoryInfo(BaseModel):
     """
     TechnologyCategoryInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"id of the technology category. example:. crm, cart_abandonment")
-    path: Optional[StrictStr] = Field(default=None, description=r"path to the technology category. example:. user_generated_content.content_curation")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the technology category")
-    technologies: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"list of technologies in this category. example:. 'Salesforce', 'CareCart'")
+    id: Optional[StrictStr] = Field(default=None, description=r"*id of the technology category*. example:. `crm`, `cart_abandonment`")
+    path: Optional[StrictStr] = Field(default=None, description=r"*path to the technology category*. example:. `user_generated_content.content_curation`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the technology category*")
+    technologies: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*list of technologies in this category*. example:. `'Salesforce'`, `'CareCart'`")
     __properties: ClassVar[List[str]] = [
         "id", 
         "path", 

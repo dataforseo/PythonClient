@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the result in SERP |[optional]|
-**url** | **StrictStr** | relevant URL in SERP |[optional]|
+**title** | **StrictStr** | <em>title of the result in SERP</em> |[optional]|
+**url** | **StrictStr** | <em> relevant URL in SERP</em> |[optional]|

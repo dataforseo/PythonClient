@@ -17,8 +17,8 @@ class MathSolverElement(BaseModel):
     MathSolverElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    expanded_element: Optional[List[Optional[MathSolverExpandedElement]]] = Field(default=None, description=r"expanded element")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    expanded_element: Optional[List[Optional[MathSolverExpandedElement]]] = Field(default=None, description=r"*expanded element*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

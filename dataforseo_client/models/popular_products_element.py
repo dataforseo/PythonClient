@@ -10,6 +10,7 @@ from typing_extensions import Self
 
 from dataforseo_client.models.price_info import PriceInfo
 from dataforseo_client.models.rating_info import RatingInfo
+from dataforseo_client.models.product_identifiers import ProductIdentifiers
 
 
 
@@ -18,22 +19,28 @@ class PopularProductsElement(BaseModel):
     PopularProductsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description=r"link description")
-    more_sellers: Optional[StrictBool] = Field(default=None, description=r"indicates whether the product is sold by multiple sellers")
-    seller: Optional[StrictStr] = Field(default=None, description=r"seller of the product")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the item’s rating . the popularity rate based on reviews and displayed in SERP;. if there is none, equals null")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain where a link points*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*link description*")
+    more_sellers: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the product is sold by multiple sellers*")
+    seller: Optional[StrictStr] = Field(default=None, description=r"*seller of the product*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    price: Optional[PriceInfo] = Field(default=None, description=r"*price indicated in the element*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the item's rating*. the popularity rate based on reviews and displayed in SERP;. if there is none, equals `null`")
+    product_identifiers: Optional[ProductIdentifiers] = Field(default=None, description=r"*identifiers of the product*. can include the following identifiers: `product_id`, `data_docid`, `gid`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 
+        "url", 
+        "domain", 
         "description", 
         "more_sellers", 
         "seller", 
         "image_url", 
         "price", 
         "rating", 
+        "product_identifiers", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -62,12 +69,15 @@ class PopularProductsElement(BaseModel):
 
         _dict['type'] = self.type
         _dict['title'] = self.title
+        _dict['url'] = self.url
+        _dict['domain'] = self.domain
         _dict['description'] = self.description
         _dict['more_sellers'] = self.more_sellers
         _dict['seller'] = self.seller
         _dict['image_url'] = self.image_url
         _dict['price'] = self.price.to_dict() if self.price else None
         _dict['rating'] = self.rating.to_dict() if self.rating else None
+        _dict['product_identifiers'] = self.product_identifiers.to_dict() if self.product_identifiers else None
         return _dict
 
 
@@ -82,12 +92,15 @@ class PopularProductsElement(BaseModel):
         _obj = cls.model_validate({
             "type": obj.get("type"),
             "title": obj.get("title"),
+            "url": obj.get("url"),
+            "domain": obj.get("domain"),
             "description": obj.get("description"),
             "more_sellers": obj.get("more_sellers"),
             "seller": obj.get("seller"),
             "image_url": obj.get("image_url"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "product_identifiers": ProductIdentifiers.from_dict(obj["product_identifiers"]) if obj.get("product_identifiers") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -16,12 +16,12 @@ class KnowledgeGraphListElement(BaseModel):
     KnowledgeGraphListElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    subtitle: Optional[StrictStr] = Field(default=None, description=r"subtitle of the item")
-    url: Optional[StrictStr] = Field(default=None, description=r"sitelink URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
+    subtitle: Optional[StrictStr] = Field(default=None, description=r"*subtitle of the item*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*sitelink URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

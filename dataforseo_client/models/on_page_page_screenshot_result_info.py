@@ -16,10 +16,10 @@ class OnPagePageScreenshotResultInfo(BaseModel):
     """
     OnPagePageScreenshotResultInfo
     """ # noqa: E501
-    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"status of the crawling session. possible values: in_progress, finished")
-    error_message: Optional[StrictStr] = Field(default=None, description=r"error message. if the url you indicated returns a 404 status code or is not a valid URL, you will obtain 'error_message':'Screenshot is empty'. if no error is encountered, the value will be null")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[List[Optional[ScreenshotItem]]] = Field(default=None, description=r"items array")
+    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"*status of the crawling session*. possible values: `in_progress`, `finished`")
+    error_message: Optional[StrictStr] = Field(default=None, description=r"*error message*. if the `url` you indicated returns a 404 status code or is not a valid URL, you will obtain `'error_message':'Screenshot is empty'`. if no error is encountered, the value will be `null`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    items: Optional[List[Optional[ScreenshotItem]]] = Field(default=None, description=r"*items array*")
     __properties: ClassVar[List[str]] = [
         "crawl_progress", 
         "error_message", 

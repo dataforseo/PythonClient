@@ -16,12 +16,12 @@ class DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem(BaseModel):
     DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    group: Optional[StrictStr] = Field(default=None, description=r"technology group id")
-    category: Optional[StrictStr] = Field(default=None, description=r"technology category id")
-    technology: Optional[StrictStr] = Field(default=None, description=r"technology name")
-    groups_count: Optional[StrictInt] = Field(default=None, description=r"technology groups count. number of domains that match the parameters you specified and are using technologies from the indicated group")
-    categories_count: Optional[StrictInt] = Field(default=None, description=r"technology categories count. number of domains that match the parameters you specified and are using technologies from the indicated category")
-    technologies_count: Optional[StrictInt] = Field(default=None, description=r"technologies count. number of domains that match the parameters you specified and are using the indicated technology")
+    group: Optional[StrictStr] = Field(default=None, description=r"*technology group id*")
+    category: Optional[StrictStr] = Field(default=None, description=r"*technology category id*")
+    technology: Optional[StrictStr] = Field(default=None, description=r"*technology name*")
+    groups_count: Optional[StrictInt] = Field(default=None, description=r"*technology groups count*. number of domains that match the parameters you specified and are using technologies from the indicated `group`")
+    categories_count: Optional[StrictInt] = Field(default=None, description=r"*technology categories count*. number of domains that match the parameters you specified and are using technologies from the indicated `category`")
+    technologies_count: Optional[StrictInt] = Field(default=None, description=r"*technologies count*. number of domains that match the parameters you specified and are using the indicated `technology`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "group", 

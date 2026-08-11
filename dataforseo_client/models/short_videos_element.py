@@ -16,10 +16,10 @@ class ShortVideosElement(BaseModel):
     ShortVideosElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain where a link points*")
+    source: Optional[StrictStr] = Field(default=None, description=r"*reference source name or title*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

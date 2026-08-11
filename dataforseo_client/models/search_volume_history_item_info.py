@@ -15,10 +15,10 @@ class SearchVolumeHistoryItemInfo(BaseModel):
     """
     SearchVolumeHistoryItemInfo
     """ # noqa: E501
-    year: Optional[StrictInt] = Field(default=None, description=r"year")
-    month: Optional[StrictInt] = Field(default=None, description=r"month")
-    day: Optional[StrictInt] = Field(default=None, description=r"day of the month")
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"search volume rate")
+    year: Optional[StrictInt] = Field(default=None, description=r"*year*")
+    month: Optional[StrictInt] = Field(default=None, description=r"*month*")
+    day: Optional[StrictInt] = Field(default=None, description=r"*day of the month*")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"*search volume rate*")
     __properties: ClassVar[List[str]] = [
         "year", 
         "month", 

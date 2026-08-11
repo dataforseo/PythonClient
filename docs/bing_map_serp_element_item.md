@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the item |[optional]|
-**url** | **StrictStr** | URL |[optional]|
+**title** | **StrictStr** | <em>title of the item</em> |[optional]|
+**url** | **StrictStr** | <em>URL</em> |[optional]|

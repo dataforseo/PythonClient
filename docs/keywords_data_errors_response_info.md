@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[KeywordsDataErrorsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[KeywordsDataErrorsTaskInfo]]** | <em>array of tasks</em> |[optional]|

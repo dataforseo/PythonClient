@@ -19,14 +19,14 @@ class DataforseoLabsKnowledgeGraphCarouselItemElementItem(BaseDataforseoLabsKnow
     DataforseoLabsKnowledgeGraphCarouselItemElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    data_attrid: Optional[StrictStr] = Field(default=None, description=r"google defined data attribute ID. example:. action:listen_artist")
-    link: Optional[LinkElement] = Field(default=None, description=r"link of the element")
-    items: Optional[List[Optional[KnowledgeGraphListElement]]] = Field(default=None, description=r"historical SERPs and related data found in the database")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*.             position within a group of elements with identical `type` values.             positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
+    data_attrid: Optional[StrictStr] = Field(default=None, description=r"*google defined data attribute ID*.             example:.             `action:listen_artist`")
+    link: Optional[LinkElement] = Field(default=None, description=r"*link of the element*")
+    items: Optional[List[Optional[KnowledgeGraphListElement]]] = Field(default=None, description=r"*historical SERPs and related data found in the database*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

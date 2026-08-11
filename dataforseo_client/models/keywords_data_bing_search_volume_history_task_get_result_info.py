@@ -16,12 +16,12 @@ class KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo(BaseModel):
     """
     KeywordsDataBingSearchVolumeHistoryTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is_`null`n")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
     device: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"")
-    period: Optional[StrictStr] = Field(default=None, description=r"time period. indicates if returned data is aggregated to a certain time period. default value monthly")
-    searches: Optional[SearchVolumeHistorySearchInfo] = Field(default=None, description=r"contains results distributed by device type. if the device parameter is not specified, the data will be returned for all available device types")
+    period: Optional[StrictStr] = Field(default=None, description=r"")
+    searches: Optional[SearchVolumeHistorySearchInfo] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 

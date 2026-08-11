@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**hotel_identifier** | **StrictStr** | unique hotel identifier<br>unique hotel identifier assigned by Google;<br>example: 'CgoIjaeSlI6CnNpVEAE' |[optional]|
-**url** | **StrictStr** | relevant URL in SERP |[optional]|
+**hotel_identifier** | **StrictStr** | <em>unique hotel identifier</em><br>            unique hotel identifier assigned by Google;<br>            example: <code>'CgoIjaeSlI6CnNpVEAE'</code> |[optional]|
+**url** | **StrictStr** | <em> relevant URL in SERP</em> |[optional]|

@@ -16,16 +16,16 @@ class KeywordsDataBingKeywordsForSiteTaskGetResultInfo(BaseModel):
     """
     KeywordsDataBingKeywordsForSiteTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data the value is null")
-    search_partners: Optional[StrictBool] = Field(default=None, description=r"indicates whether data from partner networks included in the response")
-    device: Optional[StrictStr] = Field(default=None, description=r"device type in a POST array. if there is no data, then the value is null")
-    competition: Optional[StrictFloat] = Field(default=None, description=r"competition. represents the relative amount of competition associated with the given keyword in paid SERP only. This value is based on Bing Ads data.. Possible values: 0.1, 0.5,0.9 . 0.1 – low competition,. 0.5 – medium competition,. 0.9 – high competition;. if there is no data the value is null")
-    cpc: Optional[StrictFloat] = Field(default=None, description=r"cost-per-click. represents the average cost per click (USD) historically paid for the keyword.. if there is no data the value is null")
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"monthly average search volume rate. represents the (approximate) number of searches for the given keyword idea on Bing search engine depending on the user’s targeting. if there is no data then the value is null")
-    categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"product and service categories. legacy field, the value will always be null")
-    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly searches. represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations. search volume is rounded to the closest decimal values. if there is no data the value is null")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data the value is `null`")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data the value is `null`")
+    search_partners: Optional[StrictBool] = Field(default=None, description=r"*indicates whether data from partner networks included in the response*")
+    device: Optional[StrictStr] = Field(default=None, description=r"*device type in a POST array*. if there is no data, then the value is_`null`n")
+    competition: Optional[StrictFloat] = Field(default=None, description=r"*competition*. represents the relative amount of competition associated with the given keyword in paid SERP only. This value is based on Bing Ads data.. Possible values: `0.1`, `0.5`,`0.9` . `0.1` - low competition,. `0.5` - medium competition, . `0.9` - high competition;. if there is no data the value is `null`")
+    cpc: Optional[StrictFloat] = Field(default=None, description=r"*cost-per-click*. represents the average cost per click (USD) historically paid for the keyword.. if there is no data the value is `null`")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"*monthly average search volume rate*represents the (approximate) number of searches for the given keyword idea on Bing search engine depending on the user’s targeting. if there is no data then the value is_`null`n")
+    categories: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*product and service categories*. legacy field, the value will always be `null`")
+    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"*monthly searches*. represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations. search volume is rounded to the closest decimal values. if there is no data the value is `null`")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 

@@ -15,7 +15,7 @@ class DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo(BaseModel):
     """
     DomainAnalyticsTechnologiesDomainTechnologiesLiveRequestInfo
     """ # noqa: E501
-    target: Optional[StrictStr] = Field(default=None, description=r"target domain. required field. domain name of the website to analyze. Note: results will be returned for the specified domain only")
+    target: Optional[StrictStr] = Field(default=None, description=r"*target domain*. **required field**. domain name of the website to analyze. **Note:** results will be returned for the specified domain only")
     __properties: ClassVar[List[str]] = [
         "target", 
         ]

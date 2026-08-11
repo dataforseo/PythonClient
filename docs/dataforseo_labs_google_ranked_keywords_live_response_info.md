@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[DataforseoLabsGoogleRankedKeywordsLiveTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[DataforseoLabsGoogleRankedKeywordsLiveTaskInfo]]** | <em>array of tasks</em> |[optional]|

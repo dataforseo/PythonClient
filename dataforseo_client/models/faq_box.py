@@ -20,7 +20,7 @@ class FaqBox(BaseModel):
     
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    items: Optional[List[Optional[FaqBoxElement]]] = Field(default=None, description=r"contains arrays of specific images")
+    items: Optional[List[Optional[FaqBoxElement]]] = Field(default=None, description=r"*contains arrays of specific images*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "items", 

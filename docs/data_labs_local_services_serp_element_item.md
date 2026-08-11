@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the result in SERP |[optional]|
-**url** | **StrictStr** | relevant URL in SERP |[optional]|
-**domain** | **StrictStr** | domain in SERP |[optional]|
-**items** | **Any** | historical SERPs and related data found in the database |[optional]|
+**title** | **StrictStr** | <em>title of the result in SERP</em> |[optional]|
+**url** | **StrictStr** | <em> relevant URL in SERP</em> |[optional]|
+**domain** | **StrictStr** | <em>domain in SERP</em> |[optional]|
+**items** | **Any** | <em>historical SERPs and related data found in the database</em> |[optional]|

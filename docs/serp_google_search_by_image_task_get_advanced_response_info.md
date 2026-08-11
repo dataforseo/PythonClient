@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpGoogleSearchByImageTaskGetAdvancedTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpGoogleSearchByImageTaskGetAdvancedTaskInfo]]** | <em>array of tasks</em> |[optional]|

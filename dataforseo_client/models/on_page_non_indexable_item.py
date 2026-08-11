@@ -15,8 +15,8 @@ class OnPageNonIndexableItem(BaseModel):
     """
     OnPageNonIndexableItem
     """ # noqa: E501
-    reason: Optional[StrictStr] = Field(default=None, description=r"the reason why the page is non-indexable. can take the following values: robots_txt, meta_tag, http_header, attribute, too_many_redirects")
-    url: Optional[StrictStr] = Field(default=None, description=r"url of the non-indexable page")
+    reason: Optional[StrictStr] = Field(default=None, description=r"*the reason why the page is non-indexable*. can take the following values: `robots_txt`, `meta_tag`, `http_header`, `attribute`, `too_many_redirects`")
+    url: Optional[StrictStr] = Field(default=None, description=r"*url of the non-indexable page*")
     __properties: ClassVar[List[str]] = [
         "reason", 
         "url", 

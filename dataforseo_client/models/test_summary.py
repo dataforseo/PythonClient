@@ -15,10 +15,10 @@ class TestSummary(BaseModel):
     """
     TestSummary
     """ # noqa: E501
-    fatal: Optional[StrictInt] = Field(default=None, description=r"number of fatal microdata errors")
-    error: Optional[StrictInt] = Field(default=None, description=r"number of serious microdata errors")
-    warning: Optional[StrictInt] = Field(default=None, description=r"number of microdata warnings")
-    info: Optional[StrictInt] = Field(default=None, description=r"number of microdata information flags")
+    fatal: Optional[StrictInt] = Field(default=None, description=r"*number of fatal microdata errors*")
+    error: Optional[StrictInt] = Field(default=None, description=r"*number of serious microdata errors*")
+    warning: Optional[StrictInt] = Field(default=None, description=r"*number of microdata warnings*")
+    info: Optional[StrictInt] = Field(default=None, description=r"*number of microdata information flags*")
     __properties: ClassVar[List[str]] = [
         "fatal", 
         "error", 

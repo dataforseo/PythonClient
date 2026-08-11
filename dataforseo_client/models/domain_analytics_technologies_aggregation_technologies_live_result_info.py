@@ -16,8 +16,8 @@ class DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo(BaseModel
     """
     DomainAnalyticsTechnologiesAggregationTechnologiesLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
     offset: Optional[StrictInt] = Field(default=None, description=r"offset in the results array of returned domains")
     items: Optional[List[Optional[DomainAnalyticsTechnologiesAggregationTechnologiesLiveItem]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [

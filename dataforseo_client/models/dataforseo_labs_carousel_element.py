@@ -16,8 +16,8 @@ class DataforseoLabsCarouselElement(BaseModel):
     DataforseoLabsCarouselElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    sub_title: Optional[StrictStr] = Field(default=None, description=r"subtitle of the item")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
+    sub_title: Optional[StrictStr] = Field(default=None, description=r"*subtitle of the item*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

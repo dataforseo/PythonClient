@@ -17,10 +17,10 @@ class AppElement(BaseModel):
     AppElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    description: Optional[StrictStr] = Field(default=None, description=r"link description")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price indicated in the element")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    description: Optional[StrictStr] = Field(default=None, description=r"*link description*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    price: Optional[PriceInfo] = Field(default=None, description=r"*price indicated in the element*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

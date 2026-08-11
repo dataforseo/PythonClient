@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[KeywordsDataBingLocationsResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[KeywordsDataBingLocationsResultInfo]]** | <em>array of results</em> |[optional]|

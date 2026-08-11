@@ -17,10 +17,10 @@ class OnPageRawHtmlResultInfo(BaseModel):
     """
     OnPageRawHtmlResultInfo
     """ # noqa: E501
-    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"status of the crawling session. possible values: in_progress, finished")
-    crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description=r"details of the crawling session")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[OnPageRawHtmlItem] = Field(default=None, description=r"items object")
+    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"*status of the crawling session*. possible values: `in_progress`, `finished`")
+    crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description=r"*details of the crawling session*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    items: Optional[OnPageRawHtmlItem] = Field(default=None, description=r"*items object*")
     __properties: ClassVar[List[str]] = [
         "crawl_progress", 
         "crawl_status", 

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[KeywordsDataGoogleAdsLanguagesResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[KeywordsDataGoogleAdsLanguagesResultInfo]]** | <em>array of results</em> |[optional]|

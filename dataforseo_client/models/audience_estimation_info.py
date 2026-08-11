@@ -15,8 +15,8 @@ class AudienceEstimationInfo(BaseModel):
     """
     AudienceEstimationInfo
     """ # noqa: E501
-    high: Optional[StrictFloat] = Field(default=None, description=r"indicates the upper bound of the range result")
-    low: Optional[StrictFloat] = Field(default=None, description=r"indicates the lower bound of the range result")
+    high: Optional[StrictFloat] = Field(default=None, description=r"*indicates the upper bound of the range result*")
+    low: Optional[StrictFloat] = Field(default=None, description=r"*indicates the lower bound of the range result*")
     __properties: ClassVar[List[str]] = [
         "high", 
         "low", 

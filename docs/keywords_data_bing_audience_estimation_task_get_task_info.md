@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[KeywordsDataBingAudienceEstimationTaskGetResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[KeywordsDataBingAudienceEstimationTaskGetResultInfo]]** | <em>array of results</em> |[optional]|

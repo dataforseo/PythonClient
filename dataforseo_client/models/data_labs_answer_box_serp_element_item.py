@@ -18,13 +18,13 @@ class DataLabsAnswerBoxSerpElementItem(BaseDataforseoLabsApiElementItem):
     DataLabsAnswerBoxSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    text: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"text. if there is none, equals null")
-    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"sitelinks. the links shown below some of Google’s search results. if there are none, equals null")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*.             positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    text: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*text*.             if there is none, equals `null`")
+    links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"*sitelinks*.             the links shown below some of Google's search results.             if there are none, equals `null`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

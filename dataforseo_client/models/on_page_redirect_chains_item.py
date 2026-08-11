@@ -16,8 +16,8 @@ class OnPageRedirectChainsItem(BaseModel):
     """
     OnPageRedirectChainsItem
     """ # noqa: E501
-    is_redirect_loop: Optional[StrictBool] = Field(default=None, description=r"indicates if redirects in chain start and end at the same URL. if true, the last URL from the chain redirects back to the original URL")
-    chain: Optional[List[Optional[OnPageRedirectLinkItem]]] = Field(default=None, description=r"contains links that form a chain")
+    is_redirect_loop: Optional[StrictBool] = Field(default=None, description=r"*indicates if redirects in `chain` start and end at the same URL*. if `true`, the last URL from the chain redirects back to the original URL")
+    chain: Optional[List[Optional[OnPageRedirectLinkItem]]] = Field(default=None, description=r"*contains links that form a chain*")
     __properties: ClassVar[List[str]] = [
         "is_redirect_loop", 
         "chain", 

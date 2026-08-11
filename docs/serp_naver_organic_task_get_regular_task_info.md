@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpNaverOrganicTaskGetRegularResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpNaverOrganicTaskGetRegularResultInfo]]** | <em>array of results</em> |[optional]|

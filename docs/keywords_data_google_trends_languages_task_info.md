@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[KeywordsDataGoogleTrendsLanguagesResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[KeywordsDataGoogleTrendsLanguagesResultInfo]]** | <em>array of results</em> |[optional]|

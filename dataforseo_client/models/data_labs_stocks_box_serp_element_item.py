@@ -20,19 +20,19 @@ class DataLabsStocksBoxSerpElementItem(BaseDataforseoLabsApiElementItem):
     DataLabsStocksBoxSerpElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    source: Optional[StrictStr] = Field(default=None, description=r"source of additional information about the result")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"text alongside the link title")
-    price: Optional[PriceInfo] = Field(default=None, description=r"price of booking a place for the specified dates of stay")
-    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    table: Optional[Table] = Field(default=None, description=r"table element")
-    graph: Optional[Graph] = Field(default=None, description=r"contains data provided in the graph of the element")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*position within a group of elements with identical `type` values*.             positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
+    source: Optional[StrictStr] = Field(default=None, description=r"*source of additional information about the result*")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*text alongside the link title*")
+    price: Optional[PriceInfo] = Field(default=None, description=r"*price of booking a place for the specified dates of stay*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*relevant URL in SERP*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
+    table: Optional[Table] = Field(default=None, description=r"*table element*")
+    graph: Optional[Graph] = Field(default=None, description=r"*contains data provided in the graph of the element*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 

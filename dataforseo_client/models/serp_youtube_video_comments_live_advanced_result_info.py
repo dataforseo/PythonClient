@@ -17,18 +17,18 @@ class SerpYoutubeVideoCommentsLiveAdvancedResultInfo(BaseModel):
     """
     SerpYoutubeVideoCommentsLiveAdvancedResultInfo
     """ # noqa: E501
-    video_id: Optional[StrictStr] = Field(default=None, description=r"ID of the video received in a POST array")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"search engine domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to search engine results. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    spell: Optional[SpellInfo] = Field(default=None, description=r"autocorrection of the search engine. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"types of search results in SERP. contains types of search results (items) found in SERP.. possible item:. youtube_comment")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the video")
-    comments_count: Optional[StrictInt] = Field(default=None, description=r"number of comments on the video")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[YoutubeComment]]] = Field(default=None, description=r"elements of search results found in SERP")
+    video_id: Optional[StrictStr] = Field(default=None, description=r"*ID of the video received in a POST array*")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    spell: Optional[SpellInfo] = Field(default=None, description=r"*autocorrection of the search engine*. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results in SERP*. contains types of search results (`items`) found in SERP.. possible item:. `youtube_comment`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the video*")
+    comments_count: Optional[StrictInt] = Field(default=None, description=r"*number of comments on the video*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[YoutubeComment]]] = Field(default=None, description=r"*elements of search results found in SERP*")
     __properties: ClassVar[List[str]] = [
         "video_id", 
         "se_domain", 

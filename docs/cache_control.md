@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**cachable** | **StrictBool** | indicates whether the page is cacheable |[optional]|
-**ttl** | **StrictInt** | time to live<br>the amount of time the browser caches a resource |[optional]|
+**cachable** | **StrictBool** | <em>indicates whether the page is cacheable</em> |[optional]|
+**ttl** | **StrictInt** | <em>time to live</em><br>the amount of time the browser caches a resource |[optional]|

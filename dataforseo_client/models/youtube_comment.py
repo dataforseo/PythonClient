@@ -16,16 +16,16 @@ class YoutubeComment(BaseModel):
     YoutubeComment
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP for the target domain. absolute position among all the elements in SERP")
-    author_name: Optional[StrictStr] = Field(default=None, description=r"name of the author of the comment")
-    author_thumbnail: Optional[StrictStr] = Field(default=None, description=r"the URL of the page where the author’s channel logo is hosted")
-    author_url: Optional[StrictStr] = Field(default=None, description=r"URL of the author’s channel")
-    text: Optional[StrictStr] = Field(default=None, description=r"text of the comment")
-    publication_date: Optional[StrictStr] = Field(default=None, description=r"displayed publication date")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2022-11-15 12:57:46 +00:00")
-    likes_count: Optional[StrictInt] = Field(default=None, description=r"number of likes on the comment")
-    reply_count: Optional[StrictInt] = Field(default=None, description=r"number of replies on the comment")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP for the target domain*. absolute position among all the elements in SERP")
+    author_name: Optional[StrictStr] = Field(default=None, description=r"*name of the author of the comment*")
+    author_thumbnail: Optional[StrictStr] = Field(default=None, description=r"*the URL of the page where the author's channel logo is hosted*")
+    author_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the author's channel*")
+    text: Optional[StrictStr] = Field(default=None, description=r"*text of the comment*")
+    publication_date: Optional[StrictStr] = Field(default=None, description=r"*displayed publication date*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2022-11-15 12:57:46 +00:00`")
+    likes_count: Optional[StrictInt] = Field(default=None, description=r"*number of likes on the comment*")
+    reply_count: Optional[StrictInt] = Field(default=None, description=r"*number of replies on the comment*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

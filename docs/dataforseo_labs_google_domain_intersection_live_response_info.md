@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[DataforseoLabsGoogleDomainIntersectionLiveTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[DataforseoLabsGoogleDomainIntersectionLiveTaskInfo]]** | <em>array of tasks</em> |[optional]|

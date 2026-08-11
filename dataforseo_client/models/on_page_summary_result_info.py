@@ -18,12 +18,12 @@ class OnPageSummaryResultInfo(BaseModel):
     """
     OnPageSummaryResultInfo
     """ # noqa: E501
-    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"status of the crawling session. possible values: in_progress, finished")
-    crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description=r"details of the crawling session")
-    crawl_gateway_address: Optional[StrictStr] = Field(default=None, description=r"crawler ip address. displays the IP address used by the crawler to initiate the current crawling session. you can find the full list of IPs used by our crawler in the Overview section")
-    crawl_stop_reason: Optional[StrictStr] = Field(default=None, description=r"reason why the crawling stopped. information about the reason why the crawling process stopped;. possible values:. limit_exceeded – the limit set in the max_crawl_pages was exceeded;. empty_queue – all URLs in the queue were crawled;. force_stopped – the crawling process was halted using the On Page API Force Stop function;. unexpected_exception – an internal error was encountered while crawling the target, contact support for more info")
-    domain_info: Optional[DomainInfo] = Field(default=None, description=r"domain-wide info. on-page information about the target domain and crawling process")
-    page_metrics: Optional[PageMetrics] = Field(default=None, description=r"page-specific info. metrics information on the target website pages")
+    crawl_progress: Optional[StrictStr] = Field(default=None, description=r"*status of the crawling session*. possible values: `in_progress`, `finished`")
+    crawl_status: Optional[CrawlStatusInfo] = Field(default=None, description=r"*details of the crawling session*")
+    crawl_gateway_address: Optional[StrictStr] = Field(default=None, description=r"*crawler ip address*. displays the IP address used by the crawler to initiate the current crawling session. you can find the full list of IPs used by our crawler in the [Overview section](/v3/on_page/overview)")
+    crawl_stop_reason: Optional[StrictStr] = Field(default=None, description=r"*reason why the crawling stopped*. information about the reason why the crawling process stopped;. possible values:. `limit_exceeded` - the limit set in the `max_crawl_pages` was exceeded;. `empty_queue` - all URLs in the queue were crawled;. `force_stopped` - the crawling process was halted using the[On Page API Force Stop](/v3/on_page/force_stop) function;. `unexpected_exception` - an internal error was encountered while crawling the `target`, contact support for more info")
+    domain_info: Optional[DomainInfo] = Field(default=None, description=r"*domain-wide info*. on-page information about the target domain and crawling process")
+    page_metrics: Optional[PageMetrics] = Field(default=None, description=r"*page-specific info*. metrics information on the target website pages")
     __properties: ClassVar[List[str]] = [
         "crawl_progress", 
         "crawl_status", 

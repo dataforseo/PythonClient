@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[OnPageMicrodataTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[OnPageMicrodataTaskInfo]]** | <em>array of tasks</em> |[optional]|

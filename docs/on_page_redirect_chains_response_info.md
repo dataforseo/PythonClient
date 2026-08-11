@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[OnPageRedirectChainsTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[OnPageRedirectChainsTaskInfo]]** | <em>array of tasks</em> |[optional]|

@@ -19,9 +19,9 @@ class SerpApiPeopleAlsoAskAiOverviewExpandedElementItem(BaseSerpApiPeopleAlsoAsk
     SerpApiPeopleAlsoAskAiOverviewExpandedElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    items: Optional[List[Optional[BaseSerpApiAiOverviewElementItem]]] = Field(default=None, description=r"items present in the element")
-    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"additional references relevant to the item. includes references to webpages that may have been used to generate the ai_overview")
-    asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description=r"indicates whether the element is loaded asynchronously. if true, the people_also_ask_ai_overview_expanded_element element is loaded asynchronously;. if false, the people_also_ask_ai_overview_expanded_element element is loaded from cache")
+    items: Optional[List[Optional[BaseSerpApiAiOverviewElementItem]]] = Field(default=None, description=r"*items present in the element*")
+    references: Optional[List[Optional[AiModeAiOverviewReferenceInfo]]] = Field(default=None, description=r"*additional references relevant to the item*. includes references to webpages that may have been used to generate the `ai_overview`")
+    asynchronous_ai_overview: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the element is loaded asynchronously*. if `true`, the `people_also_ask_ai_overview_expanded_element` element is loaded asynchronously;. if `false`, the `people_also_ask_ai_overview_expanded_element` element is loaded from cache")
     __properties: ClassVar[List[str]] = [
         "type", 
         "items", 

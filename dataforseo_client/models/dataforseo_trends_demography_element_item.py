@@ -19,10 +19,10 @@ class DataforseoTrendsDemographyElementItem(BaseKeywordDataDataforseoTrendsItem)
     DataforseoTrendsDemographyElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictInt] = Field(default=None, description=r"the alignment of the element. can take the following values: 1, 2, 3, 4, etc.")
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords in a POST array")
-    demography: Optional[Demography] = Field(default=None, description=r"demographic breakdown of keyword popularity data per each specified term. conains keyword popularity data by age and gender")
-    demography_comparison: Optional[DemographyComparisonInfo] = Field(default=None, description=r"comparison of demographic data on keyword popularity for the specified parameters. conains keyword popularity data by age and gender. if you specified a single keyword, the value will be null")
+    position: Optional[StrictInt] = Field(default=None, description=r"*the alignment of the element*. can take the following values: `1`, `2`, `3`, `4`, etc.")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*keywords in a POST array*")
+    demography: Optional[Demography] = Field(default=None, description=r"*demographic breakdown of keyword popularity data per each specified term*. conains keyword popularity data by age and gender")
+    demography_comparison: Optional[DemographyComparisonInfo] = Field(default=None, description=r"*comparison of demographic data on keyword popularity for the specified parameters*. conains keyword popularity data by age and gender. if you specified a single keyword, the value will be `null`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

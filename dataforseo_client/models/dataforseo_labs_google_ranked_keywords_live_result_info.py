@@ -17,15 +17,15 @@ class DataforseoLabsGoogleRankedKeywordsLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleRankedKeywordsLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    target: Optional[StrictStr] = Field(default=None, description=r"target domain or webpage in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to the specified domain or webpage . ranking data is provided by the rank_group parameters that show the result’s rank considering only equivalent SERP elements")
-    metrics_absolute: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"ranking data relevant to the specified domain or webpage. ranking data is provided by the rank_absolute parameters that indicate the result’s position among all SERP elements")
-    items: Optional[List[Optional[DataforseoLabsGoogleRankedKeywordsLiveItem]]] = Field(default=None, description=r"contains ranked keywords and related data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    target: Optional[StrictStr] = Field(default=None, description=r"*target domain or webpage in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*.             if there is no data, then the value is `null`")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*.             if there is no data, then the value is `null`")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    metrics: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*ranking data relevant to the specified domain or webpage*.             ranking data is provided by the `rank_group` parameters that show the result’s rank considering only equivalent SERP elements")
+    metrics_absolute: Optional[Dict[str, Optional[DataforseoLabsMetricsInfo]]] = Field(default=None, description=r"*ranking data relevant to the specified domain or webpage*.             ranking data is provided by the `rank_absolute` parameters that indicate the result’s position among all SERP elements")
+    items: Optional[List[Optional[DataforseoLabsGoogleRankedKeywordsLiveItem]]] = Field(default=None, description=r"*contains ranked keywords and related data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "target", 

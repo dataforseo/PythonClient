@@ -16,9 +16,9 @@ class KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo(BaseMode
     """
     KeywordsDataBingKeywordPerformanceLocationsAndLanguagesResultInfo
     """ # noqa: E501
-    language_name: Optional[StrictStr] = Field(default=None, description=r"language name")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code")
-    available_locations: Optional[List[Optional[AvailableLocations]]] = Field(default=None, description=r"supported locations. contains locations supported in combination with a specific language")
+    language_name: Optional[StrictStr] = Field(default=None, description=r"*language name*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code*")
+    available_locations: Optional[List[Optional[AvailableLocations]]] = Field(default=None, description=r"*supported locations*. contains locations supported in combination with a specific language")
     __properties: ClassVar[List[str]] = [
         "language_name", 
         "language_code", 

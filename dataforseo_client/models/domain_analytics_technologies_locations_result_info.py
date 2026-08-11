@@ -15,8 +15,8 @@ class DomainAnalyticsTechnologiesLocationsResultInfo(BaseModel):
     """
     DomainAnalyticsTechnologiesLocationsResultInfo
     """ # noqa: E501
-    location_name: Optional[StrictStr] = Field(default=None, description=r"full name of the location")
-    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the location")
+    location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of the location*")
+    country_iso_code: Optional[StrictStr] = Field(default=None, description=r"*ISO country code of the location*")
     __properties: ClassVar[List[str]] = [
         "location_name", 
         "country_iso_code", 

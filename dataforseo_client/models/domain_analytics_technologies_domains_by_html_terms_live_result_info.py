@@ -16,11 +16,11 @@ class DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResultInfo(BaseModel):
     """
     DomainAnalyticsTechnologiesDomainsByHtmlTermsLiveResultInfo
     """ # noqa: E501
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of relevant items in the database")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    offset: Optional[StrictInt] = Field(default=None, description=r"specified offset value")
-    offset_token: Optional[StrictStr] = Field(default=None, description=r"token for subsequent requests. by specifying the unique offset_token when setting a new task, you will get the subsequent results of the initial task;. offset_token values are unique for each subsequent task")
-    items: Optional[List[Optional[DomainAnalyticsTechnologiesDomainsByLiveItem]]] = Field(default=None, description=r"items array")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of relevant items in the database*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    offset: Optional[StrictInt] = Field(default=None, description=r"*specified offset value*")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"*token for subsequent requests*. by specifying the unique `offset_token` when setting a new task, you will get the subsequent results of the initial task;. `offset_token` values are unique for each subsequent task")
+    items: Optional[List[Optional[DomainAnalyticsTechnologiesDomainsByLiveItem]]] = Field(default=None, description=r"*items array*")
     __properties: ClassVar[List[str]] = [
         "total_count", 
         "items_count", 

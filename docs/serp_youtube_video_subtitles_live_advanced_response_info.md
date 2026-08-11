@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**tasks** | **List[Optional[SerpYoutubeVideoSubtitlesLiveAdvancedTaskInfo]]** | array of tasks |[optional]|
+**tasks** | **List[Optional[SerpYoutubeVideoSubtitlesLiveAdvancedTaskInfo]]** | <em>array of tasks</em> |[optional]|

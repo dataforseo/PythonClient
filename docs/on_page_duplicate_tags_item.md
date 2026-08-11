@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**accumulator** | **StrictStr** | contains the value of duplicated tag |[optional]|
-**total_count** | **StrictInt** | total count of duplicate pages |[optional]|
-**pages** | **List[Optional[OnPageHtmlResourceItem]]** | pages with duplicate tags |[optional]|
+**accumulator** | **StrictStr** | <em>contains the value of duplicated tag</em> |[optional]|
+**total_count** | **StrictInt** | <em>total count of duplicate pages</em> |[optional]|
+**pages** | **List[Optional[OnPageHtmlResourceItem]]** | <em>pages with duplicate tags</em> |[optional]|

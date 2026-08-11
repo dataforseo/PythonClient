@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[MerchantAmazonSellersTaskGetAdvancedResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[MerchantAmazonSellersTaskGetAdvancedResultInfo]]** | <em>array of results</em> |[optional]|

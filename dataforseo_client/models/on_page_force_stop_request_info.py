@@ -15,7 +15,7 @@ class OnPageForceStopRequestInfo(BaseModel):
     """
     OnPageForceStopRequestInfo
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description=r"ID of the task. required field. you can get this ID in the response of the Task POST endpoint. example:. “07131248-1535-0216-1000-17384017ad04”. note: you can set up to 1000 id values as separate objects in the POST array")
+    id: Optional[StrictStr] = Field(default=None, description=r"*ID of the task*. **required field**. you can get this ID in the response of the [Task POST](/v3/on_page/task_post/) endpoint. example:. '07131248-1535-0216-1000-17384017ad04'. **note**: you can set up to 1000 `id` values as separate objects in the POST array")
     __properties: ClassVar[List[str]] = [
         "id", 
         ]

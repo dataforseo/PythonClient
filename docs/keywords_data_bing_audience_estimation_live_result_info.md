@@ -5,16 +5,16 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**est_impressions** | **AudienceEstimationInfo** | monthly estimated impressions range |[optional]|
-**est_audience_size** | **AudienceEstimationInfo** | monthly estimated reach user count range |[optional]|
-**est_clicks** | **AudienceEstimationInfo** | monthly estimated click count range |[optional]|
-**est_spend** | **AudienceEstimationInfo** | monthly estimated spending range |[optional]|
-**est_cost_per_event** | **AudienceEstimationInfo** | indicates the estimated cost per event with range result |[optional]|
-**est_ctr** | **AudienceEstimationInfo** | estimated click-through rate range |[optional]|
-**suggested_bid** | **StrictFloat** | suggested bid value under the current targeting |[optional]|
-**suggested_budget** | **StrictFloat** | suggested daily budget value under the current targeting and bid |[optional]|
-**events_lost_to_bid** | **StrictInt** | indicates event lost count due to insufficient input bid |[optional]|
-**events_lost_to_budget** | **StrictInt** | indicates the event lost count due to insufficient input budget |[optional]|
-**est_reach_audience_size** | **StrictInt** | monthly estimated user count |[optional]|
-**est_reach_impressions** | **StrictInt** | monthly estimated impressions |[optional]|
-**currency** | **StrictStr** | currency name<br>example: USDollar |[optional]|
+**est_impressions** | **AudienceEstimationInfo** | <em>monthly estimated impressions range</em> |[optional]|
+**est_audience_size** | **AudienceEstimationInfo** | <em>monthly estimated reach user count range</em> |[optional]|
+**est_clicks** | **AudienceEstimationInfo** | <em>monthly estimated click count range</em> |[optional]|
+**est_spend** | **AudienceEstimationInfo** | <em>monthly estimated spending range</em> |[optional]|
+**est_cost_per_event** | **AudienceEstimationInfo** | <em>indicates the estimated cost per event with range result</em> |[optional]|
+**est_ctr** | **AudienceEstimationInfo** | <em>estimated click-through rate range</em> |[optional]|
+**suggested_bid** | **StrictFloat** | <em>suggested bid value under the current targeting</em> |[optional]|
+**suggested_budget** | **StrictFloat** | <em>suggested daily budget value under the current targeting and bid</em> |[optional]|
+**events_lost_to_bid** | **StrictInt** | <em>indicates event lost count due to insufficient input bid</em> |[optional]|
+**events_lost_to_budget** | **StrictInt** | <em>indicates the event lost count due to insufficient input budget</em> |[optional]|
+**est_reach_audience_size** | **StrictInt** | <em>monthly estimated user count</em> |[optional]|
+**est_reach_impressions** | **StrictInt** | <em>monthly estimated impressions</em> |[optional]|
+**currency** | **StrictStr** | <em>currency name</em><p>example: <code>USDollar</code> |[optional]|

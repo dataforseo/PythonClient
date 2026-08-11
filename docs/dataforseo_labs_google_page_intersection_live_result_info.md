@@ -5,11 +5,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**se_type** | **StrictStr** | search engine type |[optional]|
-**pages** | **Dict[str, Optional[StrictStr]]** | URLs you specified a POST array |[optional]|
-**exclude_pages** | **List[Optional[StrictStr]]** | URLs you specified in a POST array that will be excluded from the results |[optional]|
-**location_code** | **StrictInt** | location code in a POST array |[optional]|
-**language_code** | **StrictStr** | language code in a POST array |[optional]|
-**total_count** | **StrictInt** | total amount of results in our database relevant to your request |[optional]|
-**items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[DataforseoLabsGooglePageIntersectionLiveItem]]** | contains keywords, relevant SERP elements and related data |[optional]|
+**se_type** | **StrictStr** | <em>search engine type</em> |[optional]|
+**pages** | **Dict[str, Optional[StrictStr]]** | <em>URLs you specified a POST array</em> |[optional]|
+**exclude_pages** | **List[Optional[StrictStr]]** | <em>URLs you specified in a POST array that will be excluded from the results</em> |[optional]|
+**location_code** | **StrictInt** | <em>location code in a POST array</em> |[optional]|
+**language_code** | **StrictStr** | <em>language code in a POST array</em> |[optional]|
+**total_count** | **StrictInt** | <em>total amount of results in our database relevant to your request</em> |[optional]|
+**items_count** | **StrictInt** | <em>the number of results returned in the <code>items</code> array</em> |[optional]|
+**items** | **List[Optional[DataforseoLabsGooglePageIntersectionLiveItem]]** | <em>contains keywords, relevant SERP elements and related data</em> |[optional]|

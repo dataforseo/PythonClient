@@ -18,7 +18,7 @@ class SerpApiBingAiOverviewVideosElementItem(BaseSerpApiBingAiOverviewElementIte
     SerpApiBingAiOverviewVideosElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    items: Optional[List[Optional[VideoElement]]] = Field(default=None, description=r"elements of search results found in SERP")
+    items: Optional[List[Optional[VideoElement]]] = Field(default=None, description=r"*elements of search results found in SERP*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "items", 

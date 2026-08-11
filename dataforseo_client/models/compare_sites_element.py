@@ -16,11 +16,11 @@ class CompareSitesElement(BaseModel):
     CompareSitesElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of a given link element")
-    url: Optional[StrictStr] = Field(default=None, description=r"source URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain where a link points")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    source: Optional[StrictStr] = Field(default=None, description=r"reference source name or title")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of a given link element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain where a link points*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    source: Optional[StrictStr] = Field(default=None, description=r"*reference source name or title*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

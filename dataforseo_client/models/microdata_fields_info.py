@@ -16,11 +16,11 @@ class MicrodataFieldsInfo(BaseModel):
     """
     MicrodataFieldsInfo
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description=r"field name. name of the data field")
+    name: Optional[StrictStr] = Field(default=None, description=r"*field name*. name of the data field")
     types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"list of microdata types")
     value: Optional[StrictStr] = Field(default=None, description=r"microdata value. microdata value specified on a target web page")
-    test_results: Optional[MessageInfo] = Field(default=None, description=r"microdata validation test results. sub-type microdata test results that contain detected errors and related messages")
-    fields: Optional[List[Optional[MicrodataFieldsInfo]]] = Field(default=None, description=r"microdata fields. an array of objects containing data fields related to the certain microdata type")
+    test_results: Optional[MessageInfo] = Field(default=None, description=r"*microdata validation test results*. sub-type microdata test results that contain detected errors and related messages")
+    fields: Optional[List[Optional[MicrodataFieldsInfo]]] = Field(default=None, description=r"*microdata fields*. an array of objects containing data fields related to the certain microdata type")
     __properties: ClassVar[List[str]] = [
         "name", 
         "types", 

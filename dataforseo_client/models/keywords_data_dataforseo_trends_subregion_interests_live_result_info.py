@@ -16,13 +16,13 @@ class KeywordsDataDataforseoTrendsSubregionInterestsLiveResultInfo(BaseModel):
     """
     KeywordsDataDataforseoTrendsSubregionInterestsLiveResultInfo
     """ # noqa: E501
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"keywords in a POST array")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*keywords in a POST array*")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was received. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoTrendsSubregionInterestsElementItem]]] = Field(default=None, description=r"contains keyword popularity and related data")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is_`null`n")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[DataforseoTrendsSubregionInterestsElementItem]]] = Field(default=None, description=r"*contains keyword popularity and related data*")
     __properties: ClassVar[List[str]] = [
         "keywords", 
         "type", 

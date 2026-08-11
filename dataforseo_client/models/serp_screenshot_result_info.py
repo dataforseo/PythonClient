@@ -16,8 +16,8 @@ class SerpScreenshotResultInfo(BaseModel):
     """
     SerpScreenshotResultInfo
     """ # noqa: E501
-    items_count: Optional[StrictInt] = Field(default=None, description=r"number of items in the results array")
-    items: Optional[List[Optional[ScreenshotItem]]] = Field(default=None, description=r"items array")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*number of items in the results array*")
+    items: Optional[List[Optional[ScreenshotItem]]] = Field(default=None, description=r"*items array*")
     __properties: ClassVar[List[str]] = [
         "items_count", 
         "items", 

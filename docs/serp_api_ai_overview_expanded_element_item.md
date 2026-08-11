@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**title** | **StrictStr** | title of the element |[optional]|
-**text** | **StrictStr** | additional text of the element in SERP |[optional]|
-**components** | **List[Optional[AiOverviewExpandedComponent]]** | array of components of the element |[optional]|
-**references** | **List[Optional[AiModeAiOverviewReferenceInfo]]** | references relevant to the element<br>includes references to webpages that were used to generate the ai_overview_element |[optional]|
+**title** | **StrictStr** | <em>title of the element</em> |[optional]|
+**text** | **StrictStr** | <em>additional text of the element in SERP</em> |[optional]|
+**components** | **List[Optional[AiOverviewExpandedComponent]]** | <em>array of components of the element</em> |[optional]|
+**references** | **List[Optional[AiModeAiOverviewReferenceInfo]]** | <em>references relevant to the element</em><br>includes references to webpages that were used to generate the <code>ai_overview_element</code> |[optional]|

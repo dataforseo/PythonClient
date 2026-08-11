@@ -15,18 +15,18 @@ class KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResultInfo(BaseModel):
     """
     KeywordsDataGoogleAdsAdTrafficByKeywordsTaskGetResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array. metrics are provided for all the keywords specified in the POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array. if there is no data, then the value is null")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array. if there is no data, then the value is null")
-    date_interval: Optional[StrictStr] = Field(default=None, description=r"forecasting date interval in a POST array")
-    search_partners: Optional[StrictBool] = Field(default=None, description=r"include Google search partners. the value is always false")
-    bid: Optional[StrictFloat] = Field(default=None, description=r"the maximum custom bid. the bid you have specified when setting the task. represents the price you are willing to pay for an ad. the higher value you have specified, the higher metrics and cost you receive in response. learn more in this help center article")
-    match: Optional[StrictStr] = Field(default=None, description=r"keywords match-type. can take the following values: exact, broad, phrase")
-    impressions: Optional[StrictInt] = Field(default=None, description=r"projected number of ad impressions. number of impressions an ad is projected to get within the specified time period. Note: parameter deprecated, the value is always null")
-    ctr: Optional[StrictFloat] = Field(default=None, description=r"projected clickthrough rate (CTR) of the advertisement. number of clicks an ad is projected to receive divided by the number of ad impressions;. Note: parameter deprecated, the value is always null")
-    average_cpc: Optional[StrictFloat] = Field(default=None, description=r"the average cost-per-click value. represents the cost-per-click (USD) estimated for a keyword based on the specified time period and historical data;. if there is no data, then the value is null")
-    cost: Optional[StrictFloat] = Field(default=None, description=r"charge for an ad. amount that will be charged for running an ad within the specified time period. if there is no data, then the value is null")
-    clicks: Optional[StrictFloat] = Field(default=None, description=r"number of clicks on an ad. number of clicks an ad is projected to get within the specified time period. if there is no data, then the value is null")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*. metrics are provided for all the keywords specified in the POST array")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*. if there is no data, then the value is_`null`n")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*. if there is no data, then the value is_`null`n")
+    date_interval: Optional[StrictStr] = Field(default=None, description=r"*forecasting date interval in a POST array*")
+    search_partners: Optional[StrictBool] = Field(default=None, description=r"*include Google search partners*. the value is always `false`")
+    bid: Optional[StrictFloat] = Field(default=None, description=r"*the maximum custom bid*. the bid you have specified when setting the task. represents the price you are willing to pay for an ad. the higher value you have specified, the higher metrics and cost you receive in response. learn more in [this help center article](https://dataforseo.com/help-center/configuring-bid)")
+    match: Optional[StrictStr] = Field(default=None, description=r"*keywords match-type*. can take the following values: `exact`, `broad`, `phrase`")
+    impressions: Optional[StrictInt] = Field(default=None, description=r"*projected number of ad impressions*. number of impressions an ad is projected to get within the specified time period. **Note:** parameter deprecated, the value is always_`null`n")
+    ctr: Optional[StrictFloat] = Field(default=None, description=r"*projected clickthrough rate (CTR) of the advertisement*. number of clicks an ad is projected to receive divided by the number of ad impressions;. **Note:** parameter deprecated, the value is always `null`")
+    average_cpc: Optional[StrictFloat] = Field(default=None, description=r"*the average cost-per-click value*. represents the cost-per-click (USD) estimated for a keyword based on the specified time period and historical data;. if there is no data, then the value is_`null`n")
+    cost: Optional[StrictFloat] = Field(default=None, description=r"*charge for an ad*. amount that will be charged for running an ad within the specified time period. if there is no data, then the value is_`null`n")
+    clicks: Optional[StrictFloat] = Field(default=None, description=r"*number of clicks on an ad*. number of clicks an ad is projected to get within the specified time period. if there is no data, then the value is_`null`n")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 

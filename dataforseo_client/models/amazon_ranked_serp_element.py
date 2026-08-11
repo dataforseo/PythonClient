@@ -16,13 +16,13 @@ class AmazonRankedSerpElement(BaseModel):
     """
     AmazonRankedSerpElement
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    serp_item: Optional[AmazonInfo] = Field(default=None, description=r"contains data on the SERP element. the list of supported SERP elements can be found below")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"direct URL to Amazon results. you can use it to make sure that we provided accurate results")
-    serp_item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"direct URL to Amazon results. contains types of all search results (items) found in the returned SERP;. possible item types:. amazon_serp, amazon_paid, editorial_recommendations, top_rated_from_our_brands, related_searches")
-    se_results_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in Amazon SERP")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when keyword data was updated. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. 2019-11-15 12:57:46 +00:00")
-    previous_updated_time: Optional[StrictStr] = Field(default=None, description=r"previous to the most recent update of SERP data. in the ISO 8601 format: “YYYY-MM-DDThh:mm:ss.sssssssZ”. example:. 2020-09-12T00:07:43.0733218Z")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    serp_item: Optional[AmazonInfo] = Field(default=None, description=r"*contains data on the SERP element*. the list of supported SERP elements can be found below")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to Amazon results*. you can use it to make sure that we provided accurate results")
+    serp_item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*direct URL to Amazon results*. contains types of all search results (`items`) found in the returned SERP;. possible item types:. `amazon_serp`, `amazon_paid`, `editorial_recommendations`, `top_rated_from_our_brands`, `related_searches`")
+    se_results_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in Amazon SERP*")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"*date and time when keyword data was updated*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”;. example:. `2019-11-15 12:57:46 +00:00`")
+    previous_updated_time: Optional[StrictStr] = Field(default=None, description=r"*previous to the most recent update of SERP data*. in the [ISO 860](https://en.wikipedia.org/wiki/ISO_8601)1 format: “YYYY-MM-DDThh:mm:ss.sssssssZ”. example:. `2020-09-12T00:07:43.0733218Z`")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "serp_item", 

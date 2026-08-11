@@ -17,15 +17,15 @@ class SerpApiBingAiOverviewVideoElementItem(BaseSerpApiBingAiOverviewElementItem
     SerpApiBingAiOverviewVideoElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    title: Optional[StrictStr] = Field(default=None, description=r"link anchor text")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"text snippet of the video")
-    url: Optional[StrictStr] = Field(default=None, description=r"link URL")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    source: Optional[StrictStr] = Field(default=None, description=r"source of the element. indicates the source of information included in the questions_and_answers_element")
-    date: Optional[StrictStr] = Field(default=None, description=r"the date when the page source of the element was published")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the result was published. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2019-11-15 12:57:46 +00:00")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*link anchor text*")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*text snippet of the video*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*link URL*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*.             the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    source: Optional[StrictStr] = Field(default=None, description=r"*source of the element*.             indicates the source of information included in the `questions_and_answers_element`")
+    date: Optional[StrictStr] = Field(default=None, description=r"*the date when the page source of the element was published*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*.             in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'.             example:.             `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 

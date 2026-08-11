@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**location_code** | **StrictInt** | location code |[optional]|
-**location_name** | **StrictStr** | location name |[optional]|
-**country_iso_code** | **StrictStr** | ISO country code of the location |[optional]|
-**location_type** | **StrictStr** | location type<br>possible values:<br>Country, Region |[optional]|
+**location_code** | **StrictInt** | <em>location code</em> |[optional]|
+**location_name** | **StrictStr** | <em>location name</em> |[optional]|
+**country_iso_code** | **StrictStr** | <em>ISO country code of the location</em> |[optional]|
+**location_type** | **StrictStr** | <em>location type</em><br>possible values:<br><code>Country</code>, <code>Region</code> |[optional]|

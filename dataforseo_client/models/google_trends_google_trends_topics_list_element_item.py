@@ -18,10 +18,10 @@ class GoogleTrendsGoogleTrendsTopicsListElementItem(BaseKeywordDataGoogleTrendsI
     GoogleTrendsGoogleTrendsTopicsListElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    position: Optional[StrictInt] = Field(default=None, description=r"the alignment of the element in Google Trends. can take the following values: 1, 2, 3, 4, etc.")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element in Google Trends")
-    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"relevant keywords. the data included in the google_trends_graph element is based on the keywords listed in this array")
-    data: Optional[ListDataInfo] = Field(default=None, description=r"Google Trends data from the corresponding item")
+    position: Optional[StrictInt] = Field(default=None, description=r"*the alignment of the element in Google Trends*. can take the following values: `1`, `2`, `3`, `4`, etc.")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element in Google Trends*")
+    keywords: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*relevant keywords*. the data included in the `google_trends_graph` element is based on the keywords listed in this array")
+    data: Optional[ListDataInfo] = Field(default=None, description=r"*Google Trends data from the corresponding item*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "position", 
