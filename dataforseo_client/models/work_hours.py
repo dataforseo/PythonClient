@@ -16,8 +16,8 @@ class WorkHours(BaseModel):
     """
     WorkHours
     """ # noqa: E501
-    timetable: Optional[Dict[str, Optional[List[Optional[WorkDayInfo]]]]] = Field(default=None, description=r"work hours timetable")
-    current_status: Optional[StrictStr] = Field(default=None, description=r"current status of the establishment. indicates whether the establishment is opened or closed")
+    timetable: Optional[Dict[str, Optional[List[Optional[WorkDayInfo]]]]] = Field(default=None, description=r"*work hours timetable*")
+    current_status: Optional[StrictStr] = Field(default=None, description=r"*current status of the establishment*. indicates whether the establishment is opened or closed")
     __properties: ClassVar[List[str]] = [
         "timetable", 
         "current_status", 

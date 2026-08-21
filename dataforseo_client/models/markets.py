@@ -16,8 +16,8 @@ class Markets(BaseModel):
     """
     Markets
     """ # noqa: E501
-    market: Optional[StrictStr] = Field(default=None, description=r"financial market identifier. possible values: US, Europe, Asia, Currencies, Crypto, Futures")
-    items: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"elements of search results found in SERP")
+    market: Optional[StrictStr] = Field(default=None, description=r"*financial market identifier*. possible values: `US`, `Europe`, `Asia`, `Currencies`, `Crypto`, `Futures`")
+    items: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"*elements of search results found in SERP*")
     __properties: ClassVar[List[str]] = [
         "market", 
         "items", 

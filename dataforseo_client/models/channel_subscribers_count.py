@@ -15,8 +15,8 @@ class ChannelSubscribersCount(BaseModel):
     """
     ChannelSubscribersCount
     """ # noqa: E501
-    displayed_count: Optional[StrictStr] = Field(default=None, description=r"displayed subscriber count. subscriber count as displayed on YouTube")
-    count: Optional[StrictInt] = Field(default=None, description=r"subscriber count")
+    displayed_count: Optional[StrictStr] = Field(default=None, description=r"*displayed subscriber count*.             subscriber count as displayed on YouTube")
+    count: Optional[StrictInt] = Field(default=None, description=r"*subscriber count*")
     __properties: ClassVar[List[str]] = [
         "displayed_count", 
         "count", 

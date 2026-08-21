@@ -53,9 +53,7 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_id_list([BacklinksIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )
@@ -114,8 +112,6 @@ try:
 
         response = backlinks_api.backlinks_errors([BacklinksErrorsRequestInfo(
                 limit=10,
-                offset=0,
-                filtered_function="backlinks/content_duplicates",
         )]
         )
 except ApiException as e:

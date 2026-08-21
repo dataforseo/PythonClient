@@ -16,7 +16,7 @@ class SerpGoogleFinanceExploreAdvancedItem(BaseModel):
     """
     SerpGoogleFinanceExploreAdvancedItem
     """ # noqa: E501
-    most_active: Optional[List[Optional[GoogleFinanceMarketTrendsElement]]] = Field(default=None, description=r"array of items. this array can take the following names: most_active, gainers, losers")
+    most_active: Optional[List[Optional[GoogleFinanceMarketTrendsElement]]] = Field(default=None, description=r"*array of items*. this array can take the following names: `most_active`, `gainers`, `losers`")
     gainers: Optional[List[Optional[GoogleFinanceMarketTrendsElement]]] = Field(default=None, description=r"")
     losers: Optional[List[Optional[GoogleFinanceMarketTrendsElement]]] = Field(default=None, description=r"")
     __properties: ClassVar[List[str]] = [

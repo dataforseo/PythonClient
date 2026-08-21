@@ -71,9 +71,7 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.app_data_id_list([AppDataIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )
@@ -132,8 +130,6 @@ try:
 
         response = app_data_api.app_data_errors([AppDataErrorsRequestInfo(
                 limit=10,
-                offset=0,
-                filtered_function="pingback_url",
         )]
         )
 except ApiException as e:
@@ -2343,7 +2339,7 @@ try:
                 title="vpn",
                 description="vpn",
                 categories=[
-                    "Tools",
+                    "Utilities",
                     ],
                 order_by=[
                     "item.rating.value,desc",
@@ -2351,7 +2347,7 @@ try:
                 filters=[
                     ,
                     ],
-                limit=2,
+                limit=10,
         )]
         )
 except ApiException as e:

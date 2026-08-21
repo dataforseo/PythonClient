@@ -5,13 +5,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**rank_group** | **StrictInt** | group rank in SERP<br>position within a group of elements with identical type values<br>positions of elements with different type values are omitted from rank_group |[optional]|
-**rank_absolute** | **StrictInt** | absolute rank in SERP<br>absolute position among all the elements in SERP |[optional]|
-**displayed_name** | **StrictStr** | displayed name of the market index<br>example: E-mini Dow ($5) |[optional]|
-**description** | **StrictStr** | company description |[optional]|
-**description_source_url** | **StrictStr** | source of information provided in description |[optional]|
-**ceo** | **StrictStr** | Chief Executive Officer of the company |[optional]|
-**founded** | **StrictStr** | date when the company was founded<br>in the format: “yyyy-mm-ddThh-mm-ssZ”<br>example:<br>1993-04-05T00:00:00Z |[optional]|
-**headquarters** | **StrictStr** | company headquarters |[optional]|
-**website** | **StrictStr** | company website |[optional]|
-**employees** | **StrictInt** | number of company employees |[optional]|
+**rank_group** | **StrictInt** | <em>group rank in SERP</em><br>position within a group of elements with identical <code>type</code> values<br>positions of elements with different <code>type</code> values are omitted from <code>rank_group</code> |[optional]|
+**rank_absolute** | **StrictInt** | <em>absolute rank in SERP</em><br>absolute position among all the elements in SERP |[optional]|
+**displayed_name** | **StrictStr** | <em>displayed name of the market index</em><br>example: <code>E-mini Dow ($5)</code> |[optional]|
+**description** | **StrictStr** | <em>company description</em> |[optional]|
+**description_source_url** | **StrictStr** | <em>source of information provided in description</em> |[optional]|
+**ceo** | **StrictStr** | <em>Chief Executive Officer of the company</em> |[optional]|
+**founded** | **StrictStr** | <em>date when the company was founded</em><br>in the format: 'yyyy-mm-ddThh-mm-ssZ'<br>example:<br><code class='long-string'>1993-04-05T00:00:00Z</code> |[optional]|
+**headquarters** | **StrictStr** | <em>company headquarters</em> |[optional]|
+**website** | **StrictStr** | <em>company website</em> |[optional]|
+**employees** | **StrictInt** | <em>number of company employees</em> |[optional]|

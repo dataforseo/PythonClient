@@ -25,7 +25,7 @@ class BusinessDataBusinessListingsAvailableFiltersTaskInfo(BaseModel):
     result_count: Optional[StrictInt] = Field(default=None, description=r"number of elements in the result array")
     path: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"URL path")
     data: Optional[Dict[str, Optional[Any]]] = Field(default=None, description=r"contains the same parameters that you specified in the POST request")
-    result: Optional[List[Optional[BusinessDataBusinessListingsAvailableFiltersResultInfo]]] = Field(default=None, description=r"")
+    result: Optional[List[Optional[BusinessDataBusinessListingsAvailableFiltersResultInfo]]] = Field(default=None, description=r"*array of results*. contains the full list of available parameters that can be used for data filtration. the parameters are grouped by the endpoint they can be used with")
     __properties: ClassVar[List[str]] = [
         "id", 
         "status_code", 

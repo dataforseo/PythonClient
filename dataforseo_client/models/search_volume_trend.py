@@ -15,9 +15,9 @@ class SearchVolumeTrend(BaseModel):
     """
     SearchVolumeTrend
     """ # noqa: E501
-    monthly: Optional[StrictInt] = Field(default=None, description=r"search volume change in percent compared to the previous month")
-    quarterly: Optional[StrictInt] = Field(default=None, description=r"search volume change in percent compared to the previous quarter")
-    yearly: Optional[StrictInt] = Field(default=None, description=r"search volume change in percent compared to the previous year")
+    monthly: Optional[StrictInt] = Field(default=None, description=r"*search volume change in percent compared to the previous month*")
+    quarterly: Optional[StrictInt] = Field(default=None, description=r"*search volume change in percent compared to the previous quarter*")
+    yearly: Optional[StrictInt] = Field(default=None, description=r"*search volume change in percent compared to the previous year*")
     __properties: ClassVar[List[str]] = [
         "monthly", 
         "quarterly", 

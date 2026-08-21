@@ -17,14 +17,14 @@ class DataforseoLabsGoogleRelatedKeywordsLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleRelatedKeywordsLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    seed_keyword: Optional[StrictStr] = Field(default=None, description=r"keyword in a POST array")
-    seed_keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"keyword data for the seed keywordfields in the array are identical to that of keyword_data")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total amount of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    items: Optional[List[Optional[DataforseoLabsGoogleRelatedKeywordsLiveItem]]] = Field(default=None, description=r"contains keywords and related data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    seed_keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword in a POST array*")
+    seed_keyword_data: Optional[KeywordDataInfo] = Field(default=None, description=r"*keyword data for the seed keyword*. fields in the array are identical to that of `keyword_data`")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total amount of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    items: Optional[List[Optional[DataforseoLabsGoogleRelatedKeywordsLiveItem]]] = Field(default=None, description=r"*contains keywords and related data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "seed_keyword", 

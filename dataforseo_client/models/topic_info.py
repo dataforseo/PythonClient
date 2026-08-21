@@ -17,14 +17,14 @@ class TopicInfo(BaseModel):
     """
     TopicInfo
     """ # noqa: E501
-    h_title: Optional[StrictStr] = Field(default=None, description=r"meta title")
-    main_title: Optional[StrictStr] = Field(default=None, description=r"main title of the block")
-    author: Optional[StrictStr] = Field(default=None, description=r"content author name")
-    language: Optional[StrictStr] = Field(default=None, description=r"content language")
-    level: Optional[StrictInt] = Field(default=None, description=r"HTML level")
-    primary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"primary content on the page. you can find more information about content priority calculation in this help center article")
-    secondary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"secondary content on the page. you can find more information about content priority calculation in this help center article")
-    table_content: Optional[List[Optional[TableContentInfo]]] = Field(default=None, description=r"content of the table on the page")
+    h_title: Optional[StrictStr] = Field(default=None, description=r"*meta title*")
+    main_title: Optional[StrictStr] = Field(default=None, description=r"*main title of the block*")
+    author: Optional[StrictStr] = Field(default=None, description=r"*content author name*")
+    language: Optional[StrictStr] = Field(default=None, description=r"*content language*")
+    level: Optional[StrictInt] = Field(default=None, description=r"*HTML level*")
+    primary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"*primary content on the page*.             you can find more information about content priority calculation in this [help center article](https://dataforseo.com/help-center/difference-between-primary-and-secondary-content)")
+    secondary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"*secondary content on the page*.             you can find more information about content priority calculation in this [help center article](https://dataforseo.com/help-center/difference-between-primary-and-secondary-content)")
+    table_content: Optional[List[Optional[TableContentInfo]]] = Field(default=None, description=r"*content of the table on the page*")
     __properties: ClassVar[List[str]] = [
         "h_title", 
         "main_title", 

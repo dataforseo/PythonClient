@@ -15,15 +15,15 @@ class AvgBacklinksInfo(BaseModel):
     """
     AvgBacklinksInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    backlinks: Optional[StrictFloat] = Field(default=None, description=r"average number of backlinks")
-    dofollow: Optional[StrictFloat] = Field(default=None, description=r"average number of dofollow links")
-    referring_pages: Optional[StrictFloat] = Field(default=None, description=r"average number of referring pages")
-    referring_domains: Optional[StrictFloat] = Field(default=None, description=r"average number of referring domains")
-    referring_main_domains: Optional[StrictFloat] = Field(default=None, description=r"average number of referring main domains")
-    rank: Optional[StrictFloat] = Field(default=None, description=r"average ranklearn more about the metric and its calculation formula in this help center article")
-    main_domain_rank: Optional[StrictFloat] = Field(default=None, description=r"average main domain ranklearn more about the metric and its calculation formula in this help center article")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when keyword data was updatedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    backlinks: Optional[StrictFloat] = Field(default=None, description=r"*average number of backlinks*")
+    dofollow: Optional[StrictFloat] = Field(default=None, description=r"*average number of dofollow links*")
+    referring_pages: Optional[StrictFloat] = Field(default=None, description=r"*average number of referring pages*")
+    referring_domains: Optional[StrictFloat] = Field(default=None, description=r"*average number of referring domains*")
+    referring_main_domains: Optional[StrictFloat] = Field(default=None, description=r"*average number of referring main domains*")
+    rank: Optional[StrictFloat] = Field(default=None, description=r"*average rank*. learn more about the metric and its calculation formula in [this help center article](https://dataforseo.com/help-center/what_is_rank_in_backlinks_api)")
+    main_domain_rank: Optional[StrictFloat] = Field(default=None, description=r"*average main domain rank*. learn more about the metric and its calculation formula in [this help center article](https://dataforseo.com/help-center/what_is_rank_in_backlinks_api)")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"*date and time when keyword data was updated*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "backlinks", 

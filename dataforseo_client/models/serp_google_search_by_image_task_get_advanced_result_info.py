@@ -24,14 +24,14 @@ class SerpGoogleSearchByImageTaskGetAdvancedResultInfo(BaseModel):
     se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
     location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
     language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
-    spell: Optional[SpellInfo] = Field(default=None, description=r"*autocorrection of the search engine*. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*.             you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*.             in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”.             example:.             `2019-11-15 12:57:46 +00:00`")
+    spell: Optional[SpellInfo] = Field(default=None, description=r"*autocorrection of the search engine*.             if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
     refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"*search refinement chips*")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results in SERP*. contains types of search results (`items`) found in SERP.. possible item types:. `organic`, . `images`")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results in SERP*.             contains types of search results (`items`) found in SERP..             possible item types:.             `organic`,.             `images`")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in SERP*")
     items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
-    items: Optional[List[Optional[BaseSerpApiGoogleSearchByImagesElementItem]]] = Field(default=None, description=r"*items of the element*")
+    items: Optional[List[Optional[BaseSerpApiGoogleSearchByImagesElementItem]]] = Field(default=None, description=r"*items featured in the faq_box*")
     __properties: ClassVar[List[str]] = [
         "image_url", 
         "keyword", 

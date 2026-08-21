@@ -17,17 +17,17 @@ class KeywordInfo(BaseModel):
     """
     KeywordInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when keyword data was updatedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
-    competition: Optional[StrictFloat] = Field(default=None, description=r"competitionrepresents the relative amount of competition associated with the given keyword. This value is based on Google Ads data and can be between 0 and 1 (inclusive)")
-    competition_level: Optional[StrictStr] = Field(default=None, description=r"competition levelrepresents the relative level of competition associated with the given keyword in paid SERP only;possible values: LOW, MEDIUM, HIGHif competition level is unknown, the value is null;learn more about the metric in this help center article")
-    cpc: Optional[StrictFloat] = Field(default=None, description=r"cost-per-clickrepresents the average cost per click (USD) historically paid for the keyword")
-    search_volume: Optional[StrictInt] = Field(default=None, description=r"average monthly search volume raterepresents the (approximate) number of searches for the given keyword idea on google.com")
-    low_top_of_page_bid: Optional[StrictFloat] = Field(default=None, description=r"minimum bid for the ad to be displayed at the top of the first pageindicates the value greater than about 20% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers)the value may differ depending on the location specified in a POST request")
-    high_top_of_page_bid: Optional[StrictFloat] = Field(default=None, description=r"maximum bid for the ad to be displayed at the top of the first pageindicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers)the value may differ depending on the location specified in a POST request")
-    categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"product and service categoriesyou can download the_full list of possible categoriesn")
-    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"monthly searchesrepresents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations")
-    search_volume_trend: Optional[SearchVolumeTrend] = Field(default=None, description=r"search volume trend changesrepresents search volume change in percent compared to the previous period")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"*date and time when keyword data was updated*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    competition: Optional[StrictFloat] = Field(default=None, description=r"*competition*. represents the relative amount of competition associated with the given keyword. This value is based on Google Ads data and can be between 0 and 1 (inclusive)")
+    competition_level: Optional[StrictStr] = Field(default=None, description=r"*competition level*. represents the relative level of competition associated with the given keyword in paid SERP only;. possible values: `LOW`, `MEDIUM`, `HIGH`. if competition level is unknown, the value is `null`;. learn more about the metric in [this help center article](https://dataforseo.com/help-center/what-is-competition)")
+    cpc: Optional[StrictFloat] = Field(default=None, description=r"*cost-per-click*. represents the average cost per click (USD) historically paid for the keyword")
+    search_volume: Optional[StrictInt] = Field(default=None, description=r"*average monthly search volume rate*. represents the (approximate) number of searches for the given keyword idea on google.com")
+    low_top_of_page_bid: Optional[StrictFloat] = Field(default=None, description=r"*minimum bid for the ad to be displayed at the top of the first page*. indicates the value greater than about 20% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers). the value may differ depending on the location specified in a POST request")
+    high_top_of_page_bid: Optional[StrictFloat] = Field(default=None, description=r"*maximum bid for the ad to be displayed at the top of the first page*. indicates the value greater than about 80% of the lowest bids for which ads were displayed (based on Google Ads statistics for advertisers). the value may differ depending on the location specified in a POST request")
+    categories: Optional[List[Optional[StrictInt]]] = Field(default=None, description=r"*product and service categories*. you can download the [full list of possible categories](https://cdn.dataforseo.com/v3/categories/categories_dataforseo_labs_2023_10_25.csv)")
+    monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"*monthly searches*. represents the (approximate) number of searches on this keyword idea (as available for the past twelve months), targeted to the specified geographic locations")
+    search_volume_trend: Optional[SearchVolumeTrend] = Field(default=None, description=r"*search volume trend changes*. represents search volume change in percent compared to the previous period")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "last_updated_time", 

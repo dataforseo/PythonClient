@@ -25,7 +25,7 @@ class SerpGoogleEventsLiveAdvancedResultInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"*language code*. in this case, the value will be `null`")
     check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*")
     datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2019-11-15 12:57:46 +00:00`")
-    spell: Optional[SpellInfo] = Field(default=None, description=r"*autocorrection of the search engine*. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
+    spell: Optional[SpellInfo] = Field(default=None, description=r"autocorrection of the search engine. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
     refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"*search refinement chips*")
     item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results found in SERP*. possible item types:. `event_item`")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in SERP*. in this case, the value will be `0` . this search engine does not indicate the total number of results")

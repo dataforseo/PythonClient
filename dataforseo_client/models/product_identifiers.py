@@ -17,7 +17,7 @@ class ProductIdentifiers(BaseModel):
     """ # noqa: E501
     product_id: Optional[StrictStr] = Field(default=None, description=r"*unique product identifier on Google Shopping*. example:. `4485466949985702538`. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/product-id-google-shopping)")
     data_docid: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the SERP data element*. example:. `17363035694596624076`")
-    gid: Optional[StrictStr] = Field(default=None, description=r"*global product identifier on Google Shopping*. example:. 4702526954592161872. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/whats-a-gid-in-google-shopping-api)")
+    gid: Optional[StrictStr] = Field(default=None, description=r"*global product identifier on Google Shopping*. example:. `4702526954592161872`. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/whats-a-gid-in-google-shopping-api)")
     __properties: ClassVar[List[str]] = [
         "product_id", 
         "data_docid", 

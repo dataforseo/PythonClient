@@ -99,9 +99,7 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )

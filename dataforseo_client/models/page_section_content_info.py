@@ -17,9 +17,9 @@ class PageSectionContentInfo(BaseModel):
     """
     PageSectionContentInfo
     """ # noqa: E501
-    primary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"primary content on the page. you can find more information about content priority calculation in this help center article")
-    secondary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"secondary content on the page. you can find more information about content priority calculation in this help center article")
-    table_content: Optional[List[Optional[TableContentInfo]]] = Field(default=None, description=r"content of the table on the page")
+    primary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"*primary content on the page*.             you can find more information about content priority calculation in this [help center article](https://dataforseo.com/help-center/difference-between-primary-and-secondary-content)")
+    secondary_content: Optional[List[Optional[SectionContentItemInfo]]] = Field(default=None, description=r"*secondary content on the page*.             you can find more information about content priority calculation in this [help center article](https://dataforseo.com/help-center/difference-between-primary-and-secondary-content)")
+    table_content: Optional[List[Optional[TableContentInfo]]] = Field(default=None, description=r"*content of the table on the page*")
     __properties: ClassVar[List[str]] = [
         "primary_content", 
         "secondary_content", 

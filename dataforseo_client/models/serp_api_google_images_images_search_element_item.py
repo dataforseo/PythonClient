@@ -17,15 +17,15 @@ class SerpApiGoogleImagesImagesSearchElementItem(BaseSerpApiGoogleImagesElementI
     SerpApiGoogleImagesImagesSearchElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP for the target domain. absolute position among all the elements in SERP")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
-    subtitle: Optional[StrictStr] = Field(default=None, description=r"subtitle of the result in SERP")
-    alt: Optional[StrictStr] = Field(default=None, description=r"the alt tag of the image")
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    source_url: Optional[StrictStr] = Field(default=None, description=r"the URL of the source image")
-    encoded_url: Optional[StrictStr] = Field(default=None, description=r"the URL of the cached version of the image stored on Google’s servers")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP for the target domain*. absolute position among all the elements in SERP")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
+    subtitle: Optional[StrictStr] = Field(default=None, description=r"*subtitle of the result in SERP*")
+    alt: Optional[StrictStr] = Field(default=None, description=r"*the alt tag of the image*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    source_url: Optional[StrictStr] = Field(default=None, description=r"*the URL of the source image*")
+    encoded_url: Optional[StrictStr] = Field(default=None, description=r"*the URL of the cached version of the image stored on Google's servers*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

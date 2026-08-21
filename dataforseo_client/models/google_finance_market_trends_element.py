@@ -18,8 +18,8 @@ class GoogleFinanceMarketTrendsElement(BaseModel):
     GoogleFinanceMarketTrendsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    quote: Optional[BaseSerpApiGoogleFinanceElementItem] = Field(default=None, description=r"object of items. array contains the following type of items: google_finance_asset_pair_element, google_finance_market_instrument_element, google_finance_market_index_element")
-    news: Optional[List[Optional[GoogleFinanceNewsElement]]] = Field(default=None, description=r"array of items. array contains the following type of items: google_finance_news_element")
+    quote: Optional[BaseSerpApiGoogleFinanceElementItem] = Field(default=None, description=r"*object of items*. array contains the following `type` of items: `google_finance_asset_pair_element`, `google_finance_market_instrument_element`, `google_finance_market_index_element`")
+    news: Optional[List[Optional[GoogleFinanceNewsElement]]] = Field(default=None, description=r"*array of items*. array contains the following `type` of items: `google_finance_news_element`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "quote", 

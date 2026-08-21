@@ -6,4 +6,4 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 **type** | **StrictStr** | type of element |[optional]|
-**text** | **StrictStr** | text snippet of local justification |[optional]|
+**text** | **StrictStr** | <em>text snippet of local justification</em> |[optional]|

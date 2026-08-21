@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpYoutubeVideoInfoTaskGetAdvancedResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[SerpYoutubeVideoInfoTaskGetAdvancedResultInfo]]** | <em>array of results</em> |[optional]|

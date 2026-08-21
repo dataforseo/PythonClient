@@ -83,9 +83,7 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_id_list([BusinessDataIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )
@@ -144,8 +142,6 @@ try:
 
         response = business_data_api.business_data_errors([BusinessDataErrorsRequestInfo(
                 limit=10,
-                offset=0,
-                filtered_function="pingback_url",
         )]
         )
 except ApiException as e:

@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[DataforseoLabsGoogleKeywordSuggestionsLiveResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[DataforseoLabsGoogleKeywordSuggestionsLiveResultInfo]]** | <em>array of results</em> |[optional]|

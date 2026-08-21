@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[BusinessDataTripadvisorReviewsTasksReadyResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[BusinessDataTripadvisorReviewsTasksReadyResultInfo]]** | <em>array of results</em> |[optional]|

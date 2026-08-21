@@ -16,7 +16,7 @@ class LocalJustificationInfo(BaseModel):
     LocalJustificationInfo
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    text: Optional[StrictStr] = Field(default=None, description=r"text snippet of local justification")
+    text: Optional[StrictStr] = Field(default=None, description=r"*text snippet of local justification*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "text", 

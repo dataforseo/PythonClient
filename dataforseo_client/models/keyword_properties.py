@@ -15,13 +15,13 @@ class KeywordProperties(BaseModel):
     """
     KeywordProperties
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    core_keyword: Optional[StrictStr] = Field(default=None, description=r"main keyword in a groupcontains the main keyword in a group determined by the synonym clustering algorithmif the value is null, our database does not contain any keywords the corresponding algorithm could identify as synonymous with keyword")
-    synonym_clustering_algorithm: Optional[StrictStr] = Field(default=None, description=r"the algorithm used to identify synonymspossible values:keyword_metrics - indicates the algorithm based on keyword_info parameterstext_processing - indicates the text-based algorithmif the value is null, our database does not contain any keywords the corresponding algorithm could identify as synonymous with keyword")
-    keyword_difficulty: Optional[StrictInt] = Field(default=None, description=r"difficulty of ranking in the first top-10 organic results for a keywordindicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100;calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP;learn more about the metric in this help center guide")
-    detected_language: Optional[StrictStr] = Field(default=None, description=r"detected language of the keywordindicates the language of the keyword as identified by our system")
-    is_another_language: Optional[StrictBool] = Field(default=None, description=r"detected language of the keyword is different from the set languageif true, the language set in the request does not match the language determined by our system for a given keyword")
-    words_count: Optional[StrictInt] = Field(default=None, description=r"number of words in the keywordindicates how many words the keyword consists of")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    core_keyword: Optional[StrictStr] = Field(default=None, description=r"*main keyword in a group*. contains the main keyword in a group determined by the synonym clustering algorithm. if the value is `null`, our database does not contain any keywords the corresponding algorithm could identify as synonymous with `keyword`")
+    synonym_clustering_algorithm: Optional[StrictStr] = Field(default=None, description=r"*the algorithm used to identify synonyms*. possible values:. `keyword_metrics` - indicates the algorithm based on `keyword_info` parameters. `text_processing` - indicates the text-based algorithm. if the value is `null`, our database does not contain any keywords the corresponding algorithm could identify as synonymous with `keyword`")
+    keyword_difficulty: Optional[StrictInt] = Field(default=None, description=r"*difficulty of ranking in the first top-10 organic results for a keyword*. indicates the chance of getting in top-10 organic results for a keyword on a logarithmic scale from 0 to 100;. calculated by analysing, among other parameters, link profiles of the first 10 pages in SERP;. learn more about the metric in [this help center guide](https://dataforseo.com/help-center/what-is-keyword-difficulty-and-how-is-it-calculated)")
+    detected_language: Optional[StrictStr] = Field(default=None, description=r"*detected language of the keyword*. indicates the language of the keyword as identified by our system")
+    is_another_language: Optional[StrictBool] = Field(default=None, description=r"*detected language of the keyword is different from the set language*. if `true`, the language set in the request does not match the language determined by our system for a given keyword")
+    words_count: Optional[StrictInt] = Field(default=None, description=r"*number of words in the keyword*. indicates how many words the keyword consists of")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "core_keyword", 

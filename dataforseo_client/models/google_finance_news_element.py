@@ -17,12 +17,12 @@ class GoogleFinanceNewsElement(BaseModel):
     GoogleFinanceNewsElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the news article")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the page of the market index on Google Finance")
-    source: Optional[StrictStr] = Field(default=None, description=r"name of the news source. name of the website where the news article is published")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"featured image URL. URL of the news article’s featured image")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time of the value readout. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-02-10 09:40:00 +00:00")
-    quotes: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"market indexes quoted in the news article. information about market indexes quoted in the google_finance_news_element")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the news article*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to the page of the market index on Google Finance*")
+    source: Optional[StrictStr] = Field(default=None, description=r"*name of the news source*. name of the website where the news article is published")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*featured image URL*. URL of the news article's featured image")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time of the value readout*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2025-02-10 09:40:00 +00:00`")
+    quotes: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"*market indexes quoted in the news article*. information about market indexes quoted in the `google_finance_news_element`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

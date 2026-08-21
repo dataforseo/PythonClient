@@ -16,9 +16,9 @@ class GoogleFinanceEarningsCalendarElement(BaseModel):
     GoogleFinanceEarningsCalendarElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the news article")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the page of the market index on Google Finance")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time of the value readout. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-02-10 09:40:00 +00:00")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the news article*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to the page of the market index on Google Finance*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time of the value readout*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2025-02-10 09:40:00 +00:00`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

@@ -19,14 +19,14 @@ class SerpApiGoogleImagesCarouselElementItem(BaseSerpApiGoogleImagesElementItem)
     SerpApiGoogleImagesCarouselElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP for the target domain. absolute position among all the elements in SERP")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP for the target domain*. absolute position among all the elements in SERP")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
     page: Optional[StrictInt] = Field(default=None, description=r"")
-    position: Optional[StrictStr] = Field(default=None, description=r"the alignment of the element in SERP. can take the following values:. left, right")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    items: Optional[List[Optional[SerpApiCarouselElement]]] = Field(default=None, description=r"items of the element")
-    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. note: calculate_rectangles parameter is not yet available when setting tasks for this search engine type, that’s why rectangle always equals null")
+    position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*. can take the following values:. `left`, `right`")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    items: Optional[List[Optional[SerpApiCarouselElement]]] = Field(default=None, description=r"*items of the element*")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"*rectangle parameters*. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. **note:**calculate_rectangles parameter is not yet available when setting tasks for this search engine type, that’s why `rectangle` always equals `null`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

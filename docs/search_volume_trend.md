@@ -5,6 +5,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**monthly** | **StrictInt** | search volume change in percent compared to the previous month |[optional]|
-**quarterly** | **StrictInt** | search volume change in percent compared to the previous quarter |[optional]|
-**yearly** | **StrictInt** | search volume change in percent compared to the previous year |[optional]|
+**monthly** | **StrictInt** | <em>search volume change in percent compared to the previous month</em> |[optional]|
+**quarterly** | **StrictInt** | <em>search volume change in percent compared to the previous quarter</em> |[optional]|
+**yearly** | **StrictInt** | <em>search volume change in percent compared to the previous year</em> |[optional]|

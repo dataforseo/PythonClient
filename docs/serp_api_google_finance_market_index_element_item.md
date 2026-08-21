@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**ticker** | **StrictStr** | ticker of the market index<br>example: DAX |[optional]|
-**market_identifier** | **StrictStr** | market identifier<br>example: INDEXDB |[optional]|
-**index_value** | **StrictFloat** | value of the market index<br>numerical value of the index at a given timestamp |[optional]|
-**index_value_delta** | **StrictFloat** | change in value of the market index<br>change in the index_value at a given timestamp |[optional]|
+**ticker** | **StrictStr** | <em>ticker of the market index</em><br>example: <code>DAX</code> |[optional]|
+**market_identifier** | **StrictStr** | <em>market identifier</em><br>example: <code>INDEXDB</code> |[optional]|
+**index_value** | **StrictFloat** | <em>value of the market index</em><br>numerical value of the index at a given <code>timestamp</code> |[optional]|
+**index_value_delta** | **StrictFloat** | <em>change in value of the market index</em><br>change in the <code>index_value</code> at a given <code>timestamp</code> |[optional]|

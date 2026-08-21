@@ -17,16 +17,16 @@ class SerpApiGoogleFinanceAboutElementItem(BaseSerpApiGoogleFinanceElementItem):
     SerpApiGoogleFinanceAboutElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    displayed_name: Optional[StrictStr] = Field(default=None, description=r"displayed name of the market index. example: E-mini Dow ($5)")
-    description: Optional[StrictStr] = Field(default=None, description=r"company description")
-    description_source_url: Optional[StrictStr] = Field(default=None, description=r"source of information provided in description")
-    ceo: Optional[StrictStr] = Field(default=None, description=r"Chief Executive Officer of the company")
-    founded: Optional[StrictStr] = Field(default=None, description=r"date when the company was founded. in the format: “yyyy-mm-ddThh-mm-ssZ”. example:. 1993-04-05T00:00:00Z")
-    headquarters: Optional[StrictStr] = Field(default=None, description=r"company headquarters")
-    website: Optional[StrictStr] = Field(default=None, description=r"company website")
-    employees: Optional[StrictInt] = Field(default=None, description=r"number of company employees")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    displayed_name: Optional[StrictStr] = Field(default=None, description=r"*displayed name of the market index*. example: `E-mini Dow ($5)`")
+    description: Optional[StrictStr] = Field(default=None, description=r"*company description*")
+    description_source_url: Optional[StrictStr] = Field(default=None, description=r"*source of information provided in description*")
+    ceo: Optional[StrictStr] = Field(default=None, description=r"*Chief Executive Officer of the company*")
+    founded: Optional[StrictStr] = Field(default=None, description=r"*date when the company was founded*. in the format: 'yyyy-mm-ddThh-mm-ssZ'. example:. `1993-04-05T00:00:00Z`")
+    headquarters: Optional[StrictStr] = Field(default=None, description=r"*company headquarters*")
+    website: Optional[StrictStr] = Field(default=None, description=r"*company website*")
+    employees: Optional[StrictInt] = Field(default=None, description=r"*number of company employees*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

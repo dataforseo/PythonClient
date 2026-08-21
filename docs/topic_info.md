@@ -5,11 +5,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**h_title** | **StrictStr** | meta title |[optional]|
-**main_title** | **StrictStr** | main title of the block |[optional]|
-**author** | **StrictStr** | content author name |[optional]|
-**language** | **StrictStr** | content language |[optional]|
-**level** | **StrictInt** | HTML level |[optional]|
-**primary_content** | **List[Optional[SectionContentItemInfo]]** | primary content on the page<br>you can find more information about content priority calculation in this help center article |[optional]|
-**secondary_content** | **List[Optional[SectionContentItemInfo]]** | secondary content on the page<br>you can find more information about content priority calculation in this help center article |[optional]|
-**table_content** | **List[Optional[TableContentInfo]]** | content of the table on the page |[optional]|
+**h_title** | **StrictStr** | <em>meta title</em><br> |[optional]|
+**main_title** | **StrictStr** | <em>  main title of the block</em><br> |[optional]|
+**author** | **StrictStr** | <em>content author name</em><br> |[optional]|
+**language** | **StrictStr** | <em>content language</em><br> |[optional]|
+**level** | **StrictInt** | <em>HTML level</em><br> |[optional]|
+**primary_content** | **List[Optional[SectionContentItemInfo]]** | <em>primary content on the page</em><br>            you can find more information about content priority calculation in this <a href='https://dataforseo.com/help-center/difference-between-primary-and-secondary-content' rel='noopener noreferrer' target='_blank'>help center article</a><br> |[optional]|
+**secondary_content** | **List[Optional[SectionContentItemInfo]]** | <em>secondary content on the page</em><br>            you can find more information about content priority calculation in this <a href='https://dataforseo.com/help-center/difference-between-primary-and-secondary-content' rel='noopener noreferrer' target='_blank'>help center article</a><br> |[optional]|
+**table_content** | **List[Optional[TableContentInfo]]** | <em>content of the table on the page</em><br> |[optional]|

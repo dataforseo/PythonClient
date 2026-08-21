@@ -15,12 +15,12 @@ class AddressInfo(BaseModel):
     """
     AddressInfo
     """ # noqa: E501
-    borough: Optional[StrictStr] = Field(default=None, description=r"administrative unit or district the local establishment belongs to")
-    address: Optional[StrictStr] = Field(default=None, description=r"street address of the local establishment")
-    city: Optional[StrictStr] = Field(default=None, description=r"name of the city where the local establishment is located")
-    zip: Optional[StrictStr] = Field(default=None, description=r"ZIP code of the local establishment")
-    region: Optional[StrictStr] = Field(default=None, description=r"DMA region the local establishment belongs to")
-    country_code: Optional[StrictStr] = Field(default=None, description=r"ISO country code of the local establishment")
+    borough: Optional[StrictStr] = Field(default=None, description=r"*administrative unit or district the local establishment belongs to*")
+    address: Optional[StrictStr] = Field(default=None, description=r"*street address of the local establishment*")
+    city: Optional[StrictStr] = Field(default=None, description=r"*name of the city where the local establishment is located*")
+    zip: Optional[StrictStr] = Field(default=None, description=r"*ZIP code of the local establishment*")
+    region: Optional[StrictStr] = Field(default=None, description=r"*DMA region the local establishment belongs to*")
+    country_code: Optional[StrictStr] = Field(default=None, description=r"*ISO country code of the local establishment*")
     __properties: ClassVar[List[str]] = [
         "borough", 
         "address", 

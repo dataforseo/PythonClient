@@ -24,7 +24,7 @@ class SerpGoogleFinanceTickerSearchTaskPostResponseInfo(BaseModel):
     cost: Optional[StrictFloat] = Field(default=None, description=r"total tasks cost, USD")
     tasks_count: Optional[StrictInt] = Field(default=None, description=r"the number of tasks in the tasks array")
     tasks_error: Optional[StrictInt] = Field(default=None, description=r"the number of tasks in the tasks array returned with an error")
-    tasks: Optional[List[Optional[SerpGoogleFinanceTickerSearchTaskPostTaskInfo]]] = Field(default=None, description=r"")
+    tasks: Optional[List[Optional[SerpGoogleFinanceTickerSearchTaskPostTaskInfo]]] = Field(default=None, description=r"*array of tasks*")
     __properties: ClassVar[List[str]] = [
         "version", 
         "status_code", 

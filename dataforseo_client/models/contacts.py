@@ -15,8 +15,8 @@ class Contacts(BaseModel):
     """
     Contacts
     """ # noqa: E501
-    telephones: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of telephone numbers")
-    emails: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of emails")
+    telephones: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*array of telephone numbers*")
+    emails: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*array of emails*")
     __properties: ClassVar[List[str]] = [
         "telephones", 
         "emails", 

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**crawl_progress** | **StrictStr** | status of the crawling session<br>possible values: in_progress, finished |[optional]|
-**crawl_status** | **CrawlStatusInfo** | details of the crawling session |[optional]|
-**items_count** | **StrictInt** | number of items in the results array |[optional]|
-**items** | **List[Optional[ContentParsingElement]]** | items array |[optional]|
+**crawl_progress** | **StrictStr** | <em>status of the crawling session</em><br>            possible values: <code>in_progress</code>, <code>finished</code> |[optional]|
+**crawl_status** | **CrawlStatusInfo** | <em>details of the crawling session</em> |[optional]|
+**items_count** | **StrictInt** | <em>number of items in the results array</em><br> |[optional]|
+**items** | **List[Optional[ContentParsingElement]]** | <em>items array</em><br> |[optional]|

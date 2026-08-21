@@ -15,9 +15,9 @@ class Subtitles(BaseModel):
     """
     Subtitles
     """ # noqa: E501
-    language: Optional[StrictStr] = Field(default=None, description=r"language of subtitles")
-    is_translatable: Optional[StrictBool] = Field(default=None, description=r"defines if subtitles are translatable")
-    is_auto_generated: Optional[StrictBool] = Field(default=None, description=r"defines if subtitles are auto generated")
+    language: Optional[StrictStr] = Field(default=None, description=r"*language of subtitles*")
+    is_translatable: Optional[StrictBool] = Field(default=None, description=r"*defines if subtitles are translatable*")
+    is_auto_generated: Optional[StrictBool] = Field(default=None, description=r"*defines if subtitles are auto generated*")
     __properties: ClassVar[List[str]] = [
         "language", 
         "is_translatable", 

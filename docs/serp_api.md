@@ -210,9 +210,7 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.id_list([SerpIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )

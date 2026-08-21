@@ -60,9 +60,7 @@ try:
         on_page_api = OnPageApi(api_client)
 
         response = on_page_api.on_page_id_list([OnPageIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )

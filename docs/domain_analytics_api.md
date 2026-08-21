@@ -43,9 +43,7 @@ try:
         domain_analytics_api = DomainAnalyticsApi(api_client)
 
         response = domain_analytics_api.domain_analytics_id_list([DomainAnalyticsIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )

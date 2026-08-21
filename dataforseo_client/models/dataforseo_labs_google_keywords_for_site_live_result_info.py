@@ -16,15 +16,15 @@ class DataforseoLabsGoogleKeywordsForSiteLiveResultInfo(BaseModel):
     """
     DataforseoLabsGoogleKeywordsForSiteLiveResultInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    target: Optional[StrictStr] = Field(default=None, description=r"target domain in a POST array")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"location code in a POST array")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"language code in a POST array")
-    total_count: Optional[StrictInt] = Field(default=None, description=r"total number of results in our database relevant to your request")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"the number of results returned in the items array")
-    offset: Optional[StrictInt] = Field(default=None, description=r"current offset value")
-    offset_token: Optional[StrictStr] = Field(default=None, description=r"offset token for subsequent requestsyou can use the string provided in this field to get the subsequent results of the initial task;note: offset_token values are unique for each subsequent task")
-    items: Optional[List[Optional[KeywordDataInfo]]] = Field(default=None, description=r"contains keyword ideas and related data")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    target: Optional[StrictStr] = Field(default=None, description=r"*target domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    total_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in our database relevant to your request*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the `items` array*")
+    offset: Optional[StrictInt] = Field(default=None, description=r"*current offset value*")
+    offset_token: Optional[StrictStr] = Field(default=None, description=r"*offset token for subsequent requests*. you can use the string provided in this field to get the subsequent results of the initial task;. **note:** `offset_token` values are unique for each subsequent task")
+    items: Optional[List[Optional[KeywordDataInfo]]] = Field(default=None, description=r"*contains keyword ideas and related data*")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "target", 

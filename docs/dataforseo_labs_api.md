@@ -76,9 +76,7 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_id_list([DataforseoLabsIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )
@@ -190,7 +188,6 @@ try:
 
         response = dataforseo_labs_api.dataforseo_labs_errors([DataforseoLabsErrorsRequestInfo(
                 limit=10,
-                offset=0,
         )]
         )
 except ApiException as e:

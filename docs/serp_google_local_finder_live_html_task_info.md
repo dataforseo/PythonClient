@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleLocalFinderLiveHtmlResultInfo]]** |  |[optional]|
+**result** | **List[Optional[SerpGoogleLocalFinderLiveHtmlResultInfo]]** | <em>array of results</em> |[optional]|

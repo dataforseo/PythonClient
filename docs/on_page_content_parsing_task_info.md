@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[OnPageContentParsingResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[OnPageContentParsingResultInfo]]** | <em>array of results</em> |[optional]|

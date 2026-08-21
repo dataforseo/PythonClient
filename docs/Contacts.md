@@ -5,5 +5,5 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**telephones** | **List[Optional[StrictStr]]** | array of telephone numbers |[optional]|
-**emails** | **List[Optional[StrictStr]]** | array of emails |[optional]|
+**telephones** | **List[Optional[StrictStr]]** | <em>array of telephone numbers</em><br> |[optional]|
+**emails** | **List[Optional[StrictStr]]** | <em>array of emails</em><br> |[optional]|

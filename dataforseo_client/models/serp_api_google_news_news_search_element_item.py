@@ -18,17 +18,17 @@ class SerpApiGoogleNewsNewsSearchElementItem(BaseSerpApiGoogleNewsElementItem):
     SerpApiGoogleNewsNewsSearchElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    xpath: Optional[StrictStr] = Field(default=None, description=r"the XPath of the element")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"rectangle parameters. contains cartesian coordinates and pixel dimensions of the result’s snippet in SERP. equals null if calculate_rectangles in the POST request is not set to true")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    image_url: Optional[StrictStr] = Field(default=None, description=r"URL of the image. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
-    snippet: Optional[StrictStr] = Field(default=None, description=r"snippet of the result in SERP")
-    time_published: Optional[StrictStr] = Field(default=None, description=r"indicates the time the result was published")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time when the news was published. in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. 2019-11-15 12:57:46 +00:00")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    rectangle: Optional[AiModeRectangleInfo] = Field(default=None, description=r"*rectangle parameters*. contains cartesian coordinates and pixel dimensions of the result's snippet in SERP. equals `null` if `calculate_rectangles` in the POST request is not set to `true`")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*snippet of the result in SERP*")
+    time_published: Optional[StrictStr] = Field(default=None, description=r"*indicates the time the result was published*")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the news was published*. in the format “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

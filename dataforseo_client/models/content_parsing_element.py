@@ -17,10 +17,10 @@ class ContentParsingElement(BaseModel):
     ContentParsingElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    fetch_time: Optional[StrictStr] = Field(default=None, description=r"date and time when the content was fethced. example:. '2022-11-01 10:02:52 +00:00'")
-    status_code: Optional[StrictInt] = Field(default=None, description=r"general status code. you can find the full list of the response codes here. Note: we strongly recommend designing a necessary system for handling related exceptional or error conditions")
-    page_content: Optional[PageContentInfo] = Field(default=None, description=r"parsed content of the page")
-    page_as_markdown: Optional[StrictStr] = Field(default=None, description=r"page content in the markdown format. page content in the text-to-HTML markdown format. specify markdown_view as true in the request to return the value")
+    fetch_time: Optional[StrictStr] = Field(default=None, description=r"*date and time when the content was fethced*.             example:.             `'2022-11-01 10:02:52 +00:00'`")
+    status_code: Optional[StrictInt] = Field(default=None, description=r"*general status code*.             you can find the full list of the response codes [here](/v3/appendix/errors).             **Note:** we strongly recommend designing a necessary system for handling related exceptional or error conditions")
+    page_content: Optional[PageContentInfo] = Field(default=None, description=r"*parsed content of the page*")
+    page_as_markdown: Optional[StrictStr] = Field(default=None, description=r"*page content in the markdown format*.             page content in the [text-to-HTML markdown format](https://daringfireball.net/projects/markdown/).             specify `markdown_view` as `true` in the request to return the value")
     __properties: ClassVar[List[str]] = [
         "type", 
         "fetch_time", 

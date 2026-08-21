@@ -40,9 +40,7 @@ try:
         content_analysis_api = ContentAnalysisApi(api_client)
 
         response = content_analysis_api.content_analysis_id_list([ContentAnalysisIdListRequestInfo(
-                limit=100,
-                offset=0,
-                sort="desc",
+                limit=10,
                 include_metadata=True,
         )]
         )

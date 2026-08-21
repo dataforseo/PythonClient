@@ -18,19 +18,19 @@ class SerpGoogleFinanceQuoteLiveAdvancedResultInfo(BaseModel):
     """
     SerpGoogleFinanceQuoteLiveAdvancedResultInfo
     """ # noqa: E501
-    keyword: Optional[StrictStr] = Field(default=None, description=r"")
+    keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword received in a POST array*. **the keyword is returned with decoded %## (plus character '+' will be decoded to a space character)**")
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    se_domain: Optional[StrictStr] = Field(default=None, description=r"")
-    location_code: Optional[StrictInt] = Field(default=None, description=r"")
-    language_code: Optional[StrictStr] = Field(default=None, description=r"")
-    check_url: Optional[StrictStr] = Field(default=None, description=r"")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"")
-    spell: Optional[SpellInfo] = Field(default=None, description=r"")
-    refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"")
-    se_results_count: Optional[StrictInt] = Field(default=None, description=r"")
-    items_count: Optional[StrictInt] = Field(default=None, description=r"")
-    items: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"")
+    se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain in a POST array*")
+    location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
+    language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
+    check_url: Optional[StrictStr] = Field(default=None, description=r"*direct URL to search engine results*. you can use it to make sure that we provided accurate results")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    spell: Optional[SpellInfo] = Field(default=None, description=r"*autocorrection of the search engine*. if the search engine provided results for a keyword that was corrected, we will specify the keyword corrected by the search engine and the type of autocorrection")
+    refinement_chips: Optional[RefinementChipsInfo] = Field(default=None, description=r"*search refinement chips*. in this case, the value will be `null`")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results in SERP*. contains types of search results (`items`) found in SERP;. possible item types: [google_finance_hero_groups](#google_finance_hero_groups), [google_finance_quote](#google_finance_quote), [google_finance_compare_to](#google_finance_compare_to), [google_finance_news](#google_finance_news), [google_finance_financial](#google_finance_financial), [google_finance_futures_chain](#google_finance_futures_chain), [google_finance_details](#google_finance_details), [google_finance_about](#google_finance_about), [google_finance_interested](#google_finance_interested), `google_finance_people_also_search`")
+    se_results_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results in SERP*")
+    items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
+    items: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"*elements of search results found in SERP*")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "type", 

@@ -15,9 +15,9 @@ class GraphItems(BaseModel):
     """
     GraphItems
     """ # noqa: E501
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time of the value readout. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-02-10 09:40:00 +00:00")
-    value: Optional[StrictFloat] = Field(default=None, description=r"point value on graph")
-    volume: Optional[StrictFloat] = Field(default=None, description=r"volume value on graph")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time of the value readout*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2025-02-10 09:40:00 +00:00`")
+    value: Optional[StrictFloat] = Field(default=None, description=r"*point value on graph*")
+    volume: Optional[StrictFloat] = Field(default=None, description=r"*volume value on graph*")
     __properties: ClassVar[List[str]] = [
         "timestamp", 
         "value", 

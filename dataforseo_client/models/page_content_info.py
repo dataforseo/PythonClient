@@ -21,14 +21,14 @@ class PageContentInfo(BaseModel):
     """
     PageContentInfo
     """ # noqa: E501
-    header: Optional[PageSectionContentInfo] = Field(default=None, description=r"parsed content of the header")
-    footer: Optional[PageSectionContentInfo] = Field(default=None, description=r"content of the footer of the table")
-    main_topic: Optional[List[Optional[TopicInfo]]] = Field(default=None, description=r"main topic on the page. you can find more information about topic priority calculation in this help center article")
-    secondary_topic: Optional[List[Optional[TopicInfo]]] = Field(default=None, description=r"secondary topic on the page. you can find more information about topic priority calculation in this help center article")
-    ratings: Optional[List[Optional[ContentRatingInfo]]] = Field(default=None, description=r"contains objects with rating information for the products displayed on the page")
-    offers: Optional[List[Optional[ContentOfferInfo]]] = Field(default=None, description=r"array of products displayed on the page. contains objects with information on products displayed on the page")
-    comments: Optional[List[Optional[ContentCommentInfo]]] = Field(default=None, description=r"array of comments displayed on the page. contains objects with information on comments related to displayed products")
-    contacts: Optional[Contacts] = Field(default=None, description=r"contact information. contains contact information displayed on the page")
+    header: Optional[PageSectionContentInfo] = Field(default=None, description=r"*parsed content of the header*")
+    footer: Optional[PageSectionContentInfo] = Field(default=None, description=r"*content of the footer of the table*")
+    main_topic: Optional[List[Optional[TopicInfo]]] = Field(default=None, description=r"*main topic on the page*.             you can find more information about topic priority calculation in this [help center article](https://dataforseo.com/help-center/difference-between-primary-and-secondary-content#topics)")
+    secondary_topic: Optional[List[Optional[TopicInfo]]] = Field(default=None, description=r"*secondary topic on the page*.             you can find more information about topic priority calculation in this [help center article](https://dataforseo.com/help-center/difference-between-primary-and-secondary-content#topics)")
+    ratings: Optional[List[Optional[ContentRatingInfo]]] = Field(default=None, description=r"*contains objects with rating information for the products displayed on the page*")
+    offers: Optional[List[Optional[ContentOfferInfo]]] = Field(default=None, description=r"*array of products displayed on the page*.             contains objects with information on products displayed on the page")
+    comments: Optional[List[Optional[ContentCommentInfo]]] = Field(default=None, description=r"*array of comments displayed on the page*.             contains objects with information on comments related to displayed products")
+    contacts: Optional[Contacts] = Field(default=None, description=r"*contact information*.             contains contact information displayed on the page")
     __properties: ClassVar[List[str]] = [
         "header", 
         "footer", 

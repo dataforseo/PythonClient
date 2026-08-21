@@ -26,7 +26,7 @@ class SerpApiProductConsiderationsExpandedElementItem(BaseSerpApiProductConsider
     url: Optional[StrictStr] = Field(default=None, description=r"*relevant URL*")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
     related_searches: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"")
-    about_this_result: Optional[AboutThisResultElement] = Field(default=None, description=r"*contains information from the 'About this result' panel*. **Note:** element no longer appears in SERP and has been deprecated in SERP API", deprecated=True)
+    about_this_result: Optional[AboutThisResultElement] = Field(default=None, description=r"*contains information from the 'About this result' panel*. **Note:** this object is deprecated and always returns null", deprecated=True)
     __properties: ClassVar[List[str]] = [
         "type", 
         "title", 

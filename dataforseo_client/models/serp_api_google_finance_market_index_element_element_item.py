@@ -17,17 +17,17 @@ class SerpApiGoogleFinanceMarketIndexElementElementItem(BaseSerpApiGoogleFinance
     SerpApiGoogleFinanceMarketIndexElementElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    ticker: Optional[StrictStr] = Field(default=None, description=r"ticker of the market index. example: DAX")
-    market_identifier: Optional[StrictStr] = Field(default=None, description=r"market identifier. example: INDEXDB")
-    index_value: Optional[StrictFloat] = Field(default=None, description=r"value of the market index. numerical value of the index at a given timestamp")
-    index_value_delta: Optional[StrictFloat] = Field(default=None, description=r"change in value of the market index. change in the index_value at a given timestamp")
-    identifier: Optional[StrictStr] = Field(default=None, description=r"identifier of the element. full identifier of the element that consists from ticker and market_identifier. example: PX1:INDEXDB")
-    displayed_name: Optional[StrictStr] = Field(default=None, description=r"name of the market index as displayed on Google Finance. example: CAC 40")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to the page of the market index on Google Finance")
-    location: Optional[StrictStr] = Field(default=None, description=r"location of the market index. example: Europe/Paris")
-    trend: Optional[StrictStr] = Field(default=None, description=r"growth trend of the market index. possible values: up, down, stable")
-    timestamp: Optional[StrictStr] = Field(default=None, description=r"date and time of the value readout. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-02-10 09:40:00 +00:00")
-    percentage_delta: Optional[StrictFloat] = Field(default=None, description=r"percentage of change in value of the market index")
+    ticker: Optional[StrictStr] = Field(default=None, description=r"*ticker of the market index*. example: `DAX`")
+    market_identifier: Optional[StrictStr] = Field(default=None, description=r"*market identifier*. example: `INDEXDB`")
+    index_value: Optional[StrictFloat] = Field(default=None, description=r"*value of the market index*. numerical value of the index at a given `timestamp`")
+    index_value_delta: Optional[StrictFloat] = Field(default=None, description=r"*change in value of the market index*. change in the `index_value` at a given `timestamp`")
+    identifier: Optional[StrictStr] = Field(default=None, description=r"*identifier of the element*. full identifier of the element that consists from `ticker` and `market_identifier`. example: `PX1:INDEXDB`")
+    displayed_name: Optional[StrictStr] = Field(default=None, description=r"*name of the market index as displayed on Google Finance*. example: `CAC 40`")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to the page of the market index on Google Finance*")
+    location: Optional[StrictStr] = Field(default=None, description=r"*location of the market index*. example: `Europe/Paris`")
+    trend: Optional[StrictStr] = Field(default=None, description=r"*growth trend of the market index*. possible values: `up`, `down`, `stable`")
+    timestamp: Optional[StrictStr] = Field(default=None, description=r"*date and time of the value readout*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2025-02-10 09:40:00 +00:00`")
+    percentage_delta: Optional[StrictFloat] = Field(default=None, description=r"*percentage of change in value of the market index*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "ticker", 

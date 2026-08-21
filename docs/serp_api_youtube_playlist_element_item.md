@@ -12,4 +12,4 @@
 **channel_url** | **StrictStr** | <em>the URL of the channel where the video is published</em> |[optional]|
 **channel_logo** | **StrictStr** | <em>the URL of the page where the logo image of the channel is hosted</em> |[optional]|
 **videos_count** | **StrictInt** | <em>the number of videos in playlist</em> |[optional]|
-**preview_videos** | **List[Optional[PreviewVideos]]** | <em>information about preview videos</em><br>array of objects containing information about videos in the preview block of the playlist element |[optional]|
+**preview_videos** | **List[Optional[PreviewVideos]]** | <em>information about preview videos</em><br>            array of objects containing information about videos in the preview block of the playlist element |[optional]|

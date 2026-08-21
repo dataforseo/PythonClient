@@ -20,6 +20,7 @@ class ChatGptAdElementItem(BaseChatGptLlmScraperElementItem):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements")
+    is_rendered: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the ad is displayed to the user*. if `true`, the ad is present in the response and shown on the page. if `false`, the ad is present in the response but not displayed to the user")
     title: Optional[StrictStr] = Field(default=None, description=r"*name of the brand*")
     snippet: Optional[StrictStr] = Field(default=None, description=r"*source description*")
     url: Optional[StrictStr] = Field(default=None, description=r"*URL*")
@@ -30,6 +31,7 @@ class ChatGptAdElementItem(BaseChatGptLlmScraperElementItem):
         "type", 
         "rank_group", 
         "rank_absolute", 
+        "is_rendered", 
         "title", 
         "snippet", 
         "url", 
@@ -65,6 +67,7 @@ class ChatGptAdElementItem(BaseChatGptLlmScraperElementItem):
         _dict['type'] = self.type
         _dict['rank_group'] = self.rank_group
         _dict['rank_absolute'] = self.rank_absolute
+        _dict['is_rendered'] = self.is_rendered
         _dict['title'] = self.title
         _dict['snippet'] = self.snippet
         _dict['url'] = self.url
@@ -86,6 +89,7 @@ class ChatGptAdElementItem(BaseChatGptLlmScraperElementItem):
             "type": obj.get("type"),
             "rank_group": obj.get("rank_group"),
             "rank_absolute": obj.get("rank_absolute"),
+            "is_rendered": obj.get("is_rendered"),
             "title": obj.get("title"),
             "snippet": obj.get("snippet"),
             "url": obj.get("url"),

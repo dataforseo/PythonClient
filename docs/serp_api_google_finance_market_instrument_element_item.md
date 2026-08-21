@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**ticker** | **StrictStr** | ticker of the market index<br>example: DAX |[optional]|
-**price** | **StrictFloat** | value of the base asset compared to the quote asset |[optional]|
-**price_delta** | **StrictFloat** | change in price<br>change in price at a given timestamp |[optional]|
-**price_currency** | **StrictStr** | price currency<br>example: USD |[optional]|
+**ticker** | **StrictStr** | <em>ticker of the market index</em><br>example: <code>DAX</code> |[optional]|
+**price** | **StrictFloat** | <em>value of the base asset compared to the quote asset</em> |[optional]|
+**price_delta** | **StrictFloat** | <em>change in price</em><br>change in <code>price</code> at a given <code>timestamp</code> |[optional]|
+**price_currency** | **StrictStr** | <em>price currency</em><br>example: <code>USD</code> |[optional]|

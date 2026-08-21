@@ -18,11 +18,11 @@ class SerpApiGoogleFinanceNewsElementItem(BaseSerpApiGoogleFinanceElementItem):
     SerpApiGoogleFinanceNewsElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the news element. example: In the news")
-    sub_title: Optional[StrictStr] = Field(default=None, description=r"sub-title of the news element. example: Based on Europe, Middle East, and Africa")
-    items: Optional[List[Optional[GoogleFinanceNewsElement]]] = Field(default=None, description=r"market indexes data. array of items containing market indexes data;. possible type of items: google_finance_asset_pair_element, google_finance_market_instrument_element, google_finance_market_index_element")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the news element*. example: `In the news`")
+    sub_title: Optional[StrictStr] = Field(default=None, description=r"*sub-title of the news element*. example: `Based on Europe, Middle East, and Africa`")
+    items: Optional[List[Optional[GoogleFinanceNewsElement]]] = Field(default=None, description=r"*market indexes data*. array of items containing market indexes data;. possible `type` of items: `google_finance_asset_pair_element`, `google_finance_market_instrument_element`, `google_finance_market_index_element`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

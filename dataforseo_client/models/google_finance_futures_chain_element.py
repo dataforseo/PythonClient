@@ -16,13 +16,13 @@ class GoogleFinanceFuturesChainElement(BaseModel):
     GoogleFinanceFuturesChainElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    expiration_timestamp: Optional[StrictStr] = Field(default=None, description=r"futures’ date and time of expiration. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. 2025-02-10 09:40:00 +00:00")
-    symbol: Optional[StrictStr] = Field(default=None, description=r"futures’ symbol")
-    price: Optional[StrictFloat] = Field(default=None, description=r"price of the market instrument. price of the market instrument at a given timestamp")
-    price_currency: Optional[StrictStr] = Field(default=None, description=r"currency of the price value")
-    price_delta: Optional[StrictFloat] = Field(default=None, description=r"change in price of the market instrument. change in price at a given timestamp")
-    percentage_delta: Optional[StrictFloat] = Field(default=None, description=r"percentage of change in value of the market index")
-    trend: Optional[StrictStr] = Field(default=None, description=r"growth trend of the market index. possible values: up, down, stable")
+    expiration_timestamp: Optional[StrictStr] = Field(default=None, description=r"*futures' date and time of expiration*. in the UTC format: 'yyyy-mm-dd hh-mm-ss +00:00'. example:. `2025-02-10 09:40:00 +00:00`")
+    symbol: Optional[StrictStr] = Field(default=None, description=r"*futures' symbol*")
+    price: Optional[StrictFloat] = Field(default=None, description=r"*price of the market instrument*. price of the market instrument at a given `timestamp`")
+    price_currency: Optional[StrictStr] = Field(default=None, description=r"*currency of the price value*")
+    price_delta: Optional[StrictFloat] = Field(default=None, description=r"*change in price of the market instrument*. change in `price` at a given `timestamp`")
+    percentage_delta: Optional[StrictFloat] = Field(default=None, description=r"*percentage of change in value of the market index*")
+    trend: Optional[StrictStr] = Field(default=None, description=r"*growth trend of the market index*. possible values: `up`, `down`, `stable`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "expiration_timestamp", 

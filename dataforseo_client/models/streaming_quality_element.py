@@ -16,12 +16,12 @@ class StreamingQualityElement(BaseModel):
     StreamingQualityElement
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    label: Optional[StrictStr] = Field(default=None, description=r"label of the quality element")
-    width: Optional[StrictInt] = Field(default=None, description=r"video width in pixels")
-    height: Optional[StrictInt] = Field(default=None, description=r"video height in pixels")
-    bitrate: Optional[StrictInt] = Field(default=None, description=r"bit rate of the video")
-    mime_type: Optional[StrictStr] = Field(default=None, description=r"media type of the video")
-    fps: Optional[StrictInt] = Field(default=None, description=r"frame rate of the video")
+    label: Optional[StrictStr] = Field(default=None, description=r"*label of the quality element*")
+    width: Optional[StrictInt] = Field(default=None, description=r"*video width in pixels*")
+    height: Optional[StrictInt] = Field(default=None, description=r"*video height in pixels*")
+    bitrate: Optional[StrictInt] = Field(default=None, description=r"*[bit rate](https://en.wikipedia.org/wiki/Bit_rate) of the video*")
+    mime_type: Optional[StrictStr] = Field(default=None, description=r"*[media type](https://en.wikipedia.org/wiki/Media_type) of the video*")
+    fps: Optional[StrictInt] = Field(default=None, description=r"*[frame rate](https://en.wikipedia.org/wiki/Frame_rate) of the video*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "label", 

@@ -15,10 +15,10 @@ class SearchIntentInfo(BaseModel):
     """
     SearchIntentInfo
     """ # noqa: E501
-    se_type: Optional[StrictStr] = Field(default=None, description=r"search engine type")
-    main_intent: Optional[StrictStr] = Field(default=None, description=r"main search intentpossible values: informational, navigational, commercial, transactional")
-    foreign_intent: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"supplementary search intentspossible values: informational, navigational, commercial, transactional")
-    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"date and time when keyword data was updatedin the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”example:2019-11-15 12:57:46 +00:00")
+    se_type: Optional[StrictStr] = Field(default=None, description=r"*search engine type*")
+    main_intent: Optional[StrictStr] = Field(default=None, description=r"*main search intent*. possible values: `informational`, `navigational`, `commercial`, `transactional`")
+    foreign_intent: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*supplementary search intents*. possible values: `informational`, `navigational`, `commercial`, `transactional`")
+    last_updated_time: Optional[StrictStr] = Field(default=None, description=r"*date and time when keyword data was updated*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
     __properties: ClassVar[List[str]] = [
         "se_type", 
         "main_intent", 

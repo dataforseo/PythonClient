@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[BusinessDataTrustpilotSearchTasksReadyResultInfo]]** | array of results |[optional]|
+**result** | **List[Optional[BusinessDataTrustpilotSearchTasksReadyResultInfo]]** | <em>array of results</em> |[optional]|

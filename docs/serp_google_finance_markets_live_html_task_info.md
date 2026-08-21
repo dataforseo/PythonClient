@@ -5,4 +5,4 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**result** | **List[Optional[SerpGoogleFinanceMarketsLiveHtmlResultInfo]]** |  |[optional]|
+**result** | **List[Optional[SerpGoogleFinanceMarketsLiveHtmlResultInfo]]** | <em>array of results</em> |[optional]|

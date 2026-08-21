@@ -18,13 +18,13 @@ class SerpApiMapsPaidItemElementItem(BaseSerpApiGoogleMapsElementItem):
     SerpApiMapsPaidItemElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    domain: Optional[StrictStr] = Field(default=None, description=r"domain in SERP")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the element")
-    url: Optional[StrictStr] = Field(default=None, description=r"search URL with refinement parameters")
-    rating: Optional[RatingInfo] = Field(default=None, description=r"the element’s rating . the popularity rate based on reviews and displayed in SERP")
-    rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"the distribution of ratings of the business entity. the object displays the number of 1-star to 5-star ratings, as reviewed by users")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*domain in SERP*")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*search URL with refinement parameters*")
+    rating: Optional[RatingInfo] = Field(default=None, description=r"*the element's rating*. the popularity rate based on reviews and displayed in SERP")
+    rating_distribution: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*the distribution of ratings of the business entity*. the object displays the number of 1-star to 5-star ratings, as reviewed by users")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

@@ -17,12 +17,12 @@ class SerpApiGoogleFinanceExploreMarketTrendsElementItem(BaseSerpApiGoogleFinanc
     SerpApiGoogleFinanceExploreMarketTrendsElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"group rank in SERP. position within a group of elements with identical type values. positions of elements with different type values are omitted from rank_group")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"absolute rank in SERP. absolute position among all the elements in SERP")
-    title: Optional[StrictStr] = Field(default=None, description=r"title of the market trends element. example: Europe, Middle East, and Africa")
-    sub_title: Optional[StrictStr] = Field(default=None, description=r"sub-title of the market trends element")
-    url: Optional[StrictStr] = Field(default=None, description=r"URL to finance pair on Google Finance")
-    items: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"market indexes data. array of items containing market indexes data;. possible type of items: google_finance_asset_pair_element, google_finance_market_instrument_element, google_finance_market_index_element")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    title: Optional[StrictStr] = Field(default=None, description=r"*title of the market trends element*. example: `Europe, Middle East, and Africa`")
+    sub_title: Optional[StrictStr] = Field(default=None, description=r"*sub-title of the market trends element*")
+    url: Optional[StrictStr] = Field(default=None, description=r"*URL to finance pair on Google Finance*")
+    items: Optional[List[Optional[BaseSerpApiGoogleFinanceElementItem]]] = Field(default=None, description=r"*market indexes data*. array of items containing market indexes data;. possible `type` of items: `google_finance_asset_pair_element`, `google_finance_market_instrument_element`, `google_finance_market_index_element`")
     __properties: ClassVar[List[str]] = [
         "type", 
         "rank_group", 

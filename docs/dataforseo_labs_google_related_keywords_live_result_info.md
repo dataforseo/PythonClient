@@ -5,11 +5,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**se_type** | **StrictStr** | search engine type |[optional]|
-**seed_keyword** | **StrictStr** | keyword in a POST array |[optional]|
-**seed_keyword_data** | **KeywordDataInfo** | keyword data for the seed keywordfields in the array are identical to that of keyword_data |[optional]|
-**location_code** | **StrictInt** | location code in a POST array |[optional]|
-**language_code** | **StrictStr** | language code in a POST array |[optional]|
-**total_count** | **StrictInt** | total amount of results in our database relevant to your request |[optional]|
-**items_count** | **StrictInt** | the number of results returned in the items array |[optional]|
-**items** | **List[Optional[DataforseoLabsGoogleRelatedKeywordsLiveItem]]** | contains keywords and related data |[optional]|
+**se_type** | **StrictStr** | <em>search engine type</em> |[optional]|
+**seed_keyword** | **StrictStr** | <em>keyword in a POST array</em> |[optional]|
+**seed_keyword_data** | **KeywordDataInfo** | <em>keyword data for the seed keyword</em><br>fields in the array are identical to that of <code>keyword_data</code> |[optional]|
+**location_code** | **StrictInt** | <em>location code in a POST array</em> |[optional]|
+**language_code** | **StrictStr** | <em>language code in a POST array</em> |[optional]|
+**total_count** | **StrictInt** | <em>total amount of results in our database relevant to your request</em> |[optional]|
+**items_count** | **StrictInt** | <em>the number of results returned in the <code>items</code> array</em> |[optional]|
+**items** | **List[Optional[DataforseoLabsGoogleRelatedKeywordsLiveItem]]** | <em>contains keywords and related data</em> |[optional]|
