@@ -4,7 +4,7 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 NAME = "dataforseo-client"
-VERSION = "2.1.7"
+VERSION = "2.1.8"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 2.2.3",
@@ -27,5 +27,5 @@ setup(
     include_package_data=True,
     long_description=long_description,
     long_description_content_type='text/markdown',
-    package_data={"dataforseo_client": ["py.typed"]},
+    package_data={"dataforseo_client": ["py.typed", "SKILL.md"]},
 )

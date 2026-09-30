@@ -1951,7 +1951,6 @@ try:
                 app_collection="top_free_ios",
                 location_code=2840,
                 language_code="en",
-                depth=200,
                 app_category="games",
         )]
         )

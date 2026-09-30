@@ -18,7 +18,7 @@ class DataforseoLabsGoogleSearchIntentLiveItem(BaseModel):
     """ # noqa: E501
     keyword: Optional[StrictStr] = Field(default=None, description=r"*target keyword in a POST array*")
     keyword_intent: Optional[KeywordIntentInfo] = Field(default=None, description=r"*search intent data relevant for the specified keyword*")
-    secondary_keyword_intents: Optional[Any] = Field(default=None, description=r"*contains objects with other possible search intents for the specified keyword*")
+    secondary_keyword_intents: Optional[List[Optional[KeywordIntentInfo]]] = Field(default=None, description=r"*contains objects with other possible search intents for the specified keyword*")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "keyword_intent", 
@@ -51,7 +51,12 @@ class DataforseoLabsGoogleSearchIntentLiveItem(BaseModel):
 
         _dict['keyword'] = self.keyword
         _dict['keyword_intent'] = self.keyword_intent.to_dict() if self.keyword_intent else None
-        _dict['secondary_keyword_intents'] = self.secondary_keyword_intents
+        secondary_keyword_intents_items = []
+        if self.secondary_keyword_intents:
+            for _item in self.secondary_keyword_intents:
+                if _item:
+                    secondary_keyword_intents_items.append(_item.to_dict())
+            _dict['secondary_keyword_intents'] = secondary_keyword_intents_items
         return _dict
 
 
@@ -66,7 +71,7 @@ class DataforseoLabsGoogleSearchIntentLiveItem(BaseModel):
         _obj = cls.model_validate({
             "keyword": obj.get("keyword"),
             "keyword_intent": KeywordIntentInfo.from_dict(obj["keyword_intent"]) if obj.get("keyword_intent") is not None else None,
-            "secondary_keyword_intents": obj.get("secondary_keyword_intents"),
+            "secondary_keyword_intents": [KeywordIntentInfo.from_dict(_item) for _item in obj["secondary_keyword_intents"]] if obj.get("secondary_keyword_intents") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

@@ -81,9 +81,8 @@ Example of Task-Based request
 from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
 from dataforseo_client.api.serp_api import SerpApi
 from dataforseo_client.rest import ApiException
-from dataforseo_client.models.serp_task_request_info import SerpTaskRequestInfo
+from dataforseo_client.models.serp_google_organic_task_post_request_info import SerpGoogleOrganicTaskPostRequestInfo
 from pprint import pprint
-import asyncio
 import time
 
 # Configure HTTP basic authorization: basicAuth
@@ -91,7 +90,7 @@ configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD'
 
 def GoogleOrganicTaskReady(id):
     result = serp_api.google_organic_tasks_ready()
-    return any(any(xx.id == id for xx in x.result) for x in result.tasks)
+    return any(any(xx.id == id for xx in (x.result or [])) for x in (result.tasks or []))
 
 with dfs_api_provider.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -99,7 +98,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
 
     try:
 
-        task_post = serp_api.google_organic_task_post([SerpTaskRequestInfo(
+        task_post = serp_api.google_organic_task_post([SerpGoogleOrganicTaskPostRequestInfo(
             language_name="English",
             location_name="United States",
             keyword="albert einstein"
@@ -110,7 +109,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
         start_time = time.time()
 
         while GoogleOrganicTaskReady(task_id) is not True and (time.time() - start_time) < 60:
-           asyncio.sleep(1) 
+            time.sleep(1)
 
         api_response = serp_api.google_organic_task_get_advanced(id=task_id)
         

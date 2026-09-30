@@ -5663,6 +5663,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.youtube_video_info_task_post([SerpYoutubeVideoInfoTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="vQXvyV0zIP4",
         )]
         )
 except ApiException as e:
@@ -5938,6 +5941,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.youtube_organic_task_post([SerpYoutubeOrganicTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="audi",
         )]
         )
 except ApiException as e:
@@ -6154,6 +6160,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.youtube_organic_live_advanced([SerpYoutubeOrganicLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                keyword="audi",
         )]
         )
 except ApiException as e:
@@ -6210,6 +6219,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.youtube_video_subtitles_task_post([SerpYoutubeVideoSubtitlesTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="Y8Wu4rSNJms",
         )]
         )
 except ApiException as e:
@@ -6426,6 +6438,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.youtube_video_subtitles_live_advanced([SerpYoutubeVideoSubtitlesLiveAdvancedRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="Y8Wu4rSNJms",
         )]
         )
 except ApiException as e:
@@ -6482,6 +6497,9 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.youtube_video_comments_task_post([SerpYoutubeVideoCommentsTaskPostRequestInfo(
+                language_code="en",
+                location_code=2840,
+                video_id="vQXvyV0zIP4",
         )]
         )
 except ApiException as e:
