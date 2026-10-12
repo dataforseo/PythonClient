@@ -57,6 +57,8 @@ if TYPE_CHECKING:
     from dataforseo_client.models.dataforseo_labs_google_historical_rank_overview_live_response_info import DataforseoLabsGoogleHistoricalRankOverviewLiveResponseInfo
     from dataforseo_client.models.dataforseo_labs_google_page_intersection_live_request_info import DataforseoLabsGooglePageIntersectionLiveRequestInfo
     from dataforseo_client.models.dataforseo_labs_google_page_intersection_live_response_info import DataforseoLabsGooglePageIntersectionLiveResponseInfo
+    from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_request_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_response_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo
     from dataforseo_client.models.dataforseo_labs_google_bulk_traffic_estimation_live_request_info import DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo
     from dataforseo_client.models.dataforseo_labs_google_bulk_traffic_estimation_live_response_info import DataforseoLabsGoogleBulkTrafficEstimationLiveResponseInfo
     from dataforseo_client.models.dataforseo_labs_google_historical_bulk_traffic_estimation_live_request_info import DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveRequestInfo
@@ -5447,6 +5449,198 @@ class DataforseoLabsApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v3/dataforseo_labs/google/page_intersection/live',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+    from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_request_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo
+    from dataforseo_client.models.dataforseo_labs_google_historical_search_volume_live_response_info import DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo
+    @validate_call
+    def google_historical_search_volume_live(
+        self,
+        list_optional_dataforseo_labs_google_historical_search_volume_live_request_info: 'List[Optional[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo:
+
+        _param = self._google_historical_search_volume_live_serialize(
+            list_optional_dataforseo_labs_google_historical_search_volume_live_request_info=list_optional_dataforseo_labs_google_historical_search_volume_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    
+    @validate_call
+    def google_historical_search_volume_live_with_http_info(
+        self,
+        list_optional_dataforseo_labs_google_historical_search_volume_live_request_info: 'List[Optional[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'ApiResponse[DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo]':
+
+        _param = self._google_historical_search_volume_live_serialize(
+            list_optional_dataforseo_labs_google_historical_search_volume_live_request_info=list_optional_dataforseo_labs_google_historical_search_volume_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def google_historical_search_volume_live_without_preload_content(
+        self,
+        list_optional_dataforseo_labs_google_historical_search_volume_live_request_info: 'List[Optional[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]]' = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+
+        _param = self._google_historical_search_volume_live_serialize(
+            list_optional_dataforseo_labs_google_historical_search_volume_live_request_info=list_optional_dataforseo_labs_google_historical_search_volume_live_request_info,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _google_historical_search_volume_live_serialize(
+        self,
+        list_optional_dataforseo_labs_google_historical_search_volume_live_request_info,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'List[Optional[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]]': '',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if list_optional_dataforseo_labs_google_historical_search_volume_live_request_info is not None:
+            _body_params = list_optional_dataforseo_labs_google_historical_search_volume_live_request_info
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'basicAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/v3/dataforseo_labs/google/historical_search_volume/live',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

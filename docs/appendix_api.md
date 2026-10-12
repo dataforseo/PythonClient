@@ -139,7 +139,7 @@ try:
         appendix_api = AppendixApi(api_client)
 
         response = appendix_api.webhook_resend([AppendixWebhookResendRequestInfo(
-                id="08161139-0001-0066-1000-06491d097ed5",
+            id="08161139-0001-0066-1000-06491d097ed5",
         )]
         )
 except ApiException as e:

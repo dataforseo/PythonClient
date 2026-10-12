@@ -53,8 +53,8 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_id_list([BacklinksIdListRequestInfo(
-                limit=10,
-                include_metadata=True,
+            limit=10,
+            include_metadata=True,
         )]
         )
 except ApiException as e:
@@ -111,7 +111,7 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_errors([BacklinksErrorsRequestInfo(
-                limit=10,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -274,15 +274,15 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.summary_live([BacklinksSummaryLiveRequestInfo(
-                target="explodingtopics.com",
-                internal_list_limit=10,
-                include_subdomains=True,
-                backlinks_filters=[
-                    "dofollow",
-                    "=",
-                    True,
-                    ],
-                backlinks_status_type="all",
+            target="explodingtopics.com",
+            internal_list_limit=10,
+            include_subdomains=True,
+            backlinks_filters=[
+                "dofollow",
+                "=",
+                True,
+            ],
+            backlinks_status_type="all",
         )]
         )
 except ApiException as e:
@@ -339,7 +339,7 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.history_live([BacklinksHistoryLiveRequestInfo(
-                target="cnn.com",
+            target="cnn.com",
         )]
         )
 except ApiException as e:
@@ -396,14 +396,14 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_live([BacklinksBacklinksLiveRequestInfo(
-                target="forbes.com",
-                mode="as_is",
-                filters=[
-                    "dofollow",
-                    "=",
-                    True,
-                    ],
-                limit=5,
+            target="forbes.com",
+            mode="as_is",
+            filters=[
+                "dofollow",
+                "=",
+                True,
+            ],
+            limit=5,
         )]
         )
 except ApiException as e:
@@ -460,16 +460,16 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.anchors_live([BacklinksAnchorsLiveRequestInfo(
-                target="forbes.com",
-                limit=4,
-                order_by=[
-                    "backlinks,desc",
-                    ],
-                filters=[
-                    "anchor",
-                    "like",
-                    "%news%",
-                    ],
+            target="forbes.com",
+            limit=4,
+            order_by=[
+                "backlinks,desc",
+            ],
+            filters=[
+                "anchor",
+                "like",
+                "%news%",
+            ],
         )]
         )
 except ApiException as e:
@@ -526,13 +526,21 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.domain_pages_live([BacklinksDomainPagesLiveRequestInfo(
-                target="forbes.com",
-                limit=5,
-                filters=[
-                    ,
-                    "and",
-                    ,
-                    ],
+            target="forbes.com",
+            limit=5,
+            filters=[
+                [
+                    "page_summary.backlinks",
+                    ">",
+                    5,
+                ],
+                "and",
+                [
+                    "page",
+                    "like",
+                    "%sites%",
+                ],
+            ],
         )]
         )
 except ApiException as e:
@@ -589,11 +597,11 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.domain_pages_summary_live([BacklinksDomainPagesSummaryLiveRequestInfo(
-                target="forbes.com",
-                limit=4,
-                order_by=[
-                    "backlinks,desc",
-                    ],
+            target="forbes.com",
+            limit=4,
+            order_by=[
+                "backlinks,desc",
+            ],
         )]
         )
 except ApiException as e:
@@ -650,22 +658,22 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.referring_domains_live([BacklinksReferringDomainsLiveRequestInfo(
-                target="backlinko.com",
-                limit=5,
-                order_by=[
-                    "rank,desc",
-                    ],
-                exclude_internal_backlinks=True,
-                backlinks_filters=[
-                    "dofollow",
-                    "=",
-                    True,
-                    ],
-                filters=[
-                    "backlinks",
-                    ">",
-                    100,
-                    ],
+            target="backlinko.com",
+            limit=5,
+            order_by=[
+                "rank,desc",
+            ],
+            exclude_internal_backlinks=True,
+            backlinks_filters=[
+                "dofollow",
+                "=",
+                True,
+            ],
+            filters=[
+                "backlinks",
+                ">",
+                100,
+            ],
         )]
         )
 except ApiException as e:
@@ -722,23 +730,23 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.referring_networks_live([BacklinksReferringNetworksLiveRequestInfo(
-                target="backlinko.com",
-                network_address_type="subnet",
-                limit=5,
-                order_by=[
-                    "rank,desc",
-                    ],
-                exclude_internal_backlinks=True,
-                backlinks_filters=[
-                    "dofollow",
-                    "=",
-                    True,
-                    ],
-                filters=[
-                    "backlinks",
-                    ">",
-                    100,
-                    ],
+            target="backlinko.com",
+            network_address_type="subnet",
+            limit=5,
+            order_by=[
+                "rank,desc",
+            ],
+            exclude_internal_backlinks=True,
+            backlinks_filters=[
+                "dofollow",
+                "=",
+                True,
+            ],
+            filters=[
+                "backlinks",
+                ">",
+                100,
+            ],
         )]
         )
 except ApiException as e:
@@ -795,16 +803,16 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.competitors_live([BacklinksCompetitorsLiveRequestInfo(
-                target="dataforseo.com",
-                filters=[
-                    "rank",
-                    ">",
-                    100,
-                    ],
-                order_by=[
-                    "rank,desc",
-                    ],
-                limit=5,
+            target="dataforseo.com",
+            filters=[
+                "rank",
+                ">",
+                100,
+            ],
+            order_by=[
+                "rank,desc",
+            ],
+            limit=5,
         )]
         )
 except ApiException as e:
@@ -861,17 +869,19 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.domain_intersection_live([BacklinksDomainIntersectionLiveRequestInfo(
-                targets={
-                    },
-                include_subdomains=False,
-                exclude_targets=[
-                    "semrush.com",
-                    ],
-                limit=5,
-                order_by=[
-                    "1.backlinks,desc",
-                    ],
-                exclude_internal_backlinks=True,
+            targets={
+                "1": "moz.com",
+                "2": "ahrefs.com",
+            },
+            include_subdomains=False,
+            exclude_targets=[
+                "semrush.com",
+            ],
+            limit=5,
+            order_by=[
+                "1.backlinks,desc",
+            ],
+            exclude_internal_backlinks=True,
         )]
         )
 except ApiException as e:
@@ -928,20 +938,30 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.page_intersection_live([BacklinksPageIntersectionLiveRequestInfo(
-                targets={
-                    },
-                exclude_targets=[
-                    "skysports.com",
-                    ],
-                limit=5,
-                order_by=[
-                    "1.rank,desc",
-                    ],
-                filters=[
-                    ,
-                    "and",
-                    ,
-                    ],
+            targets={
+                "1": "football.com",
+                "2": "fifa.com",
+            },
+            exclude_targets=[
+                "skysports.com",
+            ],
+            limit=5,
+            order_by=[
+                "1.rank,desc",
+            ],
+            filters=[
+                [
+                    "2.domain_from_rank",
+                    ">",
+                    400,
+                ],
+                "and",
+                [
+                    "1.dofollow",
+                    "=",
+                    True,
+                ],
+            ],
         )]
         )
 except ApiException as e:
@@ -998,8 +1018,8 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.timeseries_summary_live([BacklinksTimeseriesSummaryLiveRequestInfo(
-                target="dataforseo.com",
-                group_range="month",
+            target="dataforseo.com",
+            group_range="month",
         )]
         )
 except ApiException as e:
@@ -1056,8 +1076,8 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.timeseries_new_lost_summary_live([BacklinksTimeseriesNewLostSummaryLiveRequestInfo(
-                target="dataforseo.com",
-                group_range="month",
+            target="dataforseo.com",
+            group_range="month",
         )]
         )
 except ApiException as e:
@@ -1114,18 +1134,18 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.bulk_ranks_live([BacklinksBulkRanksLiveRequestInfo(
-                targets=[
-                    "forbes.com",
-                    "cnn.com",
-                    "bbc.com",
-                    "yelp.com",
-                    "https://www.apple.com/iphone/",
-                    "https://ahrefs.com/blog/",
-                    "ibm.com",
-                    "https://variety.com/",
-                    "https://stackoverflow.com/",
-                    "www.trustpilot.com",
-                    ],
+            targets=[
+                "forbes.com",
+                "cnn.com",
+                "bbc.com",
+                "yelp.com",
+                "https://www.apple.com/iphone/",
+                "https://ahrefs.com/blog/",
+                "ibm.com",
+                "https://variety.com/",
+                "https://stackoverflow.com/",
+                "www.trustpilot.com",
+            ],
         )]
         )
 except ApiException as e:
@@ -1182,18 +1202,18 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.bulk_backlinks_live([BacklinksBulkBacklinksLiveRequestInfo(
-                targets=[
-                    "forbes.com",
-                    "cnn.com",
-                    "bbc.com",
-                    "yelp.com",
-                    "https://www.apple.com/iphone/",
-                    "https://ahrefs.com/blog/",
-                    "ibm.com",
-                    "https://variety.com/",
-                    "https://stackoverflow.com/",
-                    "www.trustpilot.com",
-                    ],
+            targets=[
+                "forbes.com",
+                "cnn.com",
+                "bbc.com",
+                "yelp.com",
+                "https://www.apple.com/iphone/",
+                "https://ahrefs.com/blog/",
+                "ibm.com",
+                "https://variety.com/",
+                "https://stackoverflow.com/",
+                "www.trustpilot.com",
+            ],
         )]
         )
 except ApiException as e:
@@ -1250,18 +1270,18 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.bulk_spam_score_live([BacklinksBulkSpamScoreLiveRequestInfo(
-                targets=[
-                    "forbes.com",
-                    "cnn.com",
-                    "bbc.com",
-                    "yelp.com",
-                    "https://www.apple.com/iphone/",
-                    "https://ahrefs.com/blog/",
-                    "ibm.com",
-                    "https://variety.com/",
-                    "https://stackoverflow.com/",
-                    "www.trustpilot.com",
-                    ],
+            targets=[
+                "forbes.com",
+                "cnn.com",
+                "bbc.com",
+                "yelp.com",
+                "https://www.apple.com/iphone/",
+                "https://ahrefs.com/blog/",
+                "ibm.com",
+                "https://variety.com/",
+                "https://stackoverflow.com/",
+                "www.trustpilot.com",
+            ],
         )]
         )
 except ApiException as e:
@@ -1318,18 +1338,18 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.bulk_referring_domains_live([BacklinksBulkReferringDomainsLiveRequestInfo(
-                targets=[
-                    "forbes.com",
-                    "cnn.com",
-                    "bbc.com",
-                    "yelp.com",
-                    "https://www.apple.com/iphone/",
-                    "https://ahrefs.com/blog/",
-                    "ibm.com",
-                    "https://variety.com/",
-                    "https://stackoverflow.com/",
-                    "www.trustpilot.com",
-                    ],
+            targets=[
+                "forbes.com",
+                "cnn.com",
+                "bbc.com",
+                "yelp.com",
+                "https://www.apple.com/iphone/",
+                "https://ahrefs.com/blog/",
+                "ibm.com",
+                "https://variety.com/",
+                "https://stackoverflow.com/",
+                "www.trustpilot.com",
+            ],
         )]
         )
 except ApiException as e:
@@ -1386,18 +1406,18 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.bulk_new_lost_backlinks_live([BacklinksBulkNewLostBacklinksLiveRequestInfo(
-                targets=[
-                    "forbes.com",
-                    "cnn.com",
-                    "bbc.com",
-                    "yelp.com",
-                    "https://www.apple.com/iphone/",
-                    "https://ahrefs.com/blog/",
-                    "ibm.com",
-                    "https://variety.com/",
-                    "https://stackoverflow.com/",
-                    "www.trustpilot.com",
-                    ],
+            targets=[
+                "forbes.com",
+                "cnn.com",
+                "bbc.com",
+                "yelp.com",
+                "https://www.apple.com/iphone/",
+                "https://ahrefs.com/blog/",
+                "ibm.com",
+                "https://variety.com/",
+                "https://stackoverflow.com/",
+                "www.trustpilot.com",
+            ],
         )]
         )
 except ApiException as e:
@@ -1454,18 +1474,18 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.bulk_new_lost_referring_domains_live([BacklinksBulkNewLostReferringDomainsLiveRequestInfo(
-                targets=[
-                    "forbes.com",
-                    "cnn.com",
-                    "bbc.com",
-                    "yelp.com",
-                    "https://www.apple.com/iphone/",
-                    "https://ahrefs.com/blog/",
-                    "ibm.com",
-                    "https://variety.com/",
-                    "https://stackoverflow.com/",
-                    "www.trustpilot.com",
-                    ],
+            targets=[
+                "forbes.com",
+                "cnn.com",
+                "bbc.com",
+                "yelp.com",
+                "https://www.apple.com/iphone/",
+                "https://ahrefs.com/blog/",
+                "ibm.com",
+                "https://variety.com/",
+                "https://stackoverflow.com/",
+                "www.trustpilot.com",
+            ],
         )]
         )
 except ApiException as e:
@@ -1522,10 +1542,10 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.bulk_pages_summary_live([BacklinksBulkPagesSummaryLiveRequestInfo(
-                targets=[
-                    "https://dataforseo.com/solutions",
-                    "https://dataforseo.com/about-us",
-                    ],
+            targets=[
+                "https://dataforseo.com/solutions",
+                "https://dataforseo.com/about-us",
+            ],
         )]
         )
 except ApiException as e:

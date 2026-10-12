@@ -67,8 +67,8 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.merchant_id_list([MerchantIdListRequestInfo(
-                limit=10,
-                include_metadata=True,
+            limit=10,
+            include_metadata=True,
         )]
         )
 except ApiException as e:
@@ -125,9 +125,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.merchant_errors([MerchantErrorsRequestInfo(
-                limit=10,
-                offset=0,
-                filtered_function="pingback_url",
+            limit=10,
+            offset=0,
+            filtered_function="pingback_url",
         )]
         )
 except ApiException as e:
@@ -344,10 +344,10 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.google_products_task_post([MerchantGoogleProductsTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keyword="iphone",
-                price_min=5,
+            language_code="en",
+            location_code=2840,
+            keyword="iphone",
+            price_min=5,
         )]
         )
 except ApiException as e:
@@ -618,9 +618,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.google_sellers_task_post([MerchantGoogleSellersTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                product_id="1113158713975221117",
+            language_code="en",
+            location_code=2840,
+            product_id="1113158713975221117",
         )]
         )
 except ApiException as e:
@@ -784,9 +784,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.google_product_info_task_post([MerchantGoogleProductInfoTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                product_id="1113158713975221117",
+            language_code="en",
+            location_code=2840,
+            product_id="1113158713975221117",
         )]
         )
 except ApiException as e:
@@ -1164,9 +1164,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_products_task_post([MerchantAmazonProductsTaskPostRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                keyword="shoes",
+            language_code="en_US",
+            location_code=2840,
+            keyword="shoes",
         )]
         )
 except ApiException as e:
@@ -1330,9 +1330,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_products_live_advanced([MerchantAmazonProductsLiveAdvancedRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                keyword="shoes",
+            language_code="en_US",
+            location_code=2840,
+            keyword="shoes",
         )]
         )
 except ApiException as e:
@@ -1443,9 +1443,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_products_live_html([MerchantAmazonProductsLiveHtmlRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                keyword="shoes",
+            language_code="en_US",
+            location_code=2840,
+            keyword="shoes",
         )]
         )
 except ApiException as e:
@@ -1502,9 +1502,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_asin_task_post([MerchantAmazonAsinTaskPostRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                asin="B0756FCPPN",
+            language_code="en_US",
+            location_code=2840,
+            asin="B0756FCPPN",
         )]
         )
 except ApiException as e:
@@ -1668,9 +1668,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_asin_live_advanced([MerchantAmazonAsinLiveAdvancedRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                asin="B0756FCPPN",
+            language_code="en_US",
+            location_code=2840,
+            asin="B0756FCPPN",
         )]
         )
 except ApiException as e:
@@ -1781,9 +1781,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_asin_live_html([MerchantAmazonAsinLiveHtmlRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                asin="B0756FCPPN",
+            language_code="en_US",
+            location_code=2840,
+            asin="B0756FCPPN",
         )]
         )
 except ApiException as e:
@@ -1840,9 +1840,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_sellers_task_post([MerchantAmazonSellersTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                asin="B085RFFC9Q",
+            language_code="en",
+            location_code=2840,
+            asin="B085RFFC9Q",
         )]
         )
 except ApiException as e:
@@ -2006,9 +2006,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_sellers_live_advanced([MerchantAmazonSellersLiveAdvancedRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                asin="B07D528W98",
+            language_code="en_US",
+            location_code=2840,
+            asin="B07D528W98",
         )]
         )
 except ApiException as e:
@@ -2119,9 +2119,9 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_sellers_live_html([MerchantAmazonSellersLiveHtmlRequestInfo(
-                language_code="en_US",
-                location_code=2840,
-                asin="B085RFFC9Q",
+            language_code="en_US",
+            location_code=2840,
+            asin="B085RFFC9Q",
         )]
         )
 except ApiException as e:

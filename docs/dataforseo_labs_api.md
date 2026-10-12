@@ -33,6 +33,7 @@ All URIs are relative to *https://api.dataforseo.com*
 [**googleHistoricalSerpsLive**](DataforseoLabsApi.md#googleHistoricalSerpsLive) | **POST**  /v3/dataforseo_labs/google/historical_serps/live  |
 [**googleHistoricalRankOverviewLive**](DataforseoLabsApi.md#googleHistoricalRankOverviewLive) | **POST**  /v3/dataforseo_labs/google/historical_rank_overview/live  |
 [**googlePageIntersectionLive**](DataforseoLabsApi.md#googlePageIntersectionLive) | **POST**  /v3/dataforseo_labs/google/page_intersection/live  |
+[**googleHistoricalSearchVolumeLive**](DataforseoLabsApi.md#googleHistoricalSearchVolumeLive) | **POST**  /v3/dataforseo_labs/google/historical_search_volume/live  |
 [**googleBulkTrafficEstimationLive**](DataforseoLabsApi.md#googleBulkTrafficEstimationLive) | **POST**  /v3/dataforseo_labs/google/bulk_traffic_estimation/live  |
 [**googleHistoricalBulkTrafficEstimationLive**](DataforseoLabsApi.md#googleHistoricalBulkTrafficEstimationLive) | **POST**  /v3/dataforseo_labs/google/historical_bulk_traffic_estimation/live  |
 [**googleHistoricalKeywordDataLive**](DataforseoLabsApi.md#googleHistoricalKeywordDataLive) | **POST**  /v3/dataforseo_labs/google/historical_keyword_data/live  |
@@ -76,8 +77,8 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_id_list([DataforseoLabsIdListRequestInfo(
-                limit=10,
-                include_metadata=True,
+            limit=10,
+            include_metadata=True,
         )]
         )
 except ApiException as e:
@@ -187,7 +188,7 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_errors([DataforseoLabsErrorsRequestInfo(
-                limit=10,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -456,17 +457,17 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_keywords_for_site_live([DataforseoLabsGoogleKeywordsForSiteLiveRequestInfo(
-                target="apple.com",
-                language_code="en",
-                location_code=2840,
-                include_serp_info=True,
-                include_subdomains=True,
-                filters=[
-                    "serp_info.se_results_count",
-                    ">",
-                    0,
-                    ],
-                limit=3,
+            target="apple.com",
+            language_code="en",
+            location_code=2840,
+            include_serp_info=True,
+            include_subdomains=True,
+            filters=[
+                "serp_info.se_results_count",
+                ">",
+                0,
+            ],
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -523,10 +524,10 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_related_keywords_live([DataforseoLabsGoogleRelatedKeywordsLiveRequestInfo(
-                keyword="phone",
-                language_name="English",
-                location_code=2840,
-                limit=3,
+            keyword="phone",
+            language_name="English",
+            location_code=2840,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -583,12 +584,12 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_keyword_suggestions_live([DataforseoLabsGoogleKeywordSuggestionsLiveRequestInfo(
-                keyword="phone",
-                location_code=2840,
-                language_code="en",
-                include_serp_info=True,
-                include_seed_keyword=True,
-                limit=1,
+            keyword="phone",
+            location_code=2840,
+            language_code="en",
+            include_serp_info=True,
+            include_seed_keyword=True,
+            limit=1,
         )]
         )
 except ApiException as e:
@@ -645,14 +646,14 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_keyword_ideas_live([DataforseoLabsGoogleKeywordIdeasLiveRequestInfo(
-                keywords=[
-                    "phone",
-                    "watch",
-                    ],
-                location_code=2840,
-                language_code="en",
-                include_serp_info=True,
-                limit=3,
+            keywords=[
+                "phone",
+                "watch",
+            ],
+            location_code=2840,
+            language_code="en",
+            include_serp_info=True,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -709,13 +710,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_bulk_keyword_difficulty_live([DataforseoLabsGoogleBulkKeywordDifficultyLiveRequestInfo(
-                location_code=2840,
-                language_code="en",
-                keywords=[
-                    "dentist new york",
-                    "pizza brooklyn",
-                    "car dealer los angeles",
-                    ],
+            location_code=2840,
+            language_code="en",
+            keywords=[
+                "dentist new york",
+                "pizza brooklyn",
+                "car dealer los angeles",
+            ],
         )]
         )
 except ApiException as e:
@@ -772,12 +773,12 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_search_intent_live([DataforseoLabsGoogleSearchIntentLiveRequestInfo(
-                keywords=[
-                    "login page",
-                    "audi a7",
-                    "elon musk",
-                    "milk store new york",
-                    ],
+            keywords=[
+                "login page",
+                "audi a7",
+                "elon musk",
+                "milk store new york",
+            ],
         )]
         )
 except ApiException as e:
@@ -887,16 +888,16 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_categories_for_domain_live([DataforseoLabsGoogleCategoriesForDomainLiveRequestInfo(
-                target="dataforseo.com",
-                language_code="en",
-                location_name="United States",
-                item_types=[
-                    "paid",
-                    "organic",
-                    "featured_snippet",
-                    "local_pack",
-                    ],
-                limit=3,
+            target="dataforseo.com",
+            language_code="en",
+            location_name="United States",
+            item_types=[
+                "paid",
+                "organic",
+                "featured_snippet",
+                "local_pack",
+            ],
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -953,12 +954,12 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_categories_for_keywords_live([DataforseoLabsGoogleCategoriesForKeywordsLiveRequestInfo(
-                language_code="en",
-                keywords=[
-                    "dentist new york",
-                    "pizza brooklyn",
-                    "car dealer los angeles",
-                    ],
+            language_code="en",
+            keywords=[
+                "dentist new york",
+                "pizza brooklyn",
+                "car dealer los angeles",
+            ],
         )]
         )
 except ApiException as e:
@@ -1015,14 +1016,14 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_keywords_for_categories_live([DataforseoLabsGoogleKeywordsForCategoriesLiveRequestInfo(
-                category_codes=[
-                    "12191",
-                    "12193",
-                    ],
-                language_name="English",
-                location_code=2840,
-                include_serp_info=True,
-                limit=3,
+            category_codes=[
+                "12191",
+                "12193",
+            ],
+            language_name="English",
+            location_code=2840,
+            include_serp_info=True,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1079,13 +1080,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_domain_metrics_by_categories_live([DataforseoLabsGoogleDomainMetricsByCategoriesLiveRequestInfo(
-                location_code=2840,
-                language_code="en",
-                category_codes=[
-                    "13418",
-                    "11494",
-                    ],
-                limit=3,
+            location_code=2840,
+            language_code="en",
+            category_codes=[
+                "13418",
+                "11494",
+            ],
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1142,9 +1143,9 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_top_searches_live([DataforseoLabsGoogleTopSearchesLiveRequestInfo(
-                language_name="English",
-                location_code=2840,
-                limit=3,
+            language_name="English",
+            location_code=2840,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1201,11 +1202,11 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_ranked_keywords_live([DataforseoLabsGoogleRankedKeywordsLiveRequestInfo(
-                target="dataforseo.com",
-                language_name="English",
-                location_name="United States",
-                load_rank_absolute=True,
-                limit=3,
+            target="dataforseo.com",
+            language_name="English",
+            location_name="United States",
+            load_rank_absolute=True,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1262,15 +1263,15 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_serp_competitors_live([DataforseoLabsGoogleSerpCompetitorsLiveRequestInfo(
-                keywords=[
-                    "phone",
-                    ],
-                language_name="English",
-                location_code=2840,
-                item_types=[
-                    "organic",
-                    ],
-                limit=5,
+            keywords=[
+                "phone",
+            ],
+            language_name="English",
+            location_code=2840,
+            item_types=[
+                "organic",
+            ],
+            limit=5,
         )]
         )
 except ApiException as e:
@@ -1327,15 +1328,15 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_competitors_domain_live([DataforseoLabsGoogleCompetitorsDomainLiveRequestInfo(
-                target="newmouth.com",
-                intersecting_domains=[
-                    "dentaly.org",
-                    "health.com",
-                    "trysnow.com",
-                    ],
-                language_name="English",
-                location_code=2840,
-                limit=3,
+            target="newmouth.com",
+            intersecting_domains=[
+                "dentaly.org",
+                "health.com",
+                "trysnow.com",
+            ],
+            language_name="English",
+            location_code=2840,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1392,12 +1393,12 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_domain_intersection_live([DataforseoLabsGoogleDomainIntersectionLiveRequestInfo(
-                target_1="mom.com",
-                target_2="quora.com",
-                language_code="en",
-                location_code=2840,
-                include_serp_info=True,
-                limit=3,
+            target_1="mom.com",
+            target_2="quora.com",
+            language_code="en",
+            location_code=2840,
+            include_serp_info=True,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1454,14 +1455,22 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_subdomains_live([DataforseoLabsGoogleSubdomainsLiveRequestInfo(
-                target="dataforseo.com",
-                language_name="English",
-                location_code=2840,
-                filters=[
-                    ,
-                    "or",
-                    ,
-                    ],
+            target="dataforseo.com",
+            language_name="English",
+            location_code=2840,
+            filters=[
+                [
+                    "metrics.organic.pos_1",
+                    "<>",
+                    0,
+                ],
+                "or",
+                [
+                    "metrics.organic.pos_2_3",
+                    "<>",
+                    0,
+                ],
+            ],
         )]
         )
 except ApiException as e:
@@ -1518,15 +1527,23 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_relevant_pages_live([DataforseoLabsGoogleRelevantPagesLiveRequestInfo(
-                target="amazon.com",
-                language_name="English",
-                location_code=2840,
-                filters=[
-                    ,
-                    "or",
-                    ,
-                    ],
-                limit=3,
+            target="amazon.com",
+            language_name="English",
+            location_code=2840,
+            filters=[
+                [
+                    "metrics.organic.pos_1",
+                    "<>",
+                    0,
+                ],
+                "or",
+                [
+                    "metrics.organic.pos_2_3",
+                    "<>",
+                    0,
+                ],
+            ],
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1583,9 +1600,9 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_domain_rank_overview_live([DataforseoLabsGoogleDomainRankOverviewLiveRequestInfo(
-                target="dataforseo.com",
-                language_name="English",
-                location_code=2840,
+            target="dataforseo.com",
+            language_name="English",
+            location_code=2840,
         )]
         )
 except ApiException as e:
@@ -1642,9 +1659,9 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_historical_serps_live([DataforseoLabsGoogleHistoricalSerpsLiveRequestInfo(
-                keyword="albert einstein",
-                location_code=2840,
-                language_code="en",
+            keyword="albert einstein",
+            location_code=2840,
+            language_code="en",
         )]
         )
 except ApiException as e:
@@ -1701,9 +1718,9 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_historical_rank_overview_live([DataforseoLabsGoogleHistoricalRankOverviewLiveRequestInfo(
-                target="dataforseo.com",
-                location_code=2840,
-                language_code="en",
+            target="dataforseo.com",
+            location_code=2840,
+            language_code="en",
         )]
         )
 except ApiException as e:
@@ -1760,12 +1777,14 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_page_intersection_live([DataforseoLabsGooglePageIntersectionLiveRequestInfo(
-                pages={
-                    },
-                language_name="English",
-                location_code=2840,
-                include_serp_info=True,
-                limit=3,
+            pages={
+                "1": "https://forbes.com",
+                "2": "https://cnn.com/*",
+            },
+            language_name="English",
+            location_code=2840,
+            include_serp_info=True,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -1783,6 +1802,69 @@ except ApiException as e:
 ### Return type
 
 [**DataforseoLabsGooglePageIntersectionLiveResponseInfo**](DataforseoLabsGooglePageIntersectionLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="googleHistoricalSearchVolumeLive"></a>
+# **googleHistoricalSearchVolumeLive**
+> DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo googleHistoricalSearchVolumeLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.dataforseo_labs_api import DataforseoLabsApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_dataforseo_labs_google_historical_search_volume_live_request_info import List[Optional[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        dataforseo_labs_api = DataforseoLabsApi(api_client)
+
+        response = dataforseo_labs_api.google_historical_search_volume_live([DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo(
+            keywords=[
+                "phone",
+                "watch",
+            ],
+            language_name="English",
+            location_code=2840,
+            include_serp_info=True,
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]]&gt;**](List[Optional[DataforseoLabsGoogleHistoricalSearchVolumeLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo**](DataforseoLabsGoogleHistoricalSearchVolumeLiveResponseInfo.md)
 
 ### Authorization
 
@@ -1822,17 +1904,17 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_bulk_traffic_estimation_live([DataforseoLabsGoogleBulkTrafficEstimationLiveRequestInfo(
-                targets=[
-                    "dataforseo.com",
-                    "cnn.com",
-                    "forbes.com",
-                    ],
-                location_code=2840,
-                language_code="en",
-                item_types=[
-                    "organic",
-                    "paid",
-                    ],
+            targets=[
+                "dataforseo.com",
+                "cnn.com",
+                "forbes.com",
+            ],
+            location_code=2840,
+            language_code="en",
+            item_types=[
+                "organic",
+                "paid",
+            ],
         )]
         )
 except ApiException as e:
@@ -1889,17 +1971,17 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_historical_bulk_traffic_estimation_live([DataforseoLabsGoogleHistoricalBulkTrafficEstimationLiveRequestInfo(
-                targets=[
-                    "dataforseo.com",
-                    "cnn.com",
-                    "forbes.com",
-                    ],
-                location_code=2840,
-                language_code="en",
-                item_types=[
-                    "organic",
-                    "paid",
-                    ],
+            targets=[
+                "dataforseo.com",
+                "cnn.com",
+                "forbes.com",
+            ],
+            location_code=2840,
+            language_code="en",
+            item_types=[
+                "organic",
+                "paid",
+            ],
         )]
         )
 except ApiException as e:
@@ -1956,11 +2038,11 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_historical_keyword_data_live([DataforseoLabsGoogleHistoricalKeywordDataLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keywords=[
-                    "iphone",
-                    ],
+            language_code="en",
+            location_code=2840,
+            keywords=[
+                "iphone",
+            ],
         )]
         )
 except ApiException as e:
@@ -2017,13 +2099,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_keyword_overview_live([DataforseoLabsGoogleKeywordOverviewLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                include_clickstream_data=True,
-                include_serp_info=True,
-                keywords=[
-                    "iphone",
-                    ],
+            language_code="en",
+            location_code=2840,
+            include_clickstream_data=True,
+            include_serp_info=True,
+            keywords=[
+                "iphone",
+            ],
         )]
         )
 except ApiException as e:
@@ -2080,13 +2162,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.amazon_bulk_search_volume_live([DataforseoLabsAmazonBulkSearchVolumeLiveRequestInfo(
-                keywords=[
-                    "buy laptop",
-                    "cheap laptops for sale",
-                    "purchase laptop",
-                    ],
-                location_code=2840,
-                language_code="en",
+            keywords=[
+                "buy laptop",
+                "cheap laptops for sale",
+                "purchase laptop",
+            ],
+            location_code=2840,
+            language_code="en",
         )]
         )
 except ApiException as e:
@@ -2143,11 +2225,11 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.amazon_related_keywords_live([DataforseoLabsAmazonRelatedKeywordsLiveRequestInfo(
-                keyword="computer mouse",
-                language_name="English",
-                location_code=2840,
-                limit=5,
-                include_seed_keyword=True,
+            keyword="computer mouse",
+            language_name="English",
+            location_code=2840,
+            limit=5,
+            include_seed_keyword=True,
         )]
         )
 except ApiException as e:
@@ -2204,9 +2286,9 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.amazon_ranked_keywords_live([DataforseoLabsAmazonRankedKeywordsLiveRequestInfo(
-                asin="B00R92CL5E",
-                location_code=2840,
-                language_code="en",
+            asin="B00R92CL5E",
+            location_code=2840,
+            language_code="en",
         )]
         )
 except ApiException as e:
@@ -2263,12 +2345,12 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.amazon_product_rank_overview_live([DataforseoLabsAmazonProductRankOverviewLiveRequestInfo(
-                asins=[
-                    "B001TJ3HUG",
-                    "B01LW2SL7R",
-                    ],
-                language_name="English",
-                location_code=2840,
+            asins=[
+                "B001TJ3HUG",
+                "B01LW2SL7R",
+            ],
+            language_name="English",
+            location_code=2840,
         )]
         )
 except ApiException as e:
@@ -2325,9 +2407,9 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.amazon_product_competitors_live([DataforseoLabsAmazonProductCompetitorsLiveRequestInfo(
-                asin="019005476X",
-                location_code=2840,
-                language_code="en",
+            asin="019005476X",
+            location_code=2840,
+            language_code="en",
         )]
         )
 except ApiException as e:
@@ -2384,10 +2466,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.amazon_product_keyword_intersections_live([DataforseoLabsAmazonProductKeywordIntersectionsLiveRequestInfo(
-                asins={
-                    },
-                language_name="English",
-                location_code=2840,
+            asins={
+                "1": "B09172433Z",
+                "2": "B07GBZ4Q68",
+                "3": "B07GCKQD77",
+            },
+            language_name="English",
+            location_code=2840,
         )]
         )
 except ApiException as e:
@@ -2444,12 +2529,12 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_bulk_app_metrics_live([DataforseoLabsGoogleBulkAppMetricsLiveRequestInfo(
-                app_ids=[
-                    "org.telegram.messenger",
-                    "com.zhiliaoapp.musically",
-                    ],
-                language_name="English",
-                location_code=2840,
+            app_ids=[
+                "org.telegram.messenger",
+                "com.zhiliaoapp.musically",
+            ],
+            language_name="English",
+            location_code=2840,
         )]
         )
 except ApiException as e:
@@ -2506,10 +2591,10 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_keywords_for_app_live([DataforseoLabsGoogleKeywordsForAppLiveRequestInfo(
-                app_id="org.telegram.messenger",
-                language_name="English",
-                location_code=2840,
-                limit=10,
+            app_id="org.telegram.messenger",
+            language_name="English",
+            location_code=2840,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -2566,10 +2651,10 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_app_competitors_live([DataforseoLabsGoogleAppCompetitorsLiveRequestInfo(
-                app_id="org.telegram.messenger",
-                language_name="English",
-                location_code=2840,
-                limit=10,
+            app_id="org.telegram.messenger",
+            language_name="English",
+            location_code=2840,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -2626,11 +2711,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_app_intersection_live([DataforseoLabsGoogleAppIntersectionLiveRequestInfo(
-                app_ids={
-                    },
-                language_name="English",
-                location_code=2840,
-                limit=10,
+            app_ids={
+                "1": "686449807",
+                "2": "382617920",
+            },
+            language_name="English",
+            location_code=2840,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -2687,12 +2774,12 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.apple_bulk_app_metrics_live([DataforseoLabsAppleBulkAppMetricsLiveRequestInfo(
-                app_ids=[
-                    "686449807",
-                    "382617920",
-                    ],
-                language_name="English",
-                location_code=2840,
+            app_ids=[
+                "686449807",
+                "382617920",
+            ],
+            language_name="English",
+            location_code=2840,
         )]
         )
 except ApiException as e:
@@ -2749,10 +2836,10 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.apple_keywords_for_app_live([DataforseoLabsAppleKeywordsForAppLiveRequestInfo(
-                app_id="686449807",
-                language_name="English",
-                location_code=2840,
-                limit=10,
+            app_id="686449807",
+            language_name="English",
+            location_code=2840,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -2809,10 +2896,10 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.apple_app_competitors_live([DataforseoLabsAppleAppCompetitorsLiveRequestInfo(
-                app_id="686449807",
-                language_name="English",
-                location_code=2840,
-                limit=10,
+            app_id="686449807",
+            language_name="English",
+            location_code=2840,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -2869,11 +2956,13 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.apple_app_intersection_live([DataforseoLabsAppleAppIntersectionLiveRequestInfo(
-                app_ids={
-                    },
-                language_name="English",
-                location_code=2840,
-                limit=10,
+            app_ids={
+                "1": "686449807",
+                "2": "382617920",
+            },
+            language_name="English",
+            location_code=2840,
+            limit=10,
         )]
         )
 except ApiException as e:

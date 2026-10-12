@@ -82,8 +82,8 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_id_list([BusinessDataIdListRequestInfo(
-                limit=10,
-                include_metadata=True,
+            limit=10,
+            include_metadata=True,
         )]
         )
 except ApiException as e:
@@ -140,7 +140,7 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_errors([BusinessDataErrorsRequestInfo(
-                limit=10,
+            limit=10,
         )]
         )
 except ApiException as e:
@@ -356,20 +356,24 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_listings_search_live([BusinessDataBusinessListingsSearchLiveRequestInfo(
-                categories=[
-                    "pizza_restaurant",
-                    ],
-                description="pizza",
-                title="pizza",
-                is_claimed=True,
-                location_coordinate="53.476225,-2.243572,10",
-                order_by=[
-                    "rating.value,desc",
-                    ],
-                filters=[
-                    ,
-                    ],
-                limit=3,
+            categories=[
+                "pizza_restaurant",
+            ],
+            description="pizza",
+            title="pizza",
+            is_claimed=True,
+            location_coordinate="53.476225,-2.243572,10",
+            order_by=[
+                "rating.value,desc",
+            ],
+            filters=[
+                [
+                    "rating.value",
+                    ">",
+                    3,
+                ],
+            ],
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -426,17 +430,21 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_listings_categories_aggregation_live([BusinessDataBusinessListingsCategoriesAggregationLiveRequestInfo(
-                categories=[
-                    "pizza_restaurant",
-                    ],
-                description="pizza",
-                title="pizza",
-                is_claimed=True,
-                location_coordinate="53.476225,-2.243572,10",
-                initial_dataset_filters=[
-                    ,
-                    ],
-                limit=3,
+            categories=[
+                "pizza_restaurant",
+            ],
+            description="pizza",
+            title="pizza",
+            is_claimed=True,
+            location_coordinate="53.476225,-2.243572,10",
+            initial_dataset_filters=[
+                [
+                    "rating.value",
+                    ">",
+                    3,
+                ],
+            ],
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -653,9 +661,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_my_business_info_task_post([BusinessDataGoogleMyBusinessInfoTaskPostRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                keyword="RustyBrick, Inc.",
+            language_code="en",
+            location_name="New York,New York,United States",
+            keyword="RustyBrick, Inc.",
         )]
         )
 except ApiException as e:
@@ -872,9 +880,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_my_business_info_live([BusinessDataGoogleMyBusinessInfoLiveRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                keyword="RustyBrick, Inc.",
+            language_code="en",
+            location_name="New York,New York,United States",
+            keyword="RustyBrick, Inc.",
         )]
         )
 except ApiException as e:
@@ -931,9 +939,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_my_business_updates_task_post([BusinessDataGoogleMyBusinessUpdatesTaskPostRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                keyword="RustyBrick, Inc.",
+            language_code="en",
+            location_name="New York,New York,United States",
+            keyword="RustyBrick, Inc.",
         )]
         )
 except ApiException as e:
@@ -1097,17 +1105,17 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_searches_task_post([BusinessDataGoogleHotelSearchesTaskPostRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                keyword="cheap hotel",
-                currency="USD",
-                adults=2,
-                children=[
-                    "14",
-                    ],
-                sort_by="highest_rating",
-                priority=2,
-                tag="example",
+            language_code="en",
+            location_name="New York,New York,United States",
+            keyword="cheap hotel",
+            currency="USD",
+            adults=2,
+            children=[
+                "14",
+            ],
+            sort_by="highest_rating",
+            priority=2,
+            tag="example",
         )]
         )
 except ApiException as e:
@@ -1271,16 +1279,16 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_searches_live([BusinessDataGoogleHotelSearchesLiveRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                keyword="cheap hotel",
-                currency="USD",
-                adults=2,
-                children=[
-                    "14",
-                    ],
-                sort_by="highest_rating",
-                tag="example",
+            language_code="en",
+            location_name="New York,New York,United States",
+            keyword="cheap hotel",
+            currency="USD",
+            adults=2,
+            children=[
+                "14",
+            ],
+            sort_by="highest_rating",
+            tag="example",
         )]
         )
 except ApiException as e:
@@ -1337,12 +1345,12 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_info_task_post([BusinessDataGoogleHotelInfoTaskPostRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                hotel_identifier="ChYIq6SB--i6p6cpGgovbS8wN2s5ODZfEAE",
-                tag="some_string_123",
-                postback_url="https://your-server.com/postbackscript.php",
-                postback_data="advanced",
+            language_code="en",
+            location_name="New York,New York,United States",
+            hotel_identifier="ChYIq6SB--i6p6cpGgovbS8wN2s5ODZfEAE",
+            tag="some_string_123",
+            postback_url="https://your-server.com/postbackscript.php",
+            postback_data="advanced",
         )]
         )
 except ApiException as e:
@@ -1560,9 +1568,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_info_live_advanced([BusinessDataGoogleHotelInfoLiveAdvancedRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                hotel_identifier="CgoI-KWyzenM_MV3EAE",
+            language_code="en",
+            location_name="New York,New York,United States",
+            hotel_identifier="CgoI-KWyzenM_MV3EAE",
         )]
         )
 except ApiException as e:
@@ -1619,9 +1627,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_hotel_info_live_html([BusinessDataGoogleHotelInfoLiveHtmlRequestInfo(
-                language_code="en",
-                location_name="New York,New York,United States",
-                hotel_identifier="ChYIq6SB--i6p6cpGgovbS8wN2s5ODZfEAE",
+            language_code="en",
+            location_name="New York,New York,United States",
+            hotel_identifier="ChYIq6SB--i6p6cpGgovbS8wN2s5ODZfEAE",
         )]
         )
 except ApiException as e:
@@ -1678,11 +1686,11 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_reviews_task_post([BusinessDataGoogleReviewsTaskPostRequestInfo(
-                location_name="London,England,United Kingdom",
-                language_name="English",
-                keyword="hedonism wines",
-                depth=50,
-                sort_by="highest_rating",
+            location_name="London,England,United Kingdom",
+            language_name="English",
+            keyword="hedonism wines",
+            depth=50,
+            sort_by="highest_rating",
         )]
         )
 except ApiException as e:
@@ -1846,9 +1854,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_extended_reviews_task_post([BusinessDataGoogleExtendedReviewsTaskPostRequestInfo(
-                location_name="London,England,United Kingdom",
-                language_name="english",
-                cid="17626775537598922320",
+            location_name="London,England,United Kingdom",
+            language_name="english",
+            cid="17626775537598922320",
         )]
         )
 except ApiException as e:
@@ -2012,9 +2020,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_questions_and_answers_task_post([BusinessDataGoogleQuestionsAndAnswersTaskPostRequestInfo(
-                language_code="en",
-                location_name="Los Angeles,California,United States",
-                keyword="The Last Bookstore",
+            language_code="en",
+            location_name="Los Angeles,California,United States",
+            keyword="The Last Bookstore",
         )]
         )
 except ApiException as e:
@@ -2178,9 +2186,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.google_questions_and_answers_live([BusinessDataGoogleQuestionsAndAnswersLiveRequestInfo(
-                language_code="en",
-                location_name="Los Angeles,California,United States",
-                keyword="The Last Bookstore",
+            language_code="en",
+            location_name="Los Angeles,California,United States",
+            keyword="The Last Bookstore",
         )]
         )
 except ApiException as e:
@@ -2237,8 +2245,8 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.trustpilot_search_task_post([BusinessDataTrustpilotSearchTaskPostRequestInfo(
-                keyword="pizza restaurant",
-                depth=20,
+            keyword="pizza restaurant",
+            depth=20,
         )]
         )
 except ApiException as e:
@@ -2402,8 +2410,8 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.trustpilot_reviews_task_post([BusinessDataTrustpilotReviewsTaskPostRequestInfo(
-                domain="www.thepearlsource.com",
-                depth=40,
+            domain="www.thepearlsource.com",
+            depth=40,
         )]
         )
 except ApiException as e:
@@ -2727,9 +2735,9 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.tripadvisor_search_task_post([BusinessDataTripadvisorSearchTaskPostRequestInfo(
-                keyword="pizza",
-                location_code=1003854,
-                depth=30,
+            keyword="pizza",
+            location_code=1003854,
+            depth=30,
         )]
         )
 except ApiException as e:
@@ -2893,10 +2901,10 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.tripadvisor_reviews_task_post([BusinessDataTripadvisorReviewsTaskPostRequestInfo(
-                url_path="Hotel_Review-g60763-d23462501-Reviews-Margaritaville_Times_Square-New_York_City_New_York.html",
-                location_code=1003854,
-                pingback_url="https://your-server.com/pingback.php?id=$id&tag=$tag",
-                tag="some_string_123",
+            url_path="Hotel_Review-g60763-d23462501-Reviews-Margaritaville_Times_Square-New_York_City_New_York.html",
+            location_code=1003854,
+            pingback_url="https://your-server.com/pingback.php?id=$id&tag=$tag",
+            tag="some_string_123",
         )]
         )
 except ApiException as e:

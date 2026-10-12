@@ -29,8 +29,6 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
     os: Optional[StrictStr] = Field(default=None, description=r"*device operating system*. optional field. if you specify `desktop` in the `device` field, choose from the following values: `windows`, `macos`. default value: `windows`. if you specify `mobile` in the `device` field, choose from the following values: `android`, `ios`. default value: `android`")
     tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
     location_coordinate: Optional[StrictStr] = Field(default=None, description=r"*GPS coordinates of a location*. **required field if you don't specify** `location_name` or `location_code`. **if you use this field, you don't need to specify `location_name` or `location_code`**. `location_coordinate` parameter should be specified in the *'latitude,longitude,zoom'* format. if *'zoom'* is not specified, *9z* will be applied as a default value. the maximum number of decimal digits for *'latitude'* and *'longitude'*: 7. the minimum value for *'zoom'*: 4z. the maximum value for *'zoom'*: 18z. example:. `52.6178549,-155.352142,18z`")
-    min_rating: Optional[StrictFloat] = Field(default=None, description=r"*filter results by minimum rating*. optional field. possible values for `desktop`: `3.5`, `4`, `4.5`;. possible values for `mobile`: `2`, `2.5`, `3`, `3.5`, `4`, `4.5`")
-    time_filter: Optional[StrictStr] = Field(default=None, description=r"*filter results by open hours*. optional field. using this field, you can filter places in the results by the time a place is open for visitors. note that Google may also provide results that do not match this filter. possible values: `'open_now'`, `'24_hours'`, `'$day_value'`, `'$day_value;$time_value'`;. instead of `$day_value` use one of these values: `'monday'`, `'tuesday'`, `'wednesday'`, `'thursday'`, `'friday'`, `'saturday'`, `'sunday'`;. instead of `$time_value` use one of these values: `'00'`, `'01'`, `'02'`, `'03'`, `'04'`, `'05'`, `'06'`, `'07'`, `'08'`, `'09'`, `'10'`, `'11'`, `'12'`, `'13'`, `'14'`, `'15'`, `'16'`, `'17'`, `'18'`, `'19'`, `'20'`, `'21'`, `'22'`, `'23'`. example: `'tuesday;18'`")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 
@@ -46,8 +44,6 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
         "os", 
         "tag", 
         "location_coordinate", 
-        "min_rating", 
-        "time_filter", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -88,8 +84,6 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
         _dict['os'] = self.os
         _dict['tag'] = self.tag
         _dict['location_coordinate'] = self.location_coordinate
-        _dict['min_rating'] = self.min_rating
-        _dict['time_filter'] = self.time_filter
         return _dict
 
 
@@ -116,8 +110,6 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
             "os": obj.get("os"),
             "tag": obj.get("tag"),
             "location_coordinate": obj.get("location_coordinate"),
-            "min_rating": obj.get("min_rating"),
-            "time_filter": obj.get("time_filter"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

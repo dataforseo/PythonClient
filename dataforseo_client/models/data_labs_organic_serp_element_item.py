@@ -37,10 +37,11 @@ class DataLabsOrganicSerpElementItem(BaseDataforseoLabsApiElementItem):
     is_video: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the element contains a `video`*. **Note:** this check no longer appears in SERP")
     is_featured_snippet: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the element is a `featured_snippet`*. **Note:** this check no longer appears in SERP")
     is_malicious: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the element is marked as malicious*. **Note:** this check no longer appears in SERP")
+    checks: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*array of properties detected for the SERP element*. lists the properties that are true for this element. each value in the array represents a detected property . example:. if `is_image` is present in the array, the element contains an image. possible values in the array:. `is_image`, `is_video`, `is_featured_snippet`, `amp_version`, `is_malicious`, `is_web_story`, `is_highly_cited`. equals `null` if none of the properties are detected for the element. learn more about the `checks` array in [this Help Center article](https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api)")
     description: Optional[StrictStr] = Field(default=None, description=r"*description of the results element in SERP*")
     pre_snippet: Optional[StrictStr] = Field(default=None, description=r"*includes additional information appended before the result description in SERP*")
     extended_snippet: Optional[StrictStr] = Field(default=None, description=r"*includes additional information appended after the result description in SERP*")
-    amp_version: Optional[StrictBool] = Field(default=None, description=r"*Accelerated Mobile Pages*.             indicates whether an item has the Accelerated Mobile Page (AMP) version")
+    amp_version: Optional[StrictBool] = Field(default=None, description=r"*Accelerated Mobile Pages*. indicates whether an item has the Accelerated Mobile Page (AMP) version. **Note:** this check no longer appears in SERP")
     rating: Optional[RatingInfo] = Field(default=None, description=r"*the item's rating*.             the popularity rate based on reviews and displayed in SERP")
     highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*words highlighted in bold within the results `description`*")
     links: Optional[List[Optional[LinkElement]]] = Field(default=None, description=r"*sitelinks*.             the links shown below some of Google's search results.             if there are none, equals `null`")
@@ -69,6 +70,7 @@ class DataLabsOrganicSerpElementItem(BaseDataforseoLabsApiElementItem):
         "is_video", 
         "is_featured_snippet", 
         "is_malicious", 
+        "checks", 
         "description", 
         "pre_snippet", 
         "extended_snippet", 
@@ -126,6 +128,7 @@ class DataLabsOrganicSerpElementItem(BaseDataforseoLabsApiElementItem):
         _dict['is_video'] = self.is_video
         _dict['is_featured_snippet'] = self.is_featured_snippet
         _dict['is_malicious'] = self.is_malicious
+        _dict['checks'] = self.checks
         _dict['description'] = self.description
         _dict['pre_snippet'] = self.pre_snippet
         _dict['extended_snippet'] = self.extended_snippet
@@ -174,6 +177,7 @@ class DataLabsOrganicSerpElementItem(BaseDataforseoLabsApiElementItem):
             "is_video": obj.get("is_video"),
             "is_featured_snippet": obj.get("is_featured_snippet"),
             "is_malicious": obj.get("is_malicious"),
+            "checks": obj.get("checks"),
             "description": obj.get("description"),
             "pre_snippet": obj.get("pre_snippet"),
             "extended_snippet": obj.get("extended_snippet"),

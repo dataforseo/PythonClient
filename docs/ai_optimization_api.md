@@ -243,9 +243,9 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.chat_gpt_llm_scraper_task_post([AiOptimizationChatGptLlmScraperTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keyword="what is chatgpt",
+            language_code="en",
+            location_code=2840,
+            keyword="what is chatgpt",
         )]
         )
 except ApiException as e:
@@ -463,9 +463,9 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.chat_gpt_llm_scraper_live_advanced([AiOptimizationChatGptLlmScraperLiveAdvancedRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keyword="albert einstein",
+            language_code="en",
+            location_code=2840,
+            keyword="albert einstein",
         )]
         )
 except ApiException as e:
@@ -522,9 +522,9 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.chat_gpt_llm_scraper_live_html([AiOptimizationChatGptLlmScraperLiveHtmlRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keyword="albert einstein",
+            language_code="en",
+            location_code=2840,
+            keyword="albert einstein",
         )]
         )
 except ApiException as e:
@@ -634,25 +634,25 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.chat_gpt_llm_responses_live([AiOptimizationChatGptLlmResponsesLiveRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                max_output_tokens=200,
-                temperature=0.3,
-                top_p=0.5,
-                model_name="gpt-4.1-mini",
-                web_search=True,
-                web_search_country_iso_code="FR",
-                web_search_city="Paris",
-                user_prompt="provide information on how relevant the amusement park business is in France now",
+            system_message="communicate as if we are in a business meeting",
+            message_chain=[
+                LlmMessageChainItem(
+                    role="user",
+                    message="Hello, what’s up?",
+                ),
+                LlmMessageChainItem(
+                    role="ai",
+                    message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                ),
+            ],
+            max_output_tokens=200,
+            temperature=0.3,
+            top_p=0.5,
+            model_name="gpt-4.1-mini",
+            web_search=True,
+            web_search_country_iso_code="FR",
+            web_search_city="Paris",
+            user_prompt="provide information on how relevant the amusement park business is in France now",
         )]
         )
 except ApiException as e:
@@ -709,19 +709,19 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.chat_gpt_llm_responses_task_post([AiOptimizationChatGptLlmResponsesTaskPostRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                model_name="gpt-4.1-mini",
-                user_prompt="provide information on how relevant the amusement park business is in France now",
+            system_message="communicate as if we are in a business meeting",
+            message_chain=[
+                LlmMessageChainItem(
+                    role="user",
+                    message="Hello, what’s up?",
+                ),
+                LlmMessageChainItem(
+                    role="ai",
+                    message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                ),
+            ],
+            model_name="gpt-4.1-mini",
+            user_prompt="provide information on how relevant the amusement park business is in France now",
         )]
         )
 except ApiException as e:
@@ -938,23 +938,23 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.claude_llm_responses_live([AiOptimizationClaudeLlmResponsesLiveRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                max_output_tokens=200,
-                model_name="claude-opus-4-0",
-                temperature=0.3,
-                web_search=True,
-                web_search_country_iso_code="FR",
-                user_prompt="provide information on how relevant the amusement park business is in France now",
+            system_message="communicate as if we are in a business meeting",
+            message_chain=[
+                LlmMessageChainItem(
+                    role="user",
+                    message="Hello, what’s up?",
+                ),
+                LlmMessageChainItem(
+                    role="ai",
+                    message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                ),
+            ],
+            max_output_tokens=200,
+            model_name="claude-opus-5",
+            temperature=0.3,
+            web_search=True,
+            web_search_country_iso_code="FR",
+            user_prompt="provide information on how relevant the amusement park business is in France now",
         )]
         )
 except ApiException as e:
@@ -1011,23 +1011,23 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.claude_llm_responses_task_post([AiOptimizationClaudeLlmResponsesTaskPostRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                max_output_tokens=1024,
-                temperature=0.3,
-                web_search_country_iso_code="FR",
-                model_name="claude-sonnet-4-0",
-                web_search=True,
-                user_prompt="provide information on how relevant the amusement park business is in France now",
+            system_message="communicate as if we are in a business meeting",
+            message_chain=[
+                LlmMessageChainItem(
+                    role="user",
+                    message="Hello, what’s up?",
+                ),
+                LlmMessageChainItem(
+                    role="ai",
+                    message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                ),
+            ],
+            max_output_tokens=1024,
+            temperature=0.3,
+            web_search_country_iso_code="FR",
+            model_name="claude-sonnet-5",
+            web_search=True,
+            user_prompt="provide information on how relevant the amusement park business is in France now",
         )]
         )
 except ApiException as e:
@@ -1244,19 +1244,19 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.gemini_llm_responses_task_post([AiOptimizationGeminiLlmResponsesTaskPostRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                model_name="gemini-2.5-flash",
-                user_prompt="provide information on how relevant the amusement park business is in France now",
+            system_message="communicate as if we are in a business meeting",
+            message_chain=[
+                LlmMessageChainItem(
+                    role="user",
+                    message="Hello, what’s up?",
+                ),
+                LlmMessageChainItem(
+                    role="ai",
+                    message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                ),
+            ],
+            model_name="gemini-2.5-flash",
+            user_prompt="provide information on how relevant the amusement park business is in France now",
         )]
         )
 except ApiException as e:
@@ -1420,23 +1420,23 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.gemini_llm_responses_live([AiOptimizationGeminiLlmResponsesLiveRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                max_output_tokens=200,
-                temperature=0.3,
-                top_p=0.5,
-                model_name="gemini-2.5-flash",
-                web_search=True,
-                user_prompt="provide information on how relevant the amusement park business is in France now",
+            system_message="communicate as if we are in a business meeting",
+            message_chain=[
+                LlmMessageChainItem(
+                    role="user",
+                    message="Hello, what’s up?",
+                ),
+                LlmMessageChainItem(
+                    role="ai",
+                    message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                ),
+            ],
+            max_output_tokens=200,
+            temperature=0.3,
+            top_p=0.5,
+            model_name="gemini-2.5-flash",
+            web_search=True,
+            user_prompt="provide information on how relevant the amusement park business is in France now",
         )]
         )
 except ApiException as e:
@@ -1546,23 +1546,23 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.perplexity_llm_responses_live([AiOptimizationPerplexityLlmResponsesLiveRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                max_output_tokens=200,
-                temperature=0.3,
-                top_p=0.5,
-                web_search_country_iso_code="FR",
-                model_name="sonar",
-                user_prompt="provide information on how relevant the amusement park business is in France now",
+            system_message="communicate as if we are in a business meeting",
+            message_chain=[
+                LlmMessageChainItem(
+                    role="user",
+                    message="Hello, what’s up?",
+                ),
+                LlmMessageChainItem(
+                    role="ai",
+                    message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                ),
+            ],
+            max_output_tokens=200,
+            temperature=0.3,
+            top_p=0.5,
+            web_search_country_iso_code="FR",
+            model_name="sonar",
+            user_prompt="provide information on how relevant the amusement park business is in France now",
         )]
         )
 except ApiException as e:
@@ -1725,9 +1725,9 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.gemini_llm_scraper_task_post([AiOptimizationGeminiLlmScraperTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keyword="albert einstein",
+            language_code="en",
+            location_code=2840,
+            keyword="albert einstein",
         )]
         )
 except ApiException as e:
@@ -1945,9 +1945,9 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.gemini_llm_scraper_live_advanced([AiOptimizationGeminiLlmScraperLiveAdvancedRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keyword="albert einstein",
+            language_code="en",
+            location_code=2840,
+            keyword="albert einstein",
         )]
         )
 except ApiException as e:
@@ -2004,9 +2004,9 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.gemini_llm_scraper_live_html([AiOptimizationGeminiLlmScraperLiveHtmlRequestInfo(
-                language_code="en",
-                location_code=2840,
-                keyword="albert einstein",
+            language_code="en",
+            location_code=2840,
+            keyword="albert einstein",
         )]
         )
 except ApiException as e:
@@ -2169,12 +2169,12 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.ai_keyword_data_keywords_search_volume_live([AiOptimizationAiKeywordDataKeywordsSearchVolumeLiveRequestInfo(
-                language_name="English",
-                location_code=2840,
-                keywords=[
-                    "iphone",
-                    "seo",
-                    ],
+            language_name="English",
+            location_code=2840,
+            keywords=[
+                "iphone",
+                "seo",
+            ],
         )]
         )
 except ApiException as e:
@@ -2337,27 +2337,33 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_search_mentions_live([AiOptimizationLlmMentionsSearchMentionsLiveRequestInfo(
-                language_name="English",
-                location_code=2840,
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="dataforseo.com",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
+            language_name="English",
+            location_code=2840,
+            target=[
+                AiOptimizationLLmMentionsDomainElement(
+                    domain="dataforseo.com",
+                    search_filter="exclude",
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                platform="google",
-                filters=[
-                    ,
-                    ],
-                order_by=[
-                    "ai_search_volume,desc",
-                    ],
-                offset=0,
-                limit=3,
+                ),
+            ],
+            platform="google",
+            filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    1000,
+                ],
+            ],
+            order_by=[
+                "ai_search_volume,desc",
+            ],
+            offset=0,
+            limit=3,
         )]
         )
 except ApiException as e:
@@ -2414,23 +2420,29 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_target_metrics_live([AiOptimizationLlmMentionsTargetMetricsLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="en.wikipedia.org",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsDomainElement(
+                    domain="en.wikipedia.org",
+                    search_filter="exclude",
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                initial_dataset_filters=[
-                    ,
-                    ],
-                internal_list_limit=10,
+                ),
+            ],
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            internal_list_limit=10,
         )]
         )
 except ApiException as e:
@@ -2487,31 +2499,52 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_multi_target_metrics_live([AiOptimizationLlmMentionsMultiTargetMetricsLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="google",
-                targets=[
-                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
-                        key="chat_gpt",
-                        target=,
-                    ),
-                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
-                        key="claude",
-                        target=,
-                    ),
-                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
-                        key="gemini",
-                        target=,
-                    ),
-                    AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
-                        key="perplexity",
-                        target=,
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="google",
+            targets=[
+                AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                    key="chat_gpt",
+                    target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="chat gpt",
+                        ),
                     ],
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                    key="claude",
+                    target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="claude",
+                        ),
                     ],
-                internal_list_limit=5,
+                ),
+                AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                    key="gemini",
+                    target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="gemini",
+                        ),
+                    ],
+                ),
+                AiOptimizationLLmMentionsMultiTargetMetricsRequestInfo(
+                    key="perplexity",
+                    target=[
+                        AiOptimizationLLmMentionsKeywordElement(
+                            keyword="perplexity",
+                            search_filter="include",
+                        ),
+                    ],
+                ),
+            ],
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            internal_list_limit=5,
         )]
         )
 except ApiException as e:
@@ -2568,26 +2601,34 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_domains_live([AiOptimizationLlmMentionsTopMentionedDomainsLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                links_scope="sources",
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            links_scope="sources",
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -2644,26 +2685,34 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_pages_live([AiOptimizationLlmMentionsTopMentionedPagesLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                links_scope="sources",
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            links_scope="sources",
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -2720,25 +2769,33 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_brands_live([AiOptimizationLlmMentionsTopMentionedBrandsLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -2795,25 +2852,33 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_brand_categories_live([AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -2870,23 +2935,29 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_target_metrics_lite_live([AiOptimizationLlmMentionsTargetMetricsLiteLiveRequestInfo(
-                language_code="es",
-                location_code=2840,
-                platform="google",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="en.wikipedia.org",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
+            language_code="es",
+            location_code=2840,
+            platform="google",
+            target=[
+                AiOptimizationLLmMentionsDomainElement(
+                    domain="en.wikipedia.org",
+                    search_filter="exclude",
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                initial_dataset_filters=[
-                    ,
-                    ],
-                limit=6,
+                ),
+            ],
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=6,
         )]
         )
 except ApiException as e:
@@ -2943,26 +3014,34 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_domains_lite_live([AiOptimizationLlmMentionsTopMentionedDomainsLiteLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                links_scope="sources",
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            links_scope="sources",
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -3019,26 +3098,34 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_pages_lite_live([AiOptimizationLlmMentionsTopMentionedPagesLiteLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                links_scope="sources",
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            links_scope="sources",
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -3095,25 +3182,33 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_brands_lite_live([AiOptimizationLlmMentionsTopMentionedBrandsLiteLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -3170,25 +3265,33 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_top_mentioned_brand_categories_lite_live([AiOptimizationLlmMentionsTopMentionedBrandCategoriesLiteLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                platform="chat_gpt",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="auto",
-                        search_scope=,
-                        match_type="partial_match",
-                    ),
+            language_code="en",
+            location_code=2840,
+            platform="chat_gpt",
+            target=[
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                initial_dataset_filters=[
-                    ,
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="auto",
+                    match_type="partial_match",
+                    search_scope=[
+                        "question",
                     ],
-                limit=3,
-                internal_list_limit=2,
+                ),
+            ],
+            initial_dataset_filters=[
+                [
+                    "ai_search_volume",
+                    ">",
+                    10,
+                ],
+            ],
+            limit=3,
+            internal_list_limit=2,
         )]
         )
 except ApiException as e:
@@ -3245,19 +3348,21 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_historical_live([AiOptimizationLlmMentionsHistoricalLiveRequestInfo(
-                language_code="es",
-                location_code=2840,
-                platform="google",
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="en.wikipedia.org",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
+            language_code="es",
+            location_code=2840,
+            platform="google",
+            target=[
+                AiOptimizationLLmMentionsDomainElement(
+                    domain="en.wikipedia.org",
+                    search_filter="exclude",
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
+                ),
+            ],
         )]
         )
 except ApiException as e:
@@ -3314,20 +3419,22 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_timeseries_delta_live([AiOptimizationLlmMentionsTimeseriesDeltaLiveRequestInfo(
-                language_name="English",
-                location_code=2840,
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="dataforseo.com",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="bmw",
-                        search_scope=,
-                    ),
+            language_name="English",
+            location_code=2840,
+            target=[
+                AiOptimizationLLmMentionsDomainElement(
+                    domain="dataforseo.com",
+                    search_filter="exclude",
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="bmw",
+                    search_scope=[
+                        "answer",
                     ],
-                platform="google",
-                group_range="month",
+                ),
+            ],
+            platform="google",
+            group_range="month",
         )]
         )
 except ApiException as e:
@@ -3384,20 +3491,22 @@ try:
         ai_optimization_api = AiOptimizationApi(api_client)
 
         response = ai_optimization_api.llm_mentions_timeseries_new_lost_live([AiOptimizationLlmMentionsTimeseriesNewLostLiveRequestInfo(
-                language_name="English",
-                location_code=2840,
-                target=[
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        domain="dataforseo.com",
-                        search_filter="exclude",
-                    ),
-                    BaseAiOptimizationLLmMentionsTargetElement(
-                        keyword="serp",
-                        search_scope=,
-                    ),
+            language_name="English",
+            location_code=2840,
+            target=[
+                AiOptimizationLLmMentionsDomainElement(
+                    domain="dataforseo.com",
+                    search_filter="exclude",
+                ),
+                AiOptimizationLLmMentionsKeywordElement(
+                    keyword="serp",
+                    search_scope=[
+                        "answer",
                     ],
-                platform="google",
-                group_range="month",
+                ),
+            ],
+            platform="google",
+            group_range="month",
         )]
         )
 except ApiException as e:

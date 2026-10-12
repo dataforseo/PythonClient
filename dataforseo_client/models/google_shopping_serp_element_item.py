@@ -37,6 +37,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
     product_id: Optional[StrictStr] = Field(default=None, description=r"*unique product identifier on Google Shopping*. note that there is no full list of possible values as the `product_id` is a dynamic value assigned by Google. if there are no values, you will get `null`. example:. `4485466949985702538`. learn more about the parameter in [this help center guide](https://dataforseo.com/help-center/product-id-google-shopping)")
     data_docid: Optional[StrictStr] = Field(default=None, description=r"*unique identifier of the SERP data element*. note that there is no full list of possible values as the `data_docid` is a dynamic value assigned by Google. example:. `17363035694596624076`")
     seller: Optional[StrictStr] = Field(default=None, description=r"*name of the seller*. the name of the company that placed a corresponding product on Google Shopping")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*additional information about the result*")
     additional_specifications: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"*object containing additional url parameters*. you can get more details about the product by using this object in the POST request to the [Google Shopping Product Specification](/v3/merchant/google/products/task_post/?php) and [Google Shopping Sellers](/v3/merchant/google/sellers/task_post/?php) endpoint")
     reviews_count: Optional[StrictInt] = Field(default=None, description=r"*number of product reviews*. indicates the number of reviews left by users on Google Shopping. if there are no values, you will get `null`")
     is_best_match: Optional[StrictBool] = Field(default=None, description=r"*'best match' label*. if the value is `true`, the product is marked with the 'best match' label. if there are no values, you will get `null`")
@@ -66,6 +67,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
         "product_id", 
         "data_docid", 
         "seller", 
+        "snippet", 
         "additional_specifications", 
         "reviews_count", 
         "is_best_match", 
@@ -120,6 +122,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
         _dict['product_id'] = self.product_id
         _dict['data_docid'] = self.data_docid
         _dict['seller'] = self.seller
+        _dict['snippet'] = self.snippet
         _dict['additional_specifications'] = self.additional_specifications
         _dict['reviews_count'] = self.reviews_count
         _dict['is_best_match'] = self.is_best_match
@@ -160,6 +163,7 @@ class GoogleShoppingSerpElementItem(BaseMerchantGoogleShoppingProductsElementIte
             "product_id": obj.get("product_id"),
             "data_docid": obj.get("data_docid"),
             "seller": obj.get("seller"),
+            "snippet": obj.get("snippet"),
             "additional_specifications": obj.get("additional_specifications"),
             "reviews_count": obj.get("reviews_count"),
             "is_best_match": obj.get("is_best_match"),

@@ -23,6 +23,7 @@ class GoogleShoppingCarouselElement(BaseModel):
     title: Optional[StrictStr] = Field(default=None, description=r"*product title*")
     tags: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*tags assigned to the product*")
     seller: Optional[StrictStr] = Field(default=None, description=r"*name of the seller*. the name of the company that placed a corresponding product on Google Shopping")
+    snippet: Optional[StrictStr] = Field(default=None, description=r"*additional information about the result*")
     price: Optional[StrictFloat] = Field(default=None, description=r"*product price*. example:. `384.99`")
     currency: Optional[StrictStr] = Field(default=None, description=r"*currency in the [ISO](https://en.wikipedia.org/wiki/ISO_4217) format*. example:. `USD`")
     product_rating: Optional[RatingElement] = Field(default=None, description=r"*product rating*. the product popularity rate based on product reviews")
@@ -39,6 +40,7 @@ class GoogleShoppingCarouselElement(BaseModel):
         "title", 
         "tags", 
         "seller", 
+        "snippet", 
         "price", 
         "currency", 
         "product_rating", 
@@ -80,6 +82,7 @@ class GoogleShoppingCarouselElement(BaseModel):
         _dict['title'] = self.title
         _dict['tags'] = self.tags
         _dict['seller'] = self.seller
+        _dict['snippet'] = self.snippet
         _dict['price'] = self.price
         _dict['currency'] = self.currency
         _dict['product_rating'] = self.product_rating.to_dict() if self.product_rating else None
@@ -107,6 +110,7 @@ class GoogleShoppingCarouselElement(BaseModel):
             "title": obj.get("title"),
             "tags": obj.get("tags"),
             "seller": obj.get("seller"),
+            "snippet": obj.get("snippet"),
             "price": obj.get("price"),
             "currency": obj.get("currency"),
             "product_rating": RatingElement.from_dict(obj["product_rating"]) if obj.get("product_rating") is not None else None,

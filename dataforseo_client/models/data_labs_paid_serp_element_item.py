@@ -26,23 +26,24 @@ class DataLabsPaidSerpElementItem(BaseDataforseoLabsApiElementItem):
     rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*.             absolute position among all the elements in SERP")
     position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*.             can take the following values:.             `left`, `right`")
     xpath: Optional[StrictStr] = Field(default=None, description=r"*the [XPath](https://en.wikipedia.org/wiki/XPath) of the element*")
-    title: Optional[StrictStr] = Field(default=None, description=r"*title of the result in SERP*")
-    domain: Optional[StrictStr] = Field(default=None, description=r"*subdomain in SERP*")
-    description: Optional[StrictStr] = Field(default=None, description=r"*description of the results element in SERP*")
-    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"*breadcrumb in SERP*")
-    url: Optional[StrictStr] = Field(default=None, description=r"*relevant URL in SERP*")
-    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*words highlighted in bold within the results `description`*")
+    title: Optional[StrictStr] = Field(default=None, description=r"title of the result in SERP")
+    domain: Optional[StrictStr] = Field(default=None, description=r"subdomain in SERP")
+    description: Optional[StrictStr] = Field(default=None, description=r"description of the results element in SERP")
+    breadcrumb: Optional[StrictStr] = Field(default=None, description=r"breadcrumb in SERP")
+    url: Optional[StrictStr] = Field(default=None, description=r"relevant URL in SERP")
+    checks: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"array of properties detected for the SERP elementlists the properties that are true for this elementeach value in the array represents a detected property example:if is_image is present in the array, the element contains an imagepossible values in the array:is_image, is_video, is_featured_snippet, amp_version, is_malicious, is_web_story, is_highly_citedequals null if none of the properties are detected for the elementlearn more about the checks array in this Help Center article")
+    highlighted: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"words highlighted in bold within the results description")
     extra: Optional[Dict[str, Optional[StrictStr]]] = Field(default=None, description=r"")
-    description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*extended description*.             if there is none, equals `null`")
-    links: Optional[List[Optional[AdLinkElement]]] = Field(default=None, description=r"*sitelinks*.             the links shown below some of Google's search results.             if there are none, equals `null`")
-    main_domain: Optional[StrictStr] = Field(default=None, description=r"*primary domain name in SERP*")
-    relative_url: Optional[StrictStr] = Field(default=None, description=r"*URL in SERP that does not specify the HTTPs protocol and domain name*")
-    etv: Optional[StrictFloat] = Field(default=None, description=r"*estimated traffic volume*.             estimated organic monthly traffic to the domain or webpage;.             calculated as the product of CTR (click-through-rate) and search volume values of all keywords the domain or webpage rank for;.             learn more about how the metric is calculated in [this help center article](https://dataforseo.com/help-center/how-is-etv-calculated)")
-    estimated_paid_traffic_cost: Optional[StrictFloat] = Field(default=None, description=r"*estimated cost of converting organic search traffic into paid*.             represents the estimated monthly cost of running ads for all keywords that a domain or webpage ranks for;.             the metric is calculated as the product of organic `etv` and paid `cpc` values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search;.             learn more about how the metric is calculated in [this help center article](https://dataforseo.com/help-center/how-is-traffic-cost-calculated)")
-    clickstream_etv: Optional[StrictFloat] = Field(default=None, description=r"*estimated traffic volume based on clickstream data*.             calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain or webpage ranks for;.             to retrieve results for this field, the parameter `include_clickstream_data` must be set to `true`;.             learn more about how the metric is calculated in this [help center article](https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated)")
-    rank_changes: Optional[RankChanges] = Field(default=None, description=r"*changes in rankings*.             contains information about the ranking changes of the SERP element since the `previous_updated_time`")
-    backlinks_info: Optional[BacklinksInfo] = Field(default=None, description=r"*backlinks information for the relevant page URL*")
-    rank_info: Optional[RankInfo] = Field(default=None, description=r"*page and domain rank information*")
+    description_rows: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"extended description            if there is none, equals null")
+    links: Optional[List[Optional[AdLinkElement]]] = Field(default=None, description=r"sitelinks            the links shown below some of Google's search results            if there are none, equals null")
+    main_domain: Optional[StrictStr] = Field(default=None, description=r"primary domain name in SERP")
+    relative_url: Optional[StrictStr] = Field(default=None, description=r"URL in SERP that does not specify the HTTPs protocol and domain name")
+    etv: Optional[StrictFloat] = Field(default=None, description=r"estimated traffic volume            estimated organic monthly traffic to the domain            calculated as the product of CTR (click-through-rate) and search volume values of the returned keyword            learn more about how the metric is calculated in this help center article")
+    estimated_paid_traffic_cost: Optional[StrictFloat] = Field(default=None, description=r"estimated cost of paid monthly search traffic            represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values            learn more about how the metric is calculated in this help center article")
+    clickstream_etv: Optional[StrictFloat] = Field(default=None, description=r"estimated traffic volume based on clickstream data            calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for            to retrieve results for this field, the parameter include_clickstream_data must be set to true            learn more about how the metric is calculated in this help center article")
+    rank_changes: Optional[RankChanges] = Field(default=None, description=r"changes in rankings            contains information about the ranking changes of the SERP element since the previous_updated_time")
+    backlinks_info: Optional[BacklinksInfo] = Field(default=None, description=r"backlinks information for the ranked website")
+    rank_info: Optional[RankInfo] = Field(default=None, description=r"page and domain rank information")
     __properties: ClassVar[List[str]] = [
         "type", 
         "se_type", 
@@ -55,6 +56,7 @@ class DataLabsPaidSerpElementItem(BaseDataforseoLabsApiElementItem):
         "description", 
         "breadcrumb", 
         "url", 
+        "checks", 
         "highlighted", 
         "extra", 
         "description_rows", 
@@ -104,6 +106,7 @@ class DataLabsPaidSerpElementItem(BaseDataforseoLabsApiElementItem):
         _dict['description'] = self.description
         _dict['breadcrumb'] = self.breadcrumb
         _dict['url'] = self.url
+        _dict['checks'] = self.checks
         _dict['highlighted'] = self.highlighted
         _dict['extra'] = self.extra
         _dict['description_rows'] = self.description_rows
@@ -144,6 +147,7 @@ class DataLabsPaidSerpElementItem(BaseDataforseoLabsApiElementItem):
             "description": obj.get("description"),
             "breadcrumb": obj.get("breadcrumb"),
             "url": obj.get("url"),
+            "checks": obj.get("checks"),
             "highlighted": obj.get("highlighted"),
             "extra": obj.get("extra"),
             "description_rows": obj.get("description_rows"),

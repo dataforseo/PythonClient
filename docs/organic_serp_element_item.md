@@ -15,7 +15,7 @@
 **cache_url** | **StrictStr** | <em>cached version of the page</em> |[optional]|
 **related_search_url** | **StrictStr** | <em>URL to a similar search</em><br>URL to a new search for the same keyword(s) <a href='https://support.google.com/websearch/answer/2466433?hl=en#:~:text=Search%20for%20related%20sites'>on related sites</a> |[optional]|
 **website_name** | **StrictStr** | <em>name of the website in SERP</em> |[optional]|
-**is_image** | **StrictBool** | <em>indicates whether the element contains an_<code class='prettyprint'>image</code></em><br><strong>Note:</strong> this check no longer appears in SERPn |[optional]|
+**is_image** | **StrictBool** | <em>indicates whether the element contains an_<code class='prettyprint'>image</code></em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
 **is_video** | **StrictBool** | <em>indicates whether the element contains a <code class='prettyprint'>video</code></em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
 **is_featured_snippet** | **StrictBool** | <em>indicates whether the element is a <code class='prettyprint'>featured_snippet</code></em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
 **is_malicious** | **StrictBool** | <em>indicates whether the element is marked as malicious</em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
@@ -24,7 +24,7 @@
 **pre_snippet** | **StrictStr** | <em>includes additional information appended before the result description in SERP</em> |[optional]|
 **extended_snippet** | **StrictStr** | <em>includes additional information appended after the result description in SERP</em> |[optional]|
 **images** | **List[Optional[AiModeImagesElementInfo]]** | <em>images of the element</em><br>if there are none, equals <code>null</code> |[optional]|
-**amp_version** | **StrictBool** | <em>Accelerated Mobile Pages</em><br>indicates whether an item has the Accelerated Mobile Page (AMP) version |[optional]|
+**amp_version** | **StrictBool** | <em>Accelerated Mobile Pages</em><br>indicates whether an item has the Accelerated Mobile Page (AMP) version<br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
 **rating** | **RatingInfo** | <em>the item's rating </em><br>the popularity rate based on reviews and displayed in SERP<br>if there is none, equals <code>null</code> |[optional]|
 **price** | **PriceInfo** | <em>pricing details</em><br>contains the pricing details of the product or service featured in the result;<br>if there is none, equals <code>null</code> |[optional]|
 **highlighted** | **List[Optional[StrictStr]]** | <em>words highlighted in bold within the results <code>description</code></em> |[optional]|

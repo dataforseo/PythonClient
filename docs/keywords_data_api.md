@@ -99,8 +99,8 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
-                limit=10,
-                include_metadata=True,
+            limit=10,
+            include_metadata=True,
         )]
         )
 except ApiException as e:
@@ -157,9 +157,9 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_errors([KeywordsDataErrorsRequestInfo(
-                limit=10,
-                offset=0,
-                filtered_function="pingback_url",
+            limit=10,
+            offset=0,
+            filtered_function="pingback_url",
         )]
         )
 except ApiException as e:
@@ -429,12 +429,12 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_search_volume_task_post([KeywordsDataGoogleAdsSearchVolumeTaskPostRequestInfo(
-                location_name="United States",
-                keywords=[
-                    "buy laptop",
-                    "cheap laptops for sale",
-                    "purchase laptop",
-                    ],
+            location_name="United States",
+            keywords=[
+                "buy laptop",
+                "cheap laptops for sale",
+                "purchase laptop",
+            ],
         )]
         )
 except ApiException as e:
@@ -598,13 +598,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_search_volume_live([KeywordsDataGoogleAdsSearchVolumeLiveRequestInfo(
-                location_code=2840,
-                keywords=[
-                    "buy laptop",
-                    "cheap laptops for sale",
-                    "purchase laptop",
-                    ],
-                search_partners=True,
+            location_code=2840,
+            keywords=[
+                "buy laptop",
+                "cheap laptops for sale",
+                "purchase laptop",
+            ],
+            search_partners=True,
         )]
         )
 except ApiException as e:
@@ -661,8 +661,8 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_site_task_post([KeywordsDataGoogleAdsKeywordsForSiteTaskPostRequestInfo(
-                location_code=2840,
-                target="dataforseo.com",
+            location_code=2840,
+            target="dataforseo.com",
         )]
         )
 except ApiException as e:
@@ -826,8 +826,8 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_site_live([KeywordsDataGoogleAdsKeywordsForSiteLiveRequestInfo(
-                location_code=2840,
-                target="dataforseo.com",
+            location_code=2840,
+            target="dataforseo.com",
         )]
         )
 except ApiException as e:
@@ -884,11 +884,11 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_keywords_task_post([KeywordsDataGoogleAdsKeywordsForKeywordsTaskPostRequestInfo(
-                location_code=2840,
-                keywords=[
-                    "phone",
-                    "cellphone",
-                    ],
+            location_code=2840,
+            keywords=[
+                "phone",
+                "cellphone",
+            ],
         )]
         )
 except ApiException as e:
@@ -1052,11 +1052,11 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_keywords_for_keywords_live([KeywordsDataGoogleAdsKeywordsForKeywordsLiveRequestInfo(
-                location_code=2840,
-                keywords=[
-                    "phone",
-                    "cellphone",
-                    ],
+            location_code=2840,
+            keywords=[
+                "phone",
+                "cellphone",
+            ],
         )]
         )
 except ApiException as e:
@@ -1113,13 +1113,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_task_post([KeywordsDataGoogleAdsAdTrafficByKeywordsTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                bid=999,
-                match="exact",
-                keywords=[
-                    "seo marketing",
-                    ],
+            language_code="en",
+            location_code=2840,
+            bid=999,
+            match="exact",
+            keywords=[
+                "seo marketing",
+            ],
         )]
         )
 except ApiException as e:
@@ -1283,13 +1283,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_ads_ad_traffic_by_keywords_live([KeywordsDataGoogleAdsAdTrafficByKeywordsLiveRequestInfo(
-                location_code=2840,
-                language_code="en",
-                bid=999,
-                match="exact",
-                keywords=[
-                    "seo marketing",
-                    ],
+            location_code=2840,
+            language_code="en",
+            bid=999,
+            match="exact",
+            keywords=[
+                "seo marketing",
+            ],
         )]
         )
 except ApiException as e:
@@ -1559,12 +1559,12 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_trends_explore_task_post([KeywordsDataGoogleTrendsExploreTaskPostRequestInfo(
-                type="youtube",
-                category_code=3,
-                keywords=[
-                    "seo api",
-                    "rank api",
-                    ],
+            type="youtube",
+            category_code=3,
+            keywords=[
+                "seo api",
+                "rank api",
+            ],
         )]
         )
 except ApiException as e:
@@ -1728,13 +1728,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_trends_explore_live([KeywordsDataGoogleTrendsExploreLiveRequestInfo(
-                location_name="United States",
-                type="youtube",
-                category_code=3,
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
+            location_name="United States",
+            type="youtube",
+            category_code=3,
+            keywords=[
+                "rugby",
+                "cricket",
+            ],
         )]
         )
 except ApiException as e:
@@ -1898,11 +1898,11 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_explore_live([KeywordsDataDataforseoTrendsExploreLiveRequestInfo(
-                keywords=[
-                    "iphone 14",
-                    "samsung s23",
-                    ],
-                location_code=2840,
+            keywords=[
+                "iphone 14",
+                "samsung s23",
+            ],
+            location_code=2840,
         )]
         )
 except ApiException as e:
@@ -1959,12 +1959,12 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_subregion_interests_live([KeywordsDataDataforseoTrendsSubregionInterestsLiveRequestInfo(
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
-                type="web",
-                location_name="United States",
+            keywords=[
+                "rugby",
+                "cricket",
+            ],
+            type="web",
+            location_name="United States",
         )]
         )
 except ApiException as e:
@@ -2021,12 +2021,12 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_demography_live([KeywordsDataDataforseoTrendsDemographyLiveRequestInfo(
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
-                type="web",
-                location_name="United States",
+            keywords=[
+                "rugby",
+                "cricket",
+            ],
+            type="web",
+            location_name="United States",
         )]
         )
 except ApiException as e:
@@ -2083,12 +2083,12 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.dataforseo_trends_merged_data_live([KeywordsDataDataforseoTrendsMergedDataLiveRequestInfo(
-                keywords=[
-                    "rugby",
-                    "cricket",
-                    ],
-                type="web",
-                location_name="United States",
+            keywords=[
+                "rugby",
+                "cricket",
+            ],
+            type="web",
+            location_name="United States",
         )]
         )
 except ApiException as e:
@@ -2251,13 +2251,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_task_post([KeywordsDataBingSearchVolumeTaskPostRequestInfo(
-                location_name="United States",
-                language_name="English",
-                keywords=[
-                    "average page rpm adsense",
-                    "adsense blank ads how long",
-                    "leads and prospects",
-                    ],
+            location_name="United States",
+            language_name="English",
+            keywords=[
+                "average page rpm adsense",
+                "adsense blank ads how long",
+                "leads and prospects",
+            ],
         )]
         )
 except ApiException as e:
@@ -2421,13 +2421,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_live([KeywordsDataBingSearchVolumeLiveRequestInfo(
-                location_name="United States",
-                language_code="en",
-                keywords=[
-                    "tom and jerry",
-                    "silicon valley",
-                    "spider man",
-                    ],
+            location_name="United States",
+            language_code="en",
+            keywords=[
+                "tom and jerry",
+                "silicon valley",
+                "spider man",
+            ],
         )]
         )
 except ApiException as e:
@@ -2590,24 +2590,24 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_audience_estimation_task_post([KeywordsDataBingAudienceEstimationTaskPostRequestInfo(
-                location_coordinate="29.6821525,-82.4098881,100",
-                age=[
-                    "twenty_five_to_thirty_four",
-                    "eighteen_to_twenty_four",
-                    "unknown",
-                    ],
-                bid=1,
-                daily_budget=24,
-                gender=[
-                    "male",
-                    ],
-                industry=[
-                    "806303407",
-                    "806301758",
-                    ],
-                job_function=[
-                    "806298607",
-                    ],
+            location_coordinate="29.6821525,-82.4098881,100",
+            age=[
+                "twenty_five_to_thirty_four",
+                "eighteen_to_twenty_four",
+                "unknown",
+            ],
+            bid=1,
+            daily_budget=24,
+            gender=[
+                "male",
+            ],
+            industry=[
+                "806303407",
+                "806301758",
+            ],
+            job_function=[
+                "806298607",
+            ],
         )]
         )
 except ApiException as e:
@@ -2771,24 +2771,24 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_audience_estimation_live([KeywordsDataBingAudienceEstimationLiveRequestInfo(
-                location_coordinate="29.6821525,-82.4098881,100",
-                age=[
-                    "twenty_five_to_thirty_four",
-                    "eighteen_to_twenty_four",
-                    "unknown",
-                    ],
-                bid=1,
-                daily_budget=24,
-                gender=[
-                    "male",
-                    ],
-                industry=[
-                    "806303407",
-                    "806301758",
-                    ],
-                job_function=[
-                    "806298607",
-                    ],
+            location_coordinate="29.6821525,-82.4098881,100",
+            age=[
+                "twenty_five_to_thirty_four",
+                "eighteen_to_twenty_four",
+                "unknown",
+            ],
+            bid=1,
+            daily_budget=24,
+            gender=[
+                "male",
+            ],
+            industry=[
+                "806303407",
+                "806301758",
+            ],
+            job_function=[
+                "806298607",
+            ],
         )]
         )
 except ApiException as e:
@@ -2845,9 +2845,9 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_site_task_post([KeywordsDataBingKeywordsForSiteTaskPostRequestInfo(
-                language_code="en",
-                location_code=2840,
-                target="dataforseo.com",
+            language_code="en",
+            location_code=2840,
+            target="dataforseo.com",
         )]
         )
 except ApiException as e:
@@ -3011,9 +3011,9 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_site_live([KeywordsDataBingKeywordsForSiteLiveRequestInfo(
-                language_code="en",
-                location_code=2840,
-                target="dataforseo.com",
+            language_code="en",
+            location_code=2840,
+            target="dataforseo.com",
         )]
         )
 except ApiException as e:
@@ -3070,13 +3070,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_keywords_task_post([KeywordsDataBingKeywordsForKeywordsTaskPostRequestInfo(
-                location_code=2840,
-                language_code="en",
-                keywords=[
-                    "average page rpm adsense",
-                    "adsense blank ads how long",
-                    "leads and prospects",
-                    ],
+            location_code=2840,
+            language_code="en",
+            keywords=[
+                "average page rpm adsense",
+                "adsense blank ads how long",
+                "leads and prospects",
+            ],
         )]
         )
 except ApiException as e:
@@ -3240,13 +3240,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keywords_for_keywords_live([KeywordsDataBingKeywordsForKeywordsLiveRequestInfo(
-                location_name="United States",
-                language_name="English",
-                keywords=[
-                    "average page rpm adsense",
-                    "adsense blank ads how long",
-                    "leads and prospects",
-                    ],
+            location_name="United States",
+            language_name="English",
+            keywords=[
+                "average page rpm adsense",
+                "adsense blank ads how long",
+                "leads and prospects",
+            ],
         )]
         )
 except ApiException as e:
@@ -3356,13 +3356,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keyword_performance_task_post([KeywordsDataBingKeywordPerformanceTaskPostRequestInfo(
-                location_code=2840,
-                language_code="en",
-                keywords=[
-                    "dataforseo",
-                    "seo",
-                    "ranking",
-                    ],
+            location_code=2840,
+            language_code="en",
+            keywords=[
+                "dataforseo",
+                "seo",
+                "ranking",
+            ],
         )]
         )
 except ApiException as e:
@@ -3526,13 +3526,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_keyword_performance_live([KeywordsDataBingKeywordPerformanceLiveRequestInfo(
-                location_code=2840,
-                language_code="en",
-                keywords=[
-                    "dataforseo",
-                    "seo",
-                    "ranking",
-                    ],
+            location_code=2840,
+            language_code="en",
+            keywords=[
+                "dataforseo",
+                "seo",
+                "ranking",
+            ],
         )]
         )
 except ApiException as e:
@@ -3642,11 +3642,11 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_history_task_post([KeywordsDataBingSearchVolumeHistoryTaskPostRequestInfo(
-                location_code=2840,
-                language_code="en",
-                keywords=[
-                    "10 minute timer",
-                    ],
+            location_code=2840,
+            language_code="en",
+            keywords=[
+                "10 minute timer",
+            ],
         )]
         )
 except ApiException as e:
@@ -3810,11 +3810,11 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.bing_search_volume_history_live([KeywordsDataBingSearchVolumeHistoryLiveRequestInfo(
-                location_code=2840,
-                language_code="en",
-                keywords=[
-                    "10 minute timer",
-                    ],
+            location_code=2840,
+            language_code="en",
+            keywords=[
+                "10 minute timer",
+            ],
         )]
         )
 except ApiException as e:
@@ -3924,14 +3924,14 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.clickstream_data_dataforseo_search_volume_live([KeywordsDataClickstreamDataDataforseoSearchVolumeLiveRequestInfo(
-                location_code=2840,
-                language_code="en",
-                tag="test-tag",
-                keywords=[
-                    "you tube",
-                    "youtube",
-                    "youtub",
-                    ],
+            location_code=2840,
+            language_code="en",
+            tag="test-tag",
+            keywords=[
+                "you tube",
+                "youtube",
+                "youtub",
+            ],
         )]
         )
 except ApiException as e:
@@ -3988,12 +3988,12 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.clickstream_data_global_search_volume_live([KeywordsDataClickstreamDataGlobalSearchVolumeLiveRequestInfo(
-                tag="test-tag",
-                keywords=[
-                    "you tube",
-                    "youtube",
-                    "youtub",
-                    ],
+            tag="test-tag",
+            keywords=[
+                "you tube",
+                "youtube",
+                "youtub",
+            ],
         )]
         )
 except ApiException as e:
@@ -4050,13 +4050,13 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.clickstream_data_bulk_search_volume_live([KeywordsDataClickstreamDataBulkSearchVolumeLiveRequestInfo(
-                location_code=2840,
-                tag="test-tag",
-                keywords=[
-                    "you tube",
-                    "youtube",
-                    "youtub",
-                    ],
+            location_code=2840,
+            tag="test-tag",
+            keywords=[
+                "you tube",
+                "youtube",
+                "youtub",
+            ],
         )]
         )
 except ApiException as e:
