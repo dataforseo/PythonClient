@@ -23,8 +23,8 @@ class BaseGeminiLlmScraperElementItem(BaseModel):
     BaseGeminiLlmScraperElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements in SERP")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in Gemini result*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in a Gemini result*. absolute position among all the elements in a Gemini result")
     markdown: Optional[StrictStr] = Field(default=None, description=r"*content of the element in markdown format*. content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
     __properties: ClassVar[List[str]] = [
         "type", 

@@ -19,7 +19,7 @@ class SerpApiAiModeAiOverviewPaidItem(BaseSerpApiAiModeAiOverviewElementItem):
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     position: Optional[StrictStr] = Field(default=None, description=r"*the alignment of the element in SERP*. can take the following values:. `left`, `right`")
-    text: Optional[StrictStr] = Field(default=None, description=r"*introductory text of the element in the response*. text preceding the paid ad items")
+    text: Optional[StrictStr] = Field(default=None, description=r"*content of the code block*. contains the code returned in the AI Mode response")
     markdown: Optional[StrictStr] = Field(default=None, description=r"*content of the element in markdown format*. the text of the `ai_overview_paid` formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
     items: Optional[List[Optional[AiModeAiOverviewPaidElementInfo]]] = Field(default=None, description=r"*elements of search results found in SERP*")
     __properties: ClassVar[List[str]] = [

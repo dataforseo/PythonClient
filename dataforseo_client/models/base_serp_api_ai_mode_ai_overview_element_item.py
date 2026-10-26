@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_expanded_element_item import SerpApiAiModeAiOverviewExpandedElementItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_video_element_item import SerpApiAiModeAiOverviewVideoElementItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_table_element_item import SerpApiAiModeAiOverviewTableElementItem;
+    from dataforseo_client.models.serp_api_ai_mode_ai_overview_code_block_element_item import SerpApiAiModeAiOverviewCodeBlockElementItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_shopping_item import SerpApiAiModeAiOverviewShoppingItem;
     from dataforseo_client.models.serp_api_ai_mode_ai_overview_paid_item import SerpApiAiModeAiOverviewPaidItem;
 
@@ -37,6 +38,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
         'ai_overview_expanded_element': 'SerpApiAiModeAiOverviewExpandedElementItem',
         'ai_overview_video_element': 'SerpApiAiModeAiOverviewVideoElementItem',
         'ai_overview_table_element': 'SerpApiAiModeAiOverviewTableElementItem',
+        'ai_overview_code_block_element': 'SerpApiAiModeAiOverviewCodeBlockElementItem',
         'ai_overview_shopping': 'SerpApiAiModeAiOverviewShoppingItem',
         'ai_overview_paid': 'SerpApiAiModeAiOverviewPaidItem',
     }
@@ -84,6 +86,7 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
         SerpApiAiModeAiOverviewExpandedElementItem, 
         SerpApiAiModeAiOverviewVideoElementItem, 
         SerpApiAiModeAiOverviewTableElementItem, 
+        SerpApiAiModeAiOverviewCodeBlockElementItem, 
         SerpApiAiModeAiOverviewShoppingItem, 
         SerpApiAiModeAiOverviewPaidItem
     ]]:
@@ -98,6 +101,8 @@ class BaseSerpApiAiModeAiOverviewElementItem(BaseModel):
             return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_video_element_item").SerpApiAiModeAiOverviewVideoElementItem.from_dict(obj)
         if object_type == 'SerpApiAiModeAiOverviewTableElementItem':
             return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_table_element_item").SerpApiAiModeAiOverviewTableElementItem.from_dict(obj)
+        if object_type == 'SerpApiAiModeAiOverviewCodeBlockElementItem':
+            return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_code_block_element_item").SerpApiAiModeAiOverviewCodeBlockElementItem.from_dict(obj)
         if object_type == 'SerpApiAiModeAiOverviewShoppingItem':
             return import_module("dataforseo_client.models.serp_api_ai_mode_ai_overview_shopping_item").SerpApiAiModeAiOverviewShoppingItem.from_dict(obj)
         if object_type == 'SerpApiAiModeAiOverviewPaidItem':

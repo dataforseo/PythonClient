@@ -12,6 +12,8 @@
 **description** | **StrictStr** | <em>link description</em> |[optional]|
 **more_sellers** | **StrictBool** | <em>indicates whether the product is sold by multiple sellers</em> |[optional]|
 **seller** | **StrictStr** | <em>seller of the product</em> |[optional]|
+**group_title** | **StrictStr** | <em>title of the hotel listing's group</em> |[optional]|
+**group_source** | **StrictStr** | <em>domain or brand name of the hotel listing's group</em> |[optional]|
 **image_url** | **StrictStr** | <em>URL of the image</em><br>the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available) |[optional]|
 **price** | **PriceInfo** | <em>price indicated in the element</em> |[optional]|
 **rating** | **RatingInfo** | <em>the item's rating </em><br>the popularity rate based on reviews and displayed in SERP;<br>if there is none, equals <code>null</code> |[optional]|

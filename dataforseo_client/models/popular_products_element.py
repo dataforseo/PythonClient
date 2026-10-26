@@ -25,6 +25,8 @@ class PopularProductsElement(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description=r"*link description*")
     more_sellers: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the product is sold by multiple sellers*")
     seller: Optional[StrictStr] = Field(default=None, description=r"*seller of the product*")
+    group_title: Optional[StrictStr] = Field(default=None, description=r"*title of the hotel listing's group*")
+    group_source: Optional[StrictStr] = Field(default=None, description=r"*domain or brand name of the hotel listing's group*")
     image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
     price: Optional[PriceInfo] = Field(default=None, description=r"*price indicated in the element*")
     rating: Optional[RatingInfo] = Field(default=None, description=r"*the item's rating*. the popularity rate based on reviews and displayed in SERP;. if there is none, equals `null`")
@@ -37,6 +39,8 @@ class PopularProductsElement(BaseModel):
         "description", 
         "more_sellers", 
         "seller", 
+        "group_title", 
+        "group_source", 
         "image_url", 
         "price", 
         "rating", 
@@ -74,6 +78,8 @@ class PopularProductsElement(BaseModel):
         _dict['description'] = self.description
         _dict['more_sellers'] = self.more_sellers
         _dict['seller'] = self.seller
+        _dict['group_title'] = self.group_title
+        _dict['group_source'] = self.group_source
         _dict['image_url'] = self.image_url
         _dict['price'] = self.price.to_dict() if self.price else None
         _dict['rating'] = self.rating.to_dict() if self.rating else None
@@ -97,6 +103,8 @@ class PopularProductsElement(BaseModel):
             "description": obj.get("description"),
             "more_sellers": obj.get("more_sellers"),
             "seller": obj.get("seller"),
+            "group_title": obj.get("group_title"),
+            "group_source": obj.get("group_source"),
             "image_url": obj.get("image_url"),
             "price": PriceInfo.from_dict(obj["price"]) if obj.get("price") is not None else None,
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,

@@ -18,11 +18,11 @@ class SourceInfo(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
     title: Optional[StrictStr] = Field(default=None, description=r"*source title*")
     snippet: Optional[StrictStr] = Field(default=None, description=r"*source description*")
-    domain: Optional[StrictStr] = Field(default=None, description=r"*source domain in SERP*")
+    domain: Optional[StrictStr] = Field(default=None, description=r"*source domain in a ChatGPT result*")
     url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
     thumbnail: Optional[StrictStr] = Field(default=None, description=r"*source thumbnail*")
     source_name: Optional[StrictStr] = Field(default=None, description=r"*source name*")
-    publication_date: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the format: “year-month-date:minutes:UTC_difference_hours:UTC_difference_minutes”. example:. `2019-11-15 12:57:46 +00:00`")
+    publication_date: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was published*. in the format: “yyyy-mm-dd hh:mm:ss +hh:mm”. example:. `2019-11-15 12:57:46 +00:00`")
     markdown: Optional[StrictStr] = Field(default=None, description=r"*content of the element in markdown format*. content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
     __properties: ClassVar[List[str]] = [
         "type", 

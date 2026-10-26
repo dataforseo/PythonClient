@@ -26,6 +26,8 @@ class HotelsPackElement(BaseModel):
     url: Optional[StrictStr] = Field(default=None, description=r"*source URL*")
     is_paid: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the element is an ad*")
     rating: Optional[RatingInfo] = Field(default=None, description=r"*the item's rating*. the popularity rate based on reviews and displayed in SERP;. if there is none, equals `null`")
+    group_title: Optional[StrictStr] = Field(default=None, description=r"*title of the hotel listing's group*")
+    group_source: Optional[StrictStr] = Field(default=None, description=r"*domain or brand name of the hotel listing's group*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "price", 
@@ -36,6 +38,8 @@ class HotelsPackElement(BaseModel):
         "url", 
         "is_paid", 
         "rating", 
+        "group_title", 
+        "group_source", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -71,6 +75,8 @@ class HotelsPackElement(BaseModel):
         _dict['url'] = self.url
         _dict['is_paid'] = self.is_paid
         _dict['rating'] = self.rating.to_dict() if self.rating else None
+        _dict['group_title'] = self.group_title
+        _dict['group_source'] = self.group_source
         return _dict
 
 
@@ -92,6 +98,8 @@ class HotelsPackElement(BaseModel):
             "url": obj.get("url"),
             "is_paid": obj.get("is_paid"),
             "rating": RatingInfo.from_dict(obj["rating"]) if obj.get("rating") is not None else None,
+            "group_title": obj.get("group_title"),
+            "group_source": obj.get("group_source"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

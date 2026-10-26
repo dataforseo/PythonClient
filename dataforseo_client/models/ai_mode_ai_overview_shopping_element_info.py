@@ -31,6 +31,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
     marketplace: Optional[StrictStr] = Field(default=None, description=r"*merchant account provider*. e-commerce site that hosts products or websites of individual sellers under the same merchant account. example:. `by Google`")
     marketplace_url: Optional[StrictStr] = Field(default=None, description=r"*URL to the merchant account provider*. e-commerce site that hosts products or websites of individual sellers under the same merchant account")
     image_url: Optional[StrictStr] = Field(default=None, description=r"*URL of the image*. the URL leading to the image on the original resource or DataForSEO storage (in case the original source is not available)")
+    text: Optional[StrictStr] = Field(default=None, description=r"*introductory text of the element in the response*. text preceding the paid ad items")
+    markdown: Optional[StrictStr] = Field(default=None, description=r"*content of the element in the markdown format*")
     __properties: ClassVar[List[str]] = [
         "type", 
         "product_id", 
@@ -46,6 +48,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
         "marketplace", 
         "marketplace_url", 
         "image_url", 
+        "text", 
+        "markdown", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -86,6 +90,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
         _dict['marketplace'] = self.marketplace
         _dict['marketplace_url'] = self.marketplace_url
         _dict['image_url'] = self.image_url
+        _dict['text'] = self.text
+        _dict['markdown'] = self.markdown
         return _dict
 
 
@@ -112,6 +118,8 @@ class AiModeAiOverviewShoppingElementInfo(BaseModel):
             "marketplace": obj.get("marketplace"),
             "marketplace_url": obj.get("marketplace_url"),
             "image_url": obj.get("image_url"),
+            "text": obj.get("text"),
+            "markdown": obj.get("markdown"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

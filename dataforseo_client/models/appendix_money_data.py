@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.appendix_limits_money_data import AppendixLimitsMoneyData
-from dataforseo_client.models.appendix_statistics_data_info import AppendixStatisticsDataInfo
+from dataforseo_client.models.appendix_statistics_money_data import AppendixStatisticsMoneyData
 
 
 
@@ -20,7 +20,7 @@ class AppendixMoneyData(BaseModel):
     total: Optional[StrictFloat] = Field(default=None, description=r"*total amount of money deposited to your account*")
     balance: Optional[StrictFloat] = Field(default=None, description=r"*amount of money left in your account*")
     limits: Optional[AppendixLimitsMoneyData] = Field(default=None, description=r"*cost limits*")
-    statistics: Optional[AppendixStatisticsDataInfo] = Field(default=None, description=r"*statistics of your spending*")
+    statistics: Optional[AppendixStatisticsMoneyData] = Field(default=None, description=r"*statistics of your spending*")
     __properties: ClassVar[List[str]] = [
         "total", 
         "balance", 
@@ -71,7 +71,7 @@ class AppendixMoneyData(BaseModel):
             "total": obj.get("total"),
             "balance": obj.get("balance"),
             "limits": AppendixLimitsMoneyData.from_dict(obj["limits"]) if obj.get("limits") is not None else None,
-            "statistics": AppendixStatisticsDataInfo.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None,
+            "statistics": AppendixStatisticsMoneyData.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

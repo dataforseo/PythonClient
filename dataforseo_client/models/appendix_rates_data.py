@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.appendix_limits_rates_data import AppendixLimitsRatesData
-from dataforseo_client.models.appendix_statistics_data_info import AppendixStatisticsDataInfo
+from dataforseo_client.models.appendix_statistics_rates_data import AppendixStatisticsRatesData
 
 
 
@@ -18,7 +18,7 @@ class AppendixRatesData(BaseModel):
     AppendixRatesData
     """ # noqa: E501
     limits: Optional[AppendixLimitsRatesData] = Field(default=None, description=r"*rate limits for API calls per a certain period of time*")
-    statistics: Optional[AppendixStatisticsDataInfo] = Field(default=None, description=r"*statisctics for API calls*")
+    statistics: Optional[AppendixStatisticsRatesData] = Field(default=None, description=r"*statisctics for API calls*")
     __properties: ClassVar[List[str]] = [
         "limits", 
         "statistics", 
@@ -63,7 +63,7 @@ class AppendixRatesData(BaseModel):
 
         _obj = cls.model_validate({
             "limits": AppendixLimitsRatesData.from_dict(obj["limits"]) if obj.get("limits") is not None else None,
-            "statistics": AppendixStatisticsDataInfo.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None,
+            "statistics": AppendixStatisticsRatesData.from_dict(obj["statistics"]) if obj.get("statistics") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

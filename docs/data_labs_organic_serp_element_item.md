@@ -5,29 +5,29 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**domain** | **StrictStr** | <em>subdomain in SERP</em> |[optional]|
-**title** | **StrictStr** | <em>title of the result in SERP</em> |[optional]|
-**url** | **StrictStr** | <em> relevant URL in SERP</em> |[optional]|
-**breadcrumb** | **StrictStr** | <em>breadcrumb in SERP</em> |[optional]|
-**website_name** | **StrictStr** | <em>relevant website name in SERP</em> |[optional]|
-**is_image** | **StrictBool** | <em>indicates whether the element contains an <code class='prettyprint'>image</code></em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
-**is_video** | **StrictBool** | <em>indicates whether the element contains a <code class='prettyprint'>video</code></em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
-**is_featured_snippet** | **StrictBool** | <em>indicates whether the element is a <code class='prettyprint'>featured_snippet</code></em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
-**is_malicious** | **StrictBool** | <em>indicates whether the element is marked as malicious</em><br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
-**checks** | **List[Optional[StrictStr]]** | <em>array of properties detected for the SERP element</em><br>lists the properties that are true for this element<br>each value in the array represents a detected property <br>example:<br>if <code>is_image</code> is present in the array, the element contains an image<br>possible values in the array:<br><code>is_image</code>, <code>is_video</code>, <code>is_featured_snippet</code>, <code>amp_version</code>, <code>is_malicious</code>, <code>is_web_story</code>, <code>is_highly_cited</code><br>equals <code>null</code> if none of the properties are detected for the element<br>learn more about the <code>checks</code> array in <a href='https://dataforseo.com/help-center/whats-a-checks-array-in-the-google-organic-serp-api' target='_blank'>this Help Center article</a> |[optional]|
-**description** | **StrictStr** | <em>description of the results element in SERP</em> |[optional]|
-**pre_snippet** | **StrictStr** | <em>includes additional information appended before the result description in SERP</em> |[optional]|
-**extended_snippet** | **StrictStr** | <em>includes additional information appended after the result description in SERP</em> |[optional]|
-**amp_version** | **StrictBool** | <em>Accelerated Mobile Pages</em><br>indicates whether an item has the Accelerated Mobile Page (AMP) version<br><strong>Note:</strong> this check no longer appears in SERP |[optional]|
-**rating** | **RatingInfo** | <em>the item's rating </em><br>            the popularity rate based on reviews and displayed in SERP |[optional]|
-**highlighted** | **List[Optional[StrictStr]]** | <em>words highlighted in bold within the results <code>description</code></em> |[optional]|
-**links** | **List[Optional[LinkElement]]** | <em>sitelinks</em><br>            the links shown below some of Google's search results<br>            if there are none, equals <code>null</code> |[optional]|
-**about_this_result** | **AboutThisResultElement** | <em>contains information from the 'About this result' panel</em><br>            <a href='https://blog.google/products/search/learn-more-and-get-more-from-search/'>'About this result' panel</a> provides additional context about why Google returned this result for the given query;<br>            this feature appears after clicking on the three dots next to most results |[optional]|
-**main_domain** | **StrictStr** | <em>primary domain name in SERP</em> |[optional]|
-**relative_url** | **StrictStr** | <em>URL in SERP that does not specify the HTTPs protocol and domain name</em> |[optional]|
-**etv** | **StrictFloat** | <em>estimated traffic volume</em><br>            estimated organic monthly traffic to the domain or webpage;<br>            calculated as the product of CTR (click-through-rate) and search volume values of all keywords the domain or webpage rank for;<br>            learn more about how the metric is calculated in <a href='https://dataforseo.com/help-center/how-is-etv-calculated' rel='noopener noreferrer' target='_blank'>this help center article</a> |[optional]|
-**estimated_paid_traffic_cost** | **StrictFloat** | <em>estimated cost of converting organic search traffic into paid</em><br>            represents the estimated monthly cost of running ads for all keywords that a domain or webpage ranks for;<br>            the metric is calculated as the product of organic <code>etv</code> and paid <code>cpc</code> values and indicates the cost of driving the estimated volume of monthly organic traffic through PPC advertising in Google Search;<br>            learn more about how the metric is calculated in <a href='https://dataforseo.com/help-center/how-is-traffic-cost-calculated' rel='noopener noreferrer' target='_blank'>this help center article</a> |[optional]|
-**clickstream_etv** | **StrictFloat** | <em>estimated traffic volume based on clickstream data</em><br>            calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain or webpage ranks for;<br>            to retrieve results for this field, the parameter <code>include_clickstream_data</code> must be set to <code>true</code>;<br>            learn more about how the metric is calculated in this <a href='https://dataforseo.com/help-center/whats-clickstream-estimated-traffic-volume-and-how-is-it-calculated' rel='noopener noreferrer' target='_blank'>help center article</a> |[optional]|
-**rank_changes** | **RankChanges** | <em>changes in rankings</em><br>            contains information about the ranking changes of the SERP element since the <code>previous_updated_time</code> |[optional]|
-**backlinks_info** | **BacklinksInfo** | <em>backlinks information for the relevant page URL</em> |[optional]|
-**rank_info** | **RankInfo** | <em>page and domain rank information</em> |[optional]|
+**domain** | **StrictStr** | subdomain in SERP |[optional]|
+**title** | **StrictStr** | title of the result in SERP |[optional]|
+**url** | **StrictStr** | relevant URL in SERP |[optional]|
+**breadcrumb** | **StrictStr** | breadcrumb in SERP |[optional]|
+**website_name** | **StrictStr** |  |[optional]|
+**is_image** | **StrictBool** | indicates whether the element contains an imageNote: this check no longer appears in SERP |[optional]|
+**is_video** | **StrictBool** | indicates whether the element contains a videoNote: this check no longer appears in SERP |[optional]|
+**is_featured_snippet** | **StrictBool** | indicates whether the element is a featured_snippetNote: this check no longer appears in SERP |[optional]|
+**is_malicious** | **StrictBool** | indicates whether the element is marked as maliciousNote: this check no longer appears in SERP |[optional]|
+**checks** | **List[Optional[StrictStr]]** | array of properties detected for the SERP elementlists the properties that are true for this elementeach value in the array represents a detected property example:if is_image is present in the array, the element contains an imagepossible values in the array:is_image, is_video, is_featured_snippet, amp_version, is_malicious, is_web_story, is_highly_citedequals null if none of the properties are detected for the elementlearn more about the checks array in this Help Center article |[optional]|
+**description** | **StrictStr** | description of the results element in SERP |[optional]|
+**pre_snippet** | **StrictStr** |  |[optional]|
+**extended_snippet** | **StrictStr** |  |[optional]|
+**amp_version** | **StrictBool** |  |[optional]|
+**rating** | **RatingInfo** | the item's rating             the popularity rate based on reviews and displayed in SERP |[optional]|
+**highlighted** | **List[Optional[StrictStr]]** | words highlighted in bold within the results description |[optional]|
+**links** | **List[Optional[LinkElement]]** | sitelinks            the links shown below some of Google's search results            if there are none, equals null |[optional]|
+**about_this_result** | **AboutThisResultElement** |  |[optional]|
+**main_domain** | **StrictStr** | primary domain name in SERP |[optional]|
+**relative_url** | **StrictStr** | URL in SERP that does not specify the HTTPs protocol and domain name |[optional]|
+**etv** | **StrictFloat** | estimated traffic volume            estimated organic monthly traffic to the domain            calculated as the product of CTR (click-through-rate) and search volume values of the returned keyword            learn more about how the metric is calculated in this help center article |[optional]|
+**estimated_paid_traffic_cost** | **StrictFloat** | estimated cost of paid monthly search traffic            represents the estimated cost of paid monthly traffic (USD) based on etv and cpc values            learn more about how the metric is calculated in this help center article |[optional]|
+**clickstream_etv** | **StrictFloat** | estimated traffic volume based on clickstream data            calculated as the product of click-through-rate and clickstream search volume values of all keywords the domain ranks for            to retrieve results for this field, the parameter include_clickstream_data must be set to true            learn more about how the metric is calculated in this help center article |[optional]|
+**rank_changes** | **RankChanges** | changes in rankings            contains information about the ranking changes of the SERP element since the previous_updated_time |[optional]|
+**backlinks_info** | **BacklinksInfo** | backlinks information for the ranked website |[optional]|
+**rank_info** | **RankInfo** | page and domain rank information |[optional]|

@@ -18,8 +18,8 @@ class ChatGptAdElementItem(BaseChatGptLlmScraperElementItem):
     ChatGptAdElementItem
     """ # noqa: E501
     type: Optional[StrictStr] = Field(default=None, description=r"type of element")
-    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in SERP*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
-    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in SERP*. absolute position among all the elements")
+    rank_group: Optional[StrictInt] = Field(default=None, description=r"*group rank in a ChatGPT result*. position within a group of elements with identical `type` values. positions of elements with different `type` values are omitted from `rank_group`")
+    rank_absolute: Optional[StrictInt] = Field(default=None, description=r"*absolute rank in a ChatGPT result*. absolute position among all the elements")
     is_rendered: Optional[StrictBool] = Field(default=None, description=r"*indicates whether the ad is displayed to the user*. if `true`, the ad is present in the response and shown on the page. if `false`, the ad is present in the response but not displayed to the user")
     title: Optional[StrictStr] = Field(default=None, description=r"*name of the brand*")
     snippet: Optional[StrictStr] = Field(default=None, description=r"*source description*")

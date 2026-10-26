@@ -21,11 +21,11 @@ class AiOptimizationGeminiLlmScraperTaskGetAdvancedResultInfo(BaseModel):
     location_code: Optional[StrictInt] = Field(default=None, description=r"*location code in a POST array*")
     language_code: Optional[StrictStr] = Field(default=None, description=r"*language code in a POST array*")
     model: Optional[StrictStr] = Field(default=None, description=r"*indicates the model version*")
-    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
+    datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh:mm:ss +hh:mm”. example:. `2019-11-15 12:57:46 +00:00`")
     markdown: Optional[StrictStr] = Field(default=None, description=r"*content of the element in markdown format*. content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
     sources: Optional[List[Optional[SourceInfo]]] = Field(default=None, description=r"*array of sources*. the sources the model actually cited or relied on in its final answer")
     se_results_count: Optional[StrictInt] = Field(default=None, description=r"*total number of results*")
-    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of search results*. contains types of search results (`items`) found in SERP.. possible item types:. `gemini_text`, `gemini_table`, `gemini_images`")
+    item_types: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*types of result items*. contains types of result `items` found in a Gemini result.. possible item types:. `gemini_text`, `gemini_table`, `gemini_images`")
     items_count: Optional[StrictInt] = Field(default=None, description=r"*the number of results returned in the **`items`** array*")
     items: Optional[List[Optional[BaseGeminiLlmScraperElementItem]]] = Field(default=None, description=r"*items present in the element*")
     __properties: ClassVar[List[str]] = [
