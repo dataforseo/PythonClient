@@ -9,7 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.sources import Sources
-from dataforseo_client.models.search_results import SearchResults
+from dataforseo_client.models.items_search_results import ItemsSearchResults
 from dataforseo_client.models.monthly_searches_info import MonthlySearchesInfo
 from dataforseo_client.models.brand_entities import BrandEntities
 
@@ -26,7 +26,7 @@ class AiOptimizationLlmMentionsSearchMentionsLiveItem(BaseModel):
     question: Optional[StrictStr] = Field(default=None, description=r"*relevant question*")
     answer: Optional[StrictStr] = Field(default=None, description=r"*relevant answer in markdown format*. content of the result formatted in the [markdown markup language](https://en.wikipedia.org/wiki/Markdown)")
     sources: Optional[List[Optional[Sources]]] = Field(default=None, description=r"*array of sources*. the sources the model cited or relied on in its final answer. learn more about the sources and how to retrieve LLM citation data at our [Help Center](https://dataforseo.com/help-center/how-to-get-llm-citation-data-with-llm-mentions-api)")
-    search_results: Optional[List[Optional[SearchResults]]] = Field(default=None, description=r"*array of search results*. all web search outputs the model retrieved when looking up information, including duplicates and unused entries. **Note:** available only for `chat_gpt`")
+    search_results: Optional[List[Optional[ItemsSearchResults]]] = Field(default=None, description=r"*array of search results*. all web search outputs the model retrieved when looking up information, including duplicates and unused entries. **Note:** available only for `chat_gpt`")
     ai_search_volume: Optional[StrictInt] = Field(default=None, description=r"*current AI search volume rate of a keyword*. learn more about this metric [here](https://dataforseo.com/help-center/how-the-ai-search-volume-metric-works-in-llm-mentions)")
     monthly_searches: Optional[List[Optional[MonthlySearchesInfo]]] = Field(default=None, description=r"*monthly AI search volume rates*. array of objects with AI search volume rates in a certain month of a year")
     first_response_at: Optional[StrictStr] = Field(default=None, description=r"*date and time when the response data was first recorded*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2025-10-21 06:25:30 +00:00`")
@@ -130,7 +130,7 @@ class AiOptimizationLlmMentionsSearchMentionsLiveItem(BaseModel):
             "question": obj.get("question"),
             "answer": obj.get("answer"),
             "sources": [Sources.from_dict(_item) for _item in obj["sources"]] if obj.get("sources") is not None else None,
-            "search_results": [SearchResults.from_dict(_item) for _item in obj["search_results"]] if obj.get("search_results") is not None else None,
+            "search_results": [ItemsSearchResults.from_dict(_item) for _item in obj["search_results"]] if obj.get("search_results") is not None else None,
             "ai_search_volume": obj.get("ai_search_volume"),
             "monthly_searches": [MonthlySearchesInfo.from_dict(_item) for _item in obj["monthly_searches"]] if obj.get("monthly_searches") is not None else None,
             "first_response_at": obj.get("first_response_at"),

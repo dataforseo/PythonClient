@@ -9,6 +9,7 @@ from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
 from dataforseo_client.models.base_ai_optimization_llm_response_element_item import BaseAiOptimizationLlmResponseElementItem
+from dataforseo_client.models.search_results import SearchResults
 
 
 
@@ -25,6 +26,7 @@ class AiOptimizationClaudeLlmResponsesLiveResultInfo(BaseModel):
     datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
     items: Optional[List[Optional[BaseAiOptimizationLlmResponseElementItem]]] = Field(default=None, description=r"*array of response items*. contains structured AI response data")
     fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*array of fan-out queries*. contains related search queries derived from the main query to provide a more comprehensive response")
+    search_results: Optional[List[Optional[SearchResults]]] = Field(default=None, description=r"*array of search results*. contains objects with search results relevant to the user query and model's response")
     __properties: ClassVar[List[str]] = [
         "model_name", 
         "input_tokens", 
@@ -35,6 +37,7 @@ class AiOptimizationClaudeLlmResponsesLiveResultInfo(BaseModel):
         "datetime", 
         "items", 
         "fan_out_queries", 
+        "search_results", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -75,6 +78,12 @@ class AiOptimizationClaudeLlmResponsesLiveResultInfo(BaseModel):
                     items_items.append(_item.to_dict())
             _dict['items'] = items_items
         _dict['fan_out_queries'] = self.fan_out_queries
+        search_results_items = []
+        if self.search_results:
+            for _item in self.search_results:
+                if _item:
+                    search_results_items.append(_item.to_dict())
+            _dict['search_results'] = search_results_items
         return _dict
 
 
@@ -96,6 +105,7 @@ class AiOptimizationClaudeLlmResponsesLiveResultInfo(BaseModel):
             "datetime": obj.get("datetime"),
             "items": [BaseAiOptimizationLlmResponseElementItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "fan_out_queries": obj.get("fan_out_queries"),
+            "search_results": [SearchResults.from_dict(_item) for _item in obj["search_results"]] if obj.get("search_results") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}
