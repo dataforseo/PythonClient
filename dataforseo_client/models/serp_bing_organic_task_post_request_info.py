@@ -8,7 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -29,9 +28,6 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
     language_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine language*. **required field if you don't specify** `language_code`. **if you use this field, you don't need to specify `language_code`**. you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/languages`. example:. `English`")
     os: Optional[StrictStr] = Field(default=None, description=r"*device operating system*. optional field. if you specify `desktop` in the `device` field, choose from the following values: `windows`, `macos`. default value: `windows`. if you specify `mobile` in the `device` field, choose from the following values: `android`, `ios`. default value: `android`")
     tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
-    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
-    match_type: Optional[StrictStr] = Field(default=None, description=r"*target match type*. **required field if `stop_crawl_on_match` is specified**. type of match for the `match_value`. possible values:. `domain` – specific domain or subdomain. `with_subdomains` – main domain and subdomains. `wildcard` –  wildcard pattern")
-    match_value: Optional[StrictStr] = Field(default=None, description=r"*target domain, subdomain, or wildcard value*. **required field if `stop_crawl_on_match` is specified**. specify a target domain, subdomain, or wildcard value;. **Note:** domain or subdomain must be specified without a request protocol;. example: `'match_value': 'dataforseo.com'`,. `'match_value': '/blog/post-*'`")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"*page crawl limit*. optional field. number of search results pages to crawl. default value: `1`. max value: `100`. **Note:** the `max_crawl_pages` and `depth` parameters complement each other;. learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work)")
     search_param: Optional[StrictStr] = Field(default=None, description=r"*additional parameters of the search query*. optional field. [get the list of available parameters and additional details here](https://dataforseo.com/help-center/bing-search-engine-parameters-and-how-to-use-them)")
     calculate_rectangles: Optional[StrictBool] = Field(default=None, description=r"*calcualte pixel rankings for SERP elements in advanced results*. optional field. pixel ranking refers to the distance between the result snippet and top left corner of the screen;. [Visit Help Center to learn more>>](https://dataforseo.com/help-center/pixel-ranking-in-serp-api). by default, the parameter is set to `false`. **Note:** you will be charged extra $0.0006 for using this parameter")
@@ -54,9 +50,6 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
         "language_name", 
         "os", 
         "tag", 
-        "stop_crawl_on_match", 
-        "match_type", 
-        "match_value", 
         "max_crawl_pages", 
         "search_param", 
         "calculate_rectangles", 
@@ -104,14 +97,6 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
         _dict['language_name'] = self.language_name
         _dict['os'] = self.os
         _dict['tag'] = self.tag
-        stop_crawl_on_match_items = []
-        if self.stop_crawl_on_match:
-            for _item in self.stop_crawl_on_match:
-                if _item:
-                    stop_crawl_on_match_items.append(_item.to_dict())
-            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
-        _dict['match_type'] = self.match_type
-        _dict['match_value'] = self.match_value
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['search_param'] = self.search_param
         _dict['calculate_rectangles'] = self.calculate_rectangles
@@ -145,9 +130,6 @@ class SerpBingOrganicTaskPostRequestInfo(BaseModel):
             "language_name": obj.get("language_name"),
             "os": obj.get("os"),
             "tag": obj.get("tag"),
-            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
-            "match_type": obj.get("match_type"),
-            "match_value": obj.get("match_value"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "search_param": obj.get("search_param"),
             "calculate_rectangles": obj.get("calculate_rectangles"),

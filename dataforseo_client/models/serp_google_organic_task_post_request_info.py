@@ -8,7 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -26,14 +25,12 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
     postback_url: Optional[StrictStr] = Field(default=None, description=r"*URL for sending task results*. optional field. once the task is completed, we will send a POST request with its results compressed in the `gzip` format to the `postback_url` you specified. you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request. example:. `http://your-server.com/postbackscript?id=$id`. `http://your-server.com/postbackscript?id=$id&tag=$tag`. **Note:** special characters in `postback_url` will be urlencoded;. i.a., the `#` character will be encoded into `%23`. learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api)")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"*postback_url datatype*. **required field if you specify `postback_url`**. corresponds to the datatype that will be sent to your server. possible values:. `regular`, `advanced`, `html`")
     priority: Optional[StrictInt] = Field(default=None, description=r"*task priority*. optional field. can take the following values:. 1 – normal execution priority (set by default);. 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page.")
+    resolve_goto_urls: Optional[StrictBool] = Field(default=None, description=r"*resolve goto redirect URLs*. optional field. set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority. default value for tasks with `priority: 1` is `true`. default value for tasks with `priority: 2` is `false`. **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds")
     location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine location*. **required field if you don't specify** `location_code` or `location_coordinate`. **if you use this field, you don't need to specify `location_code` or `location_coordinate`**. you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations`. example:. `London,England,United Kingdom`")
     location_coordinate: Optional[StrictStr] = Field(default=None, description=r"*GPS coordinates of a location*. **required field if you don't specify** `location_name` or `location_code`. **if you use this field, you don't need to specify `location_name` or `location_code`**. `location_coordinate` parameter should be specified in the *'latitude,longitude,radius'* format. the maximum number of decimal digits for *'latitude'* and *'longitude'*: 7. the minimum value for *'radius'*: 199 (mm). the maximum value for *'radius'*: 199999 (mm). example:. `53.476225,-2.243572,200`")
     language_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine language*. **required field if you don't specify** `language_code`. **if you use this field, you don't need to specify `language_code`**. you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/languages`. example:. `English`")
     tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
     os: Optional[StrictStr] = Field(default=None, description=r"*device operating system*. optional field. if you specify `desktop` in the `device` field, choose from the following values: `windows`, `macos`. default value: `windows`. if you specify `mobile` in the `device` field, choose from the following values: `android`, `ios`. default value: `android`")
-    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
-    match_type: Optional[StrictStr] = Field(default=None, description=r"*target match type*. **required field if `stop_crawl_on_match` is specified**. type of match for the `match_value`. possible values:. `domain` – specific domain or subdomain. `with_subdomains` – main domain and subdomains. `wildcard` –  wildcard pattern")
-    match_value: Optional[StrictStr] = Field(default=None, description=r"*target domain, subdomain, or wildcard value*. **required field if `stop_crawl_on_match` is specified**. specify a target domain, subdomain, or wildcard value;. **Note:** domain or subdomain must be specified without a request protocol;. example: `'match_value': 'dataforseo.com'`,. `'match_value': '/blog/post-*'`")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"*page crawl limit*. optional field. number of search results pages to crawl. max value: `100`. **Note:** you will be charged for each page crawled (10 organic results per page);. learn more about pricing on our [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page;. **Note#2:** the `max_crawl_pages` and `depth` parameters complement each other;. learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work)")
     search_param: Optional[StrictStr] = Field(default=None, description=r"*additional parameters of the search query*. optional field. [get the list of available parameters and additional details here](https://dataforseo.com/help-center/google-search-engine-parameters-and-how-to-use-them). **Note:** the following search engine parameters are not supported and will be automatically unset if specified: `lr`, `cr`, `as_qdr`, `as_sitesearch`, `as_occt`, `as_filetype`.")
     remove_from_url: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*remove specific parameters from URLs*. optional field. using this field, you can specify up to 10 parameters to remove from URLs in the result. example:. `'remove_from_url': ['srsltid']`")
@@ -45,9 +42,6 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
     browser_screen_height: Optional[StrictInt] = Field(default=None, description=r"*browser screen height*. optional field. you can set a custom browser screen height to calculate pixel rankings for a particular device;. can be specified within the following range: `240-9999`;. by default, the parameter is set to:. `1080` for `desktop`;. `640` for `mobile` on `android`;. `812` for `mobile` on `iOS`;. **Note:** to use this parameter, set `calculate_rectangles` to `true`")
     browser_screen_resolution_ratio: Optional[StrictInt] = Field(default=None, description=r"*browser screen resolution ratio*. optional field. you can set a custom browser screen resolution ratio to calculate pixel rankings for a particular device;. can be specified within the following range: `0.5-3`;. by default, the parameter is set to:. `1` for `desktop`;. `3` for `mobile` on `android`;. `3` for `mobile` on `iOS`;. **Note:** to use this parameter, set `calculate_rectangles` to `true`")
     url: Optional[StrictStr] = Field(default=None, description=r"*direct URL of the search query*. optional field. you can specify a direct URL and we will sort it out to the necessary fields. Note that this method is the most difficult for our API to process and also requires you to specify the exact language and location in the URL. In most cases, we wouldn’t recommend using this method.. example:. `https://www.google.co.uk/search?q=%20rank%20tracker%20api&hl=en&gl=GB&uule=w+CAIQIFISCXXeIa8LoNhHEZkq1d1aOpZS`. **Note:** the following search engine parameters are not supported and will be automatically unset if specified in the URL: `lr`, `cr`, `as_qdr`, `as_sitesearch`, `as_occt`, `as_filetype`.")
-    target_search_mode: Optional[StrictStr] = Field(default=None, description=r"*target matching mode*. optional field. to enable this parameter, `stop_crawl_on_match` must also be enabled. defines how the crawl should stop when multiple targets are specified in `stop_crawl_on_match`. possible values: `all`, `any`. `all` – the crawl stops only when all specified targets are found. `any` – the crawl stops when any single target is found. default value: `any`. learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api)")
-    find_targets_in: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*SERP element types to check for targets*. optional field. to enable this parameter, `stop_crawl_on_match` must also be enabled. specifies which SERP element types should be checked for target matches. if not specified, all first-level elements with `url` and `domain` fields are checked for targets. possible values: `organic`, `paid`, `local_pack`, `featured_snippet`, `events`, `google_flights`, `images`, `jobs`, `knowledge_graph`, `local_service`, `map`, `scholarly_articles`, `third_party_reviews`, `twitter`. **Note:** cannot contain the same element types as `ignore_targets_in`. example:. `'find_targets_in': ['organic', 'featured_snippet']`. learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api)")
-    ignore_targets_in: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*SERP element types to exclude from target search*. optional field. to enable this parameter, `stop_crawl_on_match` must also be enabled. specifies which SERP element types should be excluded when searching for target matches. possible values: `organic`, `paid`, `local_pack`, `featured_snippet`, `events`, `google_flights`, `images`, `jobs`, `knowledge_graph`, `local_service`, `map`, `scholarly_articles`, `third_party_reviews`, `twitter`. **Note:** cannot contain the same element types as `find_targets_in`. example:. `'ignore_targets_in': ['paid', 'images']`. learn more about this parameter on our [Help Center](https://dataforseo.com/help-center/how-to-use-new-crawl-control-parameters-in-google-organic-serp-api)")
     se_domain: Optional[StrictStr] = Field(default=None, description=r"*search engine domain*. optional field. we choose the relevant search engine domain automatically according to the location and language you specify. however, you can set a custom search engine domain in this field. example:. `google.co.uk, google.com.au, google.de`, etc.")
     __properties: ClassVar[List[str]] = [
         "keyword", 
@@ -60,14 +54,12 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         "postback_url", 
         "postback_data", 
         "priority", 
+        "resolve_goto_urls", 
         "location_name", 
         "location_coordinate", 
         "language_name", 
         "tag", 
         "os", 
-        "stop_crawl_on_match", 
-        "match_type", 
-        "match_value", 
         "max_crawl_pages", 
         "search_param", 
         "remove_from_url", 
@@ -79,9 +71,6 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         "browser_screen_height", 
         "browser_screen_resolution_ratio", 
         "url", 
-        "target_search_mode", 
-        "find_targets_in", 
-        "ignore_targets_in", 
         "se_domain", 
         ]
 
@@ -119,19 +108,12 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
         _dict['priority'] = self.priority
+        _dict['resolve_goto_urls'] = self.resolve_goto_urls
         _dict['location_name'] = self.location_name
         _dict['location_coordinate'] = self.location_coordinate
         _dict['language_name'] = self.language_name
         _dict['tag'] = self.tag
         _dict['os'] = self.os
-        stop_crawl_on_match_items = []
-        if self.stop_crawl_on_match:
-            for _item in self.stop_crawl_on_match:
-                if _item:
-                    stop_crawl_on_match_items.append(_item.to_dict())
-            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
-        _dict['match_type'] = self.match_type
-        _dict['match_value'] = self.match_value
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['search_param'] = self.search_param
         _dict['remove_from_url'] = self.remove_from_url
@@ -143,9 +125,6 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         _dict['browser_screen_height'] = self.browser_screen_height
         _dict['browser_screen_resolution_ratio'] = self.browser_screen_resolution_ratio
         _dict['url'] = self.url
-        _dict['target_search_mode'] = self.target_search_mode
-        _dict['find_targets_in'] = self.find_targets_in
-        _dict['ignore_targets_in'] = self.ignore_targets_in
         _dict['se_domain'] = self.se_domain
         return _dict
 
@@ -169,14 +148,12 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),
             "priority": obj.get("priority"),
+            "resolve_goto_urls": obj.get("resolve_goto_urls"),
             "location_name": obj.get("location_name"),
             "location_coordinate": obj.get("location_coordinate"),
             "language_name": obj.get("language_name"),
             "tag": obj.get("tag"),
             "os": obj.get("os"),
-            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
-            "match_type": obj.get("match_type"),
-            "match_value": obj.get("match_value"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "search_param": obj.get("search_param"),
             "remove_from_url": obj.get("remove_from_url"),
@@ -188,9 +165,6 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
             "browser_screen_height": obj.get("browser_screen_height"),
             "browser_screen_resolution_ratio": obj.get("browser_screen_resolution_ratio"),
             "url": obj.get("url"),
-            "target_search_mode": obj.get("target_search_mode"),
-            "find_targets_in": obj.get("find_targets_in"),
-            "ignore_targets_in": obj.get("ignore_targets_in"),
             "se_domain": obj.get("se_domain"),
         })
 

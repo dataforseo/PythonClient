@@ -37,7 +37,7 @@ class BacklinksDomainIntersection(BaseModel):
     referring_links_attributes: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*link attributes of the referring links*. indicates link attributes of the referring links and the link count per each attribute")
     referring_links_platform_types: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*types of referring platforms*. indicates referring platform types and link count per each platform. possible values: `cms`, `blogs`, `ecommerce`, `message-boards`, `wikis`, `news`, `organization`")
     referring_links_semantic_locations: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*semantic locations of the referring links*. indicates semantic elements in HTML where the referring links are located and the link count per each semantic location. you can get the full list of semantic elements [here](https://www.w3schools.com/html/html5_semantic_elements.asp)")
-    referring_links_countries: Optional[Dict[str, Optional[StrictInt]]] = Field(default=None, description=r"*ISO country codes of the referring links*. indicates ISO country codes of the domains where the referring links are located and the link count per each country")
+    referring_links_countries: Optional[Any] = Field(default=None, description=r"*ISO country codes of the referring links*. indicates ISO country codes of the domains where the referring links are located and the link count per each country")
     __properties: ClassVar[List[str]] = [
         "type", 
         "target", 

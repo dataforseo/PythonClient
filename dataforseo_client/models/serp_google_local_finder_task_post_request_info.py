@@ -19,7 +19,8 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
     location_code: Optional[StrictInt] = Field(default=None, description=r"*search engine location code*. **required field if you don't specify** `location_name` or `location_coordinate`. **if you use this field, you don't need to specify `location_name` or `location_coordinate`**. you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations`. example:. `2840`")
     language_code: Optional[StrictStr] = Field(default=None, description=r"*search engine language code*. **required field if you don't specify** `language_name`. **if you use this field, you don't need to specify `language_name`**. you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/languages`. example:`en`")
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. default value: `10`. max value: `350`. **your account will be billed per each SERP containing up to 10 results;**. setting depth above 10 may result in additional charges if the search engine returns more than 10 results respectively;. If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page.")
-    priority: Optional[StrictInt] = Field(default=None, description=r"*task priority*. optional field. can take the following values:. 1 – normal execution priority (set by default). 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page.")
+    priority: Optional[StrictInt] = Field(default=None, description=r"*task priority*. optional field. can take the following values:. 1 – normal execution priority (set by default). 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page")
+    resolve_goto_urls: Optional[StrictBool] = Field(default=None, description=r"*resolve goto redirect URLs*. optional field. set to `true` to resolve goto redirect URLs in SERPs for tasks with high execution priority. default value for tasks with `priority: 1` is `true`. default value for tasks with `priority: 2` is `false`. **Note:** this parameter adds up to 40 seconds to the turnaround time of high-priority tasks, with a maximum turnaround time of 260 seconds")
     device: Optional[StrictStr] = Field(default=None, description=r"*device type*. optional field. return results for a specific device type. can take the values:`desktop`, `mobile`. default value: `desktop`")
     pingback_url: Optional[StrictStr] = Field(default=None, description=r"*notification URL of a completed task*. optional field. when a task is completed we will notify you by GET request sent to the URL you have specified. you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request.. example:. `http://your-server.com/pingscript?id=$id`. `http://your-server.com/pingscript?id=$id&tag=$tag`. **Note:** special characters in `pingback_url` will be urlencoded;. i.a., the `#` character will be encoded into `%23`. learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api)")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"*URL for sending task results*. optional field. once the task is completed, we will send a POST request with its results compressed in the `gzip` format to the `postback_url` you specified. you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request.. example:. `http://your-server.com/postbackscript?id=$id`. `http://your-server.com/postbackscript?id=$id&tag=$tag`. **Note:** special characters in `postback_url` will be urlencoded;. i.a., the `#` character will be encoded into `%23`. learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api)")
@@ -35,6 +36,7 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
         "language_code", 
         "depth", 
         "priority", 
+        "resolve_goto_urls", 
         "device", 
         "pingback_url", 
         "postback_url", 
@@ -75,6 +77,7 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
         _dict['language_code'] = self.language_code
         _dict['depth'] = self.depth
         _dict['priority'] = self.priority
+        _dict['resolve_goto_urls'] = self.resolve_goto_urls
         _dict['device'] = self.device
         _dict['pingback_url'] = self.pingback_url
         _dict['postback_url'] = self.postback_url
@@ -101,6 +104,7 @@ class SerpGoogleLocalFinderTaskPostRequestInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "depth": obj.get("depth"),
             "priority": obj.get("priority"),
+            "resolve_goto_urls": obj.get("resolve_goto_urls"),
             "device": obj.get("device"),
             "pingback_url": obj.get("pingback_url"),
             "postback_url": obj.get("postback_url"),

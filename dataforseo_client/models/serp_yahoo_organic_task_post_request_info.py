@@ -8,7 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -30,7 +29,6 @@ class SerpYahooOrganicTaskPostRequestInfo(BaseModel):
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. default value: `6`. max value: `700`. **Your account will be billed per each SERP;** . Each Yahoo SERP can contain fewer than 10 results, so setting depth above the default value may result in additional charges [](https://dataforseo.com/help-center/how-many-results-scraped);. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/yahoo-serp-api) page.")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"*page crawl limit*. optional field. number of search results pages to crawl. default value: `1`. max value: `100`. **Note:** the `max_crawl_pages` and `depth` parameters complement each other;. learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work)")
     search_param: Optional[StrictStr] = Field(default=None, description=r"*additional parameters of the search query*. optional field. [get the list of available parameters and additional details here](https://dataforseo.com/help-center/yahoo-search-engine-parameters-and-how-to-use-them)")
-    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
     tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"*URL for sending task results*. optional field. once the task is completed, we will send a POST request with its results compressed in the `gzip` format to the `postback_url` you specified. you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request.. example:. `http://your-server.com/postbackscript?id=$id`. `http://your-server.com/postbackscript?id=$id&tag=$tag`. **Note:** special characters in `postback_url` will be urlencoded;. i.a., the `#` character will be encoded into `%23`. learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api)")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"*postback_url datatype*. **required field if you specify `postback_url`**. corresponds to the datatype that will be sent to your server. possible values:. `regular`, `html`")
@@ -50,7 +48,6 @@ class SerpYahooOrganicTaskPostRequestInfo(BaseModel):
         "depth", 
         "max_crawl_pages", 
         "search_param", 
-        "stop_crawl_on_match", 
         "tag", 
         "postback_url", 
         "postback_data", 
@@ -95,12 +92,6 @@ class SerpYahooOrganicTaskPostRequestInfo(BaseModel):
         _dict['depth'] = self.depth
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['search_param'] = self.search_param
-        stop_crawl_on_match_items = []
-        if self.stop_crawl_on_match:
-            for _item in self.stop_crawl_on_match:
-                if _item:
-                    stop_crawl_on_match_items.append(_item.to_dict())
-            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         _dict['tag'] = self.tag
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
@@ -131,7 +122,6 @@ class SerpYahooOrganicTaskPostRequestInfo(BaseModel):
             "depth": obj.get("depth"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "search_param": obj.get("search_param"),
-            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
             "tag": obj.get("tag"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),

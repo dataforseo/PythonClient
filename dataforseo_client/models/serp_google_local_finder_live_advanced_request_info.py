@@ -19,24 +19,24 @@ class SerpGoogleLocalFinderLiveAdvancedRequestInfo(BaseModel):
     location_code: Optional[StrictInt] = Field(default=None, description=r"*search engine location code*. **required field if you don't specify** `location_name` or `location_coordinate`. **if you use this field, you don't need to specify `location_name` or `location_coordinate`**. you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations`. example:. `2840`")
     language_code: Optional[StrictStr] = Field(default=None, description=r"*search engine language code*. **required field if you don't specify** `language_name`. **if you use this field, you don't need to specify `language_name`**. you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/languages`. example:`en`")
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. default value: `10`. max value: `100`. **Your account will be billed per each SERP containing up to 10 results;**. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results respectively;. If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page.")
+    resolve_goto_urls: Optional[StrictBool] = Field(default=None, description=r"*resolve goto redirect URLs*. optional field. set to `true` to resolve goto redirect URLs in SERPs. default value: `false`. **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds")
     device: Optional[StrictStr] = Field(default=None, description=r"*device type*. optional field. return results for a specific device type. can take the values:`desktop`, `mobile`. default value: `desktop`")
     location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine location*. **required field if you don't specify** `location_code` or `location_coordinate`. **if you use this field, you don't need to specify `location_code` or `location_coordinate`**. you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations`. example:. `London,England,United Kingdom`")
     language_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine language*. **required field if you don't specify** `language_code`. **if you use this field, you don't need to specify `language_code`**. you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/languages`. example:. `English`")
     os: Optional[StrictStr] = Field(default=None, description=r"*device operating system*. optional field. if you specify `desktop` in the `device` field, choose from the following values: `windows`, `macos`. default value: `windows`. if you specify `mobile` in the `device` field, choose from the following values: `android`, `ios`. default value: `android`")
     tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
-    priority: Optional[StrictInt] = Field(default=None, description=r"*task priority*. optional field. can take the following values:. 1 – normal execution priority (set by default). 2 – high execution priority. You will be additionally charged for the tasks with high execution priority.. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-local-finder-serp-api) page.")
     location_coordinate: Optional[StrictStr] = Field(default=None, description=r"*GPS coordinates of a location*. **required field if you don't specify** `location_name` or `location_code`. **if you use this field, you don't need to specify `location_name` or `location_code`**. `location_coordinate` parameter should be specified in the *'latitude,longitude,zoom'* format. if *'zoom'* is not specified, *9z* will be applied as a default value. the maximum number of decimal digits for *'latitude'* and *'longitude'*: 7. the minimum value for *'zoom'*: 4z. the maximum value for *'zoom'*: 18z. example:. `52.6178549,-155.352142,20z`")
     __properties: ClassVar[List[str]] = [
         "keyword", 
         "location_code", 
         "language_code", 
         "depth", 
+        "resolve_goto_urls", 
         "device", 
         "location_name", 
         "language_name", 
         "os", 
         "tag", 
-        "priority", 
         "location_coordinate", 
         ]
 
@@ -68,12 +68,12 @@ class SerpGoogleLocalFinderLiveAdvancedRequestInfo(BaseModel):
         _dict['location_code'] = self.location_code
         _dict['language_code'] = self.language_code
         _dict['depth'] = self.depth
+        _dict['resolve_goto_urls'] = self.resolve_goto_urls
         _dict['device'] = self.device
         _dict['location_name'] = self.location_name
         _dict['language_name'] = self.language_name
         _dict['os'] = self.os
         _dict['tag'] = self.tag
-        _dict['priority'] = self.priority
         _dict['location_coordinate'] = self.location_coordinate
         return _dict
 
@@ -91,12 +91,12 @@ class SerpGoogleLocalFinderLiveAdvancedRequestInfo(BaseModel):
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "depth": obj.get("depth"),
+            "resolve_goto_urls": obj.get("resolve_goto_urls"),
             "device": obj.get("device"),
             "location_name": obj.get("location_name"),
             "language_name": obj.get("language_name"),
             "os": obj.get("os"),
             "tag": obj.get("tag"),
-            "priority": obj.get("priority"),
             "location_coordinate": obj.get("location_coordinate"),
         })
 

@@ -8,7 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -30,7 +29,6 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"*page crawl limit*. optional field. number of search results pages to crawl. default value: `1`. max value: `100`. **Note:** the `max_crawl_pages` and `depth` parameters complement each other;. learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work)")
     target: Optional[StrictStr] = Field(default=None, description=r"*target domain, subdomain, or webpage to get results for*. optional field. a domain or a subdomain should be specified without `https://` and `www.`. note that the results of `target`-specific tasks will only include SERP elements that contain a `url` string;. you can also use a wildcard (‘*’) character to specify the search pattern in SERP and narrow down the results;. examples:. **`example.com`**  - returns results for the website's home page with URLs, such as `https://example.com`, or `https://www.example.com/`, or `https://example.com/`;. **`example.com*`** - returns results for the domain, including all its pages;. **`*example.com*`** - returns results for the entire domain, including all its pages and subdomains;. **`*example.com`**  - returns results for the home page regardless of the subdomain, such as `https://en.example.com`; . **`example.com/example-page`**  - returns results for the exact URL;. **`example.com/example-page*`**  - returns results for all domain's URLs that start with the specified string")
     search_param: Optional[StrictStr] = Field(default=None, description=r"*additional parameters of the search query*. optional field. [get the list of available parameters and additional details here](https://dataforseo.com/what-are-google-search-parameters-and-how-to-use-them-with-serp-api.html)")
-    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
     tag: Optional[StrictStr] = Field(default=None, description=r"*user-defined task identifier*. optional field. *the character limit is 255*. you can use this parameter to identify the task and match it with the result. you will find the specified `tag` value in the `data` object of the response")
     __properties: ClassVar[List[str]] = [
         "url", 
@@ -47,7 +45,6 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
         "max_crawl_pages", 
         "target", 
         "search_param", 
-        "stop_crawl_on_match", 
         "tag", 
         ]
 
@@ -89,12 +86,6 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['target'] = self.target
         _dict['search_param'] = self.search_param
-        stop_crawl_on_match_items = []
-        if self.stop_crawl_on_match:
-            for _item in self.stop_crawl_on_match:
-                if _item:
-                    stop_crawl_on_match_items.append(_item.to_dict())
-            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         _dict['tag'] = self.tag
         return _dict
 
@@ -122,7 +113,6 @@ class SerpYahooOrganicLiveRegularRequestInfo(BaseModel):
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "target": obj.get("target"),
             "search_param": obj.get("search_param"),
-            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
             "tag": obj.get("tag"),
         })
 

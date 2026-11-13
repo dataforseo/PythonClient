@@ -1,5 +1,5 @@
 import warnings
-from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
+from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt, StrictBool
 from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from typing import List, Optional
@@ -17,7 +17,6 @@ if TYPE_CHECKING:
     from dataforseo_client.models.serp_google_locations_country_response_info import SerpGoogleLocationsCountryResponseInfo
     from dataforseo_client.models.serp_google_languages_response_info import SerpGoogleLanguagesResponseInfo
     from dataforseo_client.models.serp_google_organic_task_post_request_info import SerpGoogleOrganicTaskPostRequestInfo
-    from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
     from dataforseo_client.models.serp_google_organic_task_post_response_info import SerpGoogleOrganicTaskPostResponseInfo
     from dataforseo_client.models.serp_google_organic_tasks_ready_response_info import SerpGoogleOrganicTasksReadyResponseInfo
     from dataforseo_client.models.serp_tasks_ready_response_info import SerpTasksReadyResponseInfo
@@ -2168,6 +2167,7 @@ class SerpApi:
     def google_organic_task_get_regular(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/organic/task_get/regular/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2184,6 +2184,7 @@ class SerpApi:
 
         _param = self._google_organic_task_get_regular_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2207,6 +2208,7 @@ class SerpApi:
     def google_organic_task_get_regular_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/organic/task_get/regular/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2223,6 +2225,7 @@ class SerpApi:
 
         _param = self._google_organic_task_get_regular_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2246,6 +2249,7 @@ class SerpApi:
     def google_organic_task_get_regular_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/organic/task_get/regular/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2262,6 +2266,7 @@ class SerpApi:
 
         _param = self._google_organic_task_get_regular_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2281,6 +2286,7 @@ class SerpApi:
     def _google_organic_task_get_regular_serialize(
         self,
         id,
+        resolve_goto_urls,
         _request_auth,
         _content_type,
         _headers,
@@ -2301,6 +2307,8 @@ class SerpApi:
 
         if id is not None:
             _path_params['id'] = id
+        if resolve_goto_urls is not None:
+            _query_params.append(('resolve_goto_urls', resolve_goto_urls))
 
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
@@ -2333,6 +2341,7 @@ class SerpApi:
     def google_organic_task_get_advanced(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/organic/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2349,6 +2358,7 @@ class SerpApi:
 
         _param = self._google_organic_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2372,6 +2382,7 @@ class SerpApi:
     def google_organic_task_get_advanced_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/organic/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2388,6 +2399,7 @@ class SerpApi:
 
         _param = self._google_organic_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2411,6 +2423,7 @@ class SerpApi:
     def google_organic_task_get_advanced_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/organic/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2427,6 +2440,7 @@ class SerpApi:
 
         _param = self._google_organic_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2446,6 +2460,7 @@ class SerpApi:
     def _google_organic_task_get_advanced_serialize(
         self,
         id,
+        resolve_goto_urls,
         _request_auth,
         _content_type,
         _headers,
@@ -2466,6 +2481,8 @@ class SerpApi:
 
         if id is not None:
             _path_params['id'] = id
+        if resolve_goto_urls is not None:
+            _query_params.append(('resolve_goto_urls', resolve_goto_urls))
 
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
@@ -5978,6 +5995,7 @@ class SerpApi:
     def google_local_finder_task_get_advanced(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5994,6 +6012,7 @@ class SerpApi:
 
         _param = self._google_local_finder_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6017,6 +6036,7 @@ class SerpApi:
     def google_local_finder_task_get_advanced_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6033,6 +6053,7 @@ class SerpApi:
 
         _param = self._google_local_finder_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6056,6 +6077,7 @@ class SerpApi:
     def google_local_finder_task_get_advanced_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6072,6 +6094,7 @@ class SerpApi:
 
         _param = self._google_local_finder_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6091,6 +6114,7 @@ class SerpApi:
     def _google_local_finder_task_get_advanced_serialize(
         self,
         id,
+        resolve_goto_urls,
         _request_auth,
         _content_type,
         _headers,
@@ -6111,6 +6135,8 @@ class SerpApi:
 
         if id is not None:
             _path_params['id'] = id
+        if resolve_goto_urls is not None:
+            _query_params.append(('resolve_goto_urls', resolve_goto_urls))
 
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
@@ -7196,6 +7222,7 @@ class SerpApi:
     def google_news_task_get_advanced(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7212,6 +7239,7 @@ class SerpApi:
 
         _param = self._google_news_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7235,6 +7263,7 @@ class SerpApi:
     def google_news_task_get_advanced_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7251,6 +7280,7 @@ class SerpApi:
 
         _param = self._google_news_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7274,6 +7304,7 @@ class SerpApi:
     def google_news_task_get_advanced_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7290,6 +7321,7 @@ class SerpApi:
 
         _param = self._google_news_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7309,6 +7341,7 @@ class SerpApi:
     def _google_news_task_get_advanced_serialize(
         self,
         id,
+        resolve_goto_urls,
         _request_auth,
         _content_type,
         _headers,
@@ -7329,6 +7362,8 @@ class SerpApi:
 
         if id is not None:
             _path_params['id'] = id
+        if resolve_goto_urls is not None:
+            _query_params.append(('resolve_goto_urls', resolve_goto_urls))
 
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
@@ -9632,6 +9667,7 @@ class SerpApi:
     def google_search_by_image_task_get_advanced(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9648,6 +9684,7 @@ class SerpApi:
 
         _param = self._google_search_by_image_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9671,6 +9708,7 @@ class SerpApi:
     def google_search_by_image_task_get_advanced_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9687,6 +9725,7 @@ class SerpApi:
 
         _param = self._google_search_by_image_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9710,6 +9749,7 @@ class SerpApi:
     def google_search_by_image_task_get_advanced_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="")],
+        resolve_goto_urls: Optional[Annotated[StrictBool, Field(description="<em>resolve goto redirect URLs</em><br>use this parameter to resolve goto URLs for high-priority tasks that have not been executed yet and did not contain the <code>resolve_goto_urls: true</code> parameter in the Task Post request<br><br><strong>Note:</strong> this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds<br><br>example: <code>/v3/serp/google/{{low_se_type}}/task_get/advanced/11091412-0696-0066-0000-5d21fa5fdcf6?resolve_goto_urls=true</code>")]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9726,6 +9766,7 @@ class SerpApi:
 
         _param = self._google_search_by_image_task_get_advanced_serialize(
             id=id,
+            resolve_goto_urls=resolve_goto_urls,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9745,6 +9786,7 @@ class SerpApi:
     def _google_search_by_image_task_get_advanced_serialize(
         self,
         id,
+        resolve_goto_urls,
         _request_auth,
         _content_type,
         _headers,
@@ -9765,6 +9807,8 @@ class SerpApi:
 
         if id is not None:
             _path_params['id'] = id
+        if resolve_goto_urls is not None:
+            _query_params.append(('resolve_goto_urls', resolve_goto_urls))
 
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(

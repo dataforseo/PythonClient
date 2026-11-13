@@ -8,7 +8,6 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.serp_api_stop_crawl_on_match_info import SerpApiStopCrawlOnMatchInfo
 
 
 
@@ -29,7 +28,6 @@ class SerpYahooOrganicLiveHtmlRequestInfo(BaseModel):
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. default value: `10`. max value: `200`. **Your account will be billed per each SERP containing up to 10 results;** . Setting depth above 10 may result in additional charges [if the search engine returns more than 10 results](https://dataforseo.com/help-center/how-many-results-scraped);. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/yahoo-serp-api) page.")
     max_crawl_pages: Optional[StrictInt] = Field(default=None, description=r"*page crawl limit*. optional field. number of search results pages to crawl. default value: `1`. max value: `100`. **Note:** the `max_crawl_pages` and `depth` parameters complement each other;. learn more at [our help center](https://dataforseo.com/help-center/what-is-max-crawl-pages-and-how-does-it-work)")
     search_param: Optional[StrictStr] = Field(default=None, description=r"*additional parameters of the search query*. optional field. [get the list of available parameters and additional details here](https://dataforseo.com/what-are-google-search-parameters-and-how-to-use-them-with-serp-api.html)")
-    stop_crawl_on_match: Optional[List[Optional[SerpApiStopCrawlOnMatchInfo]]] = Field(default=None, description=r"array of targets to stop crawling. optional field. if specified, the response will contain SERP results up to and including the specified match_value;. you can specify up to 10 target values in this array. example:. 'stop_crawl_on_match':[{'match_value':'dataforseo.com','match_type':'with_subdomains'}]. learn more about this parameter on our Help Center - https://dataforseo.com/help-center/using-the-stop_crawl_on_match-parameter-in-serp-api. Your account will be billed per each SERP crawled through the specified targets")
     __properties: ClassVar[List[str]] = [
         "url", 
         "keyword", 
@@ -44,7 +42,6 @@ class SerpYahooOrganicLiveHtmlRequestInfo(BaseModel):
         "depth", 
         "max_crawl_pages", 
         "search_param", 
-        "stop_crawl_on_match", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -84,12 +81,6 @@ class SerpYahooOrganicLiveHtmlRequestInfo(BaseModel):
         _dict['depth'] = self.depth
         _dict['max_crawl_pages'] = self.max_crawl_pages
         _dict['search_param'] = self.search_param
-        stop_crawl_on_match_items = []
-        if self.stop_crawl_on_match:
-            for _item in self.stop_crawl_on_match:
-                if _item:
-                    stop_crawl_on_match_items.append(_item.to_dict())
-            _dict['stop_crawl_on_match'] = stop_crawl_on_match_items
         return _dict
 
 
@@ -115,7 +106,6 @@ class SerpYahooOrganicLiveHtmlRequestInfo(BaseModel):
             "depth": obj.get("depth"),
             "max_crawl_pages": obj.get("max_crawl_pages"),
             "search_param": obj.get("search_param"),
-            "stop_crawl_on_match": [SerpApiStopCrawlOnMatchInfo.from_dict(_item) for _item in obj["stop_crawl_on_match"]] if obj.get("stop_crawl_on_match") is not None else None,
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

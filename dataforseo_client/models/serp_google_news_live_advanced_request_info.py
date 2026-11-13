@@ -18,7 +18,8 @@ class SerpGoogleNewsLiveAdvancedRequestInfo(BaseModel):
     keyword: Optional[StrictStr] = Field(default=None, description=r"*keyword*. **required field**. you can specify **up to 700 characters** in the `keyword` field. all %## will be decoded (plus character '+' will be decoded to a space character). if you need to use the '%' character for your `keyword`, please specify it as '%25';. if you need to use the “+” character for your `keyword`, please specify it as “%2B”;. if this field contains such parameters as *'allinanchor:', 'allintext:', 'allintitle:', 'allinurl:', 'define:', 'filetype:', 'id:', 'inanchor:', 'info:', 'intext:', 'intitle:', 'inurl:', 'link:', 'related:', 'site:'*, **the charge per task will be multiplied by 5**. **Note:** queries containing the ‘cache:’ parameter are not supported and will return a validation error. learn more about rules and limitations of `keyword` and `keywords` fields in DataForSEO APIs in this [Help Center article](https://dataforseo.com/help-center/rules-and-limitations-of-keyword-and-keywords-fields-in-dataforseo-apis)")
     location_code: Optional[StrictInt] = Field(default=None, description=r"*search engine location code*. **required field if you don't specify** `location_name` or `location_coordinate`. **if you use this field, you don't need to specify `location_name` or `location_coordinate`**. you can receive the list of available locations of the search engines with their `location_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations`. example:. `2840`")
     language_code: Optional[StrictStr] = Field(default=None, description=r"*search engine language code*. **required field if you don't specify** `language_name`. **if you use this field, you don't need to specify `language_name`**. you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/languages`**example:**`en`")
-    depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. default value: `10`. max value: `200`. **Your account will be billed per each SERP containing up to 10 results;**. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page.")
+    depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. default value: `10`. max value: `200`. **Your account will be billed per each SERP containing up to 10 results;**. Setting depth above 10 may result in additional charges if the search engine returns more than 10 results;. If the specified depth is higher than the number of results in the response, the difference will be refunded to your account balance automatically. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-news-serp-api) page")
+    resolve_goto_urls: Optional[StrictBool] = Field(default=None, description=r"*resolve goto redirect URLs*. optional field. set to `true` to resolve goto redirect URLs in SERPs. default value: `false`. **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds")
     location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine location*. **required field if you don't specify** `location_code` or `location_coordinate`. **if you use this field, you don't need to specify `location_code` or `location_coordinate`**. you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/locations`. example:. `London,England,United Kingdom`")
     language_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine language*. **required field if you don't specify** `language_code`. **if you use this field, you don't need to specify `language_code`**. you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/{{low_se_name}}/languages`. example:. `English`")
     os: Optional[StrictStr] = Field(default=None, description=r"*device operating system*. optional field. **note that this API provides results for desktop only**. choose from the following values: `windows`, `macos`. default value: `windows`")
@@ -36,6 +37,7 @@ class SerpGoogleNewsLiveAdvancedRequestInfo(BaseModel):
         "location_code", 
         "language_code", 
         "depth", 
+        "resolve_goto_urls", 
         "location_name", 
         "language_name", 
         "os", 
@@ -78,6 +80,7 @@ class SerpGoogleNewsLiveAdvancedRequestInfo(BaseModel):
         _dict['location_code'] = self.location_code
         _dict['language_code'] = self.language_code
         _dict['depth'] = self.depth
+        _dict['resolve_goto_urls'] = self.resolve_goto_urls
         _dict['location_name'] = self.location_name
         _dict['language_name'] = self.language_name
         _dict['os'] = self.os
@@ -106,6 +109,7 @@ class SerpGoogleNewsLiveAdvancedRequestInfo(BaseModel):
             "location_code": obj.get("location_code"),
             "language_code": obj.get("language_code"),
             "depth": obj.get("depth"),
+            "resolve_goto_urls": obj.get("resolve_goto_urls"),
             "location_name": obj.get("location_name"),
             "language_name": obj.get("language_name"),
             "os": obj.get("os"),

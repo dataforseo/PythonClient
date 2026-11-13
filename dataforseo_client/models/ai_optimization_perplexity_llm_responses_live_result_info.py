@@ -25,7 +25,7 @@ class AiOptimizationPerplexityLlmResponsesLiveResultInfo(BaseModel):
     money_spent: Optional[StrictFloat] = Field(default=None, description=r"*cost of AI tokens, USD*. the price charged by the third-party AI model provider for according to its [Pricing](https://docs.perplexity.ai/guides/pricing)")
     datetime: Optional[StrictStr] = Field(default=None, description=r"*date and time when the result was received*. in the UTC format: “yyyy-mm-dd hh-mm-ss +00:00”. example:. `2019-11-15 12:57:46 +00:00`")
     items: Optional[List[Optional[MessageAiOptimizationLlmResponseElementItem]]] = Field(default=None, description=r"*array of response items*. contains structured AI response data")
-    fan_out_queries: Optional[List[Optional[StrictStr]]] = Field(default=None, description=r"*array of fan-out queries*. contains related search queries derived from the main query to provide a more comprehensive response")
+    fan_out_queries: Optional[Any] = Field(default=None, description=r"*array of fan-out queries*. contains related search queries derived from the main query to provide a more comprehensive response")
     search_results: Optional[List[Optional[SearchResults]]] = Field(default=None, description=r"*array of search results*. contains objects with search results relevant to the user query and model's response")
     __properties: ClassVar[List[str]] = [
         "model_name", 
