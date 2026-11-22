@@ -3434,6 +3434,8 @@ try:
                 ),
             ],
             platform="google",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             group_range="month",
         )]
         )
@@ -3506,6 +3508,8 @@ try:
                 ),
             ],
             platform="google",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             group_range="month",
         )]
         )

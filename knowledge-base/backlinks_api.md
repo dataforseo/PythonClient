@@ -276,6 +276,8 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
 
     response = backlinks_api.history_live([BacklinksHistoryLiveRequestInfo(
         target="cnn.com",
+        date_from="2026-08-22",
+        date_to="2026-10-22",
     )]
     )
 ```

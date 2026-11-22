@@ -21,6 +21,7 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. **default value: `10`**. max value: `700`. **Your account will be billed per each SERP containing up to 10 results;**. Setting depth above 10 may result in additional charges [if the search engine returns more than 10 results](https://dataforseo.com/help-center/how-many-results-scraped);. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page.")
     device: Optional[StrictStr] = Field(default=None, description=r"*device type*. optional field. return results for a specific device type. can take the values:`desktop`, `mobile`. default value: `desktop`")
     load_async_ai_overview: Optional[StrictBool] = Field(default=None, description=r"*load asynchronous ai overview*. optional field. set to `true` to obtain `ai_overview` items is SERPs even if they are loaded asynchronously;. if set to `false`, you will only obtain `ai_overview` items from cache;. default value: `false`. **Note:** you will be charged extra $0.0006 for using this parameter;. if the element is absent or contains `'asynchronous_ai_overview': false`, all extra charges will be returned to your account balance")
+    resolve_poisoned_results: Optional[StrictBool] = Field(default=None, description=r"*resolve poisoned SERP results*. optional field. set to `true` to detect and resolve poisoned SERPs;. restored organic results are marked with the `from_web` value in the `checks` array;. default value: `false`;. **Note:** if set to `true`, the cost of the task is increased by the price of one SERP page;. the cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page;. **Note#2:** this parameter cannot be used together with `udm=web` or `udm=14` in the `url` or `search_param` fields")
     pingback_url: Optional[StrictStr] = Field(default=None, description=r"*notification URL of a completed task*. optional field. when a task is completed we will notify you by GET request sent to the URL you have specified. you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request.. example:. `http://your-server.com/pingscript?id=$id`. `http://your-server.com/pingscript?id=$id&tag=$tag`. **Note:** special characters in `pingback_url` will be urlencoded;. i.a., the `#` character will be encoded into `%23`. learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api)")
     postback_url: Optional[StrictStr] = Field(default=None, description=r"*URL for sending task results*. optional field. once the task is completed, we will send a POST request with its results compressed in the `gzip` format to the `postback_url` you specified. you can use the ‘$id’ string as a `$id` variable and ‘$tag’ as urlencoded `$tag` variable. We will set the necessary values before sending the request. example:. `http://your-server.com/postbackscript?id=$id`. `http://your-server.com/postbackscript?id=$id&tag=$tag`. **Note:** special characters in `postback_url` will be urlencoded;. i.a., the `#` character will be encoded into `%23`. learn more on our [Help Center](https://dataforseo.com/help-center/pingbacks-postbacks-with-dataforseo-api)")
     postback_data: Optional[StrictStr] = Field(default=None, description=r"*postback_url datatype*. **required field if you specify `postback_url`**. corresponds to the datatype that will be sent to your server. possible values:. `regular`, `advanced`, `html`")
@@ -50,6 +51,7 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         "depth", 
         "device", 
         "load_async_ai_overview", 
+        "resolve_poisoned_results", 
         "pingback_url", 
         "postback_url", 
         "postback_data", 
@@ -104,6 +106,7 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
         _dict['depth'] = self.depth
         _dict['device'] = self.device
         _dict['load_async_ai_overview'] = self.load_async_ai_overview
+        _dict['resolve_poisoned_results'] = self.resolve_poisoned_results
         _dict['pingback_url'] = self.pingback_url
         _dict['postback_url'] = self.postback_url
         _dict['postback_data'] = self.postback_data
@@ -144,6 +147,7 @@ class SerpGoogleOrganicTaskPostRequestInfo(BaseModel):
             "depth": obj.get("depth"),
             "device": obj.get("device"),
             "load_async_ai_overview": obj.get("load_async_ai_overview"),
+            "resolve_poisoned_results": obj.get("resolve_poisoned_results"),
             "pingback_url": obj.get("pingback_url"),
             "postback_url": obj.get("postback_url"),
             "postback_data": obj.get("postback_data"),

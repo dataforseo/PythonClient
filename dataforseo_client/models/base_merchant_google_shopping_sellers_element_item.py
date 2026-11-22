@@ -8,6 +8,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
+from dataforseo_client.models.rating_element import RatingElement
 
 from importlib import import_module
 from typing import TYPE_CHECKING
@@ -36,6 +37,7 @@ class BaseMerchantGoogleShoppingSellersElementItem(BaseModel):
     total_price: Optional[StrictFloat] = Field(default=None, description=r"*product price including tax and shipping*")
     currency: Optional[StrictStr] = Field(default=None, description=r"*currency in the [ISO](https://en.wikipedia.org/wiki/ISO_4217) format*. example:. `USD`")
     seller_name: Optional[StrictStr] = Field(default=None, description=r"*name of the seller*. the name of the company that placed a corresponding product on Google Shopping")
+    rating: Optional[RatingElement] = Field(default=None, description=r"*shop rating*. the shop popularity rate based on product reviews")
     shop_ad_aclk: Optional[StrictStr] = Field(default=None, description=r"*unique ad click referral parameter*. using this parameter you can get a URL of the advertisement in [Google Shopping Sellers Ad URL](/v3/merchant/google/sellers/ad_url/)")
     __properties: ClassVar[List[str]] = [
         "type", 
@@ -53,6 +55,7 @@ class BaseMerchantGoogleShoppingSellersElementItem(BaseModel):
         "total_price", 
         "currency", 
         "seller_name", 
+        "rating", 
         "shop_ad_aclk", 
         ]
     __discriminator_property_name: ClassVar[str] = 'type'
@@ -100,6 +103,7 @@ class BaseMerchantGoogleShoppingSellersElementItem(BaseModel):
         _dict['total_price'] = self.total_price
         _dict['currency'] = self.currency
         _dict['seller_name'] = self.seller_name
+        _dict['rating'] = self.rating.to_dict() if self.rating else None
         _dict['shop_ad_aclk'] = self.shop_ad_aclk
         return _dict
 

@@ -17,10 +17,14 @@ class ReviewResponseItemInfo(BaseModel):
     """ # noqa: E501
     title: Optional[StrictStr] = Field(default=None, description=r"the title of response")
     text: Optional[StrictStr] = Field(default=None, description=r"the content of response")
+    language: Optional[StrictStr] = Field(default=None, description=r"language of the response")
+    response_id: Optional[StrictStr] = Field(default=None, description=r"ID of the response")
     timestamp: Optional[StrictStr] = Field(default=None, description=r"the time of publication")
     __properties: ClassVar[List[str]] = [
         "title", 
         "text", 
+        "language", 
+        "response_id", 
         "timestamp", 
         ]
 
@@ -50,6 +54,8 @@ class ReviewResponseItemInfo(BaseModel):
 
         _dict['title'] = self.title
         _dict['text'] = self.text
+        _dict['language'] = self.language
+        _dict['response_id'] = self.response_id
         _dict['timestamp'] = self.timestamp
         return _dict
 
@@ -65,6 +71,8 @@ class ReviewResponseItemInfo(BaseModel):
         _obj = cls.model_validate({
             "title": obj.get("title"),
             "text": obj.get("text"),
+            "language": obj.get("language"),
+            "response_id": obj.get("response_id"),
             "timestamp": obj.get("timestamp"),
         })
 

@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-**resource_type** | **StrictStr** | <em>type of the returned resource = <strong>'html'</strong></em> |[optional]|
+**resource_type** | **StrictStr** | type of element |[optional]|
 **status_code** | **StrictInt** | general status codeyou can find the full list of the response codes hereNote: we strongly recommend designing a necessary system for handling related exceptional or error conditions |[optional]|
 **location** | **StrictStr** | location headerindicates the URL to redirect a page to |[optional]|
 **url** | **StrictStr** | page URL |[optional]|

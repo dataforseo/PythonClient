@@ -20,6 +20,7 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"*search engine language code*. **required field if you don't specify** `language_name`. **if you use this field, you don't need to specify `language_name`**. you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/languages`**example:**`en`")
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. **default value: `10`**. max value: `200`. **Your account will be billed per each SERP containing up to 10 results;**. Setting depth above 10 may result in additional charges [if the search engine returns more than 10 results](https://dataforseo.com/help-center/how-many-results-scraped);. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page.")
     resolve_goto_urls: Optional[StrictBool] = Field(default=None, description=r"*resolve goto redirect URLs*. optional field. set to `true` to resolve goto redirect URLs in SERPs. default value: `false`. **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds")
+    resolve_poisoned_results: Optional[StrictBool] = Field(default=None, description=r"*resolve poisoned SERP results*. optional field. set to `true` to detect and resolve poisoned SERPs;. default value: `false`;. **Note:** if set to `true`, the cost of the task is increased by the price of one SERP page;. the cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page;. **Note#2:** this parameter cannot be used together with `udm=web` or `udm=14` in the `url` or `search_param` fields")
     device: Optional[StrictStr] = Field(default=None, description=r"*device type*. optional field. return results for a specific device type. can take the values:`desktop`, `mobile`. default value: `desktop`")
     location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine location*. **required field if you don't specify** `location_code` or `location_coordinate`. **if you use this field, you don't need to specify `location_code` or `location_coordinate`**. you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations`. example:. `London,England,United Kingdom`")
     language_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine language*. **required field if you don't specify** `language_code`. **if you use this field, you don't need to specify `language_code`**. you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/languages`. example:. `English`")
@@ -38,6 +39,7 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
         "language_code", 
         "depth", 
         "resolve_goto_urls", 
+        "resolve_poisoned_results", 
         "device", 
         "location_name", 
         "language_name", 
@@ -81,6 +83,7 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
         _dict['language_code'] = self.language_code
         _dict['depth'] = self.depth
         _dict['resolve_goto_urls'] = self.resolve_goto_urls
+        _dict['resolve_poisoned_results'] = self.resolve_poisoned_results
         _dict['device'] = self.device
         _dict['location_name'] = self.location_name
         _dict['language_name'] = self.language_name
@@ -110,6 +113,7 @@ class SerpGoogleOrganicLiveRegularRequestInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "depth": obj.get("depth"),
             "resolve_goto_urls": obj.get("resolve_goto_urls"),
+            "resolve_poisoned_results": obj.get("resolve_poisoned_results"),
             "device": obj.get("device"),
             "location_name": obj.get("location_name"),
             "language_name": obj.get("language_name"),

@@ -99,7 +99,11 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.keywords_data_id_list([KeywordsDataIdListRequestInfo(
+            datetime_from="2026-11-19 16:20:19 +00:00",
+            datetime_to="2026-11-21 16:20:19 +00:00",
             limit=10,
+            offset=0,
+            sort="desc",
             include_metadata=True,
         )]
         )
@@ -604,6 +608,7 @@ try:
                 "cheap laptops for sale",
                 "purchase laptop",
             ],
+            date_from="2026-08-22",
             search_partners=True,
         )]
         )
@@ -1559,6 +1564,8 @@ try:
         keywords_data_api = KeywordsDataApi(api_client)
 
         response = keywords_data_api.google_trends_explore_task_post([KeywordsDataGoogleTrendsExploreTaskPostRequestInfo(
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             type="youtube",
             category_code=3,
             keywords=[
@@ -1729,6 +1736,8 @@ try:
 
         response = keywords_data_api.google_trends_explore_live([KeywordsDataGoogleTrendsExploreLiveRequestInfo(
             location_name="United States",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             type="youtube",
             category_code=3,
             keywords=[
@@ -1963,6 +1972,8 @@ try:
                 "rugby",
                 "cricket",
             ],
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             type="web",
             location_name="United States",
         )]
@@ -2025,6 +2036,8 @@ try:
                 "rugby",
                 "cricket",
             ],
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             type="web",
             location_name="United States",
         )]
@@ -2087,6 +2100,8 @@ try:
                 "rugby",
                 "cricket",
             ],
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             type="web",
             location_name="United States",
         )]

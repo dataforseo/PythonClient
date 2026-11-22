@@ -67,7 +67,11 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.merchant_id_list([MerchantIdListRequestInfo(
+            datetime_from="2026-11-19 16:24:56 +00:00",
+            datetime_to="2026-11-21 16:24:56 +00:00",
             limit=10,
+            offset=0,
+            sort="desc",
             include_metadata=True,
         )]
         )
@@ -1840,7 +1844,7 @@ try:
         merchant_api = MerchantApi(api_client)
 
         response = merchant_api.amazon_sellers_task_post([MerchantAmazonSellersTaskPostRequestInfo(
-            language_code="en",
+            language_code="en_US",
             location_code=2840,
             asin="B085RFFC9Q",
         )]

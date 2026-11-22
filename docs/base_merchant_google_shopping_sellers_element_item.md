@@ -20,4 +20,5 @@
 **total_price** | **StrictFloat** | <em>product price including tax and shipping</em> |[optional]|
 **currency** | **StrictStr** | <em>currency in the <a href='https://en.wikipedia.org/wiki/ISO_4217'>ISO</a> format</em><br>example:<br><code>USD</code> |[optional]|
 **seller_name** | **StrictStr** | <em>name of the seller</em><br>the name of the company that placed a corresponding product on Google Shopping |[optional]|
+**rating** | **RatingElement** | <em>shop rating</em><br>the shop popularity rate based on product reviews |[optional]|
 **shop_ad_aclk** | **StrictStr** | <em>unique ad click referral parameter</em><br>using this parameter you can get a URL of the advertisement in <a href='/v3/merchant/google/sellers/ad_url/'>Google Shopping Sellers Ad URL</a> |[optional]|

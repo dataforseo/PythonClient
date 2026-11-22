@@ -82,7 +82,11 @@ try:
         business_data_api = BusinessDataApi(api_client)
 
         response = business_data_api.business_data_id_list([BusinessDataIdListRequestInfo(
+            datetime_from="2026-11-19 16:25:20 +00:00",
+            datetime_to="2026-11-21 16:25:20 +00:00",
             limit=10,
+            offset=0,
+            sort="desc",
             include_metadata=True,
         )]
         )
@@ -141,6 +145,7 @@ try:
 
         response = business_data_api.business_data_errors([BusinessDataErrorsRequestInfo(
             limit=10,
+            offset=0,
         )]
         )
 except ApiException as e:
@@ -1108,6 +1113,8 @@ try:
             language_code="en",
             location_name="New York,New York,United States",
             keyword="cheap hotel",
+            check_in="2026-12-22",
+            check_out="2026-12-23",
             currency="USD",
             adults=2,
             children=[
@@ -1282,6 +1289,8 @@ try:
             language_code="en",
             location_name="New York,New York,United States",
             keyword="cheap hotel",
+            check_in="2026-12-22",
+            check_out="2026-12-23",
             currency="USD",
             adults=2,
             children=[

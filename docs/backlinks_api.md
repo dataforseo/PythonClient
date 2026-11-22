@@ -53,7 +53,11 @@ try:
         backlinks_api = BacklinksApi(api_client)
 
         response = backlinks_api.backlinks_id_list([BacklinksIdListRequestInfo(
+            datetime_from="2026-11-19 16:20:40 +00:00",
+            datetime_to="2026-11-21 16:20:40 +00:00",
             limit=10,
+            offset=0,
+            sort="desc",
             include_metadata=True,
         )]
         )
@@ -112,6 +116,7 @@ try:
 
         response = backlinks_api.backlinks_errors([BacklinksErrorsRequestInfo(
             limit=10,
+            offset=0,
         )]
         )
 except ApiException as e:
@@ -340,6 +345,8 @@ try:
 
         response = backlinks_api.history_live([BacklinksHistoryLiveRequestInfo(
             target="cnn.com",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
         )]
         )
 except ApiException as e:
@@ -1019,6 +1026,8 @@ try:
 
         response = backlinks_api.timeseries_summary_live([BacklinksTimeseriesSummaryLiveRequestInfo(
             target="dataforseo.com",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             group_range="month",
         )]
         )
@@ -1077,6 +1086,8 @@ try:
 
         response = backlinks_api.timeseries_new_lost_summary_live([BacklinksTimeseriesNewLostSummaryLiveRequestInfo(
             target="dataforseo.com",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             group_range="month",
         )]
         )
@@ -1418,6 +1429,7 @@ try:
                 "https://stackoverflow.com/",
                 "www.trustpilot.com",
             ],
+            date_from="2026-08-22",
         )]
         )
 except ApiException as e:
@@ -1486,6 +1498,7 @@ try:
                 "https://stackoverflow.com/",
                 "www.trustpilot.com",
             ],
+            date_from="2026-08-22",
         )]
         )
 except ApiException as e:

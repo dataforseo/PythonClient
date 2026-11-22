@@ -162,6 +162,8 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
         keyword="albert einstein",
         location_code=2840,
         language_code="en",
+        date_from="2026-08-22",
+        date_to="2026-10-22",
     )]
     )
 ```

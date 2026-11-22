@@ -77,7 +77,11 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.dataforseo_labs_id_list([DataforseoLabsIdListRequestInfo(
+            datetime_from="2026-11-19 16:18:23 +00:00",
+            datetime_to="2026-11-21 16:18:23 +00:00",
             limit=10,
+            offset=0,
+            sort="desc",
             include_metadata=True,
         )]
         )
@@ -189,6 +193,7 @@ try:
 
         response = dataforseo_labs_api.dataforseo_labs_errors([DataforseoLabsErrorsRequestInfo(
             limit=10,
+            offset=0,
         )]
         )
 except ApiException as e:
@@ -1086,6 +1091,8 @@ try:
                 "13418",
                 "11494",
             ],
+            first_date="2026-08-22",
+            second_date="2026-10-22",
             limit=3,
         )]
         )
@@ -1662,6 +1669,8 @@ try:
             keyword="albert einstein",
             location_code=2840,
             language_code="en",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
         )]
         )
 except ApiException as e:
@@ -1721,6 +1730,8 @@ try:
             target="dataforseo.com",
             location_code=2840,
             language_code="en",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
         )]
         )
 except ApiException as e:
@@ -1978,6 +1989,8 @@ try:
             ],
             location_code=2840,
             language_code="en",
+            date_from="2026-08-22",
+            date_to="2026-10-22",
             item_types=[
                 "organic",
                 "paid",

@@ -71,7 +71,11 @@ try:
         app_data_api = AppDataApi(api_client)
 
         response = app_data_api.app_data_id_list([AppDataIdListRequestInfo(
+            datetime_from="2026-11-19 16:25:10 +00:00",
+            datetime_to="2026-11-21 16:25:10 +00:00",
             limit=10,
+            offset=0,
+            sort="desc",
             include_metadata=True,
         )]
         )
@@ -130,6 +134,7 @@ try:
 
         response = app_data_api.app_data_errors([AppDataErrorsRequestInfo(
             limit=10,
+            offset=0,
         )]
         )
 except ApiException as e:
@@ -1390,18 +1395,13 @@ try:
         response = app_data_api.google_app_listings_search_live([AppDataGoogleAppListingsSearchLiveRequestInfo(
             title="vpn",
             description="vpn",
-            categories=[
-                "Tools",
-            ],
             order_by=[
-                "item.installs_count,asc",
+                "item.rating.value,desc",
             ],
             filters=[
-                [
-                    "item.rating.value",
-                    ">",
-                    4.5,
-                ],
+                "item.rating.value",
+                ">",
+                4.5,
             ],
             limit=10,
         )]
@@ -2341,18 +2341,13 @@ try:
         response = app_data_api.apple_app_listings_search_live([AppDataAppleAppListingsSearchLiveRequestInfo(
             title="vpn",
             description="vpn",
-            categories=[
-                "Utilities",
-            ],
             order_by=[
                 "item.rating.value,desc",
             ],
             filters=[
-                [
-                    "item.rating.value",
-                    ">",
-                    4.5,
-                ],
+                "item.rating.value",
+                ">",
+                4.5,
             ],
             limit=10,
         )]

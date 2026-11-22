@@ -109,7 +109,6 @@ All URIs are relative to *https://api.dataforseo.com*
 [**youtubeVideoInfoLiveAdvanced**](SerpApi.md#youtubeVideoInfoLiveAdvanced) | **POST**  /v3/serp/youtube/video_info/live/advanced  |
 [**youtubeOrganicTaskPost**](SerpApi.md#youtubeOrganicTaskPost) | **POST**  /v3/serp/youtube/organic/task_post  |
 [**youtubeOrganicTasksReady**](SerpApi.md#youtubeOrganicTasksReady) | **GET**  /v3/serp/youtube/organic/tasks_ready  |
-[**youtubeOrganicTasksFixed**](SerpApi.md#youtubeOrganicTasksFixed) | **GET**  /v3/serp/youtube/organic/tasks_fixed  |
 [**youtubeOrganicTaskGetAdvanced**](SerpApi.md#youtubeOrganicTaskGetAdvanced) | **GET**  /v3/serp/youtube/organic/task_get/advanced/{id}  |
 [**youtubeOrganicLiveAdvanced**](SerpApi.md#youtubeOrganicLiveAdvanced) | **POST**  /v3/serp/youtube/organic/live/advanced  |
 [**youtubeVideoSubtitlesTaskPost**](SerpApi.md#youtubeVideoSubtitlesTaskPost) | **POST**  /v3/serp/youtube/video_subtitles/task_post  |
@@ -205,7 +204,11 @@ try:
         serp_api = SerpApi(api_client)
 
         response = serp_api.id_list([SerpIdListRequestInfo(
+            datetime_from="2026-11-19 16:16:03 +00:00",
+            datetime_to="2026-11-21 16:16:03 +00:00",
             limit=10,
+            offset=0,
+            sort="desc",
             include_metadata=True,
         )]
         )
@@ -6010,59 +6013,6 @@ except ApiException as e:
 ### Return type
 
 [**SerpYoutubeOrganicTasksReadyResponseInfo**](SerpYoutubeOrganicTasksReadyResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="youtubeOrganicTasksFixed"></a>
-# **youtubeOrganicTasksFixed**
-> SerpYoutubeOrganicTasksFixedResponseInfo youtubeOrganicTasksFixed()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.serp_api import SerpApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        serp_api = SerpApi(api_client)
-
-        response = serp_api.youtube_organic_tasks_fixed()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**SerpYoutubeOrganicTasksFixedResponseInfo**](SerpYoutubeOrganicTasksFixedResponseInfo.md)
 
 ### Authorization
 

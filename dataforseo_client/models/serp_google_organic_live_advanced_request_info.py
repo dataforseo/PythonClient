@@ -20,6 +20,7 @@ class SerpGoogleOrganicLiveAdvancedRequestInfo(BaseModel):
     language_code: Optional[StrictStr] = Field(default=None, description=r"*search engine language code*. optional field if you specify `language_name`. **if you use this field, you don't need to specify `language_name`**. you can receive the list of available languages of the search engine with their `language_code` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/languages`**example:**`en`")
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. **default value: `10`**. max value: `200`. **Your account will be billed per each SERP containing up to 10 results;**. Setting depth above 10 may result in additional charges [if the search engine returns more than 10 results](https://dataforseo.com/help-center/how-many-results-scraped);. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page.")
     resolve_goto_urls: Optional[StrictBool] = Field(default=None, description=r"*resolve goto redirect URLs*. optional field. set to `true` to resolve goto redirect URLs in SERPs. default value: `false`. **Note:** this parameter adds up to 40 seconds to the turnaround time, with a maximum turnaround time of 260 seconds")
+    resolve_poisoned_results: Optional[StrictBool] = Field(default=None, description=r"*resolve poisoned SERP results*. optional field. set to `true` to detect and resolve poisoned SERPs;. restored organic results are marked with the `from_web` value in the `checks` array;. default value: `false`;. **Note:** if set to `true`, the cost of the task is increased by the price of one SERP page;. the cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page;. **Note#2:** this parameter cannot be used together with `udm=web` or `udm=14` in the `url` or `search_param` fields")
     device: Optional[StrictStr] = Field(default=None, description=r"*device type*. optional field. return results for a specific device type. can take the values:`desktop`, `mobile`. default value: `desktop`")
     load_async_ai_overview: Optional[StrictBool] = Field(default=None, description=r"*load asynchronous ai overview*. optional field. set to `true` to obtain `ai_overview` items is SERPs even if they are loaded asynchronously;. if set to `false`, you will only obtain `ai_overview` items from cache;. default value: `false`. **Note:** you will be charged extra $0.002 for using this parameter;. if the element is absent or contains `'asynchronous_ai_overview': false`, all extra charges will be returned to your account balance")
     location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine location*. **required field if you don't specify** `location_code` or `location_coordinate`. **if you use this field, you don't need to specify `location_code` or `location_coordinate`**. you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations`. example:. `London,England,United Kingdom`")
@@ -45,6 +46,7 @@ class SerpGoogleOrganicLiveAdvancedRequestInfo(BaseModel):
         "language_code", 
         "depth", 
         "resolve_goto_urls", 
+        "resolve_poisoned_results", 
         "device", 
         "load_async_ai_overview", 
         "location_name", 
@@ -95,6 +97,7 @@ class SerpGoogleOrganicLiveAdvancedRequestInfo(BaseModel):
         _dict['language_code'] = self.language_code
         _dict['depth'] = self.depth
         _dict['resolve_goto_urls'] = self.resolve_goto_urls
+        _dict['resolve_poisoned_results'] = self.resolve_poisoned_results
         _dict['device'] = self.device
         _dict['load_async_ai_overview'] = self.load_async_ai_overview
         _dict['location_name'] = self.location_name
@@ -131,6 +134,7 @@ class SerpGoogleOrganicLiveAdvancedRequestInfo(BaseModel):
             "language_code": obj.get("language_code"),
             "depth": obj.get("depth"),
             "resolve_goto_urls": obj.get("resolve_goto_urls"),
+            "resolve_poisoned_results": obj.get("resolve_poisoned_results"),
             "device": obj.get("device"),
             "load_async_ai_overview": obj.get("load_async_ai_overview"),
             "location_name": obj.get("location_name"),

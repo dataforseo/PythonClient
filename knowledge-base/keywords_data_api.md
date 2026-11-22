@@ -63,6 +63,8 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
     keywords_data_api = KeywordsDataApi(api_client)
 
     response = keywords_data_api.google_trends_explore_task_post([KeywordsDataGoogleTrendsExploreTaskPostRequestInfo(
+        date_from="2026-08-22",
+        date_to="2026-10-22",
         type="youtube",
         category_code=3,
         keywords=[
@@ -98,6 +100,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
             "cheap laptops for sale",
             "purchase laptop",
         ],
+        date_from="2026-08-22",
         search_partners=True,
     )]
     )
@@ -153,6 +156,8 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
 
     response = keywords_data_api.google_trends_explore_live([KeywordsDataGoogleTrendsExploreLiveRequestInfo(
         location_name="United States",
+        date_from="2026-08-22",
+        date_to="2026-10-22",
         type="youtube",
         category_code=3,
         keywords=[

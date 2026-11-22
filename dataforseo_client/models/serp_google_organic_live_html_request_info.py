@@ -21,6 +21,7 @@ class SerpGoogleOrganicLiveHtmlRequestInfo(BaseModel):
     depth: Optional[StrictInt] = Field(default=None, description=r"*parsing depth*. optional field. number of results in SERP. **default value: `10`**. max value: `200`. **Your account will be billed per each SERP containing up to 10 results;**. Setting depth above 10 may result in additional charges [if the search engine returns more than 10 results](https://dataforseo.com/help-center/how-many-results-scraped);. The cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page.")
     device: Optional[StrictStr] = Field(default=None, description=r"*device type*. optional field. return results for a specific device type. can take the values:`desktop`, `mobile`. default value: `desktop`")
     load_async_ai_overview: Optional[StrictBool] = Field(default=None, description=r"*load asynchronous ai overview*. optional field. set to `true` to obtain `ai_overview` items is SERPs even if they are loaded asynchronously;. if set to `false`, you will only obtain `ai_overview` items from cache;. default value: `false`. **Note** your account will be billed $0.002 extra for each request;. if the element is absent or contains `'asynchronous_ai_overview': false`, all extra charges will be returned to your account balance")
+    resolve_poisoned_results: Optional[StrictBool] = Field(default=None, description=r"*resolve poisoned SERP results*. optional field. set to `true` to detect and resolve poisoned SERPs;. default value: `false`;. **Note:** if set to `true`, the cost of the task is increased by the price of one SERP page;. the cost can be calculated on the [Pricing](https://dataforseo.com/pricing/serp/google-organic-serp-api) page;. **Note#2:** this parameter cannot be used together with `udm=web` or `udm=14` in the `url` or `search_param` fields")
     location_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine location*. **required field if you don't specify** `location_code` or `location_coordinate`. **if you use this field, you don't need to specify `location_code` or `location_coordinate`**. you can receive the list of available locations of the search engine with their `location_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/locations`. example:. `London,England,United Kingdom`")
     language_name: Optional[StrictStr] = Field(default=None, description=r"*full name of search engine language*. **required field if you don't specify** `language_code`. **if you use this field, you don't need to specify `language_code`**. you can receive the list of available languages of the search engine with their `language_name` by making a separate request to the `https://api.dataforseo.com/v3/serp/google/languages`. example:. `English`")
     os: Optional[StrictStr] = Field(default=None, description=r"*device operating system*. optional field. if you specify `desktop` in the `device` field, choose from the following values: `windows`, `macos`. default value: `windows`. if you specify `mobile` in the `device` field, choose from the following values: `android`, `ios`. default value: `android`")
@@ -38,6 +39,7 @@ class SerpGoogleOrganicLiveHtmlRequestInfo(BaseModel):
         "depth", 
         "device", 
         "load_async_ai_overview", 
+        "resolve_poisoned_results", 
         "location_name", 
         "language_name", 
         "os", 
@@ -80,6 +82,7 @@ class SerpGoogleOrganicLiveHtmlRequestInfo(BaseModel):
         _dict['depth'] = self.depth
         _dict['device'] = self.device
         _dict['load_async_ai_overview'] = self.load_async_ai_overview
+        _dict['resolve_poisoned_results'] = self.resolve_poisoned_results
         _dict['location_name'] = self.location_name
         _dict['language_name'] = self.language_name
         _dict['os'] = self.os
@@ -108,6 +111,7 @@ class SerpGoogleOrganicLiveHtmlRequestInfo(BaseModel):
             "depth": obj.get("depth"),
             "device": obj.get("device"),
             "load_async_ai_overview": obj.get("load_async_ai_overview"),
+            "resolve_poisoned_results": obj.get("resolve_poisoned_results"),
             "location_name": obj.get("location_name"),
             "language_name": obj.get("language_name"),
             "os": obj.get("os"),

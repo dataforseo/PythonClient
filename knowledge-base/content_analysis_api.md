@@ -119,6 +119,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
     response = content_analysis_api.phrase_trends_live([ContentAnalysisPhraseTrendsLiveRequestInfo(
         keyword="logitech",
         search_mode="as_is",
+        date_from="2026-08-22",
         date_group="month",
     )]
     )
@@ -143,7 +144,11 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
     content_analysis_api = ContentAnalysisApi(api_client)
 
     response = content_analysis_api.content_analysis_id_list([ContentAnalysisIdListRequestInfo(
+        datetime_from="2026-11-19 16:24:50 +00:00",
+        datetime_to="2026-11-21 16:24:50 +00:00",
         limit=10,
+        offset=0,
+        sort="desc",
         include_metadata=True,
     )]
     )
@@ -281,6 +286,7 @@ with dfs_api_provider.ApiClient(configuration) as api_client:
     response = content_analysis_api.category_trends_live([ContentAnalysisCategoryTrendsLiveRequestInfo(
         category_code=10994,
         search_mode="as_is",
+        date_from="2026-08-22",
         date_group="month",
     )]
     )
